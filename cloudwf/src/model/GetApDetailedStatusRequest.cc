@@ -33,7 +33,7 @@ long GetApDetailedStatusRequest::getId()const
 void GetApDetailedStatusRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetApDetailedStatusRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetApDetailedStatusRequest::getAccessKeyId()const
 void GetApDetailedStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

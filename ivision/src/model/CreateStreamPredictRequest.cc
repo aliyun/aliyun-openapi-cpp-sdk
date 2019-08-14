@@ -256,6 +256,17 @@ void CreateStreamPredictRequest::setStreamType(const std::string& streamType)
 	setCoreParameter("StreamType", streamType);
 }
 
+std::string CreateStreamPredictRequest::getFaceGroupId()const
+{
+	return faceGroupId_;
+}
+
+void CreateStreamPredictRequest::setFaceGroupId(const std::string& faceGroupId)
+{
+	faceGroupId_ = faceGroupId;
+	setCoreParameter("FaceGroupId", faceGroupId);
+}
+
 std::string CreateStreamPredictRequest::getStreamId()const
 {
 	return streamId_;
@@ -276,6 +287,17 @@ void CreateStreamPredictRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
 	setCoreParameter("CallerBid", callerBid);
+}
+
+std::string CreateStreamPredictRequest::getDetectIntervals()const
+{
+	return detectIntervals_;
+}
+
+void CreateStreamPredictRequest::setDetectIntervals(const std::string& detectIntervals)
+{
+	detectIntervals_ = detectIntervals;
+	setCoreParameter("DetectIntervals", detectIntervals);
 }
 
 long CreateStreamPredictRequest::getOwnerId()const
@@ -331,6 +353,17 @@ void CreateStreamPredictRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
 	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string CreateStreamPredictRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void CreateStreamPredictRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string CreateStreamPredictRequest::getProbabilityThresholds()const

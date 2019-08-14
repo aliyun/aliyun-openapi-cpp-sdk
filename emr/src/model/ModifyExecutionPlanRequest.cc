@@ -33,7 +33,7 @@ long ModifyExecutionPlanRequest::getResourceOwnerId()const
 void ModifyExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyExecutionPlanRequest::getLogPath()const
@@ -44,7 +44,7 @@ std::string ModifyExecutionPlanRequest::getLogPath()const
 void ModifyExecutionPlanRequest::setLogPath(const std::string& logPath)
 {
 	logPath_ = logPath;
-	setParameter("LogPath", logPath);
+	setCoreParameter("LogPath", logPath);
 }
 
 int ModifyExecutionPlanRequest::getTimeInterval()const
@@ -55,7 +55,7 @@ int ModifyExecutionPlanRequest::getTimeInterval()const
 void ModifyExecutionPlanRequest::setTimeInterval(int timeInterval)
 {
 	timeInterval_ = timeInterval;
-	setParameter("TimeInterval", std::to_string(timeInterval));
+	setCoreParameter("TimeInterval", std::to_string(timeInterval));
 }
 
 std::string ModifyExecutionPlanRequest::getClusterName()const
@@ -66,7 +66,7 @@ std::string ModifyExecutionPlanRequest::getClusterName()const
 void ModifyExecutionPlanRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setParameter("ClusterName", clusterName);
+	setCoreParameter("ClusterName", clusterName);
 }
 
 std::string ModifyExecutionPlanRequest::getConfigurations()const
@@ -77,7 +77,7 @@ std::string ModifyExecutionPlanRequest::getConfigurations()const
 void ModifyExecutionPlanRequest::setConfigurations(const std::string& configurations)
 {
 	configurations_ = configurations;
-	setParameter("Configurations", configurations);
+	setCoreParameter("Configurations", configurations);
 }
 
 bool ModifyExecutionPlanRequest::getIoOptimized()const
@@ -88,7 +88,7 @@ bool ModifyExecutionPlanRequest::getIoOptimized()const
 void ModifyExecutionPlanRequest::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setParameter("IoOptimized", std::to_string(ioOptimized));
+	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
 }
 
 std::string ModifyExecutionPlanRequest::getSecurityGroupId()const
@@ -99,7 +99,7 @@ std::string ModifyExecutionPlanRequest::getSecurityGroupId()const
 void ModifyExecutionPlanRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 bool ModifyExecutionPlanRequest::getEasEnable()const
@@ -110,7 +110,7 @@ bool ModifyExecutionPlanRequest::getEasEnable()const
 void ModifyExecutionPlanRequest::setEasEnable(bool easEnable)
 {
 	easEnable_ = easEnable;
-	setParameter("EasEnable", std::to_string(easEnable));
+	setCoreParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 bool ModifyExecutionPlanRequest::getCreateClusterOnDemand()const
@@ -121,7 +121,7 @@ bool ModifyExecutionPlanRequest::getCreateClusterOnDemand()const
 void ModifyExecutionPlanRequest::setCreateClusterOnDemand(bool createClusterOnDemand)
 {
 	createClusterOnDemand_ = createClusterOnDemand;
-	setParameter("CreateClusterOnDemand", std::to_string(createClusterOnDemand));
+	setCoreParameter("CreateClusterOnDemand", createClusterOnDemand ? "true" : "false");
 }
 
 long ModifyExecutionPlanRequest::getStartTime()const
@@ -132,7 +132,7 @@ long ModifyExecutionPlanRequest::getStartTime()const
 void ModifyExecutionPlanRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::vector<std::string> ModifyExecutionPlanRequest::getJobIdList()const
@@ -144,7 +144,7 @@ void ModifyExecutionPlanRequest::setJobIdList(const std::vector<std::string>& jo
 {
 	jobIdList_ = jobIdList;
 	for(int i = 0; i!= jobIdList.size(); i++)
-		setParameter("JobIdList."+ std::to_string(i), jobIdList.at(i));
+		setCoreParameter("JobIdList."+ std::to_string(i), jobIdList.at(i));
 }
 
 std::string ModifyExecutionPlanRequest::getAccessKeyId()const
@@ -155,7 +155,7 @@ std::string ModifyExecutionPlanRequest::getAccessKeyId()const
 void ModifyExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyExecutionPlanRequest::getDayOfMonth()const
@@ -166,7 +166,7 @@ std::string ModifyExecutionPlanRequest::getDayOfMonth()const
 void ModifyExecutionPlanRequest::setDayOfMonth(const std::string& dayOfMonth)
 {
 	dayOfMonth_ = dayOfMonth;
-	setParameter("DayOfMonth", dayOfMonth);
+	setCoreParameter("DayOfMonth", dayOfMonth);
 }
 
 std::vector<ModifyExecutionPlanRequest::BootstrapAction> ModifyExecutionPlanRequest::getBootstrapAction()const
@@ -181,9 +181,9 @@ void ModifyExecutionPlanRequest::setBootstrapAction(const std::vector<BootstrapA
 	for(int i = 0; i!= bootstrapAction.size(); i++)	{
 		auto obj = bootstrapAction.at(i);
 		std::string str ="BootstrapAction."+ std::to_string(i);
-		setParameter(str + ".Path", obj.path);
-		setParameter(str + ".Arg", obj.arg);
-		setParameter(str + ".Name", obj.name);
+		setCoreParameter(str + ".Path", obj.path);
+		setCoreParameter(str + ".Arg", obj.arg);
+		setCoreParameter(str + ".Name", obj.name);
 	}
 }
 
@@ -195,7 +195,7 @@ std::string ModifyExecutionPlanRequest::getRegionId()const
 void ModifyExecutionPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ModifyExecutionPlanRequest::getUseLocalMetaDb()const
@@ -206,7 +206,7 @@ bool ModifyExecutionPlanRequest::getUseLocalMetaDb()const
 void ModifyExecutionPlanRequest::setUseLocalMetaDb(bool useLocalMetaDb)
 {
 	useLocalMetaDb_ = useLocalMetaDb;
-	setParameter("UseLocalMetaDb", std::to_string(useLocalMetaDb));
+	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
 }
 
 std::string ModifyExecutionPlanRequest::getEmrVer()const
@@ -217,7 +217,7 @@ std::string ModifyExecutionPlanRequest::getEmrVer()const
 void ModifyExecutionPlanRequest::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
-	setParameter("EmrVer", emrVer);
+	setCoreParameter("EmrVer", emrVer);
 }
 
 std::string ModifyExecutionPlanRequest::getId()const
@@ -228,7 +228,7 @@ std::string ModifyExecutionPlanRequest::getId()const
 void ModifyExecutionPlanRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyExecutionPlanRequest::getUserDefinedEmrEcsRole()const
@@ -239,7 +239,7 @@ std::string ModifyExecutionPlanRequest::getUserDefinedEmrEcsRole()const
 void ModifyExecutionPlanRequest::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
 {
 	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
-	setParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
 }
 
 bool ModifyExecutionPlanRequest::getIsOpenPublicIp()const
@@ -250,7 +250,7 @@ bool ModifyExecutionPlanRequest::getIsOpenPublicIp()const
 void ModifyExecutionPlanRequest::setIsOpenPublicIp(bool isOpenPublicIp)
 {
 	isOpenPublicIp_ = isOpenPublicIp;
-	setParameter("IsOpenPublicIp", std::to_string(isOpenPublicIp));
+	setCoreParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
 }
 
 long ModifyExecutionPlanRequest::getExecutionPlanVersion()const
@@ -261,7 +261,7 @@ long ModifyExecutionPlanRequest::getExecutionPlanVersion()const
 void ModifyExecutionPlanRequest::setExecutionPlanVersion(long executionPlanVersion)
 {
 	executionPlanVersion_ = executionPlanVersion;
-	setParameter("ExecutionPlanVersion", std::to_string(executionPlanVersion));
+	setCoreParameter("ExecutionPlanVersion", std::to_string(executionPlanVersion));
 }
 
 std::string ModifyExecutionPlanRequest::getClusterId()const
@@ -272,7 +272,7 @@ std::string ModifyExecutionPlanRequest::getClusterId()const
 void ModifyExecutionPlanRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyExecutionPlanRequest::getTimeUnit()const
@@ -283,7 +283,7 @@ std::string ModifyExecutionPlanRequest::getTimeUnit()const
 void ModifyExecutionPlanRequest::setTimeUnit(const std::string& timeUnit)
 {
 	timeUnit_ = timeUnit;
-	setParameter("TimeUnit", timeUnit);
+	setCoreParameter("TimeUnit", timeUnit);
 }
 
 std::string ModifyExecutionPlanRequest::getInstanceGeneration()const
@@ -294,7 +294,7 @@ std::string ModifyExecutionPlanRequest::getInstanceGeneration()const
 void ModifyExecutionPlanRequest::setInstanceGeneration(const std::string& instanceGeneration)
 {
 	instanceGeneration_ = instanceGeneration;
-	setParameter("InstanceGeneration", instanceGeneration);
+	setCoreParameter("InstanceGeneration", instanceGeneration);
 }
 
 std::string ModifyExecutionPlanRequest::getClusterType()const
@@ -305,7 +305,7 @@ std::string ModifyExecutionPlanRequest::getClusterType()const
 void ModifyExecutionPlanRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", clusterType);
 }
 
 std::string ModifyExecutionPlanRequest::getVSwitchId()const
@@ -316,7 +316,7 @@ std::string ModifyExecutionPlanRequest::getVSwitchId()const
 void ModifyExecutionPlanRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::vector<std::string> ModifyExecutionPlanRequest::getOptionSoftWareList()const
@@ -328,7 +328,7 @@ void ModifyExecutionPlanRequest::setOptionSoftWareList(const std::vector<std::st
 {
 	optionSoftWareList_ = optionSoftWareList;
 	for(int i = 0; i!= optionSoftWareList.size(); i++)
-		setParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
+		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
 }
 
 std::string ModifyExecutionPlanRequest::getVpcId()const
@@ -339,7 +339,7 @@ std::string ModifyExecutionPlanRequest::getVpcId()const
 void ModifyExecutionPlanRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string ModifyExecutionPlanRequest::getNetType()const
@@ -350,7 +350,7 @@ std::string ModifyExecutionPlanRequest::getNetType()const
 void ModifyExecutionPlanRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setParameter("NetType", netType);
+	setCoreParameter("NetType", netType);
 }
 
 std::string ModifyExecutionPlanRequest::getWorkflowDefinition()const
@@ -361,7 +361,7 @@ std::string ModifyExecutionPlanRequest::getWorkflowDefinition()const
 void ModifyExecutionPlanRequest::setWorkflowDefinition(const std::string& workflowDefinition)
 {
 	workflowDefinition_ = workflowDefinition;
-	setParameter("WorkflowDefinition", workflowDefinition);
+	setCoreParameter("WorkflowDefinition", workflowDefinition);
 }
 
 std::vector<ModifyExecutionPlanRequest::EcsOrder> ModifyExecutionPlanRequest::getEcsOrder()const
@@ -376,13 +376,13 @@ void ModifyExecutionPlanRequest::setEcsOrder(const std::vector<EcsOrder>& ecsOrd
 	for(int i = 0; i!= ecsOrder.size(); i++)	{
 		auto obj = ecsOrder.at(i);
 		std::string str ="EcsOrder."+ std::to_string(i);
-		setParameter(str + ".NodeType", obj.nodeType);
-		setParameter(str + ".DiskCount", std::to_string(obj.diskCount));
-		setParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setParameter(str + ".Index", std::to_string(obj.index));
-		setParameter(str + ".InstanceType", obj.instanceType);
-		setParameter(str + ".DiskType", obj.diskType);
+		setCoreParameter(str + ".NodeType", obj.nodeType);
+		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
+		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
+		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
+		setCoreParameter(str + ".Index", std::to_string(obj.index));
+		setCoreParameter(str + ".InstanceType", obj.instanceType);
+		setCoreParameter(str + ".DiskType", obj.diskType);
 	}
 }
 
@@ -394,7 +394,7 @@ std::string ModifyExecutionPlanRequest::getName()const
 void ModifyExecutionPlanRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyExecutionPlanRequest::getZoneId()const
@@ -405,7 +405,7 @@ std::string ModifyExecutionPlanRequest::getZoneId()const
 void ModifyExecutionPlanRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string ModifyExecutionPlanRequest::getDayOfWeek()const
@@ -416,7 +416,7 @@ std::string ModifyExecutionPlanRequest::getDayOfWeek()const
 void ModifyExecutionPlanRequest::setDayOfWeek(const std::string& dayOfWeek)
 {
 	dayOfWeek_ = dayOfWeek;
-	setParameter("DayOfWeek", dayOfWeek);
+	setCoreParameter("DayOfWeek", dayOfWeek);
 }
 
 bool ModifyExecutionPlanRequest::getUseCustomHiveMetaDB()const
@@ -427,7 +427,7 @@ bool ModifyExecutionPlanRequest::getUseCustomHiveMetaDB()const
 void ModifyExecutionPlanRequest::setUseCustomHiveMetaDB(bool useCustomHiveMetaDB)
 {
 	useCustomHiveMetaDB_ = useCustomHiveMetaDB;
-	setParameter("UseCustomHiveMetaDB", std::to_string(useCustomHiveMetaDB));
+	setCoreParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB ? "true" : "false");
 }
 
 std::string ModifyExecutionPlanRequest::getStrategy()const
@@ -438,7 +438,7 @@ std::string ModifyExecutionPlanRequest::getStrategy()const
 void ModifyExecutionPlanRequest::setStrategy(const std::string& strategy)
 {
 	strategy_ = strategy;
-	setParameter("Strategy", strategy);
+	setCoreParameter("Strategy", strategy);
 }
 
 std::vector<ModifyExecutionPlanRequest::Config> ModifyExecutionPlanRequest::getConfig()const
@@ -453,12 +453,12 @@ void ModifyExecutionPlanRequest::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setParameter(str + ".ConfigKey", obj.configKey);
-		setParameter(str + ".FileName", obj.fileName);
-		setParameter(str + ".Encrypt", obj.encrypt);
-		setParameter(str + ".Replace", obj.replace);
-		setParameter(str + ".ConfigValue", obj.configValue);
-		setParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".ConfigKey", obj.configKey);
+		setCoreParameter(str + ".FileName", obj.fileName);
+		setCoreParameter(str + ".Encrypt", obj.encrypt);
+		setCoreParameter(str + ".Replace", obj.replace);
+		setCoreParameter(str + ".ConfigValue", obj.configValue);
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
 	}
 }
 
@@ -470,7 +470,7 @@ bool ModifyExecutionPlanRequest::getHighAvailabilityEnable()const
 void ModifyExecutionPlanRequest::setHighAvailabilityEnable(bool highAvailabilityEnable)
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
-	setParameter("HighAvailabilityEnable", std::to_string(highAvailabilityEnable));
+	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
 }
 
 bool ModifyExecutionPlanRequest::getInitCustomHiveMetaDB()const
@@ -481,7 +481,7 @@ bool ModifyExecutionPlanRequest::getInitCustomHiveMetaDB()const
 void ModifyExecutionPlanRequest::setInitCustomHiveMetaDB(bool initCustomHiveMetaDB)
 {
 	initCustomHiveMetaDB_ = initCustomHiveMetaDB;
-	setParameter("InitCustomHiveMetaDB", std::to_string(initCustomHiveMetaDB));
+	setCoreParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
 }
 
 bool ModifyExecutionPlanRequest::getLogEnable()const
@@ -492,6 +492,6 @@ bool ModifyExecutionPlanRequest::getLogEnable()const
 void ModifyExecutionPlanRequest::setLogEnable(bool logEnable)
 {
 	logEnable_ = logEnable;
-	setParameter("LogEnable", std::to_string(logEnable));
+	setCoreParameter("LogEnable", logEnable ? "true" : "false");
 }
 

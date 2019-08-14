@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string serverType;
 					std::string type;
 					std::string serverId;
+					std::string description;
 					std::string vpcId;
-					std::string eniHost;
 					int port;
 					std::string serverIp;
 					int weight;

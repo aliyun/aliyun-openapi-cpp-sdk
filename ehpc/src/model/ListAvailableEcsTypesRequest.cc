@@ -47,6 +47,17 @@ void ListAvailableEcsTypesRequest::setZoneId(const std::string& zoneId)
 	setCoreParameter("ZoneId", zoneId);
 }
 
+bool ListAvailableEcsTypesRequest::getShowSoldOut()const
+{
+	return showSoldOut_;
+}
+
+void ListAvailableEcsTypesRequest::setShowSoldOut(bool showSoldOut)
+{
+	showSoldOut_ = showSoldOut;
+	setCoreParameter("ShowSoldOut", showSoldOut ? "true" : "false");
+}
+
 std::string ListAvailableEcsTypesRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;

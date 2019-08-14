@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsInstanceUpdateRequest();
 				~OnsInstanceUpdateRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				std::string getInstanceId()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setRemark(const std::string& remark);
 
             private:
-				long preventCache_;
 				std::string instanceName_;
 				std::string instanceId_;
 				std::string remark_;

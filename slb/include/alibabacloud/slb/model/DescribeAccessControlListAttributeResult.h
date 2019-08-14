@@ -50,6 +50,7 @@ namespace AlibabaCloud
 				explicit DescribeAccessControlListAttributeResult(const std::string &payload);
 				~DescribeAccessControlListAttributeResult();
 				std::vector<AclEntry> getAclEntrys()const;
+				std::string getResourceGroupId()const;
 				std::string getAclId()const;
 				std::string getAddressIPVersion()const;
 				std::vector<RelatedListener> getRelatedListeners()const;
@@ -59,6 +60,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<AclEntry> aclEntrys_;
+				std::string resourceGroupId_;
 				std::string aclId_;
 				std::string addressIPVersion_;
 				std::vector<RelatedListener> relatedListeners_;

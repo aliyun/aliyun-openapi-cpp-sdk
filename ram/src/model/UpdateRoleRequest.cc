@@ -33,7 +33,7 @@ std::string UpdateRoleRequest::getNewAssumeRolePolicyDocument()const
 void UpdateRoleRequest::setNewAssumeRolePolicyDocument(const std::string& newAssumeRolePolicyDocument)
 {
 	newAssumeRolePolicyDocument_ = newAssumeRolePolicyDocument;
-	setParameter("NewAssumeRolePolicyDocument", newAssumeRolePolicyDocument);
+	setCoreParameter("NewAssumeRolePolicyDocument", newAssumeRolePolicyDocument);
 }
 
 std::string UpdateRoleRequest::getRoleName()const
@@ -44,6 +44,6 @@ std::string UpdateRoleRequest::getRoleName()const
 void UpdateRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setParameter("RoleName", roleName);
+	setCoreParameter("RoleName", roleName);
 }
 

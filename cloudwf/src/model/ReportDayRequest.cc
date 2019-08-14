@@ -33,7 +33,7 @@ std::string ReportDayRequest::getBeginDate()const
 void ReportDayRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setParameter("BeginDate", beginDate);
+	setCoreParameter("BeginDate", beginDate);
 }
 
 std::string ReportDayRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string ReportDayRequest::getEndDate()const
 void ReportDayRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setParameter("EndDate", endDate);
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string ReportDayRequest::getAccessKeyId()const
@@ -55,7 +55,7 @@ std::string ReportDayRequest::getAccessKeyId()const
 void ReportDayRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ReportDayRequest::getAgsid()const
@@ -66,6 +66,6 @@ long ReportDayRequest::getAgsid()const
 void ReportDayRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", std::to_string(agsid));
 }
 

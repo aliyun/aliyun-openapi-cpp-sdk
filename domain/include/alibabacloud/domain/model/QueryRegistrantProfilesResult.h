@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string province;
 					std::string registrantName;
 					std::string zhCity;
+					std::string registrantProfileType;
 					std::string updateTime;
 					std::string country;
 					std::string zhRegistrantOrganization;

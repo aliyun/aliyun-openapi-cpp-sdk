@@ -33,7 +33,7 @@ std::string MoPenBindIsvRequest::getOrderKey()const
 void MoPenBindIsvRequest::setOrderKey(const std::string& orderKey)
 {
 	orderKey_ = orderKey;
-	setParameter("OrderKey", orderKey);
+	setCoreParameter("OrderKey", orderKey);
 }
 
 std::string MoPenBindIsvRequest::getDeviceName()const
@@ -44,6 +44,6 @@ std::string MoPenBindIsvRequest::getDeviceName()const
 void MoPenBindIsvRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 

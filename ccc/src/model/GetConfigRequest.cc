@@ -33,7 +33,7 @@ std::string GetConfigRequest::getInstanceId()const
 void GetConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetConfigRequest::getName()const
@@ -44,7 +44,7 @@ std::string GetConfigRequest::getName()const
 void GetConfigRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string GetConfigRequest::getObjectType()const
@@ -55,7 +55,7 @@ std::string GetConfigRequest::getObjectType()const
 void GetConfigRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setParameter("ObjectType", objectType);
+	setCoreParameter("ObjectType", objectType);
 }
 
 std::string GetConfigRequest::getObjectId()const
@@ -66,7 +66,7 @@ std::string GetConfigRequest::getObjectId()const
 void GetConfigRequest::setObjectId(const std::string& objectId)
 {
 	objectId_ = objectId;
-	setParameter("ObjectId", objectId);
+	setCoreParameter("ObjectId", objectId);
 }
 
 std::string GetConfigRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetConfigRequest::getAccessKeyId()const
 void GetConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

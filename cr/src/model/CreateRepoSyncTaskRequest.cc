@@ -33,7 +33,7 @@ std::string CreateRepoSyncTaskRequest::getRepoNamespace()const
 void CreateRepoSyncTaskRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string CreateRepoSyncTaskRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string CreateRepoSyncTaskRequest::getRepoName()const
 void CreateRepoSyncTaskRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setParameter("RepoName", repoName);
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string CreateRepoSyncTaskRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string CreateRepoSyncTaskRequest::getRegionId()const
 void CreateRepoSyncTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 

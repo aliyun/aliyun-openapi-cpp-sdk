@@ -33,7 +33,7 @@ long ModifyExecutionPlanBasicInfoRequest::getResourceOwnerId()const
 void ModifyExecutionPlanBasicInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ModifyExecutionPlanBasicInfoRequest::getRegionId()const
 void ModifyExecutionPlanBasicInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getName()const
@@ -55,7 +55,7 @@ std::string ModifyExecutionPlanBasicInfoRequest::getName()const
 void ModifyExecutionPlanBasicInfoRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getId()const
@@ -66,7 +66,7 @@ std::string ModifyExecutionPlanBasicInfoRequest::getId()const
 void ModifyExecutionPlanBasicInfoRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ModifyExecutionPlanBasicInfoRequest::getClusterId()const
 void ModifyExecutionPlanBasicInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyExecutionPlanBasicInfoRequest::getAccessKeyId()const
 void ModifyExecutionPlanBasicInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

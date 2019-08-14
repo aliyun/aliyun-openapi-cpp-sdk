@@ -33,7 +33,7 @@ std::string DescribeThreatDistributeRequest::getEndDate()const
 void DescribeThreatDistributeRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setParameter("EndDate", endDate);
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeThreatDistributeRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeThreatDistributeRequest::getSourceIp()const
 void DescribeThreatDistributeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeThreatDistributeRequest::getHitDay()const
@@ -55,7 +55,7 @@ int DescribeThreatDistributeRequest::getHitDay()const
 void DescribeThreatDistributeRequest::setHitDay(int hitDay)
 {
 	hitDay_ = hitDay;
-	setParameter("HitDay", std::to_string(hitDay));
+	setCoreParameter("HitDay", std::to_string(hitDay));
 }
 
 std::string DescribeThreatDistributeRequest::getStartDate()const
@@ -66,7 +66,7 @@ std::string DescribeThreatDistributeRequest::getStartDate()const
 void DescribeThreatDistributeRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setParameter("StartDate", startDate);
+	setCoreParameter("StartDate", startDate);
 }
 
 int DescribeThreatDistributeRequest::getApiType()const
@@ -77,6 +77,6 @@ int DescribeThreatDistributeRequest::getApiType()const
 void DescribeThreatDistributeRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setParameter("ApiType", std::to_string(apiType));
+	setCoreParameter("ApiType", std::to_string(apiType));
 }
 

@@ -34,12 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Trademark
 				{
+					int status;
 					std::string registerNumber;
 					std::string userName;
-					std::string userId;
+					std::string description;
 					std::string classification;
-					long id;
 					int mobile;
+					std::string bizId;
 				};
 
 

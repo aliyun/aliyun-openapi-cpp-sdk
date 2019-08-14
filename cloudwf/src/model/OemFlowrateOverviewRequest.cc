@@ -33,7 +33,7 @@ long OemFlowrateOverviewRequest::getBid()const
 void OemFlowrateOverviewRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", std::to_string(bid));
 }
 
 std::string OemFlowrateOverviewRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string OemFlowrateOverviewRequest::getAccessKeyId()const
 void OemFlowrateOverviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

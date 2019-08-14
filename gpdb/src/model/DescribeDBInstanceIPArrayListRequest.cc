@@ -33,7 +33,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
 void DescribeDBInstanceIPArrayListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId()const
 void DescribeDBInstanceIPArrayListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

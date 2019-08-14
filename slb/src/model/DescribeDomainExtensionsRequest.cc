@@ -33,7 +33,7 @@ std::string DescribeDomainExtensionsRequest::getAccess_key_id()const
 void DescribeDomainExtensionsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long DescribeDomainExtensionsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeDomainExtensionsRequest::getResourceOwnerId()const
 void DescribeDomainExtensionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeDomainExtensionsRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int DescribeDomainExtensionsRequest::getListenerPort()const
 void DescribeDomainExtensionsRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeDomainExtensionsRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string DescribeDomainExtensionsRequest::getLoadBalancerId()const
 void DescribeDomainExtensionsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string DescribeDomainExtensionsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDomainExtensionsRequest::getResourceOwnerAccount()const
 void DescribeDomainExtensionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDomainExtensionsRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string DescribeDomainExtensionsRequest::getRegionId()const
 void DescribeDomainExtensionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeDomainExtensionsRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeDomainExtensionsRequest::getOwnerAccount()const
 void DescribeDomainExtensionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDomainExtensionsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeDomainExtensionsRequest::getOwnerId()const
 void DescribeDomainExtensionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainExtensionsRequest::getTags()const
@@ -121,7 +121,7 @@ std::string DescribeDomainExtensionsRequest::getTags()const
 void DescribeDomainExtensionsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 
 std::string DescribeDomainExtensionsRequest::getDomainExtensionId()const
@@ -132,6 +132,6 @@ std::string DescribeDomainExtensionsRequest::getDomainExtensionId()const
 void DescribeDomainExtensionsRequest::setDomainExtensionId(const std::string& domainExtensionId)
 {
 	domainExtensionId_ = domainExtensionId;
-	setParameter("DomainExtensionId", domainExtensionId);
+	setCoreParameter("DomainExtensionId", domainExtensionId);
 }
 

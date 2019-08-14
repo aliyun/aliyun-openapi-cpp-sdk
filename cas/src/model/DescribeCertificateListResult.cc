@@ -35,10 +35,13 @@ DescribeCertificateListResult::~DescribeCertificateListResult()
 
 void DescribeCertificateListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allCertificateList = value["CertificateList"]["Certificate"];
 	for (auto value : allCertificateList)
@@ -80,8 +83,16 @@ void DescribeCertificateListResult::parse(const std::string &payload)
 			certificateListObject.newBuyDomainType = value["NewBuyDomainType"].asString();
 		if(!value["NewBuyBrand"].isNull())
 			certificateListObject.newBuyBrand = value["NewBuyBrand"].asString();
+		if(!value["NewBuyDomainCount"].isNull())
+			certificateListObject.newBuyDomainCount = std::stoi(value["NewBuyDomainCount"].asString());
 		if(!value["ShowDeployment"].isNull())
 			certificateListObject.showDeployment = std::stoi(value["ShowDeployment"].asString());
+		if(!value["ShowRefund"].isNull())
+			certificateListObject.showRefund = value["ShowRefund"].asString() == "true";
+		if(!value["AccessDownload"].isNull())
+			certificateListObject.accessDownload = std::stoi(value["AccessDownload"].asString());
+		if(!value["PartnerOrderId"].isNull())
+			certificateListObject.partnerOrderId = value["PartnerOrderId"].asString();
 		certificateList_.push_back(certificateListObject);
 	}
 	if(!value["TotalCount"].isNull())

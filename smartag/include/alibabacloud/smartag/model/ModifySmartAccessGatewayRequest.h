@@ -56,6 +56,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getSecurityLockThreshold()const;
 				void setSecurityLockThreshold(int securityLockThreshold);
+				std::string getRoutingStrategy()const;
+				void setRoutingStrategy(const std::string& routingStrategy);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 				std::string description_;
 				long ownerId_;
 				int securityLockThreshold_;
+				std::string routingStrategy_;
 				std::string regionId_;
 				std::string name_;
 				std::string cidrBlock_;

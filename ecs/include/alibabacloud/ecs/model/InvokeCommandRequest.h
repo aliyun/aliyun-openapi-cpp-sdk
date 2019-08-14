@@ -93,8 +93,8 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 				std::string getAkProxy()const;
 				void setAkProxy(const std::string& akProxy);
-				Json getParameters()const;
-				void setParameters(const Json& parameters);
+				std::map<std::string, std::string> getParameters()const;
+				void setParameters(const std::map<std::string, std::string>& parameters);
 
             private:
 				long resourceOwnerId_;
@@ -126,7 +126,7 @@ namespace AlibabaCloud
 				std::vector<std::string> instanceId_;
 				std::string requestId_;
 				std::string akProxy_;
-				Json parameters_;
+				std::map<std::string, std::string> parameters_;
 
 			};
 		}

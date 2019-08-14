@@ -40,10 +40,10 @@
 #include "model/SaveApPortalConfigResult.h"
 #include "model/ShopOverviewRequest.h"
 #include "model/ShopOverviewResult.h"
-#include "model/ModifySubAccountPermissionRequest.h"
-#include "model/ModifySubAccountPermissionResult.h"
 #include "model/SaveUmengPagePermission4RootRequest.h"
 #include "model/SaveUmengPagePermission4RootResult.h"
+#include "model/ModifySubAccountPermissionRequest.h"
+#include "model/ModifySubAccountPermissionResult.h"
 #include "model/FrequencyAnalyseRequest.h"
 #include "model/FrequencyAnalyseResult.h"
 #include "model/DeviceCreateRequest.h"
@@ -124,18 +124,18 @@
 #include "model/ListConfigByActionResult.h"
 #include "model/GetSubAccountStatusRequest.h"
 #include "model/GetSubAccountStatusResult.h"
-#include "model/GetSendCommandByMacProgressRequest.h"
-#include "model/GetSendCommandByMacProgressResult.h"
 #include "model/HeadquartersTrendRequest.h"
 #include "model/HeadquartersTrendResult.h"
+#include "model/GetSendCommandByMacProgressRequest.h"
+#include "model/GetSendCommandByMacProgressResult.h"
 #include "model/UserDataCreateRequest.h"
 #include "model/UserDataCreateResult.h"
 #include "model/ListApStatusRequest.h"
 #include "model/ListApStatusResult.h"
-#include "model/ListProbeinfoRequest.h"
-#include "model/ListProbeinfoResult.h"
 #include "model/AreaInfoRequest.h"
 #include "model/AreaInfoResult.h"
+#include "model/ListProbeinfoRequest.h"
+#include "model/ListProbeinfoResult.h"
 #include "model/GetAllActiveShopByGroupRequest.h"
 #include "model/GetAllActiveShopByGroupResult.h"
 #include "model/GetLatestApStatisticRequest.h"
@@ -190,20 +190,20 @@
 #include "model/SaveGroupApRadioConfigResult.h"
 #include "model/DeletePositionMapRequest.h"
 #include "model/DeletePositionMapResult.h"
-#include "model/SetScanModeRequest.h"
-#include "model/SetScanModeResult.h"
 #include "model/UpgradeAPRequest.h"
 #include "model/UpgradeAPResult.h"
+#include "model/SetScanModeRequest.h"
+#include "model/SetScanModeResult.h"
 #include "model/ListUpgradeImgRequest.h"
 #include "model/ListUpgradeImgResult.h"
 #include "model/GetGroupApRadioOnoffProgressRequest.h"
 #include "model/GetGroupApRadioOnoffProgressResult.h"
 #include "model/ApgroupBatchDeleteApRequest.h"
 #include "model/ApgroupBatchDeleteApResult.h"
-#include "model/ShopMarketingListRequest.h"
-#include "model/ShopMarketingListResult.h"
 #include "model/ProfileHistoryRequest.h"
 #include "model/ProfileHistoryResult.h"
+#include "model/ShopMarketingListRequest.h"
+#include "model/ShopMarketingListResult.h"
 #include "model/ListApPositionRequest.h"
 #include "model/ListApPositionResult.h"
 #include "model/GetDeviceInfoByMacRequest.h"
@@ -214,32 +214,32 @@
 #include "model/GroupTrendResult.h"
 #include "model/SaveApgroupSsidConfigRequest.h"
 #include "model/SaveApgroupSsidConfigResult.h"
-#include "model/OemMarketingSettingDataRequest.h"
-#include "model/OemMarketingSettingDataResult.h"
 #include "model/InnerCheckOrderRequest.h"
 #include "model/InnerCheckOrderResult.h"
+#include "model/OemMarketingSettingDataRequest.h"
+#include "model/OemMarketingSettingDataResult.h"
 #include "model/GetOnlineStaTimeSerRequest.h"
 #include "model/GetOnlineStaTimeSerResult.h"
-#include "model/ListSubAccountPermissionRequest.h"
-#include "model/ListSubAccountPermissionResult.h"
 #include "model/ListStaOnoffLogRequest.h"
 #include "model/ListStaOnoffLogResult.h"
+#include "model/ListSubAccountPermissionRequest.h"
+#include "model/ListSubAccountPermissionResult.h"
 #include "model/HeadquartersOverviewRequest.h"
 #include "model/HeadquartersOverviewResult.h"
 #include "model/GetApgroupConfigProgressRequest.h"
 #include "model/GetApgroupConfigProgressResult.h"
-#include "model/ListPortalTemplateRequest.h"
-#include "model/ListPortalTemplateResult.h"
 #include "model/AreaCreateRequest.h"
 #include "model/AreaCreateResult.h"
+#include "model/ListPortalTemplateRequest.h"
+#include "model/ListPortalTemplateResult.h"
 #include "model/QueryRenewPriceRequest.h"
 #include "model/QueryRenewPriceResult.h"
 #include "model/GetApgroupPortalConfigProgressRequest.h"
 #include "model/GetApgroupPortalConfigProgressResult.h"
-#include "model/GetOssServerSignRequest.h"
-#include "model/GetOssServerSignResult.h"
 #include "model/OemSitingContrastRequest.h"
 #include "model/OemSitingContrastResult.h"
+#include "model/GetOssServerSignRequest.h"
+#include "model/GetOssServerSignResult.h"
 #include "model/BusinessInfoRequest.h"
 #include "model/BusinessInfoResult.h"
 #include "model/ListBriefApConfigRequest.h"
@@ -272,10 +272,10 @@
 #include "model/ResetApResult.h"
 #include "model/OemHeatMapRequest.h"
 #include "model/OemHeatMapResult.h"
-#include "model/ReleaseInstanceRequest.h"
-#include "model/ReleaseInstanceResult.h"
 #include "model/ReportRealtimeRequest.h"
 #include "model/ReportRealtimeResult.h"
+#include "model/ReleaseInstanceRequest.h"
+#include "model/ReleaseInstanceResult.h"
 #include "model/GetUmengPagePermission4RootRequest.h"
 #include "model/GetUmengPagePermission4RootResult.h"
 #include "model/ListPageConfigTemplateRequest.h"
@@ -292,22 +292,22 @@
 #include "model/GetScanModeResult.h"
 #include "model/ListGroupApBriefConfigRequest.h"
 #include "model/ListGroupApBriefConfigResult.h"
-#include "model/BatchRegisterApAssetRequest.h"
-#include "model/BatchRegisterApAssetResult.h"
 #include "model/PutOssFileRequest.h"
 #include "model/PutOssFileResult.h"
-#include "model/SaveApScanConfigRequest.h"
-#include "model/SaveApScanConfigResult.h"
+#include "model/BatchRegisterApAssetRequest.h"
+#include "model/BatchRegisterApAssetResult.h"
 #include "model/AreaDeleteRequest.h"
 #include "model/AreaDeleteResult.h"
 #include "model/GetGroupApRadioConfigTemplateRequest.h"
 #include "model/GetGroupApRadioConfigTemplateResult.h"
+#include "model/SaveApScanConfigRequest.h"
+#include "model/SaveApScanConfigResult.h"
 #include "model/HeadquartersToolsO2ORequest.h"
 #include "model/HeadquartersToolsO2OResult.h"
-#include "model/HeadquartersToolsCoincideRequest.h"
-#include "model/HeadquartersToolsCoincideResult.h"
 #include "model/ResumeInstanceRequest.h"
 #include "model/ResumeInstanceResult.h"
+#include "model/HeadquartersToolsCoincideRequest.h"
+#include "model/HeadquartersToolsCoincideResult.h"
 #include "model/ListApAssetRequest.h"
 #include "model/ListApAssetResult.h"
 #include "model/SaveApRadioConfigRequest.h"
@@ -316,10 +316,10 @@
 #include "model/GetLatestStaStatisticResult.h"
 #include "model/RepairGroupApRequest.h"
 #include "model/RepairGroupApResult.h"
-#include "model/GetMapUrlRequest.h"
-#include "model/GetMapUrlResult.h"
 #include "model/GetUpgradeAPGroupProgressRequest.h"
 #include "model/GetUpgradeAPGroupProgressResult.h"
+#include "model/GetMapUrlRequest.h"
+#include "model/GetMapUrlResult.h"
 #include "model/ShopGetfiltermacRequest.h"
 #include "model/ShopGetfiltermacResult.h"
 #include "model/ShopSetredressRequest.h"
@@ -348,12 +348,12 @@
 #include "model/AreaShowListResult.h"
 #include "model/GetApgroupDetailedConfigRequest.h"
 #include "model/GetApgroupDetailedConfigResult.h"
+#include "model/ListStaStatusRequest.h"
+#include "model/ListStaStatusResult.h"
 #include "model/InnerRefundRequest.h"
 #include "model/InnerRefundResult.h"
 #include "model/ProfileTradeRequest.h"
 #include "model/ProfileTradeResult.h"
-#include "model/ListStaStatusRequest.h"
-#include "model/ListStaStatusResult.h"
 #include "model/DeviceUpdateRequest.h"
 #include "model/DeviceUpdateResult.h"
 #include "model/DeleteApgroupSsidConfigRequest.h"
@@ -382,10 +382,10 @@
 #include "model/GetPageConfigTemplateResult.h"
 #include "model/KickStaRequest.h"
 #include "model/KickStaResult.h"
-#include "model/ProfileConsumeRequest.h"
-#include "model/ProfileConsumeResult.h"
 #include "model/DelApPositionRequest.h"
 #include "model/DelApPositionResult.h"
+#include "model/ProfileConsumeRequest.h"
+#include "model/ProfileConsumeResult.h"
 #include "model/ShopInfoRequest.h"
 #include "model/ShopInfoResult.h"
 #include "model/GetPagePropertiesRequest.h"
@@ -394,10 +394,10 @@
 #include "model/ShopCreatemarketingResult.h"
 #include "model/SavePageConfigTemplateRequest.h"
 #include "model/SavePageConfigTemplateResult.h"
-#include "model/ShopGroupUpdateRequest.h"
-#include "model/ShopGroupUpdateResult.h"
 #include "model/SetUpgradeImgByModelRequest.h"
 #include "model/SetUpgradeImgByModelResult.h"
+#include "model/ShopGroupUpdateRequest.h"
+#include "model/ShopGroupUpdateResult.h"
 #include "model/ShopGroupInfoRequest.h"
 #include "model/ShopGroupInfoResult.h"
 #include "model/GetApDetailedStatusRequest.h"
@@ -412,10 +412,10 @@
 #include "model/SaveStaStatusResult.h"
 #include "model/CheckUmengDataAnalysisPermissionRequest.h"
 #include "model/CheckUmengDataAnalysisPermissionResult.h"
-#include "model/DeviceDeleteRequest.h"
-#include "model/DeviceDeleteResult.h"
 #include "model/ReportDayRequest.h"
 #include "model/ReportDayResult.h"
+#include "model/DeviceDeleteRequest.h"
+#include "model/DeviceDeleteResult.h"
 #include "model/UpgradeAPGroupRequest.h"
 #include "model/UpgradeAPGroupResult.h"
 #include "model/SaveApgroupConfigRequest.h"
@@ -430,18 +430,18 @@
 #include "model/UserDataUpdateResult.h"
 #include "model/InnerProduceCloudWFRequest.h"
 #include "model/InnerProduceCloudWFResult.h"
-#include "model/UpLoadMapRequest.h"
-#include "model/UpLoadMapResult.h"
 #include "model/SavePortalConfigRequest.h"
 #include "model/SavePortalConfigResult.h"
+#include "model/UpLoadMapRequest.h"
+#include "model/UpLoadMapResult.h"
 #include "model/BatchSaveApPositionRequest.h"
 #include "model/BatchSaveApPositionResult.h"
 #include "model/SaveApgroupScanConfigRequest.h"
 #include "model/SaveApgroupScanConfigResult.h"
-#include "model/GetApStaMiscAggRequest.h"
-#include "model/GetApStaMiscAggResult.h"
 #include "model/AliyunRegisterApAssetRequest.h"
 #include "model/AliyunRegisterApAssetResult.h"
+#include "model/GetApStaMiscAggRequest.h"
+#include "model/GetApStaMiscAggResult.h"
 #include "model/UserAnalyseRequest.h"
 #include "model/UserAnalyseResult.h"
 #include "model/ResetApConfigRequest.h"
@@ -450,10 +450,10 @@
 #include "model/CreateSubAccountPermissionResult.h"
 #include "model/GetStaRunHistoryTimeSerRequest.h"
 #include "model/GetStaRunHistoryTimeSerResult.h"
-#include "model/GetUpgradeAPProgressRequest.h"
-#include "model/GetUpgradeAPProgressResult.h"
 #include "model/GroupIntimeRequest.h"
 #include "model/GroupIntimeResult.h"
+#include "model/GetUpgradeAPProgressRequest.h"
+#include "model/GetUpgradeAPProgressResult.h"
 #include "model/ShopDeletemarketingRequest.h"
 #include "model/ShopDeletemarketingResult.h"
 #include "model/BusinessUpdateRequest.h"
@@ -466,10 +466,10 @@
 #include "model/SaveApMapInfoResult.h"
 #include "model/GetAccountConfigRequest.h"
 #include "model/GetAccountConfigResult.h"
-#include "model/GetAddApsProgressRequest.h"
-#include "model/GetAddApsProgressResult.h"
 #include "model/ProfileDistrictRequest.h"
 #include "model/ProfileDistrictResult.h"
+#include "model/GetAddApsProgressRequest.h"
+#include "model/GetAddApsProgressResult.h"
 
 
 namespace AlibabaCloud
@@ -506,12 +506,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ShopOverviewResult> ShopOverviewOutcome;
 			typedef std::future<ShopOverviewOutcome> ShopOverviewOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ShopOverviewRequest&, const ShopOverviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopOverviewAsyncHandler;
-			typedef Outcome<Error, Model::ModifySubAccountPermissionResult> ModifySubAccountPermissionOutcome;
-			typedef std::future<ModifySubAccountPermissionOutcome> ModifySubAccountPermissionOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ModifySubAccountPermissionRequest&, const ModifySubAccountPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubAccountPermissionAsyncHandler;
 			typedef Outcome<Error, Model::SaveUmengPagePermission4RootResult> SaveUmengPagePermission4RootOutcome;
 			typedef std::future<SaveUmengPagePermission4RootOutcome> SaveUmengPagePermission4RootOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::SaveUmengPagePermission4RootRequest&, const SaveUmengPagePermission4RootOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveUmengPagePermission4RootAsyncHandler;
+			typedef Outcome<Error, Model::ModifySubAccountPermissionResult> ModifySubAccountPermissionOutcome;
+			typedef std::future<ModifySubAccountPermissionOutcome> ModifySubAccountPermissionOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ModifySubAccountPermissionRequest&, const ModifySubAccountPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubAccountPermissionAsyncHandler;
 			typedef Outcome<Error, Model::FrequencyAnalyseResult> FrequencyAnalyseOutcome;
 			typedef std::future<FrequencyAnalyseOutcome> FrequencyAnalyseOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::FrequencyAnalyseRequest&, const FrequencyAnalyseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FrequencyAnalyseAsyncHandler;
@@ -632,24 +632,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetSubAccountStatusResult> GetSubAccountStatusOutcome;
 			typedef std::future<GetSubAccountStatusOutcome> GetSubAccountStatusOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetSubAccountStatusRequest&, const GetSubAccountStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSubAccountStatusAsyncHandler;
-			typedef Outcome<Error, Model::GetSendCommandByMacProgressResult> GetSendCommandByMacProgressOutcome;
-			typedef std::future<GetSendCommandByMacProgressOutcome> GetSendCommandByMacProgressOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::GetSendCommandByMacProgressRequest&, const GetSendCommandByMacProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSendCommandByMacProgressAsyncHandler;
 			typedef Outcome<Error, Model::HeadquartersTrendResult> HeadquartersTrendOutcome;
 			typedef std::future<HeadquartersTrendOutcome> HeadquartersTrendOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::HeadquartersTrendRequest&, const HeadquartersTrendOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HeadquartersTrendAsyncHandler;
+			typedef Outcome<Error, Model::GetSendCommandByMacProgressResult> GetSendCommandByMacProgressOutcome;
+			typedef std::future<GetSendCommandByMacProgressOutcome> GetSendCommandByMacProgressOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::GetSendCommandByMacProgressRequest&, const GetSendCommandByMacProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSendCommandByMacProgressAsyncHandler;
 			typedef Outcome<Error, Model::UserDataCreateResult> UserDataCreateOutcome;
 			typedef std::future<UserDataCreateOutcome> UserDataCreateOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::UserDataCreateRequest&, const UserDataCreateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UserDataCreateAsyncHandler;
 			typedef Outcome<Error, Model::ListApStatusResult> ListApStatusOutcome;
 			typedef std::future<ListApStatusOutcome> ListApStatusOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ListApStatusRequest&, const ListApStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApStatusAsyncHandler;
-			typedef Outcome<Error, Model::ListProbeinfoResult> ListProbeinfoOutcome;
-			typedef std::future<ListProbeinfoOutcome> ListProbeinfoOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ListProbeinfoRequest&, const ListProbeinfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProbeinfoAsyncHandler;
 			typedef Outcome<Error, Model::AreaInfoResult> AreaInfoOutcome;
 			typedef std::future<AreaInfoOutcome> AreaInfoOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::AreaInfoRequest&, const AreaInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AreaInfoAsyncHandler;
+			typedef Outcome<Error, Model::ListProbeinfoResult> ListProbeinfoOutcome;
+			typedef std::future<ListProbeinfoOutcome> ListProbeinfoOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ListProbeinfoRequest&, const ListProbeinfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProbeinfoAsyncHandler;
 			typedef Outcome<Error, Model::GetAllActiveShopByGroupResult> GetAllActiveShopByGroupOutcome;
 			typedef std::future<GetAllActiveShopByGroupOutcome> GetAllActiveShopByGroupOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetAllActiveShopByGroupRequest&, const GetAllActiveShopByGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAllActiveShopByGroupAsyncHandler;
@@ -731,12 +731,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePositionMapResult> DeletePositionMapOutcome;
 			typedef std::future<DeletePositionMapOutcome> DeletePositionMapOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::DeletePositionMapRequest&, const DeletePositionMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePositionMapAsyncHandler;
-			typedef Outcome<Error, Model::SetScanModeResult> SetScanModeOutcome;
-			typedef std::future<SetScanModeOutcome> SetScanModeOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::SetScanModeRequest&, const SetScanModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScanModeAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeAPResult> UpgradeAPOutcome;
 			typedef std::future<UpgradeAPOutcome> UpgradeAPOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::UpgradeAPRequest&, const UpgradeAPOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeAPAsyncHandler;
+			typedef Outcome<Error, Model::SetScanModeResult> SetScanModeOutcome;
+			typedef std::future<SetScanModeOutcome> SetScanModeOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::SetScanModeRequest&, const SetScanModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScanModeAsyncHandler;
 			typedef Outcome<Error, Model::ListUpgradeImgResult> ListUpgradeImgOutcome;
 			typedef std::future<ListUpgradeImgOutcome> ListUpgradeImgOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ListUpgradeImgRequest&, const ListUpgradeImgOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUpgradeImgAsyncHandler;
@@ -746,12 +746,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ApgroupBatchDeleteApResult> ApgroupBatchDeleteApOutcome;
 			typedef std::future<ApgroupBatchDeleteApOutcome> ApgroupBatchDeleteApOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ApgroupBatchDeleteApRequest&, const ApgroupBatchDeleteApOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApgroupBatchDeleteApAsyncHandler;
-			typedef Outcome<Error, Model::ShopMarketingListResult> ShopMarketingListOutcome;
-			typedef std::future<ShopMarketingListOutcome> ShopMarketingListOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ShopMarketingListRequest&, const ShopMarketingListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopMarketingListAsyncHandler;
 			typedef Outcome<Error, Model::ProfileHistoryResult> ProfileHistoryOutcome;
 			typedef std::future<ProfileHistoryOutcome> ProfileHistoryOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ProfileHistoryRequest&, const ProfileHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProfileHistoryAsyncHandler;
+			typedef Outcome<Error, Model::ShopMarketingListResult> ShopMarketingListOutcome;
+			typedef std::future<ShopMarketingListOutcome> ShopMarketingListOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ShopMarketingListRequest&, const ShopMarketingListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopMarketingListAsyncHandler;
 			typedef Outcome<Error, Model::ListApPositionResult> ListApPositionOutcome;
 			typedef std::future<ListApPositionOutcome> ListApPositionOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ListApPositionRequest&, const ListApPositionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApPositionAsyncHandler;
@@ -767,45 +767,45 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveApgroupSsidConfigResult> SaveApgroupSsidConfigOutcome;
 			typedef std::future<SaveApgroupSsidConfigOutcome> SaveApgroupSsidConfigOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::SaveApgroupSsidConfigRequest&, const SaveApgroupSsidConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveApgroupSsidConfigAsyncHandler;
-			typedef Outcome<Error, Model::OemMarketingSettingDataResult> OemMarketingSettingDataOutcome;
-			typedef std::future<OemMarketingSettingDataOutcome> OemMarketingSettingDataOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::OemMarketingSettingDataRequest&, const OemMarketingSettingDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OemMarketingSettingDataAsyncHandler;
 			typedef Outcome<Error, Model::InnerCheckOrderResult> InnerCheckOrderOutcome;
 			typedef std::future<InnerCheckOrderOutcome> InnerCheckOrderOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::InnerCheckOrderRequest&, const InnerCheckOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InnerCheckOrderAsyncHandler;
+			typedef Outcome<Error, Model::OemMarketingSettingDataResult> OemMarketingSettingDataOutcome;
+			typedef std::future<OemMarketingSettingDataOutcome> OemMarketingSettingDataOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::OemMarketingSettingDataRequest&, const OemMarketingSettingDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OemMarketingSettingDataAsyncHandler;
 			typedef Outcome<Error, Model::GetOnlineStaTimeSerResult> GetOnlineStaTimeSerOutcome;
 			typedef std::future<GetOnlineStaTimeSerOutcome> GetOnlineStaTimeSerOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetOnlineStaTimeSerRequest&, const GetOnlineStaTimeSerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOnlineStaTimeSerAsyncHandler;
-			typedef Outcome<Error, Model::ListSubAccountPermissionResult> ListSubAccountPermissionOutcome;
-			typedef std::future<ListSubAccountPermissionOutcome> ListSubAccountPermissionOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ListSubAccountPermissionRequest&, const ListSubAccountPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSubAccountPermissionAsyncHandler;
 			typedef Outcome<Error, Model::ListStaOnoffLogResult> ListStaOnoffLogOutcome;
 			typedef std::future<ListStaOnoffLogOutcome> ListStaOnoffLogOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ListStaOnoffLogRequest&, const ListStaOnoffLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListStaOnoffLogAsyncHandler;
+			typedef Outcome<Error, Model::ListSubAccountPermissionResult> ListSubAccountPermissionOutcome;
+			typedef std::future<ListSubAccountPermissionOutcome> ListSubAccountPermissionOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ListSubAccountPermissionRequest&, const ListSubAccountPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSubAccountPermissionAsyncHandler;
 			typedef Outcome<Error, Model::HeadquartersOverviewResult> HeadquartersOverviewOutcome;
 			typedef std::future<HeadquartersOverviewOutcome> HeadquartersOverviewOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::HeadquartersOverviewRequest&, const HeadquartersOverviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HeadquartersOverviewAsyncHandler;
 			typedef Outcome<Error, Model::GetApgroupConfigProgressResult> GetApgroupConfigProgressOutcome;
 			typedef std::future<GetApgroupConfigProgressOutcome> GetApgroupConfigProgressOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetApgroupConfigProgressRequest&, const GetApgroupConfigProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApgroupConfigProgressAsyncHandler;
-			typedef Outcome<Error, Model::ListPortalTemplateResult> ListPortalTemplateOutcome;
-			typedef std::future<ListPortalTemplateOutcome> ListPortalTemplateOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ListPortalTemplateRequest&, const ListPortalTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPortalTemplateAsyncHandler;
 			typedef Outcome<Error, Model::AreaCreateResult> AreaCreateOutcome;
 			typedef std::future<AreaCreateOutcome> AreaCreateOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::AreaCreateRequest&, const AreaCreateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AreaCreateAsyncHandler;
+			typedef Outcome<Error, Model::ListPortalTemplateResult> ListPortalTemplateOutcome;
+			typedef std::future<ListPortalTemplateOutcome> ListPortalTemplateOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ListPortalTemplateRequest&, const ListPortalTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPortalTemplateAsyncHandler;
 			typedef Outcome<Error, Model::QueryRenewPriceResult> QueryRenewPriceOutcome;
 			typedef std::future<QueryRenewPriceOutcome> QueryRenewPriceOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::QueryRenewPriceRequest&, const QueryRenewPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRenewPriceAsyncHandler;
 			typedef Outcome<Error, Model::GetApgroupPortalConfigProgressResult> GetApgroupPortalConfigProgressOutcome;
 			typedef std::future<GetApgroupPortalConfigProgressOutcome> GetApgroupPortalConfigProgressOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetApgroupPortalConfigProgressRequest&, const GetApgroupPortalConfigProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApgroupPortalConfigProgressAsyncHandler;
-			typedef Outcome<Error, Model::GetOssServerSignResult> GetOssServerSignOutcome;
-			typedef std::future<GetOssServerSignOutcome> GetOssServerSignOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::GetOssServerSignRequest&, const GetOssServerSignOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOssServerSignAsyncHandler;
 			typedef Outcome<Error, Model::OemSitingContrastResult> OemSitingContrastOutcome;
 			typedef std::future<OemSitingContrastOutcome> OemSitingContrastOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::OemSitingContrastRequest&, const OemSitingContrastOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OemSitingContrastAsyncHandler;
+			typedef Outcome<Error, Model::GetOssServerSignResult> GetOssServerSignOutcome;
+			typedef std::future<GetOssServerSignOutcome> GetOssServerSignOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::GetOssServerSignRequest&, const GetOssServerSignOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOssServerSignAsyncHandler;
 			typedef Outcome<Error, Model::BusinessInfoResult> BusinessInfoOutcome;
 			typedef std::future<BusinessInfoOutcome> BusinessInfoOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::BusinessInfoRequest&, const BusinessInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BusinessInfoAsyncHandler;
@@ -854,12 +854,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OemHeatMapResult> OemHeatMapOutcome;
 			typedef std::future<OemHeatMapOutcome> OemHeatMapOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::OemHeatMapRequest&, const OemHeatMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OemHeatMapAsyncHandler;
-			typedef Outcome<Error, Model::ReleaseInstanceResult> ReleaseInstanceOutcome;
-			typedef std::future<ReleaseInstanceOutcome> ReleaseInstanceOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ReleaseInstanceRequest&, const ReleaseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstanceAsyncHandler;
 			typedef Outcome<Error, Model::ReportRealtimeResult> ReportRealtimeOutcome;
 			typedef std::future<ReportRealtimeOutcome> ReportRealtimeOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ReportRealtimeRequest&, const ReportRealtimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReportRealtimeAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseInstanceResult> ReleaseInstanceOutcome;
+			typedef std::future<ReleaseInstanceOutcome> ReleaseInstanceOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ReleaseInstanceRequest&, const ReleaseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstanceAsyncHandler;
 			typedef Outcome<Error, Model::GetUmengPagePermission4RootResult> GetUmengPagePermission4RootOutcome;
 			typedef std::future<GetUmengPagePermission4RootOutcome> GetUmengPagePermission4RootOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetUmengPagePermission4RootRequest&, const GetUmengPagePermission4RootOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUmengPagePermission4RootAsyncHandler;
@@ -884,30 +884,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListGroupApBriefConfigResult> ListGroupApBriefConfigOutcome;
 			typedef std::future<ListGroupApBriefConfigOutcome> ListGroupApBriefConfigOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ListGroupApBriefConfigRequest&, const ListGroupApBriefConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupApBriefConfigAsyncHandler;
-			typedef Outcome<Error, Model::BatchRegisterApAssetResult> BatchRegisterApAssetOutcome;
-			typedef std::future<BatchRegisterApAssetOutcome> BatchRegisterApAssetOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::BatchRegisterApAssetRequest&, const BatchRegisterApAssetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterApAssetAsyncHandler;
 			typedef Outcome<Error, Model::PutOssFileResult> PutOssFileOutcome;
 			typedef std::future<PutOssFileOutcome> PutOssFileOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::PutOssFileRequest&, const PutOssFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutOssFileAsyncHandler;
-			typedef Outcome<Error, Model::SaveApScanConfigResult> SaveApScanConfigOutcome;
-			typedef std::future<SaveApScanConfigOutcome> SaveApScanConfigOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::SaveApScanConfigRequest&, const SaveApScanConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveApScanConfigAsyncHandler;
+			typedef Outcome<Error, Model::BatchRegisterApAssetResult> BatchRegisterApAssetOutcome;
+			typedef std::future<BatchRegisterApAssetOutcome> BatchRegisterApAssetOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::BatchRegisterApAssetRequest&, const BatchRegisterApAssetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterApAssetAsyncHandler;
 			typedef Outcome<Error, Model::AreaDeleteResult> AreaDeleteOutcome;
 			typedef std::future<AreaDeleteOutcome> AreaDeleteOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::AreaDeleteRequest&, const AreaDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AreaDeleteAsyncHandler;
 			typedef Outcome<Error, Model::GetGroupApRadioConfigTemplateResult> GetGroupApRadioConfigTemplateOutcome;
 			typedef std::future<GetGroupApRadioConfigTemplateOutcome> GetGroupApRadioConfigTemplateOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetGroupApRadioConfigTemplateRequest&, const GetGroupApRadioConfigTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupApRadioConfigTemplateAsyncHandler;
+			typedef Outcome<Error, Model::SaveApScanConfigResult> SaveApScanConfigOutcome;
+			typedef std::future<SaveApScanConfigOutcome> SaveApScanConfigOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::SaveApScanConfigRequest&, const SaveApScanConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveApScanConfigAsyncHandler;
 			typedef Outcome<Error, Model::HeadquartersToolsO2OResult> HeadquartersToolsO2OOutcome;
 			typedef std::future<HeadquartersToolsO2OOutcome> HeadquartersToolsO2OOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::HeadquartersToolsO2ORequest&, const HeadquartersToolsO2OOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HeadquartersToolsO2OAsyncHandler;
-			typedef Outcome<Error, Model::HeadquartersToolsCoincideResult> HeadquartersToolsCoincideOutcome;
-			typedef std::future<HeadquartersToolsCoincideOutcome> HeadquartersToolsCoincideOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::HeadquartersToolsCoincideRequest&, const HeadquartersToolsCoincideOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HeadquartersToolsCoincideAsyncHandler;
 			typedef Outcome<Error, Model::ResumeInstanceResult> ResumeInstanceOutcome;
 			typedef std::future<ResumeInstanceOutcome> ResumeInstanceOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ResumeInstanceRequest&, const ResumeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::HeadquartersToolsCoincideResult> HeadquartersToolsCoincideOutcome;
+			typedef std::future<HeadquartersToolsCoincideOutcome> HeadquartersToolsCoincideOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::HeadquartersToolsCoincideRequest&, const HeadquartersToolsCoincideOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HeadquartersToolsCoincideAsyncHandler;
 			typedef Outcome<Error, Model::ListApAssetResult> ListApAssetOutcome;
 			typedef std::future<ListApAssetOutcome> ListApAssetOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ListApAssetRequest&, const ListApAssetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApAssetAsyncHandler;
@@ -920,12 +920,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RepairGroupApResult> RepairGroupApOutcome;
 			typedef std::future<RepairGroupApOutcome> RepairGroupApOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::RepairGroupApRequest&, const RepairGroupApOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RepairGroupApAsyncHandler;
-			typedef Outcome<Error, Model::GetMapUrlResult> GetMapUrlOutcome;
-			typedef std::future<GetMapUrlOutcome> GetMapUrlOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::GetMapUrlRequest&, const GetMapUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMapUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetUpgradeAPGroupProgressResult> GetUpgradeAPGroupProgressOutcome;
 			typedef std::future<GetUpgradeAPGroupProgressOutcome> GetUpgradeAPGroupProgressOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetUpgradeAPGroupProgressRequest&, const GetUpgradeAPGroupProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeAPGroupProgressAsyncHandler;
+			typedef Outcome<Error, Model::GetMapUrlResult> GetMapUrlOutcome;
+			typedef std::future<GetMapUrlOutcome> GetMapUrlOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::GetMapUrlRequest&, const GetMapUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMapUrlAsyncHandler;
 			typedef Outcome<Error, Model::ShopGetfiltermacResult> ShopGetfiltermacOutcome;
 			typedef std::future<ShopGetfiltermacOutcome> ShopGetfiltermacOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ShopGetfiltermacRequest&, const ShopGetfiltermacOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopGetfiltermacAsyncHandler;
@@ -968,15 +968,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetApgroupDetailedConfigResult> GetApgroupDetailedConfigOutcome;
 			typedef std::future<GetApgroupDetailedConfigOutcome> GetApgroupDetailedConfigOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetApgroupDetailedConfigRequest&, const GetApgroupDetailedConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApgroupDetailedConfigAsyncHandler;
+			typedef Outcome<Error, Model::ListStaStatusResult> ListStaStatusOutcome;
+			typedef std::future<ListStaStatusOutcome> ListStaStatusOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ListStaStatusRequest&, const ListStaStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListStaStatusAsyncHandler;
 			typedef Outcome<Error, Model::InnerRefundResult> InnerRefundOutcome;
 			typedef std::future<InnerRefundOutcome> InnerRefundOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::InnerRefundRequest&, const InnerRefundOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InnerRefundAsyncHandler;
 			typedef Outcome<Error, Model::ProfileTradeResult> ProfileTradeOutcome;
 			typedef std::future<ProfileTradeOutcome> ProfileTradeOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ProfileTradeRequest&, const ProfileTradeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProfileTradeAsyncHandler;
-			typedef Outcome<Error, Model::ListStaStatusResult> ListStaStatusOutcome;
-			typedef std::future<ListStaStatusOutcome> ListStaStatusOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ListStaStatusRequest&, const ListStaStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListStaStatusAsyncHandler;
 			typedef Outcome<Error, Model::DeviceUpdateResult> DeviceUpdateOutcome;
 			typedef std::future<DeviceUpdateOutcome> DeviceUpdateOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::DeviceUpdateRequest&, const DeviceUpdateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeviceUpdateAsyncHandler;
@@ -1019,12 +1019,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::KickStaResult> KickStaOutcome;
 			typedef std::future<KickStaOutcome> KickStaOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::KickStaRequest&, const KickStaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> KickStaAsyncHandler;
-			typedef Outcome<Error, Model::ProfileConsumeResult> ProfileConsumeOutcome;
-			typedef std::future<ProfileConsumeOutcome> ProfileConsumeOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ProfileConsumeRequest&, const ProfileConsumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProfileConsumeAsyncHandler;
 			typedef Outcome<Error, Model::DelApPositionResult> DelApPositionOutcome;
 			typedef std::future<DelApPositionOutcome> DelApPositionOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::DelApPositionRequest&, const DelApPositionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DelApPositionAsyncHandler;
+			typedef Outcome<Error, Model::ProfileConsumeResult> ProfileConsumeOutcome;
+			typedef std::future<ProfileConsumeOutcome> ProfileConsumeOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ProfileConsumeRequest&, const ProfileConsumeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProfileConsumeAsyncHandler;
 			typedef Outcome<Error, Model::ShopInfoResult> ShopInfoOutcome;
 			typedef std::future<ShopInfoOutcome> ShopInfoOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ShopInfoRequest&, const ShopInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopInfoAsyncHandler;
@@ -1037,12 +1037,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SavePageConfigTemplateResult> SavePageConfigTemplateOutcome;
 			typedef std::future<SavePageConfigTemplateOutcome> SavePageConfigTemplateOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::SavePageConfigTemplateRequest&, const SavePageConfigTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SavePageConfigTemplateAsyncHandler;
-			typedef Outcome<Error, Model::ShopGroupUpdateResult> ShopGroupUpdateOutcome;
-			typedef std::future<ShopGroupUpdateOutcome> ShopGroupUpdateOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::ShopGroupUpdateRequest&, const ShopGroupUpdateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopGroupUpdateAsyncHandler;
 			typedef Outcome<Error, Model::SetUpgradeImgByModelResult> SetUpgradeImgByModelOutcome;
 			typedef std::future<SetUpgradeImgByModelOutcome> SetUpgradeImgByModelOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::SetUpgradeImgByModelRequest&, const SetUpgradeImgByModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUpgradeImgByModelAsyncHandler;
+			typedef Outcome<Error, Model::ShopGroupUpdateResult> ShopGroupUpdateOutcome;
+			typedef std::future<ShopGroupUpdateOutcome> ShopGroupUpdateOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::ShopGroupUpdateRequest&, const ShopGroupUpdateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopGroupUpdateAsyncHandler;
 			typedef Outcome<Error, Model::ShopGroupInfoResult> ShopGroupInfoOutcome;
 			typedef std::future<ShopGroupInfoOutcome> ShopGroupInfoOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ShopGroupInfoRequest&, const ShopGroupInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopGroupInfoAsyncHandler;
@@ -1064,12 +1064,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckUmengDataAnalysisPermissionResult> CheckUmengDataAnalysisPermissionOutcome;
 			typedef std::future<CheckUmengDataAnalysisPermissionOutcome> CheckUmengDataAnalysisPermissionOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::CheckUmengDataAnalysisPermissionRequest&, const CheckUmengDataAnalysisPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckUmengDataAnalysisPermissionAsyncHandler;
-			typedef Outcome<Error, Model::DeviceDeleteResult> DeviceDeleteOutcome;
-			typedef std::future<DeviceDeleteOutcome> DeviceDeleteOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::DeviceDeleteRequest&, const DeviceDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeviceDeleteAsyncHandler;
 			typedef Outcome<Error, Model::ReportDayResult> ReportDayOutcome;
 			typedef std::future<ReportDayOutcome> ReportDayOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ReportDayRequest&, const ReportDayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReportDayAsyncHandler;
+			typedef Outcome<Error, Model::DeviceDeleteResult> DeviceDeleteOutcome;
+			typedef std::future<DeviceDeleteOutcome> DeviceDeleteOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::DeviceDeleteRequest&, const DeviceDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeviceDeleteAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeAPGroupResult> UpgradeAPGroupOutcome;
 			typedef std::future<UpgradeAPGroupOutcome> UpgradeAPGroupOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::UpgradeAPGroupRequest&, const UpgradeAPGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeAPGroupAsyncHandler;
@@ -1091,24 +1091,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InnerProduceCloudWFResult> InnerProduceCloudWFOutcome;
 			typedef std::future<InnerProduceCloudWFOutcome> InnerProduceCloudWFOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::InnerProduceCloudWFRequest&, const InnerProduceCloudWFOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InnerProduceCloudWFAsyncHandler;
-			typedef Outcome<Error, Model::UpLoadMapResult> UpLoadMapOutcome;
-			typedef std::future<UpLoadMapOutcome> UpLoadMapOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::UpLoadMapRequest&, const UpLoadMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpLoadMapAsyncHandler;
 			typedef Outcome<Error, Model::SavePortalConfigResult> SavePortalConfigOutcome;
 			typedef std::future<SavePortalConfigOutcome> SavePortalConfigOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::SavePortalConfigRequest&, const SavePortalConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SavePortalConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpLoadMapResult> UpLoadMapOutcome;
+			typedef std::future<UpLoadMapOutcome> UpLoadMapOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::UpLoadMapRequest&, const UpLoadMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpLoadMapAsyncHandler;
 			typedef Outcome<Error, Model::BatchSaveApPositionResult> BatchSaveApPositionOutcome;
 			typedef std::future<BatchSaveApPositionOutcome> BatchSaveApPositionOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::BatchSaveApPositionRequest&, const BatchSaveApPositionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSaveApPositionAsyncHandler;
 			typedef Outcome<Error, Model::SaveApgroupScanConfigResult> SaveApgroupScanConfigOutcome;
 			typedef std::future<SaveApgroupScanConfigOutcome> SaveApgroupScanConfigOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::SaveApgroupScanConfigRequest&, const SaveApgroupScanConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveApgroupScanConfigAsyncHandler;
-			typedef Outcome<Error, Model::GetApStaMiscAggResult> GetApStaMiscAggOutcome;
-			typedef std::future<GetApStaMiscAggOutcome> GetApStaMiscAggOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::GetApStaMiscAggRequest&, const GetApStaMiscAggOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApStaMiscAggAsyncHandler;
 			typedef Outcome<Error, Model::AliyunRegisterApAssetResult> AliyunRegisterApAssetOutcome;
 			typedef std::future<AliyunRegisterApAssetOutcome> AliyunRegisterApAssetOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::AliyunRegisterApAssetRequest&, const AliyunRegisterApAssetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AliyunRegisterApAssetAsyncHandler;
+			typedef Outcome<Error, Model::GetApStaMiscAggResult> GetApStaMiscAggOutcome;
+			typedef std::future<GetApStaMiscAggOutcome> GetApStaMiscAggOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::GetApStaMiscAggRequest&, const GetApStaMiscAggOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApStaMiscAggAsyncHandler;
 			typedef Outcome<Error, Model::UserAnalyseResult> UserAnalyseOutcome;
 			typedef std::future<UserAnalyseOutcome> UserAnalyseOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::UserAnalyseRequest&, const UserAnalyseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UserAnalyseAsyncHandler;
@@ -1121,12 +1121,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetStaRunHistoryTimeSerResult> GetStaRunHistoryTimeSerOutcome;
 			typedef std::future<GetStaRunHistoryTimeSerOutcome> GetStaRunHistoryTimeSerOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetStaRunHistoryTimeSerRequest&, const GetStaRunHistoryTimeSerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetStaRunHistoryTimeSerAsyncHandler;
-			typedef Outcome<Error, Model::GetUpgradeAPProgressResult> GetUpgradeAPProgressOutcome;
-			typedef std::future<GetUpgradeAPProgressOutcome> GetUpgradeAPProgressOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::GetUpgradeAPProgressRequest&, const GetUpgradeAPProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeAPProgressAsyncHandler;
 			typedef Outcome<Error, Model::GroupIntimeResult> GroupIntimeOutcome;
 			typedef std::future<GroupIntimeOutcome> GroupIntimeOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GroupIntimeRequest&, const GroupIntimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GroupIntimeAsyncHandler;
+			typedef Outcome<Error, Model::GetUpgradeAPProgressResult> GetUpgradeAPProgressOutcome;
+			typedef std::future<GetUpgradeAPProgressOutcome> GetUpgradeAPProgressOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::GetUpgradeAPProgressRequest&, const GetUpgradeAPProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeAPProgressAsyncHandler;
 			typedef Outcome<Error, Model::ShopDeletemarketingResult> ShopDeletemarketingOutcome;
 			typedef std::future<ShopDeletemarketingOutcome> ShopDeletemarketingOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ShopDeletemarketingRequest&, const ShopDeletemarketingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShopDeletemarketingAsyncHandler;
@@ -1145,12 +1145,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAccountConfigResult> GetAccountConfigOutcome;
 			typedef std::future<GetAccountConfigOutcome> GetAccountConfigOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::GetAccountConfigRequest&, const GetAccountConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountConfigAsyncHandler;
-			typedef Outcome<Error, Model::GetAddApsProgressResult> GetAddApsProgressOutcome;
-			typedef std::future<GetAddApsProgressOutcome> GetAddApsProgressOutcomeCallable;
-			typedef std::function<void(const CloudwfClient*, const Model::GetAddApsProgressRequest&, const GetAddApsProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAddApsProgressAsyncHandler;
 			typedef Outcome<Error, Model::ProfileDistrictResult> ProfileDistrictOutcome;
 			typedef std::future<ProfileDistrictOutcome> ProfileDistrictOutcomeCallable;
 			typedef std::function<void(const CloudwfClient*, const Model::ProfileDistrictRequest&, const ProfileDistrictOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProfileDistrictAsyncHandler;
+			typedef Outcome<Error, Model::GetAddApsProgressResult> GetAddApsProgressOutcome;
+			typedef std::future<GetAddApsProgressOutcome> GetAddApsProgressOutcomeCallable;
+			typedef std::function<void(const CloudwfClient*, const Model::GetAddApsProgressRequest&, const GetAddApsProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAddApsProgressAsyncHandler;
 
 			CloudwfClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CloudwfClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -1183,12 +1183,12 @@ namespace AlibabaCloud
 			ShopOverviewOutcome shopOverview(const Model::ShopOverviewRequest &request)const;
 			void shopOverviewAsync(const Model::ShopOverviewRequest& request, const ShopOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ShopOverviewOutcomeCallable shopOverviewCallable(const Model::ShopOverviewRequest& request) const;
-			ModifySubAccountPermissionOutcome modifySubAccountPermission(const Model::ModifySubAccountPermissionRequest &request)const;
-			void modifySubAccountPermissionAsync(const Model::ModifySubAccountPermissionRequest& request, const ModifySubAccountPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifySubAccountPermissionOutcomeCallable modifySubAccountPermissionCallable(const Model::ModifySubAccountPermissionRequest& request) const;
 			SaveUmengPagePermission4RootOutcome saveUmengPagePermission4Root(const Model::SaveUmengPagePermission4RootRequest &request)const;
 			void saveUmengPagePermission4RootAsync(const Model::SaveUmengPagePermission4RootRequest& request, const SaveUmengPagePermission4RootAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveUmengPagePermission4RootOutcomeCallable saveUmengPagePermission4RootCallable(const Model::SaveUmengPagePermission4RootRequest& request) const;
+			ModifySubAccountPermissionOutcome modifySubAccountPermission(const Model::ModifySubAccountPermissionRequest &request)const;
+			void modifySubAccountPermissionAsync(const Model::ModifySubAccountPermissionRequest& request, const ModifySubAccountPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifySubAccountPermissionOutcomeCallable modifySubAccountPermissionCallable(const Model::ModifySubAccountPermissionRequest& request) const;
 			FrequencyAnalyseOutcome frequencyAnalyse(const Model::FrequencyAnalyseRequest &request)const;
 			void frequencyAnalyseAsync(const Model::FrequencyAnalyseRequest& request, const FrequencyAnalyseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FrequencyAnalyseOutcomeCallable frequencyAnalyseCallable(const Model::FrequencyAnalyseRequest& request) const;
@@ -1309,24 +1309,24 @@ namespace AlibabaCloud
 			GetSubAccountStatusOutcome getSubAccountStatus(const Model::GetSubAccountStatusRequest &request)const;
 			void getSubAccountStatusAsync(const Model::GetSubAccountStatusRequest& request, const GetSubAccountStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSubAccountStatusOutcomeCallable getSubAccountStatusCallable(const Model::GetSubAccountStatusRequest& request) const;
-			GetSendCommandByMacProgressOutcome getSendCommandByMacProgress(const Model::GetSendCommandByMacProgressRequest &request)const;
-			void getSendCommandByMacProgressAsync(const Model::GetSendCommandByMacProgressRequest& request, const GetSendCommandByMacProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetSendCommandByMacProgressOutcomeCallable getSendCommandByMacProgressCallable(const Model::GetSendCommandByMacProgressRequest& request) const;
 			HeadquartersTrendOutcome headquartersTrend(const Model::HeadquartersTrendRequest &request)const;
 			void headquartersTrendAsync(const Model::HeadquartersTrendRequest& request, const HeadquartersTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			HeadquartersTrendOutcomeCallable headquartersTrendCallable(const Model::HeadquartersTrendRequest& request) const;
+			GetSendCommandByMacProgressOutcome getSendCommandByMacProgress(const Model::GetSendCommandByMacProgressRequest &request)const;
+			void getSendCommandByMacProgressAsync(const Model::GetSendCommandByMacProgressRequest& request, const GetSendCommandByMacProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSendCommandByMacProgressOutcomeCallable getSendCommandByMacProgressCallable(const Model::GetSendCommandByMacProgressRequest& request) const;
 			UserDataCreateOutcome userDataCreate(const Model::UserDataCreateRequest &request)const;
 			void userDataCreateAsync(const Model::UserDataCreateRequest& request, const UserDataCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UserDataCreateOutcomeCallable userDataCreateCallable(const Model::UserDataCreateRequest& request) const;
 			ListApStatusOutcome listApStatus(const Model::ListApStatusRequest &request)const;
 			void listApStatusAsync(const Model::ListApStatusRequest& request, const ListApStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApStatusOutcomeCallable listApStatusCallable(const Model::ListApStatusRequest& request) const;
-			ListProbeinfoOutcome listProbeinfo(const Model::ListProbeinfoRequest &request)const;
-			void listProbeinfoAsync(const Model::ListProbeinfoRequest& request, const ListProbeinfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListProbeinfoOutcomeCallable listProbeinfoCallable(const Model::ListProbeinfoRequest& request) const;
 			AreaInfoOutcome areaInfo(const Model::AreaInfoRequest &request)const;
 			void areaInfoAsync(const Model::AreaInfoRequest& request, const AreaInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AreaInfoOutcomeCallable areaInfoCallable(const Model::AreaInfoRequest& request) const;
+			ListProbeinfoOutcome listProbeinfo(const Model::ListProbeinfoRequest &request)const;
+			void listProbeinfoAsync(const Model::ListProbeinfoRequest& request, const ListProbeinfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProbeinfoOutcomeCallable listProbeinfoCallable(const Model::ListProbeinfoRequest& request) const;
 			GetAllActiveShopByGroupOutcome getAllActiveShopByGroup(const Model::GetAllActiveShopByGroupRequest &request)const;
 			void getAllActiveShopByGroupAsync(const Model::GetAllActiveShopByGroupRequest& request, const GetAllActiveShopByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAllActiveShopByGroupOutcomeCallable getAllActiveShopByGroupCallable(const Model::GetAllActiveShopByGroupRequest& request) const;
@@ -1408,12 +1408,12 @@ namespace AlibabaCloud
 			DeletePositionMapOutcome deletePositionMap(const Model::DeletePositionMapRequest &request)const;
 			void deletePositionMapAsync(const Model::DeletePositionMapRequest& request, const DeletePositionMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePositionMapOutcomeCallable deletePositionMapCallable(const Model::DeletePositionMapRequest& request) const;
-			SetScanModeOutcome setScanMode(const Model::SetScanModeRequest &request)const;
-			void setScanModeAsync(const Model::SetScanModeRequest& request, const SetScanModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetScanModeOutcomeCallable setScanModeCallable(const Model::SetScanModeRequest& request) const;
 			UpgradeAPOutcome upgradeAP(const Model::UpgradeAPRequest &request)const;
 			void upgradeAPAsync(const Model::UpgradeAPRequest& request, const UpgradeAPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeAPOutcomeCallable upgradeAPCallable(const Model::UpgradeAPRequest& request) const;
+			SetScanModeOutcome setScanMode(const Model::SetScanModeRequest &request)const;
+			void setScanModeAsync(const Model::SetScanModeRequest& request, const SetScanModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetScanModeOutcomeCallable setScanModeCallable(const Model::SetScanModeRequest& request) const;
 			ListUpgradeImgOutcome listUpgradeImg(const Model::ListUpgradeImgRequest &request)const;
 			void listUpgradeImgAsync(const Model::ListUpgradeImgRequest& request, const ListUpgradeImgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUpgradeImgOutcomeCallable listUpgradeImgCallable(const Model::ListUpgradeImgRequest& request) const;
@@ -1423,12 +1423,12 @@ namespace AlibabaCloud
 			ApgroupBatchDeleteApOutcome apgroupBatchDeleteAp(const Model::ApgroupBatchDeleteApRequest &request)const;
 			void apgroupBatchDeleteApAsync(const Model::ApgroupBatchDeleteApRequest& request, const ApgroupBatchDeleteApAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApgroupBatchDeleteApOutcomeCallable apgroupBatchDeleteApCallable(const Model::ApgroupBatchDeleteApRequest& request) const;
-			ShopMarketingListOutcome shopMarketingList(const Model::ShopMarketingListRequest &request)const;
-			void shopMarketingListAsync(const Model::ShopMarketingListRequest& request, const ShopMarketingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ShopMarketingListOutcomeCallable shopMarketingListCallable(const Model::ShopMarketingListRequest& request) const;
 			ProfileHistoryOutcome profileHistory(const Model::ProfileHistoryRequest &request)const;
 			void profileHistoryAsync(const Model::ProfileHistoryRequest& request, const ProfileHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ProfileHistoryOutcomeCallable profileHistoryCallable(const Model::ProfileHistoryRequest& request) const;
+			ShopMarketingListOutcome shopMarketingList(const Model::ShopMarketingListRequest &request)const;
+			void shopMarketingListAsync(const Model::ShopMarketingListRequest& request, const ShopMarketingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ShopMarketingListOutcomeCallable shopMarketingListCallable(const Model::ShopMarketingListRequest& request) const;
 			ListApPositionOutcome listApPosition(const Model::ListApPositionRequest &request)const;
 			void listApPositionAsync(const Model::ListApPositionRequest& request, const ListApPositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApPositionOutcomeCallable listApPositionCallable(const Model::ListApPositionRequest& request) const;
@@ -1444,45 +1444,45 @@ namespace AlibabaCloud
 			SaveApgroupSsidConfigOutcome saveApgroupSsidConfig(const Model::SaveApgroupSsidConfigRequest &request)const;
 			void saveApgroupSsidConfigAsync(const Model::SaveApgroupSsidConfigRequest& request, const SaveApgroupSsidConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveApgroupSsidConfigOutcomeCallable saveApgroupSsidConfigCallable(const Model::SaveApgroupSsidConfigRequest& request) const;
-			OemMarketingSettingDataOutcome oemMarketingSettingData(const Model::OemMarketingSettingDataRequest &request)const;
-			void oemMarketingSettingDataAsync(const Model::OemMarketingSettingDataRequest& request, const OemMarketingSettingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OemMarketingSettingDataOutcomeCallable oemMarketingSettingDataCallable(const Model::OemMarketingSettingDataRequest& request) const;
 			InnerCheckOrderOutcome innerCheckOrder(const Model::InnerCheckOrderRequest &request)const;
 			void innerCheckOrderAsync(const Model::InnerCheckOrderRequest& request, const InnerCheckOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InnerCheckOrderOutcomeCallable innerCheckOrderCallable(const Model::InnerCheckOrderRequest& request) const;
+			OemMarketingSettingDataOutcome oemMarketingSettingData(const Model::OemMarketingSettingDataRequest &request)const;
+			void oemMarketingSettingDataAsync(const Model::OemMarketingSettingDataRequest& request, const OemMarketingSettingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OemMarketingSettingDataOutcomeCallable oemMarketingSettingDataCallable(const Model::OemMarketingSettingDataRequest& request) const;
 			GetOnlineStaTimeSerOutcome getOnlineStaTimeSer(const Model::GetOnlineStaTimeSerRequest &request)const;
 			void getOnlineStaTimeSerAsync(const Model::GetOnlineStaTimeSerRequest& request, const GetOnlineStaTimeSerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOnlineStaTimeSerOutcomeCallable getOnlineStaTimeSerCallable(const Model::GetOnlineStaTimeSerRequest& request) const;
-			ListSubAccountPermissionOutcome listSubAccountPermission(const Model::ListSubAccountPermissionRequest &request)const;
-			void listSubAccountPermissionAsync(const Model::ListSubAccountPermissionRequest& request, const ListSubAccountPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListSubAccountPermissionOutcomeCallable listSubAccountPermissionCallable(const Model::ListSubAccountPermissionRequest& request) const;
 			ListStaOnoffLogOutcome listStaOnoffLog(const Model::ListStaOnoffLogRequest &request)const;
 			void listStaOnoffLogAsync(const Model::ListStaOnoffLogRequest& request, const ListStaOnoffLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListStaOnoffLogOutcomeCallable listStaOnoffLogCallable(const Model::ListStaOnoffLogRequest& request) const;
+			ListSubAccountPermissionOutcome listSubAccountPermission(const Model::ListSubAccountPermissionRequest &request)const;
+			void listSubAccountPermissionAsync(const Model::ListSubAccountPermissionRequest& request, const ListSubAccountPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSubAccountPermissionOutcomeCallable listSubAccountPermissionCallable(const Model::ListSubAccountPermissionRequest& request) const;
 			HeadquartersOverviewOutcome headquartersOverview(const Model::HeadquartersOverviewRequest &request)const;
 			void headquartersOverviewAsync(const Model::HeadquartersOverviewRequest& request, const HeadquartersOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			HeadquartersOverviewOutcomeCallable headquartersOverviewCallable(const Model::HeadquartersOverviewRequest& request) const;
 			GetApgroupConfigProgressOutcome getApgroupConfigProgress(const Model::GetApgroupConfigProgressRequest &request)const;
 			void getApgroupConfigProgressAsync(const Model::GetApgroupConfigProgressRequest& request, const GetApgroupConfigProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetApgroupConfigProgressOutcomeCallable getApgroupConfigProgressCallable(const Model::GetApgroupConfigProgressRequest& request) const;
-			ListPortalTemplateOutcome listPortalTemplate(const Model::ListPortalTemplateRequest &request)const;
-			void listPortalTemplateAsync(const Model::ListPortalTemplateRequest& request, const ListPortalTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListPortalTemplateOutcomeCallable listPortalTemplateCallable(const Model::ListPortalTemplateRequest& request) const;
 			AreaCreateOutcome areaCreate(const Model::AreaCreateRequest &request)const;
 			void areaCreateAsync(const Model::AreaCreateRequest& request, const AreaCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AreaCreateOutcomeCallable areaCreateCallable(const Model::AreaCreateRequest& request) const;
+			ListPortalTemplateOutcome listPortalTemplate(const Model::ListPortalTemplateRequest &request)const;
+			void listPortalTemplateAsync(const Model::ListPortalTemplateRequest& request, const ListPortalTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPortalTemplateOutcomeCallable listPortalTemplateCallable(const Model::ListPortalTemplateRequest& request) const;
 			QueryRenewPriceOutcome queryRenewPrice(const Model::QueryRenewPriceRequest &request)const;
 			void queryRenewPriceAsync(const Model::QueryRenewPriceRequest& request, const QueryRenewPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRenewPriceOutcomeCallable queryRenewPriceCallable(const Model::QueryRenewPriceRequest& request) const;
 			GetApgroupPortalConfigProgressOutcome getApgroupPortalConfigProgress(const Model::GetApgroupPortalConfigProgressRequest &request)const;
 			void getApgroupPortalConfigProgressAsync(const Model::GetApgroupPortalConfigProgressRequest& request, const GetApgroupPortalConfigProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetApgroupPortalConfigProgressOutcomeCallable getApgroupPortalConfigProgressCallable(const Model::GetApgroupPortalConfigProgressRequest& request) const;
-			GetOssServerSignOutcome getOssServerSign(const Model::GetOssServerSignRequest &request)const;
-			void getOssServerSignAsync(const Model::GetOssServerSignRequest& request, const GetOssServerSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOssServerSignOutcomeCallable getOssServerSignCallable(const Model::GetOssServerSignRequest& request) const;
 			OemSitingContrastOutcome oemSitingContrast(const Model::OemSitingContrastRequest &request)const;
 			void oemSitingContrastAsync(const Model::OemSitingContrastRequest& request, const OemSitingContrastAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OemSitingContrastOutcomeCallable oemSitingContrastCallable(const Model::OemSitingContrastRequest& request) const;
+			GetOssServerSignOutcome getOssServerSign(const Model::GetOssServerSignRequest &request)const;
+			void getOssServerSignAsync(const Model::GetOssServerSignRequest& request, const GetOssServerSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOssServerSignOutcomeCallable getOssServerSignCallable(const Model::GetOssServerSignRequest& request) const;
 			BusinessInfoOutcome businessInfo(const Model::BusinessInfoRequest &request)const;
 			void businessInfoAsync(const Model::BusinessInfoRequest& request, const BusinessInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BusinessInfoOutcomeCallable businessInfoCallable(const Model::BusinessInfoRequest& request) const;
@@ -1531,12 +1531,12 @@ namespace AlibabaCloud
 			OemHeatMapOutcome oemHeatMap(const Model::OemHeatMapRequest &request)const;
 			void oemHeatMapAsync(const Model::OemHeatMapRequest& request, const OemHeatMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OemHeatMapOutcomeCallable oemHeatMapCallable(const Model::OemHeatMapRequest& request) const;
-			ReleaseInstanceOutcome releaseInstance(const Model::ReleaseInstanceRequest &request)const;
-			void releaseInstanceAsync(const Model::ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ReleaseInstanceOutcomeCallable releaseInstanceCallable(const Model::ReleaseInstanceRequest& request) const;
 			ReportRealtimeOutcome reportRealtime(const Model::ReportRealtimeRequest &request)const;
 			void reportRealtimeAsync(const Model::ReportRealtimeRequest& request, const ReportRealtimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReportRealtimeOutcomeCallable reportRealtimeCallable(const Model::ReportRealtimeRequest& request) const;
+			ReleaseInstanceOutcome releaseInstance(const Model::ReleaseInstanceRequest &request)const;
+			void releaseInstanceAsync(const Model::ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseInstanceOutcomeCallable releaseInstanceCallable(const Model::ReleaseInstanceRequest& request) const;
 			GetUmengPagePermission4RootOutcome getUmengPagePermission4Root(const Model::GetUmengPagePermission4RootRequest &request)const;
 			void getUmengPagePermission4RootAsync(const Model::GetUmengPagePermission4RootRequest& request, const GetUmengPagePermission4RootAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUmengPagePermission4RootOutcomeCallable getUmengPagePermission4RootCallable(const Model::GetUmengPagePermission4RootRequest& request) const;
@@ -1561,30 +1561,30 @@ namespace AlibabaCloud
 			ListGroupApBriefConfigOutcome listGroupApBriefConfig(const Model::ListGroupApBriefConfigRequest &request)const;
 			void listGroupApBriefConfigAsync(const Model::ListGroupApBriefConfigRequest& request, const ListGroupApBriefConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGroupApBriefConfigOutcomeCallable listGroupApBriefConfigCallable(const Model::ListGroupApBriefConfigRequest& request) const;
-			BatchRegisterApAssetOutcome batchRegisterApAsset(const Model::BatchRegisterApAssetRequest &request)const;
-			void batchRegisterApAssetAsync(const Model::BatchRegisterApAssetRequest& request, const BatchRegisterApAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			BatchRegisterApAssetOutcomeCallable batchRegisterApAssetCallable(const Model::BatchRegisterApAssetRequest& request) const;
 			PutOssFileOutcome putOssFile(const Model::PutOssFileRequest &request)const;
 			void putOssFileAsync(const Model::PutOssFileRequest& request, const PutOssFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutOssFileOutcomeCallable putOssFileCallable(const Model::PutOssFileRequest& request) const;
-			SaveApScanConfigOutcome saveApScanConfig(const Model::SaveApScanConfigRequest &request)const;
-			void saveApScanConfigAsync(const Model::SaveApScanConfigRequest& request, const SaveApScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SaveApScanConfigOutcomeCallable saveApScanConfigCallable(const Model::SaveApScanConfigRequest& request) const;
+			BatchRegisterApAssetOutcome batchRegisterApAsset(const Model::BatchRegisterApAssetRequest &request)const;
+			void batchRegisterApAssetAsync(const Model::BatchRegisterApAssetRequest& request, const BatchRegisterApAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchRegisterApAssetOutcomeCallable batchRegisterApAssetCallable(const Model::BatchRegisterApAssetRequest& request) const;
 			AreaDeleteOutcome areaDelete(const Model::AreaDeleteRequest &request)const;
 			void areaDeleteAsync(const Model::AreaDeleteRequest& request, const AreaDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AreaDeleteOutcomeCallable areaDeleteCallable(const Model::AreaDeleteRequest& request) const;
 			GetGroupApRadioConfigTemplateOutcome getGroupApRadioConfigTemplate(const Model::GetGroupApRadioConfigTemplateRequest &request)const;
 			void getGroupApRadioConfigTemplateAsync(const Model::GetGroupApRadioConfigTemplateRequest& request, const GetGroupApRadioConfigTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetGroupApRadioConfigTemplateOutcomeCallable getGroupApRadioConfigTemplateCallable(const Model::GetGroupApRadioConfigTemplateRequest& request) const;
+			SaveApScanConfigOutcome saveApScanConfig(const Model::SaveApScanConfigRequest &request)const;
+			void saveApScanConfigAsync(const Model::SaveApScanConfigRequest& request, const SaveApScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveApScanConfigOutcomeCallable saveApScanConfigCallable(const Model::SaveApScanConfigRequest& request) const;
 			HeadquartersToolsO2OOutcome headquartersToolsO2O(const Model::HeadquartersToolsO2ORequest &request)const;
 			void headquartersToolsO2OAsync(const Model::HeadquartersToolsO2ORequest& request, const HeadquartersToolsO2OAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			HeadquartersToolsO2OOutcomeCallable headquartersToolsO2OCallable(const Model::HeadquartersToolsO2ORequest& request) const;
-			HeadquartersToolsCoincideOutcome headquartersToolsCoincide(const Model::HeadquartersToolsCoincideRequest &request)const;
-			void headquartersToolsCoincideAsync(const Model::HeadquartersToolsCoincideRequest& request, const HeadquartersToolsCoincideAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			HeadquartersToolsCoincideOutcomeCallable headquartersToolsCoincideCallable(const Model::HeadquartersToolsCoincideRequest& request) const;
 			ResumeInstanceOutcome resumeInstance(const Model::ResumeInstanceRequest &request)const;
 			void resumeInstanceAsync(const Model::ResumeInstanceRequest& request, const ResumeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeInstanceOutcomeCallable resumeInstanceCallable(const Model::ResumeInstanceRequest& request) const;
+			HeadquartersToolsCoincideOutcome headquartersToolsCoincide(const Model::HeadquartersToolsCoincideRequest &request)const;
+			void headquartersToolsCoincideAsync(const Model::HeadquartersToolsCoincideRequest& request, const HeadquartersToolsCoincideAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			HeadquartersToolsCoincideOutcomeCallable headquartersToolsCoincideCallable(const Model::HeadquartersToolsCoincideRequest& request) const;
 			ListApAssetOutcome listApAsset(const Model::ListApAssetRequest &request)const;
 			void listApAssetAsync(const Model::ListApAssetRequest& request, const ListApAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListApAssetOutcomeCallable listApAssetCallable(const Model::ListApAssetRequest& request) const;
@@ -1597,12 +1597,12 @@ namespace AlibabaCloud
 			RepairGroupApOutcome repairGroupAp(const Model::RepairGroupApRequest &request)const;
 			void repairGroupApAsync(const Model::RepairGroupApRequest& request, const RepairGroupApAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RepairGroupApOutcomeCallable repairGroupApCallable(const Model::RepairGroupApRequest& request) const;
-			GetMapUrlOutcome getMapUrl(const Model::GetMapUrlRequest &request)const;
-			void getMapUrlAsync(const Model::GetMapUrlRequest& request, const GetMapUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetMapUrlOutcomeCallable getMapUrlCallable(const Model::GetMapUrlRequest& request) const;
 			GetUpgradeAPGroupProgressOutcome getUpgradeAPGroupProgress(const Model::GetUpgradeAPGroupProgressRequest &request)const;
 			void getUpgradeAPGroupProgressAsync(const Model::GetUpgradeAPGroupProgressRequest& request, const GetUpgradeAPGroupProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUpgradeAPGroupProgressOutcomeCallable getUpgradeAPGroupProgressCallable(const Model::GetUpgradeAPGroupProgressRequest& request) const;
+			GetMapUrlOutcome getMapUrl(const Model::GetMapUrlRequest &request)const;
+			void getMapUrlAsync(const Model::GetMapUrlRequest& request, const GetMapUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMapUrlOutcomeCallable getMapUrlCallable(const Model::GetMapUrlRequest& request) const;
 			ShopGetfiltermacOutcome shopGetfiltermac(const Model::ShopGetfiltermacRequest &request)const;
 			void shopGetfiltermacAsync(const Model::ShopGetfiltermacRequest& request, const ShopGetfiltermacAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ShopGetfiltermacOutcomeCallable shopGetfiltermacCallable(const Model::ShopGetfiltermacRequest& request) const;
@@ -1645,15 +1645,15 @@ namespace AlibabaCloud
 			GetApgroupDetailedConfigOutcome getApgroupDetailedConfig(const Model::GetApgroupDetailedConfigRequest &request)const;
 			void getApgroupDetailedConfigAsync(const Model::GetApgroupDetailedConfigRequest& request, const GetApgroupDetailedConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetApgroupDetailedConfigOutcomeCallable getApgroupDetailedConfigCallable(const Model::GetApgroupDetailedConfigRequest& request) const;
+			ListStaStatusOutcome listStaStatus(const Model::ListStaStatusRequest &request)const;
+			void listStaStatusAsync(const Model::ListStaStatusRequest& request, const ListStaStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListStaStatusOutcomeCallable listStaStatusCallable(const Model::ListStaStatusRequest& request) const;
 			InnerRefundOutcome innerRefund(const Model::InnerRefundRequest &request)const;
 			void innerRefundAsync(const Model::InnerRefundRequest& request, const InnerRefundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InnerRefundOutcomeCallable innerRefundCallable(const Model::InnerRefundRequest& request) const;
 			ProfileTradeOutcome profileTrade(const Model::ProfileTradeRequest &request)const;
 			void profileTradeAsync(const Model::ProfileTradeRequest& request, const ProfileTradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ProfileTradeOutcomeCallable profileTradeCallable(const Model::ProfileTradeRequest& request) const;
-			ListStaStatusOutcome listStaStatus(const Model::ListStaStatusRequest &request)const;
-			void listStaStatusAsync(const Model::ListStaStatusRequest& request, const ListStaStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListStaStatusOutcomeCallable listStaStatusCallable(const Model::ListStaStatusRequest& request) const;
 			DeviceUpdateOutcome deviceUpdate(const Model::DeviceUpdateRequest &request)const;
 			void deviceUpdateAsync(const Model::DeviceUpdateRequest& request, const DeviceUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeviceUpdateOutcomeCallable deviceUpdateCallable(const Model::DeviceUpdateRequest& request) const;
@@ -1696,12 +1696,12 @@ namespace AlibabaCloud
 			KickStaOutcome kickSta(const Model::KickStaRequest &request)const;
 			void kickStaAsync(const Model::KickStaRequest& request, const KickStaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			KickStaOutcomeCallable kickStaCallable(const Model::KickStaRequest& request) const;
-			ProfileConsumeOutcome profileConsume(const Model::ProfileConsumeRequest &request)const;
-			void profileConsumeAsync(const Model::ProfileConsumeRequest& request, const ProfileConsumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ProfileConsumeOutcomeCallable profileConsumeCallable(const Model::ProfileConsumeRequest& request) const;
 			DelApPositionOutcome delApPosition(const Model::DelApPositionRequest &request)const;
 			void delApPositionAsync(const Model::DelApPositionRequest& request, const DelApPositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DelApPositionOutcomeCallable delApPositionCallable(const Model::DelApPositionRequest& request) const;
+			ProfileConsumeOutcome profileConsume(const Model::ProfileConsumeRequest &request)const;
+			void profileConsumeAsync(const Model::ProfileConsumeRequest& request, const ProfileConsumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProfileConsumeOutcomeCallable profileConsumeCallable(const Model::ProfileConsumeRequest& request) const;
 			ShopInfoOutcome shopInfo(const Model::ShopInfoRequest &request)const;
 			void shopInfoAsync(const Model::ShopInfoRequest& request, const ShopInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ShopInfoOutcomeCallable shopInfoCallable(const Model::ShopInfoRequest& request) const;
@@ -1714,12 +1714,12 @@ namespace AlibabaCloud
 			SavePageConfigTemplateOutcome savePageConfigTemplate(const Model::SavePageConfigTemplateRequest &request)const;
 			void savePageConfigTemplateAsync(const Model::SavePageConfigTemplateRequest& request, const SavePageConfigTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SavePageConfigTemplateOutcomeCallable savePageConfigTemplateCallable(const Model::SavePageConfigTemplateRequest& request) const;
-			ShopGroupUpdateOutcome shopGroupUpdate(const Model::ShopGroupUpdateRequest &request)const;
-			void shopGroupUpdateAsync(const Model::ShopGroupUpdateRequest& request, const ShopGroupUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ShopGroupUpdateOutcomeCallable shopGroupUpdateCallable(const Model::ShopGroupUpdateRequest& request) const;
 			SetUpgradeImgByModelOutcome setUpgradeImgByModel(const Model::SetUpgradeImgByModelRequest &request)const;
 			void setUpgradeImgByModelAsync(const Model::SetUpgradeImgByModelRequest& request, const SetUpgradeImgByModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetUpgradeImgByModelOutcomeCallable setUpgradeImgByModelCallable(const Model::SetUpgradeImgByModelRequest& request) const;
+			ShopGroupUpdateOutcome shopGroupUpdate(const Model::ShopGroupUpdateRequest &request)const;
+			void shopGroupUpdateAsync(const Model::ShopGroupUpdateRequest& request, const ShopGroupUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ShopGroupUpdateOutcomeCallable shopGroupUpdateCallable(const Model::ShopGroupUpdateRequest& request) const;
 			ShopGroupInfoOutcome shopGroupInfo(const Model::ShopGroupInfoRequest &request)const;
 			void shopGroupInfoAsync(const Model::ShopGroupInfoRequest& request, const ShopGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ShopGroupInfoOutcomeCallable shopGroupInfoCallable(const Model::ShopGroupInfoRequest& request) const;
@@ -1741,12 +1741,12 @@ namespace AlibabaCloud
 			CheckUmengDataAnalysisPermissionOutcome checkUmengDataAnalysisPermission(const Model::CheckUmengDataAnalysisPermissionRequest &request)const;
 			void checkUmengDataAnalysisPermissionAsync(const Model::CheckUmengDataAnalysisPermissionRequest& request, const CheckUmengDataAnalysisPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckUmengDataAnalysisPermissionOutcomeCallable checkUmengDataAnalysisPermissionCallable(const Model::CheckUmengDataAnalysisPermissionRequest& request) const;
-			DeviceDeleteOutcome deviceDelete(const Model::DeviceDeleteRequest &request)const;
-			void deviceDeleteAsync(const Model::DeviceDeleteRequest& request, const DeviceDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeviceDeleteOutcomeCallable deviceDeleteCallable(const Model::DeviceDeleteRequest& request) const;
 			ReportDayOutcome reportDay(const Model::ReportDayRequest &request)const;
 			void reportDayAsync(const Model::ReportDayRequest& request, const ReportDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReportDayOutcomeCallable reportDayCallable(const Model::ReportDayRequest& request) const;
+			DeviceDeleteOutcome deviceDelete(const Model::DeviceDeleteRequest &request)const;
+			void deviceDeleteAsync(const Model::DeviceDeleteRequest& request, const DeviceDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeviceDeleteOutcomeCallable deviceDeleteCallable(const Model::DeviceDeleteRequest& request) const;
 			UpgradeAPGroupOutcome upgradeAPGroup(const Model::UpgradeAPGroupRequest &request)const;
 			void upgradeAPGroupAsync(const Model::UpgradeAPGroupRequest& request, const UpgradeAPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeAPGroupOutcomeCallable upgradeAPGroupCallable(const Model::UpgradeAPGroupRequest& request) const;
@@ -1768,24 +1768,24 @@ namespace AlibabaCloud
 			InnerProduceCloudWFOutcome innerProduceCloudWF(const Model::InnerProduceCloudWFRequest &request)const;
 			void innerProduceCloudWFAsync(const Model::InnerProduceCloudWFRequest& request, const InnerProduceCloudWFAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InnerProduceCloudWFOutcomeCallable innerProduceCloudWFCallable(const Model::InnerProduceCloudWFRequest& request) const;
-			UpLoadMapOutcome upLoadMap(const Model::UpLoadMapRequest &request)const;
-			void upLoadMapAsync(const Model::UpLoadMapRequest& request, const UpLoadMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpLoadMapOutcomeCallable upLoadMapCallable(const Model::UpLoadMapRequest& request) const;
 			SavePortalConfigOutcome savePortalConfig(const Model::SavePortalConfigRequest &request)const;
 			void savePortalConfigAsync(const Model::SavePortalConfigRequest& request, const SavePortalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SavePortalConfigOutcomeCallable savePortalConfigCallable(const Model::SavePortalConfigRequest& request) const;
+			UpLoadMapOutcome upLoadMap(const Model::UpLoadMapRequest &request)const;
+			void upLoadMapAsync(const Model::UpLoadMapRequest& request, const UpLoadMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpLoadMapOutcomeCallable upLoadMapCallable(const Model::UpLoadMapRequest& request) const;
 			BatchSaveApPositionOutcome batchSaveApPosition(const Model::BatchSaveApPositionRequest &request)const;
 			void batchSaveApPositionAsync(const Model::BatchSaveApPositionRequest& request, const BatchSaveApPositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchSaveApPositionOutcomeCallable batchSaveApPositionCallable(const Model::BatchSaveApPositionRequest& request) const;
 			SaveApgroupScanConfigOutcome saveApgroupScanConfig(const Model::SaveApgroupScanConfigRequest &request)const;
 			void saveApgroupScanConfigAsync(const Model::SaveApgroupScanConfigRequest& request, const SaveApgroupScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveApgroupScanConfigOutcomeCallable saveApgroupScanConfigCallable(const Model::SaveApgroupScanConfigRequest& request) const;
-			GetApStaMiscAggOutcome getApStaMiscAgg(const Model::GetApStaMiscAggRequest &request)const;
-			void getApStaMiscAggAsync(const Model::GetApStaMiscAggRequest& request, const GetApStaMiscAggAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetApStaMiscAggOutcomeCallable getApStaMiscAggCallable(const Model::GetApStaMiscAggRequest& request) const;
 			AliyunRegisterApAssetOutcome aliyunRegisterApAsset(const Model::AliyunRegisterApAssetRequest &request)const;
 			void aliyunRegisterApAssetAsync(const Model::AliyunRegisterApAssetRequest& request, const AliyunRegisterApAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AliyunRegisterApAssetOutcomeCallable aliyunRegisterApAssetCallable(const Model::AliyunRegisterApAssetRequest& request) const;
+			GetApStaMiscAggOutcome getApStaMiscAgg(const Model::GetApStaMiscAggRequest &request)const;
+			void getApStaMiscAggAsync(const Model::GetApStaMiscAggRequest& request, const GetApStaMiscAggAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetApStaMiscAggOutcomeCallable getApStaMiscAggCallable(const Model::GetApStaMiscAggRequest& request) const;
 			UserAnalyseOutcome userAnalyse(const Model::UserAnalyseRequest &request)const;
 			void userAnalyseAsync(const Model::UserAnalyseRequest& request, const UserAnalyseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UserAnalyseOutcomeCallable userAnalyseCallable(const Model::UserAnalyseRequest& request) const;
@@ -1798,12 +1798,12 @@ namespace AlibabaCloud
 			GetStaRunHistoryTimeSerOutcome getStaRunHistoryTimeSer(const Model::GetStaRunHistoryTimeSerRequest &request)const;
 			void getStaRunHistoryTimeSerAsync(const Model::GetStaRunHistoryTimeSerRequest& request, const GetStaRunHistoryTimeSerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetStaRunHistoryTimeSerOutcomeCallable getStaRunHistoryTimeSerCallable(const Model::GetStaRunHistoryTimeSerRequest& request) const;
-			GetUpgradeAPProgressOutcome getUpgradeAPProgress(const Model::GetUpgradeAPProgressRequest &request)const;
-			void getUpgradeAPProgressAsync(const Model::GetUpgradeAPProgressRequest& request, const GetUpgradeAPProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetUpgradeAPProgressOutcomeCallable getUpgradeAPProgressCallable(const Model::GetUpgradeAPProgressRequest& request) const;
 			GroupIntimeOutcome groupIntime(const Model::GroupIntimeRequest &request)const;
 			void groupIntimeAsync(const Model::GroupIntimeRequest& request, const GroupIntimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GroupIntimeOutcomeCallable groupIntimeCallable(const Model::GroupIntimeRequest& request) const;
+			GetUpgradeAPProgressOutcome getUpgradeAPProgress(const Model::GetUpgradeAPProgressRequest &request)const;
+			void getUpgradeAPProgressAsync(const Model::GetUpgradeAPProgressRequest& request, const GetUpgradeAPProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUpgradeAPProgressOutcomeCallable getUpgradeAPProgressCallable(const Model::GetUpgradeAPProgressRequest& request) const;
 			ShopDeletemarketingOutcome shopDeletemarketing(const Model::ShopDeletemarketingRequest &request)const;
 			void shopDeletemarketingAsync(const Model::ShopDeletemarketingRequest& request, const ShopDeletemarketingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ShopDeletemarketingOutcomeCallable shopDeletemarketingCallable(const Model::ShopDeletemarketingRequest& request) const;
@@ -1822,12 +1822,12 @@ namespace AlibabaCloud
 			GetAccountConfigOutcome getAccountConfig(const Model::GetAccountConfigRequest &request)const;
 			void getAccountConfigAsync(const Model::GetAccountConfigRequest& request, const GetAccountConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAccountConfigOutcomeCallable getAccountConfigCallable(const Model::GetAccountConfigRequest& request) const;
-			GetAddApsProgressOutcome getAddApsProgress(const Model::GetAddApsProgressRequest &request)const;
-			void getAddApsProgressAsync(const Model::GetAddApsProgressRequest& request, const GetAddApsProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetAddApsProgressOutcomeCallable getAddApsProgressCallable(const Model::GetAddApsProgressRequest& request) const;
 			ProfileDistrictOutcome profileDistrict(const Model::ProfileDistrictRequest &request)const;
 			void profileDistrictAsync(const Model::ProfileDistrictRequest& request, const ProfileDistrictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ProfileDistrictOutcomeCallable profileDistrictCallable(const Model::ProfileDistrictRequest& request) const;
+			GetAddApsProgressOutcome getAddApsProgress(const Model::GetAddApsProgressRequest &request)const;
+			void getAddApsProgressAsync(const Model::GetAddApsProgressRequest& request, const GetAddApsProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAddApsProgressOutcomeCallable getAddApsProgressCallable(const Model::GetAddApsProgressRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

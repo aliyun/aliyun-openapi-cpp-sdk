@@ -25,17 +25,6 @@ OnsTopicDeleteRequest::OnsTopicDeleteRequest() :
 OnsTopicDeleteRequest::~OnsTopicDeleteRequest()
 {}
 
-long OnsTopicDeleteRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsTopicDeleteRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsTopicDeleteRequest::getInstanceId()const
 {
 	return instanceId_;

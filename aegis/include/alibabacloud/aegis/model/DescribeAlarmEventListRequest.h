@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setAlarmEventName(const std::string& alarmEventName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
 				std::string getAlarmEventType()const;
@@ -55,10 +57,13 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getLevels()const;
 				void setLevels(const std::string& levels);
+				std::vector<std::string> getOperateErrorCodeList()const;
+				void setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList);
 
             private:
 				std::string alarmEventName_;
 				std::string sourceIp_;
+				std::string groupId_;
 				std::string pageSize_;
 				std::string alarmEventType_;
 				std::string dealed_;
@@ -67,6 +72,7 @@ namespace AlibabaCloud
 				int currentPage_;
 				std::string lang_;
 				std::string levels_;
+				std::vector<std::string> operateErrorCodeList_;
 
 			};
 		}

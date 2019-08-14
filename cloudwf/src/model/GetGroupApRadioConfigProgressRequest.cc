@@ -33,7 +33,7 @@ long GetGroupApRadioConfigProgressRequest::getId()const
 void GetGroupApRadioConfigProgressRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetGroupApRadioConfigProgressRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetGroupApRadioConfigProgressRequest::getAccessKeyId()const
 void GetGroupApRadioConfigProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -87,6 +87,10 @@ namespace AlibabaCloud
 				void setSshEnable(bool sshEnable);
 				bool getEasEnable()const;
 				void setEasEnable(bool easEnable);
+				std::string getKeyPairName()const;
+				void setKeyPairName(const std::string& keyPairName);
+				std::string getMetaStoreType()const;
+				void setMetaStoreType(const std::string& metaStoreType);
 				std::string getSecurityGroupName()const;
 				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getDepositType()const;
@@ -101,6 +105,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				bool getUseLocalMetaDb()const;
 				void setUseLocalMetaDb(bool useLocalMetaDb);
+				std::string getMetaStoreConf()const;
+				void setMetaStoreConf(const std::string& metaStoreConf);
 				std::string getEmrVer()const;
 				void setEmrVer(const std::string& emrVer);
 				std::string getTemplateName()const;
@@ -151,6 +157,8 @@ namespace AlibabaCloud
 				std::string securityGroupId_;
 				bool sshEnable_;
 				bool easEnable_;
+				std::string keyPairName_;
+				std::string metaStoreType_;
 				std::string securityGroupName_;
 				std::string depositType_;
 				std::string accessKeyId_;
@@ -158,6 +166,7 @@ namespace AlibabaCloud
 				std::vector<BootstrapAction> bootstrapAction_;
 				std::string regionId_;
 				bool useLocalMetaDb_;
+				std::string metaStoreConf_;
 				std::string emrVer_;
 				std::string templateName_;
 				std::string userDefinedEmrEcsRole_;

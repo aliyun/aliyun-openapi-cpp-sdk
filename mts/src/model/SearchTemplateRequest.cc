@@ -33,7 +33,7 @@ long SearchTemplateRequest::getResourceOwnerId()const
 void SearchTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SearchTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string SearchTemplateRequest::getResourceOwnerAccount()const
 void SearchTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SearchTemplateRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SearchTemplateRequest::getOwnerAccount()const
 void SearchTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SearchTemplateRequest::getPageSize()const
@@ -66,7 +66,7 @@ long SearchTemplateRequest::getPageSize()const
 void SearchTemplateRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string SearchTemplateRequest::getState()const
@@ -77,7 +77,7 @@ std::string SearchTemplateRequest::getState()const
 void SearchTemplateRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 long SearchTemplateRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SearchTemplateRequest::getOwnerId()const
 void SearchTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long SearchTemplateRequest::getPageNumber()const
@@ -99,7 +99,7 @@ long SearchTemplateRequest::getPageNumber()const
 void SearchTemplateRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string SearchTemplateRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string SearchTemplateRequest::getAccessKeyId()const
 void SearchTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

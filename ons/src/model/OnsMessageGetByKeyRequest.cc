@@ -25,17 +25,6 @@ OnsMessageGetByKeyRequest::OnsMessageGetByKeyRequest() :
 OnsMessageGetByKeyRequest::~OnsMessageGetByKeyRequest()
 {}
 
-long OnsMessageGetByKeyRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMessageGetByKeyRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMessageGetByKeyRequest::getInstanceId()const
 {
 	return instanceId_;

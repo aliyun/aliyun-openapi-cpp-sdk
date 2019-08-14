@@ -33,7 +33,7 @@ std::string ChangePasswordRequest::getOldPassword()const
 void ChangePasswordRequest::setOldPassword(const std::string& oldPassword)
 {
 	oldPassword_ = oldPassword;
-	setParameter("OldPassword", oldPassword);
+	setCoreParameter("OldPassword", oldPassword);
 }
 
 std::string ChangePasswordRequest::getNewPassword()const
@@ -44,6 +44,6 @@ std::string ChangePasswordRequest::getNewPassword()const
 void ChangePasswordRequest::setNewPassword(const std::string& newPassword)
 {
 	newPassword_ = newPassword;
-	setParameter("NewPassword", newPassword);
+	setCoreParameter("NewPassword", newPassword);
 }
 

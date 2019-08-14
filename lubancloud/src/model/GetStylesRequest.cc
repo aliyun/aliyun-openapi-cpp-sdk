@@ -33,6 +33,6 @@ std::string GetStylesRequest::getRegionId()const
 void GetStylesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -33,7 +33,7 @@ long GetPageConfigTemplateRequest::getId()const
 void GetPageConfigTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetPageConfigTemplateRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetPageConfigTemplateRequest::getAccessKeyId()const
 void GetPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

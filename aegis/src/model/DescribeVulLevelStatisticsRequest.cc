@@ -47,6 +47,17 @@ void DescribeVulLevelStatisticsRequest::setEndTs(long endTs)
 	setCoreParameter("EndTs", std::to_string(endTs));
 }
 
+std::string DescribeVulLevelStatisticsRequest::getFrom()const
+{
+	return from_;
+}
+
+void DescribeVulLevelStatisticsRequest::setFrom(const std::string& from)
+{
+	from_ = from;
+	setCoreParameter("From", from);
+}
+
 long DescribeVulLevelStatisticsRequest::getStartTs()const
 {
 	return startTs_;
@@ -56,6 +67,17 @@ void DescribeVulLevelStatisticsRequest::setStartTs(long startTs)
 {
 	startTs_ = startTs;
 	setCoreParameter("StartTs", std::to_string(startTs));
+}
+
+std::string DescribeVulLevelStatisticsRequest::getIncludeApp()const
+{
+	return includeApp_;
+}
+
+void DescribeVulLevelStatisticsRequest::setIncludeApp(const std::string& includeApp)
+{
+	includeApp_ = includeApp;
+	setCoreParameter("IncludeApp", includeApp);
 }
 
 std::string DescribeVulLevelStatisticsRequest::getUuids()const

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct FailedEcs
 				{
 					std::string instanceName;
+					std::string internetIp;
 					std::string iP;
 					std::string intranetIp;
 					std::string reason;

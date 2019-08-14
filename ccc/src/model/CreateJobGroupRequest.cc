@@ -34,7 +34,7 @@ void CreateJobGroupRequest::setCallingNumber(const std::vector<std::string>& cal
 {
 	callingNumber_ = callingNumber;
 	for(int i = 0; i!= callingNumber.size(); i++)
-		setParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
 }
 
 std::string CreateJobGroupRequest::getInstanceId()const
@@ -45,7 +45,7 @@ std::string CreateJobGroupRequest::getInstanceId()const
 void CreateJobGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateJobGroupRequest::getStrategyJson()const
@@ -56,7 +56,7 @@ std::string CreateJobGroupRequest::getStrategyJson()const
 void CreateJobGroupRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setParameter("StrategyJson", strategyJson);
+	setCoreParameter("StrategyJson", strategyJson);
 }
 
 std::string CreateJobGroupRequest::getName()const
@@ -67,7 +67,7 @@ std::string CreateJobGroupRequest::getName()const
 void CreateJobGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string CreateJobGroupRequest::getDescription()const
@@ -78,7 +78,7 @@ std::string CreateJobGroupRequest::getDescription()const
 void CreateJobGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string CreateJobGroupRequest::getScenarioId()const
@@ -89,6 +89,6 @@ std::string CreateJobGroupRequest::getScenarioId()const
 void CreateJobGroupRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", scenarioId);
 }
 

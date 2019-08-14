@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CreateHaVipResult();
 				explicit CreateHaVipResult(const std::string &payload);
 				~CreateHaVipResult();
+				std::string getIpAddress()const;
 				std::string getHaVipId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string ipAddress_;
 				std::string haVipId_;
 
 			};

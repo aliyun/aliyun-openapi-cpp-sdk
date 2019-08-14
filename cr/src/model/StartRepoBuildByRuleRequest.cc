@@ -33,7 +33,7 @@ std::string StartRepoBuildByRuleRequest::getRepoNamespace()const
 void StartRepoBuildByRuleRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string StartRepoBuildByRuleRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string StartRepoBuildByRuleRequest::getRepoName()const
 void StartRepoBuildByRuleRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setParameter("RepoName", repoName);
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string StartRepoBuildByRuleRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string StartRepoBuildByRuleRequest::getRegionId()const
 void StartRepoBuildByRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 long StartRepoBuildByRuleRequest::getBuildRuleId()const
@@ -66,6 +66,6 @@ long StartRepoBuildByRuleRequest::getBuildRuleId()const
 void StartRepoBuildByRuleRequest::setBuildRuleId(long buildRuleId)
 {
 	buildRuleId_ = buildRuleId;
-	setParameter("BuildRuleId", std::to_string(buildRuleId));
+	setCoreParameter("BuildRuleId", std::to_string(buildRuleId));
 }
 

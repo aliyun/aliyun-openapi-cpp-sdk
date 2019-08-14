@@ -33,7 +33,7 @@ std::string NodeListRequest::getHostName()const
 void NodeListRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setParameter("HostName", hostName);
+	setCoreParameter("HostName", hostName);
 }
 
 std::string NodeListRequest::getInstanceIds()const
@@ -44,7 +44,7 @@ std::string NodeListRequest::getInstanceIds()const
 void NodeListRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 std::string NodeListRequest::getInstanceRegionId()const
@@ -55,7 +55,7 @@ std::string NodeListRequest::getInstanceRegionId()const
 void NodeListRequest::setInstanceRegionId(const std::string& instanceRegionId)
 {
 	instanceRegionId_ = instanceRegionId;
-	setParameter("InstanceRegionId", instanceRegionId);
+	setCoreParameter("InstanceRegionId", instanceRegionId);
 }
 
 int NodeListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int NodeListRequest::getPageSize()const
 void NodeListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string NodeListRequest::getKeyWord()const
@@ -77,7 +77,7 @@ std::string NodeListRequest::getKeyWord()const
 void NodeListRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setParameter("KeyWord", keyWord);
+	setCoreParameter("KeyWord", keyWord);
 }
 
 long NodeListRequest::getUserId()const
@@ -88,7 +88,7 @@ long NodeListRequest::getUserId()const
 void NodeListRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string NodeListRequest::getSerialNumbers()const
@@ -99,7 +99,7 @@ std::string NodeListRequest::getSerialNumbers()const
 void NodeListRequest::setSerialNumbers(const std::string& serialNumbers)
 {
 	serialNumbers_ = serialNumbers;
-	setParameter("SerialNumbers", serialNumbers);
+	setCoreParameter("SerialNumbers", serialNumbers);
 }
 
 int NodeListRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int NodeListRequest::getPageNumber()const
 void NodeListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string NodeListRequest::getStatus()const
@@ -121,6 +121,6 @@ std::string NodeListRequest::getStatus()const
 void NodeListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

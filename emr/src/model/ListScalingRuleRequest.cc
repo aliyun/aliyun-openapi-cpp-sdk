@@ -33,7 +33,7 @@ long ListScalingRuleRequest::getResourceOwnerId()const
 void ListScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListScalingRuleRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListScalingRuleRequest::getRegionId()const
 void ListScalingRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListScalingRuleRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string ListScalingRuleRequest::getHostGroupId()const
 void ListScalingRuleRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 int ListScalingRuleRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListScalingRuleRequest::getPageSize()const
 void ListScalingRuleRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListScalingRuleRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ListScalingRuleRequest::getClusterId()const
 void ListScalingRuleRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListScalingRuleRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListScalingRuleRequest::getPageNumber()const
 void ListScalingRuleRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListScalingRuleRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListScalingRuleRequest::getAccessKeyId()const
 void ListScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

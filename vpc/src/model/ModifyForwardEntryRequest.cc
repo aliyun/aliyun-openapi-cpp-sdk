@@ -33,7 +33,7 @@ long ModifyForwardEntryRequest::getResourceOwnerId()const
 void ModifyForwardEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyForwardEntryRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyForwardEntryRequest::getResourceOwnerAccount()const
 void ModifyForwardEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyForwardEntryRequest::getIpProtocol()const
@@ -55,7 +55,7 @@ std::string ModifyForwardEntryRequest::getIpProtocol()const
 void ModifyForwardEntryRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setParameter("IpProtocol", ipProtocol);
+	setCoreParameter("IpProtocol", ipProtocol);
 }
 
 std::string ModifyForwardEntryRequest::getForwardEntryName()const
@@ -66,7 +66,7 @@ std::string ModifyForwardEntryRequest::getForwardEntryName()const
 void ModifyForwardEntryRequest::setForwardEntryName(const std::string& forwardEntryName)
 {
 	forwardEntryName_ = forwardEntryName;
-	setParameter("ForwardEntryName", forwardEntryName);
+	setCoreParameter("ForwardEntryName", forwardEntryName);
 }
 
 std::string ModifyForwardEntryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyForwardEntryRequest::getOwnerAccount()const
 void ModifyForwardEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyForwardEntryRequest::getForwardTableId()const
@@ -88,7 +88,7 @@ std::string ModifyForwardEntryRequest::getForwardTableId()const
 void ModifyForwardEntryRequest::setForwardTableId(const std::string& forwardTableId)
 {
 	forwardTableId_ = forwardTableId;
-	setParameter("ForwardTableId", forwardTableId);
+	setCoreParameter("ForwardTableId", forwardTableId);
 }
 
 long ModifyForwardEntryRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyForwardEntryRequest::getOwnerId()const
 void ModifyForwardEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyForwardEntryRequest::getInternalIp()const
@@ -110,7 +110,7 @@ std::string ModifyForwardEntryRequest::getInternalIp()const
 void ModifyForwardEntryRequest::setInternalIp(const std::string& internalIp)
 {
 	internalIp_ = internalIp;
-	setParameter("InternalIp", internalIp);
+	setCoreParameter("InternalIp", internalIp);
 }
 
 std::string ModifyForwardEntryRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string ModifyForwardEntryRequest::getRegionId()const
 void ModifyForwardEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyForwardEntryRequest::getForwardEntryId()const
@@ -132,7 +132,7 @@ std::string ModifyForwardEntryRequest::getForwardEntryId()const
 void ModifyForwardEntryRequest::setForwardEntryId(const std::string& forwardEntryId)
 {
 	forwardEntryId_ = forwardEntryId;
-	setParameter("ForwardEntryId", forwardEntryId);
+	setCoreParameter("ForwardEntryId", forwardEntryId);
 }
 
 std::string ModifyForwardEntryRequest::getInternalPort()const
@@ -143,7 +143,7 @@ std::string ModifyForwardEntryRequest::getInternalPort()const
 void ModifyForwardEntryRequest::setInternalPort(const std::string& internalPort)
 {
 	internalPort_ = internalPort;
-	setParameter("InternalPort", internalPort);
+	setCoreParameter("InternalPort", internalPort);
 }
 
 std::string ModifyForwardEntryRequest::getExternalIp()const
@@ -154,7 +154,7 @@ std::string ModifyForwardEntryRequest::getExternalIp()const
 void ModifyForwardEntryRequest::setExternalIp(const std::string& externalIp)
 {
 	externalIp_ = externalIp;
-	setParameter("ExternalIp", externalIp);
+	setCoreParameter("ExternalIp", externalIp);
 }
 
 std::string ModifyForwardEntryRequest::getExternalPort()const
@@ -165,6 +165,6 @@ std::string ModifyForwardEntryRequest::getExternalPort()const
 void ModifyForwardEntryRequest::setExternalPort(const std::string& externalPort)
 {
 	externalPort_ = externalPort;
-	setParameter("ExternalPort", externalPort);
+	setCoreParameter("ExternalPort", externalPort);
 }
 

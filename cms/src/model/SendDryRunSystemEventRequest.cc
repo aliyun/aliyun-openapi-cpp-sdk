@@ -33,7 +33,7 @@ std::string SendDryRunSystemEventRequest::getProduct()const
 void SendDryRunSystemEventRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string SendDryRunSystemEventRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string SendDryRunSystemEventRequest::getGroupId()const
 void SendDryRunSystemEventRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string SendDryRunSystemEventRequest::getEventName()const
@@ -55,7 +55,7 @@ std::string SendDryRunSystemEventRequest::getEventName()const
 void SendDryRunSystemEventRequest::setEventName(const std::string& eventName)
 {
 	eventName_ = eventName;
-	setParameter("EventName", eventName);
+	setCoreParameter("EventName", eventName);
 }
 
 std::string SendDryRunSystemEventRequest::getEventContent()const
@@ -66,6 +66,6 @@ std::string SendDryRunSystemEventRequest::getEventContent()const
 void SendDryRunSystemEventRequest::setEventContent(const std::string& eventContent)
 {
 	eventContent_ = eventContent;
-	setParameter("EventContent", eventContent);
+	setCoreParameter("EventContent", eventContent);
 }
 

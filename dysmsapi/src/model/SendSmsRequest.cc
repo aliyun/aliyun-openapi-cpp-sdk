@@ -33,7 +33,7 @@ std::string SendSmsRequest::getSmsUpExtendCode()const
 void SendSmsRequest::setSmsUpExtendCode(const std::string& smsUpExtendCode)
 {
 	smsUpExtendCode_ = smsUpExtendCode;
-	setParameter("SmsUpExtendCode", smsUpExtendCode);
+	setCoreParameter("SmsUpExtendCode", smsUpExtendCode);
 }
 
 long SendSmsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long SendSmsRequest::getResourceOwnerId()const
 void SendSmsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SendSmsRequest::getSignName()const
@@ -55,7 +55,7 @@ std::string SendSmsRequest::getSignName()const
 void SendSmsRequest::setSignName(const std::string& signName)
 {
 	signName_ = signName;
-	setParameter("SignName", signName);
+	setCoreParameter("SignName", signName);
 }
 
 std::string SendSmsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SendSmsRequest::getResourceOwnerAccount()const
 void SendSmsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SendSmsRequest::getPhoneNumbers()const
@@ -77,7 +77,7 @@ std::string SendSmsRequest::getPhoneNumbers()const
 void SendSmsRequest::setPhoneNumbers(const std::string& phoneNumbers)
 {
 	phoneNumbers_ = phoneNumbers;
-	setParameter("PhoneNumbers", phoneNumbers);
+	setCoreParameter("PhoneNumbers", phoneNumbers);
 }
 
 std::string SendSmsRequest::getOutId()const
@@ -88,7 +88,7 @@ std::string SendSmsRequest::getOutId()const
 void SendSmsRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setParameter("OutId", outId);
+	setCoreParameter("OutId", outId);
 }
 
 long SendSmsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SendSmsRequest::getOwnerId()const
 void SendSmsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SendSmsRequest::getTemplateCode()const
@@ -110,7 +110,7 @@ std::string SendSmsRequest::getTemplateCode()const
 void SendSmsRequest::setTemplateCode(const std::string& templateCode)
 {
 	templateCode_ = templateCode;
-	setParameter("TemplateCode", templateCode);
+	setCoreParameter("TemplateCode", templateCode);
 }
 
 std::string SendSmsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string SendSmsRequest::getAccessKeyId()const
 void SendSmsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SendSmsRequest::getTemplateParam()const
@@ -132,6 +132,6 @@ std::string SendSmsRequest::getTemplateParam()const
 void SendSmsRequest::setTemplateParam(const std::string& templateParam)
 {
 	templateParam_ = templateParam;
-	setParameter("TemplateParam", templateParam);
+	setCoreParameter("TemplateParam", templateParam);
 }
 

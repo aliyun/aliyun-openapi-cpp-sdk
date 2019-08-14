@@ -37,32 +37,50 @@ namespace AlibabaCloud
 				DescribeOrderDetailResult();
 				explicit DescribeOrderDetailResult(const std::string &payload);
 				~DescribeOrderDetailResult();
-				std::string getBrandName()const;
-				int getYear()const;
+				int getVerifyStatus()const;
+				long getAfterDate()const;
+				bool getShowRefund()const;
 				std::string getInstanceId()const;
-				std::string getProductAliasName()const;
 				std::string getSourceType()const;
 				std::string getCertType()const;
-				int getId()const;
+				int getWildDomainCount()const;
 				long getOrderId()const;
+				std::string getStatusCode()const;
+				std::string getBrandName()const;
+				std::string getOrderType()const;
+				long getYear()const;
+				bool getShowCancel()const;
+				std::string getProductAliasName()const;
+				long getMaybeIssueDate()const;
+				long getId()const;
 				std::string getDomain()const;
-				int getStatusCode()const;
-				int getBuyDate()const;
+				long getBuyDate()const;
+				int getDomainCount()const;
+				long getBeforeDate()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string brandName_;
-				int year_;
+				int verifyStatus_;
+				long afterDate_;
+				bool showRefund_;
 				std::string instanceId_;
-				std::string productAliasName_;
 				std::string sourceType_;
 				std::string certType_;
-				int id_;
+				int wildDomainCount_;
 				long orderId_;
+				std::string statusCode_;
+				std::string brandName_;
+				std::string orderType_;
+				long year_;
+				bool showCancel_;
+				std::string productAliasName_;
+				long maybeIssueDate_;
+				long id_;
 				std::string domain_;
-				int statusCode_;
-				int buyDate_;
+				long buyDate_;
+				int domainCount_;
+				long beforeDate_;
 
 			};
 		}

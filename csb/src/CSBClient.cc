@@ -31,21 +31,21 @@ CSBClient::CSBClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "csb");
 }
 
 CSBClient::CSBClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "csb");
 }
 
 CSBClient::CSBClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "csb");
 }
 
 CSBClient::~CSBClient()
@@ -411,6 +411,42 @@ CSBClient::DeleteOrderListOutcomeCallable CSBClient::deleteOrderListCallable(con
 	return task->get_future();
 }
 
+CSBClient::ImportCredentialsOutcome CSBClient::importCredentials(const ImportCredentialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportCredentialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportCredentialsOutcome(ImportCredentialsResult(outcome.result()));
+	else
+		return ImportCredentialsOutcome(outcome.error());
+}
+
+void CSBClient::importCredentialsAsync(const ImportCredentialsRequest& request, const ImportCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importCredentials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::ImportCredentialsOutcomeCallable CSBClient::importCredentialsCallable(const ImportCredentialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportCredentialsOutcome()>>(
+			[this, request]()
+			{
+			return this->importCredentials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSBClient::CreateCredentialsOutcome CSBClient::createCredentials(const CreateCredentialsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,42 +591,6 @@ CSBClient::FindInstanceListOutcomeCallable CSBClient::findInstanceListCallable(c
 	return task->get_future();
 }
 
-CSBClient::PublishCasServiceOutcome CSBClient::publishCasService(const PublishCasServiceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PublishCasServiceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PublishCasServiceOutcome(PublishCasServiceResult(outcome.result()));
-	else
-		return PublishCasServiceOutcome(outcome.error());
-}
-
-void CSBClient::publishCasServiceAsync(const PublishCasServiceRequest& request, const PublishCasServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, publishCasService(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSBClient::PublishCasServiceOutcomeCallable CSBClient::publishCasServiceCallable(const PublishCasServiceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PublishCasServiceOutcome()>>(
-			[this, request]()
-			{
-			return this->publishCasService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CSBClient::UpdateProjectListStatusOutcome CSBClient::updateProjectListStatus(const UpdateProjectListStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,36 +627,36 @@ CSBClient::UpdateProjectListStatusOutcomeCallable CSBClient::updateProjectListSt
 	return task->get_future();
 }
 
-CSBClient::FindProjectsNameListOutcome CSBClient::findProjectsNameList(const FindProjectsNameListRequest &request) const
+CSBClient::PublishCasServiceOutcome CSBClient::publishCasService(const PublishCasServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return FindProjectsNameListOutcome(endpointOutcome.error());
+		return PublishCasServiceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return FindProjectsNameListOutcome(FindProjectsNameListResult(outcome.result()));
+		return PublishCasServiceOutcome(PublishCasServiceResult(outcome.result()));
 	else
-		return FindProjectsNameListOutcome(outcome.error());
+		return PublishCasServiceOutcome(outcome.error());
 }
 
-void CSBClient::findProjectsNameListAsync(const FindProjectsNameListRequest& request, const FindProjectsNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CSBClient::publishCasServiceAsync(const PublishCasServiceRequest& request, const PublishCasServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, findProjectsNameList(request), context);
+		handler(this, request, publishCasService(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CSBClient::FindProjectsNameListOutcomeCallable CSBClient::findProjectsNameListCallable(const FindProjectsNameListRequest &request) const
+CSBClient::PublishCasServiceOutcomeCallable CSBClient::publishCasServiceCallable(const PublishCasServiceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<FindProjectsNameListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<PublishCasServiceOutcome()>>(
 			[this, request]()
 			{
-			return this->findProjectsNameList(request);
+			return this->publishCasService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -693,6 +693,42 @@ CSBClient::ReplaceCredentialOutcomeCallable CSBClient::replaceCredentialCallable
 			[this, request]()
 			{
 			return this->replaceCredential(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindProjectsNameListOutcome CSBClient::findProjectsNameList(const FindProjectsNameListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindProjectsNameListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindProjectsNameListOutcome(FindProjectsNameListResult(outcome.result()));
+	else
+		return FindProjectsNameListOutcome(outcome.error());
+}
+
+void CSBClient::findProjectsNameListAsync(const FindProjectsNameListRequest& request, const FindProjectsNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findProjectsNameList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindProjectsNameListOutcomeCallable CSBClient::findProjectsNameListCallable(const FindProjectsNameListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindProjectsNameListOutcome()>>(
+			[this, request]()
+			{
+			return this->findProjectsNameList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,6 +843,42 @@ CSBClient::CheckServiceExistOutcomeCallable CSBClient::checkServiceExistCallable
 	return task->get_future();
 }
 
+CSBClient::UpdateOrderListOutcome CSBClient::updateOrderList(const UpdateOrderListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateOrderListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateOrderListOutcome(UpdateOrderListResult(outcome.result()));
+	else
+		return UpdateOrderListOutcome(outcome.error());
+}
+
+void CSBClient::updateOrderListAsync(const UpdateOrderListRequest& request, const UpdateOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateOrderList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::UpdateOrderListOutcomeCallable CSBClient::updateOrderListCallable(const UpdateOrderListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateOrderListOutcome()>>(
+			[this, request]()
+			{
+			return this->updateOrderList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSBClient::GetInstanceOutcome CSBClient::getInstance(const GetInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,42 +909,6 @@ CSBClient::GetInstanceOutcomeCallable CSBClient::getInstanceCallable(const GetIn
 			[this, request]()
 			{
 			return this->getInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CSBClient::RenewCredentialsOutcome CSBClient::renewCredentials(const RenewCredentialsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RenewCredentialsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RenewCredentialsOutcome(RenewCredentialsResult(outcome.result()));
-	else
-		return RenewCredentialsOutcome(outcome.error());
-}
-
-void CSBClient::renewCredentialsAsync(const RenewCredentialsRequest& request, const RenewCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, renewCredentials(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSBClient::RenewCredentialsOutcomeCallable CSBClient::renewCredentialsCallable(const RenewCredentialsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RenewCredentialsOutcome()>>(
-			[this, request]()
-			{
-			return this->renewCredentials(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,36 +951,36 @@ CSBClient::GetOrderOutcomeCallable CSBClient::getOrderCallable(const GetOrderReq
 	return task->get_future();
 }
 
-CSBClient::UpdateOrderListOutcome CSBClient::updateOrderList(const UpdateOrderListRequest &request) const
+CSBClient::RenewCredentialsOutcome CSBClient::renewCredentials(const RenewCredentialsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateOrderListOutcome(endpointOutcome.error());
+		return RenewCredentialsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateOrderListOutcome(UpdateOrderListResult(outcome.result()));
+		return RenewCredentialsOutcome(RenewCredentialsResult(outcome.result()));
 	else
-		return UpdateOrderListOutcome(outcome.error());
+		return RenewCredentialsOutcome(outcome.error());
 }
 
-void CSBClient::updateOrderListAsync(const UpdateOrderListRequest& request, const UpdateOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CSBClient::renewCredentialsAsync(const RenewCredentialsRequest& request, const RenewCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateOrderList(request), context);
+		handler(this, request, renewCredentials(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CSBClient::UpdateOrderListOutcomeCallable CSBClient::updateOrderListCallable(const UpdateOrderListRequest &request) const
+CSBClient::RenewCredentialsOutcomeCallable CSBClient::renewCredentialsCallable(const RenewCredentialsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateOrderListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RenewCredentialsOutcome()>>(
 			[this, request]()
 			{
-			return this->updateOrderList(request);
+			return this->renewCredentials(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,42 +1023,6 @@ CSBClient::DeleteCredentialsListOutcomeCallable CSBClient::deleteCredentialsList
 	return task->get_future();
 }
 
-CSBClient::FindServiceStatisticalDataOutcome CSBClient::findServiceStatisticalData(const FindServiceStatisticalDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return FindServiceStatisticalDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return FindServiceStatisticalDataOutcome(FindServiceStatisticalDataResult(outcome.result()));
-	else
-		return FindServiceStatisticalDataOutcome(outcome.error());
-}
-
-void CSBClient::findServiceStatisticalDataAsync(const FindServiceStatisticalDataRequest& request, const FindServiceStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, findServiceStatisticalData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSBClient::FindServiceStatisticalDataOutcomeCallable CSBClient::findServiceStatisticalDataCallable(const FindServiceStatisticalDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<FindServiceStatisticalDataOutcome()>>(
-			[this, request]()
-			{
-			return this->findServiceStatisticalData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CSBClient::CreateServiceOutcome CSBClient::createService(const CreateServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1053,42 @@ CSBClient::CreateServiceOutcomeCallable CSBClient::createServiceCallable(const C
 			[this, request]()
 			{
 			return this->createService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindServiceStatisticalDataOutcome CSBClient::findServiceStatisticalData(const FindServiceStatisticalDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindServiceStatisticalDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindServiceStatisticalDataOutcome(FindServiceStatisticalDataResult(outcome.result()));
+	else
+		return FindServiceStatisticalDataOutcome(outcome.error());
+}
+
+void CSBClient::findServiceStatisticalDataAsync(const FindServiceStatisticalDataRequest& request, const FindServiceStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findServiceStatisticalData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindServiceStatisticalDataOutcomeCallable CSBClient::findServiceStatisticalDataCallable(const FindServiceStatisticalDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindServiceStatisticalDataOutcome()>>(
+			[this, request]()
+			{
+			return this->findServiceStatisticalData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1131,42 +1167,6 @@ CSBClient::ApproveOrderListOutcomeCallable CSBClient::approveOrderListCallable(c
 	return task->get_future();
 }
 
-CSBClient::UpdateServiceOutcome CSBClient::updateService(const UpdateServiceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateServiceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateServiceOutcome(UpdateServiceResult(outcome.result()));
-	else
-		return UpdateServiceOutcome(outcome.error());
-}
-
-void CSBClient::updateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateService(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSBClient::UpdateServiceOutcomeCallable CSBClient::updateServiceCallable(const UpdateServiceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateServiceOutcome()>>(
-			[this, request]()
-			{
-			return this->updateService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CSBClient::DeleteProjectOutcome CSBClient::deleteProject(const DeleteProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,36 +1203,36 @@ CSBClient::DeleteProjectOutcomeCallable CSBClient::deleteProjectCallable(const D
 	return task->get_future();
 }
 
-CSBClient::UpdateProjectOutcome CSBClient::updateProject(const UpdateProjectRequest &request) const
+CSBClient::UpdateServiceOutcome CSBClient::updateService(const UpdateServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateProjectOutcome(endpointOutcome.error());
+		return UpdateServiceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateProjectOutcome(UpdateProjectResult(outcome.result()));
+		return UpdateServiceOutcome(UpdateServiceResult(outcome.result()));
 	else
-		return UpdateProjectOutcome(outcome.error());
+		return UpdateServiceOutcome(outcome.error());
 }
 
-void CSBClient::updateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CSBClient::updateServiceAsync(const UpdateServiceRequest& request, const UpdateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateProject(request), context);
+		handler(this, request, updateService(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CSBClient::UpdateProjectOutcomeCallable CSBClient::updateProjectCallable(const UpdateProjectRequest &request) const
+CSBClient::UpdateServiceOutcomeCallable CSBClient::updateServiceCallable(const UpdateServiceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateProjectOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UpdateServiceOutcome()>>(
 			[this, request]()
 			{
-			return this->updateProject(request);
+			return this->updateService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1269,6 +1269,42 @@ CSBClient::FindOrderableListOutcomeCallable CSBClient::findOrderableListCallable
 			[this, request]()
 			{
 			return this->findOrderableList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::UpdateProjectOutcome CSBClient::updateProject(const UpdateProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateProjectOutcome(UpdateProjectResult(outcome.result()));
+	else
+		return UpdateProjectOutcome(outcome.error());
+}
+
+void CSBClient::updateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::UpdateProjectOutcomeCallable CSBClient::updateProjectCallable(const UpdateProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->updateProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1419,42 +1455,6 @@ CSBClient::UpdateOrderOutcomeCallable CSBClient::updateOrderCallable(const Updat
 	return task->get_future();
 }
 
-CSBClient::FindApproveServiceListOutcome CSBClient::findApproveServiceList(const FindApproveServiceListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return FindApproveServiceListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return FindApproveServiceListOutcome(FindApproveServiceListResult(outcome.result()));
-	else
-		return FindApproveServiceListOutcome(outcome.error());
-}
-
-void CSBClient::findApproveServiceListAsync(const FindApproveServiceListRequest& request, const FindApproveServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, findApproveServiceList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSBClient::FindApproveServiceListOutcomeCallable CSBClient::findApproveServiceListCallable(const FindApproveServiceListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<FindApproveServiceListOutcome()>>(
-			[this, request]()
-			{
-			return this->findApproveServiceList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CSBClient::GetServiceOutcome CSBClient::getService(const GetServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1485,42 @@ CSBClient::GetServiceOutcomeCallable CSBClient::getServiceCallable(const GetServ
 			[this, request]()
 			{
 			return this->getService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindApproveServiceListOutcome CSBClient::findApproveServiceList(const FindApproveServiceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindApproveServiceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindApproveServiceListOutcome(FindApproveServiceListResult(outcome.result()));
+	else
+		return FindApproveServiceListOutcome(outcome.error());
+}
+
+void CSBClient::findApproveServiceListAsync(const FindApproveServiceListRequest& request, const FindApproveServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findApproveServiceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindApproveServiceListOutcomeCallable CSBClient::findApproveServiceListCallable(const FindApproveServiceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindApproveServiceListOutcome()>>(
+			[this, request]()
+			{
+			return this->findApproveServiceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

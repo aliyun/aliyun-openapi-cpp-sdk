@@ -33,7 +33,7 @@ long SaveParagraphRequest::getResourceOwnerId()const
 void SaveParagraphRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SaveParagraphRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string SaveParagraphRequest::getRegionId()const
 void SaveParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SaveParagraphRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string SaveParagraphRequest::getNoteId()const
 void SaveParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setParameter("NoteId", noteId);
+	setCoreParameter("NoteId", noteId);
 }
 
 std::string SaveParagraphRequest::getId()const
@@ -66,7 +66,7 @@ std::string SaveParagraphRequest::getId()const
 void SaveParagraphRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string SaveParagraphRequest::getText()const
@@ -77,7 +77,7 @@ std::string SaveParagraphRequest::getText()const
 void SaveParagraphRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setParameter("Text", text);
+	setCoreParameter("Text", text);
 }
 
 std::string SaveParagraphRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string SaveParagraphRequest::getAccessKeyId()const
 void SaveParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

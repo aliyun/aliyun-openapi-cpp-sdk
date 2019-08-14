@@ -33,7 +33,7 @@ std::string SaveDomainGroupRequest::getUserClientIp()const
 void SaveDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveDomainGroupRequest::getDomainGroupName()const
@@ -44,7 +44,7 @@ std::string SaveDomainGroupRequest::getDomainGroupName()const
 void SaveDomainGroupRequest::setDomainGroupName(const std::string& domainGroupName)
 {
 	domainGroupName_ = domainGroupName;
-	setParameter("DomainGroupName", domainGroupName);
+	setCoreParameter("DomainGroupName", domainGroupName);
 }
 
 std::string SaveDomainGroupRequest::getLang()const
@@ -55,7 +55,7 @@ std::string SaveDomainGroupRequest::getLang()const
 void SaveDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 long SaveDomainGroupRequest::getDomainGroupId()const
@@ -66,6 +66,6 @@ long SaveDomainGroupRequest::getDomainGroupId()const
 void SaveDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setParameter("DomainGroupId", std::to_string(domainGroupId));
+	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
 }
 

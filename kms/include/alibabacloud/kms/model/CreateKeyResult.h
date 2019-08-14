@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string origin;
 					std::string creationDate;
+					std::string protectionLevel;
 					std::string description;
 					std::string materialExpireTime;
 					std::string keyUsage;

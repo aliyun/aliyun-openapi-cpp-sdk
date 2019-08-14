@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string accSkillGroupName;
 					std::string instanceId;
 					int userCount;
+					std::string routingStrategy;
 					std::string skillGroupId;
 					std::vector<SkillGroup::PhoneNumber> outboundPhoneNumbers;
 					std::string accQueueName;

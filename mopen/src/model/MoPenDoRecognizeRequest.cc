@@ -33,7 +33,7 @@ long MoPenDoRecognizeRequest::getCanvasId()const
 void MoPenDoRecognizeRequest::setCanvasId(long canvasId)
 {
 	canvasId_ = canvasId;
-	setParameter("CanvasId", std::to_string(canvasId));
+	setCoreParameter("CanvasId", std::to_string(canvasId));
 }
 
 int MoPenDoRecognizeRequest::getEndY()const
@@ -44,7 +44,7 @@ int MoPenDoRecognizeRequest::getEndY()const
 void MoPenDoRecognizeRequest::setEndY(int endY)
 {
 	endY_ = endY;
-	setParameter("EndY", std::to_string(endY));
+	setCoreParameter("EndY", std::to_string(endY));
 }
 
 int MoPenDoRecognizeRequest::getEndX()const
@@ -55,7 +55,7 @@ int MoPenDoRecognizeRequest::getEndX()const
 void MoPenDoRecognizeRequest::setEndX(int endX)
 {
 	endX_ = endX;
-	setParameter("EndX", std::to_string(endX));
+	setCoreParameter("EndX", std::to_string(endX));
 }
 
 std::string MoPenDoRecognizeRequest::getJsonConf()const
@@ -66,7 +66,7 @@ std::string MoPenDoRecognizeRequest::getJsonConf()const
 void MoPenDoRecognizeRequest::setJsonConf(const std::string& jsonConf)
 {
 	jsonConf_ = jsonConf;
-	setParameter("JsonConf", jsonConf);
+	setCoreParameter("JsonConf", jsonConf);
 }
 
 std::string MoPenDoRecognizeRequest::getExportType()const
@@ -77,7 +77,7 @@ std::string MoPenDoRecognizeRequest::getExportType()const
 void MoPenDoRecognizeRequest::setExportType(const std::string& exportType)
 {
 	exportType_ = exportType;
-	setParameter("ExportType", exportType);
+	setCoreParameter("ExportType", exportType);
 }
 
 int MoPenDoRecognizeRequest::getStartY()const
@@ -88,7 +88,7 @@ int MoPenDoRecognizeRequest::getStartY()const
 void MoPenDoRecognizeRequest::setStartY(int startY)
 {
 	startY_ = startY;
-	setParameter("StartY", std::to_string(startY));
+	setCoreParameter("StartY", std::to_string(startY));
 }
 
 int MoPenDoRecognizeRequest::getStartX()const
@@ -99,6 +99,6 @@ int MoPenDoRecognizeRequest::getStartX()const
 void MoPenDoRecognizeRequest::setStartX(int startX)
 {
 	startX_ = startX;
-	setParameter("StartX", std::to_string(startX));
+	setCoreParameter("StartX", std::to_string(startX));
 }
 

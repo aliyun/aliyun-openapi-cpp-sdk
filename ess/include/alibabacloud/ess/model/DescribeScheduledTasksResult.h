@@ -38,8 +38,10 @@ namespace AlibabaCloud
 					std::string launchTime;
 					std::string scheduledTaskId;
 					std::string recurrenceType;
+					int minValue;
 					std::string scheduledTaskName;
 					std::string scheduledAction;
+					int maxValue;
 					std::string recurrenceEndTime;
 					std::string recurrenceValue;
 					int launchExpirationTime;

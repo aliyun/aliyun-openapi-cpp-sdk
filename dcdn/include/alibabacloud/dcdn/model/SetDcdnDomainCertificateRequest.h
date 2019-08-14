@@ -53,8 +53,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSSLPri()const;
 				void setSSLPri(const std::string& sSLPri);
 
@@ -68,7 +66,6 @@ namespace AlibabaCloud
 				std::string domainName_;
 				long ownerId_;
 				std::string region_;
-				std::string accessKeyId_;
 				std::string sSLPri_;
 
 			};

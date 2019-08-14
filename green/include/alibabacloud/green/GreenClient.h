@@ -32,38 +32,40 @@
 #include "model/DescribeWebsiteScanResultResult.h"
 #include "model/UpdateAppPackageRequest.h"
 #include "model/UpdateAppPackageResult.h"
-#include "model/DeleteVideoDnaGroupRequest.h"
-#include "model/DeleteVideoDnaGroupResult.h"
 #include "model/UpdateOssCallbackSettingRequest.h"
 #include "model/UpdateOssCallbackSettingResult.h"
+#include "model/DeleteVideoDnaGroupRequest.h"
+#include "model/DeleteVideoDnaGroupResult.h"
 #include "model/DescribeWebsiteInstanceKeyUrlRequest.h"
 #include "model/DescribeWebsiteInstanceKeyUrlResult.h"
-#include "model/DeleteVideoDnaRequest.h"
-#include "model/DeleteVideoDnaResult.h"
 #include "model/RefundCdiBaseBagRequest.h"
 #include "model/RefundCdiBaseBagResult.h"
+#include "model/DeleteVideoDnaRequest.h"
+#include "model/DeleteVideoDnaResult.h"
 #include "model/UpdateBizTypeSettingRequest.h"
 #include "model/UpdateBizTypeSettingResult.h"
 #include "model/FileAsyncScanRequest.h"
 #include "model/FileAsyncScanResult.h"
+#include "model/DetectFaceRequest.h"
+#include "model/DetectFaceResult.h"
 #include "model/DescribeOssResultItemsRequest.h"
 #include "model/DescribeOssResultItemsResult.h"
-#include "model/UpdateWebsiteInstanceStatusRequest.h"
-#include "model/UpdateWebsiteInstanceStatusResult.h"
 #include "model/DescribeBizTypesRequest.h"
 #include "model/DescribeBizTypesResult.h"
+#include "model/UpdateWebsiteInstanceStatusRequest.h"
+#include "model/UpdateWebsiteInstanceStatusResult.h"
 #include "model/RefundCdiBagRequest.h"
 #include "model/RefundCdiBagResult.h"
 #include "model/DeleteImageFromLibRequest.h"
 #include "model/DeleteImageFromLibResult.h"
 #include "model/CreateCdiBaseBagRequest.h"
 #include "model/CreateCdiBaseBagResult.h"
+#include "model/DeleteKeywordLibRequest.h"
+#include "model/DeleteKeywordLibResult.h"
 #include "model/VerifyPhoneRequest.h"
 #include "model/VerifyPhoneResult.h"
 #include "model/ImageDetectionRequest.h"
 #include "model/ImageDetectionResult.h"
-#include "model/DeleteKeywordLibRequest.h"
-#include "model/DeleteKeywordLibResult.h"
 #include "model/ImportKeywordsRequest.h"
 #include "model/ImportKeywordsResult.h"
 #include "model/VoiceCancelScanRequest.h"
@@ -82,12 +84,14 @@
 #include "model/DescribeWebsiteStatResult.h"
 #include "model/UpdateNotificationSettingRequest.h"
 #include "model/UpdateNotificationSettingResult.h"
+#include "model/DescribeUserBizTypesRequest.h"
+#include "model/DescribeUserBizTypesResult.h"
 #include "model/DescribeAuditContentItemRequest.h"
 #include "model/DescribeAuditContentItemResult.h"
-#include "model/SearchPersonRequest.h"
-#include "model/SearchPersonResult.h"
 #include "model/MarkOssResultRequest.h"
 #include "model/MarkOssResultResult.h"
+#include "model/SearchPersonRequest.h"
+#include "model/SearchPersonResult.h"
 #include "model/DescribeAppInfoRequest.h"
 #include "model/DescribeAppInfoResult.h"
 #include "model/AddSimilarityImageRequest.h"
@@ -158,20 +162,20 @@
 #include "model/DescribeImageLibResult.h"
 #include "model/UpgradeCdiBaseBagRequest.h"
 #include "model/UpgradeCdiBaseBagResult.h"
-#include "model/DescribeUserStatusRequest.h"
-#include "model/DescribeUserStatusResult.h"
 #include "model/GetAddVideoDnaResultsRequest.h"
 #include "model/GetAddVideoDnaResultsResult.h"
+#include "model/DescribeUserStatusRequest.h"
+#include "model/DescribeUserStatusResult.h"
 #include "model/DescribeKeywordRequest.h"
 #include "model/DescribeKeywordResult.h"
-#include "model/AddFacesRequest.h"
-#include "model/AddFacesResult.h"
 #include "model/DescribeAuditSettingRequest.h"
 #include "model/DescribeAuditSettingResult.h"
-#include "model/CreateKeywordLibRequest.h"
-#include "model/CreateKeywordLibResult.h"
+#include "model/AddFacesRequest.h"
+#include "model/AddFacesResult.h"
 #include "model/UpdateOssIncrementCheckSettingRequest.h"
 #include "model/UpdateOssIncrementCheckSettingResult.h"
+#include "model/CreateKeywordLibRequest.h"
+#include "model/CreateKeywordLibResult.h"
 #include "model/UploadCredentialsRequest.h"
 #include "model/UploadCredentialsResult.h"
 #include "model/CreateBizTypeRequest.h"
@@ -236,10 +240,10 @@
 #include "model/MarkAuditContentItemResult.h"
 #include "model/AddVideoDnaRequest.h"
 #include "model/AddVideoDnaResult.h"
-#include "model/VideoSyncScanRequest.h"
-#include "model/VideoSyncScanResult.h"
 #include "model/DeleteNotificationContactsRequest.h"
 #include "model/DeleteNotificationContactsResult.h"
+#include "model/VideoSyncScanRequest.h"
+#include "model/VideoSyncScanResult.h"
 #include "model/VideoAsyncScanResultsRequest.h"
 #include "model/VideoAsyncScanResultsResult.h"
 #include "model/DescribeOssStockStatusRequest.h"
@@ -260,32 +264,32 @@
 #include "model/DescribeWebsiteScanResultDetailResult.h"
 #include "model/AddSimilarityLibraryRequest.h"
 #include "model/AddSimilarityLibraryResult.h"
-#include "model/AddVideoDnaGroupRequest.h"
-#include "model/AddVideoDnaGroupResult.h"
 #include "model/CreateCdiBagRequest.h"
 #include "model/CreateCdiBagResult.h"
-#include "model/UpdateKeywordLibRequest.h"
-#include "model/UpdateKeywordLibResult.h"
+#include "model/AddVideoDnaGroupRequest.h"
+#include "model/AddVideoDnaGroupResult.h"
 #include "model/ImageAsyncScanRequest.h"
 #include "model/ImageAsyncScanResult.h"
+#include "model/UpdateKeywordLibRequest.h"
+#include "model/UpdateKeywordLibResult.h"
 #include "model/ImageAsyncScanResultsRequest.h"
 #include "model/ImageAsyncScanResultsResult.h"
 #include "model/VoiceAsyncScanResultsRequest.h"
 #include "model/VoiceAsyncScanResultsResult.h"
 #include "model/ImageResultsRequest.h"
 #include "model/ImageResultsResult.h"
-#include "model/VerifyWebsiteInstanceRequest.h"
-#include "model/VerifyWebsiteInstanceResult.h"
 #include "model/UpdateWebsiteInstanceKeyUrlRequest.h"
 #include "model/UpdateWebsiteInstanceKeyUrlResult.h"
+#include "model/VerifyWebsiteInstanceRequest.h"
+#include "model/VerifyWebsiteInstanceResult.h"
 #include "model/SendVerifyCodeToPhoneRequest.h"
 #include "model/SendVerifyCodeToPhoneResult.h"
 #include "model/DescribeOssIncrementOverviewRequest.h"
 #include "model/DescribeOssIncrementOverviewResult.h"
-#include "model/DescribeNotificationSettingRequest.h"
-#include "model/DescribeNotificationSettingResult.h"
 #include "model/DescribeAuditContentRequest.h"
 #include "model/DescribeAuditContentResult.h"
+#include "model/DescribeNotificationSettingRequest.h"
+#include "model/DescribeNotificationSettingResult.h"
 
 
 namespace AlibabaCloud
@@ -310,36 +314,39 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAppPackageResult> UpdateAppPackageOutcome;
 			typedef std::future<UpdateAppPackageOutcome> UpdateAppPackageOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateAppPackageRequest&, const UpdateAppPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAppPackageAsyncHandler;
-			typedef Outcome<Error, Model::DeleteVideoDnaGroupResult> DeleteVideoDnaGroupOutcome;
-			typedef std::future<DeleteVideoDnaGroupOutcome> DeleteVideoDnaGroupOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::DeleteVideoDnaGroupRequest&, const DeleteVideoDnaGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoDnaGroupAsyncHandler;
 			typedef Outcome<Error, Model::UpdateOssCallbackSettingResult> UpdateOssCallbackSettingOutcome;
 			typedef std::future<UpdateOssCallbackSettingOutcome> UpdateOssCallbackSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateOssCallbackSettingRequest&, const UpdateOssCallbackSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOssCallbackSettingAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVideoDnaGroupResult> DeleteVideoDnaGroupOutcome;
+			typedef std::future<DeleteVideoDnaGroupOutcome> DeleteVideoDnaGroupOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DeleteVideoDnaGroupRequest&, const DeleteVideoDnaGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoDnaGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWebsiteInstanceKeyUrlResult> DescribeWebsiteInstanceKeyUrlOutcome;
 			typedef std::future<DescribeWebsiteInstanceKeyUrlOutcome> DescribeWebsiteInstanceKeyUrlOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeWebsiteInstanceKeyUrlRequest&, const DescribeWebsiteInstanceKeyUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebsiteInstanceKeyUrlAsyncHandler;
-			typedef Outcome<Error, Model::DeleteVideoDnaResult> DeleteVideoDnaOutcome;
-			typedef std::future<DeleteVideoDnaOutcome> DeleteVideoDnaOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::DeleteVideoDnaRequest&, const DeleteVideoDnaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoDnaAsyncHandler;
 			typedef Outcome<Error, Model::RefundCdiBaseBagResult> RefundCdiBaseBagOutcome;
 			typedef std::future<RefundCdiBaseBagOutcome> RefundCdiBaseBagOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::RefundCdiBaseBagRequest&, const RefundCdiBaseBagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundCdiBaseBagAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVideoDnaResult> DeleteVideoDnaOutcome;
+			typedef std::future<DeleteVideoDnaOutcome> DeleteVideoDnaOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DeleteVideoDnaRequest&, const DeleteVideoDnaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoDnaAsyncHandler;
 			typedef Outcome<Error, Model::UpdateBizTypeSettingResult> UpdateBizTypeSettingOutcome;
 			typedef std::future<UpdateBizTypeSettingOutcome> UpdateBizTypeSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateBizTypeSettingRequest&, const UpdateBizTypeSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBizTypeSettingAsyncHandler;
 			typedef Outcome<Error, Model::FileAsyncScanResult> FileAsyncScanOutcome;
 			typedef std::future<FileAsyncScanOutcome> FileAsyncScanOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::FileAsyncScanRequest&, const FileAsyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FileAsyncScanAsyncHandler;
+			typedef Outcome<Error, Model::DetectFaceResult> DetectFaceOutcome;
+			typedef std::future<DetectFaceOutcome> DetectFaceOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DetectFaceRequest&, const DetectFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOssResultItemsResult> DescribeOssResultItemsOutcome;
 			typedef std::future<DescribeOssResultItemsOutcome> DescribeOssResultItemsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeOssResultItemsRequest&, const DescribeOssResultItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOssResultItemsAsyncHandler;
-			typedef Outcome<Error, Model::UpdateWebsiteInstanceStatusResult> UpdateWebsiteInstanceStatusOutcome;
-			typedef std::future<UpdateWebsiteInstanceStatusOutcome> UpdateWebsiteInstanceStatusOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::UpdateWebsiteInstanceStatusRequest&, const UpdateWebsiteInstanceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWebsiteInstanceStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBizTypesResult> DescribeBizTypesOutcome;
 			typedef std::future<DescribeBizTypesOutcome> DescribeBizTypesOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypesRequest&, const DescribeBizTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateWebsiteInstanceStatusResult> UpdateWebsiteInstanceStatusOutcome;
+			typedef std::future<UpdateWebsiteInstanceStatusOutcome> UpdateWebsiteInstanceStatusOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::UpdateWebsiteInstanceStatusRequest&, const UpdateWebsiteInstanceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWebsiteInstanceStatusAsyncHandler;
 			typedef Outcome<Error, Model::RefundCdiBagResult> RefundCdiBagOutcome;
 			typedef std::future<RefundCdiBagOutcome> RefundCdiBagOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::RefundCdiBagRequest&, const RefundCdiBagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundCdiBagAsyncHandler;
@@ -349,15 +356,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCdiBaseBagResult> CreateCdiBaseBagOutcome;
 			typedef std::future<CreateCdiBaseBagOutcome> CreateCdiBaseBagOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::CreateCdiBaseBagRequest&, const CreateCdiBaseBagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdiBaseBagAsyncHandler;
+			typedef Outcome<Error, Model::DeleteKeywordLibResult> DeleteKeywordLibOutcome;
+			typedef std::future<DeleteKeywordLibOutcome> DeleteKeywordLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DeleteKeywordLibRequest&, const DeleteKeywordLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeywordLibAsyncHandler;
 			typedef Outcome<Error, Model::VerifyPhoneResult> VerifyPhoneOutcome;
 			typedef std::future<VerifyPhoneOutcome> VerifyPhoneOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VerifyPhoneRequest&, const VerifyPhoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPhoneAsyncHandler;
 			typedef Outcome<Error, Model::ImageDetectionResult> ImageDetectionOutcome;
 			typedef std::future<ImageDetectionOutcome> ImageDetectionOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::ImageDetectionRequest&, const ImageDetectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImageDetectionAsyncHandler;
-			typedef Outcome<Error, Model::DeleteKeywordLibResult> DeleteKeywordLibOutcome;
-			typedef std::future<DeleteKeywordLibOutcome> DeleteKeywordLibOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::DeleteKeywordLibRequest&, const DeleteKeywordLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeywordLibAsyncHandler;
 			typedef Outcome<Error, Model::ImportKeywordsResult> ImportKeywordsOutcome;
 			typedef std::future<ImportKeywordsOutcome> ImportKeywordsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::ImportKeywordsRequest&, const ImportKeywordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeywordsAsyncHandler;
@@ -385,15 +392,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateNotificationSettingResult> UpdateNotificationSettingOutcome;
 			typedef std::future<UpdateNotificationSettingOutcome> UpdateNotificationSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateNotificationSettingRequest&, const UpdateNotificationSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNotificationSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserBizTypesResult> DescribeUserBizTypesOutcome;
+			typedef std::future<DescribeUserBizTypesOutcome> DescribeUserBizTypesOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeUserBizTypesRequest&, const DescribeUserBizTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBizTypesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditContentItemResult> DescribeAuditContentItemOutcome;
 			typedef std::future<DescribeAuditContentItemOutcome> DescribeAuditContentItemOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAuditContentItemRequest&, const DescribeAuditContentItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditContentItemAsyncHandler;
-			typedef Outcome<Error, Model::SearchPersonResult> SearchPersonOutcome;
-			typedef std::future<SearchPersonOutcome> SearchPersonOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::SearchPersonRequest&, const SearchPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchPersonAsyncHandler;
 			typedef Outcome<Error, Model::MarkOssResultResult> MarkOssResultOutcome;
 			typedef std::future<MarkOssResultOutcome> MarkOssResultOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::MarkOssResultRequest&, const MarkOssResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MarkOssResultAsyncHandler;
+			typedef Outcome<Error, Model::SearchPersonResult> SearchPersonOutcome;
+			typedef std::future<SearchPersonOutcome> SearchPersonOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::SearchPersonRequest&, const SearchPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchPersonAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAppInfoResult> DescribeAppInfoOutcome;
 			typedef std::future<DescribeAppInfoOutcome> DescribeAppInfoOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAppInfoRequest&, const DescribeAppInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppInfoAsyncHandler;
@@ -499,27 +509,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpgradeCdiBaseBagResult> UpgradeCdiBaseBagOutcome;
 			typedef std::future<UpgradeCdiBaseBagOutcome> UpgradeCdiBaseBagOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpgradeCdiBaseBagRequest&, const UpgradeCdiBaseBagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeCdiBaseBagAsyncHandler;
-			typedef Outcome<Error, Model::DescribeUserStatusResult> DescribeUserStatusOutcome;
-			typedef std::future<DescribeUserStatusOutcome> DescribeUserStatusOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::DescribeUserStatusRequest&, const DescribeUserStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetAddVideoDnaResultsResult> GetAddVideoDnaResultsOutcome;
 			typedef std::future<GetAddVideoDnaResultsOutcome> GetAddVideoDnaResultsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::GetAddVideoDnaResultsRequest&, const GetAddVideoDnaResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAddVideoDnaResultsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserStatusResult> DescribeUserStatusOutcome;
+			typedef std::future<DescribeUserStatusOutcome> DescribeUserStatusOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeUserStatusRequest&, const DescribeUserStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeKeywordResult> DescribeKeywordOutcome;
 			typedef std::future<DescribeKeywordOutcome> DescribeKeywordOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeKeywordRequest&, const DescribeKeywordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeywordAsyncHandler;
-			typedef Outcome<Error, Model::AddFacesResult> AddFacesOutcome;
-			typedef std::future<AddFacesOutcome> AddFacesOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::AddFacesRequest&, const AddFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFacesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditSettingResult> DescribeAuditSettingOutcome;
 			typedef std::future<DescribeAuditSettingOutcome> DescribeAuditSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAuditSettingRequest&, const DescribeAuditSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditSettingAsyncHandler;
-			typedef Outcome<Error, Model::CreateKeywordLibResult> CreateKeywordLibOutcome;
-			typedef std::future<CreateKeywordLibOutcome> CreateKeywordLibOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::CreateKeywordLibRequest&, const CreateKeywordLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeywordLibAsyncHandler;
+			typedef Outcome<Error, Model::AddFacesResult> AddFacesOutcome;
+			typedef std::future<AddFacesOutcome> AddFacesOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::AddFacesRequest&, const AddFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFacesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateOssIncrementCheckSettingResult> UpdateOssIncrementCheckSettingOutcome;
 			typedef std::future<UpdateOssIncrementCheckSettingOutcome> UpdateOssIncrementCheckSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateOssIncrementCheckSettingRequest&, const UpdateOssIncrementCheckSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOssIncrementCheckSettingAsyncHandler;
+			typedef Outcome<Error, Model::CreateKeywordLibResult> CreateKeywordLibOutcome;
+			typedef std::future<CreateKeywordLibOutcome> CreateKeywordLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::CreateKeywordLibRequest&, const CreateKeywordLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeywordLibAsyncHandler;
 			typedef Outcome<Error, Model::UploadCredentialsResult> UploadCredentialsOutcome;
 			typedef std::future<UploadCredentialsOutcome> UploadCredentialsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UploadCredentialsRequest&, const UploadCredentialsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadCredentialsAsyncHandler;
@@ -616,12 +626,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddVideoDnaResult> AddVideoDnaOutcome;
 			typedef std::future<AddVideoDnaOutcome> AddVideoDnaOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::AddVideoDnaRequest&, const AddVideoDnaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVideoDnaAsyncHandler;
-			typedef Outcome<Error, Model::VideoSyncScanResult> VideoSyncScanOutcome;
-			typedef std::future<VideoSyncScanOutcome> VideoSyncScanOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::VideoSyncScanRequest&, const VideoSyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoSyncScanAsyncHandler;
 			typedef Outcome<Error, Model::DeleteNotificationContactsResult> DeleteNotificationContactsOutcome;
 			typedef std::future<DeleteNotificationContactsOutcome> DeleteNotificationContactsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DeleteNotificationContactsRequest&, const DeleteNotificationContactsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotificationContactsAsyncHandler;
+			typedef Outcome<Error, Model::VideoSyncScanResult> VideoSyncScanOutcome;
+			typedef std::future<VideoSyncScanOutcome> VideoSyncScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VideoSyncScanRequest&, const VideoSyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoSyncScanAsyncHandler;
 			typedef Outcome<Error, Model::VideoAsyncScanResultsResult> VideoAsyncScanResultsOutcome;
 			typedef std::future<VideoAsyncScanResultsOutcome> VideoAsyncScanResultsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VideoAsyncScanResultsRequest&, const VideoAsyncScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoAsyncScanResultsAsyncHandler;
@@ -652,18 +662,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddSimilarityLibraryResult> AddSimilarityLibraryOutcome;
 			typedef std::future<AddSimilarityLibraryOutcome> AddSimilarityLibraryOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::AddSimilarityLibraryRequest&, const AddSimilarityLibraryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSimilarityLibraryAsyncHandler;
-			typedef Outcome<Error, Model::AddVideoDnaGroupResult> AddVideoDnaGroupOutcome;
-			typedef std::future<AddVideoDnaGroupOutcome> AddVideoDnaGroupOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::AddVideoDnaGroupRequest&, const AddVideoDnaGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVideoDnaGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateCdiBagResult> CreateCdiBagOutcome;
 			typedef std::future<CreateCdiBagOutcome> CreateCdiBagOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::CreateCdiBagRequest&, const CreateCdiBagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdiBagAsyncHandler;
-			typedef Outcome<Error, Model::UpdateKeywordLibResult> UpdateKeywordLibOutcome;
-			typedef std::future<UpdateKeywordLibOutcome> UpdateKeywordLibOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::UpdateKeywordLibRequest&, const UpdateKeywordLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKeywordLibAsyncHandler;
+			typedef Outcome<Error, Model::AddVideoDnaGroupResult> AddVideoDnaGroupOutcome;
+			typedef std::future<AddVideoDnaGroupOutcome> AddVideoDnaGroupOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::AddVideoDnaGroupRequest&, const AddVideoDnaGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVideoDnaGroupAsyncHandler;
 			typedef Outcome<Error, Model::ImageAsyncScanResult> ImageAsyncScanOutcome;
 			typedef std::future<ImageAsyncScanOutcome> ImageAsyncScanOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::ImageAsyncScanRequest&, const ImageAsyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImageAsyncScanAsyncHandler;
+			typedef Outcome<Error, Model::UpdateKeywordLibResult> UpdateKeywordLibOutcome;
+			typedef std::future<UpdateKeywordLibOutcome> UpdateKeywordLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::UpdateKeywordLibRequest&, const UpdateKeywordLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateKeywordLibAsyncHandler;
 			typedef Outcome<Error, Model::ImageAsyncScanResultsResult> ImageAsyncScanResultsOutcome;
 			typedef std::future<ImageAsyncScanResultsOutcome> ImageAsyncScanResultsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::ImageAsyncScanResultsRequest&, const ImageAsyncScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImageAsyncScanResultsAsyncHandler;
@@ -673,24 +683,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ImageResultsResult> ImageResultsOutcome;
 			typedef std::future<ImageResultsOutcome> ImageResultsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::ImageResultsRequest&, const ImageResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImageResultsAsyncHandler;
-			typedef Outcome<Error, Model::VerifyWebsiteInstanceResult> VerifyWebsiteInstanceOutcome;
-			typedef std::future<VerifyWebsiteInstanceOutcome> VerifyWebsiteInstanceOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::VerifyWebsiteInstanceRequest&, const VerifyWebsiteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyWebsiteInstanceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateWebsiteInstanceKeyUrlResult> UpdateWebsiteInstanceKeyUrlOutcome;
 			typedef std::future<UpdateWebsiteInstanceKeyUrlOutcome> UpdateWebsiteInstanceKeyUrlOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateWebsiteInstanceKeyUrlRequest&, const UpdateWebsiteInstanceKeyUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWebsiteInstanceKeyUrlAsyncHandler;
+			typedef Outcome<Error, Model::VerifyWebsiteInstanceResult> VerifyWebsiteInstanceOutcome;
+			typedef std::future<VerifyWebsiteInstanceOutcome> VerifyWebsiteInstanceOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VerifyWebsiteInstanceRequest&, const VerifyWebsiteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyWebsiteInstanceAsyncHandler;
 			typedef Outcome<Error, Model::SendVerifyCodeToPhoneResult> SendVerifyCodeToPhoneOutcome;
 			typedef std::future<SendVerifyCodeToPhoneOutcome> SendVerifyCodeToPhoneOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::SendVerifyCodeToPhoneRequest&, const SendVerifyCodeToPhoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendVerifyCodeToPhoneAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOssIncrementOverviewResult> DescribeOssIncrementOverviewOutcome;
 			typedef std::future<DescribeOssIncrementOverviewOutcome> DescribeOssIncrementOverviewOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeOssIncrementOverviewRequest&, const DescribeOssIncrementOverviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOssIncrementOverviewAsyncHandler;
-			typedef Outcome<Error, Model::DescribeNotificationSettingResult> DescribeNotificationSettingOutcome;
-			typedef std::future<DescribeNotificationSettingOutcome> DescribeNotificationSettingOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::DescribeNotificationSettingRequest&, const DescribeNotificationSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotificationSettingAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditContentResult> DescribeAuditContentOutcome;
 			typedef std::future<DescribeAuditContentOutcome> DescribeAuditContentOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAuditContentRequest&, const DescribeAuditContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditContentAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNotificationSettingResult> DescribeNotificationSettingOutcome;
+			typedef std::future<DescribeNotificationSettingOutcome> DescribeNotificationSettingOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeNotificationSettingRequest&, const DescribeNotificationSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotificationSettingAsyncHandler;
 
 			GreenClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			GreenClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -711,36 +721,39 @@ namespace AlibabaCloud
 			UpdateAppPackageOutcome updateAppPackage(const Model::UpdateAppPackageRequest &request)const;
 			void updateAppPackageAsync(const Model::UpdateAppPackageRequest& request, const UpdateAppPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAppPackageOutcomeCallable updateAppPackageCallable(const Model::UpdateAppPackageRequest& request) const;
-			DeleteVideoDnaGroupOutcome deleteVideoDnaGroup(const Model::DeleteVideoDnaGroupRequest &request)const;
-			void deleteVideoDnaGroupAsync(const Model::DeleteVideoDnaGroupRequest& request, const DeleteVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteVideoDnaGroupOutcomeCallable deleteVideoDnaGroupCallable(const Model::DeleteVideoDnaGroupRequest& request) const;
 			UpdateOssCallbackSettingOutcome updateOssCallbackSetting(const Model::UpdateOssCallbackSettingRequest &request)const;
 			void updateOssCallbackSettingAsync(const Model::UpdateOssCallbackSettingRequest& request, const UpdateOssCallbackSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateOssCallbackSettingOutcomeCallable updateOssCallbackSettingCallable(const Model::UpdateOssCallbackSettingRequest& request) const;
+			DeleteVideoDnaGroupOutcome deleteVideoDnaGroup(const Model::DeleteVideoDnaGroupRequest &request)const;
+			void deleteVideoDnaGroupAsync(const Model::DeleteVideoDnaGroupRequest& request, const DeleteVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVideoDnaGroupOutcomeCallable deleteVideoDnaGroupCallable(const Model::DeleteVideoDnaGroupRequest& request) const;
 			DescribeWebsiteInstanceKeyUrlOutcome describeWebsiteInstanceKeyUrl(const Model::DescribeWebsiteInstanceKeyUrlRequest &request)const;
 			void describeWebsiteInstanceKeyUrlAsync(const Model::DescribeWebsiteInstanceKeyUrlRequest& request, const DescribeWebsiteInstanceKeyUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWebsiteInstanceKeyUrlOutcomeCallable describeWebsiteInstanceKeyUrlCallable(const Model::DescribeWebsiteInstanceKeyUrlRequest& request) const;
-			DeleteVideoDnaOutcome deleteVideoDna(const Model::DeleteVideoDnaRequest &request)const;
-			void deleteVideoDnaAsync(const Model::DeleteVideoDnaRequest& request, const DeleteVideoDnaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteVideoDnaOutcomeCallable deleteVideoDnaCallable(const Model::DeleteVideoDnaRequest& request) const;
 			RefundCdiBaseBagOutcome refundCdiBaseBag(const Model::RefundCdiBaseBagRequest &request)const;
 			void refundCdiBaseBagAsync(const Model::RefundCdiBaseBagRequest& request, const RefundCdiBaseBagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefundCdiBaseBagOutcomeCallable refundCdiBaseBagCallable(const Model::RefundCdiBaseBagRequest& request) const;
+			DeleteVideoDnaOutcome deleteVideoDna(const Model::DeleteVideoDnaRequest &request)const;
+			void deleteVideoDnaAsync(const Model::DeleteVideoDnaRequest& request, const DeleteVideoDnaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVideoDnaOutcomeCallable deleteVideoDnaCallable(const Model::DeleteVideoDnaRequest& request) const;
 			UpdateBizTypeSettingOutcome updateBizTypeSetting(const Model::UpdateBizTypeSettingRequest &request)const;
 			void updateBizTypeSettingAsync(const Model::UpdateBizTypeSettingRequest& request, const UpdateBizTypeSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateBizTypeSettingOutcomeCallable updateBizTypeSettingCallable(const Model::UpdateBizTypeSettingRequest& request) const;
 			FileAsyncScanOutcome fileAsyncScan(const Model::FileAsyncScanRequest &request)const;
 			void fileAsyncScanAsync(const Model::FileAsyncScanRequest& request, const FileAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FileAsyncScanOutcomeCallable fileAsyncScanCallable(const Model::FileAsyncScanRequest& request) const;
+			DetectFaceOutcome detectFace(const Model::DetectFaceRequest &request)const;
+			void detectFaceAsync(const Model::DetectFaceRequest& request, const DetectFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectFaceOutcomeCallable detectFaceCallable(const Model::DetectFaceRequest& request) const;
 			DescribeOssResultItemsOutcome describeOssResultItems(const Model::DescribeOssResultItemsRequest &request)const;
 			void describeOssResultItemsAsync(const Model::DescribeOssResultItemsRequest& request, const DescribeOssResultItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOssResultItemsOutcomeCallable describeOssResultItemsCallable(const Model::DescribeOssResultItemsRequest& request) const;
-			UpdateWebsiteInstanceStatusOutcome updateWebsiteInstanceStatus(const Model::UpdateWebsiteInstanceStatusRequest &request)const;
-			void updateWebsiteInstanceStatusAsync(const Model::UpdateWebsiteInstanceStatusRequest& request, const UpdateWebsiteInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateWebsiteInstanceStatusOutcomeCallable updateWebsiteInstanceStatusCallable(const Model::UpdateWebsiteInstanceStatusRequest& request) const;
 			DescribeBizTypesOutcome describeBizTypes(const Model::DescribeBizTypesRequest &request)const;
 			void describeBizTypesAsync(const Model::DescribeBizTypesRequest& request, const DescribeBizTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizTypesOutcomeCallable describeBizTypesCallable(const Model::DescribeBizTypesRequest& request) const;
+			UpdateWebsiteInstanceStatusOutcome updateWebsiteInstanceStatus(const Model::UpdateWebsiteInstanceStatusRequest &request)const;
+			void updateWebsiteInstanceStatusAsync(const Model::UpdateWebsiteInstanceStatusRequest& request, const UpdateWebsiteInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateWebsiteInstanceStatusOutcomeCallable updateWebsiteInstanceStatusCallable(const Model::UpdateWebsiteInstanceStatusRequest& request) const;
 			RefundCdiBagOutcome refundCdiBag(const Model::RefundCdiBagRequest &request)const;
 			void refundCdiBagAsync(const Model::RefundCdiBagRequest& request, const RefundCdiBagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefundCdiBagOutcomeCallable refundCdiBagCallable(const Model::RefundCdiBagRequest& request) const;
@@ -750,15 +763,15 @@ namespace AlibabaCloud
 			CreateCdiBaseBagOutcome createCdiBaseBag(const Model::CreateCdiBaseBagRequest &request)const;
 			void createCdiBaseBagAsync(const Model::CreateCdiBaseBagRequest& request, const CreateCdiBaseBagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCdiBaseBagOutcomeCallable createCdiBaseBagCallable(const Model::CreateCdiBaseBagRequest& request) const;
+			DeleteKeywordLibOutcome deleteKeywordLib(const Model::DeleteKeywordLibRequest &request)const;
+			void deleteKeywordLibAsync(const Model::DeleteKeywordLibRequest& request, const DeleteKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteKeywordLibOutcomeCallable deleteKeywordLibCallable(const Model::DeleteKeywordLibRequest& request) const;
 			VerifyPhoneOutcome verifyPhone(const Model::VerifyPhoneRequest &request)const;
 			void verifyPhoneAsync(const Model::VerifyPhoneRequest& request, const VerifyPhoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyPhoneOutcomeCallable verifyPhoneCallable(const Model::VerifyPhoneRequest& request) const;
 			ImageDetectionOutcome imageDetection(const Model::ImageDetectionRequest &request)const;
 			void imageDetectionAsync(const Model::ImageDetectionRequest& request, const ImageDetectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImageDetectionOutcomeCallable imageDetectionCallable(const Model::ImageDetectionRequest& request) const;
-			DeleteKeywordLibOutcome deleteKeywordLib(const Model::DeleteKeywordLibRequest &request)const;
-			void deleteKeywordLibAsync(const Model::DeleteKeywordLibRequest& request, const DeleteKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteKeywordLibOutcomeCallable deleteKeywordLibCallable(const Model::DeleteKeywordLibRequest& request) const;
 			ImportKeywordsOutcome importKeywords(const Model::ImportKeywordsRequest &request)const;
 			void importKeywordsAsync(const Model::ImportKeywordsRequest& request, const ImportKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportKeywordsOutcomeCallable importKeywordsCallable(const Model::ImportKeywordsRequest& request) const;
@@ -786,15 +799,18 @@ namespace AlibabaCloud
 			UpdateNotificationSettingOutcome updateNotificationSetting(const Model::UpdateNotificationSettingRequest &request)const;
 			void updateNotificationSettingAsync(const Model::UpdateNotificationSettingRequest& request, const UpdateNotificationSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateNotificationSettingOutcomeCallable updateNotificationSettingCallable(const Model::UpdateNotificationSettingRequest& request) const;
+			DescribeUserBizTypesOutcome describeUserBizTypes(const Model::DescribeUserBizTypesRequest &request)const;
+			void describeUserBizTypesAsync(const Model::DescribeUserBizTypesRequest& request, const DescribeUserBizTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserBizTypesOutcomeCallable describeUserBizTypesCallable(const Model::DescribeUserBizTypesRequest& request) const;
 			DescribeAuditContentItemOutcome describeAuditContentItem(const Model::DescribeAuditContentItemRequest &request)const;
 			void describeAuditContentItemAsync(const Model::DescribeAuditContentItemRequest& request, const DescribeAuditContentItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditContentItemOutcomeCallable describeAuditContentItemCallable(const Model::DescribeAuditContentItemRequest& request) const;
-			SearchPersonOutcome searchPerson(const Model::SearchPersonRequest &request)const;
-			void searchPersonAsync(const Model::SearchPersonRequest& request, const SearchPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SearchPersonOutcomeCallable searchPersonCallable(const Model::SearchPersonRequest& request) const;
 			MarkOssResultOutcome markOssResult(const Model::MarkOssResultRequest &request)const;
 			void markOssResultAsync(const Model::MarkOssResultRequest& request, const MarkOssResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MarkOssResultOutcomeCallable markOssResultCallable(const Model::MarkOssResultRequest& request) const;
+			SearchPersonOutcome searchPerson(const Model::SearchPersonRequest &request)const;
+			void searchPersonAsync(const Model::SearchPersonRequest& request, const SearchPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchPersonOutcomeCallable searchPersonCallable(const Model::SearchPersonRequest& request) const;
 			DescribeAppInfoOutcome describeAppInfo(const Model::DescribeAppInfoRequest &request)const;
 			void describeAppInfoAsync(const Model::DescribeAppInfoRequest& request, const DescribeAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppInfoOutcomeCallable describeAppInfoCallable(const Model::DescribeAppInfoRequest& request) const;
@@ -900,27 +916,27 @@ namespace AlibabaCloud
 			UpgradeCdiBaseBagOutcome upgradeCdiBaseBag(const Model::UpgradeCdiBaseBagRequest &request)const;
 			void upgradeCdiBaseBagAsync(const Model::UpgradeCdiBaseBagRequest& request, const UpgradeCdiBaseBagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeCdiBaseBagOutcomeCallable upgradeCdiBaseBagCallable(const Model::UpgradeCdiBaseBagRequest& request) const;
-			DescribeUserStatusOutcome describeUserStatus(const Model::DescribeUserStatusRequest &request)const;
-			void describeUserStatusAsync(const Model::DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeUserStatusOutcomeCallable describeUserStatusCallable(const Model::DescribeUserStatusRequest& request) const;
 			GetAddVideoDnaResultsOutcome getAddVideoDnaResults(const Model::GetAddVideoDnaResultsRequest &request)const;
 			void getAddVideoDnaResultsAsync(const Model::GetAddVideoDnaResultsRequest& request, const GetAddVideoDnaResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAddVideoDnaResultsOutcomeCallable getAddVideoDnaResultsCallable(const Model::GetAddVideoDnaResultsRequest& request) const;
+			DescribeUserStatusOutcome describeUserStatus(const Model::DescribeUserStatusRequest &request)const;
+			void describeUserStatusAsync(const Model::DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserStatusOutcomeCallable describeUserStatusCallable(const Model::DescribeUserStatusRequest& request) const;
 			DescribeKeywordOutcome describeKeyword(const Model::DescribeKeywordRequest &request)const;
 			void describeKeywordAsync(const Model::DescribeKeywordRequest& request, const DescribeKeywordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeKeywordOutcomeCallable describeKeywordCallable(const Model::DescribeKeywordRequest& request) const;
-			AddFacesOutcome addFaces(const Model::AddFacesRequest &request)const;
-			void addFacesAsync(const Model::AddFacesRequest& request, const AddFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddFacesOutcomeCallable addFacesCallable(const Model::AddFacesRequest& request) const;
 			DescribeAuditSettingOutcome describeAuditSetting(const Model::DescribeAuditSettingRequest &request)const;
 			void describeAuditSettingAsync(const Model::DescribeAuditSettingRequest& request, const DescribeAuditSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditSettingOutcomeCallable describeAuditSettingCallable(const Model::DescribeAuditSettingRequest& request) const;
-			CreateKeywordLibOutcome createKeywordLib(const Model::CreateKeywordLibRequest &request)const;
-			void createKeywordLibAsync(const Model::CreateKeywordLibRequest& request, const CreateKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateKeywordLibOutcomeCallable createKeywordLibCallable(const Model::CreateKeywordLibRequest& request) const;
+			AddFacesOutcome addFaces(const Model::AddFacesRequest &request)const;
+			void addFacesAsync(const Model::AddFacesRequest& request, const AddFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddFacesOutcomeCallable addFacesCallable(const Model::AddFacesRequest& request) const;
 			UpdateOssIncrementCheckSettingOutcome updateOssIncrementCheckSetting(const Model::UpdateOssIncrementCheckSettingRequest &request)const;
 			void updateOssIncrementCheckSettingAsync(const Model::UpdateOssIncrementCheckSettingRequest& request, const UpdateOssIncrementCheckSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateOssIncrementCheckSettingOutcomeCallable updateOssIncrementCheckSettingCallable(const Model::UpdateOssIncrementCheckSettingRequest& request) const;
+			CreateKeywordLibOutcome createKeywordLib(const Model::CreateKeywordLibRequest &request)const;
+			void createKeywordLibAsync(const Model::CreateKeywordLibRequest& request, const CreateKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateKeywordLibOutcomeCallable createKeywordLibCallable(const Model::CreateKeywordLibRequest& request) const;
 			UploadCredentialsOutcome uploadCredentials(const Model::UploadCredentialsRequest &request)const;
 			void uploadCredentialsAsync(const Model::UploadCredentialsRequest& request, const UploadCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadCredentialsOutcomeCallable uploadCredentialsCallable(const Model::UploadCredentialsRequest& request) const;
@@ -1017,12 +1033,12 @@ namespace AlibabaCloud
 			AddVideoDnaOutcome addVideoDna(const Model::AddVideoDnaRequest &request)const;
 			void addVideoDnaAsync(const Model::AddVideoDnaRequest& request, const AddVideoDnaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddVideoDnaOutcomeCallable addVideoDnaCallable(const Model::AddVideoDnaRequest& request) const;
-			VideoSyncScanOutcome videoSyncScan(const Model::VideoSyncScanRequest &request)const;
-			void videoSyncScanAsync(const Model::VideoSyncScanRequest& request, const VideoSyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			VideoSyncScanOutcomeCallable videoSyncScanCallable(const Model::VideoSyncScanRequest& request) const;
 			DeleteNotificationContactsOutcome deleteNotificationContacts(const Model::DeleteNotificationContactsRequest &request)const;
 			void deleteNotificationContactsAsync(const Model::DeleteNotificationContactsRequest& request, const DeleteNotificationContactsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNotificationContactsOutcomeCallable deleteNotificationContactsCallable(const Model::DeleteNotificationContactsRequest& request) const;
+			VideoSyncScanOutcome videoSyncScan(const Model::VideoSyncScanRequest &request)const;
+			void videoSyncScanAsync(const Model::VideoSyncScanRequest& request, const VideoSyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VideoSyncScanOutcomeCallable videoSyncScanCallable(const Model::VideoSyncScanRequest& request) const;
 			VideoAsyncScanResultsOutcome videoAsyncScanResults(const Model::VideoAsyncScanResultsRequest &request)const;
 			void videoAsyncScanResultsAsync(const Model::VideoAsyncScanResultsRequest& request, const VideoAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VideoAsyncScanResultsOutcomeCallable videoAsyncScanResultsCallable(const Model::VideoAsyncScanResultsRequest& request) const;
@@ -1053,18 +1069,18 @@ namespace AlibabaCloud
 			AddSimilarityLibraryOutcome addSimilarityLibrary(const Model::AddSimilarityLibraryRequest &request)const;
 			void addSimilarityLibraryAsync(const Model::AddSimilarityLibraryRequest& request, const AddSimilarityLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddSimilarityLibraryOutcomeCallable addSimilarityLibraryCallable(const Model::AddSimilarityLibraryRequest& request) const;
-			AddVideoDnaGroupOutcome addVideoDnaGroup(const Model::AddVideoDnaGroupRequest &request)const;
-			void addVideoDnaGroupAsync(const Model::AddVideoDnaGroupRequest& request, const AddVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddVideoDnaGroupOutcomeCallable addVideoDnaGroupCallable(const Model::AddVideoDnaGroupRequest& request) const;
 			CreateCdiBagOutcome createCdiBag(const Model::CreateCdiBagRequest &request)const;
 			void createCdiBagAsync(const Model::CreateCdiBagRequest& request, const CreateCdiBagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCdiBagOutcomeCallable createCdiBagCallable(const Model::CreateCdiBagRequest& request) const;
-			UpdateKeywordLibOutcome updateKeywordLib(const Model::UpdateKeywordLibRequest &request)const;
-			void updateKeywordLibAsync(const Model::UpdateKeywordLibRequest& request, const UpdateKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateKeywordLibOutcomeCallable updateKeywordLibCallable(const Model::UpdateKeywordLibRequest& request) const;
+			AddVideoDnaGroupOutcome addVideoDnaGroup(const Model::AddVideoDnaGroupRequest &request)const;
+			void addVideoDnaGroupAsync(const Model::AddVideoDnaGroupRequest& request, const AddVideoDnaGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddVideoDnaGroupOutcomeCallable addVideoDnaGroupCallable(const Model::AddVideoDnaGroupRequest& request) const;
 			ImageAsyncScanOutcome imageAsyncScan(const Model::ImageAsyncScanRequest &request)const;
 			void imageAsyncScanAsync(const Model::ImageAsyncScanRequest& request, const ImageAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImageAsyncScanOutcomeCallable imageAsyncScanCallable(const Model::ImageAsyncScanRequest& request) const;
+			UpdateKeywordLibOutcome updateKeywordLib(const Model::UpdateKeywordLibRequest &request)const;
+			void updateKeywordLibAsync(const Model::UpdateKeywordLibRequest& request, const UpdateKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateKeywordLibOutcomeCallable updateKeywordLibCallable(const Model::UpdateKeywordLibRequest& request) const;
 			ImageAsyncScanResultsOutcome imageAsyncScanResults(const Model::ImageAsyncScanResultsRequest &request)const;
 			void imageAsyncScanResultsAsync(const Model::ImageAsyncScanResultsRequest& request, const ImageAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImageAsyncScanResultsOutcomeCallable imageAsyncScanResultsCallable(const Model::ImageAsyncScanResultsRequest& request) const;
@@ -1074,24 +1090,24 @@ namespace AlibabaCloud
 			ImageResultsOutcome imageResults(const Model::ImageResultsRequest &request)const;
 			void imageResultsAsync(const Model::ImageResultsRequest& request, const ImageResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImageResultsOutcomeCallable imageResultsCallable(const Model::ImageResultsRequest& request) const;
-			VerifyWebsiteInstanceOutcome verifyWebsiteInstance(const Model::VerifyWebsiteInstanceRequest &request)const;
-			void verifyWebsiteInstanceAsync(const Model::VerifyWebsiteInstanceRequest& request, const VerifyWebsiteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			VerifyWebsiteInstanceOutcomeCallable verifyWebsiteInstanceCallable(const Model::VerifyWebsiteInstanceRequest& request) const;
 			UpdateWebsiteInstanceKeyUrlOutcome updateWebsiteInstanceKeyUrl(const Model::UpdateWebsiteInstanceKeyUrlRequest &request)const;
 			void updateWebsiteInstanceKeyUrlAsync(const Model::UpdateWebsiteInstanceKeyUrlRequest& request, const UpdateWebsiteInstanceKeyUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateWebsiteInstanceKeyUrlOutcomeCallable updateWebsiteInstanceKeyUrlCallable(const Model::UpdateWebsiteInstanceKeyUrlRequest& request) const;
+			VerifyWebsiteInstanceOutcome verifyWebsiteInstance(const Model::VerifyWebsiteInstanceRequest &request)const;
+			void verifyWebsiteInstanceAsync(const Model::VerifyWebsiteInstanceRequest& request, const VerifyWebsiteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VerifyWebsiteInstanceOutcomeCallable verifyWebsiteInstanceCallable(const Model::VerifyWebsiteInstanceRequest& request) const;
 			SendVerifyCodeToPhoneOutcome sendVerifyCodeToPhone(const Model::SendVerifyCodeToPhoneRequest &request)const;
 			void sendVerifyCodeToPhoneAsync(const Model::SendVerifyCodeToPhoneRequest& request, const SendVerifyCodeToPhoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendVerifyCodeToPhoneOutcomeCallable sendVerifyCodeToPhoneCallable(const Model::SendVerifyCodeToPhoneRequest& request) const;
 			DescribeOssIncrementOverviewOutcome describeOssIncrementOverview(const Model::DescribeOssIncrementOverviewRequest &request)const;
 			void describeOssIncrementOverviewAsync(const Model::DescribeOssIncrementOverviewRequest& request, const DescribeOssIncrementOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOssIncrementOverviewOutcomeCallable describeOssIncrementOverviewCallable(const Model::DescribeOssIncrementOverviewRequest& request) const;
-			DescribeNotificationSettingOutcome describeNotificationSetting(const Model::DescribeNotificationSettingRequest &request)const;
-			void describeNotificationSettingAsync(const Model::DescribeNotificationSettingRequest& request, const DescribeNotificationSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeNotificationSettingOutcomeCallable describeNotificationSettingCallable(const Model::DescribeNotificationSettingRequest& request) const;
 			DescribeAuditContentOutcome describeAuditContent(const Model::DescribeAuditContentRequest &request)const;
 			void describeAuditContentAsync(const Model::DescribeAuditContentRequest& request, const DescribeAuditContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditContentOutcomeCallable describeAuditContentCallable(const Model::DescribeAuditContentRequest& request) const;
+			DescribeNotificationSettingOutcome describeNotificationSetting(const Model::DescribeNotificationSettingRequest &request)const;
+			void describeNotificationSettingAsync(const Model::DescribeNotificationSettingRequest& request, const DescribeNotificationSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNotificationSettingOutcomeCallable describeNotificationSettingCallable(const Model::DescribeNotificationSettingRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

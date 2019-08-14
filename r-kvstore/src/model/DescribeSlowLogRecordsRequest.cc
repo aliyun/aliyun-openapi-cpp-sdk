@@ -124,6 +124,17 @@ void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyI
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeSlowLogRecordsRequest::getSlowLogRecordType()const
+{
+	return slowLogRecordType_;
+}
+
+void DescribeSlowLogRecordsRequest::setSlowLogRecordType(const std::string& slowLogRecordType)
+{
+	slowLogRecordType_ = slowLogRecordType;
+	setCoreParameter("SlowLogRecordType", slowLogRecordType);
+}
+
 std::string DescribeSlowLogRecordsRequest::getInstanceId()const
 {
 	return instanceId_;

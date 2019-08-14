@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				int getSize()const;
 				void setSize(int size);
+				bool getNeedQuota()const;
+				void setNeedQuota(bool needQuota);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
 				int getPage()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				int size_;
+				bool needQuota_;
 				std::string storeName_;
 				int page_;
 

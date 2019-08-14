@@ -33,7 +33,7 @@ std::string DeleteOrderRequest::getSourceIp()const
 void DeleteOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DeleteOrderRequest::getOrderId()const
@@ -44,7 +44,7 @@ long DeleteOrderRequest::getOrderId()const
 void DeleteOrderRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DeleteOrderRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DeleteOrderRequest::getLang()const
 void DeleteOrderRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

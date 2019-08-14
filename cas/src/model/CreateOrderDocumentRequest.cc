@@ -33,7 +33,7 @@ std::string CreateOrderDocumentRequest::getOssKey()const
 void CreateOrderDocumentRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setParameter("OssKey", ossKey);
+	setCoreParameter("OssKey", ossKey);
 }
 
 std::string CreateOrderDocumentRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateOrderDocumentRequest::getSourceIp()const
 void CreateOrderDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long CreateOrderDocumentRequest::getOrderId()const
@@ -55,7 +55,7 @@ long CreateOrderDocumentRequest::getOrderId()const
 void CreateOrderDocumentRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 int CreateOrderDocumentRequest::getDocumentType()const
@@ -66,7 +66,7 @@ int CreateOrderDocumentRequest::getDocumentType()const
 void CreateOrderDocumentRequest::setDocumentType(int documentType)
 {
 	documentType_ = documentType;
-	setParameter("DocumentType", std::to_string(documentType));
+	setCoreParameter("DocumentType", std::to_string(documentType));
 }
 
 std::string CreateOrderDocumentRequest::getLang()const
@@ -77,7 +77,7 @@ std::string CreateOrderDocumentRequest::getLang()const
 void CreateOrderDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateOrderDocumentRequest::getExtName()const
@@ -88,6 +88,6 @@ std::string CreateOrderDocumentRequest::getExtName()const
 void CreateOrderDocumentRequest::setExtName(const std::string& extName)
 {
 	extName_ = extName;
-	setParameter("ExtName", extName);
+	setCoreParameter("ExtName", extName);
 }
 

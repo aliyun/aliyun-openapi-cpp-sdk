@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getMobile()const;
 				void setMobile(const std::string& mobile);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::string getPartnerCode()const;
 				void setPartnerCode(const std::string& partnerCode);
 				std::string getClassification()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 
             private:
 				std::string mobile_;
+				std::string description_;
 				std::string partnerCode_;
 				std::string classification_;
 				int type_;

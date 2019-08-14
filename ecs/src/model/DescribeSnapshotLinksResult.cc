@@ -35,10 +35,13 @@ DescribeSnapshotLinksResult::~DescribeSnapshotLinksResult()
 
 void DescribeSnapshotLinksResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allSnapshotLinks = value["SnapshotLinks"]["SnapshotLink"];
 	for (auto value : allSnapshotLinks)
@@ -61,7 +64,7 @@ void DescribeSnapshotLinksResult::parse(const std::string &payload)
 		if(!value["SourceDiskType"].isNull())
 			snapshotLinksObject.sourceDiskType = value["SourceDiskType"].asString();
 		if(!value["TotalSize"].isNull())
-			snapshotLinksObject.totalSize = std::stoi(value["TotalSize"].asString());
+			snapshotLinksObject.totalSize = std::stol(value["TotalSize"].asString());
 		if(!value["TotalCount"].isNull())
 			snapshotLinksObject.totalCount = std::stoi(value["TotalCount"].asString());
 		snapshotLinks_.push_back(snapshotLinksObject);

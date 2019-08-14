@@ -33,7 +33,7 @@ long GetScanProbeTimeSerRequest::getZoomStart()const
 void GetScanProbeTimeSerRequest::setZoomStart(long zoomStart)
 {
 	zoomStart_ = zoomStart;
-	setParameter("ZoomStart", std::to_string(zoomStart));
+	setCoreParameter("ZoomStart", std::to_string(zoomStart));
 }
 
 long GetScanProbeTimeSerRequest::getCompanyId()const
@@ -44,7 +44,7 @@ long GetScanProbeTimeSerRequest::getCompanyId()const
 void GetScanProbeTimeSerRequest::setCompanyId(long companyId)
 {
 	companyId_ = companyId;
-	setParameter("CompanyId", std::to_string(companyId));
+	setCoreParameter("CompanyId", std::to_string(companyId));
 }
 
 long GetScanProbeTimeSerRequest::getApgroupId()const
@@ -55,7 +55,7 @@ long GetScanProbeTimeSerRequest::getApgroupId()const
 void GetScanProbeTimeSerRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 long GetScanProbeTimeSerRequest::getStart()const
@@ -66,7 +66,7 @@ long GetScanProbeTimeSerRequest::getStart()const
 void GetScanProbeTimeSerRequest::setStart(long start)
 {
 	start_ = start;
-	setParameter("Start", std::to_string(start));
+	setCoreParameter("Start", std::to_string(start));
 }
 
 long GetScanProbeTimeSerRequest::getZoomEnd()const
@@ -77,7 +77,7 @@ long GetScanProbeTimeSerRequest::getZoomEnd()const
 void GetScanProbeTimeSerRequest::setZoomEnd(long zoomEnd)
 {
 	zoomEnd_ = zoomEnd;
-	setParameter("ZoomEnd", std::to_string(zoomEnd));
+	setCoreParameter("ZoomEnd", std::to_string(zoomEnd));
 }
 
 long GetScanProbeTimeSerRequest::getEnd()const
@@ -88,7 +88,7 @@ long GetScanProbeTimeSerRequest::getEnd()const
 void GetScanProbeTimeSerRequest::setEnd(long end)
 {
 	end_ = end;
-	setParameter("End", std::to_string(end));
+	setCoreParameter("End", std::to_string(end));
 }
 
 std::string GetScanProbeTimeSerRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetScanProbeTimeSerRequest::getAccessKeyId()const
 void GetScanProbeTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string RemoveReadOnlyAccountRequest::getDbName()const
 void RemoveReadOnlyAccountRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string RemoveReadOnlyAccountRequest::getAccountName()const
@@ -44,7 +44,7 @@ std::string RemoveReadOnlyAccountRequest::getAccountName()const
 void RemoveReadOnlyAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string RemoveReadOnlyAccountRequest::getDrdsInstanceId()const
@@ -55,7 +55,7 @@ std::string RemoveReadOnlyAccountRequest::getDrdsInstanceId()const
 void RemoveReadOnlyAccountRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string RemoveReadOnlyAccountRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string RemoveReadOnlyAccountRequest::getAccessKeyId()const
 void RemoveReadOnlyAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

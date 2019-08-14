@@ -33,7 +33,7 @@ std::string ModifyAlertUserGroupRequest::getUserList()const
 void ModifyAlertUserGroupRequest::setUserList(const std::string& userList)
 {
 	userList_ = userList;
-	setParameter("UserList", userList);
+	setCoreParameter("UserList", userList);
 }
 
 long ModifyAlertUserGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyAlertUserGroupRequest::getResourceOwnerId()const
 void ModifyAlertUserGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyAlertUserGroupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyAlertUserGroupRequest::getRegionId()const
 void ModifyAlertUserGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyAlertUserGroupRequest::getBizId()const
@@ -66,7 +66,7 @@ std::string ModifyAlertUserGroupRequest::getBizId()const
 void ModifyAlertUserGroupRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setParameter("BizId", bizId);
+	setCoreParameter("BizId", bizId);
 }
 
 std::string ModifyAlertUserGroupRequest::getName()const
@@ -77,7 +77,7 @@ std::string ModifyAlertUserGroupRequest::getName()const
 void ModifyAlertUserGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyAlertUserGroupRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string ModifyAlertUserGroupRequest::getDescription()const
 void ModifyAlertUserGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyAlertUserGroupRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ModifyAlertUserGroupRequest::getAccessKeyId()const
 void ModifyAlertUserGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,10 +35,13 @@ ListAppInfoResult::~ListAppInfoResult()
 
 void ListAppInfoResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allAppInfoList = value["AppInfoList"]["AppInfo"];
 	for (auto value : allAppInfoList)
@@ -60,7 +63,14 @@ void ListAppInfoResult::parse(const std::string &payload)
 			appInfoListObject.modificationTime = value["ModificationTime"].asString();
 		appInfoList_.push_back(appInfoListObject);
 	}
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
+}
+
+int ListAppInfoResult::getTotal()const
+{
+	return total_;
 }
 
 std::vector<ListAppInfoResult::AppInfo> ListAppInfoResult::getAppInfoList()const

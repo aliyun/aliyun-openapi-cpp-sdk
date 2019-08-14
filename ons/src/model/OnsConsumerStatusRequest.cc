@@ -25,17 +25,6 @@ OnsConsumerStatusRequest::OnsConsumerStatusRequest() :
 OnsConsumerStatusRequest::~OnsConsumerStatusRequest()
 {}
 
-long OnsConsumerStatusRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsConsumerStatusRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsConsumerStatusRequest::getInstanceId()const
 {
 	return instanceId_;

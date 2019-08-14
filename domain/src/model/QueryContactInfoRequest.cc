@@ -33,7 +33,7 @@ std::string QueryContactInfoRequest::getContactType()const
 void QueryContactInfoRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setParameter("ContactType", contactType);
+	setCoreParameter("ContactType", contactType);
 }
 
 std::string QueryContactInfoRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryContactInfoRequest::getUserClientIp()const
 void QueryContactInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryContactInfoRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string QueryContactInfoRequest::getDomainName()const
 void QueryContactInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string QueryContactInfoRequest::getLang()const
@@ -66,6 +66,6 @@ std::string QueryContactInfoRequest::getLang()const
 void QueryContactInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

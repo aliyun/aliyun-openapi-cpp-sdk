@@ -33,7 +33,7 @@ long CreateVpcRequest::getResourceOwnerId()const
 void CreateVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateVpcRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string CreateVpcRequest::getResourceOwnerAccount()const
 void CreateVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateVpcRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string CreateVpcRequest::getClientToken()const
 void CreateVpcRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateVpcRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateVpcRequest::getOwnerAccount()const
 void CreateVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool CreateVpcRequest::getEnableIpv6()const
@@ -77,7 +77,7 @@ bool CreateVpcRequest::getEnableIpv6()const
 void CreateVpcRequest::setEnableIpv6(bool enableIpv6)
 {
 	enableIpv6_ = enableIpv6;
-	setParameter("EnableIpv6", std::to_string(enableIpv6));
+	setCoreParameter("EnableIpv6", enableIpv6 ? "true" : "false");
 }
 
 std::string CreateVpcRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreateVpcRequest::getDescription()const
 void CreateVpcRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 long CreateVpcRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CreateVpcRequest::getOwnerId()const
 void CreateVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateVpcRequest::getIpv6CidrBlock()const
@@ -110,7 +110,7 @@ std::string CreateVpcRequest::getIpv6CidrBlock()const
 void CreateVpcRequest::setIpv6CidrBlock(const std::string& ipv6CidrBlock)
 {
 	ipv6CidrBlock_ = ipv6CidrBlock;
-	setParameter("Ipv6CidrBlock", ipv6CidrBlock);
+	setCoreParameter("Ipv6CidrBlock", ipv6CidrBlock);
 }
 
 std::string CreateVpcRequest::getVpcName()const
@@ -121,7 +121,7 @@ std::string CreateVpcRequest::getVpcName()const
 void CreateVpcRequest::setVpcName(const std::string& vpcName)
 {
 	vpcName_ = vpcName;
-	setParameter("VpcName", vpcName);
+	setCoreParameter("VpcName", vpcName);
 }
 
 std::string CreateVpcRequest::getResourceGroupId()const
@@ -132,7 +132,7 @@ std::string CreateVpcRequest::getResourceGroupId()const
 void CreateVpcRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateVpcRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string CreateVpcRequest::getRegionId()const
 void CreateVpcRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateVpcRequest::getCidrBlock()const
@@ -154,7 +154,7 @@ std::string CreateVpcRequest::getCidrBlock()const
 void CreateVpcRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setParameter("CidrBlock", cidrBlock);
+	setCoreParameter("CidrBlock", cidrBlock);
 }
 
 std::string CreateVpcRequest::getUserCidr()const
@@ -165,6 +165,6 @@ std::string CreateVpcRequest::getUserCidr()const
 void CreateVpcRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", userCidr);
 }
 

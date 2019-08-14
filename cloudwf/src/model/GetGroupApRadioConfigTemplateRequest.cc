@@ -33,6 +33,6 @@ std::string GetGroupApRadioConfigTemplateRequest::getAccessKeyId()const
 void GetGroupApRadioConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,10 +35,13 @@ DescribeScalingRulesResult::~DescribeScalingRulesResult()
 
 void DescribeScalingRulesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allScalingRules = value["ScalingRules"]["ScalingRule"];
 	for (auto value : allScalingRules)
@@ -74,6 +77,16 @@ void DescribeScalingRulesResult::parse(const std::string &payload)
 			scalingRulesObject.targetValue = std::stof(value["TargetValue"].asString());
 		if(!value["DisableScaleIn"].isNull())
 			scalingRulesObject.disableScaleIn = value["DisableScaleIn"].asString() == "true";
+		if(!value["PredictiveScalingMode"].isNull())
+			scalingRulesObject.predictiveScalingMode = value["PredictiveScalingMode"].asString();
+		if(!value["PredictiveValueBehavior"].isNull())
+			scalingRulesObject.predictiveValueBehavior = value["PredictiveValueBehavior"].asString();
+		if(!value["PredictiveValueBuffer"].isNull())
+			scalingRulesObject.predictiveValueBuffer = std::stoi(value["PredictiveValueBuffer"].asString());
+		if(!value["PredictiveTaskBufferTime"].isNull())
+			scalingRulesObject.predictiveTaskBufferTime = std::stoi(value["PredictiveTaskBufferTime"].asString());
+		if(!value["InitialMaxSize"].isNull())
+			scalingRulesObject.initialMaxSize = std::stoi(value["InitialMaxSize"].asString());
 		auto allAlarms = value["Alarms"]["Alarm"];
 		for (auto value : allAlarms)
 		{
@@ -82,6 +95,26 @@ void DescribeScalingRulesResult::parse(const std::string &payload)
 				alarmsObject.alarmTaskName = value["AlarmTaskName"].asString();
 			if(!value["AlarmTaskId"].isNull())
 				alarmsObject.alarmTaskId = value["AlarmTaskId"].asString();
+			if(!value["ComparisonOperator"].isNull())
+				alarmsObject.comparisonOperator = value["ComparisonOperator"].asString();
+			if(!value["Statistics"].isNull())
+				alarmsObject.statistics = value["Statistics"].asString();
+			if(!value["MetricName"].isNull())
+				alarmsObject.metricName = value["MetricName"].asString();
+			if(!value["Threshold"].isNull())
+				alarmsObject.threshold = std::stof(value["Threshold"].asString());
+			if(!value["EvaluationCount"].isNull())
+				alarmsObject.evaluationCount = std::stoi(value["EvaluationCount"].asString());
+			auto allDimensions = value["Dimensions"]["Dimension"];
+			for (auto value : allDimensions)
+			{
+				ScalingRule::Alarm::Dimension dimensionsObject;
+				if(!value["DimensionKey"].isNull())
+					dimensionsObject.dimensionKey = value["DimensionKey"].asString();
+				if(!value["DimensionValue"].isNull())
+					dimensionsObject.dimensionValue = value["DimensionValue"].asString();
+				alarmsObject.dimensions.push_back(dimensionsObject);
+			}
 			scalingRulesObject.alarms.push_back(alarmsObject);
 		}
 		auto allStepAdjustments = value["StepAdjustments"]["StepAdjustment"];

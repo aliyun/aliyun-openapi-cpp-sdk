@@ -33,7 +33,7 @@ std::string SaveBatchTaskForUpdateProhibitionLockRequest::getUserClientIp()const
 void SaveBatchTaskForUpdateProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::vector<std::string> SaveBatchTaskForUpdateProhibitionLockRequest::getDomainName()const
@@ -45,7 +45,7 @@ void SaveBatchTaskForUpdateProhibitionLockRequest::setDomainName(const std::vect
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
 }
 
 std::string SaveBatchTaskForUpdateProhibitionLockRequest::getLang()const
@@ -56,7 +56,7 @@ std::string SaveBatchTaskForUpdateProhibitionLockRequest::getLang()const
 void SaveBatchTaskForUpdateProhibitionLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 bool SaveBatchTaskForUpdateProhibitionLockRequest::getStatus()const
@@ -67,6 +67,6 @@ bool SaveBatchTaskForUpdateProhibitionLockRequest::getStatus()const
 void SaveBatchTaskForUpdateProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status ? "true" : "false");
 }
 

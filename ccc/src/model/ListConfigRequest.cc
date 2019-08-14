@@ -33,7 +33,7 @@ std::string ListConfigRequest::getInstanceId()const
 void ListConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> ListConfigRequest::getConfigItem()const
@@ -45,7 +45,7 @@ void ListConfigRequest::setConfigItem(const std::vector<std::string>& configItem
 {
 	configItem_ = configItem;
 	for(int i = 0; i!= configItem.size(); i++)
-		setParameter("ConfigItem."+ std::to_string(i), configItem.at(i));
+		setCoreParameter("ConfigItem."+ std::to_string(i), configItem.at(i));
 }
 
 std::string ListConfigRequest::getAccessKeyId()const
@@ -56,6 +56,6 @@ std::string ListConfigRequest::getAccessKeyId()const
 void ListConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

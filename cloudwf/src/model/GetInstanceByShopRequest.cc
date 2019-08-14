@@ -33,7 +33,7 @@ long GetInstanceByShopRequest::getShopId()const
 void GetInstanceByShopRequest::setShopId(long shopId)
 {
 	shopId_ = shopId;
-	setParameter("ShopId", std::to_string(shopId));
+	setCoreParameter("ShopId", std::to_string(shopId));
 }
 
 std::string GetInstanceByShopRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetInstanceByShopRequest::getAccessKeyId()const
 void GetInstanceByShopRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

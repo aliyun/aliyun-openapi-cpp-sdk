@@ -31,21 +31,21 @@ LubancloudClient::LubancloudClient(const Credentials &credentials, const ClientC
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "luban");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "lubancloud");
 }
 
 LubancloudClient::LubancloudClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "luban");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "lubancloud");
 }
 
 LubancloudClient::LubancloudClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "luban");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "lubancloud");
 }
 
 LubancloudClient::~LubancloudClient()
@@ -87,42 +87,6 @@ LubancloudClient::QueryCutoutTaskResultOutcomeCallable LubancloudClient::queryCu
 	return task->get_future();
 }
 
-LubancloudClient::SubmitGenerateTaskOutcome LubancloudClient::submitGenerateTask(const SubmitGenerateTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitGenerateTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitGenerateTaskOutcome(SubmitGenerateTaskResult(outcome.result()));
-	else
-		return SubmitGenerateTaskOutcome(outcome.error());
-}
-
-void LubancloudClient::submitGenerateTaskAsync(const SubmitGenerateTaskRequest& request, const SubmitGenerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitGenerateTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LubancloudClient::SubmitGenerateTaskOutcomeCallable LubancloudClient::submitGenerateTaskCallable(const SubmitGenerateTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitGenerateTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->submitGenerateTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LubancloudClient::BuyOriginPicturesOutcome LubancloudClient::buyOriginPictures(const BuyOriginPicturesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +117,42 @@ LubancloudClient::BuyOriginPicturesOutcomeCallable LubancloudClient::buyOriginPi
 			[this, request]()
 			{
 			return this->buyOriginPictures(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LubancloudClient::SubmitGenerateTaskOutcome LubancloudClient::submitGenerateTask(const SubmitGenerateTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitGenerateTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitGenerateTaskOutcome(SubmitGenerateTaskResult(outcome.result()));
+	else
+		return SubmitGenerateTaskOutcome(outcome.error());
+}
+
+void LubancloudClient::submitGenerateTaskAsync(const SubmitGenerateTaskRequest& request, const SubmitGenerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitGenerateTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LubancloudClient::SubmitGenerateTaskOutcomeCallable LubancloudClient::submitGenerateTaskCallable(const SubmitGenerateTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitGenerateTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->submitGenerateTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

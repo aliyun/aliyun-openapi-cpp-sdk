@@ -36,7 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string connInfo;
 					std::string category;
-					long content;
+					std::string content;
 					std::string createTime;
 					int id;
 				};

@@ -33,7 +33,7 @@ std::string ListProbeinfoRequest::getOrderCol()const
 void ListProbeinfoRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListProbeinfoRequest::getSearchUserMac()const
@@ -44,7 +44,7 @@ std::string ListProbeinfoRequest::getSearchUserMac()const
 void ListProbeinfoRequest::setSearchUserMac(const std::string& searchUserMac)
 {
 	searchUserMac_ = searchUserMac;
-	setParameter("SearchUserMac", searchUserMac);
+	setCoreParameter("SearchUserMac", searchUserMac);
 }
 
 std::string ListProbeinfoRequest::getSearchSensorMac()const
@@ -55,7 +55,7 @@ std::string ListProbeinfoRequest::getSearchSensorMac()const
 void ListProbeinfoRequest::setSearchSensorMac(const std::string& searchSensorMac)
 {
 	searchSensorMac_ = searchSensorMac;
-	setParameter("SearchSensorMac", searchSensorMac);
+	setCoreParameter("SearchSensorMac", searchSensorMac);
 }
 
 int ListProbeinfoRequest::getLength()const
@@ -66,7 +66,7 @@ int ListProbeinfoRequest::getLength()const
 void ListProbeinfoRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 std::string ListProbeinfoRequest::getSearchSensorName()const
@@ -77,7 +77,7 @@ std::string ListProbeinfoRequest::getSearchSensorName()const
 void ListProbeinfoRequest::setSearchSensorName(const std::string& searchSensorName)
 {
 	searchSensorName_ = searchSensorName;
-	setParameter("SearchSensorName", searchSensorName);
+	setCoreParameter("SearchSensorName", searchSensorName);
 }
 
 int ListProbeinfoRequest::getPageIndex()const
@@ -88,7 +88,7 @@ int ListProbeinfoRequest::getPageIndex()const
 void ListProbeinfoRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListProbeinfoRequest::getOrderDir()const
@@ -99,7 +99,7 @@ std::string ListProbeinfoRequest::getOrderDir()const
 void ListProbeinfoRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListProbeinfoRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListProbeinfoRequest::getAccessKeyId()const
 void ListProbeinfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -51,42 +51,6 @@ ImmClient::ImmClient(const std::string & accessKeyId, const std::string & access
 ImmClient::~ImmClient()
 {}
 
-ImmClient::ListPornBatchDetectJobsOutcome ImmClient::listPornBatchDetectJobs(const ListPornBatchDetectJobsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListPornBatchDetectJobsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListPornBatchDetectJobsOutcome(ListPornBatchDetectJobsResult(outcome.result()));
-	else
-		return ListPornBatchDetectJobsOutcome(outcome.error());
-}
-
-void ImmClient::listPornBatchDetectJobsAsync(const ListPornBatchDetectJobsRequest& request, const ListPornBatchDetectJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listPornBatchDetectJobs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::ListPornBatchDetectJobsOutcomeCallable ImmClient::listPornBatchDetectJobsCallable(const ListPornBatchDetectJobsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListPornBatchDetectJobsOutcome()>>(
-			[this, request]()
-			{
-			return this->listPornBatchDetectJobs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::DetectImageFacesOutcome ImmClient::detectImageFaces(const DetectImageFacesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +81,42 @@ ImmClient::DetectImageFacesOutcomeCallable ImmClient::detectImageFacesCallable(c
 			[this, request]()
 			{
 			return this->detectImageFaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::ListPornBatchDetectJobsOutcome ImmClient::listPornBatchDetectJobs(const ListPornBatchDetectJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPornBatchDetectJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPornBatchDetectJobsOutcome(ListPornBatchDetectJobsResult(outcome.result()));
+	else
+		return ListPornBatchDetectJobsOutcome(outcome.error());
+}
+
+void ImmClient::listPornBatchDetectJobsAsync(const ListPornBatchDetectJobsRequest& request, const ListPornBatchDetectJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPornBatchDetectJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::ListPornBatchDetectJobsOutcomeCallable ImmClient::listPornBatchDetectJobsCallable(const ListPornBatchDetectJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPornBatchDetectJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->listPornBatchDetectJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -159,42 +159,6 @@ ImmClient::DeleteImageOutcomeCallable ImmClient::deleteImageCallable(const Delet
 	return task->get_future();
 }
 
-ImmClient::CreateTagJobOutcome ImmClient::createTagJob(const CreateTagJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateTagJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateTagJobOutcome(CreateTagJobResult(outcome.result()));
-	else
-		return CreateTagJobOutcome(outcome.error());
-}
-
-void ImmClient::createTagJobAsync(const CreateTagJobRequest& request, const CreateTagJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createTagJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::CreateTagJobOutcomeCallable ImmClient::createTagJobCallable(const CreateTagJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateTagJobOutcome()>>(
-			[this, request]()
-			{
-			return this->createTagJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::IndexTagOutcome ImmClient::indexTag(const IndexTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +189,42 @@ ImmClient::IndexTagOutcomeCallable ImmClient::indexTagCallable(const IndexTagReq
 			[this, request]()
 			{
 			return this->indexTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::CreateTagJobOutcome ImmClient::createTagJob(const CreateTagJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTagJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTagJobOutcome(CreateTagJobResult(outcome.result()));
+	else
+		return CreateTagJobOutcome(outcome.error());
+}
+
+void ImmClient::createTagJobAsync(const CreateTagJobRequest& request, const CreateTagJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTagJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::CreateTagJobOutcomeCallable ImmClient::createTagJobCallable(const CreateTagJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTagJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createTagJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,42 +375,6 @@ ImmClient::ListFaceSearchGroupImagesOutcomeCallable ImmClient::listFaceSearchGro
 	return task->get_future();
 }
 
-ImmClient::PutProjectOutcome ImmClient::putProject(const PutProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PutProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PutProjectOutcome(PutProjectResult(outcome.result()));
-	else
-		return PutProjectOutcome(outcome.error());
-}
-
-void ImmClient::putProjectAsync(const PutProjectRequest& request, const PutProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, putProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::PutProjectOutcomeCallable ImmClient::putProjectCallable(const PutProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PutProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->putProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::ListSetsOutcome ImmClient::listSets(const ListSetsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +405,42 @@ ImmClient::ListSetsOutcomeCallable ImmClient::listSetsCallable(const ListSetsReq
 			[this, request]()
 			{
 			return this->listSets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::PutProjectOutcome ImmClient::putProject(const PutProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutProjectOutcome(PutProjectResult(outcome.result()));
+	else
+		return PutProjectOutcome(outcome.error());
+}
+
+void ImmClient::putProjectAsync(const PutProjectRequest& request, const PutProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::PutProjectOutcomeCallable ImmClient::putProjectCallable(const PutProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->putProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,6 +735,42 @@ ImmClient::DetectImageCelebrityOutcomeCallable ImmClient::detectImageCelebrityCa
 	return task->get_future();
 }
 
+ImmClient::ListFaceSearchGroupsOutcome ImmClient::listFaceSearchGroups(const ListFaceSearchGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFaceSearchGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFaceSearchGroupsOutcome(ListFaceSearchGroupsResult(outcome.result()));
+	else
+		return ListFaceSearchGroupsOutcome(outcome.error());
+}
+
+void ImmClient::listFaceSearchGroupsAsync(const ListFaceSearchGroupsRequest& request, const ListFaceSearchGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFaceSearchGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::ListFaceSearchGroupsOutcomeCallable ImmClient::listFaceSearchGroupsCallable(const ListFaceSearchGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFaceSearchGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listFaceSearchGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::DeletePornBatchDetectJobOutcome ImmClient::deletePornBatchDetectJob(const DeletePornBatchDetectJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,42 +837,6 @@ ImmClient::GetTagSetOutcomeCallable ImmClient::getTagSetCallable(const GetTagSet
 			[this, request]()
 			{
 			return this->getTagSet(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::ListFaceSearchGroupsOutcome ImmClient::listFaceSearchGroups(const ListFaceSearchGroupsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListFaceSearchGroupsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListFaceSearchGroupsOutcome(ListFaceSearchGroupsResult(outcome.result()));
-	else
-		return ListFaceSearchGroupsOutcome(outcome.error());
-}
-
-void ImmClient::listFaceSearchGroupsAsync(const ListFaceSearchGroupsRequest& request, const ListFaceSearchGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listFaceSearchGroups(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::ListFaceSearchGroupsOutcomeCallable ImmClient::listFaceSearchGroupsCallable(const ListFaceSearchGroupsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListFaceSearchGroupsOutcome()>>(
-			[this, request]()
-			{
-			return this->listFaceSearchGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,42 +951,6 @@ ImmClient::IndexVideoOutcomeCallable ImmClient::indexVideoCallable(const IndexVi
 	return task->get_future();
 }
 
-ImmClient::CreateMergeFaceGroupsJobOutcome ImmClient::createMergeFaceGroupsJob(const CreateMergeFaceGroupsJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateMergeFaceGroupsJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateMergeFaceGroupsJobOutcome(CreateMergeFaceGroupsJobResult(outcome.result()));
-	else
-		return CreateMergeFaceGroupsJobOutcome(outcome.error());
-}
-
-void ImmClient::createMergeFaceGroupsJobAsync(const CreateMergeFaceGroupsJobRequest& request, const CreateMergeFaceGroupsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createMergeFaceGroupsJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::CreateMergeFaceGroupsJobOutcomeCallable ImmClient::createMergeFaceGroupsJobCallable(const CreateMergeFaceGroupsJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateMergeFaceGroupsJobOutcome()>>(
-			[this, request]()
-			{
-			return this->createMergeFaceGroupsJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::ListVideoAudiosOutcome ImmClient::listVideoAudios(const ListVideoAudiosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +981,42 @@ ImmClient::ListVideoAudiosOutcomeCallable ImmClient::listVideoAudiosCallable(con
 			[this, request]()
 			{
 			return this->listVideoAudios(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::CreateMergeFaceGroupsJobOutcome ImmClient::createMergeFaceGroupsJob(const CreateMergeFaceGroupsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMergeFaceGroupsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMergeFaceGroupsJobOutcome(CreateMergeFaceGroupsJobResult(outcome.result()));
+	else
+		return CreateMergeFaceGroupsJobOutcome(outcome.error());
+}
+
+void ImmClient::createMergeFaceGroupsJobAsync(const CreateMergeFaceGroupsJobRequest& request, const CreateMergeFaceGroupsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMergeFaceGroupsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::CreateMergeFaceGroupsJobOutcomeCallable ImmClient::createMergeFaceGroupsJobCallable(const CreateMergeFaceGroupsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMergeFaceGroupsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createMergeFaceGroupsJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1275,42 +1275,6 @@ ImmClient::DeleteFaceSearchUserOutcomeCallable ImmClient::deleteFaceSearchUserCa
 	return task->get_future();
 }
 
-ImmClient::RegistFaceOutcome ImmClient::registFace(const RegistFaceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RegistFaceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RegistFaceOutcome(RegistFaceResult(outcome.result()));
-	else
-		return RegistFaceOutcome(outcome.error());
-}
-
-void ImmClient::registFaceAsync(const RegistFaceRequest& request, const RegistFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, registFace(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::RegistFaceOutcomeCallable ImmClient::registFaceCallable(const RegistFaceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RegistFaceOutcome()>>(
-			[this, request]()
-			{
-			return this->registFace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::GetOfficeConversionTaskOutcome ImmClient::getOfficeConversionTask(const GetOfficeConversionTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +1341,42 @@ ImmClient::CreateTagSetOutcomeCallable ImmClient::createTagSetCallable(const Cre
 			[this, request]()
 			{
 			return this->createTagSet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::RegistFaceOutcome ImmClient::registFace(const RegistFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegistFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegistFaceOutcome(RegistFaceResult(outcome.result()));
+	else
+		return RegistFaceOutcome(outcome.error());
+}
+
+void ImmClient::registFaceAsync(const RegistFaceRequest& request, const RegistFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::RegistFaceOutcomeCallable ImmClient::registFaceCallable(const RegistFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegistFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->registFace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1563,42 +1563,6 @@ ImmClient::CreateGroupFacesJobOutcomeCallable ImmClient::createGroupFacesJobCall
 	return task->get_future();
 }
 
-ImmClient::ListOfficeConversionTaskOutcome ImmClient::listOfficeConversionTask(const ListOfficeConversionTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListOfficeConversionTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListOfficeConversionTaskOutcome(ListOfficeConversionTaskResult(outcome.result()));
-	else
-		return ListOfficeConversionTaskOutcome(outcome.error());
-}
-
-void ImmClient::listOfficeConversionTaskAsync(const ListOfficeConversionTaskRequest& request, const ListOfficeConversionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listOfficeConversionTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::ListOfficeConversionTaskOutcomeCallable ImmClient::listOfficeConversionTaskCallable(const ListOfficeConversionTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListOfficeConversionTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->listOfficeConversionTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::DeleteVideoOutcome ImmClient::deleteVideo(const DeleteVideoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +1593,42 @@ ImmClient::DeleteVideoOutcomeCallable ImmClient::deleteVideoCallable(const Delet
 			[this, request]()
 			{
 			return this->deleteVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::ListOfficeConversionTaskOutcome ImmClient::listOfficeConversionTask(const ListOfficeConversionTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOfficeConversionTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOfficeConversionTaskOutcome(ListOfficeConversionTaskResult(outcome.result()));
+	else
+		return ListOfficeConversionTaskOutcome(outcome.error());
+}
+
+void ImmClient::listOfficeConversionTaskAsync(const ListOfficeConversionTaskRequest& request, const ListOfficeConversionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOfficeConversionTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::ListOfficeConversionTaskOutcomeCallable ImmClient::listOfficeConversionTaskCallable(const ListOfficeConversionTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOfficeConversionTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->listOfficeConversionTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3039,42 +3039,6 @@ ImmClient::GetPornBatchDetectJobOutcomeCallable ImmClient::getPornBatchDetectJob
 	return task->get_future();
 }
 
-ImmClient::DetectLogoOutcome ImmClient::detectLogo(const DetectLogoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectLogoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectLogoOutcome(DetectLogoResult(outcome.result()));
-	else
-		return DetectLogoOutcome(outcome.error());
-}
-
-void ImmClient::detectLogoAsync(const DetectLogoRequest& request, const DetectLogoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectLogo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::DetectLogoOutcomeCallable ImmClient::detectLogoCallable(const DetectLogoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectLogoOutcome()>>(
-			[this, request]()
-			{
-			return this->detectLogo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::DetectClothesOutcome ImmClient::detectClothes(const DetectClothesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,6 +3105,42 @@ ImmClient::ListTagJobsOutcomeCallable ImmClient::listTagJobsCallable(const ListT
 			[this, request]()
 			{
 			return this->listTagJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::DetectLogoOutcome ImmClient::detectLogo(const DetectLogoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectLogoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectLogoOutcome(DetectLogoResult(outcome.result()));
+	else
+		return DetectLogoOutcome(outcome.error());
+}
+
+void ImmClient::detectLogoAsync(const DetectLogoRequest& request, const DetectLogoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectLogo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::DetectLogoOutcomeCallable ImmClient::detectLogoCallable(const DetectLogoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectLogoOutcome()>>(
+			[this, request]()
+			{
+			return this->detectLogo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

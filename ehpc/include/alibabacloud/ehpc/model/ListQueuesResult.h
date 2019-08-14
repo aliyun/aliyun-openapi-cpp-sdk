@@ -35,7 +35,9 @@ namespace AlibabaCloud
 				struct QueueInfo
 				{
 					std::string type;
+					std::string resourceGroupId;
 					std::string queueName;
+					std::string computeInstanceType;
 				};
 
 

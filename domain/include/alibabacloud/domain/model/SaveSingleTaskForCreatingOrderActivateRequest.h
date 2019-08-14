@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setDns1(const std::string& dns1);
 				long getRegistrantProfileId()const;
 				void setRegistrantProfileId(long registrantProfileId);
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
 				bool getAliyunDns()const;
 				void setAliyunDns(bool aliyunDns);
 				std::string getZhCity()const;
@@ -81,16 +83,22 @@ namespace AlibabaCloud
 				void setTelephone(const std::string& telephone);
 				bool getTrademarkDomainActivation()const;
 				void setTrademarkDomainActivation(bool trademarkDomainActivation);
+				bool getUseCoupon()const;
+				void setUseCoupon(bool useCoupon);
 				std::string getZhProvince()const;
 				void setZhProvince(const std::string& zhProvince);
 				std::string getRegistrantOrganization()const;
 				void setRegistrantOrganization(const std::string& registrantOrganization);
+				std::string getPromotionNo()const;
+				void setPromotionNo(const std::string& promotionNo);
 				bool getEnableDomainProxy()const;
 				void setEnableDomainProxy(bool enableDomainProxy);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getRegistrantName()const;
 				void setRegistrantName(const std::string& registrantName);
+				bool getUsePromotion()const;
+				void setUsePromotion(bool usePromotion);
 
             private:
 				std::string country_;
@@ -100,6 +108,7 @@ namespace AlibabaCloud
 				std::string dns2_;
 				std::string dns1_;
 				long registrantProfileId_;
+				std::string couponNo_;
 				bool aliyunDns_;
 				std::string zhCity_;
 				std::string telExt_;
@@ -116,11 +125,14 @@ namespace AlibabaCloud
 				std::string registrantType_;
 				std::string telephone_;
 				bool trademarkDomainActivation_;
+				bool useCoupon_;
 				std::string zhProvince_;
 				std::string registrantOrganization_;
+				std::string promotionNo_;
 				bool enableDomainProxy_;
 				std::string userClientIp_;
 				std::string registrantName_;
+				bool usePromotion_;
 
 			};
 		}

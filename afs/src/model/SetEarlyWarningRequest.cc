@@ -33,7 +33,7 @@ std::string SetEarlyWarningRequest::getTimeEnd()const
 void SetEarlyWarningRequest::setTimeEnd(const std::string& timeEnd)
 {
 	timeEnd_ = timeEnd;
-	setParameter("TimeEnd", timeEnd);
+	setCoreParameter("TimeEnd", timeEnd);
 }
 
 bool SetEarlyWarningRequest::getWarnOpen()const
@@ -44,7 +44,7 @@ bool SetEarlyWarningRequest::getWarnOpen()const
 void SetEarlyWarningRequest::setWarnOpen(bool warnOpen)
 {
 	warnOpen_ = warnOpen;
-	setParameter("WarnOpen", std::to_string(warnOpen));
+	setCoreParameter("WarnOpen", warnOpen ? "true" : "false");
 }
 
 std::string SetEarlyWarningRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string SetEarlyWarningRequest::getSourceIp()const
 void SetEarlyWarningRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string SetEarlyWarningRequest::getChannel()const
@@ -66,7 +66,7 @@ std::string SetEarlyWarningRequest::getChannel()const
 void SetEarlyWarningRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setParameter("Channel", channel);
+	setCoreParameter("Channel", channel);
 }
 
 std::string SetEarlyWarningRequest::getTitle()const
@@ -77,7 +77,7 @@ std::string SetEarlyWarningRequest::getTitle()const
 void SetEarlyWarningRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 
 bool SetEarlyWarningRequest::getTimeOpen()const
@@ -88,7 +88,7 @@ bool SetEarlyWarningRequest::getTimeOpen()const
 void SetEarlyWarningRequest::setTimeOpen(bool timeOpen)
 {
 	timeOpen_ = timeOpen;
-	setParameter("TimeOpen", std::to_string(timeOpen));
+	setCoreParameter("TimeOpen", timeOpen ? "true" : "false");
 }
 
 std::string SetEarlyWarningRequest::getTimeBegin()const
@@ -99,7 +99,7 @@ std::string SetEarlyWarningRequest::getTimeBegin()const
 void SetEarlyWarningRequest::setTimeBegin(const std::string& timeBegin)
 {
 	timeBegin_ = timeBegin;
-	setParameter("TimeBegin", timeBegin);
+	setCoreParameter("TimeBegin", timeBegin);
 }
 
 std::string SetEarlyWarningRequest::getFrequency()const
@@ -110,6 +110,6 @@ std::string SetEarlyWarningRequest::getFrequency()const
 void SetEarlyWarningRequest::setFrequency(const std::string& frequency)
 {
 	frequency_ = frequency;
-	setParameter("Frequency", frequency);
+	setCoreParameter("Frequency", frequency);
 }
 

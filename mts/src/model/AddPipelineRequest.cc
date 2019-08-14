@@ -33,7 +33,7 @@ long AddPipelineRequest::getResourceOwnerId()const
 void AddPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddPipelineRequest::getRole()const
@@ -44,7 +44,7 @@ std::string AddPipelineRequest::getRole()const
 void AddPipelineRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setParameter("Role", role);
+	setCoreParameter("Role", role);
 }
 
 std::string AddPipelineRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddPipelineRequest::getResourceOwnerAccount()const
 void AddPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddPipelineRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddPipelineRequest::getOwnerAccount()const
 void AddPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddPipelineRequest::getName()const
@@ -77,7 +77,7 @@ std::string AddPipelineRequest::getName()const
 void AddPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string AddPipelineRequest::getNotifyConfig()const
@@ -88,7 +88,7 @@ std::string AddPipelineRequest::getNotifyConfig()const
 void AddPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setParameter("NotifyConfig", notifyConfig);
+	setCoreParameter("NotifyConfig", notifyConfig);
 }
 
 long AddPipelineRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long AddPipelineRequest::getOwnerId()const
 void AddPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long AddPipelineRequest::getSpeedLevel()const
@@ -110,7 +110,7 @@ long AddPipelineRequest::getSpeedLevel()const
 void AddPipelineRequest::setSpeedLevel(long speedLevel)
 {
 	speedLevel_ = speedLevel;
-	setParameter("SpeedLevel", std::to_string(speedLevel));
+	setCoreParameter("SpeedLevel", std::to_string(speedLevel));
 }
 
 std::string AddPipelineRequest::getSpeed()const
@@ -121,7 +121,7 @@ std::string AddPipelineRequest::getSpeed()const
 void AddPipelineRequest::setSpeed(const std::string& speed)
 {
 	speed_ = speed;
-	setParameter("Speed", speed);
+	setCoreParameter("Speed", speed);
 }
 
 std::string AddPipelineRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string AddPipelineRequest::getAccessKeyId()const
 void AddPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

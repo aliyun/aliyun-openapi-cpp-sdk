@@ -33,7 +33,7 @@ std::string SetUserBusinessStatusRequest::getUid()const
 void SetUserBusinessStatusRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setParameter("Uid", uid);
+	setCoreParameter("Uid", uid);
 }
 
 std::string SetUserBusinessStatusRequest::getStatusValue()const
@@ -44,7 +44,7 @@ std::string SetUserBusinessStatusRequest::getStatusValue()const
 void SetUserBusinessStatusRequest::setStatusValue(const std::string& statusValue)
 {
 	statusValue_ = statusValue;
-	setParameter("StatusValue", statusValue);
+	setCoreParameter("StatusValue", statusValue);
 }
 
 std::string SetUserBusinessStatusRequest::getService()const
@@ -55,7 +55,7 @@ std::string SetUserBusinessStatusRequest::getService()const
 void SetUserBusinessStatusRequest::setService(const std::string& service)
 {
 	service_ = service;
-	setParameter("Service", service);
+	setCoreParameter("Service", service);
 }
 
 std::string SetUserBusinessStatusRequest::getStatusKey()const
@@ -66,6 +66,6 @@ std::string SetUserBusinessStatusRequest::getStatusKey()const
 void SetUserBusinessStatusRequest::setStatusKey(const std::string& statusKey)
 {
 	statusKey_ = statusKey;
-	setParameter("StatusKey", statusKey);
+	setCoreParameter("StatusKey", statusKey);
 }
 

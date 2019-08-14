@@ -33,7 +33,7 @@ long GetSupportedOpsCommandRequest::getResourceOwnerId()const
 void GetSupportedOpsCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetSupportedOpsCommandRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetSupportedOpsCommandRequest::getRegionId()const
 void GetSupportedOpsCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetSupportedOpsCommandRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetSupportedOpsCommandRequest::getAccessKeyId()const
 void GetSupportedOpsCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -48,6 +48,8 @@
 #include "model/ModifyRdsReadWeightResult.h"
 #include "model/CreateDrdsInstanceRequest.h"
 #include "model/CreateDrdsInstanceResult.h"
+#include "model/DescribeDrdsInstanceMonitorRequest.h"
+#include "model/DescribeDrdsInstanceMonitorResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeDrdsDBIpWhiteListRequest.h"
@@ -66,6 +68,8 @@
 #include "model/ModifyDrdsDBPasswdResult.h"
 #include "model/DeleteFailedDrdsDBRequest.h"
 #include "model/DeleteFailedDrdsDBResult.h"
+#include "model/DescribeDrdsInstanceDbMonitorRequest.h"
+#include "model/DescribeDrdsInstanceDbMonitorResult.h"
 #include "model/DescribeCreateDrdsInstanceStatusRequest.h"
 #include "model/DescribeCreateDrdsInstanceStatusResult.h"
 #include "model/DescribeDrdsDBsRequest.h"
@@ -124,6 +128,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDrdsInstanceResult> CreateDrdsInstanceOutcome;
 			typedef std::future<CreateDrdsInstanceOutcome> CreateDrdsInstanceOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::CreateDrdsInstanceRequest&, const CreateDrdsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDrdsInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDrdsInstanceMonitorResult> DescribeDrdsInstanceMonitorOutcome;
+			typedef std::future<DescribeDrdsInstanceMonitorOutcome> DescribeDrdsInstanceMonitorOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::DescribeDrdsInstanceMonitorRequest&, const DescribeDrdsInstanceMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrdsInstanceMonitorAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -151,6 +158,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteFailedDrdsDBResult> DeleteFailedDrdsDBOutcome;
 			typedef std::future<DeleteFailedDrdsDBOutcome> DeleteFailedDrdsDBOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DeleteFailedDrdsDBRequest&, const DeleteFailedDrdsDBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFailedDrdsDBAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDrdsInstanceDbMonitorResult> DescribeDrdsInstanceDbMonitorOutcome;
+			typedef std::future<DescribeDrdsInstanceDbMonitorOutcome> DescribeDrdsInstanceDbMonitorOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::DescribeDrdsInstanceDbMonitorRequest&, const DescribeDrdsInstanceDbMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrdsInstanceDbMonitorAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCreateDrdsInstanceStatusResult> DescribeCreateDrdsInstanceStatusOutcome;
 			typedef std::future<DescribeCreateDrdsInstanceStatusOutcome> DescribeCreateDrdsInstanceStatusOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::DescribeCreateDrdsInstanceStatusRequest&, const DescribeCreateDrdsInstanceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreateDrdsInstanceStatusAsyncHandler;
@@ -210,6 +220,9 @@ namespace AlibabaCloud
 			CreateDrdsInstanceOutcome createDrdsInstance(const Model::CreateDrdsInstanceRequest &request)const;
 			void createDrdsInstanceAsync(const Model::CreateDrdsInstanceRequest& request, const CreateDrdsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDrdsInstanceOutcomeCallable createDrdsInstanceCallable(const Model::CreateDrdsInstanceRequest& request) const;
+			DescribeDrdsInstanceMonitorOutcome describeDrdsInstanceMonitor(const Model::DescribeDrdsInstanceMonitorRequest &request)const;
+			void describeDrdsInstanceMonitorAsync(const Model::DescribeDrdsInstanceMonitorRequest& request, const DescribeDrdsInstanceMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDrdsInstanceMonitorOutcomeCallable describeDrdsInstanceMonitorCallable(const Model::DescribeDrdsInstanceMonitorRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -237,6 +250,9 @@ namespace AlibabaCloud
 			DeleteFailedDrdsDBOutcome deleteFailedDrdsDB(const Model::DeleteFailedDrdsDBRequest &request)const;
 			void deleteFailedDrdsDBAsync(const Model::DeleteFailedDrdsDBRequest& request, const DeleteFailedDrdsDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFailedDrdsDBOutcomeCallable deleteFailedDrdsDBCallable(const Model::DeleteFailedDrdsDBRequest& request) const;
+			DescribeDrdsInstanceDbMonitorOutcome describeDrdsInstanceDbMonitor(const Model::DescribeDrdsInstanceDbMonitorRequest &request)const;
+			void describeDrdsInstanceDbMonitorAsync(const Model::DescribeDrdsInstanceDbMonitorRequest& request, const DescribeDrdsInstanceDbMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDrdsInstanceDbMonitorOutcomeCallable describeDrdsInstanceDbMonitorCallable(const Model::DescribeDrdsInstanceDbMonitorRequest& request) const;
 			DescribeCreateDrdsInstanceStatusOutcome describeCreateDrdsInstanceStatus(const Model::DescribeCreateDrdsInstanceStatusRequest &request)const;
 			void describeCreateDrdsInstanceStatusAsync(const Model::DescribeCreateDrdsInstanceStatusRequest& request, const DescribeCreateDrdsInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCreateDrdsInstanceStatusOutcomeCallable describeCreateDrdsInstanceStatusCallable(const Model::DescribeCreateDrdsInstanceStatusRequest& request) const;

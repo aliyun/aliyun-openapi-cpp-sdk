@@ -35,10 +35,13 @@ DescribeNetworkOptimizationsResult::~DescribeNetworkOptimizationsResult()
 
 void DescribeNetworkOptimizationsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allNetworkOptimizations = value["NetworkOptimizations"]["NetworkOptimization"];
 	for (auto value : allNetworkOptimizations)
@@ -60,8 +63,8 @@ void DescribeNetworkOptimizationsResult::parse(const std::string &payload)
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNo"].isNull())
-		pageNo_ = std::stoi(value["PageNo"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 
@@ -82,8 +85,8 @@ int DescribeNetworkOptimizationsResult::getPageSize()const
 	return pageSize_;
 }
 
-int DescribeNetworkOptimizationsResult::getPageNo()const
+int DescribeNetworkOptimizationsResult::getPageNumber()const
 {
-	return pageNo_;
+	return pageNumber_;
 }
 

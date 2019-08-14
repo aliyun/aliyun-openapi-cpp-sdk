@@ -81,12 +81,14 @@ namespace AlibabaCloud
 					bool initCustomHiveMetaDb;
 					std::vector<std::string> softwareInfoList;
 					bool useLocalMetaDb;
+					std::string keyPairName;
 					bool ioOptimized;
 					std::string zoneId;
 					std::string vSwitchId;
 					std::string securityGroupId;
 					std::string depositType;
 					std::string machineType;
+					std::string metaStoreType;
 					int masterNodeTotal;
 					std::string clusterType;
 					bool easEnable;
@@ -94,6 +96,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					bool useCustomHiveMetaDb;
 					std::string userId;
+					std::string metaStoreConf;
 					std::vector<TemplateInfo::HostGroup> hostGroupList;
 					std::string instanceGeneration;
 					std::string id;

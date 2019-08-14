@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setSpotStrategy(const std::string& spotStrategy);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				bool getShowSoldOut()const;
+				void setShowSoldOut(bool showSoldOut);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getAccessKeyId()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string spotStrategy_;
 				std::string zoneId_;
+				bool showSoldOut_;
 				std::string instanceChargeType_;
 				std::string accessKeyId_;
 

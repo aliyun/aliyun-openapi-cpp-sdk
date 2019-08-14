@@ -33,7 +33,7 @@ int QueryInstanceInfoByConnRequest::getPort()const
 void QueryInstanceInfoByConnRequest::setPort(int port)
 {
 	port_ = port;
-	setParameter("Port", std::to_string(port));
+	setCoreParameter("Port", std::to_string(port));
 }
 
 std::string QueryInstanceInfoByConnRequest::getHost()const
@@ -44,7 +44,7 @@ std::string QueryInstanceInfoByConnRequest::getHost()const
 void QueryInstanceInfoByConnRequest::setHost(const std::string& host)
 {
 	host_ = host;
-	setParameter("Host", host);
+	setCoreParameter("Host", host);
 }
 
 std::string QueryInstanceInfoByConnRequest::getUserName()const
@@ -55,7 +55,7 @@ std::string QueryInstanceInfoByConnRequest::getUserName()const
 void QueryInstanceInfoByConnRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 
 std::string QueryInstanceInfoByConnRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string QueryInstanceInfoByConnRequest::getAccessKeyId()const
 void QueryInstanceInfoByConnRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

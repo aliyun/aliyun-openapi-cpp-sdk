@@ -53,6 +53,12 @@ namespace AlibabaCloud
 							Data data;
 							std::string xLabel;
 						};
+						struct ResourceInfoItem
+						{
+							std::string label;
+							std::string value;
+						};
+						std::vector<ResourceInfoItem> resourceInfo;
 						std::vector<ContentItem> content;
 						std::vector<ChartItem> chart;
 					};

@@ -33,7 +33,7 @@ long DeleteIPv6TranslatorRequest::getResourceOwnerId()const
 void DeleteIPv6TranslatorRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIPv6TranslatorRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteIPv6TranslatorRequest::getResourceOwnerAccount()const
 void DeleteIPv6TranslatorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIPv6TranslatorRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DeleteIPv6TranslatorRequest::getClientToken()const
 void DeleteIPv6TranslatorRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DeleteIPv6TranslatorRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteIPv6TranslatorRequest::getRegionId()const
 void DeleteIPv6TranslatorRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteIPv6TranslatorRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteIPv6TranslatorRequest::getOwnerAccount()const
 void DeleteIPv6TranslatorRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteIPv6TranslatorRequest::getIpv6TranslatorId()const
@@ -88,7 +88,7 @@ std::string DeleteIPv6TranslatorRequest::getIpv6TranslatorId()const
 void DeleteIPv6TranslatorRequest::setIpv6TranslatorId(const std::string& ipv6TranslatorId)
 {
 	ipv6TranslatorId_ = ipv6TranslatorId;
-	setParameter("Ipv6TranslatorId", ipv6TranslatorId);
+	setCoreParameter("Ipv6TranslatorId", ipv6TranslatorId);
 }
 
 long DeleteIPv6TranslatorRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DeleteIPv6TranslatorRequest::getOwnerId()const
 void DeleteIPv6TranslatorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

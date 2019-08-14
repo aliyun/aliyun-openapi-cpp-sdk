@@ -35,10 +35,13 @@ DescribeTraceInfoDetailResult::~DescribeTraceInfoDetailResult()
 
 void DescribeTraceInfoDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto traceInfoDetailNode = value["TraceInfoDetail"];
 	auto allEdgeList = value["EdgeList"]["Edge"];
@@ -53,6 +56,8 @@ void DescribeTraceInfoDetailResult::parse(const std::string &payload)
 			edgeObject.count = std::stoi(value["Count"].asString());
 		if(!value["Time"].isNull())
 			edgeObject.time = value["Time"].asString();
+		if(!value["Type"].isNull())
+			edgeObject.type = value["Type"].asString();
 		traceInfoDetail_.edgeList.push_back(edgeObject);
 	}
 	auto allVertexList = value["VertexList"]["Vertex"];
@@ -110,6 +115,22 @@ void DescribeTraceInfoDetailResult::parse(const std::string &payload)
 		if(!value["GmtCreate"].isNull())
 			entityTypeObject.gmtCreate = std::stol(value["GmtCreate"].asString());
 		traceInfoDetail_.entityTypeList.push_back(entityTypeObject);
+	}
+	auto allRelationTypeList = value["RelationTypeList"]["RelationType"];
+	for (auto value : allRelationTypeList)
+	{
+		TraceInfoDetail::RelationType relationTypeObject;
+		if(!value["RelationTypeId"].isNull())
+			relationTypeObject.relationTypeId = value["RelationTypeId"].asString();
+		if(!value["Name"].isNull())
+			relationTypeObject.name = value["Name"].asString();
+		if(!value["Directed"].isNull())
+			relationTypeObject.directed = std::stoi(value["Directed"].asString());
+		if(!value["DisplayColor"].isNull())
+			relationTypeObject.displayColor = value["DisplayColor"].asString();
+		if(!value["ShowType"].isNull())
+			relationTypeObject.showType = value["ShowType"].asString();
+		traceInfoDetail_.relationTypeList.push_back(relationTypeObject);
 	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";

@@ -33,7 +33,18 @@ std::string DescribeDomainRecordsRequest::getValueKeyWord()const
 void DescribeDomainRecordsRequest::setValueKeyWord(const std::string& valueKeyWord)
 {
 	valueKeyWord_ = valueKeyWord;
-	setParameter("ValueKeyWord", valueKeyWord);
+	setCoreParameter("ValueKeyWord", valueKeyWord);
+}
+
+std::string DescribeDomainRecordsRequest::getLine()const
+{
+	return line_;
+}
+
+void DescribeDomainRecordsRequest::setLine(const std::string& line)
+{
+	line_ = line;
+	setCoreParameter("Line", line);
 }
 
 long DescribeDomainRecordsRequest::getGroupId()const
@@ -44,7 +55,7 @@ long DescribeDomainRecordsRequest::getGroupId()const
 void DescribeDomainRecordsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeDomainRecordsRequest::getDomainName()const
@@ -55,7 +66,7 @@ std::string DescribeDomainRecordsRequest::getDomainName()const
 void DescribeDomainRecordsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRecordsRequest::getOrderBy()const
@@ -66,7 +77,18 @@ std::string DescribeDomainRecordsRequest::getOrderBy()const
 void DescribeDomainRecordsRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", orderBy);
+}
+
+std::string DescribeDomainRecordsRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeDomainRecordsRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
 long DescribeDomainRecordsRequest::getPageNumber()const
@@ -77,7 +99,7 @@ long DescribeDomainRecordsRequest::getPageNumber()const
 void DescribeDomainRecordsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDomainRecordsRequest::getUserClientIp()const
@@ -88,7 +110,7 @@ std::string DescribeDomainRecordsRequest::getUserClientIp()const
 void DescribeDomainRecordsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long DescribeDomainRecordsRequest::getPageSize()const
@@ -99,7 +121,7 @@ long DescribeDomainRecordsRequest::getPageSize()const
 void DescribeDomainRecordsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainRecordsRequest::getSearchMode()const
@@ -110,7 +132,7 @@ std::string DescribeDomainRecordsRequest::getSearchMode()const
 void DescribeDomainRecordsRequest::setSearchMode(const std::string& searchMode)
 {
 	searchMode_ = searchMode;
-	setParameter("SearchMode", searchMode);
+	setCoreParameter("SearchMode", searchMode);
 }
 
 std::string DescribeDomainRecordsRequest::getLang()const
@@ -121,7 +143,7 @@ std::string DescribeDomainRecordsRequest::getLang()const
 void DescribeDomainRecordsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeDomainRecordsRequest::getKeyWord()const
@@ -132,7 +154,7 @@ std::string DescribeDomainRecordsRequest::getKeyWord()const
 void DescribeDomainRecordsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setParameter("KeyWord", keyWord);
+	setCoreParameter("KeyWord", keyWord);
 }
 
 std::string DescribeDomainRecordsRequest::getTypeKeyWord()const
@@ -143,7 +165,7 @@ std::string DescribeDomainRecordsRequest::getTypeKeyWord()const
 void DescribeDomainRecordsRequest::setTypeKeyWord(const std::string& typeKeyWord)
 {
 	typeKeyWord_ = typeKeyWord;
-	setParameter("TypeKeyWord", typeKeyWord);
+	setCoreParameter("TypeKeyWord", typeKeyWord);
 }
 
 std::string DescribeDomainRecordsRequest::getRRKeyWord()const
@@ -154,7 +176,7 @@ std::string DescribeDomainRecordsRequest::getRRKeyWord()const
 void DescribeDomainRecordsRequest::setRRKeyWord(const std::string& rRKeyWord)
 {
 	rRKeyWord_ = rRKeyWord;
-	setParameter("RRKeyWord", rRKeyWord);
+	setCoreParameter("RRKeyWord", rRKeyWord);
 }
 
 std::string DescribeDomainRecordsRequest::getDirection()const
@@ -165,6 +187,17 @@ std::string DescribeDomainRecordsRequest::getDirection()const
 void DescribeDomainRecordsRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setParameter("Direction", direction);
+	setCoreParameter("Direction", direction);
+}
+
+std::string DescribeDomainRecordsRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeDomainRecordsRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setCoreParameter("Status", status);
 }
 

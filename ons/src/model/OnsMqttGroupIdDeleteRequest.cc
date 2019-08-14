@@ -25,17 +25,6 @@ OnsMqttGroupIdDeleteRequest::OnsMqttGroupIdDeleteRequest() :
 OnsMqttGroupIdDeleteRequest::~OnsMqttGroupIdDeleteRequest()
 {}
 
-long OnsMqttGroupIdDeleteRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMqttGroupIdDeleteRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMqttGroupIdDeleteRequest::getInstanceId()const
 {
 	return instanceId_;

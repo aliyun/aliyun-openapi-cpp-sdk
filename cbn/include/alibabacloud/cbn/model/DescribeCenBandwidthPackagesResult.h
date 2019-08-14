@@ -42,10 +42,12 @@ namespace AlibabaCloud
 					bool isCrossBorder;
 					std::string businessStatus;
 					std::string name;
+					std::string typeFor95;
 					std::string bandwidthPackageChargeType;
 					long bandwidth;
 					std::string expiredTime;
 					std::string creationTime;
+					std::string ratio;
 					std::vector<std::string> cenIds;
 					std::string cenBandwidthPackageId;
 				};

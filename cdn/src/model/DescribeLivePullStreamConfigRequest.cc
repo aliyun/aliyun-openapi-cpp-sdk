@@ -33,7 +33,7 @@ std::string DescribeLivePullStreamConfigRequest::getSecurityToken()const
 void DescribeLivePullStreamConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLivePullStreamConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLivePullStreamConfigRequest::getDomainName()const
 void DescribeLivePullStreamConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeLivePullStreamConfigRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long DescribeLivePullStreamConfigRequest::getOwnerId()const
 void DescribeLivePullStreamConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

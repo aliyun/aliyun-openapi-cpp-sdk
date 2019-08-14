@@ -33,7 +33,7 @@ std::string GetQuotaRequest::getLibraryId()const
 void GetQuotaRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string GetQuotaRequest::getStoreName()const
@@ -44,6 +44,6 @@ std::string GetQuotaRequest::getStoreName()const
 void GetQuotaRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

@@ -33,7 +33,7 @@ std::string ListTagPhotosRequest::getCursor()const
 void ListTagPhotosRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setParameter("Cursor", cursor);
+	setCoreParameter("Cursor", cursor);
 }
 
 int ListTagPhotosRequest::getSize()const
@@ -44,7 +44,7 @@ int ListTagPhotosRequest::getSize()const
 void ListTagPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setParameter("Size", std::to_string(size));
+	setCoreParameter("Size", std::to_string(size));
 }
 
 long ListTagPhotosRequest::getTagId()const
@@ -55,7 +55,7 @@ long ListTagPhotosRequest::getTagId()const
 void ListTagPhotosRequest::setTagId(long tagId)
 {
 	tagId_ = tagId;
-	setParameter("TagId", std::to_string(tagId));
+	setCoreParameter("TagId", std::to_string(tagId));
 }
 
 std::string ListTagPhotosRequest::getLibraryId()const
@@ -66,7 +66,7 @@ std::string ListTagPhotosRequest::getLibraryId()const
 void ListTagPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListTagPhotosRequest::getStoreName()const
@@ -77,7 +77,7 @@ std::string ListTagPhotosRequest::getStoreName()const
 void ListTagPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListTagPhotosRequest::getState()const
@@ -88,7 +88,7 @@ std::string ListTagPhotosRequest::getState()const
 void ListTagPhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 std::string ListTagPhotosRequest::getDirection()const
@@ -99,6 +99,6 @@ std::string ListTagPhotosRequest::getDirection()const
 void ListTagPhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setParameter("Direction", direction);
+	setCoreParameter("Direction", direction);
 }
 

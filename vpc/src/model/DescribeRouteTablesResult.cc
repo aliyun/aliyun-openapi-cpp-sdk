@@ -35,10 +35,13 @@ DescribeRouteTablesResult::~DescribeRouteTablesResult()
 
 void DescribeRouteTablesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allRouteTables = value["RouteTables"]["RouteTable"];
 	for (auto value : allRouteTables)
@@ -54,6 +57,8 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 			routeTablesObject.creationTime = value["CreationTime"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			routeTablesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["Status"].isNull())
+			routeTablesObject.status = value["Status"].asString();
 		auto allRouteEntrys = value["RouteEntrys"]["RouteEntry"];
 		for (auto value : allRouteEntrys)
 		{
@@ -70,6 +75,10 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 				routeEntrysObject.instanceId = value["InstanceId"].asString();
 			if(!value["NextHopType"].isNull())
 				routeEntrysObject.nextHopType = value["NextHopType"].asString();
+			if(!value["RouteEntryName"].isNull())
+				routeEntrysObject.routeEntryName = value["RouteEntryName"].asString();
+			if(!value["RouteEntryId"].isNull())
+				routeEntrysObject.routeEntryId = value["RouteEntryId"].asString();
 			if(!value["NextHopRegionId"].isNull())
 				routeEntrysObject.nextHopRegionId = value["NextHopRegionId"].asString();
 			if(!value["NextHopOppsiteType"].isNull())

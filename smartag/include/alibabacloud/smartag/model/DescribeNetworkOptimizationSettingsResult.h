@@ -44,7 +44,7 @@ namespace AlibabaCloud
 				~DescribeNetworkOptimizationSettingsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
-				int getPageNo()const;
+				int getPageNumber()const;
 				std::vector<Setting> getSettings()const;
 
 			protected:
@@ -52,7 +52,7 @@ namespace AlibabaCloud
 			private:
 				int totalCount_;
 				int pageSize_;
-				int pageNo_;
+				int pageNumber_;
 				std::vector<Setting> settings_;
 
 			};

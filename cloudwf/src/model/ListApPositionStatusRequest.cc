@@ -33,7 +33,7 @@ std::string ListApPositionStatusRequest::getJsonData()const
 void ListApPositionStatusRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setParameter("JsonData", jsonData);
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string ListApPositionStatusRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListApPositionStatusRequest::getAccessKeyId()const
 void ListApPositionStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

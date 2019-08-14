@@ -57,10 +57,14 @@ namespace AlibabaCloud
 				void setAddressType(const std::string& addressType);
 				std::string getSlaveZoneId()const;
 				void setSlaveZoneId(const std::string& slaveZoneId);
+				std::string getDeleteProtection()const;
+				void setDeleteProtection(const std::string& deleteProtection);
 				std::string getLoadBalancerSpec()const;
 				void setLoadBalancerSpec(const std::string& loadBalancerSpec);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
+				std::string getAddress()const;
+				void setAddress(const std::string& address);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getBandwidth()const;
@@ -83,6 +87,8 @@ namespace AlibabaCloud
 				void setPayType(const std::string& payType);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
+				int getRatio()const;
+				void setRatio(int ratio);
 
             private:
 				std::string access_key_id_;
@@ -96,8 +102,10 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string addressType_;
 				std::string slaveZoneId_;
+				std::string deleteProtection_;
 				std::string loadBalancerSpec_;
 				bool autoPay_;
+				std::string address_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
 				std::string ownerAccount_;
@@ -109,6 +117,7 @@ namespace AlibabaCloud
 				std::string vpcId_;
 				std::string payType_;
 				std::string pricingCycle_;
+				int ratio_;
 
 			};
 		}

@@ -33,7 +33,7 @@ std::string DescribeGtmAvailableAlertGroupRequest::getUserClientIp()const
 void DescribeGtmAvailableAlertGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeGtmAvailableAlertGroupRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeGtmAvailableAlertGroupRequest::getLang()const
 void DescribeGtmAvailableAlertGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

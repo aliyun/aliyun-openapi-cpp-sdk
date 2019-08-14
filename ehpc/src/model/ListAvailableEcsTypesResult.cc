@@ -35,10 +35,13 @@ ListAvailableEcsTypesResult::~ListAvailableEcsTypesResult()
 
 void ListAvailableEcsTypesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allInstanceTypeFamilies = value["InstanceTypeFamilies"]["InstanceTypeFamilyInfo"];
 	for (auto value : allInstanceTypeFamilies)
@@ -72,6 +75,8 @@ void ListAvailableEcsTypesResult::parse(const std::string &payload)
 				typesObject.instanceTypeId = value["InstanceTypeId"].asString();
 			if(!value["GPUSpec"].isNull())
 				typesObject.gPUSpec = value["GPUSpec"].asString();
+			if(!value["Status"].isNull())
+				typesObject.status = value["Status"].asString();
 			instanceTypeFamiliesObject.types.push_back(typesObject);
 		}
 		instanceTypeFamilies_.push_back(instanceTypeFamiliesObject);

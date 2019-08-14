@@ -21,45 +21,117 @@ set(dyvmsapi_public_header
 	include/alibabacloud/dyvmsapi/DyvmsapiExport.h )
 
 set(dyvmsapi_public_header_model 
-	include/alibabacloud/dyvmsapi/model/SmartCallRequest.h
-	include/alibabacloud/dyvmsapi/model/SmartCallResult.h
-	include/alibabacloud/dyvmsapi/model/QueryCallDetailByCallIdRequest.h
-	include/alibabacloud/dyvmsapi/model/QueryCallDetailByCallIdResult.h
-	include/alibabacloud/dyvmsapi/model/VoipAddAccountRequest.h
-	include/alibabacloud/dyvmsapi/model/VoipAddAccountResult.h
+	include/alibabacloud/dyvmsapi/model/UploadRobotTaskCalledFileRequest.h
+	include/alibabacloud/dyvmsapi/model/UploadRobotTaskCalledFileResult.h
 	include/alibabacloud/dyvmsapi/model/CancelCallRequest.h
 	include/alibabacloud/dyvmsapi/model/CancelCallResult.h
+	include/alibabacloud/dyvmsapi/model/CancelRobotTaskRequest.h
+	include/alibabacloud/dyvmsapi/model/CancelRobotTaskResult.h
+	include/alibabacloud/dyvmsapi/model/AddRtcAccountRequest.h
+	include/alibabacloud/dyvmsapi/model/AddRtcAccountResult.h
+	include/alibabacloud/dyvmsapi/model/QueryCallDetailByTaskIdRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryCallDetailByTaskIdResult.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotTaskCallDetailRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotTaskCallDetailResult.h
+	include/alibabacloud/dyvmsapi/model/SmartCallOperateRequest.h
+	include/alibabacloud/dyvmsapi/model/SmartCallOperateResult.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotTaskDetailRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotTaskDetailResult.h
+	include/alibabacloud/dyvmsapi/model/SingleCallByVoiceRequest.h
+	include/alibabacloud/dyvmsapi/model/SingleCallByVoiceResult.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotv2AllListRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotv2AllListResult.h
+	include/alibabacloud/dyvmsapi/model/GetRtcTokenRequest.h
+	include/alibabacloud/dyvmsapi/model/GetRtcTokenResult.h
+	include/alibabacloud/dyvmsapi/model/SingleCallByTtsRequest.h
+	include/alibabacloud/dyvmsapi/model/SingleCallByTtsResult.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotInfoListRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotInfoListResult.h
 	include/alibabacloud/dyvmsapi/model/VoipGetTokenRequest.h
 	include/alibabacloud/dyvmsapi/model/VoipGetTokenResult.h
 	include/alibabacloud/dyvmsapi/model/ClickToDialRequest.h
 	include/alibabacloud/dyvmsapi/model/ClickToDialResult.h
+	include/alibabacloud/dyvmsapi/model/DeleteRobotTaskRequest.h
+	include/alibabacloud/dyvmsapi/model/DeleteRobotTaskResult.h
+	include/alibabacloud/dyvmsapi/model/CreateRobotTaskRequest.h
+	include/alibabacloud/dyvmsapi/model/CreateRobotTaskResult.h
+	include/alibabacloud/dyvmsapi/model/QueryCallDetailByCallIdRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryCallDetailByCallIdResult.h
+	include/alibabacloud/dyvmsapi/model/StopRobotTaskRequest.h
+	include/alibabacloud/dyvmsapi/model/StopRobotTaskResult.h
 	include/alibabacloud/dyvmsapi/model/IvrCallRequest.h
 	include/alibabacloud/dyvmsapi/model/IvrCallResult.h
-	include/alibabacloud/dyvmsapi/model/SingleCallByVoiceRequest.h
-	include/alibabacloud/dyvmsapi/model/SingleCallByVoiceResult.h
-	include/alibabacloud/dyvmsapi/model/SingleCallByTtsRequest.h
-	include/alibabacloud/dyvmsapi/model/SingleCallByTtsResult.h )
+	include/alibabacloud/dyvmsapi/model/BatchRobotSmartCallRequest.h
+	include/alibabacloud/dyvmsapi/model/BatchRobotSmartCallResult.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotTaskListRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotTaskListResult.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotTaskCallListRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryRobotTaskCallListResult.h
+	include/alibabacloud/dyvmsapi/model/SmartCallRequest.h
+	include/alibabacloud/dyvmsapi/model/SmartCallResult.h
+	include/alibabacloud/dyvmsapi/model/CancelOrderRobotTaskRequest.h
+	include/alibabacloud/dyvmsapi/model/CancelOrderRobotTaskResult.h
+	include/alibabacloud/dyvmsapi/model/VoipAddAccountRequest.h
+	include/alibabacloud/dyvmsapi/model/VoipAddAccountResult.h
+	include/alibabacloud/dyvmsapi/model/StartRobotTaskRequest.h
+	include/alibabacloud/dyvmsapi/model/StartRobotTaskResult.h )
 
 set(dyvmsapi_src 
 	src/DyvmsapiClient.cc
-	src/model/SmartCallRequest.cc
-	src/model/SmartCallResult.cc
-	src/model/QueryCallDetailByCallIdRequest.cc
-	src/model/QueryCallDetailByCallIdResult.cc
-	src/model/VoipAddAccountRequest.cc
-	src/model/VoipAddAccountResult.cc
+	src/model/UploadRobotTaskCalledFileRequest.cc
+	src/model/UploadRobotTaskCalledFileResult.cc
 	src/model/CancelCallRequest.cc
 	src/model/CancelCallResult.cc
+	src/model/CancelRobotTaskRequest.cc
+	src/model/CancelRobotTaskResult.cc
+	src/model/AddRtcAccountRequest.cc
+	src/model/AddRtcAccountResult.cc
+	src/model/QueryCallDetailByTaskIdRequest.cc
+	src/model/QueryCallDetailByTaskIdResult.cc
+	src/model/QueryRobotTaskCallDetailRequest.cc
+	src/model/QueryRobotTaskCallDetailResult.cc
+	src/model/SmartCallOperateRequest.cc
+	src/model/SmartCallOperateResult.cc
+	src/model/QueryRobotTaskDetailRequest.cc
+	src/model/QueryRobotTaskDetailResult.cc
+	src/model/SingleCallByVoiceRequest.cc
+	src/model/SingleCallByVoiceResult.cc
+	src/model/QueryRobotv2AllListRequest.cc
+	src/model/QueryRobotv2AllListResult.cc
+	src/model/GetRtcTokenRequest.cc
+	src/model/GetRtcTokenResult.cc
+	src/model/SingleCallByTtsRequest.cc
+	src/model/SingleCallByTtsResult.cc
+	src/model/QueryRobotInfoListRequest.cc
+	src/model/QueryRobotInfoListResult.cc
 	src/model/VoipGetTokenRequest.cc
 	src/model/VoipGetTokenResult.cc
 	src/model/ClickToDialRequest.cc
 	src/model/ClickToDialResult.cc
+	src/model/DeleteRobotTaskRequest.cc
+	src/model/DeleteRobotTaskResult.cc
+	src/model/CreateRobotTaskRequest.cc
+	src/model/CreateRobotTaskResult.cc
+	src/model/QueryCallDetailByCallIdRequest.cc
+	src/model/QueryCallDetailByCallIdResult.cc
+	src/model/StopRobotTaskRequest.cc
+	src/model/StopRobotTaskResult.cc
 	src/model/IvrCallRequest.cc
 	src/model/IvrCallResult.cc
-	src/model/SingleCallByVoiceRequest.cc
-	src/model/SingleCallByVoiceResult.cc
-	src/model/SingleCallByTtsRequest.cc
-	src/model/SingleCallByTtsResult.cc )
+	src/model/BatchRobotSmartCallRequest.cc
+	src/model/BatchRobotSmartCallResult.cc
+	src/model/QueryRobotTaskListRequest.cc
+	src/model/QueryRobotTaskListResult.cc
+	src/model/QueryRobotTaskCallListRequest.cc
+	src/model/QueryRobotTaskCallListResult.cc
+	src/model/SmartCallRequest.cc
+	src/model/SmartCallResult.cc
+	src/model/CancelOrderRobotTaskRequest.cc
+	src/model/CancelOrderRobotTaskResult.cc
+	src/model/VoipAddAccountRequest.cc
+	src/model/VoipAddAccountResult.cc
+	src/model/StartRobotTaskRequest.cc
+	src/model/StartRobotTaskResult.cc )
 
 add_library(dyvmsapi ${LIB_TYPE}
 	${dyvmsapi_public_header}

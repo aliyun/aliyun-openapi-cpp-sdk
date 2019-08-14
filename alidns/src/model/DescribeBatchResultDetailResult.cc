@@ -35,10 +35,13 @@ DescribeBatchResultDetailResult::~DescribeBatchResultDetailResult()
 
 void DescribeBatchResultDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allBatchResultDetails = value["BatchResultDetails"]["BatchResultDetail"];
 	for (auto value : allBatchResultDetails)
@@ -67,9 +70,9 @@ void DescribeBatchResultDetailResult::parse(const std::string &payload)
 		if(!value["Line"].isNull())
 			batchResultDetailsObject.line = value["Line"].asString();
 		if(!value["Priority"].isNull())
-			batchResultDetailsObject.priority = std::stoi(value["Priority"].asString());
+			batchResultDetailsObject.priority = value["Priority"].asString();
 		if(!value["Ttl"].isNull())
-			batchResultDetailsObject.ttl = std::stoi(value["Ttl"].asString());
+			batchResultDetailsObject.ttl = value["Ttl"].asString();
 		if(!value["RecordId"].isNull())
 			batchResultDetailsObject.recordId = value["RecordId"].asString();
 		if(!value["Remark"].isNull())

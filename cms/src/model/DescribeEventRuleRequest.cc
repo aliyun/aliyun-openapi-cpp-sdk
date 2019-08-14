@@ -33,6 +33,6 @@ std::string DescribeEventRuleRequest::getRuleName()const
 void DescribeEventRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", ruleName);
 }
 

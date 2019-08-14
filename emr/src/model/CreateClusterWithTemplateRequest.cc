@@ -33,7 +33,7 @@ long CreateClusterWithTemplateRequest::getResourceOwnerId()const
 void CreateClusterWithTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateClusterWithTemplateRequest::getUniqueTag()const
@@ -44,7 +44,18 @@ std::string CreateClusterWithTemplateRequest::getUniqueTag()const
 void CreateClusterWithTemplateRequest::setUniqueTag(const std::string& uniqueTag)
 {
 	uniqueTag_ = uniqueTag;
-	setParameter("UniqueTag", uniqueTag);
+	setCoreParameter("UniqueTag", uniqueTag);
+}
+
+std::string CreateClusterWithTemplateRequest::getClusterName()const
+{
+	return clusterName_;
+}
+
+void CreateClusterWithTemplateRequest::setClusterName(const std::string& clusterName)
+{
+	clusterName_ = clusterName;
+	setCoreParameter("ClusterName", clusterName);
 }
 
 std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
@@ -55,7 +66,7 @@ std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
 void CreateClusterWithTemplateRequest::setTemplateBizId(const std::string& templateBizId)
 {
 	templateBizId_ = templateBizId;
-	setParameter("TemplateBizId", templateBizId);
+	setCoreParameter("TemplateBizId", templateBizId);
 }
 
 std::string CreateClusterWithTemplateRequest::getAccessKeyId()const
@@ -66,6 +77,6 @@ std::string CreateClusterWithTemplateRequest::getAccessKeyId()const
 void CreateClusterWithTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

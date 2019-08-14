@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string type;
 					std::string serverId;
+					std::string description;
 					std::string vpcId;
-					std::string eniHost;
 					int port;
 					std::string serverIp;
 					int weight;
@@ -49,6 +49,7 @@ namespace AlibabaCloud
 				~DescribeVServerGroupAttributeResult();
 				std::string getVServerGroupId()const;
 				std::string getVServerGroupName()const;
+				std::string getLoadBalancerId()const;
 				std::vector<BackendServer> getBackendServers()const;
 
 			protected:
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 			private:
 				std::string vServerGroupId_;
 				std::string vServerGroupName_;
+				std::string loadBalancerId_;
 				std::vector<BackendServer> backendServers_;
 
 			};

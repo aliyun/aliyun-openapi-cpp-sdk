@@ -33,7 +33,7 @@ std::string AuthorizeSecurityGroupRequest::getBizType()const
 void AuthorizeSecurityGroupRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setParameter("BizType", bizType);
+	setCoreParameter("BizType", bizType);
 }
 
 long AuthorizeSecurityGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AuthorizeSecurityGroupRequest::getResourceOwnerId()const
 void AuthorizeSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AuthorizeSecurityGroupRequest::getBizContent()const
@@ -55,7 +55,7 @@ std::string AuthorizeSecurityGroupRequest::getBizContent()const
 void AuthorizeSecurityGroupRequest::setBizContent(const std::string& bizContent)
 {
 	bizContent_ = bizContent;
-	setParameter("BizContent", bizContent);
+	setCoreParameter("BizContent", bizContent);
 }
 
 std::string AuthorizeSecurityGroupRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AuthorizeSecurityGroupRequest::getRegionId()const
 void AuthorizeSecurityGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AuthorizeSecurityGroupRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string AuthorizeSecurityGroupRequest::getClusterId()const
 void AuthorizeSecurityGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string AuthorizeSecurityGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string AuthorizeSecurityGroupRequest::getAccessKeyId()const
 void AuthorizeSecurityGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsConsumerStatusRequest();
 				~OnsConsumerStatusRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				bool getNeedJstack()const;
@@ -47,7 +45,6 @@ namespace AlibabaCloud
 				void setDetail(bool detail);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				bool needJstack_;
 				std::string groupId_;

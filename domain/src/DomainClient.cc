@@ -31,21 +31,21 @@ DomainClient::DomainClient(const Credentials &credentials, const ClientConfigura
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::DomainClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::DomainClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::~DomainClient()
@@ -663,36 +663,36 @@ DomainClient::RecordDemandOutcomeCallable DomainClient::recordDemandCallable(con
 	return task->get_future();
 }
 
-DomainClient::UpdateDomainToDomainGroupOutcome DomainClient::updateDomainToDomainGroup(const UpdateDomainToDomainGroupRequest &request) const
+DomainClient::QueryArtExtensionOutcome DomainClient::queryArtExtension(const QueryArtExtensionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateDomainToDomainGroupOutcome(endpointOutcome.error());
+		return QueryArtExtensionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateDomainToDomainGroupOutcome(UpdateDomainToDomainGroupResult(outcome.result()));
+		return QueryArtExtensionOutcome(QueryArtExtensionResult(outcome.result()));
 	else
-		return UpdateDomainToDomainGroupOutcome(outcome.error());
+		return QueryArtExtensionOutcome(outcome.error());
 }
 
-void DomainClient::updateDomainToDomainGroupAsync(const UpdateDomainToDomainGroupRequest& request, const UpdateDomainToDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DomainClient::queryArtExtensionAsync(const QueryArtExtensionRequest& request, const QueryArtExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateDomainToDomainGroup(request), context);
+		handler(this, request, queryArtExtension(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DomainClient::UpdateDomainToDomainGroupOutcomeCallable DomainClient::updateDomainToDomainGroupCallable(const UpdateDomainToDomainGroupRequest &request) const
+DomainClient::QueryArtExtensionOutcomeCallable DomainClient::queryArtExtensionCallable(const QueryArtExtensionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateDomainToDomainGroupOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<QueryArtExtensionOutcome()>>(
 			[this, request]()
 			{
-			return this->updateDomainToDomainGroup(request);
+			return this->queryArtExtension(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,6 +735,42 @@ DomainClient::QueryContactInfoOutcomeCallable DomainClient::queryContactInfoCall
 	return task->get_future();
 }
 
+DomainClient::UpdateDomainToDomainGroupOutcome DomainClient::updateDomainToDomainGroup(const UpdateDomainToDomainGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDomainToDomainGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDomainToDomainGroupOutcome(UpdateDomainToDomainGroupResult(outcome.result()));
+	else
+		return UpdateDomainToDomainGroupOutcome(outcome.error());
+}
+
+void DomainClient::updateDomainToDomainGroupAsync(const UpdateDomainToDomainGroupRequest& request, const UpdateDomainToDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDomainToDomainGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::UpdateDomainToDomainGroupOutcomeCallable DomainClient::updateDomainToDomainGroupCallable(const UpdateDomainToDomainGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDomainToDomainGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDomainToDomainGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::QueryDomainSuffixOutcome DomainClient::queryDomainSuffix(const QueryDomainSuffixRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -771,42 +807,6 @@ DomainClient::QueryDomainSuffixOutcomeCallable DomainClient::queryDomainSuffixCa
 	return task->get_future();
 }
 
-DomainClient::SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome DomainClient::saveSingleTaskForQueryingTransferAuthorizationCode(const SaveSingleTaskForQueryingTransferAuthorizationCodeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome(SaveSingleTaskForQueryingTransferAuthorizationCodeResult(outcome.result()));
-	else
-		return SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome(outcome.error());
-}
-
-void DomainClient::saveSingleTaskForQueryingTransferAuthorizationCodeAsync(const SaveSingleTaskForQueryingTransferAuthorizationCodeRequest& request, const SaveSingleTaskForQueryingTransferAuthorizationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, saveSingleTaskForQueryingTransferAuthorizationCode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DomainClient::SaveSingleTaskForQueryingTransferAuthorizationCodeOutcomeCallable DomainClient::saveSingleTaskForQueryingTransferAuthorizationCodeCallable(const SaveSingleTaskForQueryingTransferAuthorizationCodeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome()>>(
-			[this, request]()
-			{
-			return this->saveSingleTaskForQueryingTransferAuthorizationCode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DomainClient::GetReserveDomainUrlOutcome DomainClient::getReserveDomainUrl(const GetReserveDomainUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,6 +837,42 @@ DomainClient::GetReserveDomainUrlOutcomeCallable DomainClient::getReserveDomainU
 			[this, request]()
 			{
 			return this->getReserveDomainUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome DomainClient::saveSingleTaskForQueryingTransferAuthorizationCode(const SaveSingleTaskForQueryingTransferAuthorizationCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome(SaveSingleTaskForQueryingTransferAuthorizationCodeResult(outcome.result()));
+	else
+		return SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForQueryingTransferAuthorizationCodeAsync(const SaveSingleTaskForQueryingTransferAuthorizationCodeRequest& request, const SaveSingleTaskForQueryingTransferAuthorizationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForQueryingTransferAuthorizationCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForQueryingTransferAuthorizationCodeOutcomeCallable DomainClient::saveSingleTaskForQueryingTransferAuthorizationCodeCallable(const SaveSingleTaskForQueryingTransferAuthorizationCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForQueryingTransferAuthorizationCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForQueryingTransferAuthorizationCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -909,6 +945,42 @@ DomainClient::SubmitEmailVerificationOutcomeCallable DomainClient::submitEmailVe
 			[this, request]()
 			{
 			return this->submitEmailVerification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForAddingDSRecordOutcome DomainClient::saveSingleTaskForAddingDSRecord(const SaveSingleTaskForAddingDSRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForAddingDSRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForAddingDSRecordOutcome(SaveSingleTaskForAddingDSRecordResult(outcome.result()));
+	else
+		return SaveSingleTaskForAddingDSRecordOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForAddingDSRecordAsync(const SaveSingleTaskForAddingDSRecordRequest& request, const SaveSingleTaskForAddingDSRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForAddingDSRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForAddingDSRecordOutcomeCallable DomainClient::saveSingleTaskForAddingDSRecordCallable(const SaveSingleTaskForAddingDSRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForAddingDSRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForAddingDSRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,36 +1239,36 @@ DomainClient::SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfile
 	return task->get_future();
 }
 
-DomainClient::GetQualificationUploadPolicyOutcome DomainClient::getQualificationUploadPolicy(const GetQualificationUploadPolicyRequest &request) const
+DomainClient::VerifyEmailOutcome DomainClient::verifyEmail(const VerifyEmailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetQualificationUploadPolicyOutcome(endpointOutcome.error());
+		return VerifyEmailOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetQualificationUploadPolicyOutcome(GetQualificationUploadPolicyResult(outcome.result()));
+		return VerifyEmailOutcome(VerifyEmailResult(outcome.result()));
 	else
-		return GetQualificationUploadPolicyOutcome(outcome.error());
+		return VerifyEmailOutcome(outcome.error());
 }
 
-void DomainClient::getQualificationUploadPolicyAsync(const GetQualificationUploadPolicyRequest& request, const GetQualificationUploadPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DomainClient::verifyEmailAsync(const VerifyEmailRequest& request, const VerifyEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getQualificationUploadPolicy(request), context);
+		handler(this, request, verifyEmail(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DomainClient::GetQualificationUploadPolicyOutcomeCallable DomainClient::getQualificationUploadPolicyCallable(const GetQualificationUploadPolicyRequest &request) const
+DomainClient::VerifyEmailOutcomeCallable DomainClient::verifyEmailCallable(const VerifyEmailRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetQualificationUploadPolicyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<VerifyEmailOutcome()>>(
 			[this, request]()
 			{
-			return this->getQualificationUploadPolicy(request);
+			return this->verifyEmail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,36 +1311,36 @@ DomainClient::QueryDomainRealNameVerificationInfoOutcomeCallable DomainClient::q
 	return task->get_future();
 }
 
-DomainClient::VerifyEmailOutcome DomainClient::verifyEmail(const VerifyEmailRequest &request) const
+DomainClient::GetQualificationUploadPolicyOutcome DomainClient::getQualificationUploadPolicy(const GetQualificationUploadPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return VerifyEmailOutcome(endpointOutcome.error());
+		return GetQualificationUploadPolicyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return VerifyEmailOutcome(VerifyEmailResult(outcome.result()));
+		return GetQualificationUploadPolicyOutcome(GetQualificationUploadPolicyResult(outcome.result()));
 	else
-		return VerifyEmailOutcome(outcome.error());
+		return GetQualificationUploadPolicyOutcome(outcome.error());
 }
 
-void DomainClient::verifyEmailAsync(const VerifyEmailRequest& request, const VerifyEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DomainClient::getQualificationUploadPolicyAsync(const GetQualificationUploadPolicyRequest& request, const GetQualificationUploadPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, verifyEmail(request), context);
+		handler(this, request, getQualificationUploadPolicy(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DomainClient::VerifyEmailOutcomeCallable DomainClient::verifyEmailCallable(const VerifyEmailRequest &request) const
+DomainClient::GetQualificationUploadPolicyOutcomeCallable DomainClient::getQualificationUploadPolicyCallable(const GetQualificationUploadPolicyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<VerifyEmailOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetQualificationUploadPolicyOutcome()>>(
 			[this, request]()
 			{
-			return this->verifyEmail(request);
+			return this->getQualificationUploadPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1377,6 +1449,42 @@ DomainClient::QueryDnsHostOutcomeCallable DomainClient::queryDnsHostCallable(con
 			[this, request]()
 			{
 			return this->queryDnsHost(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::CancelTaskOutcome DomainClient::cancelTask(const CancelTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelTaskOutcome(CancelTaskResult(outcome.result()));
+	else
+		return CancelTaskOutcome(outcome.error());
+}
+
+void DomainClient::cancelTaskAsync(const CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::CancelTaskOutcomeCallable DomainClient::cancelTaskCallable(const CancelTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1521,6 +1629,42 @@ DomainClient::SaveSingleTaskForCancelingTransferInOutcomeCallable DomainClient::
 			[this, request]()
 			{
 			return this->saveSingleTaskForCancelingTransferIn(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryDSRecordOutcome DomainClient::queryDSRecord(const QueryDSRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDSRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDSRecordOutcome(QueryDSRecordResult(outcome.result()));
+	else
+		return QueryDSRecordOutcome(outcome.error());
+}
+
+void DomainClient::queryDSRecordAsync(const QueryDSRecordRequest& request, const QueryDSRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDSRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryDSRecordOutcomeCallable DomainClient::queryDSRecordCallable(const QueryDSRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDSRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDSRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1917,6 +2061,78 @@ DomainClient::BatchFuzzyMatchDomainSensitiveWordOutcomeCallable DomainClient::ba
 			[this, request]()
 			{
 			return this->batchFuzzyMatchDomainSensitiveWord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::ScrollDomainListOutcome DomainClient::scrollDomainList(const ScrollDomainListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScrollDomainListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScrollDomainListOutcome(ScrollDomainListResult(outcome.result()));
+	else
+		return ScrollDomainListOutcome(outcome.error());
+}
+
+void DomainClient::scrollDomainListAsync(const ScrollDomainListRequest& request, const ScrollDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, scrollDomainList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::ScrollDomainListOutcomeCallable DomainClient::scrollDomainListCallable(const ScrollDomainListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScrollDomainListOutcome()>>(
+			[this, request]()
+			{
+			return this->scrollDomainList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForSaveArtExtensionOutcome DomainClient::saveSingleTaskForSaveArtExtension(const SaveSingleTaskForSaveArtExtensionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForSaveArtExtensionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForSaveArtExtensionOutcome(SaveSingleTaskForSaveArtExtensionResult(outcome.result()));
+	else
+		return SaveSingleTaskForSaveArtExtensionOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForSaveArtExtensionAsync(const SaveSingleTaskForSaveArtExtensionRequest& request, const SaveSingleTaskForSaveArtExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForSaveArtExtension(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForSaveArtExtensionOutcomeCallable DomainClient::saveSingleTaskForSaveArtExtensionCallable(const SaveSingleTaskForSaveArtExtensionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForSaveArtExtensionOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForSaveArtExtension(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,42 +2823,6 @@ DomainClient::SaveSingleTaskForTransferProhibitionLockOutcomeCallable DomainClie
 	return task->get_future();
 }
 
-DomainClient::SaveSingleTaskForAssociatingEnsOutcome DomainClient::saveSingleTaskForAssociatingEns(const SaveSingleTaskForAssociatingEnsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SaveSingleTaskForAssociatingEnsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SaveSingleTaskForAssociatingEnsOutcome(SaveSingleTaskForAssociatingEnsResult(outcome.result()));
-	else
-		return SaveSingleTaskForAssociatingEnsOutcome(outcome.error());
-}
-
-void DomainClient::saveSingleTaskForAssociatingEnsAsync(const SaveSingleTaskForAssociatingEnsRequest& request, const SaveSingleTaskForAssociatingEnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, saveSingleTaskForAssociatingEns(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DomainClient::SaveSingleTaskForAssociatingEnsOutcomeCallable DomainClient::saveSingleTaskForAssociatingEnsCallable(const SaveSingleTaskForAssociatingEnsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForAssociatingEnsOutcome()>>(
-			[this, request]()
-			{
-			return this->saveSingleTaskForAssociatingEns(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DomainClient::SaveTaskForSubmittingDomainDeleteOutcome DomainClient::saveTaskForSubmittingDomainDelete(const SaveTaskForSubmittingDomainDeleteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +2853,42 @@ DomainClient::SaveTaskForSubmittingDomainDeleteOutcomeCallable DomainClient::sav
 			[this, request]()
 			{
 			return this->saveTaskForSubmittingDomainDelete(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForAssociatingEnsOutcome DomainClient::saveSingleTaskForAssociatingEns(const SaveSingleTaskForAssociatingEnsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForAssociatingEnsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForAssociatingEnsOutcome(SaveSingleTaskForAssociatingEnsResult(outcome.result()));
+	else
+		return SaveSingleTaskForAssociatingEnsOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForAssociatingEnsAsync(const SaveSingleTaskForAssociatingEnsRequest& request, const SaveSingleTaskForAssociatingEnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForAssociatingEns(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForAssociatingEnsOutcomeCallable DomainClient::saveSingleTaskForAssociatingEnsCallable(const SaveSingleTaskForAssociatingEnsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForAssociatingEnsOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForAssociatingEns(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2859,42 +3075,6 @@ DomainClient::LookupTmchNoticeOutcomeCallable DomainClient::lookupTmchNoticeCall
 	return task->get_future();
 }
 
-DomainClient::ReserveDomainOutcome DomainClient::reserveDomain(const ReserveDomainRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReserveDomainOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReserveDomainOutcome(ReserveDomainResult(outcome.result()));
-	else
-		return ReserveDomainOutcome(outcome.error());
-}
-
-void DomainClient::reserveDomainAsync(const ReserveDomainRequest& request, const ReserveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, reserveDomain(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DomainClient::ReserveDomainOutcomeCallable DomainClient::reserveDomainCallable(const ReserveDomainRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReserveDomainOutcome()>>(
-			[this, request]()
-			{
-			return this->reserveDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DomainClient::QueryFailingReasonListForQualificationOutcome DomainClient::queryFailingReasonListForQualification(const QueryFailingReasonListForQualificationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2931,6 +3111,42 @@ DomainClient::QueryFailingReasonListForQualificationOutcomeCallable DomainClient
 	return task->get_future();
 }
 
+DomainClient::ReserveDomainOutcome DomainClient::reserveDomain(const ReserveDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReserveDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReserveDomainOutcome(ReserveDomainResult(outcome.result()));
+	else
+		return ReserveDomainOutcome(outcome.error());
+}
+
+void DomainClient::reserveDomainAsync(const ReserveDomainRequest& request, const ReserveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reserveDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::ReserveDomainOutcomeCallable DomainClient::reserveDomainCallable(const ReserveDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReserveDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->reserveDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::TransferInResendMailTokenOutcome DomainClient::transferInResendMailToken(const TransferInResendMailTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2961,6 +3177,42 @@ DomainClient::TransferInResendMailTokenOutcomeCallable DomainClient::transferInR
 			[this, request]()
 			{
 			return this->transferInResendMailToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForSynchronizingDSRecordOutcome DomainClient::saveSingleTaskForSynchronizingDSRecord(const SaveSingleTaskForSynchronizingDSRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForSynchronizingDSRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForSynchronizingDSRecordOutcome(SaveSingleTaskForSynchronizingDSRecordResult(outcome.result()));
+	else
+		return SaveSingleTaskForSynchronizingDSRecordOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForSynchronizingDSRecordAsync(const SaveSingleTaskForSynchronizingDSRecordRequest& request, const SaveSingleTaskForSynchronizingDSRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForSynchronizingDSRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForSynchronizingDSRecordOutcomeCallable DomainClient::saveSingleTaskForSynchronizingDSRecordCallable(const SaveSingleTaskForSynchronizingDSRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForSynchronizingDSRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForSynchronizingDSRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3069,6 +3321,42 @@ DomainClient::ListEmailVerificationOutcomeCallable DomainClient::listEmailVerifi
 			[this, request]()
 			{
 			return this->listEmailVerification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForModifyingDSRecordOutcome DomainClient::saveSingleTaskForModifyingDSRecord(const SaveSingleTaskForModifyingDSRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForModifyingDSRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForModifyingDSRecordOutcome(SaveSingleTaskForModifyingDSRecordResult(outcome.result()));
+	else
+		return SaveSingleTaskForModifyingDSRecordOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForModifyingDSRecordAsync(const SaveSingleTaskForModifyingDSRecordRequest& request, const SaveSingleTaskForModifyingDSRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForModifyingDSRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForModifyingDSRecordOutcomeCallable DomainClient::saveSingleTaskForModifyingDSRecordCallable(const SaveSingleTaskForModifyingDSRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForModifyingDSRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForModifyingDSRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3327,42 +3615,6 @@ DomainClient::QueryDomainByInstanceIdOutcomeCallable DomainClient::queryDomainBy
 	return task->get_future();
 }
 
-DomainClient::SaveSingleTaskForDeletingDnsHostOutcome DomainClient::saveSingleTaskForDeletingDnsHost(const SaveSingleTaskForDeletingDnsHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SaveSingleTaskForDeletingDnsHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SaveSingleTaskForDeletingDnsHostOutcome(SaveSingleTaskForDeletingDnsHostResult(outcome.result()));
-	else
-		return SaveSingleTaskForDeletingDnsHostOutcome(outcome.error());
-}
-
-void DomainClient::saveSingleTaskForDeletingDnsHostAsync(const SaveSingleTaskForDeletingDnsHostRequest& request, const SaveSingleTaskForDeletingDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, saveSingleTaskForDeletingDnsHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DomainClient::SaveSingleTaskForDeletingDnsHostOutcomeCallable DomainClient::saveSingleTaskForDeletingDnsHostCallable(const SaveSingleTaskForDeletingDnsHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForDeletingDnsHostOutcome()>>(
-			[this, request]()
-			{
-			return this->saveSingleTaskForDeletingDnsHost(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DomainClient::SaveBatchTaskForCreatingOrderRedeemOutcome DomainClient::saveBatchTaskForCreatingOrderRedeem(const SaveBatchTaskForCreatingOrderRedeemRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3393,6 +3645,42 @@ DomainClient::SaveBatchTaskForCreatingOrderRedeemOutcomeCallable DomainClient::s
 			[this, request]()
 			{
 			return this->saveBatchTaskForCreatingOrderRedeem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForDeletingDnsHostOutcome DomainClient::saveSingleTaskForDeletingDnsHost(const SaveSingleTaskForDeletingDnsHostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForDeletingDnsHostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForDeletingDnsHostOutcome(SaveSingleTaskForDeletingDnsHostResult(outcome.result()));
+	else
+		return SaveSingleTaskForDeletingDnsHostOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForDeletingDnsHostAsync(const SaveSingleTaskForDeletingDnsHostRequest& request, const SaveSingleTaskForDeletingDnsHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForDeletingDnsHost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForDeletingDnsHostOutcomeCallable DomainClient::saveSingleTaskForDeletingDnsHostCallable(const SaveSingleTaskForDeletingDnsHostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForDeletingDnsHostOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForDeletingDnsHost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3507,36 +3795,36 @@ DomainClient::SaveSingleTaskForCreatingOrderRenewOutcomeCallable DomainClient::s
 	return task->get_future();
 }
 
-DomainClient::PollTaskResultOutcome DomainClient::pollTaskResult(const PollTaskResultRequest &request) const
+DomainClient::QueryDomainAdminDivisionOutcome DomainClient::queryDomainAdminDivision(const QueryDomainAdminDivisionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return PollTaskResultOutcome(endpointOutcome.error());
+		return QueryDomainAdminDivisionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return PollTaskResultOutcome(PollTaskResultResult(outcome.result()));
+		return QueryDomainAdminDivisionOutcome(QueryDomainAdminDivisionResult(outcome.result()));
 	else
-		return PollTaskResultOutcome(outcome.error());
+		return QueryDomainAdminDivisionOutcome(outcome.error());
 }
 
-void DomainClient::pollTaskResultAsync(const PollTaskResultRequest& request, const PollTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DomainClient::queryDomainAdminDivisionAsync(const QueryDomainAdminDivisionRequest& request, const QueryDomainAdminDivisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, pollTaskResult(request), context);
+		handler(this, request, queryDomainAdminDivision(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DomainClient::PollTaskResultOutcomeCallable DomainClient::pollTaskResultCallable(const PollTaskResultRequest &request) const
+DomainClient::QueryDomainAdminDivisionOutcomeCallable DomainClient::queryDomainAdminDivisionCallable(const QueryDomainAdminDivisionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<PollTaskResultOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<QueryDomainAdminDivisionOutcome()>>(
 			[this, request]()
 			{
-			return this->pollTaskResult(request);
+			return this->queryDomainAdminDivision(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3579,36 +3867,36 @@ DomainClient::DeleteEmailVerificationOutcomeCallable DomainClient::deleteEmailVe
 	return task->get_future();
 }
 
-DomainClient::QueryDomainAdminDivisionOutcome DomainClient::queryDomainAdminDivision(const QueryDomainAdminDivisionRequest &request) const
+DomainClient::PollTaskResultOutcome DomainClient::pollTaskResult(const PollTaskResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryDomainAdminDivisionOutcome(endpointOutcome.error());
+		return PollTaskResultOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryDomainAdminDivisionOutcome(QueryDomainAdminDivisionResult(outcome.result()));
+		return PollTaskResultOutcome(PollTaskResultResult(outcome.result()));
 	else
-		return QueryDomainAdminDivisionOutcome(outcome.error());
+		return PollTaskResultOutcome(outcome.error());
 }
 
-void DomainClient::queryDomainAdminDivisionAsync(const QueryDomainAdminDivisionRequest& request, const QueryDomainAdminDivisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DomainClient::pollTaskResultAsync(const PollTaskResultRequest& request, const PollTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryDomainAdminDivision(request), context);
+		handler(this, request, pollTaskResult(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DomainClient::QueryDomainAdminDivisionOutcomeCallable DomainClient::queryDomainAdminDivisionCallable(const QueryDomainAdminDivisionRequest &request) const
+DomainClient::PollTaskResultOutcomeCallable DomainClient::pollTaskResultCallable(const PollTaskResultRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryDomainAdminDivisionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<PollTaskResultOutcome()>>(
 			[this, request]()
 			{
-			return this->queryDomainAdminDivision(request);
+			return this->pollTaskResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3645,6 +3933,42 @@ DomainClient::SaveSingleTaskForCreatingOrderActivateOutcomeCallable DomainClient
 			[this, request]()
 			{
 			return this->saveSingleTaskForCreatingOrderActivate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SaveSingleTaskForDeletingDSRecordOutcome DomainClient::saveSingleTaskForDeletingDSRecord(const SaveSingleTaskForDeletingDSRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveSingleTaskForDeletingDSRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveSingleTaskForDeletingDSRecordOutcome(SaveSingleTaskForDeletingDSRecordResult(outcome.result()));
+	else
+		return SaveSingleTaskForDeletingDSRecordOutcome(outcome.error());
+}
+
+void DomainClient::saveSingleTaskForDeletingDSRecordAsync(const SaveSingleTaskForDeletingDSRecordRequest& request, const SaveSingleTaskForDeletingDSRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveSingleTaskForDeletingDSRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveSingleTaskForDeletingDSRecordOutcomeCallable DomainClient::saveSingleTaskForDeletingDSRecordCallable(const SaveSingleTaskForDeletingDSRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveSingleTaskForDeletingDSRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->saveSingleTaskForDeletingDSRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3717,6 +4041,42 @@ DomainClient::TransferInReenterTransferAuthorizationCodeOutcomeCallable DomainCl
 			[this, request]()
 			{
 			return this->transferInReenterTransferAuthorizationCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryDomainByDomainNameOutcome DomainClient::queryDomainByDomainName(const QueryDomainByDomainNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDomainByDomainNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDomainByDomainNameOutcome(QueryDomainByDomainNameResult(outcome.result()));
+	else
+		return QueryDomainByDomainNameOutcome(outcome.error());
+}
+
+void DomainClient::queryDomainByDomainNameAsync(const QueryDomainByDomainNameRequest& request, const QueryDomainByDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDomainByDomainName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryDomainByDomainNameOutcomeCallable DomainClient::queryDomainByDomainNameCallable(const QueryDomainByDomainNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDomainByDomainNameOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDomainByDomainName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

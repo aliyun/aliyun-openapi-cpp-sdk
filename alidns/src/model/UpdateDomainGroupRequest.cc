@@ -33,7 +33,7 @@ std::string UpdateDomainGroupRequest::getGroupId()const
 void UpdateDomainGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string UpdateDomainGroupRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string UpdateDomainGroupRequest::getUserClientIp()const
 void UpdateDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateDomainGroupRequest::getLang()const
@@ -55,7 +55,7 @@ std::string UpdateDomainGroupRequest::getLang()const
 void UpdateDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string UpdateDomainGroupRequest::getGroupName()const
@@ -66,17 +66,6 @@ std::string UpdateDomainGroupRequest::getGroupName()const
 void UpdateDomainGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
-}
-
-std::string UpdateDomainGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateDomainGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("GroupName", groupName);
 }
 

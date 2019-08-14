@@ -33,7 +33,7 @@ std::string DeleteRepoRequest::getRepoNamespace()const
 void DeleteRepoRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string DeleteRepoRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string DeleteRepoRequest::getRepoName()const
 void DeleteRepoRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setParameter("RepoName", repoName);
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string DeleteRepoRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string DeleteRepoRequest::getRegionId()const
 void DeleteRepoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeDomainGroupsRequest::getUserClientIp()const
 void DescribeDomainGroupsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long DescribeDomainGroupsRequest::getPageSize()const
@@ -44,7 +44,7 @@ long DescribeDomainGroupsRequest::getPageSize()const
 void DescribeDomainGroupsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainGroupsRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeDomainGroupsRequest::getLang()const
 void DescribeDomainGroupsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeDomainGroupsRequest::getKeyWord()const
@@ -66,7 +66,7 @@ std::string DescribeDomainGroupsRequest::getKeyWord()const
 void DescribeDomainGroupsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setParameter("KeyWord", keyWord);
+	setCoreParameter("KeyWord", keyWord);
 }
 
 long DescribeDomainGroupsRequest::getPageNumber()const
@@ -77,17 +77,6 @@ long DescribeDomainGroupsRequest::getPageNumber()const
 void DescribeDomainGroupsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeDomainGroupsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

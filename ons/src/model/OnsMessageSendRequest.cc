@@ -25,17 +25,6 @@ OnsMessageSendRequest::OnsMessageSendRequest() :
 OnsMessageSendRequest::~OnsMessageSendRequest()
 {}
 
-long OnsMessageSendRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMessageSendRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMessageSendRequest::getInstanceId()const
 {
 	return instanceId_;

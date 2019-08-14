@@ -35,10 +35,13 @@ MetastoreListKafkaTopicResult::~MetastoreListKafkaTopicResult()
 
 void MetastoreListKafkaTopicResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allTopicList = value["TopicList"]["Topic"];
 	for (auto value : allTopicList)
@@ -58,6 +61,10 @@ void MetastoreListKafkaTopicResult::parse(const std::string &payload)
 			topicListObject.gmtCreate = std::stol(value["GmtCreate"].asString());
 		if(!value["GmtModified"].isNull())
 			topicListObject.gmtModified = std::stol(value["GmtModified"].asString());
+		if(!value["Status"].isNull())
+			topicListObject.status = value["Status"].asString();
+		if(!value["ReassignId"].isNull())
+			topicListObject.reassignId = value["ReassignId"].asString();
 		auto allAdvancedConfigList = value["AdvancedConfigList"]["AdvancedConfig"];
 		for (auto value : allAdvancedConfigList)
 		{

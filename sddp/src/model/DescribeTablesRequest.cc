@@ -25,6 +25,17 @@ DescribeTablesRequest::DescribeTablesRequest() :
 DescribeTablesRequest::~DescribeTablesRequest()
 {}
 
+std::string DescribeTablesRequest::getProductCode()const
+{
+	return productCode_;
+}
+
+void DescribeTablesRequest::setProductCode(const std::string& productCode)
+{
+	productCode_ = productCode;
+	setCoreParameter("ProductCode", productCode);
+}
+
 long DescribeTablesRequest::getProductId()const
 {
 	return productId_;

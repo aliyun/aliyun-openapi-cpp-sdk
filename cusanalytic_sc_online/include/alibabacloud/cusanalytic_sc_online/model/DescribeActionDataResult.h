@@ -82,9 +82,11 @@ namespace AlibabaCloud
 				DescribeActionDataResult();
 				explicit DescribeActionDataResult(const std::string &payload);
 				~DescribeActionDataResult();
+				bool getIsSuccess()const;
 				long getTsStart()const;
 				int getPageCount()const;
 				std::string getStoreId()const;
+				std::string getErrorMsg()const;
 				long getTsEnd()const;
 				int getPageNo()const;
 				int getPageLimit()const;
@@ -93,9 +95,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool isSuccess_;
 				long tsStart_;
 				int pageCount_;
 				std::string storeId_;
+				std::string errorMsg_;
 				long tsEnd_;
 				int pageNo_;
 				int pageLimit_;

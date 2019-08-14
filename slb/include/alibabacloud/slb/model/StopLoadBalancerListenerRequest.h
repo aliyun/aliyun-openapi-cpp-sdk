@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getListenerProtocol()const;
+				void setListenerProtocol(const std::string& listenerProtocol);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string listenerProtocol_;
 				std::string tags_;
 
 			};

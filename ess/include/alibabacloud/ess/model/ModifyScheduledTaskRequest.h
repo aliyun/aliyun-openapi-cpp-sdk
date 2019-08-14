@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getScheduledAction()const;
 				void setScheduledAction(const std::string& scheduledAction);
+				int getMaxValue()const;
+				void setMaxValue(int maxValue);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -57,6 +59,8 @@ namespace AlibabaCloud
 				void setRecurrenceEndTime(const std::string& recurrenceEndTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getMinValue()const;
+				void setMinValue(int minValue);
 				std::string getScheduledTaskName()const;
 				void setScheduledTaskName(const std::string& scheduledTaskName);
 				bool getTaskEnabled()const;
@@ -70,6 +74,7 @@ namespace AlibabaCloud
 				std::string launchTime_;
 				long resourceOwnerId_;
 				std::string scheduledAction_;
+				int maxValue_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string description_;
@@ -78,6 +83,7 @@ namespace AlibabaCloud
 				int launchExpirationTime_;
 				std::string recurrenceEndTime_;
 				std::string accessKeyId_;
+				int minValue_;
 				std::string scheduledTaskName_;
 				bool taskEnabled_;
 				std::string scheduledTaskId_;

@@ -33,7 +33,7 @@ bool QueryRegistrantProfileRealNameVerificationInfoRequest::getFetchImage()const
 void QueryRegistrantProfileRealNameVerificationInfoRequest::setFetchImage(bool fetchImage)
 {
 	fetchImage_ = fetchImage;
-	setParameter("FetchImage", std::to_string(fetchImage));
+	setCoreParameter("FetchImage", fetchImage ? "true" : "false");
 }
 
 std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getUserClient
 void QueryRegistrantProfileRealNameVerificationInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long QueryRegistrantProfileRealNameVerificationInfoRequest::getRegistrantProfileId()const
@@ -55,7 +55,7 @@ long QueryRegistrantProfileRealNameVerificationInfoRequest::getRegistrantProfile
 void QueryRegistrantProfileRealNameVerificationInfoRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getLang()const
@@ -66,6 +66,6 @@ std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getLang()cons
 void QueryRegistrantProfileRealNameVerificationInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

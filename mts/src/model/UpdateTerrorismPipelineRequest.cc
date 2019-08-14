@@ -33,7 +33,7 @@ long UpdateTerrorismPipelineRequest::getResourceOwnerId()const
 void UpdateTerrorismPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateTerrorismPipelineRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UpdateTerrorismPipelineRequest::getResourceOwnerAccount()const
 void UpdateTerrorismPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateTerrorismPipelineRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateTerrorismPipelineRequest::getOwnerAccount()const
 void UpdateTerrorismPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdateTerrorismPipelineRequest::getName()const
@@ -66,7 +66,7 @@ std::string UpdateTerrorismPipelineRequest::getName()const
 void UpdateTerrorismPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateTerrorismPipelineRequest::getState()const
@@ -77,7 +77,7 @@ std::string UpdateTerrorismPipelineRequest::getState()const
 void UpdateTerrorismPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 std::string UpdateTerrorismPipelineRequest::getNotifyConfig()const
@@ -88,7 +88,7 @@ std::string UpdateTerrorismPipelineRequest::getNotifyConfig()const
 void UpdateTerrorismPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setParameter("NotifyConfig", notifyConfig);
+	setCoreParameter("NotifyConfig", notifyConfig);
 }
 
 long UpdateTerrorismPipelineRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long UpdateTerrorismPipelineRequest::getOwnerId()const
 void UpdateTerrorismPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpdateTerrorismPipelineRequest::getPriority()const
@@ -110,7 +110,7 @@ int UpdateTerrorismPipelineRequest::getPriority()const
 void UpdateTerrorismPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", std::to_string(priority));
 }
 
 std::string UpdateTerrorismPipelineRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string UpdateTerrorismPipelineRequest::getAccessKeyId()const
 void UpdateTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateTerrorismPipelineRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string UpdateTerrorismPipelineRequest::getPipelineId()const
 void UpdateTerrorismPipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

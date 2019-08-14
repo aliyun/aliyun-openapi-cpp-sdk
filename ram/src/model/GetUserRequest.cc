@@ -33,6 +33,6 @@ std::string GetUserRequest::getUserName()const
 void GetUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

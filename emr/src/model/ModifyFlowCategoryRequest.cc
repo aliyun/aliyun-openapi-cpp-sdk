@@ -33,7 +33,7 @@ std::string ModifyFlowCategoryRequest::getRegionId()const
 void ModifyFlowCategoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyFlowCategoryRequest::getName()const
@@ -44,7 +44,7 @@ std::string ModifyFlowCategoryRequest::getName()const
 void ModifyFlowCategoryRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyFlowCategoryRequest::getId()const
@@ -55,7 +55,7 @@ std::string ModifyFlowCategoryRequest::getId()const
 void ModifyFlowCategoryRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyFlowCategoryRequest::getProjectId()const
@@ -66,7 +66,7 @@ std::string ModifyFlowCategoryRequest::getProjectId()const
 void ModifyFlowCategoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string ModifyFlowCategoryRequest::getParentId()const
@@ -77,6 +77,6 @@ std::string ModifyFlowCategoryRequest::getParentId()const
 void ModifyFlowCategoryRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setParameter("ParentId", parentId);
+	setCoreParameter("ParentId", parentId);
 }
 

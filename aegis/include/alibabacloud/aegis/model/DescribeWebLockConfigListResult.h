@@ -34,8 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct ConfigInfo
 				{
+					std::string inclusiveFileType;
+					std::string exclusiveFile;
 					std::string uuid;
 					std::string exclusiveDir;
+					std::string mode;
 					std::string localBackupDir;
 					std::string exclusiveFileType;
 					std::string id;

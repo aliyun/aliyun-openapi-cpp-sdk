@@ -33,7 +33,7 @@ long GetLogDownloadUrlRequest::getResourceOwnerId()const
 void GetLogDownloadUrlRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetLogDownloadUrlRequest::getHostName()const
@@ -44,7 +44,7 @@ std::string GetLogDownloadUrlRequest::getHostName()const
 void GetLogDownloadUrlRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setParameter("HostName", hostName);
+	setCoreParameter("HostName", hostName);
 }
 
 std::string GetLogDownloadUrlRequest::getLogstoreName()const
@@ -55,7 +55,7 @@ std::string GetLogDownloadUrlRequest::getLogstoreName()const
 void GetLogDownloadUrlRequest::setLogstoreName(const std::string& logstoreName)
 {
 	logstoreName_ = logstoreName;
-	setParameter("LogstoreName", logstoreName);
+	setCoreParameter("LogstoreName", logstoreName);
 }
 
 std::string GetLogDownloadUrlRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string GetLogDownloadUrlRequest::getRegionId()const
 void GetLogDownloadUrlRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetLogDownloadUrlRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string GetLogDownloadUrlRequest::getClusterId()const
 void GetLogDownloadUrlRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string GetLogDownloadUrlRequest::getLogFileName()const
@@ -88,7 +88,7 @@ std::string GetLogDownloadUrlRequest::getLogFileName()const
 void GetLogDownloadUrlRequest::setLogFileName(const std::string& logFileName)
 {
 	logFileName_ = logFileName;
-	setParameter("LogFileName", logFileName);
+	setCoreParameter("LogFileName", logFileName);
 }
 
 std::string GetLogDownloadUrlRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetLogDownloadUrlRequest::getAccessKeyId()const
 void GetLogDownloadUrlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

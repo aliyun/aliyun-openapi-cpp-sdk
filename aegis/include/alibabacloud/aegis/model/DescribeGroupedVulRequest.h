@@ -39,6 +39,10 @@ namespace AlibabaCloud
 				void setStatusList(const std::string& statusList);
 				std::string getLevel()const;
 				void setLevel(const std::string& level);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getCveId()const;
+				void setCveId(const std::string& cveId);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
 				std::string getDealed()const;
@@ -77,6 +81,8 @@ namespace AlibabaCloud
             private:
 				std::string statusList_;
 				std::string level_;
+				std::string groupId_;
+				std::string cveId_;
 				std::string orderBy_;
 				std::string dealed_;
 				int currentPage_;

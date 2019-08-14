@@ -35,10 +35,13 @@ FetchLibrariesResult::~FetchLibrariesResult()
 
 void FetchLibrariesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allLibraries = value["Libraries"]["Library"];
 	for (auto value : allLibraries)
@@ -48,6 +51,8 @@ void FetchLibrariesResult::parse(const std::string &payload)
 			librariesObject.libraryId = value["LibraryId"].asString();
 		if(!value["Ctime"].isNull())
 			librariesObject.ctime = std::stol(value["Ctime"].asString());
+		if(!value["TotalQuota"].isNull())
+			librariesObject.totalQuota = std::stol(value["TotalQuota"].asString());
 		libraries_.push_back(librariesObject);
 	}
 	if(!value["Code"].isNull())

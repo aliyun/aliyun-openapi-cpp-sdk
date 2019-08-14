@@ -35,10 +35,13 @@ DescribeAgentInstallStatusResult::~DescribeAgentInstallStatusResult()
 
 void DescribeAgentInstallStatusResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allAegisClientInvokeStatusResponseList = value["AegisClientInvokeStatusResponseList"]["AegisClientInvokeStatusResponse"];
 	for (auto value : allAegisClientInvokeStatusResponseList)
@@ -50,6 +53,8 @@ void DescribeAgentInstallStatusResult::parse(const std::string &payload)
 			aegisClientInvokeStatusResponseListObject.message = value["Message"].asString();
 		if(!value["Result"].isNull())
 			aegisClientInvokeStatusResponseListObject.result = std::stoi(value["Result"].asString());
+		if(!value["ResuleCode"].isNull())
+			aegisClientInvokeStatusResponseListObject.resuleCode = value["ResuleCode"].asString();
 		aegisClientInvokeStatusResponseList_.push_back(aegisClientInvokeStatusResponseListObject);
 	}
 

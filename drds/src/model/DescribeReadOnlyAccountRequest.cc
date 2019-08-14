@@ -33,7 +33,7 @@ std::string DescribeReadOnlyAccountRequest::getDbName()const
 void DescribeReadOnlyAccountRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string DescribeReadOnlyAccountRequest::getDrdsInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeReadOnlyAccountRequest::getDrdsInstanceId()const
 void DescribeReadOnlyAccountRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeReadOnlyAccountRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeReadOnlyAccountRequest::getAccessKeyId()const
 void DescribeReadOnlyAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

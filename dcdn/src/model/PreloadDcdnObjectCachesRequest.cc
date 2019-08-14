@@ -33,7 +33,7 @@ std::string PreloadDcdnObjectCachesRequest::getArea()const
 void PreloadDcdnObjectCachesRequest::setArea(const std::string& area)
 {
 	area_ = area;
-	setParameter("Area", area);
+	setCoreParameter("Area", area);
 }
 
 std::string PreloadDcdnObjectCachesRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string PreloadDcdnObjectCachesRequest::getSecurityToken()const
 void PreloadDcdnObjectCachesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string PreloadDcdnObjectCachesRequest::getObjectPath()const
@@ -55,7 +55,7 @@ std::string PreloadDcdnObjectCachesRequest::getObjectPath()const
 void PreloadDcdnObjectCachesRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setParameter("ObjectPath", objectPath);
+	setCoreParameter("ObjectPath", objectPath);
 }
 
 long PreloadDcdnObjectCachesRequest::getOwnerId()const
@@ -66,17 +66,6 @@ long PreloadDcdnObjectCachesRequest::getOwnerId()const
 void PreloadDcdnObjectCachesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string PreloadDcdnObjectCachesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void PreloadDcdnObjectCachesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

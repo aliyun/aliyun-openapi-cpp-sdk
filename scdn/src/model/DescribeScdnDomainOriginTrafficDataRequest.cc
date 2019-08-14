@@ -33,7 +33,7 @@ long DescribeScdnDomainOriginTrafficDataRequest::getCallerParentId()const
 void DescribeScdnDomainOriginTrafficDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeScdnDomainOriginTrafficDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeScdnDomainOriginTrafficDataRequest::getProxy_original_security_tran
 void DescribeScdnDomainOriginTrafficDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getStartTime()const
 void DescribeScdnDomainOriginTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getProxy_original_source
 void DescribeScdnDomainOriginTrafficDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getOwnerIdLoginEmail()co
 void DescribeScdnDomainOriginTrafficDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getCallerType()const
 void DescribeScdnDomainOriginTrafficDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getAccessKeyId()const
 void DescribeScdnDomainOriginTrafficDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getSecurityToken()const
 void DescribeScdnDomainOriginTrafficDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getRequestContent()const
 void DescribeScdnDomainOriginTrafficDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getCallerBidEmail()const
 void DescribeScdnDomainOriginTrafficDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getCallerUidEmail()const
 void DescribeScdnDomainOriginTrafficDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeScdnDomainOriginTrafficDataRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeScdnDomainOriginTrafficDataRequest::getCallerUid()const
 void DescribeScdnDomainOriginTrafficDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getApp_ip()const
 void DescribeScdnDomainOriginTrafficDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getPopProduct()const
 void DescribeScdnDomainOriginTrafficDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getProduct()const
@@ -187,7 +187,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getProduct()const
 void DescribeScdnDomainOriginTrafficDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getDomainName()const
@@ -198,7 +198,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getDomainName()const
 void DescribeScdnDomainOriginTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getEndTime()const
 void DescribeScdnDomainOriginTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getCallerBid()const
 void DescribeScdnDomainOriginTrafficDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeScdnDomainOriginTrafficDataRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeScdnDomainOriginTrafficDataRequest::getOwnerId()const
 void DescribeScdnDomainOriginTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getVersion()const
 void DescribeScdnDomainOriginTrafficDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeScdnDomainOriginTrafficDataRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribeScdnDomainOriginTrafficDataRequest::getProxy_trust_transport_info()
 void DescribeScdnDomainOriginTrafficDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeScdnDomainOriginTrafficDataRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeScdnDomainOriginTrafficDataRequest::getAk_mfa_present()const
 void DescribeScdnDomainOriginTrafficDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeScdnDomainOriginTrafficDataRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeScdnDomainOriginTrafficDataRequest::getSecurity_transport()const
 void DescribeScdnDomainOriginTrafficDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getRequestId()const
 void DescribeScdnDomainOriginTrafficDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getInterval()const
@@ -297,7 +297,7 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getInterval()const
 void DescribeScdnDomainOriginTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setParameter("Interval", interval);
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeScdnDomainOriginTrafficDataRequest::getFields()const
@@ -308,6 +308,6 @@ std::string DescribeScdnDomainOriginTrafficDataRequest::getFields()const
 void DescribeScdnDomainOriginTrafficDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setParameter("Fields", fields);
+	setCoreParameter("Fields", fields);
 }
 

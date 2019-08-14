@@ -33,7 +33,18 @@ std::string AddZoneRequest::getProxyPattern()const
 void AddZoneRequest::setProxyPattern(const std::string& proxyPattern)
 {
 	proxyPattern_ = proxyPattern;
-	setParameter("ProxyPattern", proxyPattern);
+	setCoreParameter("ProxyPattern", proxyPattern);
+}
+
+std::string AddZoneRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void AddZoneRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string AddZoneRequest::getUserClientIp()const
@@ -44,7 +55,7 @@ std::string AddZoneRequest::getUserClientIp()const
 void AddZoneRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string AddZoneRequest::getLang()const
@@ -55,7 +66,7 @@ std::string AddZoneRequest::getLang()const
 void AddZoneRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string AddZoneRequest::getZoneName()const
@@ -66,6 +77,6 @@ std::string AddZoneRequest::getZoneName()const
 void AddZoneRequest::setZoneName(const std::string& zoneName)
 {
 	zoneName_ = zoneName;
-	setParameter("ZoneName", zoneName);
+	setCoreParameter("ZoneName", zoneName);
 }
 

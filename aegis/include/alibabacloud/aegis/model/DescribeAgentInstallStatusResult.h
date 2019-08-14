@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string uuid;
 					std::string message;
+					std::string resuleCode;
 					int result;
 				};
 

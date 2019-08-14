@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setZhAddress(const std::string& zhAddress);
 				std::string getRegistrantType()const;
 				void setRegistrantType(const std::string& registrantType);
+				std::string getRegistrantProfileType()const;
+				void setRegistrantProfileType(const std::string& registrantProfileType);
 				std::string getTelephone()const;
 				void setTelephone(const std::string& telephone);
 				bool getDefaultRegistrantProfile()const;
@@ -86,6 +88,7 @@ namespace AlibabaCloud
 				long registrantProfileId_;
 				std::string zhAddress_;
 				std::string registrantType_;
+				std::string registrantProfileType_;
 				std::string telephone_;
 				bool defaultRegistrantProfile_;
 				std::string zhCity_;

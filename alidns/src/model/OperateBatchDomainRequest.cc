@@ -33,7 +33,7 @@ std::string OperateBatchDomainRequest::getUserClientIp()const
 void OperateBatchDomainRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::vector<OperateBatchDomainRequest::DomainRecordInfo> OperateBatchDomainRequest::getDomainRecordInfo()const
@@ -48,13 +48,16 @@ void OperateBatchDomainRequest::setDomainRecordInfo(const std::vector<DomainReco
 	for(int i = 0; i!= domainRecordInfo.size(); i++)	{
 		auto obj = domainRecordInfo.at(i);
 		std::string str ="DomainRecordInfo."+ std::to_string(i);
-		setParameter(str + ".Rr", obj.rr);
-		setParameter(str + ".Line", obj.line);
-		setParameter(str + ".Domain", obj.domain);
-		setParameter(str + ".Type", obj.type);
-		setParameter(str + ".Priority", std::to_string(obj.priority));
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Ttl", std::to_string(obj.ttl));
+		setCoreParameter(str + ".Rr", obj.rr);
+		setCoreParameter(str + ".NewType", obj.newType);
+		setCoreParameter(str + ".NewValue", obj.newValue);
+		setCoreParameter(str + ".Line", obj.line);
+		setCoreParameter(str + ".Domain", obj.domain);
+		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Priority", std::to_string(obj.priority));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Ttl", std::to_string(obj.ttl));
+		setCoreParameter(str + ".NewRr", obj.newRr);
 	}
 }
 
@@ -66,7 +69,7 @@ std::string OperateBatchDomainRequest::getLang()const
 void OperateBatchDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string OperateBatchDomainRequest::getType()const
@@ -77,6 +80,6 @@ std::string OperateBatchDomainRequest::getType()const
 void OperateBatchDomainRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 

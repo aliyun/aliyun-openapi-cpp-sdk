@@ -33,7 +33,7 @@ long MigrateJobsRequest::getResourceOwnerId()const
 void MigrateJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MigrateJobsRequest::getProjectName()const
@@ -44,7 +44,7 @@ std::string MigrateJobsRequest::getProjectName()const
 void MigrateJobsRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setParameter("ProjectName", projectName);
+	setCoreParameter("ProjectName", projectName);
 }
 
 std::string MigrateJobsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MigrateJobsRequest::getRegionId()const
 void MigrateJobsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MigrateJobsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string MigrateJobsRequest::getAccessKeyId()const
 void MigrateJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

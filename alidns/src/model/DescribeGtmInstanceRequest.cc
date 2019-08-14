@@ -33,7 +33,7 @@ std::string DescribeGtmInstanceRequest::getInstanceId()const
 void DescribeGtmInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeGtmInstanceRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeGtmInstanceRequest::getUserClientIp()const
 void DescribeGtmInstanceRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeGtmInstanceRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeGtmInstanceRequest::getLang()const
 void DescribeGtmInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

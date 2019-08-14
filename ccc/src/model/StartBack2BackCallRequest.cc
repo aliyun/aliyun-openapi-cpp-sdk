@@ -33,7 +33,7 @@ std::string StartBack2BackCallRequest::getCaller()const
 void StartBack2BackCallRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setParameter("Caller", caller);
+	setCoreParameter("Caller", caller);
 }
 
 std::string StartBack2BackCallRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string StartBack2BackCallRequest::getInstanceId()const
 void StartBack2BackCallRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string StartBack2BackCallRequest::getCallCenterNumber()const
@@ -55,7 +55,7 @@ std::string StartBack2BackCallRequest::getCallCenterNumber()const
 void StartBack2BackCallRequest::setCallCenterNumber(const std::string& callCenterNumber)
 {
 	callCenterNumber_ = callCenterNumber;
-	setParameter("CallCenterNumber", callCenterNumber);
+	setCoreParameter("CallCenterNumber", callCenterNumber);
 }
 
 std::string StartBack2BackCallRequest::getCallee()const
@@ -66,7 +66,7 @@ std::string StartBack2BackCallRequest::getCallee()const
 void StartBack2BackCallRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setParameter("Callee", callee);
+	setCoreParameter("Callee", callee);
 }
 
 std::string StartBack2BackCallRequest::getWorkflowId()const
@@ -77,7 +77,7 @@ std::string StartBack2BackCallRequest::getWorkflowId()const
 void StartBack2BackCallRequest::setWorkflowId(const std::string& workflowId)
 {
 	workflowId_ = workflowId;
-	setParameter("WorkflowId", workflowId);
+	setCoreParameter("WorkflowId", workflowId);
 }
 
 std::string StartBack2BackCallRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string StartBack2BackCallRequest::getAccessKeyId()const
 void StartBack2BackCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

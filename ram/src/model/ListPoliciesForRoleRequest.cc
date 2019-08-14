@@ -33,6 +33,6 @@ std::string ListPoliciesForRoleRequest::getRoleName()const
 void ListPoliciesForRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setParameter("RoleName", roleName);
+	setCoreParameter("RoleName", roleName);
 }
 

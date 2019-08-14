@@ -36,7 +36,6 @@ namespace AlibabaCloud
 				{
 					std::string credentialUrl;
 					std::string credentialType;
-					std::string params;
 					std::string credentialNo;
 				};
 

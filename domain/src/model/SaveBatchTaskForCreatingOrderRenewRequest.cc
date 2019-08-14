@@ -25,6 +25,17 @@ SaveBatchTaskForCreatingOrderRenewRequest::SaveBatchTaskForCreatingOrderRenewReq
 SaveBatchTaskForCreatingOrderRenewRequest::~SaveBatchTaskForCreatingOrderRenewRequest()
 {}
 
+std::string SaveBatchTaskForCreatingOrderRenewRequest::getPromotionNo()const
+{
+	return promotionNo_;
+}
+
+void SaveBatchTaskForCreatingOrderRenewRequest::setPromotionNo(const std::string& promotionNo)
+{
+	promotionNo_ = promotionNo;
+	setCoreParameter("PromotionNo", promotionNo);
+}
+
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -33,7 +44,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::vector<SaveBatchTaskForCreatingOrderRenewRequest::OrderRenewParam> SaveBatchTaskForCreatingOrderRenewRequest::getOrderRenewParam()const
@@ -48,10 +59,32 @@ void SaveBatchTaskForCreatingOrderRenewRequest::setOrderRenewParam(const std::ve
 	for(int i = 0; i!= orderRenewParam.size(); i++)	{
 		auto obj = orderRenewParam.at(i);
 		std::string str ="OrderRenewParam."+ std::to_string(i);
-		setParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
-		setParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
-		setParameter(str + ".DomainName", obj.domainName);
+		setCoreParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
+		setCoreParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
+		setCoreParameter(str + ".DomainName", obj.domainName);
 	}
+}
+
+std::string SaveBatchTaskForCreatingOrderRenewRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void SaveBatchTaskForCreatingOrderRenewRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setCoreParameter("CouponNo", couponNo);
+}
+
+bool SaveBatchTaskForCreatingOrderRenewRequest::getUseCoupon()const
+{
+	return useCoupon_;
+}
+
+void SaveBatchTaskForCreatingOrderRenewRequest::setUseCoupon(bool useCoupon)
+{
+	useCoupon_ = useCoupon;
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getLang()const
@@ -62,6 +95,17 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getLang()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
+}
+
+bool SaveBatchTaskForCreatingOrderRenewRequest::getUsePromotion()const
+{
+	return usePromotion_;
+}
+
+void SaveBatchTaskForCreatingOrderRenewRequest::setUsePromotion(bool usePromotion)
+{
+	usePromotion_ = usePromotion;
+	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

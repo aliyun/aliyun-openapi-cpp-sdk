@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getCalledNumber()const;
 				void setCalledNumber(const std::string& calledNumber);
+				long getInstanceOwnerId()const;
+				void setInstanceOwnerId(long instanceOwnerId);
 				std::string getActionKey()const;
 				void setActionKey(const std::string& actionKey);
 				std::string getActionParams()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string callingNumber_;
 				std::string instanceId_;
 				std::string calledNumber_;
+				long instanceOwnerId_;
 				std::string actionKey_;
 				std::string actionParams_;
 				std::string callType_;

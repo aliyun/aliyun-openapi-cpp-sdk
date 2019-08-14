@@ -33,7 +33,7 @@ long EnablePhysicalConnectionRequest::getResourceOwnerId()const
 void EnablePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string EnablePhysicalConnectionRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string EnablePhysicalConnectionRequest::getRegionId()const
 void EnablePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string EnablePhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string EnablePhysicalConnectionRequest::getResourceOwnerAccount()const
 void EnablePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string EnablePhysicalConnectionRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string EnablePhysicalConnectionRequest::getClientToken()const
 void EnablePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string EnablePhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -77,7 +77,7 @@ std::string EnablePhysicalConnectionRequest::getPhysicalConnectionId()const
 void EnablePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setParameter("PhysicalConnectionId", physicalConnectionId);
+	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
 }
 
 std::string EnablePhysicalConnectionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string EnablePhysicalConnectionRequest::getOwnerAccount()const
 void EnablePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long EnablePhysicalConnectionRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long EnablePhysicalConnectionRequest::getOwnerId()const
 void EnablePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,10 +35,13 @@ DescribeVSwitchAttributesResult::~DescribeVSwitchAttributesResult()
 
 void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allCloudResources = value["CloudResources"]["CloudResourceSetType"];
 	for (auto value : allCloudResources)
@@ -79,6 +82,8 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 		isDefault_ = value["IsDefault"].asString() == "true";
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["NetworkAclId"].isNull())
+		networkAclId_ = value["NetworkAclId"].asString();
 
 }
 
@@ -105,6 +110,11 @@ std::string DescribeVSwitchAttributesResult::getZoneId()const
 std::string DescribeVSwitchAttributesResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
+}
+
+std::string DescribeVSwitchAttributesResult::getNetworkAclId()const
+{
+	return networkAclId_;
 }
 
 std::string DescribeVSwitchAttributesResult::getVSwitchId()const

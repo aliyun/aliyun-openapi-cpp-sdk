@@ -35,10 +35,13 @@ DescribeApiSignaturesResult::~DescribeApiSignaturesResult()
 
 void DescribeApiSignaturesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allApiSignatures = value["ApiSignatures"]["ApiSignatureItem"];
 	for (auto value : allApiSignatures)

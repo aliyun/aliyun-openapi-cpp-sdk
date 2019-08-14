@@ -33,7 +33,7 @@ long CreateSubAccountPermissionRequest::getUid()const
 void CreateSubAccountPermissionRequest::setUid(long uid)
 {
 	uid_ = uid;
-	setParameter("Uid", std::to_string(uid));
+	setCoreParameter("Uid", std::to_string(uid));
 }
 
 std::vector<long> CreateSubAccountPermissionRequest::getShopGroupIds()const
@@ -45,7 +45,7 @@ void CreateSubAccountPermissionRequest::setShopGroupIds(const std::vector<long>&
 {
 	shopGroupIds_ = shopGroupIds;
 	for(int i = 0; i!= shopGroupIds.size(); i++)
-		setParameter("ShopGroupIds."+ std::to_string(i), std::to_string(shopGroupIds.at(i)));
+		setCoreParameter("ShopGroupIds."+ std::to_string(i), std::to_string(shopGroupIds.at(i)));
 }
 
 std::vector<long> CreateSubAccountPermissionRequest::getShopIds()const
@@ -57,7 +57,7 @@ void CreateSubAccountPermissionRequest::setShopIds(const std::vector<long>& shop
 {
 	shopIds_ = shopIds;
 	for(int i = 0; i!= shopIds.size(); i++)
-		setParameter("ShopIds."+ std::to_string(i), std::to_string(shopIds.at(i)));
+		setCoreParameter("ShopIds."+ std::to_string(i), std::to_string(shopIds.at(i)));
 }
 
 std::string CreateSubAccountPermissionRequest::getPagePermission()const
@@ -68,7 +68,7 @@ std::string CreateSubAccountPermissionRequest::getPagePermission()const
 void CreateSubAccountPermissionRequest::setPagePermission(const std::string& pagePermission)
 {
 	pagePermission_ = pagePermission;
-	setParameter("PagePermission", pagePermission);
+	setCoreParameter("PagePermission", pagePermission);
 }
 
 std::string CreateSubAccountPermissionRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string CreateSubAccountPermissionRequest::getAccessKeyId()const
 void CreateSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int CreateSubAccountPermissionRequest::getPermissionType()const
@@ -90,7 +90,7 @@ int CreateSubAccountPermissionRequest::getPermissionType()const
 void CreateSubAccountPermissionRequest::setPermissionType(int permissionType)
 {
 	permissionType_ = permissionType;
-	setParameter("PermissionType", std::to_string(permissionType));
+	setCoreParameter("PermissionType", std::to_string(permissionType));
 }
 
 std::vector<long> CreateSubAccountPermissionRequest::getBusinessIds()const
@@ -102,6 +102,6 @@ void CreateSubAccountPermissionRequest::setBusinessIds(const std::vector<long>& 
 {
 	businessIds_ = businessIds;
 	for(int i = 0; i!= businessIds.size(); i++)
-		setParameter("BusinessIds."+ std::to_string(i), std::to_string(businessIds.at(i)));
+		setCoreParameter("BusinessIds."+ std::to_string(i), std::to_string(businessIds.at(i)));
 }
 

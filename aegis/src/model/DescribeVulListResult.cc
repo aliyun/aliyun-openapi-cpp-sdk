@@ -35,10 +35,13 @@ DescribeVulListResult::~DescribeVulListResult()
 
 void DescribeVulListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allVulRecords = value["VulRecords"]["VulRecord"];
 	for (auto value : allVulRecords)
@@ -92,10 +95,16 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.intranetIp = value["IntranetIp"].asString();
 		if(!value["Ip"].isNull())
 			vulRecordsObject.ip = value["Ip"].asString();
+		if(!value["Online"].isNull())
+			vulRecordsObject.online = value["Online"].asString() == "true";
+		if(!value["RegionId"].isNull())
+			vulRecordsObject.regionId = value["RegionId"].asString();
 		if(!value["OsVersion"].isNull())
 			vulRecordsObject.osVersion = value["OsVersion"].asString();
 		if(!value["NeedReboot"].isNull())
 			vulRecordsObject.needReboot = value["NeedReboot"].asString();
+		if(!value["CanFix"].isNull())
+			vulRecordsObject.canFix = value["CanFix"].asString();
 		auto extendContentJsonNode = value["ExtendContentJson"];
 		if(!extendContentJsonNode["Os"].isNull())
 			vulRecordsObject.extendContentJson.os = extendContentJsonNode["Os"].asString();
@@ -117,27 +126,49 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.extendContentJson.absolutePath = extendContentJsonNode["AbsolutePath"].asString();
 		if(!extendContentJsonNode["Target"].isNull())
 			vulRecordsObject.extendContentJson.target = extendContentJsonNode["Target"].asString();
-		if(!extendContentJsonNode["Proof"].isNull())
-			vulRecordsObject.extendContentJson.proof = extendContentJsonNode["Proof"].asString();
+		if(!extendContentJsonNode["EmgProof"].isNull())
+			vulRecordsObject.extendContentJson.emgProof = extendContentJsonNode["EmgProof"].asString();
 		if(!extendContentJsonNode["Reason"].isNull())
 			vulRecordsObject.extendContentJson.reason = extendContentJsonNode["Reason"].asString();
-		auto allRpmEntityList = value["RpmEntityList"]["RpmEntityListItem"];
+		if(!extendContentJsonNode["Title"].isNull())
+			vulRecordsObject.extendContentJson.title = extendContentJsonNode["Title"].asString();
+		if(!extendContentJsonNode["Description"].isNull())
+			vulRecordsObject.extendContentJson.description = extendContentJsonNode["Description"].asString();
+		if(!extendContentJsonNode["Ip"].isNull())
+			vulRecordsObject.extendContentJson.ip = extendContentJsonNode["Ip"].asString();
+		if(!extendContentJsonNode["Owasp"].isNull())
+			vulRecordsObject.extendContentJson.owasp = extendContentJsonNode["Owasp"].asString();
+		if(!extendContentJsonNode["Cwe"].isNull())
+			vulRecordsObject.extendContentJson.cwe = extendContentJsonNode["Cwe"].asString();
+		if(!extendContentJsonNode["Wasc"].isNull())
+			vulRecordsObject.extendContentJson.wasc = extendContentJsonNode["Wasc"].asString();
+		if(!extendContentJsonNode["VulType"].isNull())
+			vulRecordsObject.extendContentJson.vulType = extendContentJsonNode["VulType"].asString();
+		if(!extendContentJsonNode["Effect"].isNull())
+			vulRecordsObject.extendContentJson.effect = extendContentJsonNode["Effect"].asString();
+		if(!extendContentJsonNode["Solution"].isNull())
+			vulRecordsObject.extendContentJson.solution = extendContentJsonNode["Solution"].asString();
+		if(!extendContentJsonNode["Reference"].isNull())
+			vulRecordsObject.extendContentJson.reference = extendContentJsonNode["Reference"].asString();
+		if(!extendContentJsonNode["Proof"].isNull())
+			vulRecordsObject.extendContentJson.proof = extendContentJsonNode["Proof"].asString();
+		auto allRpmEntityList = value["RpmEntityList"]["RpmEntity"];
 		for (auto value : allRpmEntityList)
 		{
-			VulRecord::ExtendContentJson::RpmEntityListItem rpmEntityListItemObject;
+			VulRecord::ExtendContentJson::RpmEntity rpmEntityObject;
 			if(!value["FullVersion"].isNull())
-				rpmEntityListItemObject.fullVersion = value["FullVersion"].asString();
+				rpmEntityObject.fullVersion = value["FullVersion"].asString();
 			if(!value["MatchDetail"].isNull())
-				rpmEntityListItemObject.matchDetail = value["MatchDetail"].asString();
+				rpmEntityObject.matchDetail = value["MatchDetail"].asString();
 			if(!value["Name"].isNull())
-				rpmEntityListItemObject.name = value["Name"].asString();
+				rpmEntityObject.name = value["Name"].asString();
 			if(!value["Path"].isNull())
-				rpmEntityListItemObject.path = value["Path"].asString();
+				rpmEntityObject.path = value["Path"].asString();
 			if(!value["UpdateCmd"].isNull())
-				rpmEntityListItemObject.updateCmd = value["UpdateCmd"].asString();
+				rpmEntityObject.updateCmd = value["UpdateCmd"].asString();
 			if(!value["Version"].isNull())
-				rpmEntityListItemObject.version = value["Version"].asString();
-			vulRecordsObject.extendContentJson.rpmEntityList.push_back(rpmEntityListItemObject);
+				rpmEntityObject.version = value["Version"].asString();
+			vulRecordsObject.extendContentJson.rpmEntityList.push_back(rpmEntityObject);
 		}
 		auto necessityNode = extendContentJsonNode["Necessity"];
 		if(!necessityNode["Cvss_factor"].isNull())
@@ -156,9 +187,35 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.extendContentJson.necessity.total_score = necessityNode["Total_score"].asString();
 		if(!necessityNode["Time_factor"].isNull())
 			vulRecordsObject.extendContentJson.necessity.time_factor = necessityNode["Time_factor"].asString();
-			auto allCveList = extendContentJsonNode["cveList"]["CveList"];
-			for (auto value : allCveList)
-				vulRecordsObject.extendContentJson.cveList.push_back(value.asString());
+		auto processInfoNode = value["ProcessInfo"];
+		if(!processInfoNode["GmtLastTs"].isNull())
+			vulRecordsObject.processInfo.gmtLastTs = std::stol(processInfoNode["GmtLastTs"].asString());
+		if(!processInfoNode["TotalCount"].isNull())
+			vulRecordsObject.processInfo.totalCount = std::stoi(processInfoNode["TotalCount"].asString());
+		auto allProcessList = value["ProcessList"]["Process"];
+		for (auto value : allProcessList)
+		{
+			VulRecord::ProcessInfo::Process processObject;
+			if(!value["Rpm"].isNull())
+				processObject.rpm = value["Rpm"].asString();
+			if(!value["Pname"].isNull())
+				processObject.pname = value["Pname"].asString();
+			if(!value["Pid"].isNull())
+				processObject.pid = value["Pid"].asString();
+			auto allSubProcessList = value["SubProcessList"]["SubProcess"];
+			for (auto value : allSubProcessList)
+			{
+				VulRecord::ProcessInfo::Process::SubProcess subProcessListObject;
+				if(!value["Rpm"].isNull())
+					subProcessListObject.rpm = value["Rpm"].asString();
+				if(!value["Pname"].isNull())
+					subProcessListObject.pname = value["Pname"].asString();
+				if(!value["Pid"].isNull())
+					subProcessListObject.pid = value["Pid"].asString();
+				processObject.subProcessList.push_back(subProcessListObject);
+			}
+			vulRecordsObject.processInfo.processList.push_back(processObject);
+		}
 		vulRecords_.push_back(vulRecordsObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -33,7 +33,7 @@ std::string GetIpProfileRequest::getDeviceIdMd5()const
 void GetIpProfileRequest::setDeviceIdMd5(const std::string& deviceIdMd5)
 {
 	deviceIdMd5_ = deviceIdMd5;
-	setParameter("DeviceIdMd5", deviceIdMd5);
+	setCoreParameter("DeviceIdMd5", deviceIdMd5);
 }
 
 int GetIpProfileRequest::getCarrier()const
@@ -44,7 +44,7 @@ int GetIpProfileRequest::getCarrier()const
 void GetIpProfileRequest::setCarrier(int carrier)
 {
 	carrier_ = carrier;
-	setParameter("Carrier", std::to_string(carrier));
+	setCoreParameter("Carrier", std::to_string(carrier));
 }
 
 std::string GetIpProfileRequest::getOs()const
@@ -55,7 +55,7 @@ std::string GetIpProfileRequest::getOs()const
 void GetIpProfileRequest::setOs(const std::string& os)
 {
 	os_ = os;
-	setParameter("Os", os);
+	setCoreParameter("Os", os);
 }
 
 std::string GetIpProfileRequest::getRequestUrl()const
@@ -66,7 +66,7 @@ std::string GetIpProfileRequest::getRequestUrl()const
 void GetIpProfileRequest::setRequestUrl(const std::string& requestUrl)
 {
 	requestUrl_ = requestUrl;
-	setParameter("RequestUrl", requestUrl);
+	setCoreParameter("RequestUrl", requestUrl);
 }
 
 std::string GetIpProfileRequest::getIp()const
@@ -77,7 +77,7 @@ std::string GetIpProfileRequest::getIp()const
 void GetIpProfileRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setParameter("Ip", ip);
+	setCoreParameter("Ip", ip);
 }
 
 std::string GetIpProfileRequest::getUserAgent()const
@@ -88,7 +88,7 @@ std::string GetIpProfileRequest::getUserAgent()const
 void GetIpProfileRequest::setUserAgent(const std::string& userAgent)
 {
 	userAgent_ = userAgent;
-	setParameter("UserAgent", userAgent);
+	setCoreParameter("UserAgent", userAgent);
 }
 
 int GetIpProfileRequest::getConnectionType()const
@@ -99,7 +99,7 @@ int GetIpProfileRequest::getConnectionType()const
 void GetIpProfileRequest::setConnectionType(int connectionType)
 {
 	connectionType_ = connectionType;
-	setParameter("ConnectionType", std::to_string(connectionType));
+	setCoreParameter("ConnectionType", std::to_string(connectionType));
 }
 
 int GetIpProfileRequest::getSensType()const
@@ -110,7 +110,7 @@ int GetIpProfileRequest::getSensType()const
 void GetIpProfileRequest::setSensType(int sensType)
 {
 	sensType_ = sensType;
-	setParameter("SensType", std::to_string(sensType));
+	setCoreParameter("SensType", std::to_string(sensType));
 }
 
 int GetIpProfileRequest::getDeviceType()const
@@ -121,7 +121,7 @@ int GetIpProfileRequest::getDeviceType()const
 void GetIpProfileRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setParameter("DeviceType", std::to_string(deviceType));
+	setCoreParameter("DeviceType", std::to_string(deviceType));
 }
 
 int GetIpProfileRequest::getBusinessType()const
@@ -132,6 +132,6 @@ int GetIpProfileRequest::getBusinessType()const
 void GetIpProfileRequest::setBusinessType(int businessType)
 {
 	businessType_ = businessType;
-	setParameter("BusinessType", std::to_string(businessType));
+	setCoreParameter("BusinessType", std::to_string(businessType));
 }
 

@@ -47,6 +47,28 @@ void DescribeGroupedVulRequest::setLevel(const std::string& level)
 	setCoreParameter("Level", level);
 }
 
+std::string DescribeGroupedVulRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeGroupedVulRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeGroupedVulRequest::getCveId()const
+{
+	return cveId_;
+}
+
+void DescribeGroupedVulRequest::setCveId(const std::string& cveId)
+{
+	cveId_ = cveId;
+	setCoreParameter("CveId", cveId);
+}
+
 std::string DescribeGroupedVulRequest::getOrderBy()const
 {
 	return orderBy_;

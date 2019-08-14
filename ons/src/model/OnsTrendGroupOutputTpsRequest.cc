@@ -25,17 +25,6 @@ OnsTrendGroupOutputTpsRequest::OnsTrendGroupOutputTpsRequest() :
 OnsTrendGroupOutputTpsRequest::~OnsTrendGroupOutputTpsRequest()
 {}
 
-long OnsTrendGroupOutputTpsRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsTrendGroupOutputTpsRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 long OnsTrendGroupOutputTpsRequest::getPeriod()const
 {
 	return period_;

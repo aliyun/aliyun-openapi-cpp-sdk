@@ -25,17 +25,6 @@ OnsTopicCreateRequest::OnsTopicCreateRequest() :
 OnsTopicCreateRequest::~OnsTopicCreateRequest()
 {}
 
-long OnsTopicCreateRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsTopicCreateRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsTopicCreateRequest::getInstanceId()const
 {
 	return instanceId_;

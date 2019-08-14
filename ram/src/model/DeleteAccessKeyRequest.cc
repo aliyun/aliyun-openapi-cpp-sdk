@@ -33,7 +33,7 @@ std::string DeleteAccessKeyRequest::getUserAccessKeyId()const
 void DeleteAccessKeyRequest::setUserAccessKeyId(const std::string& userAccessKeyId)
 {
 	userAccessKeyId_ = userAccessKeyId;
-	setParameter("UserAccessKeyId", userAccessKeyId);
+	setCoreParameter("UserAccessKeyId", userAccessKeyId);
 }
 
 std::string DeleteAccessKeyRequest::getUserName()const
@@ -44,6 +44,6 @@ std::string DeleteAccessKeyRequest::getUserName()const
 void DeleteAccessKeyRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

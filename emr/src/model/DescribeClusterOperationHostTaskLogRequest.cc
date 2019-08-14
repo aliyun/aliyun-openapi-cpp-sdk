@@ -33,7 +33,7 @@ long DescribeClusterOperationHostTaskLogRequest::getResourceOwnerId()const
 void DescribeClusterOperationHostTaskLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getRegionId()const
 void DescribeClusterOperationHostTaskLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getOperationId()const
@@ -55,7 +55,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getOperationId()const
 void DescribeClusterOperationHostTaskLogRequest::setOperationId(const std::string& operationId)
 {
 	operationId_ = operationId;
-	setParameter("OperationId", operationId);
+	setCoreParameter("OperationId", operationId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getHostId()const
@@ -66,7 +66,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getHostId()const
 void DescribeClusterOperationHostTaskLogRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setParameter("HostId", hostId);
+	setCoreParameter("HostId", hostId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getClusterId()const
 void DescribeClusterOperationHostTaskLogRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getTaskId()const
@@ -88,7 +88,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getTaskId()const
 void DescribeClusterOperationHostTaskLogRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getAccessKeyId()const
 void DescribeClusterOperationHostTaskLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getStatus()const
@@ -110,6 +110,6 @@ std::string DescribeClusterOperationHostTaskLogRequest::getStatus()const
 void DescribeClusterOperationHostTaskLogRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

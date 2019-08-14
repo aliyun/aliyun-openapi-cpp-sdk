@@ -61,12 +61,12 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/InactivatePhotosResult.h
 	include/alibabacloud/cloudphoto/model/CreateTransactionRequest.h
 	include/alibabacloud/cloudphoto/model/CreateTransactionResult.h
-	include/alibabacloud/cloudphoto/model/GetLibraryRequest.h
-	include/alibabacloud/cloudphoto/model/GetLibraryResult.h
 	include/alibabacloud/cloudphoto/model/CreatePhotoStoreRequest.h
 	include/alibabacloud/cloudphoto/model/CreatePhotoStoreResult.h
 	include/alibabacloud/cloudphoto/model/TagPhotoRequest.h
 	include/alibabacloud/cloudphoto/model/TagPhotoResult.h
+	include/alibabacloud/cloudphoto/model/GetLibraryRequest.h
+	include/alibabacloud/cloudphoto/model/GetLibraryResult.h
 	include/alibabacloud/cloudphoto/model/SetQuotaRequest.h
 	include/alibabacloud/cloudphoto/model/SetQuotaResult.h
 	include/alibabacloud/cloudphoto/model/RemoveAlbumPhotosRequest.h
@@ -75,20 +75,20 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/ListAlbumPhotosResult.h
 	include/alibabacloud/cloudphoto/model/ListAlbumsRequest.h
 	include/alibabacloud/cloudphoto/model/ListAlbumsResult.h
-	include/alibabacloud/cloudphoto/model/FetchPhotosRequest.h
-	include/alibabacloud/cloudphoto/model/FetchPhotosResult.h
 	include/alibabacloud/cloudphoto/model/ListPhotoFacesRequest.h
 	include/alibabacloud/cloudphoto/model/ListPhotoFacesResult.h
+	include/alibabacloud/cloudphoto/model/FetchPhotosRequest.h
+	include/alibabacloud/cloudphoto/model/FetchPhotosResult.h
 	include/alibabacloud/cloudphoto/model/RenameAlbumRequest.h
 	include/alibabacloud/cloudphoto/model/RenameAlbumResult.h
 	include/alibabacloud/cloudphoto/model/ActivatePhotosRequest.h
 	include/alibabacloud/cloudphoto/model/ActivatePhotosResult.h
 	include/alibabacloud/cloudphoto/model/GetPrivateAccessUrlsRequest.h
 	include/alibabacloud/cloudphoto/model/GetPrivateAccessUrlsResult.h
-	include/alibabacloud/cloudphoto/model/ListEventsRequest.h
-	include/alibabacloud/cloudphoto/model/ListEventsResult.h
 	include/alibabacloud/cloudphoto/model/GetSimilarPhotosRequest.h
 	include/alibabacloud/cloudphoto/model/GetSimilarPhotosResult.h
+	include/alibabacloud/cloudphoto/model/ListEventsRequest.h
+	include/alibabacloud/cloudphoto/model/ListEventsResult.h
 	include/alibabacloud/cloudphoto/model/GetVideoCoverRequest.h
 	include/alibabacloud/cloudphoto/model/GetVideoCoverResult.h
 	include/alibabacloud/cloudphoto/model/GetFramedPhotoUrlsRequest.h
@@ -111,20 +111,20 @@ set(cloudphoto_public_header_model
 	include/alibabacloud/cloudphoto/model/EditPhotoStoreResult.h
 	include/alibabacloud/cloudphoto/model/ListTimeLinesRequest.h
 	include/alibabacloud/cloudphoto/model/ListTimeLinesResult.h
-	include/alibabacloud/cloudphoto/model/SearchPhotosRequest.h
-	include/alibabacloud/cloudphoto/model/SearchPhotosResult.h
 	include/alibabacloud/cloudphoto/model/ToggleFeaturesRequest.h
 	include/alibabacloud/cloudphoto/model/ToggleFeaturesResult.h
+	include/alibabacloud/cloudphoto/model/SearchPhotosRequest.h
+	include/alibabacloud/cloudphoto/model/SearchPhotosResult.h
 	include/alibabacloud/cloudphoto/model/ListRegisteredTagsRequest.h
 	include/alibabacloud/cloudphoto/model/ListRegisteredTagsResult.h
 	include/alibabacloud/cloudphoto/model/DeletePhotoStoreRequest.h
 	include/alibabacloud/cloudphoto/model/DeletePhotoStoreResult.h
 	include/alibabacloud/cloudphoto/model/CreateEventRequest.h
 	include/alibabacloud/cloudphoto/model/CreateEventResult.h
-	include/alibabacloud/cloudphoto/model/GetPhotoStoreRequest.h
-	include/alibabacloud/cloudphoto/model/GetPhotoStoreResult.h
 	include/alibabacloud/cloudphoto/model/ListMomentPhotosRequest.h
 	include/alibabacloud/cloudphoto/model/ListMomentPhotosResult.h
+	include/alibabacloud/cloudphoto/model/GetPhotoStoreRequest.h
+	include/alibabacloud/cloudphoto/model/GetPhotoStoreResult.h
 	include/alibabacloud/cloudphoto/model/GetThumbnailRequest.h
 	include/alibabacloud/cloudphoto/model/GetThumbnailResult.h
 	include/alibabacloud/cloudphoto/model/SetFaceCoverRequest.h
@@ -204,12 +204,12 @@ set(cloudphoto_src
 	src/model/InactivatePhotosResult.cc
 	src/model/CreateTransactionRequest.cc
 	src/model/CreateTransactionResult.cc
-	src/model/GetLibraryRequest.cc
-	src/model/GetLibraryResult.cc
 	src/model/CreatePhotoStoreRequest.cc
 	src/model/CreatePhotoStoreResult.cc
 	src/model/TagPhotoRequest.cc
 	src/model/TagPhotoResult.cc
+	src/model/GetLibraryRequest.cc
+	src/model/GetLibraryResult.cc
 	src/model/SetQuotaRequest.cc
 	src/model/SetQuotaResult.cc
 	src/model/RemoveAlbumPhotosRequest.cc
@@ -218,20 +218,20 @@ set(cloudphoto_src
 	src/model/ListAlbumPhotosResult.cc
 	src/model/ListAlbumsRequest.cc
 	src/model/ListAlbumsResult.cc
-	src/model/FetchPhotosRequest.cc
-	src/model/FetchPhotosResult.cc
 	src/model/ListPhotoFacesRequest.cc
 	src/model/ListPhotoFacesResult.cc
+	src/model/FetchPhotosRequest.cc
+	src/model/FetchPhotosResult.cc
 	src/model/RenameAlbumRequest.cc
 	src/model/RenameAlbumResult.cc
 	src/model/ActivatePhotosRequest.cc
 	src/model/ActivatePhotosResult.cc
 	src/model/GetPrivateAccessUrlsRequest.cc
 	src/model/GetPrivateAccessUrlsResult.cc
-	src/model/ListEventsRequest.cc
-	src/model/ListEventsResult.cc
 	src/model/GetSimilarPhotosRequest.cc
 	src/model/GetSimilarPhotosResult.cc
+	src/model/ListEventsRequest.cc
+	src/model/ListEventsResult.cc
 	src/model/GetVideoCoverRequest.cc
 	src/model/GetVideoCoverResult.cc
 	src/model/GetFramedPhotoUrlsRequest.cc
@@ -254,20 +254,20 @@ set(cloudphoto_src
 	src/model/EditPhotoStoreResult.cc
 	src/model/ListTimeLinesRequest.cc
 	src/model/ListTimeLinesResult.cc
-	src/model/SearchPhotosRequest.cc
-	src/model/SearchPhotosResult.cc
 	src/model/ToggleFeaturesRequest.cc
 	src/model/ToggleFeaturesResult.cc
+	src/model/SearchPhotosRequest.cc
+	src/model/SearchPhotosResult.cc
 	src/model/ListRegisteredTagsRequest.cc
 	src/model/ListRegisteredTagsResult.cc
 	src/model/DeletePhotoStoreRequest.cc
 	src/model/DeletePhotoStoreResult.cc
 	src/model/CreateEventRequest.cc
 	src/model/CreateEventResult.cc
-	src/model/GetPhotoStoreRequest.cc
-	src/model/GetPhotoStoreResult.cc
 	src/model/ListMomentPhotosRequest.cc
 	src/model/ListMomentPhotosResult.cc
+	src/model/GetPhotoStoreRequest.cc
+	src/model/GetPhotoStoreResult.cc
 	src/model/GetThumbnailRequest.cc
 	src/model/GetThumbnailResult.cc
 	src/model/SetFaceCoverRequest.cc

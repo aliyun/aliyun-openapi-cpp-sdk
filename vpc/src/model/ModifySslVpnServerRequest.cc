@@ -33,7 +33,7 @@ std::string ModifySslVpnServerRequest::getCipher()const
 void ModifySslVpnServerRequest::setCipher(const std::string& cipher)
 {
 	cipher_ = cipher;
-	setParameter("Cipher", cipher);
+	setCoreParameter("Cipher", cipher);
 }
 
 long ModifySslVpnServerRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifySslVpnServerRequest::getResourceOwnerId()const
 void ModifySslVpnServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySslVpnServerRequest::getClientIpPool()const
@@ -55,7 +55,7 @@ std::string ModifySslVpnServerRequest::getClientIpPool()const
 void ModifySslVpnServerRequest::setClientIpPool(const std::string& clientIpPool)
 {
 	clientIpPool_ = clientIpPool;
-	setParameter("ClientIpPool", clientIpPool);
+	setCoreParameter("ClientIpPool", clientIpPool);
 }
 
 std::string ModifySslVpnServerRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifySslVpnServerRequest::getResourceOwnerAccount()const
 void ModifySslVpnServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySslVpnServerRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string ModifySslVpnServerRequest::getClientToken()const
 void ModifySslVpnServerRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 bool ModifySslVpnServerRequest::getCompress()const
@@ -88,7 +88,7 @@ bool ModifySslVpnServerRequest::getCompress()const
 void ModifySslVpnServerRequest::setCompress(bool compress)
 {
 	compress_ = compress;
-	setParameter("Compress", std::to_string(compress));
+	setCoreParameter("Compress", compress ? "true" : "false");
 }
 
 std::string ModifySslVpnServerRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifySslVpnServerRequest::getOwnerAccount()const
 void ModifySslVpnServerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifySslVpnServerRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifySslVpnServerRequest::getOwnerId()const
 void ModifySslVpnServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifySslVpnServerRequest::getSslVpnServerId()const
@@ -121,7 +121,7 @@ std::string ModifySslVpnServerRequest::getSslVpnServerId()const
 void ModifySslVpnServerRequest::setSslVpnServerId(const std::string& sslVpnServerId)
 {
 	sslVpnServerId_ = sslVpnServerId;
-	setParameter("SslVpnServerId", sslVpnServerId);
+	setCoreParameter("SslVpnServerId", sslVpnServerId);
 }
 
 std::string ModifySslVpnServerRequest::getLocalSubnet()const
@@ -132,7 +132,7 @@ std::string ModifySslVpnServerRequest::getLocalSubnet()const
 void ModifySslVpnServerRequest::setLocalSubnet(const std::string& localSubnet)
 {
 	localSubnet_ = localSubnet;
-	setParameter("LocalSubnet", localSubnet);
+	setCoreParameter("LocalSubnet", localSubnet);
 }
 
 std::string ModifySslVpnServerRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string ModifySslVpnServerRequest::getRegionId()const
 void ModifySslVpnServerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ModifySslVpnServerRequest::getPort()const
@@ -154,7 +154,7 @@ int ModifySslVpnServerRequest::getPort()const
 void ModifySslVpnServerRequest::setPort(int port)
 {
 	port_ = port;
-	setParameter("Port", std::to_string(port));
+	setCoreParameter("Port", std::to_string(port));
 }
 
 std::string ModifySslVpnServerRequest::getProto()const
@@ -165,7 +165,7 @@ std::string ModifySslVpnServerRequest::getProto()const
 void ModifySslVpnServerRequest::setProto(const std::string& proto)
 {
 	proto_ = proto;
-	setParameter("Proto", proto);
+	setCoreParameter("Proto", proto);
 }
 
 std::string ModifySslVpnServerRequest::getName()const
@@ -176,6 +176,6 @@ std::string ModifySslVpnServerRequest::getName()const
 void ModifySslVpnServerRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 

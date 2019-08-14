@@ -99,18 +99,18 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DeactivateScalingConfigurationResult.h
 	include/alibabacloud/ess/model/CreateNotificationConfigurationRequest.h
 	include/alibabacloud/ess/model/CreateNotificationConfigurationResult.h
-	include/alibabacloud/ess/model/ModifyScheduledTaskRequest.h
-	include/alibabacloud/ess/model/ModifyScheduledTaskResult.h
 	include/alibabacloud/ess/model/RecordLifecycleActionHeartbeatRequest.h
 	include/alibabacloud/ess/model/RecordLifecycleActionHeartbeatResult.h
+	include/alibabacloud/ess/model/ModifyScheduledTaskRequest.h
+	include/alibabacloud/ess/model/ModifyScheduledTaskResult.h
 	include/alibabacloud/ess/model/DeleteScalingGroupRequest.h
 	include/alibabacloud/ess/model/DeleteScalingGroupResult.h
 	include/alibabacloud/ess/model/CreateScalingConfigurationRequest.h
 	include/alibabacloud/ess/model/CreateScalingConfigurationResult.h
-	include/alibabacloud/ess/model/DescribeRegionsRequest.h
-	include/alibabacloud/ess/model/DescribeRegionsResult.h
 	include/alibabacloud/ess/model/DetachDBInstancesRequest.h
 	include/alibabacloud/ess/model/DetachDBInstancesResult.h
+	include/alibabacloud/ess/model/DescribeRegionsRequest.h
+	include/alibabacloud/ess/model/DescribeRegionsResult.h
 	include/alibabacloud/ess/model/SetInstancesProtectionRequest.h
 	include/alibabacloud/ess/model/SetInstancesProtectionResult.h
 	include/alibabacloud/ess/model/AttachLoadBalancersRequest.h
@@ -123,20 +123,20 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/ModifyScalingConfigurationResult.h
 	include/alibabacloud/ess/model/DescribeLimitationRequest.h
 	include/alibabacloud/ess/model/DescribeLimitationResult.h
-	include/alibabacloud/ess/model/DescribeAlertConfigRequest.h
-	include/alibabacloud/ess/model/DescribeAlertConfigResult.h
 	include/alibabacloud/ess/model/CreateScalingGroupRequest.h
 	include/alibabacloud/ess/model/CreateScalingGroupResult.h
+	include/alibabacloud/ess/model/DescribeAlertConfigRequest.h
+	include/alibabacloud/ess/model/DescribeAlertConfigResult.h
 	include/alibabacloud/ess/model/DeleteScalingConfigurationRequest.h
 	include/alibabacloud/ess/model/DeleteScalingConfigurationResult.h
 	include/alibabacloud/ess/model/DisableScalingGroupRequest.h
 	include/alibabacloud/ess/model/DisableScalingGroupResult.h
 	include/alibabacloud/ess/model/ModifyScalingRuleRequest.h
 	include/alibabacloud/ess/model/ModifyScalingRuleResult.h
-	include/alibabacloud/ess/model/DeleteScalingRuleRequest.h
-	include/alibabacloud/ess/model/DeleteScalingRuleResult.h
 	include/alibabacloud/ess/model/AttachDBInstancesRequest.h
 	include/alibabacloud/ess/model/AttachDBInstancesResult.h
+	include/alibabacloud/ess/model/DeleteScalingRuleRequest.h
+	include/alibabacloud/ess/model/DeleteScalingRuleResult.h
 	include/alibabacloud/ess/model/CreateLifecycleHookRequest.h
 	include/alibabacloud/ess/model/CreateLifecycleHookResult.h
 	include/alibabacloud/ess/model/EnableAlarmRequest.h
@@ -224,18 +224,18 @@ set(ess_src
 	src/model/DeactivateScalingConfigurationResult.cc
 	src/model/CreateNotificationConfigurationRequest.cc
 	src/model/CreateNotificationConfigurationResult.cc
-	src/model/ModifyScheduledTaskRequest.cc
-	src/model/ModifyScheduledTaskResult.cc
 	src/model/RecordLifecycleActionHeartbeatRequest.cc
 	src/model/RecordLifecycleActionHeartbeatResult.cc
+	src/model/ModifyScheduledTaskRequest.cc
+	src/model/ModifyScheduledTaskResult.cc
 	src/model/DeleteScalingGroupRequest.cc
 	src/model/DeleteScalingGroupResult.cc
 	src/model/CreateScalingConfigurationRequest.cc
 	src/model/CreateScalingConfigurationResult.cc
-	src/model/DescribeRegionsRequest.cc
-	src/model/DescribeRegionsResult.cc
 	src/model/DetachDBInstancesRequest.cc
 	src/model/DetachDBInstancesResult.cc
+	src/model/DescribeRegionsRequest.cc
+	src/model/DescribeRegionsResult.cc
 	src/model/SetInstancesProtectionRequest.cc
 	src/model/SetInstancesProtectionResult.cc
 	src/model/AttachLoadBalancersRequest.cc
@@ -248,20 +248,20 @@ set(ess_src
 	src/model/ModifyScalingConfigurationResult.cc
 	src/model/DescribeLimitationRequest.cc
 	src/model/DescribeLimitationResult.cc
-	src/model/DescribeAlertConfigRequest.cc
-	src/model/DescribeAlertConfigResult.cc
 	src/model/CreateScalingGroupRequest.cc
 	src/model/CreateScalingGroupResult.cc
+	src/model/DescribeAlertConfigRequest.cc
+	src/model/DescribeAlertConfigResult.cc
 	src/model/DeleteScalingConfigurationRequest.cc
 	src/model/DeleteScalingConfigurationResult.cc
 	src/model/DisableScalingGroupRequest.cc
 	src/model/DisableScalingGroupResult.cc
 	src/model/ModifyScalingRuleRequest.cc
 	src/model/ModifyScalingRuleResult.cc
-	src/model/DeleteScalingRuleRequest.cc
-	src/model/DeleteScalingRuleResult.cc
 	src/model/AttachDBInstancesRequest.cc
 	src/model/AttachDBInstancesResult.cc
+	src/model/DeleteScalingRuleRequest.cc
+	src/model/DeleteScalingRuleResult.cc
 	src/model/CreateLifecycleHookRequest.cc
 	src/model/CreateLifecycleHookResult.cc
 	src/model/EnableAlarmRequest.cc

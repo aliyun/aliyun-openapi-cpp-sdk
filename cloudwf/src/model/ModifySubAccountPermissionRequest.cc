@@ -34,7 +34,7 @@ void ModifySubAccountPermissionRequest::setShopGroupIds(const std::vector<long>&
 {
 	shopGroupIds_ = shopGroupIds;
 	for(int i = 0; i!= shopGroupIds.size(); i++)
-		setParameter("ShopGroupIds."+ std::to_string(i), std::to_string(shopGroupIds.at(i)));
+		setCoreParameter("ShopGroupIds."+ std::to_string(i), std::to_string(shopGroupIds.at(i)));
 }
 
 std::vector<long> ModifySubAccountPermissionRequest::getShopIds()const
@@ -46,7 +46,7 @@ void ModifySubAccountPermissionRequest::setShopIds(const std::vector<long>& shop
 {
 	shopIds_ = shopIds;
 	for(int i = 0; i!= shopIds.size(); i++)
-		setParameter("ShopIds."+ std::to_string(i), std::to_string(shopIds.at(i)));
+		setCoreParameter("ShopIds."+ std::to_string(i), std::to_string(shopIds.at(i)));
 }
 
 std::string ModifySubAccountPermissionRequest::getPagePermission()const
@@ -57,7 +57,7 @@ std::string ModifySubAccountPermissionRequest::getPagePermission()const
 void ModifySubAccountPermissionRequest::setPagePermission(const std::string& pagePermission)
 {
 	pagePermission_ = pagePermission;
-	setParameter("PagePermission", pagePermission);
+	setCoreParameter("PagePermission", pagePermission);
 }
 
 long ModifySubAccountPermissionRequest::getId()const
@@ -68,7 +68,7 @@ long ModifySubAccountPermissionRequest::getId()const
 void ModifySubAccountPermissionRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifySubAccountPermissionRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string ModifySubAccountPermissionRequest::getAccessKeyId()const
 void ModifySubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<long> ModifySubAccountPermissionRequest::getBusinessIds()const
@@ -91,6 +91,6 @@ void ModifySubAccountPermissionRequest::setBusinessIds(const std::vector<long>& 
 {
 	businessIds_ = businessIds;
 	for(int i = 0; i!= businessIds.size(); i++)
-		setParameter("BusinessIds."+ std::to_string(i), std::to_string(businessIds.at(i)));
+		setCoreParameter("BusinessIds."+ std::to_string(i), std::to_string(businessIds.at(i)));
 }
 

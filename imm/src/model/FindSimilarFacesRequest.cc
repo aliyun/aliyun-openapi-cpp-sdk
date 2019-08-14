@@ -58,6 +58,17 @@ void FindSimilarFacesRequest::setMinSimilarity(float minSimilarity)
 	setCoreParameter("MinSimilarity", std::to_string(minSimilarity));
 }
 
+std::string FindSimilarFacesRequest::getResponseFormat()const
+{
+	return responseFormat_;
+}
+
+void FindSimilarFacesRequest::setResponseFormat(const std::string& responseFormat)
+{
+	responseFormat_ = responseFormat;
+	setCoreParameter("ResponseFormat", responseFormat);
+}
+
 int FindSimilarFacesRequest::getLimit()const
 {
 	return limit_;

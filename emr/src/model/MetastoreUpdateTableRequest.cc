@@ -33,7 +33,7 @@ long MetastoreUpdateTableRequest::getResourceOwnerId()const
 void MetastoreUpdateTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreUpdateTableRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string MetastoreUpdateTableRequest::getRegionId()const
 void MetastoreUpdateTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<MetastoreUpdateTableRequest::AddColumn> MetastoreUpdateTableRequest::getAddColumn()const
@@ -59,9 +59,9 @@ void MetastoreUpdateTableRequest::setAddColumn(const std::vector<AddColumn>& add
 	for(int i = 0; i!= addColumn.size(); i++)	{
 		auto obj = addColumn.at(i);
 		std::string str ="AddColumn."+ std::to_string(i);
-		setParameter(str + ".Name", obj.name);
-		setParameter(str + ".Comment", obj.comment);
-		setParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Name", obj.name);
+		setCoreParameter(str + ".Comment", obj.comment);
+		setCoreParameter(str + ".Type", obj.type);
 	}
 }
 
@@ -77,9 +77,9 @@ void MetastoreUpdateTableRequest::setAddPartition(const std::vector<AddPartition
 	for(int i = 0; i!= addPartition.size(); i++)	{
 		auto obj = addPartition.at(i);
 		std::string str ="AddPartition."+ std::to_string(i);
-		setParameter(str + ".Name", obj.name);
-		setParameter(str + ".Comment", obj.comment);
-		setParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Name", obj.name);
+		setCoreParameter(str + ".Comment", obj.comment);
+		setCoreParameter(str + ".Type", obj.type);
 	}
 }
 
@@ -92,7 +92,7 @@ void MetastoreUpdateTableRequest::setDeleteColumnName(const std::vector<std::str
 {
 	deleteColumnName_ = deleteColumnName;
 	for(int i = 0; i!= deleteColumnName.size(); i++)
-		setParameter("DeleteColumnName."+ std::to_string(i), deleteColumnName.at(i));
+		setCoreParameter("DeleteColumnName."+ std::to_string(i), deleteColumnName.at(i));
 }
 
 std::string MetastoreUpdateTableRequest::getTableId()const
@@ -103,7 +103,7 @@ std::string MetastoreUpdateTableRequest::getTableId()const
 void MetastoreUpdateTableRequest::setTableId(const std::string& tableId)
 {
 	tableId_ = tableId;
-	setParameter("TableId", tableId);
+	setCoreParameter("TableId", tableId);
 }
 
 std::vector<std::string> MetastoreUpdateTableRequest::getDeletePartitionName()const
@@ -115,7 +115,7 @@ void MetastoreUpdateTableRequest::setDeletePartitionName(const std::vector<std::
 {
 	deletePartitionName_ = deletePartitionName;
 	for(int i = 0; i!= deletePartitionName.size(); i++)
-		setParameter("DeletePartitionName."+ std::to_string(i), deletePartitionName.at(i));
+		setCoreParameter("DeletePartitionName."+ std::to_string(i), deletePartitionName.at(i));
 }
 
 std::string MetastoreUpdateTableRequest::getAccessKeyId()const
@@ -126,6 +126,6 @@ std::string MetastoreUpdateTableRequest::getAccessKeyId()const
 void MetastoreUpdateTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

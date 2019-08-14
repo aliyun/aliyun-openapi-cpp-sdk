@@ -33,6 +33,6 @@ std::string UnbindMFADeviceRequest::getUserName()const
 void UnbindMFADeviceRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

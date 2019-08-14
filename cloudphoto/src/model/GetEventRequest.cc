@@ -33,7 +33,7 @@ long GetEventRequest::getEventId()const
 void GetEventRequest::setEventId(long eventId)
 {
 	eventId_ = eventId;
-	setParameter("EventId", std::to_string(eventId));
+	setCoreParameter("EventId", std::to_string(eventId));
 }
 
 std::string GetEventRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string GetEventRequest::getLibraryId()const
 void GetEventRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string GetEventRequest::getStoreName()const
@@ -55,6 +55,6 @@ std::string GetEventRequest::getStoreName()const
 void GetEventRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

@@ -35,10 +35,13 @@ DescribeLoadBalancersResult::~DescribeLoadBalancersResult()
 
 void DescribeLoadBalancersResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allLoadBalancers = value["LoadBalancers"]["LoadBalancer"];
 	for (auto value : allLoadBalancers)
@@ -80,6 +83,16 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 			loadBalancersObject.resourceGroupId = value["ResourceGroupId"].asString();
 		if(!value["AddressIPVersion"].isNull())
 			loadBalancersObject.addressIPVersion = value["AddressIPVersion"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			LoadBalancer::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			loadBalancersObject.tags.push_back(tagsObject);
+		}
 		loadBalancers_.push_back(loadBalancersObject);
 	}
 	if(!value["PageNumber"].isNull())

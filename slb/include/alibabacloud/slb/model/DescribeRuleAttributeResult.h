@@ -45,6 +45,7 @@ namespace AlibabaCloud
 				int getUnhealthyThreshold()const;
 				std::string getScheduler()const;
 				std::string getHealthCheckURI()const;
+				std::string getRuleId()const;
 				std::string getHealthCheck()const;
 				std::string getLoadBalancerId()const;
 				int getHealthCheckTimeout()const;
@@ -70,6 +71,7 @@ namespace AlibabaCloud
 				int unhealthyThreshold_;
 				std::string scheduler_;
 				std::string healthCheckURI_;
+				std::string ruleId_;
 				std::string healthCheck_;
 				std::string loadBalancerId_;
 				int healthCheckTimeout_;

@@ -33,7 +33,7 @@ std::string BatchChangeGroupApNameRequest::getJsonData()const
 void BatchChangeGroupApNameRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setParameter("JsonData", jsonData);
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string BatchChangeGroupApNameRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string BatchChangeGroupApNameRequest::getAccessKeyId()const
 void BatchChangeGroupApNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

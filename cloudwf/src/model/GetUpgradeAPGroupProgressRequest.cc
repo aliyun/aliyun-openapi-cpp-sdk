@@ -33,6 +33,6 @@ std::string GetUpgradeAPGroupProgressRequest::getAccessKeyId()const
 void GetUpgradeAPGroupProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

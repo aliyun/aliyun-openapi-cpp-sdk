@@ -25,17 +25,6 @@ OnsInstanceCreateRequest::OnsInstanceCreateRequest() :
 OnsInstanceCreateRequest::~OnsInstanceCreateRequest()
 {}
 
-long OnsInstanceCreateRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsInstanceCreateRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsInstanceCreateRequest::getInstanceName()const
 {
 	return instanceName_;

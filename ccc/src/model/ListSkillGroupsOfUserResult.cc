@@ -35,10 +35,13 @@ ListSkillGroupsOfUserResult::~ListSkillGroupsOfUserResult()
 
 void ListSkillGroupsOfUserResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allSkillLevels = value["SkillLevels"]["SkillLevel"];
 	for (auto value : allSkillLevels)
@@ -57,6 +60,8 @@ void ListSkillGroupsOfUserResult::parse(const std::string &payload)
 			skillLevelsObject.skill.skillGroupName = skillNode["SkillGroupName"].asString();
 		if(!skillNode["SkillGroupDescription"].isNull())
 			skillLevelsObject.skill.skillGroupDescription = skillNode["SkillGroupDescription"].asString();
+		if(!skillNode["RoutingStrategy"].isNull())
+			skillLevelsObject.skill.routingStrategy = skillNode["RoutingStrategy"].asString();
 		auto allOutboundPhoneNumbers = value["OutboundPhoneNumbers"]["PhoneNumber"];
 		for (auto value : allOutboundPhoneNumbers)
 		{

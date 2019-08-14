@@ -25,17 +25,6 @@ OnsConsumerGetConnectionRequest::OnsConsumerGetConnectionRequest() :
 OnsConsumerGetConnectionRequest::~OnsConsumerGetConnectionRequest()
 {}
 
-long OnsConsumerGetConnectionRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsConsumerGetConnectionRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsConsumerGetConnectionRequest::getInstanceId()const
 {
 	return instanceId_;

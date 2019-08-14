@@ -35,10 +35,13 @@ ListClusterHostResult::~ListClusterHostResult()
 
 void ListClusterHostResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allHostList = value["HostList"]["Host"];
 	for (auto value : allHostList)
@@ -52,6 +55,8 @@ void ListClusterHostResult::parse(const std::string &payload)
 			hostListObject.privateIp = value["PrivateIp"].asString();
 		if(!value["Role"].isNull())
 			hostListObject.role = value["Role"].asString();
+		if(!value["ZoneId"].isNull())
+			hostListObject.zoneId = value["ZoneId"].asString();
 		if(!value["InstanceType"].isNull())
 			hostListObject.instanceType = value["InstanceType"].asString();
 		if(!value["Cpu"].isNull())
@@ -88,6 +93,8 @@ void ListClusterHostResult::parse(const std::string &payload)
 				diskListObject.diskId = value["DiskId"].asString();
 			if(!value["Type"].isNull())
 				diskListObject.type = value["Type"].asString();
+			if(!value["Device"].isNull())
+				diskListObject.device = value["Device"].asString();
 			if(!value["DiskType"].isNull())
 				diskListObject.diskType = value["DiskType"].asString();
 			if(!value["DiskSize"].isNull())

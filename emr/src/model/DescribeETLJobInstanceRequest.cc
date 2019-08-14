@@ -33,7 +33,7 @@ long DescribeETLJobInstanceRequest::getResourceOwnerId()const
 void DescribeETLJobInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeETLJobInstanceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeETLJobInstanceRequest::getRegionId()const
 void DescribeETLJobInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeETLJobInstanceRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeETLJobInstanceRequest::getId()const
 void DescribeETLJobInstanceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeETLJobInstanceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeETLJobInstanceRequest::getAccessKeyId()const
 void DescribeETLJobInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

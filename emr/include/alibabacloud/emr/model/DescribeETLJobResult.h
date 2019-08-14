@@ -60,7 +60,7 @@ namespace AlibabaCloud
 						std::vector<std::string> alertUserGroupIdList;
 						bool enable;
 						std::string eventId;
-						std::vector<std::string> alertDingDingGroupIdList;
+						std::vector<std::string> alertDingDingGroupList;
 					};
 					std::vector<Item> items;
 				};

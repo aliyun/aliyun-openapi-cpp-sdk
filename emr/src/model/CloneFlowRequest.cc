@@ -33,7 +33,7 @@ std::string CloneFlowRequest::getRegionId()const
 void CloneFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CloneFlowRequest::getId()const
@@ -44,7 +44,7 @@ std::string CloneFlowRequest::getId()const
 void CloneFlowRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string CloneFlowRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string CloneFlowRequest::getProjectId()const
 void CloneFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 

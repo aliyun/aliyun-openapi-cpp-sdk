@@ -33,7 +33,7 @@ std::string DescribeDNSSLBSubDomainsRequest::getUserClientIp()const
 void DescribeDNSSLBSubDomainsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeDNSSLBSubDomainsRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDNSSLBSubDomainsRequest::getDomainName()const
 void DescribeDNSSLBSubDomainsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeDNSSLBSubDomainsRequest::getPageSize()const
@@ -55,7 +55,7 @@ long DescribeDNSSLBSubDomainsRequest::getPageSize()const
 void DescribeDNSSLBSubDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDNSSLBSubDomainsRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeDNSSLBSubDomainsRequest::getLang()const
 void DescribeDNSSLBSubDomainsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeDNSSLBSubDomainsRequest::getPageNumber()const
@@ -77,7 +77,7 @@ long DescribeDNSSLBSubDomainsRequest::getPageNumber()const
 void DescribeDNSSLBSubDomainsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDNSSLBSubDomainsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDNSSLBSubDomainsRequest::getAccessKeyId()const
 void DescribeDNSSLBSubDomainsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

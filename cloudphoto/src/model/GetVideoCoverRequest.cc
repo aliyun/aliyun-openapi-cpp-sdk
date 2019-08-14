@@ -33,7 +33,7 @@ std::string GetVideoCoverRequest::getLibraryId()const
 void GetVideoCoverRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long GetVideoCoverRequest::getPhotoId()const
@@ -44,7 +44,7 @@ long GetVideoCoverRequest::getPhotoId()const
 void GetVideoCoverRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string GetVideoCoverRequest::getStoreName()const
@@ -55,7 +55,7 @@ std::string GetVideoCoverRequest::getStoreName()const
 void GetVideoCoverRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string GetVideoCoverRequest::getZoomType()const
@@ -66,6 +66,6 @@ std::string GetVideoCoverRequest::getZoomType()const
 void GetVideoCoverRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
-	setParameter("ZoomType", zoomType);
+	setCoreParameter("ZoomType", zoomType);
 }
 

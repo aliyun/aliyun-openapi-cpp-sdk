@@ -26,10 +26,10 @@
 #include "model/GetUserInstanceResult.h"
 #include "model/GetProjectInstanceRequest.h"
 #include "model/GetProjectInstanceResult.h"
-#include "model/QueryResourceInventoryRequest.h"
-#include "model/QueryResourceInventoryResult.h"
 #include "model/QueryTopologyRequest.h"
 #include "model/QueryTopologyResult.h"
+#include "model/QueryResourceInventoryRequest.h"
+#include "model/QueryResourceInventoryResult.h"
 #include "model/GetInstancesStatusCountRequest.h"
 #include "model/GetInstancesStatusCountResult.h"
 #include "model/ListUserQuotasRequest.h"
@@ -57,12 +57,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetProjectInstanceResult> GetProjectInstanceOutcome;
 			typedef std::future<GetProjectInstanceOutcome> GetProjectInstanceOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetProjectInstanceRequest&, const GetProjectInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectInstanceAsyncHandler;
-			typedef Outcome<Error, Model::QueryResourceInventoryResult> QueryResourceInventoryOutcome;
-			typedef std::future<QueryResourceInventoryOutcome> QueryResourceInventoryOutcomeCallable;
-			typedef std::function<void(const TeslaMaxComputeClient*, const Model::QueryResourceInventoryRequest&, const QueryResourceInventoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourceInventoryAsyncHandler;
 			typedef Outcome<Error, Model::QueryTopologyResult> QueryTopologyOutcome;
 			typedef std::future<QueryTopologyOutcome> QueryTopologyOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::QueryTopologyRequest&, const QueryTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTopologyAsyncHandler;
+			typedef Outcome<Error, Model::QueryResourceInventoryResult> QueryResourceInventoryOutcome;
+			typedef std::future<QueryResourceInventoryOutcome> QueryResourceInventoryOutcomeCallable;
+			typedef std::function<void(const TeslaMaxComputeClient*, const Model::QueryResourceInventoryRequest&, const QueryResourceInventoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourceInventoryAsyncHandler;
 			typedef Outcome<Error, Model::GetInstancesStatusCountResult> GetInstancesStatusCountOutcome;
 			typedef std::future<GetInstancesStatusCountOutcome> GetInstancesStatusCountOutcomeCallable;
 			typedef std::function<void(const TeslaMaxComputeClient*, const Model::GetInstancesStatusCountRequest&, const GetInstancesStatusCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstancesStatusCountAsyncHandler;
@@ -92,12 +92,12 @@ namespace AlibabaCloud
 			GetProjectInstanceOutcome getProjectInstance(const Model::GetProjectInstanceRequest &request)const;
 			void getProjectInstanceAsync(const Model::GetProjectInstanceRequest& request, const GetProjectInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProjectInstanceOutcomeCallable getProjectInstanceCallable(const Model::GetProjectInstanceRequest& request) const;
-			QueryResourceInventoryOutcome queryResourceInventory(const Model::QueryResourceInventoryRequest &request)const;
-			void queryResourceInventoryAsync(const Model::QueryResourceInventoryRequest& request, const QueryResourceInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryResourceInventoryOutcomeCallable queryResourceInventoryCallable(const Model::QueryResourceInventoryRequest& request) const;
 			QueryTopologyOutcome queryTopology(const Model::QueryTopologyRequest &request)const;
 			void queryTopologyAsync(const Model::QueryTopologyRequest& request, const QueryTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryTopologyOutcomeCallable queryTopologyCallable(const Model::QueryTopologyRequest& request) const;
+			QueryResourceInventoryOutcome queryResourceInventory(const Model::QueryResourceInventoryRequest &request)const;
+			void queryResourceInventoryAsync(const Model::QueryResourceInventoryRequest& request, const QueryResourceInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryResourceInventoryOutcomeCallable queryResourceInventoryCallable(const Model::QueryResourceInventoryRequest& request) const;
 			GetInstancesStatusCountOutcome getInstancesStatusCount(const Model::GetInstancesStatusCountRequest &request)const;
 			void getInstancesStatusCountAsync(const Model::GetInstancesStatusCountRequest& request, const GetInstancesStatusCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstancesStatusCountOutcomeCallable getInstancesStatusCountCallable(const Model::GetInstancesStatusCountRequest& request) const;

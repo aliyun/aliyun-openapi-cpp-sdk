@@ -33,6 +33,6 @@ std::string BatchGetPluginConfigInfoRequest::getPluginInfos()const
 void BatchGetPluginConfigInfoRequest::setPluginInfos(const std::string& pluginInfos)
 {
 	pluginInfos_ = pluginInfos;
-	setParameter("PluginInfos", pluginInfos);
+	setCoreParameter("PluginInfos", pluginInfos);
 }
 

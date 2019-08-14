@@ -35,10 +35,13 @@ ListEmrAvailableConfigResult::~ListEmrAvailableConfigResult()
 
 void ListEmrAvailableConfigResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allEmrMainVersionList = value["EmrMainVersionList"]["EmrMainVersion"];
 	for (auto value : allEmrMainVersionList)
@@ -50,6 +53,10 @@ void ListEmrAvailableConfigResult::parse(const std::string &payload)
 			emrMainVersionListObject.mainVersionName = value["MainVersionName"].asString();
 		if(!value["EcmVersion"].isNull())
 			emrMainVersionListObject.ecmVersion = value["EcmVersion"].asString() == "true";
+		if(!value["StackName"].isNull())
+			emrMainVersionListObject.stackName = value["StackName"].asString();
+		if(!value["StackVersion"].isNull())
+			emrMainVersionListObject.stackVersion = value["StackVersion"].asString();
 		auto allClusterTypeInfoList = value["ClusterTypeInfoList"]["ClusterTypeInfo"];
 		for (auto value : allClusterTypeInfoList)
 		{

@@ -411,42 +411,6 @@ GpdbClient::ModifyAccountDescriptionOutcomeCallable GpdbClient::modifyAccountDes
 	return task->get_future();
 }
 
-GpdbClient::DescribeResourceUsageOutcome GpdbClient::describeResourceUsage(const DescribeResourceUsageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeResourceUsageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeResourceUsageOutcome(DescribeResourceUsageResult(outcome.result()));
-	else
-		return DescribeResourceUsageOutcome(outcome.error());
-}
-
-void GpdbClient::describeResourceUsageAsync(const DescribeResourceUsageRequest& request, const DescribeResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeResourceUsage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DescribeResourceUsageOutcomeCallable GpdbClient::describeResourceUsageCallable(const DescribeResourceUsageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeResourceUsageOutcome()>>(
-			[this, request]()
-			{
-			return this->describeResourceUsage(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GpdbClient::DescribeSQLCollectorPolicyOutcome GpdbClient::describeSQLCollectorPolicy(const DescribeSQLCollectorPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +441,42 @@ GpdbClient::DescribeSQLCollectorPolicyOutcomeCallable GpdbClient::describeSQLCol
 			[this, request]()
 			{
 			return this->describeSQLCollectorPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::DescribeResourceUsageOutcome GpdbClient::describeResourceUsage(const DescribeResourceUsageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResourceUsageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResourceUsageOutcome(DescribeResourceUsageResult(outcome.result()));
+	else
+		return DescribeResourceUsageOutcome(outcome.error());
+}
+
+void GpdbClient::describeResourceUsageAsync(const DescribeResourceUsageRequest& request, const DescribeResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResourceUsage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::DescribeResourceUsageOutcomeCallable GpdbClient::describeResourceUsageCallable(const DescribeResourceUsageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResourceUsageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResourceUsage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,42 +663,6 @@ GpdbClient::ModifyDBInstanceConnectionStringOutcomeCallable GpdbClient::modifyDB
 	return task->get_future();
 }
 
-GpdbClient::DeleteDBInstanceOutcome GpdbClient::deleteDBInstance(const DeleteDBInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteDBInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteDBInstanceOutcome(DeleteDBInstanceResult(outcome.result()));
-	else
-		return DeleteDBInstanceOutcome(outcome.error());
-}
-
-void GpdbClient::deleteDBInstanceAsync(const DeleteDBInstanceRequest& request, const DeleteDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteDBInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GpdbClient::DeleteDBInstanceOutcomeCallable GpdbClient::deleteDBInstanceCallable(const DeleteDBInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteDBInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteDBInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GpdbClient::DescribeSlowLogRecordsOutcome GpdbClient::describeSlowLogRecords(const DescribeSlowLogRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -735,36 +699,36 @@ GpdbClient::DescribeSlowLogRecordsOutcomeCallable GpdbClient::describeSlowLogRec
 	return task->get_future();
 }
 
-GpdbClient::ModifyDBInstanceConnectionModeOutcome GpdbClient::modifyDBInstanceConnectionMode(const ModifyDBInstanceConnectionModeRequest &request) const
+GpdbClient::DeleteDBInstanceOutcome GpdbClient::deleteDBInstance(const DeleteDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyDBInstanceConnectionModeOutcome(endpointOutcome.error());
+		return DeleteDBInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyDBInstanceConnectionModeOutcome(ModifyDBInstanceConnectionModeResult(outcome.result()));
+		return DeleteDBInstanceOutcome(DeleteDBInstanceResult(outcome.result()));
 	else
-		return ModifyDBInstanceConnectionModeOutcome(outcome.error());
+		return DeleteDBInstanceOutcome(outcome.error());
 }
 
-void GpdbClient::modifyDBInstanceConnectionModeAsync(const ModifyDBInstanceConnectionModeRequest& request, const ModifyDBInstanceConnectionModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void GpdbClient::deleteDBInstanceAsync(const DeleteDBInstanceRequest& request, const DeleteDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyDBInstanceConnectionMode(request), context);
+		handler(this, request, deleteDBInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-GpdbClient::ModifyDBInstanceConnectionModeOutcomeCallable GpdbClient::modifyDBInstanceConnectionModeCallable(const ModifyDBInstanceConnectionModeRequest &request) const
+GpdbClient::DeleteDBInstanceOutcomeCallable GpdbClient::deleteDBInstanceCallable(const DeleteDBInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceConnectionModeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteDBInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyDBInstanceConnectionMode(request);
+			return this->deleteDBInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -801,6 +765,42 @@ GpdbClient::RestartDBInstanceOutcomeCallable GpdbClient::restartDBInstanceCallab
 			[this, request]()
 			{
 			return this->restartDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::ModifyDBInstanceConnectionModeOutcome GpdbClient::modifyDBInstanceConnectionMode(const ModifyDBInstanceConnectionModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBInstanceConnectionModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBInstanceConnectionModeOutcome(ModifyDBInstanceConnectionModeResult(outcome.result()));
+	else
+		return ModifyDBInstanceConnectionModeOutcome(outcome.error());
+}
+
+void GpdbClient::modifyDBInstanceConnectionModeAsync(const ModifyDBInstanceConnectionModeRequest& request, const ModifyDBInstanceConnectionModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBInstanceConnectionMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::ModifyDBInstanceConnectionModeOutcomeCallable GpdbClient::modifyDBInstanceConnectionModeCallable(const ModifyDBInstanceConnectionModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceConnectionModeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBInstanceConnectionMode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,6 +1125,42 @@ GpdbClient::ReleaseInstancePublicConnectionOutcomeCallable GpdbClient::releaseIn
 			[this, request]()
 			{
 			return this->releaseInstancePublicConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GpdbClient::UpgradeDBInstanceOutcome GpdbClient::upgradeDBInstance(const UpgradeDBInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeDBInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeDBInstanceOutcome(UpgradeDBInstanceResult(outcome.result()));
+	else
+		return UpgradeDBInstanceOutcome(outcome.error());
+}
+
+void GpdbClient::upgradeDBInstanceAsync(const UpgradeDBInstanceRequest& request, const UpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeDBInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GpdbClient::UpgradeDBInstanceOutcomeCallable GpdbClient::upgradeDBInstanceCallable(const UpgradeDBInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeDBInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

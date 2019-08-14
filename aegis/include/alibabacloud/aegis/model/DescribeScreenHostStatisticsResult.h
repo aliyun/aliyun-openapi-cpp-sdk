@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::vector<std::string> weaknessMachineNames;
+					std::vector<std::string> safeCount;
 					std::vector<std::string> suspEventUuids;
 					std::vector<std::string> weaknessUuids;
 					std::vector<std::string> suspEventMachineNames;

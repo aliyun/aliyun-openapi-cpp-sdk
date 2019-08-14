@@ -33,7 +33,7 @@ long ListSupportedServiceNameRequest::getResourceOwnerId()const
 void ListSupportedServiceNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListSupportedServiceNameRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListSupportedServiceNameRequest::getRegionId()const
 void ListSupportedServiceNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListSupportedServiceNameRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListSupportedServiceNameRequest::getAccessKeyId()const
 void ListSupportedServiceNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

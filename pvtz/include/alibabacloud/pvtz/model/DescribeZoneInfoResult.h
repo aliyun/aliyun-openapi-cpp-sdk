@@ -47,6 +47,7 @@ namespace AlibabaCloud
 				~DescribeZoneInfoResult();
 				std::string getZoneName()const;
 				std::string getZoneId()const;
+				bool getSlaveDns()const;
 				std::string getProxyPattern()const;
 				std::string getCreateTime()const;
 				std::string getUpdateTime()const;
@@ -62,6 +63,7 @@ namespace AlibabaCloud
 			private:
 				std::string zoneName_;
 				std::string zoneId_;
+				bool slaveDns_;
 				std::string proxyPattern_;
 				std::string createTime_;
 				std::string updateTime_;

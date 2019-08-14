@@ -105,12 +105,14 @@ namespace AlibabaCloud
 				~QuerySnapshotJobListResult();
 				std::vector<SnapshotJob> getSnapshotJobList()const;
 				std::vector<std::string> getNonExistSnapshotJobIds()const;
+				std::string getNextPageToken()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<SnapshotJob> snapshotJobList_;
 				std::vector<std::string> nonExistSnapshotJobIds_;
+				std::string nextPageToken_;
 
 			};
 		}

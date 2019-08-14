@@ -33,6 +33,6 @@ std::string StopTasksRequest::getTaskIds()const
 void StopTasksRequest::setTaskIds(const std::string& taskIds)
 {
 	taskIds_ = taskIds;
-	setParameter("TaskIds", taskIds);
+	setCoreParameter("TaskIds", taskIds);
 }
 

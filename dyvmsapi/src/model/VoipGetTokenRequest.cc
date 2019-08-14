@@ -33,7 +33,7 @@ long VoipGetTokenRequest::getResourceOwnerId()const
 void VoipGetTokenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string VoipGetTokenRequest::getVoipId()const
@@ -44,7 +44,7 @@ std::string VoipGetTokenRequest::getVoipId()const
 void VoipGetTokenRequest::setVoipId(const std::string& voipId)
 {
 	voipId_ = voipId;
-	setParameter("VoipId", voipId);
+	setCoreParameter("VoipId", voipId);
 }
 
 std::string VoipGetTokenRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string VoipGetTokenRequest::getResourceOwnerAccount()const
 void VoipGetTokenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long VoipGetTokenRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long VoipGetTokenRequest::getOwnerId()const
 void VoipGetTokenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string VoipGetTokenRequest::getDeviceId()const
@@ -77,7 +77,18 @@ std::string VoipGetTokenRequest::getDeviceId()const
 void VoipGetTokenRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setParameter("DeviceId", deviceId);
+	setCoreParameter("DeviceId", deviceId);
+}
+
+bool VoipGetTokenRequest::getIsCustomAccount()const
+{
+	return isCustomAccount_;
+}
+
+void VoipGetTokenRequest::setIsCustomAccount(bool isCustomAccount)
+{
+	isCustomAccount_ = isCustomAccount;
+	setCoreParameter("IsCustomAccount", isCustomAccount ? "true" : "false");
 }
 
 std::string VoipGetTokenRequest::getAccessKeyId()const
@@ -88,6 +99,6 @@ std::string VoipGetTokenRequest::getAccessKeyId()const
 void VoipGetTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

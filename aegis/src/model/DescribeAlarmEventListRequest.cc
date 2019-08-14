@@ -47,6 +47,17 @@ void DescribeAlarmEventListRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
+std::string DescribeAlarmEventListRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeAlarmEventListRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
 std::string DescribeAlarmEventListRequest::getPageSize()const
 {
 	return pageSize_;
@@ -133,5 +144,17 @@ void DescribeAlarmEventListRequest::setLevels(const std::string& levels)
 {
 	levels_ = levels;
 	setCoreParameter("Levels", levels);
+}
+
+std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList()const
+{
+	return operateErrorCodeList_;
+}
+
+void DescribeAlarmEventListRequest::setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList)
+{
+	operateErrorCodeList_ = operateErrorCodeList;
+	for(int i = 0; i!= operateErrorCodeList.size(); i++)
+		setCoreParameter("OperateErrorCodeList."+ std::to_string(i), operateErrorCodeList.at(i));
 }
 

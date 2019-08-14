@@ -33,7 +33,7 @@ std::string ContextQueryLogRequest::getPackId()const
 void ContextQueryLogRequest::setPackId(const std::string& packId)
 {
 	packId_ = packId;
-	setParameter("PackId", packId);
+	setCoreParameter("PackId", packId);
 }
 
 long ContextQueryLogRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ContextQueryLogRequest::getResourceOwnerId()const
 void ContextQueryLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ContextQueryLogRequest::getTotalOffset()const
@@ -55,7 +55,7 @@ int ContextQueryLogRequest::getTotalOffset()const
 void ContextQueryLogRequest::setTotalOffset(int totalOffset)
 {
 	totalOffset_ = totalOffset;
-	setParameter("TotalOffset", std::to_string(totalOffset));
+	setCoreParameter("TotalOffset", std::to_string(totalOffset));
 }
 
 int ContextQueryLogRequest::getSize()const
@@ -66,7 +66,7 @@ int ContextQueryLogRequest::getSize()const
 void ContextQueryLogRequest::setSize(int size)
 {
 	size_ = size;
-	setParameter("Size", std::to_string(size));
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ContextQueryLogRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ContextQueryLogRequest::getRegionId()const
 void ContextQueryLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ContextQueryLogRequest::getPackMeta()const
@@ -88,7 +88,7 @@ std::string ContextQueryLogRequest::getPackMeta()const
 void ContextQueryLogRequest::setPackMeta(const std::string& packMeta)
 {
 	packMeta_ = packMeta;
-	setParameter("PackMeta", packMeta);
+	setCoreParameter("PackMeta", packMeta);
 }
 
 int ContextQueryLogRequest::getFrom()const
@@ -99,7 +99,7 @@ int ContextQueryLogRequest::getFrom()const
 void ContextQueryLogRequest::setFrom(int from)
 {
 	from_ = from;
-	setParameter("From", std::to_string(from));
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string ContextQueryLogRequest::getClusterId()const
@@ -110,7 +110,7 @@ std::string ContextQueryLogRequest::getClusterId()const
 void ContextQueryLogRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ContextQueryLogRequest::getTo()const
@@ -121,7 +121,7 @@ int ContextQueryLogRequest::getTo()const
 void ContextQueryLogRequest::setTo(int to)
 {
 	to_ = to;
-	setParameter("To", std::to_string(to));
+	setCoreParameter("To", std::to_string(to));
 }
 
 bool ContextQueryLogRequest::getReverse()const
@@ -132,7 +132,7 @@ bool ContextQueryLogRequest::getReverse()const
 void ContextQueryLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setParameter("Reverse", std::to_string(reverse));
+	setCoreParameter("Reverse", reverse ? "true" : "false");
 }
 
 std::string ContextQueryLogRequest::getLogStore()const
@@ -143,7 +143,7 @@ std::string ContextQueryLogRequest::getLogStore()const
 void ContextQueryLogRequest::setLogStore(const std::string& logStore)
 {
 	logStore_ = logStore;
-	setParameter("LogStore", logStore);
+	setCoreParameter("LogStore", logStore);
 }
 
 std::string ContextQueryLogRequest::getAccessKeyId()const
@@ -154,6 +154,6 @@ std::string ContextQueryLogRequest::getAccessKeyId()const
 void ContextQueryLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

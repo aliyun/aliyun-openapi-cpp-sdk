@@ -35,10 +35,13 @@ DescribeETLJobInstanceResult::~DescribeETLJobInstanceResult()
 
 void DescribeETLJobInstanceResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allFlowRelationList = value["FlowRelationList"]["FlowRelation"];
 	for (auto value : allFlowRelationList)
@@ -58,25 +61,10 @@ void DescribeETLJobInstanceResult::parse(const std::string &payload)
 			stageInstanceListObject.id = value["Id"].asString();
 		if(!value["Name"].isNull())
 			stageInstanceListObject.name = value["Name"].asString();
-		if(!value["StartTime"].isNull())
-			stageInstanceListObject.startTime = std::stol(value["StartTime"].asString());
-		if(!value["EndTime"].isNull())
-			stageInstanceListObject.endTime = std::stol(value["EndTime"].asString());
-		auto metrics1Node = value["Metrics"];
-		if(!metrics1Node["TotalTime"].isNull())
-			stageInstanceListObject.metrics1.totalTime = std::stol(metrics1Node["TotalTime"].asString());
-		if(!metrics1Node["RecordsIn"].isNull())
-			stageInstanceListObject.metrics1.recordsIn = std::stol(metrics1Node["RecordsIn"].asString());
-		if(!metrics1Node["RecordsOut"].isNull())
-			stageInstanceListObject.metrics1.recordsOut = std::stol(metrics1Node["RecordsOut"].asString());
-		if(!metrics1Node["RecordsError"].isNull())
-			stageInstanceListObject.metrics1.recordsError = std::stol(metrics1Node["RecordsError"].asString());
-		if(!metrics1Node["RecordsRate"].isNull())
-			stageInstanceListObject.metrics1.recordsRate = metrics1Node["RecordsRate"].asString();
-		if(!metrics1Node["Vcores"].isNull())
-			stageInstanceListObject.metrics1.vcores = std::stol(metrics1Node["Vcores"].asString());
-		if(!metrics1Node["MemSize"].isNull())
-			stageInstanceListObject.metrics1.memSize = std::stol(metrics1Node["MemSize"].asString());
+		if(!value["StageStartTime"].isNull())
+			stageInstanceListObject.stageStartTime = std::stol(value["StageStartTime"].asString());
+		if(!value["StageEndTime"].isNull())
+			stageInstanceListObject.stageEndTime = std::stol(value["StageEndTime"].asString());
 		stageInstanceList_.push_back(stageInstanceListObject);
 	}
 	auto triggerHistoryNode = value["TriggerHistory"];

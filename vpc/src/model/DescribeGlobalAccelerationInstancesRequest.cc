@@ -33,7 +33,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getIpAddress()const
 void DescribeGlobalAccelerationInstancesRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setParameter("IpAddress", ipAddress);
+	setCoreParameter("IpAddress", ipAddress);
 }
 
 long DescribeGlobalAccelerationInstancesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeGlobalAccelerationInstancesRequest::getResourceOwnerId()const
 void DescribeGlobalAccelerationInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getBandwidthType()const
@@ -55,7 +55,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getBandwidthType()const
 void DescribeGlobalAccelerationInstancesRequest::setBandwidthType(const std::string& bandwidthType)
 {
 	bandwidthType_ = bandwidthType;
-	setParameter("BandwidthType", bandwidthType);
+	setCoreParameter("BandwidthType", bandwidthType);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getResourceOwnerAccount(
 void DescribeGlobalAccelerationInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getServiceLocation()const
@@ -77,7 +77,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getServiceLocation()cons
 void DescribeGlobalAccelerationInstancesRequest::setServiceLocation(const std::string& serviceLocation)
 {
 	serviceLocation_ = serviceLocation;
-	setParameter("ServiceLocation", serviceLocation);
+	setCoreParameter("ServiceLocation", serviceLocation);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getOwnerAccount()const
 void DescribeGlobalAccelerationInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeGlobalAccelerationInstancesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeGlobalAccelerationInstancesRequest::getOwnerId()const
 void DescribeGlobalAccelerationInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeGlobalAccelerationInstancesRequest::getIncludeReservationData()const
@@ -110,7 +110,7 @@ bool DescribeGlobalAccelerationInstancesRequest::getIncludeReservationData()cons
 void DescribeGlobalAccelerationInstancesRequest::setIncludeReservationData(bool includeReservationData)
 {
 	includeReservationData_ = includeReservationData;
-	setParameter("IncludeReservationData", std::to_string(includeReservationData));
+	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getGlobalAccelerationInstanceId()const
@@ -121,7 +121,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getGlobalAccelerationIns
 void DescribeGlobalAccelerationInstancesRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getServerId()const
@@ -132,7 +132,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getServerId()const
 void DescribeGlobalAccelerationInstancesRequest::setServerId(const std::string& serverId)
 {
 	serverId_ = serverId;
-	setParameter("ServerId", serverId);
+	setCoreParameter("ServerId", serverId);
 }
 
 int DescribeGlobalAccelerationInstancesRequest::getPageNumber()const
@@ -143,7 +143,7 @@ int DescribeGlobalAccelerationInstancesRequest::getPageNumber()const
 void DescribeGlobalAccelerationInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getRegionId()const
 void DescribeGlobalAccelerationInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getName()const
@@ -165,7 +165,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getName()const
 void DescribeGlobalAccelerationInstancesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 int DescribeGlobalAccelerationInstancesRequest::getPageSize()const
@@ -176,7 +176,7 @@ int DescribeGlobalAccelerationInstancesRequest::getPageSize()const
 void DescribeGlobalAccelerationInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getStatus()const
@@ -187,6 +187,6 @@ std::string DescribeGlobalAccelerationInstancesRequest::getStatus()const
 void DescribeGlobalAccelerationInstancesRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

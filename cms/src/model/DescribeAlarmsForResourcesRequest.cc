@@ -33,7 +33,7 @@ bool DescribeAlarmsForResourcesRequest::getEnableState()const
 void DescribeAlarmsForResourcesRequest::setEnableState(bool enableState)
 {
 	enableState_ = enableState;
-	setParameter("EnableState", enableState ? "true" : "false");
+	setCoreParameter("EnableState", enableState ? "true" : "false");
 }
 
 std::string DescribeAlarmsForResourcesRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeAlarmsForResourcesRequest::getGroupId()const
 void DescribeAlarmsForResourcesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeAlarmsForResourcesRequest::get_Namespace()const
@@ -55,7 +55,7 @@ std::string DescribeAlarmsForResourcesRequest::get_Namespace()const
 void DescribeAlarmsForResourcesRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setParameter("_Namespace", _namespace);
+	setCoreParameter("_Namespace", _namespace);
 }
 
 std::string DescribeAlarmsForResourcesRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeAlarmsForResourcesRequest::getPageSize()const
 void DescribeAlarmsForResourcesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAlarmsForResourcesRequest::getAlertState()const
@@ -77,7 +77,7 @@ std::string DescribeAlarmsForResourcesRequest::getAlertState()const
 void DescribeAlarmsForResourcesRequest::setAlertState(const std::string& alertState)
 {
 	alertState_ = alertState;
-	setParameter("AlertState", alertState);
+	setCoreParameter("AlertState", alertState);
 }
 
 std::string DescribeAlarmsForResourcesRequest::getPage()const
@@ -88,7 +88,7 @@ std::string DescribeAlarmsForResourcesRequest::getPage()const
 void DescribeAlarmsForResourcesRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setParameter("Page", page);
+	setCoreParameter("Page", page);
 }
 
 std::string DescribeAlarmsForResourcesRequest::getMetricName()const
@@ -99,7 +99,7 @@ std::string DescribeAlarmsForResourcesRequest::getMetricName()const
 void DescribeAlarmsForResourcesRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setParameter("MetricName", metricName);
+	setCoreParameter("MetricName", metricName);
 }
 
 std::string DescribeAlarmsForResourcesRequest::getDimensions()const
@@ -110,6 +110,6 @@ std::string DescribeAlarmsForResourcesRequest::getDimensions()const
 void DescribeAlarmsForResourcesRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setParameter("Dimensions", dimensions);
+	setCoreParameter("Dimensions", dimensions);
 }
 

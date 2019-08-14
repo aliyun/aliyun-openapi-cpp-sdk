@@ -33,7 +33,7 @@ std::string AuthenticateSigRequest::getSig()const
 void AuthenticateSigRequest::setSig(const std::string& sig)
 {
 	sig_ = sig;
-	setParameter("Sig", sig);
+	setCoreParameter("Sig", sig);
 }
 
 std::string AuthenticateSigRequest::getRemoteIp()const
@@ -44,7 +44,7 @@ std::string AuthenticateSigRequest::getRemoteIp()const
 void AuthenticateSigRequest::setRemoteIp(const std::string& remoteIp)
 {
 	remoteIp_ = remoteIp;
-	setParameter("RemoteIp", remoteIp);
+	setCoreParameter("RemoteIp", remoteIp);
 }
 
 std::string AuthenticateSigRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string AuthenticateSigRequest::getSourceIp()const
 void AuthenticateSigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string AuthenticateSigRequest::getAppKey()const
@@ -66,7 +66,7 @@ std::string AuthenticateSigRequest::getAppKey()const
 void AuthenticateSigRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
-	setParameter("AppKey", appKey);
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string AuthenticateSigRequest::getSessionId()const
@@ -77,7 +77,7 @@ std::string AuthenticateSigRequest::getSessionId()const
 void AuthenticateSigRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setParameter("SessionId", sessionId);
+	setCoreParameter("SessionId", sessionId);
 }
 
 std::string AuthenticateSigRequest::getToken()const
@@ -88,7 +88,7 @@ std::string AuthenticateSigRequest::getToken()const
 void AuthenticateSigRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setParameter("Token", token);
+	setCoreParameter("Token", token);
 }
 
 std::string AuthenticateSigRequest::getScene()const
@@ -99,6 +99,6 @@ std::string AuthenticateSigRequest::getScene()const
 void AuthenticateSigRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setParameter("Scene", scene);
+	setCoreParameter("Scene", scene);
 }
 

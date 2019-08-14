@@ -33,7 +33,18 @@ long DescribeVSwitchesRequest::getResourceOwnerId()const
 void DescribeVSwitchesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+bool DescribeVSwitchesRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void DescribeVSwitchesRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeVSwitchesRequest::getResourceOwnerAccount()const
@@ -44,7 +55,7 @@ std::string DescribeVSwitchesRequest::getResourceOwnerAccount()const
 void DescribeVSwitchesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVSwitchesRequest::getOwnerAccount()const
@@ -55,7 +66,7 @@ std::string DescribeVSwitchesRequest::getOwnerAccount()const
 void DescribeVSwitchesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVSwitchesRequest::getOwnerId()const
@@ -66,7 +77,7 @@ long DescribeVSwitchesRequest::getOwnerId()const
 void DescribeVSwitchesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeVSwitchesRequest::getPageNumber()const
@@ -77,7 +88,7 @@ int DescribeVSwitchesRequest::getPageNumber()const
 void DescribeVSwitchesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVSwitchesRequest::getVSwitchId()const
@@ -88,7 +99,7 @@ std::string DescribeVSwitchesRequest::getVSwitchId()const
 void DescribeVSwitchesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string DescribeVSwitchesRequest::getResourceGroupId()const
@@ -99,7 +110,7 @@ std::string DescribeVSwitchesRequest::getResourceGroupId()const
 void DescribeVSwitchesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeVSwitchesRequest::getRegionId()const
@@ -110,7 +121,7 @@ std::string DescribeVSwitchesRequest::getRegionId()const
 void DescribeVSwitchesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVSwitchesRequest::getVpcId()const
@@ -121,7 +132,7 @@ std::string DescribeVSwitchesRequest::getVpcId()const
 void DescribeVSwitchesRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string DescribeVSwitchesRequest::getVSwitchName()const
@@ -132,7 +143,7 @@ std::string DescribeVSwitchesRequest::getVSwitchName()const
 void DescribeVSwitchesRequest::setVSwitchName(const std::string& vSwitchName)
 {
 	vSwitchName_ = vSwitchName;
-	setParameter("VSwitchName", vSwitchName);
+	setCoreParameter("VSwitchName", vSwitchName);
 }
 
 int DescribeVSwitchesRequest::getPageSize()const
@@ -143,7 +154,7 @@ int DescribeVSwitchesRequest::getPageSize()const
 void DescribeVSwitchesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVSwitchesRequest::getZoneId()const
@@ -154,7 +165,7 @@ std::string DescribeVSwitchesRequest::getZoneId()const
 void DescribeVSwitchesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::vector<DescribeVSwitchesRequest::Tag> DescribeVSwitchesRequest::getTag()const
@@ -169,8 +180,8 @@ void DescribeVSwitchesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -182,7 +193,7 @@ bool DescribeVSwitchesRequest::getIsDefault()const
 void DescribeVSwitchesRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setParameter("IsDefault", std::to_string(isDefault));
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 std::string DescribeVSwitchesRequest::getRouteTableId()const
@@ -193,6 +204,6 @@ std::string DescribeVSwitchesRequest::getRouteTableId()const
 void DescribeVSwitchesRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setParameter("RouteTableId", routeTableId);
+	setCoreParameter("RouteTableId", routeTableId);
 }
 

@@ -39,7 +39,7 @@ namespace AlibabaCloud
 					int currentPage;
 					int count;
 				};
-				struct ResultListItem
+				struct ResultListArr
 				{
 					long lastOperate;
 					int status;
@@ -68,13 +68,13 @@ namespace AlibabaCloud
 				explicit DescribeResultListResult(const std::string &payload);
 				~DescribeResultListResult();
 				PageInfo getPageInfo()const;
-				std::vector<ResultListItem> getResultList()const;
+				std::vector<ResultListArr> getResultList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				PageInfo pageInfo_;
-				std::vector<ResultListItem> resultList_;
+				std::vector<ResultListArr> resultList_;
 
 			};
 		}

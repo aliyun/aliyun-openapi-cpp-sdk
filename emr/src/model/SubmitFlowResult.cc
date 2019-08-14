@@ -35,14 +35,31 @@ SubmitFlowResult::~SubmitFlowResult()
 
 void SubmitFlowResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 	if(!value["Id"].isNull())
 		id_ = value["Id"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
+}
+
+std::string SubmitFlowResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+std::string SubmitFlowResult::getData()const
+{
+	return data_;
 }
 
 std::string SubmitFlowResult::getId()const

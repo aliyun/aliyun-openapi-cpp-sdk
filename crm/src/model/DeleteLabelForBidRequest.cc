@@ -33,7 +33,7 @@ std::string DeleteLabelForBidRequest::getLabelSeries()const
 void DeleteLabelForBidRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setParameter("LabelSeries", labelSeries);
+	setCoreParameter("LabelSeries", labelSeries);
 }
 
 std::string DeleteLabelForBidRequest::getPK()const
@@ -44,7 +44,7 @@ std::string DeleteLabelForBidRequest::getPK()const
 void DeleteLabelForBidRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setParameter("PK", pK);
+	setCoreParameter("PK", pK);
 }
 
 std::string DeleteLabelForBidRequest::getLabel()const
@@ -55,6 +55,6 @@ std::string DeleteLabelForBidRequest::getLabel()const
 void DeleteLabelForBidRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setParameter("Label", label);
+	setCoreParameter("Label", label);
 }
 

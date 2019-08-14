@@ -33,7 +33,7 @@ std::string SearchFaceRequest::getImage()const
 void SearchFaceRequest::setImage(const std::string& image)
 {
 	image_ = image;
-	setParameter("Image", image);
+	setCoreParameter("Image", image);
 }
 
 std::string SearchFaceRequest::getGroupId()const
@@ -44,6 +44,6 @@ std::string SearchFaceRequest::getGroupId()const
 void SearchFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 

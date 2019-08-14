@@ -25,28 +25,6 @@ ExportVulRequest::ExportVulRequest() :
 ExportVulRequest::~ExportVulRequest()
 {}
 
-std::string ExportVulRequest::getBatchName()const
-{
-	return batchName_;
-}
-
-void ExportVulRequest::setBatchName(const std::string& batchName)
-{
-	batchName_ = batchName;
-	setCoreParameter("BatchName", batchName);
-}
-
-std::string ExportVulRequest::getAliasName()const
-{
-	return aliasName_;
-}
-
-void ExportVulRequest::setAliasName(const std::string& aliasName)
-{
-	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
-}
-
 std::string ExportVulRequest::getStatusList()const
 {
 	return statusList_;
@@ -56,17 +34,6 @@ void ExportVulRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
 	setCoreParameter("StatusList", statusList);
-}
-
-std::string ExportVulRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ExportVulRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ExportVulRequest::getLevel()const
@@ -91,15 +58,15 @@ void ExportVulRequest::setResource(const std::string& resource)
 	setCoreParameter("Resource", resource);
 }
 
-std::string ExportVulRequest::getName()const
+std::string ExportVulRequest::getRemark()const
 {
-	return name_;
+	return remark_;
 }
 
-void ExportVulRequest::setName(const std::string& name)
+void ExportVulRequest::setRemark(const std::string& remark)
 {
-	name_ = name;
-	setCoreParameter("Name", name);
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
 }
 
 std::string ExportVulRequest::getDealed()const
@@ -113,17 +80,6 @@ void ExportVulRequest::setDealed(const std::string& dealed)
 	setCoreParameter("Dealed", dealed);
 }
 
-std::string ExportVulRequest::getLang()const
-{
-	return lang_;
-}
-
-void ExportVulRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string ExportVulRequest::getType()const
 {
 	return type_;
@@ -133,6 +89,61 @@ void ExportVulRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string ExportVulRequest::getBatchName()const
+{
+	return batchName_;
+}
+
+void ExportVulRequest::setBatchName(const std::string& batchName)
+{
+	batchName_ = batchName;
+	setCoreParameter("BatchName", batchName);
+}
+
+std::string ExportVulRequest::getAliasName()const
+{
+	return aliasName_;
+}
+
+void ExportVulRequest::setAliasName(const std::string& aliasName)
+{
+	aliasName_ = aliasName;
+	setCoreParameter("AliasName", aliasName);
+}
+
+std::string ExportVulRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ExportVulRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string ExportVulRequest::getName()const
+{
+	return name_;
+}
+
+void ExportVulRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string ExportVulRequest::getLang()const
+{
+	return lang_;
+}
+
+void ExportVulRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 std::string ExportVulRequest::getNecessity()const

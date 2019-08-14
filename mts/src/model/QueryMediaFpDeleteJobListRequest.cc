@@ -33,7 +33,7 @@ long QueryMediaFpDeleteJobListRequest::getResourceOwnerId()const
 void QueryMediaFpDeleteJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryMediaFpDeleteJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryMediaFpDeleteJobListRequest::getResourceOwnerAccount()const
 void QueryMediaFpDeleteJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMediaFpDeleteJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryMediaFpDeleteJobListRequest::getJobIds()const
 void QueryMediaFpDeleteJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QueryMediaFpDeleteJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryMediaFpDeleteJobListRequest::getOwnerAccount()const
 void QueryMediaFpDeleteJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMediaFpDeleteJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryMediaFpDeleteJobListRequest::getOwnerId()const
 void QueryMediaFpDeleteJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryMediaFpDeleteJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryMediaFpDeleteJobListRequest::getAccessKeyId()const
 void QueryMediaFpDeleteJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

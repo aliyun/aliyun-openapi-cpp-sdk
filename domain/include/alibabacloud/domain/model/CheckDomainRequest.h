@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setFeePeriod(int feePeriod);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getFeeCommand()const;
 				void setFeeCommand(const std::string& feeCommand);
 				std::string getLang()const;
@@ -52,7 +50,6 @@ namespace AlibabaCloud
 				std::string feeCurrency_;
 				int feePeriod_;
 				std::string domainName_;
-				std::string userClientIp_;
 				std::string feeCommand_;
 				std::string lang_;
 

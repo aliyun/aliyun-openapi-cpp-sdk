@@ -33,7 +33,7 @@ std::string DescribeDomainVerifyConfigurationStatusRequest::getSourceIp()const
 void DescribeDomainVerifyConfigurationStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeDomainVerifyConfigurationStatusRequest::getOrderId()const
@@ -44,7 +44,7 @@ long DescribeDomainVerifyConfigurationStatusRequest::getOrderId()const
 void DescribeDomainVerifyConfigurationStatusRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeDomainVerifyConfigurationStatusRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeDomainVerifyConfigurationStatusRequest::getLang()const
 void DescribeDomainVerifyConfigurationStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

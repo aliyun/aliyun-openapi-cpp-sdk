@@ -33,7 +33,7 @@ long QueryTagJobListRequest::getResourceOwnerId()const
 void QueryTagJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryTagJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryTagJobListRequest::getResourceOwnerAccount()const
 void QueryTagJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryTagJobListRequest::getTagJobIds()const
@@ -55,7 +55,7 @@ std::string QueryTagJobListRequest::getTagJobIds()const
 void QueryTagJobListRequest::setTagJobIds(const std::string& tagJobIds)
 {
 	tagJobIds_ = tagJobIds;
-	setParameter("TagJobIds", tagJobIds);
+	setCoreParameter("TagJobIds", tagJobIds);
 }
 
 std::string QueryTagJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryTagJobListRequest::getOwnerAccount()const
 void QueryTagJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryTagJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryTagJobListRequest::getOwnerId()const
 void QueryTagJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryTagJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryTagJobListRequest::getAccessKeyId()const
 void QueryTagJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

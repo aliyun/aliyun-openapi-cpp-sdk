@@ -35,10 +35,13 @@ ListQueuesResult::~ListQueuesResult()
 
 void ListQueuesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allQueues = value["Queues"]["QueueInfo"];
 	for (auto value : allQueues)
@@ -48,6 +51,10 @@ void ListQueuesResult::parse(const std::string &payload)
 			queuesObject.queueName = value["QueueName"].asString();
 		if(!value["Type"].isNull())
 			queuesObject.type = value["Type"].asString();
+		if(!value["ResourceGroupId"].isNull())
+			queuesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["ComputeInstanceType"].isNull())
+			queuesObject.computeInstanceType = value["ComputeInstanceType"].asString();
 		queues_.push_back(queuesObject);
 	}
 

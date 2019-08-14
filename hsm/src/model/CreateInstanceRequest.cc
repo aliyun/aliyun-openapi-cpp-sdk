@@ -33,7 +33,7 @@ int CreateInstanceRequest::getPeriod()const
 void CreateInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setParameter("Period", std::to_string(period));
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string CreateInstanceRequest::getPeriodUnit()const
@@ -44,7 +44,7 @@ std::string CreateInstanceRequest::getPeriodUnit()const
 void CreateInstanceRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setParameter("PeriodUnit", periodUnit);
+	setCoreParameter("PeriodUnit", periodUnit);
 }
 
 std::string CreateInstanceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateInstanceRequest::getResourceOwnerId()const
 void CreateInstanceRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateInstanceRequest::getQuantity()const
@@ -66,7 +66,7 @@ int CreateInstanceRequest::getQuantity()const
 void CreateInstanceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", std::to_string(quantity));
 }
 
 std::string CreateInstanceRequest::getHsmDeviceType()const
@@ -77,7 +77,7 @@ std::string CreateInstanceRequest::getHsmDeviceType()const
 void CreateInstanceRequest::setHsmDeviceType(const std::string& hsmDeviceType)
 {
 	hsmDeviceType_ = hsmDeviceType;
-	setParameter("HsmDeviceType", hsmDeviceType);
+	setCoreParameter("HsmDeviceType", hsmDeviceType);
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateInstanceRequest::getZoneId()const
@@ -99,7 +99,7 @@ std::string CreateInstanceRequest::getZoneId()const
 void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string CreateInstanceRequest::getHsmOem()const
@@ -110,6 +110,6 @@ std::string CreateInstanceRequest::getHsmOem()const
 void CreateInstanceRequest::setHsmOem(const std::string& hsmOem)
 {
 	hsmOem_ = hsmOem;
-	setParameter("HsmOem", hsmOem);
+	setCoreParameter("HsmOem", hsmOem);
 }
 

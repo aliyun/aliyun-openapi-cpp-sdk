@@ -33,17 +33,6 @@ std::string DisableKeyRequest::getKeyId()const
 void DisableKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string DisableKeyRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void DisableKeyRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 

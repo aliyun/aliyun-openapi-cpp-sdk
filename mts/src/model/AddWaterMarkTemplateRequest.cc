@@ -33,7 +33,7 @@ long AddWaterMarkTemplateRequest::getResourceOwnerId()const
 void AddWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddWaterMarkTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AddWaterMarkTemplateRequest::getResourceOwnerAccount()const
 void AddWaterMarkTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddWaterMarkTemplateRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddWaterMarkTemplateRequest::getOwnerAccount()const
 void AddWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddWaterMarkTemplateRequest::getName()const
@@ -66,7 +66,7 @@ std::string AddWaterMarkTemplateRequest::getName()const
 void AddWaterMarkTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 long AddWaterMarkTemplateRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long AddWaterMarkTemplateRequest::getOwnerId()const
 void AddWaterMarkTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddWaterMarkTemplateRequest::getConfig()const
@@ -88,7 +88,7 @@ std::string AddWaterMarkTemplateRequest::getConfig()const
 void AddWaterMarkTemplateRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setParameter("Config", config);
+	setCoreParameter("Config", config);
 }
 
 std::string AddWaterMarkTemplateRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string AddWaterMarkTemplateRequest::getAccessKeyId()const
 void AddWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

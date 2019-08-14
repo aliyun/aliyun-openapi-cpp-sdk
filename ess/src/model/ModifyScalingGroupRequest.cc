@@ -114,6 +114,17 @@ void ModifyScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
+int ModifyScalingGroupRequest::getSpotInstancePools()const
+{
+	return spotInstancePools_;
+}
+
+void ModifyScalingGroupRequest::setSpotInstancePools(int spotInstancePools)
+{
+	spotInstancePools_ = spotInstancePools;
+	setCoreParameter("SpotInstancePools", std::to_string(spotInstancePools));
+}
+
 std::string ModifyScalingGroupRequest::getActiveScalingConfigurationId()const
 {
 	return activeScalingConfigurationId_;
@@ -158,6 +169,17 @@ void ModifyScalingGroupRequest::setLaunchTemplateVersion(const std::string& laun
 	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
+int ModifyScalingGroupRequest::getOnDemandBaseCapacity()const
+{
+	return onDemandBaseCapacity_;
+}
+
+void ModifyScalingGroupRequest::setOnDemandBaseCapacity(int onDemandBaseCapacity)
+{
+	onDemandBaseCapacity_ = onDemandBaseCapacity;
+	setCoreParameter("OnDemandBaseCapacity", std::to_string(onDemandBaseCapacity));
+}
+
 std::string ModifyScalingGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -167,6 +189,28 @@ void ModifyScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ModifyScalingGroupRequest::getOnDemandPercentageAboveBaseCapacity()const
+{
+	return onDemandPercentageAboveBaseCapacity_;
+}
+
+void ModifyScalingGroupRequest::setOnDemandPercentageAboveBaseCapacity(int onDemandPercentageAboveBaseCapacity)
+{
+	onDemandPercentageAboveBaseCapacity_ = onDemandPercentageAboveBaseCapacity;
+	setCoreParameter("OnDemandPercentageAboveBaseCapacity", std::to_string(onDemandPercentageAboveBaseCapacity));
+}
+
+bool ModifyScalingGroupRequest::getSpotInstanceRemedy()const
+{
+	return spotInstanceRemedy_;
+}
+
+void ModifyScalingGroupRequest::setSpotInstanceRemedy(bool spotInstanceRemedy)
+{
+	spotInstanceRemedy_ = spotInstanceRemedy;
+	setCoreParameter("SpotInstanceRemedy", spotInstanceRemedy ? "true" : "false");
 }
 
 int ModifyScalingGroupRequest::getMaxSize()const

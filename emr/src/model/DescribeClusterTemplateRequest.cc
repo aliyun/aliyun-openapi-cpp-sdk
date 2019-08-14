@@ -33,7 +33,7 @@ long DescribeClusterTemplateRequest::getResourceOwnerId()const
 void DescribeClusterTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterTemplateRequest::getBizId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterTemplateRequest::getBizId()const
 void DescribeClusterTemplateRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setParameter("BizId", bizId);
+	setCoreParameter("BizId", bizId);
 }
 
 std::string DescribeClusterTemplateRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeClusterTemplateRequest::getAccessKeyId()const
 void DescribeClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

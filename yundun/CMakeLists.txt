@@ -25,12 +25,12 @@ set(yundun_public_header_model
 	include/alibabacloud/yundun/model/TodayqpsByRegionResult.h
 	include/alibabacloud/yundun/model/TodayAllppsRequest.h
 	include/alibabacloud/yundun/model/TodayAllppsResult.h
-	include/alibabacloud/yundun/model/TodayBackdoorRequest.h
-	include/alibabacloud/yundun/model/TodayBackdoorResult.h
-	include/alibabacloud/yundun/model/TodayCrackInterceptRequest.h
-	include/alibabacloud/yundun/model/TodayCrackInterceptResult.h
 	include/alibabacloud/yundun/model/AllMalwareNumRequest.h
 	include/alibabacloud/yundun/model/AllMalwareNumResult.h
+	include/alibabacloud/yundun/model/TodayCrackInterceptRequest.h
+	include/alibabacloud/yundun/model/TodayCrackInterceptResult.h
+	include/alibabacloud/yundun/model/TodayBackdoorRequest.h
+	include/alibabacloud/yundun/model/TodayBackdoorResult.h
 	include/alibabacloud/yundun/model/TodayMalwareNumRequest.h
 	include/alibabacloud/yundun/model/TodayMalwareNumResult.h
 	include/alibabacloud/yundun/model/WebAttackNumRequest.h
@@ -48,12 +48,12 @@ set(yundun_src
 	src/model/TodayqpsByRegionResult.cc
 	src/model/TodayAllppsRequest.cc
 	src/model/TodayAllppsResult.cc
-	src/model/TodayBackdoorRequest.cc
-	src/model/TodayBackdoorResult.cc
-	src/model/TodayCrackInterceptRequest.cc
-	src/model/TodayCrackInterceptResult.cc
 	src/model/AllMalwareNumRequest.cc
 	src/model/AllMalwareNumResult.cc
+	src/model/TodayCrackInterceptRequest.cc
+	src/model/TodayCrackInterceptResult.cc
+	src/model/TodayBackdoorRequest.cc
+	src/model/TodayBackdoorResult.cc
 	src/model/TodayMalwareNumRequest.cc
 	src/model/TodayMalwareNumResult.cc
 	src/model/WebAttackNumRequest.cc

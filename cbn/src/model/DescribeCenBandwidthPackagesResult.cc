@@ -35,10 +35,13 @@ DescribeCenBandwidthPackagesResult::~DescribeCenBandwidthPackagesResult()
 
 void DescribeCenBandwidthPackagesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allCenBandwidthPackages = value["CenBandwidthPackages"]["CenBandwidthPackage"];
 	for (auto value : allCenBandwidthPackages)
@@ -70,6 +73,10 @@ void DescribeCenBandwidthPackagesResult::parse(const std::string &payload)
 			cenBandwidthPackagesObject.status = value["Status"].asString();
 		if(!value["IsCrossBorder"].isNull())
 			cenBandwidthPackagesObject.isCrossBorder = value["IsCrossBorder"].asString() == "true";
+		if(!value["TypeFor95"].isNull())
+			cenBandwidthPackagesObject.typeFor95 = value["TypeFor95"].asString();
+		if(!value["Ratio"].isNull())
+			cenBandwidthPackagesObject.ratio = value["Ratio"].asString();
 		auto allCenIds = value["CenIds"]["CenId"];
 		for (auto value : allCenIds)
 			cenBandwidthPackagesObject.cenIds.push_back(value.asString());

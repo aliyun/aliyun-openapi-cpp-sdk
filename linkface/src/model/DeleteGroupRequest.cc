@@ -33,6 +33,6 @@ std::string DeleteGroupRequest::getGroupId()const
 void DeleteGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 

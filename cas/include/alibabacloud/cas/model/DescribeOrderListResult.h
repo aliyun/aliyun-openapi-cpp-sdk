@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int verifyStatus;
 					long afterDate;
+					bool showRefund;
 					std::string instanceId;
 					std::string sourceType;
 					std::string certType;

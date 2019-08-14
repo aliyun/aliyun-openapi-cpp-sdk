@@ -27,20 +27,30 @@ set(jarvis_public_header_model
 	include/alibabacloud/jarvis/model/CreateCpmcPunishFeedBackResult.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListSlbListRequest.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListSlbListResult.h
-	include/alibabacloud/jarvis/model/DescribePhoneInfoRequest.h
-	include/alibabacloud/jarvis/model/DescribePhoneInfoResult.h
+	include/alibabacloud/jarvis/model/DeleteIpWhiteBaselineRequest.h
+	include/alibabacloud/jarvis/model/DeleteIpWhiteBaselineResult.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhitelistEcsListRequest.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhitelistEcsListResult.h
+	include/alibabacloud/jarvis/model/DescribePhoneInfoRequest.h
+	include/alibabacloud/jarvis/model/DescribePhoneInfoResult.h
 	include/alibabacloud/jarvis/model/ModifyUidWhiteListAutoShareRequest.h
 	include/alibabacloud/jarvis/model/ModifyUidWhiteListAutoShareResult.h
 	include/alibabacloud/jarvis/model/CreateConsoleAccessWhiteListRequest.h
 	include/alibabacloud/jarvis/model/CreateConsoleAccessWhiteListResult.h
+	include/alibabacloud/jarvis/model/DescribeUidWhiteBaselineRequest.h
+	include/alibabacloud/jarvis/model/DescribeUidWhiteBaselineResult.h
 	include/alibabacloud/jarvis/model/DescribeConsoleAccessWhiteListRequest.h
 	include/alibabacloud/jarvis/model/DescribeConsoleAccessWhiteListResult.h
+	include/alibabacloud/jarvis/model/DeleteWhiteListDbItemConditionalRequest.h
+	include/alibabacloud/jarvis/model/DeleteWhiteListDbItemConditionalResult.h
+	include/alibabacloud/jarvis/model/DescribeIpWhiteBaselineRequest.h
+	include/alibabacloud/jarvis/model/DescribeIpWhiteBaselineResult.h
 	include/alibabacloud/jarvis/model/DeleteCdnIpRequest.h
 	include/alibabacloud/jarvis/model/DeleteCdnIpResult.h
 	include/alibabacloud/jarvis/model/CreateCdnIpRequest.h
 	include/alibabacloud/jarvis/model/CreateCdnIpResult.h
+	include/alibabacloud/jarvis/model/DeleteUidWhiteBaselineRequest.h
+	include/alibabacloud/jarvis/model/DeleteUidWhiteBaselineResult.h
 	include/alibabacloud/jarvis/model/DescribeUidGcLevelRequest.h
 	include/alibabacloud/jarvis/model/DescribeUidGcLevelResult.h
 	include/alibabacloud/jarvis/model/DescribeResetRecordQueryCountRequest.h
@@ -51,14 +61,18 @@ set(jarvis_public_header_model
 	include/alibabacloud/jarvis/model/CreateAllEcsWhiteListResult.h
 	include/alibabacloud/jarvis/model/DescribeRiskListDetailRequest.h
 	include/alibabacloud/jarvis/model/DescribeRiskListDetailResult.h
-	include/alibabacloud/jarvis/model/DescribeEcsListPageRequest.h
-	include/alibabacloud/jarvis/model/DescribeEcsListPageResult.h
 	include/alibabacloud/jarvis/model/DeleteConsoleAccessWhiteListRequest.h
 	include/alibabacloud/jarvis/model/DeleteConsoleAccessWhiteListResult.h
+	include/alibabacloud/jarvis/model/DescribeEcsListPageRequest.h
+	include/alibabacloud/jarvis/model/DescribeEcsListPageResult.h
+	include/alibabacloud/jarvis/model/CreateUidWhiteBaselineRequest.h
+	include/alibabacloud/jarvis/model/CreateUidWhiteBaselineResult.h
 	include/alibabacloud/jarvis/model/DescribeSpecialEcsRequest.h
 	include/alibabacloud/jarvis/model/DescribeSpecialEcsResult.h
 	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/CreateAccessWhiteListGroupResult.h
+	include/alibabacloud/jarvis/model/DeleteWhiteListConditionalRequest.h
+	include/alibabacloud/jarvis/model/DeleteWhiteListConditionalResult.h
 	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoRequest.h
 	include/alibabacloud/jarvis/model/DescribeDdosDefenseInfoResult.h
 	include/alibabacloud/jarvis/model/DescribeCdnVendorRequest.h
@@ -69,18 +83,24 @@ set(jarvis_public_header_model
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListEipListResult.h
 	include/alibabacloud/jarvis/model/ModifyAccessWhiteListAutoShareRequest.h
 	include/alibabacloud/jarvis/model/ModifyAccessWhiteListAutoShareResult.h
+	include/alibabacloud/jarvis/model/CreateIpWhiteBaselineRequest.h
+	include/alibabacloud/jarvis/model/CreateIpWhiteBaselineResult.h
 	include/alibabacloud/jarvis/model/CreateUidWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/CreateUidWhiteListGroupResult.h
 	include/alibabacloud/jarvis/model/DescribeCdnIpListRequest.h
 	include/alibabacloud/jarvis/model/DescribeCdnIpListResult.h
-	include/alibabacloud/jarvis/model/CreateCdnSubscriptionRequest.h
-	include/alibabacloud/jarvis/model/CreateCdnSubscriptionResult.h
 	include/alibabacloud/jarvis/model/DeleteCdnSubscriptionRequest.h
 	include/alibabacloud/jarvis/model/DeleteCdnSubscriptionResult.h
+	include/alibabacloud/jarvis/model/CreateCdnSubscriptionRequest.h
+	include/alibabacloud/jarvis/model/CreateCdnSubscriptionResult.h
+	include/alibabacloud/jarvis/model/ModifyIpWhiteBaselineRequest.h
+	include/alibabacloud/jarvis/model/ModifyIpWhiteBaselineResult.h
 	include/alibabacloud/jarvis/model/DescribeCpmcPunishListRequest.h
 	include/alibabacloud/jarvis/model/DescribeCpmcPunishListResult.h
 	include/alibabacloud/jarvis/model/DeleteAccessWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/DeleteAccessWhiteListGroupResult.h
+	include/alibabacloud/jarvis/model/ModifyUidWhiteBaselineRequest.h
+	include/alibabacloud/jarvis/model/ModifyUidWhiteBaselineResult.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListGroupRequest.h
 	include/alibabacloud/jarvis/model/DescribeAccessWhiteListGroupResult.h
 	include/alibabacloud/jarvis/model/DescribePunishListRequest.h
@@ -100,20 +120,30 @@ set(jarvis_src
 	src/model/CreateCpmcPunishFeedBackResult.cc
 	src/model/DescribeAccessWhiteListSlbListRequest.cc
 	src/model/DescribeAccessWhiteListSlbListResult.cc
-	src/model/DescribePhoneInfoRequest.cc
-	src/model/DescribePhoneInfoResult.cc
+	src/model/DeleteIpWhiteBaselineRequest.cc
+	src/model/DeleteIpWhiteBaselineResult.cc
 	src/model/DescribeAccessWhitelistEcsListRequest.cc
 	src/model/DescribeAccessWhitelistEcsListResult.cc
+	src/model/DescribePhoneInfoRequest.cc
+	src/model/DescribePhoneInfoResult.cc
 	src/model/ModifyUidWhiteListAutoShareRequest.cc
 	src/model/ModifyUidWhiteListAutoShareResult.cc
 	src/model/CreateConsoleAccessWhiteListRequest.cc
 	src/model/CreateConsoleAccessWhiteListResult.cc
+	src/model/DescribeUidWhiteBaselineRequest.cc
+	src/model/DescribeUidWhiteBaselineResult.cc
 	src/model/DescribeConsoleAccessWhiteListRequest.cc
 	src/model/DescribeConsoleAccessWhiteListResult.cc
+	src/model/DeleteWhiteListDbItemConditionalRequest.cc
+	src/model/DeleteWhiteListDbItemConditionalResult.cc
+	src/model/DescribeIpWhiteBaselineRequest.cc
+	src/model/DescribeIpWhiteBaselineResult.cc
 	src/model/DeleteCdnIpRequest.cc
 	src/model/DeleteCdnIpResult.cc
 	src/model/CreateCdnIpRequest.cc
 	src/model/CreateCdnIpResult.cc
+	src/model/DeleteUidWhiteBaselineRequest.cc
+	src/model/DeleteUidWhiteBaselineResult.cc
 	src/model/DescribeUidGcLevelRequest.cc
 	src/model/DescribeUidGcLevelResult.cc
 	src/model/DescribeResetRecordQueryCountRequest.cc
@@ -124,14 +154,18 @@ set(jarvis_src
 	src/model/CreateAllEcsWhiteListResult.cc
 	src/model/DescribeRiskListDetailRequest.cc
 	src/model/DescribeRiskListDetailResult.cc
-	src/model/DescribeEcsListPageRequest.cc
-	src/model/DescribeEcsListPageResult.cc
 	src/model/DeleteConsoleAccessWhiteListRequest.cc
 	src/model/DeleteConsoleAccessWhiteListResult.cc
+	src/model/DescribeEcsListPageRequest.cc
+	src/model/DescribeEcsListPageResult.cc
+	src/model/CreateUidWhiteBaselineRequest.cc
+	src/model/CreateUidWhiteBaselineResult.cc
 	src/model/DescribeSpecialEcsRequest.cc
 	src/model/DescribeSpecialEcsResult.cc
 	src/model/CreateAccessWhiteListGroupRequest.cc
 	src/model/CreateAccessWhiteListGroupResult.cc
+	src/model/DeleteWhiteListConditionalRequest.cc
+	src/model/DeleteWhiteListConditionalResult.cc
 	src/model/DescribeDdosDefenseInfoRequest.cc
 	src/model/DescribeDdosDefenseInfoResult.cc
 	src/model/DescribeCdnVendorRequest.cc
@@ -142,18 +176,24 @@ set(jarvis_src
 	src/model/DescribeAccessWhiteListEipListResult.cc
 	src/model/ModifyAccessWhiteListAutoShareRequest.cc
 	src/model/ModifyAccessWhiteListAutoShareResult.cc
+	src/model/CreateIpWhiteBaselineRequest.cc
+	src/model/CreateIpWhiteBaselineResult.cc
 	src/model/CreateUidWhiteListGroupRequest.cc
 	src/model/CreateUidWhiteListGroupResult.cc
 	src/model/DescribeCdnIpListRequest.cc
 	src/model/DescribeCdnIpListResult.cc
-	src/model/CreateCdnSubscriptionRequest.cc
-	src/model/CreateCdnSubscriptionResult.cc
 	src/model/DeleteCdnSubscriptionRequest.cc
 	src/model/DeleteCdnSubscriptionResult.cc
+	src/model/CreateCdnSubscriptionRequest.cc
+	src/model/CreateCdnSubscriptionResult.cc
+	src/model/ModifyIpWhiteBaselineRequest.cc
+	src/model/ModifyIpWhiteBaselineResult.cc
 	src/model/DescribeCpmcPunishListRequest.cc
 	src/model/DescribeCpmcPunishListResult.cc
 	src/model/DeleteAccessWhiteListGroupRequest.cc
 	src/model/DeleteAccessWhiteListGroupResult.cc
+	src/model/ModifyUidWhiteBaselineRequest.cc
+	src/model/ModifyUidWhiteBaselineResult.cc
 	src/model/DescribeAccessWhiteListGroupRequest.cc
 	src/model/DescribeAccessWhiteListGroupResult.cc
 	src/model/DescribePunishListRequest.cc

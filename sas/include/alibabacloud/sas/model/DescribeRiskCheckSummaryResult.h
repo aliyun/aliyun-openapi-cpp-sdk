@@ -54,11 +54,13 @@ namespace AlibabaCloud
 						long id;
 					};
 					std::vector<LevelCount> riskLevelCount;
+					int disabledRiskCount;
 					std::vector<Group> groups;
 					long previousTime;
 					int previousCount;
 					int itemCount;
 					float riskRate;
+					int enabledRiskCount;
 					int affectedAssetCount;
 					int riskCount;
 				};

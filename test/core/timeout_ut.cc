@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "gtest/gtest.h"
-#include "../../core/src/Utils.h"
+#include "alibabacloud/core/Utils.h"
 #include "alibabacloud/core/Config.h"
 #include "alibabacloud/core/AlibabaCloud.h"
 #include "alibabacloud/core/CommonClient.h"

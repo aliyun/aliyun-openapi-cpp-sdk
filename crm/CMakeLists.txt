@@ -33,14 +33,14 @@ set(crm_public_header_model
 	include/alibabacloud/crm/model/GetAliyunPkByAliyunIdResult.h
 	include/alibabacloud/crm/model/QueryCustomerLabelRequest.h
 	include/alibabacloud/crm/model/QueryCustomerLabelResult.h
-	include/alibabacloud/crm/model/RemoveIdentityCertifiedForBidUserRequest.h
-	include/alibabacloud/crm/model/RemoveIdentityCertifiedForBidUserResult.h
 	include/alibabacloud/crm/model/QueryBidUserCertifiedInfoRequest.h
 	include/alibabacloud/crm/model/QueryBidUserCertifiedInfoResult.h
-	include/alibabacloud/crm/model/AddLabelForBidRequest.h
-	include/alibabacloud/crm/model/AddLabelForBidResult.h
 	include/alibabacloud/crm/model/BatchGetAliyunIdByAliyunPkRequest.h
 	include/alibabacloud/crm/model/BatchGetAliyunIdByAliyunPkResult.h
+	include/alibabacloud/crm/model/RemoveIdentityCertifiedForBidUserRequest.h
+	include/alibabacloud/crm/model/RemoveIdentityCertifiedForBidUserResult.h
+	include/alibabacloud/crm/model/AddLabelForBidRequest.h
+	include/alibabacloud/crm/model/AddLabelForBidResult.h
 	include/alibabacloud/crm/model/DeleteLabelRequest.h
 	include/alibabacloud/crm/model/DeleteLabelResult.h
 	include/alibabacloud/crm/model/AddLabelRequest.h
@@ -60,14 +60,14 @@ set(crm_src
 	src/model/GetAliyunPkByAliyunIdResult.cc
 	src/model/QueryCustomerLabelRequest.cc
 	src/model/QueryCustomerLabelResult.cc
-	src/model/RemoveIdentityCertifiedForBidUserRequest.cc
-	src/model/RemoveIdentityCertifiedForBidUserResult.cc
 	src/model/QueryBidUserCertifiedInfoRequest.cc
 	src/model/QueryBidUserCertifiedInfoResult.cc
-	src/model/AddLabelForBidRequest.cc
-	src/model/AddLabelForBidResult.cc
 	src/model/BatchGetAliyunIdByAliyunPkRequest.cc
 	src/model/BatchGetAliyunIdByAliyunPkResult.cc
+	src/model/RemoveIdentityCertifiedForBidUserRequest.cc
+	src/model/RemoveIdentityCertifiedForBidUserResult.cc
+	src/model/AddLabelForBidRequest.cc
+	src/model/AddLabelForBidResult.cc
 	src/model/DeleteLabelRequest.cc
 	src/model/DeleteLabelResult.cc
 	src/model/AddLabelRequest.cc

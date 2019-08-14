@@ -33,7 +33,7 @@ long DescribeIpv6EgressOnlyRulesRequest::getResourceOwnerId()const
 void DescribeIpv6EgressOnlyRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeIpv6EgressOnlyRulesRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeIpv6EgressOnlyRulesRequest::getCallerParentId()const
 void DescribeIpv6EgressOnlyRulesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeIpv6EgressOnlyRulesRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeIpv6EgressOnlyRulesRequest::getProxy_original_security_transport()c
 void DescribeIpv6EgressOnlyRulesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getProxy_original_source_ip()con
 void DescribeIpv6EgressOnlyRulesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 int DescribeIpv6EgressOnlyRulesRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeIpv6EgressOnlyRulesRequest::getPageNumber()const
 void DescribeIpv6EgressOnlyRulesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getOwnerIdLoginEmail()const
 void DescribeIpv6EgressOnlyRulesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getCallerType()const
 void DescribeIpv6EgressOnlyRulesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getAccessKeyId()const
 void DescribeIpv6EgressOnlyRulesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getIpv6EgressOnlyRuleId()const
@@ -121,7 +121,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getIpv6EgressOnlyRuleId()const
 void DescribeIpv6EgressOnlyRulesRequest::setIpv6EgressOnlyRuleId(const std::string& ipv6EgressOnlyRuleId)
 {
 	ipv6EgressOnlyRuleId_ = ipv6EgressOnlyRuleId;
-	setParameter("Ipv6EgressOnlyRuleId", ipv6EgressOnlyRuleId);
+	setCoreParameter("Ipv6EgressOnlyRuleId", ipv6EgressOnlyRuleId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getResourceGroupId()const
@@ -132,7 +132,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getResourceGroupId()const
 void DescribeIpv6EgressOnlyRulesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getRegionId()const
 void DescribeIpv6EgressOnlyRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getSecurityToken()const
 void DescribeIpv6EgressOnlyRulesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool DescribeIpv6EgressOnlyRulesRequest::getEnable()const
@@ -165,7 +165,7 @@ bool DescribeIpv6EgressOnlyRulesRequest::getEnable()const
 void DescribeIpv6EgressOnlyRulesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setParameter("Enable", std::to_string(enable));
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getRequestContent()const
@@ -176,7 +176,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getRequestContent()const
 void DescribeIpv6EgressOnlyRulesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 int DescribeIpv6EgressOnlyRulesRequest::getPageSize()const
@@ -187,7 +187,7 @@ int DescribeIpv6EgressOnlyRulesRequest::getPageSize()const
 void DescribeIpv6EgressOnlyRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getInstanceType()const
@@ -198,7 +198,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getInstanceType()const
 void DescribeIpv6EgressOnlyRulesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getCallerBidEmail()const
@@ -209,7 +209,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getCallerBidEmail()const
 void DescribeIpv6EgressOnlyRulesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getCallerUidEmail()const
@@ -220,7 +220,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getCallerUidEmail()const
 void DescribeIpv6EgressOnlyRulesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeIpv6EgressOnlyRulesRequest::getCallerUid()const
@@ -231,7 +231,7 @@ long DescribeIpv6EgressOnlyRulesRequest::getCallerUid()const
 void DescribeIpv6EgressOnlyRulesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getApp_ip()const
@@ -242,7 +242,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getApp_ip()const
 void DescribeIpv6EgressOnlyRulesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getResourceOwnerAccount()const
@@ -253,7 +253,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getResourceOwnerAccount()const
 void DescribeIpv6EgressOnlyRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getOwnerAccount()const
@@ -264,7 +264,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getOwnerAccount()const
 void DescribeIpv6EgressOnlyRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getCallerBid()const
@@ -275,7 +275,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getCallerBid()const
 void DescribeIpv6EgressOnlyRulesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeIpv6EgressOnlyRulesRequest::getOwnerId()const
@@ -286,7 +286,7 @@ long DescribeIpv6EgressOnlyRulesRequest::getOwnerId()const
 void DescribeIpv6EgressOnlyRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeIpv6EgressOnlyRulesRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ bool DescribeIpv6EgressOnlyRulesRequest::getProxy_trust_transport_info()const
 void DescribeIpv6EgressOnlyRulesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeIpv6EgressOnlyRulesRequest::getAk_mfa_present()const
@@ -308,7 +308,7 @@ bool DescribeIpv6EgressOnlyRulesRequest::getAk_mfa_present()const
 void DescribeIpv6EgressOnlyRulesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeIpv6EgressOnlyRulesRequest::getSecurity_transport()const
@@ -319,7 +319,7 @@ bool DescribeIpv6EgressOnlyRulesRequest::getSecurity_transport()const
 void DescribeIpv6EgressOnlyRulesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getInstanceId()const
@@ -330,7 +330,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getInstanceId()const
 void DescribeIpv6EgressOnlyRulesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getRequestId()const
@@ -341,7 +341,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getRequestId()const
 void DescribeIpv6EgressOnlyRulesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getIpv6GatewayId()const
@@ -352,7 +352,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getIpv6GatewayId()const
 void DescribeIpv6EgressOnlyRulesRequest::setIpv6GatewayId(const std::string& ipv6GatewayId)
 {
 	ipv6GatewayId_ = ipv6GatewayId;
-	setParameter("Ipv6GatewayId", ipv6GatewayId);
+	setCoreParameter("Ipv6GatewayId", ipv6GatewayId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getName()const
@@ -363,6 +363,6 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getName()const
 void DescribeIpv6EgressOnlyRulesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 

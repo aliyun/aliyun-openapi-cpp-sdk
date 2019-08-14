@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeScdnDomainLogRequest();
 				~DescribeScdnDomainLogRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -67,8 +69,6 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -89,6 +89,7 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 
             private:
+				long resourceOwnerId_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string startTime_;
@@ -105,7 +106,6 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string popProduct_;
-				std::string product_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string callerBid_;

@@ -37,10 +37,14 @@ namespace AlibabaCloud
 				CreateSignatureResult();
 				explicit CreateSignatureResult(const std::string &payload);
 				~CreateSignatureResult();
+				std::string getDocContent()const;
+				std::string getTransactionId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string docContent_;
+				std::string transactionId_;
 
 			};
 		}

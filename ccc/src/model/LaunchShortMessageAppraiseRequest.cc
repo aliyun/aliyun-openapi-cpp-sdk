@@ -33,7 +33,7 @@ std::string LaunchShortMessageAppraiseRequest::getAcid()const
 void LaunchShortMessageAppraiseRequest::setAcid(const std::string& acid)
 {
 	acid_ = acid;
-	setParameter("Acid", acid);
+	setCoreParameter("Acid", acid);
 }
 
 std::string LaunchShortMessageAppraiseRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string LaunchShortMessageAppraiseRequest::getInstanceId()const
 void LaunchShortMessageAppraiseRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int LaunchShortMessageAppraiseRequest::getContactType()const
@@ -55,7 +55,7 @@ int LaunchShortMessageAppraiseRequest::getContactType()const
 void LaunchShortMessageAppraiseRequest::setContactType(int contactType)
 {
 	contactType_ = contactType;
-	setParameter("ContactType", std::to_string(contactType));
+	setCoreParameter("ContactType", std::to_string(contactType));
 }
 
 std::string LaunchShortMessageAppraiseRequest::getPhoneNumbers()const
@@ -66,7 +66,7 @@ std::string LaunchShortMessageAppraiseRequest::getPhoneNumbers()const
 void LaunchShortMessageAppraiseRequest::setPhoneNumbers(const std::string& phoneNumbers)
 {
 	phoneNumbers_ = phoneNumbers;
-	setParameter("PhoneNumbers", phoneNumbers);
+	setCoreParameter("PhoneNumbers", phoneNumbers);
 }
 
 std::string LaunchShortMessageAppraiseRequest::getSkillGroupId()const
@@ -77,7 +77,7 @@ std::string LaunchShortMessageAppraiseRequest::getSkillGroupId()const
 void LaunchShortMessageAppraiseRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 std::string LaunchShortMessageAppraiseRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string LaunchShortMessageAppraiseRequest::getAccessKeyId()const
 void LaunchShortMessageAppraiseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

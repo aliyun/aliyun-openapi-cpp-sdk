@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeWebLockStatusResult(const std::string &payload);
 				~DescribeWebLockStatusResult();
 				int getBindCount()const;
+				int getDirCount()const;
 				long getExpireTime()const;
 				int getAuthCount()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int bindCount_;
+				int dirCount_;
 				long expireTime_;
 				int authCount_;
 

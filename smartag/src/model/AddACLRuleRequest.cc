@@ -135,6 +135,17 @@ void AddACLRuleRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
+std::string AddACLRuleRequest::getType()const
+{
+	return type_;
+}
+
+void AddACLRuleRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string AddACLRuleRequest::getDestCidr()const
 {
 	return destCidr_;

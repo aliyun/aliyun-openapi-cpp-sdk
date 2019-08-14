@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getDeviceId()const;
 				void setDeviceId(const std::string& deviceId);
+				bool getIsCustomAccount()const;
+				void setIsCustomAccount(bool isCustomAccount);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::string deviceId_;
+				bool isCustomAccount_;
 				std::string accessKeyId_;
 
 			};

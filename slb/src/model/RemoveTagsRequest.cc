@@ -33,7 +33,7 @@ std::string RemoveTagsRequest::getAccess_key_id()const
 void RemoveTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long RemoveTagsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RemoveTagsRequest::getResourceOwnerId()const
 void RemoveTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveTagsRequest::getLoadBalancerId()const
@@ -55,7 +55,7 @@ std::string RemoveTagsRequest::getLoadBalancerId()const
 void RemoveTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string RemoveTagsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RemoveTagsRequest::getResourceOwnerAccount()const
 void RemoveTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveTagsRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string RemoveTagsRequest::getRegionId()const
 void RemoveTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RemoveTagsRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RemoveTagsRequest::getOwnerAccount()const
 void RemoveTagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RemoveTagsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long RemoveTagsRequest::getOwnerId()const
 void RemoveTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveTagsRequest::getTags()const
@@ -110,6 +110,6 @@ std::string RemoveTagsRequest::getTags()const
 void RemoveTagsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 

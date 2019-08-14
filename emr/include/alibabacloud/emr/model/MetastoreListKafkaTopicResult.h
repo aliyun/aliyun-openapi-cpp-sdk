@@ -45,9 +45,11 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					std::string status;
 					long gmtCreate;
 					std::vector<Topic::AdvancedConfig> advancedConfigList;
 					int replicationFactor;
+					std::string reassignId;
 					int numPartitions;
 					long gmtModified;
 					Cluster cluster;

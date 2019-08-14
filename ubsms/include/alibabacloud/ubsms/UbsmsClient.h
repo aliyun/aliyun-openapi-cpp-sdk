@@ -22,10 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "UbsmsExport.h"
-#include "model/NotifyUserBusinessCommandRequest.h"
-#include "model/NotifyUserBusinessCommandResult.h"
 #include "model/DescribeBusinessStatusRequest.h"
 #include "model/DescribeBusinessStatusResult.h"
+#include "model/NotifyUserBusinessCommandRequest.h"
+#include "model/NotifyUserBusinessCommandResult.h"
 #include "model/SetUserBusinessStatusRequest.h"
 #include "model/SetUserBusinessStatusResult.h"
 
@@ -37,12 +37,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_UBSMS_EXPORT UbsmsClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::NotifyUserBusinessCommandResult> NotifyUserBusinessCommandOutcome;
-			typedef std::future<NotifyUserBusinessCommandOutcome> NotifyUserBusinessCommandOutcomeCallable;
-			typedef std::function<void(const UbsmsClient*, const Model::NotifyUserBusinessCommandRequest&, const NotifyUserBusinessCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NotifyUserBusinessCommandAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBusinessStatusResult> DescribeBusinessStatusOutcome;
 			typedef std::future<DescribeBusinessStatusOutcome> DescribeBusinessStatusOutcomeCallable;
 			typedef std::function<void(const UbsmsClient*, const Model::DescribeBusinessStatusRequest&, const DescribeBusinessStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBusinessStatusAsyncHandler;
+			typedef Outcome<Error, Model::NotifyUserBusinessCommandResult> NotifyUserBusinessCommandOutcome;
+			typedef std::future<NotifyUserBusinessCommandOutcome> NotifyUserBusinessCommandOutcomeCallable;
+			typedef std::function<void(const UbsmsClient*, const Model::NotifyUserBusinessCommandRequest&, const NotifyUserBusinessCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NotifyUserBusinessCommandAsyncHandler;
 			typedef Outcome<Error, Model::SetUserBusinessStatusResult> SetUserBusinessStatusOutcome;
 			typedef std::future<SetUserBusinessStatusOutcome> SetUserBusinessStatusOutcomeCallable;
 			typedef std::function<void(const UbsmsClient*, const Model::SetUserBusinessStatusRequest&, const SetUserBusinessStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUserBusinessStatusAsyncHandler;
@@ -51,12 +51,12 @@ namespace AlibabaCloud
 			UbsmsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			UbsmsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~UbsmsClient();
-			NotifyUserBusinessCommandOutcome notifyUserBusinessCommand(const Model::NotifyUserBusinessCommandRequest &request)const;
-			void notifyUserBusinessCommandAsync(const Model::NotifyUserBusinessCommandRequest& request, const NotifyUserBusinessCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			NotifyUserBusinessCommandOutcomeCallable notifyUserBusinessCommandCallable(const Model::NotifyUserBusinessCommandRequest& request) const;
 			DescribeBusinessStatusOutcome describeBusinessStatus(const Model::DescribeBusinessStatusRequest &request)const;
 			void describeBusinessStatusAsync(const Model::DescribeBusinessStatusRequest& request, const DescribeBusinessStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBusinessStatusOutcomeCallable describeBusinessStatusCallable(const Model::DescribeBusinessStatusRequest& request) const;
+			NotifyUserBusinessCommandOutcome notifyUserBusinessCommand(const Model::NotifyUserBusinessCommandRequest &request)const;
+			void notifyUserBusinessCommandAsync(const Model::NotifyUserBusinessCommandRequest& request, const NotifyUserBusinessCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			NotifyUserBusinessCommandOutcomeCallable notifyUserBusinessCommandCallable(const Model::NotifyUserBusinessCommandRequest& request) const;
 			SetUserBusinessStatusOutcome setUserBusinessStatus(const Model::SetUserBusinessStatusRequest &request)const;
 			void setUserBusinessStatusAsync(const Model::SetUserBusinessStatusRequest& request, const SetUserBusinessStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetUserBusinessStatusOutcomeCallable setUserBusinessStatusCallable(const Model::SetUserBusinessStatusRequest& request) const;

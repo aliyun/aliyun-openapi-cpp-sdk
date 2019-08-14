@@ -113,17 +113,6 @@ void ModifyCloudConnectNetworkRequest::setDescription(const std::string& descrip
 	setCoreParameter("Description", description);
 }
 
-std::string ModifyCloudConnectNetworkRequest::getSnatCidrBlock()const
-{
-	return snatCidrBlock_;
-}
-
-void ModifyCloudConnectNetworkRequest::setSnatCidrBlock(const std::string& snatCidrBlock)
-{
-	snatCidrBlock_ = snatCidrBlock;
-	setCoreParameter("SnatCidrBlock", snatCidrBlock);
-}
-
 long ModifyCloudConnectNetworkRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -133,5 +122,16 @@ void ModifyCloudConnectNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyCloudConnectNetworkRequest::getInterworkingStatus()const
+{
+	return interworkingStatus_;
+}
+
+void ModifyCloudConnectNetworkRequest::setInterworkingStatus(const std::string& interworkingStatus)
+{
+	interworkingStatus_ = interworkingStatus;
+	setCoreParameter("InterworkingStatus", interworkingStatus);
 }
 

@@ -33,7 +33,7 @@ std::string CheckDomainSunriseClaimRequest::getDomainName()const
 void CheckDomainSunriseClaimRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string CheckDomainSunriseClaimRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string CheckDomainSunriseClaimRequest::getUserClientIp()const
 void CheckDomainSunriseClaimRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckDomainSunriseClaimRequest::getLang()const
@@ -55,6 +55,6 @@ std::string CheckDomainSunriseClaimRequest::getLang()const
 void CheckDomainSunriseClaimRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

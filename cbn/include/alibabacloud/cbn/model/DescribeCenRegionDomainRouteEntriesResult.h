@@ -34,10 +34,27 @@ namespace AlibabaCloud
 			public:
 				struct CenRouteEntry
 				{
+					struct CenRouteMapRecord
+					{
+						std::string regionId;
+						std::string routeMapId;
+					};
+					struct CenOutRouteMapRecord
+					{
+						std::string regionId;
+						std::string routeMapId;
+					};
+					std::vector<CenRouteEntry::CenOutRouteMapRecord> cenOutRouteMapRecords;
+					std::string status;
+					std::string toOtherRegionStatus;
 					std::string nextHopType;
 					std::string nextHopRegionId;
 					std::string type;
+					std::vector<CenRouteEntry::CenRouteMapRecord> cenRouteMapRecords;
+					int preference;
+					std::vector<std::string> communities;
 					std::string destinationCidrBlock;
+					std::vector<std::string> asPaths;
 					std::string nextHopInstanceId;
 				};
 

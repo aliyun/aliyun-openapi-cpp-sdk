@@ -33,17 +33,6 @@ std::string DeleteKeyMaterialRequest::getKeyId()const
 void DeleteKeyMaterialRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string DeleteKeyMaterialRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void DeleteKeyMaterialRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 

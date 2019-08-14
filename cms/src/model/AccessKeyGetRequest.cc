@@ -33,6 +33,6 @@ long AccessKeyGetRequest::getUserId()const
 void AccessKeyGetRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", std::to_string(userId));
 }
 

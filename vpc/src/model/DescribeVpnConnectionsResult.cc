@@ -35,10 +35,13 @@ DescribeVpnConnectionsResult::~DescribeVpnConnectionsResult()
 
 void DescribeVpnConnectionsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allVpnConnections = value["VpnConnections"]["VpnConnection"];
 	for (auto value : allVpnConnections)
@@ -90,6 +93,19 @@ void DescribeVpnConnectionsResult::parse(const std::string &payload)
 			vpnConnectionsObject.ipsecConfig.ipsecPfs = ipsecConfigNode["IpsecPfs"].asString();
 		if(!ipsecConfigNode["IpsecLifetime"].isNull())
 			vpnConnectionsObject.ipsecConfig.ipsecLifetime = std::stol(ipsecConfigNode["IpsecLifetime"].asString());
+		auto vcoHealthCheckNode = value["VcoHealthCheck"];
+		if(!vcoHealthCheckNode["Enable"].isNull())
+			vpnConnectionsObject.vcoHealthCheck.enable = vcoHealthCheckNode["Enable"].asString();
+		if(!vcoHealthCheckNode["Sip"].isNull())
+			vpnConnectionsObject.vcoHealthCheck.sip = vcoHealthCheckNode["Sip"].asString();
+		if(!vcoHealthCheckNode["Dip"].isNull())
+			vpnConnectionsObject.vcoHealthCheck.dip = vcoHealthCheckNode["Dip"].asString();
+		if(!vcoHealthCheckNode["Interval"].isNull())
+			vpnConnectionsObject.vcoHealthCheck.interval = std::stoi(vcoHealthCheckNode["Interval"].asString());
+		if(!vcoHealthCheckNode["Retry"].isNull())
+			vpnConnectionsObject.vcoHealthCheck.retry = std::stoi(vcoHealthCheckNode["Retry"].asString());
+		if(!vcoHealthCheckNode["Status"].isNull())
+			vpnConnectionsObject.vcoHealthCheck.status = vcoHealthCheckNode["Status"].asString();
 		vpnConnections_.push_back(vpnConnectionsObject);
 	}
 	if(!value["TotalCount"].isNull())

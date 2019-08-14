@@ -33,7 +33,7 @@ long AliyunRegisterApAssetRequest::getApgroupId()const
 void AliyunRegisterApAssetRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string AliyunRegisterApAssetRequest::getMac()const
@@ -44,7 +44,7 @@ std::string AliyunRegisterApAssetRequest::getMac()const
 void AliyunRegisterApAssetRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setParameter("Mac", mac);
+	setCoreParameter("Mac", mac);
 }
 
 std::string AliyunRegisterApAssetRequest::getAccessKeyId()const
@@ -55,7 +55,7 @@ std::string AliyunRegisterApAssetRequest::getAccessKeyId()const
 void AliyunRegisterApAssetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AliyunRegisterApAssetRequest::getSerialNo()const
@@ -66,6 +66,6 @@ std::string AliyunRegisterApAssetRequest::getSerialNo()const
 void AliyunRegisterApAssetRequest::setSerialNo(const std::string& serialNo)
 {
 	serialNo_ = serialNo;
-	setParameter("SerialNo", serialNo);
+	setCoreParameter("SerialNo", serialNo);
 }
 

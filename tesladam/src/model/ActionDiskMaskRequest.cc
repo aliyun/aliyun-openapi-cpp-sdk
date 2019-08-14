@@ -33,7 +33,7 @@ std::string ActionDiskMaskRequest::getOp()const
 void ActionDiskMaskRequest::setOp(const std::string& op)
 {
 	op_ = op;
-	setParameter("Op", op);
+	setCoreParameter("Op", op);
 }
 
 std::string ActionDiskMaskRequest::getDiskMount()const
@@ -44,7 +44,7 @@ std::string ActionDiskMaskRequest::getDiskMount()const
 void ActionDiskMaskRequest::setDiskMount(const std::string& diskMount)
 {
 	diskMount_ = diskMount;
-	setParameter("DiskMount", diskMount);
+	setCoreParameter("DiskMount", diskMount);
 }
 
 std::string ActionDiskMaskRequest::getIp()const
@@ -55,6 +55,6 @@ std::string ActionDiskMaskRequest::getIp()const
 void ActionDiskMaskRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setParameter("Ip", ip);
+	setCoreParameter("Ip", ip);
 }
 

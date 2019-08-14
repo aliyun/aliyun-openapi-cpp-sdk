@@ -45,6 +45,10 @@ namespace AlibabaCloud
 				void setSystemDBCharset(const std::string& systemDBCharset);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getZoneIdSlave1()const;
+				void setZoneIdSlave1(const std::string& zoneIdSlave1);
+				std::string getZoneIdSlave2()const;
+				void setZoneIdSlave2(const std::string& zoneIdSlave2);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getAccessKeyId()const;
@@ -93,6 +97,8 @@ namespace AlibabaCloud
 				void setTunnelId(const std::string& tunnelId);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 				std::string getInstanceNetworkType()const;
@@ -104,6 +110,8 @@ namespace AlibabaCloud
 				int dBInstanceStorage_;
 				std::string systemDBCharset_;
 				std::string clientToken_;
+				std::string zoneIdSlave1_;
+				std::string zoneIdSlave2_;
 				std::string engineVersion_;
 				std::string accessKeyId_;
 				std::string resourceGroupId_;
@@ -128,6 +136,7 @@ namespace AlibabaCloud
 				std::string vPCId_;
 				std::string tunnelId_;
 				std::string zoneId_;
+				std::string category_;
 				std::string payType_;
 				std::string instanceNetworkType_;
 

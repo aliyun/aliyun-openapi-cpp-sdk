@@ -33,6 +33,6 @@ std::string GetSendCommandByMacProgressRequest::getAccessKeyId()const
 void GetSendCommandByMacProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

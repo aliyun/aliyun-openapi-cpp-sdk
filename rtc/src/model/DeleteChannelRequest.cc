@@ -25,37 +25,15 @@ DeleteChannelRequest::DeleteChannelRequest() :
 DeleteChannelRequest::~DeleteChannelRequest()
 {}
 
-std::string DeleteChannelRequest::getApp_ip()const
+long DeleteChannelRequest::getResourceOwnerId()const
 {
-	return app_ip_;
+	return resourceOwnerId_;
 }
 
-void DeleteChannelRequest::setApp_ip(const std::string& app_ip)
+void DeleteChannelRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
-}
-
-std::string DeleteChannelRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DeleteChannelRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
-}
-
-std::string DeleteChannelRequest::getProduct()const
-{
-	return product_;
-}
-
-void DeleteChannelRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteChannelRequest::getCallerParentId()const
@@ -66,7 +44,7 @@ long DeleteChannelRequest::getCallerParentId()const
 void DeleteChannelRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteChannelRequest::getProxy_original_security_transport()const
@@ -77,29 +55,7 @@ bool DeleteChannelRequest::getProxy_original_security_transport()const
 void DeleteChannelRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
-}
-
-std::string DeleteChannelRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DeleteChannelRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
-}
-
-long DeleteChannelRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteChannelRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteChannelRequest::getProxy_original_source_ip()const
@@ -110,18 +66,7 @@ std::string DeleteChannelRequest::getProxy_original_source_ip()const
 void DeleteChannelRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DeleteChannelRequest::getVersion()const
-{
-	return version_;
-}
-
-void DeleteChannelRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteChannelRequest::getOwnerIdLoginEmail()const
@@ -132,7 +77,7 @@ std::string DeleteChannelRequest::getOwnerIdLoginEmail()const
 void DeleteChannelRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteChannelRequest::getCallerType()const
@@ -143,29 +88,7 @@ std::string DeleteChannelRequest::getCallerType()const
 void DeleteChannelRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
-}
-
-bool DeleteChannelRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DeleteChannelRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
-}
-
-bool DeleteChannelRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DeleteChannelRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteChannelRequest::getAccessKeyId()const
@@ -176,18 +99,7 @@ std::string DeleteChannelRequest::getAccessKeyId()const
 void DeleteChannelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-bool DeleteChannelRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DeleteChannelRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteChannelRequest::getSecurityToken()const
@@ -198,18 +110,7 @@ std::string DeleteChannelRequest::getSecurityToken()const
 void DeleteChannelRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
-std::string DeleteChannelRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DeleteChannelRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteChannelRequest::getRequestContent()const
@@ -220,18 +121,7 @@ std::string DeleteChannelRequest::getRequestContent()const
 void DeleteChannelRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
-}
-
-std::string DeleteChannelRequest::getAppId()const
-{
-	return appId_;
-}
-
-void DeleteChannelRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteChannelRequest::getCallerBidEmail()const
@@ -242,7 +132,7 @@ std::string DeleteChannelRequest::getCallerBidEmail()const
 void DeleteChannelRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteChannelRequest::getCallerUidEmail()const
@@ -253,18 +143,7 @@ std::string DeleteChannelRequest::getCallerUidEmail()const
 void DeleteChannelRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
-}
-
-std::string DeleteChannelRequest::getChannelId()const
-{
-	return channelId_;
-}
-
-void DeleteChannelRequest::setChannelId(const std::string& channelId)
-{
-	channelId_ = channelId;
-	setParameter("ChannelId", channelId);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteChannelRequest::getCallerUid()const
@@ -275,6 +154,138 @@ long DeleteChannelRequest::getCallerUid()const
 void DeleteChannelRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
+}
+
+std::string DeleteChannelRequest::getApp_ip()const
+{
+	return app_ip_;
+}
+
+void DeleteChannelRequest::setApp_ip(const std::string& app_ip)
+{
+	app_ip_ = app_ip;
+	setCoreParameter("App_ip", app_ip);
+}
+
+std::string DeleteChannelRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void DeleteChannelRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setCoreParameter("PopProduct", popProduct);
+}
+
+std::string DeleteChannelRequest::getCallerBid()const
+{
+	return callerBid_;
+}
+
+void DeleteChannelRequest::setCallerBid(const std::string& callerBid)
+{
+	callerBid_ = callerBid;
+	setCoreParameter("CallerBid", callerBid);
+}
+
+long DeleteChannelRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DeleteChannelRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteChannelRequest::getVersion()const
+{
+	return version_;
+}
+
+void DeleteChannelRequest::setVersion(const std::string& version)
+{
+	version_ = version;
+	setCoreParameter("Version", version);
+}
+
+bool DeleteChannelRequest::getProxy_trust_transport_info()const
+{
+	return proxy_trust_transport_info_;
+}
+
+void DeleteChannelRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+{
+	proxy_trust_transport_info_ = proxy_trust_transport_info;
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+}
+
+bool DeleteChannelRequest::getAk_mfa_present()const
+{
+	return ak_mfa_present_;
+}
+
+void DeleteChannelRequest::setAk_mfa_present(bool ak_mfa_present)
+{
+	ak_mfa_present_ = ak_mfa_present;
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+}
+
+bool DeleteChannelRequest::getSecurity_transport()const
+{
+	return security_transport_;
+}
+
+void DeleteChannelRequest::setSecurity_transport(bool security_transport)
+{
+	security_transport_ = security_transport;
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string DeleteChannelRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void DeleteChannelRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
+}
+
+std::string DeleteChannelRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void DeleteChannelRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setCoreParameter("RequestId", requestId);
+}
+
+std::string DeleteChannelRequest::getAppId()const
+{
+	return appId_;
+}
+
+void DeleteChannelRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
+}
+
+std::string DeleteChannelRequest::getChannelId()const
+{
+	return channelId_;
+}
+
+void DeleteChannelRequest::setChannelId(const std::string& channelId)
+{
+	channelId_ = channelId;
+	setCoreParameter("ChannelId", channelId);
 }
 

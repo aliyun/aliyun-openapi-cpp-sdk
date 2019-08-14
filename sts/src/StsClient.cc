@@ -159,3 +159,39 @@ StsClient::AssumeRoleOutcomeCallable StsClient::assumeRoleCallable(const AssumeR
 	return task->get_future();
 }
 
+StsClient::AssumeRoleWithSAMLOutcome StsClient::assumeRoleWithSAML(const AssumeRoleWithSAMLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssumeRoleWithSAMLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssumeRoleWithSAMLOutcome(AssumeRoleWithSAMLResult(outcome.result()));
+	else
+		return AssumeRoleWithSAMLOutcome(outcome.error());
+}
+
+void StsClient::assumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, assumeRoleWithSAML(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+StsClient::AssumeRoleWithSAMLOutcomeCallable StsClient::assumeRoleWithSAMLCallable(const AssumeRoleWithSAMLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssumeRoleWithSAMLOutcome()>>(
+			[this, request]()
+			{
+			return this->assumeRoleWithSAML(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

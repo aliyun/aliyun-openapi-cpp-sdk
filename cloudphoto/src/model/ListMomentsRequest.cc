@@ -33,7 +33,7 @@ std::string ListMomentsRequest::getCursor()const
 void ListMomentsRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setParameter("Cursor", cursor);
+	setCoreParameter("Cursor", cursor);
 }
 
 int ListMomentsRequest::getSize()const
@@ -44,7 +44,7 @@ int ListMomentsRequest::getSize()const
 void ListMomentsRequest::setSize(int size)
 {
 	size_ = size;
-	setParameter("Size", std::to_string(size));
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListMomentsRequest::getLibraryId()const
@@ -55,7 +55,7 @@ std::string ListMomentsRequest::getLibraryId()const
 void ListMomentsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListMomentsRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string ListMomentsRequest::getStoreName()const
 void ListMomentsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListMomentsRequest::getState()const
@@ -77,7 +77,7 @@ std::string ListMomentsRequest::getState()const
 void ListMomentsRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 std::string ListMomentsRequest::getDirection()const
@@ -88,6 +88,6 @@ std::string ListMomentsRequest::getDirection()const
 void ListMomentsRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setParameter("Direction", direction);
+	setCoreParameter("Direction", direction);
 }
 

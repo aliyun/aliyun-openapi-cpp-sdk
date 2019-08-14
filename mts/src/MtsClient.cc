@@ -51,36 +51,36 @@ MtsClient::MtsClient(const std::string & accessKeyId, const std::string & access
 MtsClient::~MtsClient()
 {}
 
-MtsClient::DeleteCategoryOutcome MtsClient::deleteCategory(const DeleteCategoryRequest &request) const
+MtsClient::QueryAuthConfigOutcome MtsClient::queryAuthConfig(const QueryAuthConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteCategoryOutcome(endpointOutcome.error());
+		return QueryAuthConfigOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteCategoryOutcome(DeleteCategoryResult(outcome.result()));
+		return QueryAuthConfigOutcome(QueryAuthConfigResult(outcome.result()));
 	else
-		return DeleteCategoryOutcome(outcome.error());
+		return QueryAuthConfigOutcome(outcome.error());
 }
 
-void MtsClient::deleteCategoryAsync(const DeleteCategoryRequest& request, const DeleteCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::queryAuthConfigAsync(const QueryAuthConfigRequest& request, const QueryAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteCategory(request), context);
+		handler(this, request, queryAuthConfig(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::DeleteCategoryOutcomeCallable MtsClient::deleteCategoryCallable(const DeleteCategoryRequest &request) const
+MtsClient::QueryAuthConfigOutcomeCallable MtsClient::queryAuthConfigCallable(const QueryAuthConfigRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteCategoryOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<QueryAuthConfigOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteCategory(request);
+			return this->queryAuthConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -123,36 +123,36 @@ MtsClient::QuerySnapshotJobListOutcomeCallable MtsClient::querySnapshotJobListCa
 	return task->get_future();
 }
 
-MtsClient::QueryAuthConfigOutcome MtsClient::queryAuthConfig(const QueryAuthConfigRequest &request) const
+MtsClient::DeleteCategoryOutcome MtsClient::deleteCategory(const DeleteCategoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryAuthConfigOutcome(endpointOutcome.error());
+		return DeleteCategoryOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryAuthConfigOutcome(QueryAuthConfigResult(outcome.result()));
+		return DeleteCategoryOutcome(DeleteCategoryResult(outcome.result()));
 	else
-		return QueryAuthConfigOutcome(outcome.error());
+		return DeleteCategoryOutcome(outcome.error());
 }
 
-void MtsClient::queryAuthConfigAsync(const QueryAuthConfigRequest& request, const QueryAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::deleteCategoryAsync(const DeleteCategoryRequest& request, const DeleteCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryAuthConfig(request), context);
+		handler(this, request, deleteCategory(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::QueryAuthConfigOutcomeCallable MtsClient::queryAuthConfigCallable(const QueryAuthConfigRequest &request) const
+MtsClient::DeleteCategoryOutcomeCallable MtsClient::deleteCategoryCallable(const DeleteCategoryRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryAuthConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteCategoryOutcome()>>(
 			[this, request]()
 			{
-			return this->queryAuthConfig(request);
+			return this->deleteCategory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,42 +339,6 @@ MtsClient::UpdateMediaPublishStateOutcomeCallable MtsClient::updateMediaPublishS
 	return task->get_future();
 }
 
-MtsClient::ListJobOutcome MtsClient::listJob(const ListJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListJobOutcome(ListJobResult(outcome.result()));
-	else
-		return ListJobOutcome(outcome.error());
-}
-
-void MtsClient::listJobAsync(const ListJobRequest& request, const ListJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::ListJobOutcomeCallable MtsClient::listJobCallable(const ListJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListJobOutcome()>>(
-			[this, request]()
-			{
-			return this->listJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::ListAsrPipelineOutcome MtsClient::listAsrPipeline(const ListAsrPipelineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +369,42 @@ MtsClient::ListAsrPipelineOutcomeCallable MtsClient::listAsrPipelineCallable(con
 			[this, request]()
 			{
 			return this->listAsrPipeline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::ListJobOutcome MtsClient::listJob(const ListJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListJobOutcome(ListJobResult(outcome.result()));
+	else
+		return ListJobOutcome(outcome.error());
+}
+
+void MtsClient::listJobAsync(const ListJobRequest& request, const ListJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::ListJobOutcomeCallable MtsClient::listJobCallable(const ListJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListJobOutcome()>>(
+			[this, request]()
+			{
+			return this->listJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,42 +627,6 @@ MtsClient::AddAsrPipelineOutcomeCallable MtsClient::addAsrPipelineCallable(const
 	return task->get_future();
 }
 
-MtsClient::CancelJobOutcome MtsClient::cancelJob(const CancelJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CancelJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CancelJobOutcome(CancelJobResult(outcome.result()));
-	else
-		return CancelJobOutcome(outcome.error());
-}
-
-void MtsClient::cancelJobAsync(const CancelJobRequest& request, const CancelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, cancelJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::CancelJobOutcomeCallable MtsClient::cancelJobCallable(const CancelJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CancelJobOutcome()>>(
-			[this, request]()
-			{
-			return this->cancelJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::ReportCensorJobResultOutcome MtsClient::reportCensorJobResult(const ReportCensorJobResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +657,42 @@ MtsClient::ReportCensorJobResultOutcomeCallable MtsClient::reportCensorJobResult
 			[this, request]()
 			{
 			return this->reportCensorJobResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::CancelJobOutcome MtsClient::cancelJob(const CancelJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelJobOutcome(CancelJobResult(outcome.result()));
+	else
+		return CancelJobOutcome(outcome.error());
+}
+
+void MtsClient::cancelJobAsync(const CancelJobRequest& request, const CancelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::CancelJobOutcomeCallable MtsClient::cancelJobCallable(const CancelJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelJobOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,42 +1095,6 @@ MtsClient::QueryJobListOutcomeCallable MtsClient::queryJobListCallable(const Que
 	return task->get_future();
 }
 
-MtsClient::SearchMediaWorkflowOutcome MtsClient::searchMediaWorkflow(const SearchMediaWorkflowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchMediaWorkflowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchMediaWorkflowOutcome(SearchMediaWorkflowResult(outcome.result()));
-	else
-		return SearchMediaWorkflowOutcome(outcome.error());
-}
-
-void MtsClient::searchMediaWorkflowAsync(const SearchMediaWorkflowRequest& request, const SearchMediaWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, searchMediaWorkflow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::SearchMediaWorkflowOutcomeCallable MtsClient::searchMediaWorkflowCallable(const SearchMediaWorkflowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchMediaWorkflowOutcome()>>(
-			[this, request]()
-			{
-			return this->searchMediaWorkflow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::LogicalDeleteResourceOutcome MtsClient::logicalDeleteResource(const LogicalDeleteResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1167,36 +1131,36 @@ MtsClient::LogicalDeleteResourceOutcomeCallable MtsClient::logicalDeleteResource
 	return task->get_future();
 }
 
-MtsClient::QueryCoverPipelineListOutcome MtsClient::queryCoverPipelineList(const QueryCoverPipelineListRequest &request) const
+MtsClient::SearchMediaWorkflowOutcome MtsClient::searchMediaWorkflow(const SearchMediaWorkflowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryCoverPipelineListOutcome(endpointOutcome.error());
+		return SearchMediaWorkflowOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryCoverPipelineListOutcome(QueryCoverPipelineListResult(outcome.result()));
+		return SearchMediaWorkflowOutcome(SearchMediaWorkflowResult(outcome.result()));
 	else
-		return QueryCoverPipelineListOutcome(outcome.error());
+		return SearchMediaWorkflowOutcome(outcome.error());
 }
 
-void MtsClient::queryCoverPipelineListAsync(const QueryCoverPipelineListRequest& request, const QueryCoverPipelineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::searchMediaWorkflowAsync(const SearchMediaWorkflowRequest& request, const SearchMediaWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryCoverPipelineList(request), context);
+		handler(this, request, searchMediaWorkflow(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::QueryCoverPipelineListOutcomeCallable MtsClient::queryCoverPipelineListCallable(const QueryCoverPipelineListRequest &request) const
+MtsClient::SearchMediaWorkflowOutcomeCallable MtsClient::searchMediaWorkflowCallable(const SearchMediaWorkflowRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryCoverPipelineListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SearchMediaWorkflowOutcome()>>(
 			[this, request]()
 			{
-			return this->queryCoverPipelineList(request);
+			return this->searchMediaWorkflow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,6 +1203,42 @@ MtsClient::QueryFpShotJobListOutcomeCallable MtsClient::queryFpShotJobListCallab
 	return task->get_future();
 }
 
+MtsClient::QueryCoverPipelineListOutcome MtsClient::queryCoverPipelineList(const QueryCoverPipelineListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCoverPipelineListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCoverPipelineListOutcome(QueryCoverPipelineListResult(outcome.result()));
+	else
+		return QueryCoverPipelineListOutcome(outcome.error());
+}
+
+void MtsClient::queryCoverPipelineListAsync(const QueryCoverPipelineListRequest& request, const QueryCoverPipelineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCoverPipelineList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QueryCoverPipelineListOutcomeCallable MtsClient::queryCoverPipelineListCallable(const QueryCoverPipelineListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCoverPipelineListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCoverPipelineList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MtsClient::ListMediaWorkflowExecutionsOutcome MtsClient::listMediaWorkflowExecutions(const ListMediaWorkflowExecutionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1275,42 +1275,6 @@ MtsClient::ListMediaWorkflowExecutionsOutcomeCallable MtsClient::listMediaWorkfl
 	return task->get_future();
 }
 
-MtsClient::DeletePipelineOutcome MtsClient::deletePipeline(const DeletePipelineRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeletePipelineOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeletePipelineOutcome(DeletePipelineResult(outcome.result()));
-	else
-		return DeletePipelineOutcome(outcome.error());
-}
-
-void MtsClient::deletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deletePipeline(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::DeletePipelineOutcomeCallable MtsClient::deletePipelineCallable(const DeletePipelineRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeletePipelineOutcome()>>(
-			[this, request]()
-			{
-			return this->deletePipeline(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::DeleteMediaTagOutcome MtsClient::deleteMediaTag(const DeleteMediaTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1305,42 @@ MtsClient::DeleteMediaTagOutcomeCallable MtsClient::deleteMediaTagCallable(const
 			[this, request]()
 			{
 			return this->deleteMediaTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::DeletePipelineOutcome MtsClient::deletePipeline(const DeletePipelineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePipelineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePipelineOutcome(DeletePipelineResult(outcome.result()));
+	else
+		return DeletePipelineOutcome(outcome.error());
+}
+
+void MtsClient::deletePipelineAsync(const DeletePipelineRequest& request, const DeletePipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePipeline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::DeletePipelineOutcomeCallable MtsClient::deletePipelineCallable(const DeletePipelineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePipelineOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePipeline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,36 +1779,36 @@ MtsClient::UpdateMediaOutcomeCallable MtsClient::updateMediaCallable(const Updat
 	return task->get_future();
 }
 
-MtsClient::SubmitMediaFpDeleteJobOutcome MtsClient::submitMediaFpDeleteJob(const SubmitMediaFpDeleteJobRequest &request) const
+MtsClient::QuerySubtitleJobListOutcome MtsClient::querySubtitleJobList(const QuerySubtitleJobListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitMediaFpDeleteJobOutcome(endpointOutcome.error());
+		return QuerySubtitleJobListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitMediaFpDeleteJobOutcome(SubmitMediaFpDeleteJobResult(outcome.result()));
+		return QuerySubtitleJobListOutcome(QuerySubtitleJobListResult(outcome.result()));
 	else
-		return SubmitMediaFpDeleteJobOutcome(outcome.error());
+		return QuerySubtitleJobListOutcome(outcome.error());
 }
 
-void MtsClient::submitMediaFpDeleteJobAsync(const SubmitMediaFpDeleteJobRequest& request, const SubmitMediaFpDeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::querySubtitleJobListAsync(const QuerySubtitleJobListRequest& request, const QuerySubtitleJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitMediaFpDeleteJob(request), context);
+		handler(this, request, querySubtitleJobList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::SubmitMediaFpDeleteJobOutcomeCallable MtsClient::submitMediaFpDeleteJobCallable(const SubmitMediaFpDeleteJobRequest &request) const
+MtsClient::QuerySubtitleJobListOutcomeCallable MtsClient::querySubtitleJobListCallable(const QuerySubtitleJobListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitMediaFpDeleteJobOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<QuerySubtitleJobListOutcome()>>(
 			[this, request]()
 			{
-			return this->submitMediaFpDeleteJob(request);
+			return this->querySubtitleJobList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1851,36 +1851,36 @@ MtsClient::ListCensorPipelineOutcomeCallable MtsClient::listCensorPipelineCallab
 	return task->get_future();
 }
 
-MtsClient::QuerySubtitleJobListOutcome MtsClient::querySubtitleJobList(const QuerySubtitleJobListRequest &request) const
+MtsClient::SubmitMediaFpDeleteJobOutcome MtsClient::submitMediaFpDeleteJob(const SubmitMediaFpDeleteJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QuerySubtitleJobListOutcome(endpointOutcome.error());
+		return SubmitMediaFpDeleteJobOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QuerySubtitleJobListOutcome(QuerySubtitleJobListResult(outcome.result()));
+		return SubmitMediaFpDeleteJobOutcome(SubmitMediaFpDeleteJobResult(outcome.result()));
 	else
-		return QuerySubtitleJobListOutcome(outcome.error());
+		return SubmitMediaFpDeleteJobOutcome(outcome.error());
 }
 
-void MtsClient::querySubtitleJobListAsync(const QuerySubtitleJobListRequest& request, const QuerySubtitleJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::submitMediaFpDeleteJobAsync(const SubmitMediaFpDeleteJobRequest& request, const SubmitMediaFpDeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, querySubtitleJobList(request), context);
+		handler(this, request, submitMediaFpDeleteJob(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::QuerySubtitleJobListOutcomeCallable MtsClient::querySubtitleJobListCallable(const QuerySubtitleJobListRequest &request) const
+MtsClient::SubmitMediaFpDeleteJobOutcomeCallable MtsClient::submitMediaFpDeleteJobCallable(const SubmitMediaFpDeleteJobRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QuerySubtitleJobListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SubmitMediaFpDeleteJobOutcome()>>(
 			[this, request]()
 			{
-			return this->querySubtitleJobList(request);
+			return this->submitMediaFpDeleteJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2247,6 +2247,42 @@ MtsClient::SubmitImageQualityJobOutcomeCallable MtsClient::submitImageQualityJob
 	return task->get_future();
 }
 
+MtsClient::QueryFpCompareJobListOutcome MtsClient::queryFpCompareJobList(const QueryFpCompareJobListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryFpCompareJobListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryFpCompareJobListOutcome(QueryFpCompareJobListResult(outcome.result()));
+	else
+		return QueryFpCompareJobListOutcome(outcome.error());
+}
+
+void MtsClient::queryFpCompareJobListAsync(const QueryFpCompareJobListRequest& request, const QueryFpCompareJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryFpCompareJobList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QueryFpCompareJobListOutcomeCallable MtsClient::queryFpCompareJobListCallable(const QueryFpCompareJobListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryFpCompareJobListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryFpCompareJobList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MtsClient::AddMCTemplateOutcome MtsClient::addMCTemplate(const AddMCTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,78 +2313,6 @@ MtsClient::AddMCTemplateOutcomeCallable MtsClient::addMCTemplateCallable(const A
 			[this, request]()
 			{
 			return this->addMCTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MtsClient::BindOutputBucketOutcome MtsClient::bindOutputBucket(const BindOutputBucketRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BindOutputBucketOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BindOutputBucketOutcome(BindOutputBucketResult(outcome.result()));
-	else
-		return BindOutputBucketOutcome(outcome.error());
-}
-
-void MtsClient::bindOutputBucketAsync(const BindOutputBucketRequest& request, const BindOutputBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bindOutputBucket(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::BindOutputBucketOutcomeCallable MtsClient::bindOutputBucketCallable(const BindOutputBucketRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BindOutputBucketOutcome()>>(
-			[this, request]()
-			{
-			return this->bindOutputBucket(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MtsClient::SearchTemplateOutcome MtsClient::searchTemplate(const SearchTemplateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchTemplateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchTemplateOutcome(SearchTemplateResult(outcome.result()));
-	else
-		return SearchTemplateOutcome(outcome.error());
-}
-
-void MtsClient::searchTemplateAsync(const SearchTemplateRequest& request, const SearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, searchTemplate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::SearchTemplateOutcomeCallable MtsClient::searchTemplateCallable(const SearchTemplateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchTemplateOutcome()>>(
-			[this, request]()
-			{
-			return this->searchTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2391,36 +2355,72 @@ MtsClient::UpdateMcuTemplateOutcomeCallable MtsClient::updateMcuTemplateCallable
 	return task->get_future();
 }
 
-MtsClient::QueryMCJobListOutcome MtsClient::queryMCJobList(const QueryMCJobListRequest &request) const
+MtsClient::SearchTemplateOutcome MtsClient::searchTemplate(const SearchTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryMCJobListOutcome(endpointOutcome.error());
+		return SearchTemplateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryMCJobListOutcome(QueryMCJobListResult(outcome.result()));
+		return SearchTemplateOutcome(SearchTemplateResult(outcome.result()));
 	else
-		return QueryMCJobListOutcome(outcome.error());
+		return SearchTemplateOutcome(outcome.error());
 }
 
-void MtsClient::queryMCJobListAsync(const QueryMCJobListRequest& request, const QueryMCJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::searchTemplateAsync(const SearchTemplateRequest& request, const SearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryMCJobList(request), context);
+		handler(this, request, searchTemplate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::QueryMCJobListOutcomeCallable MtsClient::queryMCJobListCallable(const QueryMCJobListRequest &request) const
+MtsClient::SearchTemplateOutcomeCallable MtsClient::searchTemplateCallable(const SearchTemplateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryMCJobListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SearchTemplateOutcome()>>(
 			[this, request]()
 			{
-			return this->queryMCJobList(request);
+			return this->searchTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::BindOutputBucketOutcome MtsClient::bindOutputBucket(const BindOutputBucketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindOutputBucketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindOutputBucketOutcome(BindOutputBucketResult(outcome.result()));
+	else
+		return BindOutputBucketOutcome(outcome.error());
+}
+
+void MtsClient::bindOutputBucketAsync(const BindOutputBucketRequest& request, const BindOutputBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindOutputBucket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::BindOutputBucketOutcomeCallable MtsClient::bindOutputBucketCallable(const BindOutputBucketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindOutputBucketOutcome()>>(
+			[this, request]()
+			{
+			return this->bindOutputBucket(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2457,6 +2457,42 @@ MtsClient::AddPipelineOutcomeCallable MtsClient::addPipelineCallable(const AddPi
 			[this, request]()
 			{
 			return this->addPipeline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::QueryMCJobListOutcome MtsClient::queryMCJobList(const QueryMCJobListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryMCJobListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryMCJobListOutcome(QueryMCJobListResult(outcome.result()));
+	else
+		return QueryMCJobListOutcome(outcome.error());
+}
+
+void MtsClient::queryMCJobListAsync(const QueryMCJobListRequest& request, const QueryMCJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryMCJobList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QueryMCJobListOutcomeCallable MtsClient::queryMCJobListCallable(const QueryMCJobListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryMCJobListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryMCJobList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,42 +2643,6 @@ MtsClient::SubmitMediaInfoJobOutcomeCallable MtsClient::submitMediaInfoJobCallab
 	return task->get_future();
 }
 
-MtsClient::QueryPornJobListOutcome MtsClient::queryPornJobList(const QueryPornJobListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryPornJobListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryPornJobListOutcome(QueryPornJobListResult(outcome.result()));
-	else
-		return QueryPornJobListOutcome(outcome.error());
-}
-
-void MtsClient::queryPornJobListAsync(const QueryPornJobListRequest& request, const QueryPornJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryPornJobList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::QueryPornJobListOutcomeCallable MtsClient::queryPornJobListCallable(const QueryPornJobListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryPornJobListOutcome()>>(
-			[this, request]()
-			{
-			return this->queryPornJobList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::ReportVideoSplitJobResultOutcome MtsClient::reportVideoSplitJobResult(const ReportVideoSplitJobResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +2673,42 @@ MtsClient::ReportVideoSplitJobResultOutcomeCallable MtsClient::reportVideoSplitJ
 			[this, request]()
 			{
 			return this->reportVideoSplitJobResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::QueryPornJobListOutcome MtsClient::queryPornJobList(const QueryPornJobListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryPornJobListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryPornJobListOutcome(QueryPornJobListResult(outcome.result()));
+	else
+		return QueryPornJobListOutcome(outcome.error());
+}
+
+void MtsClient::queryPornJobListAsync(const QueryPornJobListRequest& request, const QueryPornJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryPornJobList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QueryPornJobListOutcomeCallable MtsClient::queryPornJobListCallable(const QueryPornJobListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryPornJobListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryPornJobList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2787,36 +2823,36 @@ MtsClient::QueryMcuJobOutcomeCallable MtsClient::queryMcuJobCallable(const Query
 	return task->get_future();
 }
 
-MtsClient::ListCoverPipelineOutcome MtsClient::listCoverPipeline(const ListCoverPipelineRequest &request) const
+MtsClient::SubmitBeautifyJobsOutcome MtsClient::submitBeautifyJobs(const SubmitBeautifyJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListCoverPipelineOutcome(endpointOutcome.error());
+		return SubmitBeautifyJobsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListCoverPipelineOutcome(ListCoverPipelineResult(outcome.result()));
+		return SubmitBeautifyJobsOutcome(SubmitBeautifyJobsResult(outcome.result()));
 	else
-		return ListCoverPipelineOutcome(outcome.error());
+		return SubmitBeautifyJobsOutcome(outcome.error());
 }
 
-void MtsClient::listCoverPipelineAsync(const ListCoverPipelineRequest& request, const ListCoverPipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::submitBeautifyJobsAsync(const SubmitBeautifyJobsRequest& request, const SubmitBeautifyJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listCoverPipeline(request), context);
+		handler(this, request, submitBeautifyJobs(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::ListCoverPipelineOutcomeCallable MtsClient::listCoverPipelineCallable(const ListCoverPipelineRequest &request) const
+MtsClient::SubmitBeautifyJobsOutcomeCallable MtsClient::submitBeautifyJobsCallable(const SubmitBeautifyJobsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListCoverPipelineOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SubmitBeautifyJobsOutcome()>>(
 			[this, request]()
 			{
-			return this->listCoverPipeline(request);
+			return this->submitBeautifyJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2853,6 +2889,42 @@ MtsClient::QueryMediaCensorJobDetailOutcomeCallable MtsClient::queryMediaCensorJ
 			[this, request]()
 			{
 			return this->queryMediaCensorJobDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::ListCoverPipelineOutcome MtsClient::listCoverPipeline(const ListCoverPipelineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCoverPipelineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCoverPipelineOutcome(ListCoverPipelineResult(outcome.result()));
+	else
+		return ListCoverPipelineOutcome(outcome.error());
+}
+
+void MtsClient::listCoverPipelineAsync(const ListCoverPipelineRequest& request, const ListCoverPipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCoverPipeline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::ListCoverPipelineOutcomeCallable MtsClient::listCoverPipelineCallable(const ListCoverPipelineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCoverPipelineOutcome()>>(
+			[this, request]()
+			{
+			return this->listCoverPipeline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2931,42 +3003,6 @@ MtsClient::QueryImageSearchJobListOutcomeCallable MtsClient::queryImageSearchJob
 	return task->get_future();
 }
 
-MtsClient::ReportFpShotJobResultOutcome MtsClient::reportFpShotJobResult(const ReportFpShotJobResultRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReportFpShotJobResultOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReportFpShotJobResultOutcome(ReportFpShotJobResultResult(outcome.result()));
-	else
-		return ReportFpShotJobResultOutcome(outcome.error());
-}
-
-void MtsClient::reportFpShotJobResultAsync(const ReportFpShotJobResultRequest& request, const ReportFpShotJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, reportFpShotJobResult(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::ReportFpShotJobResultOutcomeCallable MtsClient::reportFpShotJobResultCallable(const ReportFpShotJobResultRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReportFpShotJobResultOutcome()>>(
-			[this, request]()
-			{
-			return this->reportFpShotJobResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::SubmitVideoSummaryJobOutcome MtsClient::submitVideoSummaryJob(const SubmitVideoSummaryJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2997,6 +3033,42 @@ MtsClient::SubmitVideoSummaryJobOutcomeCallable MtsClient::submitVideoSummaryJob
 			[this, request]()
 			{
 			return this->submitVideoSummaryJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::ReportFpShotJobResultOutcome MtsClient::reportFpShotJobResult(const ReportFpShotJobResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReportFpShotJobResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReportFpShotJobResultOutcome(ReportFpShotJobResultResult(outcome.result()));
+	else
+		return ReportFpShotJobResultOutcome(outcome.error());
+}
+
+void MtsClient::reportFpShotJobResultAsync(const ReportFpShotJobResultRequest& request, const ReportFpShotJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reportFpShotJobResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::ReportFpShotJobResultOutcomeCallable MtsClient::reportFpShotJobResultCallable(const ReportFpShotJobResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReportFpShotJobResultOutcome()>>(
+			[this, request]()
+			{
+			return this->reportFpShotJobResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3075,42 +3147,6 @@ MtsClient::QueryAnnotationJobListOutcomeCallable MtsClient::queryAnnotationJobLi
 	return task->get_future();
 }
 
-MtsClient::SubmitMediaDetailJobOutcome MtsClient::submitMediaDetailJob(const SubmitMediaDetailJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitMediaDetailJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitMediaDetailJobOutcome(SubmitMediaDetailJobResult(outcome.result()));
-	else
-		return SubmitMediaDetailJobOutcome(outcome.error());
-}
-
-void MtsClient::submitMediaDetailJobAsync(const SubmitMediaDetailJobRequest& request, const SubmitMediaDetailJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitMediaDetailJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::SubmitMediaDetailJobOutcomeCallable MtsClient::submitMediaDetailJobCallable(const SubmitMediaDetailJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitMediaDetailJobOutcome()>>(
-			[this, request]()
-			{
-			return this->submitMediaDetailJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::SubmitPornJobOutcome MtsClient::submitPornJob(const SubmitPornJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3147,36 +3183,72 @@ MtsClient::SubmitPornJobOutcomeCallable MtsClient::submitPornJobCallable(const S
 	return task->get_future();
 }
 
-MtsClient::QueryFpImportResultOutcome MtsClient::queryFpImportResult(const QueryFpImportResultRequest &request) const
+MtsClient::SubmitMediaDetailJobOutcome MtsClient::submitMediaDetailJob(const SubmitMediaDetailJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryFpImportResultOutcome(endpointOutcome.error());
+		return SubmitMediaDetailJobOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryFpImportResultOutcome(QueryFpImportResultResult(outcome.result()));
+		return SubmitMediaDetailJobOutcome(SubmitMediaDetailJobResult(outcome.result()));
 	else
-		return QueryFpImportResultOutcome(outcome.error());
+		return SubmitMediaDetailJobOutcome(outcome.error());
 }
 
-void MtsClient::queryFpImportResultAsync(const QueryFpImportResultRequest& request, const QueryFpImportResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::submitMediaDetailJobAsync(const SubmitMediaDetailJobRequest& request, const SubmitMediaDetailJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryFpImportResult(request), context);
+		handler(this, request, submitMediaDetailJob(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::QueryFpImportResultOutcomeCallable MtsClient::queryFpImportResultCallable(const QueryFpImportResultRequest &request) const
+MtsClient::SubmitMediaDetailJobOutcomeCallable MtsClient::submitMediaDetailJobCallable(const SubmitMediaDetailJobRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryFpImportResultOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SubmitMediaDetailJobOutcome()>>(
 			[this, request]()
 			{
-			return this->queryFpImportResult(request);
+			return this->submitMediaDetailJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::DescribeMtsUserResourcePackageOutcome MtsClient::describeMtsUserResourcePackage(const DescribeMtsUserResourcePackageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMtsUserResourcePackageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMtsUserResourcePackageOutcome(DescribeMtsUserResourcePackageResult(outcome.result()));
+	else
+		return DescribeMtsUserResourcePackageOutcome(outcome.error());
+}
+
+void MtsClient::describeMtsUserResourcePackageAsync(const DescribeMtsUserResourcePackageRequest& request, const DescribeMtsUserResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMtsUserResourcePackage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::DescribeMtsUserResourcePackageOutcomeCallable MtsClient::describeMtsUserResourcePackageCallable(const DescribeMtsUserResourcePackageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMtsUserResourcePackageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMtsUserResourcePackage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3249,6 +3321,42 @@ MtsClient::AddTemplateOutcomeCallable MtsClient::addTemplateCallable(const AddTe
 			[this, request]()
 			{
 			return this->addTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::QueryFpImportResultOutcome MtsClient::queryFpImportResult(const QueryFpImportResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryFpImportResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryFpImportResultOutcome(QueryFpImportResultResult(outcome.result()));
+	else
+		return QueryFpImportResultOutcome(outcome.error());
+}
+
+void MtsClient::queryFpImportResultAsync(const QueryFpImportResultRequest& request, const QueryFpImportResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryFpImportResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QueryFpImportResultOutcomeCallable MtsClient::queryFpImportResultCallable(const QueryFpImportResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryFpImportResultOutcome()>>(
+			[this, request]()
+			{
+			return this->queryFpImportResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3579,42 +3687,6 @@ MtsClient::GetLicenseOutcomeCallable MtsClient::getLicenseCallable(const GetLice
 	return task->get_future();
 }
 
-MtsClient::QueryVideoSummaryJobListOutcome MtsClient::queryVideoSummaryJobList(const QueryVideoSummaryJobListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryVideoSummaryJobListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryVideoSummaryJobListOutcome(QueryVideoSummaryJobListResult(outcome.result()));
-	else
-		return QueryVideoSummaryJobListOutcome(outcome.error());
-}
-
-void MtsClient::queryVideoSummaryJobListAsync(const QueryVideoSummaryJobListRequest& request, const QueryVideoSummaryJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryVideoSummaryJobList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::QueryVideoSummaryJobListOutcomeCallable MtsClient::queryVideoSummaryJobListCallable(const QueryVideoSummaryJobListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryVideoSummaryJobListOutcome()>>(
-			[this, request]()
-			{
-			return this->queryVideoSummaryJobList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::QueryPornPipelineListOutcome MtsClient::queryPornPipelineList(const QueryPornPipelineListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3645,6 +3717,42 @@ MtsClient::QueryPornPipelineListOutcomeCallable MtsClient::queryPornPipelineList
 			[this, request]()
 			{
 			return this->queryPornPipelineList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::QueryVideoSummaryJobListOutcome MtsClient::queryVideoSummaryJobList(const QueryVideoSummaryJobListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryVideoSummaryJobListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryVideoSummaryJobListOutcome(QueryVideoSummaryJobListResult(outcome.result()));
+	else
+		return QueryVideoSummaryJobListOutcome(outcome.error());
+}
+
+void MtsClient::queryVideoSummaryJobListAsync(const QueryVideoSummaryJobListRequest& request, const QueryVideoSummaryJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryVideoSummaryJobList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QueryVideoSummaryJobListOutcomeCallable MtsClient::queryVideoSummaryJobListCallable(const QueryVideoSummaryJobListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryVideoSummaryJobListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryVideoSummaryJobList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4011,42 +4119,6 @@ MtsClient::UpdateMediaWorkflowTriggerModeOutcomeCallable MtsClient::updateMediaW
 	return task->get_future();
 }
 
-MtsClient::SearchMediaOutcome MtsClient::searchMedia(const SearchMediaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchMediaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchMediaOutcome(SearchMediaResult(outcome.result()));
-	else
-		return SearchMediaOutcome(outcome.error());
-}
-
-void MtsClient::searchMediaAsync(const SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, searchMedia(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::SearchMediaOutcomeCallable MtsClient::searchMediaCallable(const SearchMediaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchMediaOutcome()>>(
-			[this, request]()
-			{
-			return this->searchMedia(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::ActivateMediaWorkflowOutcome MtsClient::activateMediaWorkflow(const ActivateMediaWorkflowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4077,6 +4149,42 @@ MtsClient::ActivateMediaWorkflowOutcomeCallable MtsClient::activateMediaWorkflow
 			[this, request]()
 			{
 			return this->activateMediaWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::SearchMediaOutcome MtsClient::searchMedia(const SearchMediaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchMediaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchMediaOutcome(SearchMediaResult(outcome.result()));
+	else
+		return SearchMediaOutcome(outcome.error());
+}
+
+void MtsClient::searchMediaAsync(const SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchMedia(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::SearchMediaOutcomeCallable MtsClient::searchMediaCallable(const SearchMediaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchMediaOutcome()>>(
+			[this, request]()
+			{
+			return this->searchMedia(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4515,6 +4623,42 @@ MtsClient::RegisterMediaDetailScenarioOutcomeCallable MtsClient::registerMediaDe
 	return task->get_future();
 }
 
+MtsClient::QueryMediaCensorJobListOutcome MtsClient::queryMediaCensorJobList(const QueryMediaCensorJobListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryMediaCensorJobListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryMediaCensorJobListOutcome(QueryMediaCensorJobListResult(outcome.result()));
+	else
+		return QueryMediaCensorJobListOutcome(outcome.error());
+}
+
+void MtsClient::queryMediaCensorJobListAsync(const QueryMediaCensorJobListRequest& request, const QueryMediaCensorJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryMediaCensorJobList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QueryMediaCensorJobListOutcomeCallable MtsClient::queryMediaCensorJobListCallable(const QueryMediaCensorJobListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryMediaCensorJobListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryMediaCensorJobList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MtsClient::ReportAnnotationJobResultOutcome MtsClient::reportAnnotationJobResult(const ReportAnnotationJobResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4623,42 +4767,6 @@ MtsClient::QueryVideoSplitJobListOutcomeCallable MtsClient::queryVideoSplitJobLi
 	return task->get_future();
 }
 
-MtsClient::BindInputBucketOutcome MtsClient::bindInputBucket(const BindInputBucketRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BindInputBucketOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BindInputBucketOutcome(BindInputBucketResult(outcome.result()));
-	else
-		return BindInputBucketOutcome(outcome.error());
-}
-
-void MtsClient::bindInputBucketAsync(const BindInputBucketRequest& request, const BindInputBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bindInputBucket(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::BindInputBucketOutcomeCallable MtsClient::bindInputBucketCallable(const BindInputBucketRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BindInputBucketOutcome()>>(
-			[this, request]()
-			{
-			return this->bindInputBucket(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::AddTerrorismPipelineOutcome MtsClient::addTerrorismPipeline(const AddTerrorismPipelineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4689,6 +4797,42 @@ MtsClient::AddTerrorismPipelineOutcomeCallable MtsClient::addTerrorismPipelineCa
 			[this, request]()
 			{
 			return this->addTerrorismPipeline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::BindInputBucketOutcome MtsClient::bindInputBucket(const BindInputBucketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindInputBucketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindInputBucketOutcome(BindInputBucketResult(outcome.result()));
+	else
+		return BindInputBucketOutcome(outcome.error());
+}
+
+void MtsClient::bindInputBucketAsync(const BindInputBucketRequest& request, const BindInputBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindInputBucket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::BindInputBucketOutcomeCallable MtsClient::bindInputBucketCallable(const BindInputBucketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindInputBucketOutcome()>>(
+			[this, request]()
+			{
+			return this->bindInputBucket(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4983,42 +5127,6 @@ MtsClient::QueryCensorPipelineListOutcomeCallable MtsClient::queryCensorPipeline
 	return task->get_future();
 }
 
-MtsClient::SubmitVideoSplitJobOutcome MtsClient::submitVideoSplitJob(const SubmitVideoSplitJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitVideoSplitJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitVideoSplitJobOutcome(SubmitVideoSplitJobResult(outcome.result()));
-	else
-		return SubmitVideoSplitJobOutcome(outcome.error());
-}
-
-void MtsClient::submitVideoSplitJobAsync(const SubmitVideoSplitJobRequest& request, const SubmitVideoSplitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitVideoSplitJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::SubmitVideoSplitJobOutcomeCallable MtsClient::submitVideoSplitJobCallable(const SubmitVideoSplitJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitVideoSplitJobOutcome()>>(
-			[this, request]()
-			{
-			return this->submitVideoSplitJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::SubmitMcuJobOutcome MtsClient::submitMcuJob(const SubmitMcuJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5049,6 +5157,42 @@ MtsClient::SubmitMcuJobOutcomeCallable MtsClient::submitMcuJobCallable(const Sub
 			[this, request]()
 			{
 			return this->submitMcuJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::SubmitVideoSplitJobOutcome MtsClient::submitVideoSplitJob(const SubmitVideoSplitJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitVideoSplitJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitVideoSplitJobOutcome(SubmitVideoSplitJobResult(outcome.result()));
+	else
+		return SubmitVideoSplitJobOutcome(outcome.error());
+}
+
+void MtsClient::submitVideoSplitJobAsync(const SubmitVideoSplitJobRequest& request, const SubmitVideoSplitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitVideoSplitJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::SubmitVideoSplitJobOutcomeCallable MtsClient::submitVideoSplitJobCallable(const SubmitVideoSplitJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitVideoSplitJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitVideoSplitJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5163,6 +5307,42 @@ MtsClient::SubmitCoverJobOutcomeCallable MtsClient::submitCoverJobCallable(const
 	return task->get_future();
 }
 
+MtsClient::PlayInfoOutcome MtsClient::playInfo(const PlayInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PlayInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PlayInfoOutcome(PlayInfoResult(outcome.result()));
+	else
+		return PlayInfoOutcome(outcome.error());
+}
+
+void MtsClient::playInfoAsync(const PlayInfoRequest& request, const PlayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, playInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::PlayInfoOutcomeCallable MtsClient::playInfoCallable(const PlayInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PlayInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->playInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MtsClient::SearchWaterMarkTemplateOutcome MtsClient::searchWaterMarkTemplate(const SearchWaterMarkTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5229,42 +5409,6 @@ MtsClient::AddCensorPipelineOutcomeCallable MtsClient::addCensorPipelineCallable
 			[this, request]()
 			{
 			return this->addCensorPipeline(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MtsClient::PlayInfoOutcome MtsClient::playInfo(const PlayInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PlayInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PlayInfoOutcome(PlayInfoResult(outcome.result()));
-	else
-		return PlayInfoOutcome(outcome.error());
-}
-
-void MtsClient::playInfoAsync(const PlayInfoRequest& request, const PlayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, playInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::PlayInfoOutcomeCallable MtsClient::playInfoCallable(const PlayInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PlayInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->playInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5343,42 +5487,6 @@ MtsClient::SubmitSubtitleJobOutcomeCallable MtsClient::submitSubtitleJobCallable
 	return task->get_future();
 }
 
-MtsClient::QueryCoverJobListOutcome MtsClient::queryCoverJobList(const QueryCoverJobListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryCoverJobListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryCoverJobListOutcome(QueryCoverJobListResult(outcome.result()));
-	else
-		return QueryCoverJobListOutcome(outcome.error());
-}
-
-void MtsClient::queryCoverJobListAsync(const QueryCoverJobListRequest& request, const QueryCoverJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryCoverJobList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MtsClient::QueryCoverJobListOutcomeCallable MtsClient::queryCoverJobListCallable(const QueryCoverJobListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryCoverJobListOutcome()>>(
-			[this, request]()
-			{
-			return this->queryCoverJobList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MtsClient::AddMediaWorkflowOutcome MtsClient::addMediaWorkflow(const AddMediaWorkflowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5409,6 +5517,42 @@ MtsClient::AddMediaWorkflowOutcomeCallable MtsClient::addMediaWorkflowCallable(c
 			[this, request]()
 			{
 			return this->addMediaWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::QueryCoverJobListOutcome MtsClient::queryCoverJobList(const QueryCoverJobListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCoverJobListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCoverJobListOutcome(QueryCoverJobListResult(outcome.result()));
+	else
+		return QueryCoverJobListOutcome(outcome.error());
+}
+
+void MtsClient::queryCoverJobListAsync(const QueryCoverJobListRequest& request, const QueryCoverJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCoverJobList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::QueryCoverJobListOutcomeCallable MtsClient::queryCoverJobListCallable(const QueryCoverJobListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCoverJobListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCoverJobList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5451,36 +5595,36 @@ MtsClient::QueryAsrJobListOutcomeCallable MtsClient::queryAsrJobListCallable(con
 	return task->get_future();
 }
 
-MtsClient::SubmitVideoPoseJobOutcome MtsClient::submitVideoPoseJob(const SubmitVideoPoseJobRequest &request) const
+MtsClient::AddWaterMarkTemplateOutcome MtsClient::addWaterMarkTemplate(const AddWaterMarkTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitVideoPoseJobOutcome(endpointOutcome.error());
+		return AddWaterMarkTemplateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitVideoPoseJobOutcome(SubmitVideoPoseJobResult(outcome.result()));
+		return AddWaterMarkTemplateOutcome(AddWaterMarkTemplateResult(outcome.result()));
 	else
-		return SubmitVideoPoseJobOutcome(outcome.error());
+		return AddWaterMarkTemplateOutcome(outcome.error());
 }
 
-void MtsClient::submitVideoPoseJobAsync(const SubmitVideoPoseJobRequest& request, const SubmitVideoPoseJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::addWaterMarkTemplateAsync(const AddWaterMarkTemplateRequest& request, const AddWaterMarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitVideoPoseJob(request), context);
+		handler(this, request, addWaterMarkTemplate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::SubmitVideoPoseJobOutcomeCallable MtsClient::submitVideoPoseJobCallable(const SubmitVideoPoseJobRequest &request) const
+MtsClient::AddWaterMarkTemplateOutcomeCallable MtsClient::addWaterMarkTemplateCallable(const AddWaterMarkTemplateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitVideoPoseJobOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddWaterMarkTemplateOutcome()>>(
 			[this, request]()
 			{
-			return this->submitVideoPoseJob(request);
+			return this->addWaterMarkTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5523,36 +5667,36 @@ MtsClient::PlayerAuthOutcomeCallable MtsClient::playerAuthCallable(const PlayerA
 	return task->get_future();
 }
 
-MtsClient::AddWaterMarkTemplateOutcome MtsClient::addWaterMarkTemplate(const AddWaterMarkTemplateRequest &request) const
+MtsClient::SubmitVideoPoseJobOutcome MtsClient::submitVideoPoseJob(const SubmitVideoPoseJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddWaterMarkTemplateOutcome(endpointOutcome.error());
+		return SubmitVideoPoseJobOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddWaterMarkTemplateOutcome(AddWaterMarkTemplateResult(outcome.result()));
+		return SubmitVideoPoseJobOutcome(SubmitVideoPoseJobResult(outcome.result()));
 	else
-		return AddWaterMarkTemplateOutcome(outcome.error());
+		return SubmitVideoPoseJobOutcome(outcome.error());
 }
 
-void MtsClient::addWaterMarkTemplateAsync(const AddWaterMarkTemplateRequest& request, const AddWaterMarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MtsClient::submitVideoPoseJobAsync(const SubmitVideoPoseJobRequest& request, const SubmitVideoPoseJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addWaterMarkTemplate(request), context);
+		handler(this, request, submitVideoPoseJob(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MtsClient::AddWaterMarkTemplateOutcomeCallable MtsClient::addWaterMarkTemplateCallable(const AddWaterMarkTemplateRequest &request) const
+MtsClient::SubmitVideoPoseJobOutcomeCallable MtsClient::submitVideoPoseJobCallable(const SubmitVideoPoseJobRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddWaterMarkTemplateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SubmitVideoPoseJobOutcome()>>(
 			[this, request]()
 			{
-			return this->addWaterMarkTemplate(request);
+			return this->submitVideoPoseJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5589,6 +5733,42 @@ MtsClient::RegisterMediaDetailPersonOutcomeCallable MtsClient::registerMediaDeta
 			[this, request]()
 			{
 			return this->registerMediaDetailPerson(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MtsClient::SubmitFpCompareJobOutcome MtsClient::submitFpCompareJob(const SubmitFpCompareJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitFpCompareJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitFpCompareJobOutcome(SubmitFpCompareJobResult(outcome.result()));
+	else
+		return SubmitFpCompareJobOutcome(outcome.error());
+}
+
+void MtsClient::submitFpCompareJobAsync(const SubmitFpCompareJobRequest& request, const SubmitFpCompareJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitFpCompareJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MtsClient::SubmitFpCompareJobOutcomeCallable MtsClient::submitFpCompareJobCallable(const SubmitFpCompareJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitFpCompareJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitFpCompareJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

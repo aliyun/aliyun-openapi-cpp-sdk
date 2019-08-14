@@ -25,17 +25,6 @@ OnsMqttQueryClientByTopicRequest::OnsMqttQueryClientByTopicRequest() :
 OnsMqttQueryClientByTopicRequest::~OnsMqttQueryClientByTopicRequest()
 {}
 
-long OnsMqttQueryClientByTopicRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMqttQueryClientByTopicRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMqttQueryClientByTopicRequest::getInstanceId()const
 {
 	return instanceId_;

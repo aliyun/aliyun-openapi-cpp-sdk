@@ -33,7 +33,7 @@ long UpdateMediaWorkflowTriggerModeRequest::getResourceOwnerId()const
 void UpdateMediaWorkflowTriggerModeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getResourceOwnerAccount()cons
 void UpdateMediaWorkflowTriggerModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getOwnerAccount()const
 void UpdateMediaWorkflowTriggerModeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getMediaWorkflowId()const
@@ -66,7 +66,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getMediaWorkflowId()const
 void UpdateMediaWorkflowTriggerModeRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setParameter("MediaWorkflowId", mediaWorkflowId);
+	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
 }
 
 long UpdateMediaWorkflowTriggerModeRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateMediaWorkflowTriggerModeRequest::getOwnerId()const
 void UpdateMediaWorkflowTriggerModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getAccessKeyId()const
 void UpdateMediaWorkflowTriggerModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getTriggerMode()const
@@ -99,6 +99,6 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getTriggerMode()const
 void UpdateMediaWorkflowTriggerModeRequest::setTriggerMode(const std::string& triggerMode)
 {
 	triggerMode_ = triggerMode;
-	setParameter("TriggerMode", triggerMode);
+	setCoreParameter("TriggerMode", triggerMode);
 }
 

@@ -33,7 +33,7 @@ std::string RefreshTokenRequest::getInstanceId()const
 void RefreshTokenRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string RefreshTokenRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string RefreshTokenRequest::getAccessKeyId()const
 void RefreshTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

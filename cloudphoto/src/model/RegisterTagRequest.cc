@@ -33,7 +33,7 @@ std::string RegisterTagRequest::getStoreName()const
 void RegisterTagRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string RegisterTagRequest::getText()const
@@ -44,7 +44,7 @@ std::string RegisterTagRequest::getText()const
 void RegisterTagRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setParameter("Text", text);
+	setCoreParameter("Text", text);
 }
 
 std::string RegisterTagRequest::getTagKey()const
@@ -55,7 +55,7 @@ std::string RegisterTagRequest::getTagKey()const
 void RegisterTagRequest::setTagKey(const std::string& tagKey)
 {
 	tagKey_ = tagKey;
-	setParameter("TagKey", tagKey);
+	setCoreParameter("TagKey", tagKey);
 }
 
 std::string RegisterTagRequest::getLang()const
@@ -66,6 +66,6 @@ std::string RegisterTagRequest::getLang()const
 void RegisterTagRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

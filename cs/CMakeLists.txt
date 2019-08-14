@@ -27,22 +27,30 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/RevokeClusterTokenResult.h
 	include/alibabacloud/cs/model/AttachInstancesRequest.h
 	include/alibabacloud/cs/model/AttachInstancesResult.h
+	include/alibabacloud/cs/model/CreateClusterByResourcesGroupRequest.h
+	include/alibabacloud/cs/model/CreateClusterByResourcesGroupResult.h
 	include/alibabacloud/cs/model/CheckAliyunCSServiceRoleRequest.h
 	include/alibabacloud/cs/model/CheckAliyunCSServiceRoleResult.h
 	include/alibabacloud/cs/model/DescribeClusterCertsRequest.h
 	include/alibabacloud/cs/model/DescribeClusterCertsResult.h
+	include/alibabacloud/cs/model/DescribeClusterAttachScriptsRequest.h
+	include/alibabacloud/cs/model/DescribeClusterAttachScriptsResult.h
 	include/alibabacloud/cs/model/DeleteClusterRequest.h
 	include/alibabacloud/cs/model/DeleteClusterResult.h
 	include/alibabacloud/cs/model/DescribeClusterNodesRequest.h
 	include/alibabacloud/cs/model/DescribeClusterNodesResult.h
+	include/alibabacloud/cs/model/ModifyClusterRequest.h
+	include/alibabacloud/cs/model/ModifyClusterResult.h
 	include/alibabacloud/cs/model/DescribeApiVersionRequest.h
 	include/alibabacloud/cs/model/DescribeApiVersionResult.h
+	include/alibabacloud/cs/model/ScaleOutClusterRequest.h
+	include/alibabacloud/cs/model/ScaleOutClusterResult.h
 	include/alibabacloud/cs/model/DescribeClusterLogsRequest.h
 	include/alibabacloud/cs/model/DescribeClusterLogsResult.h
-	include/alibabacloud/cs/model/DescribeClusterDetailRequest.h
-	include/alibabacloud/cs/model/DescribeClusterDetailResult.h
 	include/alibabacloud/cs/model/DescribeClusterUserKubeconfigRequest.h
 	include/alibabacloud/cs/model/DescribeClusterUserKubeconfigResult.h
+	include/alibabacloud/cs/model/DescribeClusterDetailRequest.h
+	include/alibabacloud/cs/model/DescribeClusterDetailResult.h
 	include/alibabacloud/cs/model/ResetClusterNodeRequest.h
 	include/alibabacloud/cs/model/ResetClusterNodeResult.h
 	include/alibabacloud/cs/model/ScaleClusterRequest.h
@@ -53,6 +61,8 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/DownloadClusterNodeCertsResult.h
 	include/alibabacloud/cs/model/CreateClusterRequest.h
 	include/alibabacloud/cs/model/CreateClusterResult.h
+	include/alibabacloud/cs/model/DeleteClusterNodesRequest.h
+	include/alibabacloud/cs/model/DeleteClusterNodesResult.h
 	include/alibabacloud/cs/model/DeleteClusterNodeRequest.h
 	include/alibabacloud/cs/model/DeleteClusterNodeResult.h )
 
@@ -64,22 +74,30 @@ set(cs_src
 	src/model/RevokeClusterTokenResult.cc
 	src/model/AttachInstancesRequest.cc
 	src/model/AttachInstancesResult.cc
+	src/model/CreateClusterByResourcesGroupRequest.cc
+	src/model/CreateClusterByResourcesGroupResult.cc
 	src/model/CheckAliyunCSServiceRoleRequest.cc
 	src/model/CheckAliyunCSServiceRoleResult.cc
 	src/model/DescribeClusterCertsRequest.cc
 	src/model/DescribeClusterCertsResult.cc
+	src/model/DescribeClusterAttachScriptsRequest.cc
+	src/model/DescribeClusterAttachScriptsResult.cc
 	src/model/DeleteClusterRequest.cc
 	src/model/DeleteClusterResult.cc
 	src/model/DescribeClusterNodesRequest.cc
 	src/model/DescribeClusterNodesResult.cc
+	src/model/ModifyClusterRequest.cc
+	src/model/ModifyClusterResult.cc
 	src/model/DescribeApiVersionRequest.cc
 	src/model/DescribeApiVersionResult.cc
+	src/model/ScaleOutClusterRequest.cc
+	src/model/ScaleOutClusterResult.cc
 	src/model/DescribeClusterLogsRequest.cc
 	src/model/DescribeClusterLogsResult.cc
-	src/model/DescribeClusterDetailRequest.cc
-	src/model/DescribeClusterDetailResult.cc
 	src/model/DescribeClusterUserKubeconfigRequest.cc
 	src/model/DescribeClusterUserKubeconfigResult.cc
+	src/model/DescribeClusterDetailRequest.cc
+	src/model/DescribeClusterDetailResult.cc
 	src/model/ResetClusterNodeRequest.cc
 	src/model/ResetClusterNodeResult.cc
 	src/model/ScaleClusterRequest.cc
@@ -90,6 +108,8 @@ set(cs_src
 	src/model/DownloadClusterNodeCertsResult.cc
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
+	src/model/DeleteClusterNodesRequest.cc
+	src/model/DeleteClusterNodesResult.cc
 	src/model/DeleteClusterNodeRequest.cc
 	src/model/DeleteClusterNodeResult.cc )
 

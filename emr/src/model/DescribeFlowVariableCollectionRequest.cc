@@ -33,7 +33,7 @@ std::string DescribeFlowVariableCollectionRequest::getRegionId()const
 void DescribeFlowVariableCollectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowVariableCollectionRequest::getEntityId()const
@@ -44,6 +44,6 @@ std::string DescribeFlowVariableCollectionRequest::getEntityId()const
 void DescribeFlowVariableCollectionRequest::setEntityId(const std::string& entityId)
 {
 	entityId_ = entityId;
-	setParameter("EntityId", entityId);
+	setCoreParameter("EntityId", entityId);
 }
 

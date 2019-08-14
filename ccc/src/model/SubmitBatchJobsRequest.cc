@@ -33,7 +33,7 @@ std::string SubmitBatchJobsRequest::getInstanceId()const
 void SubmitBatchJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string SubmitBatchJobsRequest::getJobGroupId()const
@@ -44,6 +44,6 @@ std::string SubmitBatchJobsRequest::getJobGroupId()const
 void SubmitBatchJobsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", jobGroupId);
 }
 

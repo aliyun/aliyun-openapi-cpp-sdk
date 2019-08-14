@@ -33,7 +33,7 @@ bool QueryGenerateTaskResultRequest::getSecurity_transport()const
 void QueryGenerateTaskResultRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string QueryGenerateTaskResultRequest::getApp_ip()const
@@ -44,7 +44,7 @@ std::string QueryGenerateTaskResultRequest::getApp_ip()const
 void QueryGenerateTaskResultRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string QueryGenerateTaskResultRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string QueryGenerateTaskResultRequest::getRegionId()const
 void QueryGenerateTaskResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string QueryGenerateTaskResultRequest::getRequestId()const
@@ -66,7 +66,7 @@ std::string QueryGenerateTaskResultRequest::getRequestId()const
 void QueryGenerateTaskResultRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 long QueryGenerateTaskResultRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ long QueryGenerateTaskResultRequest::getCallerParentId()const
 void QueryGenerateTaskResultRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string QueryGenerateTaskResultRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string QueryGenerateTaskResultRequest::getCallerType()const
 void QueryGenerateTaskResultRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool QueryGenerateTaskResultRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool QueryGenerateTaskResultRequest::getAk_mfa_present()const
 void QueryGenerateTaskResultRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long QueryGenerateTaskResultRequest::getCallerUid()const
@@ -110,7 +110,7 @@ long QueryGenerateTaskResultRequest::getCallerUid()const
 void QueryGenerateTaskResultRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 long QueryGenerateTaskResultRequest::getTaskId()const
@@ -121,6 +121,6 @@ long QueryGenerateTaskResultRequest::getTaskId()const
 void QueryGenerateTaskResultRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

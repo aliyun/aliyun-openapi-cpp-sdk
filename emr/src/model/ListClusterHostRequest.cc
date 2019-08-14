@@ -33,7 +33,7 @@ long ListClusterHostRequest::getResourceOwnerId()const
 void ListClusterHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterHostRequest::getHostInstanceId()const
@@ -44,7 +44,7 @@ std::string ListClusterHostRequest::getHostInstanceId()const
 void ListClusterHostRequest::setHostInstanceId(const std::string& hostInstanceId)
 {
 	hostInstanceId_ = hostInstanceId;
-	setParameter("HostInstanceId", hostInstanceId);
+	setCoreParameter("HostInstanceId", hostInstanceId);
 }
 
 std::vector<std::string> ListClusterHostRequest::getStatusList()const
@@ -56,7 +56,7 @@ void ListClusterHostRequest::setStatusList(const std::vector<std::string>& statu
 {
 	statusList_ = statusList;
 	for(int i = 0; i!= statusList.size(); i++)
-		setParameter("StatusList."+ std::to_string(i), statusList.at(i));
+		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
 }
 
 std::string ListClusterHostRequest::getPrivateIp()const
@@ -67,7 +67,7 @@ std::string ListClusterHostRequest::getPrivateIp()const
 void ListClusterHostRequest::setPrivateIp(const std::string& privateIp)
 {
 	privateIp_ = privateIp;
-	setParameter("PrivateIp", privateIp);
+	setCoreParameter("PrivateIp", privateIp);
 }
 
 std::string ListClusterHostRequest::getComponentName()const
@@ -78,7 +78,7 @@ std::string ListClusterHostRequest::getComponentName()const
 void ListClusterHostRequest::setComponentName(const std::string& componentName)
 {
 	componentName_ = componentName;
-	setParameter("ComponentName", componentName);
+	setCoreParameter("ComponentName", componentName);
 }
 
 std::string ListClusterHostRequest::getPublicIp()const
@@ -89,7 +89,7 @@ std::string ListClusterHostRequest::getPublicIp()const
 void ListClusterHostRequest::setPublicIp(const std::string& publicIp)
 {
 	publicIp_ = publicIp;
-	setParameter("PublicIp", publicIp);
+	setCoreParameter("PublicIp", publicIp);
 }
 
 std::string ListClusterHostRequest::getClusterId()const
@@ -100,7 +100,7 @@ std::string ListClusterHostRequest::getClusterId()const
 void ListClusterHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListClusterHostRequest::getPageNumber()const
@@ -111,7 +111,7 @@ int ListClusterHostRequest::getPageNumber()const
 void ListClusterHostRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterHostRequest::getAccessKeyId()const
@@ -122,7 +122,7 @@ std::string ListClusterHostRequest::getAccessKeyId()const
 void ListClusterHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListClusterHostRequest::getHostName()const
@@ -133,7 +133,7 @@ std::string ListClusterHostRequest::getHostName()const
 void ListClusterHostRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setParameter("HostName", hostName);
+	setCoreParameter("HostName", hostName);
 }
 
 std::string ListClusterHostRequest::getGroupType()const
@@ -144,7 +144,7 @@ std::string ListClusterHostRequest::getGroupType()const
 void ListClusterHostRequest::setGroupType(const std::string& groupType)
 {
 	groupType_ = groupType;
-	setParameter("GroupType", groupType);
+	setCoreParameter("GroupType", groupType);
 }
 
 std::string ListClusterHostRequest::getRegionId()const
@@ -155,7 +155,7 @@ std::string ListClusterHostRequest::getRegionId()const
 void ListClusterHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListClusterHostRequest::getHostGroupId()const
@@ -166,7 +166,7 @@ std::string ListClusterHostRequest::getHostGroupId()const
 void ListClusterHostRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 int ListClusterHostRequest::getPageSize()const
@@ -177,6 +177,6 @@ int ListClusterHostRequest::getPageSize()const
 void ListClusterHostRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

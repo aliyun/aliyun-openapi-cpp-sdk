@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeDomainsRequest();
 				~DescribeDomainsRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getUserClientIp()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setPageNumber(long pageNumber);
 
             private:
+				std::string resourceGroupId_;
 				std::string groupId_;
 				std::string userClientIp_;
 				long pageSize_;

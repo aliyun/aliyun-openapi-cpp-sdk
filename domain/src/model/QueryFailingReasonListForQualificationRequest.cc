@@ -33,7 +33,7 @@ std::string QueryFailingReasonListForQualificationRequest::getInstanceId()const
 void QueryFailingReasonListForQualificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string QueryFailingReasonListForQualificationRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryFailingReasonListForQualificationRequest::getUserClientIp()cons
 void QueryFailingReasonListForQualificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int QueryFailingReasonListForQualificationRequest::getLimit()const
@@ -55,7 +55,7 @@ int QueryFailingReasonListForQualificationRequest::getLimit()const
 void QueryFailingReasonListForQualificationRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string QueryFailingReasonListForQualificationRequest::getLang()const
@@ -66,7 +66,7 @@ std::string QueryFailingReasonListForQualificationRequest::getLang()const
 void QueryFailingReasonListForQualificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string QueryFailingReasonListForQualificationRequest::getQualificationType()const
@@ -77,6 +77,6 @@ std::string QueryFailingReasonListForQualificationRequest::getQualificationType(
 void QueryFailingReasonListForQualificationRequest::setQualificationType(const std::string& qualificationType)
 {
 	qualificationType_ = qualificationType;
-	setParameter("QualificationType", qualificationType);
+	setCoreParameter("QualificationType", qualificationType);
 }
 

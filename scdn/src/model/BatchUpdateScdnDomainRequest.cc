@@ -33,7 +33,7 @@ std::string BatchUpdateScdnDomainRequest::getTopLevelDomain()const
 void BatchUpdateScdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setParameter("TopLevelDomain", topLevelDomain);
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string BatchUpdateScdnDomainRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string BatchUpdateScdnDomainRequest::getResourceGroupId()const
 void BatchUpdateScdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string BatchUpdateScdnDomainRequest::getSources()const
@@ -55,7 +55,7 @@ std::string BatchUpdateScdnDomainRequest::getSources()const
 void BatchUpdateScdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setParameter("Sources", sources);
+	setCoreParameter("Sources", sources);
 }
 
 std::string BatchUpdateScdnDomainRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string BatchUpdateScdnDomainRequest::getSecurityToken()const
 void BatchUpdateScdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string BatchUpdateScdnDomainRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string BatchUpdateScdnDomainRequest::getDomainName()const
 void BatchUpdateScdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long BatchUpdateScdnDomainRequest::getOwnerId()const
@@ -88,17 +88,6 @@ long BatchUpdateScdnDomainRequest::getOwnerId()const
 void BatchUpdateScdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string BatchUpdateScdnDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchUpdateScdnDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

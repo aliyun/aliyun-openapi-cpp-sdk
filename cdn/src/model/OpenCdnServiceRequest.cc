@@ -33,7 +33,7 @@ std::string OpenCdnServiceRequest::getSecurityToken()const
 void OpenCdnServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string OpenCdnServiceRequest::getInternetChargeType()const
@@ -44,7 +44,7 @@ std::string OpenCdnServiceRequest::getInternetChargeType()const
 void OpenCdnServiceRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setParameter("InternetChargeType", internetChargeType);
+	setCoreParameter("InternetChargeType", internetChargeType);
 }
 
 long OpenCdnServiceRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long OpenCdnServiceRequest::getOwnerId()const
 void OpenCdnServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Library
 				{
 					std::string libraryId;
+					long totalQuota;
 					long ctime;
 				};
 

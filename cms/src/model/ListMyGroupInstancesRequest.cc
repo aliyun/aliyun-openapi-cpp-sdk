@@ -33,7 +33,7 @@ bool ListMyGroupInstancesRequest::getTotal()const
 void ListMyGroupInstancesRequest::setTotal(bool total)
 {
 	total_ = total;
-	setParameter("Total", total ? "true" : "false");
+	setCoreParameter("Total", total ? "true" : "false");
 }
 
 std::string ListMyGroupInstancesRequest::getInstanceIds()const
@@ -44,7 +44,7 @@ std::string ListMyGroupInstancesRequest::getInstanceIds()const
 void ListMyGroupInstancesRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 long ListMyGroupInstancesRequest::getGroupId()const
@@ -55,7 +55,7 @@ long ListMyGroupInstancesRequest::getGroupId()const
 void ListMyGroupInstancesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int ListMyGroupInstancesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListMyGroupInstancesRequest::getPageSize()const
 void ListMyGroupInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListMyGroupInstancesRequest::getCategory()const
@@ -77,7 +77,7 @@ std::string ListMyGroupInstancesRequest::getCategory()const
 void ListMyGroupInstancesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setParameter("Category", category);
+	setCoreParameter("Category", category);
 }
 
 std::string ListMyGroupInstancesRequest::getKeyword()const
@@ -88,7 +88,7 @@ std::string ListMyGroupInstancesRequest::getKeyword()const
 void ListMyGroupInstancesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+	setCoreParameter("Keyword", keyword);
 }
 
 int ListMyGroupInstancesRequest::getPageNumber()const
@@ -99,6 +99,6 @@ int ListMyGroupInstancesRequest::getPageNumber()const
 void ListMyGroupInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

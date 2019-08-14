@@ -33,7 +33,7 @@ std::string SaveApMapInfoRequest::getJsonData()const
 void SaveApMapInfoRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setParameter("JsonData", jsonData);
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string SaveApMapInfoRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string SaveApMapInfoRequest::getAccessKeyId()const
 void SaveApMapInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,6 +33,6 @@ std::string GetUserMFAInfoRequest::getUserName()const
 void GetUserMFAInfoRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

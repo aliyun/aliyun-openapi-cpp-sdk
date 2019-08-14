@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancersRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeLoadBalancersRequest();
@@ -59,6 +64,8 @@ namespace AlibabaCloud
 				void setAddressType(const std::string& addressType);
 				std::string getSlaveZoneId()const;
 				void setSlaveZoneId(const std::string& slaveZoneId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getFuzzy()const;
 				void setFuzzy(const std::string& fuzzy);
 				std::string getAddress()const;
@@ -101,6 +108,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string addressType_;
 				std::string slaveZoneId_;
+				std::vector<Tag> tag_;
 				std::string fuzzy_;
 				std::string address_;
 				std::string resourceOwnerAccount_;

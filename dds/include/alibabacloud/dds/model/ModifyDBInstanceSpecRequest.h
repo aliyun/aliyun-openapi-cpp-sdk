@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getReadonlyReplicas()const;
+				void setReadonlyReplicas(const std::string& readonlyReplicas);
 				std::string getCouponNo()const;
 				void setCouponNo(const std::string& couponNo);
 				long getOwnerId()const;
@@ -77,6 +79,7 @@ namespace AlibabaCloud
 				std::string fromApp_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string readonlyReplicas_;
 				std::string couponNo_;
 				long ownerId_;
 				std::string replicationFactor_;

@@ -33,7 +33,7 @@ std::string GetMainDomainNameRequest::getInputString()const
 void GetMainDomainNameRequest::setInputString(const std::string& inputString)
 {
 	inputString_ = inputString;
-	setParameter("InputString", inputString);
+	setCoreParameter("InputString", inputString);
 }
 
 std::string GetMainDomainNameRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string GetMainDomainNameRequest::getUserClientIp()const
 void GetMainDomainNameRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string GetMainDomainNameRequest::getLang()const
@@ -55,7 +55,7 @@ std::string GetMainDomainNameRequest::getLang()const
 void GetMainDomainNameRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string GetMainDomainNameRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetMainDomainNameRequest::getAccessKeyId()const
 void GetMainDomainNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

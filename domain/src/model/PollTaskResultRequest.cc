@@ -33,7 +33,7 @@ std::string PollTaskResultRequest::getInstanceId()const
 void PollTaskResultRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string PollTaskResultRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string PollTaskResultRequest::getUserClientIp()const
 void PollTaskResultRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string PollTaskResultRequest::getTaskNo()const
@@ -55,7 +55,7 @@ std::string PollTaskResultRequest::getTaskNo()const
 void PollTaskResultRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
-	setParameter("TaskNo", taskNo);
+	setCoreParameter("TaskNo", taskNo);
 }
 
 std::string PollTaskResultRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string PollTaskResultRequest::getDomainName()const
 void PollTaskResultRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 int PollTaskResultRequest::getPageSize()const
@@ -77,7 +77,7 @@ int PollTaskResultRequest::getPageSize()const
 void PollTaskResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string PollTaskResultRequest::getLang()const
@@ -88,7 +88,7 @@ std::string PollTaskResultRequest::getLang()const
 void PollTaskResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 int PollTaskResultRequest::getPageNum()const
@@ -99,7 +99,7 @@ int PollTaskResultRequest::getPageNum()const
 void PollTaskResultRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 int PollTaskResultRequest::getTaskResultStatus()const
@@ -110,6 +110,6 @@ int PollTaskResultRequest::getTaskResultStatus()const
 void PollTaskResultRequest::setTaskResultStatus(int taskResultStatus)
 {
 	taskResultStatus_ = taskResultStatus;
-	setParameter("TaskResultStatus", std::to_string(taskResultStatus));
+	setCoreParameter("TaskResultStatus", std::to_string(taskResultStatus));
 }
 

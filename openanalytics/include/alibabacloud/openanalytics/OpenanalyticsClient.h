@@ -30,10 +30,10 @@
 #include "model/DescribeRegionListResult.h"
 #include "model/OpenProductAccountRequest.h"
 #include "model/OpenProductAccountResult.h"
-#include "model/CloseProductAccountRequest.h"
-#include "model/CloseProductAccountResult.h"
 #include "model/GetEndPointByDomainRequest.h"
 #include "model/GetEndPointByDomainResult.h"
+#include "model/CloseProductAccountRequest.h"
+#include "model/CloseProductAccountResult.h"
 #include "model/GetAllowIPRequest.h"
 #include "model/GetAllowIPResult.h"
 #include "model/GetProductStatusRequest.h"
@@ -61,12 +61,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OpenProductAccountResult> OpenProductAccountOutcome;
 			typedef std::future<OpenProductAccountOutcome> OpenProductAccountOutcomeCallable;
 			typedef std::function<void(const OpenanalyticsClient*, const Model::OpenProductAccountRequest&, const OpenProductAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenProductAccountAsyncHandler;
-			typedef Outcome<Error, Model::CloseProductAccountResult> CloseProductAccountOutcome;
-			typedef std::future<CloseProductAccountOutcome> CloseProductAccountOutcomeCallable;
-			typedef std::function<void(const OpenanalyticsClient*, const Model::CloseProductAccountRequest&, const CloseProductAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseProductAccountAsyncHandler;
 			typedef Outcome<Error, Model::GetEndPointByDomainResult> GetEndPointByDomainOutcome;
 			typedef std::future<GetEndPointByDomainOutcome> GetEndPointByDomainOutcomeCallable;
 			typedef std::function<void(const OpenanalyticsClient*, const Model::GetEndPointByDomainRequest&, const GetEndPointByDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEndPointByDomainAsyncHandler;
+			typedef Outcome<Error, Model::CloseProductAccountResult> CloseProductAccountOutcome;
+			typedef std::future<CloseProductAccountOutcome> CloseProductAccountOutcomeCallable;
+			typedef std::function<void(const OpenanalyticsClient*, const Model::CloseProductAccountRequest&, const CloseProductAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseProductAccountAsyncHandler;
 			typedef Outcome<Error, Model::GetAllowIPResult> GetAllowIPOutcome;
 			typedef std::future<GetAllowIPOutcome> GetAllowIPOutcomeCallable;
 			typedef std::function<void(const OpenanalyticsClient*, const Model::GetAllowIPRequest&, const GetAllowIPOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAllowIPAsyncHandler;
@@ -93,12 +93,12 @@ namespace AlibabaCloud
 			OpenProductAccountOutcome openProductAccount(const Model::OpenProductAccountRequest &request)const;
 			void openProductAccountAsync(const Model::OpenProductAccountRequest& request, const OpenProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenProductAccountOutcomeCallable openProductAccountCallable(const Model::OpenProductAccountRequest& request) const;
-			CloseProductAccountOutcome closeProductAccount(const Model::CloseProductAccountRequest &request)const;
-			void closeProductAccountAsync(const Model::CloseProductAccountRequest& request, const CloseProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CloseProductAccountOutcomeCallable closeProductAccountCallable(const Model::CloseProductAccountRequest& request) const;
 			GetEndPointByDomainOutcome getEndPointByDomain(const Model::GetEndPointByDomainRequest &request)const;
 			void getEndPointByDomainAsync(const Model::GetEndPointByDomainRequest& request, const GetEndPointByDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEndPointByDomainOutcomeCallable getEndPointByDomainCallable(const Model::GetEndPointByDomainRequest& request) const;
+			CloseProductAccountOutcome closeProductAccount(const Model::CloseProductAccountRequest &request)const;
+			void closeProductAccountAsync(const Model::CloseProductAccountRequest& request, const CloseProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CloseProductAccountOutcomeCallable closeProductAccountCallable(const Model::CloseProductAccountRequest& request) const;
 			GetAllowIPOutcome getAllowIP(const Model::GetAllowIPRequest &request)const;
 			void getAllowIPAsync(const Model::GetAllowIPRequest& request, const GetAllowIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAllowIPOutcomeCallable getAllowIPCallable(const Model::GetAllowIPRequest& request) const;

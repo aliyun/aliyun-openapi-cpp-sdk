@@ -33,7 +33,7 @@ long DescribeDomainRealTimeSrcTrafficDataRequest::getCallerParentId()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDomainRealTimeSrcTrafficDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeDomainRealTimeSrcTrafficDataRequest::getProxy_original_security_tra
 void DescribeDomainRealTimeSrcTrafficDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getStartTime()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getProxy_original_sourc
 void DescribeDomainRealTimeSrcTrafficDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getOwnerIdLoginEmail()c
 void DescribeDomainRealTimeSrcTrafficDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getCallerType()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getAccessKeyId()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getSecurityToken()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getRequestContent()cons
 void DescribeDomainRealTimeSrcTrafficDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getCallerBidEmail()cons
 void DescribeDomainRealTimeSrcTrafficDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getCallerUidEmail()cons
 void DescribeDomainRealTimeSrcTrafficDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDomainRealTimeSrcTrafficDataRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeDomainRealTimeSrcTrafficDataRequest::getCallerUid()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getApp_ip()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getPopProduct()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getProduct()const
@@ -187,7 +187,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getProduct()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getDomainName()const
@@ -198,7 +198,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getDomainName()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getEndTime()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getCallerBid()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDomainRealTimeSrcTrafficDataRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeDomainRealTimeSrcTrafficDataRequest::getOwnerId()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getVersion()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDomainRealTimeSrcTrafficDataRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribeDomainRealTimeSrcTrafficDataRequest::getProxy_trust_transport_info(
 void DescribeDomainRealTimeSrcTrafficDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeDomainRealTimeSrcTrafficDataRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeDomainRealTimeSrcTrafficDataRequest::getAk_mfa_present()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeDomainRealTimeSrcTrafficDataRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeDomainRealTimeSrcTrafficDataRequest::getSecurity_transport()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getRequestId()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getInterval()const
@@ -297,7 +297,7 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getInterval()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setParameter("Interval", interval);
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeDomainRealTimeSrcTrafficDataRequest::getFields()const
@@ -308,6 +308,6 @@ std::string DescribeDomainRealTimeSrcTrafficDataRequest::getFields()const
 void DescribeDomainRealTimeSrcTrafficDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setParameter("Fields", fields);
+	setCoreParameter("Fields", fields);
 }
 

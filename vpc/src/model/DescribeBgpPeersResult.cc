@@ -35,10 +35,13 @@ DescribeBgpPeersResult::~DescribeBgpPeersResult()
 
 void DescribeBgpPeersResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allBgpPeers = value["BgpPeers"]["BgpPeer"];
 	for (auto value : allBgpPeers)
@@ -76,6 +79,8 @@ void DescribeBgpPeersResult::parse(const std::string &payload)
 			bgpPeersObject.routeLimit = value["RouteLimit"].asString();
 		if(!value["RegionId"].isNull())
 			bgpPeersObject.regionId = value["RegionId"].asString();
+		if(!value["EnableBfd"].isNull())
+			bgpPeersObject.enableBfd = value["EnableBfd"].asString() == "true";
 		bgpPeers_.push_back(bgpPeersObject);
 	}
 	if(!value["TotalCount"].isNull())

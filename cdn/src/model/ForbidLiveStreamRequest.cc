@@ -33,7 +33,7 @@ std::string ForbidLiveStreamRequest::getResumeTime()const
 void ForbidLiveStreamRequest::setResumeTime(const std::string& resumeTime)
 {
 	resumeTime_ = resumeTime;
-	setParameter("ResumeTime", resumeTime);
+	setCoreParameter("ResumeTime", resumeTime);
 }
 
 std::string ForbidLiveStreamRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string ForbidLiveStreamRequest::getAppName()const
 void ForbidLiveStreamRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setParameter("AppName", appName);
+	setCoreParameter("AppName", appName);
 }
 
 std::string ForbidLiveStreamRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ForbidLiveStreamRequest::getSecurityToken()const
 void ForbidLiveStreamRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ForbidLiveStreamRequest::getLiveStreamType()const
@@ -66,7 +66,7 @@ std::string ForbidLiveStreamRequest::getLiveStreamType()const
 void ForbidLiveStreamRequest::setLiveStreamType(const std::string& liveStreamType)
 {
 	liveStreamType_ = liveStreamType;
-	setParameter("LiveStreamType", liveStreamType);
+	setCoreParameter("LiveStreamType", liveStreamType);
 }
 
 std::string ForbidLiveStreamRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string ForbidLiveStreamRequest::getDomainName()const
 void ForbidLiveStreamRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long ForbidLiveStreamRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ForbidLiveStreamRequest::getOwnerId()const
 void ForbidLiveStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ForbidLiveStreamRequest::getStreamName()const
@@ -99,6 +99,6 @@ std::string ForbidLiveStreamRequest::getStreamName()const
 void ForbidLiveStreamRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+	setCoreParameter("StreamName", streamName);
 }
 

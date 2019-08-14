@@ -33,7 +33,7 @@ std::string DescribeCdnCertifyRequest::getSourceIp()const
 void DescribeCdnCertifyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCdnCertifyRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeCdnCertifyRequest::getLang()const
 void DescribeCdnCertifyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeCdnCertifyRequest::getSourceCode()const
@@ -55,6 +55,6 @@ std::string DescribeCdnCertifyRequest::getSourceCode()const
 void DescribeCdnCertifyRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", sourceCode);
 }
 

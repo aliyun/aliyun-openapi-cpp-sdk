@@ -33,7 +33,7 @@ std::string GetQualificationUploadPolicyRequest::getUserClientIp()const
 void GetQualificationUploadPolicyRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string GetQualificationUploadPolicyRequest::getLang()const
@@ -44,6 +44,6 @@ std::string GetQualificationUploadPolicyRequest::getLang()const
 void GetQualificationUploadPolicyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

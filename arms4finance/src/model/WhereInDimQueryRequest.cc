@@ -33,7 +33,7 @@ std::string WhereInDimQueryRequest::getWhereInKey()const
 void WhereInDimQueryRequest::setWhereInKey(const std::string& whereInKey)
 {
 	whereInKey_ = whereInKey;
-	setParameter("WhereInKey", whereInKey);
+	setCoreParameter("WhereInKey", whereInKey);
 }
 
 std::vector<std::string> WhereInDimQueryRequest::getMeasures()const
@@ -45,7 +45,7 @@ void WhereInDimQueryRequest::setMeasures(const std::vector<std::string>& measure
 {
 	measures_ = measures;
 	for(int i = 0; i!= measures.size(); i++)
-		setParameter("Measures."+ std::to_string(i), measures.at(i));
+		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
 }
 
 int WhereInDimQueryRequest::getIntervalInSec()const
@@ -56,7 +56,7 @@ int WhereInDimQueryRequest::getIntervalInSec()const
 void WhereInDimQueryRequest::setIntervalInSec(int intervalInSec)
 {
 	intervalInSec_ = intervalInSec;
-	setParameter("IntervalInSec", std::to_string(intervalInSec));
+	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
 }
 
 std::string WhereInDimQueryRequest::getDateStr()const
@@ -67,7 +67,7 @@ std::string WhereInDimQueryRequest::getDateStr()const
 void WhereInDimQueryRequest::setDateStr(const std::string& dateStr)
 {
 	dateStr_ = dateStr;
-	setParameter("DateStr", dateStr);
+	setCoreParameter("DateStr", dateStr);
 }
 
 bool WhereInDimQueryRequest::getIsDrillDown()const
@@ -78,7 +78,7 @@ bool WhereInDimQueryRequest::getIsDrillDown()const
 void WhereInDimQueryRequest::setIsDrillDown(bool isDrillDown)
 {
 	isDrillDown_ = isDrillDown;
-	setParameter("IsDrillDown", std::to_string(isDrillDown));
+	setCoreParameter("IsDrillDown", isDrillDown ? "true" : "false");
 }
 
 long WhereInDimQueryRequest::getMinTime()const
@@ -89,7 +89,7 @@ long WhereInDimQueryRequest::getMinTime()const
 void WhereInDimQueryRequest::setMinTime(long minTime)
 {
 	minTime_ = minTime;
-	setParameter("MinTime", std::to_string(minTime));
+	setCoreParameter("MinTime", std::to_string(minTime));
 }
 
 long WhereInDimQueryRequest::getDatasetId()const
@@ -100,7 +100,7 @@ long WhereInDimQueryRequest::getDatasetId()const
 void WhereInDimQueryRequest::setDatasetId(long datasetId)
 {
 	datasetId_ = datasetId;
-	setParameter("DatasetId", std::to_string(datasetId));
+	setCoreParameter("DatasetId", std::to_string(datasetId));
 }
 
 std::vector<std::string> WhereInDimQueryRequest::getWhereInValues()const
@@ -112,7 +112,7 @@ void WhereInDimQueryRequest::setWhereInValues(const std::vector<std::string>& wh
 {
 	whereInValues_ = whereInValues;
 	for(int i = 0; i!= whereInValues.size(); i++)
-		setParameter("WhereInValues."+ std::to_string(i), whereInValues.at(i));
+		setCoreParameter("WhereInValues."+ std::to_string(i), whereInValues.at(i));
 }
 
 long WhereInDimQueryRequest::getMaxTime()const
@@ -123,7 +123,7 @@ long WhereInDimQueryRequest::getMaxTime()const
 void WhereInDimQueryRequest::setMaxTime(long maxTime)
 {
 	maxTime_ = maxTime;
-	setParameter("MaxTime", std::to_string(maxTime));
+	setCoreParameter("MaxTime", std::to_string(maxTime));
 }
 
 std::vector<WhereInDimQueryRequest::Dimensions> WhereInDimQueryRequest::getDimensions()const
@@ -138,8 +138,8 @@ void WhereInDimQueryRequest::setDimensions(const std::vector<Dimensions>& dimens
 	for(int i = 0; i!= dimensions.size(); i++)	{
 		auto obj = dimensions.at(i);
 		std::string str ="Dimensions."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 

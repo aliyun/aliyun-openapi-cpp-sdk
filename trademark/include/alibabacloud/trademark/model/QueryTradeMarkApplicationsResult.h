@@ -69,8 +69,10 @@ namespace AlibabaCloud
 					long supplementId;
 					std::string userId;
 					std::string note;
+					float totalPrice;
 					std::string tmName;
 					long updateTime;
+					float servicePrice;
 					std::string materialName;
 					std::string bizId;
 					std::vector<TmProduces::ThirdClassifications> thirdClassification;

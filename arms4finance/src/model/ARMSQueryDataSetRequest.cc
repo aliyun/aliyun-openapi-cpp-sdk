@@ -34,7 +34,7 @@ void ARMSQueryDataSetRequest::setMeasures(const std::vector<std::string>& measur
 {
 	measures_ = measures;
 	for(int i = 0; i!= measures.size(); i++)
-		setParameter("Measures."+ std::to_string(i), measures.at(i));
+		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
 }
 
 int ARMSQueryDataSetRequest::getIntervalInSec()const
@@ -45,7 +45,7 @@ int ARMSQueryDataSetRequest::getIntervalInSec()const
 void ARMSQueryDataSetRequest::setIntervalInSec(int intervalInSec)
 {
 	intervalInSec_ = intervalInSec;
-	setParameter("IntervalInSec", std::to_string(intervalInSec));
+	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
 }
 
 std::string ARMSQueryDataSetRequest::getDateStr()const
@@ -56,7 +56,7 @@ std::string ARMSQueryDataSetRequest::getDateStr()const
 void ARMSQueryDataSetRequest::setDateStr(const std::string& dateStr)
 {
 	dateStr_ = dateStr;
-	setParameter("DateStr", dateStr);
+	setCoreParameter("DateStr", dateStr);
 }
 
 bool ARMSQueryDataSetRequest::getIsDrillDown()const
@@ -67,7 +67,7 @@ bool ARMSQueryDataSetRequest::getIsDrillDown()const
 void ARMSQueryDataSetRequest::setIsDrillDown(bool isDrillDown)
 {
 	isDrillDown_ = isDrillDown;
-	setParameter("IsDrillDown", std::to_string(isDrillDown));
+	setCoreParameter("IsDrillDown", isDrillDown ? "true" : "false");
 }
 
 long ARMSQueryDataSetRequest::getMinTime()const
@@ -78,7 +78,7 @@ long ARMSQueryDataSetRequest::getMinTime()const
 void ARMSQueryDataSetRequest::setMinTime(long minTime)
 {
 	minTime_ = minTime;
-	setParameter("MinTime", std::to_string(minTime));
+	setCoreParameter("MinTime", std::to_string(minTime));
 }
 
 long ARMSQueryDataSetRequest::getDatasetId()const
@@ -89,7 +89,7 @@ long ARMSQueryDataSetRequest::getDatasetId()const
 void ARMSQueryDataSetRequest::setDatasetId(long datasetId)
 {
 	datasetId_ = datasetId;
-	setParameter("DatasetId", std::to_string(datasetId));
+	setCoreParameter("DatasetId", std::to_string(datasetId));
 }
 
 long ARMSQueryDataSetRequest::getMaxTime()const
@@ -100,7 +100,7 @@ long ARMSQueryDataSetRequest::getMaxTime()const
 void ARMSQueryDataSetRequest::setMaxTime(long maxTime)
 {
 	maxTime_ = maxTime;
-	setParameter("MaxTime", std::to_string(maxTime));
+	setCoreParameter("MaxTime", std::to_string(maxTime));
 }
 
 std::vector<ARMSQueryDataSetRequest::Dimensions> ARMSQueryDataSetRequest::getDimensions()const
@@ -115,8 +115,8 @@ void ARMSQueryDataSetRequest::setDimensions(const std::vector<Dimensions>& dimen
 	for(int i = 0; i!= dimensions.size(); i++)	{
 		auto obj = dimensions.at(i);
 		std::string str ="Dimensions."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 

@@ -33,7 +33,7 @@ std::string SetErrorPageConfigRequest::getPageType()const
 void SetErrorPageConfigRequest::setPageType(const std::string& pageType)
 {
 	pageType_ = pageType;
-	setParameter("PageType", pageType);
+	setCoreParameter("PageType", pageType);
 }
 
 std::string SetErrorPageConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SetErrorPageConfigRequest::getSecurityToken()const
 void SetErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetErrorPageConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetErrorPageConfigRequest::getDomainName()const
 void SetErrorPageConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetErrorPageConfigRequest::getCustomPageUrl()const
@@ -66,7 +66,7 @@ std::string SetErrorPageConfigRequest::getCustomPageUrl()const
 void SetErrorPageConfigRequest::setCustomPageUrl(const std::string& customPageUrl)
 {
 	customPageUrl_ = customPageUrl;
-	setParameter("CustomPageUrl", customPageUrl);
+	setCoreParameter("CustomPageUrl", customPageUrl);
 }
 
 long SetErrorPageConfigRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long SetErrorPageConfigRequest::getOwnerId()const
 void SetErrorPageConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

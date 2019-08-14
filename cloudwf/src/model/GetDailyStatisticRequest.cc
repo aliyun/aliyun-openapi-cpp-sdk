@@ -33,7 +33,7 @@ long GetDailyStatisticRequest::getApgroupId()const
 void GetDailyStatisticRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string GetDailyStatisticRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetDailyStatisticRequest::getAccessKeyId()const
 void GetDailyStatisticRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

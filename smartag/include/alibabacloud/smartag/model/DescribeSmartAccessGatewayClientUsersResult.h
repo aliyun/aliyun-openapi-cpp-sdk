@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string userName;
 					std::string userMail;
+					int state;
 					int bandwidth;
 					std::string clientIp;
 				};
@@ -46,7 +47,7 @@ namespace AlibabaCloud
 				~DescribeSmartAccessGatewayClientUsersResult();
 				int getTotalCount()const;
 				int getPageSize()const;
-				int getPageNo()const;
+				int getPageNumber()const;
 				std::vector<User> getUsers()const;
 
 			protected:
@@ -54,7 +55,7 @@ namespace AlibabaCloud
 			private:
 				int totalCount_;
 				int pageSize_;
-				int pageNo_;
+				int pageNumber_;
 				std::vector<User> users_;
 
 			};

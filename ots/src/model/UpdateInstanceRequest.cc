@@ -33,7 +33,7 @@ std::string UpdateInstanceRequest::getAccess_key_id()const
 void UpdateInstanceRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long UpdateInstanceRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateInstanceRequest::getResourceOwnerId()const
 void UpdateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateInstanceRequest::getInstanceName()const
@@ -55,7 +55,7 @@ std::string UpdateInstanceRequest::getInstanceName()const
 void UpdateInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::string UpdateInstanceRequest::getNetwork()const
@@ -66,6 +66,6 @@ std::string UpdateInstanceRequest::getNetwork()const
 void UpdateInstanceRequest::setNetwork(const std::string& network)
 {
 	network_ = network;
-	setParameter("Network", network);
+	setCoreParameter("Network", network);
 }
 
