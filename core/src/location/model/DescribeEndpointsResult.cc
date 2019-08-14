@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
+#include <alibabacloud/core/Utils.h>
 #include <alibabacloud/core/location/model/DescribeEndpointsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Location::Model;
 
-DescribeEndpointsResult::DescribeEndpointsResult() :
-  ServiceResult() {
-}
+DescribeEndpointsResult::DescribeEndpointsResult() : ServiceResult() {}
 
-DescribeEndpointsResult::DescribeEndpointsResult(const std::string &payload) :
-  ServiceResult() {
+DescribeEndpointsResult::DescribeEndpointsResult(const std::string &payload)
+    : ServiceResult() {
   parse(payload);
 }
 
@@ -56,19 +55,17 @@ void DescribeEndpointsResult::parse(const std::string &payload) {
 }
 
 std::vector<DescribeEndpointsResult::Endpoint>
-  DescribeEndpointsResult::endpoints()const {
+DescribeEndpointsResult::endpoints() const {
   return endpoints_;
 }
 
 void DescribeEndpointsResult::setEndpoints(
-  const std::vector<Endpoint> & endpoints) {
+    const std::vector<Endpoint> &endpoints) {
   endpoints_ = endpoints;
 }
 
-bool DescribeEndpointsResult::success()const {
-  return success_;
-}
+bool DescribeEndpointsResult::success() const { return success_; }
 
-void DescribeEndpointsResult::setSuccess(const bool & success) {
+void DescribeEndpointsResult::setSuccess(const bool &success) {
   success_ = success;
 }
