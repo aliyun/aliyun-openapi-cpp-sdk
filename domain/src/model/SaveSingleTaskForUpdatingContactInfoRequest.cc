@@ -33,7 +33,7 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getInstanceId()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getContactType()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getContactType()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setParameter("ContactType", contactType);
+	setCoreParameter("ContactType", contactType);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getUserClientIp()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getDomainName()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long SaveSingleTaskForUpdatingContactInfoRequest::getRegistrantProfileId()const
@@ -77,7 +77,7 @@ long SaveSingleTaskForUpdatingContactInfoRequest::getRegistrantProfileId()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 bool SaveSingleTaskForUpdatingContactInfoRequest::getAddTransferLock()const
@@ -88,7 +88,7 @@ bool SaveSingleTaskForUpdatingContactInfoRequest::getAddTransferLock()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setAddTransferLock(bool addTransferLock)
 {
 	addTransferLock_ = addTransferLock;
-	setParameter("AddTransferLock", std::to_string(addTransferLock));
+	setCoreParameter("AddTransferLock", addTransferLock ? "true" : "false");
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getLang()const
@@ -99,6 +99,6 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getLang()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

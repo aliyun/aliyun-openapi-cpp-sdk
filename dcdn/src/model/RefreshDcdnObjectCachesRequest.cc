@@ -33,7 +33,7 @@ std::string RefreshDcdnObjectCachesRequest::getSecurityToken()const
 void RefreshDcdnObjectCachesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RefreshDcdnObjectCachesRequest::getObjectPath()const
@@ -44,7 +44,7 @@ std::string RefreshDcdnObjectCachesRequest::getObjectPath()const
 void RefreshDcdnObjectCachesRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setParameter("ObjectPath", objectPath);
+	setCoreParameter("ObjectPath", objectPath);
 }
 
 long RefreshDcdnObjectCachesRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long RefreshDcdnObjectCachesRequest::getOwnerId()const
 void RefreshDcdnObjectCachesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RefreshDcdnObjectCachesRequest::getObjectType()const
@@ -66,17 +66,6 @@ std::string RefreshDcdnObjectCachesRequest::getObjectType()const
 void RefreshDcdnObjectCachesRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setParameter("ObjectType", objectType);
-}
-
-std::string RefreshDcdnObjectCachesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RefreshDcdnObjectCachesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("ObjectType", objectType);
 }
 

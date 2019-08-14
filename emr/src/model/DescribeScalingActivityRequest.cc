@@ -33,7 +33,7 @@ long DescribeScalingActivityRequest::getResourceOwnerId()const
 void DescribeScalingActivityRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeScalingActivityRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeScalingActivityRequest::getRegionId()const
 void DescribeScalingActivityRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeScalingActivityRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeScalingActivityRequest::getHostGroupId()const
 void DescribeScalingActivityRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 std::string DescribeScalingActivityRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DescribeScalingActivityRequest::getClusterId()const
 void DescribeScalingActivityRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeScalingActivityRequest::getScalingActivityId()const
@@ -77,7 +77,7 @@ std::string DescribeScalingActivityRequest::getScalingActivityId()const
 void DescribeScalingActivityRequest::setScalingActivityId(const std::string& scalingActivityId)
 {
 	scalingActivityId_ = scalingActivityId;
-	setParameter("ScalingActivityId", scalingActivityId);
+	setCoreParameter("ScalingActivityId", scalingActivityId);
 }
 
 std::string DescribeScalingActivityRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeScalingActivityRequest::getAccessKeyId()const
 void DescribeScalingActivityRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

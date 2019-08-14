@@ -33,7 +33,7 @@ long ShopDeletemarketingRequest::getId()const
 void ShopDeletemarketingRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ShopDeletemarketingRequest::getAccessKeyId()const
@@ -44,7 +44,7 @@ std::string ShopDeletemarketingRequest::getAccessKeyId()const
 void ShopDeletemarketingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopDeletemarketingRequest::getSid()const
@@ -55,6 +55,6 @@ long ShopDeletemarketingRequest::getSid()const
 void ShopDeletemarketingRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", std::to_string(sid));
 }
 

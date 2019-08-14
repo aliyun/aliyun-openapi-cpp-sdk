@@ -33,7 +33,7 @@ std::string UpdateMcuTemplateRequest::get_Template()const
 void UpdateMcuTemplateRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setParameter("_Template", _template);
+	setCoreParameter("_Template", _template);
 }
 
 long UpdateMcuTemplateRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateMcuTemplateRequest::getResourceOwnerId()const
 void UpdateMcuTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMcuTemplateRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateMcuTemplateRequest::getResourceOwnerAccount()const
 void UpdateMcuTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateMcuTemplateRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdateMcuTemplateRequest::getOwnerAccount()const
 void UpdateMcuTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateMcuTemplateRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateMcuTemplateRequest::getOwnerId()const
 void UpdateMcuTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMcuTemplateRequest::getTemplateId()const
@@ -88,7 +88,7 @@ std::string UpdateMcuTemplateRequest::getTemplateId()const
 void UpdateMcuTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", templateId);
 }
 
 std::string UpdateMcuTemplateRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string UpdateMcuTemplateRequest::getAccessKeyId()const
 void UpdateMcuTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

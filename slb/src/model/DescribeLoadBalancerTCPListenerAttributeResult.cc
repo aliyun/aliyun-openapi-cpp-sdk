@@ -35,10 +35,13 @@ DescribeLoadBalancerTCPListenerAttributeResult::~DescribeLoadBalancerTCPListener
 
 void DescribeLoadBalancerTCPListenerAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
@@ -76,6 +79,8 @@ void DescribeLoadBalancerTCPListenerAttributeResult::parse(const std::string &pa
 		healthCheckURI_ = value["HealthCheckURI"].asString();
 	if(!value["HealthCheckType"].isNull())
 		healthCheckType_ = value["HealthCheckType"].asString();
+	if(!value["HealthCheckMethod"].isNull())
+		healthCheckMethod_ = value["HealthCheckMethod"].asString();
 	if(!value["MaxConnection"].isNull())
 		maxConnection_ = std::stoi(value["MaxConnection"].asString());
 	if(!value["VServerGroupId"].isNull())
@@ -148,6 +153,11 @@ int DescribeLoadBalancerTCPListenerAttributeResult::getPersistenceTimeout()const
 int DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckConnectPort()const
 {
 	return healthCheckConnectPort_;
+}
+
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckMethod()const
+{
+	return healthCheckMethod_;
 }
 
 int DescribeLoadBalancerTCPListenerAttributeResult::getBandwidth()const

@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				OnsMqttQueryClientByClientIdRequest();
 				~OnsMqttQueryClientByClientIdRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getClientId()const;
 				void setClientId(const std::string& clientId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 
             private:
-				long preventCache_;
 				std::string clientId_;
 				std::string instanceId_;
 

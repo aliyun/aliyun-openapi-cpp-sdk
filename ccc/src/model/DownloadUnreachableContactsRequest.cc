@@ -33,7 +33,7 @@ std::string DownloadUnreachableContactsRequest::getInstanceId()const
 void DownloadUnreachableContactsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DownloadUnreachableContactsRequest::getJobGroupId()const
@@ -44,6 +44,6 @@ std::string DownloadUnreachableContactsRequest::getJobGroupId()const
 void DownloadUnreachableContactsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", jobGroupId);
 }
 

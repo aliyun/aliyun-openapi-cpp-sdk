@@ -33,6 +33,6 @@ std::string GetRegionRequest::getDomain()const
 void GetRegionRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setParameter("Domain", domain);
+	setCoreParameter("Domain", domain);
 }
 

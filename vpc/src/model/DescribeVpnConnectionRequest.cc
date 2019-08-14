@@ -33,7 +33,7 @@ long DescribeVpnConnectionRequest::getResourceOwnerId()const
 void DescribeVpnConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVpnConnectionRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeVpnConnectionRequest::getResourceOwnerAccount()const
 void DescribeVpnConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpnConnectionRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeVpnConnectionRequest::getRegionId()const
 void DescribeVpnConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVpnConnectionRequest::getVpnConnectionId()const
@@ -66,7 +66,7 @@ std::string DescribeVpnConnectionRequest::getVpnConnectionId()const
 void DescribeVpnConnectionRequest::setVpnConnectionId(const std::string& vpnConnectionId)
 {
 	vpnConnectionId_ = vpnConnectionId;
-	setParameter("VpnConnectionId", vpnConnectionId);
+	setCoreParameter("VpnConnectionId", vpnConnectionId);
 }
 
 std::string DescribeVpnConnectionRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVpnConnectionRequest::getOwnerAccount()const
 void DescribeVpnConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVpnConnectionRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DescribeVpnConnectionRequest::getOwnerId()const
 void DescribeVpnConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

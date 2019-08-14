@@ -33,7 +33,7 @@ std::string DescribeSignatureTradeListRequest::getSourceIp()const
 void DescribeSignatureTradeListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeSignatureTradeListRequest::getShowSize()const
@@ -44,7 +44,7 @@ int DescribeSignatureTradeListRequest::getShowSize()const
 void DescribeSignatureTradeListRequest::setShowSize(int showSize)
 {
 	showSize_ = showSize;
-	setParameter("ShowSize", std::to_string(showSize));
+	setCoreParameter("ShowSize", std::to_string(showSize));
 }
 
 std::string DescribeSignatureTradeListRequest::getSearchType()const
@@ -55,7 +55,7 @@ std::string DescribeSignatureTradeListRequest::getSearchType()const
 void DescribeSignatureTradeListRequest::setSearchType(const std::string& searchType)
 {
 	searchType_ = searchType;
-	setParameter("SearchType", searchType);
+	setCoreParameter("SearchType", searchType);
 }
 
 int DescribeSignatureTradeListRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeSignatureTradeListRequest::getCurrentPage()const
 void DescribeSignatureTradeListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeSignatureTradeListRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DescribeSignatureTradeListRequest::getLang()const
 void DescribeSignatureTradeListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeSignatureTradeListRequest::getSearchValue()const
@@ -88,6 +88,6 @@ std::string DescribeSignatureTradeListRequest::getSearchValue()const
 void DescribeSignatureTradeListRequest::setSearchValue(const std::string& searchValue)
 {
 	searchValue_ = searchValue;
-	setParameter("SearchValue", searchValue);
+	setCoreParameter("SearchValue", searchValue);
 }
 

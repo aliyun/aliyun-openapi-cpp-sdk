@@ -36,12 +36,24 @@ namespace AlibabaCloud
 				{
 					struct RectRoi
 					{
+						struct LeftTop
+						{
+							float x;
+							float y;
+						};
+						struct RightBottom
+						{
+							float x;
+							float y;
+						};
 						struct Point
 						{
 							float x;
 							float y;
 						};
 						std::vector<RectRoi::Point> points;
+						LeftTop leftTop;
+						RightBottom rightBottom;
 					};
 					long status;
 					std::string gmtCreate;

@@ -43,15 +43,12 @@ namespace AlibabaCloud
 				void setDomainName(const std::string& domainName);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string groupId_;
 				std::string userClientIp_;
 				std::string domainName_;
 				std::string lang_;
-				std::string accessKeyId_;
 
 			};
 		}

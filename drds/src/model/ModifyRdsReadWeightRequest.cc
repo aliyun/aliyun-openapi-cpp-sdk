@@ -33,7 +33,7 @@ std::string ModifyRdsReadWeightRequest::getInstanceNames()const
 void ModifyRdsReadWeightRequest::setInstanceNames(const std::string& instanceNames)
 {
 	instanceNames_ = instanceNames;
-	setParameter("InstanceNames", instanceNames);
+	setCoreParameter("InstanceNames", instanceNames);
 }
 
 std::string ModifyRdsReadWeightRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string ModifyRdsReadWeightRequest::getDbName()const
 void ModifyRdsReadWeightRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string ModifyRdsReadWeightRequest::getWeights()const
@@ -55,7 +55,7 @@ std::string ModifyRdsReadWeightRequest::getWeights()const
 void ModifyRdsReadWeightRequest::setWeights(const std::string& weights)
 {
 	weights_ = weights;
-	setParameter("Weights", weights);
+	setCoreParameter("Weights", weights);
 }
 
 std::string ModifyRdsReadWeightRequest::getDrdsInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifyRdsReadWeightRequest::getDrdsInstanceId()const
 void ModifyRdsReadWeightRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyRdsReadWeightRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ModifyRdsReadWeightRequest::getAccessKeyId()const
 void ModifyRdsReadWeightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

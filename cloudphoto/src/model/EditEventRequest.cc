@@ -33,7 +33,7 @@ std::string EditEventRequest::getEventId()const
 void EditEventRequest::setEventId(const std::string& eventId)
 {
 	eventId_ = eventId;
-	setParameter("EventId", eventId);
+	setCoreParameter("EventId", eventId);
 }
 
 std::string EditEventRequest::getBannerPhotoId()const
@@ -44,7 +44,7 @@ std::string EditEventRequest::getBannerPhotoId()const
 void EditEventRequest::setBannerPhotoId(const std::string& bannerPhotoId)
 {
 	bannerPhotoId_ = bannerPhotoId;
-	setParameter("BannerPhotoId", bannerPhotoId);
+	setCoreParameter("BannerPhotoId", bannerPhotoId);
 }
 
 std::string EditEventRequest::getWatermarkPhotoId()const
@@ -55,7 +55,7 @@ std::string EditEventRequest::getWatermarkPhotoId()const
 void EditEventRequest::setWatermarkPhotoId(const std::string& watermarkPhotoId)
 {
 	watermarkPhotoId_ = watermarkPhotoId;
-	setParameter("WatermarkPhotoId", watermarkPhotoId);
+	setCoreParameter("WatermarkPhotoId", watermarkPhotoId);
 }
 
 std::string EditEventRequest::getIdentity()const
@@ -66,7 +66,7 @@ std::string EditEventRequest::getIdentity()const
 void EditEventRequest::setIdentity(const std::string& identity)
 {
 	identity_ = identity;
-	setParameter("Identity", identity);
+	setCoreParameter("Identity", identity);
 }
 
 std::string EditEventRequest::getSplashPhotoId()const
@@ -77,7 +77,7 @@ std::string EditEventRequest::getSplashPhotoId()const
 void EditEventRequest::setSplashPhotoId(const std::string& splashPhotoId)
 {
 	splashPhotoId_ = splashPhotoId;
-	setParameter("SplashPhotoId", splashPhotoId);
+	setCoreParameter("SplashPhotoId", splashPhotoId);
 }
 
 std::string EditEventRequest::getLibraryId()const
@@ -88,7 +88,7 @@ std::string EditEventRequest::getLibraryId()const
 void EditEventRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string EditEventRequest::getWeixinTitle()const
@@ -99,7 +99,7 @@ std::string EditEventRequest::getWeixinTitle()const
 void EditEventRequest::setWeixinTitle(const std::string& weixinTitle)
 {
 	weixinTitle_ = weixinTitle;
-	setParameter("WeixinTitle", weixinTitle);
+	setCoreParameter("WeixinTitle", weixinTitle);
 }
 
 std::string EditEventRequest::getStoreName()const
@@ -110,7 +110,7 @@ std::string EditEventRequest::getStoreName()const
 void EditEventRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string EditEventRequest::getRemark()const
@@ -121,7 +121,7 @@ std::string EditEventRequest::getRemark()const
 void EditEventRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
 }
 
 std::string EditEventRequest::getTitle()const
@@ -132,7 +132,7 @@ std::string EditEventRequest::getTitle()const
 void EditEventRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 
 long EditEventRequest::getEndAt()const
@@ -143,7 +143,7 @@ long EditEventRequest::getEndAt()const
 void EditEventRequest::setEndAt(long endAt)
 {
 	endAt_ = endAt;
-	setParameter("EndAt", std::to_string(endAt));
+	setCoreParameter("EndAt", std::to_string(endAt));
 }
 
 long EditEventRequest::getStartAt()const
@@ -154,6 +154,6 @@ long EditEventRequest::getStartAt()const
 void EditEventRequest::setStartAt(long startAt)
 {
 	startAt_ = startAt;
-	setParameter("StartAt", std::to_string(startAt));
+	setCoreParameter("StartAt", std::to_string(startAt));
 }
 

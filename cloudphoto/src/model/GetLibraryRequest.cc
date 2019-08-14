@@ -33,7 +33,7 @@ std::string GetLibraryRequest::getLibraryId()const
 void GetLibraryRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string GetLibraryRequest::getStoreName()const
@@ -44,6 +44,6 @@ std::string GetLibraryRequest::getStoreName()const
 void GetLibraryRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

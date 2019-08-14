@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsGroupCreateRequest();
 				~OnsGroupCreateRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setRemark(const std::string& remark);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				std::string groupId_;
 				std::string remark_;

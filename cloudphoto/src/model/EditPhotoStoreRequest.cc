@@ -33,7 +33,7 @@ std::string EditPhotoStoreRequest::getAutoCleanEnabled()const
 void EditPhotoStoreRequest::setAutoCleanEnabled(const std::string& autoCleanEnabled)
 {
 	autoCleanEnabled_ = autoCleanEnabled;
-	setParameter("AutoCleanEnabled", autoCleanEnabled);
+	setCoreParameter("AutoCleanEnabled", autoCleanEnabled);
 }
 
 long EditPhotoStoreRequest::getDefaultTrashQuota()const
@@ -44,7 +44,7 @@ long EditPhotoStoreRequest::getDefaultTrashQuota()const
 void EditPhotoStoreRequest::setDefaultTrashQuota(long defaultTrashQuota)
 {
 	defaultTrashQuota_ = defaultTrashQuota;
-	setParameter("DefaultTrashQuota", std::to_string(defaultTrashQuota));
+	setCoreParameter("DefaultTrashQuota", std::to_string(defaultTrashQuota));
 }
 
 std::string EditPhotoStoreRequest::getStoreName()const
@@ -55,7 +55,7 @@ std::string EditPhotoStoreRequest::getStoreName()const
 void EditPhotoStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string EditPhotoStoreRequest::getRemark()const
@@ -66,7 +66,7 @@ std::string EditPhotoStoreRequest::getRemark()const
 void EditPhotoStoreRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
 }
 
 long EditPhotoStoreRequest::getDefaultQuota()const
@@ -77,7 +77,7 @@ long EditPhotoStoreRequest::getDefaultQuota()const
 void EditPhotoStoreRequest::setDefaultQuota(long defaultQuota)
 {
 	defaultQuota_ = defaultQuota;
-	setParameter("DefaultQuota", std::to_string(defaultQuota));
+	setCoreParameter("DefaultQuota", std::to_string(defaultQuota));
 }
 
 int EditPhotoStoreRequest::getAutoCleanDays()const
@@ -88,6 +88,6 @@ int EditPhotoStoreRequest::getAutoCleanDays()const
 void EditPhotoStoreRequest::setAutoCleanDays(int autoCleanDays)
 {
 	autoCleanDays_ = autoCleanDays;
-	setParameter("AutoCleanDays", std::to_string(autoCleanDays));
+	setCoreParameter("AutoCleanDays", std::to_string(autoCleanDays));
 }
 

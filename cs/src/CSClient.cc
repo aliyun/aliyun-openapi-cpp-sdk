@@ -159,6 +159,42 @@ CSClient::AttachInstancesOutcomeCallable CSClient::attachInstancesCallable(const
 	return task->get_future();
 }
 
+CSClient::CreateClusterByResourcesGroupOutcome CSClient::createClusterByResourcesGroup(const CreateClusterByResourcesGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateClusterByResourcesGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateClusterByResourcesGroupOutcome(CreateClusterByResourcesGroupResult(outcome.result()));
+	else
+		return CreateClusterByResourcesGroupOutcome(outcome.error());
+}
+
+void CSClient::createClusterByResourcesGroupAsync(const CreateClusterByResourcesGroupRequest& request, const CreateClusterByResourcesGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createClusterByResourcesGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::CreateClusterByResourcesGroupOutcomeCallable CSClient::createClusterByResourcesGroupCallable(const CreateClusterByResourcesGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateClusterByResourcesGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createClusterByResourcesGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::CheckAliyunCSServiceRoleOutcome CSClient::checkAliyunCSServiceRole(const CheckAliyunCSServiceRoleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +261,42 @@ CSClient::DescribeClusterCertsOutcomeCallable CSClient::describeClusterCertsCall
 			[this, request]()
 			{
 			return this->describeClusterCerts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::DescribeClusterAttachScriptsOutcome CSClient::describeClusterAttachScripts(const DescribeClusterAttachScriptsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterAttachScriptsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterAttachScriptsOutcome(DescribeClusterAttachScriptsResult(outcome.result()));
+	else
+		return DescribeClusterAttachScriptsOutcome(outcome.error());
+}
+
+void CSClient::describeClusterAttachScriptsAsync(const DescribeClusterAttachScriptsRequest& request, const DescribeClusterAttachScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterAttachScripts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeClusterAttachScriptsOutcomeCallable CSClient::describeClusterAttachScriptsCallable(const DescribeClusterAttachScriptsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterAttachScriptsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterAttachScripts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +375,42 @@ CSClient::DescribeClusterNodesOutcomeCallable CSClient::describeClusterNodesCall
 	return task->get_future();
 }
 
+CSClient::ModifyClusterOutcome CSClient::modifyCluster(const ModifyClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyClusterOutcome(ModifyClusterResult(outcome.result()));
+	else
+		return ModifyClusterOutcome(outcome.error());
+}
+
+void CSClient::modifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::ModifyClusterOutcomeCallable CSClient::modifyClusterCallable(const ModifyClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::DescribeApiVersionOutcome CSClient::describeApiVersion(const DescribeApiVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +441,42 @@ CSClient::DescribeApiVersionOutcomeCallable CSClient::describeApiVersionCallable
 			[this, request]()
 			{
 			return this->describeApiVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::ScaleOutClusterOutcome CSClient::scaleOutCluster(const ScaleOutClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScaleOutClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScaleOutClusterOutcome(ScaleOutClusterResult(outcome.result()));
+	else
+		return ScaleOutClusterOutcome(outcome.error());
+}
+
+void CSClient::scaleOutClusterAsync(const ScaleOutClusterRequest& request, const ScaleOutClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, scaleOutCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::ScaleOutClusterOutcomeCallable CSClient::scaleOutClusterCallable(const ScaleOutClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScaleOutClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->scaleOutCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,42 +519,6 @@ CSClient::DescribeClusterLogsOutcomeCallable CSClient::describeClusterLogsCallab
 	return task->get_future();
 }
 
-CSClient::DescribeClusterDetailOutcome CSClient::describeClusterDetail(const DescribeClusterDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeClusterDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeClusterDetailOutcome(DescribeClusterDetailResult(outcome.result()));
-	else
-		return DescribeClusterDetailOutcome(outcome.error());
-}
-
-void CSClient::describeClusterDetailAsync(const DescribeClusterDetailRequest& request, const DescribeClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeClusterDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSClient::DescribeClusterDetailOutcomeCallable CSClient::describeClusterDetailCallable(const DescribeClusterDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeClusterDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeClusterDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CSClient::DescribeClusterUserKubeconfigOutcome CSClient::describeClusterUserKubeconfig(const DescribeClusterUserKubeconfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +549,42 @@ CSClient::DescribeClusterUserKubeconfigOutcomeCallable CSClient::describeCluster
 			[this, request]()
 			{
 			return this->describeClusterUserKubeconfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::DescribeClusterDetailOutcome CSClient::describeClusterDetail(const DescribeClusterDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterDetailOutcome(DescribeClusterDetailResult(outcome.result()));
+	else
+		return DescribeClusterDetailOutcome(outcome.error());
+}
+
+void CSClient::describeClusterDetailAsync(const DescribeClusterDetailRequest& request, const DescribeClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeClusterDetailOutcomeCallable CSClient::describeClusterDetailCallable(const DescribeClusterDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -621,6 +765,42 @@ CSClient::CreateClusterOutcomeCallable CSClient::createClusterCallable(const Cre
 			[this, request]()
 			{
 			return this->createCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::DeleteClusterNodesOutcome CSClient::deleteClusterNodes(const DeleteClusterNodesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteClusterNodesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteClusterNodesOutcome(DeleteClusterNodesResult(outcome.result()));
+	else
+		return DeleteClusterNodesOutcome(outcome.error());
+}
+
+void CSClient::deleteClusterNodesAsync(const DeleteClusterNodesRequest& request, const DeleteClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteClusterNodes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DeleteClusterNodesOutcomeCallable CSClient::deleteClusterNodesCallable(const DeleteClusterNodesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteClusterNodesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteClusterNodes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

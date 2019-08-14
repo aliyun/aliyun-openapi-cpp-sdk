@@ -35,10 +35,13 @@ DescribeACLAttributeResult::~DescribeACLAttributeResult()
 
 void DescribeACLAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allAcrs = value["Acrs"]["Acr"];
 	for (auto value : allAcrs)
@@ -68,6 +71,8 @@ void DescribeACLAttributeResult::parse(const std::string &payload)
 			acrsObject.gmtCreate = std::stol(value["GmtCreate"].asString());
 		if(!value["AclId"].isNull())
 			acrsObject.aclId = value["AclId"].asString();
+		if(!value["Type"].isNull())
+			acrsObject.type = value["Type"].asString();
 		acrs_.push_back(acrsObject);
 	}
 	if(!value["TotalCount"].isNull())

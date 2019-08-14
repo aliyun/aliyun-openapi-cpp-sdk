@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setWebGroupId(long webGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
 				int getAction1()const;
 				void setAction1(int action1);
 				std::string getTag()const;
@@ -90,6 +92,7 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				long webGroupId_;
 				int pageSize_;
+				std::string from_;
 				int action1_;
 				std::string tag_;
 				int flow_;

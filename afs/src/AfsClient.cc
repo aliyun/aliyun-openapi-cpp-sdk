@@ -483,42 +483,6 @@ AfsClient::DescribeConfigNameOutcomeCallable AfsClient::describeConfigNameCallab
 	return task->get_future();
 }
 
-AfsClient::DescribeCaptchaDayOutcome AfsClient::describeCaptchaDay(const DescribeCaptchaDayRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCaptchaDayOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCaptchaDayOutcome(DescribeCaptchaDayResult(outcome.result()));
-	else
-		return DescribeCaptchaDayOutcome(outcome.error());
-}
-
-void AfsClient::describeCaptchaDayAsync(const DescribeCaptchaDayRequest& request, const DescribeCaptchaDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCaptchaDay(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AfsClient::DescribeCaptchaDayOutcomeCallable AfsClient::describeCaptchaDayCallable(const DescribeCaptchaDayRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCaptchaDayOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCaptchaDay(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AfsClient::UpdateConfigNameOutcome AfsClient::updateConfigName(const UpdateConfigNameRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +513,42 @@ AfsClient::UpdateConfigNameOutcomeCallable AfsClient::updateConfigNameCallable(c
 			[this, request]()
 			{
 			return this->updateConfigName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::DescribeCaptchaDayOutcome AfsClient::describeCaptchaDay(const DescribeCaptchaDayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCaptchaDayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCaptchaDayOutcome(DescribeCaptchaDayResult(outcome.result()));
+	else
+		return DescribeCaptchaDayOutcome(outcome.error());
+}
+
+void AfsClient::describeCaptchaDayAsync(const DescribeCaptchaDayRequest& request, const DescribeCaptchaDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCaptchaDay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::DescribeCaptchaDayOutcomeCallable AfsClient::describeCaptchaDayCallable(const DescribeCaptchaDayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCaptchaDayOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCaptchaDay(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					int vulLaterSum;
 					int vulLowTotal;
 					int emgNum;
+					int appNum;
 					int vulAsapSum;
 					int vulSeriousTotal;
 					int vulNntfSum;

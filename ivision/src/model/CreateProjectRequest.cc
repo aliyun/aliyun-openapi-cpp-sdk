@@ -212,6 +212,17 @@ void CreateProjectRequest::setPopProduct(const std::string& popProduct)
 	setCoreParameter("PopProduct", popProduct);
 }
 
+std::string CreateProjectRequest::getModelId()const
+{
+	return modelId_;
+}
+
+void CreateProjectRequest::setModelId(const std::string& modelId)
+{
+	modelId_ = modelId;
+	setCoreParameter("ModelId", modelId);
+}
+
 std::string CreateProjectRequest::getCallerBid()const
 {
 	return callerBid_;

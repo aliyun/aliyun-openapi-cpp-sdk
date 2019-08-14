@@ -33,7 +33,7 @@ int ListPageConfigTemplateRequest::getLength()const
 void ListPageConfigTemplateRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 int ListPageConfigTemplateRequest::getPageIndex()const
@@ -44,7 +44,7 @@ int ListPageConfigTemplateRequest::getPageIndex()const
 void ListPageConfigTemplateRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListPageConfigTemplateRequest::getSearchTempName()const
@@ -55,7 +55,7 @@ std::string ListPageConfigTemplateRequest::getSearchTempName()const
 void ListPageConfigTemplateRequest::setSearchTempName(const std::string& searchTempName)
 {
 	searchTempName_ = searchTempName;
-	setParameter("SearchTempName", searchTempName);
+	setCoreParameter("SearchTempName", searchTempName);
 }
 
 std::string ListPageConfigTemplateRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListPageConfigTemplateRequest::getAccessKeyId()const
 void ListPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

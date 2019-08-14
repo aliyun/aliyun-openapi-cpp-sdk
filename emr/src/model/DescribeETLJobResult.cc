@@ -35,10 +35,13 @@ DescribeETLJobResult::~DescribeETLJobResult()
 
 void DescribeETLJobResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allTriggerRuleList = value["TriggerRuleList"]["TriggerRule"];
 	for (auto value : allTriggerRuleList)
@@ -115,9 +118,9 @@ void DescribeETLJobResult::parse(const std::string &payload)
 		auto allAlertUserGroupIdList = value["AlertUserGroupIdList"]["AlertUserGroupId"];
 		for (auto value : allAlertUserGroupIdList)
 			itemObject.alertUserGroupIdList.push_back(value.asString());
-		auto allAlertDingDingGroupIdList = value["AlertDingDingGroupIdList"]["AlertDingDingGroupId"];
-		for (auto value : allAlertDingDingGroupIdList)
-			itemObject.alertDingDingGroupIdList.push_back(value.asString());
+		auto allAlertDingDingGroupList = value["AlertDingDingGroupList"]["AlertDingDingGroup"];
+		for (auto value : allAlertDingDingGroupList)
+			itemObject.alertDingDingGroupList.push_back(value.asString());
 		alertConfig_.items.push_back(itemObject);
 	}
 	if(!value["Id"].isNull())

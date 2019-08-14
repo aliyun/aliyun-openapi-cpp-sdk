@@ -33,7 +33,7 @@ std::string UpdateGroupRequest::getNewGroupName()const
 void UpdateGroupRequest::setNewGroupName(const std::string& newGroupName)
 {
 	newGroupName_ = newGroupName;
-	setParameter("NewGroupName", newGroupName);
+	setCoreParameter("NewGroupName", newGroupName);
 }
 
 std::string UpdateGroupRequest::getNewComments()const
@@ -44,7 +44,7 @@ std::string UpdateGroupRequest::getNewComments()const
 void UpdateGroupRequest::setNewComments(const std::string& newComments)
 {
 	newComments_ = newComments;
-	setParameter("NewComments", newComments);
+	setCoreParameter("NewComments", newComments);
 }
 
 std::string UpdateGroupRequest::getGroupName()const
@@ -55,6 +55,6 @@ std::string UpdateGroupRequest::getGroupName()const
 void UpdateGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 

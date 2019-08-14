@@ -33,7 +33,7 @@ std::string DescribeStatisRequest::getSortType()const
 void DescribeStatisRequest::setSortType(const std::string& sortType)
 {
 	sortType_ = sortType;
-	setParameter("SortType", sortType);
+	setCoreParameter("SortType", sortType);
 }
 
 long DescribeStatisRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeStatisRequest::getCallerParentId()const
 void DescribeStatisRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeStatisRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeStatisRequest::getProxy_original_security_transport()const
 void DescribeStatisRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeStatisRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeStatisRequest::getStartTime()const
 void DescribeStatisRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeStatisRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeStatisRequest::getProxy_original_source_ip()const
 void DescribeStatisRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeStatisRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeStatisRequest::getOwnerIdLoginEmail()const
 void DescribeStatisRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeStatisRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeStatisRequest::getCallerType()const
 void DescribeStatisRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeStatisRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeStatisRequest::getAccessKeyId()const
 void DescribeStatisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeStatisRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeStatisRequest::getSecurityToken()const
 void DescribeStatisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeStatisRequest::getDataType()const
@@ -132,7 +132,7 @@ std::string DescribeStatisRequest::getDataType()const
 void DescribeStatisRequest::setDataType(const std::string& dataType)
 {
 	dataType_ = dataType;
-	setParameter("DataType", dataType);
+	setCoreParameter("DataType", dataType);
 }
 
 std::string DescribeStatisRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeStatisRequest::getRequestContent()const
 void DescribeStatisRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeStatisRequest::getServiceArea()const
@@ -154,7 +154,7 @@ std::string DescribeStatisRequest::getServiceArea()const
 void DescribeStatisRequest::setServiceArea(const std::string& serviceArea)
 {
 	serviceArea_ = serviceArea;
-	setParameter("ServiceArea", serviceArea);
+	setCoreParameter("ServiceArea", serviceArea);
 }
 
 std::string DescribeStatisRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeStatisRequest::getCallerBidEmail()const
 void DescribeStatisRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeStatisRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeStatisRequest::getCallerUidEmail()const
 void DescribeStatisRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeStatisRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeStatisRequest::getCallerUid()const
 void DescribeStatisRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeStatisRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeStatisRequest::getApp_ip()const
 void DescribeStatisRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeStatisRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeStatisRequest::getPopProduct()const
 void DescribeStatisRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeStatisRequest::getEndTime()const
@@ -220,7 +220,7 @@ std::string DescribeStatisRequest::getEndTime()const
 void DescribeStatisRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeStatisRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeStatisRequest::getCallerBid()const
 void DescribeStatisRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeStatisRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DescribeStatisRequest::getOwnerId()const
 void DescribeStatisRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeStatisRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string DescribeStatisRequest::getVersion()const
 void DescribeStatisRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeStatisRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool DescribeStatisRequest::getProxy_trust_transport_info()const
 void DescribeStatisRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeStatisRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool DescribeStatisRequest::getAk_mfa_present()const
 void DescribeStatisRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeStatisRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool DescribeStatisRequest::getSecurity_transport()const
 void DescribeStatisRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeStatisRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string DescribeStatisRequest::getRequestId()const
 void DescribeStatisRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeStatisRequest::getAppId()const
@@ -308,7 +308,7 @@ std::string DescribeStatisRequest::getAppId()const
 void DescribeStatisRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 
 std::string DescribeStatisRequest::getInterval()const
@@ -319,6 +319,6 @@ std::string DescribeStatisRequest::getInterval()const
 void DescribeStatisRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setParameter("Interval", interval);
+	setCoreParameter("Interval", interval);
 }
 

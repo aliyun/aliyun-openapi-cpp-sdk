@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct CACertificate
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string fingerprint;
 					std::string resourceGroupId;
 					long expireTimeStamp;
@@ -42,6 +47,7 @@ namespace AlibabaCloud
 					std::string cACertificateName;
 					std::string regionId;
 					std::string expireTime;
+					std::vector<CACertificate::Tag> tags;
 					long createTimeStamp;
 					std::string commonName;
 				};

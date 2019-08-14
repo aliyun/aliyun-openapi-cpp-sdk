@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				std::string getLang()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				std::string sourceIp_;
 				int pageSize_;
+				std::string from_;
 				int currentPage_;
 				std::string lang_;
 				std::string filterConditions_;

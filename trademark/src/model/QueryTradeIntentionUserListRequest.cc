@@ -25,6 +25,28 @@ QueryTradeIntentionUserListRequest::QueryTradeIntentionUserListRequest() :
 QueryTradeIntentionUserListRequest::~QueryTradeIntentionUserListRequest()
 {}
 
+int QueryTradeIntentionUserListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryTradeIntentionUserListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryTradeIntentionUserListRequest::getBizId()const
+{
+	return bizId_;
+}
+
+void QueryTradeIntentionUserListRequest::setBizId(const std::string& bizId)
+{
+	bizId_ = bizId;
+	setCoreParameter("BizId", bizId);
+}
+
 long QueryTradeIntentionUserListRequest::getEnd()const
 {
 	return end_;
@@ -36,6 +58,17 @@ void QueryTradeIntentionUserListRequest::setEnd(long end)
 	setCoreParameter("End", std::to_string(end));
 }
 
+int QueryTradeIntentionUserListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryTradeIntentionUserListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 long QueryTradeIntentionUserListRequest::getBegin()const
 {
 	return begin_;
@@ -45,5 +78,16 @@ void QueryTradeIntentionUserListRequest::setBegin(long begin)
 {
 	begin_ = begin;
 	setCoreParameter("Begin", std::to_string(begin));
+}
+
+int QueryTradeIntentionUserListRequest::getStatus()const
+{
+	return status_;
+}
+
+void QueryTradeIntentionUserListRequest::setStatus(int status)
+{
+	status_ = status;
+	setCoreParameter("Status", std::to_string(status));
 }
 

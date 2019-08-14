@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					std::string status;
 					std::string routeTableId;
 					std::string description;
 					std::string vpcId;

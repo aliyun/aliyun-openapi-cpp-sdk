@@ -33,7 +33,7 @@ std::string GetConversationDetailByContactIdRequest::getInstanceId()const
 void GetConversationDetailByContactIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetConversationDetailByContactIdRequest::getContactId()const
@@ -44,7 +44,7 @@ std::string GetConversationDetailByContactIdRequest::getContactId()const
 void GetConversationDetailByContactIdRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setParameter("ContactId", contactId);
+	setCoreParameter("ContactId", contactId);
 }
 
 int GetConversationDetailByContactIdRequest::getPageSize()const
@@ -55,7 +55,7 @@ int GetConversationDetailByContactIdRequest::getPageSize()const
 void GetConversationDetailByContactIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetConversationDetailByContactIdRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int GetConversationDetailByContactIdRequest::getPageNumber()const
 void GetConversationDetailByContactIdRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetConversationDetailByContactIdRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetConversationDetailByContactIdRequest::getAccessKeyId()const
 void GetConversationDetailByContactIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

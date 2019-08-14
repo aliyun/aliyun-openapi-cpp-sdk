@@ -34,7 +34,7 @@ void CreateFlowProjectClusterSettingRequest::setUserList(const std::vector<std::
 {
 	userList_ = userList;
 	for(int i = 0; i!= userList.size(); i++)
-		setParameter("UserList."+ std::to_string(i), userList.at(i));
+		setCoreParameter("UserList."+ std::to_string(i), userList.at(i));
 }
 
 std::vector<std::string> CreateFlowProjectClusterSettingRequest::getQueueList()const
@@ -46,7 +46,7 @@ void CreateFlowProjectClusterSettingRequest::setQueueList(const std::vector<std:
 {
 	queueList_ = queueList;
 	for(int i = 0; i!= queueList.size(); i++)
-		setParameter("QueueList."+ std::to_string(i), queueList.at(i));
+		setCoreParameter("QueueList."+ std::to_string(i), queueList.at(i));
 }
 
 std::string CreateFlowProjectClusterSettingRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string CreateFlowProjectClusterSettingRequest::getRegionId()const
 void CreateFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<std::string> CreateFlowProjectClusterSettingRequest::getHostList()const
@@ -69,7 +69,7 @@ void CreateFlowProjectClusterSettingRequest::setHostList(const std::vector<std::
 {
 	hostList_ = hostList;
 	for(int i = 0; i!= hostList.size(); i++)
-		setParameter("HostList."+ std::to_string(i), hostList.at(i));
+		setCoreParameter("HostList."+ std::to_string(i), hostList.at(i));
 }
 
 std::string CreateFlowProjectClusterSettingRequest::getClusterId()const
@@ -80,7 +80,7 @@ std::string CreateFlowProjectClusterSettingRequest::getClusterId()const
 void CreateFlowProjectClusterSettingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CreateFlowProjectClusterSettingRequest::getDefaultQueue()const
@@ -91,7 +91,7 @@ std::string CreateFlowProjectClusterSettingRequest::getDefaultQueue()const
 void CreateFlowProjectClusterSettingRequest::setDefaultQueue(const std::string& defaultQueue)
 {
 	defaultQueue_ = defaultQueue;
-	setParameter("DefaultQueue", defaultQueue);
+	setCoreParameter("DefaultQueue", defaultQueue);
 }
 
 std::string CreateFlowProjectClusterSettingRequest::getProjectId()const
@@ -102,7 +102,7 @@ std::string CreateFlowProjectClusterSettingRequest::getProjectId()const
 void CreateFlowProjectClusterSettingRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string CreateFlowProjectClusterSettingRequest::getDefaultUser()const
@@ -113,6 +113,6 @@ std::string CreateFlowProjectClusterSettingRequest::getDefaultUser()const
 void CreateFlowProjectClusterSettingRequest::setDefaultUser(const std::string& defaultUser)
 {
 	defaultUser_ = defaultUser;
-	setParameter("DefaultUser", defaultUser);
+	setCoreParameter("DefaultUser", defaultUser);
 }
 

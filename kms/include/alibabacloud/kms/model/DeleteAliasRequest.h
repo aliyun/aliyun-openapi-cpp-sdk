@@ -37,12 +37,9 @@ namespace AlibabaCloud
 
 				std::string getAliasName()const;
 				void setAliasName(const std::string& aliasName);
-				std::string getSTSToken()const;
-				void setSTSToken(const std::string& sTSToken);
 
             private:
 				std::string aliasName_;
-				std::string sTSToken_;
 
 			};
 		}

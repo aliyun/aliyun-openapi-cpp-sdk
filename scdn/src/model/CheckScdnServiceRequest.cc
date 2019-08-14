@@ -33,7 +33,7 @@ std::string CheckScdnServiceRequest::getSecurityToken()const
 void CheckScdnServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 long CheckScdnServiceRequest::getOwnerId()const
@@ -44,17 +44,6 @@ long CheckScdnServiceRequest::getOwnerId()const
 void CheckScdnServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CheckScdnServiceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CheckScdnServiceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

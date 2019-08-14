@@ -33,7 +33,7 @@ std::string ChangeDomainGroupRequest::getGroupId()const
 void ChangeDomainGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string ChangeDomainGroupRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string ChangeDomainGroupRequest::getUserClientIp()const
 void ChangeDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string ChangeDomainGroupRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string ChangeDomainGroupRequest::getDomainName()const
 void ChangeDomainGroupRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string ChangeDomainGroupRequest::getLang()const
@@ -66,17 +66,6 @@ std::string ChangeDomainGroupRequest::getLang()const
 void ChangeDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
-}
-
-std::string ChangeDomainGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ChangeDomainGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("Lang", lang);
 }
 

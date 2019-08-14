@@ -79,12 +79,16 @@ namespace AlibabaCloud
 				void setListenerPort(int listenerPort);
 				std::string getCookie()const;
 				void setCookie(const std::string& cookie);
+				std::string getHealthCheckType()const;
+				void setHealthCheckType(const std::string& healthCheckType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
 				std::string getStickySession()const;
 				void setStickySession(const std::string& stickySession);
+				std::string getHealthCheckMethod()const;
+				void setHealthCheckMethod(const std::string& healthCheckMethod);
 				std::string getHealthCheckDomain()const;
 				void setHealthCheckDomain(const std::string& healthCheckDomain);
 				int getRequestTimeout()const;
@@ -101,6 +105,8 @@ namespace AlibabaCloud
 				void setServerCertificateId(const std::string& serverCertificateId);
 				std::string getCACertificateId()const;
 				void setCACertificateId(const std::string& cACertificateId);
+				std::string getBackendProtocol()const;
+				void setBackendProtocol(const std::string& backendProtocol);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				int getIdleTimeout()const;
@@ -145,9 +151,11 @@ namespace AlibabaCloud
 				std::string aclId_;
 				int listenerPort_;
 				std::string cookie_;
+				std::string healthCheckType_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
 				std::string stickySession_;
+				std::string healthCheckMethod_;
 				std::string healthCheckDomain_;
 				int requestTimeout_;
 				std::string ownerAccount_;
@@ -156,6 +164,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string serverCertificateId_;
 				std::string cACertificateId_;
+				std::string backendProtocol_;
 				std::string tags_;
 				int idleTimeout_;
 				std::string loadBalancerId_;

@@ -33,6 +33,6 @@ std::string DescribeRegionsRequest::getAccessKeyId()const
 void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CreateAlertContactRequest::getEmailVerificationCode()const
 void CreateAlertContactRequest::setEmailVerificationCode(const std::string& emailVerificationCode)
 {
 	emailVerificationCode_ = emailVerificationCode;
-	setParameter("EmailVerificationCode", emailVerificationCode);
+	setCoreParameter("EmailVerificationCode", emailVerificationCode);
 }
 
 long CreateAlertContactRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateAlertContactRequest::getResourceOwnerId()const
 void CreateAlertContactRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAlertContactRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateAlertContactRequest::getRegionId()const
 void CreateAlertContactRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateAlertContactRequest::getPhoneNumberVerificationCode()const
@@ -66,7 +66,7 @@ std::string CreateAlertContactRequest::getPhoneNumberVerificationCode()const
 void CreateAlertContactRequest::setPhoneNumberVerificationCode(const std::string& phoneNumberVerificationCode)
 {
 	phoneNumberVerificationCode_ = phoneNumberVerificationCode;
-	setParameter("PhoneNumberVerificationCode", phoneNumberVerificationCode);
+	setCoreParameter("PhoneNumberVerificationCode", phoneNumberVerificationCode);
 }
 
 std::string CreateAlertContactRequest::getName()const
@@ -77,7 +77,7 @@ std::string CreateAlertContactRequest::getName()const
 void CreateAlertContactRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string CreateAlertContactRequest::getPhoneNumber()const
@@ -88,7 +88,7 @@ std::string CreateAlertContactRequest::getPhoneNumber()const
 void CreateAlertContactRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setParameter("PhoneNumber", phoneNumber);
+	setCoreParameter("PhoneNumber", phoneNumber);
 }
 
 std::string CreateAlertContactRequest::getEmail()const
@@ -99,7 +99,7 @@ std::string CreateAlertContactRequest::getEmail()const
 void CreateAlertContactRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setParameter("Email", email);
+	setCoreParameter("Email", email);
 }
 
 std::string CreateAlertContactRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string CreateAlertContactRequest::getAccessKeyId()const
 void CreateAlertContactRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

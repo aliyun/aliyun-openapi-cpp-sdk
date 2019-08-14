@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				DeleteScreenSettingResult();
 				explicit DeleteScreenSettingResult(const std::string &payload);
 				~DeleteScreenSettingResult();
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool success_;
 
 			};
 		}

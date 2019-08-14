@@ -35,10 +35,13 @@ ListClusterTemplatesResult::~ListClusterTemplatesResult()
 
 void ListClusterTemplatesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allTemplateInfoList = value["TemplateInfoList"]["TemplateInfo"];
 	for (auto value : allTemplateInfoList)
@@ -104,6 +107,12 @@ void ListClusterTemplatesResult::parse(const std::string &payload)
 			templateInfoListObject.useCustomHiveMetaDb = value["UseCustomHiveMetaDb"].asString() == "true";
 		if(!value["InitCustomHiveMetaDb"].isNull())
 			templateInfoListObject.initCustomHiveMetaDb = value["InitCustomHiveMetaDb"].asString() == "true";
+		if(!value["KeyPairName"].isNull())
+			templateInfoListObject.keyPairName = value["KeyPairName"].asString();
+		if(!value["MetaStoreType"].isNull())
+			templateInfoListObject.metaStoreType = value["MetaStoreType"].asString();
+		if(!value["MetaStoreConf"].isNull())
+			templateInfoListObject.metaStoreConf = value["MetaStoreConf"].asString();
 		auto allBootstrapActionList = value["BootstrapActionList"]["BootstrapAction"];
 		for (auto value : allBootstrapActionList)
 		{

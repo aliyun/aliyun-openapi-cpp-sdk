@@ -33,7 +33,7 @@ long ListBriefConfigByActionRequest::getAncestorApgroupId()const
 void ListBriefConfigByActionRequest::setAncestorApgroupId(long ancestorApgroupId)
 {
 	ancestorApgroupId_ = ancestorApgroupId;
-	setParameter("AncestorApgroupId", std::to_string(ancestorApgroupId));
+	setCoreParameter("AncestorApgroupId", std::to_string(ancestorApgroupId));
 }
 
 int ListBriefConfigByActionRequest::getLimit()const
@@ -44,7 +44,7 @@ int ListBriefConfigByActionRequest::getLimit()const
 void ListBriefConfigByActionRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string ListBriefConfigByActionRequest::getFuzzySearch()const
@@ -55,7 +55,7 @@ std::string ListBriefConfigByActionRequest::getFuzzySearch()const
 void ListBriefConfigByActionRequest::setFuzzySearch(const std::string& fuzzySearch)
 {
 	fuzzySearch_ = fuzzySearch;
-	setParameter("FuzzySearch", fuzzySearch);
+	setCoreParameter("FuzzySearch", fuzzySearch);
 }
 
 std::string ListBriefConfigByActionRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListBriefConfigByActionRequest::getAccessKeyId()const
 void ListBriefConfigByActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

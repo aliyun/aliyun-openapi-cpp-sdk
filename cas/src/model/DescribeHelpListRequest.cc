@@ -33,7 +33,7 @@ std::string DescribeHelpListRequest::getSourceIp()const
 void DescribeHelpListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeHelpListRequest::getCategory()const
@@ -44,7 +44,7 @@ std::string DescribeHelpListRequest::getCategory()const
 void DescribeHelpListRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setParameter("Category", category);
+	setCoreParameter("Category", category);
 }
 
 std::string DescribeHelpListRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeHelpListRequest::getLang()const
 void DescribeHelpListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

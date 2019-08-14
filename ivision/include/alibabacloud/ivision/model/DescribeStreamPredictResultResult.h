@@ -34,41 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct StreamPredictData
 				{
-					struct ResultStatisticsItem
-					{
-						std::string tagName;
-						std::string tagId;
-						long count;
-					};
-					struct PredictionResult
-					{
-						struct Region
-						{
-							std::string left;
-							std::string top;
-							std::string height;
-							std::string width;
-						};
-						struct Properties
-						{
-							std::string withGlovesProbability;
-							std::string withGloves;
-						};
-						std::string regionType;
-						std::string tagName;
-						std::string tagId;
-						std::string probability;
-						Region region;
-						std::string overlap;
-						Properties properties;
-					};
 					std::string status;
-					std::vector<StreamPredictData::PredictionResult> predictionResults;
+					std::string predictResult;
 					std::string dataUrl;
-					std::string streamTimestamp;
 					std::string predictTime;
 					std::string predictId;
-					std::vector<StreamPredictData::ResultStatisticsItem> resultStatistics;
+					long timestamp;
 					std::string modelId;
 				};
 

@@ -35,10 +35,13 @@ DescribeVirtualBorderRoutersForPhysicalConnectionResult::~DescribeVirtualBorderR
 
 void DescribeVirtualBorderRoutersForPhysicalConnectionResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allVirtualBorderRouterForPhysicalConnectionSet = value["VirtualBorderRouterForPhysicalConnectionSet"]["VirtualBorderRouterForPhysicalConnectionType"];
 	for (auto value : allVirtualBorderRouterForPhysicalConnectionSet)
@@ -48,6 +51,10 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionResult::parse(const std::s
 			virtualBorderRouterForPhysicalConnectionSetObject.vbrId = value["VbrId"].asString();
 		if(!value["VbrOwnerUid"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.vbrOwnerUid = std::stol(value["VbrOwnerUid"].asString());
+		if(!value["EccId"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.eccId = value["EccId"].asString();
+		if(!value["Type"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.type = value["Type"].asString();
 		if(!value["CreationTime"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.creationTime = value["CreationTime"].asString();
 		if(!value["ActivationTime"].isNull())
@@ -58,6 +65,8 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionResult::parse(const std::s
 			virtualBorderRouterForPhysicalConnectionSetObject.recoveryTime = value["RecoveryTime"].asString();
 		if(!value["VlanId"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.vlanId = std::stoi(value["VlanId"].asString());
+		if(!value["Status"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.status = value["Status"].asString();
 		if(!value["CircuitCode"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.circuitCode = value["CircuitCode"].asString();
 		if(!value["LocalGatewayIp"].isNull())

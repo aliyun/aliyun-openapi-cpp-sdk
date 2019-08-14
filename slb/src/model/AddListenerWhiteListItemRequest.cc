@@ -33,7 +33,7 @@ std::string AddListenerWhiteListItemRequest::getAccess_key_id()const
 void AddListenerWhiteListItemRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long AddListenerWhiteListItemRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AddListenerWhiteListItemRequest::getResourceOwnerId()const
 void AddListenerWhiteListItemRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int AddListenerWhiteListItemRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int AddListenerWhiteListItemRequest::getListenerPort()const
 void AddListenerWhiteListItemRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string AddListenerWhiteListItemRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string AddListenerWhiteListItemRequest::getLoadBalancerId()const
 void AddListenerWhiteListItemRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string AddListenerWhiteListItemRequest::getSourceItems()const
@@ -77,7 +77,7 @@ std::string AddListenerWhiteListItemRequest::getSourceItems()const
 void AddListenerWhiteListItemRequest::setSourceItems(const std::string& sourceItems)
 {
 	sourceItems_ = sourceItems;
-	setParameter("SourceItems", sourceItems);
+	setCoreParameter("SourceItems", sourceItems);
 }
 
 std::string AddListenerWhiteListItemRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string AddListenerWhiteListItemRequest::getRegionId()const
 void AddListenerWhiteListItemRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddListenerWhiteListItemRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ std::string AddListenerWhiteListItemRequest::getResourceOwnerAccount()const
 void AddListenerWhiteListItemRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddListenerWhiteListItemRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string AddListenerWhiteListItemRequest::getOwnerAccount()const
 void AddListenerWhiteListItemRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long AddListenerWhiteListItemRequest::getOwnerId()const
@@ -121,7 +121,18 @@ long AddListenerWhiteListItemRequest::getOwnerId()const
 void AddListenerWhiteListItemRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AddListenerWhiteListItemRequest::getListenerProtocol()const
+{
+	return listenerProtocol_;
+}
+
+void AddListenerWhiteListItemRequest::setListenerProtocol(const std::string& listenerProtocol)
+{
+	listenerProtocol_ = listenerProtocol;
+	setCoreParameter("ListenerProtocol", listenerProtocol);
 }
 
 std::string AddListenerWhiteListItemRequest::getTags()const
@@ -132,6 +143,6 @@ std::string AddListenerWhiteListItemRequest::getTags()const
 void AddListenerWhiteListItemRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeCpmcPunishListRequest::getSrcIP()const
 void DescribeCpmcPunishListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", srcIP);
 }
 
 std::string DescribeCpmcPunishListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCpmcPunishListRequest::getSourceIp()const
 void DescribeCpmcPunishListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeCpmcPunishListRequest::getPageSize()const
@@ -55,7 +55,18 @@ int DescribeCpmcPunishListRequest::getPageSize()const
 void DescribeCpmcPunishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeCpmcPunishListRequest::getPunishType()const
+{
+	return punishType_;
+}
+
+void DescribeCpmcPunishListRequest::setPunishType(const std::string& punishType)
+{
+	punishType_ = punishType;
+	setCoreParameter("PunishType", punishType);
 }
 
 int DescribeCpmcPunishListRequest::getCurrentPage()const
@@ -66,7 +77,7 @@ int DescribeCpmcPunishListRequest::getCurrentPage()const
 void DescribeCpmcPunishListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeCpmcPunishListRequest::getPunishStatus()const
@@ -77,7 +88,7 @@ std::string DescribeCpmcPunishListRequest::getPunishStatus()const
 void DescribeCpmcPunishListRequest::setPunishStatus(const std::string& punishStatus)
 {
 	punishStatus_ = punishStatus;
-	setParameter("PunishStatus", punishStatus);
+	setCoreParameter("PunishStatus", punishStatus);
 }
 
 std::string DescribeCpmcPunishListRequest::getLang()const
@@ -88,7 +99,7 @@ std::string DescribeCpmcPunishListRequest::getLang()const
 void DescribeCpmcPunishListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeCpmcPunishListRequest::getSourceCode()const
@@ -99,6 +110,6 @@ std::string DescribeCpmcPunishListRequest::getSourceCode()const
 void DescribeCpmcPunishListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", sourceCode);
 }
 

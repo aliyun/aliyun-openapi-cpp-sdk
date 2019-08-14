@@ -33,7 +33,7 @@ std::string TranslateGeneralRequest::getSourceLanguage()const
 void TranslateGeneralRequest::setSourceLanguage(const std::string& sourceLanguage)
 {
 	sourceLanguage_ = sourceLanguage;
-	setParameter("SourceLanguage", sourceLanguage);
+	setCoreParameter("SourceLanguage", sourceLanguage);
 }
 
 std::string TranslateGeneralRequest::getSourceText()const
@@ -44,7 +44,7 @@ std::string TranslateGeneralRequest::getSourceText()const
 void TranslateGeneralRequest::setSourceText(const std::string& sourceText)
 {
 	sourceText_ = sourceText;
-	setParameter("SourceText", sourceText);
+	setCoreParameter("SourceText", sourceText);
 }
 
 std::string TranslateGeneralRequest::getFormatType()const
@@ -55,7 +55,7 @@ std::string TranslateGeneralRequest::getFormatType()const
 void TranslateGeneralRequest::setFormatType(const std::string& formatType)
 {
 	formatType_ = formatType;
-	setParameter("FormatType", formatType);
+	setCoreParameter("FormatType", formatType);
 }
 
 std::string TranslateGeneralRequest::getTargetLanguage()const
@@ -66,7 +66,7 @@ std::string TranslateGeneralRequest::getTargetLanguage()const
 void TranslateGeneralRequest::setTargetLanguage(const std::string& targetLanguage)
 {
 	targetLanguage_ = targetLanguage;
-	setParameter("TargetLanguage", targetLanguage);
+	setCoreParameter("TargetLanguage", targetLanguage);
 }
 
 std::string TranslateGeneralRequest::getScene()const
@@ -77,6 +77,6 @@ std::string TranslateGeneralRequest::getScene()const
 void TranslateGeneralRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setParameter("Scene", scene);
+	setCoreParameter("Scene", scene);
 }
 

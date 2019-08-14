@@ -49,8 +49,10 @@ namespace AlibabaCloud
 					std::string status;
 					std::string createResource;
 					long createTime;
+					std::string machineType;
 					std::string depositType;
 					int period;
+					std::string metaStoreType;
 					FailReason failReason;
 					std::string name;
 					std::string type;

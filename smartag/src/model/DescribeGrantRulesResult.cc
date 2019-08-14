@@ -35,10 +35,13 @@ DescribeGrantRulesResult::~DescribeGrantRulesResult()
 
 void DescribeGrantRulesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allGrantRules = value["GrantRules"]["GrantRule"];
 	for (auto value : allGrantRules)
@@ -48,8 +51,8 @@ void DescribeGrantRulesResult::parse(const std::string &payload)
 			grantRulesObject.grantRuleId = value["GrantRuleId"].asString();
 		if(!value["CenUid"].isNull())
 			grantRulesObject.cenUid = std::stol(value["CenUid"].asString());
-		if(!value["CcnId"].isNull())
-			grantRulesObject.ccnId = std::stol(value["CcnId"].asString());
+		if(!value["CcnUid"].isNull())
+			grantRulesObject.ccnUid = std::stol(value["CcnUid"].asString());
 		if(!value["CenInstanceId"].isNull())
 			grantRulesObject.cenInstanceId = value["CenInstanceId"].asString();
 		if(!value["CcnInstanceId"].isNull())

@@ -42,6 +42,7 @@ namespace AlibabaCloud
 						std::string instanceType;
 						std::string spotStrategy;
 					};
+					std::string resourceGroupId;
 					bool enableAutoGrow;
 					float spotPriceLimit;
 					std::vector<QueueInfo::InstanceTypeInfo> instanceTypes;

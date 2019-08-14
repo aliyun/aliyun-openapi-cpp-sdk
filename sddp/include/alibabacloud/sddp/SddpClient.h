@@ -28,18 +28,18 @@
 #include "model/CreateConfigResult.h"
 #include "model/DescribeEventTypesRequest.h"
 #include "model/DescribeEventTypesResult.h"
-#include "model/DescribePackagesRequest.h"
-#include "model/DescribePackagesResult.h"
 #include "model/ModifyEventStatusRequest.h"
 #include "model/ModifyEventStatusResult.h"
+#include "model/DescribePackagesRequest.h"
+#include "model/DescribePackagesResult.h"
 #include "model/DescribeConfigsRequest.h"
 #include "model/DescribeConfigsResult.h"
 #include "model/DescribeAuthAccountsRequest.h"
 #include "model/DescribeAuthAccountsResult.h"
-#include "model/DescribeDataAssetsRequest.h"
-#include "model/DescribeDataAssetsResult.h"
 #include "model/ValidateConnectorRequest.h"
 #include "model/ValidateConnectorResult.h"
+#include "model/DescribeDataAssetsRequest.h"
+#include "model/DescribeDataAssetsResult.h"
 #include "model/DescribeCloudDatabasesRequest.h"
 #include "model/DescribeCloudDatabasesResult.h"
 #include "model/CreateRuleRequest.h"
@@ -50,16 +50,16 @@
 #include "model/DeleteRuleResult.h"
 #include "model/DescribeDataHubConnectorsRequest.h"
 #include "model/DescribeDataHubConnectorsResult.h"
-#include "model/DescribeRulesRequest.h"
-#include "model/DescribeRulesResult.h"
-#include "model/DescribeDataLimitDetailRequest.h"
-#include "model/DescribeDataLimitDetailResult.h"
 #include "model/DescribeColumnsRequest.h"
 #include "model/DescribeColumnsResult.h"
-#include "model/ModifyRuleStatusRequest.h"
-#include "model/ModifyRuleStatusResult.h"
+#include "model/DescribeDataLimitDetailRequest.h"
+#include "model/DescribeDataLimitDetailResult.h"
+#include "model/DescribeRulesRequest.h"
+#include "model/DescribeRulesResult.h"
 #include "model/DeleteDataLimitRequest.h"
 #include "model/DeleteDataLimitResult.h"
+#include "model/ModifyRuleStatusRequest.h"
+#include "model/ModifyRuleStatusResult.h"
 #include "model/DescribeAccountDetailRequest.h"
 #include "model/DescribeAccountDetailResult.h"
 #include "model/DescribeDepartsRequest.h"
@@ -82,10 +82,10 @@
 #include "model/CreateDataLimitResult.h"
 #include "model/ModifyRuleRequest.h"
 #include "model/ModifyRuleResult.h"
-#include "model/ModifyDataLimitRequest.h"
-#include "model/ModifyDataLimitResult.h"
 #include "model/DescribeEventDetailRequest.h"
 #include "model/DescribeEventDetailResult.h"
+#include "model/ModifyDataLimitRequest.h"
+#include "model/ModifyDataLimitResult.h"
 #include "model/DescribeTablesRequest.h"
 #include "model/DescribeTablesResult.h"
 #include "model/DescribePrivilegesRequest.h"
@@ -94,10 +94,10 @@
 #include "model/DescribeDataHubProjectsResult.h"
 #include "model/DescribeInstancesRequest.h"
 #include "model/DescribeInstancesResult.h"
-#include "model/ModifyDefaultLevelRequest.h"
-#include "model/ModifyDefaultLevelResult.h"
 #include "model/ModifyEventTypeStatusRequest.h"
 #include "model/ModifyEventTypeStatusResult.h"
+#include "model/ModifyDefaultLevelRequest.h"
+#include "model/ModifyDefaultLevelResult.h"
 #include "model/DescribeUserStatusRequest.h"
 #include "model/DescribeUserStatusResult.h"
 
@@ -118,24 +118,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEventTypesResult> DescribeEventTypesOutcome;
 			typedef std::future<DescribeEventTypesOutcome> DescribeEventTypesOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeEventTypesRequest&, const DescribeEventTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventTypesAsyncHandler;
-			typedef Outcome<Error, Model::DescribePackagesResult> DescribePackagesOutcome;
-			typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
-			typedef std::function<void(const SddpClient*, const Model::DescribePackagesRequest&, const DescribePackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackagesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyEventStatusResult> ModifyEventStatusOutcome;
 			typedef std::future<ModifyEventStatusOutcome> ModifyEventStatusOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::ModifyEventStatusRequest&, const ModifyEventStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEventStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribePackagesResult> DescribePackagesOutcome;
+			typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribePackagesRequest&, const DescribePackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackagesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConfigsResult> DescribeConfigsOutcome;
 			typedef std::future<DescribeConfigsOutcome> DescribeConfigsOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeConfigsRequest&, const DescribeConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuthAccountsResult> DescribeAuthAccountsOutcome;
 			typedef std::future<DescribeAuthAccountsOutcome> DescribeAuthAccountsOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeAuthAccountsRequest&, const DescribeAuthAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthAccountsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDataAssetsResult> DescribeDataAssetsOutcome;
-			typedef std::future<DescribeDataAssetsOutcome> DescribeDataAssetsOutcomeCallable;
-			typedef std::function<void(const SddpClient*, const Model::DescribeDataAssetsRequest&, const DescribeDataAssetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataAssetsAsyncHandler;
 			typedef Outcome<Error, Model::ValidateConnectorResult> ValidateConnectorOutcome;
 			typedef std::future<ValidateConnectorOutcome> ValidateConnectorOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::ValidateConnectorRequest&, const ValidateConnectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateConnectorAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataAssetsResult> DescribeDataAssetsOutcome;
+			typedef std::future<DescribeDataAssetsOutcome> DescribeDataAssetsOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeDataAssetsRequest&, const DescribeDataAssetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataAssetsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCloudDatabasesResult> DescribeCloudDatabasesOutcome;
 			typedef std::future<DescribeCloudDatabasesOutcome> DescribeCloudDatabasesOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeCloudDatabasesRequest&, const DescribeCloudDatabasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudDatabasesAsyncHandler;
@@ -151,21 +151,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDataHubConnectorsResult> DescribeDataHubConnectorsOutcome;
 			typedef std::future<DescribeDataHubConnectorsOutcome> DescribeDataHubConnectorsOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeDataHubConnectorsRequest&, const DescribeDataHubConnectorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataHubConnectorsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRulesResult> DescribeRulesOutcome;
-			typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
-			typedef std::function<void(const SddpClient*, const Model::DescribeRulesRequest&, const DescribeRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDataLimitDetailResult> DescribeDataLimitDetailOutcome;
-			typedef std::future<DescribeDataLimitDetailOutcome> DescribeDataLimitDetailOutcomeCallable;
-			typedef std::function<void(const SddpClient*, const Model::DescribeDataLimitDetailRequest&, const DescribeDataLimitDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLimitDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeColumnsResult> DescribeColumnsOutcome;
 			typedef std::future<DescribeColumnsOutcome> DescribeColumnsOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeColumnsRequest&, const DescribeColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnsAsyncHandler;
-			typedef Outcome<Error, Model::ModifyRuleStatusResult> ModifyRuleStatusOutcome;
-			typedef std::future<ModifyRuleStatusOutcome> ModifyRuleStatusOutcomeCallable;
-			typedef std::function<void(const SddpClient*, const Model::ModifyRuleStatusRequest&, const ModifyRuleStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataLimitDetailResult> DescribeDataLimitDetailOutcome;
+			typedef std::future<DescribeDataLimitDetailOutcome> DescribeDataLimitDetailOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeDataLimitDetailRequest&, const DescribeDataLimitDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLimitDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRulesResult> DescribeRulesOutcome;
+			typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::DescribeRulesRequest&, const DescribeRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDataLimitResult> DeleteDataLimitOutcome;
 			typedef std::future<DeleteDataLimitOutcome> DeleteDataLimitOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DeleteDataLimitRequest&, const DeleteDataLimitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataLimitAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRuleStatusResult> ModifyRuleStatusOutcome;
+			typedef std::future<ModifyRuleStatusOutcome> ModifyRuleStatusOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::ModifyRuleStatusRequest&, const ModifyRuleStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccountDetailResult> DescribeAccountDetailOutcome;
 			typedef std::future<DescribeAccountDetailOutcome> DescribeAccountDetailOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeAccountDetailRequest&, const DescribeAccountDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountDetailAsyncHandler;
@@ -199,12 +199,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyRuleResult> ModifyRuleOutcome;
 			typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::ModifyRuleRequest&, const ModifyRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDataLimitResult> ModifyDataLimitOutcome;
-			typedef std::future<ModifyDataLimitOutcome> ModifyDataLimitOutcomeCallable;
-			typedef std::function<void(const SddpClient*, const Model::ModifyDataLimitRequest&, const ModifyDataLimitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataLimitAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEventDetailResult> DescribeEventDetailOutcome;
 			typedef std::future<DescribeEventDetailOutcome> DescribeEventDetailOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeEventDetailRequest&, const DescribeEventDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventDetailAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDataLimitResult> ModifyDataLimitOutcome;
+			typedef std::future<ModifyDataLimitOutcome> ModifyDataLimitOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::ModifyDataLimitRequest&, const ModifyDataLimitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataLimitAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTablesResult> DescribeTablesOutcome;
 			typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeTablesRequest&, const DescribeTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
@@ -217,12 +217,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstancesResult> DescribeInstancesOutcome;
 			typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeInstancesRequest&, const DescribeInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDefaultLevelResult> ModifyDefaultLevelOutcome;
-			typedef std::future<ModifyDefaultLevelOutcome> ModifyDefaultLevelOutcomeCallable;
-			typedef std::function<void(const SddpClient*, const Model::ModifyDefaultLevelRequest&, const ModifyDefaultLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultLevelAsyncHandler;
 			typedef Outcome<Error, Model::ModifyEventTypeStatusResult> ModifyEventTypeStatusOutcome;
 			typedef std::future<ModifyEventTypeStatusOutcome> ModifyEventTypeStatusOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::ModifyEventTypeStatusRequest&, const ModifyEventTypeStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEventTypeStatusAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDefaultLevelResult> ModifyDefaultLevelOutcome;
+			typedef std::future<ModifyDefaultLevelOutcome> ModifyDefaultLevelOutcomeCallable;
+			typedef std::function<void(const SddpClient*, const Model::ModifyDefaultLevelRequest&, const ModifyDefaultLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultLevelAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserStatusResult> DescribeUserStatusOutcome;
 			typedef std::future<DescribeUserStatusOutcome> DescribeUserStatusOutcomeCallable;
 			typedef std::function<void(const SddpClient*, const Model::DescribeUserStatusRequest&, const DescribeUserStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserStatusAsyncHandler;
@@ -240,24 +240,24 @@ namespace AlibabaCloud
 			DescribeEventTypesOutcome describeEventTypes(const Model::DescribeEventTypesRequest &request)const;
 			void describeEventTypesAsync(const Model::DescribeEventTypesRequest& request, const DescribeEventTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEventTypesOutcomeCallable describeEventTypesCallable(const Model::DescribeEventTypesRequest& request) const;
-			DescribePackagesOutcome describePackages(const Model::DescribePackagesRequest &request)const;
-			void describePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePackagesOutcomeCallable describePackagesCallable(const Model::DescribePackagesRequest& request) const;
 			ModifyEventStatusOutcome modifyEventStatus(const Model::ModifyEventStatusRequest &request)const;
 			void modifyEventStatusAsync(const Model::ModifyEventStatusRequest& request, const ModifyEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyEventStatusOutcomeCallable modifyEventStatusCallable(const Model::ModifyEventStatusRequest& request) const;
+			DescribePackagesOutcome describePackages(const Model::DescribePackagesRequest &request)const;
+			void describePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePackagesOutcomeCallable describePackagesCallable(const Model::DescribePackagesRequest& request) const;
 			DescribeConfigsOutcome describeConfigs(const Model::DescribeConfigsRequest &request)const;
 			void describeConfigsAsync(const Model::DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConfigsOutcomeCallable describeConfigsCallable(const Model::DescribeConfigsRequest& request) const;
 			DescribeAuthAccountsOutcome describeAuthAccounts(const Model::DescribeAuthAccountsRequest &request)const;
 			void describeAuthAccountsAsync(const Model::DescribeAuthAccountsRequest& request, const DescribeAuthAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuthAccountsOutcomeCallable describeAuthAccountsCallable(const Model::DescribeAuthAccountsRequest& request) const;
-			DescribeDataAssetsOutcome describeDataAssets(const Model::DescribeDataAssetsRequest &request)const;
-			void describeDataAssetsAsync(const Model::DescribeDataAssetsRequest& request, const DescribeDataAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDataAssetsOutcomeCallable describeDataAssetsCallable(const Model::DescribeDataAssetsRequest& request) const;
 			ValidateConnectorOutcome validateConnector(const Model::ValidateConnectorRequest &request)const;
 			void validateConnectorAsync(const Model::ValidateConnectorRequest& request, const ValidateConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateConnectorOutcomeCallable validateConnectorCallable(const Model::ValidateConnectorRequest& request) const;
+			DescribeDataAssetsOutcome describeDataAssets(const Model::DescribeDataAssetsRequest &request)const;
+			void describeDataAssetsAsync(const Model::DescribeDataAssetsRequest& request, const DescribeDataAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataAssetsOutcomeCallable describeDataAssetsCallable(const Model::DescribeDataAssetsRequest& request) const;
 			DescribeCloudDatabasesOutcome describeCloudDatabases(const Model::DescribeCloudDatabasesRequest &request)const;
 			void describeCloudDatabasesAsync(const Model::DescribeCloudDatabasesRequest& request, const DescribeCloudDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudDatabasesOutcomeCallable describeCloudDatabasesCallable(const Model::DescribeCloudDatabasesRequest& request) const;
@@ -273,21 +273,21 @@ namespace AlibabaCloud
 			DescribeDataHubConnectorsOutcome describeDataHubConnectors(const Model::DescribeDataHubConnectorsRequest &request)const;
 			void describeDataHubConnectorsAsync(const Model::DescribeDataHubConnectorsRequest& request, const DescribeDataHubConnectorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDataHubConnectorsOutcomeCallable describeDataHubConnectorsCallable(const Model::DescribeDataHubConnectorsRequest& request) const;
-			DescribeRulesOutcome describeRules(const Model::DescribeRulesRequest &request)const;
-			void describeRulesAsync(const Model::DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRulesOutcomeCallable describeRulesCallable(const Model::DescribeRulesRequest& request) const;
-			DescribeDataLimitDetailOutcome describeDataLimitDetail(const Model::DescribeDataLimitDetailRequest &request)const;
-			void describeDataLimitDetailAsync(const Model::DescribeDataLimitDetailRequest& request, const DescribeDataLimitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDataLimitDetailOutcomeCallable describeDataLimitDetailCallable(const Model::DescribeDataLimitDetailRequest& request) const;
 			DescribeColumnsOutcome describeColumns(const Model::DescribeColumnsRequest &request)const;
 			void describeColumnsAsync(const Model::DescribeColumnsRequest& request, const DescribeColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeColumnsOutcomeCallable describeColumnsCallable(const Model::DescribeColumnsRequest& request) const;
-			ModifyRuleStatusOutcome modifyRuleStatus(const Model::ModifyRuleStatusRequest &request)const;
-			void modifyRuleStatusAsync(const Model::ModifyRuleStatusRequest& request, const ModifyRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyRuleStatusOutcomeCallable modifyRuleStatusCallable(const Model::ModifyRuleStatusRequest& request) const;
+			DescribeDataLimitDetailOutcome describeDataLimitDetail(const Model::DescribeDataLimitDetailRequest &request)const;
+			void describeDataLimitDetailAsync(const Model::DescribeDataLimitDetailRequest& request, const DescribeDataLimitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataLimitDetailOutcomeCallable describeDataLimitDetailCallable(const Model::DescribeDataLimitDetailRequest& request) const;
+			DescribeRulesOutcome describeRules(const Model::DescribeRulesRequest &request)const;
+			void describeRulesAsync(const Model::DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRulesOutcomeCallable describeRulesCallable(const Model::DescribeRulesRequest& request) const;
 			DeleteDataLimitOutcome deleteDataLimit(const Model::DeleteDataLimitRequest &request)const;
 			void deleteDataLimitAsync(const Model::DeleteDataLimitRequest& request, const DeleteDataLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDataLimitOutcomeCallable deleteDataLimitCallable(const Model::DeleteDataLimitRequest& request) const;
+			ModifyRuleStatusOutcome modifyRuleStatus(const Model::ModifyRuleStatusRequest &request)const;
+			void modifyRuleStatusAsync(const Model::ModifyRuleStatusRequest& request, const ModifyRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRuleStatusOutcomeCallable modifyRuleStatusCallable(const Model::ModifyRuleStatusRequest& request) const;
 			DescribeAccountDetailOutcome describeAccountDetail(const Model::DescribeAccountDetailRequest &request)const;
 			void describeAccountDetailAsync(const Model::DescribeAccountDetailRequest& request, const DescribeAccountDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountDetailOutcomeCallable describeAccountDetailCallable(const Model::DescribeAccountDetailRequest& request) const;
@@ -321,12 +321,12 @@ namespace AlibabaCloud
 			ModifyRuleOutcome modifyRule(const Model::ModifyRuleRequest &request)const;
 			void modifyRuleAsync(const Model::ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyRuleOutcomeCallable modifyRuleCallable(const Model::ModifyRuleRequest& request) const;
-			ModifyDataLimitOutcome modifyDataLimit(const Model::ModifyDataLimitRequest &request)const;
-			void modifyDataLimitAsync(const Model::ModifyDataLimitRequest& request, const ModifyDataLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDataLimitOutcomeCallable modifyDataLimitCallable(const Model::ModifyDataLimitRequest& request) const;
 			DescribeEventDetailOutcome describeEventDetail(const Model::DescribeEventDetailRequest &request)const;
 			void describeEventDetailAsync(const Model::DescribeEventDetailRequest& request, const DescribeEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEventDetailOutcomeCallable describeEventDetailCallable(const Model::DescribeEventDetailRequest& request) const;
+			ModifyDataLimitOutcome modifyDataLimit(const Model::ModifyDataLimitRequest &request)const;
+			void modifyDataLimitAsync(const Model::ModifyDataLimitRequest& request, const ModifyDataLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDataLimitOutcomeCallable modifyDataLimitCallable(const Model::ModifyDataLimitRequest& request) const;
 			DescribeTablesOutcome describeTables(const Model::DescribeTablesRequest &request)const;
 			void describeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTablesOutcomeCallable describeTablesCallable(const Model::DescribeTablesRequest& request) const;
@@ -339,12 +339,12 @@ namespace AlibabaCloud
 			DescribeInstancesOutcome describeInstances(const Model::DescribeInstancesRequest &request)const;
 			void describeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstancesOutcomeCallable describeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
-			ModifyDefaultLevelOutcome modifyDefaultLevel(const Model::ModifyDefaultLevelRequest &request)const;
-			void modifyDefaultLevelAsync(const Model::ModifyDefaultLevelRequest& request, const ModifyDefaultLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDefaultLevelOutcomeCallable modifyDefaultLevelCallable(const Model::ModifyDefaultLevelRequest& request) const;
 			ModifyEventTypeStatusOutcome modifyEventTypeStatus(const Model::ModifyEventTypeStatusRequest &request)const;
 			void modifyEventTypeStatusAsync(const Model::ModifyEventTypeStatusRequest& request, const ModifyEventTypeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyEventTypeStatusOutcomeCallable modifyEventTypeStatusCallable(const Model::ModifyEventTypeStatusRequest& request) const;
+			ModifyDefaultLevelOutcome modifyDefaultLevel(const Model::ModifyDefaultLevelRequest &request)const;
+			void modifyDefaultLevelAsync(const Model::ModifyDefaultLevelRequest& request, const ModifyDefaultLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDefaultLevelOutcomeCallable modifyDefaultLevelCallable(const Model::ModifyDefaultLevelRequest& request) const;
 			DescribeUserStatusOutcome describeUserStatus(const Model::DescribeUserStatusRequest &request)const;
 			void describeUserStatusAsync(const Model::DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserStatusOutcomeCallable describeUserStatusCallable(const Model::DescribeUserStatusRequest& request) const;

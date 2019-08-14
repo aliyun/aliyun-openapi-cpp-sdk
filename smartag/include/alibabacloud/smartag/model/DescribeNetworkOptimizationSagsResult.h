@@ -48,16 +48,16 @@ namespace AlibabaCloud
 				~DescribeNetworkOptimizationSagsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
+				int getPageNumber()const;
 				std::vector<SmartAccessGateway> getSmartAccessGateways()const;
-				int getPageNo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
 				int pageSize_;
+				int pageNumber_;
 				std::vector<SmartAccessGateway> smartAccessGateways_;
-				int pageNo_;
 
 			};
 		}

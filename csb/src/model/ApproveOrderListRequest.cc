@@ -33,7 +33,7 @@ std::string ApproveOrderListRequest::getData()const
 void ApproveOrderListRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setParameter("Data", data);
+	setCoreParameter("Data", data);
 }
 
 std::string ApproveOrderListRequest::getRegionId()const
@@ -44,6 +44,6 @@ std::string ApproveOrderListRequest::getRegionId()const
 void ApproveOrderListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -23,6 +23,10 @@ set(dbs_public_header
 set(dbs_public_header_model 
 	include/alibabacloud/dbs/model/DescribeBackupPlanListRequest.h
 	include/alibabacloud/dbs/model/DescribeBackupPlanListResult.h
+	include/alibabacloud/dbs/model/CreateBackupPlanRequest.h
+	include/alibabacloud/dbs/model/CreateBackupPlanResult.h
+	include/alibabacloud/dbs/model/StartBackupPlanRequest.h
+	include/alibabacloud/dbs/model/StartBackupPlanResult.h
 	include/alibabacloud/dbs/model/RenewBackupPlanRequest.h
 	include/alibabacloud/dbs/model/RenewBackupPlanResult.h
 	include/alibabacloud/dbs/model/DescribeFullBackupListRequest.h
@@ -39,8 +43,12 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/DescribeBackupGatewayListResult.h
 	include/alibabacloud/dbs/model/ModifyBackupObjectsRequest.h
 	include/alibabacloud/dbs/model/ModifyBackupObjectsResult.h
+	include/alibabacloud/dbs/model/DescribeIncrementBackupListRequest.h
+	include/alibabacloud/dbs/model/DescribeIncrementBackupListResult.h
 	include/alibabacloud/dbs/model/CreateRestoreTaskRequest.h
 	include/alibabacloud/dbs/model/CreateRestoreTaskResult.h
+	include/alibabacloud/dbs/model/ConfigureBackupPlanRequest.h
+	include/alibabacloud/dbs/model/ConfigureBackupPlanResult.h
 	include/alibabacloud/dbs/model/ModifyBackupStrategyRequest.h
 	include/alibabacloud/dbs/model/ModifyBackupStrategyResult.h
 	include/alibabacloud/dbs/model/StartRestoreTaskRequest.h
@@ -52,6 +60,10 @@ set(dbs_src
 	src/DbsClient.cc
 	src/model/DescribeBackupPlanListRequest.cc
 	src/model/DescribeBackupPlanListResult.cc
+	src/model/CreateBackupPlanRequest.cc
+	src/model/CreateBackupPlanResult.cc
+	src/model/StartBackupPlanRequest.cc
+	src/model/StartBackupPlanResult.cc
 	src/model/RenewBackupPlanRequest.cc
 	src/model/RenewBackupPlanResult.cc
 	src/model/DescribeFullBackupListRequest.cc
@@ -68,8 +80,12 @@ set(dbs_src
 	src/model/DescribeBackupGatewayListResult.cc
 	src/model/ModifyBackupObjectsRequest.cc
 	src/model/ModifyBackupObjectsResult.cc
+	src/model/DescribeIncrementBackupListRequest.cc
+	src/model/DescribeIncrementBackupListResult.cc
 	src/model/CreateRestoreTaskRequest.cc
 	src/model/CreateRestoreTaskResult.cc
+	src/model/ConfigureBackupPlanRequest.cc
+	src/model/ConfigureBackupPlanResult.cc
 	src/model/ModifyBackupStrategyRequest.cc
 	src/model/ModifyBackupStrategyResult.cc
 	src/model/StartRestoreTaskRequest.cc

@@ -55,20 +55,24 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryBidRecordsResult.h
 	include/alibabacloud/domain/model/RecordDemandRequest.h
 	include/alibabacloud/domain/model/RecordDemandResult.h
-	include/alibabacloud/domain/model/UpdateDomainToDomainGroupRequest.h
-	include/alibabacloud/domain/model/UpdateDomainToDomainGroupResult.h
+	include/alibabacloud/domain/model/QueryArtExtensionRequest.h
+	include/alibabacloud/domain/model/QueryArtExtensionResult.h
 	include/alibabacloud/domain/model/QueryContactInfoRequest.h
 	include/alibabacloud/domain/model/QueryContactInfoResult.h
+	include/alibabacloud/domain/model/UpdateDomainToDomainGroupRequest.h
+	include/alibabacloud/domain/model/UpdateDomainToDomainGroupResult.h
 	include/alibabacloud/domain/model/QueryDomainSuffixRequest.h
 	include/alibabacloud/domain/model/QueryDomainSuffixResult.h
-	include/alibabacloud/domain/model/SaveSingleTaskForQueryingTransferAuthorizationCodeRequest.h
-	include/alibabacloud/domain/model/SaveSingleTaskForQueryingTransferAuthorizationCodeResult.h
 	include/alibabacloud/domain/model/GetReserveDomainUrlRequest.h
 	include/alibabacloud/domain/model/GetReserveDomainUrlResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForQueryingTransferAuthorizationCodeRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForQueryingTransferAuthorizationCodeResult.h
 	include/alibabacloud/domain/model/QueryLocalEnsAssociationRequest.h
 	include/alibabacloud/domain/model/QueryLocalEnsAssociationResult.h
 	include/alibabacloud/domain/model/SubmitEmailVerificationRequest.h
 	include/alibabacloud/domain/model/SubmitEmailVerificationResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForAddingDSRecordRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForAddingDSRecordResult.h
 	include/alibabacloud/domain/model/ResendEmailVerificationRequest.h
 	include/alibabacloud/domain/model/ResendEmailVerificationResult.h
 	include/alibabacloud/domain/model/BidDomainRequest.h
@@ -83,18 +87,20 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveSingleTaskForUpdatingContactInfoResult.h
 	include/alibabacloud/domain/model/SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest.h
 	include/alibabacloud/domain/model/SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResult.h
-	include/alibabacloud/domain/model/GetQualificationUploadPolicyRequest.h
-	include/alibabacloud/domain/model/GetQualificationUploadPolicyResult.h
-	include/alibabacloud/domain/model/QueryDomainRealNameVerificationInfoRequest.h
-	include/alibabacloud/domain/model/QueryDomainRealNameVerificationInfoResult.h
 	include/alibabacloud/domain/model/VerifyEmailRequest.h
 	include/alibabacloud/domain/model/VerifyEmailResult.h
+	include/alibabacloud/domain/model/QueryDomainRealNameVerificationInfoRequest.h
+	include/alibabacloud/domain/model/QueryDomainRealNameVerificationInfoResult.h
+	include/alibabacloud/domain/model/GetQualificationUploadPolicyRequest.h
+	include/alibabacloud/domain/model/GetQualificationUploadPolicyResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForDomainNameProxyServiceRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForDomainNameProxyServiceResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForModifyingDomainDnsRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForModifyingDomainDnsResult.h
 	include/alibabacloud/domain/model/QueryDnsHostRequest.h
 	include/alibabacloud/domain/model/QueryDnsHostResult.h
+	include/alibabacloud/domain/model/CancelTaskRequest.h
+	include/alibabacloud/domain/model/CancelTaskResult.h
 	include/alibabacloud/domain/model/QueryRegistrantProfileRealNameVerificationInfoRequest.h
 	include/alibabacloud/domain/model/QueryRegistrantProfileRealNameVerificationInfoResult.h
 	include/alibabacloud/domain/model/FuzzyMatchDomainSensitiveWordRequest.h
@@ -103,6 +109,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/FailDemandResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCancelingTransferInRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCancelingTransferInResult.h
+	include/alibabacloud/domain/model/QueryDSRecordRequest.h
+	include/alibabacloud/domain/model/QueryDSRecordResult.h
 	include/alibabacloud/domain/model/QueryQualificationDetailRequest.h
 	include/alibabacloud/domain/model/QueryQualificationDetailResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForTransferProhibitionLockRequest.h
@@ -125,6 +133,10 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryServerLockResult.h
 	include/alibabacloud/domain/model/BatchFuzzyMatchDomainSensitiveWordRequest.h
 	include/alibabacloud/domain/model/BatchFuzzyMatchDomainSensitiveWordResult.h
+	include/alibabacloud/domain/model/ScrollDomainListRequest.h
+	include/alibabacloud/domain/model/ScrollDomainListResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForSaveArtExtensionRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForSaveArtExtensionResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForModifyingDnsHostRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForModifyingDnsHostResult.h
 	include/alibabacloud/domain/model/QueryBookingDomainInfoRequest.h
@@ -163,10 +175,10 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveBatchTaskForCreatingOrderActivateResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForTransferProhibitionLockRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForTransferProhibitionLockResult.h
-	include/alibabacloud/domain/model/SaveSingleTaskForAssociatingEnsRequest.h
-	include/alibabacloud/domain/model/SaveSingleTaskForAssociatingEnsResult.h
 	include/alibabacloud/domain/model/SaveTaskForSubmittingDomainDeleteRequest.h
 	include/alibabacloud/domain/model/SaveTaskForSubmittingDomainDeleteResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForAssociatingEnsRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForAssociatingEnsResult.h
 	include/alibabacloud/domain/model/QueryTransferInListRequest.h
 	include/alibabacloud/domain/model/QueryTransferInListResult.h
 	include/alibabacloud/domain/model/TransferInRefetchWhoisEmailRequest.h
@@ -177,18 +189,22 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveSingleTaskForUpdateProhibitionLockResult.h
 	include/alibabacloud/domain/model/LookupTmchNoticeRequest.h
 	include/alibabacloud/domain/model/LookupTmchNoticeResult.h
-	include/alibabacloud/domain/model/ReserveDomainRequest.h
-	include/alibabacloud/domain/model/ReserveDomainResult.h
 	include/alibabacloud/domain/model/QueryFailingReasonListForQualificationRequest.h
 	include/alibabacloud/domain/model/QueryFailingReasonListForQualificationResult.h
+	include/alibabacloud/domain/model/ReserveDomainRequest.h
+	include/alibabacloud/domain/model/ReserveDomainResult.h
 	include/alibabacloud/domain/model/TransferInResendMailTokenRequest.h
 	include/alibabacloud/domain/model/TransferInResendMailTokenResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForSynchronizingDSRecordRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForSynchronizingDSRecordResult.h
 	include/alibabacloud/domain/model/QueryTaskDetailHistoryRequest.h
 	include/alibabacloud/domain/model/QueryTaskDetailHistoryResult.h
 	include/alibabacloud/domain/model/QueryDomainGroupListRequest.h
 	include/alibabacloud/domain/model/QueryDomainGroupListResult.h
 	include/alibabacloud/domain/model/ListEmailVerificationRequest.h
 	include/alibabacloud/domain/model/ListEmailVerificationResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForModifyingDSRecordRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForModifyingDSRecordResult.h
 	include/alibabacloud/domain/model/SaveDomainGroupRequest.h
 	include/alibabacloud/domain/model/SaveDomainGroupResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForApprovingTransferOutRequest.h
@@ -203,28 +219,32 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryAuctionDetailResult.h
 	include/alibabacloud/domain/model/QueryDomainByInstanceIdRequest.h
 	include/alibabacloud/domain/model/QueryDomainByInstanceIdResult.h
-	include/alibabacloud/domain/model/SaveSingleTaskForDeletingDnsHostRequest.h
-	include/alibabacloud/domain/model/SaveSingleTaskForDeletingDnsHostResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForCreatingOrderRedeemRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForCreatingOrderRedeemResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForDeletingDnsHostRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForDeletingDnsHostResult.h
 	include/alibabacloud/domain/model/QueryTaskListRequest.h
 	include/alibabacloud/domain/model/QueryTaskListResult.h
 	include/alibabacloud/domain/model/QueryRegistrantProfilesRequest.h
 	include/alibabacloud/domain/model/QueryRegistrantProfilesResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderRenewRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderRenewResult.h
-	include/alibabacloud/domain/model/PollTaskResultRequest.h
-	include/alibabacloud/domain/model/PollTaskResultResult.h
-	include/alibabacloud/domain/model/DeleteEmailVerificationRequest.h
-	include/alibabacloud/domain/model/DeleteEmailVerificationResult.h
 	include/alibabacloud/domain/model/QueryDomainAdminDivisionRequest.h
 	include/alibabacloud/domain/model/QueryDomainAdminDivisionResult.h
+	include/alibabacloud/domain/model/DeleteEmailVerificationRequest.h
+	include/alibabacloud/domain/model/DeleteEmailVerificationResult.h
+	include/alibabacloud/domain/model/PollTaskResultRequest.h
+	include/alibabacloud/domain/model/PollTaskResultResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderActivateRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingOrderActivateResult.h
+	include/alibabacloud/domain/model/SaveSingleTaskForDeletingDSRecordRequest.h
+	include/alibabacloud/domain/model/SaveSingleTaskForDeletingDSRecordResult.h
 	include/alibabacloud/domain/model/RefuseDemandRequest.h
 	include/alibabacloud/domain/model/RefuseDemandResult.h
 	include/alibabacloud/domain/model/TransferInReenterTransferAuthorizationCodeRequest.h
 	include/alibabacloud/domain/model/TransferInReenterTransferAuthorizationCodeResult.h
+	include/alibabacloud/domain/model/QueryDomainByDomainNameRequest.h
+	include/alibabacloud/domain/model/QueryDomainByDomainNameResult.h
 	include/alibabacloud/domain/model/EmailVerifiedRequest.h
 	include/alibabacloud/domain/model/EmailVerifiedResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForCreatingDnsHostRequest.h
@@ -276,20 +296,24 @@ set(domain_src
 	src/model/QueryBidRecordsResult.cc
 	src/model/RecordDemandRequest.cc
 	src/model/RecordDemandResult.cc
-	src/model/UpdateDomainToDomainGroupRequest.cc
-	src/model/UpdateDomainToDomainGroupResult.cc
+	src/model/QueryArtExtensionRequest.cc
+	src/model/QueryArtExtensionResult.cc
 	src/model/QueryContactInfoRequest.cc
 	src/model/QueryContactInfoResult.cc
+	src/model/UpdateDomainToDomainGroupRequest.cc
+	src/model/UpdateDomainToDomainGroupResult.cc
 	src/model/QueryDomainSuffixRequest.cc
 	src/model/QueryDomainSuffixResult.cc
-	src/model/SaveSingleTaskForQueryingTransferAuthorizationCodeRequest.cc
-	src/model/SaveSingleTaskForQueryingTransferAuthorizationCodeResult.cc
 	src/model/GetReserveDomainUrlRequest.cc
 	src/model/GetReserveDomainUrlResult.cc
+	src/model/SaveSingleTaskForQueryingTransferAuthorizationCodeRequest.cc
+	src/model/SaveSingleTaskForQueryingTransferAuthorizationCodeResult.cc
 	src/model/QueryLocalEnsAssociationRequest.cc
 	src/model/QueryLocalEnsAssociationResult.cc
 	src/model/SubmitEmailVerificationRequest.cc
 	src/model/SubmitEmailVerificationResult.cc
+	src/model/SaveSingleTaskForAddingDSRecordRequest.cc
+	src/model/SaveSingleTaskForAddingDSRecordResult.cc
 	src/model/ResendEmailVerificationRequest.cc
 	src/model/ResendEmailVerificationResult.cc
 	src/model/BidDomainRequest.cc
@@ -304,18 +328,20 @@ set(domain_src
 	src/model/SaveSingleTaskForUpdatingContactInfoResult.cc
 	src/model/SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest.cc
 	src/model/SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResult.cc
-	src/model/GetQualificationUploadPolicyRequest.cc
-	src/model/GetQualificationUploadPolicyResult.cc
-	src/model/QueryDomainRealNameVerificationInfoRequest.cc
-	src/model/QueryDomainRealNameVerificationInfoResult.cc
 	src/model/VerifyEmailRequest.cc
 	src/model/VerifyEmailResult.cc
+	src/model/QueryDomainRealNameVerificationInfoRequest.cc
+	src/model/QueryDomainRealNameVerificationInfoResult.cc
+	src/model/GetQualificationUploadPolicyRequest.cc
+	src/model/GetQualificationUploadPolicyResult.cc
 	src/model/SaveBatchTaskForDomainNameProxyServiceRequest.cc
 	src/model/SaveBatchTaskForDomainNameProxyServiceResult.cc
 	src/model/SaveBatchTaskForModifyingDomainDnsRequest.cc
 	src/model/SaveBatchTaskForModifyingDomainDnsResult.cc
 	src/model/QueryDnsHostRequest.cc
 	src/model/QueryDnsHostResult.cc
+	src/model/CancelTaskRequest.cc
+	src/model/CancelTaskResult.cc
 	src/model/QueryRegistrantProfileRealNameVerificationInfoRequest.cc
 	src/model/QueryRegistrantProfileRealNameVerificationInfoResult.cc
 	src/model/FuzzyMatchDomainSensitiveWordRequest.cc
@@ -324,6 +350,8 @@ set(domain_src
 	src/model/FailDemandResult.cc
 	src/model/SaveSingleTaskForCancelingTransferInRequest.cc
 	src/model/SaveSingleTaskForCancelingTransferInResult.cc
+	src/model/QueryDSRecordRequest.cc
+	src/model/QueryDSRecordResult.cc
 	src/model/QueryQualificationDetailRequest.cc
 	src/model/QueryQualificationDetailResult.cc
 	src/model/SaveBatchTaskForTransferProhibitionLockRequest.cc
@@ -346,6 +374,10 @@ set(domain_src
 	src/model/QueryServerLockResult.cc
 	src/model/BatchFuzzyMatchDomainSensitiveWordRequest.cc
 	src/model/BatchFuzzyMatchDomainSensitiveWordResult.cc
+	src/model/ScrollDomainListRequest.cc
+	src/model/ScrollDomainListResult.cc
+	src/model/SaveSingleTaskForSaveArtExtensionRequest.cc
+	src/model/SaveSingleTaskForSaveArtExtensionResult.cc
 	src/model/SaveSingleTaskForModifyingDnsHostRequest.cc
 	src/model/SaveSingleTaskForModifyingDnsHostResult.cc
 	src/model/QueryBookingDomainInfoRequest.cc
@@ -384,10 +416,10 @@ set(domain_src
 	src/model/SaveBatchTaskForCreatingOrderActivateResult.cc
 	src/model/SaveSingleTaskForTransferProhibitionLockRequest.cc
 	src/model/SaveSingleTaskForTransferProhibitionLockResult.cc
-	src/model/SaveSingleTaskForAssociatingEnsRequest.cc
-	src/model/SaveSingleTaskForAssociatingEnsResult.cc
 	src/model/SaveTaskForSubmittingDomainDeleteRequest.cc
 	src/model/SaveTaskForSubmittingDomainDeleteResult.cc
+	src/model/SaveSingleTaskForAssociatingEnsRequest.cc
+	src/model/SaveSingleTaskForAssociatingEnsResult.cc
 	src/model/QueryTransferInListRequest.cc
 	src/model/QueryTransferInListResult.cc
 	src/model/TransferInRefetchWhoisEmailRequest.cc
@@ -398,18 +430,22 @@ set(domain_src
 	src/model/SaveSingleTaskForUpdateProhibitionLockResult.cc
 	src/model/LookupTmchNoticeRequest.cc
 	src/model/LookupTmchNoticeResult.cc
-	src/model/ReserveDomainRequest.cc
-	src/model/ReserveDomainResult.cc
 	src/model/QueryFailingReasonListForQualificationRequest.cc
 	src/model/QueryFailingReasonListForQualificationResult.cc
+	src/model/ReserveDomainRequest.cc
+	src/model/ReserveDomainResult.cc
 	src/model/TransferInResendMailTokenRequest.cc
 	src/model/TransferInResendMailTokenResult.cc
+	src/model/SaveSingleTaskForSynchronizingDSRecordRequest.cc
+	src/model/SaveSingleTaskForSynchronizingDSRecordResult.cc
 	src/model/QueryTaskDetailHistoryRequest.cc
 	src/model/QueryTaskDetailHistoryResult.cc
 	src/model/QueryDomainGroupListRequest.cc
 	src/model/QueryDomainGroupListResult.cc
 	src/model/ListEmailVerificationRequest.cc
 	src/model/ListEmailVerificationResult.cc
+	src/model/SaveSingleTaskForModifyingDSRecordRequest.cc
+	src/model/SaveSingleTaskForModifyingDSRecordResult.cc
 	src/model/SaveDomainGroupRequest.cc
 	src/model/SaveDomainGroupResult.cc
 	src/model/SaveSingleTaskForApprovingTransferOutRequest.cc
@@ -424,28 +460,32 @@ set(domain_src
 	src/model/QueryAuctionDetailResult.cc
 	src/model/QueryDomainByInstanceIdRequest.cc
 	src/model/QueryDomainByInstanceIdResult.cc
-	src/model/SaveSingleTaskForDeletingDnsHostRequest.cc
-	src/model/SaveSingleTaskForDeletingDnsHostResult.cc
 	src/model/SaveBatchTaskForCreatingOrderRedeemRequest.cc
 	src/model/SaveBatchTaskForCreatingOrderRedeemResult.cc
+	src/model/SaveSingleTaskForDeletingDnsHostRequest.cc
+	src/model/SaveSingleTaskForDeletingDnsHostResult.cc
 	src/model/QueryTaskListRequest.cc
 	src/model/QueryTaskListResult.cc
 	src/model/QueryRegistrantProfilesRequest.cc
 	src/model/QueryRegistrantProfilesResult.cc
 	src/model/SaveSingleTaskForCreatingOrderRenewRequest.cc
 	src/model/SaveSingleTaskForCreatingOrderRenewResult.cc
-	src/model/PollTaskResultRequest.cc
-	src/model/PollTaskResultResult.cc
-	src/model/DeleteEmailVerificationRequest.cc
-	src/model/DeleteEmailVerificationResult.cc
 	src/model/QueryDomainAdminDivisionRequest.cc
 	src/model/QueryDomainAdminDivisionResult.cc
+	src/model/DeleteEmailVerificationRequest.cc
+	src/model/DeleteEmailVerificationResult.cc
+	src/model/PollTaskResultRequest.cc
+	src/model/PollTaskResultResult.cc
 	src/model/SaveSingleTaskForCreatingOrderActivateRequest.cc
 	src/model/SaveSingleTaskForCreatingOrderActivateResult.cc
+	src/model/SaveSingleTaskForDeletingDSRecordRequest.cc
+	src/model/SaveSingleTaskForDeletingDSRecordResult.cc
 	src/model/RefuseDemandRequest.cc
 	src/model/RefuseDemandResult.cc
 	src/model/TransferInReenterTransferAuthorizationCodeRequest.cc
 	src/model/TransferInReenterTransferAuthorizationCodeResult.cc
+	src/model/QueryDomainByDomainNameRequest.cc
+	src/model/QueryDomainByDomainNameResult.cc
 	src/model/EmailVerifiedRequest.cc
 	src/model/EmailVerifiedResult.cc
 	src/model/SaveSingleTaskForCreatingDnsHostRequest.cc

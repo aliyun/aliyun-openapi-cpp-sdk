@@ -231,42 +231,6 @@ MoPenClient::MoPenBindIsvOutcomeCallable MoPenClient::moPenBindIsvCallable(const
 	return task->get_future();
 }
 
-MoPenClient::MoPenCreateDeviceOutcome MoPenClient::moPenCreateDevice(const MoPenCreateDeviceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MoPenCreateDeviceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MoPenCreateDeviceOutcome(MoPenCreateDeviceResult(outcome.result()));
-	else
-		return MoPenCreateDeviceOutcome(outcome.error());
-}
-
-void MoPenClient::moPenCreateDeviceAsync(const MoPenCreateDeviceRequest& request, const MoPenCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, moPenCreateDevice(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MoPenClient::MoPenCreateDeviceOutcomeCallable MoPenClient::moPenCreateDeviceCallable(const MoPenCreateDeviceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MoPenCreateDeviceOutcome()>>(
-			[this, request]()
-			{
-			return this->moPenCreateDevice(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MoPenClient::MoPenAddGroupMemberOutcome MoPenClient::moPenAddGroupMember(const MoPenAddGroupMemberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +261,42 @@ MoPenClient::MoPenAddGroupMemberOutcomeCallable MoPenClient::moPenAddGroupMember
 			[this, request]()
 			{
 			return this->moPenAddGroupMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MoPenClient::MoPenCreateDeviceOutcome MoPenClient::moPenCreateDevice(const MoPenCreateDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoPenCreateDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoPenCreateDeviceOutcome(MoPenCreateDeviceResult(outcome.result()));
+	else
+		return MoPenCreateDeviceOutcome(outcome.error());
+}
+
+void MoPenClient::moPenCreateDeviceAsync(const MoPenCreateDeviceRequest& request, const MoPenCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moPenCreateDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MoPenClient::MoPenCreateDeviceOutcomeCallable MoPenClient::moPenCreateDeviceCallable(const MoPenCreateDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoPenCreateDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->moPenCreateDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

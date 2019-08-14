@@ -33,7 +33,7 @@ long ListJobExecutionInstancesRequest::getResourceOwnerId()const
 void ListJobExecutionInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
@@ -44,7 +44,7 @@ std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
 void ListJobExecutionInstancesRequest::setExecutionPlanInstanceId(const std::string& executionPlanInstanceId)
 {
 	executionPlanInstanceId_ = executionPlanInstanceId;
-	setParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
+	setCoreParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
 }
 
 std::string ListJobExecutionInstancesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListJobExecutionInstancesRequest::getRegionId()const
 void ListJobExecutionInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListJobExecutionInstancesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListJobExecutionInstancesRequest::getPageSize()const
 void ListJobExecutionInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 bool ListJobExecutionInstancesRequest::getIsDesc()const
@@ -77,7 +77,7 @@ bool ListJobExecutionInstancesRequest::getIsDesc()const
 void ListJobExecutionInstancesRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setParameter("IsDesc", std::to_string(isDesc));
+	setCoreParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 int ListJobExecutionInstancesRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListJobExecutionInstancesRequest::getPageNumber()const
 void ListJobExecutionInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobExecutionInstancesRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListJobExecutionInstancesRequest::getAccessKeyId()const
 void ListJobExecutionInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

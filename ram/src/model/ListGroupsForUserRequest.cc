@@ -33,6 +33,6 @@ std::string ListGroupsForUserRequest::getUserName()const
 void ListGroupsForUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

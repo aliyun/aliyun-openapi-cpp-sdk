@@ -33,7 +33,7 @@ std::string DescribeGrantRulesToCenRequest::getResourceGroupId()const
 void DescribeGrantRulesToCenRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 long DescribeGrantRulesToCenRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeGrantRulesToCenRequest::getResourceOwnerId()const
 void DescribeGrantRulesToCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeGrantRulesToCenRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string DescribeGrantRulesToCenRequest::getInstanceId()const
 void DescribeGrantRulesToCenRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeGrantRulesToCenRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeGrantRulesToCenRequest::getResourceOwnerAccount()const
 void DescribeGrantRulesToCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGrantRulesToCenRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeGrantRulesToCenRequest::getRegionId()const
 void DescribeGrantRulesToCenRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeGrantRulesToCenRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string DescribeGrantRulesToCenRequest::getClientToken()const
 void DescribeGrantRulesToCenRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribeGrantRulesToCenRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeGrantRulesToCenRequest::getOwnerAccount()const
 void DescribeGrantRulesToCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeGrantRulesToCenRequest::getInstanceType()const
@@ -110,7 +110,7 @@ std::string DescribeGrantRulesToCenRequest::getInstanceType()const
 void DescribeGrantRulesToCenRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", instanceType);
 }
 
 long DescribeGrantRulesToCenRequest::getOwnerId()const
@@ -121,6 +121,6 @@ long DescribeGrantRulesToCenRequest::getOwnerId()const
 void DescribeGrantRulesToCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

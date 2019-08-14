@@ -33,7 +33,7 @@ long UpdatePornPipelineRequest::getResourceOwnerId()const
 void UpdatePornPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdatePornPipelineRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UpdatePornPipelineRequest::getResourceOwnerAccount()const
 void UpdatePornPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdatePornPipelineRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdatePornPipelineRequest::getOwnerAccount()const
 void UpdatePornPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdatePornPipelineRequest::getName()const
@@ -66,7 +66,7 @@ std::string UpdatePornPipelineRequest::getName()const
 void UpdatePornPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string UpdatePornPipelineRequest::getState()const
@@ -77,7 +77,7 @@ std::string UpdatePornPipelineRequest::getState()const
 void UpdatePornPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 std::string UpdatePornPipelineRequest::getNotifyConfig()const
@@ -88,7 +88,7 @@ std::string UpdatePornPipelineRequest::getNotifyConfig()const
 void UpdatePornPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setParameter("NotifyConfig", notifyConfig);
+	setCoreParameter("NotifyConfig", notifyConfig);
 }
 
 long UpdatePornPipelineRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long UpdatePornPipelineRequest::getOwnerId()const
 void UpdatePornPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpdatePornPipelineRequest::getPriority()const
@@ -110,7 +110,7 @@ int UpdatePornPipelineRequest::getPriority()const
 void UpdatePornPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", std::to_string(priority));
 }
 
 std::string UpdatePornPipelineRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string UpdatePornPipelineRequest::getAccessKeyId()const
 void UpdatePornPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdatePornPipelineRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string UpdatePornPipelineRequest::getPipelineId()const
 void UpdatePornPipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

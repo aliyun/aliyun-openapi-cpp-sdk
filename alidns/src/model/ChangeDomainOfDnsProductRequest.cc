@@ -33,7 +33,7 @@ std::string ChangeDomainOfDnsProductRequest::getInstanceId()const
 void ChangeDomainOfDnsProductRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ChangeDomainOfDnsProductRequest::getNewDomain()const
@@ -44,7 +44,7 @@ std::string ChangeDomainOfDnsProductRequest::getNewDomain()const
 void ChangeDomainOfDnsProductRequest::setNewDomain(const std::string& newDomain)
 {
 	newDomain_ = newDomain;
-	setParameter("NewDomain", newDomain);
+	setCoreParameter("NewDomain", newDomain);
 }
 
 std::string ChangeDomainOfDnsProductRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string ChangeDomainOfDnsProductRequest::getUserClientIp()const
 void ChangeDomainOfDnsProductRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 bool ChangeDomainOfDnsProductRequest::getForce()const
@@ -66,7 +66,7 @@ bool ChangeDomainOfDnsProductRequest::getForce()const
 void ChangeDomainOfDnsProductRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 std::string ChangeDomainOfDnsProductRequest::getLang()const
@@ -77,7 +77,7 @@ std::string ChangeDomainOfDnsProductRequest::getLang()const
 void ChangeDomainOfDnsProductRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string ChangeDomainOfDnsProductRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ChangeDomainOfDnsProductRequest::getAccessKeyId()const
 void ChangeDomainOfDnsProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

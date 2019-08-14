@@ -355,6 +355,17 @@ void DescribeStreamPredictResultRequest::setSecurity_transport(bool security_tra
 	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
+std::string DescribeStreamPredictResultRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void DescribeStreamPredictResultRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
+}
+
 std::string DescribeStreamPredictResultRequest::getRequestId()const
 {
 	return requestId_;

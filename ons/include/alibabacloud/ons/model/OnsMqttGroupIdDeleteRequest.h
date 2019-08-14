@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsMqttGroupIdDeleteRequest();
 				~OnsMqttGroupIdDeleteRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getRegionId()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				std::string regionId_;
 				std::string groupId_;

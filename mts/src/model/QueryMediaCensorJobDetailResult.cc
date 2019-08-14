@@ -35,14 +35,17 @@ QueryMediaCensorJobDetailResult::~QueryMediaCensorJobDetailResult()
 
 void QueryMediaCensorJobDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto mediaCensorJobDetailNode = value["MediaCensorJobDetail"];
-	if(!mediaCensorJobDetailNode["Id"].isNull())
-		mediaCensorJobDetail_.id = mediaCensorJobDetailNode["Id"].asString();
+	if(!mediaCensorJobDetailNode["JobId"].isNull())
+		mediaCensorJobDetail_.jobId = mediaCensorJobDetailNode["JobId"].asString();
 	if(!mediaCensorJobDetailNode["UserData"].isNull())
 		mediaCensorJobDetail_.userData = mediaCensorJobDetailNode["UserData"].asString();
 	if(!mediaCensorJobDetailNode["PipelineId"].isNull())
@@ -57,6 +60,8 @@ void QueryMediaCensorJobDetailResult::parse(const std::string &payload)
 		mediaCensorJobDetail_.message = mediaCensorJobDetailNode["Message"].asString();
 	if(!mediaCensorJobDetailNode["CreationTime"].isNull())
 		mediaCensorJobDetail_.creationTime = mediaCensorJobDetailNode["CreationTime"].asString();
+	if(!mediaCensorJobDetailNode["FinishTime"].isNull())
+		mediaCensorJobDetail_.finishTime = mediaCensorJobDetailNode["FinishTime"].asString();
 	auto allCoverImageCensorResults = value["CoverImageCensorResults"]["CoverImageCensorResult"];
 	for (auto value : allCoverImageCensorResults)
 	{

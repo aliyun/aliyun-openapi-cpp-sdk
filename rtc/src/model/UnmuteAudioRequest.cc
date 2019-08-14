@@ -33,7 +33,7 @@ std::string UnmuteAudioRequest::getApp_ip()const
 void UnmuteAudioRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string UnmuteAudioRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string UnmuteAudioRequest::getPopProduct()const
 void UnmuteAudioRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::vector<std::string> UnmuteAudioRequest::getParticipantIds()const
@@ -56,7 +56,7 @@ void UnmuteAudioRequest::setParticipantIds(const std::vector<std::string>& parti
 {
 	participantIds_ = participantIds;
 	for(int i = 0; i!= participantIds.size(); i++)
-		setParameter("ParticipantIds."+ std::to_string(i), participantIds.at(i));
+		setCoreParameter("ParticipantIds."+ std::to_string(i), participantIds.at(i));
 }
 
 long UnmuteAudioRequest::getCallerParentId()const
@@ -67,7 +67,7 @@ long UnmuteAudioRequest::getCallerParentId()const
 void UnmuteAudioRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool UnmuteAudioRequest::getProxy_original_security_transport()const
@@ -78,7 +78,7 @@ bool UnmuteAudioRequest::getProxy_original_security_transport()const
 void UnmuteAudioRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string UnmuteAudioRequest::getCallerBid()const
@@ -89,7 +89,7 @@ std::string UnmuteAudioRequest::getCallerBid()const
 void UnmuteAudioRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long UnmuteAudioRequest::getOwnerId()const
@@ -100,7 +100,7 @@ long UnmuteAudioRequest::getOwnerId()const
 void UnmuteAudioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnmuteAudioRequest::getProxy_original_source_ip()const
@@ -111,7 +111,7 @@ std::string UnmuteAudioRequest::getProxy_original_source_ip()const
 void UnmuteAudioRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string UnmuteAudioRequest::getVersion()const
@@ -122,7 +122,7 @@ std::string UnmuteAudioRequest::getVersion()const
 void UnmuteAudioRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 std::string UnmuteAudioRequest::getOwnerIdLoginEmail()const
@@ -133,7 +133,7 @@ std::string UnmuteAudioRequest::getOwnerIdLoginEmail()const
 void UnmuteAudioRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string UnmuteAudioRequest::getCallerType()const
@@ -144,7 +144,7 @@ std::string UnmuteAudioRequest::getCallerType()const
 void UnmuteAudioRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool UnmuteAudioRequest::getProxy_trust_transport_info()const
@@ -155,7 +155,7 @@ bool UnmuteAudioRequest::getProxy_trust_transport_info()const
 void UnmuteAudioRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool UnmuteAudioRequest::getAk_mfa_present()const
@@ -166,7 +166,7 @@ bool UnmuteAudioRequest::getAk_mfa_present()const
 void UnmuteAudioRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string UnmuteAudioRequest::getAccessKeyId()const
@@ -177,7 +177,7 @@ std::string UnmuteAudioRequest::getAccessKeyId()const
 void UnmuteAudioRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool UnmuteAudioRequest::getSecurity_transport()const
@@ -188,7 +188,7 @@ bool UnmuteAudioRequest::getSecurity_transport()const
 void UnmuteAudioRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string UnmuteAudioRequest::getSecurityToken()const
@@ -199,7 +199,7 @@ std::string UnmuteAudioRequest::getSecurityToken()const
 void UnmuteAudioRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UnmuteAudioRequest::getConferenceId()const
@@ -210,7 +210,7 @@ std::string UnmuteAudioRequest::getConferenceId()const
 void UnmuteAudioRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setParameter("ConferenceId", conferenceId);
+	setCoreParameter("ConferenceId", conferenceId);
 }
 
 std::string UnmuteAudioRequest::getRequestId()const
@@ -221,7 +221,7 @@ std::string UnmuteAudioRequest::getRequestId()const
 void UnmuteAudioRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string UnmuteAudioRequest::getRequestContent()const
@@ -232,7 +232,7 @@ std::string UnmuteAudioRequest::getRequestContent()const
 void UnmuteAudioRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string UnmuteAudioRequest::getAppId()const
@@ -243,7 +243,7 @@ std::string UnmuteAudioRequest::getAppId()const
 void UnmuteAudioRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 
 std::string UnmuteAudioRequest::getCallerBidEmail()const
@@ -254,7 +254,7 @@ std::string UnmuteAudioRequest::getCallerBidEmail()const
 void UnmuteAudioRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string UnmuteAudioRequest::getCallerUidEmail()const
@@ -265,7 +265,7 @@ std::string UnmuteAudioRequest::getCallerUidEmail()const
 void UnmuteAudioRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long UnmuteAudioRequest::getCallerUid()const
@@ -276,6 +276,6 @@ long UnmuteAudioRequest::getCallerUid()const
 void UnmuteAudioRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

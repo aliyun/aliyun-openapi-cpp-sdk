@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getKeyId()const;
 				void setKeyId(const std::string& keyId);
-				std::string getSTSToken()const;
-				void setSTSToken(const std::string& sTSToken);
 				std::string getWrappingAlgorithm()const;
 				void setWrappingAlgorithm(const std::string& wrappingAlgorithm);
 				std::string getWrappingKeySpec()const;
@@ -46,7 +44,6 @@ namespace AlibabaCloud
 
             private:
 				std::string keyId_;
-				std::string sTSToken_;
 				std::string wrappingAlgorithm_;
 				std::string wrappingKeySpec_;
 

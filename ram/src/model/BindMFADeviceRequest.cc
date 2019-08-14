@@ -33,7 +33,7 @@ std::string BindMFADeviceRequest::getSerialNumber()const
 void BindMFADeviceRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setParameter("SerialNumber", serialNumber);
+	setCoreParameter("SerialNumber", serialNumber);
 }
 
 std::string BindMFADeviceRequest::getAuthenticationCode2()const
@@ -44,7 +44,7 @@ std::string BindMFADeviceRequest::getAuthenticationCode2()const
 void BindMFADeviceRequest::setAuthenticationCode2(const std::string& authenticationCode2)
 {
 	authenticationCode2_ = authenticationCode2;
-	setParameter("AuthenticationCode2", authenticationCode2);
+	setCoreParameter("AuthenticationCode2", authenticationCode2);
 }
 
 std::string BindMFADeviceRequest::getAuthenticationCode1()const
@@ -55,7 +55,7 @@ std::string BindMFADeviceRequest::getAuthenticationCode1()const
 void BindMFADeviceRequest::setAuthenticationCode1(const std::string& authenticationCode1)
 {
 	authenticationCode1_ = authenticationCode1;
-	setParameter("AuthenticationCode1", authenticationCode1);
+	setCoreParameter("AuthenticationCode1", authenticationCode1);
 }
 
 std::string BindMFADeviceRequest::getUserName()const
@@ -66,6 +66,6 @@ std::string BindMFADeviceRequest::getUserName()const
 void BindMFADeviceRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

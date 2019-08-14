@@ -31,25 +31,61 @@ LinkFaceClient::LinkFaceClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "linkface");
 }
 
 LinkFaceClient::LinkFaceClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "linkface");
 }
 
 LinkFaceClient::LinkFaceClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "linkface");
 }
 
 LinkFaceClient::~LinkFaceClient()
 {}
+
+LinkFaceClient::QuerySyncPicScheduleOutcome LinkFaceClient::querySyncPicSchedule(const QuerySyncPicScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySyncPicScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySyncPicScheduleOutcome(QuerySyncPicScheduleResult(outcome.result()));
+	else
+		return QuerySyncPicScheduleOutcome(outcome.error());
+}
+
+void LinkFaceClient::querySyncPicScheduleAsync(const QuerySyncPicScheduleRequest& request, const QuerySyncPicScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySyncPicSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkFaceClient::QuerySyncPicScheduleOutcomeCallable LinkFaceClient::querySyncPicScheduleCallable(const QuerySyncPicScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySyncPicScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->querySyncPicSchedule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
 
 LinkFaceClient::UnlinkFaceOutcome LinkFaceClient::unlinkFace(const UnlinkFaceRequest &request) const
 {
@@ -117,42 +153,6 @@ LinkFaceClient::UpdateFaceOutcomeCallable LinkFaceClient::updateFaceCallable(con
 			[this, request]()
 			{
 			return this->updateFace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LinkFaceClient::QuerySyncPicScheduleOutcome LinkFaceClient::querySyncPicSchedule(const QuerySyncPicScheduleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QuerySyncPicScheduleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QuerySyncPicScheduleOutcome(QuerySyncPicScheduleResult(outcome.result()));
-	else
-		return QuerySyncPicScheduleOutcome(outcome.error());
-}
-
-void LinkFaceClient::querySyncPicScheduleAsync(const QuerySyncPicScheduleRequest& request, const QuerySyncPicScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, querySyncPicSchedule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LinkFaceClient::QuerySyncPicScheduleOutcomeCallable LinkFaceClient::querySyncPicScheduleCallable(const QuerySyncPicScheduleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QuerySyncPicScheduleOutcome()>>(
-			[this, request]()
-			{
-			return this->querySyncPicSchedule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,6 +231,42 @@ LinkFaceClient::CreateGroupOutcomeCallable LinkFaceClient::createGroupCallable(c
 	return task->get_future();
 }
 
+LinkFaceClient::DeleteDeviceAllGroupOutcome LinkFaceClient::deleteDeviceAllGroup(const DeleteDeviceAllGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDeviceAllGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDeviceAllGroupOutcome(DeleteDeviceAllGroupResult(outcome.result()));
+	else
+		return DeleteDeviceAllGroupOutcome(outcome.error());
+}
+
+void LinkFaceClient::deleteDeviceAllGroupAsync(const DeleteDeviceAllGroupRequest& request, const DeleteDeviceAllGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDeviceAllGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkFaceClient::DeleteDeviceAllGroupOutcomeCallable LinkFaceClient::deleteDeviceAllGroupCallable(const DeleteDeviceAllGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDeviceAllGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDeviceAllGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LinkFaceClient::DeleteGroupOutcome LinkFaceClient::deleteGroup(const DeleteGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ LinkFaceClient::DeleteGroupOutcomeCallable LinkFaceClient::deleteGroupCallable(c
 			[this, request]()
 			{
 			return this->deleteGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LinkFaceClient::DeleteDeviceGroupOutcome LinkFaceClient::deleteDeviceGroup(const DeleteDeviceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDeviceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDeviceGroupOutcome(DeleteDeviceGroupResult(outcome.result()));
+	else
+		return DeleteDeviceGroupOutcome(outcome.error());
+}
+
+void LinkFaceClient::deleteDeviceGroupAsync(const DeleteDeviceGroupRequest& request, const DeleteDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDeviceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LinkFaceClient::DeleteDeviceGroupOutcomeCallable LinkFaceClient::deleteDeviceGroupCallable(const DeleteDeviceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDeviceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDeviceGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

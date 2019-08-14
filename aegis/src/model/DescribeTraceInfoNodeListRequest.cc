@@ -124,3 +124,14 @@ void DescribeTraceInfoNodeListRequest::setUuid(const std::string& uuid)
 	setCoreParameter("Uuid", uuid);
 }
 
+long DescribeTraceInfoNodeListRequest::getIncidentTime()const
+{
+	return incidentTime_;
+}
+
+void DescribeTraceInfoNodeListRequest::setIncidentTime(long incidentTime)
+{
+	incidentTime_ = incidentTime;
+	setCoreParameter("IncidentTime", std::to_string(incidentTime));
+}
+

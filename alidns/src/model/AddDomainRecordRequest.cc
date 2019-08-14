@@ -33,7 +33,7 @@ std::string AddDomainRecordRequest::getRR()const
 void AddDomainRecordRequest::setRR(const std::string& rR)
 {
 	rR_ = rR;
-	setParameter("RR", rR);
+	setCoreParameter("RR", rR);
 }
 
 std::string AddDomainRecordRequest::getLine()const
@@ -44,7 +44,7 @@ std::string AddDomainRecordRequest::getLine()const
 void AddDomainRecordRequest::setLine(const std::string& line)
 {
 	line_ = line;
-	setParameter("Line", line);
+	setCoreParameter("Line", line);
 }
 
 std::string AddDomainRecordRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string AddDomainRecordRequest::getUserClientIp()const
 void AddDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string AddDomainRecordRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string AddDomainRecordRequest::getDomainName()const
 void AddDomainRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string AddDomainRecordRequest::getLang()const
@@ -77,7 +77,7 @@ std::string AddDomainRecordRequest::getLang()const
 void AddDomainRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string AddDomainRecordRequest::getType()const
@@ -88,7 +88,7 @@ std::string AddDomainRecordRequest::getType()const
 void AddDomainRecordRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 long AddDomainRecordRequest::getPriority()const
@@ -99,7 +99,7 @@ long AddDomainRecordRequest::getPriority()const
 void AddDomainRecordRequest::setPriority(long priority)
 {
 	priority_ = priority;
-	setParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", std::to_string(priority));
 }
 
 std::string AddDomainRecordRequest::getValue()const
@@ -110,7 +110,7 @@ std::string AddDomainRecordRequest::getValue()const
 void AddDomainRecordRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setParameter("Value", value);
+	setCoreParameter("Value", value);
 }
 
 long AddDomainRecordRequest::getTTL()const
@@ -121,7 +121,7 @@ long AddDomainRecordRequest::getTTL()const
 void AddDomainRecordRequest::setTTL(long tTL)
 {
 	tTL_ = tTL;
-	setParameter("TTL", std::to_string(tTL));
+	setCoreParameter("TTL", std::to_string(tTL));
 }
 
 std::string AddDomainRecordRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string AddDomainRecordRequest::getAccessKeyId()const
 void AddDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

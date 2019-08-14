@@ -91,6 +91,17 @@ void ModifyDBInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccoun
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
+std::string ModifyDBInstanceSpecRequest::getReadonlyReplicas()const
+{
+	return readonlyReplicas_;
+}
+
+void ModifyDBInstanceSpecRequest::setReadonlyReplicas(const std::string& readonlyReplicas)
+{
+	readonlyReplicas_ = readonlyReplicas;
+	setCoreParameter("ReadonlyReplicas", readonlyReplicas);
+}
+
 std::string ModifyDBInstanceSpecRequest::getCouponNo()const
 {
 	return couponNo_;

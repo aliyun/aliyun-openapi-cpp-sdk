@@ -42,17 +42,29 @@ namespace AlibabaCloud
 				SaveBatchTaskForCreatingOrderTransferRequest();
 				~SaveBatchTaskForCreatingOrderTransferRequest();
 
+				std::string getPromotionNo()const;
+				void setPromotionNo(const std::string& promotionNo);
 				std::vector<OrderTransferParam> getOrderTransferParam()const;
 				void setOrderTransferParam(const std::vector<OrderTransferParam>& orderTransferParam);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
+				bool getUseCoupon()const;
+				void setUseCoupon(bool useCoupon);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				bool getUsePromotion()const;
+				void setUsePromotion(bool usePromotion);
 
             private:
+				std::string promotionNo_;
 				std::vector<OrderTransferParam> orderTransferParam_;
 				std::string userClientIp_;
+				std::string couponNo_;
+				bool useCoupon_;
 				std::string lang_;
+				bool usePromotion_;
 
 			};
 		}

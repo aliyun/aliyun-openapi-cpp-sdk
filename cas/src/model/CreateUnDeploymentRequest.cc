@@ -33,7 +33,7 @@ std::string CreateUnDeploymentRequest::getSourceIp()const
 void CreateUnDeploymentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long CreateUnDeploymentRequest::getDeploymentId()const
@@ -44,7 +44,7 @@ long CreateUnDeploymentRequest::getDeploymentId()const
 void CreateUnDeploymentRequest::setDeploymentId(long deploymentId)
 {
 	deploymentId_ = deploymentId;
-	setParameter("DeploymentId", std::to_string(deploymentId));
+	setCoreParameter("DeploymentId", std::to_string(deploymentId));
 }
 
 std::string CreateUnDeploymentRequest::getLang()const
@@ -55,6 +55,6 @@ std::string CreateUnDeploymentRequest::getLang()const
 void CreateUnDeploymentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

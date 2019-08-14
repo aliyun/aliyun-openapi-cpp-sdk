@@ -35,10 +35,13 @@ DescribeDataSourceSchemaTableResult::~DescribeDataSourceSchemaTableResult()
 
 void DescribeDataSourceSchemaTableResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto schemaNode = value["Schema"];
 	if(!schemaNode["DbType"].isNull())
@@ -55,6 +58,8 @@ void DescribeDataSourceSchemaTableResult::parse(const std::string &payload)
 		Schema::Field fieldObject;
 		if(!value["Type"].isNull())
 			fieldObject.type = value["Type"].asString();
+		if(!value["Length"].isNull())
+			fieldObject.length = value["Length"].asString();
 		if(!value["Name"].isNull())
 			fieldObject.name = value["Name"].asString();
 		if(!value["Index"].isNull())
@@ -65,6 +70,8 @@ void DescribeDataSourceSchemaTableResult::parse(const std::string &payload)
 			fieldObject.assignType = value["AssignType"].asString();
 		if(!value["AssignValue"].isNull())
 			fieldObject.assignValue = value["AssignValue"].asString();
+		if(!value["PartitionKey"].isNull())
+			fieldObject.partitionKey = value["PartitionKey"].asString() == "true";
 		schema_.fields.push_back(fieldObject);
 	}
 	if(!value["DataSourceId"].isNull())

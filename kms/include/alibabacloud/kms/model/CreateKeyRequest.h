@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CreateKeyRequest();
 				~CreateKeyRequest();
 
+				std::string getProtectionLevel()const;
+				void setProtectionLevel(const std::string& protectionLevel);
 				std::string getKeyUsage()const;
 				void setKeyUsage(const std::string& keyUsage);
 				std::string getOrigin()const;
 				void setOrigin(const std::string& origin);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getSTSToken()const;
-				void setSTSToken(const std::string& sTSToken);
 
             private:
+				std::string protectionLevel_;
 				std::string keyUsage_;
 				std::string origin_;
 				std::string description_;
-				std::string sTSToken_;
 
 			};
 		}

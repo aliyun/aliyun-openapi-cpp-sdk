@@ -120,13 +120,14 @@ namespace AlibabaCloud
 					std::string code;
 					std::string suggestion;
 					Input input;
+					std::string finishTime;
 					VensorCensorResult vensorCensorResult;
 					std::string state;
 					BarrageCensorResult barrageCensorResult;
 					std::string creationTime;
 					std::string pipelineId;
 					VideoCensorConfig videoCensorConfig;
-					std::string id;
+					std::string jobId;
 					TitleCensorResult titleCensorResult;
 				};
 

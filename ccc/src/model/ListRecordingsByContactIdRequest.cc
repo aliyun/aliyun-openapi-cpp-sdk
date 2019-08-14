@@ -33,7 +33,7 @@ std::string ListRecordingsByContactIdRequest::getInstanceId()const
 void ListRecordingsByContactIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListRecordingsByContactIdRequest::getContactId()const
@@ -44,7 +44,7 @@ std::string ListRecordingsByContactIdRequest::getContactId()const
 void ListRecordingsByContactIdRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setParameter("ContactId", contactId);
+	setCoreParameter("ContactId", contactId);
 }
 
 std::string ListRecordingsByContactIdRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListRecordingsByContactIdRequest::getAccessKeyId()const
 void ListRecordingsByContactIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

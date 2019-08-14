@@ -33,7 +33,7 @@ std::string CreateTransactionRequest::getExt()const
 void CreateTransactionRequest::setExt(const std::string& ext)
 {
 	ext_ = ext;
-	setParameter("Ext", ext);
+	setCoreParameter("Ext", ext);
 }
 
 long CreateTransactionRequest::getSize()const
@@ -44,7 +44,7 @@ long CreateTransactionRequest::getSize()const
 void CreateTransactionRequest::setSize(long size)
 {
 	size_ = size;
-	setParameter("Size", std::to_string(size));
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string CreateTransactionRequest::getLibraryId()const
@@ -55,7 +55,7 @@ std::string CreateTransactionRequest::getLibraryId()const
 void CreateTransactionRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string CreateTransactionRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string CreateTransactionRequest::getStoreName()const
 void CreateTransactionRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string CreateTransactionRequest::getForce()const
@@ -77,7 +77,7 @@ std::string CreateTransactionRequest::getForce()const
 void CreateTransactionRequest::setForce(const std::string& force)
 {
 	force_ = force;
-	setParameter("Force", force);
+	setCoreParameter("Force", force);
 }
 
 std::string CreateTransactionRequest::getMd5()const
@@ -88,6 +88,6 @@ std::string CreateTransactionRequest::getMd5()const
 void CreateTransactionRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setParameter("Md5", md5);
+	setCoreParameter("Md5", md5);
 }
 

@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct Edge
 					{
+						std::string type;
 						std::string endId;
 						std::string time;
 						int count;
@@ -70,6 +71,15 @@ namespace AlibabaCloud
 						int offset;
 						std::string name;
 					};
+					struct RelationType
+					{
+						std::string relationTypeId;
+						std::string displayColor;
+						int directed;
+						std::string name;
+						std::string showType;
+					};
+					std::vector<RelationType> relationTypeList;
 					std::vector<EntityType> entityTypeList;
 					std::vector<Edge> edgeList;
 					std::vector<Vertex> vertexList;

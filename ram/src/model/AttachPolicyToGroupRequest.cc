@@ -33,7 +33,7 @@ std::string AttachPolicyToGroupRequest::getPolicyType()const
 void AttachPolicyToGroupRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", policyType);
 }
 
 std::string AttachPolicyToGroupRequest::getPolicyName()const
@@ -44,7 +44,7 @@ std::string AttachPolicyToGroupRequest::getPolicyName()const
 void AttachPolicyToGroupRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setParameter("PolicyName", policyName);
+	setCoreParameter("PolicyName", policyName);
 }
 
 std::string AttachPolicyToGroupRequest::getGroupName()const
@@ -55,6 +55,6 @@ std::string AttachPolicyToGroupRequest::getGroupName()const
 void AttachPolicyToGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 

@@ -33,7 +33,7 @@ std::string SubmitEditingJobsRequest::getOutputBucket()const
 void SubmitEditingJobsRequest::setOutputBucket(const std::string& outputBucket)
 {
 	outputBucket_ = outputBucket;
-	setParameter("OutputBucket", outputBucket);
+	setCoreParameter("OutputBucket", outputBucket);
 }
 
 long SubmitEditingJobsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long SubmitEditingJobsRequest::getResourceOwnerId()const
 void SubmitEditingJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitEditingJobsRequest::getEditingJobOutputs()const
@@ -55,7 +55,7 @@ std::string SubmitEditingJobsRequest::getEditingJobOutputs()const
 void SubmitEditingJobsRequest::setEditingJobOutputs(const std::string& editingJobOutputs)
 {
 	editingJobOutputs_ = editingJobOutputs;
-	setParameter("EditingJobOutputs", editingJobOutputs);
+	setCoreParameter("EditingJobOutputs", editingJobOutputs);
 }
 
 std::string SubmitEditingJobsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitEditingJobsRequest::getResourceOwnerAccount()const
 void SubmitEditingJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitEditingJobsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitEditingJobsRequest::getOwnerAccount()const
 void SubmitEditingJobsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitEditingJobsRequest::getOutputLocation()const
@@ -88,7 +88,7 @@ std::string SubmitEditingJobsRequest::getOutputLocation()const
 void SubmitEditingJobsRequest::setOutputLocation(const std::string& outputLocation)
 {
 	outputLocation_ = outputLocation;
-	setParameter("OutputLocation", outputLocation);
+	setCoreParameter("OutputLocation", outputLocation);
 }
 
 long SubmitEditingJobsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitEditingJobsRequest::getOwnerId()const
 void SubmitEditingJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitEditingJobsRequest::getEditingInputs()const
@@ -110,7 +110,7 @@ std::string SubmitEditingJobsRequest::getEditingInputs()const
 void SubmitEditingJobsRequest::setEditingInputs(const std::string& editingInputs)
 {
 	editingInputs_ = editingInputs;
-	setParameter("EditingInputs", editingInputs);
+	setCoreParameter("EditingInputs", editingInputs);
 }
 
 std::string SubmitEditingJobsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string SubmitEditingJobsRequest::getAccessKeyId()const
 void SubmitEditingJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitEditingJobsRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string SubmitEditingJobsRequest::getPipelineId()const
 void SubmitEditingJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

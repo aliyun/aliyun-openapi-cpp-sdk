@@ -47,6 +47,7 @@ namespace AlibabaCloud
 				int getLogCapacity()const;
 				int getFlag()const;
 				int getSasLog()const;
+				long getGmtCreate()const;
 				long getReleaseTime()const;
 				int getVersion()const;
 				int getAvdsFlag()const;
@@ -70,6 +71,7 @@ namespace AlibabaCloud
 				int logCapacity_;
 				int flag_;
 				int sasLog_;
+				long gmtCreate_;
 				long releaseTime_;
 				int version_;
 				int avdsFlag_;

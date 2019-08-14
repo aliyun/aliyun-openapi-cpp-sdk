@@ -33,7 +33,7 @@ long DeleteNavNodeRequest::getResourceOwnerId()const
 void DeleteNavNodeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNavNodeRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteNavNodeRequest::getRegionId()const
 void DeleteNavNodeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteNavNodeRequest::getId()const
@@ -55,7 +55,7 @@ std::string DeleteNavNodeRequest::getId()const
 void DeleteNavNodeRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteNavNodeRequest::getProjectId()const
@@ -66,7 +66,7 @@ std::string DeleteNavNodeRequest::getProjectId()const
 void DeleteNavNodeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DeleteNavNodeRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteNavNodeRequest::getAccessKeyId()const
 void DeleteNavNodeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

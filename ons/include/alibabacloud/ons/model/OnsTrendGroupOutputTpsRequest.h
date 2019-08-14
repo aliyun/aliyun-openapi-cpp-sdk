@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsTrendGroupOutputTpsRequest();
 				~OnsTrendGroupOutputTpsRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				long getPeriod()const;
 				void setPeriod(long period);
 				std::string getInstanceId()const;
@@ -53,7 +51,6 @@ namespace AlibabaCloud
 				void setType(int type);
 
             private:
-				long preventCache_;
 				long period_;
 				std::string instanceId_;
 				std::string groupId_;

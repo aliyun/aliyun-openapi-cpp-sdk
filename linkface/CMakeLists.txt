@@ -21,18 +21,22 @@ set(linkface_public_header
 	include/alibabacloud/linkface/LinkFaceExport.h )
 
 set(linkface_public_header_model 
+	include/alibabacloud/linkface/model/QuerySyncPicScheduleRequest.h
+	include/alibabacloud/linkface/model/QuerySyncPicScheduleResult.h
 	include/alibabacloud/linkface/model/UnlinkFaceRequest.h
 	include/alibabacloud/linkface/model/UnlinkFaceResult.h
 	include/alibabacloud/linkface/model/UpdateFaceRequest.h
 	include/alibabacloud/linkface/model/UpdateFaceResult.h
-	include/alibabacloud/linkface/model/QuerySyncPicScheduleRequest.h
-	include/alibabacloud/linkface/model/QuerySyncPicScheduleResult.h
 	include/alibabacloud/linkface/model/SyncFacePicturesRequest.h
 	include/alibabacloud/linkface/model/SyncFacePicturesResult.h
 	include/alibabacloud/linkface/model/CreateGroupRequest.h
 	include/alibabacloud/linkface/model/CreateGroupResult.h
+	include/alibabacloud/linkface/model/DeleteDeviceAllGroupRequest.h
+	include/alibabacloud/linkface/model/DeleteDeviceAllGroupResult.h
 	include/alibabacloud/linkface/model/DeleteGroupRequest.h
 	include/alibabacloud/linkface/model/DeleteGroupResult.h
+	include/alibabacloud/linkface/model/DeleteDeviceGroupRequest.h
+	include/alibabacloud/linkface/model/DeleteDeviceGroupResult.h
 	include/alibabacloud/linkface/model/DeleteFaceRequest.h
 	include/alibabacloud/linkface/model/DeleteFaceResult.h
 	include/alibabacloud/linkface/model/QueryAuthenticationRequest.h
@@ -56,18 +60,22 @@ set(linkface_public_header_model
 
 set(linkface_src 
 	src/LinkFaceClient.cc
+	src/model/QuerySyncPicScheduleRequest.cc
+	src/model/QuerySyncPicScheduleResult.cc
 	src/model/UnlinkFaceRequest.cc
 	src/model/UnlinkFaceResult.cc
 	src/model/UpdateFaceRequest.cc
 	src/model/UpdateFaceResult.cc
-	src/model/QuerySyncPicScheduleRequest.cc
-	src/model/QuerySyncPicScheduleResult.cc
 	src/model/SyncFacePicturesRequest.cc
 	src/model/SyncFacePicturesResult.cc
 	src/model/CreateGroupRequest.cc
 	src/model/CreateGroupResult.cc
+	src/model/DeleteDeviceAllGroupRequest.cc
+	src/model/DeleteDeviceAllGroupResult.cc
 	src/model/DeleteGroupRequest.cc
 	src/model/DeleteGroupResult.cc
+	src/model/DeleteDeviceGroupRequest.cc
+	src/model/DeleteDeviceGroupResult.cc
 	src/model/DeleteFaceRequest.cc
 	src/model/DeleteFaceResult.cc
 	src/model/QueryAuthenticationRequest.cc

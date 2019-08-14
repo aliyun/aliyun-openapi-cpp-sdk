@@ -35,11 +35,8 @@ namespace AlibabaCloud
 				DescribeRegionsRequest();
 				~DescribeRegionsRequest();
 
-				std::string getSTSToken()const;
-				void setSTSToken(const std::string& sTSToken);
 
             private:
-				std::string sTSToken_;
 
 			};
 		}

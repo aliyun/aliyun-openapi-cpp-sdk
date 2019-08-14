@@ -33,7 +33,7 @@ std::string GetUserInputStatisticInfoRequest::getFromDatetime()const
 void GetUserInputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setParameter("FromDatetime", fromDatetime);
+	setCoreParameter("FromDatetime", fromDatetime);
 }
 
 long GetUserInputStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetUserInputStatisticInfoRequest::getResourceOwnerId()const
 void GetUserInputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetUserInputStatisticInfoRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetUserInputStatisticInfoRequest::getRegionId()const
 void GetUserInputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetUserInputStatisticInfoRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string GetUserInputStatisticInfoRequest::getClusterId()const
 void GetUserInputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string GetUserInputStatisticInfoRequest::getToDatetime()const
@@ -77,7 +77,7 @@ std::string GetUserInputStatisticInfoRequest::getToDatetime()const
 void GetUserInputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setParameter("ToDatetime", toDatetime);
+	setCoreParameter("ToDatetime", toDatetime);
 }
 
 std::string GetUserInputStatisticInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetUserInputStatisticInfoRequest::getAccessKeyId()const
 void GetUserInputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

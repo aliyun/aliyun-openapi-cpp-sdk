@@ -35,10 +35,13 @@ DescribePhysicalConnectionsResult::~DescribePhysicalConnectionsResult()
 
 void DescribePhysicalConnectionsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allPhysicalConnectionSet = value["PhysicalConnectionSet"]["PhysicalConnectionType"];
 	for (auto value : allPhysicalConnectionSet)
@@ -80,6 +83,22 @@ void DescribePhysicalConnectionsResult::parse(const std::string &payload)
 			physicalConnectionSetObject.circuitCode = value["CircuitCode"].asString();
 		if(!value["Bandwidth"].isNull())
 			physicalConnectionSetObject.bandwidth = std::stol(value["Bandwidth"].asString());
+		if(!value["LoaStatus"].isNull())
+			physicalConnectionSetObject.loaStatus = value["LoaStatus"].asString();
+		if(!value["Spec"].isNull())
+			physicalConnectionSetObject.spec1 = value["Spec"].asString();
+		if(!value["HasReservationData"].isNull())
+			physicalConnectionSetObject.hasReservationData = value["HasReservationData"].asString();
+		if(!value["ReservationInternetChargeType"].isNull())
+			physicalConnectionSetObject.reservationInternetChargeType = value["ReservationInternetChargeType"].asString();
+		if(!value["ReservationActiveTime"].isNull())
+			physicalConnectionSetObject.reservationActiveTime = value["ReservationActiveTime"].asString();
+		if(!value["ReservationOrderType"].isNull())
+			physicalConnectionSetObject.reservationOrderType = value["ReservationOrderType"].asString();
+		if(!value["EndTime"].isNull())
+			physicalConnectionSetObject.endTime = value["EndTime"].asString();
+		if(!value["ChargeType"].isNull())
+			physicalConnectionSetObject.chargeType = value["ChargeType"].asString();
 		physicalConnectionSet_.push_back(physicalConnectionSetObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -33,6 +33,6 @@ std::string GetAllApModelRequest::getAccessKeyId()const
 void GetAllApModelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

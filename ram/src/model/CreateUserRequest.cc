@@ -33,7 +33,7 @@ std::string CreateUserRequest::getComments()const
 void CreateUserRequest::setComments(const std::string& comments)
 {
 	comments_ = comments;
-	setParameter("Comments", comments);
+	setCoreParameter("Comments", comments);
 }
 
 std::string CreateUserRequest::getDisplayName()const
@@ -44,7 +44,7 @@ std::string CreateUserRequest::getDisplayName()const
 void CreateUserRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setParameter("DisplayName", displayName);
+	setCoreParameter("DisplayName", displayName);
 }
 
 std::string CreateUserRequest::getMobilePhone()const
@@ -55,7 +55,7 @@ std::string CreateUserRequest::getMobilePhone()const
 void CreateUserRequest::setMobilePhone(const std::string& mobilePhone)
 {
 	mobilePhone_ = mobilePhone;
-	setParameter("MobilePhone", mobilePhone);
+	setCoreParameter("MobilePhone", mobilePhone);
 }
 
 std::string CreateUserRequest::getEmail()const
@@ -66,7 +66,7 @@ std::string CreateUserRequest::getEmail()const
 void CreateUserRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setParameter("Email", email);
+	setCoreParameter("Email", email);
 }
 
 std::string CreateUserRequest::getUserName()const
@@ -77,6 +77,6 @@ std::string CreateUserRequest::getUserName()const
 void CreateUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

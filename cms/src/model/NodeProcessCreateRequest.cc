@@ -33,7 +33,7 @@ std::string NodeProcessCreateRequest::getInstanceId()const
 void NodeProcessCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string NodeProcessCreateRequest::getProcessName()const
@@ -44,7 +44,7 @@ std::string NodeProcessCreateRequest::getProcessName()const
 void NodeProcessCreateRequest::setProcessName(const std::string& processName)
 {
 	processName_ = processName;
-	setParameter("ProcessName", processName);
+	setCoreParameter("ProcessName", processName);
 }
 
 std::string NodeProcessCreateRequest::getName()const
@@ -55,7 +55,7 @@ std::string NodeProcessCreateRequest::getName()const
 void NodeProcessCreateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string NodeProcessCreateRequest::getProcessUser()const
@@ -66,7 +66,7 @@ std::string NodeProcessCreateRequest::getProcessUser()const
 void NodeProcessCreateRequest::setProcessUser(const std::string& processUser)
 {
 	processUser_ = processUser;
-	setParameter("ProcessUser", processUser);
+	setCoreParameter("ProcessUser", processUser);
 }
 
 std::string NodeProcessCreateRequest::getCommand()const
@@ -77,6 +77,6 @@ std::string NodeProcessCreateRequest::getCommand()const
 void NodeProcessCreateRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setParameter("Command", command);
+	setCoreParameter("Command", command);
 }
 

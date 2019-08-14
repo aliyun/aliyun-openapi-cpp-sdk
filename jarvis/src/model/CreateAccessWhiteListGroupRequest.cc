@@ -33,7 +33,7 @@ std::string CreateAccessWhiteListGroupRequest::getNote()const
 void CreateAccessWhiteListGroupRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setParameter("Note", note);
+	setCoreParameter("Note", note);
 }
 
 long CreateAccessWhiteListGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateAccessWhiteListGroupRequest::getResourceOwnerId()const
 void CreateAccessWhiteListGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAccessWhiteListGroupRequest::getSrcIP()const
@@ -55,7 +55,7 @@ std::string CreateAccessWhiteListGroupRequest::getSrcIP()const
 void CreateAccessWhiteListGroupRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", srcIP);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string CreateAccessWhiteListGroupRequest::getSourceIp()const
 void CreateAccessWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int CreateAccessWhiteListGroupRequest::getDstPort()const
@@ -77,7 +77,7 @@ int CreateAccessWhiteListGroupRequest::getDstPort()const
 void CreateAccessWhiteListGroupRequest::setDstPort(int dstPort)
 {
 	dstPort_ = dstPort;
-	setParameter("DstPort", std::to_string(dstPort));
+	setCoreParameter("DstPort", std::to_string(dstPort));
 }
 
 std::string CreateAccessWhiteListGroupRequest::getInstanceIdList()const
@@ -88,7 +88,7 @@ std::string CreateAccessWhiteListGroupRequest::getInstanceIdList()const
 void CreateAccessWhiteListGroupRequest::setInstanceIdList(const std::string& instanceIdList)
 {
 	instanceIdList_ = instanceIdList;
-	setParameter("InstanceIdList", instanceIdList);
+	setCoreParameter("InstanceIdList", instanceIdList);
 }
 
 int CreateAccessWhiteListGroupRequest::getLiveTime()const
@@ -99,7 +99,7 @@ int CreateAccessWhiteListGroupRequest::getLiveTime()const
 void CreateAccessWhiteListGroupRequest::setLiveTime(int liveTime)
 {
 	liveTime_ = liveTime;
-	setParameter("LiveTime", std::to_string(liveTime));
+	setCoreParameter("LiveTime", std::to_string(liveTime));
 }
 
 std::string CreateAccessWhiteListGroupRequest::getProductName()const
@@ -110,7 +110,7 @@ std::string CreateAccessWhiteListGroupRequest::getProductName()const
 void CreateAccessWhiteListGroupRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setParameter("ProductName", productName);
+	setCoreParameter("ProductName", productName);
 }
 
 int CreateAccessWhiteListGroupRequest::getWhiteListType()const
@@ -121,7 +121,7 @@ int CreateAccessWhiteListGroupRequest::getWhiteListType()const
 void CreateAccessWhiteListGroupRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", std::to_string(whiteListType));
 }
 
 std::string CreateAccessWhiteListGroupRequest::getInstanceInfoList()const
@@ -132,7 +132,7 @@ std::string CreateAccessWhiteListGroupRequest::getInstanceInfoList()const
 void CreateAccessWhiteListGroupRequest::setInstanceInfoList(const std::string& instanceInfoList)
 {
 	instanceInfoList_ = instanceInfoList;
-	setParameter("InstanceInfoList", instanceInfoList);
+	setCoreParameter("InstanceInfoList", instanceInfoList);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getLang()const
@@ -143,7 +143,7 @@ std::string CreateAccessWhiteListGroupRequest::getLang()const
 void CreateAccessWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getSourceCode()const
@@ -154,6 +154,6 @@ std::string CreateAccessWhiteListGroupRequest::getSourceCode()const
 void CreateAccessWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", sourceCode);
 }
 

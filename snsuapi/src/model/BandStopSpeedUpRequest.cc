@@ -33,7 +33,7 @@ std::string BandStopSpeedUpRequest::getIpAddress()const
 void BandStopSpeedUpRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setParameter("IpAddress", ipAddress);
+	setCoreParameter("IpAddress", ipAddress);
 }
 
 long BandStopSpeedUpRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long BandStopSpeedUpRequest::getResourceOwnerId()const
 void BandStopSpeedUpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BandStopSpeedUpRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string BandStopSpeedUpRequest::getResourceOwnerAccount()const
 void BandStopSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int BandStopSpeedUpRequest::getPort()const
@@ -66,7 +66,7 @@ int BandStopSpeedUpRequest::getPort()const
 void BandStopSpeedUpRequest::setPort(int port)
 {
 	port_ = port;
-	setParameter("Port", std::to_string(port));
+	setCoreParameter("Port", std::to_string(port));
 }
 
 long BandStopSpeedUpRequest::getBandId()const
@@ -77,7 +77,7 @@ long BandStopSpeedUpRequest::getBandId()const
 void BandStopSpeedUpRequest::setBandId(long bandId)
 {
 	bandId_ = bandId;
-	setParameter("BandId", std::to_string(bandId));
+	setCoreParameter("BandId", std::to_string(bandId));
 }
 
 long BandStopSpeedUpRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long BandStopSpeedUpRequest::getOwnerId()const
 void BandStopSpeedUpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BandStopSpeedUpRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string BandStopSpeedUpRequest::getAccessKeyId()const
 void BandStopSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BandStopSpeedUpRequest::getDirection()const
@@ -110,6 +110,6 @@ std::string BandStopSpeedUpRequest::getDirection()const
 void BandStopSpeedUpRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setParameter("Direction", direction);
+	setCoreParameter("Direction", direction);
 }
 

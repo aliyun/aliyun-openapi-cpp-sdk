@@ -80,6 +80,28 @@ void CreateDBInstanceRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
+std::string CreateDBInstanceRequest::getZoneIdSlave1()const
+{
+	return zoneIdSlave1_;
+}
+
+void CreateDBInstanceRequest::setZoneIdSlave1(const std::string& zoneIdSlave1)
+{
+	zoneIdSlave1_ = zoneIdSlave1;
+	setCoreParameter("ZoneIdSlave1", zoneIdSlave1);
+}
+
+std::string CreateDBInstanceRequest::getZoneIdSlave2()const
+{
+	return zoneIdSlave2_;
+}
+
+void CreateDBInstanceRequest::setZoneIdSlave2(const std::string& zoneIdSlave2)
+{
+	zoneIdSlave2_ = zoneIdSlave2;
+	setCoreParameter("ZoneIdSlave2", zoneIdSlave2);
+}
+
 std::string CreateDBInstanceRequest::getEngineVersion()const
 {
 	return engineVersion_;
@@ -342,6 +364,17 @@ void CreateDBInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
+}
+
+std::string CreateDBInstanceRequest::getCategory()const
+{
+	return category_;
+}
+
+void CreateDBInstanceRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setCoreParameter("Category", category);
 }
 
 std::string CreateDBInstanceRequest::getPayType()const

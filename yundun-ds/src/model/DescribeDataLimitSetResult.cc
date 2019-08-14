@@ -35,10 +35,13 @@ DescribeDataLimitSetResult::~DescribeDataLimitSetResult()
 
 void DescribeDataLimitSetResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto dataLimitSetNode = value["DataLimitSet"];
 	if(!dataLimitSetNode["ResourceType"].isNull())
@@ -61,6 +64,10 @@ void DescribeDataLimitSetResult::parse(const std::string &payload)
 			dataLimitObject.gmtCreate = std::stol(value["GmtCreate"].asString());
 		if(!value["Connector"].isNull())
 			dataLimitObject.connector = value["Connector"].asString();
+		if(!value["CheckStatus"].isNull())
+			dataLimitObject.checkStatus = std::stoi(value["CheckStatus"].asString());
+		if(!value["CheckStatusName"].isNull())
+			dataLimitObject.checkStatusName = value["CheckStatusName"].asString();
 		dataLimitSet_.dataLimitList.push_back(dataLimitObject);
 	}
 	auto allOssBucketList = value["OssBucketList"]["OssBucket"];

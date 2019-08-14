@@ -33,7 +33,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getUserClientIp()co
 void SaveSingleTaskForTransferProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForTransferProhibitionLockRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getDomainName()cons
 void SaveSingleTaskForTransferProhibitionLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForTransferProhibitionLockRequest::getLang()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getLang()const
 void SaveSingleTaskForTransferProhibitionLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForTransferProhibitionLockRequest::getStatus()const
@@ -66,6 +66,6 @@ bool SaveSingleTaskForTransferProhibitionLockRequest::getStatus()const
 void SaveSingleTaskForTransferProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status ? "true" : "false");
 }
 

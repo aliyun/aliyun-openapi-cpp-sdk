@@ -49,6 +49,7 @@ namespace AlibabaCloud
 				std::string getDomains()const;
 				std::string getBrandName()const;
 				int getYear()const;
+				int getAccessDownload()const;
 				long getId()const;
 				long getBeforeDate()const;
 
@@ -67,6 +68,7 @@ namespace AlibabaCloud
 				std::string domains_;
 				std::string brandName_;
 				int year_;
+				int accessDownload_;
 				long id_;
 				long beforeDate_;
 

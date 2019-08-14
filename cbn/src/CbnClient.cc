@@ -123,6 +123,78 @@ CbnClient::CreateCenBandwidthPackageOutcomeCallable CbnClient::createCenBandwidt
 	return task->get_future();
 }
 
+CbnClient::ModifyFlowLogAttributeOutcome CbnClient::modifyFlowLogAttribute(const ModifyFlowLogAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyFlowLogAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyFlowLogAttributeOutcome(ModifyFlowLogAttributeResult(outcome.result()));
+	else
+		return ModifyFlowLogAttributeOutcome(outcome.error());
+}
+
+void CbnClient::modifyFlowLogAttributeAsync(const ModifyFlowLogAttributeRequest& request, const ModifyFlowLogAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyFlowLogAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ModifyFlowLogAttributeOutcomeCallable CbnClient::modifyFlowLogAttributeCallable(const ModifyFlowLogAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyFlowLogAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyFlowLogAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DescribeGrantRulesToCenOutcome CbnClient::describeGrantRulesToCen(const DescribeGrantRulesToCenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGrantRulesToCenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGrantRulesToCenOutcome(DescribeGrantRulesToCenResult(outcome.result()));
+	else
+		return DescribeGrantRulesToCenOutcome(outcome.error());
+}
+
+void CbnClient::describeGrantRulesToCenAsync(const DescribeGrantRulesToCenRequest& request, const DescribeGrantRulesToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGrantRulesToCen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeGrantRulesToCenOutcomeCallable CbnClient::describeGrantRulesToCenCallable(const DescribeGrantRulesToCenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGrantRulesToCenOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGrantRulesToCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::WithdrawPublishedRouteEntriesOutcome CbnClient::withdrawPublishedRouteEntries(const WithdrawPublishedRouteEntriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,42 +267,6 @@ CbnClient::DescribePublishedRouteEntriesOutcomeCallable CbnClient::describePubli
 	return task->get_future();
 }
 
-CbnClient::DescribeGrantRulesToCenOutcome CbnClient::describeGrantRulesToCen(const DescribeGrantRulesToCenRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeGrantRulesToCenOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeGrantRulesToCenOutcome(DescribeGrantRulesToCenResult(outcome.result()));
-	else
-		return DescribeGrantRulesToCenOutcome(outcome.error());
-}
-
-void CbnClient::describeGrantRulesToCenAsync(const DescribeGrantRulesToCenRequest& request, const DescribeGrantRulesToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeGrantRulesToCen(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CbnClient::DescribeGrantRulesToCenOutcomeCallable CbnClient::describeGrantRulesToCenCallable(const DescribeGrantRulesToCenRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeGrantRulesToCenOutcome()>>(
-			[this, request]()
-			{
-			return this->describeGrantRulesToCen(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CbnClient::DescribeCenPrivateZoneRoutesOutcome CbnClient::describeCenPrivateZoneRoutes(const DescribeCenPrivateZoneRoutesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,42 +297,6 @@ CbnClient::DescribeCenPrivateZoneRoutesOutcomeCallable CbnClient::describeCenPri
 			[this, request]()
 			{
 			return this->describeCenPrivateZoneRoutes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CbnClient::ModifyCenBandwidthPackageAttributeOutcome CbnClient::modifyCenBandwidthPackageAttribute(const ModifyCenBandwidthPackageAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyCenBandwidthPackageAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyCenBandwidthPackageAttributeOutcome(ModifyCenBandwidthPackageAttributeResult(outcome.result()));
-	else
-		return ModifyCenBandwidthPackageAttributeOutcome(outcome.error());
-}
-
-void CbnClient::modifyCenBandwidthPackageAttributeAsync(const ModifyCenBandwidthPackageAttributeRequest& request, const ModifyCenBandwidthPackageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyCenBandwidthPackageAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CbnClient::ModifyCenBandwidthPackageAttributeOutcomeCallable CbnClient::modifyCenBandwidthPackageAttributeCallable(const ModifyCenBandwidthPackageAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyCenBandwidthPackageAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyCenBandwidthPackageAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,6 +339,42 @@ CbnClient::UntagResourcesOutcomeCallable CbnClient::untagResourcesCallable(const
 	return task->get_future();
 }
 
+CbnClient::ModifyCenBandwidthPackageAttributeOutcome CbnClient::modifyCenBandwidthPackageAttribute(const ModifyCenBandwidthPackageAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCenBandwidthPackageAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCenBandwidthPackageAttributeOutcome(ModifyCenBandwidthPackageAttributeResult(outcome.result()));
+	else
+		return ModifyCenBandwidthPackageAttributeOutcome(outcome.error());
+}
+
+void CbnClient::modifyCenBandwidthPackageAttributeAsync(const ModifyCenBandwidthPackageAttributeRequest& request, const ModifyCenBandwidthPackageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCenBandwidthPackageAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ModifyCenBandwidthPackageAttributeOutcomeCallable CbnClient::modifyCenBandwidthPackageAttributeCallable(const ModifyCenBandwidthPackageAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCenBandwidthPackageAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCenBandwidthPackageAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DisableCenVbrHealthCheckOutcome CbnClient::disableCenVbrHealthCheck(const DisableCenVbrHealthCheckRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -375,42 +411,6 @@ CbnClient::DisableCenVbrHealthCheckOutcomeCallable CbnClient::disableCenVbrHealt
 	return task->get_future();
 }
 
-CbnClient::UnroutePrivateZoneInCenToVpcOutcome CbnClient::unroutePrivateZoneInCenToVpc(const UnroutePrivateZoneInCenToVpcRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UnroutePrivateZoneInCenToVpcOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UnroutePrivateZoneInCenToVpcOutcome(UnroutePrivateZoneInCenToVpcResult(outcome.result()));
-	else
-		return UnroutePrivateZoneInCenToVpcOutcome(outcome.error());
-}
-
-void CbnClient::unroutePrivateZoneInCenToVpcAsync(const UnroutePrivateZoneInCenToVpcRequest& request, const UnroutePrivateZoneInCenToVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, unroutePrivateZoneInCenToVpc(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CbnClient::UnroutePrivateZoneInCenToVpcOutcomeCallable CbnClient::unroutePrivateZoneInCenToVpcCallable(const UnroutePrivateZoneInCenToVpcRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UnroutePrivateZoneInCenToVpcOutcome()>>(
-			[this, request]()
-			{
-			return this->unroutePrivateZoneInCenToVpc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CbnClient::CreateCenOutcome CbnClient::createCen(const CreateCenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +441,42 @@ CbnClient::CreateCenOutcomeCallable CbnClient::createCenCallable(const CreateCen
 			[this, request]()
 			{
 			return this->createCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::UnroutePrivateZoneInCenToVpcOutcome CbnClient::unroutePrivateZoneInCenToVpc(const UnroutePrivateZoneInCenToVpcRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnroutePrivateZoneInCenToVpcOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnroutePrivateZoneInCenToVpcOutcome(UnroutePrivateZoneInCenToVpcResult(outcome.result()));
+	else
+		return UnroutePrivateZoneInCenToVpcOutcome(outcome.error());
+}
+
+void CbnClient::unroutePrivateZoneInCenToVpcAsync(const UnroutePrivateZoneInCenToVpcRequest& request, const UnroutePrivateZoneInCenToVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unroutePrivateZoneInCenToVpc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UnroutePrivateZoneInCenToVpcOutcomeCallable CbnClient::unroutePrivateZoneInCenToVpcCallable(const UnroutePrivateZoneInCenToVpcRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnroutePrivateZoneInCenToVpcOutcome()>>(
+			[this, request]()
+			{
+			return this->unroutePrivateZoneInCenToVpc(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +555,42 @@ CbnClient::RoutePrivateZoneInCenToVpcOutcomeCallable CbnClient::routePrivateZone
 	return task->get_future();
 }
 
+CbnClient::DeleteFlowlogOutcome CbnClient::deleteFlowlog(const DeleteFlowlogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFlowlogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFlowlogOutcome(DeleteFlowlogResult(outcome.result()));
+	else
+		return DeleteFlowlogOutcome(outcome.error());
+}
+
+void CbnClient::deleteFlowlogAsync(const DeleteFlowlogRequest& request, const DeleteFlowlogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFlowlog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteFlowlogOutcomeCallable CbnClient::deleteFlowlogCallable(const DeleteFlowlogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFlowlogOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFlowlog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DescribeCenGeographicSpansOutcome CbnClient::describeCenGeographicSpans(const DescribeCenGeographicSpansRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,42 +627,6 @@ CbnClient::DescribeCenGeographicSpansOutcomeCallable CbnClient::describeCenGeogr
 	return task->get_future();
 }
 
-CbnClient::DescribeCensOutcome CbnClient::describeCens(const DescribeCensRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCensOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCensOutcome(DescribeCensResult(outcome.result()));
-	else
-		return DescribeCensOutcome(outcome.error());
-}
-
-void CbnClient::describeCensAsync(const DescribeCensRequest& request, const DescribeCensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCens(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CbnClient::DescribeCensOutcomeCallable CbnClient::describeCensCallable(const DescribeCensRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCensOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCens(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CbnClient::EnableCenVbrHealthCheckOutcome CbnClient::enableCenVbrHealthCheck(const EnableCenVbrHealthCheckRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +657,42 @@ CbnClient::EnableCenVbrHealthCheckOutcomeCallable CbnClient::enableCenVbrHealthC
 			[this, request]()
 			{
 			return this->enableCenVbrHealthCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DescribeCensOutcome CbnClient::describeCens(const DescribeCensRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCensOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCensOutcome(DescribeCensResult(outcome.result()));
+	else
+		return DescribeCensOutcome(outcome.error());
+}
+
+void CbnClient::describeCensAsync(const DescribeCensRequest& request, const DescribeCensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCens(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeCensOutcomeCallable CbnClient::describeCensCallable(const DescribeCensRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCensOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCens(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,6 +807,78 @@ CbnClient::UnassociateCenBandwidthPackageOutcomeCallable CbnClient::unassociateC
 	return task->get_future();
 }
 
+CbnClient::DescribeFlowlogsOutcome CbnClient::describeFlowlogs(const DescribeFlowlogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFlowlogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFlowlogsOutcome(DescribeFlowlogsResult(outcome.result()));
+	else
+		return DescribeFlowlogsOutcome(outcome.error());
+}
+
+void CbnClient::describeFlowlogsAsync(const DescribeFlowlogsRequest& request, const DescribeFlowlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFlowlogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeFlowlogsOutcomeCallable CbnClient::describeFlowlogsCallable(const DescribeFlowlogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFlowlogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFlowlogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeactiveFlowLogOutcome CbnClient::deactiveFlowLog(const DeactiveFlowLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeactiveFlowLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeactiveFlowLogOutcome(DeactiveFlowLogResult(outcome.result()));
+	else
+		return DeactiveFlowLogOutcome(outcome.error());
+}
+
+void CbnClient::deactiveFlowLogAsync(const DeactiveFlowLogRequest& request, const DeactiveFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deactiveFlowLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeactiveFlowLogOutcomeCallable CbnClient::deactiveFlowLogCallable(const DeactiveFlowLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeactiveFlowLogOutcome()>>(
+			[this, request]()
+			{
+			return this->deactiveFlowLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DescribeChildInstanceRegionsOutcome CbnClient::describeChildInstanceRegions(const DescribeChildInstanceRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +909,78 @@ CbnClient::DescribeChildInstanceRegionsOutcomeCallable CbnClient::describeChildI
 			[this, request]()
 			{
 			return this->describeChildInstanceRegions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ActiveFlowLogOutcome CbnClient::activeFlowLog(const ActiveFlowLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ActiveFlowLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ActiveFlowLogOutcome(ActiveFlowLogResult(outcome.result()));
+	else
+		return ActiveFlowLogOutcome(outcome.error());
+}
+
+void CbnClient::activeFlowLogAsync(const ActiveFlowLogRequest& request, const ActiveFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, activeFlowLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ActiveFlowLogOutcomeCallable CbnClient::activeFlowLogCallable(const ActiveFlowLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ActiveFlowLogOutcome()>>(
+			[this, request]()
+			{
+			return this->activeFlowLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ModifyCenRouteMapOutcome CbnClient::modifyCenRouteMap(const ModifyCenRouteMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCenRouteMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCenRouteMapOutcome(ModifyCenRouteMapResult(outcome.result()));
+	else
+		return ModifyCenRouteMapOutcome(outcome.error());
+}
+
+void CbnClient::modifyCenRouteMapAsync(const ModifyCenRouteMapRequest& request, const ModifyCenRouteMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCenRouteMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ModifyCenRouteMapOutcomeCallable CbnClient::modifyCenRouteMapCallable(const ModifyCenRouteMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCenRouteMapOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCenRouteMap(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -837,6 +1053,42 @@ CbnClient::AttachCenChildInstanceOutcomeCallable CbnClient::attachCenChildInstan
 			[this, request]()
 			{
 			return this->attachCenChildInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateCenRouteMapOutcome CbnClient::createCenRouteMap(const CreateCenRouteMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCenRouteMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCenRouteMapOutcome(CreateCenRouteMapResult(outcome.result()));
+	else
+		return CreateCenRouteMapOutcome(outcome.error());
+}
+
+void CbnClient::createCenRouteMapAsync(const CreateCenRouteMapRequest& request, const CreateCenRouteMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCenRouteMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateCenRouteMapOutcomeCallable CbnClient::createCenRouteMapCallable(const CreateCenRouteMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCenRouteMapOutcome()>>(
+			[this, request]()
+			{
+			return this->createCenRouteMap(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,6 +1419,42 @@ CbnClient::DescribeCenAttachedChildInstancesOutcomeCallable CbnClient::describeC
 	return task->get_future();
 }
 
+CbnClient::DeleteCenRouteMapOutcome CbnClient::deleteCenRouteMap(const DeleteCenRouteMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCenRouteMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCenRouteMapOutcome(DeleteCenRouteMapResult(outcome.result()));
+	else
+		return DeleteCenRouteMapOutcome(outcome.error());
+}
+
+void CbnClient::deleteCenRouteMapAsync(const DeleteCenRouteMapRequest& request, const DeleteCenRouteMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCenRouteMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteCenRouteMapOutcomeCallable CbnClient::deleteCenRouteMapCallable(const DeleteCenRouteMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCenRouteMapOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCenRouteMap(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DescribeCenAttachedChildInstanceAttributeOutcome CbnClient::describeCenAttachedChildInstanceAttribute(const DescribeCenAttachedChildInstanceAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1239,6 +1527,78 @@ CbnClient::ModifyCenBandwidthPackageSpecOutcomeCallable CbnClient::modifyCenBand
 	return task->get_future();
 }
 
+CbnClient::DescribeCenRouteMapsOutcome CbnClient::describeCenRouteMaps(const DescribeCenRouteMapsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCenRouteMapsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCenRouteMapsOutcome(DescribeCenRouteMapsResult(outcome.result()));
+	else
+		return DescribeCenRouteMapsOutcome(outcome.error());
+}
+
+void CbnClient::describeCenRouteMapsAsync(const DescribeCenRouteMapsRequest& request, const DescribeCenRouteMapsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCenRouteMaps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeCenRouteMapsOutcomeCallable CbnClient::describeCenRouteMapsCallable(const DescribeCenRouteMapsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCenRouteMapsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCenRouteMaps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DescribeCenChildInstanceRouteEntriesOutcome CbnClient::describeCenChildInstanceRouteEntries(const DescribeCenChildInstanceRouteEntriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCenChildInstanceRouteEntriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCenChildInstanceRouteEntriesOutcome(DescribeCenChildInstanceRouteEntriesResult(outcome.result()));
+	else
+		return DescribeCenChildInstanceRouteEntriesOutcome(outcome.error());
+}
+
+void CbnClient::describeCenChildInstanceRouteEntriesAsync(const DescribeCenChildInstanceRouteEntriesRequest& request, const DescribeCenChildInstanceRouteEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCenChildInstanceRouteEntries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeCenChildInstanceRouteEntriesOutcomeCallable CbnClient::describeCenChildInstanceRouteEntriesCallable(const DescribeCenChildInstanceRouteEntriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCenChildInstanceRouteEntriesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCenChildInstanceRouteEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DescribeCenBandwidthPackagesOutcome CbnClient::describeCenBandwidthPackages(const DescribeCenBandwidthPackagesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1629,42 @@ CbnClient::DescribeCenBandwidthPackagesOutcomeCallable CbnClient::describeCenBan
 			[this, request]()
 			{
 			return this->describeCenBandwidthPackages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateFlowlogOutcome CbnClient::createFlowlog(const CreateFlowlogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFlowlogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFlowlogOutcome(CreateFlowlogResult(outcome.result()));
+	else
+		return CreateFlowlogOutcome(outcome.error());
+}
+
+void CbnClient::createFlowlogAsync(const CreateFlowlogRequest& request, const CreateFlowlogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFlowlog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateFlowlogOutcomeCallable CbnClient::createFlowlogCallable(const CreateFlowlogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFlowlogOutcome()>>(
+			[this, request]()
+			{
+			return this->createFlowlog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

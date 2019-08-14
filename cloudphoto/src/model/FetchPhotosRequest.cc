@@ -33,7 +33,7 @@ int FetchPhotosRequest::getSize()const
 void FetchPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setParameter("Size", std::to_string(size));
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string FetchPhotosRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string FetchPhotosRequest::getLibraryId()const
 void FetchPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string FetchPhotosRequest::getOrderBy()const
@@ -55,7 +55,7 @@ std::string FetchPhotosRequest::getOrderBy()const
 void FetchPhotosRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", orderBy);
 }
 
 std::string FetchPhotosRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string FetchPhotosRequest::getStoreName()const
 void FetchPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string FetchPhotosRequest::getState()const
@@ -77,7 +77,7 @@ std::string FetchPhotosRequest::getState()const
 void FetchPhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 int FetchPhotosRequest::getPage()const
@@ -88,7 +88,7 @@ int FetchPhotosRequest::getPage()const
 void FetchPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", std::to_string(page));
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string FetchPhotosRequest::getOrder()const
@@ -99,6 +99,6 @@ std::string FetchPhotosRequest::getOrder()const
 void FetchPhotosRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setParameter("Order", order);
+	setCoreParameter("Order", order);
 }
 

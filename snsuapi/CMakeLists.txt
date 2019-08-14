@@ -29,10 +29,10 @@ set(snsuapi_public_header_model
 	include/alibabacloud/snsuapi/model/BandStatusQueryResult.h
 	include/alibabacloud/snsuapi/model/MobileStatusQueryRequest.h
 	include/alibabacloud/snsuapi/model/MobileStatusQueryResult.h
-	include/alibabacloud/snsuapi/model/BandOfferOrderRequest.h
-	include/alibabacloud/snsuapi/model/BandOfferOrderResult.h
 	include/alibabacloud/snsuapi/model/MobileStopSpeedUpRequest.h
 	include/alibabacloud/snsuapi/model/MobileStopSpeedUpResult.h
+	include/alibabacloud/snsuapi/model/BandOfferOrderRequest.h
+	include/alibabacloud/snsuapi/model/BandOfferOrderResult.h
 	include/alibabacloud/snsuapi/model/BandPrecheckRequest.h
 	include/alibabacloud/snsuapi/model/BandPrecheckResult.h
 	include/alibabacloud/snsuapi/model/BandStartSpeedUpRequest.h
@@ -48,10 +48,10 @@ set(snsuapi_src
 	src/model/BandStatusQueryResult.cc
 	src/model/MobileStatusQueryRequest.cc
 	src/model/MobileStatusQueryResult.cc
-	src/model/BandOfferOrderRequest.cc
-	src/model/BandOfferOrderResult.cc
 	src/model/MobileStopSpeedUpRequest.cc
 	src/model/MobileStopSpeedUpResult.cc
+	src/model/BandOfferOrderRequest.cc
+	src/model/BandOfferOrderResult.cc
 	src/model/BandPrecheckRequest.cc
 	src/model/BandPrecheckResult.cc
 	src/model/BandStartSpeedUpRequest.cc

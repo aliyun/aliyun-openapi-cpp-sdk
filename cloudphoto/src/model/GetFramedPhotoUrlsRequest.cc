@@ -33,7 +33,7 @@ std::string GetFramedPhotoUrlsRequest::getFrameId()const
 void GetFramedPhotoUrlsRequest::setFrameId(const std::string& frameId)
 {
 	frameId_ = frameId;
-	setParameter("FrameId", frameId);
+	setCoreParameter("FrameId", frameId);
 }
 
 std::string GetFramedPhotoUrlsRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string GetFramedPhotoUrlsRequest::getLibraryId()const
 void GetFramedPhotoUrlsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::vector<long> GetFramedPhotoUrlsRequest::getPhotoId()const
@@ -56,7 +56,7 @@ void GetFramedPhotoUrlsRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
 }
 
 std::string GetFramedPhotoUrlsRequest::getStoreName()const
@@ -67,6 +67,6 @@ std::string GetFramedPhotoUrlsRequest::getStoreName()const
 void GetFramedPhotoUrlsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

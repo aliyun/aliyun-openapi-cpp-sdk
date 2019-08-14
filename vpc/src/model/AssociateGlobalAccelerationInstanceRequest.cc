@@ -33,7 +33,7 @@ long AssociateGlobalAccelerationInstanceRequest::getResourceOwnerId()const
 void AssociateGlobalAccelerationInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getResourceOwnerAccount(
 void AssociateGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getRegionId()const
 void AssociateGlobalAccelerationInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getOwnerAccount()const
 void AssociateGlobalAccelerationInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerId()const
@@ -77,7 +77,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerId()cons
 void AssociateGlobalAccelerationInstanceRequest::setBackendServerId(const std::string& backendServerId)
 {
 	backendServerId_ = backendServerId;
-	setParameter("BackendServerId", backendServerId);
+	setCoreParameter("BackendServerId", backendServerId);
 }
 
 long AssociateGlobalAccelerationInstanceRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long AssociateGlobalAccelerationInstanceRequest::getOwnerId()const
 void AssociateGlobalAccelerationInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getGlobalAccelerationInstanceId()const
@@ -99,7 +99,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getGlobalAccelerationIns
 void AssociateGlobalAccelerationInstanceRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerRegionId()const
@@ -110,7 +110,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerRegionId
 void AssociateGlobalAccelerationInstanceRequest::setBackendServerRegionId(const std::string& backendServerRegionId)
 {
 	backendServerRegionId_ = backendServerRegionId;
-	setParameter("BackendServerRegionId", backendServerRegionId);
+	setCoreParameter("BackendServerRegionId", backendServerRegionId);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerType()const
@@ -121,6 +121,6 @@ std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerType()co
 void AssociateGlobalAccelerationInstanceRequest::setBackendServerType(const std::string& backendServerType)
 {
 	backendServerType_ = backendServerType;
-	setParameter("BackendServerType", backendServerType);
+	setCoreParameter("BackendServerType", backendServerType);
 }
 

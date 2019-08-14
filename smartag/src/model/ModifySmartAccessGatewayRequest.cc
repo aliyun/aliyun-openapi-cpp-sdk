@@ -119,6 +119,17 @@ void ModifySmartAccessGatewayRequest::setSecurityLockThreshold(int securityLockT
 	setCoreParameter("SecurityLockThreshold", std::to_string(securityLockThreshold));
 }
 
+std::string ModifySmartAccessGatewayRequest::getRoutingStrategy()const
+{
+	return routingStrategy_;
+}
+
+void ModifySmartAccessGatewayRequest::setRoutingStrategy(const std::string& routingStrategy)
+{
+	routingStrategy_ = routingStrategy;
+	setCoreParameter("RoutingStrategy", routingStrategy);
+}
+
 std::string ModifySmartAccessGatewayRequest::getRegionId()const
 {
 	return regionId_;

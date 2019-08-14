@@ -34,6 +34,23 @@ namespace AlibabaCloud
 			public:
 				struct ClusterInfo
 				{
+					struct RelateClusterInfo
+					{
+						std::string status;
+						std::string clusterId;
+						std::string clusterName;
+					};
+					struct HostPoolInfo
+					{
+						std::string hpBizId;
+						std::string hpName;
+					};
+					struct FailReason
+					{
+						std::string requestId;
+						std::string errorMsg;
+						std::string errorCode;
+					};
 					struct SoftwareInfo
 					{
 						struct Software
@@ -48,11 +65,20 @@ namespace AlibabaCloud
 						std::string emrVer;
 						std::string clusterType;
 					};
-					struct FailReason
+					struct AccessInfo
 					{
-						std::string requestId;
-						std::string errorMsg;
-						std::string errorCode;
+						struct ZKLink
+						{
+							std::string port;
+							std::string link;
+						};
+						std::vector<ZKLink> zKLinks;
+					};
+					struct GatewayClusterInfo
+					{
+						std::string status;
+						std::string clusterId;
+						std::string clusterName;
 					};
 					struct BootstrapAction
 					{
@@ -62,43 +88,58 @@ namespace AlibabaCloud
 					};
 					int taskNodeInService;
 					bool showSoftwareInterface;
+					HostPoolInfo hostPoolInfo;
 					int coreNodeInService;
-					std::string securityGroupName;
 					std::vector<BootstrapAction> bootstrapActionList;
-					bool logEnable;
-					int masterNodeInService;
+					bool resizeDiskEnable;
 					FailReason failReason;
 					std::string name;
 					bool highAvailabilityEnable;
 					long expiredTime;
 					std::string createType;
-					int coreNodeTotal;
 					std::string imageId;
-					std::string configurations;
-					std::string netType;
+					bool autoScalingSpotWithLimitAllowed;
 					std::string userDefinedEmrEcsRole;
+					bool autoScalingAllowed;
 					long stopTime;
 					std::string status;
-					bool ioOptimized;
-					std::string zoneId;
+					std::string createResource;
 					bool bootstrapFailed;
 					std::string vSwitchId;
-					std::string securityGroupId;
+					std::string depositType;
 					long startTime;
-					int taskNodeTotal;
+					std::vector<GatewayClusterInfo> gatewayClusterInfoList;
 					int period;
-					int masterNodeTotal;
-					std::string clusterType;
+					std::string metaStoreType;
 					bool easEnable;
 					std::string vpcId;
+					SoftwareInfo softwareInfo;
+					std::string securityGroupName;
+					bool logEnable;
+					int masterNodeInService;
+					RelateClusterInfo relateClusterInfo;
+					std::string relateClusterId;
+					bool autoScalingByLoadAllowed;
+					int coreNodeTotal;
+					std::string configurations;
+					std::string netType;
+					bool localMetaDb;
+					std::string gatewayClusterIds;
+					bool ioOptimized;
+					std::string zoneId;
+					std::string clusterId;
+					std::string securityGroupId;
+					std::string machineType;
+					int taskNodeTotal;
+					AccessInfo accessInfo;
+					int masterNodeTotal;
+					std::string userId;
 					std::string chargeType;
+					bool autoScalingEnable;
 					std::string instanceGeneration;
-					std::string id;
 					std::string regionId;
-					std::string bizId;
 					std::string logPath;
 					int runningTime;
-					SoftwareInfo softwareInfo;
 				};
 
 

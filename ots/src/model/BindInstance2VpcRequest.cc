@@ -33,7 +33,7 @@ std::string BindInstance2VpcRequest::getAccess_key_id()const
 void BindInstance2VpcRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 std::string BindInstance2VpcRequest::getInstanceVpcName()const
@@ -44,7 +44,7 @@ std::string BindInstance2VpcRequest::getInstanceVpcName()const
 void BindInstance2VpcRequest::setInstanceVpcName(const std::string& instanceVpcName)
 {
 	instanceVpcName_ = instanceVpcName;
-	setParameter("InstanceVpcName", instanceVpcName);
+	setCoreParameter("InstanceVpcName", instanceVpcName);
 }
 
 long BindInstance2VpcRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long BindInstance2VpcRequest::getResourceOwnerId()const
 void BindInstance2VpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BindInstance2VpcRequest::getInstanceName()const
@@ -66,7 +66,7 @@ std::string BindInstance2VpcRequest::getInstanceName()const
 void BindInstance2VpcRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::string BindInstance2VpcRequest::getVpcId()const
@@ -77,7 +77,7 @@ std::string BindInstance2VpcRequest::getVpcId()const
 void BindInstance2VpcRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string BindInstance2VpcRequest::getVirtualSwitchId()const
@@ -88,7 +88,7 @@ std::string BindInstance2VpcRequest::getVirtualSwitchId()const
 void BindInstance2VpcRequest::setVirtualSwitchId(const std::string& virtualSwitchId)
 {
 	virtualSwitchId_ = virtualSwitchId;
-	setParameter("VirtualSwitchId", virtualSwitchId);
+	setCoreParameter("VirtualSwitchId", virtualSwitchId);
 }
 
 std::string BindInstance2VpcRequest::getRegionNo()const
@@ -99,7 +99,7 @@ std::string BindInstance2VpcRequest::getRegionNo()const
 void BindInstance2VpcRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setParameter("RegionNo", regionNo);
+	setCoreParameter("RegionNo", regionNo);
 }
 
 std::string BindInstance2VpcRequest::getNetwork()const
@@ -110,6 +110,6 @@ std::string BindInstance2VpcRequest::getNetwork()const
 void BindInstance2VpcRequest::setNetwork(const std::string& network)
 {
 	network_ = network;
-	setParameter("Network", network);
+	setCoreParameter("Network", network);
 }
 

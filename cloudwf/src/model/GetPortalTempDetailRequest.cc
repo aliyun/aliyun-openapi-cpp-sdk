@@ -33,7 +33,7 @@ long GetPortalTempDetailRequest::getId()const
 void GetPortalTempDetailRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetPortalTempDetailRequest::getUniqueId()const
@@ -44,7 +44,7 @@ std::string GetPortalTempDetailRequest::getUniqueId()const
 void GetPortalTempDetailRequest::setUniqueId(const std::string& uniqueId)
 {
 	uniqueId_ = uniqueId;
-	setParameter("UniqueId", uniqueId);
+	setCoreParameter("UniqueId", uniqueId);
 }
 
 std::string GetPortalTempDetailRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetPortalTempDetailRequest::getAccessKeyId()const
 void GetPortalTempDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

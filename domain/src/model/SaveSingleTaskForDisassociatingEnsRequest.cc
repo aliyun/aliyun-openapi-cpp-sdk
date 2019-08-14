@@ -33,7 +33,7 @@ std::string SaveSingleTaskForDisassociatingEnsRequest::getUserClientIp()const
 void SaveSingleTaskForDisassociatingEnsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForDisassociatingEnsRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForDisassociatingEnsRequest::getDomainName()const
 void SaveSingleTaskForDisassociatingEnsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForDisassociatingEnsRequest::getLang()const
@@ -55,6 +55,6 @@ std::string SaveSingleTaskForDisassociatingEnsRequest::getLang()const
 void SaveSingleTaskForDisassociatingEnsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

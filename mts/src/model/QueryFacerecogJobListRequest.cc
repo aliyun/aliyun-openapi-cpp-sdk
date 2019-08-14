@@ -33,7 +33,7 @@ long QueryFacerecogJobListRequest::getResourceOwnerId()const
 void QueryFacerecogJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryFacerecogJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryFacerecogJobListRequest::getResourceOwnerAccount()const
 void QueryFacerecogJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryFacerecogJobListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryFacerecogJobListRequest::getOwnerAccount()const
 void QueryFacerecogJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string QueryFacerecogJobListRequest::getFacerecogJobIds()const
@@ -66,7 +66,7 @@ std::string QueryFacerecogJobListRequest::getFacerecogJobIds()const
 void QueryFacerecogJobListRequest::setFacerecogJobIds(const std::string& facerecogJobIds)
 {
 	facerecogJobIds_ = facerecogJobIds;
-	setParameter("FacerecogJobIds", facerecogJobIds);
+	setCoreParameter("FacerecogJobIds", facerecogJobIds);
 }
 
 long QueryFacerecogJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryFacerecogJobListRequest::getOwnerId()const
 void QueryFacerecogJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryFacerecogJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryFacerecogJobListRequest::getAccessKeyId()const
 void QueryFacerecogJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

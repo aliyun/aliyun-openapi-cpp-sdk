@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getType()const;
 				void setType(const std::string& type);
+				long getIncidentTime()const;
+				void setIncidentTime(long incidentTime);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
 				std::string getEventName()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				std::string from_;
 				std::string lang_;
 				std::string type_;
+				long incidentTime_;
 				std::string uuid_;
 				std::string eventName_;
 

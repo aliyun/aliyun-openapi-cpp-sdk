@@ -33,7 +33,7 @@ long QuerySubtitleJobListRequest::getResourceOwnerId()const
 void QuerySubtitleJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QuerySubtitleJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QuerySubtitleJobListRequest::getResourceOwnerAccount()const
 void QuerySubtitleJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QuerySubtitleJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QuerySubtitleJobListRequest::getJobIds()const
 void QuerySubtitleJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QuerySubtitleJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QuerySubtitleJobListRequest::getOwnerAccount()const
 void QuerySubtitleJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QuerySubtitleJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QuerySubtitleJobListRequest::getOwnerId()const
 void QuerySubtitleJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QuerySubtitleJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QuerySubtitleJobListRequest::getAccessKeyId()const
 void QuerySubtitleJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

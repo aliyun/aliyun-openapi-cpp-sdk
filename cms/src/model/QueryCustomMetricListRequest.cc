@@ -33,7 +33,7 @@ std::string QueryCustomMetricListRequest::getSize()const
 void QueryCustomMetricListRequest::setSize(const std::string& size)
 {
 	size_ = size;
-	setParameter("Size", size);
+	setCoreParameter("Size", size);
 }
 
 std::string QueryCustomMetricListRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string QueryCustomMetricListRequest::getGroupId()const
 void QueryCustomMetricListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string QueryCustomMetricListRequest::getPage()const
@@ -55,7 +55,7 @@ std::string QueryCustomMetricListRequest::getPage()const
 void QueryCustomMetricListRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setParameter("Page", page);
+	setCoreParameter("Page", page);
 }
 
 std::string QueryCustomMetricListRequest::getMetricName()const
@@ -66,7 +66,7 @@ std::string QueryCustomMetricListRequest::getMetricName()const
 void QueryCustomMetricListRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setParameter("MetricName", metricName);
+	setCoreParameter("MetricName", metricName);
 }
 
 std::string QueryCustomMetricListRequest::getDimension()const
@@ -77,7 +77,7 @@ std::string QueryCustomMetricListRequest::getDimension()const
 void QueryCustomMetricListRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
-	setParameter("Dimension", dimension);
+	setCoreParameter("Dimension", dimension);
 }
 
 std::string QueryCustomMetricListRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string QueryCustomMetricListRequest::getAccessKeyId()const
 void QueryCustomMetricListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryCustomMetricListRequest::getMd5()const
@@ -99,6 +99,6 @@ std::string QueryCustomMetricListRequest::getMd5()const
 void QueryCustomMetricListRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setParameter("Md5", md5);
+	setCoreParameter("Md5", md5);
 }
 

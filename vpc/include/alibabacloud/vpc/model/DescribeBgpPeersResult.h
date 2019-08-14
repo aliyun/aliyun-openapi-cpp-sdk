@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string name;
 					std::string bgpPeerId;
 					std::string localAsn;
+					bool enableBfd;
 					std::string bgpStatus;
 					std::string authKey;
 					std::string isFake;

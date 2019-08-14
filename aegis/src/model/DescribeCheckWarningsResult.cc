@@ -35,10 +35,13 @@ DescribeCheckWarningsResult::~DescribeCheckWarningsResult()
 
 void DescribeCheckWarningsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allCheckWarnings = value["CheckWarnings"]["CheckWarning"];
 	for (auto value : allCheckWarnings)
@@ -58,6 +61,8 @@ void DescribeCheckWarningsResult::parse(const std::string &payload)
 			checkWarningsObject.type = value["Type"].asString();
 		if(!value["Status"].isNull())
 			checkWarningsObject.status = std::stoi(value["Status"].asString());
+		if(!value["Reason"].isNull())
+			checkWarningsObject.reason = value["Reason"].asString();
 		checkWarnings_.push_back(checkWarningsObject);
 	}
 	if(!value["Count"].isNull())

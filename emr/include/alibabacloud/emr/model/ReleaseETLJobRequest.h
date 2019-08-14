@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getReleaseId()const;
+				void setReleaseId(const std::string& releaseId);
 				std::string getId()const;
 				void setId(const std::string& id);
 				std::string getAccessKeyId()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string regionId_;
+				std::string releaseId_;
 				std::string id_;
 				std::string accessKeyId_;
 

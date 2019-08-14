@@ -31,21 +31,21 @@ DrdsClient::DrdsClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "drds");
 }
 
 DrdsClient::DrdsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "drds");
 }
 
 DrdsClient::DrdsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "drds");
 }
 
 DrdsClient::~DrdsClient()
@@ -519,6 +519,42 @@ DrdsClient::CreateDrdsInstanceOutcomeCallable DrdsClient::createDrdsInstanceCall
 	return task->get_future();
 }
 
+DrdsClient::DescribeDrdsInstanceMonitorOutcome DrdsClient::describeDrdsInstanceMonitor(const DescribeDrdsInstanceMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDrdsInstanceMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDrdsInstanceMonitorOutcome(DescribeDrdsInstanceMonitorResult(outcome.result()));
+	else
+		return DescribeDrdsInstanceMonitorOutcome(outcome.error());
+}
+
+void DrdsClient::describeDrdsInstanceMonitorAsync(const DescribeDrdsInstanceMonitorRequest& request, const DescribeDrdsInstanceMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDrdsInstanceMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::DescribeDrdsInstanceMonitorOutcomeCallable DrdsClient::describeDrdsInstanceMonitorCallable(const DescribeDrdsInstanceMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDrdsInstanceMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDrdsInstanceMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DrdsClient::DescribeRegionsOutcome DrdsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,6 +873,42 @@ DrdsClient::DeleteFailedDrdsDBOutcomeCallable DrdsClient::deleteFailedDrdsDBCall
 			[this, request]()
 			{
 			return this->deleteFailedDrdsDB(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DrdsClient::DescribeDrdsInstanceDbMonitorOutcome DrdsClient::describeDrdsInstanceDbMonitor(const DescribeDrdsInstanceDbMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDrdsInstanceDbMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDrdsInstanceDbMonitorOutcome(DescribeDrdsInstanceDbMonitorResult(outcome.result()));
+	else
+		return DescribeDrdsInstanceDbMonitorOutcome(outcome.error());
+}
+
+void DrdsClient::describeDrdsInstanceDbMonitorAsync(const DescribeDrdsInstanceDbMonitorRequest& request, const DescribeDrdsInstanceDbMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDrdsInstanceDbMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::DescribeDrdsInstanceDbMonitorOutcomeCallable DrdsClient::describeDrdsInstanceDbMonitorCallable(const DescribeDrdsInstanceDbMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDrdsInstanceDbMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDrdsInstanceDbMonitor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

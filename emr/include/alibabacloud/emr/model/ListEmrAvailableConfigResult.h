@@ -50,6 +50,8 @@ namespace AlibabaCloud
 					bool ecmVersion;
 					std::string regionId;
 					std::string mainVersionName;
+					std::string stackName;
+					std::string stackVersion;
 				};
 				struct SecurityGroup
 				{

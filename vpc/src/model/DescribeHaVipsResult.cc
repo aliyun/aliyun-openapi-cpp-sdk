@@ -35,10 +35,13 @@ DescribeHaVipsResult::~DescribeHaVipsResult()
 
 void DescribeHaVipsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allHaVips = value["HaVips"]["HaVip"];
 	for (auto value : allHaVips)
@@ -60,6 +63,10 @@ void DescribeHaVipsResult::parse(const std::string &payload)
 			haVipsObject.masterInstanceId = value["MasterInstanceId"].asString();
 		if(!value["Description"].isNull())
 			haVipsObject.description = value["Description"].asString();
+		if(!value["Name"].isNull())
+			haVipsObject.name = value["Name"].asString();
+		if(!value["ChargeType"].isNull())
+			haVipsObject.chargeType = value["ChargeType"].asString();
 		if(!value["CreateTime"].isNull())
 			haVipsObject.createTime = value["CreateTime"].asString();
 		auto allAssociatedInstances = value["AssociatedInstances"]["associatedInstance"];

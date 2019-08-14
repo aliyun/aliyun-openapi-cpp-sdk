@@ -35,15 +35,17 @@ namespace AlibabaCloud
 				struct HaVip
 				{
 					std::string status;
-					std::vector<std::string> associatedInstances;
 					std::string description;
-					std::string vpcId;
 					std::vector<std::string> associatedEipAddresses;
-					std::string masterInstanceId;
 					std::string vSwitchId;
 					std::string createTime;
-					std::string ipAddress;
 					std::string haVipId;
+					std::string name;
+					std::vector<std::string> associatedInstances;
+					std::string vpcId;
+					std::string masterInstanceId;
+					std::string chargeType;
+					std::string ipAddress;
 					std::string regionId;
 				};
 

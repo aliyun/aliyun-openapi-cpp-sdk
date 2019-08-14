@@ -58,6 +58,17 @@ void CreateDBInstanceRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
+std::string CreateDBInstanceRequest::getReadonlyReplicas()const
+{
+	return readonlyReplicas_;
+}
+
+void CreateDBInstanceRequest::setReadonlyReplicas(const std::string& readonlyReplicas)
+{
+	readonlyReplicas_ = readonlyReplicas;
+	setCoreParameter("ReadonlyReplicas", readonlyReplicas);
+}
+
 std::string CreateDBInstanceRequest::getCouponNo()const
 {
 	return couponNo_;

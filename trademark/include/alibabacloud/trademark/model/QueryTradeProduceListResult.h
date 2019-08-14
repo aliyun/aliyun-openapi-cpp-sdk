@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					long createTime;
 					int buyerStatus;
 					std::string operateNote;
+					int failReason;
 					int finalAmount;
 					std::string preOrderId;
 					bool allowCancel;

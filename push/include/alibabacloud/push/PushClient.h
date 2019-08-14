@@ -22,20 +22,20 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "PushExport.h"
-#include "model/UnbindTagRequest.h"
-#include "model/UnbindTagResult.h"
 #include "model/QueryDeviceStatRequest.h"
 #include "model/QueryDeviceStatResult.h"
+#include "model/UnbindTagRequest.h"
+#include "model/UnbindTagResult.h"
 #include "model/QueryPushStatByAppRequest.h"
 #include "model/QueryPushStatByAppResult.h"
 #include "model/CheckDeviceRequest.h"
 #include "model/CheckDeviceResult.h"
-#include "model/ListPushRecordsRequest.h"
-#include "model/ListPushRecordsResult.h"
 #include "model/QueryDevicesByAliasRequest.h"
 #include "model/QueryDevicesByAliasResult.h"
 #include "model/PushRequest.h"
 #include "model/PushResult.h"
+#include "model/ListPushRecordsRequest.h"
+#include "model/ListPushRecordsResult.h"
 #include "model/QueryTagsRequest.h"
 #include "model/QueryTagsResult.h"
 #include "model/UnbindAliasRequest.h"
@@ -87,27 +87,27 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_PUSH_EXPORT PushClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::UnbindTagResult> UnbindTagOutcome;
-			typedef std::future<UnbindTagOutcome> UnbindTagOutcomeCallable;
-			typedef std::function<void(const PushClient*, const Model::UnbindTagRequest&, const UnbindTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindTagAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceStatResult> QueryDeviceStatOutcome;
 			typedef std::future<QueryDeviceStatOutcome> QueryDeviceStatOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryDeviceStatRequest&, const QueryDeviceStatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceStatAsyncHandler;
+			typedef Outcome<Error, Model::UnbindTagResult> UnbindTagOutcome;
+			typedef std::future<UnbindTagOutcome> UnbindTagOutcomeCallable;
+			typedef std::function<void(const PushClient*, const Model::UnbindTagRequest&, const UnbindTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindTagAsyncHandler;
 			typedef Outcome<Error, Model::QueryPushStatByAppResult> QueryPushStatByAppOutcome;
 			typedef std::future<QueryPushStatByAppOutcome> QueryPushStatByAppOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryPushStatByAppRequest&, const QueryPushStatByAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPushStatByAppAsyncHandler;
 			typedef Outcome<Error, Model::CheckDeviceResult> CheckDeviceOutcome;
 			typedef std::future<CheckDeviceOutcome> CheckDeviceOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::CheckDeviceRequest&, const CheckDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDeviceAsyncHandler;
-			typedef Outcome<Error, Model::ListPushRecordsResult> ListPushRecordsOutcome;
-			typedef std::future<ListPushRecordsOutcome> ListPushRecordsOutcomeCallable;
-			typedef std::function<void(const PushClient*, const Model::ListPushRecordsRequest&, const ListPushRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPushRecordsAsyncHandler;
 			typedef Outcome<Error, Model::QueryDevicesByAliasResult> QueryDevicesByAliasOutcome;
 			typedef std::future<QueryDevicesByAliasOutcome> QueryDevicesByAliasOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryDevicesByAliasRequest&, const QueryDevicesByAliasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDevicesByAliasAsyncHandler;
 			typedef Outcome<Error, Model::PushResult> PushOutcome;
 			typedef std::future<PushOutcome> PushOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::PushRequest&, const PushOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PushAsyncHandler;
+			typedef Outcome<Error, Model::ListPushRecordsResult> ListPushRecordsOutcome;
+			typedef std::future<ListPushRecordsOutcome> ListPushRecordsOutcomeCallable;
+			typedef std::function<void(const PushClient*, const Model::ListPushRecordsRequest&, const ListPushRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPushRecordsAsyncHandler;
 			typedef Outcome<Error, Model::QueryTagsResult> QueryTagsOutcome;
 			typedef std::future<QueryTagsOutcome> QueryTagsOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryTagsRequest&, const QueryTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTagsAsyncHandler;
@@ -176,27 +176,27 @@ namespace AlibabaCloud
 			PushClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			PushClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~PushClient();
-			UnbindTagOutcome unbindTag(const Model::UnbindTagRequest &request)const;
-			void unbindTagAsync(const Model::UnbindTagRequest& request, const UnbindTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UnbindTagOutcomeCallable unbindTagCallable(const Model::UnbindTagRequest& request) const;
 			QueryDeviceStatOutcome queryDeviceStat(const Model::QueryDeviceStatRequest &request)const;
 			void queryDeviceStatAsync(const Model::QueryDeviceStatRequest& request, const QueryDeviceStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceStatOutcomeCallable queryDeviceStatCallable(const Model::QueryDeviceStatRequest& request) const;
+			UnbindTagOutcome unbindTag(const Model::UnbindTagRequest &request)const;
+			void unbindTagAsync(const Model::UnbindTagRequest& request, const UnbindTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindTagOutcomeCallable unbindTagCallable(const Model::UnbindTagRequest& request) const;
 			QueryPushStatByAppOutcome queryPushStatByApp(const Model::QueryPushStatByAppRequest &request)const;
 			void queryPushStatByAppAsync(const Model::QueryPushStatByAppRequest& request, const QueryPushStatByAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPushStatByAppOutcomeCallable queryPushStatByAppCallable(const Model::QueryPushStatByAppRequest& request) const;
 			CheckDeviceOutcome checkDevice(const Model::CheckDeviceRequest &request)const;
 			void checkDeviceAsync(const Model::CheckDeviceRequest& request, const CheckDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDeviceOutcomeCallable checkDeviceCallable(const Model::CheckDeviceRequest& request) const;
-			ListPushRecordsOutcome listPushRecords(const Model::ListPushRecordsRequest &request)const;
-			void listPushRecordsAsync(const Model::ListPushRecordsRequest& request, const ListPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListPushRecordsOutcomeCallable listPushRecordsCallable(const Model::ListPushRecordsRequest& request) const;
 			QueryDevicesByAliasOutcome queryDevicesByAlias(const Model::QueryDevicesByAliasRequest &request)const;
 			void queryDevicesByAliasAsync(const Model::QueryDevicesByAliasRequest& request, const QueryDevicesByAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDevicesByAliasOutcomeCallable queryDevicesByAliasCallable(const Model::QueryDevicesByAliasRequest& request) const;
 			PushOutcome push(const Model::PushRequest &request)const;
 			void pushAsync(const Model::PushRequest& request, const PushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PushOutcomeCallable pushCallable(const Model::PushRequest& request) const;
+			ListPushRecordsOutcome listPushRecords(const Model::ListPushRecordsRequest &request)const;
+			void listPushRecordsAsync(const Model::ListPushRecordsRequest& request, const ListPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPushRecordsOutcomeCallable listPushRecordsCallable(const Model::ListPushRecordsRequest& request) const;
 			QueryTagsOutcome queryTags(const Model::QueryTagsRequest &request)const;
 			void queryTagsAsync(const Model::QueryTagsRequest& request, const QueryTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryTagsOutcomeCallable queryTagsCallable(const Model::QueryTagsRequest& request) const;

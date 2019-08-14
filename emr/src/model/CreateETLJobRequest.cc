@@ -33,7 +33,7 @@ long CreateETLJobRequest::getResourceOwnerId()const
 void CreateETLJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateETLJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateETLJobRequest::getRegionId()const
 void CreateETLJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateETLJobRequest::getNavParentId()const
@@ -55,7 +55,7 @@ std::string CreateETLJobRequest::getNavParentId()const
 void CreateETLJobRequest::setNavParentId(const std::string& navParentId)
 {
 	navParentId_ = navParentId;
-	setParameter("NavParentId", navParentId);
+	setCoreParameter("NavParentId", navParentId);
 }
 
 std::string CreateETLJobRequest::getName()const
@@ -66,7 +66,7 @@ std::string CreateETLJobRequest::getName()const
 void CreateETLJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string CreateETLJobRequest::getDescription()const
@@ -77,7 +77,18 @@ std::string CreateETLJobRequest::getDescription()const
 void CreateETLJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
+}
+
+std::string CreateETLJobRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void CreateETLJobRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CreateETLJobRequest::getType()const
@@ -88,7 +99,7 @@ std::string CreateETLJobRequest::getType()const
 void CreateETLJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string CreateETLJobRequest::getProjectId()const
@@ -99,7 +110,7 @@ std::string CreateETLJobRequest::getProjectId()const
 void CreateETLJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string CreateETLJobRequest::getAccessKeyId()const
@@ -110,6 +121,6 @@ std::string CreateETLJobRequest::getAccessKeyId()const
 void CreateETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

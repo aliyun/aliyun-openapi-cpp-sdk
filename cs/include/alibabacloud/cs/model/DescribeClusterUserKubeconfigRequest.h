@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				DescribeClusterUserKubeconfigRequest();
 				~DescribeClusterUserKubeconfigRequest();
 
+				bool getPrivateIpAddress()const;
+				void setPrivateIpAddress(bool privateIpAddress);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 
             private:
+				bool privateIpAddress_;
 				std::string clusterId_;
 
 			};

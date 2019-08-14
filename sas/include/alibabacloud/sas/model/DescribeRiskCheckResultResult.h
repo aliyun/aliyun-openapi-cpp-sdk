@@ -41,14 +41,16 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					long checkTime;
-					std::string type;
 					long taskId;
-					std::vector<RiskCheckResultForDisplay::RiskItemResource> riskItemResources;
-					int affectedCount;
 					int remainingTime;
 					std::string title;
-					int sort;
 					long itemId;
+					std::string riskAssertType;
+					std::string type;
+					std::string startStatus;
+					std::vector<RiskCheckResultForDisplay::RiskItemResource> riskItemResources;
+					int affectedCount;
+					int sort;
 					std::string riskLevel;
 				};
 

@@ -33,7 +33,7 @@ std::string DescribeDcdnRefreshTasksRequest::getObjectPath()const
 void DescribeDcdnRefreshTasksRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setParameter("ObjectPath", objectPath);
+	setCoreParameter("ObjectPath", objectPath);
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDcdnRefreshTasksRequest::getDomainName()const
 void DescribeDcdnRefreshTasksRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeDcdnRefreshTasksRequest::getEndTime()const
 void DescribeDcdnRefreshTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnRefreshTasksRequest::getStartTime()const
 void DescribeDcdnRefreshTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeDcdnRefreshTasksRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeDcdnRefreshTasksRequest::getOwnerId()const
 void DescribeDcdnRefreshTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeDcdnRefreshTasksRequest::getPageNumber()const
@@ -88,18 +88,7 @@ int DescribeDcdnRefreshTasksRequest::getPageNumber()const
 void DescribeDcdnRefreshTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeDcdnRefreshTasksRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDcdnRefreshTasksRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getResourceGroupId()const
@@ -110,7 +99,7 @@ std::string DescribeDcdnRefreshTasksRequest::getResourceGroupId()const
 void DescribeDcdnRefreshTasksRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getSecurityToken()const
@@ -121,7 +110,7 @@ std::string DescribeDcdnRefreshTasksRequest::getSecurityToken()const
 void DescribeDcdnRefreshTasksRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 int DescribeDcdnRefreshTasksRequest::getPageSize()const
@@ -132,7 +121,7 @@ int DescribeDcdnRefreshTasksRequest::getPageSize()const
 void DescribeDcdnRefreshTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getObjectType()const
@@ -143,7 +132,7 @@ std::string DescribeDcdnRefreshTasksRequest::getObjectType()const
 void DescribeDcdnRefreshTasksRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setParameter("ObjectType", objectType);
+	setCoreParameter("ObjectType", objectType);
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getTaskId()const
@@ -154,7 +143,7 @@ std::string DescribeDcdnRefreshTasksRequest::getTaskId()const
 void DescribeDcdnRefreshTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getStatus()const
@@ -165,6 +154,6 @@ std::string DescribeDcdnRefreshTasksRequest::getStatus()const
 void DescribeDcdnRefreshTasksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getMachineType()const;
+				void setMachineType(const std::string& machineType);
 
             private:
 				long resourceOwnerId_;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				bool defaultStatus_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string machineType_;
 
 			};
 		}

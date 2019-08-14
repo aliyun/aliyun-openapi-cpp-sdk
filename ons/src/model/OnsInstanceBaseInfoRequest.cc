@@ -25,17 +25,6 @@ OnsInstanceBaseInfoRequest::OnsInstanceBaseInfoRequest() :
 OnsInstanceBaseInfoRequest::~OnsInstanceBaseInfoRequest()
 {}
 
-long OnsInstanceBaseInfoRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsInstanceBaseInfoRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsInstanceBaseInfoRequest::getInstanceId()const
 {
 	return instanceId_;

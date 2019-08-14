@@ -33,7 +33,7 @@ std::string CreateOrderCancelRequest::getSourceIp()const
 void CreateOrderCancelRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long CreateOrderCancelRequest::getOrderId()const
@@ -44,7 +44,7 @@ long CreateOrderCancelRequest::getOrderId()const
 void CreateOrderCancelRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateOrderCancelRequest::getLang()const
@@ -55,6 +55,6 @@ std::string CreateOrderCancelRequest::getLang()const
 void CreateOrderCancelRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

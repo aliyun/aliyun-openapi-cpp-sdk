@@ -58,6 +58,17 @@ void IgnoreHcCheckWarningsRequest::setCheckWarningIds(const std::string& checkWa
 	setCoreParameter("CheckWarningIds", checkWarningIds);
 }
 
+std::string IgnoreHcCheckWarningsRequest::getCheckIds()const
+{
+	return checkIds_;
+}
+
+void IgnoreHcCheckWarningsRequest::setCheckIds(const std::string& checkIds)
+{
+	checkIds_ = checkIds;
+	setCoreParameter("CheckIds", checkIds);
+}
+
 std::string IgnoreHcCheckWarningsRequest::getRiskId()const
 {
 	return riskId_;

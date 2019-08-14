@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getRegistrantType()const;
 				void setRegistrantType(const std::string& registrantType);
+				std::string getRegistrantProfileType()const;
+				void setRegistrantProfileType(const std::string& registrantProfileType);
 				std::string getRealNameStatus()const;
 				void setRealNameStatus(const std::string& realNameStatus);
 				std::string getLang()const;
@@ -53,6 +55,8 @@ namespace AlibabaCloud
 				void setPageNum(int pageNum);
 				bool getDefaultRegistrantProfile()const;
 				void setDefaultRegistrantProfile(bool defaultRegistrantProfile);
+				std::string getEmail()const;
+				void setEmail(const std::string& email);
 				std::string getZhRegistrantOrganization()const;
 				void setZhRegistrantOrganization(const std::string& zhRegistrantOrganization);
 
@@ -62,10 +66,12 @@ namespace AlibabaCloud
 				long registrantProfileId_;
 				int pageSize_;
 				std::string registrantType_;
+				std::string registrantProfileType_;
 				std::string realNameStatus_;
 				std::string lang_;
 				int pageNum_;
 				bool defaultRegistrantProfile_;
+				std::string email_;
 				std::string zhRegistrantOrganization_;
 
 			};

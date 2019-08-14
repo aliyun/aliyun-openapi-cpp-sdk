@@ -33,7 +33,7 @@ std::string DescribeDomainLogsRequest::getEndDate()const
 void DescribeDomainLogsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setParameter("EndDate", endDate);
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeDomainLogsRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeDomainLogsRequest::getGroupId()const
 void DescribeDomainLogsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeDomainLogsRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string DescribeDomainLogsRequest::getUserClientIp()const
 void DescribeDomainLogsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long DescribeDomainLogsRequest::getPageSize()const
@@ -66,7 +66,7 @@ long DescribeDomainLogsRequest::getPageSize()const
 void DescribeDomainLogsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainLogsRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DescribeDomainLogsRequest::getLang()const
 void DescribeDomainLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeDomainLogsRequest::getKeyWord()const
@@ -88,7 +88,7 @@ std::string DescribeDomainLogsRequest::getKeyWord()const
 void DescribeDomainLogsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setParameter("KeyWord", keyWord);
+	setCoreParameter("KeyWord", keyWord);
 }
 
 std::string DescribeDomainLogsRequest::getStartDate()const
@@ -99,7 +99,7 @@ std::string DescribeDomainLogsRequest::getStartDate()const
 void DescribeDomainLogsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setParameter("StartDate", startDate);
+	setCoreParameter("StartDate", startDate);
 }
 
 std::string DescribeDomainLogsRequest::getType()const
@@ -110,7 +110,7 @@ std::string DescribeDomainLogsRequest::getType()const
 void DescribeDomainLogsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 long DescribeDomainLogsRequest::getPageNumber()const
@@ -121,6 +121,6 @@ long DescribeDomainLogsRequest::getPageNumber()const
 void DescribeDomainLogsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

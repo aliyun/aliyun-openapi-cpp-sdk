@@ -33,7 +33,7 @@ long DescribeNoteRequest::getResourceOwnerId()const
 void DescribeNoteRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeNoteRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeNoteRequest::getRegionId()const
 void DescribeNoteRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeNoteRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeNoteRequest::getId()const
 void DescribeNoteRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeNoteRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeNoteRequest::getAccessKeyId()const
 void DescribeNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

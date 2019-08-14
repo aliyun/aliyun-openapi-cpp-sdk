@@ -33,7 +33,7 @@ std::string ListUmengPagePermission4RootRequest::getOrderCol()const
 void ListUmengPagePermission4RootRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 int ListUmengPagePermission4RootRequest::getLength()const
@@ -44,7 +44,7 @@ int ListUmengPagePermission4RootRequest::getLength()const
 void ListUmengPagePermission4RootRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 std::string ListUmengPagePermission4RootRequest::getSearchEmail()const
@@ -55,7 +55,7 @@ std::string ListUmengPagePermission4RootRequest::getSearchEmail()const
 void ListUmengPagePermission4RootRequest::setSearchEmail(const std::string& searchEmail)
 {
 	searchEmail_ = searchEmail;
-	setParameter("SearchEmail", searchEmail);
+	setCoreParameter("SearchEmail", searchEmail);
 }
 
 int ListUmengPagePermission4RootRequest::getPageIndex()const
@@ -66,7 +66,7 @@ int ListUmengPagePermission4RootRequest::getPageIndex()const
 void ListUmengPagePermission4RootRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListUmengPagePermission4RootRequest::getOrderDir()const
@@ -77,7 +77,7 @@ std::string ListUmengPagePermission4RootRequest::getOrderDir()const
 void ListUmengPagePermission4RootRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListUmengPagePermission4RootRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListUmengPagePermission4RootRequest::getAccessKeyId()const
 void ListUmengPagePermission4RootRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

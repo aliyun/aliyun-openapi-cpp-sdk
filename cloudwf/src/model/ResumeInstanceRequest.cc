@@ -33,7 +33,7 @@ std::string ResumeInstanceRequest::getTraceId()const
 void ResumeInstanceRequest::setTraceId(const std::string& traceId)
 {
 	traceId_ = traceId;
-	setParameter("TraceId", traceId);
+	setCoreParameter("TraceId", traceId);
 }
 
 std::string ResumeInstanceRequest::getSpMsg()const
@@ -44,7 +44,7 @@ std::string ResumeInstanceRequest::getSpMsg()const
 void ResumeInstanceRequest::setSpMsg(const std::string& spMsg)
 {
 	spMsg_ = spMsg;
-	setParameter("SpMsg", spMsg);
+	setCoreParameter("SpMsg", spMsg);
 }
 
 std::string ResumeInstanceRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ResumeInstanceRequest::getAccessKeyId()const
 void ResumeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

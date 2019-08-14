@@ -51,10 +51,10 @@ namespace AlibabaCloud
 				void setCidrBlock(const std::string& cidrBlock);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getSnatCidrBlock()const;
-				void setSnatCidrBlock(const std::string& snatCidrBlock);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInterworkingStatus()const;
+				void setInterworkingStatus(const std::string& interworkingStatus);
 
             private:
 				long resourceOwnerId_;
@@ -65,8 +65,8 @@ namespace AlibabaCloud
 				std::string name_;
 				std::string cidrBlock_;
 				std::string description_;
-				std::string snatCidrBlock_;
 				long ownerId_;
+				std::string interworkingStatus_;
 
 			};
 		}

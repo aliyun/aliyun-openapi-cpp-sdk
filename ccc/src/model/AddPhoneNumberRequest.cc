@@ -33,7 +33,7 @@ std::string AddPhoneNumberRequest::getContactFlowId()const
 void AddPhoneNumberRequest::setContactFlowId(const std::string& contactFlowId)
 {
 	contactFlowId_ = contactFlowId;
-	setParameter("ContactFlowId", contactFlowId);
+	setCoreParameter("ContactFlowId", contactFlowId);
 }
 
 std::string AddPhoneNumberRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string AddPhoneNumberRequest::getInstanceId()const
 void AddPhoneNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string AddPhoneNumberRequest::getUsage()const
@@ -55,7 +55,7 @@ std::string AddPhoneNumberRequest::getUsage()const
 void AddPhoneNumberRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setParameter("Usage", usage);
+	setCoreParameter("Usage", usage);
 }
 
 std::string AddPhoneNumberRequest::getPhoneNumber()const
@@ -66,7 +66,7 @@ std::string AddPhoneNumberRequest::getPhoneNumber()const
 void AddPhoneNumberRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setParameter("PhoneNumber", phoneNumber);
+	setCoreParameter("PhoneNumber", phoneNumber);
 }
 
 std::string AddPhoneNumberRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string AddPhoneNumberRequest::getAccessKeyId()const
 void AddPhoneNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

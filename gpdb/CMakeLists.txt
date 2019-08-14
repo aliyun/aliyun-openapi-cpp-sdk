@@ -41,10 +41,10 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/DescribeDBInstanceAttributeResult.h
 	include/alibabacloud/gpdb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/gpdb/model/ModifyAccountDescriptionResult.h
-	include/alibabacloud/gpdb/model/DescribeResourceUsageRequest.h
-	include/alibabacloud/gpdb/model/DescribeResourceUsageResult.h
 	include/alibabacloud/gpdb/model/DescribeSQLCollectorPolicyRequest.h
 	include/alibabacloud/gpdb/model/DescribeSQLCollectorPolicyResult.h
+	include/alibabacloud/gpdb/model/DescribeResourceUsageRequest.h
+	include/alibabacloud/gpdb/model/DescribeResourceUsageResult.h
 	include/alibabacloud/gpdb/model/ModifySQLCollectorPolicyRequest.h
 	include/alibabacloud/gpdb/model/ModifySQLCollectorPolicyResult.h
 	include/alibabacloud/gpdb/model/CreateDBInstanceRequest.h
@@ -55,14 +55,14 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/DescribeRegionsResult.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionStringRequest.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionStringResult.h
-	include/alibabacloud/gpdb/model/DeleteDBInstanceRequest.h
-	include/alibabacloud/gpdb/model/DeleteDBInstanceResult.h
 	include/alibabacloud/gpdb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/gpdb/model/DescribeSlowLogRecordsResult.h
-	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionModeRequest.h
-	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionModeResult.h
+	include/alibabacloud/gpdb/model/DeleteDBInstanceRequest.h
+	include/alibabacloud/gpdb/model/DeleteDBInstanceResult.h
 	include/alibabacloud/gpdb/model/RestartDBInstanceRequest.h
 	include/alibabacloud/gpdb/model/RestartDBInstanceResult.h
+	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionModeRequest.h
+	include/alibabacloud/gpdb/model/ModifyDBInstanceConnectionModeResult.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceNetInfoRequest.h
 	include/alibabacloud/gpdb/model/DescribeDBInstanceNetInfoResult.h
 	include/alibabacloud/gpdb/model/AddBuDBInstanceRelationRequest.h
@@ -81,6 +81,8 @@ set(gpdb_public_header_model
 	include/alibabacloud/gpdb/model/ModifySecurityIpsResult.h
 	include/alibabacloud/gpdb/model/ReleaseInstancePublicConnectionRequest.h
 	include/alibabacloud/gpdb/model/ReleaseInstancePublicConnectionResult.h
+	include/alibabacloud/gpdb/model/UpgradeDBInstanceRequest.h
+	include/alibabacloud/gpdb/model/UpgradeDBInstanceResult.h
 	include/alibabacloud/gpdb/model/DescribeSQLLogFilesRequest.h
 	include/alibabacloud/gpdb/model/DescribeSQLLogFilesResult.h
 	include/alibabacloud/gpdb/model/ModifyDBInstanceNetworkTypeRequest.h
@@ -114,10 +116,10 @@ set(gpdb_src
 	src/model/DescribeDBInstanceAttributeResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
-	src/model/DescribeResourceUsageRequest.cc
-	src/model/DescribeResourceUsageResult.cc
 	src/model/DescribeSQLCollectorPolicyRequest.cc
 	src/model/DescribeSQLCollectorPolicyResult.cc
+	src/model/DescribeResourceUsageRequest.cc
+	src/model/DescribeResourceUsageResult.cc
 	src/model/ModifySQLCollectorPolicyRequest.cc
 	src/model/ModifySQLCollectorPolicyResult.cc
 	src/model/CreateDBInstanceRequest.cc
@@ -128,14 +130,14 @@ set(gpdb_src
 	src/model/DescribeRegionsResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
 	src/model/ModifyDBInstanceConnectionStringResult.cc
-	src/model/DeleteDBInstanceRequest.cc
-	src/model/DeleteDBInstanceResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
-	src/model/ModifyDBInstanceConnectionModeRequest.cc
-	src/model/ModifyDBInstanceConnectionModeResult.cc
+	src/model/DeleteDBInstanceRequest.cc
+	src/model/DeleteDBInstanceResult.cc
 	src/model/RestartDBInstanceRequest.cc
 	src/model/RestartDBInstanceResult.cc
+	src/model/ModifyDBInstanceConnectionModeRequest.cc
+	src/model/ModifyDBInstanceConnectionModeResult.cc
 	src/model/DescribeDBInstanceNetInfoRequest.cc
 	src/model/DescribeDBInstanceNetInfoResult.cc
 	src/model/AddBuDBInstanceRelationRequest.cc
@@ -154,6 +156,8 @@ set(gpdb_src
 	src/model/ModifySecurityIpsResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
 	src/model/ReleaseInstancePublicConnectionResult.cc
+	src/model/UpgradeDBInstanceRequest.cc
+	src/model/UpgradeDBInstanceResult.cc
 	src/model/DescribeSQLLogFilesRequest.cc
 	src/model/DescribeSQLLogFilesResult.cc
 	src/model/ModifyDBInstanceNetworkTypeRequest.cc

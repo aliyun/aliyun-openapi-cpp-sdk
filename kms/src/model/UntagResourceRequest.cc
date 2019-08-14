@@ -33,7 +33,7 @@ std::string UntagResourceRequest::getTagKeys()const
 void UntagResourceRequest::setTagKeys(const std::string& tagKeys)
 {
 	tagKeys_ = tagKeys;
-	setParameter("TagKeys", tagKeys);
+	setCoreParameter("TagKeys", tagKeys);
 }
 
 std::string UntagResourceRequest::getKeyId()const
@@ -44,17 +44,6 @@ std::string UntagResourceRequest::getKeyId()const
 void UntagResourceRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string UntagResourceRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void UntagResourceRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 

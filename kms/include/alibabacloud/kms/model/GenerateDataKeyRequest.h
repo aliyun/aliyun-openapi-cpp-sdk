@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setKeyId(const std::string& keyId);
 				std::string getKeySpec()const;
 				void setKeySpec(const std::string& keySpec);
-				std::string getSTSToken()const;
-				void setSTSToken(const std::string& sTSToken);
 				int getNumberOfBytes()const;
 				void setNumberOfBytes(int numberOfBytes);
 
@@ -50,7 +48,6 @@ namespace AlibabaCloud
 				std::string encryptionContext_;
 				std::string keyId_;
 				std::string keySpec_;
-				std::string sTSToken_;
 				int numberOfBytes_;
 
 			};

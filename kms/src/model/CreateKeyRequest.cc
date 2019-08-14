@@ -25,6 +25,17 @@ CreateKeyRequest::CreateKeyRequest() :
 CreateKeyRequest::~CreateKeyRequest()
 {}
 
+std::string CreateKeyRequest::getProtectionLevel()const
+{
+	return protectionLevel_;
+}
+
+void CreateKeyRequest::setProtectionLevel(const std::string& protectionLevel)
+{
+	protectionLevel_ = protectionLevel;
+	setCoreParameter("ProtectionLevel", protectionLevel);
+}
+
 std::string CreateKeyRequest::getKeyUsage()const
 {
 	return keyUsage_;
@@ -33,7 +44,7 @@ std::string CreateKeyRequest::getKeyUsage()const
 void CreateKeyRequest::setKeyUsage(const std::string& keyUsage)
 {
 	keyUsage_ = keyUsage;
-	setParameter("KeyUsage", keyUsage);
+	setCoreParameter("KeyUsage", keyUsage);
 }
 
 std::string CreateKeyRequest::getOrigin()const
@@ -44,7 +55,7 @@ std::string CreateKeyRequest::getOrigin()const
 void CreateKeyRequest::setOrigin(const std::string& origin)
 {
 	origin_ = origin;
-	setParameter("Origin", origin);
+	setCoreParameter("Origin", origin);
 }
 
 std::string CreateKeyRequest::getDescription()const
@@ -55,17 +66,6 @@ std::string CreateKeyRequest::getDescription()const
 void CreateKeyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
-}
-
-std::string CreateKeyRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void CreateKeyRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("Description", description);
 }
 

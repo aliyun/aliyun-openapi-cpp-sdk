@@ -33,6 +33,6 @@ std::string NodeStatusListRequest::getInstanceIds()const
 void NodeStatusListRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", instanceIds);
 }
 

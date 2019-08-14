@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CAS_EXPORT DescribeOrderListRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeOrderListRequest();
@@ -43,6 +48,8 @@ namespace AlibabaCloud
 				void setBrandId(long brandId);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
 				std::string getLang()const;
@@ -55,6 +62,7 @@ namespace AlibabaCloud
 				int showSize_;
 				long brandId_;
 				int currentPage_;
+				std::vector<Tag> tag_;
 				std::string keyword_;
 				std::string lang_;
 				std::string status_;

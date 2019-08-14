@@ -33,7 +33,7 @@ long DescribeJobRequest::getResourceOwnerId()const
 void DescribeJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeJobRequest::getRegionId()const
 void DescribeJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeJobRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeJobRequest::getId()const
 void DescribeJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeJobRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeJobRequest::getAccessKeyId()const
 void DescribeJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

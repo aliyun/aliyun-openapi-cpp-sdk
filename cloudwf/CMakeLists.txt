@@ -39,10 +39,10 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/SaveApPortalConfigResult.h
 	include/alibabacloud/cloudwf/model/ShopOverviewRequest.h
 	include/alibabacloud/cloudwf/model/ShopOverviewResult.h
-	include/alibabacloud/cloudwf/model/ModifySubAccountPermissionRequest.h
-	include/alibabacloud/cloudwf/model/ModifySubAccountPermissionResult.h
 	include/alibabacloud/cloudwf/model/SaveUmengPagePermission4RootRequest.h
 	include/alibabacloud/cloudwf/model/SaveUmengPagePermission4RootResult.h
+	include/alibabacloud/cloudwf/model/ModifySubAccountPermissionRequest.h
+	include/alibabacloud/cloudwf/model/ModifySubAccountPermissionResult.h
 	include/alibabacloud/cloudwf/model/FrequencyAnalyseRequest.h
 	include/alibabacloud/cloudwf/model/FrequencyAnalyseResult.h
 	include/alibabacloud/cloudwf/model/DeviceCreateRequest.h
@@ -123,18 +123,18 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/ListConfigByActionResult.h
 	include/alibabacloud/cloudwf/model/GetSubAccountStatusRequest.h
 	include/alibabacloud/cloudwf/model/GetSubAccountStatusResult.h
-	include/alibabacloud/cloudwf/model/GetSendCommandByMacProgressRequest.h
-	include/alibabacloud/cloudwf/model/GetSendCommandByMacProgressResult.h
 	include/alibabacloud/cloudwf/model/HeadquartersTrendRequest.h
 	include/alibabacloud/cloudwf/model/HeadquartersTrendResult.h
+	include/alibabacloud/cloudwf/model/GetSendCommandByMacProgressRequest.h
+	include/alibabacloud/cloudwf/model/GetSendCommandByMacProgressResult.h
 	include/alibabacloud/cloudwf/model/UserDataCreateRequest.h
 	include/alibabacloud/cloudwf/model/UserDataCreateResult.h
 	include/alibabacloud/cloudwf/model/ListApStatusRequest.h
 	include/alibabacloud/cloudwf/model/ListApStatusResult.h
-	include/alibabacloud/cloudwf/model/ListProbeinfoRequest.h
-	include/alibabacloud/cloudwf/model/ListProbeinfoResult.h
 	include/alibabacloud/cloudwf/model/AreaInfoRequest.h
 	include/alibabacloud/cloudwf/model/AreaInfoResult.h
+	include/alibabacloud/cloudwf/model/ListProbeinfoRequest.h
+	include/alibabacloud/cloudwf/model/ListProbeinfoResult.h
 	include/alibabacloud/cloudwf/model/GetAllActiveShopByGroupRequest.h
 	include/alibabacloud/cloudwf/model/GetAllActiveShopByGroupResult.h
 	include/alibabacloud/cloudwf/model/GetLatestApStatisticRequest.h
@@ -189,20 +189,20 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/SaveGroupApRadioConfigResult.h
 	include/alibabacloud/cloudwf/model/DeletePositionMapRequest.h
 	include/alibabacloud/cloudwf/model/DeletePositionMapResult.h
-	include/alibabacloud/cloudwf/model/SetScanModeRequest.h
-	include/alibabacloud/cloudwf/model/SetScanModeResult.h
 	include/alibabacloud/cloudwf/model/UpgradeAPRequest.h
 	include/alibabacloud/cloudwf/model/UpgradeAPResult.h
+	include/alibabacloud/cloudwf/model/SetScanModeRequest.h
+	include/alibabacloud/cloudwf/model/SetScanModeResult.h
 	include/alibabacloud/cloudwf/model/ListUpgradeImgRequest.h
 	include/alibabacloud/cloudwf/model/ListUpgradeImgResult.h
 	include/alibabacloud/cloudwf/model/GetGroupApRadioOnoffProgressRequest.h
 	include/alibabacloud/cloudwf/model/GetGroupApRadioOnoffProgressResult.h
 	include/alibabacloud/cloudwf/model/ApgroupBatchDeleteApRequest.h
 	include/alibabacloud/cloudwf/model/ApgroupBatchDeleteApResult.h
-	include/alibabacloud/cloudwf/model/ShopMarketingListRequest.h
-	include/alibabacloud/cloudwf/model/ShopMarketingListResult.h
 	include/alibabacloud/cloudwf/model/ProfileHistoryRequest.h
 	include/alibabacloud/cloudwf/model/ProfileHistoryResult.h
+	include/alibabacloud/cloudwf/model/ShopMarketingListRequest.h
+	include/alibabacloud/cloudwf/model/ShopMarketingListResult.h
 	include/alibabacloud/cloudwf/model/ListApPositionRequest.h
 	include/alibabacloud/cloudwf/model/ListApPositionResult.h
 	include/alibabacloud/cloudwf/model/GetDeviceInfoByMacRequest.h
@@ -213,32 +213,32 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/GroupTrendResult.h
 	include/alibabacloud/cloudwf/model/SaveApgroupSsidConfigRequest.h
 	include/alibabacloud/cloudwf/model/SaveApgroupSsidConfigResult.h
-	include/alibabacloud/cloudwf/model/OemMarketingSettingDataRequest.h
-	include/alibabacloud/cloudwf/model/OemMarketingSettingDataResult.h
 	include/alibabacloud/cloudwf/model/InnerCheckOrderRequest.h
 	include/alibabacloud/cloudwf/model/InnerCheckOrderResult.h
+	include/alibabacloud/cloudwf/model/OemMarketingSettingDataRequest.h
+	include/alibabacloud/cloudwf/model/OemMarketingSettingDataResult.h
 	include/alibabacloud/cloudwf/model/GetOnlineStaTimeSerRequest.h
 	include/alibabacloud/cloudwf/model/GetOnlineStaTimeSerResult.h
-	include/alibabacloud/cloudwf/model/ListSubAccountPermissionRequest.h
-	include/alibabacloud/cloudwf/model/ListSubAccountPermissionResult.h
 	include/alibabacloud/cloudwf/model/ListStaOnoffLogRequest.h
 	include/alibabacloud/cloudwf/model/ListStaOnoffLogResult.h
+	include/alibabacloud/cloudwf/model/ListSubAccountPermissionRequest.h
+	include/alibabacloud/cloudwf/model/ListSubAccountPermissionResult.h
 	include/alibabacloud/cloudwf/model/HeadquartersOverviewRequest.h
 	include/alibabacloud/cloudwf/model/HeadquartersOverviewResult.h
 	include/alibabacloud/cloudwf/model/GetApgroupConfigProgressRequest.h
 	include/alibabacloud/cloudwf/model/GetApgroupConfigProgressResult.h
-	include/alibabacloud/cloudwf/model/ListPortalTemplateRequest.h
-	include/alibabacloud/cloudwf/model/ListPortalTemplateResult.h
 	include/alibabacloud/cloudwf/model/AreaCreateRequest.h
 	include/alibabacloud/cloudwf/model/AreaCreateResult.h
+	include/alibabacloud/cloudwf/model/ListPortalTemplateRequest.h
+	include/alibabacloud/cloudwf/model/ListPortalTemplateResult.h
 	include/alibabacloud/cloudwf/model/QueryRenewPriceRequest.h
 	include/alibabacloud/cloudwf/model/QueryRenewPriceResult.h
 	include/alibabacloud/cloudwf/model/GetApgroupPortalConfigProgressRequest.h
 	include/alibabacloud/cloudwf/model/GetApgroupPortalConfigProgressResult.h
-	include/alibabacloud/cloudwf/model/GetOssServerSignRequest.h
-	include/alibabacloud/cloudwf/model/GetOssServerSignResult.h
 	include/alibabacloud/cloudwf/model/OemSitingContrastRequest.h
 	include/alibabacloud/cloudwf/model/OemSitingContrastResult.h
+	include/alibabacloud/cloudwf/model/GetOssServerSignRequest.h
+	include/alibabacloud/cloudwf/model/GetOssServerSignResult.h
 	include/alibabacloud/cloudwf/model/BusinessInfoRequest.h
 	include/alibabacloud/cloudwf/model/BusinessInfoResult.h
 	include/alibabacloud/cloudwf/model/ListBriefApConfigRequest.h
@@ -271,10 +271,10 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/ResetApResult.h
 	include/alibabacloud/cloudwf/model/OemHeatMapRequest.h
 	include/alibabacloud/cloudwf/model/OemHeatMapResult.h
-	include/alibabacloud/cloudwf/model/ReleaseInstanceRequest.h
-	include/alibabacloud/cloudwf/model/ReleaseInstanceResult.h
 	include/alibabacloud/cloudwf/model/ReportRealtimeRequest.h
 	include/alibabacloud/cloudwf/model/ReportRealtimeResult.h
+	include/alibabacloud/cloudwf/model/ReleaseInstanceRequest.h
+	include/alibabacloud/cloudwf/model/ReleaseInstanceResult.h
 	include/alibabacloud/cloudwf/model/GetUmengPagePermission4RootRequest.h
 	include/alibabacloud/cloudwf/model/GetUmengPagePermission4RootResult.h
 	include/alibabacloud/cloudwf/model/ListPageConfigTemplateRequest.h
@@ -291,22 +291,22 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/GetScanModeResult.h
 	include/alibabacloud/cloudwf/model/ListGroupApBriefConfigRequest.h
 	include/alibabacloud/cloudwf/model/ListGroupApBriefConfigResult.h
-	include/alibabacloud/cloudwf/model/BatchRegisterApAssetRequest.h
-	include/alibabacloud/cloudwf/model/BatchRegisterApAssetResult.h
 	include/alibabacloud/cloudwf/model/PutOssFileRequest.h
 	include/alibabacloud/cloudwf/model/PutOssFileResult.h
-	include/alibabacloud/cloudwf/model/SaveApScanConfigRequest.h
-	include/alibabacloud/cloudwf/model/SaveApScanConfigResult.h
+	include/alibabacloud/cloudwf/model/BatchRegisterApAssetRequest.h
+	include/alibabacloud/cloudwf/model/BatchRegisterApAssetResult.h
 	include/alibabacloud/cloudwf/model/AreaDeleteRequest.h
 	include/alibabacloud/cloudwf/model/AreaDeleteResult.h
 	include/alibabacloud/cloudwf/model/GetGroupApRadioConfigTemplateRequest.h
 	include/alibabacloud/cloudwf/model/GetGroupApRadioConfigTemplateResult.h
+	include/alibabacloud/cloudwf/model/SaveApScanConfigRequest.h
+	include/alibabacloud/cloudwf/model/SaveApScanConfigResult.h
 	include/alibabacloud/cloudwf/model/HeadquartersToolsO2ORequest.h
 	include/alibabacloud/cloudwf/model/HeadquartersToolsO2OResult.h
-	include/alibabacloud/cloudwf/model/HeadquartersToolsCoincideRequest.h
-	include/alibabacloud/cloudwf/model/HeadquartersToolsCoincideResult.h
 	include/alibabacloud/cloudwf/model/ResumeInstanceRequest.h
 	include/alibabacloud/cloudwf/model/ResumeInstanceResult.h
+	include/alibabacloud/cloudwf/model/HeadquartersToolsCoincideRequest.h
+	include/alibabacloud/cloudwf/model/HeadquartersToolsCoincideResult.h
 	include/alibabacloud/cloudwf/model/ListApAssetRequest.h
 	include/alibabacloud/cloudwf/model/ListApAssetResult.h
 	include/alibabacloud/cloudwf/model/SaveApRadioConfigRequest.h
@@ -315,10 +315,10 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/GetLatestStaStatisticResult.h
 	include/alibabacloud/cloudwf/model/RepairGroupApRequest.h
 	include/alibabacloud/cloudwf/model/RepairGroupApResult.h
-	include/alibabacloud/cloudwf/model/GetMapUrlRequest.h
-	include/alibabacloud/cloudwf/model/GetMapUrlResult.h
 	include/alibabacloud/cloudwf/model/GetUpgradeAPGroupProgressRequest.h
 	include/alibabacloud/cloudwf/model/GetUpgradeAPGroupProgressResult.h
+	include/alibabacloud/cloudwf/model/GetMapUrlRequest.h
+	include/alibabacloud/cloudwf/model/GetMapUrlResult.h
 	include/alibabacloud/cloudwf/model/ShopGetfiltermacRequest.h
 	include/alibabacloud/cloudwf/model/ShopGetfiltermacResult.h
 	include/alibabacloud/cloudwf/model/ShopSetredressRequest.h
@@ -347,12 +347,12 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/AreaShowListResult.h
 	include/alibabacloud/cloudwf/model/GetApgroupDetailedConfigRequest.h
 	include/alibabacloud/cloudwf/model/GetApgroupDetailedConfigResult.h
+	include/alibabacloud/cloudwf/model/ListStaStatusRequest.h
+	include/alibabacloud/cloudwf/model/ListStaStatusResult.h
 	include/alibabacloud/cloudwf/model/InnerRefundRequest.h
 	include/alibabacloud/cloudwf/model/InnerRefundResult.h
 	include/alibabacloud/cloudwf/model/ProfileTradeRequest.h
 	include/alibabacloud/cloudwf/model/ProfileTradeResult.h
-	include/alibabacloud/cloudwf/model/ListStaStatusRequest.h
-	include/alibabacloud/cloudwf/model/ListStaStatusResult.h
 	include/alibabacloud/cloudwf/model/DeviceUpdateRequest.h
 	include/alibabacloud/cloudwf/model/DeviceUpdateResult.h
 	include/alibabacloud/cloudwf/model/DeleteApgroupSsidConfigRequest.h
@@ -381,10 +381,10 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/GetPageConfigTemplateResult.h
 	include/alibabacloud/cloudwf/model/KickStaRequest.h
 	include/alibabacloud/cloudwf/model/KickStaResult.h
-	include/alibabacloud/cloudwf/model/ProfileConsumeRequest.h
-	include/alibabacloud/cloudwf/model/ProfileConsumeResult.h
 	include/alibabacloud/cloudwf/model/DelApPositionRequest.h
 	include/alibabacloud/cloudwf/model/DelApPositionResult.h
+	include/alibabacloud/cloudwf/model/ProfileConsumeRequest.h
+	include/alibabacloud/cloudwf/model/ProfileConsumeResult.h
 	include/alibabacloud/cloudwf/model/ShopInfoRequest.h
 	include/alibabacloud/cloudwf/model/ShopInfoResult.h
 	include/alibabacloud/cloudwf/model/GetPagePropertiesRequest.h
@@ -393,10 +393,10 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/ShopCreatemarketingResult.h
 	include/alibabacloud/cloudwf/model/SavePageConfigTemplateRequest.h
 	include/alibabacloud/cloudwf/model/SavePageConfigTemplateResult.h
-	include/alibabacloud/cloudwf/model/ShopGroupUpdateRequest.h
-	include/alibabacloud/cloudwf/model/ShopGroupUpdateResult.h
 	include/alibabacloud/cloudwf/model/SetUpgradeImgByModelRequest.h
 	include/alibabacloud/cloudwf/model/SetUpgradeImgByModelResult.h
+	include/alibabacloud/cloudwf/model/ShopGroupUpdateRequest.h
+	include/alibabacloud/cloudwf/model/ShopGroupUpdateResult.h
 	include/alibabacloud/cloudwf/model/ShopGroupInfoRequest.h
 	include/alibabacloud/cloudwf/model/ShopGroupInfoResult.h
 	include/alibabacloud/cloudwf/model/GetApDetailedStatusRequest.h
@@ -411,10 +411,10 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/SaveStaStatusResult.h
 	include/alibabacloud/cloudwf/model/CheckUmengDataAnalysisPermissionRequest.h
 	include/alibabacloud/cloudwf/model/CheckUmengDataAnalysisPermissionResult.h
-	include/alibabacloud/cloudwf/model/DeviceDeleteRequest.h
-	include/alibabacloud/cloudwf/model/DeviceDeleteResult.h
 	include/alibabacloud/cloudwf/model/ReportDayRequest.h
 	include/alibabacloud/cloudwf/model/ReportDayResult.h
+	include/alibabacloud/cloudwf/model/DeviceDeleteRequest.h
+	include/alibabacloud/cloudwf/model/DeviceDeleteResult.h
 	include/alibabacloud/cloudwf/model/UpgradeAPGroupRequest.h
 	include/alibabacloud/cloudwf/model/UpgradeAPGroupResult.h
 	include/alibabacloud/cloudwf/model/SaveApgroupConfigRequest.h
@@ -429,18 +429,18 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/UserDataUpdateResult.h
 	include/alibabacloud/cloudwf/model/InnerProduceCloudWFRequest.h
 	include/alibabacloud/cloudwf/model/InnerProduceCloudWFResult.h
-	include/alibabacloud/cloudwf/model/UpLoadMapRequest.h
-	include/alibabacloud/cloudwf/model/UpLoadMapResult.h
 	include/alibabacloud/cloudwf/model/SavePortalConfigRequest.h
 	include/alibabacloud/cloudwf/model/SavePortalConfigResult.h
+	include/alibabacloud/cloudwf/model/UpLoadMapRequest.h
+	include/alibabacloud/cloudwf/model/UpLoadMapResult.h
 	include/alibabacloud/cloudwf/model/BatchSaveApPositionRequest.h
 	include/alibabacloud/cloudwf/model/BatchSaveApPositionResult.h
 	include/alibabacloud/cloudwf/model/SaveApgroupScanConfigRequest.h
 	include/alibabacloud/cloudwf/model/SaveApgroupScanConfigResult.h
-	include/alibabacloud/cloudwf/model/GetApStaMiscAggRequest.h
-	include/alibabacloud/cloudwf/model/GetApStaMiscAggResult.h
 	include/alibabacloud/cloudwf/model/AliyunRegisterApAssetRequest.h
 	include/alibabacloud/cloudwf/model/AliyunRegisterApAssetResult.h
+	include/alibabacloud/cloudwf/model/GetApStaMiscAggRequest.h
+	include/alibabacloud/cloudwf/model/GetApStaMiscAggResult.h
 	include/alibabacloud/cloudwf/model/UserAnalyseRequest.h
 	include/alibabacloud/cloudwf/model/UserAnalyseResult.h
 	include/alibabacloud/cloudwf/model/ResetApConfigRequest.h
@@ -449,10 +449,10 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/CreateSubAccountPermissionResult.h
 	include/alibabacloud/cloudwf/model/GetStaRunHistoryTimeSerRequest.h
 	include/alibabacloud/cloudwf/model/GetStaRunHistoryTimeSerResult.h
-	include/alibabacloud/cloudwf/model/GetUpgradeAPProgressRequest.h
-	include/alibabacloud/cloudwf/model/GetUpgradeAPProgressResult.h
 	include/alibabacloud/cloudwf/model/GroupIntimeRequest.h
 	include/alibabacloud/cloudwf/model/GroupIntimeResult.h
+	include/alibabacloud/cloudwf/model/GetUpgradeAPProgressRequest.h
+	include/alibabacloud/cloudwf/model/GetUpgradeAPProgressResult.h
 	include/alibabacloud/cloudwf/model/ShopDeletemarketingRequest.h
 	include/alibabacloud/cloudwf/model/ShopDeletemarketingResult.h
 	include/alibabacloud/cloudwf/model/BusinessUpdateRequest.h
@@ -465,10 +465,10 @@ set(cloudwf_public_header_model
 	include/alibabacloud/cloudwf/model/SaveApMapInfoResult.h
 	include/alibabacloud/cloudwf/model/GetAccountConfigRequest.h
 	include/alibabacloud/cloudwf/model/GetAccountConfigResult.h
-	include/alibabacloud/cloudwf/model/GetAddApsProgressRequest.h
-	include/alibabacloud/cloudwf/model/GetAddApsProgressResult.h
 	include/alibabacloud/cloudwf/model/ProfileDistrictRequest.h
-	include/alibabacloud/cloudwf/model/ProfileDistrictResult.h )
+	include/alibabacloud/cloudwf/model/ProfileDistrictResult.h
+	include/alibabacloud/cloudwf/model/GetAddApsProgressRequest.h
+	include/alibabacloud/cloudwf/model/GetAddApsProgressResult.h )
 
 set(cloudwf_src 
 	src/CloudwfClient.cc
@@ -490,10 +490,10 @@ set(cloudwf_src
 	src/model/SaveApPortalConfigResult.cc
 	src/model/ShopOverviewRequest.cc
 	src/model/ShopOverviewResult.cc
-	src/model/ModifySubAccountPermissionRequest.cc
-	src/model/ModifySubAccountPermissionResult.cc
 	src/model/SaveUmengPagePermission4RootRequest.cc
 	src/model/SaveUmengPagePermission4RootResult.cc
+	src/model/ModifySubAccountPermissionRequest.cc
+	src/model/ModifySubAccountPermissionResult.cc
 	src/model/FrequencyAnalyseRequest.cc
 	src/model/FrequencyAnalyseResult.cc
 	src/model/DeviceCreateRequest.cc
@@ -574,18 +574,18 @@ set(cloudwf_src
 	src/model/ListConfigByActionResult.cc
 	src/model/GetSubAccountStatusRequest.cc
 	src/model/GetSubAccountStatusResult.cc
-	src/model/GetSendCommandByMacProgressRequest.cc
-	src/model/GetSendCommandByMacProgressResult.cc
 	src/model/HeadquartersTrendRequest.cc
 	src/model/HeadquartersTrendResult.cc
+	src/model/GetSendCommandByMacProgressRequest.cc
+	src/model/GetSendCommandByMacProgressResult.cc
 	src/model/UserDataCreateRequest.cc
 	src/model/UserDataCreateResult.cc
 	src/model/ListApStatusRequest.cc
 	src/model/ListApStatusResult.cc
-	src/model/ListProbeinfoRequest.cc
-	src/model/ListProbeinfoResult.cc
 	src/model/AreaInfoRequest.cc
 	src/model/AreaInfoResult.cc
+	src/model/ListProbeinfoRequest.cc
+	src/model/ListProbeinfoResult.cc
 	src/model/GetAllActiveShopByGroupRequest.cc
 	src/model/GetAllActiveShopByGroupResult.cc
 	src/model/GetLatestApStatisticRequest.cc
@@ -640,20 +640,20 @@ set(cloudwf_src
 	src/model/SaveGroupApRadioConfigResult.cc
 	src/model/DeletePositionMapRequest.cc
 	src/model/DeletePositionMapResult.cc
-	src/model/SetScanModeRequest.cc
-	src/model/SetScanModeResult.cc
 	src/model/UpgradeAPRequest.cc
 	src/model/UpgradeAPResult.cc
+	src/model/SetScanModeRequest.cc
+	src/model/SetScanModeResult.cc
 	src/model/ListUpgradeImgRequest.cc
 	src/model/ListUpgradeImgResult.cc
 	src/model/GetGroupApRadioOnoffProgressRequest.cc
 	src/model/GetGroupApRadioOnoffProgressResult.cc
 	src/model/ApgroupBatchDeleteApRequest.cc
 	src/model/ApgroupBatchDeleteApResult.cc
-	src/model/ShopMarketingListRequest.cc
-	src/model/ShopMarketingListResult.cc
 	src/model/ProfileHistoryRequest.cc
 	src/model/ProfileHistoryResult.cc
+	src/model/ShopMarketingListRequest.cc
+	src/model/ShopMarketingListResult.cc
 	src/model/ListApPositionRequest.cc
 	src/model/ListApPositionResult.cc
 	src/model/GetDeviceInfoByMacRequest.cc
@@ -664,32 +664,32 @@ set(cloudwf_src
 	src/model/GroupTrendResult.cc
 	src/model/SaveApgroupSsidConfigRequest.cc
 	src/model/SaveApgroupSsidConfigResult.cc
-	src/model/OemMarketingSettingDataRequest.cc
-	src/model/OemMarketingSettingDataResult.cc
 	src/model/InnerCheckOrderRequest.cc
 	src/model/InnerCheckOrderResult.cc
+	src/model/OemMarketingSettingDataRequest.cc
+	src/model/OemMarketingSettingDataResult.cc
 	src/model/GetOnlineStaTimeSerRequest.cc
 	src/model/GetOnlineStaTimeSerResult.cc
-	src/model/ListSubAccountPermissionRequest.cc
-	src/model/ListSubAccountPermissionResult.cc
 	src/model/ListStaOnoffLogRequest.cc
 	src/model/ListStaOnoffLogResult.cc
+	src/model/ListSubAccountPermissionRequest.cc
+	src/model/ListSubAccountPermissionResult.cc
 	src/model/HeadquartersOverviewRequest.cc
 	src/model/HeadquartersOverviewResult.cc
 	src/model/GetApgroupConfigProgressRequest.cc
 	src/model/GetApgroupConfigProgressResult.cc
-	src/model/ListPortalTemplateRequest.cc
-	src/model/ListPortalTemplateResult.cc
 	src/model/AreaCreateRequest.cc
 	src/model/AreaCreateResult.cc
+	src/model/ListPortalTemplateRequest.cc
+	src/model/ListPortalTemplateResult.cc
 	src/model/QueryRenewPriceRequest.cc
 	src/model/QueryRenewPriceResult.cc
 	src/model/GetApgroupPortalConfigProgressRequest.cc
 	src/model/GetApgroupPortalConfigProgressResult.cc
-	src/model/GetOssServerSignRequest.cc
-	src/model/GetOssServerSignResult.cc
 	src/model/OemSitingContrastRequest.cc
 	src/model/OemSitingContrastResult.cc
+	src/model/GetOssServerSignRequest.cc
+	src/model/GetOssServerSignResult.cc
 	src/model/BusinessInfoRequest.cc
 	src/model/BusinessInfoResult.cc
 	src/model/ListBriefApConfigRequest.cc
@@ -722,10 +722,10 @@ set(cloudwf_src
 	src/model/ResetApResult.cc
 	src/model/OemHeatMapRequest.cc
 	src/model/OemHeatMapResult.cc
-	src/model/ReleaseInstanceRequest.cc
-	src/model/ReleaseInstanceResult.cc
 	src/model/ReportRealtimeRequest.cc
 	src/model/ReportRealtimeResult.cc
+	src/model/ReleaseInstanceRequest.cc
+	src/model/ReleaseInstanceResult.cc
 	src/model/GetUmengPagePermission4RootRequest.cc
 	src/model/GetUmengPagePermission4RootResult.cc
 	src/model/ListPageConfigTemplateRequest.cc
@@ -742,22 +742,22 @@ set(cloudwf_src
 	src/model/GetScanModeResult.cc
 	src/model/ListGroupApBriefConfigRequest.cc
 	src/model/ListGroupApBriefConfigResult.cc
-	src/model/BatchRegisterApAssetRequest.cc
-	src/model/BatchRegisterApAssetResult.cc
 	src/model/PutOssFileRequest.cc
 	src/model/PutOssFileResult.cc
-	src/model/SaveApScanConfigRequest.cc
-	src/model/SaveApScanConfigResult.cc
+	src/model/BatchRegisterApAssetRequest.cc
+	src/model/BatchRegisterApAssetResult.cc
 	src/model/AreaDeleteRequest.cc
 	src/model/AreaDeleteResult.cc
 	src/model/GetGroupApRadioConfigTemplateRequest.cc
 	src/model/GetGroupApRadioConfigTemplateResult.cc
+	src/model/SaveApScanConfigRequest.cc
+	src/model/SaveApScanConfigResult.cc
 	src/model/HeadquartersToolsO2ORequest.cc
 	src/model/HeadquartersToolsO2OResult.cc
-	src/model/HeadquartersToolsCoincideRequest.cc
-	src/model/HeadquartersToolsCoincideResult.cc
 	src/model/ResumeInstanceRequest.cc
 	src/model/ResumeInstanceResult.cc
+	src/model/HeadquartersToolsCoincideRequest.cc
+	src/model/HeadquartersToolsCoincideResult.cc
 	src/model/ListApAssetRequest.cc
 	src/model/ListApAssetResult.cc
 	src/model/SaveApRadioConfigRequest.cc
@@ -766,10 +766,10 @@ set(cloudwf_src
 	src/model/GetLatestStaStatisticResult.cc
 	src/model/RepairGroupApRequest.cc
 	src/model/RepairGroupApResult.cc
-	src/model/GetMapUrlRequest.cc
-	src/model/GetMapUrlResult.cc
 	src/model/GetUpgradeAPGroupProgressRequest.cc
 	src/model/GetUpgradeAPGroupProgressResult.cc
+	src/model/GetMapUrlRequest.cc
+	src/model/GetMapUrlResult.cc
 	src/model/ShopGetfiltermacRequest.cc
 	src/model/ShopGetfiltermacResult.cc
 	src/model/ShopSetredressRequest.cc
@@ -798,12 +798,12 @@ set(cloudwf_src
 	src/model/AreaShowListResult.cc
 	src/model/GetApgroupDetailedConfigRequest.cc
 	src/model/GetApgroupDetailedConfigResult.cc
+	src/model/ListStaStatusRequest.cc
+	src/model/ListStaStatusResult.cc
 	src/model/InnerRefundRequest.cc
 	src/model/InnerRefundResult.cc
 	src/model/ProfileTradeRequest.cc
 	src/model/ProfileTradeResult.cc
-	src/model/ListStaStatusRequest.cc
-	src/model/ListStaStatusResult.cc
 	src/model/DeviceUpdateRequest.cc
 	src/model/DeviceUpdateResult.cc
 	src/model/DeleteApgroupSsidConfigRequest.cc
@@ -832,10 +832,10 @@ set(cloudwf_src
 	src/model/GetPageConfigTemplateResult.cc
 	src/model/KickStaRequest.cc
 	src/model/KickStaResult.cc
-	src/model/ProfileConsumeRequest.cc
-	src/model/ProfileConsumeResult.cc
 	src/model/DelApPositionRequest.cc
 	src/model/DelApPositionResult.cc
+	src/model/ProfileConsumeRequest.cc
+	src/model/ProfileConsumeResult.cc
 	src/model/ShopInfoRequest.cc
 	src/model/ShopInfoResult.cc
 	src/model/GetPagePropertiesRequest.cc
@@ -844,10 +844,10 @@ set(cloudwf_src
 	src/model/ShopCreatemarketingResult.cc
 	src/model/SavePageConfigTemplateRequest.cc
 	src/model/SavePageConfigTemplateResult.cc
-	src/model/ShopGroupUpdateRequest.cc
-	src/model/ShopGroupUpdateResult.cc
 	src/model/SetUpgradeImgByModelRequest.cc
 	src/model/SetUpgradeImgByModelResult.cc
+	src/model/ShopGroupUpdateRequest.cc
+	src/model/ShopGroupUpdateResult.cc
 	src/model/ShopGroupInfoRequest.cc
 	src/model/ShopGroupInfoResult.cc
 	src/model/GetApDetailedStatusRequest.cc
@@ -862,10 +862,10 @@ set(cloudwf_src
 	src/model/SaveStaStatusResult.cc
 	src/model/CheckUmengDataAnalysisPermissionRequest.cc
 	src/model/CheckUmengDataAnalysisPermissionResult.cc
-	src/model/DeviceDeleteRequest.cc
-	src/model/DeviceDeleteResult.cc
 	src/model/ReportDayRequest.cc
 	src/model/ReportDayResult.cc
+	src/model/DeviceDeleteRequest.cc
+	src/model/DeviceDeleteResult.cc
 	src/model/UpgradeAPGroupRequest.cc
 	src/model/UpgradeAPGroupResult.cc
 	src/model/SaveApgroupConfigRequest.cc
@@ -880,18 +880,18 @@ set(cloudwf_src
 	src/model/UserDataUpdateResult.cc
 	src/model/InnerProduceCloudWFRequest.cc
 	src/model/InnerProduceCloudWFResult.cc
-	src/model/UpLoadMapRequest.cc
-	src/model/UpLoadMapResult.cc
 	src/model/SavePortalConfigRequest.cc
 	src/model/SavePortalConfigResult.cc
+	src/model/UpLoadMapRequest.cc
+	src/model/UpLoadMapResult.cc
 	src/model/BatchSaveApPositionRequest.cc
 	src/model/BatchSaveApPositionResult.cc
 	src/model/SaveApgroupScanConfigRequest.cc
 	src/model/SaveApgroupScanConfigResult.cc
-	src/model/GetApStaMiscAggRequest.cc
-	src/model/GetApStaMiscAggResult.cc
 	src/model/AliyunRegisterApAssetRequest.cc
 	src/model/AliyunRegisterApAssetResult.cc
+	src/model/GetApStaMiscAggRequest.cc
+	src/model/GetApStaMiscAggResult.cc
 	src/model/UserAnalyseRequest.cc
 	src/model/UserAnalyseResult.cc
 	src/model/ResetApConfigRequest.cc
@@ -900,10 +900,10 @@ set(cloudwf_src
 	src/model/CreateSubAccountPermissionResult.cc
 	src/model/GetStaRunHistoryTimeSerRequest.cc
 	src/model/GetStaRunHistoryTimeSerResult.cc
-	src/model/GetUpgradeAPProgressRequest.cc
-	src/model/GetUpgradeAPProgressResult.cc
 	src/model/GroupIntimeRequest.cc
 	src/model/GroupIntimeResult.cc
+	src/model/GetUpgradeAPProgressRequest.cc
+	src/model/GetUpgradeAPProgressResult.cc
 	src/model/ShopDeletemarketingRequest.cc
 	src/model/ShopDeletemarketingResult.cc
 	src/model/BusinessUpdateRequest.cc
@@ -916,10 +916,10 @@ set(cloudwf_src
 	src/model/SaveApMapInfoResult.cc
 	src/model/GetAccountConfigRequest.cc
 	src/model/GetAccountConfigResult.cc
-	src/model/GetAddApsProgressRequest.cc
-	src/model/GetAddApsProgressResult.cc
 	src/model/ProfileDistrictRequest.cc
-	src/model/ProfileDistrictResult.cc )
+	src/model/ProfileDistrictResult.cc
+	src/model/GetAddApsProgressRequest.cc
+	src/model/GetAddApsProgressResult.cc )
 
 add_library(cloudwf ${LIB_TYPE}
 	${cloudwf_public_header}

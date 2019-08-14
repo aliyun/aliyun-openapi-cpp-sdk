@@ -34,6 +34,6 @@ void TaskConfigDeleteRequest::setIdList(const std::vector<long>& idList)
 {
 	idList_ = idList;
 	for(int i = 0; i!= idList.size(); i++)
-		setParameter("IdList."+ std::to_string(i), std::to_string(idList.at(i)));
+		setCoreParameter("IdList."+ std::to_string(i), std::to_string(idList.at(i)));
 }
 

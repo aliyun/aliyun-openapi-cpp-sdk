@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsMessageGetByKeyRequest();
 				~OnsMessageGetByKeyRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getTopic()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setKey(const std::string& key);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				std::string topic_;
 				std::string key_;

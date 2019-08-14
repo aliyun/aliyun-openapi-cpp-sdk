@@ -33,7 +33,7 @@ std::string ListFlowNodeInstanceContainerStatusRequest::getRegionId()const
 void ListFlowNodeInstanceContainerStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListFlowNodeInstanceContainerStatusRequest::getPageSize()const
@@ -44,7 +44,7 @@ int ListFlowNodeInstanceContainerStatusRequest::getPageSize()const
 void ListFlowNodeInstanceContainerStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowNodeInstanceContainerStatusRequest::getNodeInstanceId()const
@@ -55,7 +55,7 @@ std::string ListFlowNodeInstanceContainerStatusRequest::getNodeInstanceId()const
 void ListFlowNodeInstanceContainerStatusRequest::setNodeInstanceId(const std::string& nodeInstanceId)
 {
 	nodeInstanceId_ = nodeInstanceId;
-	setParameter("NodeInstanceId", nodeInstanceId);
+	setCoreParameter("NodeInstanceId", nodeInstanceId);
 }
 
 std::string ListFlowNodeInstanceContainerStatusRequest::getProjectId()const
@@ -66,7 +66,7 @@ std::string ListFlowNodeInstanceContainerStatusRequest::getProjectId()const
 void ListFlowNodeInstanceContainerStatusRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 int ListFlowNodeInstanceContainerStatusRequest::getPageNumber()const
@@ -77,6 +77,6 @@ int ListFlowNodeInstanceContainerStatusRequest::getPageNumber()const
 void ListFlowNodeInstanceContainerStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

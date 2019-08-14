@@ -33,7 +33,7 @@ long DescribeClusterServiceConfigTagRequest::getResourceOwnerId()const
 void DescribeClusterServiceConfigTagRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterServiceConfigTagRequest::getRegionId()const
 void DescribeClusterServiceConfigTagRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getConfigTag()const
@@ -55,7 +55,7 @@ std::string DescribeClusterServiceConfigTagRequest::getConfigTag()const
 void DescribeClusterServiceConfigTagRequest::setConfigTag(const std::string& configTag)
 {
 	configTag_ = configTag;
-	setParameter("ConfigTag", configTag);
+	setCoreParameter("ConfigTag", configTag);
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getServiceName()const
@@ -66,7 +66,7 @@ std::string DescribeClusterServiceConfigTagRequest::getServiceName()const
 void DescribeClusterServiceConfigTagRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string DescribeClusterServiceConfigTagRequest::getClusterId()const
 void DescribeClusterServiceConfigTagRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeClusterServiceConfigTagRequest::getAccessKeyId()const
 void DescribeClusterServiceConfigTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

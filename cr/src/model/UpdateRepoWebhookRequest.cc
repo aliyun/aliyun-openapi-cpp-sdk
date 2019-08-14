@@ -33,7 +33,7 @@ std::string UpdateRepoWebhookRequest::getRepoNamespace()const
 void UpdateRepoWebhookRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 long UpdateRepoWebhookRequest::getWebhookId()const
@@ -44,7 +44,7 @@ long UpdateRepoWebhookRequest::getWebhookId()const
 void UpdateRepoWebhookRequest::setWebhookId(long webhookId)
 {
 	webhookId_ = webhookId;
-	setParameter("WebhookId", std::to_string(webhookId));
+	setCoreParameter("WebhookId", std::to_string(webhookId));
 }
 
 std::string UpdateRepoWebhookRequest::getRepoName()const
@@ -55,7 +55,7 @@ std::string UpdateRepoWebhookRequest::getRepoName()const
 void UpdateRepoWebhookRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setParameter("RepoName", repoName);
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string UpdateRepoWebhookRequest::getRegionId()const
@@ -66,6 +66,6 @@ std::string UpdateRepoWebhookRequest::getRegionId()const
 void UpdateRepoWebhookRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 

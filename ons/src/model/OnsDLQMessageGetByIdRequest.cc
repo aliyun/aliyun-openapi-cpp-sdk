@@ -25,17 +25,6 @@ OnsDLQMessageGetByIdRequest::OnsDLQMessageGetByIdRequest() :
 OnsDLQMessageGetByIdRequest::~OnsDLQMessageGetByIdRequest()
 {}
 
-long OnsDLQMessageGetByIdRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsDLQMessageGetByIdRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsDLQMessageGetByIdRequest::getInstanceId()const
 {
 	return instanceId_;

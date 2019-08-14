@@ -33,7 +33,7 @@ long UpdatePipelineRequest::getResourceOwnerId()const
 void UpdatePipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdatePipelineRequest::getRole()const
@@ -44,7 +44,7 @@ std::string UpdatePipelineRequest::getRole()const
 void UpdatePipelineRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setParameter("Role", role);
+	setCoreParameter("Role", role);
 }
 
 std::string UpdatePipelineRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdatePipelineRequest::getResourceOwnerAccount()const
 void UpdatePipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdatePipelineRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdatePipelineRequest::getOwnerAccount()const
 void UpdatePipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdatePipelineRequest::getName()const
@@ -77,7 +77,7 @@ std::string UpdatePipelineRequest::getName()const
 void UpdatePipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string UpdatePipelineRequest::getState()const
@@ -88,7 +88,7 @@ std::string UpdatePipelineRequest::getState()const
 void UpdatePipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 std::string UpdatePipelineRequest::getNotifyConfig()const
@@ -99,7 +99,7 @@ std::string UpdatePipelineRequest::getNotifyConfig()const
 void UpdatePipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setParameter("NotifyConfig", notifyConfig);
+	setCoreParameter("NotifyConfig", notifyConfig);
 }
 
 long UpdatePipelineRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long UpdatePipelineRequest::getOwnerId()const
 void UpdatePipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdatePipelineRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string UpdatePipelineRequest::getAccessKeyId()const
 void UpdatePipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdatePipelineRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string UpdatePipelineRequest::getPipelineId()const
 void UpdatePipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

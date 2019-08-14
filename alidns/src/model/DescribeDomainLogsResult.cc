@@ -35,10 +35,13 @@ DescribeDomainLogsResult::~DescribeDomainLogsResult()
 
 void DescribeDomainLogsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allDomainLogs = value["DomainLogs"]["DomainLog"];
 	for (auto value : allDomainLogs)
@@ -56,6 +59,8 @@ void DescribeDomainLogsResult::parse(const std::string &payload)
 			domainLogsObject.message = value["Message"].asString();
 		if(!value["ClientIp"].isNull())
 			domainLogsObject.clientIp = value["ClientIp"].asString();
+		if(!value["ZoneId"].isNull())
+			domainLogsObject.zoneId = value["ZoneId"].asString();
 		domainLogs_.push_back(domainLogsObject);
 	}
 	if(!value["TotalCount"].isNull())

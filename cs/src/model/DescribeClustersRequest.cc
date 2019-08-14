@@ -33,7 +33,7 @@ std::string DescribeClustersRequest::getClusterType()const
 void DescribeClustersRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", clusterType);
 }
 
 std::string DescribeClustersRequest::getName()const
@@ -44,6 +44,6 @@ std::string DescribeClustersRequest::getName()const
 void DescribeClustersRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 

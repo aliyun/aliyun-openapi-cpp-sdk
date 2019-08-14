@@ -33,7 +33,7 @@ long QueryDeviceInfoRequest::getAppKey()const
 void QueryDeviceInfoRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string QueryDeviceInfoRequest::getDeviceId()const
@@ -44,7 +44,7 @@ std::string QueryDeviceInfoRequest::getDeviceId()const
 void QueryDeviceInfoRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setParameter("DeviceId", deviceId);
+	setCoreParameter("DeviceId", deviceId);
 }
 
 std::string QueryDeviceInfoRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string QueryDeviceInfoRequest::getAccessKeyId()const
 void QueryDeviceInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -64,7 +64,7 @@ namespace AlibabaCloud
 						long sensitiveCount;
 						long lastCount;
 					};
-					struct PackageInDescribeDataTotalCount
+					struct Package
 					{
 						struct RiskCount4
 						{
@@ -112,7 +112,7 @@ namespace AlibabaCloud
 					Table table;
 					Instance instance;
 					Column column;
-					PackageInDescribeDataTotalCount packageInDescribeDataTotalCount;
+					Package package;
 					Oss oss;
 				};
 

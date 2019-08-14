@@ -33,7 +33,7 @@ std::string DescribeCaptchaDayRequest::getSourceIp()const
 void DescribeCaptchaDayRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaDayRequest::getConfigName()const
@@ -44,7 +44,7 @@ std::string DescribeCaptchaDayRequest::getConfigName()const
 void DescribeCaptchaDayRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setParameter("ConfigName", configName);
+	setCoreParameter("ConfigName", configName);
 }
 
 std::string DescribeCaptchaDayRequest::getRefExtId()const
@@ -55,7 +55,7 @@ std::string DescribeCaptchaDayRequest::getRefExtId()const
 void DescribeCaptchaDayRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setParameter("RefExtId", refExtId);
+	setCoreParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaDayRequest::getTime()const
@@ -66,7 +66,7 @@ std::string DescribeCaptchaDayRequest::getTime()const
 void DescribeCaptchaDayRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setParameter("Time", time);
+	setCoreParameter("Time", time);
 }
 
 std::string DescribeCaptchaDayRequest::getType()const
@@ -77,6 +77,6 @@ std::string DescribeCaptchaDayRequest::getType()const
 void DescribeCaptchaDayRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 

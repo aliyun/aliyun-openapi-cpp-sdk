@@ -38,10 +38,12 @@ namespace AlibabaCloud
 					{
 						std::string diskType;
 						std::string type;
+						std::string device;
 						int diskSize;
 						std::string diskId;
 					};
 					std::string status;
+					std::string zoneId;
 					std::string publicIp;
 					int memory;
 					std::string createTime;

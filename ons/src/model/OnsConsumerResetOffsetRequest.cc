@@ -25,17 +25,6 @@ OnsConsumerResetOffsetRequest::OnsConsumerResetOffsetRequest() :
 OnsConsumerResetOffsetRequest::~OnsConsumerResetOffsetRequest()
 {}
 
-long OnsConsumerResetOffsetRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsConsumerResetOffsetRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsConsumerResetOffsetRequest::getInstanceId()const
 {
 	return instanceId_;

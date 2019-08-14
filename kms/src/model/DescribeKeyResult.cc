@@ -35,10 +35,13 @@ DescribeKeyResult::~DescribeKeyResult()
 
 void DescribeKeyResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto keyMetadataNode = value["KeyMetadata"];
 	if(!keyMetadataNode["CreationDate"].isNull())
@@ -61,6 +64,8 @@ void DescribeKeyResult::parse(const std::string &payload)
 		keyMetadata_.origin = keyMetadataNode["Origin"].asString();
 	if(!keyMetadataNode["MaterialExpireTime"].isNull())
 		keyMetadata_.materialExpireTime = keyMetadataNode["MaterialExpireTime"].asString();
+	if(!keyMetadataNode["ProtectionLevel"].isNull())
+		keyMetadata_.protectionLevel = keyMetadataNode["ProtectionLevel"].asString();
 
 }
 

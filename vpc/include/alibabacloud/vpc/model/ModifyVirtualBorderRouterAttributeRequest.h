@@ -55,8 +55,12 @@ namespace AlibabaCloud
 				void setVbrId(const std::string& vbrId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				long getMinRxInterval()const;
+				void setMinRxInterval(long minRxInterval);
 				std::string getPeerGatewayIp()const;
 				void setPeerGatewayIp(const std::string& peerGatewayIp);
+				long getDetectMultiplier()const;
+				void setDetectMultiplier(long detectMultiplier);
 				std::string getPeeringSubnetMask()const;
 				void setPeeringSubnetMask(const std::string& peeringSubnetMask);
 				std::string getRegionId()const;
@@ -65,6 +69,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getLocalGatewayIp()const;
 				void setLocalGatewayIp(const std::string& localGatewayIp);
+				long getMinTxInterval()const;
+				void setMinTxInterval(long minTxInterval);
 
             private:
 				long resourceOwnerId_;
@@ -77,11 +83,14 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string vbrId_;
 				long ownerId_;
+				long minRxInterval_;
 				std::string peerGatewayIp_;
+				long detectMultiplier_;
 				std::string peeringSubnetMask_;
 				std::string regionId_;
 				std::string name_;
 				std::string localGatewayIp_;
+				long minTxInterval_;
 
 			};
 		}

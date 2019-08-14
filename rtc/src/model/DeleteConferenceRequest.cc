@@ -33,7 +33,7 @@ std::string DeleteConferenceRequest::getApp_ip()const
 void DeleteConferenceRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteConferenceRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string DeleteConferenceRequest::getPopProduct()const
 void DeleteConferenceRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long DeleteConferenceRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DeleteConferenceRequest::getCallerParentId()const
 void DeleteConferenceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteConferenceRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DeleteConferenceRequest::getProxy_original_security_transport()const
 void DeleteConferenceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteConferenceRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string DeleteConferenceRequest::getCallerBid()const
 void DeleteConferenceRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteConferenceRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DeleteConferenceRequest::getOwnerId()const
 void DeleteConferenceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteConferenceRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DeleteConferenceRequest::getProxy_original_source_ip()const
 void DeleteConferenceRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteConferenceRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string DeleteConferenceRequest::getVersion()const
 void DeleteConferenceRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 std::string DeleteConferenceRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string DeleteConferenceRequest::getOwnerIdLoginEmail()const
 void DeleteConferenceRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteConferenceRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string DeleteConferenceRequest::getCallerType()const
 void DeleteConferenceRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DeleteConferenceRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool DeleteConferenceRequest::getProxy_trust_transport_info()const
 void DeleteConferenceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteConferenceRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ bool DeleteConferenceRequest::getAk_mfa_present()const
 void DeleteConferenceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DeleteConferenceRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string DeleteConferenceRequest::getAccessKeyId()const
 void DeleteConferenceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteConferenceRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ bool DeleteConferenceRequest::getSecurity_transport()const
 void DeleteConferenceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteConferenceRequest::getSecurityToken()const
@@ -187,7 +187,7 @@ std::string DeleteConferenceRequest::getSecurityToken()const
 void DeleteConferenceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteConferenceRequest::getConferenceId()const
@@ -198,7 +198,7 @@ std::string DeleteConferenceRequest::getConferenceId()const
 void DeleteConferenceRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setParameter("ConferenceId", conferenceId);
+	setCoreParameter("ConferenceId", conferenceId);
 }
 
 std::string DeleteConferenceRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string DeleteConferenceRequest::getRequestId()const
 void DeleteConferenceRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteConferenceRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string DeleteConferenceRequest::getRequestContent()const
 void DeleteConferenceRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteConferenceRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string DeleteConferenceRequest::getAppId()const
 void DeleteConferenceRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 
 std::string DeleteConferenceRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string DeleteConferenceRequest::getCallerBidEmail()const
 void DeleteConferenceRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteConferenceRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string DeleteConferenceRequest::getCallerUidEmail()const
 void DeleteConferenceRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteConferenceRequest::getCallerUid()const
@@ -264,6 +264,6 @@ long DeleteConferenceRequest::getCallerUid()const
 void DeleteConferenceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

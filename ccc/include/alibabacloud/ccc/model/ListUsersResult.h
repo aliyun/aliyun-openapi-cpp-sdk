@@ -65,6 +65,7 @@ namespace AlibabaCloud
 							int level;
 						};
 						std::vector<User::SkillLevel> skillLevels;
+						std::string privateOutboundNumberId;
 						std::string instanceId;
 						std::string userId;
 						bool primary;

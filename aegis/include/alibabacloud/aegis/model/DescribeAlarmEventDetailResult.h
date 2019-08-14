@@ -49,8 +49,10 @@ namespace AlibabaCloud
 					long endTime;
 					std::vector<CauseDetail> causeDetails;
 					long startTime;
+					std::string accessCode;
 					std::string intranetIp;
 					bool hasTraceInfo;
+					bool dealed;
 					std::string dataSource;
 					std::string instanceName;
 					std::string type;

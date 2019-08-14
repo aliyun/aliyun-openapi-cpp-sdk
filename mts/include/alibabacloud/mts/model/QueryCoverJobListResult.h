@@ -73,12 +73,14 @@ namespace AlibabaCloud
 				explicit QueryCoverJobListResult(const std::string &payload);
 				~QueryCoverJobListResult();
 				std::vector<CoverJob> getCoverJobList()const;
+				std::string getNextPageToken()const;
 				std::vector<std::string> getNonExistIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<CoverJob> coverJobList_;
+				std::string nextPageToken_;
 				std::vector<std::string> nonExistIds_;
 
 			};

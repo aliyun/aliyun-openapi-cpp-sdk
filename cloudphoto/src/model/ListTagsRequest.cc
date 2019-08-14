@@ -33,7 +33,7 @@ std::string ListTagsRequest::getLibraryId()const
 void ListTagsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListTagsRequest::getStoreName()const
@@ -44,7 +44,7 @@ std::string ListTagsRequest::getStoreName()const
 void ListTagsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListTagsRequest::getLang()const
@@ -55,6 +55,6 @@ std::string ListTagsRequest::getLang()const
 void ListTagsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ std::string GetDownloadUrlsRequest::getLibraryId()const
 void GetDownloadUrlsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::vector<long> GetDownloadUrlsRequest::getPhotoId()const
@@ -45,7 +45,7 @@ void GetDownloadUrlsRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
 }
 
 std::string GetDownloadUrlsRequest::getStoreName()const
@@ -56,6 +56,6 @@ std::string GetDownloadUrlsRequest::getStoreName()const
 void GetDownloadUrlsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

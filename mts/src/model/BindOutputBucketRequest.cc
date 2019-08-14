@@ -33,7 +33,7 @@ std::string BindOutputBucketRequest::getBucket()const
 void BindOutputBucketRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setParameter("Bucket", bucket);
+	setCoreParameter("Bucket", bucket);
 }
 
 long BindOutputBucketRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long BindOutputBucketRequest::getResourceOwnerId()const
 void BindOutputBucketRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BindOutputBucketRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string BindOutputBucketRequest::getResourceOwnerAccount()const
 void BindOutputBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string BindOutputBucketRequest::getRoleArn()const
@@ -66,7 +66,7 @@ std::string BindOutputBucketRequest::getRoleArn()const
 void BindOutputBucketRequest::setRoleArn(const std::string& roleArn)
 {
 	roleArn_ = roleArn;
-	setParameter("RoleArn", roleArn);
+	setCoreParameter("RoleArn", roleArn);
 }
 
 std::string BindOutputBucketRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string BindOutputBucketRequest::getOwnerAccount()const
 void BindOutputBucketRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long BindOutputBucketRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long BindOutputBucketRequest::getOwnerId()const
 void BindOutputBucketRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BindOutputBucketRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string BindOutputBucketRequest::getAccessKeyId()const
 void BindOutputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

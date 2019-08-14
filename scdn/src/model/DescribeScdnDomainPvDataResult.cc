@@ -35,45 +35,34 @@ DescribeScdnDomainPvDataResult::~DescribeScdnDomainPvDataResult()
 
 void DescribeScdnDomainPvDataResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allPvDataInterval = value["PvDataInterval"]["UsageData"];
 	for (auto value : allPvDataInterval)
 	{
 		UsageData pvDataIntervalObject;
-		if(!value["TimeStamp"].isNull())
-			pvDataIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
 			pvDataIntervalObject.value = value["Value"].asString();
+		if(!value["TimeStamp"].isNull())
+			pvDataIntervalObject.timeStamp = value["TimeStamp"].asString();
 		pvDataInterval_.push_back(pvDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
-}
-
-std::string DescribeScdnDomainPvDataResult::getEndTime()const
-{
-	return endTime_;
 }
 
 std::string DescribeScdnDomainPvDataResult::getDomainName()const
 {
 	return domainName_;
-}
-
-std::string DescribeScdnDomainPvDataResult::getDataInterval()const
-{
-	return dataInterval_;
 }
 
 std::string DescribeScdnDomainPvDataResult::getStartTime()const

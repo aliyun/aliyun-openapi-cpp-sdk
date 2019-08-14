@@ -35,10 +35,13 @@ DescribeVpnGatewayResult::~DescribeVpnGatewayResult()
 
 void DescribeVpnGatewayResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	if(!value["VpnGatewayId"].isNull())
 		vpnGatewayId_ = value["VpnGatewayId"].asString();
@@ -70,6 +73,8 @@ void DescribeVpnGatewayResult::parse(const std::string &payload)
 		sslVpn_ = value["SslVpn"].asString();
 	if(!value["SslMaxConnections"].isNull())
 		sslMaxConnections_ = std::stol(value["SslMaxConnections"].asString());
+	if(!value["Tag"].isNull())
+		tag_ = value["Tag"].asString();
 
 }
 
@@ -136,6 +141,11 @@ std::string DescribeVpnGatewayResult::getVpnGatewayId()const
 std::string DescribeVpnGatewayResult::getChargeType()const
 {
 	return chargeType_;
+}
+
+std::string DescribeVpnGatewayResult::getTag()const
+{
+	return tag_;
 }
 
 std::string DescribeVpnGatewayResult::getSpec()const

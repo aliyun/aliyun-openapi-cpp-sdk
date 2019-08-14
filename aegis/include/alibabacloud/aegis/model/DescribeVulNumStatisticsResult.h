@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				DescribeVulNumStatisticsResult();
 				explicit DescribeVulNumStatisticsResult(const std::string &payload);
 				~DescribeVulNumStatisticsResult();
+				int getAppCnt()const;
 				int getVulDealedTotalNum()const;
 				int getVulAsapSum()const;
 				int getVulLaterSum()const;
@@ -46,10 +47,12 @@ namespace AlibabaCloud
 				int getCmsDealedTotalNum()const;
 				int getEmgNum()const;
 				int getSysNum()const;
+				int getAppNum()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int appCnt_;
 				int vulDealedTotalNum_;
 				int vulAsapSum_;
 				int vulLaterSum_;
@@ -59,6 +62,7 @@ namespace AlibabaCloud
 				int cmsDealedTotalNum_;
 				int emgNum_;
 				int sysNum_;
+				int appNum_;
 
 			};
 		}

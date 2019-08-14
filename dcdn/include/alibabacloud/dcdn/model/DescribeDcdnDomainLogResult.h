@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct DomainLogDetail
 				{
-					struct PageInfoDetail
+					struct PageInfos
 					{
 						long pageSize;
 						long total;
@@ -49,7 +49,7 @@ namespace AlibabaCloud
 						std::string logPath;
 					};
 					std::vector<DomainLogDetail::LogInfoDetail> logInfos;
-					std::vector<DomainLogDetail::PageInfoDetail> pageInfos;
+					PageInfos pageInfos;
 					long logCount;
 				};
 

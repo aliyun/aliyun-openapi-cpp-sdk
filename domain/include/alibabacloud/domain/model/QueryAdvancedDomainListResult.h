@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Domain
 				{
 					std::string registrantType;
+					std::string email;
 					std::string registrationDate;
 					long registrationDateLong;
 					int expirationCurrDateDiff;
@@ -46,10 +47,13 @@ namespace AlibabaCloud
 					std::string domainAuditStatus;
 					std::string remark;
 					long expirationDateLong;
+					std::vector<std::string> dnsList;
 					std::string domainType;
 					std::string expirationDateStatus;
 					std::string expirationDate;
 					std::string domainGroupName;
+					std::string zhRegistrantOrganization;
+					std::string registrantOrganization;
 					std::string domainStatus;
 				};
 

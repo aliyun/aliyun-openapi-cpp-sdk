@@ -33,6 +33,6 @@ std::string SetAccountAliasRequest::getAccountAlias()const
 void SetAccountAliasRequest::setAccountAlias(const std::string& accountAlias)
 {
 	accountAlias_ = accountAlias;
-	setParameter("AccountAlias", accountAlias);
+	setCoreParameter("AccountAlias", accountAlias);
 }
 

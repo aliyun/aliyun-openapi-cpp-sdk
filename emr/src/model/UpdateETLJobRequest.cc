@@ -33,25 +33,7 @@ long UpdateETLJobRequest::getResourceOwnerId()const
 void UpdateETLJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::vector<UpdateETLJobRequest::StageConnection> UpdateETLJobRequest::getStageConnection()const
-{
-	return stageConnection_;
-}
-
-void UpdateETLJobRequest::setStageConnection(const std::vector<StageConnection>& stageConnection)
-{
-	stageConnection_ = stageConnection;
-	int i = 0;
-	for(int i = 0; i!= stageConnection.size(); i++)	{
-		auto obj = stageConnection.at(i);
-		std::string str ="StageConnection."+ std::to_string(i);
-		setParameter(str + ".Port", obj.port);
-		setParameter(str + ".From", obj.from);
-		setParameter(str + ".To", obj.to);
-	}
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateETLJobRequest::getClusterConfig()const
@@ -62,7 +44,7 @@ std::string UpdateETLJobRequest::getClusterConfig()const
 void UpdateETLJobRequest::setClusterConfig(const std::string& clusterConfig)
 {
 	clusterConfig_ = clusterConfig;
-	setParameter("ClusterConfig", clusterConfig);
+	setCoreParameter("ClusterConfig", clusterConfig);
 }
 
 std::vector<UpdateETLJobRequest::TriggerRule> UpdateETLJobRequest::getTriggerRule()const
@@ -77,10 +59,72 @@ void UpdateETLJobRequest::setTriggerRule(const std::vector<TriggerRule>& trigger
 	for(int i = 0; i!= triggerRule.size(); i++)	{
 		auto obj = triggerRule.at(i);
 		std::string str ="TriggerRule."+ std::to_string(i);
-		setParameter(str + ".CronExpr", obj.cronExpr);
-		setParameter(str + ".EndTime", std::to_string(obj.endTime));
-		setParameter(str + ".StartTime", std::to_string(obj.startTime));
-		setParameter(str + ".Enabled", std::to_string(obj.enabled));
+		setCoreParameter(str + ".CronExpr", obj.cronExpr);
+		setCoreParameter(str + ".EndTime", std::to_string(obj.endTime));
+		setCoreParameter(str + ".StartTime", std::to_string(obj.startTime));
+		setCoreParameter(str + ".Enabled", obj.enabled ? "true" : "false");
+	}
+}
+
+std::string UpdateETLJobRequest::getAlertConfig()const
+{
+	return alertConfig_;
+}
+
+void UpdateETLJobRequest::setAlertConfig(const std::string& alertConfig)
+{
+	alertConfig_ = alertConfig;
+	setCoreParameter("AlertConfig", alertConfig);
+}
+
+std::string UpdateETLJobRequest::getDescription()const
+{
+	return description_;
+}
+
+void UpdateETLJobRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+bool UpdateETLJobRequest::getCheck()const
+{
+	return check_;
+}
+
+void UpdateETLJobRequest::setCheck(bool check)
+{
+	check_ = check;
+	setCoreParameter("Check", check ? "true" : "false");
+}
+
+std::string UpdateETLJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::vector<UpdateETLJobRequest::StageConnection> UpdateETLJobRequest::getStageConnection()const
+{
+	return stageConnection_;
+}
+
+void UpdateETLJobRequest::setStageConnection(const std::vector<StageConnection>& stageConnection)
+{
+	stageConnection_ = stageConnection;
+	int i = 0;
+	for(int i = 0; i!= stageConnection.size(); i++)	{
+		auto obj = stageConnection.at(i);
+		std::string str ="StageConnection."+ std::to_string(i);
+		setCoreParameter(str + ".Port", obj.port);
+		setCoreParameter(str + ".From", obj.from);
+		setCoreParameter(str + ".To", obj.to);
 	}
 }
 
@@ -96,10 +140,10 @@ void UpdateETLJobRequest::setStage(const std::vector<Stage>& stage)
 	for(int i = 0; i!= stage.size(); i++)	{
 		auto obj = stage.at(i);
 		std::string str ="Stage."+ std::to_string(i);
-		setParameter(str + ".StageName", obj.stageName);
-		setParameter(str + ".StageConf", obj.stageConf);
-		setParameter(str + ".StageType", obj.stageType);
-		setParameter(str + ".StagePlugin", obj.stagePlugin);
+		setCoreParameter(str + ".StageName", obj.stageName);
+		setCoreParameter(str + ".StageConf", obj.stageConf);
+		setCoreParameter(str + ".StageType", obj.stageType);
+		setCoreParameter(str + ".StagePlugin", obj.stagePlugin);
 	}
 }
 
@@ -111,18 +155,7 @@ std::string UpdateETLJobRequest::getRegionId()const
 void UpdateETLJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string UpdateETLJobRequest::getAlertConfig()const
-{
-	return alertConfig_;
-}
-
-void UpdateETLJobRequest::setAlertConfig(const std::string& alertConfig)
-{
-	alertConfig_ = alertConfig;
-	setParameter("AlertConfig", alertConfig);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateETLJobRequest::getName()const
@@ -133,18 +166,7 @@ std::string UpdateETLJobRequest::getName()const
 void UpdateETLJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
-}
-
-std::string UpdateETLJobRequest::getDescription()const
-{
-	return description_;
-}
-
-void UpdateETLJobRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateETLJobRequest::getId()const
@@ -155,28 +177,6 @@ std::string UpdateETLJobRequest::getId()const
 void UpdateETLJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
-}
-
-bool UpdateETLJobRequest::getCheck()const
-{
-	return check_;
-}
-
-void UpdateETLJobRequest::setCheck(bool check)
-{
-	check_ = check;
-	setParameter("Check", std::to_string(check));
-}
-
-std::string UpdateETLJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("Id", id);
 }
 

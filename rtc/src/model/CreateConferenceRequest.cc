@@ -33,7 +33,7 @@ std::string CreateConferenceRequest::getClientToken()const
 void CreateConferenceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long CreateConferenceRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateConferenceRequest::getCallerParentId()const
 void CreateConferenceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateConferenceRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool CreateConferenceRequest::getProxy_original_security_transport()const
 void CreateConferenceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateConferenceRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string CreateConferenceRequest::getStartTime()const
 void CreateConferenceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string CreateConferenceRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string CreateConferenceRequest::getProxy_original_source_ip()const
 void CreateConferenceRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateConferenceRequest::getType()const
@@ -88,7 +88,7 @@ std::string CreateConferenceRequest::getType()const
 void CreateConferenceRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string CreateConferenceRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string CreateConferenceRequest::getOwnerIdLoginEmail()const
 void CreateConferenceRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateConferenceRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string CreateConferenceRequest::getCallerType()const
 void CreateConferenceRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateConferenceRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CreateConferenceRequest::getAccessKeyId()const
 void CreateConferenceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateConferenceRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string CreateConferenceRequest::getSecurityToken()const
 void CreateConferenceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateConferenceRequest::getConferenceName()const
@@ -143,7 +143,7 @@ std::string CreateConferenceRequest::getConferenceName()const
 void CreateConferenceRequest::setConferenceName(const std::string& conferenceName)
 {
 	conferenceName_ = conferenceName;
-	setParameter("ConferenceName", conferenceName);
+	setCoreParameter("ConferenceName", conferenceName);
 }
 
 std::string CreateConferenceRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string CreateConferenceRequest::getRequestContent()const
 void CreateConferenceRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateConferenceRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string CreateConferenceRequest::getCallerBidEmail()const
 void CreateConferenceRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateConferenceRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string CreateConferenceRequest::getCallerUidEmail()const
 void CreateConferenceRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateConferenceRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long CreateConferenceRequest::getCallerUid()const
 void CreateConferenceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateConferenceRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string CreateConferenceRequest::getApp_ip()const
 void CreateConferenceRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateConferenceRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string CreateConferenceRequest::getPopProduct()const
 void CreateConferenceRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string CreateConferenceRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string CreateConferenceRequest::getCallerBid()const
 void CreateConferenceRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateConferenceRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long CreateConferenceRequest::getOwnerId()const
 void CreateConferenceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateConferenceRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string CreateConferenceRequest::getVersion()const
 void CreateConferenceRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool CreateConferenceRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool CreateConferenceRequest::getProxy_trust_transport_info()const
 void CreateConferenceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateConferenceRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool CreateConferenceRequest::getAk_mfa_present()const
 void CreateConferenceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateConferenceRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool CreateConferenceRequest::getSecurity_transport()const
 void CreateConferenceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateConferenceRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string CreateConferenceRequest::getRequestId()const
 void CreateConferenceRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateConferenceRequest::getAppId()const
@@ -297,7 +297,7 @@ std::string CreateConferenceRequest::getAppId()const
 void CreateConferenceRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 
 int CreateConferenceRequest::getRemindNotice()const
@@ -308,6 +308,6 @@ int CreateConferenceRequest::getRemindNotice()const
 void CreateConferenceRequest::setRemindNotice(int remindNotice)
 {
 	remindNotice_ = remindNotice;
-	setParameter("RemindNotice", std::to_string(remindNotice));
+	setCoreParameter("RemindNotice", std::to_string(remindNotice));
 }
 

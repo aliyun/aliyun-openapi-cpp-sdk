@@ -33,7 +33,7 @@ std::string SetDynamicConfigRequest::getDynamicOrigin()const
 void SetDynamicConfigRequest::setDynamicOrigin(const std::string& dynamicOrigin)
 {
 	dynamicOrigin_ = dynamicOrigin;
-	setParameter("DynamicOrigin", dynamicOrigin);
+	setCoreParameter("DynamicOrigin", dynamicOrigin);
 }
 
 std::string SetDynamicConfigRequest::getStaticType()const
@@ -44,7 +44,7 @@ std::string SetDynamicConfigRequest::getStaticType()const
 void SetDynamicConfigRequest::setStaticType(const std::string& staticType)
 {
 	staticType_ = staticType;
-	setParameter("StaticType", staticType);
+	setCoreParameter("StaticType", staticType);
 }
 
 std::string SetDynamicConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string SetDynamicConfigRequest::getSecurityToken()const
 void SetDynamicConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetDynamicConfigRequest::getStaticUri()const
@@ -66,7 +66,7 @@ std::string SetDynamicConfigRequest::getStaticUri()const
 void SetDynamicConfigRequest::setStaticUri(const std::string& staticUri)
 {
 	staticUri_ = staticUri;
-	setParameter("StaticUri", staticUri);
+	setCoreParameter("StaticUri", staticUri);
 }
 
 std::string SetDynamicConfigRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string SetDynamicConfigRequest::getDomainName()const
 void SetDynamicConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetDynamicConfigRequest::getStaticPath()const
@@ -88,7 +88,7 @@ std::string SetDynamicConfigRequest::getStaticPath()const
 void SetDynamicConfigRequest::setStaticPath(const std::string& staticPath)
 {
 	staticPath_ = staticPath;
-	setParameter("StaticPath", staticPath);
+	setCoreParameter("StaticPath", staticPath);
 }
 
 std::string SetDynamicConfigRequest::getDynamicCacheControl()const
@@ -99,7 +99,7 @@ std::string SetDynamicConfigRequest::getDynamicCacheControl()const
 void SetDynamicConfigRequest::setDynamicCacheControl(const std::string& dynamicCacheControl)
 {
 	dynamicCacheControl_ = dynamicCacheControl;
-	setParameter("DynamicCacheControl", dynamicCacheControl);
+	setCoreParameter("DynamicCacheControl", dynamicCacheControl);
 }
 
 long SetDynamicConfigRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long SetDynamicConfigRequest::getOwnerId()const
 void SetDynamicConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

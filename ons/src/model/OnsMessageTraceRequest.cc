@@ -25,17 +25,6 @@ OnsMessageTraceRequest::OnsMessageTraceRequest() :
 OnsMessageTraceRequest::~OnsMessageTraceRequest()
 {}
 
-long OnsMessageTraceRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMessageTraceRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMessageTraceRequest::getInstanceId()const
 {
 	return instanceId_;

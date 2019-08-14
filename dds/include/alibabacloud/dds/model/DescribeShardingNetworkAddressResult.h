@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string networkType;
 					std::string port;
 					std::string expiredTime;
+					std::string nodeType;
 					std::string nodeId;
 					std::string iPAddress;
 					std::string vswitchId;

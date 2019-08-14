@@ -33,7 +33,7 @@ long UpdateProjectSettingRequest::getResourceOwnerId()const
 void UpdateProjectSettingRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateProjectSettingRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string UpdateProjectSettingRequest::getRegionId()const
 void UpdateProjectSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateProjectSettingRequest::getDefaultOssPath()const
@@ -55,7 +55,7 @@ std::string UpdateProjectSettingRequest::getDefaultOssPath()const
 void UpdateProjectSettingRequest::setDefaultOssPath(const std::string& defaultOssPath)
 {
 	defaultOssPath_ = defaultOssPath;
-	setParameter("DefaultOssPath", defaultOssPath);
+	setCoreParameter("DefaultOssPath", defaultOssPath);
 }
 
 std::string UpdateProjectSettingRequest::getProjectId()const
@@ -66,7 +66,7 @@ std::string UpdateProjectSettingRequest::getProjectId()const
 void UpdateProjectSettingRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string UpdateProjectSettingRequest::getOssConfig()const
@@ -77,7 +77,7 @@ std::string UpdateProjectSettingRequest::getOssConfig()const
 void UpdateProjectSettingRequest::setOssConfig(const std::string& ossConfig)
 {
 	ossConfig_ = ossConfig;
-	setParameter("OssConfig", ossConfig);
+	setCoreParameter("OssConfig", ossConfig);
 }
 
 std::string UpdateProjectSettingRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string UpdateProjectSettingRequest::getAccessKeyId()const
 void UpdateProjectSettingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long SyncDataSourceSchemaDatabaseRequest::getResourceOwnerId()const
 void SyncDataSourceSchemaDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string SyncDataSourceSchemaDatabaseRequest::getDbName()const
 void SyncDataSourceSchemaDatabaseRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SyncDataSourceSchemaDatabaseRequest::getRegionId()const
 void SyncDataSourceSchemaDatabaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getEtlJobId()const
@@ -66,7 +66,7 @@ std::string SyncDataSourceSchemaDatabaseRequest::getEtlJobId()const
 void SyncDataSourceSchemaDatabaseRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setParameter("EtlJobId", etlJobId);
+	setCoreParameter("EtlJobId", etlJobId);
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getDataSourceId()const
@@ -77,7 +77,7 @@ std::string SyncDataSourceSchemaDatabaseRequest::getDataSourceId()const
 void SyncDataSourceSchemaDatabaseRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string SyncDataSourceSchemaDatabaseRequest::getAccessKeyId()const
 void SyncDataSourceSchemaDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

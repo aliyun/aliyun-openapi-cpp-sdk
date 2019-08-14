@@ -33,7 +33,7 @@ long DescribeUserStatisticsRequest::getResourceOwnerId()const
 void DescribeUserStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserStatisticsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeUserStatisticsRequest::getRegionId()const
 void DescribeUserStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeUserStatisticsRequest::getUserId()const
@@ -55,7 +55,7 @@ std::string DescribeUserStatisticsRequest::getUserId()const
 void DescribeUserStatisticsRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 
 std::string DescribeUserStatisticsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeUserStatisticsRequest::getAccessKeyId()const
 void DescribeUserStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

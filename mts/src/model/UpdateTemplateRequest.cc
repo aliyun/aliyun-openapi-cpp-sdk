@@ -33,7 +33,7 @@ std::string UpdateTemplateRequest::getContainer()const
 void UpdateTemplateRequest::setContainer(const std::string& container)
 {
 	container_ = container;
-	setParameter("Container", container);
+	setCoreParameter("Container", container);
 }
 
 long UpdateTemplateRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateTemplateRequest::getResourceOwnerId()const
 void UpdateTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateTemplateRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateTemplateRequest::getResourceOwnerAccount()const
 void UpdateTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateTemplateRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdateTemplateRequest::getOwnerAccount()const
 void UpdateTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdateTemplateRequest::getMuxConfig()const
@@ -77,7 +77,7 @@ std::string UpdateTemplateRequest::getMuxConfig()const
 void UpdateTemplateRequest::setMuxConfig(const std::string& muxConfig)
 {
 	muxConfig_ = muxConfig;
-	setParameter("MuxConfig", muxConfig);
+	setCoreParameter("MuxConfig", muxConfig);
 }
 
 std::string UpdateTemplateRequest::getVideo()const
@@ -88,7 +88,7 @@ std::string UpdateTemplateRequest::getVideo()const
 void UpdateTemplateRequest::setVideo(const std::string& video)
 {
 	video_ = video;
-	setParameter("Video", video);
+	setCoreParameter("Video", video);
 }
 
 long UpdateTemplateRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long UpdateTemplateRequest::getOwnerId()const
 void UpdateTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateTemplateRequest::getTemplateId()const
@@ -110,7 +110,7 @@ std::string UpdateTemplateRequest::getTemplateId()const
 void UpdateTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", templateId);
 }
 
 std::string UpdateTemplateRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string UpdateTemplateRequest::getAccessKeyId()const
 void UpdateTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateTemplateRequest::getName()const
@@ -132,7 +132,7 @@ std::string UpdateTemplateRequest::getName()const
 void UpdateTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateTemplateRequest::getTransConfig()const
@@ -143,7 +143,7 @@ std::string UpdateTemplateRequest::getTransConfig()const
 void UpdateTemplateRequest::setTransConfig(const std::string& transConfig)
 {
 	transConfig_ = transConfig;
-	setParameter("TransConfig", transConfig);
+	setCoreParameter("TransConfig", transConfig);
 }
 
 std::string UpdateTemplateRequest::getAudio()const
@@ -154,6 +154,6 @@ std::string UpdateTemplateRequest::getAudio()const
 void UpdateTemplateRequest::setAudio(const std::string& audio)
 {
 	audio_ = audio;
-	setParameter("Audio", audio);
+	setCoreParameter("Audio", audio);
 }
 

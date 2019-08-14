@@ -267,42 +267,6 @@ CrmClient::QueryCustomerLabelOutcomeCallable CrmClient::queryCustomerLabelCallab
 	return task->get_future();
 }
 
-CrmClient::RemoveIdentityCertifiedForBidUserOutcome CrmClient::removeIdentityCertifiedForBidUser(const RemoveIdentityCertifiedForBidUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveIdentityCertifiedForBidUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveIdentityCertifiedForBidUserOutcome(RemoveIdentityCertifiedForBidUserResult(outcome.result()));
-	else
-		return RemoveIdentityCertifiedForBidUserOutcome(outcome.error());
-}
-
-void CrmClient::removeIdentityCertifiedForBidUserAsync(const RemoveIdentityCertifiedForBidUserRequest& request, const RemoveIdentityCertifiedForBidUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeIdentityCertifiedForBidUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::RemoveIdentityCertifiedForBidUserOutcomeCallable CrmClient::removeIdentityCertifiedForBidUserCallable(const RemoveIdentityCertifiedForBidUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveIdentityCertifiedForBidUserOutcome()>>(
-			[this, request]()
-			{
-			return this->removeIdentityCertifiedForBidUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CrmClient::QueryBidUserCertifiedInfoOutcome CrmClient::queryBidUserCertifiedInfo(const QueryBidUserCertifiedInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,42 +303,6 @@ CrmClient::QueryBidUserCertifiedInfoOutcomeCallable CrmClient::queryBidUserCerti
 	return task->get_future();
 }
 
-CrmClient::AddLabelForBidOutcome CrmClient::addLabelForBid(const AddLabelForBidRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddLabelForBidOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddLabelForBidOutcome(AddLabelForBidResult(outcome.result()));
-	else
-		return AddLabelForBidOutcome(outcome.error());
-}
-
-void CrmClient::addLabelForBidAsync(const AddLabelForBidRequest& request, const AddLabelForBidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addLabelForBid(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::AddLabelForBidOutcomeCallable CrmClient::addLabelForBidCallable(const AddLabelForBidRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddLabelForBidOutcome()>>(
-			[this, request]()
-			{
-			return this->addLabelForBid(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CrmClient::BatchGetAliyunIdByAliyunPkOutcome CrmClient::batchGetAliyunIdByAliyunPk(const BatchGetAliyunIdByAliyunPkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +333,78 @@ CrmClient::BatchGetAliyunIdByAliyunPkOutcomeCallable CrmClient::batchGetAliyunId
 			[this, request]()
 			{
 			return this->batchGetAliyunIdByAliyunPk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrmClient::RemoveIdentityCertifiedForBidUserOutcome CrmClient::removeIdentityCertifiedForBidUser(const RemoveIdentityCertifiedForBidUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveIdentityCertifiedForBidUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveIdentityCertifiedForBidUserOutcome(RemoveIdentityCertifiedForBidUserResult(outcome.result()));
+	else
+		return RemoveIdentityCertifiedForBidUserOutcome(outcome.error());
+}
+
+void CrmClient::removeIdentityCertifiedForBidUserAsync(const RemoveIdentityCertifiedForBidUserRequest& request, const RemoveIdentityCertifiedForBidUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeIdentityCertifiedForBidUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::RemoveIdentityCertifiedForBidUserOutcomeCallable CrmClient::removeIdentityCertifiedForBidUserCallable(const RemoveIdentityCertifiedForBidUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveIdentityCertifiedForBidUserOutcome()>>(
+			[this, request]()
+			{
+			return this->removeIdentityCertifiedForBidUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrmClient::AddLabelForBidOutcome CrmClient::addLabelForBid(const AddLabelForBidRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLabelForBidOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLabelForBidOutcome(AddLabelForBidResult(outcome.result()));
+	else
+		return AddLabelForBidOutcome(outcome.error());
+}
+
+void CrmClient::addLabelForBidAsync(const AddLabelForBidRequest& request, const AddLabelForBidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLabelForBid(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::AddLabelForBidOutcomeCallable CrmClient::addLabelForBidCallable(const AddLabelForBidRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLabelForBidOutcome()>>(
+			[this, request]()
+			{
+			return this->addLabelForBid(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -87,42 +87,6 @@ Sas_apiClient::DescribeAccountProfileByKeyWordOutcomeCallable Sas_apiClient::des
 	return task->get_future();
 }
 
-Sas_apiClient::DescribeThreatTypeLinesOutcome Sas_apiClient::describeThreatTypeLines(const DescribeThreatTypeLinesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeThreatTypeLinesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeThreatTypeLinesOutcome(DescribeThreatTypeLinesResult(outcome.result()));
-	else
-		return DescribeThreatTypeLinesOutcome(outcome.error());
-}
-
-void Sas_apiClient::describeThreatTypeLinesAsync(const DescribeThreatTypeLinesRequest& request, const DescribeThreatTypeLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeThreatTypeLines(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Sas_apiClient::DescribeThreatTypeLinesOutcomeCallable Sas_apiClient::describeThreatTypeLinesCallable(const DescribeThreatTypeLinesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeThreatTypeLinesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeThreatTypeLines(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Sas_apiClient::DescribeThreatDistributeOutcome Sas_apiClient::describeThreatDistribute(const DescribeThreatDistributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +117,42 @@ Sas_apiClient::DescribeThreatDistributeOutcomeCallable Sas_apiClient::describeTh
 			[this, request]()
 			{
 			return this->describeThreatDistribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Sas_apiClient::DescribeThreatTypeLinesOutcome Sas_apiClient::describeThreatTypeLines(const DescribeThreatTypeLinesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeThreatTypeLinesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeThreatTypeLinesOutcome(DescribeThreatTypeLinesResult(outcome.result()));
+	else
+		return DescribeThreatTypeLinesOutcome(outcome.error());
+}
+
+void Sas_apiClient::describeThreatTypeLinesAsync(const DescribeThreatTypeLinesRequest& request, const DescribeThreatTypeLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeThreatTypeLines(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Sas_apiClient::DescribeThreatTypeLinesOutcomeCallable Sas_apiClient::describeThreatTypeLinesCallable(const DescribeThreatTypeLinesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeThreatTypeLinesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeThreatTypeLines(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -33,7 +33,7 @@ std::string ListApUpgradeRequest::getOrderCol()const
 void ListApUpgradeRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListApUpgradeRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListApUpgradeRequest::getSearchName()const
 void ListApUpgradeRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setParameter("SearchName", searchName);
+	setCoreParameter("SearchName", searchName);
 }
 
 std::string ListApUpgradeRequest::getSearchApModelName()const
@@ -55,7 +55,7 @@ std::string ListApUpgradeRequest::getSearchApModelName()const
 void ListApUpgradeRequest::setSearchApModelName(const std::string& searchApModelName)
 {
 	searchApModelName_ = searchApModelName;
-	setParameter("SearchApModelName", searchApModelName);
+	setCoreParameter("SearchApModelName", searchApModelName);
 }
 
 int ListApUpgradeRequest::getLength()const
@@ -66,7 +66,7 @@ int ListApUpgradeRequest::getLength()const
 void ListApUpgradeRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 std::string ListApUpgradeRequest::getSearchMac()const
@@ -77,7 +77,7 @@ std::string ListApUpgradeRequest::getSearchMac()const
 void ListApUpgradeRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", searchMac);
 }
 
 int ListApUpgradeRequest::getPageIndex()const
@@ -88,7 +88,7 @@ int ListApUpgradeRequest::getPageIndex()const
 void ListApUpgradeRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListApUpgradeRequest::getOrderDir()const
@@ -99,7 +99,7 @@ std::string ListApUpgradeRequest::getOrderDir()const
 void ListApUpgradeRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListApUpgradeRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListApUpgradeRequest::getAccessKeyId()const
 void ListApUpgradeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

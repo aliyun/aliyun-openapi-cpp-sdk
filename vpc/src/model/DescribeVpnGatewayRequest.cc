@@ -33,7 +33,7 @@ long DescribeVpnGatewayRequest::getResourceOwnerId()const
 void DescribeVpnGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVpnGatewayRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeVpnGatewayRequest::getResourceOwnerAccount()const
 void DescribeVpnGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpnGatewayRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeVpnGatewayRequest::getRegionId()const
 void DescribeVpnGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVpnGatewayRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeVpnGatewayRequest::getOwnerAccount()const
 void DescribeVpnGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeVpnGatewayRequest::getVpnGatewayId()const
@@ -77,7 +77,7 @@ std::string DescribeVpnGatewayRequest::getVpnGatewayId()const
 void DescribeVpnGatewayRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setParameter("VpnGatewayId", vpnGatewayId);
+	setCoreParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long DescribeVpnGatewayRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DescribeVpnGatewayRequest::getOwnerId()const
 void DescribeVpnGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

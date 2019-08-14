@@ -34,7 +34,7 @@ void AcknowledgeTaskResultRequest::setTaskDetailNo(const std::vector<std::string
 {
 	taskDetailNo_ = taskDetailNo;
 	for(int i = 0; i!= taskDetailNo.size(); i++)
-		setParameter("TaskDetailNo."+ std::to_string(i), taskDetailNo.at(i));
+		setCoreParameter("TaskDetailNo."+ std::to_string(i), taskDetailNo.at(i));
 }
 
 std::string AcknowledgeTaskResultRequest::getUserClientIp()const
@@ -45,7 +45,7 @@ std::string AcknowledgeTaskResultRequest::getUserClientIp()const
 void AcknowledgeTaskResultRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string AcknowledgeTaskResultRequest::getLang()const
@@ -56,6 +56,6 @@ std::string AcknowledgeTaskResultRequest::getLang()const
 void AcknowledgeTaskResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

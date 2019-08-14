@@ -33,7 +33,7 @@ std::string BindZoneVpcRequest::getUserClientIp()const
 void BindZoneVpcRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string BindZoneVpcRequest::getZoneId()const
@@ -44,7 +44,7 @@ std::string BindZoneVpcRequest::getZoneId()const
 void BindZoneVpcRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string BindZoneVpcRequest::getLang()const
@@ -55,7 +55,7 @@ std::string BindZoneVpcRequest::getLang()const
 void BindZoneVpcRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::vector<BindZoneVpcRequest::Vpcs> BindZoneVpcRequest::getVpcs()const
@@ -70,8 +70,8 @@ void BindZoneVpcRequest::setVpcs(const std::vector<Vpcs>& vpcs)
 	for(int i = 0; i!= vpcs.size(); i++)	{
 		auto obj = vpcs.at(i);
 		std::string str ="Vpcs."+ std::to_string(i);
-		setParameter(str + ".RegionId", obj.regionId);
-		setParameter(str + ".VpcId", obj.vpcId);
+		setCoreParameter(str + ".RegionId", obj.regionId);
+		setCoreParameter(str + ".VpcId", obj.vpcId);
 	}
 }
 

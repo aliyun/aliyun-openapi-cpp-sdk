@@ -33,7 +33,7 @@ std::string AreaCreateRequest::getName()const
 void AreaCreateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string AreaCreateRequest::getDids()const
@@ -44,7 +44,7 @@ std::string AreaCreateRequest::getDids()const
 void AreaCreateRequest::setDids(const std::string& dids)
 {
 	dids_ = dids;
-	setParameter("Dids", dids);
+	setCoreParameter("Dids", dids);
 }
 
 std::string AreaCreateRequest::getAccessKeyId()const
@@ -55,7 +55,7 @@ std::string AreaCreateRequest::getAccessKeyId()const
 void AreaCreateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long AreaCreateRequest::getSid()const
@@ -66,6 +66,6 @@ long AreaCreateRequest::getSid()const
 void AreaCreateRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", std::to_string(sid));
 }
 

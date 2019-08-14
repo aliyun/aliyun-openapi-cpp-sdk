@@ -25,17 +25,6 @@ OnsGroupConsumerUpdateRequest::OnsGroupConsumerUpdateRequest() :
 OnsGroupConsumerUpdateRequest::~OnsGroupConsumerUpdateRequest()
 {}
 
-long OnsGroupConsumerUpdateRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsGroupConsumerUpdateRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 bool OnsGroupConsumerUpdateRequest::getReadEnable()const
 {
 	return readEnable_;

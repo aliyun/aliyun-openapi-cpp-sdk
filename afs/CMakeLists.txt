@@ -45,10 +45,10 @@ set(afs_public_header_model
 	include/alibabacloud/afs/model/AuthenticateSigResult.h
 	include/alibabacloud/afs/model/DescribeConfigNameRequest.h
 	include/alibabacloud/afs/model/DescribeConfigNameResult.h
-	include/alibabacloud/afs/model/DescribeCaptchaDayRequest.h
-	include/alibabacloud/afs/model/DescribeCaptchaDayResult.h
 	include/alibabacloud/afs/model/UpdateConfigNameRequest.h
 	include/alibabacloud/afs/model/UpdateConfigNameResult.h
+	include/alibabacloud/afs/model/DescribeCaptchaDayRequest.h
+	include/alibabacloud/afs/model/DescribeCaptchaDayResult.h
 	include/alibabacloud/afs/model/DescribePersonMachineListRequest.h
 	include/alibabacloud/afs/model/DescribePersonMachineListResult.h )
 
@@ -78,10 +78,10 @@ set(afs_src
 	src/model/AuthenticateSigResult.cc
 	src/model/DescribeConfigNameRequest.cc
 	src/model/DescribeConfigNameResult.cc
-	src/model/DescribeCaptchaDayRequest.cc
-	src/model/DescribeCaptchaDayResult.cc
 	src/model/UpdateConfigNameRequest.cc
 	src/model/UpdateConfigNameResult.cc
+	src/model/DescribeCaptchaDayRequest.cc
+	src/model/DescribeCaptchaDayResult.cc
 	src/model/DescribePersonMachineListRequest.cc
 	src/model/DescribePersonMachineListResult.cc )
 

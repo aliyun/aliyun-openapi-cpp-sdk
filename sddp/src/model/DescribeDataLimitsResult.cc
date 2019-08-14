@@ -35,10 +35,13 @@ DescribeDataLimitsResult::~DescribeDataLimitsResult()
 
 void DescribeDataLimitsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allDataLimitList = value["DataLimitList"]["DataLimit"];
 	for (auto value : allDataLimitList)
@@ -62,6 +65,10 @@ void DescribeDataLimitsResult::parse(const std::string &payload)
 			dataLimitListObject.checkStatus = std::stoi(value["CheckStatus"].asString());
 		if(!value["CheckStatusName"].isNull())
 			dataLimitListObject.checkStatusName = value["CheckStatusName"].asString();
+		if(!value["ResourceType"].isNull())
+			dataLimitListObject.resourceType = std::stol(value["ResourceType"].asString());
+		if(!value["ResourceTypeCode"].isNull())
+			dataLimitListObject.resourceTypeCode = value["ResourceTypeCode"].asString();
 		dataLimitList_.push_back(dataLimitListObject);
 	}
 

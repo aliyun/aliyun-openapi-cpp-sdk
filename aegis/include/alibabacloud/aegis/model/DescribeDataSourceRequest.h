@@ -35,23 +35,17 @@ namespace AlibabaCloud
 				DescribeDataSourceRequest();
 				~DescribeDataSourceRequest();
 
+				std::string getConfigType()const;
+				void setConfigType(const std::string& configType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				long getId()const;
-				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
 
             private:
+				std::string configType_;
 				std::string sourceIp_;
-				std::string description_;
-				long id_;
 				std::string lang_;
-				std::string groupName_;
 
 			};
 		}

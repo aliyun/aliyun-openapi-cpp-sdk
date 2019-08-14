@@ -33,7 +33,7 @@ std::string DescribeRegionsRequest::getUserClientIp()const
 void DescribeRegionsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeRegionsRequest::getAcceptLanguage()const
@@ -44,7 +44,7 @@ std::string DescribeRegionsRequest::getAcceptLanguage()const
 void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
 	acceptLanguage_ = acceptLanguage;
-	setParameter("AcceptLanguage", acceptLanguage);
+	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 
 std::string DescribeRegionsRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeRegionsRequest::getLang()const
 void DescribeRegionsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

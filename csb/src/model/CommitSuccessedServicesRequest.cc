@@ -33,7 +33,7 @@ std::string CommitSuccessedServicesRequest::getCsbName()const
 void CommitSuccessedServicesRequest::setCsbName(const std::string& csbName)
 {
 	csbName_ = csbName;
-	setParameter("CsbName", csbName);
+	setCoreParameter("CsbName", csbName);
 }
 
 std::string CommitSuccessedServicesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CommitSuccessedServicesRequest::getRegionId()const
 void CommitSuccessedServicesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CommitSuccessedServicesRequest::getServices()const
@@ -55,6 +55,6 @@ std::string CommitSuccessedServicesRequest::getServices()const
 void CommitSuccessedServicesRequest::setServices(const std::string& services)
 {
 	services_ = services;
-	setParameter("Services", services);
+	setCoreParameter("Services", services);
 }
 

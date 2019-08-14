@@ -33,7 +33,7 @@ std::string SubmitAsrJobRequest::getInput()const
 void SubmitAsrJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setParameter("Input", input);
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitAsrJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitAsrJobRequest::getUserData()const
 void SubmitAsrJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitAsrJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitAsrJobRequest::getResourceOwnerId()const
 void SubmitAsrJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitAsrJobRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitAsrJobRequest::getResourceOwnerAccount()const
 void SubmitAsrJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitAsrJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitAsrJobRequest::getOwnerAccount()const
 void SubmitAsrJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitAsrJobRequest::getAsrConfig()const
@@ -88,7 +88,7 @@ std::string SubmitAsrJobRequest::getAsrConfig()const
 void SubmitAsrJobRequest::setAsrConfig(const std::string& asrConfig)
 {
 	asrConfig_ = asrConfig;
-	setParameter("AsrConfig", asrConfig);
+	setCoreParameter("AsrConfig", asrConfig);
 }
 
 long SubmitAsrJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitAsrJobRequest::getOwnerId()const
 void SubmitAsrJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitAsrJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitAsrJobRequest::getAccessKeyId()const
 void SubmitAsrJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitAsrJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitAsrJobRequest::getPipelineId()const
 void SubmitAsrJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

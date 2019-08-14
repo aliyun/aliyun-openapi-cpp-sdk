@@ -33,7 +33,7 @@ std::string DescribeFlowJobRequest::getRegionId()const
 void DescribeFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowJobRequest::getId()const
@@ -44,7 +44,7 @@ std::string DescribeFlowJobRequest::getId()const
 void DescribeFlowJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeFlowJobRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string DescribeFlowJobRequest::getProjectId()const
 void DescribeFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 

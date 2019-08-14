@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CreateSignaturePeopleCertificateResult();
 				explicit CreateSignaturePeopleCertificateResult(const std::string &payload);
 				~CreateSignaturePeopleCertificateResult();
+				std::string getPeopleId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string peopleId_;
 
 			};
 		}

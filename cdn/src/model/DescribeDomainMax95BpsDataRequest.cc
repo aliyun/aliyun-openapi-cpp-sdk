@@ -33,7 +33,7 @@ long DescribeDomainMax95BpsDataRequest::getCallerParentId()const
 void DescribeDomainMax95BpsDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDomainMax95BpsDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeDomainMax95BpsDataRequest::getProxy_original_security_transport()co
 void DescribeDomainMax95BpsDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeDomainMax95BpsDataRequest::getStartTime()const
 void DescribeDomainMax95BpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeDomainMax95BpsDataRequest::getProxy_original_source_ip()cons
 void DescribeDomainMax95BpsDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeDomainMax95BpsDataRequest::getOwnerIdLoginEmail()const
 void DescribeDomainMax95BpsDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeDomainMax95BpsDataRequest::getCallerType()const
 void DescribeDomainMax95BpsDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeDomainMax95BpsDataRequest::getAccessKeyId()const
 void DescribeDomainMax95BpsDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeDomainMax95BpsDataRequest::getSecurityToken()const
 void DescribeDomainMax95BpsDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeDomainMax95BpsDataRequest::getRequestContent()const
 void DescribeDomainMax95BpsDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeDomainMax95BpsDataRequest::getCallerBidEmail()const
 void DescribeDomainMax95BpsDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeDomainMax95BpsDataRequest::getCallerUidEmail()const
 void DescribeDomainMax95BpsDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDomainMax95BpsDataRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeDomainMax95BpsDataRequest::getCallerUid()const
 void DescribeDomainMax95BpsDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeDomainMax95BpsDataRequest::getApp_ip()const
 void DescribeDomainMax95BpsDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeDomainMax95BpsDataRequest::getPopProduct()const
 void DescribeDomainMax95BpsDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getProduct()const
@@ -187,7 +187,7 @@ std::string DescribeDomainMax95BpsDataRequest::getProduct()const
 void DescribeDomainMax95BpsDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getDomainName()const
@@ -198,7 +198,7 @@ std::string DescribeDomainMax95BpsDataRequest::getDomainName()const
 void DescribeDomainMax95BpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribeDomainMax95BpsDataRequest::getEndTime()const
 void DescribeDomainMax95BpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeDomainMax95BpsDataRequest::getCallerBid()const
 void DescribeDomainMax95BpsDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDomainMax95BpsDataRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeDomainMax95BpsDataRequest::getOwnerId()const
 void DescribeDomainMax95BpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeDomainMax95BpsDataRequest::getVersion()const
 void DescribeDomainMax95BpsDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDomainMax95BpsDataRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribeDomainMax95BpsDataRequest::getProxy_trust_transport_info()const
 void DescribeDomainMax95BpsDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeDomainMax95BpsDataRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeDomainMax95BpsDataRequest::getAk_mfa_present()const
 void DescribeDomainMax95BpsDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeDomainMax95BpsDataRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeDomainMax95BpsDataRequest::getSecurity_transport()const
 void DescribeDomainMax95BpsDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeDomainMax95BpsDataRequest::getRequestId()const
@@ -286,6 +286,6 @@ std::string DescribeDomainMax95BpsDataRequest::getRequestId()const
 void DescribeDomainMax95BpsDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

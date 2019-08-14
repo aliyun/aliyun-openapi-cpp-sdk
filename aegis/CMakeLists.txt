@@ -27,12 +27,16 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeCanUpgradeSasResult.h
 	include/alibabacloud/aegis/model/DescribeTraceInfoNodeRequest.h
 	include/alibabacloud/aegis/model/DescribeTraceInfoNodeResult.h
+	include/alibabacloud/aegis/model/SaveCustomizeReportConfigRequest.h
+	include/alibabacloud/aegis/model/SaveCustomizeReportConfigResult.h
+	include/alibabacloud/aegis/model/DescribeScreenCloudHcRiskRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenCloudHcRiskResult.h
 	include/alibabacloud/aegis/model/DescribeScreenAttackAnalysisDataRequest.h
 	include/alibabacloud/aegis/model/DescribeScreenAttackAnalysisDataResult.h
-	include/alibabacloud/aegis/model/DescribeAutoDelConfigRequest.h
-	include/alibabacloud/aegis/model/DescribeAutoDelConfigResult.h
 	include/alibabacloud/aegis/model/DescribeVulListRequest.h
 	include/alibabacloud/aegis/model/DescribeVulListResult.h
+	include/alibabacloud/aegis/model/DescribeAutoDelConfigRequest.h
+	include/alibabacloud/aegis/model/DescribeAutoDelConfigResult.h
 	include/alibabacloud/aegis/model/ModifyWebLockUpdateConfigRequest.h
 	include/alibabacloud/aegis/model/ModifyWebLockUpdateConfigResult.h
 	include/alibabacloud/aegis/model/DescribeVulnerabilitySummaryRequest.h
@@ -49,6 +53,10 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/ExportWarningResult.h
 	include/alibabacloud/aegis/model/DescribeEcsStsStatusRequest.h
 	include/alibabacloud/aegis/model/DescribeEcsStsStatusResult.h
+	include/alibabacloud/aegis/model/DescribeCustomizeReportListRequest.h
+	include/alibabacloud/aegis/model/DescribeCustomizeReportListResult.h
+	include/alibabacloud/aegis/model/DescribeSupervisonInfoRequest.h
+	include/alibabacloud/aegis/model/DescribeSupervisonInfoResult.h
 	include/alibabacloud/aegis/model/UpdateWhiteListStrategyRelationRequest.h
 	include/alibabacloud/aegis/model/UpdateWhiteListStrategyRelationResult.h
 	include/alibabacloud/aegis/model/DeleteStrategyRequest.h
@@ -59,30 +67,44 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/OpenSasTrialResult.h
 	include/alibabacloud/aegis/model/ModifyVulLevelRequest.h
 	include/alibabacloud/aegis/model/ModifyVulLevelResult.h
+	include/alibabacloud/aegis/model/DescribeScreenOssUploadInfoRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenOssUploadInfoResult.h
 	include/alibabacloud/aegis/model/ModifyVulTargetRequest.h
 	include/alibabacloud/aegis/model/ModifyVulTargetResult.h
 	include/alibabacloud/aegis/model/ModifyBatchIgnoreVulRequest.h
 	include/alibabacloud/aegis/model/ModifyBatchIgnoreVulResult.h
-	include/alibabacloud/aegis/model/DescribeSummaryInfoRequest.h
-	include/alibabacloud/aegis/model/DescribeSummaryInfoResult.h
 	include/alibabacloud/aegis/model/DescribeStrategyProcessRequest.h
 	include/alibabacloud/aegis/model/DescribeStrategyProcessResult.h
+	include/alibabacloud/aegis/model/DescribeSummaryInfoRequest.h
+	include/alibabacloud/aegis/model/DescribeSummaryInfoResult.h
 	include/alibabacloud/aegis/model/DescribeSuspTrendStatisticsRequest.h
 	include/alibabacloud/aegis/model/DescribeSuspTrendStatisticsResult.h
 	include/alibabacloud/aegis/model/DescribeDataSourceRequest.h
 	include/alibabacloud/aegis/model/DescribeDataSourceResult.h
 	include/alibabacloud/aegis/model/DescribeResultListRequest.h
 	include/alibabacloud/aegis/model/DescribeResultListResult.h
+	include/alibabacloud/aegis/model/DescribeGrayFuncRequest.h
+	include/alibabacloud/aegis/model/DescribeGrayFuncResult.h
+	include/alibabacloud/aegis/model/DescribeCustomizeReportChartDataRequest.h
+	include/alibabacloud/aegis/model/DescribeCustomizeReportChartDataResult.h
+	include/alibabacloud/aegis/model/DescribeScreenBizStatSimpleQueryResultRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenBizStatSimpleQueryResultResult.h
 	include/alibabacloud/aegis/model/DownloadLogRequest.h
 	include/alibabacloud/aegis/model/DownloadLogResult.h
 	include/alibabacloud/aegis/model/DescribeTargetConfigRequest.h
 	include/alibabacloud/aegis/model/DescribeTargetConfigResult.h
+	include/alibabacloud/aegis/model/DescribeAccesskeyRunInfoRequest.h
+	include/alibabacloud/aegis/model/DescribeAccesskeyRunInfoResult.h
+	include/alibabacloud/aegis/model/DescribeScreenFlowRequestCountRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenFlowRequestCountResult.h
 	include/alibabacloud/aegis/model/DescribeVulNumStatisticsRequest.h
 	include/alibabacloud/aegis/model/DescribeVulNumStatisticsResult.h
 	include/alibabacloud/aegis/model/DescribeLogInfoRequest.h
 	include/alibabacloud/aegis/model/DescribeLogInfoResult.h
 	include/alibabacloud/aegis/model/GetAccountStatisticsRequest.h
 	include/alibabacloud/aegis/model/GetAccountStatisticsResult.h
+	include/alibabacloud/aegis/model/DescribeScreenEmerRiskRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenEmerRiskResult.h
 	include/alibabacloud/aegis/model/DescribeUuidConfigRequest.h
 	include/alibabacloud/aegis/model/DescribeUuidConfigResult.h
 	include/alibabacloud/aegis/model/DescribeScreenHostStatisticsRequest.h
@@ -99,26 +121,32 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/ModifySasAssetStatisticsColumnResult.h
 	include/alibabacloud/aegis/model/DescribeTraceInfoNodeListRequest.h
 	include/alibabacloud/aegis/model/DescribeTraceInfoNodeListResult.h
-	include/alibabacloud/aegis/model/DescribeAnalysisSlsIndexRequest.h
-	include/alibabacloud/aegis/model/DescribeAnalysisSlsIndexResult.h
 	include/alibabacloud/aegis/model/ModifyWebLockCreateConfigRequest.h
 	include/alibabacloud/aegis/model/ModifyWebLockCreateConfigResult.h
+	include/alibabacloud/aegis/model/DescribeAnalysisSlsIndexRequest.h
+	include/alibabacloud/aegis/model/DescribeAnalysisSlsIndexResult.h
 	include/alibabacloud/aegis/model/DeleteRuleGroupRequest.h
 	include/alibabacloud/aegis/model/DeleteRuleGroupResult.h
+	include/alibabacloud/aegis/model/DescribeScreenDataMapRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenDataMapResult.h
 	include/alibabacloud/aegis/model/DescribeStatisticsRequest.h
 	include/alibabacloud/aegis/model/DescribeStatisticsResult.h
 	include/alibabacloud/aegis/model/DescribeAlarmEventDetailRequest.h
 	include/alibabacloud/aegis/model/DescribeAlarmEventDetailResult.h
 	include/alibabacloud/aegis/model/CreateSuspiciousExportRequest.h
 	include/alibabacloud/aegis/model/CreateSuspiciousExportResult.h
+	include/alibabacloud/aegis/model/DescribeWebshellListRequest.h
+	include/alibabacloud/aegis/model/DescribeWebshellListResult.h
+	include/alibabacloud/aegis/model/DescribeBizStatSimpleQueryResultRequest.h
+	include/alibabacloud/aegis/model/DescribeBizStatSimpleQueryResultResult.h
 	include/alibabacloud/aegis/model/OperateVulRequest.h
 	include/alibabacloud/aegis/model/OperateVulResult.h
 	include/alibabacloud/aegis/model/GetCrackStatisticsRequest.h
 	include/alibabacloud/aegis/model/GetCrackStatisticsResult.h
-	include/alibabacloud/aegis/model/DescribeConcernNecessityRequest.h
-	include/alibabacloud/aegis/model/DescribeConcernNecessityResult.h
 	include/alibabacloud/aegis/model/OperateAgentClientInstallRequest.h
 	include/alibabacloud/aegis/model/OperateAgentClientInstallResult.h
+	include/alibabacloud/aegis/model/DescribeConcernNecessityRequest.h
+	include/alibabacloud/aegis/model/DescribeConcernNecessityResult.h
 	include/alibabacloud/aegis/model/DescribeScreenScoreThreadRequest.h
 	include/alibabacloud/aegis/model/DescribeScreenScoreThreadResult.h
 	include/alibabacloud/aegis/model/DescribeBuySummaryRequest.h
@@ -129,14 +157,18 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeSuspiciousUUIDConfigResult.h
 	include/alibabacloud/aegis/model/DescribeTopicListRequest.h
 	include/alibabacloud/aegis/model/DescribeTopicListResult.h
-	include/alibabacloud/aegis/model/DescribeAssetDetailByUuidRequest.h
-	include/alibabacloud/aegis/model/DescribeAssetDetailByUuidResult.h
 	include/alibabacloud/aegis/model/DescribeScreenVersionConfigRequest.h
 	include/alibabacloud/aegis/model/DescribeScreenVersionConfigResult.h
+	include/alibabacloud/aegis/model/DescribeAssetDetailByUuidRequest.h
+	include/alibabacloud/aegis/model/DescribeAssetDetailByUuidResult.h
+	include/alibabacloud/aegis/model/CreateScreenSettingRequest.h
+	include/alibabacloud/aegis/model/CreateScreenSettingResult.h
 	include/alibabacloud/aegis/model/DescribeVulExportInfoRequest.h
 	include/alibabacloud/aegis/model/DescribeVulExportInfoResult.h
 	include/alibabacloud/aegis/model/DeleteRuleRequest.h
 	include/alibabacloud/aegis/model/DeleteRuleResult.h
+	include/alibabacloud/aegis/model/DescribeChartListRequest.h
+	include/alibabacloud/aegis/model/DescribeChartListResult.h
 	include/alibabacloud/aegis/model/DescribeSuspEventDetailRequest.h
 	include/alibabacloud/aegis/model/DescribeSuspEventDetailResult.h
 	include/alibabacloud/aegis/model/DescribeEventLevelCountRequest.h
@@ -155,20 +187,26 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeVulDetailsResult.h
 	include/alibabacloud/aegis/model/DescribeLogItemsRequest.h
 	include/alibabacloud/aegis/model/DescribeLogItemsResult.h
-	include/alibabacloud/aegis/model/DescribeWebLockEventsRequest.h
-	include/alibabacloud/aegis/model/DescribeWebLockEventsResult.h
 	include/alibabacloud/aegis/model/ExecStrategyRequest.h
 	include/alibabacloud/aegis/model/ExecStrategyResult.h
+	include/alibabacloud/aegis/model/DescribeWebLockEventsRequest.h
+	include/alibabacloud/aegis/model/DescribeWebLockEventsResult.h
 	include/alibabacloud/aegis/model/DescribeSuspEventExportInfoRequest.h
 	include/alibabacloud/aegis/model/DescribeSuspEventExportInfoResult.h
 	include/alibabacloud/aegis/model/OperationSuspEventsRequest.h
 	include/alibabacloud/aegis/model/OperationSuspEventsResult.h
 	include/alibabacloud/aegis/model/DescribeSasAssetStatisticsRequest.h
 	include/alibabacloud/aegis/model/DescribeSasAssetStatisticsResult.h
+	include/alibabacloud/aegis/model/SendCustomizeReportRequest.h
+	include/alibabacloud/aegis/model/SendCustomizeReportResult.h
 	include/alibabacloud/aegis/model/DescribeDefenceThreadRequest.h
 	include/alibabacloud/aegis/model/DescribeDefenceThreadResult.h
+	include/alibabacloud/aegis/model/DescribeScreenTopRequestAndFlowRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenTopRequestAndFlowResult.h
 	include/alibabacloud/aegis/model/CreateVulWhitelistRequest.h
 	include/alibabacloud/aegis/model/CreateVulWhitelistResult.h
+	include/alibabacloud/aegis/model/DescribeLatestActionsRequest.h
+	include/alibabacloud/aegis/model/DescribeLatestActionsResult.h
 	include/alibabacloud/aegis/model/ModifyConcernNecessityRequest.h
 	include/alibabacloud/aegis/model/ModifyConcernNecessityResult.h
 	include/alibabacloud/aegis/model/GetStatisticsByUuidRequest.h
@@ -177,10 +215,16 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/ModifyVulConfigResult.h
 	include/alibabacloud/aegis/model/GetStatisticsRequest.h
 	include/alibabacloud/aegis/model/GetStatisticsResult.h
-	include/alibabacloud/aegis/model/DescribesummaryRequest.h
-	include/alibabacloud/aegis/model/DescribesummaryResult.h
 	include/alibabacloud/aegis/model/DescribeSuspEventsRequest.h
 	include/alibabacloud/aegis/model/DescribeSuspEventsResult.h
+	include/alibabacloud/aegis/model/DescribesummaryRequest.h
+	include/alibabacloud/aegis/model/DescribesummaryResult.h
+	include/alibabacloud/aegis/model/ModifyAccessKeyLeakDealRequest.h
+	include/alibabacloud/aegis/model/ModifyAccessKeyLeakDealResult.h
+	include/alibabacloud/aegis/model/DescribeCheckWarningCountRequest.h
+	include/alibabacloud/aegis/model/DescribeCheckWarningCountResult.h
+	include/alibabacloud/aegis/model/CopyCustomizeReportConfigRequest.h
+	include/alibabacloud/aegis/model/CopyCustomizeReportConfigResult.h
 	include/alibabacloud/aegis/model/CreateOrUpdateDataSourceRequest.h
 	include/alibabacloud/aegis/model/CreateOrUpdateDataSourceResult.h
 	include/alibabacloud/aegis/model/DescribeVulWhitelistRequest.h
@@ -193,10 +237,10 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeWhiteListStrategyListResult.h
 	include/alibabacloud/aegis/model/DescribeTraceInfoDetailRequest.h
 	include/alibabacloud/aegis/model/DescribeTraceInfoDetailResult.h
-	include/alibabacloud/aegis/model/DescribeGroupListRequest.h
-	include/alibabacloud/aegis/model/DescribeGroupListResult.h
 	include/alibabacloud/aegis/model/DescribeCanTrySasRequest.h
 	include/alibabacloud/aegis/model/DescribeCanTrySasResult.h
+	include/alibabacloud/aegis/model/DescribeGroupListRequest.h
+	include/alibabacloud/aegis/model/DescribeGroupListResult.h
 	include/alibabacloud/aegis/model/DescribeTargetRequest.h
 	include/alibabacloud/aegis/model/DescribeTargetResult.h
 	include/alibabacloud/aegis/model/DescribeWebshellRequest.h
@@ -211,22 +255,36 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeWarningMachinesResult.h
 	include/alibabacloud/aegis/model/ModifySearchConditionRequest.h
 	include/alibabacloud/aegis/model/ModifySearchConditionResult.h
+	include/alibabacloud/aegis/model/DescribeScreenTitlesRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenTitlesResult.h
 	include/alibabacloud/aegis/model/DescribeWhiteListStrategyUuidCountRequest.h
 	include/alibabacloud/aegis/model/DescribeWhiteListStrategyUuidCountResult.h
+	include/alibabacloud/aegis/model/DeleteCustomizeReportRequest.h
+	include/alibabacloud/aegis/model/DeleteCustomizeReportResult.h
 	include/alibabacloud/aegis/model/DescribeGroupedVulRequest.h
 	include/alibabacloud/aegis/model/DescribeGroupedVulResult.h
 	include/alibabacloud/aegis/model/ModifyWebLockDeleteConfigRequest.h
 	include/alibabacloud/aegis/model/ModifyWebLockDeleteConfigResult.h
+	include/alibabacloud/aegis/model/ModifyAccessKeyLeakInstRunRequest.h
+	include/alibabacloud/aegis/model/ModifyAccessKeyLeakInstRunResult.h
+	include/alibabacloud/aegis/model/CreateSuspEventNoteRequest.h
+	include/alibabacloud/aegis/model/CreateSuspEventNoteResult.h
 	include/alibabacloud/aegis/model/CreateUserWhiteListRequest.h
 	include/alibabacloud/aegis/model/CreateUserWhiteListResult.h
 	include/alibabacloud/aegis/model/DescribeSecureSuggestionRequest.h
 	include/alibabacloud/aegis/model/DescribeSecureSuggestionResult.h
+	include/alibabacloud/aegis/model/DescribeCustomizeReportConfigDetailRequest.h
+	include/alibabacloud/aegis/model/DescribeCustomizeReportConfigDetailResult.h
+	include/alibabacloud/aegis/model/DescribeScreenRequestTopTypeRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenRequestTopTypeResult.h
 	include/alibabacloud/aegis/model/DescribeSuspiciousOverallConfigRequest.h
 	include/alibabacloud/aegis/model/DescribeSuspiciousOverallConfigResult.h
-	include/alibabacloud/aegis/model/DescribeAnalysisCurveRequest.h
-	include/alibabacloud/aegis/model/DescribeAnalysisCurveResult.h
+	include/alibabacloud/aegis/model/DescribeAccesskeyLeakListRequest.h
+	include/alibabacloud/aegis/model/DescribeAccesskeyLeakListResult.h
 	include/alibabacloud/aegis/model/DescribeScreenAlarmEventListRequest.h
 	include/alibabacloud/aegis/model/DescribeScreenAlarmEventListResult.h
+	include/alibabacloud/aegis/model/DescribeAnalysisCurveRequest.h
+	include/alibabacloud/aegis/model/DescribeAnalysisCurveResult.h
 	include/alibabacloud/aegis/model/CreatScreenSettingRequest.h
 	include/alibabacloud/aegis/model/CreatScreenSettingResult.h
 	include/alibabacloud/aegis/model/DescribeAlarmEventListRequest.h
@@ -249,10 +307,12 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeLogMetaResult.h
 	include/alibabacloud/aegis/model/DescribeQuaraFileRequest.h
 	include/alibabacloud/aegis/model/DescribeQuaraFileResult.h
-	include/alibabacloud/aegis/model/DescribeTotalStatisticsRequest.h
-	include/alibabacloud/aegis/model/DescribeTotalStatisticsResult.h
+	include/alibabacloud/aegis/model/DescribeScreenCityMonitorDataRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenCityMonitorDataResult.h
 	include/alibabacloud/aegis/model/DescribeWhiteListStrategyStatisticsRequest.h
 	include/alibabacloud/aegis/model/DescribeWhiteListStrategyStatisticsResult.h
+	include/alibabacloud/aegis/model/DescribeTotalStatisticsRequest.h
+	include/alibabacloud/aegis/model/DescribeTotalStatisticsResult.h
 	include/alibabacloud/aegis/model/AutoUpgradeToSasAdvancedVersionRequest.h
 	include/alibabacloud/aegis/model/AutoUpgradeToSasAdvancedVersionResult.h
 	include/alibabacloud/aegis/model/DescribeStratetyRequest.h
@@ -261,12 +321,16 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeAnalysisStatisticsResult.h
 	include/alibabacloud/aegis/model/DescribeWebLockConfigListRequest.h
 	include/alibabacloud/aegis/model/DescribeWebLockConfigListResult.h
+	include/alibabacloud/aegis/model/DescribeVulStatisticsRequest.h
+	include/alibabacloud/aegis/model/DescribeVulStatisticsResult.h
 	include/alibabacloud/aegis/model/ModifyAutoDelConfigRequest.h
 	include/alibabacloud/aegis/model/ModifyAutoDelConfigResult.h
-	include/alibabacloud/aegis/model/DescribeUserSettingRequest.h
-	include/alibabacloud/aegis/model/DescribeUserSettingResult.h
 	include/alibabacloud/aegis/model/DescribeVulBatchRequest.h
 	include/alibabacloud/aegis/model/DescribeVulBatchResult.h
+	include/alibabacloud/aegis/model/DescribeUserSettingRequest.h
+	include/alibabacloud/aegis/model/DescribeUserSettingResult.h
+	include/alibabacloud/aegis/model/DescribeEntityListRequest.h
+	include/alibabacloud/aegis/model/DescribeEntityListResult.h
 	include/alibabacloud/aegis/model/ReleaseInstanceRequest.h
 	include/alibabacloud/aegis/model/ReleaseInstanceResult.h
 	include/alibabacloud/aegis/model/DescribeVulLevelRequest.h
@@ -281,6 +345,8 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/RenewInstanceResult.h
 	include/alibabacloud/aegis/model/OperateResultRequest.h
 	include/alibabacloud/aegis/model/OperateResultResult.h
+	include/alibabacloud/aegis/model/DescribeCustomizeReportChartListRequest.h
+	include/alibabacloud/aegis/model/DescribeCustomizeReportChartListResult.h
 	include/alibabacloud/aegis/model/RollbackSuspEventQuaraFileRequest.h
 	include/alibabacloud/aegis/model/RollbackSuspEventQuaraFileResult.h
 	include/alibabacloud/aegis/model/DescribeLogstoreStorageRequest.h
@@ -309,18 +375,22 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeGroupStructResult.h
 	include/alibabacloud/aegis/model/DescribeRiskWhiteListRequest.h
 	include/alibabacloud/aegis/model/DescribeRiskWhiteListResult.h
+	include/alibabacloud/aegis/model/OperationCustomizeReportChartRequest.h
+	include/alibabacloud/aegis/model/OperationCustomizeReportChartResult.h
 	include/alibabacloud/aegis/model/ModifyAssetGroupRequest.h
 	include/alibabacloud/aegis/model/ModifyAssetGroupResult.h
+	include/alibabacloud/aegis/model/DescribeVulRelatedProcessRequest.h
+	include/alibabacloud/aegis/model/DescribeVulRelatedProcessResult.h
 	include/alibabacloud/aegis/model/DescribeSasLeftConditionRequest.h
 	include/alibabacloud/aegis/model/DescribeSasLeftConditionResult.h
 	include/alibabacloud/aegis/model/DescribeSasAssetStatisticsColumnRequest.h
 	include/alibabacloud/aegis/model/DescribeSasAssetStatisticsColumnResult.h
 	include/alibabacloud/aegis/model/CreateOrUpdateRuleRequest.h
 	include/alibabacloud/aegis/model/CreateOrUpdateRuleResult.h
-	include/alibabacloud/aegis/model/ModifyLogMetaStatusRequest.h
-	include/alibabacloud/aegis/model/ModifyLogMetaStatusResult.h
 	include/alibabacloud/aegis/model/DescribeYesterdayStatisticsRequest.h
 	include/alibabacloud/aegis/model/DescribeYesterdayStatisticsResult.h
+	include/alibabacloud/aegis/model/ModifyLogMetaStatusRequest.h
+	include/alibabacloud/aegis/model/ModifyLogMetaStatusResult.h
 	include/alibabacloud/aegis/model/DescribeSuspiciousExportInfoRequest.h
 	include/alibabacloud/aegis/model/DescribeSuspiciousExportInfoResult.h
 	include/alibabacloud/aegis/model/DeleteScreenSettingRequest.h
@@ -347,28 +417,34 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/TransformLeakageResult.h
 	include/alibabacloud/aegis/model/DescribeAssetListRequest.h
 	include/alibabacloud/aegis/model/DescribeAssetListResult.h
-	include/alibabacloud/aegis/model/ModifyMachineConfigRequest.h
-	include/alibabacloud/aegis/model/ModifyMachineConfigResult.h
 	include/alibabacloud/aegis/model/DescribeVersionConfigRequest.h
 	include/alibabacloud/aegis/model/DescribeVersionConfigResult.h
-	include/alibabacloud/aegis/model/DescribeMacConfigRequest.h
-	include/alibabacloud/aegis/model/DescribeMacConfigResult.h
+	include/alibabacloud/aegis/model/ModifyMachineConfigRequest.h
+	include/alibabacloud/aegis/model/ModifyMachineConfigResult.h
+	include/alibabacloud/aegis/model/AddEventProcessRequest.h
+	include/alibabacloud/aegis/model/AddEventProcessResult.h
+	include/alibabacloud/aegis/model/DescribeChartDataRequest.h
+	include/alibabacloud/aegis/model/DescribeChartDataResult.h
 	include/alibabacloud/aegis/model/RollbackQuaraFileRequest.h
 	include/alibabacloud/aegis/model/RollbackQuaraFileResult.h
+	include/alibabacloud/aegis/model/DescribeMacConfigRequest.h
+	include/alibabacloud/aegis/model/DescribeMacConfigResult.h
 	include/alibabacloud/aegis/model/DescribeApiBuySummaryRequest.h
 	include/alibabacloud/aegis/model/DescribeApiBuySummaryResult.h
-	include/alibabacloud/aegis/model/DescribeWebLockMachineListRequest.h
-	include/alibabacloud/aegis/model/DescribeWebLockMachineListResult.h
 	include/alibabacloud/aegis/model/DeleteVulBatchRequest.h
 	include/alibabacloud/aegis/model/DeleteVulBatchResult.h
+	include/alibabacloud/aegis/model/DescribeWebLockMachineListRequest.h
+	include/alibabacloud/aegis/model/DescribeWebLockMachineListResult.h
 	include/alibabacloud/aegis/model/ModifyWebLockStatusRequest.h
 	include/alibabacloud/aegis/model/ModifyWebLockStatusResult.h
 	include/alibabacloud/aegis/model/UpdateWhiteListProcessStatusRequest.h
 	include/alibabacloud/aegis/model/UpdateWhiteListProcessStatusResult.h
-	include/alibabacloud/aegis/model/DescribeScreenSettingRequest.h
-	include/alibabacloud/aegis/model/DescribeScreenSettingResult.h
 	include/alibabacloud/aegis/model/CreateLogQueryRequest.h
 	include/alibabacloud/aegis/model/CreateLogQueryResult.h
+	include/alibabacloud/aegis/model/DescribeAccessKeyLeakDetailRequest.h
+	include/alibabacloud/aegis/model/DescribeAccessKeyLeakDetailResult.h
+	include/alibabacloud/aegis/model/DescribeScreenSettingRequest.h
+	include/alibabacloud/aegis/model/DescribeScreenSettingResult.h
 	include/alibabacloud/aegis/model/DescribeWarningRequest.h
 	include/alibabacloud/aegis/model/DescribeWarningResult.h
 	include/alibabacloud/aegis/model/DescribeWhiteListProcessRequest.h
@@ -395,10 +471,10 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeStratetyDetailResult.h
 	include/alibabacloud/aegis/model/DescribeHistogramRequest.h
 	include/alibabacloud/aegis/model/DescribeHistogramResult.h
-	include/alibabacloud/aegis/model/DescribeDingTalkRequest.h
-	include/alibabacloud/aegis/model/DescribeDingTalkResult.h
 	include/alibabacloud/aegis/model/DescribeLoginLogsRequest.h
 	include/alibabacloud/aegis/model/DescribeLoginLogsResult.h
+	include/alibabacloud/aegis/model/DescribeDingTalkRequest.h
+	include/alibabacloud/aegis/model/DescribeDingTalkResult.h
 	include/alibabacloud/aegis/model/DescribeMetaDataRequest.h
 	include/alibabacloud/aegis/model/DescribeMetaDataResult.h
 	include/alibabacloud/aegis/model/DescribeWebLockStatusRequest.h
@@ -409,30 +485,32 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeNsasSuspEventTypeResult.h
 	include/alibabacloud/aegis/model/ModifyScreenSettingRequest.h
 	include/alibabacloud/aegis/model/ModifyScreenSettingResult.h
-	include/alibabacloud/aegis/model/ModifyStrategyRequest.h
-	include/alibabacloud/aegis/model/ModifyStrategyResult.h
 	include/alibabacloud/aegis/model/DescribeEmgNoticeRequest.h
 	include/alibabacloud/aegis/model/DescribeEmgNoticeResult.h
+	include/alibabacloud/aegis/model/ModifyStrategyRequest.h
+	include/alibabacloud/aegis/model/ModifyStrategyResult.h
 	include/alibabacloud/aegis/model/DescribeScreenOperateInfoRequest.h
 	include/alibabacloud/aegis/model/DescribeScreenOperateInfoResult.h
 	include/alibabacloud/aegis/model/DescribeJoinRuleListRequest.h
 	include/alibabacloud/aegis/model/DescribeJoinRuleListResult.h
 	include/alibabacloud/aegis/model/DescribeSuspEventQuaraFilesRequest.h
 	include/alibabacloud/aegis/model/DescribeSuspEventQuaraFilesResult.h
-	include/alibabacloud/aegis/model/ValidateHcWarningsRequest.h
-	include/alibabacloud/aegis/model/ValidateHcWarningsResult.h
 	include/alibabacloud/aegis/model/CreateOrUpdateJoinRuleRequest.h
 	include/alibabacloud/aegis/model/CreateOrUpdateJoinRuleResult.h
+	include/alibabacloud/aegis/model/ValidateHcWarningsRequest.h
+	include/alibabacloud/aegis/model/ValidateHcWarningsResult.h
 	include/alibabacloud/aegis/model/AutoUpgradeSasRequest.h
 	include/alibabacloud/aegis/model/AutoUpgradeSasResult.h
+	include/alibabacloud/aegis/model/ModifyRefreshProcessInfoRequest.h
+	include/alibabacloud/aegis/model/ModifyRefreshProcessInfoResult.h
 	include/alibabacloud/aegis/model/DescribeEmgUserAgreementRequest.h
 	include/alibabacloud/aegis/model/DescribeEmgUserAgreementResult.h
-	include/alibabacloud/aegis/model/ModifyWebLockMachineListRequest.h
-	include/alibabacloud/aegis/model/ModifyWebLockMachineListResult.h
 	include/alibabacloud/aegis/model/ModifyEmgVulSubmitRequest.h
 	include/alibabacloud/aegis/model/ModifyEmgVulSubmitResult.h
 	include/alibabacloud/aegis/model/DeleteLogQueryRequest.h
 	include/alibabacloud/aegis/model/DeleteLogQueryResult.h
+	include/alibabacloud/aegis/model/ModifyWebLockMachineListRequest.h
+	include/alibabacloud/aegis/model/ModifyWebLockMachineListResult.h
 	include/alibabacloud/aegis/model/ModifyTargetConfigRequest.h
 	include/alibabacloud/aegis/model/ModifyTargetConfigResult.h
 	include/alibabacloud/aegis/model/IgnoreHcCheckWarningsRequest.h
@@ -441,34 +519,40 @@ set(aegis_public_header_model
 	include/alibabacloud/aegis/model/DescribeExportInfoResult.h
 	include/alibabacloud/aegis/model/DescribeSuspEventUserSettingRequest.h
 	include/alibabacloud/aegis/model/DescribeSuspEventUserSettingResult.h
-	include/alibabacloud/aegis/model/DescribeWhiteListStrategyCountRequest.h
-	include/alibabacloud/aegis/model/DescribeWhiteListStrategyCountResult.h
 	include/alibabacloud/aegis/model/DescribeVulConfigRequest.h
 	include/alibabacloud/aegis/model/DescribeVulConfigResult.h
+	include/alibabacloud/aegis/model/DescribeWhiteListStrategyCountRequest.h
+	include/alibabacloud/aegis/model/DescribeWhiteListStrategyCountResult.h
 	include/alibabacloud/aegis/model/ModifyWebLockRefreshRequest.h
 	include/alibabacloud/aegis/model/ModifyWebLockRefreshResult.h
 	include/alibabacloud/aegis/model/DescribeEventCountCurveRequest.h
 	include/alibabacloud/aegis/model/DescribeEventCountCurveResult.h
 	include/alibabacloud/aegis/model/DescribeWhiteListAssetRequest.h
 	include/alibabacloud/aegis/model/DescribeWhiteListAssetResult.h
+	include/alibabacloud/aegis/model/UpdateCustomizeReportStatusRequest.h
+	include/alibabacloud/aegis/model/UpdateCustomizeReportStatusResult.h
 	include/alibabacloud/aegis/model/ModifyClearLogstoreStorageRequest.h
 	include/alibabacloud/aegis/model/ModifyClearLogstoreStorageResult.h
 	include/alibabacloud/aegis/model/ModifyStrategyTargetRequest.h
 	include/alibabacloud/aegis/model/ModifyStrategyTargetResult.h
 	include/alibabacloud/aegis/model/DescribeCheckWarningsRequest.h
 	include/alibabacloud/aegis/model/DescribeCheckWarningsResult.h
-	include/alibabacloud/aegis/model/DescribeSecurityStatInfoRequest.h
-	include/alibabacloud/aegis/model/DescribeSecurityStatInfoResult.h
+	include/alibabacloud/aegis/model/DeleteSuspEventNodeRequest.h
+	include/alibabacloud/aegis/model/DeleteSuspEventNodeResult.h
+	include/alibabacloud/aegis/model/DescribeHostStatisticsRequest.h
+	include/alibabacloud/aegis/model/DescribeHostStatisticsResult.h
 	include/alibabacloud/aegis/model/SaveWhiteListStrategyRequest.h
 	include/alibabacloud/aegis/model/SaveWhiteListStrategyResult.h
+	include/alibabacloud/aegis/model/DescribeSecurityStatInfoRequest.h
+	include/alibabacloud/aegis/model/DescribeSecurityStatInfoResult.h
 	include/alibabacloud/aegis/model/DescribeFilterFieldsRequest.h
 	include/alibabacloud/aegis/model/DescribeFilterFieldsResult.h
+	include/alibabacloud/aegis/model/DescribeInstanceStatisticsRequest.h
+	include/alibabacloud/aegis/model/DescribeInstanceStatisticsResult.h
 	include/alibabacloud/aegis/model/DescribeScreenSecurityStatInfoRequest.h
 	include/alibabacloud/aegis/model/DescribeScreenSecurityStatInfoResult.h
 	include/alibabacloud/aegis/model/OperateSuspiciousOverallConfigRequest.h
-	include/alibabacloud/aegis/model/OperateSuspiciousOverallConfigResult.h
-	include/alibabacloud/aegis/model/DescribeInstanceStatisticsRequest.h
-	include/alibabacloud/aegis/model/DescribeInstanceStatisticsResult.h )
+	include/alibabacloud/aegis/model/OperateSuspiciousOverallConfigResult.h )
 
 set(aegis_src 
 	src/AegisClient.cc
@@ -478,12 +562,16 @@ set(aegis_src
 	src/model/DescribeCanUpgradeSasResult.cc
 	src/model/DescribeTraceInfoNodeRequest.cc
 	src/model/DescribeTraceInfoNodeResult.cc
+	src/model/SaveCustomizeReportConfigRequest.cc
+	src/model/SaveCustomizeReportConfigResult.cc
+	src/model/DescribeScreenCloudHcRiskRequest.cc
+	src/model/DescribeScreenCloudHcRiskResult.cc
 	src/model/DescribeScreenAttackAnalysisDataRequest.cc
 	src/model/DescribeScreenAttackAnalysisDataResult.cc
-	src/model/DescribeAutoDelConfigRequest.cc
-	src/model/DescribeAutoDelConfigResult.cc
 	src/model/DescribeVulListRequest.cc
 	src/model/DescribeVulListResult.cc
+	src/model/DescribeAutoDelConfigRequest.cc
+	src/model/DescribeAutoDelConfigResult.cc
 	src/model/ModifyWebLockUpdateConfigRequest.cc
 	src/model/ModifyWebLockUpdateConfigResult.cc
 	src/model/DescribeVulnerabilitySummaryRequest.cc
@@ -500,6 +588,10 @@ set(aegis_src
 	src/model/ExportWarningResult.cc
 	src/model/DescribeEcsStsStatusRequest.cc
 	src/model/DescribeEcsStsStatusResult.cc
+	src/model/DescribeCustomizeReportListRequest.cc
+	src/model/DescribeCustomizeReportListResult.cc
+	src/model/DescribeSupervisonInfoRequest.cc
+	src/model/DescribeSupervisonInfoResult.cc
 	src/model/UpdateWhiteListStrategyRelationRequest.cc
 	src/model/UpdateWhiteListStrategyRelationResult.cc
 	src/model/DeleteStrategyRequest.cc
@@ -510,30 +602,44 @@ set(aegis_src
 	src/model/OpenSasTrialResult.cc
 	src/model/ModifyVulLevelRequest.cc
 	src/model/ModifyVulLevelResult.cc
+	src/model/DescribeScreenOssUploadInfoRequest.cc
+	src/model/DescribeScreenOssUploadInfoResult.cc
 	src/model/ModifyVulTargetRequest.cc
 	src/model/ModifyVulTargetResult.cc
 	src/model/ModifyBatchIgnoreVulRequest.cc
 	src/model/ModifyBatchIgnoreVulResult.cc
-	src/model/DescribeSummaryInfoRequest.cc
-	src/model/DescribeSummaryInfoResult.cc
 	src/model/DescribeStrategyProcessRequest.cc
 	src/model/DescribeStrategyProcessResult.cc
+	src/model/DescribeSummaryInfoRequest.cc
+	src/model/DescribeSummaryInfoResult.cc
 	src/model/DescribeSuspTrendStatisticsRequest.cc
 	src/model/DescribeSuspTrendStatisticsResult.cc
 	src/model/DescribeDataSourceRequest.cc
 	src/model/DescribeDataSourceResult.cc
 	src/model/DescribeResultListRequest.cc
 	src/model/DescribeResultListResult.cc
+	src/model/DescribeGrayFuncRequest.cc
+	src/model/DescribeGrayFuncResult.cc
+	src/model/DescribeCustomizeReportChartDataRequest.cc
+	src/model/DescribeCustomizeReportChartDataResult.cc
+	src/model/DescribeScreenBizStatSimpleQueryResultRequest.cc
+	src/model/DescribeScreenBizStatSimpleQueryResultResult.cc
 	src/model/DownloadLogRequest.cc
 	src/model/DownloadLogResult.cc
 	src/model/DescribeTargetConfigRequest.cc
 	src/model/DescribeTargetConfigResult.cc
+	src/model/DescribeAccesskeyRunInfoRequest.cc
+	src/model/DescribeAccesskeyRunInfoResult.cc
+	src/model/DescribeScreenFlowRequestCountRequest.cc
+	src/model/DescribeScreenFlowRequestCountResult.cc
 	src/model/DescribeVulNumStatisticsRequest.cc
 	src/model/DescribeVulNumStatisticsResult.cc
 	src/model/DescribeLogInfoRequest.cc
 	src/model/DescribeLogInfoResult.cc
 	src/model/GetAccountStatisticsRequest.cc
 	src/model/GetAccountStatisticsResult.cc
+	src/model/DescribeScreenEmerRiskRequest.cc
+	src/model/DescribeScreenEmerRiskResult.cc
 	src/model/DescribeUuidConfigRequest.cc
 	src/model/DescribeUuidConfigResult.cc
 	src/model/DescribeScreenHostStatisticsRequest.cc
@@ -550,26 +656,32 @@ set(aegis_src
 	src/model/ModifySasAssetStatisticsColumnResult.cc
 	src/model/DescribeTraceInfoNodeListRequest.cc
 	src/model/DescribeTraceInfoNodeListResult.cc
-	src/model/DescribeAnalysisSlsIndexRequest.cc
-	src/model/DescribeAnalysisSlsIndexResult.cc
 	src/model/ModifyWebLockCreateConfigRequest.cc
 	src/model/ModifyWebLockCreateConfigResult.cc
+	src/model/DescribeAnalysisSlsIndexRequest.cc
+	src/model/DescribeAnalysisSlsIndexResult.cc
 	src/model/DeleteRuleGroupRequest.cc
 	src/model/DeleteRuleGroupResult.cc
+	src/model/DescribeScreenDataMapRequest.cc
+	src/model/DescribeScreenDataMapResult.cc
 	src/model/DescribeStatisticsRequest.cc
 	src/model/DescribeStatisticsResult.cc
 	src/model/DescribeAlarmEventDetailRequest.cc
 	src/model/DescribeAlarmEventDetailResult.cc
 	src/model/CreateSuspiciousExportRequest.cc
 	src/model/CreateSuspiciousExportResult.cc
+	src/model/DescribeWebshellListRequest.cc
+	src/model/DescribeWebshellListResult.cc
+	src/model/DescribeBizStatSimpleQueryResultRequest.cc
+	src/model/DescribeBizStatSimpleQueryResultResult.cc
 	src/model/OperateVulRequest.cc
 	src/model/OperateVulResult.cc
 	src/model/GetCrackStatisticsRequest.cc
 	src/model/GetCrackStatisticsResult.cc
-	src/model/DescribeConcernNecessityRequest.cc
-	src/model/DescribeConcernNecessityResult.cc
 	src/model/OperateAgentClientInstallRequest.cc
 	src/model/OperateAgentClientInstallResult.cc
+	src/model/DescribeConcernNecessityRequest.cc
+	src/model/DescribeConcernNecessityResult.cc
 	src/model/DescribeScreenScoreThreadRequest.cc
 	src/model/DescribeScreenScoreThreadResult.cc
 	src/model/DescribeBuySummaryRequest.cc
@@ -580,14 +692,18 @@ set(aegis_src
 	src/model/DescribeSuspiciousUUIDConfigResult.cc
 	src/model/DescribeTopicListRequest.cc
 	src/model/DescribeTopicListResult.cc
-	src/model/DescribeAssetDetailByUuidRequest.cc
-	src/model/DescribeAssetDetailByUuidResult.cc
 	src/model/DescribeScreenVersionConfigRequest.cc
 	src/model/DescribeScreenVersionConfigResult.cc
+	src/model/DescribeAssetDetailByUuidRequest.cc
+	src/model/DescribeAssetDetailByUuidResult.cc
+	src/model/CreateScreenSettingRequest.cc
+	src/model/CreateScreenSettingResult.cc
 	src/model/DescribeVulExportInfoRequest.cc
 	src/model/DescribeVulExportInfoResult.cc
 	src/model/DeleteRuleRequest.cc
 	src/model/DeleteRuleResult.cc
+	src/model/DescribeChartListRequest.cc
+	src/model/DescribeChartListResult.cc
 	src/model/DescribeSuspEventDetailRequest.cc
 	src/model/DescribeSuspEventDetailResult.cc
 	src/model/DescribeEventLevelCountRequest.cc
@@ -606,20 +722,26 @@ set(aegis_src
 	src/model/DescribeVulDetailsResult.cc
 	src/model/DescribeLogItemsRequest.cc
 	src/model/DescribeLogItemsResult.cc
-	src/model/DescribeWebLockEventsRequest.cc
-	src/model/DescribeWebLockEventsResult.cc
 	src/model/ExecStrategyRequest.cc
 	src/model/ExecStrategyResult.cc
+	src/model/DescribeWebLockEventsRequest.cc
+	src/model/DescribeWebLockEventsResult.cc
 	src/model/DescribeSuspEventExportInfoRequest.cc
 	src/model/DescribeSuspEventExportInfoResult.cc
 	src/model/OperationSuspEventsRequest.cc
 	src/model/OperationSuspEventsResult.cc
 	src/model/DescribeSasAssetStatisticsRequest.cc
 	src/model/DescribeSasAssetStatisticsResult.cc
+	src/model/SendCustomizeReportRequest.cc
+	src/model/SendCustomizeReportResult.cc
 	src/model/DescribeDefenceThreadRequest.cc
 	src/model/DescribeDefenceThreadResult.cc
+	src/model/DescribeScreenTopRequestAndFlowRequest.cc
+	src/model/DescribeScreenTopRequestAndFlowResult.cc
 	src/model/CreateVulWhitelistRequest.cc
 	src/model/CreateVulWhitelistResult.cc
+	src/model/DescribeLatestActionsRequest.cc
+	src/model/DescribeLatestActionsResult.cc
 	src/model/ModifyConcernNecessityRequest.cc
 	src/model/ModifyConcernNecessityResult.cc
 	src/model/GetStatisticsByUuidRequest.cc
@@ -628,10 +750,16 @@ set(aegis_src
 	src/model/ModifyVulConfigResult.cc
 	src/model/GetStatisticsRequest.cc
 	src/model/GetStatisticsResult.cc
-	src/model/DescribesummaryRequest.cc
-	src/model/DescribesummaryResult.cc
 	src/model/DescribeSuspEventsRequest.cc
 	src/model/DescribeSuspEventsResult.cc
+	src/model/DescribesummaryRequest.cc
+	src/model/DescribesummaryResult.cc
+	src/model/ModifyAccessKeyLeakDealRequest.cc
+	src/model/ModifyAccessKeyLeakDealResult.cc
+	src/model/DescribeCheckWarningCountRequest.cc
+	src/model/DescribeCheckWarningCountResult.cc
+	src/model/CopyCustomizeReportConfigRequest.cc
+	src/model/CopyCustomizeReportConfigResult.cc
 	src/model/CreateOrUpdateDataSourceRequest.cc
 	src/model/CreateOrUpdateDataSourceResult.cc
 	src/model/DescribeVulWhitelistRequest.cc
@@ -644,10 +772,10 @@ set(aegis_src
 	src/model/DescribeWhiteListStrategyListResult.cc
 	src/model/DescribeTraceInfoDetailRequest.cc
 	src/model/DescribeTraceInfoDetailResult.cc
-	src/model/DescribeGroupListRequest.cc
-	src/model/DescribeGroupListResult.cc
 	src/model/DescribeCanTrySasRequest.cc
 	src/model/DescribeCanTrySasResult.cc
+	src/model/DescribeGroupListRequest.cc
+	src/model/DescribeGroupListResult.cc
 	src/model/DescribeTargetRequest.cc
 	src/model/DescribeTargetResult.cc
 	src/model/DescribeWebshellRequest.cc
@@ -662,22 +790,36 @@ set(aegis_src
 	src/model/DescribeWarningMachinesResult.cc
 	src/model/ModifySearchConditionRequest.cc
 	src/model/ModifySearchConditionResult.cc
+	src/model/DescribeScreenTitlesRequest.cc
+	src/model/DescribeScreenTitlesResult.cc
 	src/model/DescribeWhiteListStrategyUuidCountRequest.cc
 	src/model/DescribeWhiteListStrategyUuidCountResult.cc
+	src/model/DeleteCustomizeReportRequest.cc
+	src/model/DeleteCustomizeReportResult.cc
 	src/model/DescribeGroupedVulRequest.cc
 	src/model/DescribeGroupedVulResult.cc
 	src/model/ModifyWebLockDeleteConfigRequest.cc
 	src/model/ModifyWebLockDeleteConfigResult.cc
+	src/model/ModifyAccessKeyLeakInstRunRequest.cc
+	src/model/ModifyAccessKeyLeakInstRunResult.cc
+	src/model/CreateSuspEventNoteRequest.cc
+	src/model/CreateSuspEventNoteResult.cc
 	src/model/CreateUserWhiteListRequest.cc
 	src/model/CreateUserWhiteListResult.cc
 	src/model/DescribeSecureSuggestionRequest.cc
 	src/model/DescribeSecureSuggestionResult.cc
+	src/model/DescribeCustomizeReportConfigDetailRequest.cc
+	src/model/DescribeCustomizeReportConfigDetailResult.cc
+	src/model/DescribeScreenRequestTopTypeRequest.cc
+	src/model/DescribeScreenRequestTopTypeResult.cc
 	src/model/DescribeSuspiciousOverallConfigRequest.cc
 	src/model/DescribeSuspiciousOverallConfigResult.cc
-	src/model/DescribeAnalysisCurveRequest.cc
-	src/model/DescribeAnalysisCurveResult.cc
+	src/model/DescribeAccesskeyLeakListRequest.cc
+	src/model/DescribeAccesskeyLeakListResult.cc
 	src/model/DescribeScreenAlarmEventListRequest.cc
 	src/model/DescribeScreenAlarmEventListResult.cc
+	src/model/DescribeAnalysisCurveRequest.cc
+	src/model/DescribeAnalysisCurveResult.cc
 	src/model/CreatScreenSettingRequest.cc
 	src/model/CreatScreenSettingResult.cc
 	src/model/DescribeAlarmEventListRequest.cc
@@ -700,10 +842,12 @@ set(aegis_src
 	src/model/DescribeLogMetaResult.cc
 	src/model/DescribeQuaraFileRequest.cc
 	src/model/DescribeQuaraFileResult.cc
-	src/model/DescribeTotalStatisticsRequest.cc
-	src/model/DescribeTotalStatisticsResult.cc
+	src/model/DescribeScreenCityMonitorDataRequest.cc
+	src/model/DescribeScreenCityMonitorDataResult.cc
 	src/model/DescribeWhiteListStrategyStatisticsRequest.cc
 	src/model/DescribeWhiteListStrategyStatisticsResult.cc
+	src/model/DescribeTotalStatisticsRequest.cc
+	src/model/DescribeTotalStatisticsResult.cc
 	src/model/AutoUpgradeToSasAdvancedVersionRequest.cc
 	src/model/AutoUpgradeToSasAdvancedVersionResult.cc
 	src/model/DescribeStratetyRequest.cc
@@ -712,12 +856,16 @@ set(aegis_src
 	src/model/DescribeAnalysisStatisticsResult.cc
 	src/model/DescribeWebLockConfigListRequest.cc
 	src/model/DescribeWebLockConfigListResult.cc
+	src/model/DescribeVulStatisticsRequest.cc
+	src/model/DescribeVulStatisticsResult.cc
 	src/model/ModifyAutoDelConfigRequest.cc
 	src/model/ModifyAutoDelConfigResult.cc
-	src/model/DescribeUserSettingRequest.cc
-	src/model/DescribeUserSettingResult.cc
 	src/model/DescribeVulBatchRequest.cc
 	src/model/DescribeVulBatchResult.cc
+	src/model/DescribeUserSettingRequest.cc
+	src/model/DescribeUserSettingResult.cc
+	src/model/DescribeEntityListRequest.cc
+	src/model/DescribeEntityListResult.cc
 	src/model/ReleaseInstanceRequest.cc
 	src/model/ReleaseInstanceResult.cc
 	src/model/DescribeVulLevelRequest.cc
@@ -732,6 +880,8 @@ set(aegis_src
 	src/model/RenewInstanceResult.cc
 	src/model/OperateResultRequest.cc
 	src/model/OperateResultResult.cc
+	src/model/DescribeCustomizeReportChartListRequest.cc
+	src/model/DescribeCustomizeReportChartListResult.cc
 	src/model/RollbackSuspEventQuaraFileRequest.cc
 	src/model/RollbackSuspEventQuaraFileResult.cc
 	src/model/DescribeLogstoreStorageRequest.cc
@@ -760,18 +910,22 @@ set(aegis_src
 	src/model/DescribeGroupStructResult.cc
 	src/model/DescribeRiskWhiteListRequest.cc
 	src/model/DescribeRiskWhiteListResult.cc
+	src/model/OperationCustomizeReportChartRequest.cc
+	src/model/OperationCustomizeReportChartResult.cc
 	src/model/ModifyAssetGroupRequest.cc
 	src/model/ModifyAssetGroupResult.cc
+	src/model/DescribeVulRelatedProcessRequest.cc
+	src/model/DescribeVulRelatedProcessResult.cc
 	src/model/DescribeSasLeftConditionRequest.cc
 	src/model/DescribeSasLeftConditionResult.cc
 	src/model/DescribeSasAssetStatisticsColumnRequest.cc
 	src/model/DescribeSasAssetStatisticsColumnResult.cc
 	src/model/CreateOrUpdateRuleRequest.cc
 	src/model/CreateOrUpdateRuleResult.cc
-	src/model/ModifyLogMetaStatusRequest.cc
-	src/model/ModifyLogMetaStatusResult.cc
 	src/model/DescribeYesterdayStatisticsRequest.cc
 	src/model/DescribeYesterdayStatisticsResult.cc
+	src/model/ModifyLogMetaStatusRequest.cc
+	src/model/ModifyLogMetaStatusResult.cc
 	src/model/DescribeSuspiciousExportInfoRequest.cc
 	src/model/DescribeSuspiciousExportInfoResult.cc
 	src/model/DeleteScreenSettingRequest.cc
@@ -798,28 +952,34 @@ set(aegis_src
 	src/model/TransformLeakageResult.cc
 	src/model/DescribeAssetListRequest.cc
 	src/model/DescribeAssetListResult.cc
-	src/model/ModifyMachineConfigRequest.cc
-	src/model/ModifyMachineConfigResult.cc
 	src/model/DescribeVersionConfigRequest.cc
 	src/model/DescribeVersionConfigResult.cc
-	src/model/DescribeMacConfigRequest.cc
-	src/model/DescribeMacConfigResult.cc
+	src/model/ModifyMachineConfigRequest.cc
+	src/model/ModifyMachineConfigResult.cc
+	src/model/AddEventProcessRequest.cc
+	src/model/AddEventProcessResult.cc
+	src/model/DescribeChartDataRequest.cc
+	src/model/DescribeChartDataResult.cc
 	src/model/RollbackQuaraFileRequest.cc
 	src/model/RollbackQuaraFileResult.cc
+	src/model/DescribeMacConfigRequest.cc
+	src/model/DescribeMacConfigResult.cc
 	src/model/DescribeApiBuySummaryRequest.cc
 	src/model/DescribeApiBuySummaryResult.cc
-	src/model/DescribeWebLockMachineListRequest.cc
-	src/model/DescribeWebLockMachineListResult.cc
 	src/model/DeleteVulBatchRequest.cc
 	src/model/DeleteVulBatchResult.cc
+	src/model/DescribeWebLockMachineListRequest.cc
+	src/model/DescribeWebLockMachineListResult.cc
 	src/model/ModifyWebLockStatusRequest.cc
 	src/model/ModifyWebLockStatusResult.cc
 	src/model/UpdateWhiteListProcessStatusRequest.cc
 	src/model/UpdateWhiteListProcessStatusResult.cc
-	src/model/DescribeScreenSettingRequest.cc
-	src/model/DescribeScreenSettingResult.cc
 	src/model/CreateLogQueryRequest.cc
 	src/model/CreateLogQueryResult.cc
+	src/model/DescribeAccessKeyLeakDetailRequest.cc
+	src/model/DescribeAccessKeyLeakDetailResult.cc
+	src/model/DescribeScreenSettingRequest.cc
+	src/model/DescribeScreenSettingResult.cc
 	src/model/DescribeWarningRequest.cc
 	src/model/DescribeWarningResult.cc
 	src/model/DescribeWhiteListProcessRequest.cc
@@ -846,10 +1006,10 @@ set(aegis_src
 	src/model/DescribeStratetyDetailResult.cc
 	src/model/DescribeHistogramRequest.cc
 	src/model/DescribeHistogramResult.cc
-	src/model/DescribeDingTalkRequest.cc
-	src/model/DescribeDingTalkResult.cc
 	src/model/DescribeLoginLogsRequest.cc
 	src/model/DescribeLoginLogsResult.cc
+	src/model/DescribeDingTalkRequest.cc
+	src/model/DescribeDingTalkResult.cc
 	src/model/DescribeMetaDataRequest.cc
 	src/model/DescribeMetaDataResult.cc
 	src/model/DescribeWebLockStatusRequest.cc
@@ -860,30 +1020,32 @@ set(aegis_src
 	src/model/DescribeNsasSuspEventTypeResult.cc
 	src/model/ModifyScreenSettingRequest.cc
 	src/model/ModifyScreenSettingResult.cc
-	src/model/ModifyStrategyRequest.cc
-	src/model/ModifyStrategyResult.cc
 	src/model/DescribeEmgNoticeRequest.cc
 	src/model/DescribeEmgNoticeResult.cc
+	src/model/ModifyStrategyRequest.cc
+	src/model/ModifyStrategyResult.cc
 	src/model/DescribeScreenOperateInfoRequest.cc
 	src/model/DescribeScreenOperateInfoResult.cc
 	src/model/DescribeJoinRuleListRequest.cc
 	src/model/DescribeJoinRuleListResult.cc
 	src/model/DescribeSuspEventQuaraFilesRequest.cc
 	src/model/DescribeSuspEventQuaraFilesResult.cc
-	src/model/ValidateHcWarningsRequest.cc
-	src/model/ValidateHcWarningsResult.cc
 	src/model/CreateOrUpdateJoinRuleRequest.cc
 	src/model/CreateOrUpdateJoinRuleResult.cc
+	src/model/ValidateHcWarningsRequest.cc
+	src/model/ValidateHcWarningsResult.cc
 	src/model/AutoUpgradeSasRequest.cc
 	src/model/AutoUpgradeSasResult.cc
+	src/model/ModifyRefreshProcessInfoRequest.cc
+	src/model/ModifyRefreshProcessInfoResult.cc
 	src/model/DescribeEmgUserAgreementRequest.cc
 	src/model/DescribeEmgUserAgreementResult.cc
-	src/model/ModifyWebLockMachineListRequest.cc
-	src/model/ModifyWebLockMachineListResult.cc
 	src/model/ModifyEmgVulSubmitRequest.cc
 	src/model/ModifyEmgVulSubmitResult.cc
 	src/model/DeleteLogQueryRequest.cc
 	src/model/DeleteLogQueryResult.cc
+	src/model/ModifyWebLockMachineListRequest.cc
+	src/model/ModifyWebLockMachineListResult.cc
 	src/model/ModifyTargetConfigRequest.cc
 	src/model/ModifyTargetConfigResult.cc
 	src/model/IgnoreHcCheckWarningsRequest.cc
@@ -892,34 +1054,40 @@ set(aegis_src
 	src/model/DescribeExportInfoResult.cc
 	src/model/DescribeSuspEventUserSettingRequest.cc
 	src/model/DescribeSuspEventUserSettingResult.cc
-	src/model/DescribeWhiteListStrategyCountRequest.cc
-	src/model/DescribeWhiteListStrategyCountResult.cc
 	src/model/DescribeVulConfigRequest.cc
 	src/model/DescribeVulConfigResult.cc
+	src/model/DescribeWhiteListStrategyCountRequest.cc
+	src/model/DescribeWhiteListStrategyCountResult.cc
 	src/model/ModifyWebLockRefreshRequest.cc
 	src/model/ModifyWebLockRefreshResult.cc
 	src/model/DescribeEventCountCurveRequest.cc
 	src/model/DescribeEventCountCurveResult.cc
 	src/model/DescribeWhiteListAssetRequest.cc
 	src/model/DescribeWhiteListAssetResult.cc
+	src/model/UpdateCustomizeReportStatusRequest.cc
+	src/model/UpdateCustomizeReportStatusResult.cc
 	src/model/ModifyClearLogstoreStorageRequest.cc
 	src/model/ModifyClearLogstoreStorageResult.cc
 	src/model/ModifyStrategyTargetRequest.cc
 	src/model/ModifyStrategyTargetResult.cc
 	src/model/DescribeCheckWarningsRequest.cc
 	src/model/DescribeCheckWarningsResult.cc
-	src/model/DescribeSecurityStatInfoRequest.cc
-	src/model/DescribeSecurityStatInfoResult.cc
+	src/model/DeleteSuspEventNodeRequest.cc
+	src/model/DeleteSuspEventNodeResult.cc
+	src/model/DescribeHostStatisticsRequest.cc
+	src/model/DescribeHostStatisticsResult.cc
 	src/model/SaveWhiteListStrategyRequest.cc
 	src/model/SaveWhiteListStrategyResult.cc
+	src/model/DescribeSecurityStatInfoRequest.cc
+	src/model/DescribeSecurityStatInfoResult.cc
 	src/model/DescribeFilterFieldsRequest.cc
 	src/model/DescribeFilterFieldsResult.cc
+	src/model/DescribeInstanceStatisticsRequest.cc
+	src/model/DescribeInstanceStatisticsResult.cc
 	src/model/DescribeScreenSecurityStatInfoRequest.cc
 	src/model/DescribeScreenSecurityStatInfoResult.cc
 	src/model/OperateSuspiciousOverallConfigRequest.cc
-	src/model/OperateSuspiciousOverallConfigResult.cc
-	src/model/DescribeInstanceStatisticsRequest.cc
-	src/model/DescribeInstanceStatisticsResult.cc )
+	src/model/OperateSuspiciousOverallConfigResult.cc )
 
 add_library(aegis ${LIB_TYPE}
 	${aegis_public_header}

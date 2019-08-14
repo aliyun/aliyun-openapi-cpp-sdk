@@ -28,6 +28,8 @@
 #include "model/GenerateSessionAccessKeyResult.h"
 #include "model/AssumeRoleRequest.h"
 #include "model/AssumeRoleResult.h"
+#include "model/AssumeRoleWithSAMLRequest.h"
+#include "model/AssumeRoleWithSAMLResult.h"
 
 
 namespace AlibabaCloud
@@ -46,6 +48,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AssumeRoleResult> AssumeRoleOutcome;
 			typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
 			typedef std::function<void(const StsClient*, const Model::AssumeRoleRequest&, const AssumeRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleAsyncHandler;
+			typedef Outcome<Error, Model::AssumeRoleWithSAMLResult> AssumeRoleWithSAMLOutcome;
+			typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
+			typedef std::function<void(const StsClient*, const Model::AssumeRoleWithSAMLRequest&, const AssumeRoleWithSAMLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleWithSAMLAsyncHandler;
 
 			StsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			StsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -60,6 +65,9 @@ namespace AlibabaCloud
 			AssumeRoleOutcome assumeRole(const Model::AssumeRoleRequest &request)const;
 			void assumeRoleAsync(const Model::AssumeRoleRequest& request, const AssumeRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssumeRoleOutcomeCallable assumeRoleCallable(const Model::AssumeRoleRequest& request) const;
+			AssumeRoleWithSAMLOutcome assumeRoleWithSAML(const Model::AssumeRoleWithSAMLRequest &request)const;
+			void assumeRoleWithSAMLAsync(const Model::AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssumeRoleWithSAMLOutcomeCallable assumeRoleWithSAMLCallable(const Model::AssumeRoleWithSAMLRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

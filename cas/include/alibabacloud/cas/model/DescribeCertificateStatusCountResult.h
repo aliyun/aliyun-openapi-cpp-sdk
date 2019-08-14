@@ -45,6 +45,7 @@ namespace AlibabaCloud
 				int getExpired()const;
 				int getCheckedFail()const;
 				int getChecking()const;
+				int getRevokeChecking()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -57,6 +58,7 @@ namespace AlibabaCloud
 				int expired_;
 				int checkedFail_;
 				int checking_;
+				int revokeChecking_;
 
 			};
 		}

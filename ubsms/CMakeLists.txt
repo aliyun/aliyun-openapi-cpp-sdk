@@ -21,19 +21,19 @@ set(ubsms_public_header
 	include/alibabacloud/ubsms/UbsmsExport.h )
 
 set(ubsms_public_header_model 
-	include/alibabacloud/ubsms/model/NotifyUserBusinessCommandRequest.h
-	include/alibabacloud/ubsms/model/NotifyUserBusinessCommandResult.h
 	include/alibabacloud/ubsms/model/DescribeBusinessStatusRequest.h
 	include/alibabacloud/ubsms/model/DescribeBusinessStatusResult.h
+	include/alibabacloud/ubsms/model/NotifyUserBusinessCommandRequest.h
+	include/alibabacloud/ubsms/model/NotifyUserBusinessCommandResult.h
 	include/alibabacloud/ubsms/model/SetUserBusinessStatusRequest.h
 	include/alibabacloud/ubsms/model/SetUserBusinessStatusResult.h )
 
 set(ubsms_src 
 	src/UbsmsClient.cc
-	src/model/NotifyUserBusinessCommandRequest.cc
-	src/model/NotifyUserBusinessCommandResult.cc
 	src/model/DescribeBusinessStatusRequest.cc
 	src/model/DescribeBusinessStatusResult.cc
+	src/model/NotifyUserBusinessCommandRequest.cc
+	src/model/NotifyUserBusinessCommandResult.cc
 	src/model/SetUserBusinessStatusRequest.cc
 	src/model/SetUserBusinessStatusResult.cc )
 

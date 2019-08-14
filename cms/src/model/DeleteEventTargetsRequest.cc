@@ -34,7 +34,7 @@ void DeleteEventTargetsRequest::setIds(const std::vector<std::string>& ids)
 {
 	ids_ = ids;
 	for(int i = 0; i!= ids.size(); i++)
-		setParameter("Ids."+ std::to_string(i), ids.at(i));
+		setCoreParameter("Ids."+ std::to_string(i), ids.at(i));
 }
 
 std::string DeleteEventTargetsRequest::getRuleName()const
@@ -45,6 +45,6 @@ std::string DeleteEventTargetsRequest::getRuleName()const
 void DeleteEventTargetsRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", ruleName);
 }
 

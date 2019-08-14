@@ -33,7 +33,7 @@ long MetastoreDropTableRequest::getResourceOwnerId()const
 void MetastoreDropTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreDropTableRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string MetastoreDropTableRequest::getDbName()const
 void MetastoreDropTableRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string MetastoreDropTableRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDropTableRequest::getRegionId()const
 void MetastoreDropTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreDropTableRequest::getTableId()const
@@ -66,7 +66,7 @@ std::string MetastoreDropTableRequest::getTableId()const
 void MetastoreDropTableRequest::setTableId(const std::string& tableId)
 {
 	tableId_ = tableId;
-	setParameter("TableId", tableId);
+	setCoreParameter("TableId", tableId);
 }
 
 std::string MetastoreDropTableRequest::getTableName()const
@@ -77,7 +77,7 @@ std::string MetastoreDropTableRequest::getTableName()const
 void MetastoreDropTableRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setParameter("TableName", tableName);
+	setCoreParameter("TableName", tableName);
 }
 
 std::string MetastoreDropTableRequest::getDatabaseId()const
@@ -88,7 +88,7 @@ std::string MetastoreDropTableRequest::getDatabaseId()const
 void MetastoreDropTableRequest::setDatabaseId(const std::string& databaseId)
 {
 	databaseId_ = databaseId;
-	setParameter("DatabaseId", databaseId);
+	setCoreParameter("DatabaseId", databaseId);
 }
 
 std::string MetastoreDropTableRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string MetastoreDropTableRequest::getAccessKeyId()const
 void MetastoreDropTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

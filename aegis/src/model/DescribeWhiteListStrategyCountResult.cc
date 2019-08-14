@@ -35,10 +35,13 @@ DescribeWhiteListStrategyCountResult::~DescribeWhiteListStrategyCountResult()
 
 void DescribeWhiteListStrategyCountResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	if(!value["StrategyCount"].isNull())
 		strategyCount_ = std::stoi(value["StrategyCount"].asString());

@@ -33,7 +33,7 @@ std::string DescribeAccountProfileByKeyWordRequest::getSourceIp()const
 void DescribeAccountProfileByKeyWordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAccountProfileByKeyWordRequest::getKeyword()const
@@ -44,6 +44,6 @@ std::string DescribeAccountProfileByKeyWordRequest::getKeyword()const
 void DescribeAccountProfileByKeyWordRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+	setCoreParameter("Keyword", keyword);
 }
 

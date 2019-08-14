@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsTopicCreateRequest();
 				~OnsTopicCreateRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				int getMessageType()const;
@@ -47,7 +45,6 @@ namespace AlibabaCloud
 				void setRemark(const std::string& remark);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				int messageType_;
 				std::string topic_;

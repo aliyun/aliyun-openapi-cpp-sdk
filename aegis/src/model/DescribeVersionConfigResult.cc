@@ -35,10 +35,13 @@ DescribeVersionConfigResult::~DescribeVersionConfigResult()
 
 void DescribeVersionConfigResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	if(!value["AssetLevel"].isNull())
 		assetLevel_ = std::stoi(value["AssetLevel"].asString());
@@ -78,6 +81,8 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		appWhiteList_ = std::stoi(value["AppWhiteList"].asString());
 	if(!value["SlsCapacity"].isNull())
 		slsCapacity_ = std::stol(value["SlsCapacity"].asString());
+	if(!value["GmtCreate"].isNull())
+		gmtCreate_ = std::stol(value["GmtCreate"].asString());
 
 }
 
@@ -129,6 +134,11 @@ int DescribeVersionConfigResult::getFlag()const
 int DescribeVersionConfigResult::getSasLog()const
 {
 	return sasLog_;
+}
+
+long DescribeVersionConfigResult::getGmtCreate()const
+{
+	return gmtCreate_;
 }
 
 long DescribeVersionConfigResult::getReleaseTime()const

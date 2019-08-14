@@ -39,15 +39,12 @@ namespace AlibabaCloud
 				void setEncryptionContext(const std::string& encryptionContext);
 				std::string getKeyId()const;
 				void setKeyId(const std::string& keyId);
-				std::string getSTSToken()const;
-				void setSTSToken(const std::string& sTSToken);
 				std::string getPlaintext()const;
 				void setPlaintext(const std::string& plaintext);
 
             private:
 				std::string encryptionContext_;
 				std::string keyId_;
-				std::string sTSToken_;
 				std::string plaintext_;
 
 			};

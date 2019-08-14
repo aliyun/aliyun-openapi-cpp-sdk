@@ -22,10 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "OtsExport.h"
-#include "model/UnbindInstance2VpcRequest.h"
-#include "model/UnbindInstance2VpcResult.h"
 #include "model/ListClusterTypeRequest.h"
 #include "model/ListClusterTypeResult.h"
+#include "model/UnbindInstance2VpcRequest.h"
+#include "model/UnbindInstance2VpcResult.h"
 #include "model/UpdateInstanceRequest.h"
 #include "model/UpdateInstanceResult.h"
 #include "model/ListInstanceRequest.h"
@@ -40,10 +40,10 @@
 #include "model/InsertInstanceResult.h"
 #include "model/ListTagsRequest.h"
 #include "model/ListTagsResult.h"
-#include "model/InsertTagsRequest.h"
-#include "model/InsertTagsResult.h"
 #include "model/ListVpcInfoByInstanceRequest.h"
 #include "model/ListVpcInfoByInstanceResult.h"
+#include "model/InsertTagsRequest.h"
+#include "model/InsertTagsResult.h"
 #include "model/DeleteTagsRequest.h"
 #include "model/DeleteTagsResult.h"
 #include "model/DeleteInstanceRequest.h"
@@ -57,12 +57,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_OTS_EXPORT OtsClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::UnbindInstance2VpcResult> UnbindInstance2VpcOutcome;
-			typedef std::future<UnbindInstance2VpcOutcome> UnbindInstance2VpcOutcomeCallable;
-			typedef std::function<void(const OtsClient*, const Model::UnbindInstance2VpcRequest&, const UnbindInstance2VpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindInstance2VpcAsyncHandler;
 			typedef Outcome<Error, Model::ListClusterTypeResult> ListClusterTypeOutcome;
 			typedef std::future<ListClusterTypeOutcome> ListClusterTypeOutcomeCallable;
 			typedef std::function<void(const OtsClient*, const Model::ListClusterTypeRequest&, const ListClusterTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterTypeAsyncHandler;
+			typedef Outcome<Error, Model::UnbindInstance2VpcResult> UnbindInstance2VpcOutcome;
+			typedef std::future<UnbindInstance2VpcOutcome> UnbindInstance2VpcOutcomeCallable;
+			typedef std::function<void(const OtsClient*, const Model::UnbindInstance2VpcRequest&, const UnbindInstance2VpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindInstance2VpcAsyncHandler;
 			typedef Outcome<Error, Model::UpdateInstanceResult> UpdateInstanceOutcome;
 			typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
 			typedef std::function<void(const OtsClient*, const Model::UpdateInstanceRequest&, const UpdateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
@@ -84,12 +84,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagsResult> ListTagsOutcome;
 			typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
 			typedef std::function<void(const OtsClient*, const Model::ListTagsRequest&, const ListTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsAsyncHandler;
-			typedef Outcome<Error, Model::InsertTagsResult> InsertTagsOutcome;
-			typedef std::future<InsertTagsOutcome> InsertTagsOutcomeCallable;
-			typedef std::function<void(const OtsClient*, const Model::InsertTagsRequest&, const InsertTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertTagsAsyncHandler;
 			typedef Outcome<Error, Model::ListVpcInfoByInstanceResult> ListVpcInfoByInstanceOutcome;
 			typedef std::future<ListVpcInfoByInstanceOutcome> ListVpcInfoByInstanceOutcomeCallable;
 			typedef std::function<void(const OtsClient*, const Model::ListVpcInfoByInstanceRequest&, const ListVpcInfoByInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVpcInfoByInstanceAsyncHandler;
+			typedef Outcome<Error, Model::InsertTagsResult> InsertTagsOutcome;
+			typedef std::future<InsertTagsOutcome> InsertTagsOutcomeCallable;
+			typedef std::function<void(const OtsClient*, const Model::InsertTagsRequest&, const InsertTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertTagsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTagsResult> DeleteTagsOutcome;
 			typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
 			typedef std::function<void(const OtsClient*, const Model::DeleteTagsRequest&, const DeleteTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagsAsyncHandler;
@@ -101,12 +101,12 @@ namespace AlibabaCloud
 			OtsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			OtsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~OtsClient();
-			UnbindInstance2VpcOutcome unbindInstance2Vpc(const Model::UnbindInstance2VpcRequest &request)const;
-			void unbindInstance2VpcAsync(const Model::UnbindInstance2VpcRequest& request, const UnbindInstance2VpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UnbindInstance2VpcOutcomeCallable unbindInstance2VpcCallable(const Model::UnbindInstance2VpcRequest& request) const;
 			ListClusterTypeOutcome listClusterType(const Model::ListClusterTypeRequest &request)const;
 			void listClusterTypeAsync(const Model::ListClusterTypeRequest& request, const ListClusterTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClusterTypeOutcomeCallable listClusterTypeCallable(const Model::ListClusterTypeRequest& request) const;
+			UnbindInstance2VpcOutcome unbindInstance2Vpc(const Model::UnbindInstance2VpcRequest &request)const;
+			void unbindInstance2VpcAsync(const Model::UnbindInstance2VpcRequest& request, const UnbindInstance2VpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindInstance2VpcOutcomeCallable unbindInstance2VpcCallable(const Model::UnbindInstance2VpcRequest& request) const;
 			UpdateInstanceOutcome updateInstance(const Model::UpdateInstanceRequest &request)const;
 			void updateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceOutcomeCallable updateInstanceCallable(const Model::UpdateInstanceRequest& request) const;
@@ -128,12 +128,12 @@ namespace AlibabaCloud
 			ListTagsOutcome listTags(const Model::ListTagsRequest &request)const;
 			void listTagsAsync(const Model::ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsOutcomeCallable listTagsCallable(const Model::ListTagsRequest& request) const;
-			InsertTagsOutcome insertTags(const Model::InsertTagsRequest &request)const;
-			void insertTagsAsync(const Model::InsertTagsRequest& request, const InsertTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			InsertTagsOutcomeCallable insertTagsCallable(const Model::InsertTagsRequest& request) const;
 			ListVpcInfoByInstanceOutcome listVpcInfoByInstance(const Model::ListVpcInfoByInstanceRequest &request)const;
 			void listVpcInfoByInstanceAsync(const Model::ListVpcInfoByInstanceRequest& request, const ListVpcInfoByInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListVpcInfoByInstanceOutcomeCallable listVpcInfoByInstanceCallable(const Model::ListVpcInfoByInstanceRequest& request) const;
+			InsertTagsOutcome insertTags(const Model::InsertTagsRequest &request)const;
+			void insertTagsAsync(const Model::InsertTagsRequest& request, const InsertTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InsertTagsOutcomeCallable insertTagsCallable(const Model::InsertTagsRequest& request) const;
 			DeleteTagsOutcome deleteTags(const Model::DeleteTagsRequest &request)const;
 			void deleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTagsOutcomeCallable deleteTagsCallable(const Model::DeleteTagsRequest& request) const;

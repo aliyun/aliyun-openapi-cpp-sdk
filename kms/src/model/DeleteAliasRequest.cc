@@ -33,17 +33,6 @@ std::string DeleteAliasRequest::getAliasName()const
 void DeleteAliasRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setParameter("AliasName", aliasName);
-}
-
-std::string DeleteAliasRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void DeleteAliasRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("AliasName", aliasName);
 }
 

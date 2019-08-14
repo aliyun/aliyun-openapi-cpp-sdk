@@ -33,7 +33,7 @@ std::string DescribeDrdsDBIpWhiteListRequest::getDbName()const
 void DescribeDrdsDBIpWhiteListRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string DescribeDrdsDBIpWhiteListRequest::getDrdsInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeDrdsDBIpWhiteListRequest::getDrdsInstanceId()const
 void DescribeDrdsDBIpWhiteListRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsDBIpWhiteListRequest::getGroupName()const
@@ -55,7 +55,7 @@ std::string DescribeDrdsDBIpWhiteListRequest::getGroupName()const
 void DescribeDrdsDBIpWhiteListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string DescribeDrdsDBIpWhiteListRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeDrdsDBIpWhiteListRequest::getAccessKeyId()const
 void DescribeDrdsDBIpWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

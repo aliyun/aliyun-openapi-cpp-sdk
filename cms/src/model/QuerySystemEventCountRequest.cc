@@ -33,6 +33,6 @@ std::string QuerySystemEventCountRequest::getQueryJson()const
 void QuerySystemEventCountRequest::setQueryJson(const std::string& queryJson)
 {
 	queryJson_ = queryJson;
-	setParameter("QueryJson", queryJson);
+	setCoreParameter("QueryJson", queryJson);
 }
 

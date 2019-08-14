@@ -33,7 +33,7 @@ std::string SetCACertificateNameRequest::getAccess_key_id()const
 void SetCACertificateNameRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long SetCACertificateNameRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long SetCACertificateNameRequest::getResourceOwnerId()const
 void SetCACertificateNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetCACertificateNameRequest::getCACertificateName()const
@@ -55,7 +55,7 @@ std::string SetCACertificateNameRequest::getCACertificateName()const
 void SetCACertificateNameRequest::setCACertificateName(const std::string& cACertificateName)
 {
 	cACertificateName_ = cACertificateName;
-	setParameter("CACertificateName", cACertificateName);
+	setCoreParameter("CACertificateName", cACertificateName);
 }
 
 std::string SetCACertificateNameRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SetCACertificateNameRequest::getResourceOwnerAccount()const
 void SetCACertificateNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetCACertificateNameRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string SetCACertificateNameRequest::getRegionId()const
 void SetCACertificateNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SetCACertificateNameRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SetCACertificateNameRequest::getOwnerAccount()const
 void SetCACertificateNameRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SetCACertificateNameRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SetCACertificateNameRequest::getOwnerId()const
 void SetCACertificateNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetCACertificateNameRequest::getCACertificateId()const
@@ -110,6 +110,6 @@ std::string SetCACertificateNameRequest::getCACertificateId()const
 void SetCACertificateNameRequest::setCACertificateId(const std::string& cACertificateId)
 {
 	cACertificateId_ = cACertificateId;
-	setParameter("CACertificateId", cACertificateId);
+	setCoreParameter("CACertificateId", cACertificateId);
 }
 

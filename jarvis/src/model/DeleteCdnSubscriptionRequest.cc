@@ -33,7 +33,7 @@ std::string DeleteCdnSubscriptionRequest::getSourceIp()const
 void DeleteCdnSubscriptionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteCdnSubscriptionRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DeleteCdnSubscriptionRequest::getLang()const
 void DeleteCdnSubscriptionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DeleteCdnSubscriptionRequest::getCdnUidList()const
@@ -55,7 +55,7 @@ std::string DeleteCdnSubscriptionRequest::getCdnUidList()const
 void DeleteCdnSubscriptionRequest::setCdnUidList(const std::string& cdnUidList)
 {
 	cdnUidList_ = cdnUidList;
-	setParameter("CdnUidList", cdnUidList);
+	setCoreParameter("CdnUidList", cdnUidList);
 }
 
 std::string DeleteCdnSubscriptionRequest::getSourceCode()const
@@ -66,6 +66,6 @@ std::string DeleteCdnSubscriptionRequest::getSourceCode()const
 void DeleteCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", sourceCode);
 }
 

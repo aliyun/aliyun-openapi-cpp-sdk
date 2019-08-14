@@ -33,6 +33,6 @@ std::string QueryCustomerLabelRequest::getLabelSeries()const
 void QueryCustomerLabelRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setParameter("LabelSeries", labelSeries);
+	setCoreParameter("LabelSeries", labelSeries);
 }
 

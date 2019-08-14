@@ -43,15 +43,18 @@ namespace AlibabaCloud
 						std::string vswitchId;
 					};
 					std::string status;
-					std::string type;
 					std::string description;
-					std::string drdsInstanceId;
 					std::string zoneId;
+					long createTime;
+					std::string masterInstId;
+					std::string type;
+					std::string drdsInstanceId;
 					long version;
 					std::string networkType;
-					long createTime;
+					std::string instRole;
 					std::string vpcCloudInstanceId;
 					std::string regionId;
+					std::vector<std::string> slaveInstId;
 					std::vector<Instance::Vip> vips;
 				};
 

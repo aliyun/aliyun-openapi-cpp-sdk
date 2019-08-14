@@ -34,8 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct Acl
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
+					std::string resourceGroupId;
 					std::string aclId;
 					std::string addressIPVersion;
+					std::vector<Acl::Tag> tags;
 					std::string aclName;
 				};
 

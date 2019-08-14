@@ -35,10 +35,13 @@ ListClustersMetaResult::~ListClustersMetaResult()
 
 void ListClustersMetaResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allClusters = value["Clusters"]["ClusterInfoSimple"];
 	for (auto value : allClusters)
@@ -52,6 +55,8 @@ void ListClustersMetaResult::parse(const std::string &payload)
 			clustersObject.description = value["Description"].asString();
 		if(!value["Status"].isNull())
 			clustersObject.status = value["Status"].asString();
+		if(!value["Location"].isNull())
+			clustersObject.location = value["Location"].asString();
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["TotalCount"].isNull())

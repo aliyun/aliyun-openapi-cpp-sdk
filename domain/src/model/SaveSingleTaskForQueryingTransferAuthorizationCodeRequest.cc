@@ -33,7 +33,7 @@ std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getDomain
 void SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getUserCl
 void SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getLang()const
@@ -55,6 +55,6 @@ std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getLang()
 void SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

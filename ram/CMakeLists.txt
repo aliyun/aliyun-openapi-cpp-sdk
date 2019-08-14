@@ -25,44 +25,44 @@ set(ram_public_header_model
 	include/alibabacloud/ram/model/CreatePolicyResult.h
 	include/alibabacloud/ram/model/ListUsersRequest.h
 	include/alibabacloud/ram/model/ListUsersResult.h
-	include/alibabacloud/ram/model/GetUserMFAInfoRequest.h
-	include/alibabacloud/ram/model/GetUserMFAInfoResult.h
 	include/alibabacloud/ram/model/UnbindMFADeviceRequest.h
 	include/alibabacloud/ram/model/UnbindMFADeviceResult.h
+	include/alibabacloud/ram/model/GetUserMFAInfoRequest.h
+	include/alibabacloud/ram/model/GetUserMFAInfoResult.h
 	include/alibabacloud/ram/model/BindMFADeviceRequest.h
 	include/alibabacloud/ram/model/BindMFADeviceResult.h
 	include/alibabacloud/ram/model/ListPublicKeysRequest.h
 	include/alibabacloud/ram/model/ListPublicKeysResult.h
-	include/alibabacloud/ram/model/AttachPolicyToRoleRequest.h
-	include/alibabacloud/ram/model/AttachPolicyToRoleResult.h
-	include/alibabacloud/ram/model/AddUserToGroupRequest.h
-	include/alibabacloud/ram/model/AddUserToGroupResult.h
 	include/alibabacloud/ram/model/GetAccountAliasRequest.h
 	include/alibabacloud/ram/model/GetAccountAliasResult.h
 	include/alibabacloud/ram/model/GetLoginProfileRequest.h
 	include/alibabacloud/ram/model/GetLoginProfileResult.h
+	include/alibabacloud/ram/model/AttachPolicyToRoleRequest.h
+	include/alibabacloud/ram/model/AttachPolicyToRoleResult.h
+	include/alibabacloud/ram/model/AddUserToGroupRequest.h
+	include/alibabacloud/ram/model/AddUserToGroupResult.h
 	include/alibabacloud/ram/model/ListEntitiesForPolicyRequest.h
 	include/alibabacloud/ram/model/ListEntitiesForPolicyResult.h
-	include/alibabacloud/ram/model/SetSecurityPreferenceRequest.h
-	include/alibabacloud/ram/model/SetSecurityPreferenceResult.h
 	include/alibabacloud/ram/model/ListPoliciesForUserRequest.h
 	include/alibabacloud/ram/model/ListPoliciesForUserResult.h
+	include/alibabacloud/ram/model/SetSecurityPreferenceRequest.h
+	include/alibabacloud/ram/model/SetSecurityPreferenceResult.h
 	include/alibabacloud/ram/model/UpdateLoginProfileRequest.h
 	include/alibabacloud/ram/model/UpdateLoginProfileResult.h
 	include/alibabacloud/ram/model/ListUsersForGroupRequest.h
 	include/alibabacloud/ram/model/ListUsersForGroupResult.h
 	include/alibabacloud/ram/model/GetPolicyVersionRequest.h
 	include/alibabacloud/ram/model/GetPolicyVersionResult.h
-	include/alibabacloud/ram/model/DeleteRoleRequest.h
-	include/alibabacloud/ram/model/DeleteRoleResult.h
 	include/alibabacloud/ram/model/GetUserRequest.h
 	include/alibabacloud/ram/model/GetUserResult.h
+	include/alibabacloud/ram/model/DeleteRoleRequest.h
+	include/alibabacloud/ram/model/DeleteRoleResult.h
 	include/alibabacloud/ram/model/DeleteVirtualMFADeviceRequest.h
 	include/alibabacloud/ram/model/DeleteVirtualMFADeviceResult.h
-	include/alibabacloud/ram/model/UploadPublicKeyRequest.h
-	include/alibabacloud/ram/model/UploadPublicKeyResult.h
 	include/alibabacloud/ram/model/DeletePolicyVersionRequest.h
 	include/alibabacloud/ram/model/DeletePolicyVersionResult.h
+	include/alibabacloud/ram/model/UploadPublicKeyRequest.h
+	include/alibabacloud/ram/model/UploadPublicKeyResult.h
 	include/alibabacloud/ram/model/RemoveUserFromGroupRequest.h
 	include/alibabacloud/ram/model/RemoveUserFromGroupResult.h
 	include/alibabacloud/ram/model/GetAccessKeyLastUsedRequest.h
@@ -85,10 +85,10 @@ set(ram_public_header_model
 	include/alibabacloud/ram/model/AttachPolicyToUserResult.h
 	include/alibabacloud/ram/model/CreateVirtualMFADeviceRequest.h
 	include/alibabacloud/ram/model/CreateVirtualMFADeviceResult.h
-	include/alibabacloud/ram/model/ListGroupsRequest.h
-	include/alibabacloud/ram/model/ListGroupsResult.h
 	include/alibabacloud/ram/model/DeleteUserRequest.h
 	include/alibabacloud/ram/model/DeleteUserResult.h
+	include/alibabacloud/ram/model/ListGroupsRequest.h
+	include/alibabacloud/ram/model/ListGroupsResult.h
 	include/alibabacloud/ram/model/DeletePolicyRequest.h
 	include/alibabacloud/ram/model/DeletePolicyResult.h
 	include/alibabacloud/ram/model/DeleteGroupRequest.h
@@ -123,12 +123,12 @@ set(ram_public_header_model
 	include/alibabacloud/ram/model/UpdatePublicKeyResult.h
 	include/alibabacloud/ram/model/CreateGroupRequest.h
 	include/alibabacloud/ram/model/CreateGroupResult.h
+	include/alibabacloud/ram/model/ListAccessKeysRequest.h
+	include/alibabacloud/ram/model/ListAccessKeysResult.h
 	include/alibabacloud/ram/model/CreateUserRequest.h
 	include/alibabacloud/ram/model/CreateUserResult.h
 	include/alibabacloud/ram/model/GetPasswordPolicyRequest.h
 	include/alibabacloud/ram/model/GetPasswordPolicyResult.h
-	include/alibabacloud/ram/model/ListAccessKeysRequest.h
-	include/alibabacloud/ram/model/ListAccessKeysResult.h
 	include/alibabacloud/ram/model/DetachPolicyFromGroupRequest.h
 	include/alibabacloud/ram/model/DetachPolicyFromGroupResult.h
 	include/alibabacloud/ram/model/SetPasswordPolicyRequest.h
@@ -149,10 +149,10 @@ set(ram_public_header_model
 	include/alibabacloud/ram/model/CreateLoginProfileResult.h
 	include/alibabacloud/ram/model/ListVirtualMFADevicesRequest.h
 	include/alibabacloud/ram/model/ListVirtualMFADevicesResult.h
-	include/alibabacloud/ram/model/UpdateGroupRequest.h
-	include/alibabacloud/ram/model/UpdateGroupResult.h
 	include/alibabacloud/ram/model/GetPolicyRequest.h
-	include/alibabacloud/ram/model/GetPolicyResult.h )
+	include/alibabacloud/ram/model/GetPolicyResult.h
+	include/alibabacloud/ram/model/UpdateGroupRequest.h
+	include/alibabacloud/ram/model/UpdateGroupResult.h )
 
 set(ram_src 
 	src/RamClient.cc
@@ -160,44 +160,44 @@ set(ram_src
 	src/model/CreatePolicyResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
-	src/model/GetUserMFAInfoRequest.cc
-	src/model/GetUserMFAInfoResult.cc
 	src/model/UnbindMFADeviceRequest.cc
 	src/model/UnbindMFADeviceResult.cc
+	src/model/GetUserMFAInfoRequest.cc
+	src/model/GetUserMFAInfoResult.cc
 	src/model/BindMFADeviceRequest.cc
 	src/model/BindMFADeviceResult.cc
 	src/model/ListPublicKeysRequest.cc
 	src/model/ListPublicKeysResult.cc
-	src/model/AttachPolicyToRoleRequest.cc
-	src/model/AttachPolicyToRoleResult.cc
-	src/model/AddUserToGroupRequest.cc
-	src/model/AddUserToGroupResult.cc
 	src/model/GetAccountAliasRequest.cc
 	src/model/GetAccountAliasResult.cc
 	src/model/GetLoginProfileRequest.cc
 	src/model/GetLoginProfileResult.cc
+	src/model/AttachPolicyToRoleRequest.cc
+	src/model/AttachPolicyToRoleResult.cc
+	src/model/AddUserToGroupRequest.cc
+	src/model/AddUserToGroupResult.cc
 	src/model/ListEntitiesForPolicyRequest.cc
 	src/model/ListEntitiesForPolicyResult.cc
-	src/model/SetSecurityPreferenceRequest.cc
-	src/model/SetSecurityPreferenceResult.cc
 	src/model/ListPoliciesForUserRequest.cc
 	src/model/ListPoliciesForUserResult.cc
+	src/model/SetSecurityPreferenceRequest.cc
+	src/model/SetSecurityPreferenceResult.cc
 	src/model/UpdateLoginProfileRequest.cc
 	src/model/UpdateLoginProfileResult.cc
 	src/model/ListUsersForGroupRequest.cc
 	src/model/ListUsersForGroupResult.cc
 	src/model/GetPolicyVersionRequest.cc
 	src/model/GetPolicyVersionResult.cc
-	src/model/DeleteRoleRequest.cc
-	src/model/DeleteRoleResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/DeleteRoleRequest.cc
+	src/model/DeleteRoleResult.cc
 	src/model/DeleteVirtualMFADeviceRequest.cc
 	src/model/DeleteVirtualMFADeviceResult.cc
-	src/model/UploadPublicKeyRequest.cc
-	src/model/UploadPublicKeyResult.cc
 	src/model/DeletePolicyVersionRequest.cc
 	src/model/DeletePolicyVersionResult.cc
+	src/model/UploadPublicKeyRequest.cc
+	src/model/UploadPublicKeyResult.cc
 	src/model/RemoveUserFromGroupRequest.cc
 	src/model/RemoveUserFromGroupResult.cc
 	src/model/GetAccessKeyLastUsedRequest.cc
@@ -220,10 +220,10 @@ set(ram_src
 	src/model/AttachPolicyToUserResult.cc
 	src/model/CreateVirtualMFADeviceRequest.cc
 	src/model/CreateVirtualMFADeviceResult.cc
-	src/model/ListGroupsRequest.cc
-	src/model/ListGroupsResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
+	src/model/ListGroupsRequest.cc
+	src/model/ListGroupsResult.cc
 	src/model/DeletePolicyRequest.cc
 	src/model/DeletePolicyResult.cc
 	src/model/DeleteGroupRequest.cc
@@ -258,12 +258,12 @@ set(ram_src
 	src/model/UpdatePublicKeyResult.cc
 	src/model/CreateGroupRequest.cc
 	src/model/CreateGroupResult.cc
+	src/model/ListAccessKeysRequest.cc
+	src/model/ListAccessKeysResult.cc
 	src/model/CreateUserRequest.cc
 	src/model/CreateUserResult.cc
 	src/model/GetPasswordPolicyRequest.cc
 	src/model/GetPasswordPolicyResult.cc
-	src/model/ListAccessKeysRequest.cc
-	src/model/ListAccessKeysResult.cc
 	src/model/DetachPolicyFromGroupRequest.cc
 	src/model/DetachPolicyFromGroupResult.cc
 	src/model/SetPasswordPolicyRequest.cc
@@ -284,10 +284,10 @@ set(ram_src
 	src/model/CreateLoginProfileResult.cc
 	src/model/ListVirtualMFADevicesRequest.cc
 	src/model/ListVirtualMFADevicesResult.cc
-	src/model/UpdateGroupRequest.cc
-	src/model/UpdateGroupResult.cc
 	src/model/GetPolicyRequest.cc
-	src/model/GetPolicyResult.cc )
+	src/model/GetPolicyResult.cc
+	src/model/UpdateGroupRequest.cc
+	src/model/UpdateGroupResult.cc )
 
 add_library(ram ${LIB_TYPE}
 	${ram_public_header}

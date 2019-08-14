@@ -55,8 +55,6 @@ namespace AlibabaCloud
 				void setDDoSBasic(int dDoSBasic);
 				int getCcProtection()const;
 				void setCcProtection(int ccProtection);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string endDate_;
@@ -69,7 +67,6 @@ namespace AlibabaCloud
 				int elasticProtection_;
 				int dDoSBasic_;
 				int ccProtection_;
-				std::string accessKeyId_;
 
 			};
 		}

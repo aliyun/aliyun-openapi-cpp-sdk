@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string ispName;
 					long bps;
+					std::string timeStamp;
 					std::string locationName;
 				};
 

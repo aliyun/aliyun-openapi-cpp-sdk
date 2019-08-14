@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					};
 					std::string description;
 					std::vector<Data::MetaDataField> metaDataFields;
+					std::string dataSourceName;
 					std::string dateSourceName;
 					int dataSourceId;
 				};

@@ -80,6 +80,17 @@ void CreateInstanceRequest::setEngineVersion(const std::string& engineVersion)
 	setCoreParameter("EngineVersion", engineVersion);
 }
 
+std::string CreateInstanceRequest::getAutoUseCoupon()const
+{
+	return autoUseCoupon_;
+}
+
+void CreateInstanceRequest::setAutoUseCoupon(const std::string& autoUseCoupon)
+{
+	autoUseCoupon_ = autoUseCoupon;
+	setCoreParameter("AutoUseCoupon", autoUseCoupon);
+}
+
 std::string CreateInstanceRequest::getInstanceClass()const
 {
 	return instanceClass_;
@@ -166,6 +177,17 @@ void CreateInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
 	setCoreParameter("BusinessInfo", businessInfo);
+}
+
+std::string CreateInstanceRequest::getAutoRenewPeriod()const
+{
+	return autoRenewPeriod_;
+}
+
+void CreateInstanceRequest::setAutoRenewPeriod(const std::string& autoRenewPeriod)
+{
+	autoRenewPeriod_ = autoRenewPeriod;
+	setCoreParameter("AutoRenewPeriod", autoRenewPeriod);
 }
 
 std::string CreateInstanceRequest::getPeriod()const
@@ -276,6 +298,17 @@ void CreateInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
 	setCoreParameter("InstanceName", instanceName);
+}
+
+std::string CreateInstanceRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void CreateInstanceRequest::setAutoRenew(const std::string& autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateInstanceRequest::getVpcId()const

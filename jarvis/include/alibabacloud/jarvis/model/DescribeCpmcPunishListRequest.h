@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getPunishType()const;
+				void setPunishType(const std::string& punishType);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				std::string getPunishStatus()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string srcIP_;
 				std::string sourceIp_;
 				int pageSize_;
+				std::string punishType_;
 				int currentPage_;
 				std::string punishStatus_;
 				std::string lang_;

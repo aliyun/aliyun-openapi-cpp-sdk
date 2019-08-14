@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Asset
 				{
 					std::string instanceName;
+					std::string status;
 					std::string assetType;
 					std::string clientStatus;
 					std::string uuid;

@@ -35,6 +35,14 @@ namespace AlibabaCloud
 					std::string args;
 					std::string url;
 				};
+				struct Nodes
+				{
+					std::string ipAddress;
+					std::string hostName;
+					std::string role;
+					std::string accountType;
+					std::string schedulerType;
+				};
 				struct Application
 				{
 					std::string tag;
@@ -86,8 +94,8 @@ namespace AlibabaCloud
 				void setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
-				std::string getNodes()const;
-				void setNodes(const std::string& nodes);
+				std::vector<Nodes> getNodes()const;
+				void setNodes(const std::vector<Nodes>& nodes);
 				std::vector<Application> getApplication()const;
 				void setApplication(const std::vector<Application>& application);
 				std::string getDomain()const;
@@ -102,6 +110,8 @@ namespace AlibabaCloud
 				void setVolumeMountpoint(const std::string& volumeMountpoint);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				bool getSchedulerPreInstall()const;
+				void setSchedulerPreInstall(bool schedulerPreInstall);
 				std::string getLocation()const;
 				void setLocation(const std::string& location);
 
@@ -127,7 +137,7 @@ namespace AlibabaCloud
 				std::string remoteDirectory_;
 				std::vector<PostInstallScript> postInstallScript_;
 				std::string vSwitchId_;
-				std::string nodes_;
+				std::vector<Nodes> nodes_;
 				std::vector<Application> application_;
 				std::string domain_;
 				std::string vpcId_;
@@ -135,6 +145,7 @@ namespace AlibabaCloud
 				std::string volumeId_;
 				std::string volumeMountpoint_;
 				std::string zoneId_;
+				bool schedulerPreInstall_;
 				std::string location_;
 
 			};

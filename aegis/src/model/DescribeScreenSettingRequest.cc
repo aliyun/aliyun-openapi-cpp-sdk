@@ -36,14 +36,14 @@ void DescribeScreenSettingRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeScreenSettingRequest::getScreenTitle()const
+std::string DescribeScreenSettingRequest::getId()const
 {
-	return screenTitle_;
+	return id_;
 }
 
-void DescribeScreenSettingRequest::setScreenTitle(const std::string& screenTitle)
+void DescribeScreenSettingRequest::setId(const std::string& id)
 {
-	screenTitle_ = screenTitle;
-	setCoreParameter("ScreenTitle", screenTitle);
+	id_ = id;
+	setCoreParameter("Id", id);
 }
 

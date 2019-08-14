@@ -33,7 +33,7 @@ long ListJobsRequest::getResourceOwnerId()const
 void ListJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListJobsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListJobsRequest::getRegionId()const
 void ListJobsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListJobsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListJobsRequest::getPageSize()const
 void ListJobsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListJobsRequest::getQueryString()const
@@ -66,7 +66,7 @@ std::string ListJobsRequest::getQueryString()const
 void ListJobsRequest::setQueryString(const std::string& queryString)
 {
 	queryString_ = queryString;
-	setParameter("QueryString", queryString);
+	setCoreParameter("QueryString", queryString);
 }
 
 bool ListJobsRequest::getIsDesc()const
@@ -77,7 +77,7 @@ bool ListJobsRequest::getIsDesc()const
 void ListJobsRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setParameter("IsDesc", std::to_string(isDesc));
+	setCoreParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 int ListJobsRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListJobsRequest::getPageNumber()const
 void ListJobsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobsRequest::getQueryType()const
@@ -99,7 +99,7 @@ std::string ListJobsRequest::getQueryType()const
 void ListJobsRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setParameter("QueryType", queryType);
+	setCoreParameter("QueryType", queryType);
 }
 
 std::string ListJobsRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListJobsRequest::getAccessKeyId()const
 void ListJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

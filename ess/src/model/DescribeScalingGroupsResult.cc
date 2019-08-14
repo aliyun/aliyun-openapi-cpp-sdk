@@ -35,10 +35,13 @@ DescribeScalingGroupsResult::~DescribeScalingGroupsResult()
 
 void DescribeScalingGroupsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allScalingGroups = value["ScalingGroups"]["ScalingGroup"];
 	for (auto value : allScalingGroups)
@@ -96,6 +99,14 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.scalingPolicy = value["ScalingPolicy"].asString();
 		if(!value["StoppedCapacity"].isNull())
 			scalingGroupsObject.stoppedCapacity = std::stoi(value["StoppedCapacity"].asString());
+		if(!value["OnDemandBaseCapacity"].isNull())
+			scalingGroupsObject.onDemandBaseCapacity = std::stoi(value["OnDemandBaseCapacity"].asString());
+		if(!value["OnDemandPercentageAboveBaseCapacity"].isNull())
+			scalingGroupsObject.onDemandPercentageAboveBaseCapacity = std::stoi(value["OnDemandPercentageAboveBaseCapacity"].asString());
+		if(!value["SpotInstanceRemedy"].isNull())
+			scalingGroupsObject.spotInstanceRemedy = value["SpotInstanceRemedy"].asString() == "true";
+		if(!value["SpotInstancePools"].isNull())
+			scalingGroupsObject.spotInstancePools = std::stoi(value["SpotInstancePools"].asString());
 		auto allVServerGroups = value["VServerGroups"]["VServerGroup"];
 		for (auto value : allVServerGroups)
 		{

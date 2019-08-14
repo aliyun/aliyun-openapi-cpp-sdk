@@ -33,7 +33,7 @@ std::string SetLoadBalancerNameRequest::getAccess_key_id()const
 void SetLoadBalancerNameRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long SetLoadBalancerNameRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long SetLoadBalancerNameRequest::getResourceOwnerId()const
 void SetLoadBalancerNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetLoadBalancerNameRequest::getLoadBalancerName()const
@@ -55,7 +55,7 @@ std::string SetLoadBalancerNameRequest::getLoadBalancerName()const
 void SetLoadBalancerNameRequest::setLoadBalancerName(const std::string& loadBalancerName)
 {
 	loadBalancerName_ = loadBalancerName;
-	setParameter("LoadBalancerName", loadBalancerName);
+	setCoreParameter("LoadBalancerName", loadBalancerName);
 }
 
 std::string SetLoadBalancerNameRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string SetLoadBalancerNameRequest::getLoadBalancerId()const
 void SetLoadBalancerNameRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string SetLoadBalancerNameRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string SetLoadBalancerNameRequest::getRegionId()const
 void SetLoadBalancerNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SetLoadBalancerNameRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SetLoadBalancerNameRequest::getResourceOwnerAccount()const
 void SetLoadBalancerNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetLoadBalancerNameRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string SetLoadBalancerNameRequest::getOwnerAccount()const
 void SetLoadBalancerNameRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SetLoadBalancerNameRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long SetLoadBalancerNameRequest::getOwnerId()const
 void SetLoadBalancerNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLoadBalancerNameRequest::getTags()const
@@ -121,6 +121,6 @@ std::string SetLoadBalancerNameRequest::getTags()const
 void SetLoadBalancerNameRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 

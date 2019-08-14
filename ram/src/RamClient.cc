@@ -123,42 +123,6 @@ RamClient::ListUsersOutcomeCallable RamClient::listUsersCallable(const ListUsers
 	return task->get_future();
 }
 
-RamClient::GetUserMFAInfoOutcome RamClient::getUserMFAInfo(const GetUserMFAInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetUserMFAInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetUserMFAInfoOutcome(GetUserMFAInfoResult(outcome.result()));
-	else
-		return GetUserMFAInfoOutcome(outcome.error());
-}
-
-void RamClient::getUserMFAInfoAsync(const GetUserMFAInfoRequest& request, const GetUserMFAInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getUserMFAInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::GetUserMFAInfoOutcomeCallable RamClient::getUserMFAInfoCallable(const GetUserMFAInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetUserMFAInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->getUserMFAInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RamClient::UnbindMFADeviceOutcome RamClient::unbindMFADevice(const UnbindMFADeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +153,42 @@ RamClient::UnbindMFADeviceOutcomeCallable RamClient::unbindMFADeviceCallable(con
 			[this, request]()
 			{
 			return this->unbindMFADevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RamClient::GetUserMFAInfoOutcome RamClient::getUserMFAInfo(const GetUserMFAInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserMFAInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserMFAInfoOutcome(GetUserMFAInfoResult(outcome.result()));
+	else
+		return GetUserMFAInfoOutcome(outcome.error());
+}
+
+void RamClient::getUserMFAInfoAsync(const GetUserMFAInfoRequest& request, const GetUserMFAInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserMFAInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::GetUserMFAInfoOutcomeCallable RamClient::getUserMFAInfoCallable(const GetUserMFAInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserMFAInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserMFAInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,78 +267,6 @@ RamClient::ListPublicKeysOutcomeCallable RamClient::listPublicKeysCallable(const
 	return task->get_future();
 }
 
-RamClient::AttachPolicyToRoleOutcome RamClient::attachPolicyToRole(const AttachPolicyToRoleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AttachPolicyToRoleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AttachPolicyToRoleOutcome(AttachPolicyToRoleResult(outcome.result()));
-	else
-		return AttachPolicyToRoleOutcome(outcome.error());
-}
-
-void RamClient::attachPolicyToRoleAsync(const AttachPolicyToRoleRequest& request, const AttachPolicyToRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, attachPolicyToRole(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::AttachPolicyToRoleOutcomeCallable RamClient::attachPolicyToRoleCallable(const AttachPolicyToRoleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AttachPolicyToRoleOutcome()>>(
-			[this, request]()
-			{
-			return this->attachPolicyToRole(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RamClient::AddUserToGroupOutcome RamClient::addUserToGroup(const AddUserToGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddUserToGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddUserToGroupOutcome(AddUserToGroupResult(outcome.result()));
-	else
-		return AddUserToGroupOutcome(outcome.error());
-}
-
-void RamClient::addUserToGroupAsync(const AddUserToGroupRequest& request, const AddUserToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addUserToGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::AddUserToGroupOutcomeCallable RamClient::addUserToGroupCallable(const AddUserToGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddUserToGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->addUserToGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RamClient::GetAccountAliasOutcome RamClient::getAccountAlias(const GetAccountAliasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,6 +339,78 @@ RamClient::GetLoginProfileOutcomeCallable RamClient::getLoginProfileCallable(con
 	return task->get_future();
 }
 
+RamClient::AttachPolicyToRoleOutcome RamClient::attachPolicyToRole(const AttachPolicyToRoleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachPolicyToRoleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachPolicyToRoleOutcome(AttachPolicyToRoleResult(outcome.result()));
+	else
+		return AttachPolicyToRoleOutcome(outcome.error());
+}
+
+void RamClient::attachPolicyToRoleAsync(const AttachPolicyToRoleRequest& request, const AttachPolicyToRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachPolicyToRole(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::AttachPolicyToRoleOutcomeCallable RamClient::attachPolicyToRoleCallable(const AttachPolicyToRoleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachPolicyToRoleOutcome()>>(
+			[this, request]()
+			{
+			return this->attachPolicyToRole(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RamClient::AddUserToGroupOutcome RamClient::addUserToGroup(const AddUserToGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddUserToGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddUserToGroupOutcome(AddUserToGroupResult(outcome.result()));
+	else
+		return AddUserToGroupOutcome(outcome.error());
+}
+
+void RamClient::addUserToGroupAsync(const AddUserToGroupRequest& request, const AddUserToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addUserToGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::AddUserToGroupOutcomeCallable RamClient::addUserToGroupCallable(const AddUserToGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddUserToGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->addUserToGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RamClient::ListEntitiesForPolicyOutcome RamClient::listEntitiesForPolicy(const ListEntitiesForPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,42 +447,6 @@ RamClient::ListEntitiesForPolicyOutcomeCallable RamClient::listEntitiesForPolicy
 	return task->get_future();
 }
 
-RamClient::SetSecurityPreferenceOutcome RamClient::setSecurityPreference(const SetSecurityPreferenceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetSecurityPreferenceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetSecurityPreferenceOutcome(SetSecurityPreferenceResult(outcome.result()));
-	else
-		return SetSecurityPreferenceOutcome(outcome.error());
-}
-
-void RamClient::setSecurityPreferenceAsync(const SetSecurityPreferenceRequest& request, const SetSecurityPreferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setSecurityPreference(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::SetSecurityPreferenceOutcomeCallable RamClient::setSecurityPreferenceCallable(const SetSecurityPreferenceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetSecurityPreferenceOutcome()>>(
-			[this, request]()
-			{
-			return this->setSecurityPreference(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RamClient::ListPoliciesForUserOutcome RamClient::listPoliciesForUser(const ListPoliciesForUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +477,42 @@ RamClient::ListPoliciesForUserOutcomeCallable RamClient::listPoliciesForUserCall
 			[this, request]()
 			{
 			return this->listPoliciesForUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RamClient::SetSecurityPreferenceOutcome RamClient::setSecurityPreference(const SetSecurityPreferenceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetSecurityPreferenceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetSecurityPreferenceOutcome(SetSecurityPreferenceResult(outcome.result()));
+	else
+		return SetSecurityPreferenceOutcome(outcome.error());
+}
+
+void RamClient::setSecurityPreferenceAsync(const SetSecurityPreferenceRequest& request, const SetSecurityPreferenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setSecurityPreference(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::SetSecurityPreferenceOutcomeCallable RamClient::setSecurityPreferenceCallable(const SetSecurityPreferenceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetSecurityPreferenceOutcome()>>(
+			[this, request]()
+			{
+			return this->setSecurityPreference(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,42 +627,6 @@ RamClient::GetPolicyVersionOutcomeCallable RamClient::getPolicyVersionCallable(c
 	return task->get_future();
 }
 
-RamClient::DeleteRoleOutcome RamClient::deleteRole(const DeleteRoleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteRoleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteRoleOutcome(DeleteRoleResult(outcome.result()));
-	else
-		return DeleteRoleOutcome(outcome.error());
-}
-
-void RamClient::deleteRoleAsync(const DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteRole(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::DeleteRoleOutcomeCallable RamClient::deleteRoleCallable(const DeleteRoleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteRoleOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteRole(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RamClient::GetUserOutcome RamClient::getUser(const GetUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +657,42 @@ RamClient::GetUserOutcomeCallable RamClient::getUserCallable(const GetUserReques
 			[this, request]()
 			{
 			return this->getUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RamClient::DeleteRoleOutcome RamClient::deleteRole(const DeleteRoleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRoleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRoleOutcome(DeleteRoleResult(outcome.result()));
+	else
+		return DeleteRoleOutcome(outcome.error());
+}
+
+void RamClient::deleteRoleAsync(const DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRole(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::DeleteRoleOutcomeCallable RamClient::deleteRoleCallable(const DeleteRoleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRoleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRole(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,42 +735,6 @@ RamClient::DeleteVirtualMFADeviceOutcomeCallable RamClient::deleteVirtualMFADevi
 	return task->get_future();
 }
 
-RamClient::UploadPublicKeyOutcome RamClient::uploadPublicKey(const UploadPublicKeyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UploadPublicKeyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UploadPublicKeyOutcome(UploadPublicKeyResult(outcome.result()));
-	else
-		return UploadPublicKeyOutcome(outcome.error());
-}
-
-void RamClient::uploadPublicKeyAsync(const UploadPublicKeyRequest& request, const UploadPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, uploadPublicKey(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::UploadPublicKeyOutcomeCallable RamClient::uploadPublicKeyCallable(const UploadPublicKeyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UploadPublicKeyOutcome()>>(
-			[this, request]()
-			{
-			return this->uploadPublicKey(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RamClient::DeletePolicyVersionOutcome RamClient::deletePolicyVersion(const DeletePolicyVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +765,42 @@ RamClient::DeletePolicyVersionOutcomeCallable RamClient::deletePolicyVersionCall
 			[this, request]()
 			{
 			return this->deletePolicyVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RamClient::UploadPublicKeyOutcome RamClient::uploadPublicKey(const UploadPublicKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadPublicKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadPublicKeyOutcome(UploadPublicKeyResult(outcome.result()));
+	else
+		return UploadPublicKeyOutcome(outcome.error());
+}
+
+void RamClient::uploadPublicKeyAsync(const UploadPublicKeyRequest& request, const UploadPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadPublicKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::UploadPublicKeyOutcomeCallable RamClient::uploadPublicKeyCallable(const UploadPublicKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadPublicKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadPublicKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,42 +1203,6 @@ RamClient::CreateVirtualMFADeviceOutcomeCallable RamClient::createVirtualMFADevi
 	return task->get_future();
 }
 
-RamClient::ListGroupsOutcome RamClient::listGroups(const ListGroupsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListGroupsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListGroupsOutcome(ListGroupsResult(outcome.result()));
-	else
-		return ListGroupsOutcome(outcome.error());
-}
-
-void RamClient::listGroupsAsync(const ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listGroups(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::ListGroupsOutcomeCallable RamClient::listGroupsCallable(const ListGroupsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListGroupsOutcome()>>(
-			[this, request]()
-			{
-			return this->listGroups(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RamClient::DeleteUserOutcome RamClient::deleteUser(const DeleteUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1233,42 @@ RamClient::DeleteUserOutcomeCallable RamClient::deleteUserCallable(const DeleteU
 			[this, request]()
 			{
 			return this->deleteUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RamClient::ListGroupsOutcome RamClient::listGroups(const ListGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGroupsOutcome(ListGroupsResult(outcome.result()));
+	else
+		return ListGroupsOutcome(outcome.error());
+}
+
+void RamClient::listGroupsAsync(const ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::ListGroupsOutcomeCallable RamClient::listGroupsCallable(const ListGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1887,6 +1887,42 @@ RamClient::CreateGroupOutcomeCallable RamClient::createGroupCallable(const Creat
 	return task->get_future();
 }
 
+RamClient::ListAccessKeysOutcome RamClient::listAccessKeys(const ListAccessKeysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAccessKeysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAccessKeysOutcome(ListAccessKeysResult(outcome.result()));
+	else
+		return ListAccessKeysOutcome(outcome.error());
+}
+
+void RamClient::listAccessKeysAsync(const ListAccessKeysRequest& request, const ListAccessKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAccessKeys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::ListAccessKeysOutcomeCallable RamClient::listAccessKeysCallable(const ListAccessKeysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAccessKeysOutcome()>>(
+			[this, request]()
+			{
+			return this->listAccessKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RamClient::CreateUserOutcome RamClient::createUser(const CreateUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,42 +1989,6 @@ RamClient::GetPasswordPolicyOutcomeCallable RamClient::getPasswordPolicyCallable
 			[this, request]()
 			{
 			return this->getPasswordPolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RamClient::ListAccessKeysOutcome RamClient::listAccessKeys(const ListAccessKeysRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListAccessKeysOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListAccessKeysOutcome(ListAccessKeysResult(outcome.result()));
-	else
-		return ListAccessKeysOutcome(outcome.error());
-}
-
-void RamClient::listAccessKeysAsync(const ListAccessKeysRequest& request, const ListAccessKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listAccessKeys(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::ListAccessKeysOutcomeCallable RamClient::listAccessKeysCallable(const ListAccessKeysRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListAccessKeysOutcome()>>(
-			[this, request]()
-			{
-			return this->listAccessKeys(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2355,42 +2355,6 @@ RamClient::ListVirtualMFADevicesOutcomeCallable RamClient::listVirtualMFADevices
 	return task->get_future();
 }
 
-RamClient::UpdateGroupOutcome RamClient::updateGroup(const UpdateGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateGroupOutcome(UpdateGroupResult(outcome.result()));
-	else
-		return UpdateGroupOutcome(outcome.error());
-}
-
-void RamClient::updateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RamClient::UpdateGroupOutcomeCallable RamClient::updateGroupCallable(const UpdateGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->updateGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RamClient::GetPolicyOutcome RamClient::getPolicy(const GetPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2421,6 +2385,42 @@ RamClient::GetPolicyOutcomeCallable RamClient::getPolicyCallable(const GetPolicy
 			[this, request]()
 			{
 			return this->getPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RamClient::UpdateGroupOutcome RamClient::updateGroup(const UpdateGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGroupOutcome(UpdateGroupResult(outcome.result()));
+	else
+		return UpdateGroupOutcome(outcome.error());
+}
+
+void RamClient::updateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RamClient::UpdateGroupOutcomeCallable RamClient::updateGroupCallable(const UpdateGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -40,8 +40,10 @@ namespace AlibabaCloud
 						std::string connector;
 						long gmtCreate;
 						std::string userName;
+						int checkStatus;
 						std::string regionId;
 						long id;
+						std::string checkStatusName;
 						std::string localName;
 					};
 					struct OssBucket

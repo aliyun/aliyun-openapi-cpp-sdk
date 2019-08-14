@@ -47,6 +47,17 @@ void DescribeSasLeftConditionRequest::setConditionType(const std::string& condit
 	setCoreParameter("ConditionType", conditionType);
 }
 
+std::string DescribeSasLeftConditionRequest::getFrom()const
+{
+	return from_;
+}
+
+void DescribeSasLeftConditionRequest::setFrom(const std::string& from)
+{
+	from_ = from;
+	setCoreParameter("From", from);
+}
+
 std::string DescribeSasLeftConditionRequest::getLang()const
 {
 	return lang_;

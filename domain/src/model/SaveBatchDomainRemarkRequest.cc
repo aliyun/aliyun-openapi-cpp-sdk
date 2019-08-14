@@ -33,7 +33,7 @@ std::string SaveBatchDomainRemarkRequest::getInstanceIds()const
 void SaveBatchDomainRemarkRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 std::string SaveBatchDomainRemarkRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveBatchDomainRemarkRequest::getUserClientIp()const
 void SaveBatchDomainRemarkRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchDomainRemarkRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string SaveBatchDomainRemarkRequest::getRemark()const
 void SaveBatchDomainRemarkRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
 }
 
 std::string SaveBatchDomainRemarkRequest::getLang()const
@@ -66,6 +66,6 @@ std::string SaveBatchDomainRemarkRequest::getLang()const
 void SaveBatchDomainRemarkRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

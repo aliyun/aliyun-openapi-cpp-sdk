@@ -33,7 +33,7 @@ std::string ListGroupsRequest::getMarker()const
 void ListGroupsRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setParameter("Marker", marker);
+	setCoreParameter("Marker", marker);
 }
 
 int ListGroupsRequest::getMaxItems()const
@@ -44,6 +44,6 @@ int ListGroupsRequest::getMaxItems()const
 void ListGroupsRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setParameter("MaxItems", std::to_string(maxItems));
+	setCoreParameter("MaxItems", std::to_string(maxItems));
 }
 

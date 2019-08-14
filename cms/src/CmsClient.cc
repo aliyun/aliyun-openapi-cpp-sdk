@@ -159,42 +159,6 @@ CmsClient::DisableEventRuleOutcomeCallable CmsClient::disableEventRuleCallable(c
 	return task->get_future();
 }
 
-CmsClient::DescribeEventRuleOutcome CmsClient::describeEventRule(const DescribeEventRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeEventRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeEventRuleOutcome(DescribeEventRuleResult(outcome.result()));
-	else
-		return DescribeEventRuleOutcome(outcome.error());
-}
-
-void CmsClient::describeEventRuleAsync(const DescribeEventRuleRequest& request, const DescribeEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeEventRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::DescribeEventRuleOutcomeCallable CmsClient::describeEventRuleCallable(const DescribeEventRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeEventRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->describeEventRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::StartTasksOutcome CmsClient::startTasks(const StartTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +189,42 @@ CmsClient::StartTasksOutcomeCallable CmsClient::startTasksCallable(const StartTa
 			[this, request]()
 			{
 			return this->startTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeEventRuleOutcome CmsClient::describeEventRule(const DescribeEventRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEventRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEventRuleOutcome(DescribeEventRuleResult(outcome.result()));
+	else
+		return DescribeEventRuleOutcome(outcome.error());
+}
+
+void CmsClient::describeEventRuleAsync(const DescribeEventRuleRequest& request, const DescribeEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEventRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeEventRuleOutcomeCallable CmsClient::describeEventRuleCallable(const DescribeEventRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEventRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEventRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,6 +267,42 @@ CmsClient::DescribeISPAreaCityOutcomeCallable CmsClient::describeISPAreaCityCall
 	return task->get_future();
 }
 
+CmsClient::RemoveMetricRuleTargetsOutcome CmsClient::removeMetricRuleTargets(const RemoveMetricRuleTargetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveMetricRuleTargetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveMetricRuleTargetsOutcome(RemoveMetricRuleTargetsResult(outcome.result()));
+	else
+		return RemoveMetricRuleTargetsOutcome(outcome.error());
+}
+
+void CmsClient::removeMetricRuleTargetsAsync(const RemoveMetricRuleTargetsRequest& request, const RemoveMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeMetricRuleTargets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::RemoveMetricRuleTargetsOutcomeCallable CmsClient::removeMetricRuleTargetsCallable(const RemoveMetricRuleTargetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveMetricRuleTargetsOutcome()>>(
+			[this, request]()
+			{
+			return this->removeMetricRuleTargets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::QueryCustomEventCountOutcome CmsClient::queryCustomEventCount(const QueryCustomEventCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -303,42 +339,6 @@ CmsClient::QueryCustomEventCountOutcomeCallable CmsClient::queryCustomEventCount
 	return task->get_future();
 }
 
-CmsClient::ListEventRulesOutcome CmsClient::listEventRules(const ListEventRulesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListEventRulesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListEventRulesOutcome(ListEventRulesResult(outcome.result()));
-	else
-		return ListEventRulesOutcome(outcome.error());
-}
-
-void CmsClient::listEventRulesAsync(const ListEventRulesRequest& request, const ListEventRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listEventRules(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::ListEventRulesOutcomeCallable CmsClient::listEventRulesCallable(const ListEventRulesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListEventRulesOutcome()>>(
-			[this, request]()
-			{
-			return this->listEventRules(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::UpdateMyGroupInstancesOutcome CmsClient::updateMyGroupInstances(const UpdateMyGroupInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +369,42 @@ CmsClient::UpdateMyGroupInstancesOutcomeCallable CmsClient::updateMyGroupInstanc
 			[this, request]()
 			{
 			return this->updateMyGroupInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::ListEventRulesOutcome CmsClient::listEventRules(const ListEventRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEventRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEventRulesOutcome(ListEventRulesResult(outcome.result()));
+	else
+		return ListEventRulesOutcome(outcome.error());
+}
+
+void CmsClient::listEventRulesAsync(const ListEventRulesRequest& request, const ListEventRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEventRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::ListEventRulesOutcomeCallable CmsClient::listEventRulesCallable(const ListEventRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEventRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listEventRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -447,42 +483,6 @@ CmsClient::PutEventTargetsOutcomeCallable CmsClient::putEventTargetsCallable(con
 	return task->get_future();
 }
 
-CmsClient::PutGroupDynamicRuleOutcome CmsClient::putGroupDynamicRule(const PutGroupDynamicRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PutGroupDynamicRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PutGroupDynamicRuleOutcome(PutGroupDynamicRuleResult(outcome.result()));
-	else
-		return PutGroupDynamicRuleOutcome(outcome.error());
-}
-
-void CmsClient::putGroupDynamicRuleAsync(const PutGroupDynamicRuleRequest& request, const PutGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, putGroupDynamicRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::PutGroupDynamicRuleOutcomeCallable CmsClient::putGroupDynamicRuleCallable(const PutGroupDynamicRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PutGroupDynamicRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->putGroupDynamicRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::UpdateMonitoringTemplateOutcome CmsClient::updateMonitoringTemplate(const UpdateMonitoringTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +513,42 @@ CmsClient::UpdateMonitoringTemplateOutcomeCallable CmsClient::updateMonitoringTe
 			[this, request]()
 			{
 			return this->updateMonitoringTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::PutGroupDynamicRuleOutcome CmsClient::putGroupDynamicRule(const PutGroupDynamicRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutGroupDynamicRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutGroupDynamicRuleOutcome(PutGroupDynamicRuleResult(outcome.result()));
+	else
+		return PutGroupDynamicRuleOutcome(outcome.error());
+}
+
+void CmsClient::putGroupDynamicRuleAsync(const PutGroupDynamicRuleRequest& request, const PutGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putGroupDynamicRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::PutGroupDynamicRuleOutcomeCallable CmsClient::putGroupDynamicRuleCallable(const PutGroupDynamicRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutGroupDynamicRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->putGroupDynamicRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -657,6 +693,42 @@ CmsClient::NodeProcessesOutcomeCallable CmsClient::nodeProcessesCallable(const N
 			[this, request]()
 			{
 			return this->nodeProcesses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeSiteMonitorISPCityListOutcome CmsClient::describeSiteMonitorISPCityList(const DescribeSiteMonitorISPCityListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSiteMonitorISPCityListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSiteMonitorISPCityListOutcome(DescribeSiteMonitorISPCityListResult(outcome.result()));
+	else
+		return DescribeSiteMonitorISPCityListOutcome(outcome.error());
+}
+
+void CmsClient::describeSiteMonitorISPCityListAsync(const DescribeSiteMonitorISPCityListRequest& request, const DescribeSiteMonitorISPCityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSiteMonitorISPCityList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeSiteMonitorISPCityListOutcomeCallable CmsClient::describeSiteMonitorISPCityListCallable(const DescribeSiteMonitorISPCityListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSiteMonitorISPCityListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSiteMonitorISPCityList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -879,6 +951,42 @@ CmsClient::QueryMetricLastOutcomeCallable CmsClient::queryMetricLastCallable(con
 	return task->get_future();
 }
 
+CmsClient::DescribeAlertHistoryListOutcome CmsClient::describeAlertHistoryList(const DescribeAlertHistoryListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAlertHistoryListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAlertHistoryListOutcome(DescribeAlertHistoryListResult(outcome.result()));
+	else
+		return DescribeAlertHistoryListOutcome(outcome.error());
+}
+
+void CmsClient::describeAlertHistoryListAsync(const DescribeAlertHistoryListRequest& request, const DescribeAlertHistoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAlertHistoryList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeAlertHistoryListOutcomeCallable CmsClient::describeAlertHistoryListCallable(const DescribeAlertHistoryListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAlertHistoryListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAlertHistoryList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::QuerySystemEventHistogramOutcome CmsClient::querySystemEventHistogram(const QuerySystemEventHistogramRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,42 +1059,6 @@ CmsClient::DeleteEventRuleOutcomeCallable CmsClient::deleteEventRuleCallable(con
 	return task->get_future();
 }
 
-CmsClient::TaskConfigUnhealthyOutcome CmsClient::taskConfigUnhealthy(const TaskConfigUnhealthyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TaskConfigUnhealthyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TaskConfigUnhealthyOutcome(TaskConfigUnhealthyResult(outcome.result()));
-	else
-		return TaskConfigUnhealthyOutcome(outcome.error());
-}
-
-void CmsClient::taskConfigUnhealthyAsync(const TaskConfigUnhealthyRequest& request, const TaskConfigUnhealthyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, taskConfigUnhealthy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::TaskConfigUnhealthyOutcomeCallable CmsClient::taskConfigUnhealthyCallable(const TaskConfigUnhealthyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TaskConfigUnhealthyOutcome()>>(
-			[this, request]()
-			{
-			return this->taskConfigUnhealthy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::DeleteEventTargetsOutcome CmsClient::deleteEventTargets(const DeleteEventTargetsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +1089,42 @@ CmsClient::DeleteEventTargetsOutcomeCallable CmsClient::deleteEventTargetsCallab
 			[this, request]()
 			{
 			return this->deleteEventTargets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::TaskConfigUnhealthyOutcome CmsClient::taskConfigUnhealthy(const TaskConfigUnhealthyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TaskConfigUnhealthyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TaskConfigUnhealthyOutcome(TaskConfigUnhealthyResult(outcome.result()));
+	else
+		return TaskConfigUnhealthyOutcome(outcome.error());
+}
+
+void CmsClient::taskConfigUnhealthyAsync(const TaskConfigUnhealthyRequest& request, const TaskConfigUnhealthyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, taskConfigUnhealthy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::TaskConfigUnhealthyOutcomeCallable CmsClient::taskConfigUnhealthyCallable(const TaskConfigUnhealthyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TaskConfigUnhealthyOutcome()>>(
+			[this, request]()
+			{
+			return this->taskConfigUnhealthy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,42 +1167,6 @@ CmsClient::ListProductOfActiveAlertOutcomeCallable CmsClient::listProductOfActiv
 	return task->get_future();
 }
 
-CmsClient::UpdateMyGroupAlertOutcome CmsClient::updateMyGroupAlert(const UpdateMyGroupAlertRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateMyGroupAlertOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateMyGroupAlertOutcome(UpdateMyGroupAlertResult(outcome.result()));
-	else
-		return UpdateMyGroupAlertOutcome(outcome.error());
-}
-
-void CmsClient::updateMyGroupAlertAsync(const UpdateMyGroupAlertRequest& request, const UpdateMyGroupAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateMyGroupAlert(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::UpdateMyGroupAlertOutcomeCallable CmsClient::updateMyGroupAlertCallable(const UpdateMyGroupAlertRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateMyGroupAlertOutcome()>>(
-			[this, request]()
-			{
-			return this->updateMyGroupAlert(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::CreateMonitoringTemplateOutcome CmsClient::createMonitoringTemplate(const CreateMonitoringTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,6 +1197,42 @@ CmsClient::CreateMonitoringTemplateOutcomeCallable CmsClient::createMonitoringTe
 			[this, request]()
 			{
 			return this->createMonitoringTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::UpdateMyGroupAlertOutcome CmsClient::updateMyGroupAlert(const UpdateMyGroupAlertRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMyGroupAlertOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMyGroupAlertOutcome(UpdateMyGroupAlertResult(outcome.result()));
+	else
+		return UpdateMyGroupAlertOutcome(outcome.error());
+}
+
+void CmsClient::updateMyGroupAlertAsync(const UpdateMyGroupAlertRequest& request, const UpdateMyGroupAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMyGroupAlert(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::UpdateMyGroupAlertOutcomeCallable CmsClient::updateMyGroupAlertCallable(const UpdateMyGroupAlertRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMyGroupAlertOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMyGroupAlert(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1527,6 +1635,42 @@ CmsClient::DisableActiveAlertOutcomeCallable CmsClient::disableActiveAlertCallab
 	return task->get_future();
 }
 
+CmsClient::DescribeSiteMonitorISPAreaCityOutcome CmsClient::describeSiteMonitorISPAreaCity(const DescribeSiteMonitorISPAreaCityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSiteMonitorISPAreaCityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSiteMonitorISPAreaCityOutcome(DescribeSiteMonitorISPAreaCityResult(outcome.result()));
+	else
+		return DescribeSiteMonitorISPAreaCityOutcome(outcome.error());
+}
+
+void CmsClient::describeSiteMonitorISPAreaCityAsync(const DescribeSiteMonitorISPAreaCityRequest& request, const DescribeSiteMonitorISPAreaCityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSiteMonitorISPAreaCity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeSiteMonitorISPAreaCityOutcomeCallable CmsClient::describeSiteMonitorISPAreaCityCallable(const DescribeSiteMonitorISPAreaCityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSiteMonitorISPAreaCityOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSiteMonitorISPAreaCity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::PutEventOutcome CmsClient::putEvent(const PutEventRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1923,42 +2067,6 @@ CmsClient::TaskConfigDeleteOutcomeCallable CmsClient::taskConfigDeleteCallable(c
 	return task->get_future();
 }
 
-CmsClient::QueryCustomEventDetailOutcome CmsClient::queryCustomEventDetail(const QueryCustomEventDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryCustomEventDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryCustomEventDetailOutcome(QueryCustomEventDetailResult(outcome.result()));
-	else
-		return QueryCustomEventDetailOutcome(outcome.error());
-}
-
-void CmsClient::queryCustomEventDetailAsync(const QueryCustomEventDetailRequest& request, const QueryCustomEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryCustomEventDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::QueryCustomEventDetailOutcomeCallable CmsClient::queryCustomEventDetailCallable(const QueryCustomEventDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryCustomEventDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->queryCustomEventDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::NodeProcessCreateOutcome CmsClient::nodeProcessCreate(const NodeProcessCreateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2097,42 @@ CmsClient::NodeProcessCreateOutcomeCallable CmsClient::nodeProcessCreateCallable
 			[this, request]()
 			{
 			return this->nodeProcessCreate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::QueryCustomEventDetailOutcome CmsClient::queryCustomEventDetail(const QueryCustomEventDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCustomEventDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCustomEventDetailOutcome(QueryCustomEventDetailResult(outcome.result()));
+	else
+		return QueryCustomEventDetailOutcome(outcome.error());
+}
+
+void CmsClient::queryCustomEventDetailAsync(const QueryCustomEventDetailRequest& request, const QueryCustomEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCustomEventDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::QueryCustomEventDetailOutcomeCallable CmsClient::queryCustomEventDetailCallable(const QueryCustomEventDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCustomEventDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCustomEventDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2097,6 +2241,42 @@ CmsClient::TaskConfigCreateOutcomeCallable CmsClient::taskConfigCreateCallable(c
 			[this, request]()
 			{
 			return this->taskConfigCreate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::PutMetricRuleTargetsOutcome CmsClient::putMetricRuleTargets(const PutMetricRuleTargetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutMetricRuleTargetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutMetricRuleTargetsOutcome(PutMetricRuleTargetsResult(outcome.result()));
+	else
+		return PutMetricRuleTargetsOutcome(outcome.error());
+}
+
+void CmsClient::putMetricRuleTargetsAsync(const PutMetricRuleTargetsRequest& request, const PutMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putMetricRuleTargets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::PutMetricRuleTargetsOutcomeCallable CmsClient::putMetricRuleTargetsCallable(const PutMetricRuleTargetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutMetricRuleTargetsOutcome()>>(
+			[this, request]()
+			{
+			return this->putMetricRuleTargets(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2283,42 +2463,6 @@ CmsClient::ListEventTargetsByRuleOutcomeCallable CmsClient::listEventTargetsByRu
 	return task->get_future();
 }
 
-CmsClient::DescribeTaskDetailOutcome CmsClient::describeTaskDetail(const DescribeTaskDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTaskDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTaskDetailOutcome(DescribeTaskDetailResult(outcome.result()));
-	else
-		return DescribeTaskDetailOutcome(outcome.error());
-}
-
-void CmsClient::describeTaskDetailAsync(const DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTaskDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::DescribeTaskDetailOutcomeCallable CmsClient::describeTaskDetailCallable(const DescribeTaskDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTaskDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTaskDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::QueryMonitorDataOutcome CmsClient::queryMonitorData(const QueryMonitorDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2355,36 +2499,36 @@ CmsClient::QueryMonitorDataOutcomeCallable CmsClient::queryMonitorDataCallable(c
 	return task->get_future();
 }
 
-CmsClient::QueryCustomMetricListOutcome CmsClient::queryCustomMetricList(const QueryCustomMetricListRequest &request) const
+CmsClient::DescribeTaskDetailOutcome CmsClient::describeTaskDetail(const DescribeTaskDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryCustomMetricListOutcome(endpointOutcome.error());
+		return DescribeTaskDetailOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryCustomMetricListOutcome(QueryCustomMetricListResult(outcome.result()));
+		return DescribeTaskDetailOutcome(DescribeTaskDetailResult(outcome.result()));
 	else
-		return QueryCustomMetricListOutcome(outcome.error());
+		return DescribeTaskDetailOutcome(outcome.error());
 }
 
-void CmsClient::queryCustomMetricListAsync(const QueryCustomMetricListRequest& request, const QueryCustomMetricListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CmsClient::describeTaskDetailAsync(const DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryCustomMetricList(request), context);
+		handler(this, request, describeTaskDetail(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CmsClient::QueryCustomMetricListOutcomeCallable CmsClient::queryCustomMetricListCallable(const QueryCustomMetricListRequest &request) const
+CmsClient::DescribeTaskDetailOutcomeCallable CmsClient::describeTaskDetailCallable(const DescribeTaskDetailRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryCustomMetricListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeTaskDetailOutcome()>>(
 			[this, request]()
 			{
-			return this->queryCustomMetricList(request);
+			return this->describeTaskDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2421,6 +2565,42 @@ CmsClient::ApplyTemplateOutcomeCallable CmsClient::applyTemplateCallable(const A
 			[this, request]()
 			{
 			return this->applyTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::QueryCustomMetricListOutcome CmsClient::queryCustomMetricList(const QueryCustomMetricListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCustomMetricListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCustomMetricListOutcome(QueryCustomMetricListResult(outcome.result()));
+	else
+		return QueryCustomMetricListOutcome(outcome.error());
+}
+
+void CmsClient::queryCustomMetricListAsync(const QueryCustomMetricListRequest& request, const QueryCustomMetricListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCustomMetricList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::QueryCustomMetricListOutcomeCallable CmsClient::queryCustomMetricListCallable(const QueryCustomMetricListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCustomMetricListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCustomMetricList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2679,42 +2859,6 @@ CmsClient::ListMyGroupCategoriesOutcomeCallable CmsClient::listMyGroupCategories
 	return task->get_future();
 }
 
-CmsClient::DeleteGroupDynamicRuleOutcome CmsClient::deleteGroupDynamicRule(const DeleteGroupDynamicRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteGroupDynamicRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteGroupDynamicRuleOutcome(DeleteGroupDynamicRuleResult(outcome.result()));
-	else
-		return DeleteGroupDynamicRuleOutcome(outcome.error());
-}
-
-void CmsClient::deleteGroupDynamicRuleAsync(const DeleteGroupDynamicRuleRequest& request, const DeleteGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteGroupDynamicRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::DeleteGroupDynamicRuleOutcomeCallable CmsClient::deleteGroupDynamicRuleCallable(const DeleteGroupDynamicRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteGroupDynamicRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteGroupDynamicRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::CreateTaskOutcome CmsClient::createTask(const CreateTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2745,6 +2889,42 @@ CmsClient::CreateTaskOutcomeCallable CmsClient::createTaskCallable(const CreateT
 			[this, request]()
 			{
 			return this->createTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DeleteGroupDynamicRuleOutcome CmsClient::deleteGroupDynamicRule(const DeleteGroupDynamicRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGroupDynamicRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGroupDynamicRuleOutcome(DeleteGroupDynamicRuleResult(outcome.result()));
+	else
+		return DeleteGroupDynamicRuleOutcome(outcome.error());
+}
+
+void CmsClient::deleteGroupDynamicRuleAsync(const DeleteGroupDynamicRuleRequest& request, const DeleteGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGroupDynamicRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DeleteGroupDynamicRuleOutcomeCallable CmsClient::deleteGroupDynamicRuleCallable(const DeleteGroupDynamicRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGroupDynamicRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGroupDynamicRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3147,42 +3327,6 @@ CmsClient::ListMyGroupsOutcomeCallable CmsClient::listMyGroupsCallable(const Lis
 	return task->get_future();
 }
 
-CmsClient::AddMyGroupInstancesOutcome CmsClient::addMyGroupInstances(const AddMyGroupInstancesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddMyGroupInstancesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddMyGroupInstancesOutcome(AddMyGroupInstancesResult(outcome.result()));
-	else
-		return AddMyGroupInstancesOutcome(outcome.error());
-}
-
-void CmsClient::addMyGroupInstancesAsync(const AddMyGroupInstancesRequest& request, const AddMyGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addMyGroupInstances(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::AddMyGroupInstancesOutcomeCallable CmsClient::addMyGroupInstancesCallable(const AddMyGroupInstancesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddMyGroupInstancesOutcome()>>(
-			[this, request]()
-			{
-			return this->addMyGroupInstances(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::SendDryRunSystemEventOutcome CmsClient::sendDryRunSystemEvent(const SendDryRunSystemEventRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3213,6 +3357,42 @@ CmsClient::SendDryRunSystemEventOutcomeCallable CmsClient::sendDryRunSystemEvent
 			[this, request]()
 			{
 			return this->sendDryRunSystemEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::AddMyGroupInstancesOutcome CmsClient::addMyGroupInstances(const AddMyGroupInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddMyGroupInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddMyGroupInstancesOutcome(AddMyGroupInstancesResult(outcome.result()));
+	else
+		return AddMyGroupInstancesOutcome(outcome.error());
+}
+
+void CmsClient::addMyGroupInstancesAsync(const AddMyGroupInstancesRequest& request, const AddMyGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addMyGroupInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::AddMyGroupInstancesOutcomeCallable CmsClient::addMyGroupInstancesCallable(const AddMyGroupInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddMyGroupInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->addMyGroupInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3471,6 +3651,42 @@ CmsClient::QueryStaticsErrorRateOutcomeCallable CmsClient::queryStaticsErrorRate
 	return task->get_future();
 }
 
+CmsClient::DescribeMetricRuleTargetsOutcome CmsClient::describeMetricRuleTargets(const DescribeMetricRuleTargetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMetricRuleTargetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMetricRuleTargetsOutcome(DescribeMetricRuleTargetsResult(outcome.result()));
+	else
+		return DescribeMetricRuleTargetsOutcome(outcome.error());
+}
+
+void CmsClient::describeMetricRuleTargetsAsync(const DescribeMetricRuleTargetsRequest& request, const DescribeMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMetricRuleTargets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeMetricRuleTargetsOutcomeCallable CmsClient::describeMetricRuleTargetsCallable(const DescribeMetricRuleTargetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMetricRuleTargetsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMetricRuleTargets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::ListGroupDynamicRuleOutcome CmsClient::listGroupDynamicRule(const ListGroupDynamicRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3723,42 +3939,6 @@ CmsClient::ListContactGroupOutcomeCallable CmsClient::listContactGroupCallable(c
 	return task->get_future();
 }
 
-CmsClient::DescribeContactOutcome CmsClient::describeContact(const DescribeContactRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeContactOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeContactOutcome(DescribeContactResult(outcome.result()));
-	else
-		return DescribeContactOutcome(outcome.error());
-}
-
-void CmsClient::describeContactAsync(const DescribeContactRequest& request, const DescribeContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeContact(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CmsClient::DescribeContactOutcomeCallable CmsClient::describeContactCallable(const DescribeContactRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeContactOutcome()>>(
-			[this, request]()
-			{
-			return this->describeContact(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CmsClient::PutMetricAlarmOutcome CmsClient::putMetricAlarm(const PutMetricAlarmRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3789,6 +3969,42 @@ CmsClient::PutMetricAlarmOutcomeCallable CmsClient::putMetricAlarmCallable(const
 			[this, request]()
 			{
 			return this->putMetricAlarm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeContactOutcome CmsClient::describeContact(const DescribeContactRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeContactOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeContactOutcome(DescribeContactResult(outcome.result()));
+	else
+		return DescribeContactOutcome(outcome.error());
+}
+
+void CmsClient::describeContactAsync(const DescribeContactRequest& request, const DescribeContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeContact(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeContactOutcomeCallable CmsClient::describeContactCallable(const DescribeContactRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeContactOutcome()>>(
+			[this, request]()
+			{
+			return this->describeContact(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

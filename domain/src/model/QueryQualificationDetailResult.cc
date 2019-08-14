@@ -35,10 +35,13 @@ QueryQualificationDetailResult::~QueryQualificationDetailResult()
 
 void QueryQualificationDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allCredentials = value["Credentials"]["QualificationCredential"];
 	for (auto value : allCredentials)
@@ -50,8 +53,6 @@ void QueryQualificationDetailResult::parse(const std::string &payload)
 			credentialsObject.credentialType = value["CredentialType"].asString();
 		if(!value["CredentialUrl"].isNull())
 			credentialsObject.credentialUrl = value["CredentialUrl"].asString();
-		if(!value["Params"].isNull())
-			credentialsObject.params = value["Params"].asString();
 		credentials_.push_back(credentialsObject);
 	}
 	if(!value["TrackId"].isNull())

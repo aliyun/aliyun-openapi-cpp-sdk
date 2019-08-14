@@ -34,7 +34,7 @@ void TaskConfigModifyRequest::setInstanceList(const std::vector<std::string>& in
 {
 	instanceList_ = instanceList;
 	for(int i = 0; i!= instanceList.size(); i++)
-		setParameter("InstanceList."+ std::to_string(i), instanceList.at(i));
+		setCoreParameter("InstanceList."+ std::to_string(i), instanceList.at(i));
 }
 
 std::string TaskConfigModifyRequest::getJsonData()const
@@ -45,7 +45,7 @@ std::string TaskConfigModifyRequest::getJsonData()const
 void TaskConfigModifyRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setParameter("JsonData", jsonData);
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string TaskConfigModifyRequest::getTaskType()const
@@ -56,7 +56,7 @@ std::string TaskConfigModifyRequest::getTaskType()const
 void TaskConfigModifyRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setParameter("TaskType", taskType);
+	setCoreParameter("TaskType", taskType);
 }
 
 std::string TaskConfigModifyRequest::getTaskScope()const
@@ -67,7 +67,7 @@ std::string TaskConfigModifyRequest::getTaskScope()const
 void TaskConfigModifyRequest::setTaskScope(const std::string& taskScope)
 {
 	taskScope_ = taskScope;
-	setParameter("TaskScope", taskScope);
+	setCoreParameter("TaskScope", taskScope);
 }
 
 std::string TaskConfigModifyRequest::getAlertConfig()const
@@ -78,7 +78,7 @@ std::string TaskConfigModifyRequest::getAlertConfig()const
 void TaskConfigModifyRequest::setAlertConfig(const std::string& alertConfig)
 {
 	alertConfig_ = alertConfig;
-	setParameter("AlertConfig", alertConfig);
+	setCoreParameter("AlertConfig", alertConfig);
 }
 
 long TaskConfigModifyRequest::getGroupId()const
@@ -89,7 +89,7 @@ long TaskConfigModifyRequest::getGroupId()const
 void TaskConfigModifyRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string TaskConfigModifyRequest::getTaskName()const
@@ -100,7 +100,7 @@ std::string TaskConfigModifyRequest::getTaskName()const
 void TaskConfigModifyRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setParameter("TaskName", taskName);
+	setCoreParameter("TaskName", taskName);
 }
 
 long TaskConfigModifyRequest::getId()const
@@ -111,7 +111,7 @@ long TaskConfigModifyRequest::getId()const
 void TaskConfigModifyRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string TaskConfigModifyRequest::getGroupName()const
@@ -122,6 +122,6 @@ std::string TaskConfigModifyRequest::getGroupName()const
 void TaskConfigModifyRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 

@@ -69,6 +69,17 @@ void DescribePredictDatasRequest::setProxy_original_security_transport(bool prox
 	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
+std::string DescribePredictDatasRequest::getDataIds()const
+{
+	return dataIds_;
+}
+
+void DescribePredictDatasRequest::setDataIds(const std::string& dataIds)
+{
+	dataIds_ = dataIds;
+	setCoreParameter("DataIds", dataIds);
+}
+
 std::string DescribePredictDatasRequest::getProxy_original_source_ip()const
 {
 	return proxy_original_source_ip_;

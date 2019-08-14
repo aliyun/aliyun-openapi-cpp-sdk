@@ -35,10 +35,13 @@ DescribeDBInstanceAttributeResult::~DescribeDBInstanceAttributeResult()
 
 void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allDBInstances = value["DBInstances"]["DBInstance"];
 	for (auto value : allDBInstances)
@@ -96,12 +99,16 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.lastDowngradeTime = value["LastDowngradeTime"].asString();
 		if(!value["ReplicationFactor"].isNull())
 			dBInstancesObject.replicationFactor = value["ReplicationFactor"].asString();
+		if(!value["ReadonlyReplicas"].isNull())
+			dBInstancesObject.readonlyReplicas = value["ReadonlyReplicas"].asString();
 		if(!value["MaxIOPS"].isNull())
 			dBInstancesObject.maxIOPS = std::stoi(value["MaxIOPS"].asString());
 		if(!value["MaxConnections"].isNull())
 			dBInstancesObject.maxConnections = std::stoi(value["MaxConnections"].asString());
 		if(!value["CurrentKernelVersion"].isNull())
 			dBInstancesObject.currentKernelVersion = value["CurrentKernelVersion"].asString();
+		if(!value["VpcAuthMode"].isNull())
+			dBInstancesObject.vpcAuthMode = value["VpcAuthMode"].asString();
 		auto allMongosList = value["MongosList"]["MongosAttribute"];
 		for (auto value : allMongosList)
 		{
@@ -144,7 +151,33 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 				shardListObject.maxIOPS = std::stoi(value["MaxIOPS"].asString());
 			if(!value["MaxConnections"].isNull())
 				shardListObject.maxConnections = std::stoi(value["MaxConnections"].asString());
+			if(!value["ConnectString"].isNull())
+				shardListObject.connectString = value["ConnectString"].asString();
+			if(!value["Port"].isNull())
+				shardListObject.port = std::stoi(value["Port"].asString());
 			dBInstancesObject.shardList.push_back(shardListObject);
+		}
+		auto allConfigserverList = value["ConfigserverList"]["ConfigserverAttribute"];
+		for (auto value : allConfigserverList)
+		{
+			DBInstance::ConfigserverAttribute configserverListObject;
+			if(!value["NodeId"].isNull())
+				configserverListObject.nodeId = value["NodeId"].asString();
+			if(!value["NodeDescription"].isNull())
+				configserverListObject.nodeDescription = value["NodeDescription"].asString();
+			if(!value["NodeClass"].isNull())
+				configserverListObject.nodeClass = value["NodeClass"].asString();
+			if(!value["NodeStorage"].isNull())
+				configserverListObject.nodeStorage = std::stoi(value["NodeStorage"].asString());
+			if(!value["MaxIOPS"].isNull())
+				configserverListObject.maxIOPS = std::stoi(value["MaxIOPS"].asString());
+			if(!value["MaxConnections"].isNull())
+				configserverListObject.maxConnections = std::stoi(value["MaxConnections"].asString());
+			if(!value["ConnectString"].isNull())
+				configserverListObject.connectString = value["ConnectString"].asString();
+			if(!value["Port"].isNull())
+				configserverListObject.port = std::stoi(value["Port"].asString());
+			dBInstancesObject.configserverList.push_back(configserverListObject);
 		}
 		auto allReplicaSets = value["ReplicaSets"]["ReplicaSet"];
 		for (auto value : allReplicaSets)

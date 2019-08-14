@@ -53,13 +53,12 @@ namespace AlibabaCloud
 						long cenOwnerId;
 						std::string cenId;
 					};
-					std::string status;
 					std::string peerGatewayIp;
+					long minRxInterval;
 					std::string routeTableId;
 					std::string description;
 					std::vector<VirtualBorderRouterType::AssociatedPhysicalConnection> associatedPhysicalConnections;
 					std::string activationTime;
-					std::string circuitCode;
 					std::string physicalConnectionId;
 					std::string vlanInterfaceId;
 					std::string physicalConnectionStatus;
@@ -69,11 +68,17 @@ namespace AlibabaCloud
 					std::string physicalConnectionOwnerUid;
 					std::string recoveryTime;
 					std::string name;
-					std::string localGatewayIp;
 					std::vector<VirtualBorderRouterType::AssociatedCen> associatedCens;
+					std::string eccId;
+					int vlanId;
+					std::string status;
+					std::string circuitCode;
+					long minTxInterval;
+					long detectMultiplier;
+					std::string localGatewayIp;
+					std::string type;
 					std::string creationTime;
 					std::string accessPointId;
-					int vlanId;
 					std::string physicalConnectionBusinessStatus;
 				};
 

@@ -34,12 +34,21 @@ namespace AlibabaCloud
 			public:
 				struct UserStatus
 				{
-					bool authed;
 					bool rdsSet;
+					std::string instanceId;
+					bool renewStatus;
+					int instanceNum;
+					bool trail;
+					bool authed;
+					long ossSize;
+					long useOssSize;
 					std::string accessKeyId;
+					int instanceStatus;
 					bool ossBucketSet;
 					bool odpsSet;
 					bool buyed;
+					int remainDays;
+					int useInstanceNum;
 				};
 
 

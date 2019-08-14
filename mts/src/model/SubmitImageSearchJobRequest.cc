@@ -33,7 +33,7 @@ std::string SubmitImageSearchJobRequest::getInputImage()const
 void SubmitImageSearchJobRequest::setInputImage(const std::string& inputImage)
 {
 	inputImage_ = inputImage;
-	setParameter("InputImage", inputImage);
+	setCoreParameter("InputImage", inputImage);
 }
 
 std::string SubmitImageSearchJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitImageSearchJobRequest::getUserData()const
 void SubmitImageSearchJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitImageSearchJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitImageSearchJobRequest::getResourceOwnerId()const
 void SubmitImageSearchJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitImageSearchJobRequest::getFpDBId()const
@@ -66,7 +66,7 @@ std::string SubmitImageSearchJobRequest::getFpDBId()const
 void SubmitImageSearchJobRequest::setFpDBId(const std::string& fpDBId)
 {
 	fpDBId_ = fpDBId;
-	setParameter("FpDBId", fpDBId);
+	setCoreParameter("FpDBId", fpDBId);
 }
 
 std::string SubmitImageSearchJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitImageSearchJobRequest::getResourceOwnerAccount()const
 void SubmitImageSearchJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitImageSearchJobRequest::getInputVideo()const
@@ -88,7 +88,7 @@ std::string SubmitImageSearchJobRequest::getInputVideo()const
 void SubmitImageSearchJobRequest::setInputVideo(const std::string& inputVideo)
 {
 	inputVideo_ = inputVideo;
-	setParameter("InputVideo", inputVideo);
+	setCoreParameter("InputVideo", inputVideo);
 }
 
 std::string SubmitImageSearchJobRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string SubmitImageSearchJobRequest::getOwnerAccount()const
 void SubmitImageSearchJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitImageSearchJobRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long SubmitImageSearchJobRequest::getOwnerId()const
 void SubmitImageSearchJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitImageSearchJobRequest::getConfig()const
@@ -121,7 +121,7 @@ std::string SubmitImageSearchJobRequest::getConfig()const
 void SubmitImageSearchJobRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setParameter("Config", config);
+	setCoreParameter("Config", config);
 }
 
 std::string SubmitImageSearchJobRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string SubmitImageSearchJobRequest::getAccessKeyId()const
 void SubmitImageSearchJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitImageSearchJobRequest::getPipelineId()const
@@ -143,6 +143,6 @@ std::string SubmitImageSearchJobRequest::getPipelineId()const
 void SubmitImageSearchJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

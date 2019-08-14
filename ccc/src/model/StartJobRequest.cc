@@ -33,7 +33,7 @@ std::string StartJobRequest::getJobJson()const
 void StartJobRequest::setJobJson(const std::string& jobJson)
 {
 	jobJson_ = jobJson;
-	setParameter("JobJson", jobJson);
+	setCoreParameter("JobJson", jobJson);
 }
 
 std::vector<std::string> StartJobRequest::getCallingNumber()const
@@ -45,7 +45,7 @@ void StartJobRequest::setCallingNumber(const std::vector<std::string>& callingNu
 {
 	callingNumber_ = callingNumber;
 	for(int i = 0; i!= callingNumber.size(); i++)
-		setParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
 }
 
 std::string StartJobRequest::getInstanceId()const
@@ -56,7 +56,7 @@ std::string StartJobRequest::getInstanceId()const
 void StartJobRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string StartJobRequest::getGroupId()const
@@ -67,7 +67,7 @@ std::string StartJobRequest::getGroupId()const
 void StartJobRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 bool StartJobRequest::getSelfHostedCallCenter()const
@@ -78,7 +78,7 @@ bool StartJobRequest::getSelfHostedCallCenter()const
 void StartJobRequest::setSelfHostedCallCenter(bool selfHostedCallCenter)
 {
 	selfHostedCallCenter_ = selfHostedCallCenter;
-	setParameter("SelfHostedCallCenter", std::to_string(selfHostedCallCenter));
+	setCoreParameter("SelfHostedCallCenter", selfHostedCallCenter ? "true" : "false");
 }
 
 std::string StartJobRequest::getScenarioId()const
@@ -89,6 +89,6 @@ std::string StartJobRequest::getScenarioId()const
 void StartJobRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", scenarioId);
 }
 

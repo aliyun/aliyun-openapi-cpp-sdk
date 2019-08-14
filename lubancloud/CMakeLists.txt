@@ -23,10 +23,10 @@ set(lubancloud_public_header
 set(lubancloud_public_header_model 
 	include/alibabacloud/lubancloud/model/QueryCutoutTaskResultRequest.h
 	include/alibabacloud/lubancloud/model/QueryCutoutTaskResultResult.h
-	include/alibabacloud/lubancloud/model/SubmitGenerateTaskRequest.h
-	include/alibabacloud/lubancloud/model/SubmitGenerateTaskResult.h
 	include/alibabacloud/lubancloud/model/BuyOriginPicturesRequest.h
 	include/alibabacloud/lubancloud/model/BuyOriginPicturesResult.h
+	include/alibabacloud/lubancloud/model/SubmitGenerateTaskRequest.h
+	include/alibabacloud/lubancloud/model/SubmitGenerateTaskResult.h
 	include/alibabacloud/lubancloud/model/SubmitCutoutTaskRequest.h
 	include/alibabacloud/lubancloud/model/SubmitCutoutTaskResult.h
 	include/alibabacloud/lubancloud/model/QueryGenerateTaskResultRequest.h
@@ -38,10 +38,10 @@ set(lubancloud_src
 	src/LubancloudClient.cc
 	src/model/QueryCutoutTaskResultRequest.cc
 	src/model/QueryCutoutTaskResultResult.cc
-	src/model/SubmitGenerateTaskRequest.cc
-	src/model/SubmitGenerateTaskResult.cc
 	src/model/BuyOriginPicturesRequest.cc
 	src/model/BuyOriginPicturesResult.cc
+	src/model/SubmitGenerateTaskRequest.cc
+	src/model/SubmitGenerateTaskResult.cc
 	src/model/SubmitCutoutTaskRequest.cc
 	src/model/SubmitCutoutTaskResult.cc
 	src/model/QueryGenerateTaskResultRequest.cc

@@ -33,7 +33,7 @@ std::string GetNumberRegionInfoRequest::getNumber()const
 void GetNumberRegionInfoRequest::setNumber(const std::string& number)
 {
 	number_ = number;
-	setParameter("Number", number);
+	setCoreParameter("Number", number);
 }
 
 std::string GetNumberRegionInfoRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string GetNumberRegionInfoRequest::getInstanceId()const
 void GetNumberRegionInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetNumberRegionInfoRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetNumberRegionInfoRequest::getAccessKeyId()const
 void GetNumberRegionInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

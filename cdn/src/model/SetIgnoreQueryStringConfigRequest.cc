@@ -33,7 +33,7 @@ std::string SetIgnoreQueryStringConfigRequest::getKeepOssArgs()const
 void SetIgnoreQueryStringConfigRequest::setKeepOssArgs(const std::string& keepOssArgs)
 {
 	keepOssArgs_ = keepOssArgs;
-	setParameter("KeepOssArgs", keepOssArgs);
+	setCoreParameter("KeepOssArgs", keepOssArgs);
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getHashKeyArgs()const
@@ -44,7 +44,7 @@ std::string SetIgnoreQueryStringConfigRequest::getHashKeyArgs()const
 void SetIgnoreQueryStringConfigRequest::setHashKeyArgs(const std::string& hashKeyArgs)
 {
 	hashKeyArgs_ = hashKeyArgs;
-	setParameter("HashKeyArgs", hashKeyArgs);
+	setCoreParameter("HashKeyArgs", hashKeyArgs);
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string SetIgnoreQueryStringConfigRequest::getSecurityToken()const
 void SetIgnoreQueryStringConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getEnable()const
@@ -66,7 +66,7 @@ std::string SetIgnoreQueryStringConfigRequest::getEnable()const
 void SetIgnoreQueryStringConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable);
+	setCoreParameter("Enable", enable);
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string SetIgnoreQueryStringConfigRequest::getDomainName()const
 void SetIgnoreQueryStringConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long SetIgnoreQueryStringConfigRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long SetIgnoreQueryStringConfigRequest::getOwnerId()const
 void SetIgnoreQueryStringConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getVSwitchId()const
 void ModifyDBInstanceNetworkTypeRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getPrivateIpAddress()const
@@ -44,7 +44,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getPrivateIpAddress()const
 void ModifyDBInstanceNetworkTypeRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setParameter("PrivateIpAddress", privateIpAddress);
+	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getVPCId()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getVPCId()const
 void ModifyDBInstanceNetworkTypeRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setParameter("VPCId", vPCId);
+	setCoreParameter("VPCId", vPCId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
 void ModifyDBInstanceNetworkTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getInstanceNetworkType()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getInstanceNetworkType()const
 void ModifyDBInstanceNetworkTypeRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setParameter("InstanceNetworkType", instanceNetworkType);
+	setCoreParameter("InstanceNetworkType", instanceNetworkType);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
 void ModifyDBInstanceNetworkTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

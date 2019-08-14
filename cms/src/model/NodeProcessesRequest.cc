@@ -33,6 +33,6 @@ std::string NodeProcessesRequest::getInstanceId()const
 void NodeProcessesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 

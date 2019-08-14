@@ -36,6 +36,17 @@ void InsertTradeIntentionUserRequest::setMobile(const std::string& mobile)
 	setCoreParameter("Mobile", mobile);
 }
 
+std::string InsertTradeIntentionUserRequest::getDescription()const
+{
+	return description_;
+}
+
+void InsertTradeIntentionUserRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
 std::string InsertTradeIntentionUserRequest::getPartnerCode()const
 {
 	return partnerCode_;

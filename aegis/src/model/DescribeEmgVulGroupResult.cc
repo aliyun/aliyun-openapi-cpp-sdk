@@ -35,10 +35,13 @@ DescribeEmgVulGroupResult::~DescribeEmgVulGroupResult()
 
 void DescribeEmgVulGroupResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allEmgVulGroupList = value["EmgVulGroupList"]["EmgVulGroup"];
 	for (auto value : allEmgVulGroupList)
@@ -58,6 +61,8 @@ void DescribeEmgVulGroupResult::parse(const std::string &payload)
 			emgVulGroupListObject.type = value["Type"].asString();
 		if(!value["Status"].isNull())
 			emgVulGroupListObject.status = std::stoi(value["Status"].asString());
+		if(!value["Progress"].isNull())
+			emgVulGroupListObject.progress = std::stoi(value["Progress"].asString());
 		emgVulGroupList_.push_back(emgVulGroupListObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -47,11 +47,13 @@ namespace AlibabaCloud
 				ListAppInfoResult();
 				explicit ListAppInfoResult(const std::string &payload);
 				~ListAppInfoResult();
+				int getTotal()const;
 				std::vector<AppInfo> getAppInfoList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int total_;
 				std::vector<AppInfo> appInfoList_;
 
 			};

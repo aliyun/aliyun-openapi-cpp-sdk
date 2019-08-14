@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateSignatureRequest();
 				~CreateSignatureRequest();
 
+				std::string getIconId()const;
+				void setIconId(const std::string& iconId);
 				int getQuantity()const;
 				void setQuantity(int quantity);
 				std::string getHandSignImg()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				void setKeywordStrategy(int keywordStrategy);
 
             private:
+				std::string iconId_;
 				int quantity_;
 				std::string handSignImg_;
 				std::string docId_;

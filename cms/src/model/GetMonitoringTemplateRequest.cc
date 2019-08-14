@@ -33,7 +33,7 @@ std::string GetMonitoringTemplateRequest::getName()const
 void GetMonitoringTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string GetMonitoringTemplateRequest::getId()const
@@ -44,6 +44,6 @@ std::string GetMonitoringTemplateRequest::getId()const
 void GetMonitoringTemplateRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 

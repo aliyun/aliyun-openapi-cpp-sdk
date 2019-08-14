@@ -33,7 +33,7 @@ int GetOssServerSignRequest::getDirType()const
 void GetOssServerSignRequest::setDirType(int dirType)
 {
 	dirType_ = dirType;
-	setParameter("DirType", std::to_string(dirType));
+	setCoreParameter("DirType", std::to_string(dirType));
 }
 
 std::string GetOssServerSignRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetOssServerSignRequest::getAccessKeyId()const
 void GetOssServerSignRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string serverType;
 					std::string type;
 					std::string serverId;
+					std::string description;
 					std::string vpcId;
-					std::string eniHost;
 					int port;
 					std::string serverIp;
 					int weight;
@@ -49,6 +49,7 @@ namespace AlibabaCloud
 				explicit DescribeMasterSlaveServerGroupAttributeResult(const std::string &payload);
 				~DescribeMasterSlaveServerGroupAttributeResult();
 				std::string getMasterSlaveServerGroupId()const;
+				std::string getLoadBalancerId()const;
 				std::string getMasterSlaveServerGroupName()const;
 				std::vector<MasterSlaveBackendServer> getMasterSlaveBackendServers()const;
 
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string masterSlaveServerGroupId_;
+				std::string loadBalancerId_;
 				std::string masterSlaveServerGroupName_;
 				std::vector<MasterSlaveBackendServer> masterSlaveBackendServers_;
 

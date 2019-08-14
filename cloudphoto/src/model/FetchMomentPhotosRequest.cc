@@ -33,7 +33,7 @@ int FetchMomentPhotosRequest::getSize()const
 void FetchMomentPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setParameter("Size", std::to_string(size));
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string FetchMomentPhotosRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string FetchMomentPhotosRequest::getLibraryId()const
 void FetchMomentPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string FetchMomentPhotosRequest::getOrderBy()const
@@ -55,7 +55,7 @@ std::string FetchMomentPhotosRequest::getOrderBy()const
 void FetchMomentPhotosRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", orderBy);
 }
 
 std::string FetchMomentPhotosRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string FetchMomentPhotosRequest::getStoreName()const
 void FetchMomentPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 int FetchMomentPhotosRequest::getPage()const
@@ -77,7 +77,7 @@ int FetchMomentPhotosRequest::getPage()const
 void FetchMomentPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", std::to_string(page));
+	setCoreParameter("Page", std::to_string(page));
 }
 
 long FetchMomentPhotosRequest::getMomentId()const
@@ -88,7 +88,7 @@ long FetchMomentPhotosRequest::getMomentId()const
 void FetchMomentPhotosRequest::setMomentId(long momentId)
 {
 	momentId_ = momentId;
-	setParameter("MomentId", std::to_string(momentId));
+	setCoreParameter("MomentId", std::to_string(momentId));
 }
 
 std::string FetchMomentPhotosRequest::getOrder()const
@@ -99,6 +99,6 @@ std::string FetchMomentPhotosRequest::getOrder()const
 void FetchMomentPhotosRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setParameter("Order", order);
+	setCoreParameter("Order", order);
 }
 

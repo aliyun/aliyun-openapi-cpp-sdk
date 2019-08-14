@@ -34,18 +34,26 @@ namespace AlibabaCloud
 			public:
 				struct PhysicalConnectionType
 				{
-					std::string status;
 					std::string description;
+					std::string endTime;
 					std::string lineOperator;
-					std::string circuitCode;
 					std::string physicalConnectionId;
 					std::string peerLocation;
 					std::string redundantPhysicalConnectionId;
 					std::string businessStatus;
 					std::string name;
-					std::string type;
+					std::string reservationOrderType;
+					std::string loaStatus;
 					std::string adLocation;
 					long bandwidth;
+					std::string reservationActiveTime;
+					std::string status;
+					std::string circuitCode;
+					std::string hasReservationData;
+					std::string reservationInternetChargeType;
+					std::string spec1;
+					std::string type;
+					std::string chargeType;
 					std::string accessPointId;
 					std::string creationTime;
 					std::string enabledTime;

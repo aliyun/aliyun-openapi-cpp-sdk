@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string calledNumber;
 					std::string contactType;
 					std::string instanceId;
+					std::string qualityCheckTid;
 					std::string fileName;
 					std::string channel;
 					long startTime;
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 					std::string fileDescription;
 					std::string agentId;
 					std::string agentName;
+					std::string qualityCheckTaskId;
 				};
 
 

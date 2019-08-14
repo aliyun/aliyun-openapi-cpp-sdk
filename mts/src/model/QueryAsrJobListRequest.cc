@@ -33,7 +33,7 @@ long QueryAsrJobListRequest::getResourceOwnerId()const
 void QueryAsrJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryAsrJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryAsrJobListRequest::getResourceOwnerAccount()const
 void QueryAsrJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryAsrJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryAsrJobListRequest::getJobIds()const
 void QueryAsrJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QueryAsrJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryAsrJobListRequest::getOwnerAccount()const
 void QueryAsrJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryAsrJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryAsrJobListRequest::getOwnerId()const
 void QueryAsrJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryAsrJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryAsrJobListRequest::getAccessKeyId()const
 void QueryAsrJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

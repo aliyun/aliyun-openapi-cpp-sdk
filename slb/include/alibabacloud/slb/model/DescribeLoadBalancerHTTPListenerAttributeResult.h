@@ -57,6 +57,7 @@ namespace AlibabaCloud
 				int getBackendServerPort()const;
 				std::string getXForwardedFor_SLBID()const;
 				int getHealthCheckConnectPort()const;
+				std::string getHealthCheckMethod()const;
 				int getBandwidth()const;
 				std::string getSecurityStatus()const;
 				std::string getGzip()const;
@@ -81,6 +82,7 @@ namespace AlibabaCloud
 				std::string getHealthCheckDomain()const;
 				std::string getXForwardedFor_proto()const;
 				std::string getAclType()const;
+				std::string getHealthCheckType()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -97,6 +99,7 @@ namespace AlibabaCloud
 				int backendServerPort_;
 				std::string xForwardedFor_SLBID_;
 				int healthCheckConnectPort_;
+				std::string healthCheckMethod_;
 				int bandwidth_;
 				std::string securityStatus_;
 				std::string gzip_;
@@ -121,6 +124,7 @@ namespace AlibabaCloud
 				std::string healthCheckDomain_;
 				std::string xForwardedFor_proto_;
 				std::string aclType_;
+				std::string healthCheckType_;
 
 			};
 		}

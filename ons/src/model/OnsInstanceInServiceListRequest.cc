@@ -25,14 +25,3 @@ OnsInstanceInServiceListRequest::OnsInstanceInServiceListRequest() :
 OnsInstanceInServiceListRequest::~OnsInstanceInServiceListRequest()
 {}
 
-long OnsInstanceInServiceListRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsInstanceInServiceListRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-

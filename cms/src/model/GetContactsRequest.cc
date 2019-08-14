@@ -33,6 +33,6 @@ std::string GetContactsRequest::getGroupName()const
 void GetContactsRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 

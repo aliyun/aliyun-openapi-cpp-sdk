@@ -33,7 +33,7 @@ long ListExecutionPlanInstanceTrendRequest::getResourceOwnerId()const
 void ListExecutionPlanInstanceTrendRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListExecutionPlanInstanceTrendRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListExecutionPlanInstanceTrendRequest::getRegionId()const
 void ListExecutionPlanInstanceTrendRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListExecutionPlanInstanceTrendRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListExecutionPlanInstanceTrendRequest::getAccessKeyId()const
 void ListExecutionPlanInstanceTrendRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

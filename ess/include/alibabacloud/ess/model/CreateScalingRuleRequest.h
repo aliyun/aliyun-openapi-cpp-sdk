@@ -53,26 +53,36 @@ namespace AlibabaCloud
 				void setEstimatedInstanceWarmup(int estimatedInstanceWarmup);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				int getPredictiveTaskBufferTime()const;
+				void setPredictiveTaskBufferTime(int predictiveTaskBufferTime);
 				std::string getAdjustmentType()const;
 				void setAdjustmentType(const std::string& adjustmentType);
 				bool getDisableScaleIn()const;
 				void setDisableScaleIn(bool disableScaleIn);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getInitialMaxSize()const;
+				void setInitialMaxSize(int initialMaxSize);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPredictiveValueBuffer()const;
+				void setPredictiveValueBuffer(int predictiveValueBuffer);
 				std::string getScalingRuleName()const;
 				void setScalingRuleName(const std::string& scalingRuleName);
 				int getCooldown()const;
 				void setCooldown(int cooldown);
 				int getMinAdjustmentMagnitude()const;
 				void setMinAdjustmentMagnitude(int minAdjustmentMagnitude);
+				std::string getPredictiveValueBehavior()const;
+				void setPredictiveValueBehavior(const std::string& predictiveValueBehavior);
 				float getTargetValue()const;
 				void setTargetValue(float targetValue);
 				std::string getScalingRuleType()const;
 				void setScalingRuleType(const std::string& scalingRuleType);
 				std::string getMetricName()const;
 				void setMetricName(const std::string& metricName);
+				std::string getPredictiveScalingMode()const;
+				void setPredictiveScalingMode(const std::string& predictiveScalingMode);
 
             private:
 				std::string resourceOwnerAccount_;
@@ -81,16 +91,21 @@ namespace AlibabaCloud
 				std::string scalingGroupId_;
 				int estimatedInstanceWarmup_;
 				std::string ownerAccount_;
+				int predictiveTaskBufferTime_;
 				std::string adjustmentType_;
 				bool disableScaleIn_;
 				long ownerId_;
+				int initialMaxSize_;
 				std::string accessKeyId_;
+				int predictiveValueBuffer_;
 				std::string scalingRuleName_;
 				int cooldown_;
 				int minAdjustmentMagnitude_;
+				std::string predictiveValueBehavior_;
 				float targetValue_;
 				std::string scalingRuleType_;
 				std::string metricName_;
+				std::string predictiveScalingMode_;
 
 			};
 		}

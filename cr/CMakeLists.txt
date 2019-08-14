@@ -43,24 +43,24 @@ set(cr_public_header_model
 	include/alibabacloud/cr/model/CreateCollectionResult.h
 	include/alibabacloud/cr/model/DeleteUserSourceAccountRequest.h
 	include/alibabacloud/cr/model/DeleteUserSourceAccountResult.h
-	include/alibabacloud/cr/model/GetNamespaceRequest.h
-	include/alibabacloud/cr/model/GetNamespaceResult.h
-	include/alibabacloud/cr/model/UpdateRepoBuildRuleRequest.h
-	include/alibabacloud/cr/model/UpdateRepoBuildRuleResult.h
 	include/alibabacloud/cr/model/StartImageScanRequest.h
 	include/alibabacloud/cr/model/StartImageScanResult.h
-	include/alibabacloud/cr/model/DeleteCollectionRequest.h
-	include/alibabacloud/cr/model/DeleteCollectionResult.h
+	include/alibabacloud/cr/model/UpdateRepoBuildRuleRequest.h
+	include/alibabacloud/cr/model/UpdateRepoBuildRuleResult.h
+	include/alibabacloud/cr/model/GetNamespaceRequest.h
+	include/alibabacloud/cr/model/GetNamespaceResult.h
 	include/alibabacloud/cr/model/GetUserSourceRepoListRequest.h
 	include/alibabacloud/cr/model/GetUserSourceRepoListResult.h
-	include/alibabacloud/cr/model/GetRegionRequest.h
-	include/alibabacloud/cr/model/GetRegionResult.h
-	include/alibabacloud/cr/model/GetNamespaceAuthorizationListRequest.h
-	include/alibabacloud/cr/model/GetNamespaceAuthorizationListResult.h
-	include/alibabacloud/cr/model/GetAuthorizationTokenRequest.h
-	include/alibabacloud/cr/model/GetAuthorizationTokenResult.h
+	include/alibabacloud/cr/model/DeleteCollectionRequest.h
+	include/alibabacloud/cr/model/DeleteCollectionResult.h
 	include/alibabacloud/cr/model/UpdateRepoWebhookRequest.h
 	include/alibabacloud/cr/model/UpdateRepoWebhookResult.h
+	include/alibabacloud/cr/model/GetAuthorizationTokenRequest.h
+	include/alibabacloud/cr/model/GetAuthorizationTokenResult.h
+	include/alibabacloud/cr/model/GetNamespaceAuthorizationListRequest.h
+	include/alibabacloud/cr/model/GetNamespaceAuthorizationListResult.h
+	include/alibabacloud/cr/model/GetRegionRequest.h
+	include/alibabacloud/cr/model/GetRegionResult.h
 	include/alibabacloud/cr/model/CreateRepoWebhookRequest.h
 	include/alibabacloud/cr/model/CreateRepoWebhookResult.h
 	include/alibabacloud/cr/model/UpdateUserInfoRequest.h
@@ -83,10 +83,10 @@ set(cr_public_header_model
 	include/alibabacloud/cr/model/GetUserInfoResult.h
 	include/alibabacloud/cr/model/GetRepoBuildLogsRequest.h
 	include/alibabacloud/cr/model/GetRepoBuildLogsResult.h
-	include/alibabacloud/cr/model/GetNamespaceListRequest.h
-	include/alibabacloud/cr/model/GetNamespaceListResult.h
 	include/alibabacloud/cr/model/GetRepoListRequest.h
 	include/alibabacloud/cr/model/GetRepoListResult.h
+	include/alibabacloud/cr/model/GetNamespaceListRequest.h
+	include/alibabacloud/cr/model/GetNamespaceListResult.h
 	include/alibabacloud/cr/model/GetRegionListRequest.h
 	include/alibabacloud/cr/model/GetRegionListResult.h
 	include/alibabacloud/cr/model/GetImageLayerRequest.h
@@ -101,22 +101,22 @@ set(cr_public_header_model
 	include/alibabacloud/cr/model/StartRepoBuildByRuleResult.h
 	include/alibabacloud/cr/model/CreateRepoSyncTaskRequest.h
 	include/alibabacloud/cr/model/CreateRepoSyncTaskResult.h
-	include/alibabacloud/cr/model/GetRepoBuildRuleListRequest.h
-	include/alibabacloud/cr/model/GetRepoBuildRuleListResult.h
-	include/alibabacloud/cr/model/GetUserSourceRepoRefListRequest.h
-	include/alibabacloud/cr/model/GetUserSourceRepoRefListResult.h
 	include/alibabacloud/cr/model/GetImageManifestRequest.h
 	include/alibabacloud/cr/model/GetImageManifestResult.h
+	include/alibabacloud/cr/model/GetUserSourceRepoRefListRequest.h
+	include/alibabacloud/cr/model/GetUserSourceRepoRefListResult.h
+	include/alibabacloud/cr/model/GetRepoBuildRuleListRequest.h
+	include/alibabacloud/cr/model/GetRepoBuildRuleListResult.h
 	include/alibabacloud/cr/model/CancelRepoBuildRequest.h
 	include/alibabacloud/cr/model/CancelRepoBuildResult.h
 	include/alibabacloud/cr/model/UpdateRepoAuthorizationRequest.h
 	include/alibabacloud/cr/model/UpdateRepoAuthorizationResult.h
 	include/alibabacloud/cr/model/GetRepoSourceRepoRequest.h
 	include/alibabacloud/cr/model/GetRepoSourceRepoResult.h
-	include/alibabacloud/cr/model/DeleteNamespaceAuthorizationRequest.h
-	include/alibabacloud/cr/model/DeleteNamespaceAuthorizationResult.h
 	include/alibabacloud/cr/model/CreateRepoBuildRuleRequest.h
 	include/alibabacloud/cr/model/CreateRepoBuildRuleResult.h
+	include/alibabacloud/cr/model/DeleteNamespaceAuthorizationRequest.h
+	include/alibabacloud/cr/model/DeleteNamespaceAuthorizationResult.h
 	include/alibabacloud/cr/model/UpdateRepoRequest.h
 	include/alibabacloud/cr/model/UpdateRepoResult.h
 	include/alibabacloud/cr/model/GetCollectionRequest.h
@@ -135,10 +135,10 @@ set(cr_public_header_model
 	include/alibabacloud/cr/model/UpdateRepoSourceRepoResult.h
 	include/alibabacloud/cr/model/GetRepoRequest.h
 	include/alibabacloud/cr/model/GetRepoResult.h
-	include/alibabacloud/cr/model/GetRepoBuildStatusRequest.h
-	include/alibabacloud/cr/model/GetRepoBuildStatusResult.h
 	include/alibabacloud/cr/model/CreateRepoAuthorizationRequest.h
 	include/alibabacloud/cr/model/CreateRepoAuthorizationResult.h
+	include/alibabacloud/cr/model/GetRepoBuildStatusRequest.h
+	include/alibabacloud/cr/model/GetRepoBuildStatusResult.h
 	include/alibabacloud/cr/model/DeleteRepoWebhookRequest.h
 	include/alibabacloud/cr/model/DeleteRepoWebhookResult.h
 	include/alibabacloud/cr/model/DeleteRepoBuildRuleRequest.h
@@ -174,24 +174,24 @@ set(cr_src
 	src/model/CreateCollectionResult.cc
 	src/model/DeleteUserSourceAccountRequest.cc
 	src/model/DeleteUserSourceAccountResult.cc
-	src/model/GetNamespaceRequest.cc
-	src/model/GetNamespaceResult.cc
-	src/model/UpdateRepoBuildRuleRequest.cc
-	src/model/UpdateRepoBuildRuleResult.cc
 	src/model/StartImageScanRequest.cc
 	src/model/StartImageScanResult.cc
-	src/model/DeleteCollectionRequest.cc
-	src/model/DeleteCollectionResult.cc
+	src/model/UpdateRepoBuildRuleRequest.cc
+	src/model/UpdateRepoBuildRuleResult.cc
+	src/model/GetNamespaceRequest.cc
+	src/model/GetNamespaceResult.cc
 	src/model/GetUserSourceRepoListRequest.cc
 	src/model/GetUserSourceRepoListResult.cc
-	src/model/GetRegionRequest.cc
-	src/model/GetRegionResult.cc
-	src/model/GetNamespaceAuthorizationListRequest.cc
-	src/model/GetNamespaceAuthorizationListResult.cc
-	src/model/GetAuthorizationTokenRequest.cc
-	src/model/GetAuthorizationTokenResult.cc
+	src/model/DeleteCollectionRequest.cc
+	src/model/DeleteCollectionResult.cc
 	src/model/UpdateRepoWebhookRequest.cc
 	src/model/UpdateRepoWebhookResult.cc
+	src/model/GetAuthorizationTokenRequest.cc
+	src/model/GetAuthorizationTokenResult.cc
+	src/model/GetNamespaceAuthorizationListRequest.cc
+	src/model/GetNamespaceAuthorizationListResult.cc
+	src/model/GetRegionRequest.cc
+	src/model/GetRegionResult.cc
 	src/model/CreateRepoWebhookRequest.cc
 	src/model/CreateRepoWebhookResult.cc
 	src/model/UpdateUserInfoRequest.cc
@@ -214,10 +214,10 @@ set(cr_src
 	src/model/GetUserInfoResult.cc
 	src/model/GetRepoBuildLogsRequest.cc
 	src/model/GetRepoBuildLogsResult.cc
-	src/model/GetNamespaceListRequest.cc
-	src/model/GetNamespaceListResult.cc
 	src/model/GetRepoListRequest.cc
 	src/model/GetRepoListResult.cc
+	src/model/GetNamespaceListRequest.cc
+	src/model/GetNamespaceListResult.cc
 	src/model/GetRegionListRequest.cc
 	src/model/GetRegionListResult.cc
 	src/model/GetImageLayerRequest.cc
@@ -232,22 +232,22 @@ set(cr_src
 	src/model/StartRepoBuildByRuleResult.cc
 	src/model/CreateRepoSyncTaskRequest.cc
 	src/model/CreateRepoSyncTaskResult.cc
-	src/model/GetRepoBuildRuleListRequest.cc
-	src/model/GetRepoBuildRuleListResult.cc
-	src/model/GetUserSourceRepoRefListRequest.cc
-	src/model/GetUserSourceRepoRefListResult.cc
 	src/model/GetImageManifestRequest.cc
 	src/model/GetImageManifestResult.cc
+	src/model/GetUserSourceRepoRefListRequest.cc
+	src/model/GetUserSourceRepoRefListResult.cc
+	src/model/GetRepoBuildRuleListRequest.cc
+	src/model/GetRepoBuildRuleListResult.cc
 	src/model/CancelRepoBuildRequest.cc
 	src/model/CancelRepoBuildResult.cc
 	src/model/UpdateRepoAuthorizationRequest.cc
 	src/model/UpdateRepoAuthorizationResult.cc
 	src/model/GetRepoSourceRepoRequest.cc
 	src/model/GetRepoSourceRepoResult.cc
-	src/model/DeleteNamespaceAuthorizationRequest.cc
-	src/model/DeleteNamespaceAuthorizationResult.cc
 	src/model/CreateRepoBuildRuleRequest.cc
 	src/model/CreateRepoBuildRuleResult.cc
+	src/model/DeleteNamespaceAuthorizationRequest.cc
+	src/model/DeleteNamespaceAuthorizationResult.cc
 	src/model/UpdateRepoRequest.cc
 	src/model/UpdateRepoResult.cc
 	src/model/GetCollectionRequest.cc
@@ -266,10 +266,10 @@ set(cr_src
 	src/model/UpdateRepoSourceRepoResult.cc
 	src/model/GetRepoRequest.cc
 	src/model/GetRepoResult.cc
-	src/model/GetRepoBuildStatusRequest.cc
-	src/model/GetRepoBuildStatusResult.cc
 	src/model/CreateRepoAuthorizationRequest.cc
 	src/model/CreateRepoAuthorizationResult.cc
+	src/model/GetRepoBuildStatusRequest.cc
+	src/model/GetRepoBuildStatusResult.cc
 	src/model/DeleteRepoWebhookRequest.cc
 	src/model/DeleteRepoWebhookResult.cc
 	src/model/DeleteRepoBuildRuleRequest.cc

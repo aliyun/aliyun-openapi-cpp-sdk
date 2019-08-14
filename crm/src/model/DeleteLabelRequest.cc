@@ -33,7 +33,7 @@ std::string DeleteLabelRequest::getLabelSeries()const
 void DeleteLabelRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setParameter("LabelSeries", labelSeries);
+	setCoreParameter("LabelSeries", labelSeries);
 }
 
 std::string DeleteLabelRequest::getOrganization()const
@@ -44,7 +44,7 @@ std::string DeleteLabelRequest::getOrganization()const
 void DeleteLabelRequest::setOrganization(const std::string& organization)
 {
 	organization_ = organization;
-	setParameter("Organization", organization);
+	setCoreParameter("Organization", organization);
 }
 
 std::string DeleteLabelRequest::getPK()const
@@ -55,7 +55,7 @@ std::string DeleteLabelRequest::getPK()const
 void DeleteLabelRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setParameter("PK", pK);
+	setCoreParameter("PK", pK);
 }
 
 std::string DeleteLabelRequest::getLabelName()const
@@ -66,7 +66,7 @@ std::string DeleteLabelRequest::getLabelName()const
 void DeleteLabelRequest::setLabelName(const std::string& labelName)
 {
 	labelName_ = labelName;
-	setParameter("LabelName", labelName);
+	setCoreParameter("LabelName", labelName);
 }
 
 std::string DeleteLabelRequest::getUserName()const
@@ -77,6 +77,6 @@ std::string DeleteLabelRequest::getUserName()const
 void DeleteLabelRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

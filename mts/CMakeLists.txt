@@ -21,12 +21,12 @@ set(mts_public_header
 	include/alibabacloud/mts/MtsExport.h )
 
 set(mts_public_header_model 
-	include/alibabacloud/mts/model/DeleteCategoryRequest.h
-	include/alibabacloud/mts/model/DeleteCategoryResult.h
-	include/alibabacloud/mts/model/QuerySnapshotJobListRequest.h
-	include/alibabacloud/mts/model/QuerySnapshotJobListResult.h
 	include/alibabacloud/mts/model/QueryAuthConfigRequest.h
 	include/alibabacloud/mts/model/QueryAuthConfigResult.h
+	include/alibabacloud/mts/model/QuerySnapshotJobListRequest.h
+	include/alibabacloud/mts/model/QuerySnapshotJobListResult.h
+	include/alibabacloud/mts/model/DeleteCategoryRequest.h
+	include/alibabacloud/mts/model/DeleteCategoryResult.h
 	include/alibabacloud/mts/model/QueryTagJobListRequest.h
 	include/alibabacloud/mts/model/QueryTagJobListResult.h
 	include/alibabacloud/mts/model/QueryAsrPipelineListRequest.h
@@ -37,10 +37,10 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/CreateSessionResult.h
 	include/alibabacloud/mts/model/UpdateMediaPublishStateRequest.h
 	include/alibabacloud/mts/model/UpdateMediaPublishStateResult.h
-	include/alibabacloud/mts/model/ListJobRequest.h
-	include/alibabacloud/mts/model/ListJobResult.h
 	include/alibabacloud/mts/model/ListAsrPipelineRequest.h
 	include/alibabacloud/mts/model/ListAsrPipelineResult.h
+	include/alibabacloud/mts/model/ListJobRequest.h
+	include/alibabacloud/mts/model/ListJobResult.h
 	include/alibabacloud/mts/model/AddMediaTagRequest.h
 	include/alibabacloud/mts/model/AddMediaTagResult.h
 	include/alibabacloud/mts/model/UnbindInputBucketRequest.h
@@ -53,10 +53,10 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/SubmitComplexJobResult.h
 	include/alibabacloud/mts/model/AddAsrPipelineRequest.h
 	include/alibabacloud/mts/model/AddAsrPipelineResult.h
-	include/alibabacloud/mts/model/CancelJobRequest.h
-	include/alibabacloud/mts/model/CancelJobResult.h
 	include/alibabacloud/mts/model/ReportCensorJobResultRequest.h
 	include/alibabacloud/mts/model/ReportCensorJobResultResult.h
+	include/alibabacloud/mts/model/CancelJobRequest.h
+	include/alibabacloud/mts/model/CancelJobResult.h
 	include/alibabacloud/mts/model/DeleteMcuJobRequest.h
 	include/alibabacloud/mts/model/DeleteMcuJobResult.h
 	include/alibabacloud/mts/model/ListAllCategoryRequest.h
@@ -79,20 +79,20 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/QueryComplexJobListResult.h
 	include/alibabacloud/mts/model/QueryJobListRequest.h
 	include/alibabacloud/mts/model/QueryJobListResult.h
-	include/alibabacloud/mts/model/SearchMediaWorkflowRequest.h
-	include/alibabacloud/mts/model/SearchMediaWorkflowResult.h
 	include/alibabacloud/mts/model/LogicalDeleteResourceRequest.h
 	include/alibabacloud/mts/model/LogicalDeleteResourceResult.h
-	include/alibabacloud/mts/model/QueryCoverPipelineListRequest.h
-	include/alibabacloud/mts/model/QueryCoverPipelineListResult.h
+	include/alibabacloud/mts/model/SearchMediaWorkflowRequest.h
+	include/alibabacloud/mts/model/SearchMediaWorkflowResult.h
 	include/alibabacloud/mts/model/QueryFpShotJobListRequest.h
 	include/alibabacloud/mts/model/QueryFpShotJobListResult.h
+	include/alibabacloud/mts/model/QueryCoverPipelineListRequest.h
+	include/alibabacloud/mts/model/QueryCoverPipelineListResult.h
 	include/alibabacloud/mts/model/ListMediaWorkflowExecutionsRequest.h
 	include/alibabacloud/mts/model/ListMediaWorkflowExecutionsResult.h
-	include/alibabacloud/mts/model/DeletePipelineRequest.h
-	include/alibabacloud/mts/model/DeletePipelineResult.h
 	include/alibabacloud/mts/model/DeleteMediaTagRequest.h
 	include/alibabacloud/mts/model/DeleteMediaTagResult.h
+	include/alibabacloud/mts/model/DeletePipelineRequest.h
+	include/alibabacloud/mts/model/DeletePipelineResult.h
 	include/alibabacloud/mts/model/UpdateAsrPipelineRequest.h
 	include/alibabacloud/mts/model/UpdateAsrPipelineResult.h
 	include/alibabacloud/mts/model/QueryMediaDetailJobListRequest.h
@@ -117,12 +117,12 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/QueryMCTemplateListResult.h
 	include/alibabacloud/mts/model/UpdateMediaRequest.h
 	include/alibabacloud/mts/model/UpdateMediaResult.h
-	include/alibabacloud/mts/model/SubmitMediaFpDeleteJobRequest.h
-	include/alibabacloud/mts/model/SubmitMediaFpDeleteJobResult.h
-	include/alibabacloud/mts/model/ListCensorPipelineRequest.h
-	include/alibabacloud/mts/model/ListCensorPipelineResult.h
 	include/alibabacloud/mts/model/QuerySubtitleJobListRequest.h
 	include/alibabacloud/mts/model/QuerySubtitleJobListResult.h
+	include/alibabacloud/mts/model/ListCensorPipelineRequest.h
+	include/alibabacloud/mts/model/ListCensorPipelineResult.h
+	include/alibabacloud/mts/model/SubmitMediaFpDeleteJobRequest.h
+	include/alibabacloud/mts/model/SubmitMediaFpDeleteJobResult.h
 	include/alibabacloud/mts/model/DeactivateMediaWorkflowRequest.h
 	include/alibabacloud/mts/model/DeactivateMediaWorkflowResult.h
 	include/alibabacloud/mts/model/QueryVideoGifJobListRequest.h
@@ -143,18 +143,20 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/ReportCoverJobResultResult.h
 	include/alibabacloud/mts/model/SubmitImageQualityJobRequest.h
 	include/alibabacloud/mts/model/SubmitImageQualityJobResult.h
+	include/alibabacloud/mts/model/QueryFpCompareJobListRequest.h
+	include/alibabacloud/mts/model/QueryFpCompareJobListResult.h
 	include/alibabacloud/mts/model/AddMCTemplateRequest.h
 	include/alibabacloud/mts/model/AddMCTemplateResult.h
-	include/alibabacloud/mts/model/BindOutputBucketRequest.h
-	include/alibabacloud/mts/model/BindOutputBucketResult.h
-	include/alibabacloud/mts/model/SearchTemplateRequest.h
-	include/alibabacloud/mts/model/SearchTemplateResult.h
 	include/alibabacloud/mts/model/UpdateMcuTemplateRequest.h
 	include/alibabacloud/mts/model/UpdateMcuTemplateResult.h
-	include/alibabacloud/mts/model/QueryMCJobListRequest.h
-	include/alibabacloud/mts/model/QueryMCJobListResult.h
+	include/alibabacloud/mts/model/SearchTemplateRequest.h
+	include/alibabacloud/mts/model/SearchTemplateResult.h
+	include/alibabacloud/mts/model/BindOutputBucketRequest.h
+	include/alibabacloud/mts/model/BindOutputBucketResult.h
 	include/alibabacloud/mts/model/AddPipelineRequest.h
 	include/alibabacloud/mts/model/AddPipelineResult.h
+	include/alibabacloud/mts/model/QueryMCJobListRequest.h
+	include/alibabacloud/mts/model/QueryMCJobListResult.h
 	include/alibabacloud/mts/model/SubmitFacerecogJobRequest.h
 	include/alibabacloud/mts/model/SubmitFacerecogJobResult.h
 	include/alibabacloud/mts/model/QueryMediaListRequest.h
@@ -163,42 +165,46 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/SubmitEditingJobsResult.h
 	include/alibabacloud/mts/model/SubmitMediaInfoJobRequest.h
 	include/alibabacloud/mts/model/SubmitMediaInfoJobResult.h
-	include/alibabacloud/mts/model/QueryPornJobListRequest.h
-	include/alibabacloud/mts/model/QueryPornJobListResult.h
 	include/alibabacloud/mts/model/ReportVideoSplitJobResultRequest.h
 	include/alibabacloud/mts/model/ReportVideoSplitJobResultResult.h
+	include/alibabacloud/mts/model/QueryPornJobListRequest.h
+	include/alibabacloud/mts/model/QueryPornJobListResult.h
 	include/alibabacloud/mts/model/UpdateCategoryNameRequest.h
 	include/alibabacloud/mts/model/UpdateCategoryNameResult.h
 	include/alibabacloud/mts/model/DeleteMediaWorkflowRequest.h
 	include/alibabacloud/mts/model/DeleteMediaWorkflowResult.h
 	include/alibabacloud/mts/model/QueryMcuJobRequest.h
 	include/alibabacloud/mts/model/QueryMcuJobResult.h
-	include/alibabacloud/mts/model/ListCoverPipelineRequest.h
-	include/alibabacloud/mts/model/ListCoverPipelineResult.h
+	include/alibabacloud/mts/model/SubmitBeautifyJobsRequest.h
+	include/alibabacloud/mts/model/SubmitBeautifyJobsResult.h
 	include/alibabacloud/mts/model/QueryMediaCensorJobDetailRequest.h
 	include/alibabacloud/mts/model/QueryMediaCensorJobDetailResult.h
+	include/alibabacloud/mts/model/ListCoverPipelineRequest.h
+	include/alibabacloud/mts/model/ListCoverPipelineResult.h
 	include/alibabacloud/mts/model/CreateMcuTemplateRequest.h
 	include/alibabacloud/mts/model/CreateMcuTemplateResult.h
 	include/alibabacloud/mts/model/QueryImageSearchJobListRequest.h
 	include/alibabacloud/mts/model/QueryImageSearchJobListResult.h
-	include/alibabacloud/mts/model/ReportFpShotJobResultRequest.h
-	include/alibabacloud/mts/model/ReportFpShotJobResultResult.h
 	include/alibabacloud/mts/model/SubmitVideoSummaryJobRequest.h
 	include/alibabacloud/mts/model/SubmitVideoSummaryJobResult.h
+	include/alibabacloud/mts/model/ReportFpShotJobResultRequest.h
+	include/alibabacloud/mts/model/ReportFpShotJobResultResult.h
 	include/alibabacloud/mts/model/SubmitVideoGifJobRequest.h
 	include/alibabacloud/mts/model/SubmitVideoGifJobResult.h
 	include/alibabacloud/mts/model/QueryAnnotationJobListRequest.h
 	include/alibabacloud/mts/model/QueryAnnotationJobListResult.h
-	include/alibabacloud/mts/model/SubmitMediaDetailJobRequest.h
-	include/alibabacloud/mts/model/SubmitMediaDetailJobResult.h
 	include/alibabacloud/mts/model/SubmitPornJobRequest.h
 	include/alibabacloud/mts/model/SubmitPornJobResult.h
-	include/alibabacloud/mts/model/QueryFpImportResultRequest.h
-	include/alibabacloud/mts/model/QueryFpImportResultResult.h
+	include/alibabacloud/mts/model/SubmitMediaDetailJobRequest.h
+	include/alibabacloud/mts/model/SubmitMediaDetailJobResult.h
+	include/alibabacloud/mts/model/DescribeMtsUserResourcePackageRequest.h
+	include/alibabacloud/mts/model/DescribeMtsUserResourcePackageResult.h
 	include/alibabacloud/mts/model/SubmitMCJobRequest.h
 	include/alibabacloud/mts/model/SubmitMCJobResult.h
 	include/alibabacloud/mts/model/AddTemplateRequest.h
 	include/alibabacloud/mts/model/AddTemplateResult.h
+	include/alibabacloud/mts/model/QueryFpImportResultRequest.h
+	include/alibabacloud/mts/model/QueryFpImportResultResult.h
 	include/alibabacloud/mts/model/QueryWaterMarkTemplateListRequest.h
 	include/alibabacloud/mts/model/QueryWaterMarkTemplateListResult.h
 	include/alibabacloud/mts/model/ReportPornJobResultRequest.h
@@ -217,10 +223,10 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/AddPornPipelineResult.h
 	include/alibabacloud/mts/model/GetLicenseRequest.h
 	include/alibabacloud/mts/model/GetLicenseResult.h
-	include/alibabacloud/mts/model/QueryVideoSummaryJobListRequest.h
-	include/alibabacloud/mts/model/QueryVideoSummaryJobListResult.h
 	include/alibabacloud/mts/model/QueryPornPipelineListRequest.h
 	include/alibabacloud/mts/model/QueryPornPipelineListResult.h
+	include/alibabacloud/mts/model/QueryVideoSummaryJobListRequest.h
+	include/alibabacloud/mts/model/QueryVideoSummaryJobListResult.h
 	include/alibabacloud/mts/model/QueryTerrorismJobListRequest.h
 	include/alibabacloud/mts/model/QueryTerrorismJobListResult.h
 	include/alibabacloud/mts/model/SubmitJobsRequest.h
@@ -241,10 +247,10 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/QueryMcuTemplateResult.h
 	include/alibabacloud/mts/model/UpdateMediaWorkflowTriggerModeRequest.h
 	include/alibabacloud/mts/model/UpdateMediaWorkflowTriggerModeResult.h
-	include/alibabacloud/mts/model/SearchMediaRequest.h
-	include/alibabacloud/mts/model/SearchMediaResult.h
 	include/alibabacloud/mts/model/ActivateMediaWorkflowRequest.h
 	include/alibabacloud/mts/model/ActivateMediaWorkflowResult.h
+	include/alibabacloud/mts/model/SearchMediaRequest.h
+	include/alibabacloud/mts/model/SearchMediaResult.h
 	include/alibabacloud/mts/model/SubmitTerrorismJobRequest.h
 	include/alibabacloud/mts/model/SubmitTerrorismJobResult.h
 	include/alibabacloud/mts/model/SetAuthConfigRequest.h
@@ -269,16 +275,18 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/ReportMediaDetailJobResultResult.h
 	include/alibabacloud/mts/model/RegisterMediaDetailScenarioRequest.h
 	include/alibabacloud/mts/model/RegisterMediaDetailScenarioResult.h
+	include/alibabacloud/mts/model/QueryMediaCensorJobListRequest.h
+	include/alibabacloud/mts/model/QueryMediaCensorJobListResult.h
 	include/alibabacloud/mts/model/ReportAnnotationJobResultRequest.h
 	include/alibabacloud/mts/model/ReportAnnotationJobResultResult.h
 	include/alibabacloud/mts/model/ListPornPipelineRequest.h
 	include/alibabacloud/mts/model/ListPornPipelineResult.h
 	include/alibabacloud/mts/model/QueryVideoSplitJobListRequest.h
 	include/alibabacloud/mts/model/QueryVideoSplitJobListResult.h
-	include/alibabacloud/mts/model/BindInputBucketRequest.h
-	include/alibabacloud/mts/model/BindInputBucketResult.h
 	include/alibabacloud/mts/model/AddTerrorismPipelineRequest.h
 	include/alibabacloud/mts/model/AddTerrorismPipelineResult.h
+	include/alibabacloud/mts/model/BindInputBucketRequest.h
+	include/alibabacloud/mts/model/BindInputBucketResult.h
 	include/alibabacloud/mts/model/QueryPipelineListRequest.h
 	include/alibabacloud/mts/model/QueryPipelineListResult.h
 	include/alibabacloud/mts/model/UpdateTemplateRequest.h
@@ -295,51 +303,53 @@ set(mts_public_header_model
 	include/alibabacloud/mts/model/SubmitFpShotJobResult.h
 	include/alibabacloud/mts/model/QueryCensorPipelineListRequest.h
 	include/alibabacloud/mts/model/QueryCensorPipelineListResult.h
-	include/alibabacloud/mts/model/SubmitVideoSplitJobRequest.h
-	include/alibabacloud/mts/model/SubmitVideoSplitJobResult.h
 	include/alibabacloud/mts/model/SubmitMcuJobRequest.h
 	include/alibabacloud/mts/model/SubmitMcuJobResult.h
+	include/alibabacloud/mts/model/SubmitVideoSplitJobRequest.h
+	include/alibabacloud/mts/model/SubmitVideoSplitJobResult.h
 	include/alibabacloud/mts/model/CategoryTreeRequest.h
 	include/alibabacloud/mts/model/CategoryTreeResult.h
 	include/alibabacloud/mts/model/SubmitTagJobRequest.h
 	include/alibabacloud/mts/model/SubmitTagJobResult.h
 	include/alibabacloud/mts/model/SubmitCoverJobRequest.h
 	include/alibabacloud/mts/model/SubmitCoverJobResult.h
+	include/alibabacloud/mts/model/PlayInfoRequest.h
+	include/alibabacloud/mts/model/PlayInfoResult.h
 	include/alibabacloud/mts/model/SearchWaterMarkTemplateRequest.h
 	include/alibabacloud/mts/model/SearchWaterMarkTemplateResult.h
 	include/alibabacloud/mts/model/AddCensorPipelineRequest.h
 	include/alibabacloud/mts/model/AddCensorPipelineResult.h
-	include/alibabacloud/mts/model/PlayInfoRequest.h
-	include/alibabacloud/mts/model/PlayInfoResult.h
 	include/alibabacloud/mts/model/SubmitAsrJobRequest.h
 	include/alibabacloud/mts/model/SubmitAsrJobResult.h
 	include/alibabacloud/mts/model/SubmitSubtitleJobRequest.h
 	include/alibabacloud/mts/model/SubmitSubtitleJobResult.h
-	include/alibabacloud/mts/model/QueryCoverJobListRequest.h
-	include/alibabacloud/mts/model/QueryCoverJobListResult.h
 	include/alibabacloud/mts/model/AddMediaWorkflowRequest.h
 	include/alibabacloud/mts/model/AddMediaWorkflowResult.h
+	include/alibabacloud/mts/model/QueryCoverJobListRequest.h
+	include/alibabacloud/mts/model/QueryCoverJobListResult.h
 	include/alibabacloud/mts/model/QueryAsrJobListRequest.h
 	include/alibabacloud/mts/model/QueryAsrJobListResult.h
-	include/alibabacloud/mts/model/SubmitVideoPoseJobRequest.h
-	include/alibabacloud/mts/model/SubmitVideoPoseJobResult.h
-	include/alibabacloud/mts/model/PlayerAuthRequest.h
-	include/alibabacloud/mts/model/PlayerAuthResult.h
 	include/alibabacloud/mts/model/AddWaterMarkTemplateRequest.h
 	include/alibabacloud/mts/model/AddWaterMarkTemplateResult.h
+	include/alibabacloud/mts/model/PlayerAuthRequest.h
+	include/alibabacloud/mts/model/PlayerAuthResult.h
+	include/alibabacloud/mts/model/SubmitVideoPoseJobRequest.h
+	include/alibabacloud/mts/model/SubmitVideoPoseJobResult.h
 	include/alibabacloud/mts/model/RegisterMediaDetailPersonRequest.h
 	include/alibabacloud/mts/model/RegisterMediaDetailPersonResult.h
+	include/alibabacloud/mts/model/SubmitFpCompareJobRequest.h
+	include/alibabacloud/mts/model/SubmitFpCompareJobResult.h
 	include/alibabacloud/mts/model/QueryCensorJobListRequest.h
 	include/alibabacloud/mts/model/QueryCensorJobListResult.h )
 
 set(mts_src 
 	src/MtsClient.cc
-	src/model/DeleteCategoryRequest.cc
-	src/model/DeleteCategoryResult.cc
-	src/model/QuerySnapshotJobListRequest.cc
-	src/model/QuerySnapshotJobListResult.cc
 	src/model/QueryAuthConfigRequest.cc
 	src/model/QueryAuthConfigResult.cc
+	src/model/QuerySnapshotJobListRequest.cc
+	src/model/QuerySnapshotJobListResult.cc
+	src/model/DeleteCategoryRequest.cc
+	src/model/DeleteCategoryResult.cc
 	src/model/QueryTagJobListRequest.cc
 	src/model/QueryTagJobListResult.cc
 	src/model/QueryAsrPipelineListRequest.cc
@@ -350,10 +360,10 @@ set(mts_src
 	src/model/CreateSessionResult.cc
 	src/model/UpdateMediaPublishStateRequest.cc
 	src/model/UpdateMediaPublishStateResult.cc
-	src/model/ListJobRequest.cc
-	src/model/ListJobResult.cc
 	src/model/ListAsrPipelineRequest.cc
 	src/model/ListAsrPipelineResult.cc
+	src/model/ListJobRequest.cc
+	src/model/ListJobResult.cc
 	src/model/AddMediaTagRequest.cc
 	src/model/AddMediaTagResult.cc
 	src/model/UnbindInputBucketRequest.cc
@@ -366,10 +376,10 @@ set(mts_src
 	src/model/SubmitComplexJobResult.cc
 	src/model/AddAsrPipelineRequest.cc
 	src/model/AddAsrPipelineResult.cc
-	src/model/CancelJobRequest.cc
-	src/model/CancelJobResult.cc
 	src/model/ReportCensorJobResultRequest.cc
 	src/model/ReportCensorJobResultResult.cc
+	src/model/CancelJobRequest.cc
+	src/model/CancelJobResult.cc
 	src/model/DeleteMcuJobRequest.cc
 	src/model/DeleteMcuJobResult.cc
 	src/model/ListAllCategoryRequest.cc
@@ -392,20 +402,20 @@ set(mts_src
 	src/model/QueryComplexJobListResult.cc
 	src/model/QueryJobListRequest.cc
 	src/model/QueryJobListResult.cc
-	src/model/SearchMediaWorkflowRequest.cc
-	src/model/SearchMediaWorkflowResult.cc
 	src/model/LogicalDeleteResourceRequest.cc
 	src/model/LogicalDeleteResourceResult.cc
-	src/model/QueryCoverPipelineListRequest.cc
-	src/model/QueryCoverPipelineListResult.cc
+	src/model/SearchMediaWorkflowRequest.cc
+	src/model/SearchMediaWorkflowResult.cc
 	src/model/QueryFpShotJobListRequest.cc
 	src/model/QueryFpShotJobListResult.cc
+	src/model/QueryCoverPipelineListRequest.cc
+	src/model/QueryCoverPipelineListResult.cc
 	src/model/ListMediaWorkflowExecutionsRequest.cc
 	src/model/ListMediaWorkflowExecutionsResult.cc
-	src/model/DeletePipelineRequest.cc
-	src/model/DeletePipelineResult.cc
 	src/model/DeleteMediaTagRequest.cc
 	src/model/DeleteMediaTagResult.cc
+	src/model/DeletePipelineRequest.cc
+	src/model/DeletePipelineResult.cc
 	src/model/UpdateAsrPipelineRequest.cc
 	src/model/UpdateAsrPipelineResult.cc
 	src/model/QueryMediaDetailJobListRequest.cc
@@ -430,12 +440,12 @@ set(mts_src
 	src/model/QueryMCTemplateListResult.cc
 	src/model/UpdateMediaRequest.cc
 	src/model/UpdateMediaResult.cc
-	src/model/SubmitMediaFpDeleteJobRequest.cc
-	src/model/SubmitMediaFpDeleteJobResult.cc
-	src/model/ListCensorPipelineRequest.cc
-	src/model/ListCensorPipelineResult.cc
 	src/model/QuerySubtitleJobListRequest.cc
 	src/model/QuerySubtitleJobListResult.cc
+	src/model/ListCensorPipelineRequest.cc
+	src/model/ListCensorPipelineResult.cc
+	src/model/SubmitMediaFpDeleteJobRequest.cc
+	src/model/SubmitMediaFpDeleteJobResult.cc
 	src/model/DeactivateMediaWorkflowRequest.cc
 	src/model/DeactivateMediaWorkflowResult.cc
 	src/model/QueryVideoGifJobListRequest.cc
@@ -456,18 +466,20 @@ set(mts_src
 	src/model/ReportCoverJobResultResult.cc
 	src/model/SubmitImageQualityJobRequest.cc
 	src/model/SubmitImageQualityJobResult.cc
+	src/model/QueryFpCompareJobListRequest.cc
+	src/model/QueryFpCompareJobListResult.cc
 	src/model/AddMCTemplateRequest.cc
 	src/model/AddMCTemplateResult.cc
-	src/model/BindOutputBucketRequest.cc
-	src/model/BindOutputBucketResult.cc
-	src/model/SearchTemplateRequest.cc
-	src/model/SearchTemplateResult.cc
 	src/model/UpdateMcuTemplateRequest.cc
 	src/model/UpdateMcuTemplateResult.cc
-	src/model/QueryMCJobListRequest.cc
-	src/model/QueryMCJobListResult.cc
+	src/model/SearchTemplateRequest.cc
+	src/model/SearchTemplateResult.cc
+	src/model/BindOutputBucketRequest.cc
+	src/model/BindOutputBucketResult.cc
 	src/model/AddPipelineRequest.cc
 	src/model/AddPipelineResult.cc
+	src/model/QueryMCJobListRequest.cc
+	src/model/QueryMCJobListResult.cc
 	src/model/SubmitFacerecogJobRequest.cc
 	src/model/SubmitFacerecogJobResult.cc
 	src/model/QueryMediaListRequest.cc
@@ -476,42 +488,46 @@ set(mts_src
 	src/model/SubmitEditingJobsResult.cc
 	src/model/SubmitMediaInfoJobRequest.cc
 	src/model/SubmitMediaInfoJobResult.cc
-	src/model/QueryPornJobListRequest.cc
-	src/model/QueryPornJobListResult.cc
 	src/model/ReportVideoSplitJobResultRequest.cc
 	src/model/ReportVideoSplitJobResultResult.cc
+	src/model/QueryPornJobListRequest.cc
+	src/model/QueryPornJobListResult.cc
 	src/model/UpdateCategoryNameRequest.cc
 	src/model/UpdateCategoryNameResult.cc
 	src/model/DeleteMediaWorkflowRequest.cc
 	src/model/DeleteMediaWorkflowResult.cc
 	src/model/QueryMcuJobRequest.cc
 	src/model/QueryMcuJobResult.cc
-	src/model/ListCoverPipelineRequest.cc
-	src/model/ListCoverPipelineResult.cc
+	src/model/SubmitBeautifyJobsRequest.cc
+	src/model/SubmitBeautifyJobsResult.cc
 	src/model/QueryMediaCensorJobDetailRequest.cc
 	src/model/QueryMediaCensorJobDetailResult.cc
+	src/model/ListCoverPipelineRequest.cc
+	src/model/ListCoverPipelineResult.cc
 	src/model/CreateMcuTemplateRequest.cc
 	src/model/CreateMcuTemplateResult.cc
 	src/model/QueryImageSearchJobListRequest.cc
 	src/model/QueryImageSearchJobListResult.cc
-	src/model/ReportFpShotJobResultRequest.cc
-	src/model/ReportFpShotJobResultResult.cc
 	src/model/SubmitVideoSummaryJobRequest.cc
 	src/model/SubmitVideoSummaryJobResult.cc
+	src/model/ReportFpShotJobResultRequest.cc
+	src/model/ReportFpShotJobResultResult.cc
 	src/model/SubmitVideoGifJobRequest.cc
 	src/model/SubmitVideoGifJobResult.cc
 	src/model/QueryAnnotationJobListRequest.cc
 	src/model/QueryAnnotationJobListResult.cc
-	src/model/SubmitMediaDetailJobRequest.cc
-	src/model/SubmitMediaDetailJobResult.cc
 	src/model/SubmitPornJobRequest.cc
 	src/model/SubmitPornJobResult.cc
-	src/model/QueryFpImportResultRequest.cc
-	src/model/QueryFpImportResultResult.cc
+	src/model/SubmitMediaDetailJobRequest.cc
+	src/model/SubmitMediaDetailJobResult.cc
+	src/model/DescribeMtsUserResourcePackageRequest.cc
+	src/model/DescribeMtsUserResourcePackageResult.cc
 	src/model/SubmitMCJobRequest.cc
 	src/model/SubmitMCJobResult.cc
 	src/model/AddTemplateRequest.cc
 	src/model/AddTemplateResult.cc
+	src/model/QueryFpImportResultRequest.cc
+	src/model/QueryFpImportResultResult.cc
 	src/model/QueryWaterMarkTemplateListRequest.cc
 	src/model/QueryWaterMarkTemplateListResult.cc
 	src/model/ReportPornJobResultRequest.cc
@@ -530,10 +546,10 @@ set(mts_src
 	src/model/AddPornPipelineResult.cc
 	src/model/GetLicenseRequest.cc
 	src/model/GetLicenseResult.cc
-	src/model/QueryVideoSummaryJobListRequest.cc
-	src/model/QueryVideoSummaryJobListResult.cc
 	src/model/QueryPornPipelineListRequest.cc
 	src/model/QueryPornPipelineListResult.cc
+	src/model/QueryVideoSummaryJobListRequest.cc
+	src/model/QueryVideoSummaryJobListResult.cc
 	src/model/QueryTerrorismJobListRequest.cc
 	src/model/QueryTerrorismJobListResult.cc
 	src/model/SubmitJobsRequest.cc
@@ -554,10 +570,10 @@ set(mts_src
 	src/model/QueryMcuTemplateResult.cc
 	src/model/UpdateMediaWorkflowTriggerModeRequest.cc
 	src/model/UpdateMediaWorkflowTriggerModeResult.cc
-	src/model/SearchMediaRequest.cc
-	src/model/SearchMediaResult.cc
 	src/model/ActivateMediaWorkflowRequest.cc
 	src/model/ActivateMediaWorkflowResult.cc
+	src/model/SearchMediaRequest.cc
+	src/model/SearchMediaResult.cc
 	src/model/SubmitTerrorismJobRequest.cc
 	src/model/SubmitTerrorismJobResult.cc
 	src/model/SetAuthConfigRequest.cc
@@ -582,16 +598,18 @@ set(mts_src
 	src/model/ReportMediaDetailJobResultResult.cc
 	src/model/RegisterMediaDetailScenarioRequest.cc
 	src/model/RegisterMediaDetailScenarioResult.cc
+	src/model/QueryMediaCensorJobListRequest.cc
+	src/model/QueryMediaCensorJobListResult.cc
 	src/model/ReportAnnotationJobResultRequest.cc
 	src/model/ReportAnnotationJobResultResult.cc
 	src/model/ListPornPipelineRequest.cc
 	src/model/ListPornPipelineResult.cc
 	src/model/QueryVideoSplitJobListRequest.cc
 	src/model/QueryVideoSplitJobListResult.cc
-	src/model/BindInputBucketRequest.cc
-	src/model/BindInputBucketResult.cc
 	src/model/AddTerrorismPipelineRequest.cc
 	src/model/AddTerrorismPipelineResult.cc
+	src/model/BindInputBucketRequest.cc
+	src/model/BindInputBucketResult.cc
 	src/model/QueryPipelineListRequest.cc
 	src/model/QueryPipelineListResult.cc
 	src/model/UpdateTemplateRequest.cc
@@ -608,40 +626,42 @@ set(mts_src
 	src/model/SubmitFpShotJobResult.cc
 	src/model/QueryCensorPipelineListRequest.cc
 	src/model/QueryCensorPipelineListResult.cc
-	src/model/SubmitVideoSplitJobRequest.cc
-	src/model/SubmitVideoSplitJobResult.cc
 	src/model/SubmitMcuJobRequest.cc
 	src/model/SubmitMcuJobResult.cc
+	src/model/SubmitVideoSplitJobRequest.cc
+	src/model/SubmitVideoSplitJobResult.cc
 	src/model/CategoryTreeRequest.cc
 	src/model/CategoryTreeResult.cc
 	src/model/SubmitTagJobRequest.cc
 	src/model/SubmitTagJobResult.cc
 	src/model/SubmitCoverJobRequest.cc
 	src/model/SubmitCoverJobResult.cc
+	src/model/PlayInfoRequest.cc
+	src/model/PlayInfoResult.cc
 	src/model/SearchWaterMarkTemplateRequest.cc
 	src/model/SearchWaterMarkTemplateResult.cc
 	src/model/AddCensorPipelineRequest.cc
 	src/model/AddCensorPipelineResult.cc
-	src/model/PlayInfoRequest.cc
-	src/model/PlayInfoResult.cc
 	src/model/SubmitAsrJobRequest.cc
 	src/model/SubmitAsrJobResult.cc
 	src/model/SubmitSubtitleJobRequest.cc
 	src/model/SubmitSubtitleJobResult.cc
-	src/model/QueryCoverJobListRequest.cc
-	src/model/QueryCoverJobListResult.cc
 	src/model/AddMediaWorkflowRequest.cc
 	src/model/AddMediaWorkflowResult.cc
+	src/model/QueryCoverJobListRequest.cc
+	src/model/QueryCoverJobListResult.cc
 	src/model/QueryAsrJobListRequest.cc
 	src/model/QueryAsrJobListResult.cc
-	src/model/SubmitVideoPoseJobRequest.cc
-	src/model/SubmitVideoPoseJobResult.cc
-	src/model/PlayerAuthRequest.cc
-	src/model/PlayerAuthResult.cc
 	src/model/AddWaterMarkTemplateRequest.cc
 	src/model/AddWaterMarkTemplateResult.cc
+	src/model/PlayerAuthRequest.cc
+	src/model/PlayerAuthResult.cc
+	src/model/SubmitVideoPoseJobRequest.cc
+	src/model/SubmitVideoPoseJobResult.cc
 	src/model/RegisterMediaDetailPersonRequest.cc
 	src/model/RegisterMediaDetailPersonResult.cc
+	src/model/SubmitFpCompareJobRequest.cc
+	src/model/SubmitFpCompareJobResult.cc
 	src/model/QueryCensorJobListRequest.cc
 	src/model/QueryCensorJobListResult.cc )
 

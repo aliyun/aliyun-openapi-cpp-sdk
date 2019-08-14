@@ -35,10 +35,13 @@ DescribeDBInstancesResult::~DescribeDBInstancesResult()
 
 void DescribeDBInstancesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allItems = value["Items"]["DBInstance"];
 	for (auto value : allItems)
@@ -104,6 +107,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.replicateId = value["ReplicateId"].asString();
 		if(!value["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["AutoUpgradeMinorVersion"].isNull())
+			itemsObject.autoUpgradeMinorVersion = value["AutoUpgradeMinorVersion"].asString();
 		auto allReadOnlyDBInstanceIds = value["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto value : allReadOnlyDBInstanceIds)
 		{

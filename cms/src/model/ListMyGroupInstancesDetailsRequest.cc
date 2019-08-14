@@ -33,7 +33,7 @@ bool ListMyGroupInstancesDetailsRequest::getTotal()const
 void ListMyGroupInstancesDetailsRequest::setTotal(bool total)
 {
 	total_ = total;
-	setParameter("Total", total ? "true" : "false");
+	setCoreParameter("Total", total ? "true" : "false");
 }
 
 std::string ListMyGroupInstancesDetailsRequest::getInstanceIds()const
@@ -44,7 +44,7 @@ std::string ListMyGroupInstancesDetailsRequest::getInstanceIds()const
 void ListMyGroupInstancesDetailsRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 long ListMyGroupInstancesDetailsRequest::getGroupId()const
@@ -55,7 +55,7 @@ long ListMyGroupInstancesDetailsRequest::getGroupId()const
 void ListMyGroupInstancesDetailsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int ListMyGroupInstancesDetailsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListMyGroupInstancesDetailsRequest::getPageSize()const
 void ListMyGroupInstancesDetailsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListMyGroupInstancesDetailsRequest::getCategory()const
@@ -77,7 +77,7 @@ std::string ListMyGroupInstancesDetailsRequest::getCategory()const
 void ListMyGroupInstancesDetailsRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setParameter("Category", category);
+	setCoreParameter("Category", category);
 }
 
 std::string ListMyGroupInstancesDetailsRequest::getKeyword()const
@@ -88,7 +88,7 @@ std::string ListMyGroupInstancesDetailsRequest::getKeyword()const
 void ListMyGroupInstancesDetailsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+	setCoreParameter("Keyword", keyword);
 }
 
 int ListMyGroupInstancesDetailsRequest::getPageNumber()const
@@ -99,6 +99,6 @@ int ListMyGroupInstancesDetailsRequest::getPageNumber()const
 void ListMyGroupInstancesDetailsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

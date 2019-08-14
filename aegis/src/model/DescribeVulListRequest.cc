@@ -58,6 +58,28 @@ void DescribeVulListRequest::setResource(const std::string& resource)
 	setCoreParameter("Resource", resource);
 }
 
+std::string DescribeVulListRequest::getCveId()const
+{
+	return cveId_;
+}
+
+void DescribeVulListRequest::setCveId(const std::string& cveId)
+{
+	cveId_ = cveId;
+	setCoreParameter("CveId", cveId);
+}
+
+std::string DescribeVulListRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeVulListRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
 std::string DescribeVulListRequest::getRemark()const
 {
 	return remark_;
@@ -166,6 +188,17 @@ void DescribeVulListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeVulListRequest::getIds()const
+{
+	return ids_;
+}
+
+void DescribeVulListRequest::setIds(const std::string& ids)
+{
+	ids_ = ids;
+	setCoreParameter("Ids", ids);
 }
 
 std::string DescribeVulListRequest::getLang()const

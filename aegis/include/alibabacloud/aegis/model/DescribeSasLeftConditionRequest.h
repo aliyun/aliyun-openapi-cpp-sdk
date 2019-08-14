@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				std::string getConditionType()const;
 				void setConditionType(const std::string& conditionType);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getFilterConditions()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string sourceIp_;
 				std::string conditionType_;
+				std::string from_;
 				std::string lang_;
 				std::string filterConditions_;
 

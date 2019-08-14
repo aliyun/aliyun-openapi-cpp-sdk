@@ -35,10 +35,13 @@ DescribeErrorLogRecordsResult::~DescribeErrorLogRecordsResult()
 
 void DescribeErrorLogRecordsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allItems = value["Items"]["LogRecords"];
 	for (auto value : allItems)
@@ -53,7 +56,7 @@ void DescribeErrorLogRecordsResult::parse(const std::string &payload)
 		if(!value["ConnInfo"].isNull())
 			itemsObject.connInfo = value["ConnInfo"].asString();
 		if(!value["Content"].isNull())
-			itemsObject.content = std::stol(value["Content"].asString());
+			itemsObject.content = value["Content"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Engine"].isNull())

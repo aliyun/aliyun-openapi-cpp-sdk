@@ -33,7 +33,7 @@ std::string DescribeDBInstanceNetInfoRequest::getDBInstanceId()const
 void DescribeDBInstanceNetInfoRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId()const
 void DescribeDBInstanceNetInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

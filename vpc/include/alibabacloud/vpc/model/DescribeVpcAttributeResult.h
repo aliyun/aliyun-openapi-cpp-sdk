@@ -56,6 +56,7 @@ namespace AlibabaCloud
 				std::vector<std::string> getVSwitchIds()const;
 				std::string getCidrBlock()const;
 				std::vector<std::string> getUserCidrs()const;
+				std::string getNetworkAclNum()const;
 				std::string getVRouterId()const;
 				std::string getVpcId()const;
 				std::vector<AssociatedCen> getAssociatedCens()const;
@@ -76,6 +77,7 @@ namespace AlibabaCloud
 				std::vector<std::string> vSwitchIds_;
 				std::string cidrBlock_;
 				std::vector<std::string> userCidrs_;
+				std::string networkAclNum_;
 				std::string vRouterId_;
 				std::string vpcId_;
 				std::vector<AssociatedCen> associatedCens_;

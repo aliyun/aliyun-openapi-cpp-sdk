@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setKeyWord(const std::string& keyWord);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string userClientIp_;
@@ -54,7 +52,6 @@ namespace AlibabaCloud
 				std::string lang_;
 				std::string keyWord_;
 				long pageNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -33,7 +33,7 @@ long UpdateMediaPublishStateRequest::getResourceOwnerId()const
 void UpdateMediaPublishStateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMediaPublishStateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UpdateMediaPublishStateRequest::getResourceOwnerAccount()const
 void UpdateMediaPublishStateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool UpdateMediaPublishStateRequest::getPublish()const
@@ -55,7 +55,7 @@ bool UpdateMediaPublishStateRequest::getPublish()const
 void UpdateMediaPublishStateRequest::setPublish(bool publish)
 {
 	publish_ = publish;
-	setParameter("Publish", publish ? "true" : "false");
+	setCoreParameter("Publish", publish ? "true" : "false");
 }
 
 std::string UpdateMediaPublishStateRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdateMediaPublishStateRequest::getOwnerAccount()const
 void UpdateMediaPublishStateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateMediaPublishStateRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateMediaPublishStateRequest::getOwnerId()const
 void UpdateMediaPublishStateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMediaPublishStateRequest::getMediaId()const
@@ -88,7 +88,7 @@ std::string UpdateMediaPublishStateRequest::getMediaId()const
 void UpdateMediaPublishStateRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setParameter("MediaId", mediaId);
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string UpdateMediaPublishStateRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string UpdateMediaPublishStateRequest::getAccessKeyId()const
 void UpdateMediaPublishStateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

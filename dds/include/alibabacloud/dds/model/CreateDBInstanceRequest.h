@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setDBInstanceStorage(int dBInstanceStorage);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getReadonlyReplicas()const;
+				void setReadonlyReplicas(const std::string& readonlyReplicas);
 				std::string getCouponNo()const;
 				void setCouponNo(const std::string& couponNo);
 				std::string getEngineVersion()const;
@@ -102,6 +104,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				int dBInstanceStorage_;
 				std::string clientToken_;
+				std::string readonlyReplicas_;
 				std::string couponNo_;
 				std::string engineVersion_;
 				std::string networkType_;

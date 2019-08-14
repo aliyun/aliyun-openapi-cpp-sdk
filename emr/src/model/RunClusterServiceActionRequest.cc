@@ -33,7 +33,7 @@ std::string RunClusterServiceActionRequest::getExecuteStrategy()const
 void RunClusterServiceActionRequest::setExecuteStrategy(const std::string& executeStrategy)
 {
 	executeStrategy_ = executeStrategy;
-	setParameter("ExecuteStrategy", executeStrategy);
+	setCoreParameter("ExecuteStrategy", executeStrategy);
 }
 
 std::vector<std::string> RunClusterServiceActionRequest::getHostGroupIdList()const
@@ -45,7 +45,7 @@ void RunClusterServiceActionRequest::setHostGroupIdList(const std::vector<std::s
 {
 	hostGroupIdList_ = hostGroupIdList;
 	for(int i = 0; i!= hostGroupIdList.size(); i++)
-		setParameter("HostGroupIdList."+ std::to_string(i), hostGroupIdList.at(i));
+		setCoreParameter("HostGroupIdList."+ std::to_string(i), hostGroupIdList.at(i));
 }
 
 long RunClusterServiceActionRequest::getResourceOwnerId()const
@@ -56,7 +56,7 @@ long RunClusterServiceActionRequest::getResourceOwnerId()const
 void RunClusterServiceActionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool RunClusterServiceActionRequest::getOnlyRestartStaleConfigNodes()const
@@ -67,7 +67,7 @@ bool RunClusterServiceActionRequest::getOnlyRestartStaleConfigNodes()const
 void RunClusterServiceActionRequest::setOnlyRestartStaleConfigNodes(bool onlyRestartStaleConfigNodes)
 {
 	onlyRestartStaleConfigNodes_ = onlyRestartStaleConfigNodes;
-	setParameter("OnlyRestartStaleConfigNodes", std::to_string(onlyRestartStaleConfigNodes));
+	setCoreParameter("OnlyRestartStaleConfigNodes", onlyRestartStaleConfigNodes ? "true" : "false");
 }
 
 int RunClusterServiceActionRequest::getNodeCountPerBatch()const
@@ -78,7 +78,7 @@ int RunClusterServiceActionRequest::getNodeCountPerBatch()const
 void RunClusterServiceActionRequest::setNodeCountPerBatch(int nodeCountPerBatch)
 {
 	nodeCountPerBatch_ = nodeCountPerBatch;
-	setParameter("NodeCountPerBatch", std::to_string(nodeCountPerBatch));
+	setCoreParameter("NodeCountPerBatch", std::to_string(nodeCountPerBatch));
 }
 
 std::string RunClusterServiceActionRequest::getClusterId()const
@@ -89,7 +89,7 @@ std::string RunClusterServiceActionRequest::getClusterId()const
 void RunClusterServiceActionRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string RunClusterServiceActionRequest::getCustomCommand()const
@@ -100,7 +100,7 @@ std::string RunClusterServiceActionRequest::getCustomCommand()const
 void RunClusterServiceActionRequest::setCustomCommand(const std::string& customCommand)
 {
 	customCommand_ = customCommand;
-	setParameter("CustomCommand", customCommand);
+	setCoreParameter("CustomCommand", customCommand);
 }
 
 std::string RunClusterServiceActionRequest::getAccessKeyId()const
@@ -111,7 +111,7 @@ std::string RunClusterServiceActionRequest::getAccessKeyId()const
 void RunClusterServiceActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RunClusterServiceActionRequest::getComponentNameList()const
@@ -122,7 +122,7 @@ std::string RunClusterServiceActionRequest::getComponentNameList()const
 void RunClusterServiceActionRequest::setComponentNameList(const std::string& componentNameList)
 {
 	componentNameList_ = componentNameList;
-	setParameter("ComponentNameList", componentNameList);
+	setCoreParameter("ComponentNameList", componentNameList);
 }
 
 std::string RunClusterServiceActionRequest::getRegionId()const
@@ -133,7 +133,7 @@ std::string RunClusterServiceActionRequest::getRegionId()const
 void RunClusterServiceActionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RunClusterServiceActionRequest::getServiceActionName()const
@@ -144,7 +144,7 @@ std::string RunClusterServiceActionRequest::getServiceActionName()const
 void RunClusterServiceActionRequest::setServiceActionName(const std::string& serviceActionName)
 {
 	serviceActionName_ = serviceActionName;
-	setParameter("ServiceActionName", serviceActionName);
+	setCoreParameter("ServiceActionName", serviceActionName);
 }
 
 bool RunClusterServiceActionRequest::getIsRolling()const
@@ -155,7 +155,7 @@ bool RunClusterServiceActionRequest::getIsRolling()const
 void RunClusterServiceActionRequest::setIsRolling(bool isRolling)
 {
 	isRolling_ = isRolling;
-	setParameter("IsRolling", std::to_string(isRolling));
+	setCoreParameter("IsRolling", isRolling ? "true" : "false");
 }
 
 int RunClusterServiceActionRequest::getTotlerateFailCount()const
@@ -166,7 +166,7 @@ int RunClusterServiceActionRequest::getTotlerateFailCount()const
 void RunClusterServiceActionRequest::setTotlerateFailCount(int totlerateFailCount)
 {
 	totlerateFailCount_ = totlerateFailCount;
-	setParameter("TotlerateFailCount", std::to_string(totlerateFailCount));
+	setCoreParameter("TotlerateFailCount", std::to_string(totlerateFailCount));
 }
 
 std::string RunClusterServiceActionRequest::getServiceName()const
@@ -177,7 +177,7 @@ std::string RunClusterServiceActionRequest::getServiceName()const
 void RunClusterServiceActionRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string RunClusterServiceActionRequest::getComment()const
@@ -188,7 +188,7 @@ std::string RunClusterServiceActionRequest::getComment()const
 void RunClusterServiceActionRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setParameter("Comment", comment);
+	setCoreParameter("Comment", comment);
 }
 
 std::string RunClusterServiceActionRequest::getCustomParams()const
@@ -199,7 +199,7 @@ std::string RunClusterServiceActionRequest::getCustomParams()const
 void RunClusterServiceActionRequest::setCustomParams(const std::string& customParams)
 {
 	customParams_ = customParams;
-	setParameter("CustomParams", customParams);
+	setCoreParameter("CustomParams", customParams);
 }
 
 long RunClusterServiceActionRequest::getInterval()const
@@ -210,7 +210,7 @@ long RunClusterServiceActionRequest::getInterval()const
 void RunClusterServiceActionRequest::setInterval(long interval)
 {
 	interval_ = interval;
-	setParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", std::to_string(interval));
 }
 
 std::string RunClusterServiceActionRequest::getHostIdList()const
@@ -221,7 +221,7 @@ std::string RunClusterServiceActionRequest::getHostIdList()const
 void RunClusterServiceActionRequest::setHostIdList(const std::string& hostIdList)
 {
 	hostIdList_ = hostIdList;
-	setParameter("HostIdList", hostIdList);
+	setCoreParameter("HostIdList", hostIdList);
 }
 
 bool RunClusterServiceActionRequest::getTurnOnMaintenanceMode()const
@@ -232,6 +232,6 @@ bool RunClusterServiceActionRequest::getTurnOnMaintenanceMode()const
 void RunClusterServiceActionRequest::setTurnOnMaintenanceMode(bool turnOnMaintenanceMode)
 {
 	turnOnMaintenanceMode_ = turnOnMaintenanceMode;
-	setParameter("TurnOnMaintenanceMode", std::to_string(turnOnMaintenanceMode));
+	setCoreParameter("TurnOnMaintenanceMode", turnOnMaintenanceMode ? "true" : "false");
 }
 

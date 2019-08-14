@@ -33,7 +33,7 @@ long ClickToDialRequest::getResourceOwnerId()const
 void ClickToDialRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ClickToDialRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ClickToDialRequest::getResourceOwnerAccount()const
 void ClickToDialRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool ClickToDialRequest::getRecordFlag()const
@@ -55,7 +55,7 @@ bool ClickToDialRequest::getRecordFlag()const
 void ClickToDialRequest::setRecordFlag(bool recordFlag)
 {
 	recordFlag_ = recordFlag;
-	setParameter("RecordFlag", std::to_string(recordFlag));
+	setCoreParameter("RecordFlag", recordFlag ? "true" : "false");
 }
 
 long ClickToDialRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long ClickToDialRequest::getOwnerId()const
 void ClickToDialRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ClickToDialRequest::getCallerShowNumber()const
@@ -77,7 +77,7 @@ std::string ClickToDialRequest::getCallerShowNumber()const
 void ClickToDialRequest::setCallerShowNumber(const std::string& callerShowNumber)
 {
 	callerShowNumber_ = callerShowNumber;
-	setParameter("CallerShowNumber", callerShowNumber);
+	setCoreParameter("CallerShowNumber", callerShowNumber);
 }
 
 std::string ClickToDialRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ClickToDialRequest::getAccessKeyId()const
 void ClickToDialRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int ClickToDialRequest::getSessionTimeout()const
@@ -99,7 +99,7 @@ int ClickToDialRequest::getSessionTimeout()const
 void ClickToDialRequest::setSessionTimeout(int sessionTimeout)
 {
 	sessionTimeout_ = sessionTimeout;
-	setParameter("SessionTimeout", std::to_string(sessionTimeout));
+	setCoreParameter("SessionTimeout", std::to_string(sessionTimeout));
 }
 
 std::string ClickToDialRequest::getCalledNumber()const
@@ -110,7 +110,7 @@ std::string ClickToDialRequest::getCalledNumber()const
 void ClickToDialRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setParameter("CalledNumber", calledNumber);
+	setCoreParameter("CalledNumber", calledNumber);
 }
 
 std::string ClickToDialRequest::getCalledShowNumber()const
@@ -121,7 +121,7 @@ std::string ClickToDialRequest::getCalledShowNumber()const
 void ClickToDialRequest::setCalledShowNumber(const std::string& calledShowNumber)
 {
 	calledShowNumber_ = calledShowNumber;
-	setParameter("CalledShowNumber", calledShowNumber);
+	setCoreParameter("CalledShowNumber", calledShowNumber);
 }
 
 std::string ClickToDialRequest::getOutId()const
@@ -132,7 +132,7 @@ std::string ClickToDialRequest::getOutId()const
 void ClickToDialRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setParameter("OutId", outId);
+	setCoreParameter("OutId", outId);
 }
 
 bool ClickToDialRequest::getAsrFlag()const
@@ -143,7 +143,7 @@ bool ClickToDialRequest::getAsrFlag()const
 void ClickToDialRequest::setAsrFlag(bool asrFlag)
 {
 	asrFlag_ = asrFlag;
-	setParameter("AsrFlag", std::to_string(asrFlag));
+	setCoreParameter("AsrFlag", asrFlag ? "true" : "false");
 }
 
 std::string ClickToDialRequest::getAsrModelId()const
@@ -154,7 +154,7 @@ std::string ClickToDialRequest::getAsrModelId()const
 void ClickToDialRequest::setAsrModelId(const std::string& asrModelId)
 {
 	asrModelId_ = asrModelId;
-	setParameter("AsrModelId", asrModelId);
+	setCoreParameter("AsrModelId", asrModelId);
 }
 
 std::string ClickToDialRequest::getCallerNumber()const
@@ -165,6 +165,6 @@ std::string ClickToDialRequest::getCallerNumber()const
 void ClickToDialRequest::setCallerNumber(const std::string& callerNumber)
 {
 	callerNumber_ = callerNumber;
-	setParameter("CallerNumber", callerNumber);
+	setCoreParameter("CallerNumber", callerNumber);
 }
 

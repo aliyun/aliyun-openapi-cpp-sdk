@@ -33,6 +33,6 @@ long ListGroupDynamicRuleRequest::getGroupId()const
 void ListGroupDynamicRuleRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 

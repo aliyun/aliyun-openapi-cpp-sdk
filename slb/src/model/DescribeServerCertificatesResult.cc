@@ -35,10 +35,13 @@ DescribeServerCertificatesResult::~DescribeServerCertificatesResult()
 
 void DescribeServerCertificatesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allServerCertificates = value["ServerCertificates"]["ServerCertificate"];
 	for (auto value : allServerCertificates)
@@ -72,6 +75,16 @@ void DescribeServerCertificatesResult::parse(const std::string &payload)
 			serverCertificatesObject.expireTimeStamp = std::stol(value["ExpireTimeStamp"].asString());
 		if(!value["CommonName"].isNull())
 			serverCertificatesObject.commonName = value["CommonName"].asString();
+		auto allTags = value["Tags"]["Tag"];
+		for (auto value : allTags)
+		{
+			ServerCertificate::Tag tagsObject;
+			if(!value["TagKey"].isNull())
+				tagsObject.tagKey = value["TagKey"].asString();
+			if(!value["TagValue"].isNull())
+				tagsObject.tagValue = value["TagValue"].asString();
+			serverCertificatesObject.tags.push_back(tagsObject);
+		}
 		auto allSubjectAlternativeNames = value["SubjectAlternativeNames"]["SubjectAlternativeName"];
 		for (auto value : allSubjectAlternativeNames)
 			serverCertificatesObject.subjectAlternativeNames.push_back(value.asString());

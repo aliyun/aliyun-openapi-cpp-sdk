@@ -33,7 +33,7 @@ std::string SaveApPortalConfigRequest::getAuthKey()const
 void SaveApPortalConfigRequest::setAuthKey(const std::string& authKey)
 {
 	authKey_ = authKey;
-	setParameter("AuthKey", authKey);
+	setCoreParameter("AuthKey", authKey);
 }
 
 std::string SaveApPortalConfigRequest::getPortalUrl()const
@@ -44,7 +44,7 @@ std::string SaveApPortalConfigRequest::getPortalUrl()const
 void SaveApPortalConfigRequest::setPortalUrl(const std::string& portalUrl)
 {
 	portalUrl_ = portalUrl;
-	setParameter("PortalUrl", portalUrl);
+	setCoreParameter("PortalUrl", portalUrl);
 }
 
 bool SaveApPortalConfigRequest::getPortalStatus()const
@@ -55,7 +55,7 @@ bool SaveApPortalConfigRequest::getPortalStatus()const
 void SaveApPortalConfigRequest::setPortalStatus(bool portalStatus)
 {
 	portalStatus_ = portalStatus;
-	setParameter("PortalStatus", portalStatus ? "true" : "false");
+	setCoreParameter("PortalStatus", portalStatus ? "true" : "false");
 }
 
 std::string SaveApPortalConfigRequest::getWhitelist()const
@@ -66,7 +66,7 @@ std::string SaveApPortalConfigRequest::getWhitelist()const
 void SaveApPortalConfigRequest::setWhitelist(const std::string& whitelist)
 {
 	whitelist_ = whitelist;
-	setParameter("Whitelist", whitelist);
+	setCoreParameter("Whitelist", whitelist);
 }
 
 std::string SaveApPortalConfigRequest::getCheckUrl()const
@@ -77,7 +77,7 @@ std::string SaveApPortalConfigRequest::getCheckUrl()const
 void SaveApPortalConfigRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setParameter("CheckUrl", checkUrl);
+	setCoreParameter("CheckUrl", checkUrl);
 }
 
 long SaveApPortalConfigRequest::getApConfigId()const
@@ -88,7 +88,7 @@ long SaveApPortalConfigRequest::getApConfigId()const
 void SaveApPortalConfigRequest::setApConfigId(long apConfigId)
 {
 	apConfigId_ = apConfigId;
-	setParameter("ApConfigId", std::to_string(apConfigId));
+	setCoreParameter("ApConfigId", std::to_string(apConfigId));
 }
 
 std::string SaveApPortalConfigRequest::getAuthSecret()const
@@ -99,7 +99,7 @@ std::string SaveApPortalConfigRequest::getAuthSecret()const
 void SaveApPortalConfigRequest::setAuthSecret(const std::string& authSecret)
 {
 	authSecret_ = authSecret;
-	setParameter("AuthSecret", authSecret);
+	setCoreParameter("AuthSecret", authSecret);
 }
 
 std::string SaveApPortalConfigRequest::getWebAuthUrl()const
@@ -110,7 +110,7 @@ std::string SaveApPortalConfigRequest::getWebAuthUrl()const
 void SaveApPortalConfigRequest::setWebAuthUrl(const std::string& webAuthUrl)
 {
 	webAuthUrl_ = webAuthUrl;
-	setParameter("WebAuthUrl", webAuthUrl);
+	setCoreParameter("WebAuthUrl", webAuthUrl);
 }
 
 std::string SaveApPortalConfigRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string SaveApPortalConfigRequest::getAccessKeyId()const
 void SaveApPortalConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int SaveApPortalConfigRequest::getNetwork()const
@@ -132,6 +132,6 @@ int SaveApPortalConfigRequest::getNetwork()const
 void SaveApPortalConfigRequest::setNetwork(int network)
 {
 	network_ = network;
-	setParameter("Network", std::to_string(network));
+	setCoreParameter("Network", std::to_string(network));
 }
 

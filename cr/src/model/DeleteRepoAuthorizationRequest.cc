@@ -33,7 +33,7 @@ std::string DeleteRepoAuthorizationRequest::getRepoNamespace()const
 void DeleteRepoAuthorizationRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string DeleteRepoAuthorizationRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string DeleteRepoAuthorizationRequest::getRepoName()const
 void DeleteRepoAuthorizationRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setParameter("RepoName", repoName);
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string DeleteRepoAuthorizationRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteRepoAuthorizationRequest::getRegionId()const
 void DeleteRepoAuthorizationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 long DeleteRepoAuthorizationRequest::getAuthorizeId()const
@@ -66,6 +66,6 @@ long DeleteRepoAuthorizationRequest::getAuthorizeId()const
 void DeleteRepoAuthorizationRequest::setAuthorizeId(long authorizeId)
 {
 	authorizeId_ = authorizeId;
-	setParameter("AuthorizeId", std::to_string(authorizeId));
+	setCoreParameter("AuthorizeId", std::to_string(authorizeId));
 }
 

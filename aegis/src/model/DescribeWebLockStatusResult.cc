@@ -35,10 +35,13 @@ DescribeWebLockStatusResult::~DescribeWebLockStatusResult()
 
 void DescribeWebLockStatusResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	if(!value["AuthCount"].isNull())
 		authCount_ = std::stoi(value["AuthCount"].asString());
@@ -46,12 +49,19 @@ void DescribeWebLockStatusResult::parse(const std::string &payload)
 		bindCount_ = std::stoi(value["BindCount"].asString());
 	if(!value["ExpireTime"].isNull())
 		expireTime_ = std::stol(value["ExpireTime"].asString());
+	if(!value["DirCount"].isNull())
+		dirCount_ = std::stoi(value["DirCount"].asString());
 
 }
 
 int DescribeWebLockStatusResult::getBindCount()const
 {
 	return bindCount_;
+}
+
+int DescribeWebLockStatusResult::getDirCount()const
+{
+	return dirCount_;
 }
 
 long DescribeWebLockStatusResult::getExpireTime()const

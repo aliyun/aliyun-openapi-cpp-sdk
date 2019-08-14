@@ -36,6 +36,39 @@ void ModifyWebLockUpdateConfigRequest::setLocalBackupDir(const std::string& loca
 	setCoreParameter("LocalBackupDir", localBackupDir);
 }
 
+std::string ModifyWebLockUpdateConfigRequest::getMode()const
+{
+	return mode_;
+}
+
+void ModifyWebLockUpdateConfigRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setCoreParameter("Mode", mode);
+}
+
+std::string ModifyWebLockUpdateConfigRequest::getInclusiveFileType()const
+{
+	return inclusiveFileType_;
+}
+
+void ModifyWebLockUpdateConfigRequest::setInclusiveFileType(const std::string& inclusiveFileType)
+{
+	inclusiveFileType_ = inclusiveFileType;
+	setCoreParameter("InclusiveFileType", inclusiveFileType);
+}
+
+std::string ModifyWebLockUpdateConfigRequest::getExclusiveFile()const
+{
+	return exclusiveFile_;
+}
+
+void ModifyWebLockUpdateConfigRequest::setExclusiveFile(const std::string& exclusiveFile)
+{
+	exclusiveFile_ = exclusiveFile;
+	setCoreParameter("ExclusiveFile", exclusiveFile);
+}
+
 std::string ModifyWebLockUpdateConfigRequest::getSourceIp()const
 {
 	return sourceIp_;

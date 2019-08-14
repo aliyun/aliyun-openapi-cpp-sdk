@@ -56,6 +56,8 @@ namespace AlibabaCloud
 				void setImageId(const std::string& imageId);
 				int getMemory()const;
 				void setMemory(int memory);
+				std::string getHpcClusterId()const;
+				void setHpcClusterId(const std::string& hpcClusterId);
 				std::string getIoOptimized()const;
 				void setIoOptimized(const std::string& ioOptimized);
 				std::vector<std::string> getInstanceTypes()const;
@@ -82,6 +84,8 @@ namespace AlibabaCloud
 				void setPasswordInherit(bool passwordInherit);
 				std::string getImageName()const;
 				void setImageName(const std::string& imageName);
+				std::string getInstanceDescription()const;
+				void setInstanceDescription(const std::string& instanceDescription);
 				bool getOverride()const;
 				void setOverride(bool override);
 				std::string getDeploymentSetId()const;
@@ -98,6 +102,8 @@ namespace AlibabaCloud
 				void setRamRoleName(const std::string& ramRoleName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::vector<std::string> getSecurityGroupIds()const;
+				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				std::string getScalingConfigurationName()const;
@@ -122,6 +128,7 @@ namespace AlibabaCloud
             private:
 				std::string imageId_;
 				int memory_;
+				std::string hpcClusterId_;
 				std::string ioOptimized_;
 				std::vector<std::string> instanceTypes_;
 				int internetMaxBandwidthOut_;
@@ -135,6 +142,7 @@ namespace AlibabaCloud
 				std::string hostName_;
 				bool passwordInherit_;
 				std::string imageName_;
+				std::string instanceDescription_;
 				bool override_;
 				std::string deploymentSetId_;
 				std::string resourceOwnerAccount_;
@@ -143,6 +151,7 @@ namespace AlibabaCloud
 				std::string systemDiskDiskName_;
 				std::string ramRoleName_;
 				long ownerId_;
+				std::vector<std::string> securityGroupIds_;
 				std::vector<DataDisk> dataDisk_;
 				std::string scalingConfigurationName_;
 				std::string tags_;

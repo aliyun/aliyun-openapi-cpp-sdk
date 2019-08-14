@@ -159,36 +159,36 @@ JarvisClient::DescribeAccessWhiteListSlbListOutcomeCallable JarvisClient::descri
 	return task->get_future();
 }
 
-JarvisClient::DescribePhoneInfoOutcome JarvisClient::describePhoneInfo(const DescribePhoneInfoRequest &request) const
+JarvisClient::DeleteIpWhiteBaselineOutcome JarvisClient::deleteIpWhiteBaseline(const DeleteIpWhiteBaselineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribePhoneInfoOutcome(endpointOutcome.error());
+		return DeleteIpWhiteBaselineOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribePhoneInfoOutcome(DescribePhoneInfoResult(outcome.result()));
+		return DeleteIpWhiteBaselineOutcome(DeleteIpWhiteBaselineResult(outcome.result()));
 	else
-		return DescribePhoneInfoOutcome(outcome.error());
+		return DeleteIpWhiteBaselineOutcome(outcome.error());
 }
 
-void JarvisClient::describePhoneInfoAsync(const DescribePhoneInfoRequest& request, const DescribePhoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void JarvisClient::deleteIpWhiteBaselineAsync(const DeleteIpWhiteBaselineRequest& request, const DeleteIpWhiteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describePhoneInfo(request), context);
+		handler(this, request, deleteIpWhiteBaseline(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-JarvisClient::DescribePhoneInfoOutcomeCallable JarvisClient::describePhoneInfoCallable(const DescribePhoneInfoRequest &request) const
+JarvisClient::DeleteIpWhiteBaselineOutcomeCallable JarvisClient::deleteIpWhiteBaselineCallable(const DeleteIpWhiteBaselineRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribePhoneInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteIpWhiteBaselineOutcome()>>(
 			[this, request]()
 			{
-			return this->describePhoneInfo(request);
+			return this->deleteIpWhiteBaseline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -225,6 +225,42 @@ JarvisClient::DescribeAccessWhitelistEcsListOutcomeCallable JarvisClient::descri
 			[this, request]()
 			{
 			return this->describeAccessWhitelistEcsList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribePhoneInfoOutcome JarvisClient::describePhoneInfo(const DescribePhoneInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePhoneInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePhoneInfoOutcome(DescribePhoneInfoResult(outcome.result()));
+	else
+		return DescribePhoneInfoOutcome(outcome.error());
+}
+
+void JarvisClient::describePhoneInfoAsync(const DescribePhoneInfoRequest& request, const DescribePhoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePhoneInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribePhoneInfoOutcomeCallable JarvisClient::describePhoneInfoCallable(const DescribePhoneInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePhoneInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describePhoneInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +339,42 @@ JarvisClient::CreateConsoleAccessWhiteListOutcomeCallable JarvisClient::createCo
 	return task->get_future();
 }
 
+JarvisClient::DescribeUidWhiteBaselineOutcome JarvisClient::describeUidWhiteBaseline(const DescribeUidWhiteBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUidWhiteBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUidWhiteBaselineOutcome(DescribeUidWhiteBaselineResult(outcome.result()));
+	else
+		return DescribeUidWhiteBaselineOutcome(outcome.error());
+}
+
+void JarvisClient::describeUidWhiteBaselineAsync(const DescribeUidWhiteBaselineRequest& request, const DescribeUidWhiteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUidWhiteBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeUidWhiteBaselineOutcomeCallable JarvisClient::describeUidWhiteBaselineCallable(const DescribeUidWhiteBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUidWhiteBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUidWhiteBaseline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 JarvisClient::DescribeConsoleAccessWhiteListOutcome JarvisClient::describeConsoleAccessWhiteList(const DescribeConsoleAccessWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +405,78 @@ JarvisClient::DescribeConsoleAccessWhiteListOutcomeCallable JarvisClient::descri
 			[this, request]()
 			{
 			return this->describeConsoleAccessWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DeleteWhiteListDbItemConditionalOutcome JarvisClient::deleteWhiteListDbItemConditional(const DeleteWhiteListDbItemConditionalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteWhiteListDbItemConditionalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteWhiteListDbItemConditionalOutcome(DeleteWhiteListDbItemConditionalResult(outcome.result()));
+	else
+		return DeleteWhiteListDbItemConditionalOutcome(outcome.error());
+}
+
+void JarvisClient::deleteWhiteListDbItemConditionalAsync(const DeleteWhiteListDbItemConditionalRequest& request, const DeleteWhiteListDbItemConditionalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteWhiteListDbItemConditional(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DeleteWhiteListDbItemConditionalOutcomeCallable JarvisClient::deleteWhiteListDbItemConditionalCallable(const DeleteWhiteListDbItemConditionalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteWhiteListDbItemConditionalOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteWhiteListDbItemConditional(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DescribeIpWhiteBaselineOutcome JarvisClient::describeIpWhiteBaseline(const DescribeIpWhiteBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIpWhiteBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIpWhiteBaselineOutcome(DescribeIpWhiteBaselineResult(outcome.result()));
+	else
+		return DescribeIpWhiteBaselineOutcome(outcome.error());
+}
+
+void JarvisClient::describeIpWhiteBaselineAsync(const DescribeIpWhiteBaselineRequest& request, const DescribeIpWhiteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIpWhiteBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DescribeIpWhiteBaselineOutcomeCallable JarvisClient::describeIpWhiteBaselineCallable(const DescribeIpWhiteBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIpWhiteBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIpWhiteBaseline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -405,6 +549,42 @@ JarvisClient::CreateCdnIpOutcomeCallable JarvisClient::createCdnIpCallable(const
 			[this, request]()
 			{
 			return this->createCdnIp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DeleteUidWhiteBaselineOutcome JarvisClient::deleteUidWhiteBaseline(const DeleteUidWhiteBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteUidWhiteBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteUidWhiteBaselineOutcome(DeleteUidWhiteBaselineResult(outcome.result()));
+	else
+		return DeleteUidWhiteBaselineOutcome(outcome.error());
+}
+
+void JarvisClient::deleteUidWhiteBaselineAsync(const DeleteUidWhiteBaselineRequest& request, const DeleteUidWhiteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteUidWhiteBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DeleteUidWhiteBaselineOutcomeCallable JarvisClient::deleteUidWhiteBaselineCallable(const DeleteUidWhiteBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteUidWhiteBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteUidWhiteBaseline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,6 +771,42 @@ JarvisClient::DescribeRiskListDetailOutcomeCallable JarvisClient::describeRiskLi
 	return task->get_future();
 }
 
+JarvisClient::DeleteConsoleAccessWhiteListOutcome JarvisClient::deleteConsoleAccessWhiteList(const DeleteConsoleAccessWhiteListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteConsoleAccessWhiteListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteConsoleAccessWhiteListOutcome(DeleteConsoleAccessWhiteListResult(outcome.result()));
+	else
+		return DeleteConsoleAccessWhiteListOutcome(outcome.error());
+}
+
+void JarvisClient::deleteConsoleAccessWhiteListAsync(const DeleteConsoleAccessWhiteListRequest& request, const DeleteConsoleAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteConsoleAccessWhiteList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DeleteConsoleAccessWhiteListOutcomeCallable JarvisClient::deleteConsoleAccessWhiteListCallable(const DeleteConsoleAccessWhiteListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteConsoleAccessWhiteListOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteConsoleAccessWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 JarvisClient::DescribeEcsListPageOutcome JarvisClient::describeEcsListPage(const DescribeEcsListPageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,36 +843,36 @@ JarvisClient::DescribeEcsListPageOutcomeCallable JarvisClient::describeEcsListPa
 	return task->get_future();
 }
 
-JarvisClient::DeleteConsoleAccessWhiteListOutcome JarvisClient::deleteConsoleAccessWhiteList(const DeleteConsoleAccessWhiteListRequest &request) const
+JarvisClient::CreateUidWhiteBaselineOutcome JarvisClient::createUidWhiteBaseline(const CreateUidWhiteBaselineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteConsoleAccessWhiteListOutcome(endpointOutcome.error());
+		return CreateUidWhiteBaselineOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteConsoleAccessWhiteListOutcome(DeleteConsoleAccessWhiteListResult(outcome.result()));
+		return CreateUidWhiteBaselineOutcome(CreateUidWhiteBaselineResult(outcome.result()));
 	else
-		return DeleteConsoleAccessWhiteListOutcome(outcome.error());
+		return CreateUidWhiteBaselineOutcome(outcome.error());
 }
 
-void JarvisClient::deleteConsoleAccessWhiteListAsync(const DeleteConsoleAccessWhiteListRequest& request, const DeleteConsoleAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void JarvisClient::createUidWhiteBaselineAsync(const CreateUidWhiteBaselineRequest& request, const CreateUidWhiteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteConsoleAccessWhiteList(request), context);
+		handler(this, request, createUidWhiteBaseline(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-JarvisClient::DeleteConsoleAccessWhiteListOutcomeCallable JarvisClient::deleteConsoleAccessWhiteListCallable(const DeleteConsoleAccessWhiteListRequest &request) const
+JarvisClient::CreateUidWhiteBaselineOutcomeCallable JarvisClient::createUidWhiteBaselineCallable(const CreateUidWhiteBaselineRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteConsoleAccessWhiteListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateUidWhiteBaselineOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteConsoleAccessWhiteList(request);
+			return this->createUidWhiteBaseline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +945,42 @@ JarvisClient::CreateAccessWhiteListGroupOutcomeCallable JarvisClient::createAcce
 			[this, request]()
 			{
 			return this->createAccessWhiteListGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::DeleteWhiteListConditionalOutcome JarvisClient::deleteWhiteListConditional(const DeleteWhiteListConditionalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteWhiteListConditionalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteWhiteListConditionalOutcome(DeleteWhiteListConditionalResult(outcome.result()));
+	else
+		return DeleteWhiteListConditionalOutcome(outcome.error());
+}
+
+void JarvisClient::deleteWhiteListConditionalAsync(const DeleteWhiteListConditionalRequest& request, const DeleteWhiteListConditionalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteWhiteListConditional(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DeleteWhiteListConditionalOutcomeCallable JarvisClient::deleteWhiteListConditionalCallable(const DeleteWhiteListConditionalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteWhiteListConditionalOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteWhiteListConditional(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,6 +1167,42 @@ JarvisClient::ModifyAccessWhiteListAutoShareOutcomeCallable JarvisClient::modify
 	return task->get_future();
 }
 
+JarvisClient::CreateIpWhiteBaselineOutcome JarvisClient::createIpWhiteBaseline(const CreateIpWhiteBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIpWhiteBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIpWhiteBaselineOutcome(CreateIpWhiteBaselineResult(outcome.result()));
+	else
+		return CreateIpWhiteBaselineOutcome(outcome.error());
+}
+
+void JarvisClient::createIpWhiteBaselineAsync(const CreateIpWhiteBaselineRequest& request, const CreateIpWhiteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIpWhiteBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::CreateIpWhiteBaselineOutcomeCallable JarvisClient::createIpWhiteBaselineCallable(const CreateIpWhiteBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIpWhiteBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->createIpWhiteBaseline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 JarvisClient::CreateUidWhiteListGroupOutcome JarvisClient::createUidWhiteListGroup(const CreateUidWhiteListGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -987,6 +1275,42 @@ JarvisClient::DescribeCdnIpListOutcomeCallable JarvisClient::describeCdnIpListCa
 	return task->get_future();
 }
 
+JarvisClient::DeleteCdnSubscriptionOutcome JarvisClient::deleteCdnSubscription(const DeleteCdnSubscriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCdnSubscriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCdnSubscriptionOutcome(DeleteCdnSubscriptionResult(outcome.result()));
+	else
+		return DeleteCdnSubscriptionOutcome(outcome.error());
+}
+
+void JarvisClient::deleteCdnSubscriptionAsync(const DeleteCdnSubscriptionRequest& request, const DeleteCdnSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCdnSubscription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::DeleteCdnSubscriptionOutcomeCallable JarvisClient::deleteCdnSubscriptionCallable(const DeleteCdnSubscriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCdnSubscriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCdnSubscription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 JarvisClient::CreateCdnSubscriptionOutcome JarvisClient::createCdnSubscription(const CreateCdnSubscriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1023,36 +1347,36 @@ JarvisClient::CreateCdnSubscriptionOutcomeCallable JarvisClient::createCdnSubscr
 	return task->get_future();
 }
 
-JarvisClient::DeleteCdnSubscriptionOutcome JarvisClient::deleteCdnSubscription(const DeleteCdnSubscriptionRequest &request) const
+JarvisClient::ModifyIpWhiteBaselineOutcome JarvisClient::modifyIpWhiteBaseline(const ModifyIpWhiteBaselineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteCdnSubscriptionOutcome(endpointOutcome.error());
+		return ModifyIpWhiteBaselineOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteCdnSubscriptionOutcome(DeleteCdnSubscriptionResult(outcome.result()));
+		return ModifyIpWhiteBaselineOutcome(ModifyIpWhiteBaselineResult(outcome.result()));
 	else
-		return DeleteCdnSubscriptionOutcome(outcome.error());
+		return ModifyIpWhiteBaselineOutcome(outcome.error());
 }
 
-void JarvisClient::deleteCdnSubscriptionAsync(const DeleteCdnSubscriptionRequest& request, const DeleteCdnSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void JarvisClient::modifyIpWhiteBaselineAsync(const ModifyIpWhiteBaselineRequest& request, const ModifyIpWhiteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteCdnSubscription(request), context);
+		handler(this, request, modifyIpWhiteBaseline(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-JarvisClient::DeleteCdnSubscriptionOutcomeCallable JarvisClient::deleteCdnSubscriptionCallable(const DeleteCdnSubscriptionRequest &request) const
+JarvisClient::ModifyIpWhiteBaselineOutcomeCallable JarvisClient::modifyIpWhiteBaselineCallable(const ModifyIpWhiteBaselineRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteCdnSubscriptionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyIpWhiteBaselineOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteCdnSubscription(request);
+			return this->modifyIpWhiteBaseline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,6 +1449,42 @@ JarvisClient::DeleteAccessWhiteListGroupOutcomeCallable JarvisClient::deleteAcce
 			[this, request]()
 			{
 			return this->deleteAccessWhiteListGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+JarvisClient::ModifyUidWhiteBaselineOutcome JarvisClient::modifyUidWhiteBaseline(const ModifyUidWhiteBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyUidWhiteBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyUidWhiteBaselineOutcome(ModifyUidWhiteBaselineResult(outcome.result()));
+	else
+		return ModifyUidWhiteBaselineOutcome(outcome.error());
+}
+
+void JarvisClient::modifyUidWhiteBaselineAsync(const ModifyUidWhiteBaselineRequest& request, const ModifyUidWhiteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyUidWhiteBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+JarvisClient::ModifyUidWhiteBaselineOutcomeCallable JarvisClient::modifyUidWhiteBaselineCallable(const ModifyUidWhiteBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyUidWhiteBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyUidWhiteBaseline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

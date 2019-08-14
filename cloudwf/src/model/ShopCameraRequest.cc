@@ -33,7 +33,7 @@ long ShopCameraRequest::getGsid()const
 void ShopCameraRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 
 std::string ShopCameraRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ShopCameraRequest::getAccessKeyId()const
 void ShopCameraRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

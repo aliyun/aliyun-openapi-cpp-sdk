@@ -25,17 +25,6 @@ OnsTraceQueryByMsgIdRequest::OnsTraceQueryByMsgIdRequest() :
 OnsTraceQueryByMsgIdRequest::~OnsTraceQueryByMsgIdRequest()
 {}
 
-long OnsTraceQueryByMsgIdRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsTraceQueryByMsgIdRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsTraceQueryByMsgIdRequest::getInstanceId()const
 {
 	return instanceId_;

@@ -36,6 +36,17 @@ void CreateOrUpdateDataSourceRequest::setProjectName(const std::string& projectN
 	setCoreParameter("ProjectName", projectName);
 }
 
+std::string CreateOrUpdateDataSourceRequest::getConfigType()const
+{
+	return configType_;
+}
+
+void CreateOrUpdateDataSourceRequest::setConfigType(const std::string& configType)
+{
+	configType_ = configType;
+	setCoreParameter("ConfigType", configType);
+}
+
 std::string CreateOrUpdateDataSourceRequest::getSourceIp()const
 {
 	return sourceIp_;
