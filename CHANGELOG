@@ -1,3 +1,7 @@
+2019-08-15 Version 1.36.90
+- FnF public version.
+- Add Report task api.
+
 2019-08-15 Version 1.36.89
 - Add API BatchStartCdnDomain, BatchStopCdnDomain, DescribeTagResources, DescribeUserTags, TagResources, UntagResources.
 
