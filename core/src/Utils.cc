@@ -203,22 +203,6 @@ std::string AlibabaCloud::canonicalizedHeaders(
   return ss.str();
 }
 
-Json::Value AlibabaCloud::ReadJson(const std::string str)
-{
-  Json::CharReaderBuilder builder;
-  Json::CharReader *reader = builder.newCharReader();
-  Json::Value *val;
-  Json::Value value;
-  JSONCPP_STRING *errs;
-  reader->parse(str.data(), str.data() + str.size(), val, errs);
-  if (errs == NULL)
-  {
-    value = *val;
-    return value;
-  }
-  throw errs;
-}
-
 std::string AlibabaCloud::GetEnv(const std::string env)
 {
 #ifdef _WIN32
