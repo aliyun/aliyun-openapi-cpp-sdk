@@ -63,6 +63,7 @@ namespace AlibabaCloud
 						std::string billingItem;
 						std::string nickName;
 						std::string intranetIP;
+						std::string servicePeriod;
 						float deductedByResourcePackage;
 						std::string usageUnit;
 						long ownerID;

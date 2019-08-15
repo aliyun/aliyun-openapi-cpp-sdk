@@ -128,6 +128,8 @@ void QueryInstanceBillResult::parse(const std::string &payload)
 			itemObject.zone = value["Zone"].asString();
 		if(!value["Item"].isNull())
 			itemObject.item = value["Item"].asString();
+		if(!value["ServicePeriod"].isNull())
+			itemObject.servicePeriod = value["ServicePeriod"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())
