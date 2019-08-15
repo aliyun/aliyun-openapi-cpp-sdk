@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainRealTimeReqHitRateDataRequest;
 
 DescribeDomainRealTimeReqHitRateDataRequest::DescribeDomainRealTimeReqHitRateDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainRealTimeReqHitRateData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainRealTimeReqHitRateData")
 {}
 
 DescribeDomainRealTimeReqHitRateDataRequest::~DescribeDomainRealTimeReqHitRateDataRequest()
@@ -179,6 +179,17 @@ void DescribeDomainRealTimeReqHitRateDataRequest::setPopProduct(const std::strin
 	setCoreParameter("PopProduct", popProduct);
 }
 
+std::string DescribeDomainRealTimeReqHitRateDataRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribeDomainRealTimeReqHitRateDataRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setCoreParameter("Product", product);
+}
+
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -276,27 +287,5 @@ void DescribeDomainRealTimeReqHitRateDataRequest::setRequestId(const std::string
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
-}
-
-std::string DescribeDomainRealTimeReqHitRateDataRequest::getInterval()const
-{
-	return interval_;
-}
-
-void DescribeDomainRealTimeReqHitRateDataRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setCoreParameter("Interval", interval);
-}
-
-std::string DescribeDomainRealTimeReqHitRateDataRequest::getFields()const
-{
-	return fields_;
-}
-
-void DescribeDomainRealTimeReqHitRateDataRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setCoreParameter("Fields", fields);
 }
 

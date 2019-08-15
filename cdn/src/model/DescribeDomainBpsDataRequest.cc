@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainBpsDataRequest;
 
 DescribeDomainBpsDataRequest::DescribeDomainBpsDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainBpsData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainBpsData")
 {}
 
 DescribeDomainBpsDataRequest::~DescribeDomainBpsDataRequest()
 {}
-
-long DescribeDomainBpsDataRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeDomainBpsDataRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
 
 long DescribeDomainBpsDataRequest::getCallerParentId()const
 {
@@ -135,17 +124,6 @@ void DescribeDomainBpsDataRequest::setAccessKeyId(const std::string& accessKeyId
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeDomainBpsDataRequest::getDomainType()const
-{
-	return domainType_;
-}
-
-void DescribeDomainBpsDataRequest::setDomainType(const std::string& domainType)
-{
-	domainType_ = domainType;
-	setCoreParameter("DomainType", domainType);
-}
-
 std::string DescribeDomainBpsDataRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -232,17 +210,6 @@ void DescribeDomainBpsDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
 	setCoreParameter("Product", product);
-}
-
-std::string DescribeDomainBpsDataRequest::getTimeMerge()const
-{
-	return timeMerge_;
-}
-
-void DescribeDomainBpsDataRequest::setTimeMerge(const std::string& timeMerge)
-{
-	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainBpsDataRequest::getDomainName()const

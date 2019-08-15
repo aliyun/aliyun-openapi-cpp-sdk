@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainQpsDataRequest;
 
 DescribeDomainQpsDataRequest::DescribeDomainQpsDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainQpsData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainQpsData")
 {}
 
 DescribeDomainQpsDataRequest::~DescribeDomainQpsDataRequest()
@@ -124,17 +124,6 @@ void DescribeDomainQpsDataRequest::setAccessKeyId(const std::string& accessKeyId
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeDomainQpsDataRequest::getDomainType()const
-{
-	return domainType_;
-}
-
-void DescribeDomainQpsDataRequest::setDomainType(const std::string& domainType)
-{
-	domainType_ = domainType;
-	setCoreParameter("DomainType", domainType);
-}
-
 std::string DescribeDomainQpsDataRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -212,15 +201,15 @@ void DescribeDomainQpsDataRequest::setPopProduct(const std::string& popProduct)
 	setCoreParameter("PopProduct", popProduct);
 }
 
-std::string DescribeDomainQpsDataRequest::getTimeMerge()const
+std::string DescribeDomainQpsDataRequest::getProduct()const
 {
-	return timeMerge_;
+	return product_;
 }
 
-void DescribeDomainQpsDataRequest::setTimeMerge(const std::string& timeMerge)
+void DescribeDomainQpsDataRequest::setProduct(const std::string& product)
 {
-	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
+	product_ = product;
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeDomainQpsDataRequest::getDomainName()const

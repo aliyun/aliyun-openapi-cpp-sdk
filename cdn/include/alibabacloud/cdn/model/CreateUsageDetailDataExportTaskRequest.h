@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateUsageDetailDataExportTaskRequest();
 				~CreateUsageDetailDataExportTaskRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				std::string getDomainNames()const;
@@ -43,6 +45,8 @@ namespace AlibabaCloud
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
 				std::string getTaskName()const;
 				void setTaskName(const std::string& taskName);
+				std::string getLanguage()const;
+				void setLanguage(const std::string& language);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getProxy_original_source_ip()const;
@@ -91,10 +95,12 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 
             private:
+				long resourceOwnerId_;
 				long callerParentId_;
 				std::string domainNames_;
 				bool proxy_original_security_transport_;
 				std::string taskName_;
+				std::string language_;
 				std::string startTime_;
 				std::string proxy_original_source_ip_;
 				std::string type_;

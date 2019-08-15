@@ -33,7 +33,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getApp_ip()const
 void DeleteUserUsageDataExportTaskRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getPopProduct()const
 void DeleteUserUsageDataExportTaskRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getProduct()const
@@ -55,7 +55,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getProduct()const
 void DeleteUserUsageDataExportTaskRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 long DeleteUserUsageDataExportTaskRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long DeleteUserUsageDataExportTaskRequest::getCallerParentId()const
 void DeleteUserUsageDataExportTaskRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteUserUsageDataExportTaskRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool DeleteUserUsageDataExportTaskRequest::getProxy_original_security_transport(
 void DeleteUserUsageDataExportTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getCallerBid()const
@@ -88,7 +88,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getCallerBid()const
 void DeleteUserUsageDataExportTaskRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteUserUsageDataExportTaskRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DeleteUserUsageDataExportTaskRequest::getOwnerId()const
 void DeleteUserUsageDataExportTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getProxy_original_source_ip()c
 void DeleteUserUsageDataExportTaskRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getVersion()const
@@ -121,7 +121,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getVersion()const
 void DeleteUserUsageDataExportTaskRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getOwnerIdLoginEmail()const
 void DeleteUserUsageDataExportTaskRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getCallerType()const
 void DeleteUserUsageDataExportTaskRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DeleteUserUsageDataExportTaskRequest::getProxy_trust_transport_info()const
@@ -154,7 +154,7 @@ bool DeleteUserUsageDataExportTaskRequest::getProxy_trust_transport_info()const
 void DeleteUserUsageDataExportTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteUserUsageDataExportTaskRequest::getAk_mfa_present()const
@@ -165,7 +165,7 @@ bool DeleteUserUsageDataExportTaskRequest::getAk_mfa_present()const
 void DeleteUserUsageDataExportTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getAccessKeyId()const
 void DeleteUserUsageDataExportTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteUserUsageDataExportTaskRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ bool DeleteUserUsageDataExportTaskRequest::getSecurity_transport()const
 void DeleteUserUsageDataExportTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getSecurityToken()const
 void DeleteUserUsageDataExportTaskRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getRequestId()const
 void DeleteUserUsageDataExportTaskRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getRequestContent()const
 void DeleteUserUsageDataExportTaskRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getCallerBidEmail()const
@@ -231,7 +231,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getCallerBidEmail()const
 void DeleteUserUsageDataExportTaskRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getCallerUidEmail()const
@@ -242,7 +242,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getCallerUidEmail()const
 void DeleteUserUsageDataExportTaskRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 std::string DeleteUserUsageDataExportTaskRequest::getTaskId()const
@@ -253,7 +253,7 @@ std::string DeleteUserUsageDataExportTaskRequest::getTaskId()const
 void DeleteUserUsageDataExportTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 
 long DeleteUserUsageDataExportTaskRequest::getCallerUid()const
@@ -264,6 +264,6 @@ long DeleteUserUsageDataExportTaskRequest::getCallerUid()const
 void DeleteUserUsageDataExportTaskRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

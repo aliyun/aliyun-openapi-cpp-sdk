@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DeleteSpecificConfigRequest;
 
 DeleteSpecificConfigRequest::DeleteSpecificConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DeleteSpecificConfig")
+	RpcServiceRequest("cdn", "2018-05-10", "DeleteSpecificConfig")
 {}
 
 DeleteSpecificConfigRequest::~DeleteSpecificConfigRequest()
@@ -34,17 +34,6 @@ void DeleteSpecificConfigRequest::setSecurityToken(const std::string& securityTo
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DeleteSpecificConfigRequest::getFunctionName()const
-{
-	return functionName_;
-}
-
-void DeleteSpecificConfigRequest::setFunctionName(const std::string& functionName)
-{
-	functionName_ = functionName;
-	setCoreParameter("FunctionName", functionName);
 }
 
 std::string DeleteSpecificConfigRequest::getConfigId()const

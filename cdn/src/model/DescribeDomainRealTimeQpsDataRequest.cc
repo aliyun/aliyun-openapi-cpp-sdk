@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainRealTimeQpsDataRequest;
 
 DescribeDomainRealTimeQpsDataRequest::DescribeDomainRealTimeQpsDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainRealTimeQpsData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainRealTimeQpsData")
 {}
 
 DescribeDomainRealTimeQpsDataRequest::~DescribeDomainRealTimeQpsDataRequest()
@@ -201,6 +201,17 @@ void DescribeDomainRealTimeQpsDataRequest::setPopProduct(const std::string& popP
 	setCoreParameter("PopProduct", popProduct);
 }
 
+std::string DescribeDomainRealTimeQpsDataRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribeDomainRealTimeQpsDataRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setCoreParameter("Product", product);
+}
+
 std::string DescribeDomainRealTimeQpsDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -298,27 +309,5 @@ void DescribeDomainRealTimeQpsDataRequest::setRequestId(const std::string& reque
 {
 	requestId_ = requestId;
 	setCoreParameter("RequestId", requestId);
-}
-
-std::string DescribeDomainRealTimeQpsDataRequest::getInterval()const
-{
-	return interval_;
-}
-
-void DescribeDomainRealTimeQpsDataRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setCoreParameter("Interval", interval);
-}
-
-std::string DescribeDomainRealTimeQpsDataRequest::getFields()const
-{
-	return fields_;
-}
-
-void DescribeDomainRealTimeQpsDataRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setCoreParameter("Fields", fields);
 }
 

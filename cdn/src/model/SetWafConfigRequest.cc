@@ -33,7 +33,7 @@ long SetWafConfigRequest::getResourceOwnerId()const
 void SetWafConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long SetWafConfigRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long SetWafConfigRequest::getCallerParentId()const
 void SetWafConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool SetWafConfigRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool SetWafConfigRequest::getProxy_original_security_transport()const
 void SetWafConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string SetWafConfigRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string SetWafConfigRequest::getProxy_original_source_ip()const
 void SetWafConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string SetWafConfigRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string SetWafConfigRequest::getOwnerIdLoginEmail()const
 void SetWafConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string SetWafConfigRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string SetWafConfigRequest::getCallerType()const
 void SetWafConfigRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string SetWafConfigRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string SetWafConfigRequest::getAccessKeyId()const
 void SetWafConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetWafConfigRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string SetWafConfigRequest::getSecurityToken()const
 void SetWafConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetWafConfigRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string SetWafConfigRequest::getRequestContent()const
 void SetWafConfigRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string SetWafConfigRequest::getFunctionName()const
@@ -132,7 +132,7 @@ std::string SetWafConfigRequest::getFunctionName()const
 void SetWafConfigRequest::setFunctionName(const std::string& functionName)
 {
 	functionName_ = functionName;
-	setParameter("FunctionName", functionName);
+	setCoreParameter("FunctionName", functionName);
 }
 
 std::string SetWafConfigRequest::getEnable()const
@@ -143,7 +143,7 @@ std::string SetWafConfigRequest::getEnable()const
 void SetWafConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable);
+	setCoreParameter("Enable", enable);
 }
 
 std::string SetWafConfigRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string SetWafConfigRequest::getCallerBidEmail()const
 void SetWafConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string SetWafConfigRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string SetWafConfigRequest::getCallerUidEmail()const
 void SetWafConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long SetWafConfigRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long SetWafConfigRequest::getCallerUid()const
 void SetWafConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string SetWafConfigRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string SetWafConfigRequest::getApp_ip()const
 void SetWafConfigRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string SetWafConfigRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string SetWafConfigRequest::getPopProduct()const
 void SetWafConfigRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string SetWafConfigRequest::getDomainName()const
@@ -209,7 +209,7 @@ std::string SetWafConfigRequest::getDomainName()const
 void SetWafConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetWafConfigRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string SetWafConfigRequest::getCallerBid()const
 void SetWafConfigRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long SetWafConfigRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long SetWafConfigRequest::getOwnerId()const
 void SetWafConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetWafConfigRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string SetWafConfigRequest::getVersion()const
 void SetWafConfigRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool SetWafConfigRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool SetWafConfigRequest::getProxy_trust_transport_info()const
 void SetWafConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool SetWafConfigRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool SetWafConfigRequest::getAk_mfa_present()const
 void SetWafConfigRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool SetWafConfigRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool SetWafConfigRequest::getSecurity_transport()const
 void SetWafConfigRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string SetWafConfigRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string SetWafConfigRequest::getRequestId()const
 void SetWafConfigRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 long SetWafConfigRequest::getConfigId()const
@@ -297,6 +297,6 @@ long SetWafConfigRequest::getConfigId()const
 void SetWafConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setParameter("ConfigId", std::to_string(configId));
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 

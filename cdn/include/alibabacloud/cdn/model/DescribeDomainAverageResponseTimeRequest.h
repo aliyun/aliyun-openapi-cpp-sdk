@@ -69,8 +69,6 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
-				std::string getOutString()const;
-				void setOutString(const std::string& outString);
 				std::string getTimeMerge()const;
 				void setTimeMerge(const std::string& timeMerge);
 				std::string getDomainName()const;
@@ -114,7 +112,6 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string popProduct_;
-				std::string outString_;
 				std::string timeMerge_;
 				std::string domainName_;
 				std::string endTime_;

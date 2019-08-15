@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string value;
 					std::string peakTime;
+					std::string specialValue;
 					std::string timeStamp;
 				};
 

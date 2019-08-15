@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				UpdateFCTriggerRequest();
 				~UpdateFCTriggerRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getNotes()const;
 				void setNotes(const std::string& notes);
 				long getCallerParentId()const;
@@ -65,8 +67,6 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
 				std::string getSourceARN()const;
 				void setSourceARN(const std::string& sourceARN);
 				std::string getCallerBid()const;
@@ -81,6 +81,8 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getRoleARN()const;
@@ -89,6 +91,7 @@ namespace AlibabaCloud
 				void setFunctionARN(const std::string& functionARN);
 
             private:
+				long resourceOwnerId_;
 				std::string notes_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
@@ -104,7 +107,6 @@ namespace AlibabaCloud
 				std::string triggerARN_;
 				std::string app_ip_;
 				std::string popProduct_;
-				std::string product_;
 				std::string sourceARN_;
 				std::string callerBid_;
 				long ownerId_;
@@ -112,6 +114,7 @@ namespace AlibabaCloud
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
+				std::string serviceCode_;
 				std::string requestId_;
 				std::string roleARN_;
 				std::string functionARN_;

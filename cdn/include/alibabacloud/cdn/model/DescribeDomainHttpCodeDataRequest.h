@@ -39,12 +39,8 @@ namespace AlibabaCloud
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
-				std::string getLocationNameEn()const;
-				void setLocationNameEn(const std::string& locationNameEn);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getIspNameEn()const;
-				void setIspNameEn(const std::string& ispNameEn);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getOwnerIdLoginEmail()const;
@@ -67,10 +63,6 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
-				std::string getOutString()const;
-				void setOutString(const std::string& outString);
-				std::string getTimeMerge()const;
-				void setTimeMerge(const std::string& timeMerge);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -97,9 +89,7 @@ namespace AlibabaCloud
             private:
 				long callerParentId_;
 				bool proxy_original_security_transport_;
-				std::string locationNameEn_;
 				std::string startTime_;
-				std::string ispNameEn_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
@@ -111,8 +101,6 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string popProduct_;
-				std::string outString_;
-				std::string timeMerge_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string callerBid_;

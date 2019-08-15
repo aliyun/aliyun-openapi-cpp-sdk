@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::StopCdnDomainRequest;
 
 StopCdnDomainRequest::StopCdnDomainRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "StopCdnDomain")
+	RpcServiceRequest("cdn", "2018-05-10", "StopCdnDomain")
 {}
 
 StopCdnDomainRequest::~StopCdnDomainRequest()

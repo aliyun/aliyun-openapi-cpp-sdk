@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DeleteCdnDomainRequest;
 
 DeleteCdnDomainRequest::DeleteCdnDomainRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DeleteCdnDomain")
+	RpcServiceRequest("cdn", "2018-05-10", "DeleteCdnDomain")
 {}
 
 DeleteCdnDomainRequest::~DeleteCdnDomainRequest()
@@ -45,6 +45,17 @@ void DeleteCdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DeleteCdnDomainRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DeleteCdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteCdnDomainRequest::getDomainName()const

@@ -19,11 +19,22 @@
 using AlibabaCloud::Cdn::Model::UpdateFCTriggerRequest;
 
 UpdateFCTriggerRequest::UpdateFCTriggerRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "UpdateFCTrigger")
+	RpcServiceRequest("cdn", "2018-05-10", "UpdateFCTrigger")
 {}
 
 UpdateFCTriggerRequest::~UpdateFCTriggerRequest()
 {}
+
+long UpdateFCTriggerRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void UpdateFCTriggerRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
 
 std::string UpdateFCTriggerRequest::getNotes()const
 {
@@ -190,17 +201,6 @@ void UpdateFCTriggerRequest::setPopProduct(const std::string& popProduct)
 	setCoreParameter("PopProduct", popProduct);
 }
 
-std::string UpdateFCTriggerRequest::getProduct()const
-{
-	return product_;
-}
-
-void UpdateFCTriggerRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setCoreParameter("Product", product);
-}
-
 std::string UpdateFCTriggerRequest::getSourceARN()const
 {
 	return sourceARN_;
@@ -276,6 +276,17 @@ void UpdateFCTriggerRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
 	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string UpdateFCTriggerRequest::getServiceCode()const
+{
+	return serviceCode_;
+}
+
+void UpdateFCTriggerRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string UpdateFCTriggerRequest::getRequestId()const

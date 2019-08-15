@@ -33,7 +33,7 @@ std::string BatchSetCdnDomainServerCertificateRequest::getForceSet()const
 void BatchSetCdnDomainServerCertificateRequest::setForceSet(const std::string& forceSet)
 {
 	forceSet_ = forceSet;
-	setParameter("ForceSet", forceSet);
+	setCoreParameter("ForceSet", forceSet);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string BatchSetCdnDomainServerCertificateRequest::getSecurityToken()const
 void BatchSetCdnDomainServerCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getCertType()const
@@ -55,7 +55,7 @@ std::string BatchSetCdnDomainServerCertificateRequest::getCertType()const
 void BatchSetCdnDomainServerCertificateRequest::setCertType(const std::string& certType)
 {
 	certType_ = certType;
-	setParameter("CertType", certType);
+	setCoreParameter("CertType", certType);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getSSLPub()const
@@ -66,7 +66,7 @@ std::string BatchSetCdnDomainServerCertificateRequest::getSSLPub()const
 void BatchSetCdnDomainServerCertificateRequest::setSSLPub(const std::string& sSLPub)
 {
 	sSLPub_ = sSLPub;
-	setParameter("SSLPub", sSLPub);
+	setCoreParameter("SSLPub", sSLPub);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getCertName()const
@@ -77,7 +77,7 @@ std::string BatchSetCdnDomainServerCertificateRequest::getCertName()const
 void BatchSetCdnDomainServerCertificateRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setParameter("CertName", certName);
+	setCoreParameter("CertName", certName);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getSSLProtocol()const
@@ -88,7 +88,7 @@ std::string BatchSetCdnDomainServerCertificateRequest::getSSLProtocol()const
 void BatchSetCdnDomainServerCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
 {
 	sSLProtocol_ = sSLProtocol;
-	setParameter("SSLProtocol", sSLProtocol);
+	setCoreParameter("SSLProtocol", sSLProtocol);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getDomainName()const
@@ -99,7 +99,7 @@ std::string BatchSetCdnDomainServerCertificateRequest::getDomainName()const
 void BatchSetCdnDomainServerCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long BatchSetCdnDomainServerCertificateRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long BatchSetCdnDomainServerCertificateRequest::getOwnerId()const
 void BatchSetCdnDomainServerCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getRegion()const
@@ -121,7 +121,7 @@ std::string BatchSetCdnDomainServerCertificateRequest::getRegion()const
 void BatchSetCdnDomainServerCertificateRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setParameter("Region", region);
+	setCoreParameter("Region", region);
 }
 
 std::string BatchSetCdnDomainServerCertificateRequest::getSSLPri()const
@@ -132,6 +132,6 @@ std::string BatchSetCdnDomainServerCertificateRequest::getSSLPri()const
 void BatchSetCdnDomainServerCertificateRequest::setSSLPri(const std::string& sSLPri)
 {
 	sSLPri_ = sSLPri;
-	setParameter("SSLPri", sSLPri);
+	setCoreParameter("SSLPri", sSLPri);
 }
 

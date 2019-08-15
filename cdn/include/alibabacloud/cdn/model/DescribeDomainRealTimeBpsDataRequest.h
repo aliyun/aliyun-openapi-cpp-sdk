@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -85,10 +87,6 @@ namespace AlibabaCloud
 				void setSecurity_transport(bool security_transport);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
-				std::string getFields()const;
-				void setFields(const std::string& fields);
 
             private:
 				long callerParentId_;
@@ -107,6 +105,7 @@ namespace AlibabaCloud
 				long callerUid_;
 				std::string app_ip_;
 				std::string popProduct_;
+				std::string product_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string callerBid_;
@@ -116,8 +115,6 @@ namespace AlibabaCloud
 				bool ak_mfa_present_;
 				bool security_transport_;
 				std::string requestId_;
-				std::string interval_;
-				std::string fields_;
 
 			};
 		}

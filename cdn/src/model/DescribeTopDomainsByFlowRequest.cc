@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeTopDomainsByFlowRequest;
 
 DescribeTopDomainsByFlowRequest::DescribeTopDomainsByFlowRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeTopDomainsByFlow")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeTopDomainsByFlow")
 {}
 
 DescribeTopDomainsByFlowRequest::~DescribeTopDomainsByFlowRequest()

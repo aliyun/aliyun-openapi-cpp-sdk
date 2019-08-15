@@ -35,10 +35,13 @@ DescribeDomainUsageDataResult::~DescribeDomainUsageDataResult()
 
 void DescribeDomainUsageDataResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allUsageDataPerInterval = value["UsageDataPerInterval"]["DataModule"];
 	for (auto value : allUsageDataPerInterval)
@@ -50,6 +53,8 @@ void DescribeDomainUsageDataResult::parse(const std::string &payload)
 			usageDataPerIntervalObject.peakTime = value["PeakTime"].asString();
 		if(!value["Value"].isNull())
 			usageDataPerIntervalObject.value = value["Value"].asString();
+		if(!value["SpecialValue"].isNull())
+			usageDataPerIntervalObject.specialValue = value["SpecialValue"].asString();
 		usageDataPerInterval_.push_back(usageDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

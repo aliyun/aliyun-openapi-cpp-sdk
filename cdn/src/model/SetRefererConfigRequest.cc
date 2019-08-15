@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetRefererConfigRequest;
 
 SetRefererConfigRequest::SetRefererConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetRefererConfig")
+	RpcServiceRequest("cdn", "2018-05-10", "SetRefererConfig")
 {}
 
 SetRefererConfigRequest::~SetRefererConfigRequest()

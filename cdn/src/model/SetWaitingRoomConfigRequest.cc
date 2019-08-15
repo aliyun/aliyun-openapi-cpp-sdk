@@ -19,11 +19,22 @@
 using AlibabaCloud::Cdn::Model::SetWaitingRoomConfigRequest;
 
 SetWaitingRoomConfigRequest::SetWaitingRoomConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetWaitingRoomConfig")
+	RpcServiceRequest("cdn", "2018-05-10", "SetWaitingRoomConfig")
 {}
 
 SetWaitingRoomConfigRequest::~SetWaitingRoomConfigRequest()
 {}
+
+long SetWaitingRoomConfigRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void SetWaitingRoomConfigRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
 
 long SetWaitingRoomConfigRequest::getCallerParentId()const
 {

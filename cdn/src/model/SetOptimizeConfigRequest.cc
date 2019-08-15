@@ -19,11 +19,88 @@
 using AlibabaCloud::Cdn::Model::SetOptimizeConfigRequest;
 
 SetOptimizeConfigRequest::SetOptimizeConfigRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "SetOptimizeConfig")
+	RpcServiceRequest("cdn", "2018-05-10", "SetOptimizeConfig")
 {}
 
 SetOptimizeConfigRequest::~SetOptimizeConfigRequest()
 {}
+
+long SetOptimizeConfigRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void SetOptimizeConfigRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+long SetOptimizeConfigRequest::getCallerParentId()const
+{
+	return callerParentId_;
+}
+
+void SetOptimizeConfigRequest::setCallerParentId(long callerParentId)
+{
+	callerParentId_ = callerParentId;
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+}
+
+bool SetOptimizeConfigRequest::getProxy_original_security_transport()const
+{
+	return proxy_original_security_transport_;
+}
+
+void SetOptimizeConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
+{
+	proxy_original_security_transport_ = proxy_original_security_transport;
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+}
+
+std::string SetOptimizeConfigRequest::getProxy_original_source_ip()const
+{
+	return proxy_original_source_ip_;
+}
+
+void SetOptimizeConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
+{
+	proxy_original_source_ip_ = proxy_original_source_ip;
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+}
+
+std::string SetOptimizeConfigRequest::getOwnerIdLoginEmail()const
+{
+	return ownerIdLoginEmail_;
+}
+
+void SetOptimizeConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
+{
+	ownerIdLoginEmail_ = ownerIdLoginEmail;
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+}
+
+std::string SetOptimizeConfigRequest::getCallerType()const
+{
+	return callerType_;
+}
+
+void SetOptimizeConfigRequest::setCallerType(const std::string& callerType)
+{
+	callerType_ = callerType;
+	setCoreParameter("CallerType", callerType);
+}
+
+std::string SetOptimizeConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetOptimizeConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
 
 std::string SetOptimizeConfigRequest::getSecurityToken()const
 {
@@ -34,6 +111,28 @@ void SetOptimizeConfigRequest::setSecurityToken(const std::string& securityToken
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetOptimizeConfigRequest::getRequestContent()const
+{
+	return requestContent_;
+}
+
+void SetOptimizeConfigRequest::setRequestContent(const std::string& requestContent)
+{
+	requestContent_ = requestContent;
+	setCoreParameter("RequestContent", requestContent);
+}
+
+std::string SetOptimizeConfigRequest::getFunctionName()const
+{
+	return functionName_;
+}
+
+void SetOptimizeConfigRequest::setFunctionName(const std::string& functionName)
+{
+	functionName_ = functionName;
+	setCoreParameter("FunctionName", functionName);
 }
 
 std::string SetOptimizeConfigRequest::getEnable()const
@@ -47,6 +146,61 @@ void SetOptimizeConfigRequest::setEnable(const std::string& enable)
 	setCoreParameter("Enable", enable);
 }
 
+std::string SetOptimizeConfigRequest::getCallerBidEmail()const
+{
+	return callerBidEmail_;
+}
+
+void SetOptimizeConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
+{
+	callerBidEmail_ = callerBidEmail;
+	setCoreParameter("CallerBidEmail", callerBidEmail);
+}
+
+std::string SetOptimizeConfigRequest::getCallerUidEmail()const
+{
+	return callerUidEmail_;
+}
+
+void SetOptimizeConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
+{
+	callerUidEmail_ = callerUidEmail;
+	setCoreParameter("CallerUidEmail", callerUidEmail);
+}
+
+long SetOptimizeConfigRequest::getCallerUid()const
+{
+	return callerUid_;
+}
+
+void SetOptimizeConfigRequest::setCallerUid(long callerUid)
+{
+	callerUid_ = callerUid;
+	setCoreParameter("CallerUid", std::to_string(callerUid));
+}
+
+std::string SetOptimizeConfigRequest::getApp_ip()const
+{
+	return app_ip_;
+}
+
+void SetOptimizeConfigRequest::setApp_ip(const std::string& app_ip)
+{
+	app_ip_ = app_ip;
+	setCoreParameter("App_ip", app_ip);
+}
+
+std::string SetOptimizeConfigRequest::getPopProduct()const
+{
+	return popProduct_;
+}
+
+void SetOptimizeConfigRequest::setPopProduct(const std::string& popProduct)
+{
+	popProduct_ = popProduct;
+	setCoreParameter("PopProduct", popProduct);
+}
+
 std::string SetOptimizeConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -58,6 +212,17 @@ void SetOptimizeConfigRequest::setDomainName(const std::string& domainName)
 	setCoreParameter("DomainName", domainName);
 }
 
+std::string SetOptimizeConfigRequest::getCallerBid()const
+{
+	return callerBid_;
+}
+
+void SetOptimizeConfigRequest::setCallerBid(const std::string& callerBid)
+{
+	callerBid_ = callerBid;
+	setCoreParameter("CallerBid", callerBid);
+}
+
 long SetOptimizeConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +232,71 @@ void SetOptimizeConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetOptimizeConfigRequest::getVersion()const
+{
+	return version_;
+}
+
+void SetOptimizeConfigRequest::setVersion(const std::string& version)
+{
+	version_ = version;
+	setCoreParameter("Version", version);
+}
+
+bool SetOptimizeConfigRequest::getProxy_trust_transport_info()const
+{
+	return proxy_trust_transport_info_;
+}
+
+void SetOptimizeConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+{
+	proxy_trust_transport_info_ = proxy_trust_transport_info;
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+}
+
+bool SetOptimizeConfigRequest::getAk_mfa_present()const
+{
+	return ak_mfa_present_;
+}
+
+void SetOptimizeConfigRequest::setAk_mfa_present(bool ak_mfa_present)
+{
+	ak_mfa_present_ = ak_mfa_present;
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+}
+
+bool SetOptimizeConfigRequest::getSecurity_transport()const
+{
+	return security_transport_;
+}
+
+void SetOptimizeConfigRequest::setSecurity_transport(bool security_transport)
+{
+	security_transport_ = security_transport;
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+}
+
+std::string SetOptimizeConfigRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void SetOptimizeConfigRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setCoreParameter("RequestId", requestId);
+}
+
+long SetOptimizeConfigRequest::getConfigId()const
+{
+	return configId_;
+}
+
+void SetOptimizeConfigRequest::setConfigId(long configId)
+{
+	configId_ = configId;
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 

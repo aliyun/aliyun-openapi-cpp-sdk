@@ -33,7 +33,7 @@ std::string ListFCTriggerRequest::getApp_ip()const
 void ListFCTriggerRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ListFCTriggerRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string ListFCTriggerRequest::getPopProduct()const
 void ListFCTriggerRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string ListFCTriggerRequest::getProduct()const
@@ -55,7 +55,7 @@ std::string ListFCTriggerRequest::getProduct()const
 void ListFCTriggerRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 long ListFCTriggerRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long ListFCTriggerRequest::getCallerParentId()const
 void ListFCTriggerRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string ListFCTriggerRequest::getEventMetaVersion()const
@@ -77,7 +77,7 @@ std::string ListFCTriggerRequest::getEventMetaVersion()const
 void ListFCTriggerRequest::setEventMetaVersion(const std::string& eventMetaVersion)
 {
 	eventMetaVersion_ = eventMetaVersion;
-	setParameter("EventMetaVersion", eventMetaVersion);
+	setCoreParameter("EventMetaVersion", eventMetaVersion);
 }
 
 bool ListFCTriggerRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ bool ListFCTriggerRequest::getProxy_original_security_transport()const
 void ListFCTriggerRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ListFCTriggerRequest::getCallerBid()const
@@ -99,7 +99,7 @@ std::string ListFCTriggerRequest::getCallerBid()const
 void ListFCTriggerRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ListFCTriggerRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ListFCTriggerRequest::getOwnerId()const
 void ListFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListFCTriggerRequest::getProxy_original_source_ip()const
@@ -121,7 +121,7 @@ std::string ListFCTriggerRequest::getProxy_original_source_ip()const
 void ListFCTriggerRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ListFCTriggerRequest::getVersion()const
@@ -132,7 +132,7 @@ std::string ListFCTriggerRequest::getVersion()const
 void ListFCTriggerRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 std::string ListFCTriggerRequest::getOwnerIdLoginEmail()const
@@ -143,7 +143,7 @@ std::string ListFCTriggerRequest::getOwnerIdLoginEmail()const
 void ListFCTriggerRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ListFCTriggerRequest::getCallerType()const
@@ -154,7 +154,7 @@ std::string ListFCTriggerRequest::getCallerType()const
 void ListFCTriggerRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool ListFCTriggerRequest::getProxy_trust_transport_info()const
@@ -165,7 +165,7 @@ bool ListFCTriggerRequest::getProxy_trust_transport_info()const
 void ListFCTriggerRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ListFCTriggerRequest::getAk_mfa_present()const
@@ -176,7 +176,7 @@ bool ListFCTriggerRequest::getAk_mfa_present()const
 void ListFCTriggerRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string ListFCTriggerRequest::getAccessKeyId()const
@@ -187,7 +187,7 @@ std::string ListFCTriggerRequest::getAccessKeyId()const
 void ListFCTriggerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool ListFCTriggerRequest::getSecurity_transport()const
@@ -198,7 +198,7 @@ bool ListFCTriggerRequest::getSecurity_transport()const
 void ListFCTriggerRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ListFCTriggerRequest::getSecurityToken()const
@@ -209,7 +209,7 @@ std::string ListFCTriggerRequest::getSecurityToken()const
 void ListFCTriggerRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ListFCTriggerRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string ListFCTriggerRequest::getRequestId()const
 void ListFCTriggerRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string ListFCTriggerRequest::getRequestContent()const
@@ -231,7 +231,7 @@ std::string ListFCTriggerRequest::getRequestContent()const
 void ListFCTriggerRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ListFCTriggerRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string ListFCTriggerRequest::getCallerBidEmail()const
 void ListFCTriggerRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ListFCTriggerRequest::getEventMetaName()const
@@ -253,7 +253,7 @@ std::string ListFCTriggerRequest::getEventMetaName()const
 void ListFCTriggerRequest::setEventMetaName(const std::string& eventMetaName)
 {
 	eventMetaName_ = eventMetaName;
-	setParameter("EventMetaName", eventMetaName);
+	setCoreParameter("EventMetaName", eventMetaName);
 }
 
 std::string ListFCTriggerRequest::getCallerUidEmail()const
@@ -264,7 +264,7 @@ std::string ListFCTriggerRequest::getCallerUidEmail()const
 void ListFCTriggerRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ListFCTriggerRequest::getCallerUid()const
@@ -275,6 +275,6 @@ long ListFCTriggerRequest::getCallerUid()const
 void ListFCTriggerRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

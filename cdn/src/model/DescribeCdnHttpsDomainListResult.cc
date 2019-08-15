@@ -35,10 +35,13 @@ DescribeCdnHttpsDomainListResult::~DescribeCdnHttpsDomainListResult()
 
 void DescribeCdnHttpsDomainListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allCertInfos = value["CertInfos"]["CertInfo"];
 	for (auto value : allCertInfos)
@@ -62,11 +65,18 @@ void DescribeCdnHttpsDomainListResult::parse(const std::string &payload)
 			certInfosObject.certUpdateTime = value["CertUpdateTime"].asString();
 		certInfos_.push_back(certInfosObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
 std::vector<DescribeCdnHttpsDomainListResult::CertInfo> DescribeCdnHttpsDomainListResult::getCertInfos()const
 {
 	return certInfos_;
+}
+
+int DescribeCdnHttpsDomainListResult::getTotalCount()const
+{
+	return totalCount_;
 }
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainISPDataRequest;
 
 DescribeDomainISPDataRequest::DescribeDomainISPDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainISPData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainISPData")
 {}
 
 DescribeDomainISPDataRequest::~DescribeDomainISPDataRequest()
@@ -188,17 +188,6 @@ void DescribeDomainISPDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
 	setCoreParameter("Product", product);
-}
-
-std::string DescribeDomainISPDataRequest::getOutString()const
-{
-	return outString_;
-}
-
-void DescribeDomainISPDataRequest::setOutString(const std::string& outString)
-{
-	outString_ = outString;
-	setCoreParameter("OutString", outString);
 }
 
 std::string DescribeDomainISPDataRequest::getDomainName()const

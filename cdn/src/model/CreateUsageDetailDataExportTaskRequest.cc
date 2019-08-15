@@ -25,6 +25,17 @@ CreateUsageDetailDataExportTaskRequest::CreateUsageDetailDataExportTaskRequest()
 CreateUsageDetailDataExportTaskRequest::~CreateUsageDetailDataExportTaskRequest()
 {}
 
+long CreateUsageDetailDataExportTaskRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void CreateUsageDetailDataExportTaskRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
 long CreateUsageDetailDataExportTaskRequest::getCallerParentId()const
 {
 	return callerParentId_;
@@ -33,7 +44,7 @@ long CreateUsageDetailDataExportTaskRequest::getCallerParentId()const
 void CreateUsageDetailDataExportTaskRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getDomainNames()const
@@ -44,7 +55,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getDomainNames()const
 void CreateUsageDetailDataExportTaskRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setParameter("DomainNames", domainNames);
+	setCoreParameter("DomainNames", domainNames);
 }
 
 bool CreateUsageDetailDataExportTaskRequest::getProxy_original_security_transport()const
@@ -55,7 +66,7 @@ bool CreateUsageDetailDataExportTaskRequest::getProxy_original_security_transpor
 void CreateUsageDetailDataExportTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getTaskName()const
@@ -66,7 +77,18 @@ std::string CreateUsageDetailDataExportTaskRequest::getTaskName()const
 void CreateUsageDetailDataExportTaskRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setParameter("TaskName", taskName);
+	setCoreParameter("TaskName", taskName);
+}
+
+std::string CreateUsageDetailDataExportTaskRequest::getLanguage()const
+{
+	return language_;
+}
+
+void CreateUsageDetailDataExportTaskRequest::setLanguage(const std::string& language)
+{
+	language_ = language;
+	setCoreParameter("Language", language);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getStartTime()const
@@ -77,7 +99,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getStartTime()const
 void CreateUsageDetailDataExportTaskRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getProxy_original_source_ip()const
@@ -88,7 +110,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getProxy_original_source_ip(
 void CreateUsageDetailDataExportTaskRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getType()const
@@ -99,7 +121,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getType()const
 void CreateUsageDetailDataExportTaskRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getOwnerIdLoginEmail()const
@@ -110,7 +132,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getOwnerIdLoginEmail()const
 void CreateUsageDetailDataExportTaskRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getCallerType()const
@@ -121,7 +143,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getCallerType()const
 void CreateUsageDetailDataExportTaskRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getAccessKeyId()const
@@ -132,7 +154,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getAccessKeyId()const
 void CreateUsageDetailDataExportTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getSecurityToken()const
@@ -143,7 +165,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getSecurityToken()const
 void CreateUsageDetailDataExportTaskRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getRequestContent()const
@@ -154,7 +176,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getRequestContent()const
 void CreateUsageDetailDataExportTaskRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getCallerBidEmail()const
@@ -165,7 +187,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getCallerBidEmail()const
 void CreateUsageDetailDataExportTaskRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getCallerUidEmail()const
@@ -176,7 +198,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getCallerUidEmail()const
 void CreateUsageDetailDataExportTaskRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateUsageDetailDataExportTaskRequest::getCallerUid()const
@@ -187,7 +209,7 @@ long CreateUsageDetailDataExportTaskRequest::getCallerUid()const
 void CreateUsageDetailDataExportTaskRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getGroup()const
@@ -198,7 +220,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getGroup()const
 void CreateUsageDetailDataExportTaskRequest::setGroup(const std::string& group)
 {
 	group_ = group;
-	setParameter("Group", group);
+	setCoreParameter("Group", group);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getApp_ip()const
@@ -209,7 +231,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getApp_ip()const
 void CreateUsageDetailDataExportTaskRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getPopProduct()const
@@ -220,7 +242,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getPopProduct()const
 void CreateUsageDetailDataExportTaskRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getProduct()const
@@ -231,7 +253,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getProduct()const
 void CreateUsageDetailDataExportTaskRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getEndTime()const
@@ -242,7 +264,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getEndTime()const
 void CreateUsageDetailDataExportTaskRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getCallerBid()const
@@ -253,7 +275,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getCallerBid()const
 void CreateUsageDetailDataExportTaskRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateUsageDetailDataExportTaskRequest::getOwnerId()const
@@ -264,7 +286,7 @@ long CreateUsageDetailDataExportTaskRequest::getOwnerId()const
 void CreateUsageDetailDataExportTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getVersion()const
@@ -275,7 +297,7 @@ std::string CreateUsageDetailDataExportTaskRequest::getVersion()const
 void CreateUsageDetailDataExportTaskRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool CreateUsageDetailDataExportTaskRequest::getProxy_trust_transport_info()const
@@ -286,7 +308,7 @@ bool CreateUsageDetailDataExportTaskRequest::getProxy_trust_transport_info()cons
 void CreateUsageDetailDataExportTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateUsageDetailDataExportTaskRequest::getAk_mfa_present()const
@@ -297,7 +319,7 @@ bool CreateUsageDetailDataExportTaskRequest::getAk_mfa_present()const
 void CreateUsageDetailDataExportTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateUsageDetailDataExportTaskRequest::getSecurity_transport()const
@@ -308,7 +330,7 @@ bool CreateUsageDetailDataExportTaskRequest::getSecurity_transport()const
 void CreateUsageDetailDataExportTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateUsageDetailDataExportTaskRequest::getRequestId()const
@@ -319,6 +341,6 @@ std::string CreateUsageDetailDataExportTaskRequest::getRequestId()const
 void CreateUsageDetailDataExportTaskRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

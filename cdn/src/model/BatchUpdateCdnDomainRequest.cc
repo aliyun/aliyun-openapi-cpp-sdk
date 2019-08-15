@@ -33,7 +33,7 @@ std::string BatchUpdateCdnDomainRequest::getTopLevelDomain()const
 void BatchUpdateCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setParameter("TopLevelDomain", topLevelDomain);
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string BatchUpdateCdnDomainRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string BatchUpdateCdnDomainRequest::getResourceGroupId()const
 void BatchUpdateCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string BatchUpdateCdnDomainRequest::getSources()const
@@ -55,7 +55,7 @@ std::string BatchUpdateCdnDomainRequest::getSources()const
 void BatchUpdateCdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setParameter("Sources", sources);
+	setCoreParameter("Sources", sources);
 }
 
 std::string BatchUpdateCdnDomainRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string BatchUpdateCdnDomainRequest::getSecurityToken()const
 void BatchUpdateCdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string BatchUpdateCdnDomainRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string BatchUpdateCdnDomainRequest::getDomainName()const
 void BatchUpdateCdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long BatchUpdateCdnDomainRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long BatchUpdateCdnDomainRequest::getOwnerId()const
 void BatchUpdateCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -65,8 +65,6 @@ namespace AlibabaCloud
 				void setPopProduct(const std::string& popProduct);
 				std::string getProduct()const;
 				void setProduct(const std::string& product);
-				std::string getOutString()const;
-				void setOutString(const std::string& outString);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -102,7 +100,6 @@ namespace AlibabaCloud
 				std::string app_ip_;
 				std::string popProduct_;
 				std::string product_;
-				std::string outString_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string callerBid_;

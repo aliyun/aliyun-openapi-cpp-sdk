@@ -61,18 +61,18 @@ void DescribeDomainQpsDataResult::parse(const std::string &payload)
 			qpsDataIntervalObject.accDomesticValue = value["AccDomesticValue"].asString();
 		if(!value["AccOverseasValue"].isNull())
 			qpsDataIntervalObject.accOverseasValue = value["AccOverseasValue"].asString();
-		if(!value["DynamicValue"].isNull())
-			qpsDataIntervalObject.dynamicValue = value["DynamicValue"].asString();
-		if(!value["DynamicDomesticValue"].isNull())
-			qpsDataIntervalObject.dynamicDomesticValue = value["DynamicDomesticValue"].asString();
-		if(!value["DynamicOverseasValue"].isNull())
-			qpsDataIntervalObject.dynamicOverseasValue = value["DynamicOverseasValue"].asString();
-		if(!value["StaticValue"].isNull())
-			qpsDataIntervalObject.staticValue = value["StaticValue"].asString();
-		if(!value["StaticDomesticValue"].isNull())
-			qpsDataIntervalObject.staticDomesticValue = value["StaticDomesticValue"].asString();
-		if(!value["StaticOverseasValue"].isNull())
-			qpsDataIntervalObject.staticOverseasValue = value["StaticOverseasValue"].asString();
+		if(!value["HttpsValue"].isNull())
+			qpsDataIntervalObject.httpsValue = value["HttpsValue"].asString();
+		if(!value["HttpsDomesticValue"].isNull())
+			qpsDataIntervalObject.httpsDomesticValue = value["HttpsDomesticValue"].asString();
+		if(!value["HttpsOverseasValue"].isNull())
+			qpsDataIntervalObject.httpsOverseasValue = value["HttpsOverseasValue"].asString();
+		if(!value["HttpsAccValue"].isNull())
+			qpsDataIntervalObject.httpsAccValue = value["HttpsAccValue"].asString();
+		if(!value["HttpsAccDomesticValue"].isNull())
+			qpsDataIntervalObject.httpsAccDomesticValue = value["HttpsAccDomesticValue"].asString();
+		if(!value["HttpsAccOverseasValue"].isNull())
+			qpsDataIntervalObject.httpsAccOverseasValue = value["HttpsAccOverseasValue"].asString();
 		qpsDataInterval_.push_back(qpsDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

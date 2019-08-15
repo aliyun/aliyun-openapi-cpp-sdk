@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainRegionDataRequest;
 
 DescribeDomainRegionDataRequest::DescribeDomainRegionDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainRegionData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainRegionData")
 {}
 
 DescribeDomainRegionDataRequest::~DescribeDomainRegionDataRequest()
@@ -188,17 +188,6 @@ void DescribeDomainRegionDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
 	setCoreParameter("Product", product);
-}
-
-std::string DescribeDomainRegionDataRequest::getOutString()const
-{
-	return outString_;
-}
-
-void DescribeDomainRegionDataRequest::setOutString(const std::string& outString)
-{
-	outString_ = outString;
-	setCoreParameter("OutString", outString);
 }
 
 std::string DescribeDomainRegionDataRequest::getDomainName()const

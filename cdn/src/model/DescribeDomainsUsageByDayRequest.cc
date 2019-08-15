@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainsUsageByDayRequest;
 
 DescribeDomainsUsageByDayRequest::DescribeDomainsUsageByDayRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainsUsageByDay")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainsUsageByDay")
 {}
 
 DescribeDomainsUsageByDayRequest::~DescribeDomainsUsageByDayRequest()
@@ -188,17 +188,6 @@ void DescribeDomainsUsageByDayRequest::setProduct(const std::string& product)
 {
 	product_ = product;
 	setCoreParameter("Product", product);
-}
-
-std::string DescribeDomainsUsageByDayRequest::getOutString()const
-{
-	return outString_;
-}
-
-void DescribeDomainsUsageByDayRequest::setOutString(const std::string& outString)
-{
-	outString_ = outString;
-	setCoreParameter("OutString", outString);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getDomainName()const

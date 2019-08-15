@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainHitRateDataRequest;
 
 DescribeDomainHitRateDataRequest::DescribeDomainHitRateDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainHitRateData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainHitRateData")
 {}
 
 DescribeDomainHitRateDataRequest::~DescribeDomainHitRateDataRequest()
@@ -177,17 +177,6 @@ void DescribeDomainHitRateDataRequest::setPopProduct(const std::string& popProdu
 {
 	popProduct_ = popProduct;
 	setCoreParameter("PopProduct", popProduct);
-}
-
-std::string DescribeDomainHitRateDataRequest::getOutString()const
-{
-	return outString_;
-}
-
-void DescribeDomainHitRateDataRequest::setOutString(const std::string& outString)
-{
-	outString_ = outString;
-	setCoreParameter("OutString", outString);
 }
 
 std::string DescribeDomainHitRateDataRequest::getDomainName()const

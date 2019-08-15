@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeUserDomainsRequest;
 
 DescribeUserDomainsRequest::DescribeUserDomainsRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeUserDomains")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeUserDomains")
 {}
 
 DescribeUserDomainsRequest::~DescribeUserDomainsRequest()
@@ -34,17 +34,6 @@ void DescribeUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
 {
 	funcFilter_ = funcFilter;
 	setCoreParameter("FuncFilter", funcFilter);
-}
-
-std::string DescribeUserDomainsRequest::getSources()const
-{
-	return sources_;
-}
-
-void DescribeUserDomainsRequest::setSources(const std::string& sources)
-{
-	sources_ = sources;
-	setCoreParameter("Sources", sources);
 }
 
 std::string DescribeUserDomainsRequest::getDomainName()const
@@ -166,5 +155,22 @@ void DescribeUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeUserDomainsRequest::Tag> DescribeUserDomainsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeUserDomainsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 

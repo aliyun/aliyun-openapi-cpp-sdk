@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SetWaitingRoomConfigRequest();
 				~SetWaitingRoomConfigRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -91,6 +93,7 @@ namespace AlibabaCloud
 				void setRequestId(const std::string& requestId);
 
             private:
+				long resourceOwnerId_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string proxy_original_source_ip_;

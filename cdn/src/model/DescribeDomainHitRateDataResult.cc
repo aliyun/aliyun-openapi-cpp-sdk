@@ -51,6 +51,8 @@ void DescribeDomainHitRateDataResult::parse(const std::string &payload)
 			hitRateIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
 			hitRateIntervalObject.value = value["Value"].asString();
+		if(!value["HttpsValue"].isNull())
+			hitRateIntervalObject.httpsValue = value["HttpsValue"].asString();
 		hitRateInterval_.push_back(hitRateIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

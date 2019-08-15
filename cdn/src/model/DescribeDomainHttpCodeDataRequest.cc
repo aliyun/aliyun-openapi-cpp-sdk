@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainHttpCodeDataRequest;
 
 DescribeDomainHttpCodeDataRequest::DescribeDomainHttpCodeDataRequest() :
-	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainHttpCodeData")
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainHttpCodeData")
 {}
 
 DescribeDomainHttpCodeDataRequest::~DescribeDomainHttpCodeDataRequest()
@@ -47,17 +47,6 @@ void DescribeDomainHttpCodeDataRequest::setProxy_original_security_transport(boo
 	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
-std::string DescribeDomainHttpCodeDataRequest::getLocationNameEn()const
-{
-	return locationNameEn_;
-}
-
-void DescribeDomainHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
-{
-	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
-}
-
 std::string DescribeDomainHttpCodeDataRequest::getStartTime()const
 {
 	return startTime_;
@@ -67,17 +56,6 @@ void DescribeDomainHttpCodeDataRequest::setStartTime(const std::string& startTim
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-std::string DescribeDomainHttpCodeDataRequest::getIspNameEn()const
-{
-	return ispNameEn_;
-}
-
-void DescribeDomainHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
-{
-	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getProxy_original_source_ip()const
@@ -199,28 +177,6 @@ void DescribeDomainHttpCodeDataRequest::setPopProduct(const std::string& popProd
 {
 	popProduct_ = popProduct;
 	setCoreParameter("PopProduct", popProduct);
-}
-
-std::string DescribeDomainHttpCodeDataRequest::getOutString()const
-{
-	return outString_;
-}
-
-void DescribeDomainHttpCodeDataRequest::setOutString(const std::string& outString)
-{
-	outString_ = outString;
-	setCoreParameter("OutString", outString);
-}
-
-std::string DescribeDomainHttpCodeDataRequest::getTimeMerge()const
-{
-	return timeMerge_;
-}
-
-void DescribeDomainHttpCodeDataRequest::setTimeMerge(const std::string& timeMerge)
-{
-	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getDomainName()const

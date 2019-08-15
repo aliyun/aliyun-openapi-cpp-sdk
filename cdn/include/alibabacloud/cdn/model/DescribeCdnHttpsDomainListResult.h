@@ -49,11 +49,13 @@ namespace AlibabaCloud
 				explicit DescribeCdnHttpsDomainListResult(const std::string &payload);
 				~DescribeCdnHttpsDomainListResult();
 				std::vector<CertInfo> getCertInfos()const;
+				int getTotalCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<CertInfo> certInfos_;
+				int totalCount_;
 
 			};
 		}

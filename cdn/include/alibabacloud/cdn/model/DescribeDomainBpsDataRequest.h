@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				DescribeDomainBpsDataRequest();
 				~DescribeDomainBpsDataRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				long getCallerParentId()const;
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
@@ -55,8 +53,6 @@ namespace AlibabaCloud
 				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDomainType()const;
-				void setDomainType(const std::string& domainType);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRequestContent()const;
@@ -73,8 +69,6 @@ namespace AlibabaCloud
 				void setPopProduct(const std::string& popProduct);
 				std::string getProduct()const;
 				void setProduct(const std::string& product);
-				std::string getTimeMerge()const;
-				void setTimeMerge(const std::string& timeMerge);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -97,7 +91,6 @@ namespace AlibabaCloud
 				void setInterval(const std::string& interval);
 
             private:
-				long resourceOwnerId_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
 				std::string locationNameEn_;
@@ -107,7 +100,6 @@ namespace AlibabaCloud
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;
 				std::string accessKeyId_;
-				std::string domainType_;
 				std::string securityToken_;
 				std::string requestContent_;
 				std::string callerBidEmail_;
@@ -116,7 +108,6 @@ namespace AlibabaCloud
 				std::string app_ip_;
 				std::string popProduct_;
 				std::string product_;
-				std::string timeMerge_;
 				std::string domainName_;
 				std::string endTime_;
 				std::string callerBid_;
