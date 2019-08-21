@@ -65,6 +65,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.backupMethod = value["BackupMethod"].asString();
 		if(!value["StoreStatus"].isNull())
 			itemsObject.storeStatus = value["StoreStatus"].asString();
+		if(!value["BackupSetSize"].isNull())
+			itemsObject.backupSetSize = value["BackupSetSize"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())
