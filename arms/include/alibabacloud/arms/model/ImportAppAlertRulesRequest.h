@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setContactGroupIds(const std::string& contactGroupIds);
 				std::string getPids()const;
 				void setPids(const std::string& pids);
+				std::string getTemplageAlertConfig()const;
+				void setTemplageAlertConfig(const std::string& templageAlertConfig);
 				std::string getTemplateAlertId()const;
 				void setTemplateAlertId(const std::string& templateAlertId);
 
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string contactGroupIds_;
 				std::string pids_;
+				std::string templageAlertConfig_;
 				std::string templateAlertId_;
 
 			};

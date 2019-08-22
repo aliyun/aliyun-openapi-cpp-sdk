@@ -69,6 +69,17 @@ void ImportAppAlertRulesRequest::setPids(const std::string& pids)
 	setCoreParameter("Pids", pids);
 }
 
+std::string ImportAppAlertRulesRequest::getTemplageAlertConfig()const
+{
+	return templageAlertConfig_;
+}
+
+void ImportAppAlertRulesRequest::setTemplageAlertConfig(const std::string& templageAlertConfig)
+{
+	templageAlertConfig_ = templageAlertConfig;
+	setCoreParameter("TemplageAlertConfig", templageAlertConfig);
+}
+
 std::string ImportAppAlertRulesRequest::getTemplateAlertId()const
 {
 	return templateAlertId_;
