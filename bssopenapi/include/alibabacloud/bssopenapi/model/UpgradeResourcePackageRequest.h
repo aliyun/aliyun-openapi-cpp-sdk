@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBOOKLISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBOOKLISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_UPGRADERESOURCEPACKAGEREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_UPGRADERESOURCEPACKAGEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAccountBookListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT UpgradeResourcePackageRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryAccountBookListRequest();
-				~QueryAccountBookListRequest();
+				UpgradeResourcePackageRequest();
+				~UpgradeResourcePackageRequest();
 
-				long getUid()const;
-				void setUid(long uid);
-				std::string getItemCodes()const;
-				void setItemCodes(const std::string& itemCodes);
-				std::string getBid()const;
-				void setBid(const std::string& bid);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getSpecification()const;
+				void setSpecification(const std::string& specification);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getEffectiveDate()const;
+				void setEffectiveDate(const std::string& effectiveDate);
 
             private:
-				long uid_;
-				std::string itemCodes_;
-				std::string bid_;
+				std::string instanceId_;
+				std::string specification_;
+				long ownerId_;
+				std::string effectiveDate_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBOOKLISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_UPGRADERESOURCEPACKAGEREQUEST_H_

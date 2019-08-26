@@ -47,6 +47,17 @@ void GetResourcePackagePriceRequest::setProductCode(const std::string& productCo
 	setCoreParameter("ProductCode", productCode);
 }
 
+std::string GetResourcePackagePriceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GetResourcePackagePriceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
 std::string GetResourcePackagePriceRequest::getSpecification()const
 {
 	return specification_;
@@ -100,5 +111,16 @@ void GetResourcePackagePriceRequest::setPricingCycle(const std::string& pricingC
 {
 	pricingCycle_ = pricingCycle;
 	setCoreParameter("PricingCycle", pricingCycle);
+}
+
+std::string GetResourcePackagePriceRequest::getOrderType()const
+{
+	return orderType_;
+}
+
+void GetResourcePackagePriceRequest::setOrderType(const std::string& orderType)
+{
+	orderType_ = orderType;
+	setCoreParameter("OrderType", orderType);
 }
 

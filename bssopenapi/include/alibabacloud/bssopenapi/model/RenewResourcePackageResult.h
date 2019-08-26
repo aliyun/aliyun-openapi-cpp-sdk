@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_RENEWRESOURCEPACKAGERESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_RENEWRESOURCEPACKAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,16 +29,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAvaliableQuotaResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT RenewResourcePackageResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string instanceId;
+					long orderId;
+				};
 
 
-				QueryAvaliableQuotaResult();
-				explicit QueryAvaliableQuotaResult(const std::string &payload);
-				~QueryAvaliableQuotaResult();
+				RenewResourcePackageResult();
+				explicit RenewResourcePackageResult(const std::string &payload);
+				~RenewResourcePackageResult();
 				std::string getMessage()const;
-				std::string getData()const;
+				Data getData()const;
+				long getOrderId()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -46,7 +52,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string data_;
+				Data data_;
+				long orderId_;
 				std::string code_;
 				bool success_;
 
@@ -54,4 +61,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYAVALIABLEQUOTARESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_RENEWRESOURCEPACKAGERESULT_H_

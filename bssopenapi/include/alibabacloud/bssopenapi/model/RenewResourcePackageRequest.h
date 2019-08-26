@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICELISTREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICELISTREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_RENEWRESOURCEPACKAGEREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_RENEWRESOURCEPACKAGEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryPriceListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT RenewResourcePackageRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryPriceListRequest();
-				~QueryPriceListRequest();
+				RenewResourcePackageRequest();
+				~RenewResourcePackageRequest();
 
-				std::string getModuleCode()const;
-				void setModuleCode(const std::string& moduleCode);
-				std::string getProductCode()const;
-				void setProductCode(const std::string& productCode);
-				std::string getSubscriptionType()const;
-				void setSubscriptionType(const std::string& subscriptionType);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getProductType()const;
-				void setProductType(const std::string& productType);
+				std::string getEffectiveDate()const;
+				void setEffectiveDate(const std::string& effectiveDate);
+				std::string getPricingCycle()const;
+				void setPricingCycle(const std::string& pricingCycle);
 
             private:
-				std::string moduleCode_;
-				std::string productCode_;
-				std::string subscriptionType_;
+				int duration_;
+				std::string instanceId_;
 				long ownerId_;
-				std::string productType_;
+				std::string effectiveDate_;
+				std::string pricingCycle_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICELISTREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_RENEWRESOURCEPACKAGEREQUEST_H_

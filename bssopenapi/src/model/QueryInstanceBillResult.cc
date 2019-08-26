@@ -77,19 +77,19 @@ void QueryInstanceBillResult::parse(const std::string &payload)
 		if(!value["ProductDetail"].isNull())
 			itemObject.productDetail = value["ProductDetail"].asString();
 		if(!value["OwnerID"].isNull())
-			itemObject.ownerID = std::stol(value["OwnerID"].asString());
+			itemObject.ownerID = value["OwnerID"].asString();
 		if(!value["BillingItem"].isNull())
 			itemObject.billingItem = value["BillingItem"].asString();
 		if(!value["ListPrice"].isNull())
-			itemObject.listPrice = std::stof(value["ListPrice"].asString());
+			itemObject.listPrice = value["ListPrice"].asString();
 		if(!value["ListPriceUnit"].isNull())
 			itemObject.listPriceUnit = value["ListPriceUnit"].asString();
 		if(!value["Usage"].isNull())
-			itemObject.usage = std::stof(value["Usage"].asString());
+			itemObject.usage = value["Usage"].asString();
 		if(!value["UsageUnit"].isNull())
 			itemObject.usageUnit = value["UsageUnit"].asString();
 		if(!value["DeductedByResourcePackage"].isNull())
-			itemObject.deductedByResourcePackage = std::stof(value["DeductedByResourcePackage"].asString());
+			itemObject.deductedByResourcePackage = value["DeductedByResourcePackage"].asString();
 		if(!value["PretaxGrossAmount"].isNull())
 			itemObject.pretaxGrossAmount = std::stof(value["PretaxGrossAmount"].asString());
 		if(!value["InvoiceDiscount"].isNull())

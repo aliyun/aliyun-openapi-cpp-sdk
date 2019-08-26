@@ -41,7 +41,7 @@ namespace AlibabaCloud
 						std::string instanceID;
 						float deductedByCashCoupons;
 						std::string listPriceUnit;
-						float listPrice;
+						std::string listPrice;
 						float paymentAmount;
 						float deductedByPrepaidCard;
 						float invoiceDiscount;
@@ -53,7 +53,7 @@ namespace AlibabaCloud
 						std::string costUnit;
 						std::string resourceGroup;
 						std::string billingType;
-						float usage;
+						std::string usage;
 						float deductedByCoupons;
 						std::string productDetail;
 						std::string productCode;
@@ -64,9 +64,9 @@ namespace AlibabaCloud
 						std::string nickName;
 						std::string intranetIP;
 						std::string servicePeriod;
-						float deductedByResourcePackage;
+						std::string deductedByResourcePackage;
 						std::string usageUnit;
-						long ownerID;
+						std::string ownerID;
 						float pretaxAmount;
 						std::string internetIP;
 						std::string region;
