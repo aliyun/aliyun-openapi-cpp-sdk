@@ -31,21 +31,21 @@ DbsClient::DbsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbs");
 }
 
 DbsClient::DbsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbs");
 }
 
 DbsClient::DbsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbs");
 }
 
 DbsClient::~DbsClient()
@@ -231,6 +231,42 @@ DbsClient::DescribeFullBackupListOutcomeCallable DbsClient::describeFullBackupLi
 	return task->get_future();
 }
 
+DbsClient::UpgradeBackupPlanOutcome DbsClient::upgradeBackupPlan(const UpgradeBackupPlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeBackupPlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeBackupPlanOutcome(UpgradeBackupPlanResult(outcome.result()));
+	else
+		return UpgradeBackupPlanOutcome(outcome.error());
+}
+
+void DbsClient::upgradeBackupPlanAsync(const UpgradeBackupPlanRequest& request, const UpgradeBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeBackupPlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::UpgradeBackupPlanOutcomeCallable DbsClient::upgradeBackupPlanCallable(const UpgradeBackupPlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeBackupPlanOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeBackupPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DbsClient::DescribeRestoreTaskListOutcome DbsClient::describeRestoreTaskList(const DescribeRestoreTaskListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,6 +375,42 @@ DbsClient::StopBackupPlanOutcomeCallable DbsClient::stopBackupPlanCallable(const
 	return task->get_future();
 }
 
+DbsClient::DescribeBackupGatewayListOutcome DbsClient::describeBackupGatewayList(const DescribeBackupGatewayListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupGatewayListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupGatewayListOutcome(DescribeBackupGatewayListResult(outcome.result()));
+	else
+		return DescribeBackupGatewayListOutcome(outcome.error());
+}
+
+void DbsClient::describeBackupGatewayListAsync(const DescribeBackupGatewayListRequest& request, const DescribeBackupGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupGatewayList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeBackupGatewayListOutcomeCallable DbsClient::describeBackupGatewayListCallable(const DescribeBackupGatewayListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupGatewayListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupGatewayList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DbsClient::ModifyBackupSourceEndpointOutcome DbsClient::modifyBackupSourceEndpoint(const ModifyBackupSourceEndpointRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -375,36 +447,36 @@ DbsClient::ModifyBackupSourceEndpointOutcomeCallable DbsClient::modifyBackupSour
 	return task->get_future();
 }
 
-DbsClient::DescribeBackupGatewayListOutcome DbsClient::describeBackupGatewayList(const DescribeBackupGatewayListRequest &request) const
+DbsClient::DescribePreCheckProgressListOutcome DbsClient::describePreCheckProgressList(const DescribePreCheckProgressListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeBackupGatewayListOutcome(endpointOutcome.error());
+		return DescribePreCheckProgressListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeBackupGatewayListOutcome(DescribeBackupGatewayListResult(outcome.result()));
+		return DescribePreCheckProgressListOutcome(DescribePreCheckProgressListResult(outcome.result()));
 	else
-		return DescribeBackupGatewayListOutcome(outcome.error());
+		return DescribePreCheckProgressListOutcome(outcome.error());
 }
 
-void DbsClient::describeBackupGatewayListAsync(const DescribeBackupGatewayListRequest& request, const DescribeBackupGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DbsClient::describePreCheckProgressListAsync(const DescribePreCheckProgressListRequest& request, const DescribePreCheckProgressListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeBackupGatewayList(request), context);
+		handler(this, request, describePreCheckProgressList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DbsClient::DescribeBackupGatewayListOutcomeCallable DbsClient::describeBackupGatewayListCallable(const DescribeBackupGatewayListRequest &request) const
+DbsClient::DescribePreCheckProgressListOutcomeCallable DbsClient::describePreCheckProgressListCallable(const DescribePreCheckProgressListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeBackupGatewayListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribePreCheckProgressListOutcome()>>(
 			[this, request]()
 			{
-			return this->describeBackupGatewayList(request);
+			return this->describePreCheckProgressList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

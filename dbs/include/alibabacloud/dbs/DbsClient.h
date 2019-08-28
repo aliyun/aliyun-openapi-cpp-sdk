@@ -32,16 +32,20 @@
 #include "model/RenewBackupPlanResult.h"
 #include "model/DescribeFullBackupListRequest.h"
 #include "model/DescribeFullBackupListResult.h"
+#include "model/UpgradeBackupPlanRequest.h"
+#include "model/UpgradeBackupPlanResult.h"
 #include "model/DescribeRestoreTaskListRequest.h"
 #include "model/DescribeRestoreTaskListResult.h"
 #include "model/ModifyBackupPlanNameRequest.h"
 #include "model/ModifyBackupPlanNameResult.h"
 #include "model/StopBackupPlanRequest.h"
 #include "model/StopBackupPlanResult.h"
-#include "model/ModifyBackupSourceEndpointRequest.h"
-#include "model/ModifyBackupSourceEndpointResult.h"
 #include "model/DescribeBackupGatewayListRequest.h"
 #include "model/DescribeBackupGatewayListResult.h"
+#include "model/ModifyBackupSourceEndpointRequest.h"
+#include "model/ModifyBackupSourceEndpointResult.h"
+#include "model/DescribePreCheckProgressListRequest.h"
+#include "model/DescribePreCheckProgressListResult.h"
 #include "model/ModifyBackupObjectsRequest.h"
 #include "model/ModifyBackupObjectsResult.h"
 #include "model/DescribeIncrementBackupListRequest.h"
@@ -80,6 +84,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeFullBackupListResult> DescribeFullBackupListOutcome;
 			typedef std::future<DescribeFullBackupListOutcome> DescribeFullBackupListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeFullBackupListRequest&, const DescribeFullBackupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFullBackupListAsyncHandler;
+			typedef Outcome<Error, Model::UpgradeBackupPlanResult> UpgradeBackupPlanOutcome;
+			typedef std::future<UpgradeBackupPlanOutcome> UpgradeBackupPlanOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::UpgradeBackupPlanRequest&, const UpgradeBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeBackupPlanAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRestoreTaskListResult> DescribeRestoreTaskListOutcome;
 			typedef std::future<DescribeRestoreTaskListOutcome> DescribeRestoreTaskListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeRestoreTaskListRequest&, const DescribeRestoreTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTaskListAsyncHandler;
@@ -89,12 +96,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopBackupPlanResult> StopBackupPlanOutcome;
 			typedef std::future<StopBackupPlanOutcome> StopBackupPlanOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::StopBackupPlanRequest&, const StopBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopBackupPlanAsyncHandler;
-			typedef Outcome<Error, Model::ModifyBackupSourceEndpointResult> ModifyBackupSourceEndpointOutcome;
-			typedef std::future<ModifyBackupSourceEndpointOutcome> ModifyBackupSourceEndpointOutcomeCallable;
-			typedef std::function<void(const DbsClient*, const Model::ModifyBackupSourceEndpointRequest&, const ModifyBackupSourceEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupSourceEndpointAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBackupGatewayListResult> DescribeBackupGatewayListOutcome;
 			typedef std::future<DescribeBackupGatewayListOutcome> DescribeBackupGatewayListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeBackupGatewayListRequest&, const DescribeBackupGatewayListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupGatewayListAsyncHandler;
+			typedef Outcome<Error, Model::ModifyBackupSourceEndpointResult> ModifyBackupSourceEndpointOutcome;
+			typedef std::future<ModifyBackupSourceEndpointOutcome> ModifyBackupSourceEndpointOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::ModifyBackupSourceEndpointRequest&, const ModifyBackupSourceEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupSourceEndpointAsyncHandler;
+			typedef Outcome<Error, Model::DescribePreCheckProgressListResult> DescribePreCheckProgressListOutcome;
+			typedef std::future<DescribePreCheckProgressListOutcome> DescribePreCheckProgressListOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DescribePreCheckProgressListRequest&, const DescribePreCheckProgressListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreCheckProgressListAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBackupObjectsResult> ModifyBackupObjectsOutcome;
 			typedef std::future<ModifyBackupObjectsOutcome> ModifyBackupObjectsOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::ModifyBackupObjectsRequest&, const ModifyBackupObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupObjectsAsyncHandler;
@@ -136,6 +146,9 @@ namespace AlibabaCloud
 			DescribeFullBackupListOutcome describeFullBackupList(const Model::DescribeFullBackupListRequest &request)const;
 			void describeFullBackupListAsync(const Model::DescribeFullBackupListRequest& request, const DescribeFullBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFullBackupListOutcomeCallable describeFullBackupListCallable(const Model::DescribeFullBackupListRequest& request) const;
+			UpgradeBackupPlanOutcome upgradeBackupPlan(const Model::UpgradeBackupPlanRequest &request)const;
+			void upgradeBackupPlanAsync(const Model::UpgradeBackupPlanRequest& request, const UpgradeBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpgradeBackupPlanOutcomeCallable upgradeBackupPlanCallable(const Model::UpgradeBackupPlanRequest& request) const;
 			DescribeRestoreTaskListOutcome describeRestoreTaskList(const Model::DescribeRestoreTaskListRequest &request)const;
 			void describeRestoreTaskListAsync(const Model::DescribeRestoreTaskListRequest& request, const DescribeRestoreTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRestoreTaskListOutcomeCallable describeRestoreTaskListCallable(const Model::DescribeRestoreTaskListRequest& request) const;
@@ -145,12 +158,15 @@ namespace AlibabaCloud
 			StopBackupPlanOutcome stopBackupPlan(const Model::StopBackupPlanRequest &request)const;
 			void stopBackupPlanAsync(const Model::StopBackupPlanRequest& request, const StopBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopBackupPlanOutcomeCallable stopBackupPlanCallable(const Model::StopBackupPlanRequest& request) const;
-			ModifyBackupSourceEndpointOutcome modifyBackupSourceEndpoint(const Model::ModifyBackupSourceEndpointRequest &request)const;
-			void modifyBackupSourceEndpointAsync(const Model::ModifyBackupSourceEndpointRequest& request, const ModifyBackupSourceEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyBackupSourceEndpointOutcomeCallable modifyBackupSourceEndpointCallable(const Model::ModifyBackupSourceEndpointRequest& request) const;
 			DescribeBackupGatewayListOutcome describeBackupGatewayList(const Model::DescribeBackupGatewayListRequest &request)const;
 			void describeBackupGatewayListAsync(const Model::DescribeBackupGatewayListRequest& request, const DescribeBackupGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupGatewayListOutcomeCallable describeBackupGatewayListCallable(const Model::DescribeBackupGatewayListRequest& request) const;
+			ModifyBackupSourceEndpointOutcome modifyBackupSourceEndpoint(const Model::ModifyBackupSourceEndpointRequest &request)const;
+			void modifyBackupSourceEndpointAsync(const Model::ModifyBackupSourceEndpointRequest& request, const ModifyBackupSourceEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyBackupSourceEndpointOutcomeCallable modifyBackupSourceEndpointCallable(const Model::ModifyBackupSourceEndpointRequest& request) const;
+			DescribePreCheckProgressListOutcome describePreCheckProgressList(const Model::DescribePreCheckProgressListRequest &request)const;
+			void describePreCheckProgressListAsync(const Model::DescribePreCheckProgressListRequest& request, const DescribePreCheckProgressListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePreCheckProgressListOutcomeCallable describePreCheckProgressListCallable(const Model::DescribePreCheckProgressListRequest& request) const;
 			ModifyBackupObjectsOutcome modifyBackupObjects(const Model::ModifyBackupObjectsRequest &request)const;
 			void modifyBackupObjectsAsync(const Model::ModifyBackupObjectsRequest& request, const ModifyBackupObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupObjectsOutcomeCallable modifyBackupObjectsCallable(const Model::ModifyBackupObjectsRequest& request) const;
