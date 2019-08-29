@@ -23,12 +23,22 @@ set(fnf_public_header
 set(fnf_public_header_model 
 	include/alibabacloud/fnf/model/UpdateFlowRequest.h
 	include/alibabacloud/fnf/model/UpdateFlowResult.h
+	include/alibabacloud/fnf/model/DeleteFlowRequest.h
+	include/alibabacloud/fnf/model/DeleteFlowResult.h
+	include/alibabacloud/fnf/model/CreateFlowRequest.h
+	include/alibabacloud/fnf/model/CreateFlowResult.h
+	include/alibabacloud/fnf/model/DescribeExecutionRequest.h
+	include/alibabacloud/fnf/model/DescribeExecutionResult.h
 	include/alibabacloud/fnf/model/ReportTaskFailedRequest.h
 	include/alibabacloud/fnf/model/ReportTaskFailedResult.h
+	include/alibabacloud/fnf/model/DescribeFlowRequest.h
+	include/alibabacloud/fnf/model/DescribeFlowResult.h
 	include/alibabacloud/fnf/model/StopExecutionRequest.h
 	include/alibabacloud/fnf/model/StopExecutionResult.h
 	include/alibabacloud/fnf/model/StartExecutionRequest.h
 	include/alibabacloud/fnf/model/StartExecutionResult.h
+	include/alibabacloud/fnf/model/GetExecutionHistoryRequest.h
+	include/alibabacloud/fnf/model/GetExecutionHistoryResult.h
 	include/alibabacloud/fnf/model/ListExecutionsRequest.h
 	include/alibabacloud/fnf/model/ListExecutionsResult.h
 	include/alibabacloud/fnf/model/ReportTaskSucceededRequest.h
@@ -40,12 +50,22 @@ set(fnf_src
 	src/FnfClient.cc
 	src/model/UpdateFlowRequest.cc
 	src/model/UpdateFlowResult.cc
+	src/model/DeleteFlowRequest.cc
+	src/model/DeleteFlowResult.cc
+	src/model/CreateFlowRequest.cc
+	src/model/CreateFlowResult.cc
+	src/model/DescribeExecutionRequest.cc
+	src/model/DescribeExecutionResult.cc
 	src/model/ReportTaskFailedRequest.cc
 	src/model/ReportTaskFailedResult.cc
+	src/model/DescribeFlowRequest.cc
+	src/model/DescribeFlowResult.cc
 	src/model/StopExecutionRequest.cc
 	src/model/StopExecutionResult.cc
 	src/model/StartExecutionRequest.cc
 	src/model/StartExecutionResult.cc
+	src/model/GetExecutionHistoryRequest.cc
+	src/model/GetExecutionHistoryResult.cc
 	src/model/ListExecutionsRequest.cc
 	src/model/ListExecutionsResult.cc
 	src/model/ReportTaskSucceededRequest.cc
