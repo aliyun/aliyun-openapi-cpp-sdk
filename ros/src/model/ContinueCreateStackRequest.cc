@@ -19,22 +19,11 @@
 using AlibabaCloud::ROS::Model::ContinueCreateStackRequest;
 
 ContinueCreateStackRequest::ContinueCreateStackRequest() :
-	RpcServiceRequest("ros", "2019-09-10", "ContinueCreateStack")
+	RoaServiceRequest("ros", "2015-09-01")
 {}
 
 ContinueCreateStackRequest::~ContinueCreateStackRequest()
 {}
-
-std::string ContinueCreateStackRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ContinueCreateStackRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
 
 std::string ContinueCreateStackRequest::getStackId()const
 {
@@ -47,15 +36,14 @@ void ContinueCreateStackRequest::setStackId(const std::string& stackId)
 	setCoreParameter("StackId", stackId);
 }
 
-std::vector<std::string> ContinueCreateStackRequest::getRecreatingResources()const
+std::string ContinueCreateStackRequest::getStackName()const
 {
-	return recreatingResources_;
+	return stackName_;
 }
 
-void ContinueCreateStackRequest::setRecreatingResources(const std::vector<std::string>& recreatingResources)
+void ContinueCreateStackRequest::setStackName(const std::string& stackName)
 {
-	recreatingResources_ = recreatingResources;
-	for(int i = 0; i!= recreatingResources.size(); i++)
-		setCoreParameter("RecreatingResources."+ std::to_string(i), recreatingResources.at(i));
+	stackName_ = stackName;
+	setCoreParameter("StackName", stackName);
 }
 

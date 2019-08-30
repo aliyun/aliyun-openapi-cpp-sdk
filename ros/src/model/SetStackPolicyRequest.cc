@@ -19,33 +19,11 @@
 using AlibabaCloud::ROS::Model::SetStackPolicyRequest;
 
 SetStackPolicyRequest::SetStackPolicyRequest() :
-	RpcServiceRequest("ros", "2019-09-10", "SetStackPolicy")
+	RoaServiceRequest("ros", "2015-09-01")
 {}
 
 SetStackPolicyRequest::~SetStackPolicyRequest()
 {}
-
-std::string SetStackPolicyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SetStackPolicyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string SetStackPolicyRequest::getStackPolicyURL()const
-{
-	return stackPolicyURL_;
-}
-
-void SetStackPolicyRequest::setStackPolicyURL(const std::string& stackPolicyURL)
-{
-	stackPolicyURL_ = stackPolicyURL;
-	setCoreParameter("StackPolicyURL", stackPolicyURL);
-}
 
 std::string SetStackPolicyRequest::getStackId()const
 {
@@ -58,14 +36,14 @@ void SetStackPolicyRequest::setStackId(const std::string& stackId)
 	setCoreParameter("StackId", stackId);
 }
 
-std::string SetStackPolicyRequest::getStackPolicyBody()const
+std::string SetStackPolicyRequest::getStackName()const
 {
-	return stackPolicyBody_;
+	return stackName_;
 }
 
-void SetStackPolicyRequest::setStackPolicyBody(const std::string& stackPolicyBody)
+void SetStackPolicyRequest::setStackName(const std::string& stackName)
 {
-	stackPolicyBody_ = stackPolicyBody;
-	setCoreParameter("StackPolicyBody", stackPolicyBody);
+	stackName_ = stackName;
+	setCoreParameter("StackName", stackName);
 }
 

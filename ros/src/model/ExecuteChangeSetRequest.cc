@@ -19,31 +19,42 @@
 using AlibabaCloud::ROS::Model::ExecuteChangeSetRequest;
 
 ExecuteChangeSetRequest::ExecuteChangeSetRequest() :
-	RpcServiceRequest("ros", "2019-09-10", "ExecuteChangeSet")
+	RoaServiceRequest("ros", "2015-09-01")
 {}
 
 ExecuteChangeSetRequest::~ExecuteChangeSetRequest()
 {}
 
-std::string ExecuteChangeSetRequest::getRegionId()const
+std::string ExecuteChangeSetRequest::getChangeSetName()const
 {
-	return regionId_;
+	return changeSetName_;
 }
 
-void ExecuteChangeSetRequest::setRegionId(const std::string& regionId)
+void ExecuteChangeSetRequest::setChangeSetName(const std::string& changeSetName)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	changeSetName_ = changeSetName;
+	setCoreParameter("ChangeSetName", changeSetName);
 }
 
-std::string ExecuteChangeSetRequest::getChangeSetId()const
+std::string ExecuteChangeSetRequest::getStackId()const
 {
-	return changeSetId_;
+	return stackId_;
 }
 
-void ExecuteChangeSetRequest::setChangeSetId(const std::string& changeSetId)
+void ExecuteChangeSetRequest::setStackId(const std::string& stackId)
 {
-	changeSetId_ = changeSetId;
-	setCoreParameter("ChangeSetId", changeSetId);
+	stackId_ = stackId;
+	setCoreParameter("StackId", stackId);
+}
+
+std::string ExecuteChangeSetRequest::getStackName()const
+{
+	return stackName_;
+}
+
+void ExecuteChangeSetRequest::setStackName(const std::string& stackName)
+{
+	stackName_ = stackName;
+	setCoreParameter("StackName", stackName);
 }
 

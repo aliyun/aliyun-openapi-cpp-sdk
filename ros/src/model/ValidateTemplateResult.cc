@@ -43,21 +43,6 @@ void ValidateTemplateResult::parse(const std::string &payload)
 	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
 	value = *val;
 	setRequestId(value["RequestId"].asString());
-	auto allParameters = value["Parameters"]["Parameter"];
-	for (const auto &item : allParameters)
-		parameters_.push_back(item.asString());
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
 
-}
-
-std::vector<std::string> ValidateTemplateResult::getParameters()const
-{
-	return parameters_;
-}
-
-std::string ValidateTemplateResult::getDescription()const
-{
-	return description_;
 }
 

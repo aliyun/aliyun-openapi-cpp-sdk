@@ -19,42 +19,9 @@
 using AlibabaCloud::ROS::Model::ValidateTemplateRequest;
 
 ValidateTemplateRequest::ValidateTemplateRequest() :
-	RpcServiceRequest("ros", "2019-09-10", "ValidateTemplate")
+	RoaServiceRequest("ros", "2015-09-01")
 {}
 
 ValidateTemplateRequest::~ValidateTemplateRequest()
 {}
-
-std::string ValidateTemplateRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ValidateTemplateRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ValidateTemplateRequest::getTemplateBody()const
-{
-	return templateBody_;
-}
-
-void ValidateTemplateRequest::setTemplateBody(const std::string& templateBody)
-{
-	templateBody_ = templateBody;
-	setCoreParameter("TemplateBody", templateBody);
-}
-
-std::string ValidateTemplateRequest::getTemplateURL()const
-{
-	return templateURL_;
-}
-
-void ValidateTemplateRequest::setTemplateURL(const std::string& templateURL)
-{
-	templateURL_ = templateURL;
-	setCoreParameter("TemplateURL", templateURL);
-}
 

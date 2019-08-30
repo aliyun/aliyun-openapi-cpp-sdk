@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				DeleteChangeSetResult();
 				explicit DeleteChangeSetResult(const std::string &payload);
 				~DeleteChangeSetResult();
+				std::string getDummy()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dummy_;
 
 			};
 		}

@@ -19,33 +19,11 @@
 using AlibabaCloud::ROS::Model::CancelUpdateStackRequest;
 
 CancelUpdateStackRequest::CancelUpdateStackRequest() :
-	RpcServiceRequest("ros", "2019-09-10", "CancelUpdateStack")
+	RoaServiceRequest("ros", "2015-09-01")
 {}
 
 CancelUpdateStackRequest::~CancelUpdateStackRequest()
 {}
-
-std::string CancelUpdateStackRequest::getCancelType()const
-{
-	return cancelType_;
-}
-
-void CancelUpdateStackRequest::setCancelType(const std::string& cancelType)
-{
-	cancelType_ = cancelType;
-	setCoreParameter("CancelType", cancelType);
-}
-
-std::string CancelUpdateStackRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CancelUpdateStackRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
 
 std::string CancelUpdateStackRequest::getStackId()const
 {
@@ -56,5 +34,16 @@ void CancelUpdateStackRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
 	setCoreParameter("StackId", stackId);
+}
+
+std::string CancelUpdateStackRequest::getStackName()const
+{
+	return stackName_;
+}
+
+void CancelUpdateStackRequest::setStackName(const std::string& stackName)
+{
+	stackName_ = stackName;
+	setCoreParameter("StackName", stackName);
 }
 

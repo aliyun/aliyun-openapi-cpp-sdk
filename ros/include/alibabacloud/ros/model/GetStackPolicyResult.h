@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				GetStackPolicyResult();
 				explicit GetStackPolicyResult(const std::string &payload);
 				~GetStackPolicyResult();
-				std::string getStackPolicyBody()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string stackPolicyBody_;
 
 			};
 		}

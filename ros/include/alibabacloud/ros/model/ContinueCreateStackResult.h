@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				ContinueCreateStackResult();
 				explicit ContinueCreateStackResult(const std::string &payload);
 				~ContinueCreateStackResult();
-				std::string getStackId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string stackId_;
 
 			};
 		}

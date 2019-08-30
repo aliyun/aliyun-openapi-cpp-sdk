@@ -19,7 +19,7 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/ros/ROSExport.h>
 
 namespace AlibabaCloud
@@ -28,18 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ROS_EXPORT DescribeRegionsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ROS_EXPORT DescribeRegionsRequest : public RoaServiceRequest
 			{
 
 			public:
 				DescribeRegionsRequest();
 				~DescribeRegionsRequest();
 
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
 
             private:
-				std::string acceptLanguage_;
 
 			};
 		}

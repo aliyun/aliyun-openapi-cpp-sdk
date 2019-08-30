@@ -43,6 +43,13 @@ void ExecuteChangeSetResult::parse(const std::string &payload)
 	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
 	value = *val;
 	setRequestId(value["RequestId"].asString());
+	if(!value["Dummy"].isNull())
+		dummy_ = value["Dummy"].asString();
 
+}
+
+std::string ExecuteChangeSetResult::getDummy()const
+{
+	return dummy_;
 }
 

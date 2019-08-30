@@ -19,7 +19,7 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/ros/ROSExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ROS_EXPORT CancelUpdateStackRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ROS_EXPORT CancelUpdateStackRequest : public RoaServiceRequest
 			{
 
 			public:
 				CancelUpdateStackRequest();
 				~CancelUpdateStackRequest();
 
-				std::string getCancelType()const;
-				void setCancelType(const std::string& cancelType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getStackId()const;
 				void setStackId(const std::string& stackId);
+				std::string getStackName()const;
+				void setStackName(const std::string& stackName);
 
             private:
-				std::string cancelType_;
-				std::string regionId_;
 				std::string stackId_;
+				std::string stackName_;
 
 			};
 		}

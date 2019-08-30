@@ -43,20 +43,13 @@ void CreateChangeSetResult::parse(const std::string &payload)
 	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
 	value = *val;
 	setRequestId(value["RequestId"].asString());
-	if(!value["ChangeSetId"].isNull())
-		changeSetId_ = value["ChangeSetId"].asString();
-	if(!value["StackId"].isNull())
-		stackId_ = value["StackId"].asString();
+	if(!value["Dummy"].isNull())
+		dummy_ = value["Dummy"].asString();
 
 }
 
-std::string CreateChangeSetResult::getChangeSetId()const
+std::string CreateChangeSetResult::getDummy()const
 {
-	return changeSetId_;
-}
-
-std::string CreateChangeSetResult::getStackId()const
-{
-	return stackId_;
+	return dummy_;
 }
 

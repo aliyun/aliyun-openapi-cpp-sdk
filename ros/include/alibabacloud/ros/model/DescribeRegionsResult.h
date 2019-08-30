@@ -32,23 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ROS_EXPORT DescribeRegionsResult : public ServiceResult
 			{
 			public:
-				struct Region
-				{
-					std::string regionId;
-					std::string regionEndpoint;
-					std::string localName;
-				};
 
 
 				DescribeRegionsResult();
 				explicit DescribeRegionsResult(const std::string &payload);
 				~DescribeRegionsResult();
-				std::vector<Region> getRegions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Region> regions_;
 
 			};
 		}

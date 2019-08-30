@@ -19,7 +19,7 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/ros/ROSExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ROS_EXPORT SetStackPolicyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ROS_EXPORT SetStackPolicyRequest : public RoaServiceRequest
 			{
 
 			public:
 				SetStackPolicyRequest();
 				~SetStackPolicyRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getStackPolicyURL()const;
-				void setStackPolicyURL(const std::string& stackPolicyURL);
 				std::string getStackId()const;
 				void setStackId(const std::string& stackId);
-				std::string getStackPolicyBody()const;
-				void setStackPolicyBody(const std::string& stackPolicyBody);
+				std::string getStackName()const;
+				void setStackName(const std::string& stackName);
 
             private:
-				std::string regionId_;
-				std::string stackPolicyURL_;
 				std::string stackId_;
-				std::string stackPolicyBody_;
+				std::string stackName_;
 
 			};
 		}

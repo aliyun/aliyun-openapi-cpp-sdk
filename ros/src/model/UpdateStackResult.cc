@@ -43,13 +43,6 @@ void UpdateStackResult::parse(const std::string &payload)
 	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
 	value = *val;
 	setRequestId(value["RequestId"].asString());
-	if(!value["StackId"].isNull())
-		stackId_ = value["StackId"].asString();
 
-}
-
-std::string UpdateStackResult::getStackId()const
-{
-	return stackId_;
 }
 

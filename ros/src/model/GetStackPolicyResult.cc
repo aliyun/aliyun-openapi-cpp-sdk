@@ -43,13 +43,6 @@ void GetStackPolicyResult::parse(const std::string &payload)
 	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
 	value = *val;
 	setRequestId(value["RequestId"].asString());
-	if(!value["StackPolicyBody"].isNull())
-		stackPolicyBody_ = value["StackPolicyBody"].asString();
 
-}
-
-std::string GetStackPolicyResult::getStackPolicyBody()const
-{
-	return stackPolicyBody_;
 }
 

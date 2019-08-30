@@ -43,13 +43,6 @@ void PreviewStackResult::parse(const std::string &payload)
 	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
 	value = *val;
 	setRequestId(value["RequestId"].asString());
-	if(!value["Stack"].isNull())
-		stack_ = value["Stack"].asString();
 
-}
-
-std::string PreviewStackResult::getStack()const
-{
-	return stack_;
 }
 

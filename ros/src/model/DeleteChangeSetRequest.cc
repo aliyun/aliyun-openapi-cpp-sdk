@@ -19,31 +19,42 @@
 using AlibabaCloud::ROS::Model::DeleteChangeSetRequest;
 
 DeleteChangeSetRequest::DeleteChangeSetRequest() :
-	RpcServiceRequest("ros", "2019-09-10", "DeleteChangeSet")
+	RoaServiceRequest("ros", "2015-09-01")
 {}
 
 DeleteChangeSetRequest::~DeleteChangeSetRequest()
 {}
 
-std::string DeleteChangeSetRequest::getRegionId()const
+std::string DeleteChangeSetRequest::getChangeSetName()const
 {
-	return regionId_;
+	return changeSetName_;
 }
 
-void DeleteChangeSetRequest::setRegionId(const std::string& regionId)
+void DeleteChangeSetRequest::setChangeSetName(const std::string& changeSetName)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	changeSetName_ = changeSetName;
+	setCoreParameter("ChangeSetName", changeSetName);
 }
 
-std::string DeleteChangeSetRequest::getChangeSetId()const
+std::string DeleteChangeSetRequest::getStackId()const
 {
-	return changeSetId_;
+	return stackId_;
 }
 
-void DeleteChangeSetRequest::setChangeSetId(const std::string& changeSetId)
+void DeleteChangeSetRequest::setStackId(const std::string& stackId)
 {
-	changeSetId_ = changeSetId;
-	setCoreParameter("ChangeSetId", changeSetId);
+	stackId_ = stackId;
+	setCoreParameter("StackId", stackId);
+}
+
+std::string DeleteChangeSetRequest::getStackName()const
+{
+	return stackName_;
+}
+
+void DeleteChangeSetRequest::setStackName(const std::string& stackName)
+{
+	stackName_ = stackName;
+	setCoreParameter("StackName", stackName);
 }
 

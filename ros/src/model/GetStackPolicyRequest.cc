@@ -19,22 +19,11 @@
 using AlibabaCloud::ROS::Model::GetStackPolicyRequest;
 
 GetStackPolicyRequest::GetStackPolicyRequest() :
-	RpcServiceRequest("ros", "2019-09-10", "GetStackPolicy")
+	RoaServiceRequest("ros", "2015-09-01")
 {}
 
 GetStackPolicyRequest::~GetStackPolicyRequest()
 {}
-
-std::string GetStackPolicyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetStackPolicyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
 
 std::string GetStackPolicyRequest::getStackId()const
 {
@@ -45,5 +34,16 @@ void GetStackPolicyRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
 	setCoreParameter("StackId", stackId);
+}
+
+std::string GetStackPolicyRequest::getStackName()const
+{
+	return stackName_;
+}
+
+void GetStackPolicyRequest::setStackName(const std::string& stackName)
+{
+	stackName_ = stackName;
+	setCoreParameter("StackName", stackName);
 }
 

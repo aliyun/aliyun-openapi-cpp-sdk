@@ -19,7 +19,7 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/ros/ROSExport.h>
 
 namespace AlibabaCloud
@@ -28,50 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ROS_EXPORT PreviewStackRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ROS_EXPORT PreviewStackRequest : public RoaServiceRequest
 			{
-				struct Parameters
-				{
-					std::string parameterValue;
-					std::string parameterKey;
-				};
 
 			public:
 				PreviewStackRequest();
 				~PreviewStackRequest();
 
-				std::string getStackPolicyURL()const;
-				void setStackPolicyURL(const std::string& stackPolicyURL);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getTemplateBody()const;
-				void setTemplateBody(const std::string& templateBody);
-				bool getDisableRollback()const;
-				void setDisableRollback(bool disableRollback);
-				std::string getStackName()const;
-				void setStackName(const std::string& stackName);
-				std::vector<Parameters> getParameters()const;
-				void setParameters(const std::vector<Parameters>& parameters);
-				std::string getStackPolicyBody()const;
-				void setStackPolicyBody(const std::string& stackPolicyBody);
-				long getTimeoutInMinutes()const;
-				void setTimeoutInMinutes(long timeoutInMinutes);
-				std::string getTemplateURL()const;
-				void setTemplateURL(const std::string& templateURL);
 
             private:
-				std::string stackPolicyURL_;
-				std::string regionId_;
-				std::string clientToken_;
-				std::string templateBody_;
-				bool disableRollback_;
-				std::string stackName_;
-				std::vector<Parameters> parameters_;
-				std::string stackPolicyBody_;
-				long timeoutInMinutes_;
-				std::string templateURL_;
 
 			};
 		}

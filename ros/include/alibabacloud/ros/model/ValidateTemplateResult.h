@@ -37,14 +37,10 @@ namespace AlibabaCloud
 				ValidateTemplateResult();
 				explicit ValidateTemplateResult(const std::string &payload);
 				~ValidateTemplateResult();
-				std::vector<std::string> getParameters()const;
-				std::string getDescription()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> parameters_;
-				std::string description_;
 
 			};
 		}

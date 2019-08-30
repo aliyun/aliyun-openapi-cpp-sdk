@@ -19,7 +19,7 @@
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/ros/ROSExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ROS_EXPORT ValidateTemplateRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ROS_EXPORT ValidateTemplateRequest : public RoaServiceRequest
 			{
 
 			public:
 				ValidateTemplateRequest();
 				~ValidateTemplateRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getTemplateBody()const;
-				void setTemplateBody(const std::string& templateBody);
-				std::string getTemplateURL()const;
-				void setTemplateURL(const std::string& templateURL);
 
             private:
-				std::string regionId_;
-				std::string templateBody_;
-				std::string templateURL_;
 
 			};
 		}
