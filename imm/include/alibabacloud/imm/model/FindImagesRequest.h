@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setProject(const std::string& project);
 				std::string getExternalId()const;
 				void setExternalId(const std::string& externalId);
+				std::string getFacesModifyTimeRange()const;
+				void setFacesModifyTimeRange(const std::string& facesModifyTimeRange);
 				std::string getImageSizeRange()const;
 				void setImageSizeRange(const std::string& imageSizeRange);
 				std::string getRemarksBPrefix()const;
@@ -59,6 +61,8 @@ namespace AlibabaCloud
 				void setLimit(int limit);
 				std::string getRemarksDPrefix()const;
 				void setRemarksDPrefix(const std::string& remarksDPrefix);
+				std::string getTagsModifyTimeRange()const;
+				void setTagsModifyTimeRange(const std::string& tagsModifyTimeRange);
 				std::string getSourceType()const;
 				void setSourceType(const std::string& sourceType);
 				std::string getAgeRange()const;
@@ -92,6 +96,7 @@ namespace AlibabaCloud
 				std::string gender_;
 				std::string project_;
 				std::string externalId_;
+				std::string facesModifyTimeRange_;
 				std::string imageSizeRange_;
 				std::string remarksBPrefix_;
 				std::string accessKeyId_;
@@ -101,6 +106,7 @@ namespace AlibabaCloud
 				std::string oCRContentsMatch_;
 				int limit_;
 				std::string remarksDPrefix_;
+				std::string tagsModifyTimeRange_;
 				std::string sourceType_;
 				std::string ageRange_;
 				std::string order_;

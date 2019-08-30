@@ -39,10 +39,10 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ListFaceSearchGroupUsersResult.h
 	include/alibabacloud/imm/model/ListFaceSearchGroupImagesRequest.h
 	include/alibabacloud/imm/model/ListFaceSearchGroupImagesResult.h
-	include/alibabacloud/imm/model/ListSetsRequest.h
-	include/alibabacloud/imm/model/ListSetsResult.h
 	include/alibabacloud/imm/model/PutProjectRequest.h
 	include/alibabacloud/imm/model/PutProjectResult.h
+	include/alibabacloud/imm/model/ListSetsRequest.h
+	include/alibabacloud/imm/model/ListSetsResult.h
 	include/alibabacloud/imm/model/FindImagesRequest.h
 	include/alibabacloud/imm/model/FindImagesResult.h
 	include/alibabacloud/imm/model/DetectImageLogosRequest.h
@@ -61,10 +61,10 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/DetectImageCelebrityResult.h
 	include/alibabacloud/imm/model/ListFaceSearchGroupsRequest.h
 	include/alibabacloud/imm/model/ListFaceSearchGroupsResult.h
-	include/alibabacloud/imm/model/DeletePornBatchDetectJobRequest.h
-	include/alibabacloud/imm/model/DeletePornBatchDetectJobResult.h
 	include/alibabacloud/imm/model/GetTagSetRequest.h
 	include/alibabacloud/imm/model/GetTagSetResult.h
+	include/alibabacloud/imm/model/DeletePornBatchDetectJobRequest.h
+	include/alibabacloud/imm/model/DeletePornBatchDetectJobResult.h
 	include/alibabacloud/imm/model/ListTagPhotosRequest.h
 	include/alibabacloud/imm/model/ListTagPhotosResult.h
 	include/alibabacloud/imm/model/DeleteFaceSearchImageByIdRequest.h
@@ -85,16 +85,18 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/CompareImageFacesResult.h
 	include/alibabacloud/imm/model/DeleteTagJobRequest.h
 	include/alibabacloud/imm/model/DeleteTagJobResult.h
+	include/alibabacloud/imm/model/CreateMediaComplexTaskRequest.h
+	include/alibabacloud/imm/model/CreateMediaComplexTaskResult.h
 	include/alibabacloud/imm/model/PhotoProcessRequest.h
 	include/alibabacloud/imm/model/PhotoProcessResult.h
 	include/alibabacloud/imm/model/DeleteFaceSearchUserRequest.h
 	include/alibabacloud/imm/model/DeleteFaceSearchUserResult.h
 	include/alibabacloud/imm/model/GetOfficeConversionTaskRequest.h
 	include/alibabacloud/imm/model/GetOfficeConversionTaskResult.h
-	include/alibabacloud/imm/model/CreateTagSetRequest.h
-	include/alibabacloud/imm/model/CreateTagSetResult.h
 	include/alibabacloud/imm/model/RegistFaceRequest.h
 	include/alibabacloud/imm/model/RegistFaceResult.h
+	include/alibabacloud/imm/model/CreateTagSetRequest.h
+	include/alibabacloud/imm/model/CreateTagSetResult.h
 	include/alibabacloud/imm/model/GetFaceSearchUserRequest.h
 	include/alibabacloud/imm/model/GetFaceSearchUserResult.h
 	include/alibabacloud/imm/model/CreateFaceSetRequest.h
@@ -123,10 +125,10 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/DetectTagResult.h
 	include/alibabacloud/imm/model/CreateCADConversionTaskRequest.h
 	include/alibabacloud/imm/model/CreateCADConversionTaskResult.h
-	include/alibabacloud/imm/model/DeleteFaceJobRequest.h
-	include/alibabacloud/imm/model/DeleteFaceJobResult.h
 	include/alibabacloud/imm/model/GetTagJobRequest.h
 	include/alibabacloud/imm/model/GetTagJobResult.h
+	include/alibabacloud/imm/model/DeleteFaceJobRequest.h
+	include/alibabacloud/imm/model/DeleteFaceJobResult.h
 	include/alibabacloud/imm/model/CreateDocIndexTaskRequest.h
 	include/alibabacloud/imm/model/CreateDocIndexTaskResult.h
 	include/alibabacloud/imm/model/GetVideoTaskRequest.h
@@ -165,10 +167,10 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/DetectImageBodiesResult.h
 	include/alibabacloud/imm/model/DeleteDocIndexRequest.h
 	include/alibabacloud/imm/model/DeleteDocIndexResult.h
-	include/alibabacloud/imm/model/GetImageJobRequest.h
-	include/alibabacloud/imm/model/GetImageJobResult.h
 	include/alibabacloud/imm/model/GetDocIndexTaskRequest.h
 	include/alibabacloud/imm/model/GetDocIndexTaskResult.h
+	include/alibabacloud/imm/model/GetImageJobRequest.h
+	include/alibabacloud/imm/model/GetImageJobResult.h
 	include/alibabacloud/imm/model/DeleteTagByUrlRequest.h
 	include/alibabacloud/imm/model/DeleteTagByUrlResult.h
 	include/alibabacloud/imm/model/ListTagSetsRequest.h
@@ -187,10 +189,10 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ListVideoFramesResult.h
 	include/alibabacloud/imm/model/GetPornBatchDetectJobRequest.h
 	include/alibabacloud/imm/model/GetPornBatchDetectJobResult.h
-	include/alibabacloud/imm/model/DetectClothesRequest.h
-	include/alibabacloud/imm/model/DetectClothesResult.h
 	include/alibabacloud/imm/model/ListTagJobsRequest.h
 	include/alibabacloud/imm/model/ListTagJobsResult.h
+	include/alibabacloud/imm/model/DetectClothesRequest.h
+	include/alibabacloud/imm/model/DetectClothesResult.h
 	include/alibabacloud/imm/model/DetectLogoRequest.h
 	include/alibabacloud/imm/model/DetectLogoResult.h
 	include/alibabacloud/imm/model/DescribeRegionsRequest.h
@@ -238,10 +240,10 @@ set(imm_src
 	src/model/ListFaceSearchGroupUsersResult.cc
 	src/model/ListFaceSearchGroupImagesRequest.cc
 	src/model/ListFaceSearchGroupImagesResult.cc
-	src/model/ListSetsRequest.cc
-	src/model/ListSetsResult.cc
 	src/model/PutProjectRequest.cc
 	src/model/PutProjectResult.cc
+	src/model/ListSetsRequest.cc
+	src/model/ListSetsResult.cc
 	src/model/FindImagesRequest.cc
 	src/model/FindImagesResult.cc
 	src/model/DetectImageLogosRequest.cc
@@ -260,10 +262,10 @@ set(imm_src
 	src/model/DetectImageCelebrityResult.cc
 	src/model/ListFaceSearchGroupsRequest.cc
 	src/model/ListFaceSearchGroupsResult.cc
-	src/model/DeletePornBatchDetectJobRequest.cc
-	src/model/DeletePornBatchDetectJobResult.cc
 	src/model/GetTagSetRequest.cc
 	src/model/GetTagSetResult.cc
+	src/model/DeletePornBatchDetectJobRequest.cc
+	src/model/DeletePornBatchDetectJobResult.cc
 	src/model/ListTagPhotosRequest.cc
 	src/model/ListTagPhotosResult.cc
 	src/model/DeleteFaceSearchImageByIdRequest.cc
@@ -284,16 +286,18 @@ set(imm_src
 	src/model/CompareImageFacesResult.cc
 	src/model/DeleteTagJobRequest.cc
 	src/model/DeleteTagJobResult.cc
+	src/model/CreateMediaComplexTaskRequest.cc
+	src/model/CreateMediaComplexTaskResult.cc
 	src/model/PhotoProcessRequest.cc
 	src/model/PhotoProcessResult.cc
 	src/model/DeleteFaceSearchUserRequest.cc
 	src/model/DeleteFaceSearchUserResult.cc
 	src/model/GetOfficeConversionTaskRequest.cc
 	src/model/GetOfficeConversionTaskResult.cc
-	src/model/CreateTagSetRequest.cc
-	src/model/CreateTagSetResult.cc
 	src/model/RegistFaceRequest.cc
 	src/model/RegistFaceResult.cc
+	src/model/CreateTagSetRequest.cc
+	src/model/CreateTagSetResult.cc
 	src/model/GetFaceSearchUserRequest.cc
 	src/model/GetFaceSearchUserResult.cc
 	src/model/CreateFaceSetRequest.cc
@@ -322,10 +326,10 @@ set(imm_src
 	src/model/DetectTagResult.cc
 	src/model/CreateCADConversionTaskRequest.cc
 	src/model/CreateCADConversionTaskResult.cc
-	src/model/DeleteFaceJobRequest.cc
-	src/model/DeleteFaceJobResult.cc
 	src/model/GetTagJobRequest.cc
 	src/model/GetTagJobResult.cc
+	src/model/DeleteFaceJobRequest.cc
+	src/model/DeleteFaceJobResult.cc
 	src/model/CreateDocIndexTaskRequest.cc
 	src/model/CreateDocIndexTaskResult.cc
 	src/model/GetVideoTaskRequest.cc
@@ -364,10 +368,10 @@ set(imm_src
 	src/model/DetectImageBodiesResult.cc
 	src/model/DeleteDocIndexRequest.cc
 	src/model/DeleteDocIndexResult.cc
-	src/model/GetImageJobRequest.cc
-	src/model/GetImageJobResult.cc
 	src/model/GetDocIndexTaskRequest.cc
 	src/model/GetDocIndexTaskResult.cc
+	src/model/GetImageJobRequest.cc
+	src/model/GetImageJobResult.cc
 	src/model/DeleteTagByUrlRequest.cc
 	src/model/DeleteTagByUrlResult.cc
 	src/model/ListTagSetsRequest.cc
@@ -386,10 +390,10 @@ set(imm_src
 	src/model/ListVideoFramesResult.cc
 	src/model/GetPornBatchDetectJobRequest.cc
 	src/model/GetPornBatchDetectJobResult.cc
-	src/model/DetectClothesRequest.cc
-	src/model/DetectClothesResult.cc
 	src/model/ListTagJobsRequest.cc
 	src/model/ListTagJobsResult.cc
+	src/model/DetectClothesRequest.cc
+	src/model/DetectClothesResult.cc
 	src/model/DetectLogoRequest.cc
 	src/model/DetectLogoResult.cc
 	src/model/DescribeRegionsRequest.cc

@@ -58,6 +58,17 @@ void FindImagesRequest::setExternalId(const std::string& externalId)
 	setCoreParameter("ExternalId", externalId);
 }
 
+std::string FindImagesRequest::getFacesModifyTimeRange()const
+{
+	return facesModifyTimeRange_;
+}
+
+void FindImagesRequest::setFacesModifyTimeRange(const std::string& facesModifyTimeRange)
+{
+	facesModifyTimeRange_ = facesModifyTimeRange;
+	setCoreParameter("FacesModifyTimeRange", facesModifyTimeRange);
+}
+
 std::string FindImagesRequest::getImageSizeRange()const
 {
 	return imageSizeRange_;
@@ -155,6 +166,17 @@ void FindImagesRequest::setRemarksDPrefix(const std::string& remarksDPrefix)
 {
 	remarksDPrefix_ = remarksDPrefix;
 	setCoreParameter("RemarksDPrefix", remarksDPrefix);
+}
+
+std::string FindImagesRequest::getTagsModifyTimeRange()const
+{
+	return tagsModifyTimeRange_;
+}
+
+void FindImagesRequest::setTagsModifyTimeRange(const std::string& tagsModifyTimeRange)
+{
+	tagsModifyTimeRange_ = tagsModifyTimeRange;
+	setCoreParameter("TagsModifyTimeRange", tagsModifyTimeRange);
 }
 
 std::string FindImagesRequest::getSourceType()const

@@ -40,10 +40,10 @@
 #include "model/ListFaceSearchGroupUsersResult.h"
 #include "model/ListFaceSearchGroupImagesRequest.h"
 #include "model/ListFaceSearchGroupImagesResult.h"
-#include "model/ListSetsRequest.h"
-#include "model/ListSetsResult.h"
 #include "model/PutProjectRequest.h"
 #include "model/PutProjectResult.h"
+#include "model/ListSetsRequest.h"
+#include "model/ListSetsResult.h"
 #include "model/FindImagesRequest.h"
 #include "model/FindImagesResult.h"
 #include "model/DetectImageLogosRequest.h"
@@ -62,10 +62,10 @@
 #include "model/DetectImageCelebrityResult.h"
 #include "model/ListFaceSearchGroupsRequest.h"
 #include "model/ListFaceSearchGroupsResult.h"
-#include "model/DeletePornBatchDetectJobRequest.h"
-#include "model/DeletePornBatchDetectJobResult.h"
 #include "model/GetTagSetRequest.h"
 #include "model/GetTagSetResult.h"
+#include "model/DeletePornBatchDetectJobRequest.h"
+#include "model/DeletePornBatchDetectJobResult.h"
 #include "model/ListTagPhotosRequest.h"
 #include "model/ListTagPhotosResult.h"
 #include "model/DeleteFaceSearchImageByIdRequest.h"
@@ -86,16 +86,18 @@
 #include "model/CompareImageFacesResult.h"
 #include "model/DeleteTagJobRequest.h"
 #include "model/DeleteTagJobResult.h"
+#include "model/CreateMediaComplexTaskRequest.h"
+#include "model/CreateMediaComplexTaskResult.h"
 #include "model/PhotoProcessRequest.h"
 #include "model/PhotoProcessResult.h"
 #include "model/DeleteFaceSearchUserRequest.h"
 #include "model/DeleteFaceSearchUserResult.h"
 #include "model/GetOfficeConversionTaskRequest.h"
 #include "model/GetOfficeConversionTaskResult.h"
-#include "model/CreateTagSetRequest.h"
-#include "model/CreateTagSetResult.h"
 #include "model/RegistFaceRequest.h"
 #include "model/RegistFaceResult.h"
+#include "model/CreateTagSetRequest.h"
+#include "model/CreateTagSetResult.h"
 #include "model/GetFaceSearchUserRequest.h"
 #include "model/GetFaceSearchUserResult.h"
 #include "model/CreateFaceSetRequest.h"
@@ -124,10 +126,10 @@
 #include "model/DetectTagResult.h"
 #include "model/CreateCADConversionTaskRequest.h"
 #include "model/CreateCADConversionTaskResult.h"
-#include "model/DeleteFaceJobRequest.h"
-#include "model/DeleteFaceJobResult.h"
 #include "model/GetTagJobRequest.h"
 #include "model/GetTagJobResult.h"
+#include "model/DeleteFaceJobRequest.h"
+#include "model/DeleteFaceJobResult.h"
 #include "model/CreateDocIndexTaskRequest.h"
 #include "model/CreateDocIndexTaskResult.h"
 #include "model/GetVideoTaskRequest.h"
@@ -166,10 +168,10 @@
 #include "model/DetectImageBodiesResult.h"
 #include "model/DeleteDocIndexRequest.h"
 #include "model/DeleteDocIndexResult.h"
-#include "model/GetImageJobRequest.h"
-#include "model/GetImageJobResult.h"
 #include "model/GetDocIndexTaskRequest.h"
 #include "model/GetDocIndexTaskResult.h"
+#include "model/GetImageJobRequest.h"
+#include "model/GetImageJobResult.h"
 #include "model/DeleteTagByUrlRequest.h"
 #include "model/DeleteTagByUrlResult.h"
 #include "model/ListTagSetsRequest.h"
@@ -188,10 +190,10 @@
 #include "model/ListVideoFramesResult.h"
 #include "model/GetPornBatchDetectJobRequest.h"
 #include "model/GetPornBatchDetectJobResult.h"
-#include "model/DetectClothesRequest.h"
-#include "model/DetectClothesResult.h"
 #include "model/ListTagJobsRequest.h"
 #include "model/ListTagJobsResult.h"
+#include "model/DetectClothesRequest.h"
+#include "model/DetectClothesResult.h"
 #include "model/DetectLogoRequest.h"
 #include "model/DetectLogoResult.h"
 #include "model/DescribeRegionsRequest.h"
@@ -254,12 +256,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListFaceSearchGroupImagesResult> ListFaceSearchGroupImagesOutcome;
 			typedef std::future<ListFaceSearchGroupImagesOutcome> ListFaceSearchGroupImagesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListFaceSearchGroupImagesRequest&, const ListFaceSearchGroupImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFaceSearchGroupImagesAsyncHandler;
-			typedef Outcome<Error, Model::ListSetsResult> ListSetsOutcome;
-			typedef std::future<ListSetsOutcome> ListSetsOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::ListSetsRequest&, const ListSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSetsAsyncHandler;
 			typedef Outcome<Error, Model::PutProjectResult> PutProjectOutcome;
 			typedef std::future<PutProjectOutcome> PutProjectOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::PutProjectRequest&, const PutProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutProjectAsyncHandler;
+			typedef Outcome<Error, Model::ListSetsResult> ListSetsOutcome;
+			typedef std::future<ListSetsOutcome> ListSetsOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::ListSetsRequest&, const ListSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSetsAsyncHandler;
 			typedef Outcome<Error, Model::FindImagesResult> FindImagesOutcome;
 			typedef std::future<FindImagesOutcome> FindImagesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::FindImagesRequest&, const FindImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindImagesAsyncHandler;
@@ -287,12 +289,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListFaceSearchGroupsResult> ListFaceSearchGroupsOutcome;
 			typedef std::future<ListFaceSearchGroupsOutcome> ListFaceSearchGroupsOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListFaceSearchGroupsRequest&, const ListFaceSearchGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFaceSearchGroupsAsyncHandler;
-			typedef Outcome<Error, Model::DeletePornBatchDetectJobResult> DeletePornBatchDetectJobOutcome;
-			typedef std::future<DeletePornBatchDetectJobOutcome> DeletePornBatchDetectJobOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::DeletePornBatchDetectJobRequest&, const DeletePornBatchDetectJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePornBatchDetectJobAsyncHandler;
 			typedef Outcome<Error, Model::GetTagSetResult> GetTagSetOutcome;
 			typedef std::future<GetTagSetOutcome> GetTagSetOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetTagSetRequest&, const GetTagSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTagSetAsyncHandler;
+			typedef Outcome<Error, Model::DeletePornBatchDetectJobResult> DeletePornBatchDetectJobOutcome;
+			typedef std::future<DeletePornBatchDetectJobOutcome> DeletePornBatchDetectJobOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::DeletePornBatchDetectJobRequest&, const DeletePornBatchDetectJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePornBatchDetectJobAsyncHandler;
 			typedef Outcome<Error, Model::ListTagPhotosResult> ListTagPhotosOutcome;
 			typedef std::future<ListTagPhotosOutcome> ListTagPhotosOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListTagPhotosRequest&, const ListTagPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagPhotosAsyncHandler;
@@ -323,6 +325,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteTagJobResult> DeleteTagJobOutcome;
 			typedef std::future<DeleteTagJobOutcome> DeleteTagJobOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DeleteTagJobRequest&, const DeleteTagJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagJobAsyncHandler;
+			typedef Outcome<Error, Model::CreateMediaComplexTaskResult> CreateMediaComplexTaskOutcome;
+			typedef std::future<CreateMediaComplexTaskOutcome> CreateMediaComplexTaskOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::CreateMediaComplexTaskRequest&, const CreateMediaComplexTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaComplexTaskAsyncHandler;
 			typedef Outcome<Error, Model::PhotoProcessResult> PhotoProcessOutcome;
 			typedef std::future<PhotoProcessOutcome> PhotoProcessOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::PhotoProcessRequest&, const PhotoProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PhotoProcessAsyncHandler;
@@ -332,12 +337,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetOfficeConversionTaskResult> GetOfficeConversionTaskOutcome;
 			typedef std::future<GetOfficeConversionTaskOutcome> GetOfficeConversionTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetOfficeConversionTaskRequest&, const GetOfficeConversionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOfficeConversionTaskAsyncHandler;
-			typedef Outcome<Error, Model::CreateTagSetResult> CreateTagSetOutcome;
-			typedef std::future<CreateTagSetOutcome> CreateTagSetOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::CreateTagSetRequest&, const CreateTagSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagSetAsyncHandler;
 			typedef Outcome<Error, Model::RegistFaceResult> RegistFaceOutcome;
 			typedef std::future<RegistFaceOutcome> RegistFaceOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::RegistFaceRequest&, const RegistFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegistFaceAsyncHandler;
+			typedef Outcome<Error, Model::CreateTagSetResult> CreateTagSetOutcome;
+			typedef std::future<CreateTagSetOutcome> CreateTagSetOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::CreateTagSetRequest&, const CreateTagSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagSetAsyncHandler;
 			typedef Outcome<Error, Model::GetFaceSearchUserResult> GetFaceSearchUserOutcome;
 			typedef std::future<GetFaceSearchUserOutcome> GetFaceSearchUserOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetFaceSearchUserRequest&, const GetFaceSearchUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceSearchUserAsyncHandler;
@@ -380,12 +385,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCADConversionTaskResult> CreateCADConversionTaskOutcome;
 			typedef std::future<CreateCADConversionTaskOutcome> CreateCADConversionTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateCADConversionTaskRequest&, const CreateCADConversionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCADConversionTaskAsyncHandler;
-			typedef Outcome<Error, Model::DeleteFaceJobResult> DeleteFaceJobOutcome;
-			typedef std::future<DeleteFaceJobOutcome> DeleteFaceJobOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::DeleteFaceJobRequest&, const DeleteFaceJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFaceJobAsyncHandler;
 			typedef Outcome<Error, Model::GetTagJobResult> GetTagJobOutcome;
 			typedef std::future<GetTagJobOutcome> GetTagJobOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetTagJobRequest&, const GetTagJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTagJobAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFaceJobResult> DeleteFaceJobOutcome;
+			typedef std::future<DeleteFaceJobOutcome> DeleteFaceJobOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::DeleteFaceJobRequest&, const DeleteFaceJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFaceJobAsyncHandler;
 			typedef Outcome<Error, Model::CreateDocIndexTaskResult> CreateDocIndexTaskOutcome;
 			typedef std::future<CreateDocIndexTaskOutcome> CreateDocIndexTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateDocIndexTaskRequest&, const CreateDocIndexTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocIndexTaskAsyncHandler;
@@ -443,12 +448,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDocIndexResult> DeleteDocIndexOutcome;
 			typedef std::future<DeleteDocIndexOutcome> DeleteDocIndexOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DeleteDocIndexRequest&, const DeleteDocIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDocIndexAsyncHandler;
-			typedef Outcome<Error, Model::GetImageJobResult> GetImageJobOutcome;
-			typedef std::future<GetImageJobOutcome> GetImageJobOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::GetImageJobRequest&, const GetImageJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageJobAsyncHandler;
 			typedef Outcome<Error, Model::GetDocIndexTaskResult> GetDocIndexTaskOutcome;
 			typedef std::future<GetDocIndexTaskOutcome> GetDocIndexTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetDocIndexTaskRequest&, const GetDocIndexTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDocIndexTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetImageJobResult> GetImageJobOutcome;
+			typedef std::future<GetImageJobOutcome> GetImageJobOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::GetImageJobRequest&, const GetImageJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageJobAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTagByUrlResult> DeleteTagByUrlOutcome;
 			typedef std::future<DeleteTagByUrlOutcome> DeleteTagByUrlOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DeleteTagByUrlRequest&, const DeleteTagByUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagByUrlAsyncHandler;
@@ -476,12 +481,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPornBatchDetectJobResult> GetPornBatchDetectJobOutcome;
 			typedef std::future<GetPornBatchDetectJobOutcome> GetPornBatchDetectJobOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetPornBatchDetectJobRequest&, const GetPornBatchDetectJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPornBatchDetectJobAsyncHandler;
-			typedef Outcome<Error, Model::DetectClothesResult> DetectClothesOutcome;
-			typedef std::future<DetectClothesOutcome> DetectClothesOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::DetectClothesRequest&, const DetectClothesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectClothesAsyncHandler;
 			typedef Outcome<Error, Model::ListTagJobsResult> ListTagJobsOutcome;
 			typedef std::future<ListTagJobsOutcome> ListTagJobsOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListTagJobsRequest&, const ListTagJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagJobsAsyncHandler;
+			typedef Outcome<Error, Model::DetectClothesResult> DetectClothesOutcome;
+			typedef std::future<DetectClothesOutcome> DetectClothesOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::DetectClothesRequest&, const DetectClothesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectClothesAsyncHandler;
 			typedef Outcome<Error, Model::DetectLogoResult> DetectLogoOutcome;
 			typedef std::future<DetectLogoOutcome> DetectLogoOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DetectLogoRequest&, const DetectLogoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLogoAsyncHandler;
@@ -553,12 +558,12 @@ namespace AlibabaCloud
 			ListFaceSearchGroupImagesOutcome listFaceSearchGroupImages(const Model::ListFaceSearchGroupImagesRequest &request)const;
 			void listFaceSearchGroupImagesAsync(const Model::ListFaceSearchGroupImagesRequest& request, const ListFaceSearchGroupImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFaceSearchGroupImagesOutcomeCallable listFaceSearchGroupImagesCallable(const Model::ListFaceSearchGroupImagesRequest& request) const;
-			ListSetsOutcome listSets(const Model::ListSetsRequest &request)const;
-			void listSetsAsync(const Model::ListSetsRequest& request, const ListSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListSetsOutcomeCallable listSetsCallable(const Model::ListSetsRequest& request) const;
 			PutProjectOutcome putProject(const Model::PutProjectRequest &request)const;
 			void putProjectAsync(const Model::PutProjectRequest& request, const PutProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutProjectOutcomeCallable putProjectCallable(const Model::PutProjectRequest& request) const;
+			ListSetsOutcome listSets(const Model::ListSetsRequest &request)const;
+			void listSetsAsync(const Model::ListSetsRequest& request, const ListSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSetsOutcomeCallable listSetsCallable(const Model::ListSetsRequest& request) const;
 			FindImagesOutcome findImages(const Model::FindImagesRequest &request)const;
 			void findImagesAsync(const Model::FindImagesRequest& request, const FindImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindImagesOutcomeCallable findImagesCallable(const Model::FindImagesRequest& request) const;
@@ -586,12 +591,12 @@ namespace AlibabaCloud
 			ListFaceSearchGroupsOutcome listFaceSearchGroups(const Model::ListFaceSearchGroupsRequest &request)const;
 			void listFaceSearchGroupsAsync(const Model::ListFaceSearchGroupsRequest& request, const ListFaceSearchGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFaceSearchGroupsOutcomeCallable listFaceSearchGroupsCallable(const Model::ListFaceSearchGroupsRequest& request) const;
-			DeletePornBatchDetectJobOutcome deletePornBatchDetectJob(const Model::DeletePornBatchDetectJobRequest &request)const;
-			void deletePornBatchDetectJobAsync(const Model::DeletePornBatchDetectJobRequest& request, const DeletePornBatchDetectJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeletePornBatchDetectJobOutcomeCallable deletePornBatchDetectJobCallable(const Model::DeletePornBatchDetectJobRequest& request) const;
 			GetTagSetOutcome getTagSet(const Model::GetTagSetRequest &request)const;
 			void getTagSetAsync(const Model::GetTagSetRequest& request, const GetTagSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTagSetOutcomeCallable getTagSetCallable(const Model::GetTagSetRequest& request) const;
+			DeletePornBatchDetectJobOutcome deletePornBatchDetectJob(const Model::DeletePornBatchDetectJobRequest &request)const;
+			void deletePornBatchDetectJobAsync(const Model::DeletePornBatchDetectJobRequest& request, const DeletePornBatchDetectJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePornBatchDetectJobOutcomeCallable deletePornBatchDetectJobCallable(const Model::DeletePornBatchDetectJobRequest& request) const;
 			ListTagPhotosOutcome listTagPhotos(const Model::ListTagPhotosRequest &request)const;
 			void listTagPhotosAsync(const Model::ListTagPhotosRequest& request, const ListTagPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagPhotosOutcomeCallable listTagPhotosCallable(const Model::ListTagPhotosRequest& request) const;
@@ -622,6 +627,9 @@ namespace AlibabaCloud
 			DeleteTagJobOutcome deleteTagJob(const Model::DeleteTagJobRequest &request)const;
 			void deleteTagJobAsync(const Model::DeleteTagJobRequest& request, const DeleteTagJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTagJobOutcomeCallable deleteTagJobCallable(const Model::DeleteTagJobRequest& request) const;
+			CreateMediaComplexTaskOutcome createMediaComplexTask(const Model::CreateMediaComplexTaskRequest &request)const;
+			void createMediaComplexTaskAsync(const Model::CreateMediaComplexTaskRequest& request, const CreateMediaComplexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateMediaComplexTaskOutcomeCallable createMediaComplexTaskCallable(const Model::CreateMediaComplexTaskRequest& request) const;
 			PhotoProcessOutcome photoProcess(const Model::PhotoProcessRequest &request)const;
 			void photoProcessAsync(const Model::PhotoProcessRequest& request, const PhotoProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PhotoProcessOutcomeCallable photoProcessCallable(const Model::PhotoProcessRequest& request) const;
@@ -631,12 +639,12 @@ namespace AlibabaCloud
 			GetOfficeConversionTaskOutcome getOfficeConversionTask(const Model::GetOfficeConversionTaskRequest &request)const;
 			void getOfficeConversionTaskAsync(const Model::GetOfficeConversionTaskRequest& request, const GetOfficeConversionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOfficeConversionTaskOutcomeCallable getOfficeConversionTaskCallable(const Model::GetOfficeConversionTaskRequest& request) const;
-			CreateTagSetOutcome createTagSet(const Model::CreateTagSetRequest &request)const;
-			void createTagSetAsync(const Model::CreateTagSetRequest& request, const CreateTagSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateTagSetOutcomeCallable createTagSetCallable(const Model::CreateTagSetRequest& request) const;
 			RegistFaceOutcome registFace(const Model::RegistFaceRequest &request)const;
 			void registFaceAsync(const Model::RegistFaceRequest& request, const RegistFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegistFaceOutcomeCallable registFaceCallable(const Model::RegistFaceRequest& request) const;
+			CreateTagSetOutcome createTagSet(const Model::CreateTagSetRequest &request)const;
+			void createTagSetAsync(const Model::CreateTagSetRequest& request, const CreateTagSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTagSetOutcomeCallable createTagSetCallable(const Model::CreateTagSetRequest& request) const;
 			GetFaceSearchUserOutcome getFaceSearchUser(const Model::GetFaceSearchUserRequest &request)const;
 			void getFaceSearchUserAsync(const Model::GetFaceSearchUserRequest& request, const GetFaceSearchUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFaceSearchUserOutcomeCallable getFaceSearchUserCallable(const Model::GetFaceSearchUserRequest& request) const;
@@ -679,12 +687,12 @@ namespace AlibabaCloud
 			CreateCADConversionTaskOutcome createCADConversionTask(const Model::CreateCADConversionTaskRequest &request)const;
 			void createCADConversionTaskAsync(const Model::CreateCADConversionTaskRequest& request, const CreateCADConversionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCADConversionTaskOutcomeCallable createCADConversionTaskCallable(const Model::CreateCADConversionTaskRequest& request) const;
-			DeleteFaceJobOutcome deleteFaceJob(const Model::DeleteFaceJobRequest &request)const;
-			void deleteFaceJobAsync(const Model::DeleteFaceJobRequest& request, const DeleteFaceJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteFaceJobOutcomeCallable deleteFaceJobCallable(const Model::DeleteFaceJobRequest& request) const;
 			GetTagJobOutcome getTagJob(const Model::GetTagJobRequest &request)const;
 			void getTagJobAsync(const Model::GetTagJobRequest& request, const GetTagJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTagJobOutcomeCallable getTagJobCallable(const Model::GetTagJobRequest& request) const;
+			DeleteFaceJobOutcome deleteFaceJob(const Model::DeleteFaceJobRequest &request)const;
+			void deleteFaceJobAsync(const Model::DeleteFaceJobRequest& request, const DeleteFaceJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFaceJobOutcomeCallable deleteFaceJobCallable(const Model::DeleteFaceJobRequest& request) const;
 			CreateDocIndexTaskOutcome createDocIndexTask(const Model::CreateDocIndexTaskRequest &request)const;
 			void createDocIndexTaskAsync(const Model::CreateDocIndexTaskRequest& request, const CreateDocIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDocIndexTaskOutcomeCallable createDocIndexTaskCallable(const Model::CreateDocIndexTaskRequest& request) const;
@@ -742,12 +750,12 @@ namespace AlibabaCloud
 			DeleteDocIndexOutcome deleteDocIndex(const Model::DeleteDocIndexRequest &request)const;
 			void deleteDocIndexAsync(const Model::DeleteDocIndexRequest& request, const DeleteDocIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDocIndexOutcomeCallable deleteDocIndexCallable(const Model::DeleteDocIndexRequest& request) const;
-			GetImageJobOutcome getImageJob(const Model::GetImageJobRequest &request)const;
-			void getImageJobAsync(const Model::GetImageJobRequest& request, const GetImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetImageJobOutcomeCallable getImageJobCallable(const Model::GetImageJobRequest& request) const;
 			GetDocIndexTaskOutcome getDocIndexTask(const Model::GetDocIndexTaskRequest &request)const;
 			void getDocIndexTaskAsync(const Model::GetDocIndexTaskRequest& request, const GetDocIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDocIndexTaskOutcomeCallable getDocIndexTaskCallable(const Model::GetDocIndexTaskRequest& request) const;
+			GetImageJobOutcome getImageJob(const Model::GetImageJobRequest &request)const;
+			void getImageJobAsync(const Model::GetImageJobRequest& request, const GetImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetImageJobOutcomeCallable getImageJobCallable(const Model::GetImageJobRequest& request) const;
 			DeleteTagByUrlOutcome deleteTagByUrl(const Model::DeleteTagByUrlRequest &request)const;
 			void deleteTagByUrlAsync(const Model::DeleteTagByUrlRequest& request, const DeleteTagByUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTagByUrlOutcomeCallable deleteTagByUrlCallable(const Model::DeleteTagByUrlRequest& request) const;
@@ -775,12 +783,12 @@ namespace AlibabaCloud
 			GetPornBatchDetectJobOutcome getPornBatchDetectJob(const Model::GetPornBatchDetectJobRequest &request)const;
 			void getPornBatchDetectJobAsync(const Model::GetPornBatchDetectJobRequest& request, const GetPornBatchDetectJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPornBatchDetectJobOutcomeCallable getPornBatchDetectJobCallable(const Model::GetPornBatchDetectJobRequest& request) const;
-			DetectClothesOutcome detectClothes(const Model::DetectClothesRequest &request)const;
-			void detectClothesAsync(const Model::DetectClothesRequest& request, const DetectClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectClothesOutcomeCallable detectClothesCallable(const Model::DetectClothesRequest& request) const;
 			ListTagJobsOutcome listTagJobs(const Model::ListTagJobsRequest &request)const;
 			void listTagJobsAsync(const Model::ListTagJobsRequest& request, const ListTagJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagJobsOutcomeCallable listTagJobsCallable(const Model::ListTagJobsRequest& request) const;
+			DetectClothesOutcome detectClothes(const Model::DetectClothesRequest &request)const;
+			void detectClothesAsync(const Model::DetectClothesRequest& request, const DetectClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectClothesOutcomeCallable detectClothesCallable(const Model::DetectClothesRequest& request) const;
 			DetectLogoOutcome detectLogo(const Model::DetectLogoRequest &request)const;
 			void detectLogoAsync(const Model::DetectLogoRequest& request, const DetectLogoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLogoOutcomeCallable detectLogoCallable(const Model::DetectLogoRequest& request) const;
