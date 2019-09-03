@@ -36,6 +36,17 @@ void DescribeProxyFunctionSupportRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeProxyFunctionSupportRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeProxyFunctionSupportRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeProxyFunctionSupportRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeProxyFunctionSupportRequest::setSecurityToken(const std::string& se
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeProxyFunctionSupportRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeProxyFunctionSupportRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeProxyFunctionSupportRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeProxyFunctionSupportRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeProxyFunctionSupportRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeProxyFunctionSupportRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeProxyFunctionSupportRequest::getDBInstanceId()const
@@ -91,6 +69,28 @@ void DescribeProxyFunctionSupportRequest::setDBInstanceId(const std::string& dBI
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeProxyFunctionSupportRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeProxyFunctionSupportRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeProxyFunctionSupportRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeProxyFunctionSupportRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeProxyFunctionSupportRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void DescribeProxyFunctionSupportRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeProxyFunctionSupportRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeProxyFunctionSupportRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

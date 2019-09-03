@@ -69,17 +69,6 @@ void DescribeResourceUsageRequest::setOwnerAccount(const std::string& ownerAccou
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeResourceUsageRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeResourceUsageRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long DescribeResourceUsageRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void DescribeResourceUsageRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeResourceUsageRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeResourceUsageRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

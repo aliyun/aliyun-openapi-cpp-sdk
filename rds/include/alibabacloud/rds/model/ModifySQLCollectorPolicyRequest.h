@@ -39,31 +39,31 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				int getStoragePeriod()const;
 				void setStoragePeriod(int storagePeriod);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getSQLCollectorStatus()const;
-				void setSQLCollectorStatus(const std::string& sQLCollectorStatus);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSQLCollectorStatus()const;
+				void setSQLCollectorStatus(const std::string& sQLCollectorStatus);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				long resourceOwnerId_;
 				int storagePeriod_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string sQLCollectorStatus_;
-				std::string ownerAccount_;
-				std::string dBInstanceId_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string sQLCollectorStatus_;
+				std::string dBInstanceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 
 			};
 		}

@@ -47,17 +47,6 @@ void CreateReadOnlyDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage
 	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateReadOnlyDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateReadOnlyDBInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -67,17 +56,6 @@ void CreateReadOnlyDBInstanceRequest::setClientToken(const std::string& clientTo
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string CreateReadOnlyDBInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateReadOnlyDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getEngineVersion()const
@@ -91,17 +69,6 @@ void CreateReadOnlyDBInstanceRequest::setEngineVersion(const std::string& engine
 	setCoreParameter("EngineVersion", engineVersion);
 }
 
-long CreateReadOnlyDBInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateReadOnlyDBInstanceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string CreateReadOnlyDBInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -111,6 +78,94 @@ void CreateReadOnlyDBInstanceRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getDBInstanceDescription()const
+{
+	return dBInstanceDescription_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
+{
+	dBInstanceDescription_ = dBInstanceDescription;
+	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getDBInstanceStorageType()const
+{
+	return dBInstanceStorageType_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
+{
+	dBInstanceStorageType_ = dBInstanceStorageType;
+	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateReadOnlyDBInstanceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getDBInstanceClass()const
@@ -146,28 +201,6 @@ void CreateReadOnlyDBInstanceRequest::setPrivateIpAddress(const std::string& pri
 	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
-std::string CreateReadOnlyDBInstanceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void CreateReadOnlyDBInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string CreateReadOnlyDBInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateReadOnlyDBInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateReadOnlyDBInstanceRequest::getVPCId()const
 {
 	return vPCId_;
@@ -188,39 +221,6 @@ void CreateReadOnlyDBInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
-}
-
-std::string CreateReadOnlyDBInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void CreateReadOnlyDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-std::string CreateReadOnlyDBInstanceRequest::getDBInstanceDescription()const
-{
-	return dBInstanceDescription_;
-}
-
-void CreateReadOnlyDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
-{
-	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
-}
-
-std::string CreateReadOnlyDBInstanceRequest::getDBInstanceStorageType()const
-{
-	return dBInstanceStorageType_;
-}
-
-void CreateReadOnlyDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
-{
-	dBInstanceStorageType_ = dBInstanceStorageType;
-	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getCategory()const

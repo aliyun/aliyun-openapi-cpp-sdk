@@ -36,15 +36,15 @@ void ResetAccountForPGRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ResetAccountForPGRequest::getAccountPassword()const
+std::string ResetAccountForPGRequest::getAccessKeyId()const
 {
-	return accountPassword_;
+	return accessKeyId_;
 }
 
-void ResetAccountForPGRequest::setAccountPassword(const std::string& accountPassword)
+void ResetAccountForPGRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ResetAccountForPGRequest::getAccountName()const
@@ -56,6 +56,17 @@ void ResetAccountForPGRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
 	setCoreParameter("AccountName", accountName);
+}
+
+std::string ResetAccountForPGRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ResetAccountForPGRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ResetAccountForPGRequest::getResourceOwnerAccount()const
@@ -80,17 +91,6 @@ void ResetAccountForPGRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ResetAccountForPGRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ResetAccountForPGRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long ResetAccountForPGRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +102,14 @@ void ResetAccountForPGRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ResetAccountForPGRequest::getAccessKeyId()const
+std::string ResetAccountForPGRequest::getAccountPassword()const
 {
-	return accessKeyId_;
+	return accountPassword_;
 }
 
-void ResetAccountForPGRequest::setAccessKeyId(const std::string& accessKeyId)
+void ResetAccountForPGRequest::setAccountPassword(const std::string& accountPassword)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	accountPassword_ = accountPassword;
+	setCoreParameter("AccountPassword", accountPassword);
 }
 

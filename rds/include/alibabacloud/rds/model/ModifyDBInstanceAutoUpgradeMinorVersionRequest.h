@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				ModifyDBInstanceAutoUpgradeMinorVersionRequest();
 				~ModifyDBInstanceAutoUpgradeMinorVersionRequest();
 
-				std::string getAutoUpgradeMinorVersion()const;
-				void setAutoUpgradeMinorVersion(const std::string& autoUpgradeMinorVersion);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAutoUpgradeMinorVersion()const;
+				void setAutoUpgradeMinorVersion(const std::string& autoUpgradeMinorVersion);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
-				std::string autoUpgradeMinorVersion_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string dBInstanceId_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string autoUpgradeMinorVersion_;
+				std::string dBInstanceId_;
 
 			};
 		}

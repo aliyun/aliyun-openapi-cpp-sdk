@@ -36,6 +36,50 @@ void RenewInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RenewInstanceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void RenewInstanceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string RenewInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RenewInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RenewInstanceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void RenewInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string RenewInstanceRequest::getBusinessInfo()const
+{
+	return businessInfo_;
+}
+
+void RenewInstanceRequest::setBusinessInfo(const std::string& businessInfo)
+{
+	businessInfo_ = businessInfo;
+	setCoreParameter("BusinessInfo", businessInfo);
+}
+
 std::string RenewInstanceRequest::getPeriod()const
 {
 	return period_;
@@ -69,28 +113,6 @@ void RenewInstanceRequest::setResourceOwnerAccount(const std::string& resourceOw
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string RenewInstanceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void RenewInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string RenewInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void RenewInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long RenewInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,27 +122,5 @@ void RenewInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RenewInstanceRequest::getBusinessInfo()const
-{
-	return businessInfo_;
-}
-
-void RenewInstanceRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
-}
-
-std::string RenewInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RenewInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

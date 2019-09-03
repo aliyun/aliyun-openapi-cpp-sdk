@@ -36,6 +36,39 @@ void CreateMigrateTaskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateMigrateTaskRequest::getIsOnlineDB()const
+{
+	return isOnlineDB_;
+}
+
+void CreateMigrateTaskRequest::setIsOnlineDB(const std::string& isOnlineDB)
+{
+	isOnlineDB_ = isOnlineDB;
+	setCoreParameter("IsOnlineDB", isOnlineDB);
+}
+
+std::string CreateMigrateTaskRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateMigrateTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateMigrateTaskRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void CreateMigrateTaskRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string CreateMigrateTaskRequest::getMigrateTaskId()const
 {
 	return migrateTaskId_;
@@ -56,17 +89,6 @@ void CreateMigrateTaskRequest::setResourceOwnerAccount(const std::string& resour
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateMigrateTaskRequest::getIsOnlineDB()const
-{
-	return isOnlineDB_;
-}
-
-void CreateMigrateTaskRequest::setIsOnlineDB(const std::string& isOnlineDB)
-{
-	isOnlineDB_ = isOnlineDB;
-	setCoreParameter("IsOnlineDB", isOnlineDB);
 }
 
 long CreateMigrateTaskRequest::getOwnerId()const
@@ -91,17 +113,6 @@ void CreateMigrateTaskRequest::setOssObjectPositions(const std::string& ossObjec
 	setCoreParameter("OssObjectPositions", ossObjectPositions);
 }
 
-std::string CreateMigrateTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateMigrateTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string CreateMigrateTaskRequest::getOSSUrls()const
 {
 	return oSSUrls_;
@@ -122,17 +133,6 @@ void CreateMigrateTaskRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
 	setCoreParameter("DBName", dBName);
-}
-
-std::string CreateMigrateTaskRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void CreateMigrateTaskRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string CreateMigrateTaskRequest::getBackupMode()const

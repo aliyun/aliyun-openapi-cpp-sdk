@@ -36,28 +36,6 @@ void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAvailableResourceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string DescribeAvailableResourceRequest::getEngineVersion()const
 {
 	return engineVersion_;
@@ -69,17 +47,6 @@ void DescribeAvailableResourceRequest::setEngineVersion(const std::string& engin
 	setCoreParameter("EngineVersion", engineVersion);
 }
 
-long DescribeAvailableResourceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeAvailableResourceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,17 +56,6 @@ void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeAvailableResourceRequest::getDBInstanceClass()const
-{
-	return dBInstanceClass_;
-}
-
-void DescribeAvailableResourceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
-{
-	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string DescribeAvailableResourceRequest::getRegionId()const
@@ -124,17 +80,6 @@ void DescribeAvailableResourceRequest::setEngine(const std::string& engine)
 	setCoreParameter("Engine", engine);
 }
 
-std::string DescribeAvailableResourceRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void DescribeAvailableResourceRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
-}
-
 std::string DescribeAvailableResourceRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;
@@ -155,6 +100,61 @@ void DescribeAvailableResourceRequest::setInstanceChargeType(const std::string& 
 {
 	instanceChargeType_ = instanceChargeType;
 	setCoreParameter("InstanceChargeType", instanceChargeType);
+}
+
+std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAvailableResourceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeAvailableResourceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAvailableResourceRequest::getDBInstanceClass()const
+{
+	return dBInstanceClass_;
+}
+
+void DescribeAvailableResourceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
+{
+	dBInstanceClass_ = dBInstanceClass;
+	setCoreParameter("DBInstanceClass", dBInstanceClass);
+}
+
+std::string DescribeAvailableResourceRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeAvailableResourceRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeAvailableResourceRequest::getOrderType()const

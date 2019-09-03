@@ -47,28 +47,6 @@ void SwitchDBInstanceNetTypeRequest::setConnectionStringPrefix(const std::string
 	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
-std::string SwitchDBInstanceNetTypeRequest::getConnectionStringType()const
-{
-	return connectionStringType_;
-}
-
-void SwitchDBInstanceNetTypeRequest::setConnectionStringType(const std::string& connectionStringType)
-{
-	connectionStringType_ = connectionStringType;
-	setCoreParameter("ConnectionStringType", connectionStringType);
-}
-
-std::string SwitchDBInstanceNetTypeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SwitchDBInstanceNetTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string SwitchDBInstanceNetTypeRequest::getClientToken()const
 {
 	return clientToken_;
@@ -80,26 +58,15 @@ void SwitchDBInstanceNetTypeRequest::setClientToken(const std::string& clientTok
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string SwitchDBInstanceNetTypeRequest::getPort()const
+std::string SwitchDBInstanceNetTypeRequest::getAccessKeyId()const
 {
-	return port_;
+	return accessKeyId_;
 }
 
-void SwitchDBInstanceNetTypeRequest::setPort(const std::string& port)
+void SwitchDBInstanceNetTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	port_ = port;
-	setCoreParameter("Port", port);
-}
-
-std::string SwitchDBInstanceNetTypeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void SwitchDBInstanceNetTypeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SwitchDBInstanceNetTypeRequest::getDBInstanceId()const
@@ -113,6 +80,28 @@ void SwitchDBInstanceNetTypeRequest::setDBInstanceId(const std::string& dBInstan
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string SwitchDBInstanceNetTypeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void SwitchDBInstanceNetTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string SwitchDBInstanceNetTypeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void SwitchDBInstanceNetTypeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long SwitchDBInstanceNetTypeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,14 +113,25 @@ void SwitchDBInstanceNetTypeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SwitchDBInstanceNetTypeRequest::getAccessKeyId()const
+std::string SwitchDBInstanceNetTypeRequest::getConnectionStringType()const
 {
-	return accessKeyId_;
+	return connectionStringType_;
 }
 
-void SwitchDBInstanceNetTypeRequest::setAccessKeyId(const std::string& accessKeyId)
+void SwitchDBInstanceNetTypeRequest::setConnectionStringType(const std::string& connectionStringType)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	connectionStringType_ = connectionStringType;
+	setCoreParameter("ConnectionStringType", connectionStringType);
+}
+
+std::string SwitchDBInstanceNetTypeRequest::getPort()const
+{
+	return port_;
+}
+
+void SwitchDBInstanceNetTypeRequest::setPort(const std::string& port)
+{
+	port_ = port;
+	setCoreParameter("Port", port);
 }
 

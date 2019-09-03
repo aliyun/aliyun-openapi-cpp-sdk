@@ -58,28 +58,6 @@ void RemoveTagsFromResourceRequest::setTag2key(const std::string& tag2key)
 	setCoreParameter("Tag2key", tag2key);
 }
 
-std::string RemoveTagsFromResourceRequest::getTag5key()const
-{
-	return tag5key_;
-}
-
-void RemoveTagsFromResourceRequest::setTag5key(const std::string& tag5key)
-{
-	tag5key_ = tag5key;
-	setCoreParameter("Tag5key", tag5key);
-}
-
-std::string RemoveTagsFromResourceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void RemoveTagsFromResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string RemoveTagsFromResourceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -89,17 +67,6 @@ void RemoveTagsFromResourceRequest::setClientToken(const std::string& clientToke
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string RemoveTagsFromResourceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void RemoveTagsFromResourceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RemoveTagsFromResourceRequest::getTag3key()const
@@ -113,28 +80,6 @@ void RemoveTagsFromResourceRequest::setTag3key(const std::string& tag3key)
 	setCoreParameter("Tag3key", tag3key);
 }
 
-long RemoveTagsFromResourceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void RemoveTagsFromResourceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RemoveTagsFromResourceRequest::getTag5value()const
-{
-	return tag5value_;
-}
-
-void RemoveTagsFromResourceRequest::setTag5value(const std::string& tag5value)
-{
-	tag5value_ = tag5value;
-	setCoreParameter("Tag5value", tag5value);
-}
-
 std::string RemoveTagsFromResourceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -144,28 +89,6 @@ void RemoveTagsFromResourceRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string RemoveTagsFromResourceRequest::getTags()const
-{
-	return tags_;
-}
-
-void RemoveTagsFromResourceRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setCoreParameter("Tags", tags);
-}
-
-std::string RemoveTagsFromResourceRequest::getTag1key()const
-{
-	return tag1key_;
-}
-
-void RemoveTagsFromResourceRequest::setTag1key(const std::string& tag1key)
-{
-	tag1key_ = tag1key;
-	setCoreParameter("Tag1key", tag1key);
 }
 
 std::string RemoveTagsFromResourceRequest::getTag1value()const
@@ -188,28 +111,6 @@ void RemoveTagsFromResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string RemoveTagsFromResourceRequest::getTag2value()const
-{
-	return tag2value_;
-}
-
-void RemoveTagsFromResourceRequest::setTag2value(const std::string& tag2value)
-{
-	tag2value_ = tag2value;
-	setCoreParameter("Tag2value", tag2value);
-}
-
-std::string RemoveTagsFromResourceRequest::getTag4key()const
-{
-	return tag4key_;
-}
-
-void RemoveTagsFromResourceRequest::setTag4key(const std::string& tag4key)
-{
-	tag4key_ = tag4key;
-	setCoreParameter("Tag4key", tag4key);
 }
 
 std::string RemoveTagsFromResourceRequest::getDBInstanceId()const
@@ -243,5 +144,104 @@ void RemoveTagsFromResourceRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
 	setCoreParameter("ProxyId", proxyId);
+}
+
+std::string RemoveTagsFromResourceRequest::getTag5key()const
+{
+	return tag5key_;
+}
+
+void RemoveTagsFromResourceRequest::setTag5key(const std::string& tag5key)
+{
+	tag5key_ = tag5key;
+	setCoreParameter("Tag5key", tag5key);
+}
+
+std::string RemoveTagsFromResourceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void RemoveTagsFromResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string RemoveTagsFromResourceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void RemoveTagsFromResourceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long RemoveTagsFromResourceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void RemoveTagsFromResourceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string RemoveTagsFromResourceRequest::getTag5value()const
+{
+	return tag5value_;
+}
+
+void RemoveTagsFromResourceRequest::setTag5value(const std::string& tag5value)
+{
+	tag5value_ = tag5value;
+	setCoreParameter("Tag5value", tag5value);
+}
+
+std::string RemoveTagsFromResourceRequest::getTags()const
+{
+	return tags_;
+}
+
+void RemoveTagsFromResourceRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setCoreParameter("Tags", tags);
+}
+
+std::string RemoveTagsFromResourceRequest::getTag1key()const
+{
+	return tag1key_;
+}
+
+void RemoveTagsFromResourceRequest::setTag1key(const std::string& tag1key)
+{
+	tag1key_ = tag1key;
+	setCoreParameter("Tag1key", tag1key);
+}
+
+std::string RemoveTagsFromResourceRequest::getTag2value()const
+{
+	return tag2value_;
+}
+
+void RemoveTagsFromResourceRequest::setTag2value(const std::string& tag2value)
+{
+	tag2value_ = tag2value;
+	setCoreParameter("Tag2value", tag2value);
+}
+
+std::string RemoveTagsFromResourceRequest::getTag4key()const
+{
+	return tag4key_;
+}
+
+void RemoveTagsFromResourceRequest::setTag4key(const std::string& tag4key)
+{
+	tag4key_ = tag4key;
+	setCoreParameter("Tag4key", tag4key);
 }
 

@@ -37,28 +37,28 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getClassicExpiredDays()const;
+				void setClassicExpiredDays(const std::string& classicExpiredDays);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getReadWriteSplittingPrivateIpAddress()const;
+				void setReadWriteSplittingPrivateIpAddress(const std::string& readWriteSplittingPrivateIpAddress);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
 				std::string getRetainClassic()const;
 				void setRetainClassic(const std::string& retainClassic);
-				std::string getClassicExpiredDays()const;
-				void setClassicExpiredDays(const std::string& classicExpiredDays);
 				std::string getVPCId()const;
 				void setVPCId(const std::string& vPCId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getReadWriteSplittingPrivateIpAddress()const;
-				void setReadWriteSplittingPrivateIpAddress(const std::string& readWriteSplittingPrivateIpAddress);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
 				int getReadWriteSplittingClassicExpiredDays()const;
@@ -66,17 +66,17 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string classicExpiredDays_;
+				std::string dBInstanceId_;
+				std::string readWriteSplittingPrivateIpAddress_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
 				std::string retainClassic_;
-				std::string classicExpiredDays_;
 				std::string vPCId_;
-				std::string dBInstanceId_;
-				std::string readWriteSplittingPrivateIpAddress_;
 				std::string instanceNetworkType_;
 				int readWriteSplittingClassicExpiredDays_;
 

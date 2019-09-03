@@ -39,25 +39,25 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getProxyConfigurationKey()const;
-				void setProxyConfigurationKey(const std::string& proxyConfigurationKey);
 				std::string getProxyConfigurationValue()const;
 				void setProxyConfigurationValue(const std::string& proxyConfigurationValue);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getProxyConfigurationKey()const;
+				void setProxyConfigurationKey(const std::string& proxyConfigurationKey);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string proxyConfigurationKey_;
 				std::string proxyConfigurationValue_;
-				std::string dBInstanceId_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string proxyConfigurationKey_;
+				std::string dBInstanceId_;
 
 			};
 		}

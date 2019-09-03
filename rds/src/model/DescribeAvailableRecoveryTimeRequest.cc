@@ -47,28 +47,6 @@ void DescribeAvailableRecoveryTimeRequest::setResourceOwnerAccount(const std::st
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeAvailableRecoveryTimeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeAvailableRecoveryTimeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int DescribeAvailableRecoveryTimeRequest::getCrossBackupId()const
-{
-	return crossBackupId_;
-}
-
-void DescribeAvailableRecoveryTimeRequest::setCrossBackupId(int crossBackupId)
-{
-	crossBackupId_ = crossBackupId;
-	setCoreParameter("CrossBackupId", std::to_string(crossBackupId));
-}
-
 long DescribeAvailableRecoveryTimeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +67,27 @@ void DescribeAvailableRecoveryTimeRequest::setAccessKeyId(const std::string& acc
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeAvailableRecoveryTimeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeAvailableRecoveryTimeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeAvailableRecoveryTimeRequest::getCrossBackupId()const
+{
+	return crossBackupId_;
+}
+
+void DescribeAvailableRecoveryTimeRequest::setCrossBackupId(int crossBackupId)
+{
+	crossBackupId_ = crossBackupId;
+	setCoreParameter("CrossBackupId", std::to_string(crossBackupId));
 }
 

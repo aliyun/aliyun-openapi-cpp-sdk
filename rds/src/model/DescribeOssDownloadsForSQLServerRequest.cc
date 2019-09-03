@@ -58,17 +58,6 @@ void DescribeOssDownloadsForSQLServerRequest::setResourceOwnerAccount(const std:
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeOssDownloadsForSQLServerRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeOssDownloadsForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long DescribeOssDownloadsForSQLServerRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void DescribeOssDownloadsForSQLServerRequest::setAccessKeyId(const std::string& 
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeOssDownloadsForSQLServerRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeOssDownloadsForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

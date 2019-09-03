@@ -58,17 +58,6 @@ void CalculateDBInstanceWeightRequest::setOwnerAccount(const std::string& ownerA
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CalculateDBInstanceWeightRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void CalculateDBInstanceWeightRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long CalculateDBInstanceWeightRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void CalculateDBInstanceWeightRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CalculateDBInstanceWeightRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void CalculateDBInstanceWeightRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

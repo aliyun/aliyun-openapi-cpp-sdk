@@ -25,17 +25,6 @@ DescribeCloudDbExpertServiceRequest::DescribeCloudDbExpertServiceRequest() :
 DescribeCloudDbExpertServiceRequest::~DescribeCloudDbExpertServiceRequest()
 {}
 
-std::string DescribeCloudDbExpertServiceRequest::getServiceRequestParam()const
-{
-	return serviceRequestParam_;
-}
-
-void DescribeCloudDbExpertServiceRequest::setServiceRequestParam(const std::string& serviceRequestParam)
-{
-	serviceRequestParam_ = serviceRequestParam;
-	setCoreParameter("ServiceRequestParam", serviceRequestParam);
-}
-
 long DescribeCloudDbExpertServiceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,72 +34,6 @@ void DescribeCloudDbExpertServiceRequest::setResourceOwnerId(long resourceOwnerI
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeCloudDbExpertServiceRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeCloudDbExpertServiceRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeCloudDbExpertServiceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeCloudDbExpertServiceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeCloudDbExpertServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCloudDbExpertServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeCloudDbExpertServiceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeCloudDbExpertServiceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeCloudDbExpertServiceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeCloudDbExpertServiceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-long DescribeCloudDbExpertServiceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeCloudDbExpertServiceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCloudDbExpertServiceRequest::getServiceRequestType()const
@@ -133,5 +56,71 @@ void DescribeCloudDbExpertServiceRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeCloudDbExpertServiceRequest::getServiceRequestParam()const
+{
+	return serviceRequestParam_;
+}
+
+void DescribeCloudDbExpertServiceRequest::setServiceRequestParam(const std::string& serviceRequestParam)
+{
+	serviceRequestParam_ = serviceRequestParam;
+	setCoreParameter("ServiceRequestParam", serviceRequestParam);
+}
+
+std::string DescribeCloudDbExpertServiceRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeCloudDbExpertServiceRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeCloudDbExpertServiceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeCloudDbExpertServiceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeCloudDbExpertServiceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeCloudDbExpertServiceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeCloudDbExpertServiceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeCloudDbExpertServiceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeCloudDbExpertServiceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeCloudDbExpertServiceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

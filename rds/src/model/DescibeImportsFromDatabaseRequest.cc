@@ -36,17 +36,6 @@ void DescibeImportsFromDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescibeImportsFromDatabaseRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescibeImportsFromDatabaseRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescibeImportsFromDatabaseRequest::getClientToken()const
 {
 	return clientToken_;
@@ -58,28 +47,6 @@ void DescibeImportsFromDatabaseRequest::setClientToken(const std::string& client
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string DescibeImportsFromDatabaseRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescibeImportsFromDatabaseRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescibeImportsFromDatabaseRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescibeImportsFromDatabaseRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescibeImportsFromDatabaseRequest::getStartTime()const
 {
 	return startTime_;
@@ -89,17 +56,6 @@ void DescibeImportsFromDatabaseRequest::setStartTime(const std::string& startTim
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescibeImportsFromDatabaseRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescibeImportsFromDatabaseRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescibeImportsFromDatabaseRequest::getPageNumber()const
@@ -166,5 +122,49 @@ void DescibeImportsFromDatabaseRequest::setDBInstanceId(const std::string& dBIns
 {
 	dBInstanceId_ = dBInstanceId;
 	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescibeImportsFromDatabaseRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescibeImportsFromDatabaseRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescibeImportsFromDatabaseRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescibeImportsFromDatabaseRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescibeImportsFromDatabaseRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescibeImportsFromDatabaseRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescibeImportsFromDatabaseRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescibeImportsFromDatabaseRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

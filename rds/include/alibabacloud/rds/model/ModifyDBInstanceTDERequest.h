@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRoleArn()const;
-				void setRoleArn(const std::string& roleArn);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEncryptionKey()const;
 				void setEncryptionKey(const std::string& encryptionKey);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
+				std::string getRoleArn()const;
+				void setRoleArn(const std::string& roleArn);
 				std::string getTDEStatus()const;
 				void setTDEStatus(const std::string& tDEStatus);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				long resourceOwnerId_;
-				std::string dBName_;
-				std::string resourceOwnerAccount_;
-				std::string roleArn_;
-				std::string ownerAccount_;
+				std::string accessKeyId_;
 				std::string dBInstanceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				std::string encryptionKey_;
 				long ownerId_;
+				std::string dBName_;
+				std::string roleArn_;
 				std::string tDEStatus_;
-				std::string accessKeyId_;
 
 			};
 		}

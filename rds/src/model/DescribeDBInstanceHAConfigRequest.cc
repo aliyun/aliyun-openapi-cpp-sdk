@@ -58,17 +58,6 @@ void DescribeDBInstanceHAConfigRequest::setOwnerAccount(const std::string& owner
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeDBInstanceHAConfigRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeDBInstanceHAConfigRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long DescribeDBInstanceHAConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void DescribeDBInstanceHAConfigRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDBInstanceHAConfigRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeDBInstanceHAConfigRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

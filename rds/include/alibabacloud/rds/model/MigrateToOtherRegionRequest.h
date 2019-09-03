@@ -37,14 +37,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getTargetVSwitchId()const;
-				void setTargetVSwitchId(const std::string& targetVSwitchId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTargetVpcId()const;
@@ -55,24 +47,32 @@ namespace AlibabaCloud
 				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getTargetRegionId()const;
-				void setTargetRegionId(const std::string& targetRegionId);
 				std::string getSwitchTime()const;
 				void setSwitchTime(const std::string& switchTime);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getTargetVSwitchId()const;
+				void setTargetVSwitchId(const std::string& targetVSwitchId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getTargetRegionId()const;
+				void setTargetRegionId(const std::string& targetRegionId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string targetVSwitchId_;
-				long ownerId_;
 				std::string accessKeyId_;
 				std::string targetVpcId_;
 				std::string targetZoneId_;
 				std::string effectiveTime_;
 				std::string dBInstanceId_;
-				std::string targetRegionId_;
 				std::string switchTime_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string targetVSwitchId_;
+				long ownerId_;
+				std::string targetRegionId_;
 
 			};
 		}

@@ -36,6 +36,105 @@ void DescribeTemplatesListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeTemplatesListRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeTemplatesListRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+std::string DescribeTemplatesListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeTemplatesListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeTemplatesListRequest::getSortKey()const
+{
+	return sortKey_;
+}
+
+void DescribeTemplatesListRequest::setSortKey(const std::string& sortKey)
+{
+	sortKey_ = sortKey;
+	setCoreParameter("SortKey", sortKey);
+}
+
+int DescribeTemplatesListRequest::getMinAvgScanRows()const
+{
+	return minAvgScanRows_;
+}
+
+void DescribeTemplatesListRequest::setMinAvgScanRows(int minAvgScanRows)
+{
+	minAvgScanRows_ = minAvgScanRows;
+	setCoreParameter("MinAvgScanRows", std::to_string(minAvgScanRows));
+}
+
+std::string DescribeTemplatesListRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeTemplatesListRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeTemplatesListRequest::getPageNumbers()const
+{
+	return pageNumbers_;
+}
+
+void DescribeTemplatesListRequest::setPageNumbers(int pageNumbers)
+{
+	pageNumbers_ = pageNumbers;
+	setCoreParameter("PageNumbers", std::to_string(pageNumbers));
+}
+
+std::string DescribeTemplatesListRequest::getPagingId()const
+{
+	return pagingId_;
+}
+
+void DescribeTemplatesListRequest::setPagingId(const std::string& pagingId)
+{
+	pagingId_ = pagingId;
+	setCoreParameter("PagingId", pagingId);
+}
+
+std::string DescribeTemplatesListRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeTemplatesListRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+int DescribeTemplatesListRequest::getMaxAvgScanRows()const
+{
+	return maxAvgScanRows_;
+}
+
+void DescribeTemplatesListRequest::setMaxAvgScanRows(int maxAvgScanRows)
+{
+	maxAvgScanRows_ = maxAvgScanRows;
+	setCoreParameter("MaxAvgScanRows", std::to_string(maxAvgScanRows));
+}
+
 std::string DescribeTemplatesListRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -91,17 +190,6 @@ void DescribeTemplatesListRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeTemplatesListRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeTemplatesListRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long DescribeTemplatesListRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,17 +199,6 @@ void DescribeTemplatesListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeTemplatesListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeTemplatesListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeTemplatesListRequest::getMaxAvgConsume()const
@@ -135,28 +212,6 @@ void DescribeTemplatesListRequest::setMaxAvgConsume(int maxAvgConsume)
 	setCoreParameter("MaxAvgConsume", std::to_string(maxAvgConsume));
 }
 
-std::string DescribeTemplatesListRequest::getSortKey()const
-{
-	return sortKey_;
-}
-
-void DescribeTemplatesListRequest::setSortKey(const std::string& sortKey)
-{
-	sortKey_ = sortKey;
-	setCoreParameter("SortKey", sortKey);
-}
-
-int DescribeTemplatesListRequest::getMinAvgScanRows()const
-{
-	return minAvgScanRows_;
-}
-
-void DescribeTemplatesListRequest::setMinAvgScanRows(int minAvgScanRows)
-{
-	minAvgScanRows_ = minAvgScanRows;
-	setCoreParameter("MinAvgScanRows", std::to_string(minAvgScanRows));
-}
-
 std::string DescribeTemplatesListRequest::getSqType()const
 {
 	return sqType_;
@@ -168,28 +223,6 @@ void DescribeTemplatesListRequest::setSqType(const std::string& sqType)
 	setCoreParameter("SqType", sqType);
 }
 
-std::string DescribeTemplatesListRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeTemplatesListRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeTemplatesListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeTemplatesListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeTemplatesListRequest::getSortMethod()const
 {
 	return sortMethod_;
@@ -199,49 +232,5 @@ void DescribeTemplatesListRequest::setSortMethod(const std::string& sortMethod)
 {
 	sortMethod_ = sortMethod;
 	setCoreParameter("SortMethod", sortMethod);
-}
-
-int DescribeTemplatesListRequest::getPageNumbers()const
-{
-	return pageNumbers_;
-}
-
-void DescribeTemplatesListRequest::setPageNumbers(int pageNumbers)
-{
-	pageNumbers_ = pageNumbers;
-	setCoreParameter("PageNumbers", std::to_string(pageNumbers));
-}
-
-std::string DescribeTemplatesListRequest::getPagingId()const
-{
-	return pagingId_;
-}
-
-void DescribeTemplatesListRequest::setPagingId(const std::string& pagingId)
-{
-	pagingId_ = pagingId;
-	setCoreParameter("PagingId", pagingId);
-}
-
-std::string DescribeTemplatesListRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeTemplatesListRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-int DescribeTemplatesListRequest::getMaxAvgScanRows()const
-{
-	return maxAvgScanRows_;
-}
-
-void DescribeTemplatesListRequest::setMaxAvgScanRows(int maxAvgScanRows)
-{
-	maxAvgScanRows_ = maxAvgScanRows;
-	setCoreParameter("MaxAvgScanRows", std::to_string(maxAvgScanRows));
 }
 

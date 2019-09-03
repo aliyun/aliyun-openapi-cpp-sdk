@@ -36,39 +36,6 @@ void DescribeSlowLogsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSlowLogsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeSlowLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeSlowLogsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeSlowLogsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeSlowLogsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeSlowLogsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeSlowLogsRequest::getStartTime()const
 {
 	return startTime_;
@@ -78,17 +45,6 @@ void DescribeSlowLogsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeSlowLogsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeSlowLogsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeSlowLogsRequest::getPageNumber()const
@@ -124,17 +80,6 @@ void DescribeSlowLogsRequest::setSortKey(const std::string& sortKey)
 	setCoreParameter("SortKey", sortKey);
 }
 
-std::string DescribeSlowLogsRequest::getDBName()const
-{
-	return dBName_;
-}
-
-void DescribeSlowLogsRequest::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
-}
-
 int DescribeSlowLogsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -155,5 +100,60 @@ void DescribeSlowLogsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
 	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeSlowLogsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSlowLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeSlowLogsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeSlowLogsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeSlowLogsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeSlowLogsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeSlowLogsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeSlowLogsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeSlowLogsRequest::getDBName()const
+{
+	return dBName_;
+}
+
+void DescribeSlowLogsRequest::setDBName(const std::string& dBName)
+{
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
 }
 

@@ -25,17 +25,6 @@ ModifyDBInstanceAutoUpgradeMinorVersionRequest::ModifyDBInstanceAutoUpgradeMinor
 ModifyDBInstanceAutoUpgradeMinorVersionRequest::~ModifyDBInstanceAutoUpgradeMinorVersionRequest()
 {}
 
-std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getAutoUpgradeMinorVersion()const
-{
-	return autoUpgradeMinorVersion_;
-}
-
-void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setAutoUpgradeMinorVersion(const std::string& autoUpgradeMinorVersion)
-{
-	autoUpgradeMinorVersion_ = autoUpgradeMinorVersion;
-	setCoreParameter("AutoUpgradeMinorVersion", autoUpgradeMinorVersion);
-}
-
 long ModifyDBInstanceAutoUpgradeMinorVersionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -69,17 +58,6 @@ void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setClientToken(const std::s
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long ModifyDBInstanceAutoUpgradeMinorVersionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +78,27 @@ void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setAccessKeyId(const std::s
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getAutoUpgradeMinorVersion()const
+{
+	return autoUpgradeMinorVersion_;
+}
+
+void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setAutoUpgradeMinorVersion(const std::string& autoUpgradeMinorVersion)
+{
+	autoUpgradeMinorVersion_ = autoUpgradeMinorVersion;
+	setCoreParameter("AutoUpgradeMinorVersion", autoUpgradeMinorVersion);
+}
+
+std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

@@ -58,17 +58,6 @@ void ReleaseReadWriteSplittingConnectionRequest::setOwnerAccount(const std::stri
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ReleaseReadWriteSplittingConnectionRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ReleaseReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long ReleaseReadWriteSplittingConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void ReleaseReadWriteSplittingConnectionRequest::setAccessKeyId(const std::strin
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ReleaseReadWriteSplittingConnectionRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ReleaseReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

@@ -37,16 +37,24 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getDBInstanceStorage()const;
+				void setDBInstanceStorage(int dBInstanceStorage);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getDBInstanceDescription()const;
+				void setDBInstanceDescription(const std::string& dBInstanceDescription);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getRestoreTime()const;
 				void setRestoreTime(const std::string& restoreTime);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
-				int getDBInstanceStorage()const;
-				void setDBInstanceStorage(int dBInstanceStorage);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getBackupId()const;
 				void setBackupId(const std::string& backupId);
 				std::string getOwnerAccount()const;
@@ -55,8 +63,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getUsedTime()const;
 				void setUsedTime(const std::string& usedTime);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceClass()const;
 				void setDBInstanceClass(const std::string& dBInstanceClass);
 				std::string getDbNames()const;
@@ -65,16 +71,10 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getTargetDBInstanceId()const;
 				void setTargetDBInstanceId(const std::string& targetDBInstanceId);
 				std::string getVPCId()const;
 				void setVPCId(const std::string& vPCId);
-				std::string getDBInstanceDescription()const;
-				void setDBInstanceDescription(const std::string& dBInstanceDescription);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 				std::string getInstanceNetworkType()const;
@@ -82,25 +82,25 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				int dBInstanceStorage_;
+				std::string clientToken_;
+				std::string accessKeyId_;
+				std::string resourceGroupId_;
+				std::string dBInstanceDescription_;
+				std::string dBInstanceId_;
 				std::string restoreTime_;
 				std::string period_;
-				int dBInstanceStorage_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
 				std::string backupId_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string usedTime_;
-				std::string accessKeyId_;
 				std::string dBInstanceClass_;
 				std::string dbNames_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
-				std::string resourceGroupId_;
 				std::string targetDBInstanceId_;
 				std::string vPCId_;
-				std::string dBInstanceDescription_;
-				std::string dBInstanceId_;
 				std::string payType_;
 				std::string instanceNetworkType_;
 

@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getIsOnlineDB()const;
+				void setIsOnlineDB(const std::string& isOnlineDB);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getMigrateTaskId()const;
 				void setMigrateTaskId(const std::string& migrateTaskId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getIsOnlineDB()const;
-				void setIsOnlineDB(const std::string& isOnlineDB);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getOssObjectPositions()const;
 				void setOssObjectPositions(const std::string& ossObjectPositions);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getOSSUrls()const;
 				void setOSSUrls(const std::string& oSSUrls);
 				std::string getDBName()const;
 				void setDBName(const std::string& dBName);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getBackupMode()const;
 				void setBackupMode(const std::string& backupMode);
 				std::string getCheckDBMode()const;
@@ -62,15 +62,15 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string isOnlineDB_;
+				std::string accessKeyId_;
+				std::string dBInstanceId_;
 				std::string migrateTaskId_;
 				std::string resourceOwnerAccount_;
-				std::string isOnlineDB_;
 				long ownerId_;
 				std::string ossObjectPositions_;
-				std::string accessKeyId_;
 				std::string oSSUrls_;
 				std::string dBName_;
-				std::string dBInstanceId_;
 				std::string backupMode_;
 				std::string checkDBMode_;
 

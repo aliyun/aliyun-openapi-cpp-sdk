@@ -47,17 +47,6 @@ void ModifyDBInstanceProxyConfigurationRequest::setResourceOwnerAccount(const st
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyDBInstanceProxyConfigurationRequest::getProxyConfigurationKey()const
-{
-	return proxyConfigurationKey_;
-}
-
-void ModifyDBInstanceProxyConfigurationRequest::setProxyConfigurationKey(const std::string& proxyConfigurationKey)
-{
-	proxyConfigurationKey_ = proxyConfigurationKey;
-	setCoreParameter("ProxyConfigurationKey", proxyConfigurationKey);
-}
-
 std::string ModifyDBInstanceProxyConfigurationRequest::getProxyConfigurationValue()const
 {
 	return proxyConfigurationValue_;
@@ -67,17 +56,6 @@ void ModifyDBInstanceProxyConfigurationRequest::setProxyConfigurationValue(const
 {
 	proxyConfigurationValue_ = proxyConfigurationValue;
 	setCoreParameter("ProxyConfigurationValue", proxyConfigurationValue);
-}
-
-std::string ModifyDBInstanceProxyConfigurationRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyDBInstanceProxyConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ModifyDBInstanceProxyConfigurationRequest::getOwnerId()const
@@ -100,5 +78,27 @@ void ModifyDBInstanceProxyConfigurationRequest::setAccessKeyId(const std::string
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstanceProxyConfigurationRequest::getProxyConfigurationKey()const
+{
+	return proxyConfigurationKey_;
+}
+
+void ModifyDBInstanceProxyConfigurationRequest::setProxyConfigurationKey(const std::string& proxyConfigurationKey)
+{
+	proxyConfigurationKey_ = proxyConfigurationKey;
+	setCoreParameter("ProxyConfigurationKey", proxyConfigurationKey);
+}
+
+std::string ModifyDBInstanceProxyConfigurationRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstanceProxyConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

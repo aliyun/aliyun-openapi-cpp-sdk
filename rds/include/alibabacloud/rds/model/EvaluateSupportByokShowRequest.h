@@ -39,14 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getNodeType()const;
 				void setNodeType(const std::string& nodeType);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
@@ -55,24 +49,30 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getEngine()const;
 				void setEngine(const std::string& engine);
-				std::string getTargetRegionId()const;
-				void setTargetRegionId(const std::string& targetRegionId);
 				std::string getDbInstanceStorageType()const;
 				void setDbInstanceStorageType(const std::string& dbInstanceStorageType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getTargetRegionId()const;
+				void setTargetRegionId(const std::string& targetRegionId);
 
             private:
 				long resourceOwnerId_;
 				std::string nodeType_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				std::string engineVersion_;
-				long ownerId_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string regionId_;
 				std::string engine_;
-				std::string targetRegionId_;
 				std::string dbInstanceStorageType_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string targetRegionId_;
 
 			};
 		}

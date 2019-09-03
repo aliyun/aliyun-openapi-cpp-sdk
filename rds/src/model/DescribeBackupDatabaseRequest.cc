@@ -58,17 +58,6 @@ void DescribeBackupDatabaseRequest::setBackupId(const std::string& backupId)
 	setCoreParameter("BackupId", backupId);
 }
 
-std::string DescribeBackupDatabaseRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeBackupDatabaseRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long DescribeBackupDatabaseRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void DescribeBackupDatabaseRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeBackupDatabaseRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeBackupDatabaseRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

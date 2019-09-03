@@ -25,17 +25,6 @@ DescribeSQLLogRecordsRequest::DescribeSQLLogRecordsRequest() :
 DescribeSQLLogRecordsRequest::~DescribeSQLLogRecordsRequest()
 {}
 
-long DescribeSQLLogRecordsRequest::getSQLId()const
-{
-	return sQLId_;
-}
-
-void DescribeSQLLogRecordsRequest::setSQLId(long sQLId)
-{
-	sQLId_ = sQLId;
-	setCoreParameter("SQLId", std::to_string(sQLId));
-}
-
 long DescribeSQLLogRecordsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void DescribeSQLLogRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeSQLLogRecordsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeSQLLogRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSQLLogRecordsRequest::getClientToken()const
@@ -69,28 +47,6 @@ void DescribeSQLLogRecordsRequest::setClientToken(const std::string& clientToken
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string DescribeSQLLogRecordsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeSQLLogRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeSQLLogRecordsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeSQLLogRecordsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeSQLLogRecordsRequest::getStartTime()const
 {
 	return startTime_;
@@ -100,17 +56,6 @@ void DescribeSQLLogRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeSQLLogRecordsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeSQLLogRecordsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSQLLogRecordsRequest::getQueryKeywords()const
@@ -157,17 +102,6 @@ void DescribeSQLLogRecordsRequest::setDatabase(const std::string& database)
 	setCoreParameter("Database", database);
 }
 
-std::string DescribeSQLLogRecordsRequest::getForm()const
-{
-	return form_;
-}
-
-void DescribeSQLLogRecordsRequest::setForm(const std::string& form)
-{
-	form_ = form;
-	setCoreParameter("Form", form);
-}
-
 int DescribeSQLLogRecordsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -188,6 +122,72 @@ void DescribeSQLLogRecordsRequest::setDBInstanceId(const std::string& dBInstance
 {
 	dBInstanceId_ = dBInstanceId;
 	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+long DescribeSQLLogRecordsRequest::getSQLId()const
+{
+	return sQLId_;
+}
+
+void DescribeSQLLogRecordsRequest::setSQLId(long sQLId)
+{
+	sQLId_ = sQLId;
+	setCoreParameter("SQLId", std::to_string(sQLId));
+}
+
+std::string DescribeSQLLogRecordsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSQLLogRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeSQLLogRecordsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeSQLLogRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeSQLLogRecordsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeSQLLogRecordsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeSQLLogRecordsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeSQLLogRecordsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeSQLLogRecordsRequest::getForm()const
+{
+	return form_;
+}
+
+void DescribeSQLLogRecordsRequest::setForm(const std::string& form)
+{
+	form_ = form;
+	setCoreParameter("Form", form);
 }
 
 std::string DescribeSQLLogRecordsRequest::getUser()const

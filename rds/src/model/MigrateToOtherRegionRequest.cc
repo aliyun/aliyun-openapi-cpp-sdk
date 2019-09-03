@@ -36,50 +36,6 @@ void MigrateToOtherRegionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string MigrateToOtherRegionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void MigrateToOtherRegionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string MigrateToOtherRegionRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void MigrateToOtherRegionRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string MigrateToOtherRegionRequest::getTargetVSwitchId()const
-{
-	return targetVSwitchId_;
-}
-
-void MigrateToOtherRegionRequest::setTargetVSwitchId(const std::string& targetVSwitchId)
-{
-	targetVSwitchId_ = targetVSwitchId;
-	setCoreParameter("TargetVSwitchId", targetVSwitchId);
-}
-
-long MigrateToOtherRegionRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void MigrateToOtherRegionRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string MigrateToOtherRegionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -135,17 +91,6 @@ void MigrateToOtherRegionRequest::setDBInstanceId(const std::string& dBInstanceI
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string MigrateToOtherRegionRequest::getTargetRegionId()const
-{
-	return targetRegionId_;
-}
-
-void MigrateToOtherRegionRequest::setTargetRegionId(const std::string& targetRegionId)
-{
-	targetRegionId_ = targetRegionId;
-	setCoreParameter("TargetRegionId", targetRegionId);
-}
-
 std::string MigrateToOtherRegionRequest::getSwitchTime()const
 {
 	return switchTime_;
@@ -155,5 +100,60 @@ void MigrateToOtherRegionRequest::setSwitchTime(const std::string& switchTime)
 {
 	switchTime_ = switchTime;
 	setCoreParameter("SwitchTime", switchTime);
+}
+
+std::string MigrateToOtherRegionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void MigrateToOtherRegionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string MigrateToOtherRegionRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void MigrateToOtherRegionRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string MigrateToOtherRegionRequest::getTargetVSwitchId()const
+{
+	return targetVSwitchId_;
+}
+
+void MigrateToOtherRegionRequest::setTargetVSwitchId(const std::string& targetVSwitchId)
+{
+	targetVSwitchId_ = targetVSwitchId;
+	setCoreParameter("TargetVSwitchId", targetVSwitchId);
+}
+
+long MigrateToOtherRegionRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void MigrateToOtherRegionRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string MigrateToOtherRegionRequest::getTargetRegionId()const
+{
+	return targetRegionId_;
+}
+
+void MigrateToOtherRegionRequest::setTargetRegionId(const std::string& targetRegionId)
+{
+	targetRegionId_ = targetRegionId;
+	setCoreParameter("TargetRegionId", targetRegionId);
 }
 

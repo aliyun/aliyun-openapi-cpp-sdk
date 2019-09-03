@@ -36,39 +36,6 @@ void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstancesByExpireTimeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeDBInstancesByExpireTimeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeDBInstancesByExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long DescribeDBInstancesByExpireTimeRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeDBInstancesByExpireTimeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 int DescribeDBInstancesByExpireTimeRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -89,17 +56,6 @@ void DescribeDBInstancesByExpireTimeRequest::setAccessKeyId(const std::string& a
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeDBInstancesByExpireTimeRequest::getTags()const
-{
-	return tags_;
-}
-
-void DescribeDBInstancesByExpireTimeRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setCoreParameter("Tags", tags);
 }
 
 bool DescribeDBInstancesByExpireTimeRequest::getExpired()const
@@ -155,5 +111,49 @@ void DescribeDBInstancesByExpireTimeRequest::setProxyId(const std::string& proxy
 {
 	proxyId_ = proxyId;
 	setCoreParameter("ProxyId", proxyId);
+}
+
+std::string DescribeDBInstancesByExpireTimeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeDBInstancesByExpireTimeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeDBInstancesByExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeDBInstancesByExpireTimeRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeDBInstancesByExpireTimeRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeDBInstancesByExpireTimeRequest::getTags()const
+{
+	return tags_;
+}
+
+void DescribeDBInstancesByExpireTimeRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setCoreParameter("Tags", tags);
 }
 

@@ -47,28 +47,6 @@ void EvaluateSupportByokShowRequest::setNodeType(const std::string& nodeType)
 	setCoreParameter("NodeType", nodeType);
 }
 
-std::string EvaluateSupportByokShowRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void EvaluateSupportByokShowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string EvaluateSupportByokShowRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void EvaluateSupportByokShowRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string EvaluateSupportByokShowRequest::getEngineVersion()const
 {
 	return engineVersion_;
@@ -78,17 +56,6 @@ void EvaluateSupportByokShowRequest::setEngineVersion(const std::string& engineV
 {
 	engineVersion_ = engineVersion;
 	setCoreParameter("EngineVersion", engineVersion);
-}
-
-long EvaluateSupportByokShowRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void EvaluateSupportByokShowRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EvaluateSupportByokShowRequest::getAccessKeyId()const
@@ -135,17 +102,6 @@ void EvaluateSupportByokShowRequest::setEngine(const std::string& engine)
 	setCoreParameter("Engine", engine);
 }
 
-std::string EvaluateSupportByokShowRequest::getTargetRegionId()const
-{
-	return targetRegionId_;
-}
-
-void EvaluateSupportByokShowRequest::setTargetRegionId(const std::string& targetRegionId)
-{
-	targetRegionId_ = targetRegionId;
-	setCoreParameter("TargetRegionId", targetRegionId);
-}
-
 std::string EvaluateSupportByokShowRequest::getDbInstanceStorageType()const
 {
 	return dbInstanceStorageType_;
@@ -155,5 +111,49 @@ void EvaluateSupportByokShowRequest::setDbInstanceStorageType(const std::string&
 {
 	dbInstanceStorageType_ = dbInstanceStorageType;
 	setCoreParameter("DbInstanceStorageType", dbInstanceStorageType);
+}
+
+std::string EvaluateSupportByokShowRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void EvaluateSupportByokShowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string EvaluateSupportByokShowRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void EvaluateSupportByokShowRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long EvaluateSupportByokShowRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void EvaluateSupportByokShowRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string EvaluateSupportByokShowRequest::getTargetRegionId()const
+{
+	return targetRegionId_;
+}
+
+void EvaluateSupportByokShowRequest::setTargetRegionId(const std::string& targetRegionId)
+{
+	targetRegionId_ = targetRegionId;
+	setCoreParameter("TargetRegionId", targetRegionId);
 }
 

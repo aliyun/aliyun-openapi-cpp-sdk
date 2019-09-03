@@ -25,17 +25,6 @@ CreateBackupRequest::CreateBackupRequest() :
 CreateBackupRequest::~CreateBackupRequest()
 {}
 
-std::string CreateBackupRequest::getBackupMethod()const
-{
-	return backupMethod_;
-}
-
-void CreateBackupRequest::setBackupMethod(const std::string& backupMethod)
-{
-	backupMethod_ = backupMethod;
-	setCoreParameter("BackupMethod", backupMethod);
-}
-
 long CreateBackupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,17 @@ void CreateBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string CreateBackupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateBackupRequest::getBackupStrategy()const
@@ -58,15 +58,26 @@ void CreateBackupRequest::setBackupStrategy(const std::string& backupStrategy)
 	setCoreParameter("BackupStrategy", backupStrategy);
 }
 
-std::string CreateBackupRequest::getDBName()const
+std::string CreateBackupRequest::getDBInstanceId()const
 {
-	return dBName_;
+	return dBInstanceId_;
 }
 
-void CreateBackupRequest::setDBName(const std::string& dBName)
+void CreateBackupRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string CreateBackupRequest::getBackupType()const
+{
+	return backupType_;
+}
+
+void CreateBackupRequest::setBackupType(const std::string& backupType)
+{
+	backupType_ = backupType;
+	setCoreParameter("BackupType", backupType);
 }
 
 std::string CreateBackupRequest::getResourceOwnerAccount()const
@@ -91,17 +102,6 @@ void CreateBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateBackupRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void CreateBackupRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long CreateBackupRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,25 +113,25 @@ void CreateBackupRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateBackupRequest::getBackupType()const
+std::string CreateBackupRequest::getBackupMethod()const
 {
-	return backupType_;
+	return backupMethod_;
 }
 
-void CreateBackupRequest::setBackupType(const std::string& backupType)
+void CreateBackupRequest::setBackupMethod(const std::string& backupMethod)
 {
-	backupType_ = backupType;
-	setCoreParameter("BackupType", backupType);
+	backupMethod_ = backupMethod;
+	setCoreParameter("BackupMethod", backupMethod);
 }
 
-std::string CreateBackupRequest::getAccessKeyId()const
+std::string CreateBackupRequest::getDBName()const
 {
-	return accessKeyId_;
+	return dBName_;
 }
 
-void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
+void CreateBackupRequest::setDBName(const std::string& dBName)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
 }
 

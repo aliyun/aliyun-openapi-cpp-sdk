@@ -36,6 +36,50 @@ void ModifyDBInstancePayTypeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBInstancePayTypeRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ModifyDBInstancePayTypeRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string ModifyDBInstancePayTypeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBInstancePayTypeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstancePayTypeRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstancePayTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string ModifyDBInstancePayTypeRequest::getBusinessInfo()const
+{
+	return businessInfo_;
+}
+
+void ModifyDBInstancePayTypeRequest::setBusinessInfo(const std::string& businessInfo)
+{
+	businessInfo_ = businessInfo;
+	setCoreParameter("BusinessInfo", businessInfo);
+}
+
 std::string ModifyDBInstancePayTypeRequest::getPeriod()const
 {
 	return period_;
@@ -78,17 +122,6 @@ void ModifyDBInstancePayTypeRequest::setResourceOwnerAccount(const std::string& 
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyDBInstancePayTypeRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void ModifyDBInstancePayTypeRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyDBInstancePayTypeRequest::getResource()const
@@ -135,28 +168,6 @@ void ModifyDBInstancePayTypeRequest::setUsedTime(int usedTime)
 	setCoreParameter("UsedTime", std::to_string(usedTime));
 }
 
-std::string ModifyDBInstancePayTypeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBInstancePayTypeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string ModifyDBInstancePayTypeRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyDBInstancePayTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string ModifyDBInstancePayTypeRequest::getPayType()const
 {
 	return payType_;
@@ -166,16 +177,5 @@ void ModifyDBInstancePayTypeRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
 	setCoreParameter("PayType", payType);
-}
-
-std::string ModifyDBInstancePayTypeRequest::getBusinessInfo()const
-{
-	return businessInfo_;
-}
-
-void ModifyDBInstancePayTypeRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
 }
 

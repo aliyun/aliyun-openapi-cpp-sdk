@@ -36,28 +36,6 @@ void DescribeAvailableInstanceClassRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAvailableInstanceClassRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeAvailableInstanceClassRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAvailableInstanceClassRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeAvailableInstanceClassRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string DescribeAvailableInstanceClassRequest::getEngineVersion()const
 {
 	return engineVersion_;
@@ -67,17 +45,6 @@ void DescribeAvailableInstanceClassRequest::setEngineVersion(const std::string& 
 {
 	engineVersion_ = engineVersion;
 	setCoreParameter("EngineVersion", engineVersion);
-}
-
-long DescribeAvailableInstanceClassRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeAvailableInstanceClassRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getAccessKeyId()const
@@ -113,17 +80,6 @@ void DescribeAvailableInstanceClassRequest::setEngine(const std::string& engine)
 	setCoreParameter("Engine", engine);
 }
 
-std::string DescribeAvailableInstanceClassRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void DescribeAvailableInstanceClassRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
-}
-
 std::string DescribeAvailableInstanceClassRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;
@@ -144,6 +100,50 @@ void DescribeAvailableInstanceClassRequest::setInstanceChargeType(const std::str
 {
 	instanceChargeType_ = instanceChargeType;
 	setCoreParameter("InstanceChargeType", instanceChargeType);
+}
+
+std::string DescribeAvailableInstanceClassRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAvailableInstanceClassRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAvailableInstanceClassRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeAvailableInstanceClassRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeAvailableInstanceClassRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeAvailableInstanceClassRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAvailableInstanceClassRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeAvailableInstanceClassRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeAvailableInstanceClassRequest::getOrderType()const

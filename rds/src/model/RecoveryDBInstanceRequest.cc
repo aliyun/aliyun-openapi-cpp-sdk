@@ -36,6 +36,72 @@ void RecoveryDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int RecoveryDBInstanceRequest::getDBInstanceStorage()const
+{
+	return dBInstanceStorage_;
+}
+
+void RecoveryDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
+{
+	dBInstanceStorage_ = dBInstanceStorage;
+	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+}
+
+std::string RecoveryDBInstanceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void RecoveryDBInstanceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string RecoveryDBInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RecoveryDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RecoveryDBInstanceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void RecoveryDBInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string RecoveryDBInstanceRequest::getDBInstanceDescription()const
+{
+	return dBInstanceDescription_;
+}
+
+void RecoveryDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
+{
+	dBInstanceDescription_ = dBInstanceDescription;
+	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+}
+
+std::string RecoveryDBInstanceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void RecoveryDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string RecoveryDBInstanceRequest::getRestoreTime()const
 {
 	return restoreTime_;
@@ -58,17 +124,6 @@ void RecoveryDBInstanceRequest::setPeriod(const std::string& period)
 	setCoreParameter("Period", period);
 }
 
-int RecoveryDBInstanceRequest::getDBInstanceStorage()const
-{
-	return dBInstanceStorage_;
-}
-
-void RecoveryDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
-{
-	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
-}
-
 std::string RecoveryDBInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -78,17 +133,6 @@ void RecoveryDBInstanceRequest::setResourceOwnerAccount(const std::string& resou
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string RecoveryDBInstanceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void RecoveryDBInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string RecoveryDBInstanceRequest::getBackupId()const
@@ -135,17 +179,6 @@ void RecoveryDBInstanceRequest::setUsedTime(const std::string& usedTime)
 	setCoreParameter("UsedTime", usedTime);
 }
 
-std::string RecoveryDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RecoveryDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string RecoveryDBInstanceRequest::getDBInstanceClass()const
 {
 	return dBInstanceClass_;
@@ -190,17 +223,6 @@ void RecoveryDBInstanceRequest::setPrivateIpAddress(const std::string& privateIp
 	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
-std::string RecoveryDBInstanceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void RecoveryDBInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string RecoveryDBInstanceRequest::getTargetDBInstanceId()const
 {
 	return targetDBInstanceId_;
@@ -221,28 +243,6 @@ void RecoveryDBInstanceRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
 	setCoreParameter("VPCId", vPCId);
-}
-
-std::string RecoveryDBInstanceRequest::getDBInstanceDescription()const
-{
-	return dBInstanceDescription_;
-}
-
-void RecoveryDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
-{
-	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
-}
-
-std::string RecoveryDBInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void RecoveryDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string RecoveryDBInstanceRequest::getPayType()const

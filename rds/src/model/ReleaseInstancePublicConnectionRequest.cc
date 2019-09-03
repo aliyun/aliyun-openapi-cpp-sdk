@@ -58,17 +58,6 @@ void ReleaseInstancePublicConnectionRequest::setOwnerAccount(const std::string& 
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ReleaseInstancePublicConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long ReleaseInstancePublicConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string& a
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ReleaseInstancePublicConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

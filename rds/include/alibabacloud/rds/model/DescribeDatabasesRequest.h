@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getDBStatus()const;
-				void setDBStatus(const std::string& dBStatus);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBStatus()const;
+				void setDBStatus(const std::string& dBStatus);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
 
             private:
 				long resourceOwnerId_;
-				std::string dBName_;
-				std::string resourceOwnerAccount_;
-				std::string dBStatus_;
-				std::string ownerAccount_;
-				int pageSize_;
-				std::string dBInstanceId_;
-				long ownerId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string dBStatus_;
+				int pageSize_;
+				std::string dBInstanceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string dBName_;
 
 			};
 		}

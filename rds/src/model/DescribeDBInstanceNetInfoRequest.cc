@@ -47,28 +47,6 @@ void DescribeDBInstanceNetInfoRequest::setFlag(const std::string& flag)
 	setCoreParameter("Flag", flag);
 }
 
-std::string DescribeDBInstanceNetInfoRequest::getDBInstanceNetRWSplitType()const
-{
-	return dBInstanceNetRWSplitType_;
-}
-
-void DescribeDBInstanceNetInfoRequest::setDBInstanceNetRWSplitType(const std::string& dBInstanceNetRWSplitType)
-{
-	dBInstanceNetRWSplitType_ = dBInstanceNetRWSplitType;
-	setCoreParameter("DBInstanceNetRWSplitType", dBInstanceNetRWSplitType);
-}
-
-std::string DescribeDBInstanceNetInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeDBInstanceNetInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeDBInstanceNetInfoRequest::getClientToken()const
 {
 	return clientToken_;
@@ -80,15 +58,15 @@ void DescribeDBInstanceNetInfoRequest::setClientToken(const std::string& clientT
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string DescribeDBInstanceNetInfoRequest::getOwnerAccount()const
+std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void DescribeDBInstanceNetInfoRequest::setOwnerAccount(const std::string& ownerAccount)
+void DescribeDBInstanceNetInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceNetInfoRequest::getDBInstanceId()const
@@ -102,6 +80,28 @@ void DescribeDBInstanceNetInfoRequest::setDBInstanceId(const std::string& dBInst
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeDBInstanceNetInfoRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeDBInstanceNetInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeDBInstanceNetInfoRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeDBInstanceNetInfoRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeDBInstanceNetInfoRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +113,14 @@ void DescribeDBInstanceNetInfoRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId()const
+std::string DescribeDBInstanceNetInfoRequest::getDBInstanceNetRWSplitType()const
 {
-	return accessKeyId_;
+	return dBInstanceNetRWSplitType_;
 }
 
-void DescribeDBInstanceNetInfoRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeDBInstanceNetInfoRequest::setDBInstanceNetRWSplitType(const std::string& dBInstanceNetRWSplitType)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	dBInstanceNetRWSplitType_ = dBInstanceNetRWSplitType;
+	setCoreParameter("DBInstanceNetRWSplitType", dBInstanceNetRWSplitType);
 }
 

@@ -69,17 +69,6 @@ void PurgeDBInstanceLogRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string PurgeDBInstanceLogRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void PurgeDBInstanceLogRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long PurgeDBInstanceLogRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void PurgeDBInstanceLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string PurgeDBInstanceLogRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void PurgeDBInstanceLogRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

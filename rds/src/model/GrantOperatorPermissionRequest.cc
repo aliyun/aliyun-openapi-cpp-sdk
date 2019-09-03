@@ -47,6 +47,28 @@ void GrantOperatorPermissionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string GrantOperatorPermissionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GrantOperatorPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GrantOperatorPermissionRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void GrantOperatorPermissionRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string GrantOperatorPermissionRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,28 +91,6 @@ void GrantOperatorPermissionRequest::setOwnerAccount(const std::string& ownerAcc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string GrantOperatorPermissionRequest::getExpiredTime()const
-{
-	return expiredTime_;
-}
-
-void GrantOperatorPermissionRequest::setExpiredTime(const std::string& expiredTime)
-{
-	expiredTime_ = expiredTime;
-	setCoreParameter("ExpiredTime", expiredTime);
-}
-
-std::string GrantOperatorPermissionRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void GrantOperatorPermissionRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long GrantOperatorPermissionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +102,14 @@ void GrantOperatorPermissionRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string GrantOperatorPermissionRequest::getAccessKeyId()const
+std::string GrantOperatorPermissionRequest::getExpiredTime()const
 {
-	return accessKeyId_;
+	return expiredTime_;
 }
 
-void GrantOperatorPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
+void GrantOperatorPermissionRequest::setExpiredTime(const std::string& expiredTime)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	expiredTime_ = expiredTime;
+	setCoreParameter("ExpiredTime", expiredTime);
 }
 

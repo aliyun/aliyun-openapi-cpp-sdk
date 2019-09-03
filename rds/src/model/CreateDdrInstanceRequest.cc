@@ -25,17 +25,6 @@ CreateDdrInstanceRequest::CreateDdrInstanceRequest() :
 CreateDdrInstanceRequest::~CreateDdrInstanceRequest()
 {}
 
-std::string CreateDdrInstanceRequest::getConnectionMode()const
-{
-	return connectionMode_;
-}
-
-void CreateDdrInstanceRequest::setConnectionMode(const std::string& connectionMode)
-{
-	connectionMode_ = connectionMode;
-	setCoreParameter("ConnectionMode", connectionMode);
-}
-
 long CreateDdrInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -69,39 +58,6 @@ void CreateDdrInstanceRequest::setSystemDBCharset(const std::string& systemDBCha
 	setCoreParameter("SystemDBCharset", systemDBCharset);
 }
 
-std::string CreateDdrInstanceRequest::getSourceDBInstanceName()const
-{
-	return sourceDBInstanceName_;
-}
-
-void CreateDdrInstanceRequest::setSourceDBInstanceName(const std::string& sourceDBInstanceName)
-{
-	sourceDBInstanceName_ = sourceDBInstanceName;
-	setCoreParameter("SourceDBInstanceName", sourceDBInstanceName);
-}
-
-std::string CreateDdrInstanceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void CreateDdrInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string CreateDdrInstanceRequest::getHostType()const
-{
-	return hostType_;
-}
-
-void CreateDdrInstanceRequest::setHostType(const std::string& hostType)
-{
-	hostType_ = hostType;
-	setCoreParameter("HostType", hostType);
-}
-
 std::string CreateDdrInstanceRequest::getEngineVersion()const
 {
 	return engineVersion_;
@@ -124,17 +80,6 @@ void CreateDdrInstanceRequest::setUserBakSetURL(const std::string& userBakSetURL
 	setCoreParameter("UserBakSetURL", userBakSetURL);
 }
 
-std::string CreateDdrInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateDdrInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string CreateDdrInstanceRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -144,28 +89,6 @@ void CreateDdrInstanceRequest::setResourceGroupId(const std::string& resourceGro
 {
 	resourceGroupId_ = resourceGroupId;
 	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string CreateDdrInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateDdrInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateDdrInstanceRequest::getEngine()const
-{
-	return engine_;
-}
-
-void CreateDdrInstanceRequest::setEngine(const std::string& engine)
-{
-	engine_ = engine;
-	setCoreParameter("Engine", engine);
 }
 
 std::string CreateDdrInstanceRequest::getDBInstanceDescription()const
@@ -179,17 +102,6 @@ void CreateDdrInstanceRequest::setDBInstanceDescription(const std::string& dBIns
 	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
-std::string CreateDdrInstanceRequest::getDBInstanceStorageType()const
-{
-	return dBInstanceStorageType_;
-}
-
-void CreateDdrInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
-{
-	dBInstanceStorageType_ = dBInstanceStorageType;
-	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
-}
-
 std::string CreateDdrInstanceRequest::getBackupSetRegion()const
 {
 	return backupSetRegion_;
@@ -201,28 +113,6 @@ void CreateDdrInstanceRequest::setBackupSetRegion(const std::string& backupSetRe
 	setCoreParameter("BackupSetRegion", backupSetRegion);
 }
 
-std::string CreateDdrInstanceRequest::getDBInstanceNetType()const
-{
-	return dBInstanceNetType_;
-}
-
-void CreateDdrInstanceRequest::setDBInstanceNetType(const std::string& dBInstanceNetType)
-{
-	dBInstanceNetType_ = dBInstanceNetType;
-	setCoreParameter("DBInstanceNetType", dBInstanceNetType);
-}
-
-std::string CreateDdrInstanceRequest::getBackupSetType()const
-{
-	return backupSetType_;
-}
-
-void CreateDdrInstanceRequest::setBackupSetType(const std::string& backupSetType)
-{
-	backupSetType_ = backupSetType;
-	setCoreParameter("BackupSetType", backupSetType);
-}
-
 std::string CreateDdrInstanceRequest::getPeriod()const
 {
 	return period_;
@@ -232,50 +122,6 @@ void CreateDdrInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
 	setCoreParameter("Period", period);
-}
-
-std::string CreateDdrInstanceRequest::getRestoreTime()const
-{
-	return restoreTime_;
-}
-
-void CreateDdrInstanceRequest::setRestoreTime(const std::string& restoreTime)
-{
-	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
-}
-
-std::string CreateDdrInstanceRequest::getBakSetName()const
-{
-	return bakSetName_;
-}
-
-void CreateDdrInstanceRequest::setBakSetName(const std::string& bakSetName)
-{
-	bakSetName_ = bakSetName;
-	setCoreParameter("BakSetName", bakSetName);
-}
-
-std::string CreateDdrInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateDdrInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateDdrInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateDdrInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateDdrInstanceRequest::getBackupSetId()const
@@ -298,17 +144,6 @@ void CreateDdrInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateDdrInstanceRequest::getUsedTime()const
-{
-	return usedTime_;
-}
-
-void CreateDdrInstanceRequest::setUsedTime(const std::string& usedTime)
-{
-	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", usedTime);
 }
 
 std::string CreateDdrInstanceRequest::getDBInstanceClass()const
@@ -355,28 +190,6 @@ void CreateDdrInstanceRequest::setPrivateIpAddress(const std::string& privateIpA
 	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
-std::string CreateDdrInstanceRequest::getRestoreType()const
-{
-	return restoreType_;
-}
-
-void CreateDdrInstanceRequest::setRestoreType(const std::string& restoreType)
-{
-	restoreType_ = restoreType;
-	setCoreParameter("RestoreType", restoreType);
-}
-
-std::string CreateDdrInstanceRequest::getVPCId()const
-{
-	return vPCId_;
-}
-
-void CreateDdrInstanceRequest::setVPCId(const std::string& vPCId)
-{
-	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
-}
-
 std::string CreateDdrInstanceRequest::getTunnelId()const
 {
 	return tunnelId_;
@@ -399,6 +212,204 @@ void CreateDdrInstanceRequest::setZoneId(const std::string& zoneId)
 	setCoreParameter("ZoneId", zoneId);
 }
 
+std::string CreateDdrInstanceRequest::getInstanceNetworkType()const
+{
+	return instanceNetworkType_;
+}
+
+void CreateDdrInstanceRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
+{
+	instanceNetworkType_ = instanceNetworkType;
+	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+}
+
+std::string CreateDdrInstanceRequest::getConnectionMode()const
+{
+	return connectionMode_;
+}
+
+void CreateDdrInstanceRequest::setConnectionMode(const std::string& connectionMode)
+{
+	connectionMode_ = connectionMode;
+	setCoreParameter("ConnectionMode", connectionMode);
+}
+
+std::string CreateDdrInstanceRequest::getSourceDBInstanceName()const
+{
+	return sourceDBInstanceName_;
+}
+
+void CreateDdrInstanceRequest::setSourceDBInstanceName(const std::string& sourceDBInstanceName)
+{
+	sourceDBInstanceName_ = sourceDBInstanceName;
+	setCoreParameter("SourceDBInstanceName", sourceDBInstanceName);
+}
+
+std::string CreateDdrInstanceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateDdrInstanceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string CreateDdrInstanceRequest::getHostType()const
+{
+	return hostType_;
+}
+
+void CreateDdrInstanceRequest::setHostType(const std::string& hostType)
+{
+	hostType_ = hostType;
+	setCoreParameter("HostType", hostType);
+}
+
+std::string CreateDdrInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateDdrInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateDdrInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateDdrInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateDdrInstanceRequest::getEngine()const
+{
+	return engine_;
+}
+
+void CreateDdrInstanceRequest::setEngine(const std::string& engine)
+{
+	engine_ = engine;
+	setCoreParameter("Engine", engine);
+}
+
+std::string CreateDdrInstanceRequest::getDBInstanceStorageType()const
+{
+	return dBInstanceStorageType_;
+}
+
+void CreateDdrInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
+{
+	dBInstanceStorageType_ = dBInstanceStorageType;
+	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
+std::string CreateDdrInstanceRequest::getDBInstanceNetType()const
+{
+	return dBInstanceNetType_;
+}
+
+void CreateDdrInstanceRequest::setDBInstanceNetType(const std::string& dBInstanceNetType)
+{
+	dBInstanceNetType_ = dBInstanceNetType;
+	setCoreParameter("DBInstanceNetType", dBInstanceNetType);
+}
+
+std::string CreateDdrInstanceRequest::getBackupSetType()const
+{
+	return backupSetType_;
+}
+
+void CreateDdrInstanceRequest::setBackupSetType(const std::string& backupSetType)
+{
+	backupSetType_ = backupSetType;
+	setCoreParameter("BackupSetType", backupSetType);
+}
+
+std::string CreateDdrInstanceRequest::getRestoreTime()const
+{
+	return restoreTime_;
+}
+
+void CreateDdrInstanceRequest::setRestoreTime(const std::string& restoreTime)
+{
+	restoreTime_ = restoreTime;
+	setCoreParameter("RestoreTime", restoreTime);
+}
+
+std::string CreateDdrInstanceRequest::getBakSetName()const
+{
+	return bakSetName_;
+}
+
+void CreateDdrInstanceRequest::setBakSetName(const std::string& bakSetName)
+{
+	bakSetName_ = bakSetName;
+	setCoreParameter("BakSetName", bakSetName);
+}
+
+std::string CreateDdrInstanceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateDdrInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateDdrInstanceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateDdrInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string CreateDdrInstanceRequest::getUsedTime()const
+{
+	return usedTime_;
+}
+
+void CreateDdrInstanceRequest::setUsedTime(const std::string& usedTime)
+{
+	usedTime_ = usedTime;
+	setCoreParameter("UsedTime", usedTime);
+}
+
+std::string CreateDdrInstanceRequest::getRestoreType()const
+{
+	return restoreType_;
+}
+
+void CreateDdrInstanceRequest::setRestoreType(const std::string& restoreType)
+{
+	restoreType_ = restoreType;
+	setCoreParameter("RestoreType", restoreType);
+}
+
+std::string CreateDdrInstanceRequest::getVPCId()const
+{
+	return vPCId_;
+}
+
+void CreateDdrInstanceRequest::setVPCId(const std::string& vPCId)
+{
+	vPCId_ = vPCId;
+	setCoreParameter("VPCId", vPCId);
+}
+
 std::string CreateDdrInstanceRequest::getPayType()const
 {
 	return payType_;
@@ -419,16 +430,5 @@ void CreateDdrInstanceRequest::setSourceRegion(const std::string& sourceRegion)
 {
 	sourceRegion_ = sourceRegion;
 	setCoreParameter("SourceRegion", sourceRegion);
-}
-
-std::string CreateDdrInstanceRequest::getInstanceNetworkType()const
-{
-	return instanceNetworkType_;
-}
-
-void CreateDdrInstanceRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
-{
-	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
 }
 

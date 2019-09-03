@@ -36,28 +36,6 @@ void DescribeCrossRegionBackupsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeCrossRegionBackupsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeCrossRegionBackupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeCrossRegionBackupsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeCrossRegionBackupsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeCrossRegionBackupsRequest::getStartTime()const
 {
 	return startTime_;
@@ -67,28 +45,6 @@ void DescribeCrossRegionBackupsRequest::setStartTime(const std::string& startTim
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeCrossRegionBackupsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeCrossRegionBackupsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeCrossRegionBackupsRequest::getCrossBackupRegion()const
-{
-	return crossBackupRegion_;
-}
-
-void DescribeCrossRegionBackupsRequest::setCrossBackupRegion(const std::string& crossBackupRegion)
-{
-	crossBackupRegion_ = crossBackupRegion;
-	setCoreParameter("CrossBackupRegion", crossBackupRegion);
 }
 
 int DescribeCrossRegionBackupsRequest::getPageNumber()const
@@ -144,6 +100,50 @@ void DescribeCrossRegionBackupsRequest::setDBInstanceId(const std::string& dBIns
 {
 	dBInstanceId_ = dBInstanceId;
 	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeCrossRegionBackupsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeCrossRegionBackupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeCrossRegionBackupsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeCrossRegionBackupsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeCrossRegionBackupsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeCrossRegionBackupsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeCrossRegionBackupsRequest::getCrossBackupRegion()const
+{
+	return crossBackupRegion_;
+}
+
+void DescribeCrossRegionBackupsRequest::setCrossBackupRegion(const std::string& crossBackupRegion)
+{
+	crossBackupRegion_ = crossBackupRegion;
+	setCoreParameter("CrossBackupRegion", crossBackupRegion);
 }
 
 int DescribeCrossRegionBackupsRequest::getCrossBackupId()const

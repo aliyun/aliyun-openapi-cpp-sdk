@@ -36,28 +36,6 @@ void ModifyParameterRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyParameterRequest::getParameterGroupId()const
-{
-	return parameterGroupId_;
-}
-
-void ModifyParameterRequest::setParameterGroupId(const std::string& parameterGroupId)
-{
-	parameterGroupId_ = parameterGroupId;
-	setCoreParameter("ParameterGroupId", parameterGroupId);
-}
-
-std::string ModifyParameterRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyParameterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyParameterRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,15 +47,26 @@ void ModifyParameterRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string ModifyParameterRequest::getOwnerAccount()const
+std::string ModifyParameterRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void ModifyParameterRequest::setOwnerAccount(const std::string& ownerAccount)
+void ModifyParameterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyParameterRequest::getParameterGroupId()const
+{
+	return parameterGroupId_;
+}
+
+void ModifyParameterRequest::setParameterGroupId(const std::string& parameterGroupId)
+{
+	parameterGroupId_ = parameterGroupId;
+	setCoreParameter("ParameterGroupId", parameterGroupId);
 }
 
 std::string ModifyParameterRequest::getDBInstanceId()const
@@ -102,6 +91,28 @@ void ModifyParameterRequest::setForcerestart(bool forcerestart)
 	setCoreParameter("Forcerestart", forcerestart ? "true" : "false");
 }
 
+std::string ModifyParameterRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyParameterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyParameterRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyParameterRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ModifyParameterRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,16 +133,5 @@ void ModifyParameterRequest::setParameters(const std::string& parameters)
 {
 	parameters_ = parameters;
 	setCoreParameter("Parameters", parameters);
-}
-
-std::string ModifyParameterRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyParameterRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

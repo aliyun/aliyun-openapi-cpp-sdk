@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTaskType()const;
-				void setTaskType(const std::string& taskType);
-				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getIsOnlineDB()const;
 				void setIsOnlineDB(const std::string& isOnlineDB);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getTaskType()const;
+				void setTaskType(const std::string& taskType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getOSSUrls()const;
 				void setOSSUrls(const std::string& oSSUrls);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
 
             private:
 				long resourceOwnerId_;
-				std::string taskType_;
-				std::string dBName_;
-				std::string resourceOwnerAccount_;
 				std::string isOnlineDB_;
-				std::string dBInstanceId_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string taskType_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
 				std::string oSSUrls_;
+				std::string dBName_;
 
 			};
 		}

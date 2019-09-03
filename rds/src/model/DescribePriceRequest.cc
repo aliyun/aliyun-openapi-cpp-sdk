@@ -47,6 +47,61 @@ void DescribePriceRequest::setDBInstanceStorage(int dBInstanceStorage)
 	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
 }
 
+std::string DescribePriceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DescribePriceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string DescribePriceRequest::getEngineVersion()const
+{
+	return engineVersion_;
+}
+
+void DescribePriceRequest::setEngineVersion(const std::string& engineVersion)
+{
+	engineVersion_ = engineVersion;
+	setCoreParameter("EngineVersion", engineVersion);
+}
+
+std::string DescribePriceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribePriceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribePriceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribePriceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribePriceRequest::getEngine()const
+{
+	return engine_;
+}
+
+void DescribePriceRequest::setEngine(const std::string& engine)
+{
+	engine_ = engine;
+	setCoreParameter("Engine", engine);
+}
+
 int DescribePriceRequest::getQuantity()const
 {
 	return quantity_;
@@ -67,17 +122,6 @@ void DescribePriceRequest::setResourceOwnerAccount(const std::string& resourceOw
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribePriceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void DescribePriceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribePriceRequest::getOwnerAccount()const
@@ -102,17 +146,6 @@ void DescribePriceRequest::setCommodityCode(const std::string& commodityCode)
 	setCoreParameter("CommodityCode", commodityCode);
 }
 
-std::string DescribePriceRequest::getEngineVersion()const
-{
-	return engineVersion_;
-}
-
-void DescribePriceRequest::setEngineVersion(const std::string& engineVersion)
-{
-	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
-}
-
 long DescribePriceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -135,17 +168,6 @@ void DescribePriceRequest::setUsedTime(const std::string& usedTime)
 	setCoreParameter("UsedTime", usedTime);
 }
 
-std::string DescribePriceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribePriceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribePriceRequest::getDBInstanceClass()const
 {
 	return dBInstanceClass_;
@@ -166,28 +188,6 @@ void DescribePriceRequest::setInstanceUsedType(int instanceUsedType)
 {
 	instanceUsedType_ = instanceUsedType;
 	setCoreParameter("InstanceUsedType", std::to_string(instanceUsedType));
-}
-
-std::string DescribePriceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribePriceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribePriceRequest::getEngine()const
-{
-	return engine_;
-}
-
-void DescribePriceRequest::setEngine(const std::string& engine)
-{
-	engine_ = engine;
-	setCoreParameter("Engine", engine);
 }
 
 std::string DescribePriceRequest::getZoneId()const

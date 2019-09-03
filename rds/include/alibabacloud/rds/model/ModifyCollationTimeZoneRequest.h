@@ -41,23 +41,23 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getTimezone()const;
 				void setTimezone(const std::string& timezone);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getCollation()const;
-				void setCollation(const std::string& collation);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getCollation()const;
+				void setCollation(const std::string& collation);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string timezone_;
-				std::string dBInstanceId_;
-				std::string collation_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string collation_;
 
 			};
 		}

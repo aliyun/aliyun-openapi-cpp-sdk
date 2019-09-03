@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getBusinessInfo()const;
+				void setBusinessInfo(const std::string& businessInfo);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
 				std::string getAutoPay()const;
 				void setAutoPay(const std::string& autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getBusinessInfo()const;
-				void setBusinessInfo(const std::string& businessInfo);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string businessInfo_;
 				std::string period_;
 				std::string autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
-				std::string dBInstanceId_;
 				long ownerId_;
-				std::string businessInfo_;
-				std::string accessKeyId_;
 
 			};
 		}

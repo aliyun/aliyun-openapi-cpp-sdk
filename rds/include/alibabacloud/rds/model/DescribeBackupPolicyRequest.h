@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getBackupPolicyMode()const;
+				void setBackupPolicyMode(const std::string& backupPolicyMode);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getCompressType()const;
 				void setCompressType(const std::string& compressType);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getBackupPolicyMode()const;
-				void setBackupPolicyMode(const std::string& backupPolicyMode);
 
             private:
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string backupPolicyMode_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string compressType_;
-				std::string dBInstanceId_;
 				long ownerId_;
-				std::string accessKeyId_;
-				std::string backupPolicyMode_;
 
 			};
 		}

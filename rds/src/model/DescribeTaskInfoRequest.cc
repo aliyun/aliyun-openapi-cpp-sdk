@@ -36,17 +36,6 @@ void DescribeTaskInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeTaskInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeTaskInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeTaskInfoRequest::getClientToken()const
 {
 	return clientToken_;
@@ -58,15 +47,15 @@ void DescribeTaskInfoRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string DescribeTaskInfoRequest::getOwnerAccount()const
+std::string DescribeTaskInfoRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void DescribeTaskInfoRequest::setOwnerAccount(const std::string& ownerAccount)
+void DescribeTaskInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeTaskInfoRequest::getDBInstanceId()const
@@ -80,17 +69,6 @@ void DescribeTaskInfoRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-long DescribeTaskInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeTaskInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 long DescribeTaskInfoRequest::getTaskId()const
 {
 	return taskId_;
@@ -102,14 +80,36 @@ void DescribeTaskInfoRequest::setTaskId(long taskId)
 	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
-std::string DescribeTaskInfoRequest::getAccessKeyId()const
+std::string DescribeTaskInfoRequest::getResourceOwnerAccount()const
 {
-	return accessKeyId_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeTaskInfoRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeTaskInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeTaskInfoRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeTaskInfoRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeTaskInfoRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeTaskInfoRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -36,6 +36,17 @@ void DescribeDTCSecurityIpHostsForSQLServerRequest::setResourceOwnerId(long reso
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDTCSecurityIpHostsForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,17 +56,6 @@ void DescribeDTCSecurityIpHostsForSQLServerRequest::setSecurityToken(const std::
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeDTCSecurityIpHostsForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getRegionId()const
@@ -69,17 +69,6 @@ void DescribeDTCSecurityIpHostsForSQLServerRequest::setRegionId(const std::strin
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeDTCSecurityIpHostsForSQLServerRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;
@@ -91,6 +80,28 @@ void DescribeDTCSecurityIpHostsForSQLServerRequest::setDBInstanceId(const std::s
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeDTCSecurityIpHostsForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeDTCSecurityIpHostsForSQLServerRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeDTCSecurityIpHostsForSQLServerRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void DescribeDTCSecurityIpHostsForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDTCSecurityIpHostsForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

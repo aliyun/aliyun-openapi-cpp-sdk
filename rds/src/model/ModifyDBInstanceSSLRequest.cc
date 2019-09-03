@@ -36,17 +36,6 @@ void ModifyDBInstanceSSLRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDBInstanceSSLRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyDBInstanceSSLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyDBInstanceSSLRequest::getConnectionString()const
 {
 	return connectionString_;
@@ -58,15 +47,15 @@ void ModifyDBInstanceSSLRequest::setConnectionString(const std::string& connecti
 	setCoreParameter("ConnectionString", connectionString);
 }
 
-std::string ModifyDBInstanceSSLRequest::getOwnerAccount()const
+std::string ModifyDBInstanceSSLRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void ModifyDBInstanceSSLRequest::setOwnerAccount(const std::string& ownerAccount)
+void ModifyDBInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceSSLRequest::getDBInstanceId()const
@@ -80,6 +69,28 @@ void ModifyDBInstanceSSLRequest::setDBInstanceId(const std::string& dBInstanceId
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string ModifyDBInstanceSSLRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyDBInstanceSSLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyDBInstanceSSLRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyDBInstanceSSLRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ModifyDBInstanceSSLRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -91,14 +102,14 @@ void ModifyDBInstanceSSLRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyDBInstanceSSLRequest::getAccessKeyId()const
+int ModifyDBInstanceSSLRequest::getSSLEnabled()const
 {
-	return accessKeyId_;
+	return sSLEnabled_;
 }
 
-void ModifyDBInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifyDBInstanceSSLRequest::setSSLEnabled(int sSLEnabled)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	sSLEnabled_ = sSLEnabled;
+	setCoreParameter("SSLEnabled", std::to_string(sSLEnabled));
 }
 

@@ -36,28 +36,6 @@ void CheckAccountNameAvailableRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CheckAccountNameAvailableRequest::getAccountName()const
-{
-	return accountName_;
-}
-
-void CheckAccountNameAvailableRequest::setAccountName(const std::string& accountName)
-{
-	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
-}
-
-std::string CheckAccountNameAvailableRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CheckAccountNameAvailableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CheckAccountNameAvailableRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,15 +47,26 @@ void CheckAccountNameAvailableRequest::setClientToken(const std::string& clientT
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string CheckAccountNameAvailableRequest::getOwnerAccount()const
+std::string CheckAccountNameAvailableRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void CheckAccountNameAvailableRequest::setOwnerAccount(const std::string& ownerAccount)
+void CheckAccountNameAvailableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CheckAccountNameAvailableRequest::getAccountName()const
+{
+	return accountName_;
+}
+
+void CheckAccountNameAvailableRequest::setAccountName(const std::string& accountName)
+{
+	accountName_ = accountName;
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string CheckAccountNameAvailableRequest::getDBInstanceId()const
@@ -91,6 +80,28 @@ void CheckAccountNameAvailableRequest::setDBInstanceId(const std::string& dBInst
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string CheckAccountNameAvailableRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CheckAccountNameAvailableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CheckAccountNameAvailableRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CheckAccountNameAvailableRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long CheckAccountNameAvailableRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void CheckAccountNameAvailableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CheckAccountNameAvailableRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CheckAccountNameAvailableRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

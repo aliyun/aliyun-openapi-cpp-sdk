@@ -36,15 +36,26 @@ void ModifyDBInstanceTDERequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDBInstanceTDERequest::getDBName()const
+std::string ModifyDBInstanceTDERequest::getAccessKeyId()const
 {
-	return dBName_;
+	return accessKeyId_;
 }
 
-void ModifyDBInstanceTDERequest::setDBName(const std::string& dBName)
+void ModifyDBInstanceTDERequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstanceTDERequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstanceTDERequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceTDERequest::getResourceOwnerAccount()const
@@ -58,17 +69,6 @@ void ModifyDBInstanceTDERequest::setResourceOwnerAccount(const std::string& reso
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyDBInstanceTDERequest::getRoleArn()const
-{
-	return roleArn_;
-}
-
-void ModifyDBInstanceTDERequest::setRoleArn(const std::string& roleArn)
-{
-	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
-}
-
 std::string ModifyDBInstanceTDERequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,17 +78,6 @@ void ModifyDBInstanceTDERequest::setOwnerAccount(const std::string& ownerAccount
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyDBInstanceTDERequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyDBInstanceTDERequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceTDERequest::getEncryptionKey()const
@@ -113,6 +102,28 @@ void ModifyDBInstanceTDERequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyDBInstanceTDERequest::getDBName()const
+{
+	return dBName_;
+}
+
+void ModifyDBInstanceTDERequest::setDBName(const std::string& dBName)
+{
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
+}
+
+std::string ModifyDBInstanceTDERequest::getRoleArn()const
+{
+	return roleArn_;
+}
+
+void ModifyDBInstanceTDERequest::setRoleArn(const std::string& roleArn)
+{
+	roleArn_ = roleArn;
+	setCoreParameter("RoleArn", roleArn);
+}
+
 std::string ModifyDBInstanceTDERequest::getTDEStatus()const
 {
 	return tDEStatus_;
@@ -122,16 +133,5 @@ void ModifyDBInstanceTDERequest::setTDEStatus(const std::string& tDEStatus)
 {
 	tDEStatus_ = tDEStatus;
 	setCoreParameter("TDEStatus", tDEStatus);
-}
-
-std::string ModifyDBInstanceTDERequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBInstanceTDERequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -47,37 +47,15 @@ void AllocateInstancePrivateConnectionRequest::setConnectionStringPrefix(const s
 	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
-std::string AllocateInstancePrivateConnectionRequest::getResourceOwnerAccount()const
+std::string AllocateInstancePrivateConnectionRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void AllocateInstancePrivateConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void AllocateInstancePrivateConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string AllocateInstancePrivateConnectionRequest::getPort()const
-{
-	return port_;
-}
-
-void AllocateInstancePrivateConnectionRequest::setPort(const std::string& port)
-{
-	port_ = port;
-	setCoreParameter("Port", port);
-}
-
-std::string AllocateInstancePrivateConnectionRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void AllocateInstancePrivateConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AllocateInstancePrivateConnectionRequest::getDBInstanceId()const
@@ -91,6 +69,28 @@ void AllocateInstancePrivateConnectionRequest::setDBInstanceId(const std::string
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string AllocateInstancePrivateConnectionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void AllocateInstancePrivateConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string AllocateInstancePrivateConnectionRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void AllocateInstancePrivateConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long AllocateInstancePrivateConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +102,14 @@ void AllocateInstancePrivateConnectionRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AllocateInstancePrivateConnectionRequest::getAccessKeyId()const
+std::string AllocateInstancePrivateConnectionRequest::getPort()const
 {
-	return accessKeyId_;
+	return port_;
 }
 
-void AllocateInstancePrivateConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
+void AllocateInstancePrivateConnectionRequest::setPort(const std::string& port)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	port_ = port;
+	setCoreParameter("Port", port);
 }
 

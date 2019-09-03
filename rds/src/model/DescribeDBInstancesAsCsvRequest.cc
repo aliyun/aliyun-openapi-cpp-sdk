@@ -47,28 +47,6 @@ void DescribeDBInstancesAsCsvRequest::setResourceOwnerAccount(const std::string&
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeDBInstancesAsCsvRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeDBInstancesAsCsvRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeDBInstancesAsCsvRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long DescribeDBInstancesAsCsvRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +67,27 @@ void DescribeDBInstancesAsCsvRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDBInstancesAsCsvRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDBInstancesAsCsvRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeDBInstancesAsCsvRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

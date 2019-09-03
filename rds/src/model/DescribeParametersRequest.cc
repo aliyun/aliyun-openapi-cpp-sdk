@@ -69,17 +69,6 @@ void DescribeParametersRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeParametersRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeParametersRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long DescribeParametersRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void DescribeParametersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeParametersRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeParametersRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

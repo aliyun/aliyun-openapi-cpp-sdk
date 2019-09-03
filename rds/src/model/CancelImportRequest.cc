@@ -36,17 +36,6 @@ void CancelImportRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int CancelImportRequest::getImportId()const
-{
-	return importId_;
-}
-
-void CancelImportRequest::setImportId(int importId)
-{
-	importId_ = importId;
-	setCoreParameter("ImportId", std::to_string(importId));
-}
-
 std::string CancelImportRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,17 +58,6 @@ void CancelImportRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CancelImportRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void CancelImportRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long CancelImportRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +78,27 @@ void CancelImportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int CancelImportRequest::getImportId()const
+{
+	return importId_;
+}
+
+void CancelImportRequest::setImportId(int importId)
+{
+	importId_ = importId;
+	setCoreParameter("ImportId", std::to_string(importId));
+}
+
+std::string CancelImportRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void CancelImportRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

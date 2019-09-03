@@ -36,28 +36,6 @@ void DescribeMetaListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeMetaListRequest::getRestoreTime()const
-{
-	return restoreTime_;
-}
-
-void DescribeMetaListRequest::setRestoreTime(const std::string& restoreTime)
-{
-	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
-}
-
-std::string DescribeMetaListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeMetaListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeMetaListRequest::getClientToken()const
 {
 	return clientToken_;
@@ -80,28 +58,6 @@ void DescribeMetaListRequest::setPattern(const std::string& pattern)
 	setCoreParameter("Pattern", pattern);
 }
 
-std::string DescribeMetaListRequest::getBackupSetID()const
-{
-	return backupSetID_;
-}
-
-void DescribeMetaListRequest::setBackupSetID(const std::string& backupSetID)
-{
-	backupSetID_ = backupSetID;
-	setCoreParameter("BackupSetID", backupSetID);
-}
-
-long DescribeMetaListRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeMetaListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeMetaListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -111,28 +67,6 @@ void DescribeMetaListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeMetaListRequest::getGetDbName()const
-{
-	return getDbName_;
-}
-
-void DescribeMetaListRequest::setGetDbName(const std::string& getDbName)
-{
-	getDbName_ = getDbName;
-	setCoreParameter("GetDbName", getDbName);
-}
-
-std::string DescribeMetaListRequest::getRestoreType()const
-{
-	return restoreType_;
-}
-
-void DescribeMetaListRequest::setRestoreType(const std::string& restoreType)
-{
-	restoreType_ = restoreType;
-	setCoreParameter("RestoreType", restoreType);
 }
 
 std::string DescribeMetaListRequest::getPageSize()const
@@ -166,5 +100,71 @@ void DescribeMetaListRequest::setPageIndex(const std::string& pageIndex)
 {
 	pageIndex_ = pageIndex;
 	setCoreParameter("PageIndex", pageIndex);
+}
+
+std::string DescribeMetaListRequest::getRestoreTime()const
+{
+	return restoreTime_;
+}
+
+void DescribeMetaListRequest::setRestoreTime(const std::string& restoreTime)
+{
+	restoreTime_ = restoreTime;
+	setCoreParameter("RestoreTime", restoreTime);
+}
+
+std::string DescribeMetaListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeMetaListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeMetaListRequest::getBackupSetID()const
+{
+	return backupSetID_;
+}
+
+void DescribeMetaListRequest::setBackupSetID(const std::string& backupSetID)
+{
+	backupSetID_ = backupSetID;
+	setCoreParameter("BackupSetID", backupSetID);
+}
+
+long DescribeMetaListRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeMetaListRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeMetaListRequest::getGetDbName()const
+{
+	return getDbName_;
+}
+
+void DescribeMetaListRequest::setGetDbName(const std::string& getDbName)
+{
+	getDbName_ = getDbName;
+	setCoreParameter("GetDbName", getDbName);
+}
+
+std::string DescribeMetaListRequest::getRestoreType()const
+{
+	return restoreType_;
+}
+
+void DescribeMetaListRequest::setRestoreType(const std::string& restoreType)
+{
+	restoreType_ = restoreType;
+	setCoreParameter("RestoreType", restoreType);
 }
 

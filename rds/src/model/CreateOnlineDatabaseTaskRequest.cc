@@ -36,39 +36,6 @@ void CreateOnlineDatabaseTaskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateOnlineDatabaseTaskRequest::getMigrateTaskId()const
-{
-	return migrateTaskId_;
-}
-
-void CreateOnlineDatabaseTaskRequest::setMigrateTaskId(const std::string& migrateTaskId)
-{
-	migrateTaskId_ = migrateTaskId;
-	setCoreParameter("MigrateTaskId", migrateTaskId);
-}
-
-std::string CreateOnlineDatabaseTaskRequest::getDBName()const
-{
-	return dBName_;
-}
-
-void CreateOnlineDatabaseTaskRequest::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
-}
-
-std::string CreateOnlineDatabaseTaskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateOnlineDatabaseTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateOnlineDatabaseTaskRequest::getClientToken()const
 {
 	return clientToken_;
@@ -80,15 +47,15 @@ void CreateOnlineDatabaseTaskRequest::setClientToken(const std::string& clientTo
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string CreateOnlineDatabaseTaskRequest::getOwnerAccount()const
+std::string CreateOnlineDatabaseTaskRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void CreateOnlineDatabaseTaskRequest::setOwnerAccount(const std::string& ownerAccount)
+void CreateOnlineDatabaseTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateOnlineDatabaseTaskRequest::getDBInstanceId()const
@@ -102,15 +69,37 @@ void CreateOnlineDatabaseTaskRequest::setDBInstanceId(const std::string& dBInsta
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string CreateOnlineDatabaseTaskRequest::getCheckDBMode()const
+std::string CreateOnlineDatabaseTaskRequest::getMigrateTaskId()const
 {
-	return checkDBMode_;
+	return migrateTaskId_;
 }
 
-void CreateOnlineDatabaseTaskRequest::setCheckDBMode(const std::string& checkDBMode)
+void CreateOnlineDatabaseTaskRequest::setMigrateTaskId(const std::string& migrateTaskId)
 {
-	checkDBMode_ = checkDBMode;
-	setCoreParameter("CheckDBMode", checkDBMode);
+	migrateTaskId_ = migrateTaskId;
+	setCoreParameter("MigrateTaskId", migrateTaskId);
+}
+
+std::string CreateOnlineDatabaseTaskRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateOnlineDatabaseTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateOnlineDatabaseTaskRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateOnlineDatabaseTaskRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateOnlineDatabaseTaskRequest::getOwnerId()const
@@ -124,14 +113,25 @@ void CreateOnlineDatabaseTaskRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateOnlineDatabaseTaskRequest::getAccessKeyId()const
+std::string CreateOnlineDatabaseTaskRequest::getDBName()const
 {
-	return accessKeyId_;
+	return dBName_;
 }
 
-void CreateOnlineDatabaseTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+void CreateOnlineDatabaseTaskRequest::setDBName(const std::string& dBName)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
+}
+
+std::string CreateOnlineDatabaseTaskRequest::getCheckDBMode()const
+{
+	return checkDBMode_;
+}
+
+void CreateOnlineDatabaseTaskRequest::setCheckDBMode(const std::string& checkDBMode)
+{
+	checkDBMode_ = checkDBMode;
+	setCoreParameter("CheckDBMode", checkDBMode);
 }
 

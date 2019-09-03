@@ -37,45 +37,45 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getSpecifyCount()const;
 				void setSpecifyCount(const std::string& specifyCount);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDBInstanceClass()const;
-				void setDBInstanceClass(const std::string& dBInstanceClass);
 				std::string getEngine()const;
 				void setEngine(const std::string& engine);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
 				std::string getDBInstanceUseType()const;
 				void setDBInstanceUseType(const std::string& dBInstanceUseType);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getDBInstanceClass()const;
+				void setDBInstanceClass(const std::string& dBInstanceClass);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				std::string specifyCount_;
 				std::string engineVersion_;
-				long ownerId_;
 				std::string accessKeyId_;
-				std::string dBInstanceClass_;
 				std::string engine_;
 				std::string regionId_;
-				std::string zoneId_;
 				std::string dBInstanceUseType_;
 				std::string dBInstanceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string dBInstanceClass_;
+				std::string zoneId_;
 
 			};
 		}

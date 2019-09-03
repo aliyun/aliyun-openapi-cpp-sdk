@@ -36,17 +36,6 @@ void ModifyReadonlyInstanceDelayReplicationTimeRequest::setResourceOwnerId(long 
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getReadSQLReplicationTime()const
-{
-	return readSQLReplicationTime_;
-}
-
-void ModifyReadonlyInstanceDelayReplicationTimeRequest::setReadSQLReplicationTime(const std::string& readSQLReplicationTime)
-{
-	readSQLReplicationTime_ = readSQLReplicationTime;
-	setCoreParameter("ReadSQLReplicationTime", readSQLReplicationTime);
-}
-
 std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +45,6 @@ void ModifyReadonlyInstanceDelayReplicationTimeRequest::setResourceOwnerAccount(
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyReadonlyInstanceDelayReplicationTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ModifyReadonlyInstanceDelayReplicationTimeRequest::getOwnerId()const
@@ -89,5 +67,27 @@ void ModifyReadonlyInstanceDelayReplicationTimeRequest::setAccessKeyId(const std
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getReadSQLReplicationTime()const
+{
+	return readSQLReplicationTime_;
+}
+
+void ModifyReadonlyInstanceDelayReplicationTimeRequest::setReadSQLReplicationTime(const std::string& readSQLReplicationTime)
+{
+	readSQLReplicationTime_ = readSQLReplicationTime;
+	setCoreParameter("ReadSQLReplicationTime", readSQLReplicationTime);
+}
+
+std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyReadonlyInstanceDelayReplicationTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

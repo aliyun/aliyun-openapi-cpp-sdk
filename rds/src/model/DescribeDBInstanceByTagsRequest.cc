@@ -36,17 +36,6 @@ void DescribeDBInstanceByTagsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstanceByTagsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeDBInstanceByTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeDBInstanceByTagsRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,61 +45,6 @@ void DescribeDBInstanceByTagsRequest::setClientToken(const std::string& clientTo
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string DescribeDBInstanceByTagsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeDBInstanceByTagsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeDBInstanceByTagsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeDBInstanceByTagsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeDBInstanceByTagsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeDBInstanceByTagsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeDBInstanceByTagsRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeDBInstanceByTagsRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-long DescribeDBInstanceByTagsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeDBInstanceByTagsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeDBInstanceByTagsRequest::getPageNumber()const
@@ -135,6 +69,39 @@ void DescribeDBInstanceByTagsRequest::setAccessKeyId(const std::string& accessKe
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDBInstanceByTagsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDBInstanceByTagsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeDBInstanceByTagsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeDBInstanceByTagsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeDBInstanceByTagsRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeDBInstanceByTagsRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string DescribeDBInstanceByTagsRequest::getProxyId()const
 {
 	return proxyId_;
@@ -144,5 +111,38 @@ void DescribeDBInstanceByTagsRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
 	setCoreParameter("ProxyId", proxyId);
+}
+
+std::string DescribeDBInstanceByTagsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeDBInstanceByTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeDBInstanceByTagsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeDBInstanceByTagsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeDBInstanceByTagsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeDBInstanceByTagsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

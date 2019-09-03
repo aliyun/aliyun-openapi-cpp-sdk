@@ -37,12 +37,18 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getRestoreTime()const;
 				void setRestoreTime(const std::string& restoreTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getBackupId()const;
 				void setBackupId(const std::string& backupId);
 				std::string getOwnerAccount()const;
@@ -51,33 +57,27 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getSyncUserPrivilege()const;
 				void setSyncUserPrivilege(const std::string& syncUserPrivilege);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDbNames()const;
 				void setDbNames(const std::string& dbNames);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getTargetDBInstanceId()const;
 				void setTargetDBInstanceId(const std::string& targetDBInstanceId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string accessKeyId_;
+				std::string resourceGroupId_;
+				std::string dBInstanceId_;
 				std::string restoreTime_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
 				std::string backupId_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string syncUserPrivilege_;
-				std::string accessKeyId_;
 				std::string dbNames_;
-				std::string resourceGroupId_;
 				std::string targetDBInstanceId_;
-				std::string dBInstanceId_;
 				std::string payType_;
 
 			};

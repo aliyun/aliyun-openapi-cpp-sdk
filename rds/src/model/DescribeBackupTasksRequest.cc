@@ -58,17 +58,6 @@ void DescribeBackupTasksRequest::setFlag(const std::string& flag)
 	setCoreParameter("Flag", flag);
 }
 
-std::string DescribeBackupTasksRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeBackupTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeBackupTasksRequest::getClientToken()const
 {
 	return clientToken_;
@@ -80,15 +69,15 @@ void DescribeBackupTasksRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string DescribeBackupTasksRequest::getOwnerAccount()const
+std::string DescribeBackupTasksRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void DescribeBackupTasksRequest::setOwnerAccount(const std::string& ownerAccount)
+void DescribeBackupTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeBackupTasksRequest::getDBInstanceId()const
@@ -102,15 +91,26 @@ void DescribeBackupTasksRequest::setDBInstanceId(const std::string& dBInstanceId
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string DescribeBackupTasksRequest::getBackupMode()const
+std::string DescribeBackupTasksRequest::getResourceOwnerAccount()const
 {
-	return backupMode_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeBackupTasksRequest::setBackupMode(const std::string& backupMode)
+void DescribeBackupTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	backupMode_ = backupMode;
-	setCoreParameter("BackupMode", backupMode);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeBackupTasksRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeBackupTasksRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeBackupTasksRequest::getOwnerId()const
@@ -135,14 +135,14 @@ void DescribeBackupTasksRequest::setBackupJobStatus(const std::string& backupJob
 	setCoreParameter("BackupJobStatus", backupJobStatus);
 }
 
-std::string DescribeBackupTasksRequest::getAccessKeyId()const
+std::string DescribeBackupTasksRequest::getBackupMode()const
 {
-	return accessKeyId_;
+	return backupMode_;
 }
 
-void DescribeBackupTasksRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeBackupTasksRequest::setBackupMode(const std::string& backupMode)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	backupMode_ = backupMode;
+	setCoreParameter("BackupMode", backupMode);
 }
 

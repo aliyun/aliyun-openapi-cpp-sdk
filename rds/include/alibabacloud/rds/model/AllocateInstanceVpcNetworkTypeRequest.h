@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				AllocateInstanceVpcNetworkTypeRequest();
 				~AllocateInstanceVpcNetworkTypeRequest();
 
-				std::string getTargetVpcId()const;
-				void setTargetVpcId(const std::string& targetVpcId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTargetVpcId()const;
+				void setTargetVpcId(const std::string& targetVpcId);
 				std::string getTargetZoneId()const;
 				void setTargetZoneId(const std::string& targetZoneId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getTargetRegionId()const;
-				void setTargetRegionId(const std::string& targetRegionId);
 				std::string getTargetVSwitchId()const;
 				void setTargetVSwitchId(const std::string& targetVSwitchId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTargetRegionId()const;
+				void setTargetRegionId(const std::string& targetRegionId);
 
             private:
-				std::string targetVpcId_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string targetVpcId_;
 				std::string targetZoneId_;
+				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string dBInstanceId_;
-				std::string targetRegionId_;
 				std::string targetVSwitchId_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string targetRegionId_;
 
 			};
 		}

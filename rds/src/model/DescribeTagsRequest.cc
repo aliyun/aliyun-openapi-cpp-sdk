@@ -36,17 +36,6 @@ void DescribeTagsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeTagsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeTagsRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,50 +45,6 @@ void DescribeTagsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string DescribeTagsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeTagsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeTagsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeTagsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeTagsRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeTagsRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-long DescribeTagsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeTagsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeTagsRequest::getAccessKeyId()const
@@ -113,6 +58,28 @@ void DescribeTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeTagsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeTagsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeTagsRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeTagsRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string DescribeTagsRequest::getProxyId()const
 {
 	return proxyId_;
@@ -122,6 +89,39 @@ void DescribeTagsRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
 	setCoreParameter("ProxyId", proxyId);
+}
+
+std::string DescribeTagsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeTagsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeTagsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeTagsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeTagsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeTagsRequest::getTags()const

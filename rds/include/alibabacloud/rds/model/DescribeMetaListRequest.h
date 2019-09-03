@@ -37,45 +37,45 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRestoreTime()const;
-				void setRestoreTime(const std::string& restoreTime);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getPattern()const;
 				void setPattern(const std::string& pattern);
-				std::string getBackupSetID()const;
-				void setBackupSetID(const std::string& backupSetID);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getGetDbName()const;
-				void setGetDbName(const std::string& getDbName);
-				std::string getRestoreType()const;
-				void setRestoreType(const std::string& restoreType);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getPageIndex()const;
 				void setPageIndex(const std::string& pageIndex);
+				std::string getRestoreTime()const;
+				void setRestoreTime(const std::string& restoreTime);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getBackupSetID()const;
+				void setBackupSetID(const std::string& backupSetID);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getGetDbName()const;
+				void setGetDbName(const std::string& getDbName);
+				std::string getRestoreType()const;
+				void setRestoreType(const std::string& restoreType);
 
             private:
 				long resourceOwnerId_;
-				std::string restoreTime_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string pattern_;
-				std::string backupSetID_;
-				long ownerId_;
 				std::string accessKeyId_;
-				std::string getDbName_;
-				std::string restoreType_;
 				std::string pageSize_;
 				std::string dBInstanceId_;
 				std::string pageIndex_;
+				std::string restoreTime_;
+				std::string resourceOwnerAccount_;
+				std::string backupSetID_;
+				long ownerId_;
+				std::string getDbName_;
+				std::string restoreType_;
 
 			};
 		}

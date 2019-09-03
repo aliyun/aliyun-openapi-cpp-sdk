@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				CreateBackupRequest();
 				~CreateBackupRequest();
 
-				std::string getBackupMethod()const;
-				void setBackupMethod(const std::string& backupMethod);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getBackupStrategy()const;
 				void setBackupStrategy(const std::string& backupStrategy);
-				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getBackupType()const;
+				void setBackupType(const std::string& backupType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getBackupType()const;
-				void setBackupType(const std::string& backupType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getBackupMethod()const;
+				void setBackupMethod(const std::string& backupMethod);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
 
             private:
-				std::string backupMethod_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string backupStrategy_;
-				std::string dBName_;
+				std::string dBInstanceId_;
+				std::string backupType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string dBInstanceId_;
 				long ownerId_;
-				std::string backupType_;
-				std::string accessKeyId_;
+				std::string backupMethod_;
+				std::string dBName_;
 
 			};
 		}

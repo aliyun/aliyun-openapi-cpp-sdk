@@ -47,26 +47,15 @@ void ModifyReadWriteSplittingConnectionRequest::setConnectionStringPrefix(const 
 	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
-std::string ModifyReadWriteSplittingConnectionRequest::getResourceOwnerAccount()const
+std::string ModifyReadWriteSplittingConnectionRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void ModifyReadWriteSplittingConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ModifyReadWriteSplittingConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyReadWriteSplittingConnectionRequest::getPort()const
-{
-	return port_;
-}
-
-void ModifyReadWriteSplittingConnectionRequest::setPort(const std::string& port)
-{
-	port_ = port;
-	setCoreParameter("Port", port);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getDistributionType()const
@@ -78,6 +67,28 @@ void ModifyReadWriteSplittingConnectionRequest::setDistributionType(const std::s
 {
 	distributionType_ = distributionType;
 	setCoreParameter("DistributionType", distributionType);
+}
+
+std::string ModifyReadWriteSplittingConnectionRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string ModifyReadWriteSplittingConnectionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyReadWriteSplittingConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyReadWriteSplittingConnectionRequest::getOwnerAccount()const
@@ -102,17 +113,6 @@ void ModifyReadWriteSplittingConnectionRequest::setWeight(const std::string& wei
 	setCoreParameter("Weight", weight);
 }
 
-std::string ModifyReadWriteSplittingConnectionRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long ModifyReadWriteSplittingConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,6 +124,17 @@ void ModifyReadWriteSplittingConnectionRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyReadWriteSplittingConnectionRequest::getPort()const
+{
+	return port_;
+}
+
+void ModifyReadWriteSplittingConnectionRequest::setPort(const std::string& port)
+{
+	port_ = port;
+	setCoreParameter("Port", port);
+}
+
 std::string ModifyReadWriteSplittingConnectionRequest::getMaxDelayTime()const
 {
 	return maxDelayTime_;
@@ -133,16 +144,5 @@ void ModifyReadWriteSplittingConnectionRequest::setMaxDelayTime(const std::strin
 {
 	maxDelayTime_ = maxDelayTime;
 	setCoreParameter("MaxDelayTime", maxDelayTime);
-}
-
-std::string ModifyReadWriteSplittingConnectionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyReadWriteSplittingConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

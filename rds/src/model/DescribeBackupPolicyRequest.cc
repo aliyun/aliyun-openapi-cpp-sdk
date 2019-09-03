@@ -36,6 +36,39 @@ void DescribeBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeBackupPolicyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeBackupPolicyRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeBackupPolicyRequest::getBackupPolicyMode()const
+{
+	return backupPolicyMode_;
+}
+
+void DescribeBackupPolicyRequest::setBackupPolicyMode(const std::string& backupPolicyMode)
+{
+	backupPolicyMode_ = backupPolicyMode;
+	setCoreParameter("BackupPolicyMode", backupPolicyMode);
+}
+
 std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,17 +102,6 @@ void DescribeBackupPolicyRequest::setCompressType(const std::string& compressTyp
 	setCoreParameter("CompressType", compressType);
 }
 
-std::string DescribeBackupPolicyRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long DescribeBackupPolicyRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,27 +111,5 @@ void DescribeBackupPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeBackupPolicyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeBackupPolicyRequest::getBackupPolicyMode()const
-{
-	return backupPolicyMode_;
-}
-
-void DescribeBackupPolicyRequest::setBackupPolicyMode(const std::string& backupPolicyMode)
-{
-	backupPolicyMode_ = backupPolicyMode;
-	setCoreParameter("BackupPolicyMode", backupPolicyMode);
 }
 

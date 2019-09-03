@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				RequestServiceOfCloudDBExpertRequest();
 				~RequestServiceOfCloudDBExpertRequest();
 
-				std::string getServiceRequestParam()const;
-				void setServiceRequestParam(const std::string& serviceRequestParam);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getServiceRequestType()const;
 				void setServiceRequestType(const std::string& serviceRequestType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getServiceRequestParam()const;
+				void setServiceRequestParam(const std::string& serviceRequestParam);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
-				std::string serviceRequestParam_;
-				std::string dBInstanceId_;
 				std::string serviceRequestType_;
 				std::string accessKeyId_;
+				std::string serviceRequestParam_;
+				std::string dBInstanceId_;
 
 			};
 		}

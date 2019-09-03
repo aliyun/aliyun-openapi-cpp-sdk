@@ -36,6 +36,61 @@ void DescribeRenewalPriceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeRenewalPriceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DescribeRenewalPriceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string DescribeRenewalPriceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeRenewalPriceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeRenewalPriceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeRenewalPriceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeRenewalPriceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeRenewalPriceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeRenewalPriceRequest::getBusinessInfo()const
+{
+	return businessInfo_;
+}
+
+void DescribeRenewalPriceRequest::setBusinessInfo(const std::string& businessInfo)
+{
+	businessInfo_ = businessInfo;
+	setCoreParameter("BusinessInfo", businessInfo);
+}
+
 int DescribeRenewalPriceRequest::getQuantity()const
 {
 	return quantity_;
@@ -56,17 +111,6 @@ void DescribeRenewalPriceRequest::setResourceOwnerAccount(const std::string& res
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeRenewalPriceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void DescribeRenewalPriceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribeRenewalPriceRequest::getOwnerAccount()const
@@ -113,17 +157,6 @@ void DescribeRenewalPriceRequest::setUsedTime(const std::string& usedTime)
 	setCoreParameter("UsedTime", usedTime);
 }
 
-std::string DescribeRenewalPriceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeRenewalPriceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeRenewalPriceRequest::getDBInstanceClass()const
 {
 	return dBInstanceClass_;
@@ -135,17 +168,6 @@ void DescribeRenewalPriceRequest::setDBInstanceClass(const std::string& dBInstan
 	setCoreParameter("DBInstanceClass", dBInstanceClass);
 }
 
-std::string DescribeRenewalPriceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRenewalPriceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeRenewalPriceRequest::getPromotionCode()const
 {
 	return promotionCode_;
@@ -155,17 +177,6 @@ void DescribeRenewalPriceRequest::setPromotionCode(const std::string& promotionC
 {
 	promotionCode_ = promotionCode;
 	setCoreParameter("PromotionCode", promotionCode);
-}
-
-std::string DescribeRenewalPriceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeRenewalPriceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeRenewalPriceRequest::getTimeType()const
@@ -188,17 +199,6 @@ void DescribeRenewalPriceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
 	setCoreParameter("PayType", payType);
-}
-
-std::string DescribeRenewalPriceRequest::getBusinessInfo()const
-{
-	return businessInfo_;
-}
-
-void DescribeRenewalPriceRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
 }
 
 std::string DescribeRenewalPriceRequest::getOrderType()const

@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getReadSQLReplicationTime()const;
-				void setReadSQLReplicationTime(const std::string& readSQLReplicationTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getReadSQLReplicationTime()const;
+				void setReadSQLReplicationTime(const std::string& readSQLReplicationTime);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
 				long resourceOwnerId_;
-				std::string readSQLReplicationTime_;
 				std::string resourceOwnerAccount_;
-				std::string dBInstanceId_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string readSQLReplicationTime_;
+				std::string dBInstanceId_;
 
 			};
 		}

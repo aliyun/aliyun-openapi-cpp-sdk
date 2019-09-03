@@ -25,17 +25,6 @@ DescribeDiagnosticReportListRequest::DescribeDiagnosticReportListRequest() :
 DescribeDiagnosticReportListRequest::~DescribeDiagnosticReportListRequest()
 {}
 
-std::string DescribeDiagnosticReportListRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeDiagnosticReportListRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string DescribeDiagnosticReportListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DescribeDiagnosticReportListRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDiagnosticReportListRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeDiagnosticReportListRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

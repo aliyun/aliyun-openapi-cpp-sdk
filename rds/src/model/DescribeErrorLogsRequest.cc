@@ -36,61 +36,6 @@ void DescribeErrorLogsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeErrorLogsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeErrorLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeErrorLogsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeErrorLogsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeErrorLogsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeErrorLogsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeErrorLogsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeErrorLogsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeErrorLogsRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeErrorLogsRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string DescribeErrorLogsRequest::getStartTime()const
 {
 	return startTime_;
@@ -100,17 +45,6 @@ void DescribeErrorLogsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeErrorLogsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeErrorLogsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeErrorLogsRequest::getPageNumber()const
@@ -133,5 +67,71 @@ void DescribeErrorLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int DescribeErrorLogsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeErrorLogsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeErrorLogsRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeErrorLogsRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeErrorLogsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeErrorLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeErrorLogsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeErrorLogsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeErrorLogsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeErrorLogsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeErrorLogsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeErrorLogsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

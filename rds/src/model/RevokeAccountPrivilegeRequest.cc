@@ -36,6 +36,17 @@ void RevokeAccountPrivilegeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RevokeAccountPrivilegeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RevokeAccountPrivilegeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RevokeAccountPrivilegeRequest::getAccountName()const
 {
 	return accountName_;
@@ -47,15 +58,15 @@ void RevokeAccountPrivilegeRequest::setAccountName(const std::string& accountNam
 	setCoreParameter("AccountName", accountName);
 }
 
-std::string RevokeAccountPrivilegeRequest::getDBName()const
+std::string RevokeAccountPrivilegeRequest::getDBInstanceId()const
 {
-	return dBName_;
+	return dBInstanceId_;
 }
 
-void RevokeAccountPrivilegeRequest::setDBName(const std::string& dBName)
+void RevokeAccountPrivilegeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string RevokeAccountPrivilegeRequest::getResourceOwnerAccount()const
@@ -80,17 +91,6 @@ void RevokeAccountPrivilegeRequest::setOwnerAccount(const std::string& ownerAcco
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string RevokeAccountPrivilegeRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void RevokeAccountPrivilegeRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long RevokeAccountPrivilegeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +102,14 @@ void RevokeAccountPrivilegeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string RevokeAccountPrivilegeRequest::getAccessKeyId()const
+std::string RevokeAccountPrivilegeRequest::getDBName()const
 {
-	return accessKeyId_;
+	return dBName_;
 }
 
-void RevokeAccountPrivilegeRequest::setAccessKeyId(const std::string& accessKeyId)
+void RevokeAccountPrivilegeRequest::setDBName(const std::string& dBName)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
 }
 

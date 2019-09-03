@@ -36,28 +36,6 @@ void RestoreTableRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RestoreTableRequest::getRestoreTime()const
-{
-	return restoreTime_;
-}
-
-void RestoreTableRequest::setRestoreTime(const std::string& restoreTime)
-{
-	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
-}
-
-std::string RestoreTableRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void RestoreTableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string RestoreTableRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,26 +47,15 @@ void RestoreTableRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string RestoreTableRequest::getBackupId()const
+std::string RestoreTableRequest::getAccessKeyId()const
 {
-	return backupId_;
+	return accessKeyId_;
 }
 
-void RestoreTableRequest::setBackupId(const std::string& backupId)
+void RestoreTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
-}
-
-std::string RestoreTableRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void RestoreTableRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RestoreTableRequest::getTableMeta()const
@@ -113,6 +80,50 @@ void RestoreTableRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string RestoreTableRequest::getRestoreTime()const
+{
+	return restoreTime_;
+}
+
+void RestoreTableRequest::setRestoreTime(const std::string& restoreTime)
+{
+	restoreTime_ = restoreTime;
+	setCoreParameter("RestoreTime", restoreTime);
+}
+
+std::string RestoreTableRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void RestoreTableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string RestoreTableRequest::getBackupId()const
+{
+	return backupId_;
+}
+
+void RestoreTableRequest::setBackupId(const std::string& backupId)
+{
+	backupId_ = backupId;
+	setCoreParameter("BackupId", backupId);
+}
+
+std::string RestoreTableRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void RestoreTableRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long RestoreTableRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,16 +133,5 @@ void RestoreTableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RestoreTableRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RestoreTableRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -47,17 +47,6 @@ void SwitchDBInstanceHARequest::setResourceOwnerAccount(const std::string& resou
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string SwitchDBInstanceHARequest::getEffectiveTime()const
-{
-	return effectiveTime_;
-}
-
-void SwitchDBInstanceHARequest::setEffectiveTime(const std::string& effectiveTime)
-{
-	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
-}
-
 std::string SwitchDBInstanceHARequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -67,6 +56,39 @@ void SwitchDBInstanceHARequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long SwitchDBInstanceHARequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SwitchDBInstanceHARequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SwitchDBInstanceHARequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SwitchDBInstanceHARequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SwitchDBInstanceHARequest::getEffectiveTime()const
+{
+	return effectiveTime_;
+}
+
+void SwitchDBInstanceHARequest::setEffectiveTime(const std::string& effectiveTime)
+{
+	effectiveTime_ = effectiveTime;
+	setCoreParameter("EffectiveTime", effectiveTime);
 }
 
 std::string SwitchDBInstanceHARequest::getDBInstanceId()const
@@ -91,17 +113,6 @@ void SwitchDBInstanceHARequest::setForce(const std::string& force)
 	setCoreParameter("Force", force);
 }
 
-long SwitchDBInstanceHARequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SwitchDBInstanceHARequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string SwitchDBInstanceHARequest::getNodeId()const
 {
 	return nodeId_;
@@ -122,16 +133,5 @@ void SwitchDBInstanceHARequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
 	setCoreParameter("Operation", operation);
-}
-
-std::string SwitchDBInstanceHARequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SwitchDBInstanceHARequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

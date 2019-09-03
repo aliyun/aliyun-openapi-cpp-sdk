@@ -36,37 +36,26 @@ void DescribeSQLLogFilesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSQLLogFilesRequest::getFileName()const
+int DescribeSQLLogFilesRequest::getPageNumber()const
 {
-	return fileName_;
+	return pageNumber_;
 }
 
-void DescribeSQLLogFilesRequest::setFileName(const std::string& fileName)
+void DescribeSQLLogFilesRequest::setPageNumber(int pageNumber)
 {
-	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeSQLLogFilesRequest::getResourceOwnerAccount()const
+std::string DescribeSQLLogFilesRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void DescribeSQLLogFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeSQLLogFilesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeSQLLogFilesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeSQLLogFilesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeSQLLogFilesRequest::getPageSize()const
@@ -91,6 +80,28 @@ void DescribeSQLLogFilesRequest::setDBInstanceId(const std::string& dBInstanceId
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeSQLLogFilesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSQLLogFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeSQLLogFilesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeSQLLogFilesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeSQLLogFilesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,25 +113,14 @@ void DescribeSQLLogFilesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeSQLLogFilesRequest::getPageNumber()const
+std::string DescribeSQLLogFilesRequest::getFileName()const
 {
-	return pageNumber_;
+	return fileName_;
 }
 
-void DescribeSQLLogFilesRequest::setPageNumber(int pageNumber)
+void DescribeSQLLogFilesRequest::setFileName(const std::string& fileName)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeSQLLogFilesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeSQLLogFilesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	fileName_ = fileName;
+	setCoreParameter("FileName", fileName);
 }
 

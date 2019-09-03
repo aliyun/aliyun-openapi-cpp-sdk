@@ -339,42 +339,6 @@ RdsClient::DescribeDBInstanceMonitorOutcomeCallable RdsClient::describeDBInstanc
 	return task->get_future();
 }
 
-RdsClient::ModifyAccountDescriptionOutcome RdsClient::modifyAccountDescription(const ModifyAccountDescriptionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyAccountDescriptionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyAccountDescriptionOutcome(ModifyAccountDescriptionResult(outcome.result()));
-	else
-		return ModifyAccountDescriptionOutcome(outcome.error());
-}
-
-void RdsClient::modifyAccountDescriptionAsync(const ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyAccountDescription(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyAccountDescriptionOutcomeCallable RdsClient::modifyAccountDescriptionCallable(const ModifyAccountDescriptionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyAccountDescriptionOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyAccountDescription(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeDBInstanceHAConfigOutcome RdsClient::describeDBInstanceHAConfig(const DescribeDBInstanceHAConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +405,42 @@ RdsClient::CreateReadOnlyDBInstanceOutcomeCallable RdsClient::createReadOnlyDBIn
 			[this, request]()
 			{
 			return this->createReadOnlyDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyAccountDescriptionOutcome RdsClient::modifyAccountDescription(const ModifyAccountDescriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAccountDescriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAccountDescriptionOutcome(ModifyAccountDescriptionResult(outcome.result()));
+	else
+		return ModifyAccountDescriptionOutcome(outcome.error());
+}
+
+void RdsClient::modifyAccountDescriptionAsync(const ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAccountDescription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyAccountDescriptionOutcomeCallable RdsClient::modifyAccountDescriptionCallable(const ModifyAccountDescriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAccountDescriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAccountDescription(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +555,42 @@ RdsClient::ModifyParameterOutcomeCallable RdsClient::modifyParameterCallable(con
 	return task->get_future();
 }
 
+RdsClient::PreCheckCreateOrderForModifyOutcome RdsClient::preCheckCreateOrderForModify(const PreCheckCreateOrderForModifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreCheckCreateOrderForModifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreCheckCreateOrderForModifyOutcome(PreCheckCreateOrderForModifyResult(outcome.result()));
+	else
+		return PreCheckCreateOrderForModifyOutcome(outcome.error());
+}
+
+void RdsClient::preCheckCreateOrderForModifyAsync(const PreCheckCreateOrderForModifyRequest& request, const PreCheckCreateOrderForModifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preCheckCreateOrderForModify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::PreCheckCreateOrderForModifyOutcomeCallable RdsClient::preCheckCreateOrderForModifyCallable(const PreCheckCreateOrderForModifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreCheckCreateOrderForModifyOutcome()>>(
+			[this, request]()
+			{
+			return this->preCheckCreateOrderForModify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::UpgradeDBInstanceEngineVersionOutcome RdsClient::upgradeDBInstanceEngineVersion(const UpgradeDBInstanceEngineVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,42 +663,6 @@ RdsClient::ModifyDBInstanceConnectionStringOutcomeCallable RdsClient::modifyDBIn
 	return task->get_future();
 }
 
-RdsClient::RestartDBInstanceOutcome RdsClient::restartDBInstance(const RestartDBInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RestartDBInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RestartDBInstanceOutcome(RestartDBInstanceResult(outcome.result()));
-	else
-		return RestartDBInstanceOutcome(outcome.error());
-}
-
-void RdsClient::restartDBInstanceAsync(const RestartDBInstanceRequest& request, const RestartDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, restartDBInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::RestartDBInstanceOutcomeCallable RdsClient::restartDBInstanceCallable(const RestartDBInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RestartDBInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->restartDBInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::CheckAccountNameAvailableOutcome RdsClient::checkAccountNameAvailable(const CheckAccountNameAvailableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +693,42 @@ RdsClient::CheckAccountNameAvailableOutcomeCallable RdsClient::checkAccountNameA
 			[this, request]()
 			{
 			return this->checkAccountNameAvailable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::RestartDBInstanceOutcome RdsClient::restartDBInstance(const RestartDBInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartDBInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartDBInstanceOutcome(RestartDBInstanceResult(outcome.result()));
+	else
+		return RestartDBInstanceOutcome(outcome.error());
+}
+
+void RdsClient::restartDBInstanceAsync(const RestartDBInstanceRequest& request, const RestartDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartDBInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::RestartDBInstanceOutcomeCallable RdsClient::restartDBInstanceCallable(const RestartDBInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartDBInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->restartDBInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,42 +1059,6 @@ RdsClient::ModifyDBInstanceNetworkExpireTimeOutcomeCallable RdsClient::modifyDBI
 	return task->get_future();
 }
 
-RdsClient::DescribeModifyParameterLogOutcome RdsClient::describeModifyParameterLog(const DescribeModifyParameterLogRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeModifyParameterLogOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeModifyParameterLogOutcome(DescribeModifyParameterLogResult(outcome.result()));
-	else
-		return DescribeModifyParameterLogOutcome(outcome.error());
-}
-
-void RdsClient::describeModifyParameterLogAsync(const DescribeModifyParameterLogRequest& request, const DescribeModifyParameterLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeModifyParameterLog(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeModifyParameterLogOutcomeCallable RdsClient::describeModifyParameterLogCallable(const DescribeModifyParameterLogRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeModifyParameterLogOutcome()>>(
-			[this, request]()
-			{
-			return this->describeModifyParameterLog(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::CreateAccountOutcome RdsClient::createAccount(const CreateAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1089,42 @@ RdsClient::CreateAccountOutcomeCallable RdsClient::createAccountCallable(const C
 			[this, request]()
 			{
 			return this->createAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeModifyParameterLogOutcome RdsClient::describeModifyParameterLog(const DescribeModifyParameterLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeModifyParameterLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeModifyParameterLogOutcome(DescribeModifyParameterLogResult(outcome.result()));
+	else
+		return DescribeModifyParameterLogOutcome(outcome.error());
+}
+
+void RdsClient::describeModifyParameterLogAsync(const DescribeModifyParameterLogRequest& request, const DescribeModifyParameterLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeModifyParameterLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeModifyParameterLogOutcomeCallable RdsClient::describeModifyParameterLogCallable(const DescribeModifyParameterLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeModifyParameterLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeModifyParameterLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1347,42 +1383,6 @@ RdsClient::ModifyInstanceCrossBackupPolicyOutcomeCallable RdsClient::modifyInsta
 	return task->get_future();
 }
 
-RdsClient::DescribeSQLLogFilesOutcome RdsClient::describeSQLLogFiles(const DescribeSQLLogFilesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLLogFilesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLLogFilesOutcome(DescribeSQLLogFilesResult(outcome.result()));
-	else
-		return DescribeSQLLogFilesOutcome(outcome.error());
-}
-
-void RdsClient::describeSQLLogFilesAsync(const DescribeSQLLogFilesRequest& request, const DescribeSQLLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLLogFiles(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeSQLLogFilesOutcomeCallable RdsClient::describeSQLLogFilesCallable(const DescribeSQLLogFilesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLLogFilesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLLogFiles(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeAvailableCrossRegionOutcome RdsClient::describeAvailableCrossRegion(const DescribeAvailableCrossRegionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1413,42 @@ RdsClient::DescribeAvailableCrossRegionOutcomeCallable RdsClient::describeAvaila
 			[this, request]()
 			{
 			return this->describeAvailableCrossRegion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeSQLLogFilesOutcome RdsClient::describeSQLLogFiles(const DescribeSQLLogFilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSQLLogFilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSQLLogFilesOutcome(DescribeSQLLogFilesResult(outcome.result()));
+	else
+		return DescribeSQLLogFilesOutcome(outcome.error());
+}
+
+void RdsClient::describeSQLLogFilesAsync(const DescribeSQLLogFilesRequest& request, const DescribeSQLLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSQLLogFiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeSQLLogFilesOutcomeCallable RdsClient::describeSQLLogFilesCallable(const DescribeSQLLogFilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSQLLogFilesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSQLLogFiles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1527,6 +1563,42 @@ RdsClient::ModifyBackupPolicyOutcomeCallable RdsClient::modifyBackupPolicyCallab
 	return task->get_future();
 }
 
+RdsClient::PreCheckCreateOrderForTempUpgradeOutcome RdsClient::preCheckCreateOrderForTempUpgrade(const PreCheckCreateOrderForTempUpgradeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreCheckCreateOrderForTempUpgradeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreCheckCreateOrderForTempUpgradeOutcome(PreCheckCreateOrderForTempUpgradeResult(outcome.result()));
+	else
+		return PreCheckCreateOrderForTempUpgradeOutcome(outcome.error());
+}
+
+void RdsClient::preCheckCreateOrderForTempUpgradeAsync(const PreCheckCreateOrderForTempUpgradeRequest& request, const PreCheckCreateOrderForTempUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preCheckCreateOrderForTempUpgrade(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::PreCheckCreateOrderForTempUpgradeOutcomeCallable RdsClient::preCheckCreateOrderForTempUpgradeCallable(const PreCheckCreateOrderForTempUpgradeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreCheckCreateOrderForTempUpgradeOutcome()>>(
+			[this, request]()
+			{
+			return this->preCheckCreateOrderForTempUpgrade(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::ModifyReplicaDescriptionOutcome RdsClient::modifyReplicaDescription(const ModifyReplicaDescriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1599,42 +1671,6 @@ RdsClient::DescribeParametersOutcomeCallable RdsClient::describeParametersCallab
 	return task->get_future();
 }
 
-RdsClient::AddTagsToResourceOutcome RdsClient::addTagsToResource(const AddTagsToResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddTagsToResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddTagsToResourceOutcome(AddTagsToResourceResult(outcome.result()));
-	else
-		return AddTagsToResourceOutcome(outcome.error());
-}
-
-void RdsClient::addTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addTagsToResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::AddTagsToResourceOutcomeCallable RdsClient::addTagsToResourceCallable(const AddTagsToResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddTagsToResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->addTagsToResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeBinlogFilesOutcome RdsClient::describeBinlogFiles(const DescribeBinlogFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,6 +1707,42 @@ RdsClient::DescribeBinlogFilesOutcomeCallable RdsClient::describeBinlogFilesCall
 	return task->get_future();
 }
 
+RdsClient::AddTagsToResourceOutcome RdsClient::addTagsToResource(const AddTagsToResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddTagsToResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddTagsToResourceOutcome(AddTagsToResourceResult(outcome.result()));
+	else
+		return AddTagsToResourceOutcome(outcome.error());
+}
+
+void RdsClient::addTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addTagsToResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::AddTagsToResourceOutcomeCallable RdsClient::addTagsToResourceCallable(const AddTagsToResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddTagsToResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->addTagsToResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeDBInstanceProxyConfigurationOutcome RdsClient::describeDBInstanceProxyConfiguration(const DescribeDBInstanceProxyConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +1773,42 @@ RdsClient::DescribeDBInstanceProxyConfigurationOutcomeCallable RdsClient::descri
 			[this, request]()
 			{
 			return this->describeDBInstanceProxyConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::PreCheckCreateOrderOutcome RdsClient::preCheckCreateOrder(const PreCheckCreateOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreCheckCreateOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreCheckCreateOrderOutcome(PreCheckCreateOrderResult(outcome.result()));
+	else
+		return PreCheckCreateOrderOutcome(outcome.error());
+}
+
+void RdsClient::preCheckCreateOrderAsync(const PreCheckCreateOrderRequest& request, const PreCheckCreateOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preCheckCreateOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::PreCheckCreateOrderOutcomeCallable RdsClient::preCheckCreateOrderCallable(const PreCheckCreateOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreCheckCreateOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->preCheckCreateOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1959,6 +2067,42 @@ RdsClient::AllocateInstancePublicConnectionOutcomeCallable RdsClient::allocateIn
 	return task->get_future();
 }
 
+RdsClient::PreCheckDBInstanceOperationOutcome RdsClient::preCheckDBInstanceOperation(const PreCheckDBInstanceOperationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreCheckDBInstanceOperationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreCheckDBInstanceOperationOutcome(PreCheckDBInstanceOperationResult(outcome.result()));
+	else
+		return PreCheckDBInstanceOperationOutcome(outcome.error());
+}
+
+void RdsClient::preCheckDBInstanceOperationAsync(const PreCheckDBInstanceOperationRequest& request, const PreCheckDBInstanceOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preCheckDBInstanceOperation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::PreCheckDBInstanceOperationOutcomeCallable RdsClient::preCheckDBInstanceOperationCallable(const PreCheckDBInstanceOperationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreCheckDBInstanceOperationOutcome()>>(
+			[this, request]()
+			{
+			return this->preCheckDBInstanceOperation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeDBInstanceAttributeOutcome RdsClient::describeDBInstanceAttribute(const DescribeDBInstanceAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1995,6 +2139,42 @@ RdsClient::DescribeDBInstanceAttributeOutcomeCallable RdsClient::describeDBInsta
 	return task->get_future();
 }
 
+RdsClient::PreCheckCreateOrderForDeferOutcome RdsClient::preCheckCreateOrderForDefer(const PreCheckCreateOrderForDeferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreCheckCreateOrderForDeferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreCheckCreateOrderForDeferOutcome(PreCheckCreateOrderForDeferResult(outcome.result()));
+	else
+		return PreCheckCreateOrderForDeferOutcome(outcome.error());
+}
+
+void RdsClient::preCheckCreateOrderForDeferAsync(const PreCheckCreateOrderForDeferRequest& request, const PreCheckCreateOrderForDeferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preCheckCreateOrderForDefer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::PreCheckCreateOrderForDeferOutcomeCallable RdsClient::preCheckCreateOrderForDeferCallable(const PreCheckCreateOrderForDeferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreCheckCreateOrderForDeferOutcome()>>(
+			[this, request]()
+			{
+			return this->preCheckCreateOrderForDefer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::CheckInstanceExistOutcome RdsClient::checkInstanceExist(const CheckInstanceExistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2025,6 +2205,42 @@ RdsClient::CheckInstanceExistOutcomeCallable RdsClient::checkInstanceExistCallab
 			[this, request]()
 			{
 			return this->checkInstanceExist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::PreCheckCreateOrderForCloneOutcome RdsClient::preCheckCreateOrderForClone(const PreCheckCreateOrderForCloneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreCheckCreateOrderForCloneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreCheckCreateOrderForCloneOutcome(PreCheckCreateOrderForCloneResult(outcome.result()));
+	else
+		return PreCheckCreateOrderForCloneOutcome(outcome.error());
+}
+
+void RdsClient::preCheckCreateOrderForCloneAsync(const PreCheckCreateOrderForCloneRequest& request, const PreCheckCreateOrderForCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preCheckCreateOrderForClone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::PreCheckCreateOrderForCloneOutcomeCallable RdsClient::preCheckCreateOrderForCloneCallable(const PreCheckCreateOrderForCloneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreCheckCreateOrderForCloneOutcome()>>(
+			[this, request]()
+			{
+			return this->preCheckCreateOrderForClone(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2391,42 +2607,6 @@ RdsClient::DescribeInstanceAutoRenewalAttributeOutcomeCallable RdsClient::descri
 	return task->get_future();
 }
 
-RdsClient::SwitchDBInstanceVpcOutcome RdsClient::switchDBInstanceVpc(const SwitchDBInstanceVpcRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SwitchDBInstanceVpcOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SwitchDBInstanceVpcOutcome(SwitchDBInstanceVpcResult(outcome.result()));
-	else
-		return SwitchDBInstanceVpcOutcome(outcome.error());
-}
-
-void RdsClient::switchDBInstanceVpcAsync(const SwitchDBInstanceVpcRequest& request, const SwitchDBInstanceVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, switchDBInstanceVpc(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::SwitchDBInstanceVpcOutcomeCallable RdsClient::switchDBInstanceVpcCallable(const SwitchDBInstanceVpcRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SwitchDBInstanceVpcOutcome()>>(
-			[this, request]()
-			{
-			return this->switchDBInstanceVpc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::RestoreDBInstanceOutcome RdsClient::restoreDBInstance(const RestoreDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2457,6 +2637,42 @@ RdsClient::RestoreDBInstanceOutcomeCallable RdsClient::restoreDBInstanceCallable
 			[this, request]()
 			{
 			return this->restoreDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::SwitchDBInstanceVpcOutcome RdsClient::switchDBInstanceVpc(const SwitchDBInstanceVpcRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchDBInstanceVpcOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchDBInstanceVpcOutcome(SwitchDBInstanceVpcResult(outcome.result()));
+	else
+		return SwitchDBInstanceVpcOutcome(outcome.error());
+}
+
+void RdsClient::switchDBInstanceVpcAsync(const SwitchDBInstanceVpcRequest& request, const SwitchDBInstanceVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchDBInstanceVpc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::SwitchDBInstanceVpcOutcomeCallable RdsClient::switchDBInstanceVpcCallable(const SwitchDBInstanceVpcRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchDBInstanceVpcOutcome()>>(
+			[this, request]()
+			{
+			return this->switchDBInstanceVpc(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2745,6 +2961,42 @@ RdsClient::DescribeMigrateTasksForSQLServerOutcomeCallable RdsClient::describeMi
 			[this, request]()
 			{
 			return this->describeMigrateTasksForSQLServer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyHASwitchConfigOutcome RdsClient::modifyHASwitchConfig(const ModifyHASwitchConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyHASwitchConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyHASwitchConfigOutcome(ModifyHASwitchConfigResult(outcome.result()));
+	else
+		return ModifyHASwitchConfigOutcome(outcome.error());
+}
+
+void RdsClient::modifyHASwitchConfigAsync(const ModifyHASwitchConfigRequest& request, const ModifyHASwitchConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyHASwitchConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyHASwitchConfigOutcomeCallable RdsClient::modifyHASwitchConfigCallable(const ModifyHASwitchConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyHASwitchConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyHASwitchConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3075,6 +3327,42 @@ RdsClient::DescribeDBInstancesOutcomeCallable RdsClient::describeDBInstancesCall
 	return task->get_future();
 }
 
+RdsClient::DescribeActionEventPolicyOutcome RdsClient::describeActionEventPolicy(const DescribeActionEventPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActionEventPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActionEventPolicyOutcome(DescribeActionEventPolicyResult(outcome.result()));
+	else
+		return DescribeActionEventPolicyOutcome(outcome.error());
+}
+
+void RdsClient::describeActionEventPolicyAsync(const DescribeActionEventPolicyRequest& request, const DescribeActionEventPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActionEventPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeActionEventPolicyOutcomeCallable RdsClient::describeActionEventPolicyCallable(const DescribeActionEventPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActionEventPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActionEventPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::RequestServiceOfCloudDBExpertOutcome RdsClient::requestServiceOfCloudDBExpert(const RequestServiceOfCloudDBExpertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3219,42 +3507,6 @@ RdsClient::CreateDBInstanceReplicaOutcomeCallable RdsClient::createDBInstanceRep
 	return task->get_future();
 }
 
-RdsClient::AllocateInstancePrivateConnectionOutcome RdsClient::allocateInstancePrivateConnection(const AllocateInstancePrivateConnectionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AllocateInstancePrivateConnectionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AllocateInstancePrivateConnectionOutcome(AllocateInstancePrivateConnectionResult(outcome.result()));
-	else
-		return AllocateInstancePrivateConnectionOutcome(outcome.error());
-}
-
-void RdsClient::allocateInstancePrivateConnectionAsync(const AllocateInstancePrivateConnectionRequest& request, const AllocateInstancePrivateConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, allocateInstancePrivateConnection(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::AllocateInstancePrivateConnectionOutcomeCallable RdsClient::allocateInstancePrivateConnectionCallable(const AllocateInstancePrivateConnectionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AllocateInstancePrivateConnectionOutcome()>>(
-			[this, request]()
-			{
-			return this->allocateInstancePrivateConnection(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::RevokeAccountPrivilegeOutcome RdsClient::revokeAccountPrivilege(const RevokeAccountPrivilegeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3291,36 +3543,36 @@ RdsClient::RevokeAccountPrivilegeOutcomeCallable RdsClient::revokeAccountPrivile
 	return task->get_future();
 }
 
-RdsClient::DescribeParameterTemplatesOutcome RdsClient::describeParameterTemplates(const DescribeParameterTemplatesRequest &request) const
+RdsClient::AllocateInstancePrivateConnectionOutcome RdsClient::allocateInstancePrivateConnection(const AllocateInstancePrivateConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeParameterTemplatesOutcome(endpointOutcome.error());
+		return AllocateInstancePrivateConnectionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeParameterTemplatesOutcome(DescribeParameterTemplatesResult(outcome.result()));
+		return AllocateInstancePrivateConnectionOutcome(AllocateInstancePrivateConnectionResult(outcome.result()));
 	else
-		return DescribeParameterTemplatesOutcome(outcome.error());
+		return AllocateInstancePrivateConnectionOutcome(outcome.error());
 }
 
-void RdsClient::describeParameterTemplatesAsync(const DescribeParameterTemplatesRequest& request, const DescribeParameterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void RdsClient::allocateInstancePrivateConnectionAsync(const AllocateInstancePrivateConnectionRequest& request, const AllocateInstancePrivateConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeParameterTemplates(request), context);
+		handler(this, request, allocateInstancePrivateConnection(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-RdsClient::DescribeParameterTemplatesOutcomeCallable RdsClient::describeParameterTemplatesCallable(const DescribeParameterTemplatesRequest &request) const
+RdsClient::AllocateInstancePrivateConnectionOutcomeCallable RdsClient::allocateInstancePrivateConnectionCallable(const AllocateInstancePrivateConnectionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeParameterTemplatesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AllocateInstancePrivateConnectionOutcome()>>(
 			[this, request]()
 			{
-			return this->describeParameterTemplates(request);
+			return this->allocateInstancePrivateConnection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3357,6 +3609,42 @@ RdsClient::DescibeImportsFromDatabaseOutcomeCallable RdsClient::descibeImportsFr
 			[this, request]()
 			{
 			return this->descibeImportsFromDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeParameterTemplatesOutcome RdsClient::describeParameterTemplates(const DescribeParameterTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterTemplatesOutcome(DescribeParameterTemplatesResult(outcome.result()));
+	else
+		return DescribeParameterTemplatesOutcome(outcome.error());
+}
+
+void RdsClient::describeParameterTemplatesAsync(const DescribeParameterTemplatesRequest& request, const DescribeParameterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeParameterTemplatesOutcomeCallable RdsClient::describeParameterTemplatesCallable(const DescribeParameterTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3471,42 +3759,6 @@ RdsClient::CopyDatabaseOutcomeCallable RdsClient::copyDatabaseCallable(const Cop
 	return task->get_future();
 }
 
-RdsClient::ModifyDBInstanceSSLOutcome RdsClient::modifyDBInstanceSSL(const ModifyDBInstanceSSLRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDBInstanceSSLOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDBInstanceSSLOutcome(ModifyDBInstanceSSLResult(outcome.result()));
-	else
-		return ModifyDBInstanceSSLOutcome(outcome.error());
-}
-
-void RdsClient::modifyDBInstanceSSLAsync(const ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDBInstanceSSL(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyDBInstanceSSLOutcomeCallable RdsClient::modifyDBInstanceSSLCallable(const ModifyDBInstanceSSLRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSSLOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDBInstanceSSL(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::CreateDBInstanceOutcome RdsClient::createDBInstance(const CreateDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3537,6 +3789,42 @@ RdsClient::CreateDBInstanceOutcomeCallable RdsClient::createDBInstanceCallable(c
 			[this, request]()
 			{
 			return this->createDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyDBInstanceSSLOutcome RdsClient::modifyDBInstanceSSL(const ModifyDBInstanceSSLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBInstanceSSLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBInstanceSSLOutcome(ModifyDBInstanceSSLResult(outcome.result()));
+	else
+		return ModifyDBInstanceSSLOutcome(outcome.error());
+}
+
+void RdsClient::modifyDBInstanceSSLAsync(const ModifyDBInstanceSSLRequest& request, const ModifyDBInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBInstanceSSL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyDBInstanceSSLOutcomeCallable RdsClient::modifyDBInstanceSSLCallable(const ModifyDBInstanceSSLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSSLOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBInstanceSSL(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3651,42 +3939,6 @@ RdsClient::ModifyDBInstanceConnectionModeOutcomeCallable RdsClient::modifyDBInst
 	return task->get_future();
 }
 
-RdsClient::DescribeDBInstanceNetInfoOutcome RdsClient::describeDBInstanceNetInfo(const DescribeDBInstanceNetInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBInstanceNetInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBInstanceNetInfoOutcome(DescribeDBInstanceNetInfoResult(outcome.result()));
-	else
-		return DescribeDBInstanceNetInfoOutcome(outcome.error());
-}
-
-void RdsClient::describeDBInstanceNetInfoAsync(const DescribeDBInstanceNetInfoRequest& request, const DescribeDBInstanceNetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBInstanceNetInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeDBInstanceNetInfoOutcomeCallable RdsClient::describeDBInstanceNetInfoCallable(const DescribeDBInstanceNetInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceNetInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBInstanceNetInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeAvailableResourceOutcome RdsClient::describeAvailableResource(const DescribeAvailableResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3717,6 +3969,42 @@ RdsClient::DescribeAvailableResourceOutcomeCallable RdsClient::describeAvailable
 			[this, request]()
 			{
 			return this->describeAvailableResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeDBInstanceNetInfoOutcome RdsClient::describeDBInstanceNetInfo(const DescribeDBInstanceNetInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceNetInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceNetInfoOutcome(DescribeDBInstanceNetInfoResult(outcome.result()));
+	else
+		return DescribeDBInstanceNetInfoOutcome(outcome.error());
+}
+
+void RdsClient::describeDBInstanceNetInfoAsync(const DescribeDBInstanceNetInfoRequest& request, const DescribeDBInstanceNetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceNetInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDBInstanceNetInfoOutcomeCallable RdsClient::describeDBInstanceNetInfoCallable(const DescribeDBInstanceNetInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceNetInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceNetInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3831,6 +4119,42 @@ RdsClient::ModifyDBInstanceAutoUpgradeMinorVersionOutcomeCallable RdsClient::mod
 	return task->get_future();
 }
 
+RdsClient::PreCheckCreateOrderForDegradeOutcome RdsClient::preCheckCreateOrderForDegrade(const PreCheckCreateOrderForDegradeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreCheckCreateOrderForDegradeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreCheckCreateOrderForDegradeOutcome(PreCheckCreateOrderForDegradeResult(outcome.result()));
+	else
+		return PreCheckCreateOrderForDegradeOutcome(outcome.error());
+}
+
+void RdsClient::preCheckCreateOrderForDegradeAsync(const PreCheckCreateOrderForDegradeRequest& request, const PreCheckCreateOrderForDegradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preCheckCreateOrderForDegrade(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::PreCheckCreateOrderForDegradeOutcomeCallable RdsClient::preCheckCreateOrderForDegradeCallable(const PreCheckCreateOrderForDegradeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreCheckCreateOrderForDegradeOutcome()>>(
+			[this, request]()
+			{
+			return this->preCheckCreateOrderForDegrade(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::EvaluateSupportByokShowOutcome RdsClient::evaluateSupportByokShow(const EvaluateSupportByokShowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3939,6 +4263,42 @@ RdsClient::CalculateDBInstanceWeightOutcomeCallable RdsClient::calculateDBInstan
 	return task->get_future();
 }
 
+RdsClient::DescribeHASwitchConfigOutcome RdsClient::describeHASwitchConfig(const DescribeHASwitchConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHASwitchConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHASwitchConfigOutcome(DescribeHASwitchConfigResult(outcome.result()));
+	else
+		return DescribeHASwitchConfigOutcome(outcome.error());
+}
+
+void RdsClient::describeHASwitchConfigAsync(const DescribeHASwitchConfigRequest& request, const DescribeHASwitchConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHASwitchConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeHASwitchConfigOutcomeCallable RdsClient::describeHASwitchConfigCallable(const DescribeHASwitchConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHASwitchConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHASwitchConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::ModifyDBInstanceNetworkTypeOutcome RdsClient::modifyDBInstanceNetworkType(const ModifyDBInstanceNetworkTypeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3969,6 +4329,42 @@ RdsClient::ModifyDBInstanceNetworkTypeOutcomeCallable RdsClient::modifyDBInstanc
 			[this, request]()
 			{
 			return this->modifyDBInstanceNetworkType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::PreCheckCreateOrderForRebuildOutcome RdsClient::preCheckCreateOrderForRebuild(const PreCheckCreateOrderForRebuildRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreCheckCreateOrderForRebuildOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreCheckCreateOrderForRebuildOutcome(PreCheckCreateOrderForRebuildResult(outcome.result()));
+	else
+		return PreCheckCreateOrderForRebuildOutcome(outcome.error());
+}
+
+void RdsClient::preCheckCreateOrderForRebuildAsync(const PreCheckCreateOrderForRebuildRequest& request, const PreCheckCreateOrderForRebuildAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, preCheckCreateOrderForRebuild(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::PreCheckCreateOrderForRebuildOutcomeCallable RdsClient::preCheckCreateOrderForRebuildCallable(const PreCheckCreateOrderForRebuildRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreCheckCreateOrderForRebuildOutcome()>>(
+			[this, request]()
+			{
+			return this->preCheckCreateOrderForRebuild(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4329,6 +4725,42 @@ RdsClient::DescribeProxyFunctionSupportOutcomeCallable RdsClient::describeProxyF
 			[this, request]()
 			{
 			return this->describeProxyFunctionSupport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyActionEventPolicyOutcome RdsClient::modifyActionEventPolicy(const ModifyActionEventPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyActionEventPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyActionEventPolicyOutcome(ModifyActionEventPolicyResult(outcome.result()));
+	else
+		return ModifyActionEventPolicyOutcome(outcome.error());
+}
+
+void RdsClient::modifyActionEventPolicyAsync(const ModifyActionEventPolicyRequest& request, const ModifyActionEventPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyActionEventPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyActionEventPolicyOutcomeCallable RdsClient::modifyActionEventPolicyCallable(const ModifyActionEventPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyActionEventPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyActionEventPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4767,42 +5199,6 @@ RdsClient::DeleteAccountOutcomeCallable RdsClient::deleteAccountCallable(const D
 	return task->get_future();
 }
 
-RdsClient::DescribeSlowLogRecordsOutcome RdsClient::describeSlowLogRecords(const DescribeSlowLogRecordsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSlowLogRecordsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSlowLogRecordsOutcome(DescribeSlowLogRecordsResult(outcome.result()));
-	else
-		return DescribeSlowLogRecordsOutcome(outcome.error());
-}
-
-void RdsClient::describeSlowLogRecordsAsync(const DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSlowLogRecords(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeSlowLogRecordsOutcomeCallable RdsClient::describeSlowLogRecordsCallable(const DescribeSlowLogRecordsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSlowLogRecordsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSlowLogRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::ReleaseReadWriteSplittingConnectionOutcome RdsClient::releaseReadWriteSplittingConnection(const ReleaseReadWriteSplittingConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4833,6 +5229,42 @@ RdsClient::ReleaseReadWriteSplittingConnectionOutcomeCallable RdsClient::release
 			[this, request]()
 			{
 			return this->releaseReadWriteSplittingConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeSlowLogRecordsOutcome RdsClient::describeSlowLogRecords(const DescribeSlowLogRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSlowLogRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSlowLogRecordsOutcome(DescribeSlowLogRecordsResult(outcome.result()));
+	else
+		return DescribeSlowLogRecordsOutcome(outcome.error());
+}
+
+void RdsClient::describeSlowLogRecordsAsync(const DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSlowLogRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeSlowLogRecordsOutcomeCallable RdsClient::describeSlowLogRecordsCallable(const DescribeSlowLogRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSlowLogRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSlowLogRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5265,6 +5697,42 @@ RdsClient::DescribeDBInstanceSSLOutcomeCallable RdsClient::describeDBInstanceSSL
 			[this, request]()
 			{
 			return this->describeDBInstanceSSL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeEventsOutcome RdsClient::describeEvents(const DescribeEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEventsOutcome(DescribeEventsResult(outcome.result()));
+	else
+		return DescribeEventsOutcome(outcome.error());
+}
+
+void RdsClient::describeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeEventsOutcomeCallable RdsClient::describeEventsCallable(const DescribeEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEvents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

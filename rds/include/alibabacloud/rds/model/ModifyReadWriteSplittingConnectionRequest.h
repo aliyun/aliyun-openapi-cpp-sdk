@@ -39,37 +39,37 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getConnectionStringPrefix()const;
 				void setConnectionStringPrefix(const std::string& connectionStringPrefix);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getPort()const;
-				void setPort(const std::string& port);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDistributionType()const;
 				void setDistributionType(const std::string& distributionType);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getWeight()const;
 				void setWeight(const std::string& weight);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPort()const;
+				void setPort(const std::string& port);
 				std::string getMaxDelayTime()const;
 				void setMaxDelayTime(const std::string& maxDelayTime);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				long resourceOwnerId_;
 				std::string connectionStringPrefix_;
-				std::string resourceOwnerAccount_;
-				std::string port_;
+				std::string accessKeyId_;
 				std::string distributionType_;
+				std::string dBInstanceId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string weight_;
-				std::string dBInstanceId_;
 				long ownerId_;
+				std::string port_;
 				std::string maxDelayTime_;
-				std::string accessKeyId_;
 
 			};
 		}

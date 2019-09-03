@@ -39,34 +39,34 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getConnectionStringPrefix()const;
 				void setConnectionStringPrefix(const std::string& connectionStringPrefix);
-				std::string getConnectionStringType()const;
-				void setConnectionStringType(const std::string& connectionStringType);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getPort()const;
-				void setPort(const std::string& port);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getConnectionStringType()const;
+				void setConnectionStringType(const std::string& connectionStringType);
+				std::string getPort()const;
+				void setPort(const std::string& port);
 
             private:
 				long resourceOwnerId_;
 				std::string connectionStringPrefix_;
-				std::string connectionStringType_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string port_;
-				std::string ownerAccount_;
-				std::string dBInstanceId_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string connectionStringType_;
+				std::string port_;
 
 			};
 		}
