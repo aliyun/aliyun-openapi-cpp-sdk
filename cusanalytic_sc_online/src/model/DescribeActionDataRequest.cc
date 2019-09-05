@@ -36,28 +36,6 @@ void DescribeActionDataRequest::setTsEnd(long tsEnd)
 	setCoreParameter("TsEnd", std::to_string(tsEnd));
 }
 
-int DescribeActionDataRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void DescribeActionDataRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
-}
-
-long DescribeActionDataRequest::getTsStart()const
-{
-	return tsStart_;
-}
-
-void DescribeActionDataRequest::setTsStart(long tsStart)
-{
-	tsStart_ = tsStart;
-	setCoreParameter("TsStart", std::to_string(tsStart));
-}
-
 std::string DescribeActionDataRequest::getStoreId()const
 {
 	return storeId_;
@@ -78,5 +56,27 @@ void DescribeActionDataRequest::setPageLimit(int pageLimit)
 {
 	pageLimit_ = pageLimit;
 	setCoreParameter("PageLimit", std::to_string(pageLimit));
+}
+
+int DescribeActionDataRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void DescribeActionDataRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
+}
+
+long DescribeActionDataRequest::getTsStart()const
+{
+	return tsStart_;
+}
+
+void DescribeActionDataRequest::setTsStart(long tsStart)
+{
+	tsStart_ = tsStart;
+	setCoreParameter("TsStart", std::to_string(tsStart));
 }
 

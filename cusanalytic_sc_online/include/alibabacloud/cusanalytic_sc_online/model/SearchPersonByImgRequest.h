@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				SearchPersonByImgRequest();
 				~SearchPersonByImgRequest();
 
-				std::string getImgUrl()const;
-				void setImgUrl(const std::string& imgUrl);
 				long getStoreId()const;
 				void setStoreId(long storeId);
+				std::string getImgUrl()const;
+				void setImgUrl(const std::string& imgUrl);
 
             private:
-				std::string imgUrl_;
 				long storeId_;
+				std::string imgUrl_;
 
 			};
 		}

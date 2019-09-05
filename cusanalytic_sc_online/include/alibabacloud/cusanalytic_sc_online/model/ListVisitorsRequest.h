@@ -35,43 +35,43 @@ namespace AlibabaCloud
 				ListVisitorsRequest();
 				~ListVisitorsRequest();
 
-				std::string getPkId()const;
-				void setPkId(const std::string& pkId);
 				std::string getGender()const;
 				void setGender(const std::string& gender);
 				long getUkId()const;
 				void setUkId(long ukId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getLocationIds()const;
 				void setLocationIds(const std::string& locationIds);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				long getEnterCount()const;
 				void setEnterCount(long enterCount);
 				int getPageIndex()const;
 				void setPageIndex(int pageIndex);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getAgeStart()const;
 				void setAgeStart(long ageStart);
 				long getAgeEnd()const;
 				void setAgeEnd(long ageEnd);
+				std::string getPkId()const;
+				void setPkId(const std::string& pkId);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				std::string getStoreIds()const;
 				void setStoreIds(const std::string& storeIds);
 
             private:
-				std::string pkId_;
 				std::string gender_;
 				long ukId_;
-				int pageSize_;
 				std::string locationIds_;
-				std::string endTime_;
+				std::string startTime_;
+				int pageSize_;
 				long enterCount_;
 				int pageIndex_;
-				std::string startTime_;
 				long ageStart_;
 				long ageEnd_;
+				std::string pkId_;
+				std::string endTime_;
 				std::string storeIds_;
 
 			};

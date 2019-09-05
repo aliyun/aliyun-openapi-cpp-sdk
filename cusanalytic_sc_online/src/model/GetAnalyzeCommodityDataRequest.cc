@@ -25,26 +25,26 @@ GetAnalyzeCommodityDataRequest::GetAnalyzeCommodityDataRequest() :
 GetAnalyzeCommodityDataRequest::~GetAnalyzeCommodityDataRequest()
 {}
 
-long GetAnalyzeCommodityDataRequest::getStartUserCount()const
+long GetAnalyzeCommodityDataRequest::getStoreId()const
 {
-	return startUserCount_;
+	return storeId_;
 }
 
-void GetAnalyzeCommodityDataRequest::setStartUserCount(long startUserCount)
+void GetAnalyzeCommodityDataRequest::setStoreId(long storeId)
 {
-	startUserCount_ = startUserCount;
-	setCoreParameter("StartUserCount", std::to_string(startUserCount));
+	storeId_ = storeId;
+	setCoreParameter("StoreId", std::to_string(storeId));
 }
 
-std::string GetAnalyzeCommodityDataRequest::getEndDate()const
+std::string GetAnalyzeCommodityDataRequest::getStartDate()const
 {
-	return endDate_;
+	return startDate_;
 }
 
-void GetAnalyzeCommodityDataRequest::setEndDate(const std::string& endDate)
+void GetAnalyzeCommodityDataRequest::setStartDate(const std::string& startDate)
 {
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
 }
 
 long GetAnalyzeCommodityDataRequest::getEndUserCount()const
@@ -69,17 +69,6 @@ void GetAnalyzeCommodityDataRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long GetAnalyzeCommodityDataRequest::getMinSupportCount()const
-{
-	return minSupportCount_;
-}
-
-void GetAnalyzeCommodityDataRequest::setMinSupportCount(long minSupportCount)
-{
-	minSupportCount_ = minSupportCount;
-	setCoreParameter("MinSupportCount", std::to_string(minSupportCount));
-}
-
 int GetAnalyzeCommodityDataRequest::getPageIndex()const
 {
 	return pageIndex_;
@@ -91,28 +80,6 @@ void GetAnalyzeCommodityDataRequest::setPageIndex(int pageIndex)
 	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
-long GetAnalyzeCommodityDataRequest::getStoreId()const
-{
-	return storeId_;
-}
-
-void GetAnalyzeCommodityDataRequest::setStoreId(long storeId)
-{
-	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
-}
-
-std::string GetAnalyzeCommodityDataRequest::getStartDate()const
-{
-	return startDate_;
-}
-
-void GetAnalyzeCommodityDataRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
-}
-
 long GetAnalyzeCommodityDataRequest::getStayPeriod()const
 {
 	return stayPeriod_;
@@ -122,5 +89,38 @@ void GetAnalyzeCommodityDataRequest::setStayPeriod(long stayPeriod)
 {
 	stayPeriod_ = stayPeriod;
 	setCoreParameter("StayPeriod", std::to_string(stayPeriod));
+}
+
+long GetAnalyzeCommodityDataRequest::getStartUserCount()const
+{
+	return startUserCount_;
+}
+
+void GetAnalyzeCommodityDataRequest::setStartUserCount(long startUserCount)
+{
+	startUserCount_ = startUserCount;
+	setCoreParameter("StartUserCount", std::to_string(startUserCount));
+}
+
+long GetAnalyzeCommodityDataRequest::getMinSupportCount()const
+{
+	return minSupportCount_;
+}
+
+void GetAnalyzeCommodityDataRequest::setMinSupportCount(long minSupportCount)
+{
+	minSupportCount_ = minSupportCount;
+	setCoreParameter("MinSupportCount", std::to_string(minSupportCount));
+}
+
+std::string GetAnalyzeCommodityDataRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void GetAnalyzeCommodityDataRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
 }
 

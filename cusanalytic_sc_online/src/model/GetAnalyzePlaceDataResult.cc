@@ -35,13 +35,9 @@ GetAnalyzePlaceDataResult::~GetAnalyzePlaceDataResult()
 
 void GetAnalyzePlaceDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allAnalyzePlaceItems = value["AnalyzePlaceItems"]["AnalyzePlaceItem"];
 	for (auto value : allAnalyzePlaceItems)

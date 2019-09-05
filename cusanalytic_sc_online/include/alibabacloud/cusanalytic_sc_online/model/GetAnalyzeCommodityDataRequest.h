@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				GetAnalyzeCommodityDataRequest();
 				~GetAnalyzeCommodityDataRequest();
 
-				long getStartUserCount()const;
-				void setStartUserCount(long startUserCount);
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
-				long getEndUserCount()const;
-				void setEndUserCount(long endUserCount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getMinSupportCount()const;
-				void setMinSupportCount(long minSupportCount);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
 				long getStoreId()const;
 				void setStoreId(long storeId);
 				std::string getStartDate()const;
 				void setStartDate(const std::string& startDate);
+				long getEndUserCount()const;
+				void setEndUserCount(long endUserCount);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
 				long getStayPeriod()const;
 				void setStayPeriod(long stayPeriod);
+				long getStartUserCount()const;
+				void setStartUserCount(long startUserCount);
+				long getMinSupportCount()const;
+				void setMinSupportCount(long minSupportCount);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
 
             private:
-				long startUserCount_;
-				std::string endDate_;
-				long endUserCount_;
-				int pageSize_;
-				long minSupportCount_;
-				int pageIndex_;
 				long storeId_;
 				std::string startDate_;
+				long endUserCount_;
+				int pageSize_;
+				int pageIndex_;
 				long stayPeriod_;
+				long startUserCount_;
+				long minSupportCount_;
+				std::string endDate_;
 
 			};
 		}

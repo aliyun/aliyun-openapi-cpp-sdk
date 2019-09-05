@@ -35,13 +35,9 @@ DescribeActionDataResult::~DescribeActionDataResult()
 
 void DescribeActionDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allActionsMsgItems = value["ActionsMsgItems"]["ActionsMsgItem"];
 	for (auto value : allActionsMsgItems)
@@ -76,20 +72,20 @@ void DescribeActionDataResult::parse(const std::string &payload)
 			actionsMsgItemsObject.actionInfosItem.rawId = std::stol(actionInfosItemNode["RawId"].asString());
 		if(!actionInfosItemNode["Mints"].isNull())
 			actionsMsgItemsObject.actionInfosItem.mints = std::stol(actionInfosItemNode["Mints"].asString());
-		auto pointNode = actionInfosItemNode["Point"];
-		if(!pointNode["X"].isNull())
-			actionsMsgItemsObject.actionInfosItem.point.x = std::stof(pointNode["X"].asString());
-		if(!pointNode["Y"].isNull())
-			actionsMsgItemsObject.actionInfosItem.point.y = std::stof(pointNode["Y"].asString());
-		auto senseRectEntityItemNode = actionInfosItemNode["SenseRectEntityItem"];
-		if(!senseRectEntityItemNode["Bottom"].isNull())
-			actionsMsgItemsObject.actionInfosItem.senseRectEntityItem.bottom = std::stof(senseRectEntityItemNode["Bottom"].asString());
-		if(!senseRectEntityItemNode["Left"].isNull())
-			actionsMsgItemsObject.actionInfosItem.senseRectEntityItem.left = std::stof(senseRectEntityItemNode["Left"].asString());
-		if(!senseRectEntityItemNode["Top"].isNull())
-			actionsMsgItemsObject.actionInfosItem.senseRectEntityItem.top = std::stof(senseRectEntityItemNode["Top"].asString());
-		if(!senseRectEntityItemNode["Right"].isNull())
-			actionsMsgItemsObject.actionInfosItem.senseRectEntityItem.right = std::stof(senseRectEntityItemNode["Right"].asString());
+		auto mapImagePointNode = actionInfosItemNode["MapImagePoint"];
+		if(!mapImagePointNode["X"].isNull())
+			actionsMsgItemsObject.actionInfosItem.mapImagePoint.x = std::stof(mapImagePointNode["X"].asString());
+		if(!mapImagePointNode["Y"].isNull())
+			actionsMsgItemsObject.actionInfosItem.mapImagePoint.y = std::stof(mapImagePointNode["Y"].asString());
+		auto faceImgRectNode = actionInfosItemNode["FaceImgRect"];
+		if(!faceImgRectNode["Bottom"].isNull())
+			actionsMsgItemsObject.actionInfosItem.faceImgRect.bottom = std::stof(faceImgRectNode["Bottom"].asString());
+		if(!faceImgRectNode["Left"].isNull())
+			actionsMsgItemsObject.actionInfosItem.faceImgRect.left = std::stof(faceImgRectNode["Left"].asString());
+		if(!faceImgRectNode["Top"].isNull())
+			actionsMsgItemsObject.actionInfosItem.faceImgRect.top = std::stof(faceImgRectNode["Top"].asString());
+		if(!faceImgRectNode["Right"].isNull())
+			actionsMsgItemsObject.actionInfosItem.faceImgRect.right = std::stof(faceImgRectNode["Right"].asString());
 		auto attributesMsgItemNode = value["AttributesMsgItem"];
 		if(!attributesMsgItemNode["ImgUrl"].isNull())
 			actionsMsgItemsObject.attributesMsgItem.imgUrl = attributesMsgItemNode["ImgUrl"].asString();
@@ -101,6 +97,8 @@ void DescribeActionDataResult::parse(const std::string &payload)
 			actionsMsgItemsObject.attributesMsgItem.isClerk = std::stol(attributesMsgItemNode["IsClerk"].asString());
 		if(!attributesMsgItemNode["AgeNum"].isNull())
 			actionsMsgItemsObject.attributesMsgItem.ageNum = std::stoi(attributesMsgItemNode["AgeNum"].asString());
+		if(!attributesMsgItemNode["ImgObjectKey"].isNull())
+			actionsMsgItemsObject.attributesMsgItem.imgObjectKey = attributesMsgItemNode["ImgObjectKey"].asString();
 		if(!attributesMsgItemNode["ImgType"].isNull())
 			actionsMsgItemsObject.attributesMsgItem.imgType = attributesMsgItemNode["ImgType"].asString();
 		actionsMsgItems_.push_back(actionsMsgItemsObject);

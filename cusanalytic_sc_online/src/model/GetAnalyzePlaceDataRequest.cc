@@ -47,39 +47,6 @@ void GetAnalyzePlaceDataRequest::setParentAmount(long parentAmount)
 	setCoreParameter("ParentAmount", std::to_string(parentAmount));
 }
 
-std::string GetAnalyzePlaceDataRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void GetAnalyzePlaceDataRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
-}
-
-long GetAnalyzePlaceDataRequest::getLocationId()const
-{
-	return locationId_;
-}
-
-void GetAnalyzePlaceDataRequest::setLocationId(long locationId)
-{
-	locationId_ = locationId;
-	setCoreParameter("LocationId", std::to_string(locationId));
-}
-
-std::string GetAnalyzePlaceDataRequest::getParentLocationIds()const
-{
-	return parentLocationIds_;
-}
-
-void GetAnalyzePlaceDataRequest::setParentLocationIds(const std::string& parentLocationIds)
-{
-	parentLocationIds_ = parentLocationIds;
-	setCoreParameter("ParentLocationIds", parentLocationIds);
-}
-
 std::string GetAnalyzePlaceDataRequest::getStartDate()const
 {
 	return startDate_;
@@ -111,5 +78,38 @@ void GetAnalyzePlaceDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
 	setCoreParameter("StoreId", std::to_string(storeId));
+}
+
+std::string GetAnalyzePlaceDataRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void GetAnalyzePlaceDataRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
+}
+
+long GetAnalyzePlaceDataRequest::getLocationId()const
+{
+	return locationId_;
+}
+
+void GetAnalyzePlaceDataRequest::setLocationId(long locationId)
+{
+	locationId_ = locationId;
+	setCoreParameter("LocationId", std::to_string(locationId));
+}
+
+std::string GetAnalyzePlaceDataRequest::getParentLocationIds()const
+{
+	return parentLocationIds_;
+}
+
+void GetAnalyzePlaceDataRequest::setParentLocationIds(const std::string& parentLocationIds)
+{
+	parentLocationIds_ = parentLocationIds;
+	setCoreParameter("ParentLocationIds", parentLocationIds);
 }
 

@@ -36,28 +36,29 @@ namespace AlibabaCloud
 				{
 					struct ActionInfosItem
 					{
-						struct Point
+						struct MapImagePoint
 						{
 							float x;
 							float y;
 						};
-						struct SenseRectEntityItem
+						struct FaceImgRect
 						{
 							float left;
 							float top;
 							float right;
 							float bottom;
 						};
-						SenseRectEntityItem senseRectEntityItem;
 						long rawId;
 						long stayPeriod;
+						MapImagePoint mapImagePoint;
+						FaceImgRect faceImgRect;
 						long maxts;
-						Point point;
 						long stayValid;
 						long mints;
 					};
 					struct AttributesMsgItem
 					{
+						std::string imgObjectKey;
 						long score;
 						int ageNum;
 						std::string imgType;

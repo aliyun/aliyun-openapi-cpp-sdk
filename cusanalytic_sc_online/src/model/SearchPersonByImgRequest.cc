@@ -25,17 +25,6 @@ SearchPersonByImgRequest::SearchPersonByImgRequest() :
 SearchPersonByImgRequest::~SearchPersonByImgRequest()
 {}
 
-std::string SearchPersonByImgRequest::getImgUrl()const
-{
-	return imgUrl_;
-}
-
-void SearchPersonByImgRequest::setImgUrl(const std::string& imgUrl)
-{
-	imgUrl_ = imgUrl;
-	setCoreParameter("ImgUrl", imgUrl);
-}
-
 long SearchPersonByImgRequest::getStoreId()const
 {
 	return storeId_;
@@ -45,5 +34,16 @@ void SearchPersonByImgRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
 	setCoreParameter("StoreId", std::to_string(storeId));
+}
+
+std::string SearchPersonByImgRequest::getImgUrl()const
+{
+	return imgUrl_;
+}
+
+void SearchPersonByImgRequest::setImgUrl(const std::string& imgUrl)
+{
+	imgUrl_ = imgUrl;
+	setCoreParameter("ImgUrl", imgUrl);
 }
 

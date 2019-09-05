@@ -25,17 +25,6 @@ GetImageUrlRequest::GetImageUrlRequest() :
 GetImageUrlRequest::~GetImageUrlRequest()
 {}
 
-std::string GetImageUrlRequest::getObjectKeys()const
-{
-	return objectKeys_;
-}
-
-void GetImageUrlRequest::setObjectKeys(const std::string& objectKeys)
-{
-	objectKeys_ = objectKeys;
-	setCoreParameter("ObjectKeys", objectKeys);
-}
-
 std::string GetImageUrlRequest::getOriginUrls()const
 {
 	return originUrls_;
@@ -56,5 +45,16 @@ void GetImageUrlRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
 	setCoreParameter("StoreId", storeId);
+}
+
+std::string GetImageUrlRequest::getObjectKeys()const
+{
+	return objectKeys_;
+}
+
+void GetImageUrlRequest::setObjectKeys(const std::string& objectKeys)
+{
+	objectKeys_ = objectKeys;
+	setCoreParameter("ObjectKeys", objectKeys);
 }
 

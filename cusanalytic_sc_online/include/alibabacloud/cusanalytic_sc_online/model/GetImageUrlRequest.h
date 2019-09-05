@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				GetImageUrlRequest();
 				~GetImageUrlRequest();
 
-				std::string getObjectKeys()const;
-				void setObjectKeys(const std::string& objectKeys);
 				std::string getOriginUrls()const;
 				void setOriginUrls(const std::string& originUrls);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
+				std::string getObjectKeys()const;
+				void setObjectKeys(const std::string& objectKeys);
 
             private:
-				std::string objectKeys_;
 				std::string originUrls_;
 				std::string storeId_;
+				std::string objectKeys_;
 
 			};
 		}

@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				GetEMapRequest();
 				~GetEMapRequest();
 
-				long getLocationId()const;
-				void setLocationId(long locationId);
 				long getStoreId()const;
 				void setStoreId(long storeId);
+				long getLocationId()const;
+				void setLocationId(long locationId);
 
             private:
-				long locationId_;
 				long storeId_;
+				long locationId_;
 
 			};
 		}

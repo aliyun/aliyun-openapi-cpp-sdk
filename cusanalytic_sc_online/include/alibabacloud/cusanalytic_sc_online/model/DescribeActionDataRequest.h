@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				long getTsEnd()const;
 				void setTsEnd(long tsEnd);
-				int getPageNo()const;
-				void setPageNo(int pageNo);
-				long getTsStart()const;
-				void setTsStart(long tsStart);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getPageLimit()const;
 				void setPageLimit(int pageLimit);
+				int getPageNo()const;
+				void setPageNo(int pageNo);
+				long getTsStart()const;
+				void setTsStart(long tsStart);
 
             private:
 				long tsEnd_;
-				int pageNo_;
-				long tsStart_;
 				std::string storeId_;
 				int pageLimit_;
+				int pageNo_;
+				long tsStart_;
 
 			};
 		}
