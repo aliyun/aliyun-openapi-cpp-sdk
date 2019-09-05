@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateJobGroupRequest();
 				~CreateJobGroupRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::vector<std::string> getCallingNumber()const;
 				void setCallingNumber(const std::vector<std::string>& callingNumber);
 				std::string getInstanceId()const;
@@ -43,17 +45,15 @@ namespace AlibabaCloud
 				void setStrategyJson(const std::string& strategyJson);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getScenarioId()const;
 				void setScenarioId(const std::string& scenarioId);
 
             private:
+				std::string description_;
 				std::vector<std::string> callingNumber_;
 				std::string instanceId_;
 				std::string strategyJson_;
 				std::string name_;
-				std::string description_;
 				std::string scenarioId_;
 
 			};

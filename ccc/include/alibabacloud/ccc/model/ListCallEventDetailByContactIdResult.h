@@ -53,9 +53,11 @@ namespace AlibabaCloud
 						std::string timeStamp;
 					};
 					std::string callee;
+					std::string releaseReason;
 					std::vector<CallEventDetail> events;
 					std::string caller;
 					std::string privacyNumber;
+					std::string releaseAgent;
 					std::string callType;
 					std::string startTime;
 				};

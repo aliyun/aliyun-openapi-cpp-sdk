@@ -25,17 +25,6 @@ CreateScenarioRequest::CreateScenarioRequest() :
 CreateScenarioRequest::~CreateScenarioRequest()
 {}
 
-std::string CreateScenarioRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateScenarioRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::vector<std::string> CreateScenarioRequest::getSurveysJson()const
 {
 	return surveysJson_;
@@ -46,28 +35,6 @@ void CreateScenarioRequest::setSurveysJson(const std::vector<std::string>& surve
 	surveysJson_ = surveysJson;
 	for(int i = 0; i!= surveysJson.size(); i++)
 		setCoreParameter("SurveysJson."+ std::to_string(i), surveysJson.at(i));
-}
-
-std::string CreateScenarioRequest::getStrategyJson()const
-{
-	return strategyJson_;
-}
-
-void CreateScenarioRequest::setStrategyJson(const std::string& strategyJson)
-{
-	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", strategyJson);
-}
-
-std::string CreateScenarioRequest::getName()const
-{
-	return name_;
-}
-
-void CreateScenarioRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string CreateScenarioRequest::getDescription()const
@@ -90,5 +57,38 @@ void CreateScenarioRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string CreateScenarioRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateScenarioRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string CreateScenarioRequest::getStrategyJson()const
+{
+	return strategyJson_;
+}
+
+void CreateScenarioRequest::setStrategyJson(const std::string& strategyJson)
+{
+	strategyJson_ = strategyJson;
+	setCoreParameter("StrategyJson", strategyJson);
+}
+
+std::string CreateScenarioRequest::getName()const
+{
+	return name_;
+}
+
+void CreateScenarioRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

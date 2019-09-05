@@ -36,6 +36,40 @@ void CreateUserRequest::setPrivateOutboundNumberId(const std::string& privateOut
 	setCoreParameter("PrivateOutboundNumberId", privateOutboundNumberId);
 }
 
+std::string CreateUserRequest::getLoginName()const
+{
+	return loginName_;
+}
+
+void CreateUserRequest::setLoginName(const std::string& loginName)
+{
+	loginName_ = loginName;
+	setCoreParameter("LoginName", loginName);
+}
+
+std::vector<std::string> CreateUserRequest::getRoleId()const
+{
+	return roleId_;
+}
+
+void CreateUserRequest::setRoleId(const std::vector<std::string>& roleId)
+{
+	roleId_ = roleId;
+	for(int i = 0; i!= roleId.size(); i++)
+		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+}
+
+std::string CreateUserRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateUserRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<int> CreateUserRequest::getSkillLevel()const
 {
 	return skillLevel_;
@@ -59,17 +93,6 @@ void CreateUserRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
-std::string CreateUserRequest::getLoginName()const
-{
-	return loginName_;
-}
-
-void CreateUserRequest::setLoginName(const std::string& loginName)
-{
-	loginName_ = loginName;
-	setCoreParameter("LoginName", loginName);
-}
-
 std::string CreateUserRequest::getPhone()const
 {
 	return phone_;
@@ -79,18 +102,6 @@ void CreateUserRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
 	setCoreParameter("Phone", phone);
-}
-
-std::vector<std::string> CreateUserRequest::getRoleId()const
-{
-	return roleId_;
-}
-
-void CreateUserRequest::setRoleId(const std::vector<std::string>& roleId)
-{
-	roleId_ = roleId;
-	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
 }
 
 std::string CreateUserRequest::getDisplayName()const
@@ -125,16 +136,5 @@ void CreateUserRequest::setEmail(const std::string& email)
 {
 	email_ = email;
 	setCoreParameter("Email", email);
-}
-
-std::string CreateUserRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateUserRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

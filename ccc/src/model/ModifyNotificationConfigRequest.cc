@@ -43,17 +43,6 @@ void ModifyNotificationConfigRequest::setSubscriptions(const std::vector<Subscri
 	}
 }
 
-std::string ModifyNotificationConfigRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ModifyNotificationConfigRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ModifyNotificationConfigRequest::getAccessPoint()const
 {
 	return accessPoint_;
@@ -63,6 +52,28 @@ void ModifyNotificationConfigRequest::setAccessPoint(const std::string& accessPo
 {
 	accessPoint_ = accessPoint;
 	setCoreParameter("AccessPoint", accessPoint);
+}
+
+std::string ModifyNotificationConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyNotificationConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyNotificationConfigRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyNotificationConfigRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyNotificationConfigRequest::getTopic()const
@@ -85,16 +96,5 @@ void ModifyNotificationConfigRequest::setProducerId(const std::string& producerI
 {
 	producerId_ = producerId;
 	setCoreParameter("ProducerId", producerId);
-}
-
-std::string ModifyNotificationConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyNotificationConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

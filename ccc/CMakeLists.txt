@@ -41,10 +41,10 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListPhoneNumbersResult.h
 	include/alibabacloud/ccc/model/ListMediasRequest.h
 	include/alibabacloud/ccc/model/ListMediasResult.h
-	include/alibabacloud/ccc/model/DownloadUnreachableContactsRequest.h
-	include/alibabacloud/ccc/model/DownloadUnreachableContactsResult.h
 	include/alibabacloud/ccc/model/DialogueRequest.h
 	include/alibabacloud/ccc/model/DialogueResult.h
+	include/alibabacloud/ccc/model/DownloadUnreachableContactsRequest.h
+	include/alibabacloud/ccc/model/DownloadUnreachableContactsResult.h
 	include/alibabacloud/ccc/model/SimpleDialRequest.h
 	include/alibabacloud/ccc/model/SimpleDialResult.h
 	include/alibabacloud/ccc/model/CreateBatchJobsRequest.h
@@ -69,26 +69,26 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListPredictiveJobStatusResult.h
 	include/alibabacloud/ccc/model/ListJobGroupsRequest.h
 	include/alibabacloud/ccc/model/ListJobGroupsResult.h
+	include/alibabacloud/ccc/model/ResetUserStatusRequest.h
+	include/alibabacloud/ccc/model/ResetUserStatusResult.h
 	include/alibabacloud/ccc/model/AddPhoneNumberRequest.h
 	include/alibabacloud/ccc/model/AddPhoneNumberResult.h
-	include/alibabacloud/ccc/model/FindUsersRequest.h
-	include/alibabacloud/ccc/model/FindUsersResult.h
 	include/alibabacloud/ccc/model/DownloadCabRecordingRequest.h
 	include/alibabacloud/ccc/model/DownloadCabRecordingResult.h
-	include/alibabacloud/ccc/model/EncryptRequest.h
-	include/alibabacloud/ccc/model/EncryptResult.h
-	include/alibabacloud/ccc/model/PredictiveRecordFailureRequest.h
-	include/alibabacloud/ccc/model/PredictiveRecordFailureResult.h
+	include/alibabacloud/ccc/model/FindUsersRequest.h
+	include/alibabacloud/ccc/model/FindUsersResult.h
+	include/alibabacloud/ccc/model/GetJobDataUploadParamsRequest.h
+	include/alibabacloud/ccc/model/GetJobDataUploadParamsResult.h
 	include/alibabacloud/ccc/model/SubmitBatchJobsRequest.h
 	include/alibabacloud/ccc/model/SubmitBatchJobsResult.h
 	include/alibabacloud/ccc/model/ListSurveysRequest.h
 	include/alibabacloud/ccc/model/ListSurveysResult.h
-	include/alibabacloud/ccc/model/GetJobDataUploadParamsRequest.h
-	include/alibabacloud/ccc/model/GetJobDataUploadParamsResult.h
-	include/alibabacloud/ccc/model/CreateCCCPostOrderRequest.h
-	include/alibabacloud/ccc/model/CreateCCCPostOrderResult.h
+	include/alibabacloud/ccc/model/PredictiveRecordFailureRequest.h
+	include/alibabacloud/ccc/model/PredictiveRecordFailureResult.h
 	include/alibabacloud/ccc/model/ModifyAgentDeviceRequest.h
 	include/alibabacloud/ccc/model/ModifyAgentDeviceResult.h
+	include/alibabacloud/ccc/model/CreateCCCPostOrderRequest.h
+	include/alibabacloud/ccc/model/CreateCCCPostOrderResult.h
 	include/alibabacloud/ccc/model/CreatePredictiveJobGroupRequest.h
 	include/alibabacloud/ccc/model/CreatePredictiveJobGroupResult.h
 	include/alibabacloud/ccc/model/GetCallMeasureSummaryReportRequest.h
@@ -109,20 +109,20 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/DeleteSkillGroupResult.h
 	include/alibabacloud/ccc/model/GetJobFileUploadUrlRequest.h
 	include/alibabacloud/ccc/model/GetJobFileUploadUrlResult.h
-	include/alibabacloud/ccc/model/CallOnlinePrivacyNumberRequest.h
-	include/alibabacloud/ccc/model/CallOnlinePrivacyNumberResult.h
 	include/alibabacloud/ccc/model/GetRecordOssUploadParamRequest.h
 	include/alibabacloud/ccc/model/GetRecordOssUploadParamResult.h
-	include/alibabacloud/ccc/model/ListRecordingOfDualTrackRequest.h
-	include/alibabacloud/ccc/model/ListRecordingOfDualTrackResult.h
+	include/alibabacloud/ccc/model/CallOnlinePrivacyNumberRequest.h
+	include/alibabacloud/ccc/model/CallOnlinePrivacyNumberResult.h
 	include/alibabacloud/ccc/model/CommitContactFlowVersionModificationRequest.h
 	include/alibabacloud/ccc/model/CommitContactFlowVersionModificationResult.h
+	include/alibabacloud/ccc/model/ListRecordingOfDualTrackRequest.h
+	include/alibabacloud/ccc/model/ListRecordingOfDualTrackResult.h
 	include/alibabacloud/ccc/model/RemovePhoneNumberRequest.h
 	include/alibabacloud/ccc/model/RemovePhoneNumberResult.h
-	include/alibabacloud/ccc/model/GetJobRequest.h
-	include/alibabacloud/ccc/model/GetJobResult.h
 	include/alibabacloud/ccc/model/PickLocalNumberRequest.h
 	include/alibabacloud/ccc/model/PickLocalNumberResult.h
+	include/alibabacloud/ccc/model/GetJobRequest.h
+	include/alibabacloud/ccc/model/GetJobResult.h
 	include/alibabacloud/ccc/model/ListInstancesOfUserRequest.h
 	include/alibabacloud/ccc/model/ListInstancesOfUserResult.h
 	include/alibabacloud/ccc/model/StartJobRequest.h
@@ -139,14 +139,14 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/AssignUsersResult.h
 	include/alibabacloud/ccc/model/GetSurveyRequest.h
 	include/alibabacloud/ccc/model/GetSurveyResult.h
-	include/alibabacloud/ccc/model/ListRecentCallRecordsRequest.h
-	include/alibabacloud/ccc/model/ListRecentCallRecordsResult.h
-	include/alibabacloud/ccc/model/ListRolesRequest.h
-	include/alibabacloud/ccc/model/ListRolesResult.h
-	include/alibabacloud/ccc/model/ListConfigRequest.h
-	include/alibabacloud/ccc/model/ListConfigResult.h
 	include/alibabacloud/ccc/model/ListCallMeasureSummaryReportsRequest.h
 	include/alibabacloud/ccc/model/ListCallMeasureSummaryReportsResult.h
+	include/alibabacloud/ccc/model/ListRolesRequest.h
+	include/alibabacloud/ccc/model/ListRolesResult.h
+	include/alibabacloud/ccc/model/ListRecentCallRecordsRequest.h
+	include/alibabacloud/ccc/model/ListRecentCallRecordsResult.h
+	include/alibabacloud/ccc/model/ListConfigRequest.h
+	include/alibabacloud/ccc/model/ListConfigResult.h
 	include/alibabacloud/ccc/model/DeleteMediaRequest.h
 	include/alibabacloud/ccc/model/DeleteMediaResult.h
 	include/alibabacloud/ccc/model/ModifyPhoneNumberRequest.h
@@ -213,14 +213,14 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/GetPredictiveJobResult.h
 	include/alibabacloud/ccc/model/StartBack2BackCallRequest.h
 	include/alibabacloud/ccc/model/StartBack2BackCallResult.h
-	include/alibabacloud/ccc/model/DialExRequest.h
-	include/alibabacloud/ccc/model/DialExResult.h
-	include/alibabacloud/ccc/model/PublishSurveyRequest.h
-	include/alibabacloud/ccc/model/PublishSurveyResult.h
-	include/alibabacloud/ccc/model/GetInstanceSummaryReportRequest.h
-	include/alibabacloud/ccc/model/GetInstanceSummaryReportResult.h
 	include/alibabacloud/ccc/model/ModifySkillGroupOutboundNumbersRequest.h
 	include/alibabacloud/ccc/model/ModifySkillGroupOutboundNumbersResult.h
+	include/alibabacloud/ccc/model/GetInstanceSummaryReportRequest.h
+	include/alibabacloud/ccc/model/GetInstanceSummaryReportResult.h
+	include/alibabacloud/ccc/model/PublishSurveyRequest.h
+	include/alibabacloud/ccc/model/PublishSurveyResult.h
+	include/alibabacloud/ccc/model/DialExRequest.h
+	include/alibabacloud/ccc/model/DialExResult.h
 	include/alibabacloud/ccc/model/GetUserRequest.h
 	include/alibabacloud/ccc/model/GetUserResult.h
 	include/alibabacloud/ccc/model/GetConversationListRequest.h
@@ -235,10 +235,10 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListRecordingsResult.h
 	include/alibabacloud/ccc/model/ModifyNotificationConfigRequest.h
 	include/alibabacloud/ccc/model/ModifyNotificationConfigResult.h
-	include/alibabacloud/ccc/model/GetInstanceRequest.h
-	include/alibabacloud/ccc/model/GetInstanceResult.h
 	include/alibabacloud/ccc/model/ListAgentSummaryReportsRequest.h
 	include/alibabacloud/ccc/model/ListAgentSummaryReportsResult.h
+	include/alibabacloud/ccc/model/GetInstanceRequest.h
+	include/alibabacloud/ccc/model/GetInstanceResult.h
 	include/alibabacloud/ccc/model/ListBasicStatisticsReportSubItemsRequest.h
 	include/alibabacloud/ccc/model/ListBasicStatisticsReportSubItemsResult.h
 	include/alibabacloud/ccc/model/GetJobGroupRequest.h
@@ -249,14 +249,14 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/GetTURNCredentialsResult.h
 	include/alibabacloud/ccc/model/ListUnreachableContactsRequest.h
 	include/alibabacloud/ccc/model/ListUnreachableContactsResult.h
-	include/alibabacloud/ccc/model/AddNumberToSkillGroupRequest.h
-	include/alibabacloud/ccc/model/AddNumberToSkillGroupResult.h
 	include/alibabacloud/ccc/model/ModifySkillGroupRequest.h
 	include/alibabacloud/ccc/model/ModifySkillGroupResult.h
-	include/alibabacloud/ccc/model/GetConversationDetailByContactIdRequest.h
-	include/alibabacloud/ccc/model/GetConversationDetailByContactIdResult.h
+	include/alibabacloud/ccc/model/AddNumberToSkillGroupRequest.h
+	include/alibabacloud/ccc/model/AddNumberToSkillGroupResult.h
 	include/alibabacloud/ccc/model/GetJobsProgressRequest.h
 	include/alibabacloud/ccc/model/GetJobsProgressResult.h
+	include/alibabacloud/ccc/model/GetConversationDetailByContactIdRequest.h
+	include/alibabacloud/ccc/model/GetConversationDetailByContactIdResult.h
 	include/alibabacloud/ccc/model/SaveStatsRequest.h
 	include/alibabacloud/ccc/model/SaveStatsResult.h
 	include/alibabacloud/ccc/model/LaunchAppraiseRequest.h
@@ -269,16 +269,16 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListSkillGroupsResult.h
 	include/alibabacloud/ccc/model/ModifySkillGroupOfUserRequest.h
 	include/alibabacloud/ccc/model/ModifySkillGroupOfUserResult.h
-	include/alibabacloud/ccc/model/DownloadRecordingRequest.h
-	include/alibabacloud/ccc/model/DownloadRecordingResult.h
 	include/alibabacloud/ccc/model/GetConfigRequest.h
 	include/alibabacloud/ccc/model/GetConfigResult.h
+	include/alibabacloud/ccc/model/DownloadRecordingRequest.h
+	include/alibabacloud/ccc/model/DownloadRecordingResult.h
 	include/alibabacloud/ccc/model/CreateMediaRequest.h
 	include/alibabacloud/ccc/model/CreateMediaResult.h
-	include/alibabacloud/ccc/model/GenerateAgentStatisticReportRequest.h
-	include/alibabacloud/ccc/model/GenerateAgentStatisticReportResult.h
 	include/alibabacloud/ccc/model/ListAgentSummaryReportsSinceMidnightRequest.h
 	include/alibabacloud/ccc/model/ListAgentSummaryReportsSinceMidnightResult.h
+	include/alibabacloud/ccc/model/GenerateAgentStatisticReportRequest.h
+	include/alibabacloud/ccc/model/GenerateAgentStatisticReportResult.h
 	include/alibabacloud/ccc/model/ListPredictiveJobGroupsRequest.h
 	include/alibabacloud/ccc/model/ListPredictiveJobGroupsResult.h
 	include/alibabacloud/ccc/model/CreateScenarioFromTemplateRequest.h
@@ -287,10 +287,10 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/PublishContactFlowVersionResult.h
 	include/alibabacloud/ccc/model/GetTaskListRequest.h
 	include/alibabacloud/ccc/model/GetTaskListResult.h
-	include/alibabacloud/ccc/model/QueryRedialIndicatorRequest.h
-	include/alibabacloud/ccc/model/QueryRedialIndicatorResult.h
 	include/alibabacloud/ccc/model/ListScenarioTemplatesRequest.h
 	include/alibabacloud/ccc/model/ListScenarioTemplatesResult.h
+	include/alibabacloud/ccc/model/QueryRedialIndicatorRequest.h
+	include/alibabacloud/ccc/model/QueryRedialIndicatorResult.h
 	include/alibabacloud/ccc/model/PickOutboundNumbersByTagsRequest.h
 	include/alibabacloud/ccc/model/PickOutboundNumbersByTagsResult.h
 	include/alibabacloud/ccc/model/GetAgentStateRequest.h
@@ -301,10 +301,10 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ResumeJobsResult.h
 	include/alibabacloud/ccc/model/ListAgentSummaryReportsByIntervalRequest.h
 	include/alibabacloud/ccc/model/ListAgentSummaryReportsByIntervalResult.h
-	include/alibabacloud/ccc/model/PreModifyMediaRequest.h
-	include/alibabacloud/ccc/model/PreModifyMediaResult.h
 	include/alibabacloud/ccc/model/LaunchShortMessageAppraiseRequest.h
 	include/alibabacloud/ccc/model/LaunchShortMessageAppraiseResult.h
+	include/alibabacloud/ccc/model/PreModifyMediaRequest.h
+	include/alibabacloud/ccc/model/PreModifyMediaResult.h
 	include/alibabacloud/ccc/model/GetContactInfoByOutboundTaskIdRequest.h
 	include/alibabacloud/ccc/model/GetContactInfoByOutboundTaskIdResult.h
 	include/alibabacloud/ccc/model/ListScenariosRequest.h
@@ -313,24 +313,26 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListRealTimeAgentResult.h
 	include/alibabacloud/ccc/model/AssignJobsRequest.h
 	include/alibabacloud/ccc/model/AssignJobsResult.h
+	include/alibabacloud/ccc/model/GetRoutePointRequest.h
+	include/alibabacloud/ccc/model/GetRoutePointResult.h
 	include/alibabacloud/ccc/model/GetScenarioRequest.h
 	include/alibabacloud/ccc/model/GetScenarioResult.h
 	include/alibabacloud/ccc/model/ListOutboundPhoneNumberOfUserRequest.h
 	include/alibabacloud/ccc/model/ListOutboundPhoneNumberOfUserResult.h
-	include/alibabacloud/ccc/model/PickGlobalOutboundNumbersRequest.h
-	include/alibabacloud/ccc/model/PickGlobalOutboundNumbersResult.h
 	include/alibabacloud/ccc/model/ListAgentDevicesRequest.h
 	include/alibabacloud/ccc/model/ListAgentDevicesResult.h
+	include/alibabacloud/ccc/model/PickGlobalOutboundNumbersRequest.h
+	include/alibabacloud/ccc/model/PickGlobalOutboundNumbersResult.h
 	include/alibabacloud/ccc/model/CreateFaultRequest.h
 	include/alibabacloud/ccc/model/CreateFaultResult.h
 	include/alibabacloud/ccc/model/CreateSurveyRequest.h
 	include/alibabacloud/ccc/model/CreateSurveyResult.h
 	include/alibabacloud/ccc/model/CreateCabInstanceRequest.h
 	include/alibabacloud/ccc/model/CreateCabInstanceResult.h
-	include/alibabacloud/ccc/model/ModifySurveyRequest.h
-	include/alibabacloud/ccc/model/ModifySurveyResult.h
 	include/alibabacloud/ccc/model/PublishPredictiveJobGroupRequest.h
 	include/alibabacloud/ccc/model/PublishPredictiveJobGroupResult.h
+	include/alibabacloud/ccc/model/ModifySurveyRequest.h
+	include/alibabacloud/ccc/model/ModifySurveyResult.h
 	include/alibabacloud/ccc/model/CreateSkillGroupRequest.h
 	include/alibabacloud/ccc/model/CreateSkillGroupResult.h
 	include/alibabacloud/ccc/model/PickOutboundNumbersRequest.h
@@ -341,7 +343,7 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/DeleteJobGroupResult.h )
 
 set(ccc_src 
-	src/CCCClient.cc
+	src/com.aliyun.pop.sdk.domain.Product@7b78ed6aClient.cc
 	src/model/SaveWebRTCStatsRequest.cc
 	src/model/SaveWebRTCStatsResult.cc
 	src/model/GetContactIdentifyByOutBoundTaskIdRequest.cc
@@ -362,10 +364,10 @@ set(ccc_src
 	src/model/ListPhoneNumbersResult.cc
 	src/model/ListMediasRequest.cc
 	src/model/ListMediasResult.cc
-	src/model/DownloadUnreachableContactsRequest.cc
-	src/model/DownloadUnreachableContactsResult.cc
 	src/model/DialogueRequest.cc
 	src/model/DialogueResult.cc
+	src/model/DownloadUnreachableContactsRequest.cc
+	src/model/DownloadUnreachableContactsResult.cc
 	src/model/SimpleDialRequest.cc
 	src/model/SimpleDialResult.cc
 	src/model/CreateBatchJobsRequest.cc
@@ -390,26 +392,26 @@ set(ccc_src
 	src/model/ListPredictiveJobStatusResult.cc
 	src/model/ListJobGroupsRequest.cc
 	src/model/ListJobGroupsResult.cc
+	src/model/ResetUserStatusRequest.cc
+	src/model/ResetUserStatusResult.cc
 	src/model/AddPhoneNumberRequest.cc
 	src/model/AddPhoneNumberResult.cc
-	src/model/FindUsersRequest.cc
-	src/model/FindUsersResult.cc
 	src/model/DownloadCabRecordingRequest.cc
 	src/model/DownloadCabRecordingResult.cc
-	src/model/EncryptRequest.cc
-	src/model/EncryptResult.cc
-	src/model/PredictiveRecordFailureRequest.cc
-	src/model/PredictiveRecordFailureResult.cc
+	src/model/FindUsersRequest.cc
+	src/model/FindUsersResult.cc
+	src/model/GetJobDataUploadParamsRequest.cc
+	src/model/GetJobDataUploadParamsResult.cc
 	src/model/SubmitBatchJobsRequest.cc
 	src/model/SubmitBatchJobsResult.cc
 	src/model/ListSurveysRequest.cc
 	src/model/ListSurveysResult.cc
-	src/model/GetJobDataUploadParamsRequest.cc
-	src/model/GetJobDataUploadParamsResult.cc
-	src/model/CreateCCCPostOrderRequest.cc
-	src/model/CreateCCCPostOrderResult.cc
+	src/model/PredictiveRecordFailureRequest.cc
+	src/model/PredictiveRecordFailureResult.cc
 	src/model/ModifyAgentDeviceRequest.cc
 	src/model/ModifyAgentDeviceResult.cc
+	src/model/CreateCCCPostOrderRequest.cc
+	src/model/CreateCCCPostOrderResult.cc
 	src/model/CreatePredictiveJobGroupRequest.cc
 	src/model/CreatePredictiveJobGroupResult.cc
 	src/model/GetCallMeasureSummaryReportRequest.cc
@@ -430,20 +432,20 @@ set(ccc_src
 	src/model/DeleteSkillGroupResult.cc
 	src/model/GetJobFileUploadUrlRequest.cc
 	src/model/GetJobFileUploadUrlResult.cc
-	src/model/CallOnlinePrivacyNumberRequest.cc
-	src/model/CallOnlinePrivacyNumberResult.cc
 	src/model/GetRecordOssUploadParamRequest.cc
 	src/model/GetRecordOssUploadParamResult.cc
-	src/model/ListRecordingOfDualTrackRequest.cc
-	src/model/ListRecordingOfDualTrackResult.cc
+	src/model/CallOnlinePrivacyNumberRequest.cc
+	src/model/CallOnlinePrivacyNumberResult.cc
 	src/model/CommitContactFlowVersionModificationRequest.cc
 	src/model/CommitContactFlowVersionModificationResult.cc
+	src/model/ListRecordingOfDualTrackRequest.cc
+	src/model/ListRecordingOfDualTrackResult.cc
 	src/model/RemovePhoneNumberRequest.cc
 	src/model/RemovePhoneNumberResult.cc
-	src/model/GetJobRequest.cc
-	src/model/GetJobResult.cc
 	src/model/PickLocalNumberRequest.cc
 	src/model/PickLocalNumberResult.cc
+	src/model/GetJobRequest.cc
+	src/model/GetJobResult.cc
 	src/model/ListInstancesOfUserRequest.cc
 	src/model/ListInstancesOfUserResult.cc
 	src/model/StartJobRequest.cc
@@ -460,14 +462,14 @@ set(ccc_src
 	src/model/AssignUsersResult.cc
 	src/model/GetSurveyRequest.cc
 	src/model/GetSurveyResult.cc
-	src/model/ListRecentCallRecordsRequest.cc
-	src/model/ListRecentCallRecordsResult.cc
-	src/model/ListRolesRequest.cc
-	src/model/ListRolesResult.cc
-	src/model/ListConfigRequest.cc
-	src/model/ListConfigResult.cc
 	src/model/ListCallMeasureSummaryReportsRequest.cc
 	src/model/ListCallMeasureSummaryReportsResult.cc
+	src/model/ListRolesRequest.cc
+	src/model/ListRolesResult.cc
+	src/model/ListRecentCallRecordsRequest.cc
+	src/model/ListRecentCallRecordsResult.cc
+	src/model/ListConfigRequest.cc
+	src/model/ListConfigResult.cc
 	src/model/DeleteMediaRequest.cc
 	src/model/DeleteMediaResult.cc
 	src/model/ModifyPhoneNumberRequest.cc
@@ -534,14 +536,14 @@ set(ccc_src
 	src/model/GetPredictiveJobResult.cc
 	src/model/StartBack2BackCallRequest.cc
 	src/model/StartBack2BackCallResult.cc
-	src/model/DialExRequest.cc
-	src/model/DialExResult.cc
-	src/model/PublishSurveyRequest.cc
-	src/model/PublishSurveyResult.cc
-	src/model/GetInstanceSummaryReportRequest.cc
-	src/model/GetInstanceSummaryReportResult.cc
 	src/model/ModifySkillGroupOutboundNumbersRequest.cc
 	src/model/ModifySkillGroupOutboundNumbersResult.cc
+	src/model/GetInstanceSummaryReportRequest.cc
+	src/model/GetInstanceSummaryReportResult.cc
+	src/model/PublishSurveyRequest.cc
+	src/model/PublishSurveyResult.cc
+	src/model/DialExRequest.cc
+	src/model/DialExResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
 	src/model/GetConversationListRequest.cc
@@ -556,10 +558,10 @@ set(ccc_src
 	src/model/ListRecordingsResult.cc
 	src/model/ModifyNotificationConfigRequest.cc
 	src/model/ModifyNotificationConfigResult.cc
-	src/model/GetInstanceRequest.cc
-	src/model/GetInstanceResult.cc
 	src/model/ListAgentSummaryReportsRequest.cc
 	src/model/ListAgentSummaryReportsResult.cc
+	src/model/GetInstanceRequest.cc
+	src/model/GetInstanceResult.cc
 	src/model/ListBasicStatisticsReportSubItemsRequest.cc
 	src/model/ListBasicStatisticsReportSubItemsResult.cc
 	src/model/GetJobGroupRequest.cc
@@ -570,14 +572,14 @@ set(ccc_src
 	src/model/GetTURNCredentialsResult.cc
 	src/model/ListUnreachableContactsRequest.cc
 	src/model/ListUnreachableContactsResult.cc
-	src/model/AddNumberToSkillGroupRequest.cc
-	src/model/AddNumberToSkillGroupResult.cc
 	src/model/ModifySkillGroupRequest.cc
 	src/model/ModifySkillGroupResult.cc
-	src/model/GetConversationDetailByContactIdRequest.cc
-	src/model/GetConversationDetailByContactIdResult.cc
+	src/model/AddNumberToSkillGroupRequest.cc
+	src/model/AddNumberToSkillGroupResult.cc
 	src/model/GetJobsProgressRequest.cc
 	src/model/GetJobsProgressResult.cc
+	src/model/GetConversationDetailByContactIdRequest.cc
+	src/model/GetConversationDetailByContactIdResult.cc
 	src/model/SaveStatsRequest.cc
 	src/model/SaveStatsResult.cc
 	src/model/LaunchAppraiseRequest.cc
@@ -590,16 +592,16 @@ set(ccc_src
 	src/model/ListSkillGroupsResult.cc
 	src/model/ModifySkillGroupOfUserRequest.cc
 	src/model/ModifySkillGroupOfUserResult.cc
-	src/model/DownloadRecordingRequest.cc
-	src/model/DownloadRecordingResult.cc
 	src/model/GetConfigRequest.cc
 	src/model/GetConfigResult.cc
+	src/model/DownloadRecordingRequest.cc
+	src/model/DownloadRecordingResult.cc
 	src/model/CreateMediaRequest.cc
 	src/model/CreateMediaResult.cc
-	src/model/GenerateAgentStatisticReportRequest.cc
-	src/model/GenerateAgentStatisticReportResult.cc
 	src/model/ListAgentSummaryReportsSinceMidnightRequest.cc
 	src/model/ListAgentSummaryReportsSinceMidnightResult.cc
+	src/model/GenerateAgentStatisticReportRequest.cc
+	src/model/GenerateAgentStatisticReportResult.cc
 	src/model/ListPredictiveJobGroupsRequest.cc
 	src/model/ListPredictiveJobGroupsResult.cc
 	src/model/CreateScenarioFromTemplateRequest.cc
@@ -608,10 +610,10 @@ set(ccc_src
 	src/model/PublishContactFlowVersionResult.cc
 	src/model/GetTaskListRequest.cc
 	src/model/GetTaskListResult.cc
-	src/model/QueryRedialIndicatorRequest.cc
-	src/model/QueryRedialIndicatorResult.cc
 	src/model/ListScenarioTemplatesRequest.cc
 	src/model/ListScenarioTemplatesResult.cc
+	src/model/QueryRedialIndicatorRequest.cc
+	src/model/QueryRedialIndicatorResult.cc
 	src/model/PickOutboundNumbersByTagsRequest.cc
 	src/model/PickOutboundNumbersByTagsResult.cc
 	src/model/GetAgentStateRequest.cc
@@ -622,10 +624,10 @@ set(ccc_src
 	src/model/ResumeJobsResult.cc
 	src/model/ListAgentSummaryReportsByIntervalRequest.cc
 	src/model/ListAgentSummaryReportsByIntervalResult.cc
-	src/model/PreModifyMediaRequest.cc
-	src/model/PreModifyMediaResult.cc
 	src/model/LaunchShortMessageAppraiseRequest.cc
 	src/model/LaunchShortMessageAppraiseResult.cc
+	src/model/PreModifyMediaRequest.cc
+	src/model/PreModifyMediaResult.cc
 	src/model/GetContactInfoByOutboundTaskIdRequest.cc
 	src/model/GetContactInfoByOutboundTaskIdResult.cc
 	src/model/ListScenariosRequest.cc
@@ -634,24 +636,26 @@ set(ccc_src
 	src/model/ListRealTimeAgentResult.cc
 	src/model/AssignJobsRequest.cc
 	src/model/AssignJobsResult.cc
+	src/model/GetRoutePointRequest.cc
+	src/model/GetRoutePointResult.cc
 	src/model/GetScenarioRequest.cc
 	src/model/GetScenarioResult.cc
 	src/model/ListOutboundPhoneNumberOfUserRequest.cc
 	src/model/ListOutboundPhoneNumberOfUserResult.cc
-	src/model/PickGlobalOutboundNumbersRequest.cc
-	src/model/PickGlobalOutboundNumbersResult.cc
 	src/model/ListAgentDevicesRequest.cc
 	src/model/ListAgentDevicesResult.cc
+	src/model/PickGlobalOutboundNumbersRequest.cc
+	src/model/PickGlobalOutboundNumbersResult.cc
 	src/model/CreateFaultRequest.cc
 	src/model/CreateFaultResult.cc
 	src/model/CreateSurveyRequest.cc
 	src/model/CreateSurveyResult.cc
 	src/model/CreateCabInstanceRequest.cc
 	src/model/CreateCabInstanceResult.cc
-	src/model/ModifySurveyRequest.cc
-	src/model/ModifySurveyResult.cc
 	src/model/PublishPredictiveJobGroupRequest.cc
 	src/model/PublishPredictiveJobGroupResult.cc
+	src/model/ModifySurveyRequest.cc
+	src/model/ModifySurveyResult.cc
 	src/model/CreateSkillGroupRequest.cc
 	src/model/CreateSkillGroupResult.cc
 	src/model/PickOutboundNumbersRequest.cc

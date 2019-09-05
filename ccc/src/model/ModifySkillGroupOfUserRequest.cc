@@ -25,6 +25,40 @@ ModifySkillGroupOfUserRequest::ModifySkillGroupOfUserRequest() :
 ModifySkillGroupOfUserRequest::~ModifySkillGroupOfUserRequest()
 {}
 
+std::vector<std::string> ModifySkillGroupOfUserRequest::getRoleId()const
+{
+	return roleId_;
+}
+
+void ModifySkillGroupOfUserRequest::setRoleId(const std::vector<std::string>& roleId)
+{
+	roleId_ = roleId;
+	for(int i = 0; i!= roleId.size(); i++)
+		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+}
+
+std::string ModifySkillGroupOfUserRequest::getUserId()const
+{
+	return userId_;
+}
+
+void ModifySkillGroupOfUserRequest::setUserId(const std::string& userId)
+{
+	userId_ = userId;
+	setCoreParameter("UserId", userId);
+}
+
+std::string ModifySkillGroupOfUserRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifySkillGroupOfUserRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<int> ModifySkillGroupOfUserRequest::getSkillLevel()const
 {
 	return skillLevel_;
@@ -48,18 +82,6 @@ void ModifySkillGroupOfUserRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
-std::vector<std::string> ModifySkillGroupOfUserRequest::getRoleId()const
-{
-	return roleId_;
-}
-
-void ModifySkillGroupOfUserRequest::setRoleId(const std::vector<std::string>& roleId)
-{
-	roleId_ = roleId;
-	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
-}
-
 std::vector<std::string> ModifySkillGroupOfUserRequest::getSkillGroupId()const
 {
 	return skillGroupId_;
@@ -70,27 +92,5 @@ void ModifySkillGroupOfUserRequest::setSkillGroupId(const std::vector<std::strin
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
 		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
-}
-
-std::string ModifySkillGroupOfUserRequest::getUserId()const
-{
-	return userId_;
-}
-
-void ModifySkillGroupOfUserRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setCoreParameter("UserId", userId);
-}
-
-std::string ModifySkillGroupOfUserRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifySkillGroupOfUserRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

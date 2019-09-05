@@ -25,6 +25,17 @@ PickLocalNumberRequest::PickLocalNumberRequest() :
 PickLocalNumberRequest::~PickLocalNumberRequest()
 {}
 
+std::string PickLocalNumberRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void PickLocalNumberRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string PickLocalNumberRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -57,16 +68,5 @@ void PickLocalNumberRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
 	setCoreParameter("CalleeNumber", calleeNumber);
-}
-
-std::string PickLocalNumberRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void PickLocalNumberRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

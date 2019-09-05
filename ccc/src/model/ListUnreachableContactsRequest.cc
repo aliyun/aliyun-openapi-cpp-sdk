@@ -25,6 +25,17 @@ ListUnreachableContactsRequest::ListUnreachableContactsRequest() :
 ListUnreachableContactsRequest::~ListUnreachableContactsRequest()
 {}
 
+int ListUnreachableContactsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListUnreachableContactsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListUnreachableContactsRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,16 +67,5 @@ void ListUnreachableContactsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int ListUnreachableContactsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListUnreachableContactsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

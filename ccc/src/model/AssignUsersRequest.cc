@@ -25,6 +25,29 @@ AssignUsersRequest::AssignUsersRequest() :
 AssignUsersRequest::~AssignUsersRequest()
 {}
 
+std::vector<std::string> AssignUsersRequest::getRoleId()const
+{
+	return roleId_;
+}
+
+void AssignUsersRequest::setRoleId(const std::vector<std::string>& roleId)
+{
+	roleId_ = roleId;
+	for(int i = 0; i!= roleId.size(); i++)
+		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+}
+
+std::string AssignUsersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AssignUsersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<std::string> AssignUsersRequest::getUserRamId()const
 {
 	return userRamId_;
@@ -60,18 +83,6 @@ void AssignUsersRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
-std::vector<std::string> AssignUsersRequest::getRoleId()const
-{
-	return roleId_;
-}
-
-void AssignUsersRequest::setRoleId(const std::vector<std::string>& roleId)
-{
-	roleId_ = roleId;
-	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
-}
-
 std::vector<std::string> AssignUsersRequest::getSkillGroupId()const
 {
 	return skillGroupId_;
@@ -82,16 +93,5 @@ void AssignUsersRequest::setSkillGroupId(const std::vector<std::string>& skillGr
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
 		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
-}
-
-std::string AssignUsersRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AssignUsersRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

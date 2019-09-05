@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				GetJobListRequest();
 				~GetJobListRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				bool getQueryAll()const;
+				void setQueryAll(bool queryAll);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getJobGroupId()const;
 				void setJobGroupId(const std::string& jobGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				int getStatus()const;
 				void setStatus(int status);
-				bool getQueryAll()const;
-				void setQueryAll(bool queryAll);
 
             private:
+				int pageNumber_;
+				bool queryAll_;
 				std::string instanceId_;
 				std::string jobGroupId_;
 				int pageSize_;
-				int pageNumber_;
 				int status_;
-				bool queryAll_;
 
 			};
 		}

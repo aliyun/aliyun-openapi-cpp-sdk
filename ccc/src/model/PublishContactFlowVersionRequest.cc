@@ -25,6 +25,17 @@ PublishContactFlowVersionRequest::PublishContactFlowVersionRequest() :
 PublishContactFlowVersionRequest::~PublishContactFlowVersionRequest()
 {}
 
+std::string PublishContactFlowVersionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void PublishContactFlowVersionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string PublishContactFlowVersionRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,16 +67,5 @@ void PublishContactFlowVersionRequest::setUseTianGong(bool useTianGong)
 {
 	useTianGong_ = useTianGong;
 	setCoreParameter("UseTianGong", useTianGong ? "true" : "false");
-}
-
-std::string PublishContactFlowVersionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void PublishContactFlowVersionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

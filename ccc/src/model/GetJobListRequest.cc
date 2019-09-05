@@ -25,6 +25,28 @@ GetJobListRequest::GetJobListRequest() :
 GetJobListRequest::~GetJobListRequest()
 {}
 
+int GetJobListRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void GetJobListRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+bool GetJobListRequest::getQueryAll()const
+{
+	return queryAll_;
+}
+
+void GetJobListRequest::setQueryAll(bool queryAll)
+{
+	queryAll_ = queryAll;
+	setCoreParameter("QueryAll", queryAll ? "true" : "false");
+}
+
 std::string GetJobListRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -58,17 +80,6 @@ void GetJobListRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int GetJobListRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void GetJobListRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
 int GetJobListRequest::getStatus()const
 {
 	return status_;
@@ -78,16 +89,5 @@ void GetJobListRequest::setStatus(int status)
 {
 	status_ = status;
 	setCoreParameter("Status", std::to_string(status));
-}
-
-bool GetJobListRequest::getQueryAll()const
-{
-	return queryAll_;
-}
-
-void GetJobListRequest::setQueryAll(bool queryAll)
-{
-	queryAll_ = queryAll;
-	setCoreParameter("QueryAll", queryAll ? "true" : "false");
 }
 

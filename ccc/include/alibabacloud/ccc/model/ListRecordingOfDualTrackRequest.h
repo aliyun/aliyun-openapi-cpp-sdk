@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				ListRecordingOfDualTrackRequest();
 				~ListRecordingOfDualTrackRequest();
 
-				std::string getCallingNumber()const;
-				void setCallingNumber(const std::string& callingNumber);
 				std::string getAgentId()const;
 				void setAgentId(const std::string& agentId);
+				long getStartTime()const;
+				void setStartTime(long startTime);
+				long getStopTime()const;
+				void setStopTime(long stopTime);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCallingNumber()const;
+				void setCallingNumber(const std::string& callingNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getCalledNumber()const;
 				void setCalledNumber(const std::string& calledNumber);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				long getStopTime()const;
-				void setStopTime(long stopTime);
 				std::string getConnectId()const;
 				void setConnectId(const std::string& connectId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string callingNumber_;
 				std::string agentId_;
+				long startTime_;
+				long stopTime_;
+				int pageNumber_;
+				std::string accessKeyId_;
+				std::string callingNumber_;
 				std::string instanceId_;
 				std::string calledNumber_;
 				int pageSize_;
-				long startTime_;
-				long stopTime_;
 				std::string connectId_;
-				int pageNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

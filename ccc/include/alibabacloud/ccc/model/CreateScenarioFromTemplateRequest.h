@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getVariables()const;
 				void setVariables(const std::string& variables);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getTemplateId()const;
 				void setTemplateId(const std::string& templateId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string variables_;
-				std::string instanceId_;
-				std::string name_;
 				std::string description_;
 				std::string templateId_;
+				std::string instanceId_;
+				std::string name_;
 
 			};
 		}

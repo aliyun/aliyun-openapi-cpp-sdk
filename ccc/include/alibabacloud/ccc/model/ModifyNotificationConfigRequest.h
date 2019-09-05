@@ -43,24 +43,24 @@ namespace AlibabaCloud
 
 				std::vector<Subscriptions> getSubscriptions()const;
 				void setSubscriptions(const std::vector<Subscriptions>& subscriptions);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getAccessPoint()const;
 				void setAccessPoint(const std::string& accessPoint);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getTopic()const;
 				void setTopic(const std::string& topic);
 				std::string getProducerId()const;
 				void setProducerId(const std::string& producerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::vector<Subscriptions> subscriptions_;
-				std::string instanceId_;
 				std::string accessPoint_;
+				std::string accessKeyId_;
+				std::string instanceId_;
 				std::string topic_;
 				std::string producerId_;
-				std::string accessKeyId_;
 
 			};
 		}

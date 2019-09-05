@@ -35,12 +35,6 @@ namespace AlibabaCloud
 				ModifyMediaRequest();
 				~ModifyMediaRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getFileName()const;
-				void setFileName(const std::string& fileName);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getOssFilePath()const;
@@ -55,11 +49,14 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getOssFileName()const;
 				void setOssFileName(const std::string& ossFileName);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getFileName()const;
+				void setFileName(const std::string& fileName);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string instanceId_;
-				std::string fileName_;
-				std::string name_;
 				std::string description_;
 				std::string ossFilePath_;
 				std::string uploadResult_;
@@ -67,6 +64,9 @@ namespace AlibabaCloud
 				std::string content_;
 				std::string accessKeyId_;
 				std::string ossFileName_;
+				std::string instanceId_;
+				std::string fileName_;
+				std::string name_;
 
 			};
 		}

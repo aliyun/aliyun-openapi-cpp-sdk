@@ -25,29 +25,6 @@ ModifySkillGroupRequest::ModifySkillGroupRequest() :
 ModifySkillGroupRequest::~ModifySkillGroupRequest()
 {}
 
-std::vector<int> ModifySkillGroupRequest::getSkillLevel()const
-{
-	return skillLevel_;
-}
-
-void ModifySkillGroupRequest::setSkillLevel(const std::vector<int>& skillLevel)
-{
-	skillLevel_ = skillLevel;
-	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
-}
-
-std::string ModifySkillGroupRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ModifySkillGroupRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 bool ModifySkillGroupRequest::getAllowPrivateOutboundNumber()const
 {
 	return allowPrivateOutboundNumber_;
@@ -57,40 +34,6 @@ void ModifySkillGroupRequest::setAllowPrivateOutboundNumber(bool allowPrivateOut
 {
 	allowPrivateOutboundNumber_ = allowPrivateOutboundNumber;
 	setCoreParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber ? "true" : "false");
-}
-
-std::vector<std::string> ModifySkillGroupRequest::getOutboundPhoneNumberId()const
-{
-	return outboundPhoneNumberId_;
-}
-
-void ModifySkillGroupRequest::setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId)
-{
-	outboundPhoneNumberId_ = outboundPhoneNumberId;
-	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
-}
-
-std::string ModifySkillGroupRequest::getSkillGroupId()const
-{
-	return skillGroupId_;
-}
-
-void ModifySkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
-{
-	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
-}
-
-std::string ModifySkillGroupRequest::getName()const
-{
-	return name_;
-}
-
-void ModifySkillGroupRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string ModifySkillGroupRequest::getDescription()const
@@ -136,5 +79,62 @@ void ModifySkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::vector<int> ModifySkillGroupRequest::getSkillLevel()const
+{
+	return skillLevel_;
+}
+
+void ModifySkillGroupRequest::setSkillLevel(const std::vector<int>& skillLevel)
+{
+	skillLevel_ = skillLevel;
+	for(int i = 0; i!= skillLevel.size(); i++)
+		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+}
+
+std::string ModifySkillGroupRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifySkillGroupRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::vector<std::string> ModifySkillGroupRequest::getOutboundPhoneNumberId()const
+{
+	return outboundPhoneNumberId_;
+}
+
+void ModifySkillGroupRequest::setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId)
+{
+	outboundPhoneNumberId_ = outboundPhoneNumberId;
+	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
+		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
+}
+
+std::string ModifySkillGroupRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void ModifySkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	setCoreParameter("SkillGroupId", skillGroupId);
+}
+
+std::string ModifySkillGroupRequest::getName()const
+{
+	return name_;
+}
+
+void ModifySkillGroupRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

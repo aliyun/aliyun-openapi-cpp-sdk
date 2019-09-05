@@ -25,28 +25,6 @@ ListPredictiveJobStatusRequest::ListPredictiveJobStatusRequest() :
 ListPredictiveJobStatusRequest::~ListPredictiveJobStatusRequest()
 {}
 
-std::string ListPredictiveJobStatusRequest::getContactName()const
-{
-	return contactName_;
-}
-
-void ListPredictiveJobStatusRequest::setContactName(const std::string& contactName)
-{
-	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
-}
-
-std::string ListPredictiveJobStatusRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListPredictiveJobStatusRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ListPredictiveJobStatusRequest::getTimeAlignment()const
 {
 	return timeAlignment_;
@@ -58,17 +36,6 @@ void ListPredictiveJobStatusRequest::setTimeAlignment(const std::string& timeAli
 	setCoreParameter("TimeAlignment", timeAlignment);
 }
 
-std::string ListPredictiveJobStatusRequest::getJobGroupId()const
-{
-	return jobGroupId_;
-}
-
-void ListPredictiveJobStatusRequest::setJobGroupId(const std::string& jobGroupId)
-{
-	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
-}
-
 std::string ListPredictiveJobStatusRequest::getPhoneNumber()const
 {
 	return phoneNumber_;
@@ -78,17 +45,6 @@ void ListPredictiveJobStatusRequest::setPhoneNumber(const std::string& phoneNumb
 {
 	phoneNumber_ = phoneNumber;
 	setCoreParameter("PhoneNumber", phoneNumber);
-}
-
-int ListPredictiveJobStatusRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListPredictiveJobStatusRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListPredictiveJobStatusRequest::getEndTime()const
@@ -122,5 +78,49 @@ void ListPredictiveJobStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListPredictiveJobStatusRequest::getContactName()const
+{
+	return contactName_;
+}
+
+void ListPredictiveJobStatusRequest::setContactName(const std::string& contactName)
+{
+	contactName_ = contactName;
+	setCoreParameter("ContactName", contactName);
+}
+
+std::string ListPredictiveJobStatusRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListPredictiveJobStatusRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ListPredictiveJobStatusRequest::getJobGroupId()const
+{
+	return jobGroupId_;
+}
+
+void ListPredictiveJobStatusRequest::setJobGroupId(const std::string& jobGroupId)
+{
+	jobGroupId_ = jobGroupId;
+	setCoreParameter("JobGroupId", jobGroupId);
+}
+
+int ListPredictiveJobStatusRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListPredictiveJobStatusRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

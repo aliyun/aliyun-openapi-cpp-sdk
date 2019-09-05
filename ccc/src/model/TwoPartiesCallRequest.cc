@@ -25,28 +25,6 @@ TwoPartiesCallRequest::TwoPartiesCallRequest() :
 TwoPartiesCallRequest::~TwoPartiesCallRequest()
 {}
 
-std::string TwoPartiesCallRequest::getCaller()const
-{
-	return caller_;
-}
-
-void TwoPartiesCallRequest::setCaller(const std::string& caller)
-{
-	caller_ = caller;
-	setCoreParameter("Caller", caller);
-}
-
-std::string TwoPartiesCallRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void TwoPartiesCallRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string TwoPartiesCallRequest::getCalleeCustomer()const
 {
 	return calleeCustomer_;
@@ -67,6 +45,28 @@ void TwoPartiesCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string TwoPartiesCallRequest::getCaller()const
+{
+	return caller_;
+}
+
+void TwoPartiesCallRequest::setCaller(const std::string& caller)
+{
+	caller_ = caller;
+	setCoreParameter("Caller", caller);
+}
+
+std::string TwoPartiesCallRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void TwoPartiesCallRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string TwoPartiesCallRequest::getCalleeAgent()const

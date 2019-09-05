@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CreatePredictiveJobsRequest();
 				~CreatePredictiveJobsRequest();
 
+				std::vector<std::string> getJobsJson()const;
+				void setJobsJson(const std::vector<std::string>& jobsJson);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSkillGroupId()const;
 				void setSkillGroupId(const std::string& skillGroupId);
 				std::string getStrategyJson()const;
 				void setStrategyJson(const std::string& strategyJson);
-				std::vector<std::string> getJobsJson()const;
-				void setJobsJson(const std::vector<std::string>& jobsJson);
 
             private:
+				std::vector<std::string> jobsJson_;
 				std::string instanceId_;
 				std::string skillGroupId_;
 				std::string strategyJson_;
-				std::vector<std::string> jobsJson_;
 
 			};
 		}

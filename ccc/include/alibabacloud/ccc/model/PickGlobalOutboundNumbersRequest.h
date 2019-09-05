@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				bool getIsVirtual()const;
 				void setIsVirtual(bool isVirtual);
+				int getCount()const;
+				void setCount(int count);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::vector<std::string> getSkillGroupId()const;
 				void setSkillGroupId(const std::vector<std::string>& skillGroupId);
-				int getCount()const;
-				void setCount(int count);
 				std::string getCalleeNumber()const;
 				void setCalleeNumber(const std::string& calleeNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				bool isVirtual_;
+				int count_;
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::vector<std::string> skillGroupId_;
-				int count_;
 				std::string calleeNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

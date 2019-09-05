@@ -25,6 +25,17 @@ GetConfigRequest::GetConfigRequest() :
 GetConfigRequest::~GetConfigRequest()
 {}
 
+std::string GetConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetConfigRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -67,16 +78,5 @@ void GetConfigRequest::setObjectId(const std::string& objectId)
 {
 	objectId_ = objectId;
 	setCoreParameter("ObjectId", objectId);
-}
-
-std::string GetConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

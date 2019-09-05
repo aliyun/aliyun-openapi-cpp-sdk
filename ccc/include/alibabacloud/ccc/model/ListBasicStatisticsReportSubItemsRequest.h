@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ListBasicStatisticsReportSubItemsRequest();
 				~ListBasicStatisticsReportSubItemsRequest();
 
+				std::string getTitle()const;
+				void setTitle(const std::string& title);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getJobGroupId()const;
 				void setJobGroupId(const std::string& jobGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				std::string title_;
+				int pageNumber_;
 				std::string instanceId_;
 				std::string jobGroupId_;
 				int pageSize_;
-				std::string title_;
-				int pageNumber_;
 
 			};
 		}

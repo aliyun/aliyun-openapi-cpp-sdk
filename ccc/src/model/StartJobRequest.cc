@@ -25,6 +25,17 @@ StartJobRequest::StartJobRequest() :
 StartJobRequest::~StartJobRequest()
 {}
 
+std::string StartJobRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void StartJobRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
 std::string StartJobRequest::getJobJson()const
 {
 	return jobJson_;
@@ -57,17 +68,6 @@ void StartJobRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string StartJobRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void StartJobRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
 }
 
 bool StartJobRequest::getSelfHostedCallCenter()const

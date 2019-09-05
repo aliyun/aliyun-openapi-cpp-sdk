@@ -35,6 +35,14 @@ namespace AlibabaCloud
 				CreatePredictiveJobGroupRequest();
 				~CreatePredictiveJobGroupRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				bool getTimingSchedule()const;
+				void setTimingSchedule(bool timingSchedule);
+				std::vector<std::string> getJobsJson()const;
+				void setJobsJson(const std::vector<std::string>& jobsJson);
+				std::string getJobFilePath()const;
+				void setJobFilePath(const std::string& jobFilePath);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				bool getIsDraft()const;
@@ -45,25 +53,17 @@ namespace AlibabaCloud
 				void setStrategyJson(const std::string& strategyJson);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				bool getTimingSchedule()const;
-				void setTimingSchedule(bool timingSchedule);
-				std::vector<std::string> getJobsJson()const;
-				void setJobsJson(const std::vector<std::string>& jobsJson);
-				std::string getJobFilePath()const;
-				void setJobFilePath(const std::string& jobFilePath);
 
             private:
+				std::string description_;
+				bool timingSchedule_;
+				std::vector<std::string> jobsJson_;
+				std::string jobFilePath_;
 				std::string instanceId_;
 				bool isDraft_;
 				std::string skillGroupId_;
 				std::string strategyJson_;
 				std::string name_;
-				std::string description_;
-				bool timingSchedule_;
-				std::vector<std::string> jobsJson_;
-				std::string jobFilePath_;
 
 			};
 		}

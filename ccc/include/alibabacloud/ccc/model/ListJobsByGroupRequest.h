@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				ListJobsByGroupRequest();
 				~ListJobsByGroupRequest();
 
+				std::string getJobStatus()const;
+				void setJobStatus(const std::string& jobStatus);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getJobFailureReason()const;
 				void setJobFailureReason(const std::string& jobFailureReason);
-				std::string getJobStatus()const;
-				void setJobStatus(const std::string& jobStatus);
 				std::string getJobGroupId()const;
 				void setJobGroupId(const std::string& jobGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				std::string jobStatus_;
+				int pageNumber_;
 				std::string instanceId_;
 				std::string jobFailureReason_;
-				std::string jobStatus_;
 				std::string jobGroupId_;
 				int pageSize_;
-				int pageNumber_;
 
 			};
 		}

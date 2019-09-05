@@ -36,39 +36,6 @@ void ListAgentSummaryReportsRequest::setAgentIds(const std::string& agentIds)
 	setCoreParameter("AgentIds", agentIds);
 }
 
-std::string ListAgentSummaryReportsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListAgentSummaryReportsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string ListAgentSummaryReportsRequest::getSkillGroupId()const
-{
-	return skillGroupId_;
-}
-
-void ListAgentSummaryReportsRequest::setSkillGroupId(const std::string& skillGroupId)
-{
-	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
-}
-
-int ListAgentSummaryReportsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListAgentSummaryReportsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListAgentSummaryReportsRequest::getEndTime()const
 {
 	return endTime_;
@@ -111,5 +78,38 @@ void ListAgentSummaryReportsRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListAgentSummaryReportsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListAgentSummaryReportsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ListAgentSummaryReportsRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void ListAgentSummaryReportsRequest::setSkillGroupId(const std::string& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	setCoreParameter("SkillGroupId", skillGroupId);
+}
+
+int ListAgentSummaryReportsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListAgentSummaryReportsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

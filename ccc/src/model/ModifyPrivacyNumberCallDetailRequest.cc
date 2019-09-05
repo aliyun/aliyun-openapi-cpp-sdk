@@ -36,17 +36,6 @@ void ModifyPrivacyNumberCallDetailRequest::setCallId(const std::string& callId)
 	setCoreParameter("CallId", callId);
 }
 
-std::string ModifyPrivacyNumberCallDetailRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ModifyPrivacyNumberCallDetailRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ModifyPrivacyNumberCallDetailRequest::getContactId()const
 {
 	return contactId_;
@@ -67,5 +56,16 @@ void ModifyPrivacyNumberCallDetailRequest::setAccessKeyId(const std::string& acc
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyPrivacyNumberCallDetailRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyPrivacyNumberCallDetailRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

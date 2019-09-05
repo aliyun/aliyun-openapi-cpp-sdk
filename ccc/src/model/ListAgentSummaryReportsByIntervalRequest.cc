@@ -36,39 +36,6 @@ void ListAgentSummaryReportsByIntervalRequest::setAgentIds(const std::string& ag
 	setCoreParameter("AgentIds", agentIds);
 }
 
-std::string ListAgentSummaryReportsByIntervalRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListAgentSummaryReportsByIntervalRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string ListAgentSummaryReportsByIntervalRequest::getSkillGroupId()const
-{
-	return skillGroupId_;
-}
-
-void ListAgentSummaryReportsByIntervalRequest::setSkillGroupId(const std::string& skillGroupId)
-{
-	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
-}
-
-int ListAgentSummaryReportsByIntervalRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListAgentSummaryReportsByIntervalRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListAgentSummaryReportsByIntervalRequest::getEndTime()const
 {
 	return endTime_;
@@ -78,17 +45,6 @@ void ListAgentSummaryReportsByIntervalRequest::setEndTime(const std::string& end
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string ListAgentSummaryReportsByIntervalRequest::getInterval()const
-{
-	return interval_;
-}
-
-void ListAgentSummaryReportsByIntervalRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setCoreParameter("Interval", interval);
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getStartTime()const
@@ -122,5 +78,49 @@ void ListAgentSummaryReportsByIntervalRequest::setAccessKeyId(const std::string&
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListAgentSummaryReportsByIntervalRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListAgentSummaryReportsByIntervalRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ListAgentSummaryReportsByIntervalRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void ListAgentSummaryReportsByIntervalRequest::setSkillGroupId(const std::string& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	setCoreParameter("SkillGroupId", skillGroupId);
+}
+
+int ListAgentSummaryReportsByIntervalRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListAgentSummaryReportsByIntervalRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListAgentSummaryReportsByIntervalRequest::getInterval()const
+{
+	return interval_;
+}
+
+void ListAgentSummaryReportsByIntervalRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setCoreParameter("Interval", interval);
 }
 

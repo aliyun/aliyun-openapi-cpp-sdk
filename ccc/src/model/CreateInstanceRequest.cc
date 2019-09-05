@@ -49,17 +49,6 @@ void CreateInstanceRequest::setUserObject(const std::vector<std::string>& userOb
 		setCoreParameter("UserObject."+ std::to_string(i), userObject.at(i));
 }
 
-std::string CreateInstanceRequest::getName()const
-{
-	return name_;
-}
-
-void CreateInstanceRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateInstanceRequest::getDomainName()const
 {
 	return domainName_;
@@ -104,28 +93,6 @@ void CreateInstanceRequest::setStorageMaxDays(int storageMaxDays)
 	setCoreParameter("StorageMaxDays", std::to_string(storageMaxDays));
 }
 
-int CreateInstanceRequest::getStorageMaxSize()const
-{
-	return storageMaxSize_;
-}
-
-void CreateInstanceRequest::setStorageMaxSize(int storageMaxSize)
-{
-	storageMaxSize_ = storageMaxSize;
-	setCoreParameter("StorageMaxSize", std::to_string(storageMaxSize));
-}
-
-std::string CreateInstanceRequest::getDirectoryId()const
-{
-	return directoryId_;
-}
-
-void CreateInstanceRequest::setDirectoryId(const std::string& directoryId)
-{
-	directoryId_ = directoryId;
-	setCoreParameter("DirectoryId", directoryId);
-}
-
 std::vector<std::string> CreateInstanceRequest::getAdminRamId()const
 {
 	return adminRamId_;
@@ -147,5 +114,38 @@ void CreateInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateInstanceRequest::getName()const
+{
+	return name_;
+}
+
+void CreateInstanceRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+int CreateInstanceRequest::getStorageMaxSize()const
+{
+	return storageMaxSize_;
+}
+
+void CreateInstanceRequest::setStorageMaxSize(int storageMaxSize)
+{
+	storageMaxSize_ = storageMaxSize;
+	setCoreParameter("StorageMaxSize", std::to_string(storageMaxSize));
+}
+
+std::string CreateInstanceRequest::getDirectoryId()const
+{
+	return directoryId_;
+}
+
+void CreateInstanceRequest::setDirectoryId(const std::string& directoryId)
+{
+	directoryId_ = directoryId;
+	setCoreParameter("DirectoryId", directoryId);
 }
 

@@ -25,6 +25,17 @@ RemoveNumberFromSkillGroupRequest::RemoveNumberFromSkillGroupRequest() :
 RemoveNumberFromSkillGroupRequest::~RemoveNumberFromSkillGroupRequest()
 {}
 
+std::string RemoveNumberFromSkillGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RemoveNumberFromSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RemoveNumberFromSkillGroupRequest::getNumber()const
 {
 	return number_;
@@ -56,16 +67,5 @@ void RemoveNumberFromSkillGroupRequest::setSkillGroupId(const std::string& skill
 {
 	skillGroupId_ = skillGroupId;
 	setCoreParameter("SkillGroupId", skillGroupId);
-}
-
-std::string RemoveNumberFromSkillGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RemoveNumberFromSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

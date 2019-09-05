@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ListUnreachableContactsRequest();
 				~ListUnreachableContactsRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getJobGroupId()const;
 				void setJobGroupId(const std::string& jobGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				int pageNumber_;
 				std::string instanceId_;
 				std::string jobGroupId_;
 				int pageSize_;
-				int pageNumber_;
 
 			};
 		}

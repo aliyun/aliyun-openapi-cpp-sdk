@@ -25,6 +25,17 @@ AddNumberToSkillGroupRequest::AddNumberToSkillGroupRequest() :
 AddNumberToSkillGroupRequest::~AddNumberToSkillGroupRequest()
 {}
 
+std::string AddNumberToSkillGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddNumberToSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddNumberToSkillGroupRequest::getNumber()const
 {
 	return number_;
@@ -56,16 +67,5 @@ void AddNumberToSkillGroupRequest::setSkillGroupId(const std::string& skillGroup
 {
 	skillGroupId_ = skillGroupId;
 	setCoreParameter("SkillGroupId", skillGroupId);
-}
-
-std::string AddNumberToSkillGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddNumberToSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

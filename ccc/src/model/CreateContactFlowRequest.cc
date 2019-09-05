@@ -36,28 +36,6 @@ void CreateContactFlowRequest::setCanvas(const std::string& canvas)
 	setCoreParameter("Canvas", canvas);
 }
 
-std::string CreateContactFlowRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateContactFlowRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string CreateContactFlowRequest::getName()const
-{
-	return name_;
-}
-
-void CreateContactFlowRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateContactFlowRequest::getDescription()const
 {
 	return description_;
@@ -100,5 +78,27 @@ void CreateContactFlowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateContactFlowRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateContactFlowRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string CreateContactFlowRequest::getName()const
+{
+	return name_;
+}
+
+void CreateContactFlowRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

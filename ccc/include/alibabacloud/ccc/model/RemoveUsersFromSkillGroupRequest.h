@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				RemoveUsersFromSkillGroupRequest();
 				~RemoveUsersFromSkillGroupRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getSkillGroupId()const;
-				void setSkillGroupId(const std::string& skillGroupId);
 				std::vector<std::string> getUserId()const;
 				void setUserId(const std::vector<std::string>& userId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getSkillGroupId()const;
+				void setSkillGroupId(const std::string& skillGroupId);
 
             private:
-				std::string instanceId_;
-				std::string skillGroupId_;
 				std::vector<std::string> userId_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				std::string skillGroupId_;
 
 			};
 		}

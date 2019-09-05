@@ -25,28 +25,6 @@ GetInstanceSummaryReportSinceMidnightRequest::GetInstanceSummaryReportSinceMidni
 GetInstanceSummaryReportSinceMidnightRequest::~GetInstanceSummaryReportSinceMidnightRequest()
 {}
 
-std::string GetInstanceSummaryReportSinceMidnightRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void GetInstanceSummaryReportSinceMidnightRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-int GetInstanceSummaryReportSinceMidnightRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void GetInstanceSummaryReportSinceMidnightRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int GetInstanceSummaryReportSinceMidnightRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -67,5 +45,27 @@ void GetInstanceSummaryReportSinceMidnightRequest::setAccessKeyId(const std::str
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetInstanceSummaryReportSinceMidnightRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GetInstanceSummaryReportSinceMidnightRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int GetInstanceSummaryReportSinceMidnightRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetInstanceSummaryReportSinceMidnightRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

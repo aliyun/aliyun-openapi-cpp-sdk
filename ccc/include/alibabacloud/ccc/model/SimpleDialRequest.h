@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				SimpleDialRequest();
 				~SimpleDialRequest();
 
+				std::string getCallee()const;
+				void setCallee(const std::string& callee);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getCaller()const;
 				void setCaller(const std::string& caller);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getContractFlowId()const;
 				void setContractFlowId(const std::string& contractFlowId);
-				std::string getCallee()const;
-				void setCallee(const std::string& callee);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string callee_;
+				std::string accessKeyId_;
 				std::string caller_;
 				std::string instanceId_;
 				std::string contractFlowId_;
-				std::string callee_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				ListPredictiveJobGroupsRequest();
 				~ListPredictiveJobGroupsRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getCriteria()const;
 				void setCriteria(const std::string& criteria);
-				std::string getSkillGroupId()const;
-				void setSkillGroupId(const std::string& skillGroupId);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getSkillGroupId()const;
+				void setSkillGroupId(const std::string& skillGroupId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string instanceId_;
 				std::string criteria_;
-				std::string skillGroupId_;
-				std::string name_;
-				int pageSize_;
 				long endTime_;
 				long startTime_;
 				int pageNumber_;
+				std::string instanceId_;
+				std::string skillGroupId_;
+				std::string name_;
+				int pageSize_;
 
 			};
 		}

@@ -37,14 +37,10 @@ namespace AlibabaCloud
 
 				std::string getAgentId()const;
 				void setAgentId(const std::string& agentId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getCriteria()const;
 				void setCriteria(const std::string& criteria);
 				std::string getPhoneNumber()const;
 				void setPhoneNumber(const std::string& phoneNumber);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getStopTime()const;
 				void setStopTime(long stopTime);
 				long getStartTime()const;
@@ -53,17 +49,21 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::string agentId_;
-				std::string instanceId_;
 				std::string criteria_;
 				std::string phoneNumber_;
-				int pageSize_;
 				long stopTime_;
 				long startTime_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				int pageSize_;
 
 			};
 		}

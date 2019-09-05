@@ -25,6 +25,28 @@ SimpleDialRequest::SimpleDialRequest() :
 SimpleDialRequest::~SimpleDialRequest()
 {}
 
+std::string SimpleDialRequest::getCallee()const
+{
+	return callee_;
+}
+
+void SimpleDialRequest::setCallee(const std::string& callee)
+{
+	callee_ = callee;
+	setCoreParameter("Callee", callee);
+}
+
+std::string SimpleDialRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SimpleDialRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string SimpleDialRequest::getCaller()const
 {
 	return caller_;
@@ -56,27 +78,5 @@ void SimpleDialRequest::setContractFlowId(const std::string& contractFlowId)
 {
 	contractFlowId_ = contractFlowId;
 	setCoreParameter("ContractFlowId", contractFlowId);
-}
-
-std::string SimpleDialRequest::getCallee()const
-{
-	return callee_;
-}
-
-void SimpleDialRequest::setCallee(const std::string& callee)
-{
-	callee_ = callee;
-	setCoreParameter("Callee", callee);
-}
-
-std::string SimpleDialRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SimpleDialRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

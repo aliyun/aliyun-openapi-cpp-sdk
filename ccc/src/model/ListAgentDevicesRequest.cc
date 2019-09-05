@@ -25,17 +25,6 @@ ListAgentDevicesRequest::ListAgentDevicesRequest() :
 ListAgentDevicesRequest::~ListAgentDevicesRequest()
 {}
 
-std::string ListAgentDevicesRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListAgentDevicesRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ListAgentDevicesRequest::getRamIds()const
 {
 	return ramIds_;
@@ -78,5 +67,16 @@ void ListAgentDevicesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListAgentDevicesRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListAgentDevicesRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

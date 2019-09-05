@@ -25,17 +25,6 @@ CreateSurveyRequest::CreateSurveyRequest() :
 CreateSurveyRequest::~CreateSurveyRequest()
 {}
 
-std::string CreateSurveyRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateSurveyRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string CreateSurveyRequest::getRole()const
 {
 	return role_;
@@ -45,6 +34,39 @@ void CreateSurveyRequest::setRole(const std::string& role)
 {
 	role_ = role;
 	setCoreParameter("Role", role);
+}
+
+std::string CreateSurveyRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateSurveyRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string CreateSurveyRequest::getSpeechOptimizationParam()const
+{
+	return speechOptimizationParam_;
+}
+
+void CreateSurveyRequest::setSpeechOptimizationParam(const std::string& speechOptimizationParam)
+{
+	speechOptimizationParam_ = speechOptimizationParam;
+	setCoreParameter("SpeechOptimizationParam", speechOptimizationParam);
+}
+
+std::string CreateSurveyRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateSurveyRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int CreateSurveyRequest::getRound()const
@@ -91,17 +113,6 @@ void CreateSurveyRequest::setGlobalQuestions(const std::string& globalQuestions)
 	setCoreParameter("GlobalQuestions", globalQuestions);
 }
 
-std::string CreateSurveyRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateSurveyRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 std::string CreateSurveyRequest::getCorpora()const
 {
 	return corpora_;
@@ -111,17 +122,6 @@ void CreateSurveyRequest::setCorpora(const std::string& corpora)
 {
 	corpora_ = corpora;
 	setCoreParameter("Corpora", corpora);
-}
-
-std::string CreateSurveyRequest::getSpeechOptimizationParam()const
-{
-	return speechOptimizationParam_;
-}
-
-void CreateSurveyRequest::setSpeechOptimizationParam(const std::string& speechOptimizationParam)
-{
-	speechOptimizationParam_ = speechOptimizationParam;
-	setCoreParameter("SpeechOptimizationParam", speechOptimizationParam);
 }
 
 std::string CreateSurveyRequest::getScenarioId()const

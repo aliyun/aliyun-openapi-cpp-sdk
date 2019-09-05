@@ -36,6 +36,28 @@ void ListAgentStatesRequest::setAgentIds(const std::string& agentIds)
 	setCoreParameter("AgentIds", agentIds);
 }
 
+int ListAgentStatesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListAgentStatesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListAgentStatesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListAgentStatesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListAgentStatesRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -78,27 +100,5 @@ void ListAgentStatesRequest::setState(const std::string& state)
 {
 	state_ = state;
 	setCoreParameter("State", state);
-}
-
-int ListAgentStatesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListAgentStatesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListAgentStatesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListAgentStatesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

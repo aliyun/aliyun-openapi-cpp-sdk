@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ListAgentDevicesRequest();
 				~ListAgentDevicesRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getRamIds()const;
 				void setRamIds(const std::string& ramIds);
 				long getStartTime()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setStopTime(long stopTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				std::string ramIds_;
 				long startTime_;
 				long stopTime_;
 				std::string accessKeyId_;
+				std::string instanceId_;
 
 			};
 		}

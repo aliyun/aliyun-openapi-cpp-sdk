@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				CreateBatchJobsRequest();
 				~CreateBatchJobsRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getJobFilePath()const;
+				void setJobFilePath(const std::string& jobFilePath);
 				std::vector<std::string> getCallingNumber()const;
 				void setCallingNumber(const std::vector<std::string>& callingNumber);
 				std::string getInstanceId()const;
@@ -45,22 +49,18 @@ namespace AlibabaCloud
 				void setStrategyJson(const std::string& strategyJson);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getScenarioId()const;
 				void setScenarioId(const std::string& scenarioId);
-				std::string getJobFilePath()const;
-				void setJobFilePath(const std::string& jobFilePath);
 
             private:
+				std::string description_;
+				std::string jobFilePath_;
 				std::vector<std::string> callingNumber_;
 				std::string instanceId_;
 				bool submitted_;
 				std::string strategyJson_;
 				std::string name_;
-				std::string description_;
 				std::string scenarioId_;
-				std::string jobFilePath_;
 
 			};
 		}

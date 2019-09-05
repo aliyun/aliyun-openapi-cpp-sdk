@@ -36,17 +36,6 @@ void AddBulkPhoneNumbersRequest::setContactFlowId(const std::string& contactFlow
 	setCoreParameter("ContactFlowId", contactFlowId);
 }
 
-std::string AddBulkPhoneNumbersRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void AddBulkPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string AddBulkPhoneNumbersRequest::getUsage()const
 {
 	return usage_;
@@ -56,18 +45,6 @@ void AddBulkPhoneNumbersRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
 	setCoreParameter("Usage", usage);
-}
-
-std::vector<std::string> AddBulkPhoneNumbersRequest::getSkillGroupId()const
-{
-	return skillGroupId_;
-}
-
-void AddBulkPhoneNumbersRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
-{
-	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
 }
 
 std::vector<std::string> AddBulkPhoneNumbersRequest::getPhoneNumber()const
@@ -91,5 +68,28 @@ void AddBulkPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AddBulkPhoneNumbersRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void AddBulkPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::vector<std::string> AddBulkPhoneNumbersRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void AddBulkPhoneNumbersRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	for(int i = 0; i!= skillGroupId.size(); i++)
+		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
 }
 

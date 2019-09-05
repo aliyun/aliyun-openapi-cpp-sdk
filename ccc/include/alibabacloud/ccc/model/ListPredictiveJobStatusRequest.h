@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				ListPredictiveJobStatusRequest();
 				~ListPredictiveJobStatusRequest();
 
-				std::string getContactName()const;
-				void setContactName(const std::string& contactName);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getTimeAlignment()const;
 				void setTimeAlignment(const std::string& timeAlignment);
-				std::string getJobGroupId()const;
-				void setJobGroupId(const std::string& jobGroupId);
 				std::string getPhoneNumber()const;
 				void setPhoneNumber(const std::string& phoneNumber);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getContactName()const;
+				void setContactName(const std::string& contactName);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getJobGroupId()const;
+				void setJobGroupId(const std::string& jobGroupId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string contactName_;
-				std::string instanceId_;
 				std::string timeAlignment_;
-				std::string jobGroupId_;
 				std::string phoneNumber_;
-				int pageSize_;
 				long endTime_;
 				long startTime_;
 				int pageNumber_;
+				std::string contactName_;
+				std::string instanceId_;
+				std::string jobGroupId_;
+				int pageSize_;
 
 			};
 		}

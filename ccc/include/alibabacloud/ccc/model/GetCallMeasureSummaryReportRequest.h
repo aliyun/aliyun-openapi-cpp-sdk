@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				std::string getIntervalType()const;
 				void setIntervalType(const std::string& intervalType);
-				int getMonth()const;
-				void setMonth(int month);
 				int getYear()const;
 				void setYear(int year);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				int getDay()const;
-				void setDay(int day);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getMonth()const;
+				void setMonth(int month);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getDay()const;
+				void setDay(int day);
 
             private:
 				std::string intervalType_;
-				int month_;
 				int year_;
-				int pageSize_;
-				int day_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				int month_;
+				int pageSize_;
+				int day_;
 
 			};
 		}

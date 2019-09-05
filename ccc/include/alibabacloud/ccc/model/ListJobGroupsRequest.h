@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ListJobGroupsRequest();
 				~ListJobGroupsRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string instanceId_;
-				int pageSize_;
 				long endTime_;
 				long startTime_;
 				int pageNumber_;
+				std::string instanceId_;
+				int pageSize_;
 
 			};
 		}

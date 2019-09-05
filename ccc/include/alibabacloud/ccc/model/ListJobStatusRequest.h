@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				ListJobStatusRequest();
 				~ListJobStatusRequest();
 
-				std::string getContactName()const;
-				void setContactName(const std::string& contactName);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getTimeAlignment()const;
 				void setTimeAlignment(const std::string& timeAlignment);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getPhoneNumber()const;
 				void setPhoneNumber(const std::string& phoneNumber);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
-				std::string getScenarioId()const;
-				void setScenarioId(const std::string& scenarioId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getContactName()const;
+				void setContactName(const std::string& contactName);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getScenarioId()const;
+				void setScenarioId(const std::string& scenarioId);
 
             private:
-				std::string contactName_;
-				std::string instanceId_;
 				std::string timeAlignment_;
 				std::string groupId_;
 				std::string phoneNumber_;
-				int pageSize_;
 				long endTime_;
 				long startTime_;
-				std::string scenarioId_;
 				int pageNumber_;
+				std::string contactName_;
+				std::string instanceId_;
+				int pageSize_;
+				std::string scenarioId_;
 
 			};
 		}

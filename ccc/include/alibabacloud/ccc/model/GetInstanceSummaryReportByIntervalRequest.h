@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				GetInstanceSummaryReportByIntervalRequest();
 				~GetInstanceSummaryReportByIntervalRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
 
             private:
-				std::string instanceId_;
-				int pageSize_;
 				std::string endTime_;
-				std::string interval_;
 				std::string startTime_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				int pageSize_;
+				std::string interval_;
 
 			};
 		}

@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getCanvas()const;
 				void setCanvas(const std::string& canvas);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getContactFlowVersionId()const;
-				void setContactFlowVersionId(const std::string& contactFlowVersionId);
 				std::string getContent()const;
 				void setContent(const std::string& content);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getContactFlowVersionId()const;
+				void setContactFlowVersionId(const std::string& contactFlowVersionId);
 
             private:
 				std::string canvas_;
-				std::string instanceId_;
-				std::string contactFlowVersionId_;
 				std::string content_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				std::string contactFlowVersionId_;
 
 			};
 		}

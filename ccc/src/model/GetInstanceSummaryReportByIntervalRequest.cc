@@ -25,28 +25,6 @@ GetInstanceSummaryReportByIntervalRequest::GetInstanceSummaryReportByIntervalReq
 GetInstanceSummaryReportByIntervalRequest::~GetInstanceSummaryReportByIntervalRequest()
 {}
 
-std::string GetInstanceSummaryReportByIntervalRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void GetInstanceSummaryReportByIntervalRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-int GetInstanceSummaryReportByIntervalRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void GetInstanceSummaryReportByIntervalRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string GetInstanceSummaryReportByIntervalRequest::getEndTime()const
 {
 	return endTime_;
@@ -56,17 +34,6 @@ void GetInstanceSummaryReportByIntervalRequest::setEndTime(const std::string& en
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string GetInstanceSummaryReportByIntervalRequest::getInterval()const
-{
-	return interval_;
-}
-
-void GetInstanceSummaryReportByIntervalRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setCoreParameter("Interval", interval);
 }
 
 std::string GetInstanceSummaryReportByIntervalRequest::getStartTime()const
@@ -100,5 +67,38 @@ void GetInstanceSummaryReportByIntervalRequest::setAccessKeyId(const std::string
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetInstanceSummaryReportByIntervalRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GetInstanceSummaryReportByIntervalRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int GetInstanceSummaryReportByIntervalRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetInstanceSummaryReportByIntervalRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string GetInstanceSummaryReportByIntervalRequest::getInterval()const
+{
+	return interval_;
+}
+
+void GetInstanceSummaryReportByIntervalRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setCoreParameter("Interval", interval);
 }
 

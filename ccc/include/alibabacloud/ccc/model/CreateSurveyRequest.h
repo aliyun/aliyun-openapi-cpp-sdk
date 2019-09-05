@@ -35,10 +35,14 @@ namespace AlibabaCloud
 				CreateSurveyRequest();
 				~CreateSurveyRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getRole()const;
 				void setRole(const std::string& role);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getSpeechOptimizationParam()const;
+				void setSpeechOptimizationParam(const std::string& speechOptimizationParam);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				int getRound()const;
 				void setRound(int round);
 				std::string getFlowJson()const;
@@ -47,25 +51,21 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getGlobalQuestions()const;
 				void setGlobalQuestions(const std::string& globalQuestions);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getCorpora()const;
 				void setCorpora(const std::string& corpora);
-				std::string getSpeechOptimizationParam()const;
-				void setSpeechOptimizationParam(const std::string& speechOptimizationParam);
 				std::string getScenarioId()const;
 				void setScenarioId(const std::string& scenarioId);
 
             private:
-				std::string instanceId_;
 				std::string role_;
+				std::string description_;
+				std::string speechOptimizationParam_;
+				std::string instanceId_;
 				int round_;
 				std::string flowJson_;
 				std::string name_;
 				std::string globalQuestions_;
-				std::string description_;
 				std::string corpora_;
-				std::string speechOptimizationParam_;
 				std::string scenarioId_;
 
 			};

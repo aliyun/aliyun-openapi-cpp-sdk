@@ -25,39 +25,6 @@ CreateMediaRequest::CreateMediaRequest() :
 CreateMediaRequest::~CreateMediaRequest()
 {}
 
-std::string CreateMediaRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateMediaRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string CreateMediaRequest::getFileName()const
-{
-	return fileName_;
-}
-
-void CreateMediaRequest::setFileName(const std::string& fileName)
-{
-	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
-}
-
-std::string CreateMediaRequest::getName()const
-{
-	return name_;
-}
-
-void CreateMediaRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateMediaRequest::getDescription()const
 {
 	return description_;
@@ -133,5 +100,38 @@ void CreateMediaRequest::setOssFileName(const std::string& ossFileName)
 {
 	ossFileName_ = ossFileName;
 	setCoreParameter("OssFileName", ossFileName);
+}
+
+std::string CreateMediaRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateMediaRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string CreateMediaRequest::getFileName()const
+{
+	return fileName_;
+}
+
+void CreateMediaRequest::setFileName(const std::string& fileName)
+{
+	fileName_ = fileName;
+	setCoreParameter("FileName", fileName);
+}
+
+std::string CreateMediaRequest::getName()const
+{
+	return name_;
+}
+
+void CreateMediaRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

@@ -25,6 +25,51 @@ CreatePredictiveJobGroupRequest::CreatePredictiveJobGroupRequest() :
 CreatePredictiveJobGroupRequest::~CreatePredictiveJobGroupRequest()
 {}
 
+std::string CreatePredictiveJobGroupRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreatePredictiveJobGroupRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+bool CreatePredictiveJobGroupRequest::getTimingSchedule()const
+{
+	return timingSchedule_;
+}
+
+void CreatePredictiveJobGroupRequest::setTimingSchedule(bool timingSchedule)
+{
+	timingSchedule_ = timingSchedule;
+	setCoreParameter("TimingSchedule", timingSchedule ? "true" : "false");
+}
+
+std::vector<std::string> CreatePredictiveJobGroupRequest::getJobsJson()const
+{
+	return jobsJson_;
+}
+
+void CreatePredictiveJobGroupRequest::setJobsJson(const std::vector<std::string>& jobsJson)
+{
+	jobsJson_ = jobsJson;
+	for(int i = 0; i!= jobsJson.size(); i++)
+		setCoreParameter("JobsJson."+ std::to_string(i), jobsJson.at(i));
+}
+
+std::string CreatePredictiveJobGroupRequest::getJobFilePath()const
+{
+	return jobFilePath_;
+}
+
+void CreatePredictiveJobGroupRequest::setJobFilePath(const std::string& jobFilePath)
+{
+	jobFilePath_ = jobFilePath;
+	setCoreParameter("JobFilePath", jobFilePath);
+}
+
 std::string CreatePredictiveJobGroupRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -78,50 +123,5 @@ void CreatePredictiveJobGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string CreatePredictiveJobGroupRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreatePredictiveJobGroupRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
-bool CreatePredictiveJobGroupRequest::getTimingSchedule()const
-{
-	return timingSchedule_;
-}
-
-void CreatePredictiveJobGroupRequest::setTimingSchedule(bool timingSchedule)
-{
-	timingSchedule_ = timingSchedule;
-	setCoreParameter("TimingSchedule", timingSchedule ? "true" : "false");
-}
-
-std::vector<std::string> CreatePredictiveJobGroupRequest::getJobsJson()const
-{
-	return jobsJson_;
-}
-
-void CreatePredictiveJobGroupRequest::setJobsJson(const std::vector<std::string>& jobsJson)
-{
-	jobsJson_ = jobsJson;
-	for(int i = 0; i!= jobsJson.size(); i++)
-		setCoreParameter("JobsJson."+ std::to_string(i), jobsJson.at(i));
-}
-
-std::string CreatePredictiveJobGroupRequest::getJobFilePath()const
-{
-	return jobFilePath_;
-}
-
-void CreatePredictiveJobGroupRequest::setJobFilePath(const std::string& jobFilePath)
-{
-	jobFilePath_ = jobFilePath;
-	setCoreParameter("JobFilePath", jobFilePath);
 }
 

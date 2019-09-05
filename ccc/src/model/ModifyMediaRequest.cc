@@ -25,39 +25,6 @@ ModifyMediaRequest::ModifyMediaRequest() :
 ModifyMediaRequest::~ModifyMediaRequest()
 {}
 
-std::string ModifyMediaRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ModifyMediaRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string ModifyMediaRequest::getFileName()const
-{
-	return fileName_;
-}
-
-void ModifyMediaRequest::setFileName(const std::string& fileName)
-{
-	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
-}
-
-std::string ModifyMediaRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyMediaRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string ModifyMediaRequest::getDescription()const
 {
 	return description_;
@@ -133,5 +100,38 @@ void ModifyMediaRequest::setOssFileName(const std::string& ossFileName)
 {
 	ossFileName_ = ossFileName;
 	setCoreParameter("OssFileName", ossFileName);
+}
+
+std::string ModifyMediaRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyMediaRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ModifyMediaRequest::getFileName()const
+{
+	return fileName_;
+}
+
+void ModifyMediaRequest::setFileName(const std::string& fileName)
+{
+	fileName_ = fileName;
+	setCoreParameter("FileName", fileName);
+}
+
+std::string ModifyMediaRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyMediaRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

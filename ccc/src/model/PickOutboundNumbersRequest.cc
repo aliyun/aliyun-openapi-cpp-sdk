@@ -25,17 +25,6 @@ PickOutboundNumbersRequest::PickOutboundNumbersRequest() :
 PickOutboundNumbersRequest::~PickOutboundNumbersRequest()
 {}
 
-std::string PickOutboundNumbersRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void PickOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 int PickOutboundNumbersRequest::getCount()const
 {
 	return count_;
@@ -45,6 +34,28 @@ void PickOutboundNumbersRequest::setCount(int count)
 {
 	count_ = count;
 	setCoreParameter("Count", std::to_string(count));
+}
+
+std::string PickOutboundNumbersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void PickOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string PickOutboundNumbersRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void PickOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> PickOutboundNumbersRequest::getCandidateNumber()const
@@ -68,16 +79,5 @@ void PickOutboundNumbersRequest::setCalleeNumber(const std::string& calleeNumber
 {
 	calleeNumber_ = calleeNumber;
 	setCoreParameter("CalleeNumber", calleeNumber);
-}
-
-std::string PickOutboundNumbersRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void PickOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				TwoPartiesCallRequest();
 				~TwoPartiesCallRequest();
 
-				std::string getCaller()const;
-				void setCaller(const std::string& caller);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getCalleeCustomer()const;
 				void setCalleeCustomer(const std::string& calleeCustomer);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCaller()const;
+				void setCaller(const std::string& caller);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getCalleeAgent()const;
 				void setCalleeAgent(const std::string& calleeAgent);
 
             private:
-				std::string caller_;
-				std::string instanceId_;
 				std::string calleeCustomer_;
 				std::string accessKeyId_;
+				std::string caller_;
+				std::string instanceId_;
 				std::string calleeAgent_;
 
 			};

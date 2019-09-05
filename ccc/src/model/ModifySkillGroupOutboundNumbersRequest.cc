@@ -25,6 +25,28 @@ ModifySkillGroupOutboundNumbersRequest::ModifySkillGroupOutboundNumbersRequest()
 ModifySkillGroupOutboundNumbersRequest::~ModifySkillGroupOutboundNumbersRequest()
 {}
 
+int ModifySkillGroupOutboundNumbersRequest::getOperationType()const
+{
+	return operationType_;
+}
+
+void ModifySkillGroupOutboundNumbersRequest::setOperationType(int operationType)
+{
+	operationType_ = operationType;
+	setCoreParameter("OperationType", std::to_string(operationType));
+}
+
+std::string ModifySkillGroupOutboundNumbersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifySkillGroupOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifySkillGroupOutboundNumbersRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -57,27 +79,5 @@ void ModifySkillGroupOutboundNumbersRequest::setSkillGroupId(const std::string& 
 {
 	skillGroupId_ = skillGroupId;
 	setCoreParameter("SkillGroupId", skillGroupId);
-}
-
-int ModifySkillGroupOutboundNumbersRequest::getOperationType()const
-{
-	return operationType_;
-}
-
-void ModifySkillGroupOutboundNumbersRequest::setOperationType(int operationType)
-{
-	operationType_ = operationType;
-	setCoreParameter("OperationType", std::to_string(operationType));
-}
-
-std::string ModifySkillGroupOutboundNumbersRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifySkillGroupOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

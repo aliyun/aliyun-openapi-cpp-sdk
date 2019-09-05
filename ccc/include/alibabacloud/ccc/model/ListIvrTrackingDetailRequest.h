@@ -35,16 +35,8 @@ namespace AlibabaCloud
 				ListIvrTrackingDetailRequest();
 				~ListIvrTrackingDetailRequest();
 
-				std::string getCallingNumber()const;
-				void setCallingNumber(const std::string& callingNumber);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getContactId()const;
 				void setContactId(const std::string& contactId);
-				std::string getCalledNumber()const;
-				void setCalledNumber(const std::string& calledNumber);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				long getStopTime()const;
@@ -53,17 +45,25 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCallingNumber()const;
+				void setCallingNumber(const std::string& callingNumber);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getCalledNumber()const;
+				void setCalledNumber(const std::string& calledNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string callingNumber_;
-				std::string instanceId_;
 				std::string contactId_;
-				std::string calledNumber_;
-				int pageSize_;
 				long startTime_;
 				long stopTime_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string callingNumber_;
+				std::string instanceId_;
+				std::string calledNumber_;
+				int pageSize_;
 
 			};
 		}

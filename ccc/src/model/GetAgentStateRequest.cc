@@ -36,17 +36,6 @@ void GetAgentStateRequest::setAgentId(const std::string& agentId)
 	setCoreParameter("AgentId", agentId);
 }
 
-std::string GetAgentStateRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void GetAgentStateRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string GetAgentStateRequest::getDn()const
 {
 	return dn_;
@@ -67,5 +56,16 @@ void GetAgentStateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetAgentStateRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GetAgentStateRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

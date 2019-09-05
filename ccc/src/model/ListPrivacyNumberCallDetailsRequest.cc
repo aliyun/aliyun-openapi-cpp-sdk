@@ -36,17 +36,6 @@ void ListPrivacyNumberCallDetailsRequest::setAgentId(const std::string& agentId)
 	setCoreParameter("AgentId", agentId);
 }
 
-std::string ListPrivacyNumberCallDetailsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListPrivacyNumberCallDetailsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ListPrivacyNumberCallDetailsRequest::getContactId()const
 {
 	return contactId_;
@@ -56,28 +45,6 @@ void ListPrivacyNumberCallDetailsRequest::setContactId(const std::string& contac
 {
 	contactId_ = contactId;
 	setCoreParameter("ContactId", contactId);
-}
-
-std::string ListPrivacyNumberCallDetailsRequest::getAgentName()const
-{
-	return agentName_;
-}
-
-void ListPrivacyNumberCallDetailsRequest::setAgentName(const std::string& agentName)
-{
-	agentName_ = agentName;
-	setCoreParameter("AgentName", agentName);
-}
-
-int ListPrivacyNumberCallDetailsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListPrivacyNumberCallDetailsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListPrivacyNumberCallDetailsRequest::getEndTime()const
@@ -122,5 +89,38 @@ void ListPrivacyNumberCallDetailsRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListPrivacyNumberCallDetailsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListPrivacyNumberCallDetailsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ListPrivacyNumberCallDetailsRequest::getAgentName()const
+{
+	return agentName_;
+}
+
+void ListPrivacyNumberCallDetailsRequest::setAgentName(const std::string& agentName)
+{
+	agentName_ = agentName;
+	setCoreParameter("AgentName", agentName);
+}
+
+int ListPrivacyNumberCallDetailsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListPrivacyNumberCallDetailsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

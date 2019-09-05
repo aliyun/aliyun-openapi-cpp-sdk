@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				FindUsersRequest();
 				~FindUsersRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getCriteria()const;
 				void setCriteria(const std::string& criteria);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string instanceId_;
 				std::string criteria_;
-				int pageSize_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				int pageSize_;
 
 			};
 		}

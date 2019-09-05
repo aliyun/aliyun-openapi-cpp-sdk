@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ModifyAgentDeviceRequest();
 				~ModifyAgentDeviceRequest();
 
-				long getAgentDeviceId()const;
-				void setAgentDeviceId(long agentDeviceId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				int getIsLogin()const;
 				void setIsLogin(int isLogin);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getAgentDeviceId()const;
+				void setAgentDeviceId(long agentDeviceId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				long agentDeviceId_;
-				std::string instanceId_;
 				int isLogin_;
 				std::string accessKeyId_;
+				long agentDeviceId_;
+				std::string instanceId_;
 
 			};
 		}

@@ -25,28 +25,6 @@ GetInstanceSummaryReportRequest::GetInstanceSummaryReportRequest() :
 GetInstanceSummaryReportRequest::~GetInstanceSummaryReportRequest()
 {}
 
-std::string GetInstanceSummaryReportRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void GetInstanceSummaryReportRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-int GetInstanceSummaryReportRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void GetInstanceSummaryReportRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string GetInstanceSummaryReportRequest::getEndTime()const
 {
 	return endTime_;
@@ -89,5 +67,27 @@ void GetInstanceSummaryReportRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetInstanceSummaryReportRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GetInstanceSummaryReportRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int GetInstanceSummaryReportRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetInstanceSummaryReportRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_ENCRYPTREQUEST_H_
-#define ALIBABACLOUD_CCC_MODEL_ENCRYPTREQUEST_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_RESETUSERSTATUSREQUEST_H_
+#define ALIBABACLOUD_CCC_MODEL_RESETUSERSTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT EncryptRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CCC_EXPORT ResetUserStatusRequest : public RpcServiceRequest
 			{
 
 			public:
-				EncryptRequest();
-				~EncryptRequest();
+				ResetUserStatusRequest();
+				~ResetUserStatusRequest();
 
-				std::string getPublicKey()const;
-				void setPublicKey(const std::string& publicKey);
-				std::vector<std::string> getPlainText()const;
-				void setPlainText(const std::vector<std::string>& plainText);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string publicKey_;
-				std::vector<std::string> plainText_;
+				std::string instanceId_;
 				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_ENCRYPTREQUEST_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_RESETUSERSTATUSREQUEST_H_

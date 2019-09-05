@@ -25,17 +25,6 @@ QueryRedialIndicatorRequest::QueryRedialIndicatorRequest() :
 QueryRedialIndicatorRequest::~QueryRedialIndicatorRequest()
 {}
 
-std::string QueryRedialIndicatorRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void QueryRedialIndicatorRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string QueryRedialIndicatorRequest::getContactId()const
 {
 	return contactId_;
@@ -67,5 +56,16 @@ void QueryRedialIndicatorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryRedialIndicatorRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void QueryRedialIndicatorRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

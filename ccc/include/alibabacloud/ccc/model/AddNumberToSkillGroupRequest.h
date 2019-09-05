@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				AddNumberToSkillGroupRequest();
 				~AddNumberToSkillGroupRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getNumber()const;
 				void setNumber(const std::string& number);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSkillGroupId()const;
 				void setSkillGroupId(const std::string& skillGroupId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string number_;
 				std::string instanceId_;
 				std::string skillGroupId_;
-				std::string accessKeyId_;
 
 			};
 		}

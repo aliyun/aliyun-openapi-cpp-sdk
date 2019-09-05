@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_ENCRYPTRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_ENCRYPTRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_GETROUTEPOINTRESULT_H_
+#define ALIBABACLOUD_CCC_MODEL_GETROUTEPOINTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT EncryptResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT GetRoutePointResult : public ServiceResult
 			{
 			public:
-				struct CypherContent
-				{
-					std::string plainText;
-					std::string cypherText;
-				};
 
 
-				EncryptResult();
-				explicit EncryptResult(const std::string &payload);
-				~EncryptResult();
-				std::vector<CypherContent> getCypherContents()const;
+				GetRoutePointResult();
+				explicit GetRoutePointResult(const std::string &payload);
+				~GetRoutePointResult();
+				std::string getStatusDesc()const;
 				std::string getMessage()const;
-				std::string getPublicKey()const;
+				std::string getRoutePoint()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
+				std::string getStatusCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<CypherContent> cypherContents_;
+				std::string statusDesc_;
 				std::string message_;
-				std::string publicKey_;
+				std::string routePoint_;
 				int httpStatusCode_;
 				std::string code_;
+				std::string statusCode_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_ENCRYPTRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_GETROUTEPOINTRESULT_H_

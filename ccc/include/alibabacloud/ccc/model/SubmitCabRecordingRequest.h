@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				SubmitCabRecordingRequest();
 				~SubmitCabRecordingRequest();
 
+				std::string getMergedRecording()const;
+				void setMergedRecording(const std::string& mergedRecording);
+				std::string getResourceRecording()const;
+				void setResourceRecording(const std::string& resourceRecording);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				long getInstanceOwnerId()const;
 				void setInstanceOwnerId(long instanceOwnerId);
-				std::string getMergedRecording()const;
-				void setMergedRecording(const std::string& mergedRecording);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
-				std::string getResourceRecording()const;
-				void setResourceRecording(const std::string& resourceRecording);
 
             private:
+				std::string mergedRecording_;
+				std::string resourceRecording_;
 				std::string instanceId_;
 				long instanceOwnerId_;
-				std::string mergedRecording_;
 				std::string taskId_;
-				std::string resourceRecording_;
 
 			};
 		}

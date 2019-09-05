@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				bool getAll()const;
 				void setAll(bool all);
-				std::vector<std::string> getJobId()const;
-				void setJobId(const std::vector<std::string>& jobId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::vector<std::string> getJobReferenceId()const;
 				void setJobReferenceId(const std::vector<std::string>& jobReferenceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::vector<std::string> getJobId()const;
+				void setJobId(const std::vector<std::string>& jobId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getScenarioId()const;
 				void setScenarioId(const std::string& scenarioId);
 
             private:
 				bool all_;
-				std::vector<std::string> jobId_;
-				std::string instanceId_;
 				std::vector<std::string> jobReferenceId_;
 				std::string groupId_;
+				std::vector<std::string> jobId_;
+				std::string instanceId_;
 				std::string scenarioId_;
 
 			};

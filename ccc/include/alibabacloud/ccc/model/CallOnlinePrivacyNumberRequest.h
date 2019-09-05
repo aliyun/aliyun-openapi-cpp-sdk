@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CallOnlinePrivacyNumberRequest();
 				~CallOnlinePrivacyNumberRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTelA()const;
 				void setTelA(const std::string& telA);
 				std::string getTelB()const;
 				void setTelB(const std::string& telB);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string telA_;
 				std::string telB_;
 				std::string instanceId_;
-				std::string accessKeyId_;
 
 			};
 		}

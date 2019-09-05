@@ -25,39 +25,6 @@ PreCreateMediaRequest::PreCreateMediaRequest() :
 PreCreateMediaRequest::~PreCreateMediaRequest()
 {}
 
-std::string PreCreateMediaRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void PreCreateMediaRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string PreCreateMediaRequest::getFileName()const
-{
-	return fileName_;
-}
-
-void PreCreateMediaRequest::setFileName(const std::string& fileName)
-{
-	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
-}
-
-std::string PreCreateMediaRequest::getName()const
-{
-	return name_;
-}
-
-void PreCreateMediaRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string PreCreateMediaRequest::getDescription()const
 {
 	return description_;
@@ -100,5 +67,38 @@ void PreCreateMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string PreCreateMediaRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void PreCreateMediaRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string PreCreateMediaRequest::getFileName()const
+{
+	return fileName_;
+}
+
+void PreCreateMediaRequest::setFileName(const std::string& fileName)
+{
+	fileName_ = fileName;
+	setCoreParameter("FileName", fileName);
+}
+
+std::string PreCreateMediaRequest::getName()const
+{
+	return name_;
+}
+
+void PreCreateMediaRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

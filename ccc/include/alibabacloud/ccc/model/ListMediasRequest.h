@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ListMediasRequest();
 				~ListMediasRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getNamePrefix()const;
 				void setNamePrefix(const std::string& namePrefix);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				int pageNumber_;
+				std::string accessKeyId_;
 				std::string instanceId_;
 				int pageSize_;
 				std::string namePrefix_;
-				int pageNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

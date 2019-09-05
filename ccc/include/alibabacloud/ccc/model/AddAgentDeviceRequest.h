@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				AddAgentDeviceRequest();
 				~AddAgentDeviceRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getClientIp()const;
-				void setClientIp(const std::string& clientIp);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
 				std::string getClientPort()const;
 				void setClientPort(const std::string& clientPort);
-				std::string getBrowserVersion()const;
-				void setBrowserVersion(const std::string& browserVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getClientIp()const;
+				void setClientIp(const std::string& clientIp);
+				std::string getBrowserVersion()const;
+				void setBrowserVersion(const std::string& browserVersion);
 
             private:
-				std::string instanceId_;
-				std::string clientIp_;
 				std::string remark_;
 				std::string clientPort_;
-				std::string browserVersion_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				std::string clientIp_;
+				std::string browserVersion_;
 
 			};
 		}

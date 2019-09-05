@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				AssignUsersRequest();
 				~AssignUsersRequest();
 
+				std::vector<std::string> getRoleId()const;
+				void setRoleId(const std::vector<std::string>& roleId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::vector<std::string> getUserRamId()const;
 				void setUserRamId(const std::vector<std::string>& userRamId);
 				std::vector<int> getSkillLevel()const;
 				void setSkillLevel(const std::vector<int>& skillLevel);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::vector<std::string> getRoleId()const;
-				void setRoleId(const std::vector<std::string>& roleId);
 				std::vector<std::string> getSkillGroupId()const;
 				void setSkillGroupId(const std::vector<std::string>& skillGroupId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::vector<std::string> roleId_;
+				std::string accessKeyId_;
 				std::vector<std::string> userRamId_;
 				std::vector<int> skillLevel_;
 				std::string instanceId_;
-				std::vector<std::string> roleId_;
 				std::vector<std::string> skillGroupId_;
-				std::string accessKeyId_;
 
 			};
 		}

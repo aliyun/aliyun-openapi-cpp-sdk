@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DownloadRecordingRequest();
 				~DownloadRecordingRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getFileName()const;
-				void setFileName(const std::string& fileName);
 				std::string getChannel()const;
 				void setChannel(const std::string& channel);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getFileName()const;
+				void setFileName(const std::string& fileName);
 
             private:
-				std::string instanceId_;
-				std::string fileName_;
 				std::string channel_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				std::string fileName_;
 
 			};
 		}

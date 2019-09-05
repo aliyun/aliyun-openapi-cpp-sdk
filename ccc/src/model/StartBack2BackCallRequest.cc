@@ -25,28 +25,6 @@ StartBack2BackCallRequest::StartBack2BackCallRequest() :
 StartBack2BackCallRequest::~StartBack2BackCallRequest()
 {}
 
-std::string StartBack2BackCallRequest::getCaller()const
-{
-	return caller_;
-}
-
-void StartBack2BackCallRequest::setCaller(const std::string& caller)
-{
-	caller_ = caller;
-	setCoreParameter("Caller", caller);
-}
-
-std::string StartBack2BackCallRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void StartBack2BackCallRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string StartBack2BackCallRequest::getCallCenterNumber()const
 {
 	return callCenterNumber_;
@@ -69,17 +47,6 @@ void StartBack2BackCallRequest::setCallee(const std::string& callee)
 	setCoreParameter("Callee", callee);
 }
 
-std::string StartBack2BackCallRequest::getWorkflowId()const
-{
-	return workflowId_;
-}
-
-void StartBack2BackCallRequest::setWorkflowId(const std::string& workflowId)
-{
-	workflowId_ = workflowId;
-	setCoreParameter("WorkflowId", workflowId);
-}
-
 std::string StartBack2BackCallRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +56,38 @@ void StartBack2BackCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string StartBack2BackCallRequest::getCaller()const
+{
+	return caller_;
+}
+
+void StartBack2BackCallRequest::setCaller(const std::string& caller)
+{
+	caller_ = caller;
+	setCoreParameter("Caller", caller);
+}
+
+std::string StartBack2BackCallRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void StartBack2BackCallRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string StartBack2BackCallRequest::getWorkflowId()const
+{
+	return workflowId_;
+}
+
+void StartBack2BackCallRequest::setWorkflowId(const std::string& workflowId)
+{
+	workflowId_ = workflowId;
+	setCoreParameter("WorkflowId", workflowId);
 }
 

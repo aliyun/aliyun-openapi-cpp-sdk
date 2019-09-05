@@ -36,17 +36,6 @@ void GetCallMeasureSummaryReportRequest::setIntervalType(const std::string& inte
 	setCoreParameter("IntervalType", intervalType);
 }
 
-int GetCallMeasureSummaryReportRequest::getMonth()const
-{
-	return month_;
-}
-
-void GetCallMeasureSummaryReportRequest::setMonth(int month)
-{
-	month_ = month;
-	setCoreParameter("Month", std::to_string(month));
-}
-
 int GetCallMeasureSummaryReportRequest::getYear()const
 {
 	return year_;
@@ -56,28 +45,6 @@ void GetCallMeasureSummaryReportRequest::setYear(int year)
 {
 	year_ = year;
 	setCoreParameter("Year", std::to_string(year));
-}
-
-int GetCallMeasureSummaryReportRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void GetCallMeasureSummaryReportRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int GetCallMeasureSummaryReportRequest::getDay()const
-{
-	return day_;
-}
-
-void GetCallMeasureSummaryReportRequest::setDay(int day)
-{
-	day_ = day;
-	setCoreParameter("Day", std::to_string(day));
 }
 
 int GetCallMeasureSummaryReportRequest::getPageNumber()const
@@ -100,5 +67,38 @@ void GetCallMeasureSummaryReportRequest::setAccessKeyId(const std::string& acces
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int GetCallMeasureSummaryReportRequest::getMonth()const
+{
+	return month_;
+}
+
+void GetCallMeasureSummaryReportRequest::setMonth(int month)
+{
+	month_ = month;
+	setCoreParameter("Month", std::to_string(month));
+}
+
+int GetCallMeasureSummaryReportRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetCallMeasureSummaryReportRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+int GetCallMeasureSummaryReportRequest::getDay()const
+{
+	return day_;
+}
+
+void GetCallMeasureSummaryReportRequest::setDay(int day)
+{
+	day_ = day;
+	setCoreParameter("Day", std::to_string(day));
 }
 

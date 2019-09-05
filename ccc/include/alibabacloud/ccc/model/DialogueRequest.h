@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getCallId()const;
 				void setCallId(const std::string& callId);
+				std::string getActionParams()const;
+				void setActionParams(const std::string& actionParams);
 				std::string getCallingNumber()const;
 				void setCallingNumber(const std::string& callingNumber);
 				std::string getInstanceId()const;
@@ -47,8 +49,6 @@ namespace AlibabaCloud
 				void setInstanceOwnerId(long instanceOwnerId);
 				std::string getActionKey()const;
 				void setActionKey(const std::string& actionKey);
-				std::string getActionParams()const;
-				void setActionParams(const std::string& actionParams);
 				std::string getCallType()const;
 				void setCallType(const std::string& callType);
 				std::string getScenarioId()const;
@@ -60,12 +60,12 @@ namespace AlibabaCloud
 
             private:
 				std::string callId_;
+				std::string actionParams_;
 				std::string callingNumber_;
 				std::string instanceId_;
 				std::string calledNumber_;
 				long instanceOwnerId_;
 				std::string actionKey_;
-				std::string actionParams_;
 				std::string callType_;
 				std::string scenarioId_;
 				std::string taskId_;

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				QueryRedialIndicatorRequest();
 				~QueryRedialIndicatorRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getContactId()const;
 				void setContactId(const std::string& contactId);
 				bool getMockResponse()const;
 				void setMockResponse(bool mockResponse);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				std::string contactId_;
 				bool mockResponse_;
 				std::string accessKeyId_;
+				std::string instanceId_;
 
 			};
 		}

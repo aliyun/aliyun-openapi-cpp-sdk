@@ -35,18 +35,8 @@ namespace AlibabaCloud
 				ModifySkillGroupRequest();
 				~ModifySkillGroupRequest();
 
-				std::vector<int> getSkillLevel()const;
-				void setSkillLevel(const std::vector<int>& skillLevel);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				bool getAllowPrivateOutboundNumber()const;
 				void setAllowPrivateOutboundNumber(bool allowPrivateOutboundNumber);
-				std::vector<std::string> getOutboundPhoneNumberId()const;
-				void setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId);
-				std::string getSkillGroupId()const;
-				void setSkillGroupId(const std::string& skillGroupId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getRoutingStrategy()const;
@@ -55,18 +45,28 @@ namespace AlibabaCloud
 				void setUserId(const std::vector<std::string>& userId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::vector<int> getSkillLevel()const;
+				void setSkillLevel(const std::vector<int>& skillLevel);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::vector<std::string> getOutboundPhoneNumberId()const;
+				void setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId);
+				std::string getSkillGroupId()const;
+				void setSkillGroupId(const std::string& skillGroupId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::vector<int> skillLevel_;
-				std::string instanceId_;
 				bool allowPrivateOutboundNumber_;
-				std::vector<std::string> outboundPhoneNumberId_;
-				std::string skillGroupId_;
-				std::string name_;
 				std::string description_;
 				std::string routingStrategy_;
 				std::vector<std::string> userId_;
 				std::string accessKeyId_;
+				std::vector<int> skillLevel_;
+				std::string instanceId_;
+				std::vector<std::string> outboundPhoneNumberId_;
+				std::string skillGroupId_;
+				std::string name_;
 
 			};
 		}

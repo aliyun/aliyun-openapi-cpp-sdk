@@ -25,28 +25,6 @@ CreateFaultRequest::CreateFaultRequest() :
 CreateFaultRequest::~CreateFaultRequest()
 {}
 
-std::string CreateFaultRequest::getSpeakerList()const
-{
-	return speakerList_;
-}
-
-void CreateFaultRequest::setSpeakerList(const std::string& speakerList)
-{
-	speakerList_ = speakerList;
-	setCoreParameter("SpeakerList", speakerList);
-}
-
-long CreateFaultRequest::getAgentId()const
-{
-	return agentId_;
-}
-
-void CreateFaultRequest::setAgentId(long agentId)
-{
-	agentId_ = agentId;
-	setCoreParameter("AgentId", std::to_string(agentId));
-}
-
 std::string CreateFaultRequest::getAgentOssFileName()const
 {
 	return agentOssFileName_;
@@ -67,17 +45,6 @@ void CreateFaultRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long CreateFaultRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void CreateFaultRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string CreateFaultRequest::getOperatingSystemVersion()const
@@ -113,28 +80,6 @@ void CreateFaultRequest::setMicrophoneList(const std::string& microphoneList)
 	setCoreParameter("MicrophoneList", microphoneList);
 }
 
-std::string CreateFaultRequest::getSpeakerEquipment()const
-{
-	return speakerEquipment_;
-}
-
-void CreateFaultRequest::setSpeakerEquipment(const std::string& speakerEquipment)
-{
-	speakerEquipment_ = speakerEquipment;
-	setCoreParameter("SpeakerEquipment", speakerEquipment);
-}
-
-std::string CreateFaultRequest::getServicePort()const
-{
-	return servicePort_;
-}
-
-void CreateFaultRequest::setServicePort(const std::string& servicePort)
-{
-	servicePort_ = servicePort;
-	setCoreParameter("ServicePort", servicePort);
-}
-
 std::string CreateFaultRequest::getClientPort()const
 {
 	return clientPort_;
@@ -157,28 +102,6 @@ void CreateFaultRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateFaultRequest::getServiceIp()const
-{
-	return serviceIp_;
-}
-
-void CreateFaultRequest::setServiceIp(const std::string& serviceIp)
-{
-	serviceIp_ = serviceIp;
-	setCoreParameter("ServiceIp", serviceIp);
-}
-
-std::string CreateFaultRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateFaultRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string CreateFaultRequest::getCustomFilePath()const
 {
 	return customFilePath_;
@@ -199,6 +122,83 @@ void CreateFaultRequest::setClientIp(const std::string& clientIp)
 {
 	clientIp_ = clientIp;
 	setCoreParameter("ClientIp", clientIp);
+}
+
+std::string CreateFaultRequest::getSpeakerList()const
+{
+	return speakerList_;
+}
+
+void CreateFaultRequest::setSpeakerList(const std::string& speakerList)
+{
+	speakerList_ = speakerList;
+	setCoreParameter("SpeakerList", speakerList);
+}
+
+long CreateFaultRequest::getAgentId()const
+{
+	return agentId_;
+}
+
+void CreateFaultRequest::setAgentId(long agentId)
+{
+	agentId_ = agentId;
+	setCoreParameter("AgentId", std::to_string(agentId));
+}
+
+long CreateFaultRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void CreateFaultRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", std::to_string(endTime));
+}
+
+std::string CreateFaultRequest::getSpeakerEquipment()const
+{
+	return speakerEquipment_;
+}
+
+void CreateFaultRequest::setSpeakerEquipment(const std::string& speakerEquipment)
+{
+	speakerEquipment_ = speakerEquipment;
+	setCoreParameter("SpeakerEquipment", speakerEquipment);
+}
+
+std::string CreateFaultRequest::getServicePort()const
+{
+	return servicePort_;
+}
+
+void CreateFaultRequest::setServicePort(const std::string& servicePort)
+{
+	servicePort_ = servicePort;
+	setCoreParameter("ServicePort", servicePort);
+}
+
+std::string CreateFaultRequest::getServiceIp()const
+{
+	return serviceIp_;
+}
+
+void CreateFaultRequest::setServiceIp(const std::string& serviceIp)
+{
+	serviceIp_ = serviceIp;
+	setCoreParameter("ServiceIp", serviceIp);
+}
+
+std::string CreateFaultRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateFaultRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateFaultRequest::getAgentFilePath()const

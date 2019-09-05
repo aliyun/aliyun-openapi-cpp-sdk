@@ -25,17 +25,6 @@ SendPredefinedShortMessageRequest::SendPredefinedShortMessageRequest() :
 SendPredefinedShortMessageRequest::~SendPredefinedShortMessageRequest()
 {}
 
-std::string SendPredefinedShortMessageRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void SendPredefinedShortMessageRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string SendPredefinedShortMessageRequest::getPhoneNumbers()const
 {
 	return phoneNumbers_;
@@ -47,17 +36,6 @@ void SendPredefinedShortMessageRequest::setPhoneNumbers(const std::string& phone
 	setCoreParameter("PhoneNumbers", phoneNumbers);
 }
 
-long SendPredefinedShortMessageRequest::getConfigId()const
-{
-	return configId_;
-}
-
-void SendPredefinedShortMessageRequest::setConfigId(long configId)
-{
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
-}
-
 std::string SendPredefinedShortMessageRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,6 +45,28 @@ void SendPredefinedShortMessageRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SendPredefinedShortMessageRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void SendPredefinedShortMessageRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+long SendPredefinedShortMessageRequest::getConfigId()const
+{
+	return configId_;
+}
+
+void SendPredefinedShortMessageRequest::setConfigId(long configId)
+{
+	configId_ = configId;
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 
 std::string SendPredefinedShortMessageRequest::getTemplateParam()const

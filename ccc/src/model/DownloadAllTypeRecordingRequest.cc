@@ -25,17 +25,6 @@ DownloadAllTypeRecordingRequest::DownloadAllTypeRecordingRequest() :
 DownloadAllTypeRecordingRequest::~DownloadAllTypeRecordingRequest()
 {}
 
-std::string DownloadAllTypeRecordingRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DownloadAllTypeRecordingRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string DownloadAllTypeRecordingRequest::getContactId()const
 {
 	return contactId_;
@@ -67,5 +56,16 @@ void DownloadAllTypeRecordingRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DownloadAllTypeRecordingRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DownloadAllTypeRecordingRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

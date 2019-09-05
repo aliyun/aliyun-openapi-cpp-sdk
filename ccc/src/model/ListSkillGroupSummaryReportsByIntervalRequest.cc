@@ -25,39 +25,6 @@ ListSkillGroupSummaryReportsByIntervalRequest::ListSkillGroupSummaryReportsByInt
 ListSkillGroupSummaryReportsByIntervalRequest::~ListSkillGroupSummaryReportsByIntervalRequest()
 {}
 
-std::string ListSkillGroupSummaryReportsByIntervalRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListSkillGroupSummaryReportsByIntervalRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string ListSkillGroupSummaryReportsByIntervalRequest::getSkillGroupIds()const
-{
-	return skillGroupIds_;
-}
-
-void ListSkillGroupSummaryReportsByIntervalRequest::setSkillGroupIds(const std::string& skillGroupIds)
-{
-	skillGroupIds_ = skillGroupIds;
-	setCoreParameter("SkillGroupIds", skillGroupIds);
-}
-
-int ListSkillGroupSummaryReportsByIntervalRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListSkillGroupSummaryReportsByIntervalRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListSkillGroupSummaryReportsByIntervalRequest::getEndTime()const
 {
 	return endTime_;
@@ -67,17 +34,6 @@ void ListSkillGroupSummaryReportsByIntervalRequest::setEndTime(const std::string
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string ListSkillGroupSummaryReportsByIntervalRequest::getInterval()const
-{
-	return interval_;
-}
-
-void ListSkillGroupSummaryReportsByIntervalRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setCoreParameter("Interval", interval);
 }
 
 std::string ListSkillGroupSummaryReportsByIntervalRequest::getStartTime()const
@@ -111,5 +67,49 @@ void ListSkillGroupSummaryReportsByIntervalRequest::setAccessKeyId(const std::st
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListSkillGroupSummaryReportsByIntervalRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListSkillGroupSummaryReportsByIntervalRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ListSkillGroupSummaryReportsByIntervalRequest::getSkillGroupIds()const
+{
+	return skillGroupIds_;
+}
+
+void ListSkillGroupSummaryReportsByIntervalRequest::setSkillGroupIds(const std::string& skillGroupIds)
+{
+	skillGroupIds_ = skillGroupIds;
+	setCoreParameter("SkillGroupIds", skillGroupIds);
+}
+
+int ListSkillGroupSummaryReportsByIntervalRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListSkillGroupSummaryReportsByIntervalRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListSkillGroupSummaryReportsByIntervalRequest::getInterval()const
+{
+	return interval_;
+}
+
+void ListSkillGroupSummaryReportsByIntervalRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setCoreParameter("Interval", interval);
 }
 

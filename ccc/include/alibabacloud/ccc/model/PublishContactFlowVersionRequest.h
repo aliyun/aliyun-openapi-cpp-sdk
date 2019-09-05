@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				PublishContactFlowVersionRequest();
 				~PublishContactFlowVersionRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getContactFlowVersionId()const;
 				void setContactFlowVersionId(const std::string& contactFlowVersionId);
 				bool getUseTianGong()const;
 				void setUseTianGong(bool useTianGong);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string contactFlowVersionId_;
 				bool useTianGong_;
-				std::string accessKeyId_;
 
 			};
 		}

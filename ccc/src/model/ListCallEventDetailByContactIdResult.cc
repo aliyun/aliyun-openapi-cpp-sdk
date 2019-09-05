@@ -35,13 +35,9 @@ ListCallEventDetailByContactIdResult::~ListCallEventDetailByContactIdResult()
 
 void ListCallEventDetailByContactIdResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["Caller"].isNull())
@@ -54,6 +50,10 @@ void ListCallEventDetailByContactIdResult::parse(const std::string &payload)
 		data_.startTime = dataNode["StartTime"].asString();
 	if(!dataNode["PrivacyNumber"].isNull())
 		data_.privacyNumber = dataNode["PrivacyNumber"].asString();
+	if(!dataNode["ReleaseAgent"].isNull())
+		data_.releaseAgent = dataNode["ReleaseAgent"].asString();
+	if(!dataNode["ReleaseReason"].isNull())
+		data_.releaseReason = dataNode["ReleaseReason"].asString();
 	auto allEvents = value["Events"]["CallEventDetail"];
 	for (auto value : allEvents)
 	{

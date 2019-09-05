@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				PickLocalNumberRequest();
 				~PickLocalNumberRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::vector<std::string> getCandidateNumber()const;
 				void setCandidateNumber(const std::vector<std::string>& candidateNumber);
 				std::string getCalleeNumber()const;
 				void setCalleeNumber(const std::string& calleeNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::vector<std::string> candidateNumber_;
 				std::string calleeNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

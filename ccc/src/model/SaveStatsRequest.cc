@@ -36,17 +36,6 @@ void SaveStatsRequest::setCallId(const std::string& callId)
 	setCoreParameter("CallId", callId);
 }
 
-std::string SaveStatsRequest::getUid()const
-{
-	return uid_;
-}
-
-void SaveStatsRequest::setUid(const std::string& uid)
-{
-	uid_ = uid;
-	setCoreParameter("Uid", uid);
-}
-
 long SaveStatsRequest::getRecordTime()const
 {
 	return recordTime_;
@@ -56,6 +45,28 @@ void SaveStatsRequest::setRecordTime(long recordTime)
 {
 	recordTime_ = recordTime;
 	setCoreParameter("RecordTime", std::to_string(recordTime));
+}
+
+long SaveStatsRequest::getCallStartTime()const
+{
+	return callStartTime_;
+}
+
+void SaveStatsRequest::setCallStartTime(long callStartTime)
+{
+	callStartTime_ = callStartTime;
+	setCoreParameter("CallStartTime", std::to_string(callStartTime));
+}
+
+std::string SaveStatsRequest::getUid()const
+{
+	return uid_;
+}
+
+void SaveStatsRequest::setUid(const std::string& uid)
+{
+	uid_ = uid;
+	setCoreParameter("Uid", uid);
 }
 
 std::string SaveStatsRequest::getInstanceId()const
@@ -78,17 +89,6 @@ void SaveStatsRequest::setStats(const std::string& stats)
 {
 	stats_ = stats;
 	setCoreParameter("Stats", stats);
-}
-
-long SaveStatsRequest::getCallStartTime()const
-{
-	return callStartTime_;
-}
-
-void SaveStatsRequest::setCallStartTime(long callStartTime)
-{
-	callStartTime_ = callStartTime;
-	setCoreParameter("CallStartTime", std::to_string(callStartTime));
 }
 
 std::string SaveStatsRequest::getTenantId()const

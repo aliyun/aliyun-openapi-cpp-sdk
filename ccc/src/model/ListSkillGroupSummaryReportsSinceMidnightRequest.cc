@@ -25,6 +25,28 @@ ListSkillGroupSummaryReportsSinceMidnightRequest::ListSkillGroupSummaryReportsSi
 ListSkillGroupSummaryReportsSinceMidnightRequest::~ListSkillGroupSummaryReportsSinceMidnightRequest()
 {}
 
+int ListSkillGroupSummaryReportsSinceMidnightRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListSkillGroupSummaryReportsSinceMidnightRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListSkillGroupSummaryReportsSinceMidnightRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,27 +78,5 @@ void ListSkillGroupSummaryReportsSinceMidnightRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int ListSkillGroupSummaryReportsSinceMidnightRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListSkillGroupSummaryReportsSinceMidnightRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListSkillGroupSummaryReportsSinceMidnightRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

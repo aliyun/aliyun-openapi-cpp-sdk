@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				ListAgentEventsRequest();
 				~ListAgentEventsRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				long getStopTime()const;
 				void setStopTime(long stopTime);
-				std::vector<std::string> getEvent()const;
-				void setEvent(const std::vector<std::string>& event);
 				std::vector<std::string> getRamId()const;
 				void setRamId(const std::vector<std::string>& ramId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::vector<std::string> getEvent()const;
+				void setEvent(const std::vector<std::string>& event);
 
             private:
-				std::string instanceId_;
 				long startTime_;
 				long stopTime_;
-				std::vector<std::string> event_;
 				std::vector<std::string> ramId_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				std::vector<std::string> event_;
 
 			};
 		}

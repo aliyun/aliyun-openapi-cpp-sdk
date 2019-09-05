@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				GetConfigRequest();
 				~GetConfigRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getName()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setObjectType(const std::string& objectType);
 				std::string getObjectId()const;
 				void setObjectId(const std::string& objectId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string name_;
 				std::string objectType_;
 				std::string objectId_;
-				std::string accessKeyId_;
 
 			};
 		}

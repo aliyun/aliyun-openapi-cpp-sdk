@@ -25,6 +25,17 @@ CallOnlinePrivacyNumberRequest::CallOnlinePrivacyNumberRequest() :
 CallOnlinePrivacyNumberRequest::~CallOnlinePrivacyNumberRequest()
 {}
 
+std::string CallOnlinePrivacyNumberRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CallOnlinePrivacyNumberRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string CallOnlinePrivacyNumberRequest::getTelA()const
 {
 	return telA_;
@@ -56,16 +67,5 @@ void CallOnlinePrivacyNumberRequest::setInstanceId(const std::string& instanceId
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string CallOnlinePrivacyNumberRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CallOnlinePrivacyNumberRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

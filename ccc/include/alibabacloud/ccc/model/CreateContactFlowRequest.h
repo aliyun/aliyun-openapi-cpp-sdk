@@ -37,10 +37,6 @@ namespace AlibabaCloud
 
 				std::string getCanvas()const;
 				void setCanvas(const std::string& canvas);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getType()const;
@@ -49,15 +45,19 @@ namespace AlibabaCloud
 				void setContent(const std::string& content);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string canvas_;
-				std::string instanceId_;
-				std::string name_;
 				std::string description_;
 				std::string type_;
 				std::string content_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				std::string name_;
 
 			};
 		}

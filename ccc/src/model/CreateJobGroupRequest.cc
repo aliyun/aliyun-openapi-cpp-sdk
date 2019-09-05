@@ -25,6 +25,17 @@ CreateJobGroupRequest::CreateJobGroupRequest() :
 CreateJobGroupRequest::~CreateJobGroupRequest()
 {}
 
+std::string CreateJobGroupRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateJobGroupRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
 std::vector<std::string> CreateJobGroupRequest::getCallingNumber()const
 {
 	return callingNumber_;
@@ -68,17 +79,6 @@ void CreateJobGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string CreateJobGroupRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateJobGroupRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 std::string CreateJobGroupRequest::getScenarioId()const

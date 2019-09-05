@@ -25,6 +25,28 @@ ListBasicStatisticsReportSubItemsRequest::ListBasicStatisticsReportSubItemsReque
 ListBasicStatisticsReportSubItemsRequest::~ListBasicStatisticsReportSubItemsRequest()
 {}
 
+std::string ListBasicStatisticsReportSubItemsRequest::getTitle()const
+{
+	return title_;
+}
+
+void ListBasicStatisticsReportSubItemsRequest::setTitle(const std::string& title)
+{
+	title_ = title;
+	setCoreParameter("Title", title);
+}
+
+int ListBasicStatisticsReportSubItemsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListBasicStatisticsReportSubItemsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListBasicStatisticsReportSubItemsRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,27 +78,5 @@ void ListBasicStatisticsReportSubItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListBasicStatisticsReportSubItemsRequest::getTitle()const
-{
-	return title_;
-}
-
-void ListBasicStatisticsReportSubItemsRequest::setTitle(const std::string& title)
-{
-	title_ = title;
-	setCoreParameter("Title", title);
-}
-
-int ListBasicStatisticsReportSubItemsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListBasicStatisticsReportSubItemsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

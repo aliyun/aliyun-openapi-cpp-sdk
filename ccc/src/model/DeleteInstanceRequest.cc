@@ -25,17 +25,6 @@ DeleteInstanceRequest::DeleteInstanceRequest() :
 DeleteInstanceRequest::~DeleteInstanceRequest()
 {}
 
-std::string DeleteInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string DeleteInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DeleteInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

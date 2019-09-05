@@ -25,28 +25,6 @@ ListIvrTrackingDetailRequest::ListIvrTrackingDetailRequest() :
 ListIvrTrackingDetailRequest::~ListIvrTrackingDetailRequest()
 {}
 
-std::string ListIvrTrackingDetailRequest::getCallingNumber()const
-{
-	return callingNumber_;
-}
-
-void ListIvrTrackingDetailRequest::setCallingNumber(const std::string& callingNumber)
-{
-	callingNumber_ = callingNumber;
-	setCoreParameter("CallingNumber", callingNumber);
-}
-
-std::string ListIvrTrackingDetailRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListIvrTrackingDetailRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ListIvrTrackingDetailRequest::getContactId()const
 {
 	return contactId_;
@@ -56,28 +34,6 @@ void ListIvrTrackingDetailRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
 	setCoreParameter("ContactId", contactId);
-}
-
-std::string ListIvrTrackingDetailRequest::getCalledNumber()const
-{
-	return calledNumber_;
-}
-
-void ListIvrTrackingDetailRequest::setCalledNumber(const std::string& calledNumber)
-{
-	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
-}
-
-int ListIvrTrackingDetailRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListIvrTrackingDetailRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListIvrTrackingDetailRequest::getStartTime()const
@@ -122,5 +78,49 @@ void ListIvrTrackingDetailRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListIvrTrackingDetailRequest::getCallingNumber()const
+{
+	return callingNumber_;
+}
+
+void ListIvrTrackingDetailRequest::setCallingNumber(const std::string& callingNumber)
+{
+	callingNumber_ = callingNumber;
+	setCoreParameter("CallingNumber", callingNumber);
+}
+
+std::string ListIvrTrackingDetailRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListIvrTrackingDetailRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ListIvrTrackingDetailRequest::getCalledNumber()const
+{
+	return calledNumber_;
+}
+
+void ListIvrTrackingDetailRequest::setCalledNumber(const std::string& calledNumber)
+{
+	calledNumber_ = calledNumber;
+	setCoreParameter("CalledNumber", calledNumber);
+}
+
+int ListIvrTrackingDetailRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListIvrTrackingDetailRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				LaunchShortMessageAppraiseRequest();
 				~LaunchShortMessageAppraiseRequest();
 
-				std::string getAcid()const;
-				void setAcid(const std::string& acid);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				int getContactType()const;
 				void setContactType(int contactType);
 				std::string getPhoneNumbers()const;
 				void setPhoneNumbers(const std::string& phoneNumbers);
-				std::string getSkillGroupId()const;
-				void setSkillGroupId(const std::string& skillGroupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAcid()const;
+				void setAcid(const std::string& acid);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getSkillGroupId()const;
+				void setSkillGroupId(const std::string& skillGroupId);
 
             private:
-				std::string acid_;
-				std::string instanceId_;
 				int contactType_;
 				std::string phoneNumbers_;
-				std::string skillGroupId_;
 				std::string accessKeyId_;
+				std::string acid_;
+				std::string instanceId_;
+				std::string skillGroupId_;
 
 			};
 		}

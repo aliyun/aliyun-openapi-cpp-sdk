@@ -25,28 +25,6 @@ DownloadRecordingRequest::DownloadRecordingRequest() :
 DownloadRecordingRequest::~DownloadRecordingRequest()
 {}
 
-std::string DownloadRecordingRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DownloadRecordingRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DownloadRecordingRequest::getFileName()const
-{
-	return fileName_;
-}
-
-void DownloadRecordingRequest::setFileName(const std::string& fileName)
-{
-	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
-}
-
 std::string DownloadRecordingRequest::getChannel()const
 {
 	return channel_;
@@ -67,5 +45,27 @@ void DownloadRecordingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DownloadRecordingRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DownloadRecordingRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string DownloadRecordingRequest::getFileName()const
+{
+	return fileName_;
+}
+
+void DownloadRecordingRequest::setFileName(const std::string& fileName)
+{
+	fileName_ = fileName;
+	setCoreParameter("FileName", fileName);
 }
 

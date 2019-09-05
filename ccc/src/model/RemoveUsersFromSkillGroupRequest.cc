@@ -25,28 +25,6 @@ RemoveUsersFromSkillGroupRequest::RemoveUsersFromSkillGroupRequest() :
 RemoveUsersFromSkillGroupRequest::~RemoveUsersFromSkillGroupRequest()
 {}
 
-std::string RemoveUsersFromSkillGroupRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void RemoveUsersFromSkillGroupRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string RemoveUsersFromSkillGroupRequest::getSkillGroupId()const
-{
-	return skillGroupId_;
-}
-
-void RemoveUsersFromSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
-{
-	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
-}
-
 std::vector<std::string> RemoveUsersFromSkillGroupRequest::getUserId()const
 {
 	return userId_;
@@ -68,5 +46,27 @@ void RemoveUsersFromSkillGroupRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RemoveUsersFromSkillGroupRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void RemoveUsersFromSkillGroupRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string RemoveUsersFromSkillGroupRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void RemoveUsersFromSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 

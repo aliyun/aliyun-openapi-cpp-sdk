@@ -25,17 +25,6 @@ ListAgentEventsRequest::ListAgentEventsRequest() :
 ListAgentEventsRequest::~ListAgentEventsRequest()
 {}
 
-std::string ListAgentEventsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListAgentEventsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 long ListAgentEventsRequest::getStartTime()const
 {
 	return startTime_;
@@ -56,18 +45,6 @@ void ListAgentEventsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
 	setCoreParameter("StopTime", std::to_string(stopTime));
-}
-
-std::vector<std::string> ListAgentEventsRequest::getEvent()const
-{
-	return event_;
-}
-
-void ListAgentEventsRequest::setEvent(const std::vector<std::string>& event)
-{
-	event_ = event;
-	for(int i = 0; i!= event.size(); i++)
-		setCoreParameter("Event."+ std::to_string(i), event.at(i));
 }
 
 std::vector<std::string> ListAgentEventsRequest::getRamId()const
@@ -91,5 +68,28 @@ void ListAgentEventsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListAgentEventsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListAgentEventsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::vector<std::string> ListAgentEventsRequest::getEvent()const
+{
+	return event_;
+}
+
+void ListAgentEventsRequest::setEvent(const std::vector<std::string>& event)
+{
+	event_ = event;
+	for(int i = 0; i!= event.size(); i++)
+		setCoreParameter("Event."+ std::to_string(i), event.at(i));
 }
 

@@ -14,42 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ccc/model/EncryptResult.h>
+#include <alibabacloud/ccc/model/ResetUserStatusResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CCC;
 using namespace AlibabaCloud::CCC::Model;
 
-EncryptResult::EncryptResult() :
+ResetUserStatusResult::ResetUserStatusResult() :
 	ServiceResult()
 {}
 
-EncryptResult::EncryptResult(const std::string &payload) :
+ResetUserStatusResult::ResetUserStatusResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-EncryptResult::~EncryptResult()
+ResetUserStatusResult::~ResetUserStatusResult()
 {}
 
-void EncryptResult::parse(const std::string &payload)
+void ResetUserStatusResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
-
 	setRequestId(value["RequestId"].asString());
-	auto allCypherContents = value["CypherContents"]["CypherContent"];
-	for (auto value : allCypherContents)
-	{
-		CypherContent cypherContentsObject;
-		if(!value["PlainText"].isNull())
-			cypherContentsObject.plainText = value["PlainText"].asString();
-		if(!value["CypherText"].isNull())
-			cypherContentsObject.cypherText = value["CypherText"].asString();
-		cypherContents_.push_back(cypherContentsObject);
-	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -58,37 +47,25 @@ void EncryptResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["PublicKey"].isNull())
-		publicKey_ = value["PublicKey"].asString();
 
 }
 
-std::vector<EncryptResult::CypherContent> EncryptResult::getCypherContents()const
-{
-	return cypherContents_;
-}
-
-std::string EncryptResult::getMessage()const
+std::string ResetUserStatusResult::getMessage()const
 {
 	return message_;
 }
 
-std::string EncryptResult::getPublicKey()const
-{
-	return publicKey_;
-}
-
-int EncryptResult::getHttpStatusCode()const
+int ResetUserStatusResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string EncryptResult::getCode()const
+std::string ResetUserStatusResult::getCode()const
 {
 	return code_;
 }
 
-bool EncryptResult::getSuccess()const
+bool ResetUserStatusResult::getSuccess()const
 {
 	return success_;
 }

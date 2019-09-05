@@ -25,17 +25,6 @@ ListRecentCallRecordsRequest::ListRecentCallRecordsRequest() :
 ListRecentCallRecordsRequest::~ListRecentCallRecordsRequest()
 {}
 
-std::string ListRecentCallRecordsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListRecentCallRecordsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ListRecentCallRecordsRequest::getCriteria()const
 {
 	return criteria_;
@@ -45,17 +34,6 @@ void ListRecentCallRecordsRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
 	setCoreParameter("Criteria", criteria);
-}
-
-int ListRecentCallRecordsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListRecentCallRecordsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListRecentCallRecordsRequest::getStartTime()const
@@ -100,5 +78,27 @@ void ListRecentCallRecordsRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListRecentCallRecordsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListRecentCallRecordsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int ListRecentCallRecordsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListRecentCallRecordsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

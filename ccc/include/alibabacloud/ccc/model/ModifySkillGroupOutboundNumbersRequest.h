@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ModifySkillGroupOutboundNumbersRequest();
 				~ModifySkillGroupOutboundNumbersRequest();
 
+				int getOperationType()const;
+				void setOperationType(int operationType);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::vector<std::string> getOutboundPhoneNumberId()const;
 				void setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId);
 				std::string getSkillGroupId()const;
 				void setSkillGroupId(const std::string& skillGroupId);
-				int getOperationType()const;
-				void setOperationType(int operationType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				int operationType_;
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::vector<std::string> outboundPhoneNumberId_;
 				std::string skillGroupId_;
-				int operationType_;
-				std::string accessKeyId_;
 
 			};
 		}

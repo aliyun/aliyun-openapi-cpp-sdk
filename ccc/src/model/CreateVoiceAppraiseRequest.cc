@@ -25,28 +25,6 @@ CreateVoiceAppraiseRequest::CreateVoiceAppraiseRequest() :
 CreateVoiceAppraiseRequest::~CreateVoiceAppraiseRequest()
 {}
 
-std::string CreateVoiceAppraiseRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateVoiceAppraiseRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string CreateVoiceAppraiseRequest::getContactFlowVersionId()const
-{
-	return contactFlowVersionId_;
-}
-
-void CreateVoiceAppraiseRequest::setContactFlowVersionId(const std::string& contactFlowVersionId)
-{
-	contactFlowVersionId_ = contactFlowVersionId;
-	setCoreParameter("ContactFlowVersionId", contactFlowVersionId);
-}
-
 bool CreateVoiceAppraiseRequest::getIsAppraise()const
 {
 	return isAppraise_;
@@ -78,5 +56,27 @@ void CreateVoiceAppraiseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateVoiceAppraiseRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateVoiceAppraiseRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string CreateVoiceAppraiseRequest::getContactFlowVersionId()const
+{
+	return contactFlowVersionId_;
+}
+
+void CreateVoiceAppraiseRequest::setContactFlowVersionId(const std::string& contactFlowVersionId)
+{
+	contactFlowVersionId_ = contactFlowVersionId;
+	setCoreParameter("ContactFlowVersionId", contactFlowVersionId);
 }
 

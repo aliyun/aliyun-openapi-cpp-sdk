@@ -36,6 +36,17 @@ void DialogueRequest::setCallId(const std::string& callId)
 	setCoreParameter("CallId", callId);
 }
 
+std::string DialogueRequest::getActionParams()const
+{
+	return actionParams_;
+}
+
+void DialogueRequest::setActionParams(const std::string& actionParams)
+{
+	actionParams_ = actionParams;
+	setCoreParameter("ActionParams", actionParams);
+}
+
 std::string DialogueRequest::getCallingNumber()const
 {
 	return callingNumber_;
@@ -89,17 +100,6 @@ void DialogueRequest::setActionKey(const std::string& actionKey)
 {
 	actionKey_ = actionKey;
 	setCoreParameter("ActionKey", actionKey);
-}
-
-std::string DialogueRequest::getActionParams()const
-{
-	return actionParams_;
-}
-
-void DialogueRequest::setActionParams(const std::string& actionParams)
-{
-	actionParams_ = actionParams;
-	setCoreParameter("ActionParams", actionParams);
 }
 
 std::string DialogueRequest::getCallType()const

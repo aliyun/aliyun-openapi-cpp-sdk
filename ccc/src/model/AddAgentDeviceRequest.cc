@@ -25,28 +25,6 @@ AddAgentDeviceRequest::AddAgentDeviceRequest() :
 AddAgentDeviceRequest::~AddAgentDeviceRequest()
 {}
 
-std::string AddAgentDeviceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void AddAgentDeviceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string AddAgentDeviceRequest::getClientIp()const
-{
-	return clientIp_;
-}
-
-void AddAgentDeviceRequest::setClientIp(const std::string& clientIp)
-{
-	clientIp_ = clientIp;
-	setCoreParameter("ClientIp", clientIp);
-}
-
 std::string AddAgentDeviceRequest::getRemark()const
 {
 	return remark_;
@@ -69,17 +47,6 @@ void AddAgentDeviceRequest::setClientPort(const std::string& clientPort)
 	setCoreParameter("ClientPort", clientPort);
 }
 
-std::string AddAgentDeviceRequest::getBrowserVersion()const
-{
-	return browserVersion_;
-}
-
-void AddAgentDeviceRequest::setBrowserVersion(const std::string& browserVersion)
-{
-	browserVersion_ = browserVersion;
-	setCoreParameter("BrowserVersion", browserVersion);
-}
-
 std::string AddAgentDeviceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +56,38 @@ void AddAgentDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AddAgentDeviceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void AddAgentDeviceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string AddAgentDeviceRequest::getClientIp()const
+{
+	return clientIp_;
+}
+
+void AddAgentDeviceRequest::setClientIp(const std::string& clientIp)
+{
+	clientIp_ = clientIp;
+	setCoreParameter("ClientIp", clientIp);
+}
+
+std::string AddAgentDeviceRequest::getBrowserVersion()const
+{
+	return browserVersion_;
+}
+
+void AddAgentDeviceRequest::setBrowserVersion(const std::string& browserVersion)
+{
+	browserVersion_ = browserVersion;
+	setCoreParameter("BrowserVersion", browserVersion);
 }
 

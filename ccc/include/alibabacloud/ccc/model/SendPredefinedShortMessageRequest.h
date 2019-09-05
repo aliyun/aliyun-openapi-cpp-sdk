@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				SendPredefinedShortMessageRequest();
 				~SendPredefinedShortMessageRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getPhoneNumbers()const;
 				void setPhoneNumbers(const std::string& phoneNumbers);
-				long getConfigId()const;
-				void setConfigId(long configId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				long getConfigId()const;
+				void setConfigId(long configId);
 				std::string getTemplateParam()const;
 				void setTemplateParam(const std::string& templateParam);
 
             private:
-				std::string instanceId_;
 				std::string phoneNumbers_;
-				long configId_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				long configId_;
 				std::string templateParam_;
 
 			};

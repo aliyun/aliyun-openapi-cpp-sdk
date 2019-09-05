@@ -25,39 +25,6 @@ ListSkillGroupSummaryReportsRequest::ListSkillGroupSummaryReportsRequest() :
 ListSkillGroupSummaryReportsRequest::~ListSkillGroupSummaryReportsRequest()
 {}
 
-std::string ListSkillGroupSummaryReportsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListSkillGroupSummaryReportsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string ListSkillGroupSummaryReportsRequest::getSkillGroupIds()const
-{
-	return skillGroupIds_;
-}
-
-void ListSkillGroupSummaryReportsRequest::setSkillGroupIds(const std::string& skillGroupIds)
-{
-	skillGroupIds_ = skillGroupIds;
-	setCoreParameter("SkillGroupIds", skillGroupIds);
-}
-
-int ListSkillGroupSummaryReportsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListSkillGroupSummaryReportsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListSkillGroupSummaryReportsRequest::getEndTime()const
 {
 	return endTime_;
@@ -100,5 +67,38 @@ void ListSkillGroupSummaryReportsRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListSkillGroupSummaryReportsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListSkillGroupSummaryReportsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ListSkillGroupSummaryReportsRequest::getSkillGroupIds()const
+{
+	return skillGroupIds_;
+}
+
+void ListSkillGroupSummaryReportsRequest::setSkillGroupIds(const std::string& skillGroupIds)
+{
+	skillGroupIds_ = skillGroupIds;
+	setCoreParameter("SkillGroupIds", skillGroupIds);
+}
+
+int ListSkillGroupSummaryReportsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListSkillGroupSummaryReportsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

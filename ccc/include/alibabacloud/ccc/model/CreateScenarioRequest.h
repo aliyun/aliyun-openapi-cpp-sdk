@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				CreateScenarioRequest();
 				~CreateScenarioRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::vector<std::string> getSurveysJson()const;
 				void setSurveysJson(const std::vector<std::string>& surveysJson);
-				std::string getStrategyJson()const;
-				void setStrategyJson(const std::string& strategyJson);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getStrategyJson()const;
+				void setStrategyJson(const std::string& strategyJson);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string instanceId_;
 				std::vector<std::string> surveysJson_;
-				std::string strategyJson_;
-				std::string name_;
 				std::string description_;
 				std::string type_;
+				std::string instanceId_;
+				std::string strategyJson_;
+				std::string name_;
 
 			};
 		}

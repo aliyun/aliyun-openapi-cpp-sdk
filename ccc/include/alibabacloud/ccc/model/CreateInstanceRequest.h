@@ -39,8 +39,6 @@ namespace AlibabaCloud
 				void setPhoneNumbers(const std::vector<std::string>& phoneNumbers);
 				std::vector<std::string> getUserObject()const;
 				void setUserObject(const std::vector<std::string>& userObject);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getPhoneNumber()const;
@@ -49,27 +47,29 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				int getStorageMaxDays()const;
 				void setStorageMaxDays(int storageMaxDays);
-				int getStorageMaxSize()const;
-				void setStorageMaxSize(int storageMaxSize);
-				std::string getDirectoryId()const;
-				void setDirectoryId(const std::string& directoryId);
 				std::vector<std::string> getAdminRamId()const;
 				void setAdminRamId(const std::vector<std::string>& adminRamId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				int getStorageMaxSize()const;
+				void setStorageMaxSize(int storageMaxSize);
+				std::string getDirectoryId()const;
+				void setDirectoryId(const std::string& directoryId);
 
             private:
 				std::vector<std::string> phoneNumbers_;
 				std::vector<std::string> userObject_;
-				std::string name_;
 				std::string domainName_;
 				std::string phoneNumber_;
 				std::string description_;
 				int storageMaxDays_;
-				int storageMaxSize_;
-				std::string directoryId_;
 				std::vector<std::string> adminRamId_;
 				std::string accessKeyId_;
+				std::string name_;
+				int storageMaxSize_;
+				std::string directoryId_;
 
 			};
 		}

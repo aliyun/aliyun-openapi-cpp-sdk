@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				DialExRequest();
 				~DialExRequest();
 
+				std::string getCallee()const;
+				void setCallee(const std::string& callee);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRoutPoint()const;
 				void setRoutPoint(const std::string& routPoint);
 				std::string getCaller()const;
@@ -43,21 +47,17 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getProvider()const;
 				void setProvider(const std::string& provider);
-				std::string getCallee()const;
-				void setCallee(const std::string& callee);
 				int getAnswerMode()const;
 				void setAnswerMode(int answerMode);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string callee_;
+				std::string accessKeyId_;
 				std::string routPoint_;
 				std::string caller_;
 				std::string instanceId_;
 				std::string provider_;
-				std::string callee_;
 				int answerMode_;
-				std::string accessKeyId_;
 
 			};
 		}

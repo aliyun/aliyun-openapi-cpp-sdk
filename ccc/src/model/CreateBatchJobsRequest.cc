@@ -25,6 +25,28 @@ CreateBatchJobsRequest::CreateBatchJobsRequest() :
 CreateBatchJobsRequest::~CreateBatchJobsRequest()
 {}
 
+std::string CreateBatchJobsRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateBatchJobsRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string CreateBatchJobsRequest::getJobFilePath()const
+{
+	return jobFilePath_;
+}
+
+void CreateBatchJobsRequest::setJobFilePath(const std::string& jobFilePath)
+{
+	jobFilePath_ = jobFilePath;
+	setCoreParameter("JobFilePath", jobFilePath);
+}
+
 std::vector<std::string> CreateBatchJobsRequest::getCallingNumber()const
 {
 	return callingNumber_;
@@ -81,17 +103,6 @@ void CreateBatchJobsRequest::setName(const std::string& name)
 	setCoreParameter("Name", name);
 }
 
-std::string CreateBatchJobsRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateBatchJobsRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 std::string CreateBatchJobsRequest::getScenarioId()const
 {
 	return scenarioId_;
@@ -101,16 +112,5 @@ void CreateBatchJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
 	setCoreParameter("ScenarioId", scenarioId);
-}
-
-std::string CreateBatchJobsRequest::getJobFilePath()const
-{
-	return jobFilePath_;
-}
-
-void CreateBatchJobsRequest::setJobFilePath(const std::string& jobFilePath)
-{
-	jobFilePath_ = jobFilePath;
-	setCoreParameter("JobFilePath", jobFilePath);
 }
 
