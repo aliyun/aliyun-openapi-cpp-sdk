@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPackName()const;
-				void setPackName(const std::string& packName);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getSchemeName()const;
-				void setSchemeName(const std::string& schemeName);
 				std::string getBundleId()const;
 				void setBundleId(const std::string& bundleId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				std::string getPackSign()const;
+				void setPackSign(const std::string& packSign);
+				std::string getPackName()const;
+				void setPackName(const std::string& packName);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOsType()const;
 				void setOsType(const std::string& osType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getPackSign()const;
-				void setPackSign(const std::string& packSign);
+				std::string getSchemeName()const;
+				void setSchemeName(const std::string& schemeName);
 
             private:
 				long resourceOwnerId_;
-				std::string packName_;
-				std::string appName_;
-				std::string resourceOwnerAccount_;
-				std::string schemeName_;
 				std::string bundleId_;
+				std::string accessKeyId_;
+				std::string appName_;
+				std::string packSign_;
+				std::string packName_;
+				std::string resourceOwnerAccount_;
 				std::string osType_;
 				long ownerId_;
-				std::string accessKeyId_;
-				std::string packSign_;
+				std::string schemeName_;
 
 			};
 		}

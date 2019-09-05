@@ -36,6 +36,28 @@ void VerifyMobileRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string VerifyMobileRequest::getPhoneNumber()const
+{
+	return phoneNumber_;
+}
+
+void VerifyMobileRequest::setPhoneNumber(const std::string& phoneNumber)
+{
+	phoneNumber_ = phoneNumber;
+	setCoreParameter("PhoneNumber", phoneNumber);
+}
+
+std::string VerifyMobileRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void VerifyMobileRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string VerifyMobileRequest::getAccessCode()const
 {
 	return accessCode_;
@@ -58,28 +80,6 @@ void VerifyMobileRequest::setResourceOwnerAccount(const std::string& resourceOwn
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string VerifyMobileRequest::getPhoneNumber()const
-{
-	return phoneNumber_;
-}
-
-void VerifyMobileRequest::setPhoneNumber(const std::string& phoneNumber)
-{
-	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
-}
-
-std::string VerifyMobileRequest::getOutId()const
-{
-	return outId_;
-}
-
-void VerifyMobileRequest::setOutId(const std::string& outId)
-{
-	outId_ = outId;
-	setCoreParameter("OutId", outId);
-}
-
 long VerifyMobileRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -91,14 +91,14 @@ void VerifyMobileRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string VerifyMobileRequest::getAccessKeyId()const
+std::string VerifyMobileRequest::getOutId()const
 {
-	return accessKeyId_;
+	return outId_;
 }
 
-void VerifyMobileRequest::setAccessKeyId(const std::string& accessKeyId)
+void VerifyMobileRequest::setOutId(const std::string& outId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	outId_ = outId;
+	setCoreParameter("OutId", outId);
 }
 

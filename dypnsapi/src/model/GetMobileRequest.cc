@@ -58,17 +58,6 @@ void GetMobileRequest::setAccessToken(const std::string& accessToken)
 	setCoreParameter("AccessToken", accessToken);
 }
 
-std::string GetMobileRequest::getOutId()const
-{
-	return outId_;
-}
-
-void GetMobileRequest::setOutId(const std::string& outId)
-{
-	outId_ = outId;
-	setCoreParameter("OutId", outId);
-}
-
 long GetMobileRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void GetMobileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetMobileRequest::getOutId()const
+{
+	return outId_;
+}
+
+void GetMobileRequest::setOutId(const std::string& outId)
+{
+	outId_ = outId;
+	setCoreParameter("OutId", outId);
 }
 

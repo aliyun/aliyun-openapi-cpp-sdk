@@ -36,15 +36,26 @@ void CreateVerifySchemeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateVerifySchemeRequest::getPackName()const
+std::string CreateVerifySchemeRequest::getBundleId()const
 {
-	return packName_;
+	return bundleId_;
 }
 
-void CreateVerifySchemeRequest::setPackName(const std::string& packName)
+void CreateVerifySchemeRequest::setBundleId(const std::string& bundleId)
 {
-	packName_ = packName;
-	setCoreParameter("PackName", packName);
+	bundleId_ = bundleId;
+	setCoreParameter("BundleId", bundleId);
+}
+
+std::string CreateVerifySchemeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateVerifySchemeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateVerifySchemeRequest::getAppName()const
@@ -58,6 +69,28 @@ void CreateVerifySchemeRequest::setAppName(const std::string& appName)
 	setCoreParameter("AppName", appName);
 }
 
+std::string CreateVerifySchemeRequest::getPackSign()const
+{
+	return packSign_;
+}
+
+void CreateVerifySchemeRequest::setPackSign(const std::string& packSign)
+{
+	packSign_ = packSign;
+	setCoreParameter("PackSign", packSign);
+}
+
+std::string CreateVerifySchemeRequest::getPackName()const
+{
+	return packName_;
+}
+
+void CreateVerifySchemeRequest::setPackName(const std::string& packName)
+{
+	packName_ = packName;
+	setCoreParameter("PackName", packName);
+}
+
 std::string CreateVerifySchemeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,28 +100,6 @@ void CreateVerifySchemeRequest::setResourceOwnerAccount(const std::string& resou
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateVerifySchemeRequest::getSchemeName()const
-{
-	return schemeName_;
-}
-
-void CreateVerifySchemeRequest::setSchemeName(const std::string& schemeName)
-{
-	schemeName_ = schemeName;
-	setCoreParameter("SchemeName", schemeName);
-}
-
-std::string CreateVerifySchemeRequest::getBundleId()const
-{
-	return bundleId_;
-}
-
-void CreateVerifySchemeRequest::setBundleId(const std::string& bundleId)
-{
-	bundleId_ = bundleId;
-	setCoreParameter("BundleId", bundleId);
 }
 
 std::string CreateVerifySchemeRequest::getOsType()const
@@ -113,25 +124,14 @@ void CreateVerifySchemeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateVerifySchemeRequest::getAccessKeyId()const
+std::string CreateVerifySchemeRequest::getSchemeName()const
 {
-	return accessKeyId_;
+	return schemeName_;
 }
 
-void CreateVerifySchemeRequest::setAccessKeyId(const std::string& accessKeyId)
+void CreateVerifySchemeRequest::setSchemeName(const std::string& schemeName)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateVerifySchemeRequest::getPackSign()const
-{
-	return packSign_;
-}
-
-void CreateVerifySchemeRequest::setPackSign(const std::string& packSign)
-{
-	packSign_ = packSign;
-	setCoreParameter("PackSign", packSign);
+	schemeName_ = schemeName;
+	setCoreParameter("SchemeName", schemeName);
 }
 
