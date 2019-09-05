@@ -1,0 +1,59 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/foas/model/ListProjectBindQueueResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::Foas;
+using namespace AlibabaCloud::Foas::Model;
+
+ListProjectBindQueueResult::ListProjectBindQueueResult() :
+	ServiceResult()
+{}
+
+ListProjectBindQueueResult::ListProjectBindQueueResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+ListProjectBindQueueResult::~ListProjectBindQueueResult()
+{}
+
+void ListProjectBindQueueResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	auto allQueues = value["Queues"]["Queue"];
+	for (auto value : allQueues)
+	{
+		Queue queuesObject;
+		if(!value["ClusterId"].isNull())
+			queuesObject.clusterId = value["ClusterId"].asString();
+		if(!value["QueueName"].isNull())
+			queuesObject.queueName = value["QueueName"].asString();
+		queues_.push_back(queuesObject);
+	}
+
+}
+
+std::vector<ListProjectBindQueueResult::Queue> ListProjectBindQueueResult::getQueues()const
+{
+	return queues_;
+}
+
