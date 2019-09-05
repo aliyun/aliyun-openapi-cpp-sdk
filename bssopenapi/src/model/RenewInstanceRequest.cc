@@ -36,17 +36,6 @@ void RenewInstanceRequest::setProductCode(const std::string& productCode)
 	setCoreParameter("ProductCode", productCode);
 }
 
-std::string RenewInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string RenewInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,17 +45,6 @@ void RenewInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-int RenewInstanceRequest::getRenewPeriod()const
-{
-	return renewPeriod_;
-}
-
-void RenewInstanceRequest::setRenewPeriod(int renewPeriod)
-{
-	renewPeriod_ = renewPeriod;
-	setCoreParameter("RenewPeriod", std::to_string(renewPeriod));
 }
 
 long RenewInstanceRequest::getOwnerId()const
@@ -89,5 +67,27 @@ void RenewInstanceRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+std::string RenewInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int RenewInstanceRequest::getRenewPeriod()const
+{
+	return renewPeriod_;
+}
+
+void RenewInstanceRequest::setRenewPeriod(int renewPeriod)
+{
+	renewPeriod_ = renewPeriod;
+	setCoreParameter("RenewPeriod", std::to_string(renewPeriod));
 }
 

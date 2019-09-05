@@ -36,28 +36,6 @@ void CreateAgAccountRequest::setFirstName(const std::string& firstName)
 	setCoreParameter("FirstName", firstName);
 }
 
-std::string CreateAgAccountRequest::getLoginEmail()const
-{
-	return loginEmail_;
-}
-
-void CreateAgAccountRequest::setLoginEmail(const std::string& loginEmail)
-{
-	loginEmail_ = loginEmail;
-	setCoreParameter("LoginEmail", loginEmail);
-}
-
-std::string CreateAgAccountRequest::getProvinceName()const
-{
-	return provinceName_;
-}
-
-void CreateAgAccountRequest::setProvinceName(const std::string& provinceName)
-{
-	provinceName_ = provinceName;
-	setCoreParameter("ProvinceName", provinceName);
-}
-
 std::string CreateAgAccountRequest::getCityName()const
 {
 	return cityName_;
@@ -67,17 +45,6 @@ void CreateAgAccountRequest::setCityName(const std::string& cityName)
 {
 	cityName_ = cityName;
 	setCoreParameter("CityName", cityName);
-}
-
-std::string CreateAgAccountRequest::getAccountAttr()const
-{
-	return accountAttr_;
-}
-
-void CreateAgAccountRequest::setAccountAttr(const std::string& accountAttr)
-{
-	accountAttr_ = accountAttr;
-	setCoreParameter("AccountAttr", accountAttr);
 }
 
 std::string CreateAgAccountRequest::getPostcode()const
@@ -122,5 +89,38 @@ void CreateAgAccountRequest::setLastName(const std::string& lastName)
 {
 	lastName_ = lastName;
 	setCoreParameter("LastName", lastName);
+}
+
+std::string CreateAgAccountRequest::getLoginEmail()const
+{
+	return loginEmail_;
+}
+
+void CreateAgAccountRequest::setLoginEmail(const std::string& loginEmail)
+{
+	loginEmail_ = loginEmail;
+	setCoreParameter("LoginEmail", loginEmail);
+}
+
+std::string CreateAgAccountRequest::getProvinceName()const
+{
+	return provinceName_;
+}
+
+void CreateAgAccountRequest::setProvinceName(const std::string& provinceName)
+{
+	provinceName_ = provinceName;
+	setCoreParameter("ProvinceName", provinceName);
+}
+
+std::string CreateAgAccountRequest::getAccountAttr()const
+{
+	return accountAttr_;
+}
+
+void CreateAgAccountRequest::setAccountAttr(const std::string& accountAttr)
+{
+	accountAttr_ = accountAttr;
+	setCoreParameter("AccountAttr", accountAttr);
 }
 

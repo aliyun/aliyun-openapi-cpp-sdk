@@ -47,17 +47,6 @@ void QueryInstanceGaapCostRequest::setSubscriptionType(const std::string& subscr
 	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
-int QueryInstanceGaapCostRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryInstanceGaapCostRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryInstanceGaapCostRequest::getBillingCycle()const
 {
 	return billingCycle_;
@@ -89,5 +78,16 @@ void QueryInstanceGaapCostRequest::setProductType(const std::string& productType
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+int QueryInstanceGaapCostRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryInstanceGaapCostRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

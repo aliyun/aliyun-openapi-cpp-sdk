@@ -36,17 +36,6 @@ void SetRenewalRequest::setProductCode(const std::string& productCode)
 	setCoreParameter("ProductCode", productCode);
 }
 
-std::string SetRenewalRequest::getInstanceIDs()const
-{
-	return instanceIDs_;
-}
-
-void SetRenewalRequest::setInstanceIDs(const std::string& instanceIDs)
-{
-	instanceIDs_ = instanceIDs;
-	setCoreParameter("InstanceIDs", instanceIDs);
-}
-
 std::string SetRenewalRequest::getSubscriptionType()const
 {
 	return subscriptionType_;
@@ -56,28 +45,6 @@ void SetRenewalRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
 	setCoreParameter("SubscriptionType", subscriptionType);
-}
-
-std::string SetRenewalRequest::getRenewalStatus()const
-{
-	return renewalStatus_;
-}
-
-void SetRenewalRequest::setRenewalStatus(const std::string& renewalStatus)
-{
-	renewalStatus_ = renewalStatus;
-	setCoreParameter("RenewalStatus", renewalStatus);
-}
-
-std::string SetRenewalRequest::getRenewalPeriodUnit()const
-{
-	return renewalPeriodUnit_;
-}
-
-void SetRenewalRequest::setRenewalPeriodUnit(const std::string& renewalPeriodUnit)
-{
-	renewalPeriodUnit_ = renewalPeriodUnit;
-	setCoreParameter("RenewalPeriodUnit", renewalPeriodUnit);
 }
 
 int SetRenewalRequest::getRenewalPeriod()const
@@ -111,5 +78,38 @@ void SetRenewalRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+std::string SetRenewalRequest::getInstanceIDs()const
+{
+	return instanceIDs_;
+}
+
+void SetRenewalRequest::setInstanceIDs(const std::string& instanceIDs)
+{
+	instanceIDs_ = instanceIDs;
+	setCoreParameter("InstanceIDs", instanceIDs);
+}
+
+std::string SetRenewalRequest::getRenewalStatus()const
+{
+	return renewalStatus_;
+}
+
+void SetRenewalRequest::setRenewalStatus(const std::string& renewalStatus)
+{
+	renewalStatus_ = renewalStatus;
+	setCoreParameter("RenewalStatus", renewalStatus);
+}
+
+std::string SetRenewalRequest::getRenewalPeriodUnit()const
+{
+	return renewalPeriodUnit_;
+}
+
+void SetRenewalRequest::setRenewalPeriodUnit(const std::string& renewalPeriodUnit)
+{
+	renewalPeriodUnit_ = renewalPeriodUnit;
+	setCoreParameter("RenewalPeriodUnit", renewalPeriodUnit);
 }
 

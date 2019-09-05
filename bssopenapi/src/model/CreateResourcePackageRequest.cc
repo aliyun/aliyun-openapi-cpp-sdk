@@ -25,17 +25,6 @@ CreateResourcePackageRequest::CreateResourcePackageRequest() :
 CreateResourcePackageRequest::~CreateResourcePackageRequest()
 {}
 
-int CreateResourcePackageRequest::getDuration()const
-{
-	return duration_;
-}
-
-void CreateResourcePackageRequest::setDuration(int duration)
-{
-	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
-}
-
 std::string CreateResourcePackageRequest::getProductCode()const
 {
 	return productCode_;
@@ -69,17 +58,6 @@ void CreateResourcePackageRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateResourcePackageRequest::getPackageType()const
-{
-	return packageType_;
-}
-
-void CreateResourcePackageRequest::setPackageType(const std::string& packageType)
-{
-	packageType_ = packageType;
-	setCoreParameter("PackageType", packageType);
-}
-
 std::string CreateResourcePackageRequest::getEffectiveDate()const
 {
 	return effectiveDate_;
@@ -89,6 +67,28 @@ void CreateResourcePackageRequest::setEffectiveDate(const std::string& effective
 {
 	effectiveDate_ = effectiveDate;
 	setCoreParameter("EffectiveDate", effectiveDate);
+}
+
+int CreateResourcePackageRequest::getDuration()const
+{
+	return duration_;
+}
+
+void CreateResourcePackageRequest::setDuration(int duration)
+{
+	duration_ = duration;
+	setCoreParameter("Duration", std::to_string(duration));
+}
+
+std::string CreateResourcePackageRequest::getPackageType()const
+{
+	return packageType_;
+}
+
+void CreateResourcePackageRequest::setPackageType(const std::string& packageType)
+{
+	packageType_ = packageType;
+	setCoreParameter("PackageType", packageType);
 }
 
 std::string CreateResourcePackageRequest::getPricingCycle()const

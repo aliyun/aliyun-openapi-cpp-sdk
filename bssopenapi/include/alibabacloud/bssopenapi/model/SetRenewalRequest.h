@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				std::string getInstanceIDs()const;
-				void setInstanceIDs(const std::string& instanceIDs);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
-				std::string getRenewalStatus()const;
-				void setRenewalStatus(const std::string& renewalStatus);
-				std::string getRenewalPeriodUnit()const;
-				void setRenewalPeriodUnit(const std::string& renewalPeriodUnit);
 				int getRenewalPeriod()const;
 				void setRenewalPeriod(int renewalPeriod);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
+				std::string getInstanceIDs()const;
+				void setInstanceIDs(const std::string& instanceIDs);
+				std::string getRenewalStatus()const;
+				void setRenewalStatus(const std::string& renewalStatus);
+				std::string getRenewalPeriodUnit()const;
+				void setRenewalPeriodUnit(const std::string& renewalPeriodUnit);
 
             private:
 				std::string productCode_;
-				std::string instanceIDs_;
 				std::string subscriptionType_;
-				std::string renewalStatus_;
-				std::string renewalPeriodUnit_;
 				int renewalPeriod_;
 				long ownerId_;
 				std::string productType_;
+				std::string instanceIDs_;
+				std::string renewalStatus_;
+				std::string renewalPeriodUnit_;
 
 			};
 		}

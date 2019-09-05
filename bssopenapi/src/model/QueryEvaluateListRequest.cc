@@ -58,18 +58,6 @@ void QueryEvaluateListRequest::setSortType(int sortType)
 	setCoreParameter("SortType", std::to_string(sortType));
 }
 
-std::vector<std::string> QueryEvaluateListRequest::getBizTypeList()const
-{
-	return bizTypeList_;
-}
-
-void QueryEvaluateListRequest::setBizTypeList(const std::vector<std::string>& bizTypeList)
-{
-	bizTypeList_ = bizTypeList;
-	for(int i = 0; i!= bizTypeList.size(); i++)
-		setCoreParameter("BizTypeList."+ std::to_string(i), bizTypeList.at(i));
-}
-
 int QueryEvaluateListRequest::getType()const
 {
 	return type_;
@@ -81,17 +69,6 @@ void QueryEvaluateListRequest::setType(int type)
 	setCoreParameter("Type", std::to_string(type));
 }
 
-long QueryEvaluateListRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void QueryEvaluateListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 int QueryEvaluateListRequest::getPageNum()const
 {
 	return pageNum_;
@@ -101,28 +78,6 @@ void QueryEvaluateListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
 	setCoreParameter("PageNum", std::to_string(pageNum));
-}
-
-std::string QueryEvaluateListRequest::getStartSearchTime()const
-{
-	return startSearchTime_;
-}
-
-void QueryEvaluateListRequest::setStartSearchTime(const std::string& startSearchTime)
-{
-	startSearchTime_ = startSearchTime;
-	setCoreParameter("StartSearchTime", startSearchTime);
-}
-
-std::string QueryEvaluateListRequest::getEndBizTime()const
-{
-	return endBizTime_;
-}
-
-void QueryEvaluateListRequest::setEndBizTime(const std::string& endBizTime)
-{
-	endBizTime_ = endBizTime;
-	setCoreParameter("EndBizTime", endBizTime);
 }
 
 int QueryEvaluateListRequest::getPageSize()const
@@ -156,6 +111,51 @@ void QueryEvaluateListRequest::setBillCycle(const std::string& billCycle)
 {
 	billCycle_ = billCycle;
 	setCoreParameter("BillCycle", billCycle);
+}
+
+std::vector<std::string> QueryEvaluateListRequest::getBizTypeList()const
+{
+	return bizTypeList_;
+}
+
+void QueryEvaluateListRequest::setBizTypeList(const std::vector<std::string>& bizTypeList)
+{
+	bizTypeList_ = bizTypeList;
+	for(int i = 0; i!= bizTypeList.size(); i++)
+		setCoreParameter("BizTypeList."+ std::to_string(i), bizTypeList.at(i));
+}
+
+long QueryEvaluateListRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void QueryEvaluateListRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string QueryEvaluateListRequest::getStartSearchTime()const
+{
+	return startSearchTime_;
+}
+
+void QueryEvaluateListRequest::setStartSearchTime(const std::string& startSearchTime)
+{
+	startSearchTime_ = startSearchTime;
+	setCoreParameter("StartSearchTime", startSearchTime);
+}
+
+std::string QueryEvaluateListRequest::getEndBizTime()const
+{
+	return endBizTime_;
+}
+
+void QueryEvaluateListRequest::setEndBizTime(const std::string& endBizTime)
+{
+	endBizTime_ = endBizTime;
+	setCoreParameter("EndBizTime", endBizTime);
 }
 
 long QueryEvaluateListRequest::getStartAmount()const

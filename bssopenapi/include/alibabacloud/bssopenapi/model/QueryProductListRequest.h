@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				QueryProductListRequest();
 				~QueryProductListRequest();
 
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				bool getQueryTotalCount()const;
 				void setQueryTotalCount(bool queryTotalCount);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 
             private:
+				int pageNum_;
 				bool queryTotalCount_;
 				int pageSize_;
-				int pageNum_;
 
 			};
 		}

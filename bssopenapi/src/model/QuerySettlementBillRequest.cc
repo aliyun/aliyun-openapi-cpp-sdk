@@ -58,17 +58,6 @@ void QuerySettlementBillRequest::setSubscriptionType(const std::string& subscrip
 	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
-int QuerySettlementBillRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QuerySettlementBillRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QuerySettlementBillRequest::getEndTime()const
 {
 	return endTime_;
@@ -144,5 +133,16 @@ void QuerySettlementBillRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+int QuerySettlementBillRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QuerySettlementBillRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

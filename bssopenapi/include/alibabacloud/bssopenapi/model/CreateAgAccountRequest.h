@@ -37,14 +37,8 @@ namespace AlibabaCloud
 
 				std::string getFirstName()const;
 				void setFirstName(const std::string& firstName);
-				std::string getLoginEmail()const;
-				void setLoginEmail(const std::string& loginEmail);
-				std::string getProvinceName()const;
-				void setProvinceName(const std::string& provinceName);
 				std::string getCityName()const;
 				void setCityName(const std::string& cityName);
-				std::string getAccountAttr()const;
-				void setAccountAttr(const std::string& accountAttr);
 				std::string getPostcode()const;
 				void setPostcode(const std::string& postcode);
 				std::string getEnterpriseName()const;
@@ -53,17 +47,23 @@ namespace AlibabaCloud
 				void setNationCode(const std::string& nationCode);
 				std::string getLastName()const;
 				void setLastName(const std::string& lastName);
+				std::string getLoginEmail()const;
+				void setLoginEmail(const std::string& loginEmail);
+				std::string getProvinceName()const;
+				void setProvinceName(const std::string& provinceName);
+				std::string getAccountAttr()const;
+				void setAccountAttr(const std::string& accountAttr);
 
             private:
 				std::string firstName_;
-				std::string loginEmail_;
-				std::string provinceName_;
 				std::string cityName_;
-				std::string accountAttr_;
 				std::string postcode_;
 				std::string enterpriseName_;
 				std::string nationCode_;
 				std::string lastName_;
+				std::string loginEmail_;
+				std::string provinceName_;
+				std::string accountAttr_;
 
 			};
 		}

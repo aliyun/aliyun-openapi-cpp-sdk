@@ -36,17 +36,6 @@ void ModifyInstanceRequest::setProductCode(const std::string& productCode)
 	setCoreParameter("ProductCode", productCode);
 }
 
-std::string ModifyInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ModifyInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ModifyInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -67,6 +56,39 @@ void ModifyInstanceRequest::setSubscriptionType(const std::string& subscriptionT
 {
 	subscriptionType_ = subscriptionType;
 	setCoreParameter("SubscriptionType", subscriptionType);
+}
+
+long ModifyInstanceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyInstanceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyInstanceRequest::getProductType()const
+{
+	return productType_;
+}
+
+void ModifyInstanceRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setCoreParameter("ProductType", productType);
+}
+
+std::string ModifyInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyInstanceRequest::getModifyType()const
@@ -95,27 +117,5 @@ void ModifyInstanceRequest::setParameter(const std::vector<Parameter>& parameter
 		setCoreParameter(str + ".Code", obj.code);
 		setCoreParameter(str + ".Value", obj.value);
 	}
-}
-
-long ModifyInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyInstanceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyInstanceRequest::getProductType()const
-{
-	return productType_;
-}
-
-void ModifyInstanceRequest::setProductType(const std::string& productType)
-{
-	productType_ = productType;
-	setCoreParameter("ProductType", productType);
 }
 

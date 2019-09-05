@@ -39,12 +39,6 @@ namespace AlibabaCloud
 				void setProductCode(const std::string& productCode);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getPaymentStatus()const;
-				void setPaymentStatus(const std::string& paymentStatus);
-				std::string getCreateTimeStart()const;
-				void setCreateTimeStart(const std::string& createTimeStart);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				long getOwnerId()const;
@@ -53,19 +47,25 @@ namespace AlibabaCloud
 				void setCreateTimeEnd(const std::string& createTimeEnd);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getPaymentStatus()const;
+				void setPaymentStatus(const std::string& paymentStatus);
+				std::string getCreateTimeStart()const;
+				void setCreateTimeStart(const std::string& createTimeStart);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
 
             private:
 				std::string productCode_;
 				std::string subscriptionType_;
-				int pageSize_;
-				std::string paymentStatus_;
-				std::string createTimeStart_;
 				int pageNum_;
 				long ownerId_;
 				std::string createTimeEnd_;
 				std::string productType_;
+				int pageSize_;
+				std::string paymentStatus_;
+				std::string createTimeStart_;
 				std::string orderType_;
 
 			};

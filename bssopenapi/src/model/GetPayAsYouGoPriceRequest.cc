@@ -76,17 +76,6 @@ void GetPayAsYouGoPriceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string GetPayAsYouGoPriceRequest::getRegion()const
-{
-	return region_;
-}
-
-void GetPayAsYouGoPriceRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setCoreParameter("Region", region);
-}
-
 std::string GetPayAsYouGoPriceRequest::getProductType()const
 {
 	return productType_;
@@ -96,5 +85,16 @@ void GetPayAsYouGoPriceRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+std::string GetPayAsYouGoPriceRequest::getRegion()const
+{
+	return region_;
+}
+
+void GetPayAsYouGoPriceRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setCoreParameter("Region", region);
 }
 

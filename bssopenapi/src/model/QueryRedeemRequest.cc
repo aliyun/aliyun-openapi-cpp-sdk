@@ -36,17 +36,6 @@ void QueryRedeemRequest::setExpiryTimeEnd(const std::string& expiryTimeEnd)
 	setCoreParameter("ExpiryTimeEnd", expiryTimeEnd);
 }
 
-int QueryRedeemRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryRedeemRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryRedeemRequest::getExpiryTimeStart()const
 {
 	return expiryTimeStart_;
@@ -78,5 +67,16 @@ void QueryRedeemRequest::setEffectiveOrNot(bool effectiveOrNot)
 {
 	effectiveOrNot_ = effectiveOrNot;
 	setCoreParameter("EffectiveOrNot", effectiveOrNot ? "true" : "false");
+}
+
+int QueryRedeemRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryRedeemRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

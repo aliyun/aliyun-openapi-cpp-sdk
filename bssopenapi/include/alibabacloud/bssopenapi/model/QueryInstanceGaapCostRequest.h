@@ -39,22 +39,22 @@ namespace AlibabaCloud
 				void setProductCode(const std::string& productCode);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getBillingCycle()const;
 				void setBillingCycle(const std::string& billingCycle);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::string productCode_;
 				std::string subscriptionType_;
-				int pageSize_;
 				std::string billingCycle_;
 				int pageNum_;
 				std::string productType_;
+				int pageSize_;
 
 			};
 		}

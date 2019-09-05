@@ -39,16 +39,16 @@ namespace AlibabaCloud
 				void setAmount(const std::string& amount);
 				std::string getOutBizId()const;
 				void setOutBizId(const std::string& outBizId);
-				std::string getCurrency()const;
-				void setCurrency(const std::string& currency);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getCurrency()const;
+				void setCurrency(const std::string& currency);
 
             private:
 				std::string amount_;
 				std::string outBizId_;
-				std::string currency_;
 				long ownerId_;
+				std::string currency_;
 
 			};
 		}

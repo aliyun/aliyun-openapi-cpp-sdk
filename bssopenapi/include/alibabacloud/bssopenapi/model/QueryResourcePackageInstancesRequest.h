@@ -39,22 +39,22 @@ namespace AlibabaCloud
 				void setExpiryTimeEnd(const std::string& expiryTimeEnd);
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getExpiryTimeStart()const;
 				void setExpiryTimeStart(const std::string& expiryTimeStart);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::string expiryTimeEnd_;
 				std::string productCode_;
-				int pageSize_;
 				long ownerId_;
 				std::string expiryTimeStart_;
 				int pageNum_;
+				int pageSize_;
 
 			};
 		}

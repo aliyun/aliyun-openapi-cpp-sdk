@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				CreateResourcePackageRequest();
 				~CreateResourcePackageRequest();
 
-				int getDuration()const;
-				void setDuration(int duration);
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
 				std::string getSpecification()const;
 				void setSpecification(const std::string& specification);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPackageType()const;
-				void setPackageType(const std::string& packageType);
 				std::string getEffectiveDate()const;
 				void setEffectiveDate(const std::string& effectiveDate);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getPackageType()const;
+				void setPackageType(const std::string& packageType);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
 
             private:
-				int duration_;
 				std::string productCode_;
 				std::string specification_;
 				long ownerId_;
-				std::string packageType_;
 				std::string effectiveDate_;
+				int duration_;
+				std::string packageType_;
 				std::string pricingCycle_;
 
 			};

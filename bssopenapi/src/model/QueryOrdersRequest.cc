@@ -47,39 +47,6 @@ void QueryOrdersRequest::setSubscriptionType(const std::string& subscriptionType
 	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
-int QueryOrdersRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryOrdersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string QueryOrdersRequest::getPaymentStatus()const
-{
-	return paymentStatus_;
-}
-
-void QueryOrdersRequest::setPaymentStatus(const std::string& paymentStatus)
-{
-	paymentStatus_ = paymentStatus;
-	setCoreParameter("PaymentStatus", paymentStatus);
-}
-
-std::string QueryOrdersRequest::getCreateTimeStart()const
-{
-	return createTimeStart_;
-}
-
-void QueryOrdersRequest::setCreateTimeStart(const std::string& createTimeStart)
-{
-	createTimeStart_ = createTimeStart;
-	setCoreParameter("CreateTimeStart", createTimeStart);
-}
-
 int QueryOrdersRequest::getPageNum()const
 {
 	return pageNum_;
@@ -122,6 +89,39 @@ void QueryOrdersRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+int QueryOrdersRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryOrdersRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryOrdersRequest::getPaymentStatus()const
+{
+	return paymentStatus_;
+}
+
+void QueryOrdersRequest::setPaymentStatus(const std::string& paymentStatus)
+{
+	paymentStatus_ = paymentStatus;
+	setCoreParameter("PaymentStatus", paymentStatus);
+}
+
+std::string QueryOrdersRequest::getCreateTimeStart()const
+{
+	return createTimeStart_;
+}
+
+void QueryOrdersRequest::setCreateTimeStart(const std::string& createTimeStart)
+{
+	createTimeStart_ = createTimeStart;
+	setCoreParameter("CreateTimeStart", createTimeStart);
 }
 
 std::string QueryOrdersRequest::getOrderType()const

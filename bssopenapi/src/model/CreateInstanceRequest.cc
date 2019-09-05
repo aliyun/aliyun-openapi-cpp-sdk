@@ -69,6 +69,28 @@ void CreateInstanceRequest::setSubscriptionType(const std::string& subscriptionT
 	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
+long CreateInstanceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateInstanceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateInstanceRequest::getProductType()const
+{
+	return productType_;
+}
+
+void CreateInstanceRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setCoreParameter("ProductType", productType);
+}
+
 int CreateInstanceRequest::getRenewPeriod()const
 {
 	return renewPeriod_;
@@ -106,27 +128,5 @@ void CreateInstanceRequest::setRenewalStatus(const std::string& renewalStatus)
 {
 	renewalStatus_ = renewalStatus;
 	setCoreParameter("RenewalStatus", renewalStatus);
-}
-
-long CreateInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateInstanceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateInstanceRequest::getProductType()const
-{
-	return productType_;
-}
-
-void CreateInstanceRequest::setProductType(const std::string& productType)
-{
-	productType_ = productType;
-	setCoreParameter("ProductType", productType);
 }
 

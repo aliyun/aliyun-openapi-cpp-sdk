@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				ChangeResellerConsumeAmountRequest();
 				~ChangeResellerConsumeAmountRequest();
 
-				std::string getAdjustType()const;
-				void setAdjustType(const std::string& adjustType);
 				std::string getAmount()const;
 				void setAmount(const std::string& amount);
 				std::string getOutBizId()const;
 				void setOutBizId(const std::string& outBizId);
-				std::string getExtendMap()const;
-				void setExtendMap(const std::string& extendMap);
-				std::string getCurrency()const;
-				void setCurrency(const std::string& currency);
 				std::string getSource()const;
 				void setSource(const std::string& source);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getBusinessType()const;
 				void setBusinessType(const std::string& businessType);
+				std::string getAdjustType()const;
+				void setAdjustType(const std::string& adjustType);
+				std::string getExtendMap()const;
+				void setExtendMap(const std::string& extendMap);
+				std::string getCurrency()const;
+				void setCurrency(const std::string& currency);
 
             private:
-				std::string adjustType_;
 				std::string amount_;
 				std::string outBizId_;
-				std::string extendMap_;
-				std::string currency_;
 				std::string source_;
 				long ownerId_;
 				std::string businessType_;
+				std::string adjustType_;
+				std::string extendMap_;
+				std::string currency_;
 
 			};
 		}

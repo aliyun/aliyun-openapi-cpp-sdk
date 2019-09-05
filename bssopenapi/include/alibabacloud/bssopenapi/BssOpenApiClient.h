@@ -36,20 +36,20 @@
 #include "model/QueryAvailableInstancesResult.h"
 #include "model/RenewResourcePackageRequest.h"
 #include "model/RenewResourcePackageResult.h"
-#include "model/GetOrderDetailRequest.h"
-#include "model/GetOrderDetailResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
+#include "model/GetOrderDetailRequest.h"
+#include "model/GetOrderDetailResult.h"
 #include "model/QueryCustomerAddressListRequest.h"
 #include "model/QueryCustomerAddressListResult.h"
 #include "model/ModifyInstanceRequest.h"
 #include "model/ModifyInstanceResult.h"
 #include "model/CancelOrderRequest.h"
 #include "model/CancelOrderResult.h"
-#include "model/QueryResourcePackageInstancesRequest.h"
-#include "model/QueryResourcePackageInstancesResult.h"
 #include "model/CreateResellerUserQuotaRequest.h"
 #include "model/CreateResellerUserQuotaResult.h"
+#include "model/QueryResourcePackageInstancesRequest.h"
+#include "model/QueryResourcePackageInstancesResult.h"
 #include "model/QueryRedeemRequest.h"
 #include "model/QueryRedeemResult.h"
 #include "model/SubscribeBillToOSSRequest.h"
@@ -58,14 +58,14 @@
 #include "model/GetPayAsYouGoPriceResult.h"
 #include "model/GetResourcePackagePriceRequest.h"
 #include "model/GetResourcePackagePriceResult.h"
+#include "model/QueryProductListRequest.h"
+#include "model/QueryProductListResult.h"
+#include "model/ApplyInvoiceRequest.h"
+#include "model/ApplyInvoiceResult.h"
 #include "model/UnsubscribeBillToOSSRequest.h"
 #include "model/UnsubscribeBillToOSSResult.h"
 #include "model/GetCustomerListRequest.h"
 #include "model/GetCustomerListResult.h"
-#include "model/ApplyInvoiceRequest.h"
-#include "model/ApplyInvoiceResult.h"
-#include "model/QueryProductListRequest.h"
-#include "model/QueryProductListResult.h"
 #include "model/GetSubscriptionPriceRequest.h"
 #include "model/GetSubscriptionPriceResult.h"
 #include "model/QueryResellerAvailableQuotaRequest.h"
@@ -76,22 +76,22 @@
 #include "model/SetResellerUserStatusResult.h"
 #include "model/EnableBillGenerationRequest.h"
 #include "model/EnableBillGenerationResult.h"
-#include "model/QueryCashCouponsRequest.h"
-#include "model/QueryCashCouponsResult.h"
 #include "model/QueryOrdersRequest.h"
 #include "model/QueryOrdersResult.h"
+#include "model/QueryCashCouponsRequest.h"
+#include "model/QueryCashCouponsResult.h"
 #include "model/QueryInvoicingCustomerListRequest.h"
 #include "model/QueryInvoicingCustomerListResult.h"
-#include "model/QueryEvaluateListRequest.h"
-#include "model/QueryEvaluateListResult.h"
 #include "model/DescribePricingModuleRequest.h"
 #include "model/DescribePricingModuleResult.h"
+#include "model/QueryEvaluateListRequest.h"
+#include "model/QueryEvaluateListResult.h"
+#include "model/QueryAccountBalanceRequest.h"
+#include "model/QueryAccountBalanceResult.h"
 #include "model/DescribeResourcePackageProductRequest.h"
 #include "model/DescribeResourcePackageProductResult.h"
 #include "model/ChangeResellerConsumeAmountRequest.h"
 #include "model/ChangeResellerConsumeAmountResult.h"
-#include "model/QueryAccountBalanceRequest.h"
-#include "model/QueryAccountBalanceResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
 #include "model/UpgradeResourcePackageRequest.h"
@@ -104,10 +104,10 @@
 #include "model/QueryInstanceBillResult.h"
 #include "model/SetResellerUserAlarmThresholdRequest.h"
 #include "model/SetResellerUserAlarmThresholdResult.h"
-#include "model/SetRenewalRequest.h"
-#include "model/SetRenewalResult.h"
 #include "model/QueryBillRequest.h"
 #include "model/QueryBillResult.h"
+#include "model/SetRenewalRequest.h"
+#include "model/SetRenewalResult.h"
 #include "model/CreateAgAccountRequest.h"
 #include "model/CreateAgAccountResult.h"
 #include "model/ConvertChargeTypeRequest.h"
@@ -148,12 +148,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewResourcePackageResult> RenewResourcePackageOutcome;
 			typedef std::future<RenewResourcePackageOutcome> RenewResourcePackageOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::RenewResourcePackageRequest&, const RenewResourcePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewResourcePackageAsyncHandler;
-			typedef Outcome<Error, Model::GetOrderDetailResult> GetOrderDetailOutcome;
-			typedef std::future<GetOrderDetailOutcome> GetOrderDetailOutcomeCallable;
-			typedef std::function<void(const BssOpenApiClient*, const Model::GetOrderDetailRequest&, const GetOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOrderDetailAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::GetOrderDetailResult> GetOrderDetailOutcome;
+			typedef std::future<GetOrderDetailOutcome> GetOrderDetailOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::GetOrderDetailRequest&, const GetOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOrderDetailAsyncHandler;
 			typedef Outcome<Error, Model::QueryCustomerAddressListResult> QueryCustomerAddressListOutcome;
 			typedef std::future<QueryCustomerAddressListOutcome> QueryCustomerAddressListOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryCustomerAddressListRequest&, const QueryCustomerAddressListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomerAddressListAsyncHandler;
@@ -163,12 +163,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelOrderResult> CancelOrderOutcome;
 			typedef std::future<CancelOrderOutcome> CancelOrderOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::CancelOrderRequest&, const CancelOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelOrderAsyncHandler;
-			typedef Outcome<Error, Model::QueryResourcePackageInstancesResult> QueryResourcePackageInstancesOutcome;
-			typedef std::future<QueryResourcePackageInstancesOutcome> QueryResourcePackageInstancesOutcomeCallable;
-			typedef std::function<void(const BssOpenApiClient*, const Model::QueryResourcePackageInstancesRequest&, const QueryResourcePackageInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourcePackageInstancesAsyncHandler;
 			typedef Outcome<Error, Model::CreateResellerUserQuotaResult> CreateResellerUserQuotaOutcome;
 			typedef std::future<CreateResellerUserQuotaOutcome> CreateResellerUserQuotaOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::CreateResellerUserQuotaRequest&, const CreateResellerUserQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResellerUserQuotaAsyncHandler;
+			typedef Outcome<Error, Model::QueryResourcePackageInstancesResult> QueryResourcePackageInstancesOutcome;
+			typedef std::future<QueryResourcePackageInstancesOutcome> QueryResourcePackageInstancesOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryResourcePackageInstancesRequest&, const QueryResourcePackageInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourcePackageInstancesAsyncHandler;
 			typedef Outcome<Error, Model::QueryRedeemResult> QueryRedeemOutcome;
 			typedef std::future<QueryRedeemOutcome> QueryRedeemOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryRedeemRequest&, const QueryRedeemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRedeemAsyncHandler;
@@ -181,18 +181,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetResourcePackagePriceResult> GetResourcePackagePriceOutcome;
 			typedef std::future<GetResourcePackagePriceOutcome> GetResourcePackagePriceOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::GetResourcePackagePriceRequest&, const GetResourcePackagePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourcePackagePriceAsyncHandler;
+			typedef Outcome<Error, Model::QueryProductListResult> QueryProductListOutcome;
+			typedef std::future<QueryProductListOutcome> QueryProductListOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryProductListRequest&, const QueryProductListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryProductListAsyncHandler;
+			typedef Outcome<Error, Model::ApplyInvoiceResult> ApplyInvoiceOutcome;
+			typedef std::future<ApplyInvoiceOutcome> ApplyInvoiceOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::ApplyInvoiceRequest&, const ApplyInvoiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyInvoiceAsyncHandler;
 			typedef Outcome<Error, Model::UnsubscribeBillToOSSResult> UnsubscribeBillToOSSOutcome;
 			typedef std::future<UnsubscribeBillToOSSOutcome> UnsubscribeBillToOSSOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::UnsubscribeBillToOSSRequest&, const UnsubscribeBillToOSSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnsubscribeBillToOSSAsyncHandler;
 			typedef Outcome<Error, Model::GetCustomerListResult> GetCustomerListOutcome;
 			typedef std::future<GetCustomerListOutcome> GetCustomerListOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::GetCustomerListRequest&, const GetCustomerListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomerListAsyncHandler;
-			typedef Outcome<Error, Model::ApplyInvoiceResult> ApplyInvoiceOutcome;
-			typedef std::future<ApplyInvoiceOutcome> ApplyInvoiceOutcomeCallable;
-			typedef std::function<void(const BssOpenApiClient*, const Model::ApplyInvoiceRequest&, const ApplyInvoiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyInvoiceAsyncHandler;
-			typedef Outcome<Error, Model::QueryProductListResult> QueryProductListOutcome;
-			typedef std::future<QueryProductListOutcome> QueryProductListOutcomeCallable;
-			typedef std::function<void(const BssOpenApiClient*, const Model::QueryProductListRequest&, const QueryProductListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryProductListAsyncHandler;
 			typedef Outcome<Error, Model::GetSubscriptionPriceResult> GetSubscriptionPriceOutcome;
 			typedef std::future<GetSubscriptionPriceOutcome> GetSubscriptionPriceOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::GetSubscriptionPriceRequest&, const GetSubscriptionPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSubscriptionPriceAsyncHandler;
@@ -208,30 +208,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableBillGenerationResult> EnableBillGenerationOutcome;
 			typedef std::future<EnableBillGenerationOutcome> EnableBillGenerationOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::EnableBillGenerationRequest&, const EnableBillGenerationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableBillGenerationAsyncHandler;
-			typedef Outcome<Error, Model::QueryCashCouponsResult> QueryCashCouponsOutcome;
-			typedef std::future<QueryCashCouponsOutcome> QueryCashCouponsOutcomeCallable;
-			typedef std::function<void(const BssOpenApiClient*, const Model::QueryCashCouponsRequest&, const QueryCashCouponsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCashCouponsAsyncHandler;
 			typedef Outcome<Error, Model::QueryOrdersResult> QueryOrdersOutcome;
 			typedef std::future<QueryOrdersOutcome> QueryOrdersOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryOrdersRequest&, const QueryOrdersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrdersAsyncHandler;
+			typedef Outcome<Error, Model::QueryCashCouponsResult> QueryCashCouponsOutcome;
+			typedef std::future<QueryCashCouponsOutcome> QueryCashCouponsOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryCashCouponsRequest&, const QueryCashCouponsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCashCouponsAsyncHandler;
 			typedef Outcome<Error, Model::QueryInvoicingCustomerListResult> QueryInvoicingCustomerListOutcome;
 			typedef std::future<QueryInvoicingCustomerListOutcome> QueryInvoicingCustomerListOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryInvoicingCustomerListRequest&, const QueryInvoicingCustomerListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryInvoicingCustomerListAsyncHandler;
-			typedef Outcome<Error, Model::QueryEvaluateListResult> QueryEvaluateListOutcome;
-			typedef std::future<QueryEvaluateListOutcome> QueryEvaluateListOutcomeCallable;
-			typedef std::function<void(const BssOpenApiClient*, const Model::QueryEvaluateListRequest&, const QueryEvaluateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEvaluateListAsyncHandler;
 			typedef Outcome<Error, Model::DescribePricingModuleResult> DescribePricingModuleOutcome;
 			typedef std::future<DescribePricingModuleOutcome> DescribePricingModuleOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::DescribePricingModuleRequest&, const DescribePricingModuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePricingModuleAsyncHandler;
+			typedef Outcome<Error, Model::QueryEvaluateListResult> QueryEvaluateListOutcome;
+			typedef std::future<QueryEvaluateListOutcome> QueryEvaluateListOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryEvaluateListRequest&, const QueryEvaluateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEvaluateListAsyncHandler;
+			typedef Outcome<Error, Model::QueryAccountBalanceResult> QueryAccountBalanceOutcome;
+			typedef std::future<QueryAccountBalanceOutcome> QueryAccountBalanceOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryAccountBalanceRequest&, const QueryAccountBalanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAccountBalanceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeResourcePackageProductResult> DescribeResourcePackageProductOutcome;
 			typedef std::future<DescribeResourcePackageProductOutcome> DescribeResourcePackageProductOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeResourcePackageProductRequest&, const DescribeResourcePackageProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePackageProductAsyncHandler;
 			typedef Outcome<Error, Model::ChangeResellerConsumeAmountResult> ChangeResellerConsumeAmountOutcome;
 			typedef std::future<ChangeResellerConsumeAmountOutcome> ChangeResellerConsumeAmountOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::ChangeResellerConsumeAmountRequest&, const ChangeResellerConsumeAmountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResellerConsumeAmountAsyncHandler;
-			typedef Outcome<Error, Model::QueryAccountBalanceResult> QueryAccountBalanceOutcome;
-			typedef std::future<QueryAccountBalanceOutcome> QueryAccountBalanceOutcomeCallable;
-			typedef std::function<void(const BssOpenApiClient*, const Model::QueryAccountBalanceRequest&, const QueryAccountBalanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAccountBalanceAsyncHandler;
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -250,12 +250,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetResellerUserAlarmThresholdResult> SetResellerUserAlarmThresholdOutcome;
 			typedef std::future<SetResellerUserAlarmThresholdOutcome> SetResellerUserAlarmThresholdOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::SetResellerUserAlarmThresholdRequest&, const SetResellerUserAlarmThresholdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetResellerUserAlarmThresholdAsyncHandler;
-			typedef Outcome<Error, Model::SetRenewalResult> SetRenewalOutcome;
-			typedef std::future<SetRenewalOutcome> SetRenewalOutcomeCallable;
-			typedef std::function<void(const BssOpenApiClient*, const Model::SetRenewalRequest&, const SetRenewalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewalAsyncHandler;
 			typedef Outcome<Error, Model::QueryBillResult> QueryBillOutcome;
 			typedef std::future<QueryBillOutcome> QueryBillOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryBillRequest&, const QueryBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBillAsyncHandler;
+			typedef Outcome<Error, Model::SetRenewalResult> SetRenewalOutcome;
+			typedef std::future<SetRenewalOutcome> SetRenewalOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::SetRenewalRequest&, const SetRenewalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewalAsyncHandler;
 			typedef Outcome<Error, Model::CreateAgAccountResult> CreateAgAccountOutcome;
 			typedef std::future<CreateAgAccountOutcome> CreateAgAccountOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::CreateAgAccountRequest&, const CreateAgAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgAccountAsyncHandler;
@@ -297,12 +297,12 @@ namespace AlibabaCloud
 			RenewResourcePackageOutcome renewResourcePackage(const Model::RenewResourcePackageRequest &request)const;
 			void renewResourcePackageAsync(const Model::RenewResourcePackageRequest& request, const RenewResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewResourcePackageOutcomeCallable renewResourcePackageCallable(const Model::RenewResourcePackageRequest& request) const;
-			GetOrderDetailOutcome getOrderDetail(const Model::GetOrderDetailRequest &request)const;
-			void getOrderDetailAsync(const Model::GetOrderDetailRequest& request, const GetOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOrderDetailOutcomeCallable getOrderDetailCallable(const Model::GetOrderDetailRequest& request) const;
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
+			GetOrderDetailOutcome getOrderDetail(const Model::GetOrderDetailRequest &request)const;
+			void getOrderDetailAsync(const Model::GetOrderDetailRequest& request, const GetOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOrderDetailOutcomeCallable getOrderDetailCallable(const Model::GetOrderDetailRequest& request) const;
 			QueryCustomerAddressListOutcome queryCustomerAddressList(const Model::QueryCustomerAddressListRequest &request)const;
 			void queryCustomerAddressListAsync(const Model::QueryCustomerAddressListRequest& request, const QueryCustomerAddressListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCustomerAddressListOutcomeCallable queryCustomerAddressListCallable(const Model::QueryCustomerAddressListRequest& request) const;
@@ -312,12 +312,12 @@ namespace AlibabaCloud
 			CancelOrderOutcome cancelOrder(const Model::CancelOrderRequest &request)const;
 			void cancelOrderAsync(const Model::CancelOrderRequest& request, const CancelOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelOrderOutcomeCallable cancelOrderCallable(const Model::CancelOrderRequest& request) const;
-			QueryResourcePackageInstancesOutcome queryResourcePackageInstances(const Model::QueryResourcePackageInstancesRequest &request)const;
-			void queryResourcePackageInstancesAsync(const Model::QueryResourcePackageInstancesRequest& request, const QueryResourcePackageInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryResourcePackageInstancesOutcomeCallable queryResourcePackageInstancesCallable(const Model::QueryResourcePackageInstancesRequest& request) const;
 			CreateResellerUserQuotaOutcome createResellerUserQuota(const Model::CreateResellerUserQuotaRequest &request)const;
 			void createResellerUserQuotaAsync(const Model::CreateResellerUserQuotaRequest& request, const CreateResellerUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateResellerUserQuotaOutcomeCallable createResellerUserQuotaCallable(const Model::CreateResellerUserQuotaRequest& request) const;
+			QueryResourcePackageInstancesOutcome queryResourcePackageInstances(const Model::QueryResourcePackageInstancesRequest &request)const;
+			void queryResourcePackageInstancesAsync(const Model::QueryResourcePackageInstancesRequest& request, const QueryResourcePackageInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryResourcePackageInstancesOutcomeCallable queryResourcePackageInstancesCallable(const Model::QueryResourcePackageInstancesRequest& request) const;
 			QueryRedeemOutcome queryRedeem(const Model::QueryRedeemRequest &request)const;
 			void queryRedeemAsync(const Model::QueryRedeemRequest& request, const QueryRedeemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRedeemOutcomeCallable queryRedeemCallable(const Model::QueryRedeemRequest& request) const;
@@ -330,18 +330,18 @@ namespace AlibabaCloud
 			GetResourcePackagePriceOutcome getResourcePackagePrice(const Model::GetResourcePackagePriceRequest &request)const;
 			void getResourcePackagePriceAsync(const Model::GetResourcePackagePriceRequest& request, const GetResourcePackagePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetResourcePackagePriceOutcomeCallable getResourcePackagePriceCallable(const Model::GetResourcePackagePriceRequest& request) const;
+			QueryProductListOutcome queryProductList(const Model::QueryProductListRequest &request)const;
+			void queryProductListAsync(const Model::QueryProductListRequest& request, const QueryProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryProductListOutcomeCallable queryProductListCallable(const Model::QueryProductListRequest& request) const;
+			ApplyInvoiceOutcome applyInvoice(const Model::ApplyInvoiceRequest &request)const;
+			void applyInvoiceAsync(const Model::ApplyInvoiceRequest& request, const ApplyInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ApplyInvoiceOutcomeCallable applyInvoiceCallable(const Model::ApplyInvoiceRequest& request) const;
 			UnsubscribeBillToOSSOutcome unsubscribeBillToOSS(const Model::UnsubscribeBillToOSSRequest &request)const;
 			void unsubscribeBillToOSSAsync(const Model::UnsubscribeBillToOSSRequest& request, const UnsubscribeBillToOSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnsubscribeBillToOSSOutcomeCallable unsubscribeBillToOSSCallable(const Model::UnsubscribeBillToOSSRequest& request) const;
 			GetCustomerListOutcome getCustomerList(const Model::GetCustomerListRequest &request)const;
 			void getCustomerListAsync(const Model::GetCustomerListRequest& request, const GetCustomerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCustomerListOutcomeCallable getCustomerListCallable(const Model::GetCustomerListRequest& request) const;
-			ApplyInvoiceOutcome applyInvoice(const Model::ApplyInvoiceRequest &request)const;
-			void applyInvoiceAsync(const Model::ApplyInvoiceRequest& request, const ApplyInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ApplyInvoiceOutcomeCallable applyInvoiceCallable(const Model::ApplyInvoiceRequest& request) const;
-			QueryProductListOutcome queryProductList(const Model::QueryProductListRequest &request)const;
-			void queryProductListAsync(const Model::QueryProductListRequest& request, const QueryProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryProductListOutcomeCallable queryProductListCallable(const Model::QueryProductListRequest& request) const;
 			GetSubscriptionPriceOutcome getSubscriptionPrice(const Model::GetSubscriptionPriceRequest &request)const;
 			void getSubscriptionPriceAsync(const Model::GetSubscriptionPriceRequest& request, const GetSubscriptionPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSubscriptionPriceOutcomeCallable getSubscriptionPriceCallable(const Model::GetSubscriptionPriceRequest& request) const;
@@ -357,30 +357,30 @@ namespace AlibabaCloud
 			EnableBillGenerationOutcome enableBillGeneration(const Model::EnableBillGenerationRequest &request)const;
 			void enableBillGenerationAsync(const Model::EnableBillGenerationRequest& request, const EnableBillGenerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableBillGenerationOutcomeCallable enableBillGenerationCallable(const Model::EnableBillGenerationRequest& request) const;
-			QueryCashCouponsOutcome queryCashCoupons(const Model::QueryCashCouponsRequest &request)const;
-			void queryCashCouponsAsync(const Model::QueryCashCouponsRequest& request, const QueryCashCouponsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryCashCouponsOutcomeCallable queryCashCouponsCallable(const Model::QueryCashCouponsRequest& request) const;
 			QueryOrdersOutcome queryOrders(const Model::QueryOrdersRequest &request)const;
 			void queryOrdersAsync(const Model::QueryOrdersRequest& request, const QueryOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryOrdersOutcomeCallable queryOrdersCallable(const Model::QueryOrdersRequest& request) const;
+			QueryCashCouponsOutcome queryCashCoupons(const Model::QueryCashCouponsRequest &request)const;
+			void queryCashCouponsAsync(const Model::QueryCashCouponsRequest& request, const QueryCashCouponsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryCashCouponsOutcomeCallable queryCashCouponsCallable(const Model::QueryCashCouponsRequest& request) const;
 			QueryInvoicingCustomerListOutcome queryInvoicingCustomerList(const Model::QueryInvoicingCustomerListRequest &request)const;
 			void queryInvoicingCustomerListAsync(const Model::QueryInvoicingCustomerListRequest& request, const QueryInvoicingCustomerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryInvoicingCustomerListOutcomeCallable queryInvoicingCustomerListCallable(const Model::QueryInvoicingCustomerListRequest& request) const;
-			QueryEvaluateListOutcome queryEvaluateList(const Model::QueryEvaluateListRequest &request)const;
-			void queryEvaluateListAsync(const Model::QueryEvaluateListRequest& request, const QueryEvaluateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryEvaluateListOutcomeCallable queryEvaluateListCallable(const Model::QueryEvaluateListRequest& request) const;
 			DescribePricingModuleOutcome describePricingModule(const Model::DescribePricingModuleRequest &request)const;
 			void describePricingModuleAsync(const Model::DescribePricingModuleRequest& request, const DescribePricingModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePricingModuleOutcomeCallable describePricingModuleCallable(const Model::DescribePricingModuleRequest& request) const;
+			QueryEvaluateListOutcome queryEvaluateList(const Model::QueryEvaluateListRequest &request)const;
+			void queryEvaluateListAsync(const Model::QueryEvaluateListRequest& request, const QueryEvaluateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryEvaluateListOutcomeCallable queryEvaluateListCallable(const Model::QueryEvaluateListRequest& request) const;
+			QueryAccountBalanceOutcome queryAccountBalance(const Model::QueryAccountBalanceRequest &request)const;
+			void queryAccountBalanceAsync(const Model::QueryAccountBalanceRequest& request, const QueryAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryAccountBalanceOutcomeCallable queryAccountBalanceCallable(const Model::QueryAccountBalanceRequest& request) const;
 			DescribeResourcePackageProductOutcome describeResourcePackageProduct(const Model::DescribeResourcePackageProductRequest &request)const;
 			void describeResourcePackageProductAsync(const Model::DescribeResourcePackageProductRequest& request, const DescribeResourcePackageProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeResourcePackageProductOutcomeCallable describeResourcePackageProductCallable(const Model::DescribeResourcePackageProductRequest& request) const;
 			ChangeResellerConsumeAmountOutcome changeResellerConsumeAmount(const Model::ChangeResellerConsumeAmountRequest &request)const;
 			void changeResellerConsumeAmountAsync(const Model::ChangeResellerConsumeAmountRequest& request, const ChangeResellerConsumeAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeResellerConsumeAmountOutcomeCallable changeResellerConsumeAmountCallable(const Model::ChangeResellerConsumeAmountRequest& request) const;
-			QueryAccountBalanceOutcome queryAccountBalance(const Model::QueryAccountBalanceRequest &request)const;
-			void queryAccountBalanceAsync(const Model::QueryAccountBalanceRequest& request, const QueryAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryAccountBalanceOutcomeCallable queryAccountBalanceCallable(const Model::QueryAccountBalanceRequest& request) const;
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
@@ -399,12 +399,12 @@ namespace AlibabaCloud
 			SetResellerUserAlarmThresholdOutcome setResellerUserAlarmThreshold(const Model::SetResellerUserAlarmThresholdRequest &request)const;
 			void setResellerUserAlarmThresholdAsync(const Model::SetResellerUserAlarmThresholdRequest& request, const SetResellerUserAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetResellerUserAlarmThresholdOutcomeCallable setResellerUserAlarmThresholdCallable(const Model::SetResellerUserAlarmThresholdRequest& request) const;
-			SetRenewalOutcome setRenewal(const Model::SetRenewalRequest &request)const;
-			void setRenewalAsync(const Model::SetRenewalRequest& request, const SetRenewalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetRenewalOutcomeCallable setRenewalCallable(const Model::SetRenewalRequest& request) const;
 			QueryBillOutcome queryBill(const Model::QueryBillRequest &request)const;
 			void queryBillAsync(const Model::QueryBillRequest& request, const QueryBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryBillOutcomeCallable queryBillCallable(const Model::QueryBillRequest& request) const;
+			SetRenewalOutcome setRenewal(const Model::SetRenewalRequest &request)const;
+			void setRenewalAsync(const Model::SetRenewalRequest& request, const SetRenewalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetRenewalOutcomeCallable setRenewalCallable(const Model::SetRenewalRequest& request) const;
 			CreateAgAccountOutcome createAgAccount(const Model::CreateAgAccountRequest &request)const;
 			void createAgAccountAsync(const Model::CreateAgAccountRequest& request, const CreateAgAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAgAccountOutcomeCallable createAgAccountCallable(const Model::CreateAgAccountRequest& request) const;

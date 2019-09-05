@@ -25,17 +25,6 @@ GetSubscriptionPriceRequest::GetSubscriptionPriceRequest() :
 GetSubscriptionPriceRequest::~GetSubscriptionPriceRequest()
 {}
 
-int GetSubscriptionPriceRequest::getServicePeriodQuantity()const
-{
-	return servicePeriodQuantity_;
-}
-
-void GetSubscriptionPriceRequest::setServicePeriodQuantity(int servicePeriodQuantity)
-{
-	servicePeriodQuantity_ = servicePeriodQuantity;
-	setCoreParameter("ServicePeriodQuantity", std::to_string(servicePeriodQuantity));
-}
-
 std::string GetSubscriptionPriceRequest::getProductCode()const
 {
 	return productCode_;
@@ -47,17 +36,6 @@ void GetSubscriptionPriceRequest::setProductCode(const std::string& productCode)
 	setCoreParameter("ProductCode", productCode);
 }
 
-std::string GetSubscriptionPriceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void GetSubscriptionPriceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 int GetSubscriptionPriceRequest::getQuantity()const
 {
 	return quantity_;
@@ -67,17 +45,6 @@ void GetSubscriptionPriceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
 	setCoreParameter("Quantity", std::to_string(quantity));
-}
-
-std::string GetSubscriptionPriceRequest::getServicePeriodUnit()const
-{
-	return servicePeriodUnit_;
-}
-
-void GetSubscriptionPriceRequest::setServicePeriodUnit(const std::string& servicePeriodUnit)
-{
-	servicePeriodUnit_ = servicePeriodUnit;
-	setCoreParameter("ServicePeriodUnit", servicePeriodUnit);
 }
 
 std::string GetSubscriptionPriceRequest::getSubscriptionType()const
@@ -121,6 +88,50 @@ void GetSubscriptionPriceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string GetSubscriptionPriceRequest::getProductType()const
+{
+	return productType_;
+}
+
+void GetSubscriptionPriceRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setCoreParameter("ProductType", productType);
+}
+
+int GetSubscriptionPriceRequest::getServicePeriodQuantity()const
+{
+	return servicePeriodQuantity_;
+}
+
+void GetSubscriptionPriceRequest::setServicePeriodQuantity(int servicePeriodQuantity)
+{
+	servicePeriodQuantity_ = servicePeriodQuantity;
+	setCoreParameter("ServicePeriodQuantity", std::to_string(servicePeriodQuantity));
+}
+
+std::string GetSubscriptionPriceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GetSubscriptionPriceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string GetSubscriptionPriceRequest::getServicePeriodUnit()const
+{
+	return servicePeriodUnit_;
+}
+
+void GetSubscriptionPriceRequest::setServicePeriodUnit(const std::string& servicePeriodUnit)
+{
+	servicePeriodUnit_ = servicePeriodUnit;
+	setCoreParameter("ServicePeriodUnit", servicePeriodUnit);
+}
+
 std::string GetSubscriptionPriceRequest::getRegion()const
 {
 	return region_;
@@ -141,16 +152,5 @@ void GetSubscriptionPriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
 	setCoreParameter("OrderType", orderType);
-}
-
-std::string GetSubscriptionPriceRequest::getProductType()const
-{
-	return productType_;
-}
-
-void GetSubscriptionPriceRequest::setProductType(const std::string& productType)
-{
-	productType_ = productType;
-	setCoreParameter("ProductType", productType);
 }
 

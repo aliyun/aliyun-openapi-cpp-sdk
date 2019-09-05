@@ -36,51 +36,6 @@ void ApplyInvoiceRequest::setInvoicingType(int invoicingType)
 	setCoreParameter("InvoicingType", std::to_string(invoicingType));
 }
 
-std::string ApplyInvoiceRequest::getApplyUserNick()const
-{
-	return applyUserNick_;
-}
-
-void ApplyInvoiceRequest::setApplyUserNick(const std::string& applyUserNick)
-{
-	applyUserNick_ = applyUserNick;
-	setCoreParameter("ApplyUserNick", applyUserNick);
-}
-
-bool ApplyInvoiceRequest::getInvoiceByAmount()const
-{
-	return invoiceByAmount_;
-}
-
-void ApplyInvoiceRequest::setInvoiceByAmount(bool invoiceByAmount)
-{
-	invoiceByAmount_ = invoiceByAmount;
-	setCoreParameter("InvoiceByAmount", invoiceByAmount ? "true" : "false");
-}
-
-long ApplyInvoiceRequest::getCustomerId()const
-{
-	return customerId_;
-}
-
-void ApplyInvoiceRequest::setCustomerId(long customerId)
-{
-	customerId_ = customerId;
-	setCoreParameter("CustomerId", std::to_string(customerId));
-}
-
-std::vector<long> ApplyInvoiceRequest::getSelectedIds()const
-{
-	return selectedIds_;
-}
-
-void ApplyInvoiceRequest::setSelectedIds(const std::vector<long>& selectedIds)
-{
-	selectedIds_ = selectedIds;
-	for(int i = 0; i!= selectedIds.size(); i++)
-		setCoreParameter("SelectedIds."+ std::to_string(i), std::to_string(selectedIds.at(i)));
-}
-
 int ApplyInvoiceRequest::getProcessWay()const
 {
 	return processWay_;
@@ -134,6 +89,51 @@ void ApplyInvoiceRequest::setAddressId(long addressId)
 {
 	addressId_ = addressId;
 	setCoreParameter("AddressId", std::to_string(addressId));
+}
+
+std::string ApplyInvoiceRequest::getApplyUserNick()const
+{
+	return applyUserNick_;
+}
+
+void ApplyInvoiceRequest::setApplyUserNick(const std::string& applyUserNick)
+{
+	applyUserNick_ = applyUserNick;
+	setCoreParameter("ApplyUserNick", applyUserNick);
+}
+
+bool ApplyInvoiceRequest::getInvoiceByAmount()const
+{
+	return invoiceByAmount_;
+}
+
+void ApplyInvoiceRequest::setInvoiceByAmount(bool invoiceByAmount)
+{
+	invoiceByAmount_ = invoiceByAmount;
+	setCoreParameter("InvoiceByAmount", invoiceByAmount ? "true" : "false");
+}
+
+long ApplyInvoiceRequest::getCustomerId()const
+{
+	return customerId_;
+}
+
+void ApplyInvoiceRequest::setCustomerId(long customerId)
+{
+	customerId_ = customerId;
+	setCoreParameter("CustomerId", std::to_string(customerId));
+}
+
+std::vector<long> ApplyInvoiceRequest::getSelectedIds()const
+{
+	return selectedIds_;
+}
+
+void ApplyInvoiceRequest::setSelectedIds(const std::vector<long>& selectedIds)
+{
+	selectedIds_ = selectedIds;
+	for(int i = 0; i!= selectedIds.size(); i++)
+		setCoreParameter("SelectedIds."+ std::to_string(i), std::to_string(selectedIds.at(i)));
 }
 
 long ApplyInvoiceRequest::getCallerUid()const

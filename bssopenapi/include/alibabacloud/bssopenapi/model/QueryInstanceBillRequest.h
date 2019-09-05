@@ -35,16 +35,12 @@ namespace AlibabaCloud
 				QueryInstanceBillRequest();
 				~QueryInstanceBillRequest();
 
-				bool getIsBillingItem()const;
-				void setIsBillingItem(bool isBillingItem);
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
 				bool getIsHideZeroCharge()const;
 				void setIsHideZeroCharge(bool isHideZeroCharge);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getBillingCycle()const;
 				void setBillingCycle(const std::string& billingCycle);
 				long getOwnerId()const;
@@ -53,17 +49,21 @@ namespace AlibabaCloud
 				void setPageNum(int pageNum);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
+				bool getIsBillingItem()const;
+				void setIsBillingItem(bool isBillingItem);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				bool isBillingItem_;
 				std::string productCode_;
 				bool isHideZeroCharge_;
 				std::string subscriptionType_;
-				int pageSize_;
 				std::string billingCycle_;
 				long ownerId_;
 				int pageNum_;
 				std::string productType_;
+				bool isBillingItem_;
+				int pageSize_;
 
 			};
 		}

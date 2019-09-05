@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setIsHideZeroCharge(bool isHideZeroCharge);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getBillingCycle()const;
@@ -57,12 +55,13 @@ namespace AlibabaCloud
 				void setType(const std::string& type);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::string productCode_;
 				bool isHideZeroCharge_;
 				std::string subscriptionType_;
-				int pageSize_;
 				std::string endTime_;
 				std::string billingCycle_;
 				std::string startTime_;
@@ -70,6 +69,7 @@ namespace AlibabaCloud
 				int pageNum_;
 				std::string type_;
 				std::string productType_;
+				int pageSize_;
 
 			};
 		}

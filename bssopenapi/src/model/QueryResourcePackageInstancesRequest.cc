@@ -47,17 +47,6 @@ void QueryResourcePackageInstancesRequest::setProductCode(const std::string& pro
 	setCoreParameter("ProductCode", productCode);
 }
 
-int QueryResourcePackageInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryResourcePackageInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 long QueryResourcePackageInstancesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void QueryResourcePackageInstancesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
 	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+int QueryResourcePackageInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryResourcePackageInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

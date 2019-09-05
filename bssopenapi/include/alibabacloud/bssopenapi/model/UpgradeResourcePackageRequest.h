@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				UpgradeResourcePackageRequest();
 				~UpgradeResourcePackageRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getSpecification()const;
 				void setSpecification(const std::string& specification);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getEffectiveDate()const;
 				void setEffectiveDate(const std::string& effectiveDate);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				std::string specification_;
 				long ownerId_;
 				std::string effectiveDate_;
+				std::string instanceId_;
 
 			};
 		}

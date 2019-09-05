@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				RenewResourcePackageRequest();
 				~RenewResourcePackageRequest();
 
-				int getDuration()const;
-				void setDuration(int duration);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getEffectiveDate()const;
 				void setEffectiveDate(const std::string& effectiveDate);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
 
             private:
-				int duration_;
-				std::string instanceId_;
 				long ownerId_;
 				std::string effectiveDate_;
+				int duration_;
+				std::string instanceId_;
 				std::string pricingCycle_;
 
 			};

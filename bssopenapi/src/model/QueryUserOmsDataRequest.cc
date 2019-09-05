@@ -25,39 +25,6 @@ QueryUserOmsDataRequest::QueryUserOmsDataRequest() :
 QueryUserOmsDataRequest::~QueryUserOmsDataRequest()
 {}
 
-std::string QueryUserOmsDataRequest::getDataType()const
-{
-	return dataType_;
-}
-
-void QueryUserOmsDataRequest::setDataType(const std::string& dataType)
-{
-	dataType_ = dataType;
-	setCoreParameter("DataType", dataType);
-}
-
-std::string QueryUserOmsDataRequest::getMarker()const
-{
-	return marker_;
-}
-
-void QueryUserOmsDataRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setCoreParameter("Marker", marker);
-}
-
-int QueryUserOmsDataRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryUserOmsDataRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryUserOmsDataRequest::getEndTime()const
 {
 	return endTime_;
@@ -89,6 +56,39 @@ void QueryUserOmsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string QueryUserOmsDataRequest::getDataType()const
+{
+	return dataType_;
+}
+
+void QueryUserOmsDataRequest::setDataType(const std::string& dataType)
+{
+	dataType_ = dataType;
+	setCoreParameter("DataType", dataType);
+}
+
+std::string QueryUserOmsDataRequest::getMarker()const
+{
+	return marker_;
+}
+
+void QueryUserOmsDataRequest::setMarker(const std::string& marker)
+{
+	marker_ = marker;
+	setCoreParameter("Marker", marker);
+}
+
+int QueryUserOmsDataRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryUserOmsDataRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryUserOmsDataRequest::getTable()const

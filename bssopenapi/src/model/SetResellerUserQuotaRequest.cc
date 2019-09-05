@@ -47,17 +47,6 @@ void SetResellerUserQuotaRequest::setOutBizId(const std::string& outBizId)
 	setCoreParameter("OutBizId", outBizId);
 }
 
-std::string SetResellerUserQuotaRequest::getCurrency()const
-{
-	return currency_;
-}
-
-void SetResellerUserQuotaRequest::setCurrency(const std::string& currency)
-{
-	currency_ = currency;
-	setCoreParameter("Currency", currency);
-}
-
 long SetResellerUserQuotaRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +56,16 @@ void SetResellerUserQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetResellerUserQuotaRequest::getCurrency()const
+{
+	return currency_;
+}
+
+void SetResellerUserQuotaRequest::setCurrency(const std::string& currency)
+{
+	currency_ = currency;
+	setCoreParameter("Currency", currency);
 }
 

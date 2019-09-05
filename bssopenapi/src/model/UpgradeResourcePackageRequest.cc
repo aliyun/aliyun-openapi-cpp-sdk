@@ -25,17 +25,6 @@ UpgradeResourcePackageRequest::UpgradeResourcePackageRequest() :
 UpgradeResourcePackageRequest::~UpgradeResourcePackageRequest()
 {}
 
-std::string UpgradeResourcePackageRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void UpgradeResourcePackageRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string UpgradeResourcePackageRequest::getSpecification()const
 {
 	return specification_;
@@ -67,5 +56,16 @@ void UpgradeResourcePackageRequest::setEffectiveDate(const std::string& effectiv
 {
 	effectiveDate_ = effectiveDate;
 	setCoreParameter("EffectiveDate", effectiveDate);
+}
+
+std::string UpgradeResourcePackageRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void UpgradeResourcePackageRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

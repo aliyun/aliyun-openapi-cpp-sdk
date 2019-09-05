@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 				std::string getBusinessType()const;
 				void setBusinessType(const std::string& businessType);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				std::string ownerId_;
-				std::string status_;
 				std::string businessType_;
+				std::string status_;
 
 			};
 		}

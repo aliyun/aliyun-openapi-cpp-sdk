@@ -69,17 +69,6 @@ void QueryBillRequest::setSubscriptionType(const std::string& subscriptionType)
 	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
-int QueryBillRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryBillRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryBillRequest::getBillingCycle()const
 {
 	return billingCycle_;
@@ -133,5 +122,16 @@ void QueryBillRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+int QueryBillRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryBillRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

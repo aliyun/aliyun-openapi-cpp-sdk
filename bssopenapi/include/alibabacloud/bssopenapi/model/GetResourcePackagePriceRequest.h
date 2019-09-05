@@ -35,33 +35,33 @@ namespace AlibabaCloud
 				GetResourcePackagePriceRequest();
 				~GetResourcePackagePriceRequest();
 
-				int getDuration()const;
-				void setDuration(int duration);
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getSpecification()const;
 				void setSpecification(const std::string& specification);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPackageType()const;
-				void setPackageType(const std::string& packageType);
 				std::string getEffectiveDate()const;
 				void setEffectiveDate(const std::string& effectiveDate);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getPackageType()const;
+				void setPackageType(const std::string& packageType);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
 
             private:
-				int duration_;
 				std::string productCode_;
-				std::string instanceId_;
 				std::string specification_;
 				long ownerId_;
-				std::string packageType_;
 				std::string effectiveDate_;
+				int duration_;
+				std::string instanceId_;
+				std::string packageType_;
 				std::string pricingCycle_;
 				std::string orderType_;
 

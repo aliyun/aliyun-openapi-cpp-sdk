@@ -48,27 +48,27 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getProductType()const;
+				void setProductType(const std::string& productType);
 				int getRenewPeriod()const;
 				void setRenewPeriod(int renewPeriod);
 				std::vector<Parameter> getParameter()const;
 				void setParameter(const std::vector<Parameter>& parameter);
 				std::string getRenewalStatus()const;
 				void setRenewalStatus(const std::string& renewalStatus);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getProductType()const;
-				void setProductType(const std::string& productType);
 
             private:
 				std::string productCode_;
 				int period_;
 				std::string clientToken_;
 				std::string subscriptionType_;
+				long ownerId_;
+				std::string productType_;
 				int renewPeriod_;
 				std::vector<Parameter> parameter_;
 				std::string renewalStatus_;
-				long ownerId_;
-				std::string productType_;
 
 			};
 		}

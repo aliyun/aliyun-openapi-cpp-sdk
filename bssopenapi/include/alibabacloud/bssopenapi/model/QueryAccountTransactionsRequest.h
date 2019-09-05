@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				QueryAccountTransactionsRequest();
 				~QueryAccountTransactionsRequest();
 
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				std::string getCreateTimeEnd()const;
+				void setCreateTimeEnd(const std::string& createTimeEnd);
 				std::string getRecordID()const;
 				void setRecordID(const std::string& recordID);
 				int getPageSize()const;
@@ -45,19 +49,15 @@ namespace AlibabaCloud
 				void setCreateTimeStart(const std::string& createTimeStart);
 				std::string getTransactionNumber()const;
 				void setTransactionNumber(const std::string& transactionNumber);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
-				std::string getCreateTimeEnd()const;
-				void setCreateTimeEnd(const std::string& createTimeEnd);
 
             private:
+				int pageNum_;
+				std::string createTimeEnd_;
 				std::string recordID_;
 				int pageSize_;
 				std::string transactionChannelSN_;
 				std::string createTimeStart_;
 				std::string transactionNumber_;
-				int pageNum_;
-				std::string createTimeEnd_;
 
 			};
 		}

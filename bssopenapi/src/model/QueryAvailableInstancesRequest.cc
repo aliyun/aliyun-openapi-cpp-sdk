@@ -47,17 +47,6 @@ void QueryAvailableInstancesRequest::setSubscriptionType(const std::string& subs
 	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
-long QueryAvailableInstancesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void QueryAvailableInstancesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 int QueryAvailableInstancesRequest::getPageNum()const
 {
 	return pageNum_;
@@ -69,17 +58,6 @@ void QueryAvailableInstancesRequest::setPageNum(int pageNum)
 	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
-std::string QueryAvailableInstancesRequest::getEndTimeStart()const
-{
-	return endTimeStart_;
-}
-
-void QueryAvailableInstancesRequest::setEndTimeStart(const std::string& endTimeStart)
-{
-	endTimeStart_ = endTimeStart;
-	setCoreParameter("EndTimeStart", endTimeStart);
-}
-
 std::string QueryAvailableInstancesRequest::getProductType()const
 {
 	return productType_;
@@ -89,6 +67,50 @@ void QueryAvailableInstancesRequest::setProductType(const std::string& productTy
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+int QueryAvailableInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryAvailableInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryAvailableInstancesRequest::getRenewStatus()const
+{
+	return renewStatus_;
+}
+
+void QueryAvailableInstancesRequest::setRenewStatus(const std::string& renewStatus)
+{
+	renewStatus_ = renewStatus;
+	setCoreParameter("RenewStatus", renewStatus);
+}
+
+long QueryAvailableInstancesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void QueryAvailableInstancesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string QueryAvailableInstancesRequest::getEndTimeStart()const
+{
+	return endTimeStart_;
+}
+
+void QueryAvailableInstancesRequest::setEndTimeStart(const std::string& endTimeStart)
+{
+	endTimeStart_ = endTimeStart;
+	setCoreParameter("EndTimeStart", endTimeStart);
 }
 
 std::string QueryAvailableInstancesRequest::getCreateTimeEnd()const
@@ -124,17 +146,6 @@ void QueryAvailableInstancesRequest::setEndTimeEnd(const std::string& endTimeEnd
 	setCoreParameter("EndTimeEnd", endTimeEnd);
 }
 
-int QueryAvailableInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryAvailableInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryAvailableInstancesRequest::getCreateTimeStart()const
 {
 	return createTimeStart_;
@@ -155,16 +166,5 @@ void QueryAvailableInstancesRequest::setRegion(const std::string& region)
 {
 	region_ = region;
 	setCoreParameter("Region", region);
-}
-
-std::string QueryAvailableInstancesRequest::getRenewStatus()const
-{
-	return renewStatus_;
-}
-
-void QueryAvailableInstancesRequest::setRenewStatus(const std::string& renewStatus)
-{
-	renewStatus_ = renewStatus;
-	setCoreParameter("RenewStatus", renewStatus);
 }
 

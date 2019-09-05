@@ -47,17 +47,6 @@ void QueryMonthlyInstanceConsumptionRequest::setSubscriptionType(const std::stri
 	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
-int QueryMonthlyInstanceConsumptionRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryMonthlyInstanceConsumptionRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryMonthlyInstanceConsumptionRequest::getBillingCycle()const
 {
 	return billingCycle_;
@@ -100,5 +89,16 @@ void QueryMonthlyInstanceConsumptionRequest::setProductType(const std::string& p
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+int QueryMonthlyInstanceConsumptionRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryMonthlyInstanceConsumptionRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

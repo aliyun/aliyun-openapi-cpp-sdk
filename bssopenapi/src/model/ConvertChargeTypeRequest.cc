@@ -47,17 +47,6 @@ void ConvertChargeTypeRequest::setProductCode(const std::string& productCode)
 	setCoreParameter("ProductCode", productCode);
 }
 
-std::string ConvertChargeTypeRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ConvertChargeTypeRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string ConvertChargeTypeRequest::getSubscriptionType()const
 {
 	return subscriptionType_;
@@ -89,5 +78,16 @@ void ConvertChargeTypeRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+std::string ConvertChargeTypeRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ConvertChargeTypeRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

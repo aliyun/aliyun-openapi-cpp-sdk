@@ -25,17 +25,6 @@ QueryInstanceBillRequest::QueryInstanceBillRequest() :
 QueryInstanceBillRequest::~QueryInstanceBillRequest()
 {}
 
-bool QueryInstanceBillRequest::getIsBillingItem()const
-{
-	return isBillingItem_;
-}
-
-void QueryInstanceBillRequest::setIsBillingItem(bool isBillingItem)
-{
-	isBillingItem_ = isBillingItem;
-	setCoreParameter("IsBillingItem", isBillingItem ? "true" : "false");
-}
-
 std::string QueryInstanceBillRequest::getProductCode()const
 {
 	return productCode_;
@@ -67,17 +56,6 @@ void QueryInstanceBillRequest::setSubscriptionType(const std::string& subscripti
 {
 	subscriptionType_ = subscriptionType;
 	setCoreParameter("SubscriptionType", subscriptionType);
-}
-
-int QueryInstanceBillRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryInstanceBillRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryInstanceBillRequest::getBillingCycle()const
@@ -122,5 +100,27 @@ void QueryInstanceBillRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
 	setCoreParameter("ProductType", productType);
+}
+
+bool QueryInstanceBillRequest::getIsBillingItem()const
+{
+	return isBillingItem_;
+}
+
+void QueryInstanceBillRequest::setIsBillingItem(bool isBillingItem)
+{
+	isBillingItem_ = isBillingItem;
+	setCoreParameter("IsBillingItem", isBillingItem ? "true" : "false");
+}
+
+int QueryInstanceBillRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryInstanceBillRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

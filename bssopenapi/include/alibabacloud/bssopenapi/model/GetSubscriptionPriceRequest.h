@@ -42,41 +42,41 @@ namespace AlibabaCloud
 				GetSubscriptionPriceRequest();
 				~GetSubscriptionPriceRequest();
 
-				int getServicePeriodQuantity()const;
-				void setServicePeriodQuantity(int servicePeriodQuantity);
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				int getQuantity()const;
 				void setQuantity(int quantity);
-				std::string getServicePeriodUnit()const;
-				void setServicePeriodUnit(const std::string& servicePeriodUnit);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
 				std::vector<ModuleList> getModuleList()const;
 				void setModuleList(const std::vector<ModuleList>& moduleList);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getProductType()const;
+				void setProductType(const std::string& productType);
+				int getServicePeriodQuantity()const;
+				void setServicePeriodQuantity(int servicePeriodQuantity);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getServicePeriodUnit()const;
+				void setServicePeriodUnit(const std::string& servicePeriodUnit);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
-				std::string getProductType()const;
-				void setProductType(const std::string& productType);
 
             private:
-				int servicePeriodQuantity_;
 				std::string productCode_;
-				std::string instanceId_;
 				int quantity_;
-				std::string servicePeriodUnit_;
 				std::string subscriptionType_;
 				std::vector<ModuleList> moduleList_;
 				long ownerId_;
+				std::string productType_;
+				int servicePeriodQuantity_;
+				std::string instanceId_;
+				std::string servicePeriodUnit_;
 				std::string region_;
 				std::string orderType_;
-				std::string productType_;
 
 			};
 		}

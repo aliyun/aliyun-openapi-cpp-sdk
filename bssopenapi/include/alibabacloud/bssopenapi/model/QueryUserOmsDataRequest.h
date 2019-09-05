@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				QueryUserOmsDataRequest();
 				~QueryUserOmsDataRequest();
 
-				std::string getDataType()const;
-				void setDataType(const std::string& dataType);
-				std::string getMarker()const;
-				void setMarker(const std::string& marker);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getDataType()const;
+				void setDataType(const std::string& dataType);
+				std::string getMarker()const;
+				void setMarker(const std::string& marker);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getTable()const;
 				void setTable(const std::string& table);
 
             private:
-				std::string dataType_;
-				std::string marker_;
-				int pageSize_;
 				std::string endTime_;
 				std::string startTime_;
 				long ownerId_;
+				std::string dataType_;
+				std::string marker_;
+				int pageSize_;
 				std::string table_;
 
 			};

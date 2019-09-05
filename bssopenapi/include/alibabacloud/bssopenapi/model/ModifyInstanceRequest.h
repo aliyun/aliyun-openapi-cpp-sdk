@@ -42,30 +42,30 @@ namespace AlibabaCloud
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
-				std::string getModifyType()const;
-				void setModifyType(const std::string& modifyType);
-				std::vector<Parameter> getParameter()const;
-				void setParameter(const std::vector<Parameter>& parameter);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getModifyType()const;
+				void setModifyType(const std::string& modifyType);
+				std::vector<Parameter> getParameter()const;
+				void setParameter(const std::vector<Parameter>& parameter);
 
             private:
 				std::string productCode_;
-				std::string instanceId_;
 				std::string clientToken_;
 				std::string subscriptionType_;
-				std::string modifyType_;
-				std::vector<Parameter> parameter_;
 				long ownerId_;
 				std::string productType_;
+				std::string instanceId_;
+				std::string modifyType_;
+				std::vector<Parameter> parameter_;
 
 			};
 		}

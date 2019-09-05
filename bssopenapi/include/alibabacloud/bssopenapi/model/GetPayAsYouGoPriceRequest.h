@@ -49,18 +49,18 @@ namespace AlibabaCloud
 				void setModuleList(const std::vector<ModuleList>& moduleList);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
+				std::string getRegion()const;
+				void setRegion(const std::string& region);
 
             private:
 				std::string productCode_;
 				std::string subscriptionType_;
 				std::vector<ModuleList> moduleList_;
 				long ownerId_;
-				std::string region_;
 				std::string productType_;
+				std::string region_;
 
 			};
 		}

@@ -25,28 +25,6 @@ RenewResourcePackageRequest::RenewResourcePackageRequest() :
 RenewResourcePackageRequest::~RenewResourcePackageRequest()
 {}
 
-int RenewResourcePackageRequest::getDuration()const
-{
-	return duration_;
-}
-
-void RenewResourcePackageRequest::setDuration(int duration)
-{
-	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
-}
-
-std::string RenewResourcePackageRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void RenewResourcePackageRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 long RenewResourcePackageRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,6 +45,28 @@ void RenewResourcePackageRequest::setEffectiveDate(const std::string& effectiveD
 {
 	effectiveDate_ = effectiveDate;
 	setCoreParameter("EffectiveDate", effectiveDate);
+}
+
+int RenewResourcePackageRequest::getDuration()const
+{
+	return duration_;
+}
+
+void RenewResourcePackageRequest::setDuration(int duration)
+{
+	duration_ = duration;
+	setCoreParameter("Duration", std::to_string(duration));
+}
+
+std::string RenewResourcePackageRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void RenewResourcePackageRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string RenewResourcePackageRequest::getPricingCycle()const

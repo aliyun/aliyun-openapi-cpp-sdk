@@ -37,14 +37,6 @@ namespace AlibabaCloud
 
 				int getInvoicingType()const;
 				void setInvoicingType(int invoicingType);
-				std::string getApplyUserNick()const;
-				void setApplyUserNick(const std::string& applyUserNick);
-				bool getInvoiceByAmount()const;
-				void setInvoiceByAmount(bool invoiceByAmount);
-				long getCustomerId()const;
-				void setCustomerId(long customerId);
-				std::vector<long> getSelectedIds()const;
-				void setSelectedIds(const std::vector<long>& selectedIds);
 				int getProcessWay()const;
 				void setProcessWay(int processWay);
 				long getCallerBid()const;
@@ -55,20 +47,28 @@ namespace AlibabaCloud
 				void setInvoiceAmount(long invoiceAmount);
 				long getAddressId()const;
 				void setAddressId(long addressId);
+				std::string getApplyUserNick()const;
+				void setApplyUserNick(const std::string& applyUserNick);
+				bool getInvoiceByAmount()const;
+				void setInvoiceByAmount(bool invoiceByAmount);
+				long getCustomerId()const;
+				void setCustomerId(long customerId);
+				std::vector<long> getSelectedIds()const;
+				void setSelectedIds(const std::vector<long>& selectedIds);
 				long getCallerUid()const;
 				void setCallerUid(long callerUid);
 
             private:
 				int invoicingType_;
-				std::string applyUserNick_;
-				bool invoiceByAmount_;
-				long customerId_;
-				std::vector<long> selectedIds_;
 				int processWay_;
 				long callerBid_;
 				long ownerId_;
 				long invoiceAmount_;
 				long addressId_;
+				std::string applyUserNick_;
+				bool invoiceByAmount_;
+				long customerId_;
+				std::vector<long> selectedIds_;
 				long callerUid_;
 
 			};

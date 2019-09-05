@@ -25,17 +25,6 @@ ChangeResellerConsumeAmountRequest::ChangeResellerConsumeAmountRequest() :
 ChangeResellerConsumeAmountRequest::~ChangeResellerConsumeAmountRequest()
 {}
 
-std::string ChangeResellerConsumeAmountRequest::getAdjustType()const
-{
-	return adjustType_;
-}
-
-void ChangeResellerConsumeAmountRequest::setAdjustType(const std::string& adjustType)
-{
-	adjustType_ = adjustType;
-	setCoreParameter("AdjustType", adjustType);
-}
-
 std::string ChangeResellerConsumeAmountRequest::getAmount()const
 {
 	return amount_;
@@ -56,28 +45,6 @@ void ChangeResellerConsumeAmountRequest::setOutBizId(const std::string& outBizId
 {
 	outBizId_ = outBizId;
 	setCoreParameter("OutBizId", outBizId);
-}
-
-std::string ChangeResellerConsumeAmountRequest::getExtendMap()const
-{
-	return extendMap_;
-}
-
-void ChangeResellerConsumeAmountRequest::setExtendMap(const std::string& extendMap)
-{
-	extendMap_ = extendMap;
-	setCoreParameter("ExtendMap", extendMap);
-}
-
-std::string ChangeResellerConsumeAmountRequest::getCurrency()const
-{
-	return currency_;
-}
-
-void ChangeResellerConsumeAmountRequest::setCurrency(const std::string& currency)
-{
-	currency_ = currency;
-	setCoreParameter("Currency", currency);
 }
 
 std::string ChangeResellerConsumeAmountRequest::getSource()const
@@ -111,5 +78,38 @@ void ChangeResellerConsumeAmountRequest::setBusinessType(const std::string& busi
 {
 	businessType_ = businessType;
 	setCoreParameter("BusinessType", businessType);
+}
+
+std::string ChangeResellerConsumeAmountRequest::getAdjustType()const
+{
+	return adjustType_;
+}
+
+void ChangeResellerConsumeAmountRequest::setAdjustType(const std::string& adjustType)
+{
+	adjustType_ = adjustType;
+	setCoreParameter("AdjustType", adjustType);
+}
+
+std::string ChangeResellerConsumeAmountRequest::getExtendMap()const
+{
+	return extendMap_;
+}
+
+void ChangeResellerConsumeAmountRequest::setExtendMap(const std::string& extendMap)
+{
+	extendMap_ = extendMap;
+	setCoreParameter("ExtendMap", extendMap);
+}
+
+std::string ChangeResellerConsumeAmountRequest::getCurrency()const
+{
+	return currency_;
+}
+
+void ChangeResellerConsumeAmountRequest::setCurrency(const std::string& currency)
+{
+	currency_ = currency;
+	setCoreParameter("Currency", currency);
 }
 
