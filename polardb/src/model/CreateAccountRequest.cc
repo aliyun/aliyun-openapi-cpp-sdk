@@ -36,39 +36,6 @@ void CreateAccountRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateAccountRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateAccountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateAccountRequest::getDBClusterId()const
-{
-	return dBClusterId_;
-}
-
-void CreateAccountRequest::setDBClusterId(const std::string& dBClusterId)
-{
-	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
-}
-
-std::string CreateAccountRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateAccountRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string CreateAccountRequest::getAccountType()const
 {
 	return accountType_;
@@ -78,17 +45,6 @@ void CreateAccountRequest::setAccountType(const std::string& accountType)
 {
 	accountType_ = accountType;
 	setCoreParameter("AccountType", accountType);
-}
-
-long CreateAccountRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateAccountRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateAccountRequest::getAccountDescription()const
@@ -124,17 +80,6 @@ void CreateAccountRequest::setAccountPrivilege(const std::string& accountPrivile
 	setCoreParameter("AccountPrivilege", accountPrivilege);
 }
 
-std::string CreateAccountRequest::getAccountPassword()const
-{
-	return accountPassword_;
-}
-
-void CreateAccountRequest::setAccountPassword(const std::string& accountPassword)
-{
-	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
-}
-
 std::string CreateAccountRequest::getAccountName()const
 {
 	return accountName_;
@@ -144,6 +89,61 @@ void CreateAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
 	setCoreParameter("AccountName", accountName);
+}
+
+std::string CreateAccountRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateAccountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateAccountRequest::getDBClusterId()const
+{
+	return dBClusterId_;
+}
+
+void CreateAccountRequest::setDBClusterId(const std::string& dBClusterId)
+{
+	dBClusterId_ = dBClusterId;
+	setCoreParameter("DBClusterId", dBClusterId);
+}
+
+std::string CreateAccountRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateAccountRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateAccountRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateAccountRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateAccountRequest::getAccountPassword()const
+{
+	return accountPassword_;
+}
+
+void CreateAccountRequest::setAccountPassword(const std::string& accountPassword)
+{
+	accountPassword_ = accountPassword;
+	setCoreParameter("AccountPassword", accountPassword);
 }
 
 std::string CreateAccountRequest::getDBName()const

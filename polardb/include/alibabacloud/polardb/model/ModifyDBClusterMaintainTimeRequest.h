@@ -35,10 +35,12 @@ namespace AlibabaCloud
 				ModifyDBClusterMaintainTimeRequest();
 				~ModifyDBClusterMaintainTimeRequest();
 
-				std::string getMaintainTime()const;
-				void setMaintainTime(const std::string& maintainTime);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getMaintainTime()const;
+				void setMaintainTime(const std::string& maintainTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -47,17 +49,15 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string maintainTime_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string maintainTime_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

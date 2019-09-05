@@ -36,6 +36,28 @@ void GrantAccountPrivilegeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string GrantAccountPrivilegeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GrantAccountPrivilegeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GrantAccountPrivilegeRequest::getAccountPrivilege()const
+{
+	return accountPrivilege_;
+}
+
+void GrantAccountPrivilegeRequest::setAccountPrivilege(const std::string& accountPrivilege)
+{
+	accountPrivilege_ = accountPrivilege;
+	setCoreParameter("AccountPrivilege", accountPrivilege);
+}
+
 std::string GrantAccountPrivilegeRequest::getAccountName()const
 {
 	return accountName_;
@@ -45,17 +67,6 @@ void GrantAccountPrivilegeRequest::setAccountName(const std::string& accountName
 {
 	accountName_ = accountName;
 	setCoreParameter("AccountName", accountName);
-}
-
-std::string GrantAccountPrivilegeRequest::getDBName()const
-{
-	return dBName_;
-}
-
-void GrantAccountPrivilegeRequest::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
 }
 
 std::string GrantAccountPrivilegeRequest::getResourceOwnerAccount()const
@@ -102,25 +113,14 @@ void GrantAccountPrivilegeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string GrantAccountPrivilegeRequest::getAccessKeyId()const
+std::string GrantAccountPrivilegeRequest::getDBName()const
 {
-	return accessKeyId_;
+	return dBName_;
 }
 
-void GrantAccountPrivilegeRequest::setAccessKeyId(const std::string& accessKeyId)
+void GrantAccountPrivilegeRequest::setDBName(const std::string& dBName)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string GrantAccountPrivilegeRequest::getAccountPrivilege()const
-{
-	return accountPrivilege_;
-}
-
-void GrantAccountPrivilegeRequest::setAccountPrivilege(const std::string& accountPrivilege)
-{
-	accountPrivilege_ = accountPrivilege;
-	setCoreParameter("AccountPrivilege", accountPrivilege);
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
 }
 

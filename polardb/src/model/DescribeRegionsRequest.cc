@@ -36,6 +36,17 @@ void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeRegionsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,16 +78,5 @@ void DescribeRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeRegionsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

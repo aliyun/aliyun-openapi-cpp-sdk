@@ -36,6 +36,50 @@ void DescribeBackupsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeBackupsRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeBackupsRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+int DescribeBackupsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeBackupsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeBackupsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeBackupsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int DescribeBackupsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeBackupsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string DescribeBackupsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -91,17 +135,6 @@ void DescribeBackupsRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeBackupsRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeBackupsRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long DescribeBackupsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,28 +146,6 @@ void DescribeBackupsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeBackupsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeBackupsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeBackupsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeBackupsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeBackupsRequest::getBackupStatus()const
 {
 	return backupStatus_;
@@ -144,17 +155,6 @@ void DescribeBackupsRequest::setBackupStatus(const std::string& backupStatus)
 {
 	backupStatus_ = backupStatus;
 	setCoreParameter("BackupStatus", backupStatus);
-}
-
-int DescribeBackupsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeBackupsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeBackupsRequest::getBackupMode()const

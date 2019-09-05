@@ -48,17 +48,6 @@ void DeleteDBNodesRequest::setDBNodeId(const std::vector<std::string>& dBNodeId)
 		setCoreParameter("DBNodeId."+ std::to_string(i), dBNodeId.at(i));
 }
 
-std::string DeleteDBNodesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteDBNodesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteDBNodesRequest::getClientToken()const
 {
 	return clientToken_;
@@ -68,6 +57,28 @@ void DeleteDBNodesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string DeleteDBNodesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteDBNodesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteDBNodesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteDBNodesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDBNodesRequest::getDBClusterId()const
@@ -101,16 +112,5 @@ void DeleteDBNodesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteDBNodesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteDBNodesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

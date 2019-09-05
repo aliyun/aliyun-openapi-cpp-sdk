@@ -36,6 +36,17 @@ void DeleteDBClusterRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteDBClusterRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteDBClusterRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -78,16 +89,5 @@ void DeleteDBClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteDBClusterRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

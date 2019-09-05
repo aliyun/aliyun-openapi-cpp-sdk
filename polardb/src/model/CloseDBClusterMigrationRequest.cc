@@ -36,15 +36,15 @@ void CloseDBClusterMigrationRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-bool CloseDBClusterMigrationRequest::getContinueEnableBinlog()const
+std::string CloseDBClusterMigrationRequest::getAccessKeyId()const
 {
-	return continueEnableBinlog_;
+	return accessKeyId_;
 }
 
-void CloseDBClusterMigrationRequest::setContinueEnableBinlog(bool continueEnableBinlog)
+void CloseDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	continueEnableBinlog_ = continueEnableBinlog;
-	setCoreParameter("ContinueEnableBinlog", continueEnableBinlog ? "true" : "false");
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CloseDBClusterMigrationRequest::getSecurityToken()const
@@ -67,17 +67,6 @@ void CloseDBClusterMigrationRequest::setResourceOwnerAccount(const std::string& 
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CloseDBClusterMigrationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CloseDBClusterMigrationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CloseDBClusterMigrationRequest::getDBClusterId()const
@@ -113,14 +102,14 @@ void CloseDBClusterMigrationRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CloseDBClusterMigrationRequest::getAccessKeyId()const
+bool CloseDBClusterMigrationRequest::getContinueEnableBinlog()const
 {
-	return accessKeyId_;
+	return continueEnableBinlog_;
 }
 
-void CloseDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
+void CloseDBClusterMigrationRequest::setContinueEnableBinlog(bool continueEnableBinlog)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	continueEnableBinlog_ = continueEnableBinlog;
+	setCoreParameter("ContinueEnableBinlog", continueEnableBinlog ? "true" : "false");
 }
 

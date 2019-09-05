@@ -58,39 +58,6 @@ void DescribeDBClustersRequest::setDBClusterStatus(const std::string& dBClusterS
 	setCoreParameter("DBClusterStatus", dBClusterStatus);
 }
 
-std::string DescribeDBClustersRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeDBClustersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeDBClustersRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeDBClustersRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long DescribeDBClustersRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeDBClustersRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 int DescribeDBClustersRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -124,17 +91,6 @@ void DescribeDBClustersRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeDBClustersRequest::getDBType()const
-{
-	return dBType_;
-}
-
-void DescribeDBClustersRequest::setDBType(const std::string& dBType)
-{
-	dBType_ = dBType;
-	setCoreParameter("DBType", dBType);
-}
-
 int DescribeDBClustersRequest::getPageSize()const
 {
 	return pageSize_;
@@ -161,6 +117,50 @@ void DescribeDBClustersRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
+}
+
+std::string DescribeDBClustersRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeDBClustersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeDBClustersRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeDBClustersRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeDBClustersRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeDBClustersRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeDBClustersRequest::getDBType()const
+{
+	return dBType_;
+}
+
+void DescribeDBClustersRequest::setDBType(const std::string& dBType)
+{
+	dBType_ = dBType;
+	setCoreParameter("DBType", dBType);
 }
 
 std::string DescribeDBClustersRequest::getDBClusterIds()const

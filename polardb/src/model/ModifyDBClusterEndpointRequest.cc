@@ -47,15 +47,26 @@ void ModifyDBClusterEndpointRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDBClusterEndpointRequest::getNodes()const
+std::string ModifyDBClusterEndpointRequest::getDBEndpointId()const
 {
-	return nodes_;
+	return dBEndpointId_;
 }
 
-void ModifyDBClusterEndpointRequest::setNodes(const std::string& nodes)
+void ModifyDBClusterEndpointRequest::setDBEndpointId(const std::string& dBEndpointId)
 {
-	nodes_ = nodes;
-	setCoreParameter("Nodes", nodes);
+	dBEndpointId_ = dBEndpointId;
+	setCoreParameter("DBEndpointId", dBEndpointId);
+}
+
+std::string ModifyDBClusterEndpointRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBClusterEndpointRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBClusterEndpointRequest::getReadWriteMode()const
@@ -102,17 +113,6 @@ void ModifyDBClusterEndpointRequest::setOwnerAccount(const std::string& ownerAcc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyDBClusterEndpointRequest::getDBEndpointId()const
-{
-	return dBEndpointId_;
-}
-
-void ModifyDBClusterEndpointRequest::setDBEndpointId(const std::string& dBEndpointId)
-{
-	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", dBEndpointId);
-}
-
 std::string ModifyDBClusterEndpointRequest::getEndpointConfig()const
 {
 	return endpointConfig_;
@@ -135,14 +135,14 @@ void ModifyDBClusterEndpointRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyDBClusterEndpointRequest::getAccessKeyId()const
+std::string ModifyDBClusterEndpointRequest::getNodes()const
 {
-	return accessKeyId_;
+	return nodes_;
 }
 
-void ModifyDBClusterEndpointRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifyDBClusterEndpointRequest::setNodes(const std::string& nodes)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	nodes_ = nodes;
+	setCoreParameter("Nodes", nodes);
 }
 

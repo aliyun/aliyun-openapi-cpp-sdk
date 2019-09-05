@@ -37,41 +37,41 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getDBClusterId()const;
-				void setDBClusterId(const std::string& dBClusterId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getAccountType()const;
 				void setAccountType(const std::string& accountType);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccountDescription()const;
 				void setAccountDescription(const std::string& accountDescription);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getAccountPrivilege()const;
 				void setAccountPrivilege(const std::string& accountPrivilege);
-				std::string getAccountPassword()const;
-				void setAccountPassword(const std::string& accountPassword);
 				std::string getAccountName()const;
 				void setAccountName(const std::string& accountName);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getAccountPassword()const;
+				void setAccountPassword(const std::string& accountPassword);
 				std::string getDBName()const;
 				void setDBName(const std::string& dBName);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string dBClusterId_;
-				std::string ownerAccount_;
 				std::string accountType_;
-				long ownerId_;
 				std::string accountDescription_;
 				std::string accessKeyId_;
 				std::string accountPrivilege_;
-				std::string accountPassword_;
 				std::string accountName_;
+				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string accountPassword_;
 				std::string dBName_;
 
 			};

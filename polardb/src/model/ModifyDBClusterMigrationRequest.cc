@@ -36,6 +36,17 @@ void ModifyDBClusterMigrationRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBClusterMigrationRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyDBClusterMigrationRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -47,6 +58,17 @@ void ModifyDBClusterMigrationRequest::setSecurityToken(const std::string& securi
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyDBClusterMigrationRequest::getNewMasterInstanceId()const
+{
+	return newMasterInstanceId_;
+}
+
+void ModifyDBClusterMigrationRequest::setNewMasterInstanceId(const std::string& newMasterInstanceId)
+{
+	newMasterInstanceId_ = newMasterInstanceId;
+	setCoreParameter("NewMasterInstanceId", newMasterInstanceId);
+}
+
 std::string ModifyDBClusterMigrationRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +78,6 @@ void ModifyDBClusterMigrationRequest::setResourceOwnerAccount(const std::string&
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyDBClusterMigrationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyDBClusterMigrationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyDBClusterMigrationRequest::getDBClusterId()const
@@ -102,17 +113,6 @@ void ModifyDBClusterMigrationRequest::setSourceRDSDBInstanceId(const std::string
 	setCoreParameter("SourceRDSDBInstanceId", sourceRDSDBInstanceId);
 }
 
-std::string ModifyDBClusterMigrationRequest::getNewMasterInstanceId()const
-{
-	return newMasterInstanceId_;
-}
-
-void ModifyDBClusterMigrationRequest::setNewMasterInstanceId(const std::string& newMasterInstanceId)
-{
-	newMasterInstanceId_ = newMasterInstanceId;
-	setCoreParameter("NewMasterInstanceId", newMasterInstanceId);
-}
-
 long ModifyDBClusterMigrationRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,16 +122,5 @@ void ModifyDBClusterMigrationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyDBClusterMigrationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

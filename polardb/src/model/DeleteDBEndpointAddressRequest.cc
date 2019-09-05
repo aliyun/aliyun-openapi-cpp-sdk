@@ -36,6 +36,28 @@ void DeleteDBEndpointAddressRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteDBEndpointAddressRequest::getDBEndpointId()const
+{
+	return dBEndpointId_;
+}
+
+void DeleteDBEndpointAddressRequest::setDBEndpointId(const std::string& dBEndpointId)
+{
+	dBEndpointId_ = dBEndpointId;
+	setCoreParameter("DBEndpointId", dBEndpointId);
+}
+
+std::string DeleteDBEndpointAddressRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteDBEndpointAddressRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteDBEndpointAddressRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,28 +91,6 @@ void DeleteDBEndpointAddressRequest::setOwnerAccount(const std::string& ownerAcc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeleteDBEndpointAddressRequest::getNetType()const
-{
-	return netType_;
-}
-
-void DeleteDBEndpointAddressRequest::setNetType(const std::string& netType)
-{
-	netType_ = netType;
-	setCoreParameter("NetType", netType);
-}
-
-std::string DeleteDBEndpointAddressRequest::getDBEndpointId()const
-{
-	return dBEndpointId_;
-}
-
-void DeleteDBEndpointAddressRequest::setDBEndpointId(const std::string& dBEndpointId)
-{
-	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", dBEndpointId);
-}
-
 long DeleteDBEndpointAddressRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +102,14 @@ void DeleteDBEndpointAddressRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteDBEndpointAddressRequest::getAccessKeyId()const
+std::string DeleteDBEndpointAddressRequest::getNetType()const
 {
-	return accessKeyId_;
+	return netType_;
 }
 
-void DeleteDBEndpointAddressRequest::setAccessKeyId(const std::string& accessKeyId)
+void DeleteDBEndpointAddressRequest::setNetType(const std::string& netType)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	netType_ = netType;
+	setCoreParameter("NetType", netType);
 }
 

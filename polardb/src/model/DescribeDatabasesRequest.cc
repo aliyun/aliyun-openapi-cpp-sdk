@@ -36,15 +36,15 @@ void DescribeDatabasesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDatabasesRequest::getDBName()const
+std::string DescribeDatabasesRequest::getAccessKeyId()const
 {
-	return dBName_;
+	return accessKeyId_;
 }
 
-void DescribeDatabasesRequest::setDBName(const std::string& dBName)
+void DescribeDatabasesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDatabasesRequest::getResourceOwnerAccount()const
@@ -91,14 +91,14 @@ void DescribeDatabasesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDatabasesRequest::getAccessKeyId()const
+std::string DescribeDatabasesRequest::getDBName()const
 {
-	return accessKeyId_;
+	return dBName_;
 }
 
-void DescribeDatabasesRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeDatabasesRequest::setDBName(const std::string& dBName)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
 }
 

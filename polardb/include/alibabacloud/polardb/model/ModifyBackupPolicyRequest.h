@@ -35,14 +35,12 @@ namespace AlibabaCloud
 				ModifyBackupPolicyRequest();
 				~ModifyBackupPolicyRequest();
 
-				std::string getPreferredBackupTime()const;
-				void setPreferredBackupTime(const std::string& preferredBackupTime);
-				std::string getPreferredBackupPeriod()const;
-				void setPreferredBackupPeriod(const std::string& preferredBackupPeriod);
-				std::string getBackupRetentionPeriod()const;
-				void setBackupRetentionPeriod(const std::string& backupRetentionPeriod);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPreferredBackupPeriod()const;
+				void setPreferredBackupPeriod(const std::string& preferredBackupPeriod);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -51,19 +49,21 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPreferredBackupTime()const;
+				void setPreferredBackupTime(const std::string& preferredBackupTime);
+				std::string getBackupRetentionPeriod()const;
+				void setBackupRetentionPeriod(const std::string& backupRetentionPeriod);
 
             private:
-				std::string preferredBackupTime_;
-				std::string preferredBackupPeriod_;
-				std::string backupRetentionPeriod_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string preferredBackupPeriod_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string preferredBackupTime_;
+				std::string backupRetentionPeriod_;
 
 			};
 		}

@@ -36,6 +36,39 @@ void ModifyDBClusterAccessWhitelistRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBClusterAccessWhitelistRequest::getSecurityIps()const
+{
+	return securityIps_;
+}
+
+void ModifyDBClusterAccessWhitelistRequest::setSecurityIps(const std::string& securityIps)
+{
+	securityIps_ = securityIps;
+	setCoreParameter("SecurityIps", securityIps);
+}
+
+std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayAttribute()const
+{
+	return dBClusterIPArrayAttribute_;
+}
+
+void ModifyDBClusterAccessWhitelistRequest::setDBClusterIPArrayAttribute(const std::string& dBClusterIPArrayAttribute)
+{
+	dBClusterIPArrayAttribute_ = dBClusterIPArrayAttribute;
+	setCoreParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
+}
+
+std::string ModifyDBClusterAccessWhitelistRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBClusterAccessWhitelistRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyDBClusterAccessWhitelistRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,28 +102,6 @@ void ModifyDBClusterAccessWhitelistRequest::setOwnerAccount(const std::string& o
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyDBClusterAccessWhitelistRequest::getSecurityIps()const
-{
-	return securityIps_;
-}
-
-void ModifyDBClusterAccessWhitelistRequest::setSecurityIps(const std::string& securityIps)
-{
-	securityIps_ = securityIps;
-	setCoreParameter("SecurityIps", securityIps);
-}
-
-std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayName()const
-{
-	return dBClusterIPArrayName_;
-}
-
-void ModifyDBClusterAccessWhitelistRequest::setDBClusterIPArrayName(const std::string& dBClusterIPArrayName)
-{
-	dBClusterIPArrayName_ = dBClusterIPArrayName;
-	setCoreParameter("DBClusterIPArrayName", dBClusterIPArrayName);
-}
-
 long ModifyDBClusterAccessWhitelistRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,25 +113,14 @@ void ModifyDBClusterAccessWhitelistRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayAttribute()const
+std::string ModifyDBClusterAccessWhitelistRequest::getDBClusterIPArrayName()const
 {
-	return dBClusterIPArrayAttribute_;
+	return dBClusterIPArrayName_;
 }
 
-void ModifyDBClusterAccessWhitelistRequest::setDBClusterIPArrayAttribute(const std::string& dBClusterIPArrayAttribute)
+void ModifyDBClusterAccessWhitelistRequest::setDBClusterIPArrayName(const std::string& dBClusterIPArrayName)
 {
-	dBClusterIPArrayAttribute_ = dBClusterIPArrayAttribute;
-	setCoreParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
-}
-
-std::string ModifyDBClusterAccessWhitelistRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBClusterAccessWhitelistRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	dBClusterIPArrayName_ = dBClusterIPArrayName;
+	setCoreParameter("DBClusterIPArrayName", dBClusterIPArrayName);
 }
 

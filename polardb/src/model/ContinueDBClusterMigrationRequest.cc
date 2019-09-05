@@ -36,6 +36,17 @@ void ContinueDBClusterMigrationRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ContinueDBClusterMigrationRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ContinueDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ContinueDBClusterMigrationRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -56,17 +67,6 @@ void ContinueDBClusterMigrationRequest::setResourceOwnerAccount(const std::strin
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ContinueDBClusterMigrationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ContinueDBClusterMigrationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ContinueDBClusterMigrationRequest::getDBClusterId()const
@@ -100,16 +100,5 @@ void ContinueDBClusterMigrationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ContinueDBClusterMigrationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ContinueDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

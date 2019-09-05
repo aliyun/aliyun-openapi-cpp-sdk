@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getSecurityIps()const;
+				void setSecurityIps(const std::string& securityIps);
+				std::string getDBClusterIPArrayAttribute()const;
+				void setDBClusterIPArrayAttribute(const std::string& dBClusterIPArrayAttribute);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
 				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getSecurityIps()const;
-				void setSecurityIps(const std::string& securityIps);
-				std::string getDBClusterIPArrayName()const;
-				void setDBClusterIPArrayName(const std::string& dBClusterIPArrayName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getDBClusterIPArrayAttribute()const;
-				void setDBClusterIPArrayAttribute(const std::string& dBClusterIPArrayAttribute);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBClusterIPArrayName()const;
+				void setDBClusterIPArrayName(const std::string& dBClusterIPArrayName);
 
             private:
 				long resourceOwnerId_;
+				std::string securityIps_;
+				std::string dBClusterIPArrayAttribute_;
+				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
-				std::string securityIps_;
-				std::string dBClusterIPArrayName_;
 				long ownerId_;
-				std::string dBClusterIPArrayAttribute_;
-				std::string accessKeyId_;
+				std::string dBClusterIPArrayName_;
 
 			};
 		}

@@ -25,17 +25,6 @@ ModifyDBClusterMaintainTimeRequest::ModifyDBClusterMaintainTimeRequest() :
 ModifyDBClusterMaintainTimeRequest::~ModifyDBClusterMaintainTimeRequest()
 {}
 
-std::string ModifyDBClusterMaintainTimeRequest::getMaintainTime()const
-{
-	return maintainTime_;
-}
-
-void ModifyDBClusterMaintainTimeRequest::setMaintainTime(const std::string& maintainTime)
-{
-	maintainTime_ = maintainTime;
-	setCoreParameter("MaintainTime", maintainTime);
-}
-
 long ModifyDBClusterMaintainTimeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void ModifyDBClusterMaintainTimeRequest::setResourceOwnerId(long resourceOwnerId
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ModifyDBClusterMaintainTimeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBClusterMaintainTimeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBClusterMaintainTimeRequest::getMaintainTime()const
+{
+	return maintainTime_;
+}
+
+void ModifyDBClusterMaintainTimeRequest::setMaintainTime(const std::string& maintainTime)
+{
+	maintainTime_ = maintainTime;
+	setCoreParameter("MaintainTime", maintainTime);
 }
 
 std::string ModifyDBClusterMaintainTimeRequest::getResourceOwnerAccount()const
@@ -89,16 +100,5 @@ void ModifyDBClusterMaintainTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyDBClusterMaintainTimeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBClusterMaintainTimeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBNodeTargetClass()const;
+				void setDBNodeTargetClass(const std::string& dBNodeTargetClass);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
 				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getModifyType()const;
-				void setModifyType(const std::string& modifyType);
-				std::string getDBNodeTargetClass()const;
-				void setDBNodeTargetClass(const std::string& dBNodeTargetClass);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getModifyType()const;
+				void setModifyType(const std::string& modifyType);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
+				std::string accessKeyId_;
+				std::string dBNodeTargetClass_;
+				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
-				std::string modifyType_;
-				std::string dBNodeTargetClass_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string modifyType_;
 
 			};
 		}

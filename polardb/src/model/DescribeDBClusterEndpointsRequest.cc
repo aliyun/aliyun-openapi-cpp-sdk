@@ -36,6 +36,28 @@ void DescribeDBClusterEndpointsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDBClusterEndpointsRequest::getDBEndpointId()const
+{
+	return dBEndpointId_;
+}
+
+void DescribeDBClusterEndpointsRequest::setDBEndpointId(const std::string& dBEndpointId)
+{
+	dBEndpointId_ = dBEndpointId;
+	setCoreParameter("DBEndpointId", dBEndpointId);
+}
+
+std::string DescribeDBClusterEndpointsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDBClusterEndpointsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeDBClusterEndpointsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,17 +91,6 @@ void DescribeDBClusterEndpointsRequest::setOwnerAccount(const std::string& owner
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeDBClusterEndpointsRequest::getDBEndpointId()const
-{
-	return dBEndpointId_;
-}
-
-void DescribeDBClusterEndpointsRequest::setDBEndpointId(const std::string& dBEndpointId)
-{
-	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", dBEndpointId);
-}
-
 long DescribeDBClusterEndpointsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,16 +100,5 @@ void DescribeDBClusterEndpointsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDBClusterEndpointsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDBClusterEndpointsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

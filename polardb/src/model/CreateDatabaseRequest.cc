@@ -36,15 +36,26 @@ void CreateDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateDatabaseRequest::getDBName()const
+std::string CreateDatabaseRequest::getAccessKeyId()const
 {
-	return dBName_;
+	return accessKeyId_;
 }
 
-void CreateDatabaseRequest::setDBName(const std::string& dBName)
+void CreateDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateDatabaseRequest::getAccountPrivilege()const
+{
+	return accountPrivilege_;
+}
+
+void CreateDatabaseRequest::setAccountPrivilege(const std::string& accountPrivilege)
+{
+	accountPrivilege_ = accountPrivilege;
+	setCoreParameter("AccountPrivilege", accountPrivilege);
 }
 
 std::string CreateDatabaseRequest::getAccountName()const
@@ -56,6 +67,17 @@ void CreateDatabaseRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
 	setCoreParameter("AccountName", accountName);
+}
+
+std::string CreateDatabaseRequest::getDBDescription()const
+{
+	return dBDescription_;
+}
+
+void CreateDatabaseRequest::setDBDescription(const std::string& dBDescription)
+{
+	dBDescription_ = dBDescription;
+	setCoreParameter("DBDescription", dBDescription);
 }
 
 std::string CreateDatabaseRequest::getResourceOwnerAccount()const
@@ -91,17 +113,6 @@ void CreateDatabaseRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateDatabaseRequest::getDBDescription()const
-{
-	return dBDescription_;
-}
-
-void CreateDatabaseRequest::setDBDescription(const std::string& dBDescription)
-{
-	dBDescription_ = dBDescription;
-	setCoreParameter("DBDescription", dBDescription);
-}
-
 long CreateDatabaseRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,6 +124,17 @@ void CreateDatabaseRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CreateDatabaseRequest::getDBName()const
+{
+	return dBName_;
+}
+
+void CreateDatabaseRequest::setDBName(const std::string& dBName)
+{
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
+}
+
 std::string CreateDatabaseRequest::getCharacterSetName()const
 {
 	return characterSetName_;
@@ -122,27 +144,5 @@ void CreateDatabaseRequest::setCharacterSetName(const std::string& characterSetN
 {
 	characterSetName_ = characterSetName;
 	setCoreParameter("CharacterSetName", characterSetName);
-}
-
-std::string CreateDatabaseRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateDatabaseRequest::getAccountPrivilege()const
-{
-	return accountPrivilege_;
-}
-
-void CreateDatabaseRequest::setAccountPrivilege(const std::string& accountPrivilege)
-{
-	accountPrivilege_ = accountPrivilege;
-	setCoreParameter("AccountPrivilege", accountPrivilege);
 }
 

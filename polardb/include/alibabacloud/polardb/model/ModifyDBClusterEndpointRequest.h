@@ -39,8 +39,10 @@ namespace AlibabaCloud
 				void setAutoAddNewNodes(const std::string& autoAddNewNodes);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getNodes()const;
-				void setNodes(const std::string& nodes);
+				std::string getDBEndpointId()const;
+				void setDBEndpointId(const std::string& dBEndpointId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getReadWriteMode()const;
 				void setReadWriteMode(const std::string& readWriteMode);
 				std::string getResourceOwnerAccount()const;
@@ -49,27 +51,25 @@ namespace AlibabaCloud
 				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDBEndpointId()const;
-				void setDBEndpointId(const std::string& dBEndpointId);
 				std::string getEndpointConfig()const;
 				void setEndpointConfig(const std::string& endpointConfig);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNodes()const;
+				void setNodes(const std::string& nodes);
 
             private:
 				std::string autoAddNewNodes_;
 				long resourceOwnerId_;
-				std::string nodes_;
+				std::string dBEndpointId_;
+				std::string accessKeyId_;
 				std::string readWriteMode_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
-				std::string dBEndpointId_;
 				std::string endpointConfig_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string nodes_;
 
 			};
 		}

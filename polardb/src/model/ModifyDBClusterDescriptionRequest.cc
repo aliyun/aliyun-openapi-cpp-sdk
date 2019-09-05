@@ -47,6 +47,17 @@ void ModifyDBClusterDescriptionRequest::setDBClusterDescription(const std::strin
 	setCoreParameter("DBClusterDescription", dBClusterDescription);
 }
 
+std::string ModifyDBClusterDescriptionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBClusterDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyDBClusterDescriptionRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -89,16 +100,5 @@ void ModifyDBClusterDescriptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyDBClusterDescriptionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBClusterDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

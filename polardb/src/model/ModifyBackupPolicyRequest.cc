@@ -25,15 +25,26 @@ ModifyBackupPolicyRequest::ModifyBackupPolicyRequest() :
 ModifyBackupPolicyRequest::~ModifyBackupPolicyRequest()
 {}
 
-std::string ModifyBackupPolicyRequest::getPreferredBackupTime()const
+long ModifyBackupPolicyRequest::getResourceOwnerId()const
 {
-	return preferredBackupTime_;
+	return resourceOwnerId_;
 }
 
-void ModifyBackupPolicyRequest::setPreferredBackupTime(const std::string& preferredBackupTime)
+void ModifyBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	preferredBackupTime_ = preferredBackupTime;
-	setCoreParameter("PreferredBackupTime", preferredBackupTime);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ModifyBackupPolicyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyBackupPolicyRequest::getPreferredBackupPeriod()const
@@ -45,28 +56,6 @@ void ModifyBackupPolicyRequest::setPreferredBackupPeriod(const std::string& pref
 {
 	preferredBackupPeriod_ = preferredBackupPeriod;
 	setCoreParameter("PreferredBackupPeriod", preferredBackupPeriod);
-}
-
-std::string ModifyBackupPolicyRequest::getBackupRetentionPeriod()const
-{
-	return backupRetentionPeriod_;
-}
-
-void ModifyBackupPolicyRequest::setBackupRetentionPeriod(const std::string& backupRetentionPeriod)
-{
-	backupRetentionPeriod_ = backupRetentionPeriod;
-	setCoreParameter("BackupRetentionPeriod", backupRetentionPeriod);
-}
-
-long ModifyBackupPolicyRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ModifyBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyBackupPolicyRequest::getResourceOwnerAccount()const
@@ -113,14 +102,25 @@ void ModifyBackupPolicyRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyBackupPolicyRequest::getAccessKeyId()const
+std::string ModifyBackupPolicyRequest::getPreferredBackupTime()const
 {
-	return accessKeyId_;
+	return preferredBackupTime_;
 }
 
-void ModifyBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifyBackupPolicyRequest::setPreferredBackupTime(const std::string& preferredBackupTime)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	preferredBackupTime_ = preferredBackupTime;
+	setCoreParameter("PreferredBackupTime", preferredBackupTime);
+}
+
+std::string ModifyBackupPolicyRequest::getBackupRetentionPeriod()const
+{
+	return backupRetentionPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setBackupRetentionPeriod(const std::string& backupRetentionPeriod)
+{
+	backupRetentionPeriod_ = backupRetentionPeriod;
+	setCoreParameter("BackupRetentionPeriod", backupRetentionPeriod);
 }
 

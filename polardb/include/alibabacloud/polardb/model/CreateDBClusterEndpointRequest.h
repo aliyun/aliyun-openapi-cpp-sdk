@@ -39,10 +39,16 @@ namespace AlibabaCloud
 				void setAutoAddNewNodes(const std::string& autoAddNewNodes);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getReadWriteMode()const;
+				void setReadWriteMode(const std::string& readWriteMode);
+				std::string getEndpointType()const;
+				void setEndpointType(const std::string& endpointType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
 				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
@@ -51,28 +57,22 @@ namespace AlibabaCloud
 				void setEndpointConfig(const std::string& endpointConfig);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getNodes()const;
 				void setNodes(const std::string& nodes);
-				std::string getReadWriteMode()const;
-				void setReadWriteMode(const std::string& readWriteMode);
-				std::string getEndpointType()const;
-				void setEndpointType(const std::string& endpointType);
 
             private:
 				std::string autoAddNewNodes_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
+				std::string accessKeyId_;
+				std::string readWriteMode_;
+				std::string endpointType_;
+				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				std::string endpointConfig_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string nodes_;
-				std::string readWriteMode_;
-				std::string endpointType_;
 
 			};
 		}

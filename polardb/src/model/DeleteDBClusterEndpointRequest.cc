@@ -36,6 +36,28 @@ void DeleteDBClusterEndpointRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteDBClusterEndpointRequest::getDBEndpointId()const
+{
+	return dBEndpointId_;
+}
+
+void DeleteDBClusterEndpointRequest::setDBEndpointId(const std::string& dBEndpointId)
+{
+	dBEndpointId_ = dBEndpointId;
+	setCoreParameter("DBEndpointId", dBEndpointId);
+}
+
+std::string DeleteDBClusterEndpointRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteDBClusterEndpointRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteDBClusterEndpointRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,17 +91,6 @@ void DeleteDBClusterEndpointRequest::setOwnerAccount(const std::string& ownerAcc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeleteDBClusterEndpointRequest::getDBEndpointId()const
-{
-	return dBEndpointId_;
-}
-
-void DeleteDBClusterEndpointRequest::setDBEndpointId(const std::string& dBEndpointId)
-{
-	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", dBEndpointId);
-}
-
 long DeleteDBClusterEndpointRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,16 +100,5 @@ void DeleteDBClusterEndpointRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteDBClusterEndpointRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteDBClusterEndpointRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

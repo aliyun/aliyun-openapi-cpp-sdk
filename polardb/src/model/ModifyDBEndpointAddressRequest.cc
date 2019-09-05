@@ -47,6 +47,28 @@ void ModifyDBEndpointAddressRequest::setConnectionStringPrefix(const std::string
 	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
+std::string ModifyDBEndpointAddressRequest::getDBEndpointId()const
+{
+	return dBEndpointId_;
+}
+
+void ModifyDBEndpointAddressRequest::setDBEndpointId(const std::string& dBEndpointId)
+{
+	dBEndpointId_ = dBEndpointId;
+	setCoreParameter("DBEndpointId", dBEndpointId);
+}
+
+std::string ModifyDBEndpointAddressRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBEndpointAddressRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyDBEndpointAddressRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,28 +102,6 @@ void ModifyDBEndpointAddressRequest::setOwnerAccount(const std::string& ownerAcc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyDBEndpointAddressRequest::getNetType()const
-{
-	return netType_;
-}
-
-void ModifyDBEndpointAddressRequest::setNetType(const std::string& netType)
-{
-	netType_ = netType;
-	setCoreParameter("NetType", netType);
-}
-
-std::string ModifyDBEndpointAddressRequest::getDBEndpointId()const
-{
-	return dBEndpointId_;
-}
-
-void ModifyDBEndpointAddressRequest::setDBEndpointId(const std::string& dBEndpointId)
-{
-	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", dBEndpointId);
-}
-
 long ModifyDBEndpointAddressRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +113,14 @@ void ModifyDBEndpointAddressRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyDBEndpointAddressRequest::getAccessKeyId()const
+std::string ModifyDBEndpointAddressRequest::getNetType()const
 {
-	return accessKeyId_;
+	return netType_;
 }
 
-void ModifyDBEndpointAddressRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifyDBEndpointAddressRequest::setNetType(const std::string& netType)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	netType_ = netType;
+	setCoreParameter("NetType", netType);
 }
 

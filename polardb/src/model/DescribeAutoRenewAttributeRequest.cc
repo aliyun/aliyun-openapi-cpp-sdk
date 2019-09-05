@@ -36,61 +36,6 @@ void DescribeAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAutoRenewAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAutoRenewAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeAutoRenewAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeAutoRenewAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeAutoRenewAttributeRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeAutoRenewAttributeRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeAutoRenewAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeAutoRenewAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 int DescribeAutoRenewAttributeRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -111,6 +56,61 @@ void DescribeAutoRenewAttributeRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeAutoRenewAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeAutoRenewAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeAutoRenewAttributeRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeAutoRenewAttributeRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeAutoRenewAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAutoRenewAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeAutoRenewAttributeRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeAutoRenewAttributeRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAutoRenewAttributeRequest::getDBClusterIds()const

@@ -47,6 +47,17 @@ void RestartDBNodeRequest::setDBNodeId(const std::string& dBNodeId)
 	setCoreParameter("DBNodeId", dBNodeId);
 }
 
+std::string RestartDBNodeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RestartDBNodeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RestartDBNodeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -78,16 +89,5 @@ void RestartDBNodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RestartDBNodeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RestartDBNodeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
