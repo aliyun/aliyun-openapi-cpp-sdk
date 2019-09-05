@@ -36,17 +36,6 @@ void DescribeApiIpControlsRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string DescribeApiIpControlsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiIpControlsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiIpControlsRequest::getGroupId()const
 {
 	return groupId_;
@@ -56,17 +45,6 @@ void DescribeApiIpControlsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-int DescribeApiIpControlsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeApiIpControlsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeApiIpControlsRequest::getPageNumber()const
@@ -89,6 +67,28 @@ void DescribeApiIpControlsRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiIpControlsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiIpControlsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeApiIpControlsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeApiIpControlsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeApiIpControlsRequest::getApiIds()const

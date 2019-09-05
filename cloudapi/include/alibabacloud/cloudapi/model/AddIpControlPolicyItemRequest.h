@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				AddIpControlPolicyItemRequest();
 				~AddIpControlPolicyItemRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIpControlId()const;
 				void setIpControlId(const std::string& ipControlId);
 				std::string getSecurityToken()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setAppId(const std::string& appId);
 				std::string getCidrIp()const;
 				void setCidrIp(const std::string& cidrIp);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string ipControlId_;
 				std::string securityToken_;
 				std::string appId_;
 				std::string cidrIp_;
-				std::string accessKeyId_;
 
 			};
 		}

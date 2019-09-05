@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				RemoveVpcAccessRequest();
 				~RemoveVpcAccessRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSecurityToken()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setPort(int port);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string securityToken_;
 				int port_;
 				std::string vpcId_;
-				std::string accessKeyId_;
 
 			};
 		}

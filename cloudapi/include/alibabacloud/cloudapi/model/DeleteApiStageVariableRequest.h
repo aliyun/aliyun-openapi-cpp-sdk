@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				DeleteApiStageVariableRequest();
 				~DeleteApiStageVariableRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getVariableName()const;
-				void setVariableName(const std::string& variableName);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getVariableName()const;
+				void setVariableName(const std::string& variableName);
 				std::string getStageId()const;
 				void setStageId(const std::string& stageId);
 
             private:
-				std::string securityToken_;
-				std::string variableName_;
 				std::string groupId_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string variableName_;
 				std::string stageId_;
 
 			};

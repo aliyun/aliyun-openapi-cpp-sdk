@@ -25,28 +25,6 @@ ModifyIpControlRequest::ModifyIpControlRequest() :
 ModifyIpControlRequest::~ModifyIpControlRequest()
 {}
 
-std::string ModifyIpControlRequest::getIpControlId()const
-{
-	return ipControlId_;
-}
-
-void ModifyIpControlRequest::setIpControlId(const std::string& ipControlId)
-{
-	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
-}
-
-std::string ModifyIpControlRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ModifyIpControlRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string ModifyIpControlRequest::getIpControlName()const
 {
 	return ipControlName_;
@@ -78,5 +56,27 @@ void ModifyIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyIpControlRequest::getIpControlId()const
+{
+	return ipControlId_;
+}
+
+void ModifyIpControlRequest::setIpControlId(const std::string& ipControlId)
+{
+	ipControlId_ = ipControlId;
+	setCoreParameter("IpControlId", ipControlId);
+}
+
+std::string ModifyIpControlRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ModifyIpControlRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -36,17 +36,6 @@ void RemoveSignatureApisRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string RemoveSignatureApisRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void RemoveSignatureApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string RemoveSignatureApisRequest::getGroupId()const
 {
 	return groupId_;
@@ -78,6 +67,17 @@ void RemoveSignatureApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RemoveSignatureApisRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void RemoveSignatureApisRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveSignatureApisRequest::getApiIds()const

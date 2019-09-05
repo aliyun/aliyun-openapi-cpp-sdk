@@ -25,17 +25,6 @@ SetDomainRequest::SetDomainRequest() :
 SetDomainRequest::~SetDomainRequest()
 {}
 
-std::string SetDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetDomainRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,5 +56,16 @@ void SetDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

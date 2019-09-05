@@ -36,17 +36,6 @@ void AbolishApiRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string AbolishApiRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void AbolishApiRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string AbolishApiRequest::getGroupId()const
 {
 	return groupId_;
@@ -58,17 +47,6 @@ void AbolishApiRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
-std::string AbolishApiRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void AbolishApiRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 std::string AbolishApiRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +56,27 @@ void AbolishApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AbolishApiRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void AbolishApiRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string AbolishApiRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void AbolishApiRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

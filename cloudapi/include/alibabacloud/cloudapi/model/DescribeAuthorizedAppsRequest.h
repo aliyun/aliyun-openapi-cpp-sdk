@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				std::string getStageName()const;
 				void setStageName(const std::string& stageName);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				long getAppId()const;
-				void setAppId(long appId);
 				long getAppOwnerId()const;
 				void setAppOwnerId(long appOwnerId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getApiId()const;
-				void setApiId(const std::string& apiId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				long getAppId()const;
+				void setAppId(long appId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getApiId()const;
+				void setApiId(const std::string& apiId);
 
             private:
 				std::string stageName_;
-				std::string appName_;
-				std::string securityToken_;
 				std::string groupId_;
-				long appId_;
 				long appOwnerId_;
-				int pageSize_;
-				std::string apiId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string appName_;
+				std::string securityToken_;
+				long appId_;
+				int pageSize_;
+				std::string apiId_;
 
 			};
 		}

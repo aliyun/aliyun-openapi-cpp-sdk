@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				std::string getStageName()const;
 				void setStageName(const std::string& stageName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 				std::string getApiId()const;
 				void setApiId(const std::string& apiId);
 				std::string getHistoryVersion()const;
 				void setHistoryVersion(const std::string& historyVersion);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string stageName_;
-				std::string securityToken_;
 				std::string groupId_;
+				std::string accessKeyId_;
+				std::string securityToken_;
 				std::string apiId_;
 				std::string historyVersion_;
-				std::string accessKeyId_;
 
 			};
 		}

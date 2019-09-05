@@ -36,17 +36,6 @@ void DescribeDeployedApiRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string DescribeDeployedApiRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDeployedApiRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeDeployedApiRequest::getGroupId()const
 {
 	return groupId_;
@@ -58,17 +47,6 @@ void DescribeDeployedApiRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
-std::string DescribeDeployedApiRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeDeployedApiRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 std::string DescribeDeployedApiRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +56,27 @@ void DescribeDeployedApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDeployedApiRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeDeployedApiRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeDeployedApiRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeDeployedApiRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

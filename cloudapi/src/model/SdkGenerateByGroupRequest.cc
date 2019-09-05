@@ -25,17 +25,6 @@ SdkGenerateByGroupRequest::SdkGenerateByGroupRequest() :
 SdkGenerateByGroupRequest::~SdkGenerateByGroupRequest()
 {}
 
-std::string SdkGenerateByGroupRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SdkGenerateByGroupRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SdkGenerateByGroupRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,5 +56,16 @@ void SdkGenerateByGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SdkGenerateByGroupRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SdkGenerateByGroupRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

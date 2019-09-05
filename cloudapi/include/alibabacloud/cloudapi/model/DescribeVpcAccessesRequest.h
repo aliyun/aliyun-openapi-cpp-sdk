@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeVpcAccessesRequest();
 				~DescribeVpcAccessesRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string securityToken_;
-				int pageSize_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				int pageSize_;
 
 			};
 		}

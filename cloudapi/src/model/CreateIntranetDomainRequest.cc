@@ -25,28 +25,6 @@ CreateIntranetDomainRequest::CreateIntranetDomainRequest() :
 CreateIntranetDomainRequest::~CreateIntranetDomainRequest()
 {}
 
-bool CreateIntranetDomainRequest::getDeleteInternetDomain()const
-{
-	return deleteInternetDomain_;
-}
-
-void CreateIntranetDomainRequest::setDeleteInternetDomain(bool deleteInternetDomain)
-{
-	deleteInternetDomain_ = deleteInternetDomain;
-	setCoreParameter("DeleteInternetDomain", deleteInternetDomain ? "true" : "false");
-}
-
-std::string CreateIntranetDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CreateIntranetDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string CreateIntranetDomainRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,5 +45,27 @@ void CreateIntranetDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+bool CreateIntranetDomainRequest::getDeleteInternetDomain()const
+{
+	return deleteInternetDomain_;
+}
+
+void CreateIntranetDomainRequest::setDeleteInternetDomain(bool deleteInternetDomain)
+{
+	deleteInternetDomain_ = deleteInternetDomain;
+	setCoreParameter("DeleteInternetDomain", deleteInternetDomain ? "true" : "false");
+}
+
+std::string CreateIntranetDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void CreateIntranetDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

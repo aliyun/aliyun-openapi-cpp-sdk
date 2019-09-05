@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				std::string getStageName()const;
 				void setStageName(const std::string& stageName);
-				std::string getApiName()const;
-				void setApiName(const std::string& apiName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
-				std::string getApiId()const;
-				void setApiId(const std::string& apiId);
 				std::string getPageNumber()const;
 				void setPageNumber(const std::string& pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getApiName()const;
+				void setApiName(const std::string& apiName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
+				std::string getApiId()const;
+				void setApiId(const std::string& apiId);
 
             private:
 				std::string stageName_;
-				std::string apiName_;
-				std::string securityToken_;
 				std::string groupId_;
-				std::string pageSize_;
-				std::string apiId_;
 				std::string pageNumber_;
 				std::string accessKeyId_;
+				std::string apiName_;
+				std::string securityToken_;
+				std::string pageSize_;
+				std::string apiId_;
 
 			};
 		}

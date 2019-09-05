@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				SetDomainWebSocketStatusRequest();
 				~SetDomainWebSocketStatusRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getActionValue()const;
-				void setActionValue(const std::string& actionValue);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getActionValue()const;
+				void setActionValue(const std::string& actionValue);
 
             private:
-				std::string securityToken_;
 				std::string groupId_;
 				std::string domainName_;
-				std::string actionValue_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string actionValue_;
 
 			};
 		}

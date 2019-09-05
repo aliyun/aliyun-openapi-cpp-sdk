@@ -25,17 +25,6 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
 
-std::string DescribeRegionsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeRegionsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeRegionsRequest::getLanguage()const
 {
 	return language_;
@@ -56,5 +45,16 @@ void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeRegionsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeRegionsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

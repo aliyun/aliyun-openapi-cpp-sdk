@@ -47,17 +47,6 @@ void RemoveTrafficControlApisRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string RemoveTrafficControlApisRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void RemoveTrafficControlApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string RemoveTrafficControlApisRequest::getGroupId()const
 {
 	return groupId_;
@@ -78,6 +67,17 @@ void RemoveTrafficControlApisRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RemoveTrafficControlApisRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void RemoveTrafficControlApisRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveTrafficControlApisRequest::getApiIds()const

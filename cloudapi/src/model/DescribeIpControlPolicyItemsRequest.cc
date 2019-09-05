@@ -25,6 +25,28 @@ DescribeIpControlPolicyItemsRequest::DescribeIpControlPolicyItemsRequest() :
 DescribeIpControlPolicyItemsRequest::~DescribeIpControlPolicyItemsRequest()
 {}
 
+int DescribeIpControlPolicyItemsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeIpControlPolicyItemsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeIpControlPolicyItemsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeIpControlPolicyItemsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeIpControlPolicyItemsRequest::getIpControlId()const
 {
 	return ipControlId_;
@@ -67,27 +89,5 @@ void DescribeIpControlPolicyItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeIpControlPolicyItemsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeIpControlPolicyItemsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeIpControlPolicyItemsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeIpControlPolicyItemsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,28 +25,6 @@ SdkGenerateByAppRequest::SdkGenerateByAppRequest() :
 SdkGenerateByAppRequest::~SdkGenerateByAppRequest()
 {}
 
-std::string SdkGenerateByAppRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SdkGenerateByAppRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-long SdkGenerateByAppRequest::getAppId()const
-{
-	return appId_;
-}
-
-void SdkGenerateByAppRequest::setAppId(long appId)
-{
-	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
-}
-
 std::string SdkGenerateByAppRequest::getLanguage()const
 {
 	return language_;
@@ -67,5 +45,27 @@ void SdkGenerateByAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SdkGenerateByAppRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SdkGenerateByAppRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+long SdkGenerateByAppRequest::getAppId()const
+{
+	return appId_;
+}
+
+void SdkGenerateByAppRequest::setAppId(long appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", std::to_string(appId));
 }
 

@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				DeleteDomainCertificateRequest();
 				~DeleteDomainCertificateRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getCertificateId()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setDomainName(const std::string& domainName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				std::string groupId_;
 				std::string certificateId_;
 				std::string domainName_;
 				std::string accessKeyId_;
+				std::string securityToken_;
 
 			};
 		}

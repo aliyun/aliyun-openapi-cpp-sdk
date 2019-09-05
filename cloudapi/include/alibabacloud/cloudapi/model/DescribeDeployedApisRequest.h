@@ -42,36 +42,36 @@ namespace AlibabaCloud
 
 				std::string getStageName()const;
 				void setStageName(const std::string& stageName);
-				std::string getApiName()const;
-				void setApiName(const std::string& apiName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				bool getEnableTagAuth()const;
 				void setEnableTagAuth(bool enableTagAuth);
-				std::string getApiId()const;
-				void setApiId(const std::string& apiId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getApiName()const;
+				void setApiName(const std::string& apiName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				std::string getApiId()const;
+				void setApiId(const std::string& apiId);
 
             private:
 				std::string stageName_;
-				std::string apiName_;
-				std::string securityToken_;
 				std::string groupId_;
-				int pageSize_;
-				std::vector<Tag> tag_;
 				bool enableTagAuth_;
-				std::string apiId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string apiName_;
+				std::string securityToken_;
+				int pageSize_;
+				std::vector<Tag> tag_;
+				std::string apiId_;
 
 			};
 		}

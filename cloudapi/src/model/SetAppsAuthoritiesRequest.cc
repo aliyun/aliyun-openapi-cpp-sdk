@@ -47,28 +47,6 @@ void SetAppsAuthoritiesRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string SetAppsAuthoritiesRequest::getAppIds()const
-{
-	return appIds_;
-}
-
-void SetAppsAuthoritiesRequest::setAppIds(const std::string& appIds)
-{
-	appIds_ = appIds;
-	setCoreParameter("AppIds", appIds);
-}
-
-std::string SetAppsAuthoritiesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetAppsAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetAppsAuthoritiesRequest::getGroupId()const
 {
 	return groupId_;
@@ -91,17 +69,6 @@ void SetAppsAuthoritiesRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-std::string SetAppsAuthoritiesRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void SetAppsAuthoritiesRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 std::string SetAppsAuthoritiesRequest::getAuthValidTime()const
 {
 	return authValidTime_;
@@ -122,5 +89,38 @@ void SetAppsAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetAppsAuthoritiesRequest::getAppIds()const
+{
+	return appIds_;
+}
+
+void SetAppsAuthoritiesRequest::setAppIds(const std::string& appIds)
+{
+	appIds_ = appIds;
+	setCoreParameter("AppIds", appIds);
+}
+
+std::string SetAppsAuthoritiesRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetAppsAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetAppsAuthoritiesRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void SetAppsAuthoritiesRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

@@ -25,17 +25,6 @@ DescribeApiStageRequest::DescribeApiStageRequest() :
 DescribeApiStageRequest::~DescribeApiStageRequest()
 {}
 
-std::string DescribeApiStageRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiStageRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiStageRequest::getGroupId()const
 {
 	return groupId_;
@@ -56,6 +45,17 @@ void DescribeApiStageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiStageRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiStageRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiStageRequest::getStageId()const

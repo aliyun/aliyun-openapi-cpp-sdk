@@ -36,39 +36,6 @@ void CreateLogConfigRequest::setSlsLogStore(const std::string& slsLogStore)
 	setCoreParameter("SlsLogStore", slsLogStore);
 }
 
-std::string CreateLogConfigRequest::getLogType()const
-{
-	return logType_;
-}
-
-void CreateLogConfigRequest::setLogType(const std::string& logType)
-{
-	logType_ = logType;
-	setCoreParameter("LogType", logType);
-}
-
-std::string CreateLogConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CreateLogConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string CreateLogConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateLogConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateLogConfigRequest::getSlsProject()const
 {
 	return slsProject_;
@@ -89,5 +56,27 @@ void CreateLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateLogConfigRequest::getLogType()const
+{
+	return logType_;
+}
+
+void CreateLogConfigRequest::setLogType(const std::string& logType)
+{
+	logType_ = logType;
+	setCoreParameter("LogType", logType);
+}
+
+std::string CreateLogConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void CreateLogConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

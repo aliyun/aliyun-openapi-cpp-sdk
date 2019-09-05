@@ -25,17 +25,6 @@ ReactivateDomainRequest::ReactivateDomainRequest() :
 ReactivateDomainRequest::~ReactivateDomainRequest()
 {}
 
-std::string ReactivateDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ReactivateDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string ReactivateDomainRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,5 +56,16 @@ void ReactivateDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ReactivateDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ReactivateDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				std::string getTrafficControlId()const;
 				void setTrafficControlId(const std::string& trafficControlId);
-				int getApiDefault()const;
-				void setApiDefault(int apiDefault);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getTrafficControlName()const;
 				void setTrafficControlName(const std::string& trafficControlName);
-				std::string getTrafficControlUnit()const;
-				void setTrafficControlUnit(const std::string& trafficControlUnit);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				int getUserDefault()const;
 				void setUserDefault(int userDefault);
-				int getAppDefault()const;
-				void setAppDefault(int appDefault);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getApiDefault()const;
+				void setApiDefault(int apiDefault);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getTrafficControlUnit()const;
+				void setTrafficControlUnit(const std::string& trafficControlUnit);
+				int getAppDefault()const;
+				void setAppDefault(int appDefault);
 
             private:
 				std::string trafficControlId_;
-				int apiDefault_;
-				std::string securityToken_;
 				std::string trafficControlName_;
-				std::string trafficControlUnit_;
 				std::string description_;
 				int userDefault_;
-				int appDefault_;
 				std::string accessKeyId_;
+				int apiDefault_;
+				std::string securityToken_;
+				std::string trafficControlUnit_;
+				int appDefault_;
 
 			};
 		}

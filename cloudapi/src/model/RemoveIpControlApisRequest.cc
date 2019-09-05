@@ -36,28 +36,6 @@ void RemoveIpControlApisRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string RemoveIpControlApisRequest::getIpControlId()const
-{
-	return ipControlId_;
-}
-
-void RemoveIpControlApisRequest::setIpControlId(const std::string& ipControlId)
-{
-	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
-}
-
-std::string RemoveIpControlApisRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void RemoveIpControlApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string RemoveIpControlApisRequest::getGroupId()const
 {
 	return groupId_;
@@ -78,6 +56,28 @@ void RemoveIpControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RemoveIpControlApisRequest::getIpControlId()const
+{
+	return ipControlId_;
+}
+
+void RemoveIpControlApisRequest::setIpControlId(const std::string& ipControlId)
+{
+	ipControlId_ = ipControlId;
+	setCoreParameter("IpControlId", ipControlId);
+}
+
+std::string RemoveIpControlApisRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void RemoveIpControlApisRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveIpControlApisRequest::getApiIds()const

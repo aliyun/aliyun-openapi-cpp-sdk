@@ -25,6 +25,17 @@ RemoveVpcAccessRequest::RemoveVpcAccessRequest() :
 RemoveVpcAccessRequest::~RemoveVpcAccessRequest()
 {}
 
+std::string RemoveVpcAccessRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RemoveVpcAccessRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RemoveVpcAccessRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -67,16 +78,5 @@ void RemoveVpcAccessRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
 	setCoreParameter("VpcId", vpcId);
-}
-
-std::string RemoveVpcAccessRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RemoveVpcAccessRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

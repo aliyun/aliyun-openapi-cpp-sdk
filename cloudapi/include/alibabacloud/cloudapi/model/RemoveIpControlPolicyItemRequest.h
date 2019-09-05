@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				RemoveIpControlPolicyItemRequest();
 				~RemoveIpControlPolicyItemRequest();
 
-				std::string getIpControlId()const;
-				void setIpControlId(const std::string& ipControlId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPolicyItemIds()const;
 				void setPolicyItemIds(const std::string& policyItemIds);
+				std::string getIpControlId()const;
+				void setIpControlId(const std::string& ipControlId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string ipControlId_;
-				std::string securityToken_;
 				std::string accessKeyId_;
 				std::string policyItemIds_;
+				std::string ipControlId_;
+				std::string securityToken_;
 
 			};
 		}

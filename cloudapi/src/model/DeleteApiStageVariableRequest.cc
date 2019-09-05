@@ -25,28 +25,6 @@ DeleteApiStageVariableRequest::DeleteApiStageVariableRequest() :
 DeleteApiStageVariableRequest::~DeleteApiStageVariableRequest()
 {}
 
-std::string DeleteApiStageVariableRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteApiStageVariableRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DeleteApiStageVariableRequest::getVariableName()const
-{
-	return variableName_;
-}
-
-void DeleteApiStageVariableRequest::setVariableName(const std::string& variableName)
-{
-	variableName_ = variableName;
-	setCoreParameter("VariableName", variableName);
-}
-
 std::string DeleteApiStageVariableRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,6 +45,28 @@ void DeleteApiStageVariableRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteApiStageVariableRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteApiStageVariableRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DeleteApiStageVariableRequest::getVariableName()const
+{
+	return variableName_;
+}
+
+void DeleteApiStageVariableRequest::setVariableName(const std::string& variableName)
+{
+	variableName_ = variableName;
+	setCoreParameter("VariableName", variableName);
 }
 
 std::string DeleteApiStageVariableRequest::getStageId()const

@@ -40,20 +40,20 @@ namespace AlibabaCloud
 				DescribeAppSecurityRequest();
 				~DescribeAppSecurityRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				long getAppId()const;
 				void setAppId(long appId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string securityToken_;
 				long appId_;
 				std::vector<Tag> tag_;
-				std::string accessKeyId_;
 
 			};
 		}

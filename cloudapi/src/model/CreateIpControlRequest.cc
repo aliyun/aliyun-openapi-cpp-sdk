@@ -25,17 +25,6 @@ CreateIpControlRequest::CreateIpControlRequest() :
 CreateIpControlRequest::~CreateIpControlRequest()
 {}
 
-std::string CreateIpControlRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CreateIpControlRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string CreateIpControlRequest::getIpControlName()const
 {
 	return ipControlName_;
@@ -45,17 +34,6 @@ void CreateIpControlRequest::setIpControlName(const std::string& ipControlName)
 {
 	ipControlName_ = ipControlName;
 	setCoreParameter("IpControlName", ipControlName);
-}
-
-std::string CreateIpControlRequest::getIpControlType()const
-{
-	return ipControlType_;
-}
-
-void CreateIpControlRequest::setIpControlType(const std::string& ipControlType)
-{
-	ipControlType_ = ipControlType;
-	setCoreParameter("IpControlType", ipControlType);
 }
 
 std::vector<CreateIpControlRequest::IpControlPolicys> CreateIpControlRequest::getIpControlPolicys()const
@@ -95,5 +73,27 @@ void CreateIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateIpControlRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void CreateIpControlRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string CreateIpControlRequest::getIpControlType()const
+{
+	return ipControlType_;
+}
+
+void CreateIpControlRequest::setIpControlType(const std::string& ipControlType)
+{
+	ipControlType_ = ipControlType;
+	setCoreParameter("IpControlType", ipControlType);
 }
 

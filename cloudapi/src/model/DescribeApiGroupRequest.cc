@@ -25,17 +25,6 @@ DescribeApiGroupRequest::DescribeApiGroupRequest() :
 DescribeApiGroupRequest::~DescribeApiGroupRequest()
 {}
 
-std::string DescribeApiGroupRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiGroupRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiGroupRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,6 +34,28 @@ void DescribeApiGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeApiGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiGroupRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiGroupRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::vector<DescribeApiGroupRequest::Tag> DescribeApiGroupRequest::getTag()const
@@ -62,16 +73,5 @@ void DescribeApiGroupRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-std::string DescribeApiGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

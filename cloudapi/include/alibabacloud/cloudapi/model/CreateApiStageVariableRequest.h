@@ -37,10 +37,6 @@ namespace AlibabaCloud
 
 				bool getSupportRoute()const;
 				void setSupportRoute(bool supportRoute);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getVariableName()const;
-				void setVariableName(const std::string& variableName);
 				std::string getVariableValue()const;
 				void setVariableValue(const std::string& variableValue);
 				std::string getGroupId()const;
@@ -49,17 +45,21 @@ namespace AlibabaCloud
 				void setStageRouteModel(const std::string& stageRouteModel);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getVariableName()const;
+				void setVariableName(const std::string& variableName);
 				std::string getStageId()const;
 				void setStageId(const std::string& stageId);
 
             private:
 				bool supportRoute_;
-				std::string securityToken_;
-				std::string variableName_;
 				std::string variableValue_;
 				std::string groupId_;
 				std::string stageRouteModel_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string variableName_;
 				std::string stageId_;
 
 			};

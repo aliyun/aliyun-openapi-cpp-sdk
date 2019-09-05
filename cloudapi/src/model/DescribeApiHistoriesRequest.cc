@@ -36,28 +36,6 @@ void DescribeApiHistoriesRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string DescribeApiHistoriesRequest::getApiName()const
-{
-	return apiName_;
-}
-
-void DescribeApiHistoriesRequest::setApiName(const std::string& apiName)
-{
-	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
-}
-
-std::string DescribeApiHistoriesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiHistoriesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiHistoriesRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,28 +45,6 @@ void DescribeApiHistoriesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-std::string DescribeApiHistoriesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeApiHistoriesRequest::setPageSize(const std::string& pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
-}
-
-std::string DescribeApiHistoriesRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeApiHistoriesRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
 }
 
 std::string DescribeApiHistoriesRequest::getPageNumber()const
@@ -111,5 +67,49 @@ void DescribeApiHistoriesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiHistoriesRequest::getApiName()const
+{
+	return apiName_;
+}
+
+void DescribeApiHistoriesRequest::setApiName(const std::string& apiName)
+{
+	apiName_ = apiName;
+	setCoreParameter("ApiName", apiName);
+}
+
+std::string DescribeApiHistoriesRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiHistoriesRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeApiHistoriesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeApiHistoriesRequest::setPageSize(const std::string& pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", pageSize);
+}
+
+std::string DescribeApiHistoriesRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeApiHistoriesRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

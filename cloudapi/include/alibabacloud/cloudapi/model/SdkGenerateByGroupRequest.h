@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				SdkGenerateByGroupRequest();
 				~SdkGenerateByGroupRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getLanguage()const;
 				void setLanguage(const std::string& language);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				std::string groupId_;
 				std::string language_;
 				std::string accessKeyId_;
+				std::string securityToken_;
 
 			};
 		}

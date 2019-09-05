@@ -25,17 +25,6 @@ DescribeSystemParametersRequest::DescribeSystemParametersRequest() :
 DescribeSystemParametersRequest::~DescribeSystemParametersRequest()
 {}
 
-std::string DescribeSystemParametersRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeSystemParametersRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeSystemParametersRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DescribeSystemParametersRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeSystemParametersRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeSystemParametersRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

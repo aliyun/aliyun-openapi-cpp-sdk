@@ -36,17 +36,6 @@ void DeleteAllTrafficSpecialControlRequest::setTrafficControlId(const std::strin
 	setCoreParameter("TrafficControlId", trafficControlId);
 }
 
-std::string DeleteAllTrafficSpecialControlRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteAllTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DeleteAllTrafficSpecialControlRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void DeleteAllTrafficSpecialControlRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteAllTrafficSpecialControlRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteAllTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

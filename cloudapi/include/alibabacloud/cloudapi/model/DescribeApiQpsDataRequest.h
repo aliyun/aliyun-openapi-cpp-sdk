@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DescribeApiQpsDataRequest();
 				~DescribeApiQpsDataRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getApiId()const;
-				void setApiId(const std::string& apiId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getApiId()const;
+				void setApiId(const std::string& apiId);
 
             private:
-				std::string securityToken_;
 				std::string groupId_;
 				std::string endTime_;
 				std::string startTime_;
-				std::string apiId_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string apiId_;
 
 			};
 		}

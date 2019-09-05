@@ -25,6 +25,28 @@ DescribeApisByIpControlRequest::DescribeApisByIpControlRequest() :
 DescribeApisByIpControlRequest::~DescribeApisByIpControlRequest()
 {}
 
+int DescribeApisByIpControlRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeApisByIpControlRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeApisByIpControlRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeApisByIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeApisByIpControlRequest::getIpControlId()const
 {
 	return ipControlId_;
@@ -56,27 +78,5 @@ void DescribeApisByIpControlRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeApisByIpControlRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeApisByIpControlRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeApisByIpControlRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeApisByIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

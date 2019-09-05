@@ -25,17 +25,6 @@ DescribeApiLatencyDataRequest::DescribeApiLatencyDataRequest() :
 DescribeApiLatencyDataRequest::~DescribeApiLatencyDataRequest()
 {}
 
-std::string DescribeApiLatencyDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiLatencyDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiLatencyDataRequest::getGroupId()const
 {
 	return groupId_;
@@ -69,17 +58,6 @@ void DescribeApiLatencyDataRequest::setStartTime(const std::string& startTime)
 	setCoreParameter("StartTime", startTime);
 }
 
-std::string DescribeApiLatencyDataRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeApiLatencyDataRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 std::string DescribeApiLatencyDataRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +67,27 @@ void DescribeApiLatencyDataRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiLatencyDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiLatencyDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeApiLatencyDataRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeApiLatencyDataRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

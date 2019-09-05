@@ -37,6 +37,28 @@ void TagResourcesRequest::setResourceId(const std::vector<std::string>& resource
 		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
 }
 
+std::string TagResourcesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void TagResourcesRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
+std::string TagResourcesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void TagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string TagResourcesRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -63,27 +85,5 @@ void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-std::string TagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void TagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
-}
-
-std::string TagResourcesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void TagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

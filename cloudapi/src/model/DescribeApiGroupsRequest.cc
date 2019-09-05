@@ -25,17 +25,6 @@ DescribeApiGroupsRequest::DescribeApiGroupsRequest() :
 DescribeApiGroupsRequest::~DescribeApiGroupsRequest()
 {}
 
-std::string DescribeApiGroupsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiGroupsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiGroupsRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,34 +34,6 @@ void DescribeApiGroupsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-int DescribeApiGroupsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeApiGroupsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::vector<DescribeApiGroupsRequest::Tag> DescribeApiGroupsRequest::getTag()const
-{
-	return tag_;
-}
-
-void DescribeApiGroupsRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
-	}
 }
 
 bool DescribeApiGroupsRequest::getEnableTagAuth()const
@@ -117,5 +78,44 @@ void DescribeApiGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiGroupsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiGroupsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeApiGroupsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeApiGroupsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeApiGroupsRequest::Tag> DescribeApiGroupsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeApiGroupsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 

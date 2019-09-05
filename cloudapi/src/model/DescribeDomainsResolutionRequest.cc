@@ -25,17 +25,6 @@ DescribeDomainsResolutionRequest::DescribeDomainsResolutionRequest() :
 DescribeDomainsResolutionRequest::~DescribeDomainsResolutionRequest()
 {}
 
-std::string DescribeDomainsResolutionRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainsResolutionRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeDomainsResolutionRequest::getDomainNames()const
 {
 	return domainNames_;
@@ -67,5 +56,16 @@ void DescribeDomainsResolutionRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDomainsResolutionRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeDomainsResolutionRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

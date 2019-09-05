@@ -47,17 +47,6 @@ void SetTrafficControlApisRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string SetTrafficControlApisRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetTrafficControlApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetTrafficControlApisRequest::getGroupId()const
 {
 	return groupId_;
@@ -78,6 +67,17 @@ void SetTrafficControlApisRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetTrafficControlApisRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetTrafficControlApisRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetTrafficControlApisRequest::getApiIds()const

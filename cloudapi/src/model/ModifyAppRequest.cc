@@ -25,6 +25,28 @@ ModifyAppRequest::ModifyAppRequest() :
 ModifyAppRequest::~ModifyAppRequest()
 {}
 
+std::string ModifyAppRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyAppRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string ModifyAppRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyAppRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyAppRequest::getAppName()const
 {
 	return appName_;
@@ -58,17 +80,6 @@ void ModifyAppRequest::setAppId(long appId)
 	setCoreParameter("AppId", std::to_string(appId));
 }
 
-std::string ModifyAppRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyAppRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 std::vector<ModifyAppRequest::Tag> ModifyAppRequest::getTag()const
 {
 	return tag_;
@@ -84,16 +95,5 @@ void ModifyAppRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-std::string ModifyAppRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyAppRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

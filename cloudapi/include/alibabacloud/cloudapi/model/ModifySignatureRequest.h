@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				ModifySignatureRequest();
 				~ModifySignatureRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getSignatureName()const;
 				void setSignatureName(const std::string& signatureName);
-				std::string getSignatureKey()const;
-				void setSignatureKey(const std::string& signatureKey);
 				std::string getSignatureId()const;
 				void setSignatureId(const std::string& signatureId);
 				std::string getSignatureSecret()const;
 				void setSignatureSecret(const std::string& signatureSecret);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getSignatureKey()const;
+				void setSignatureKey(const std::string& signatureKey);
 
             private:
-				std::string securityToken_;
 				std::string signatureName_;
-				std::string signatureKey_;
 				std::string signatureId_;
 				std::string signatureSecret_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string signatureKey_;
 
 			};
 		}

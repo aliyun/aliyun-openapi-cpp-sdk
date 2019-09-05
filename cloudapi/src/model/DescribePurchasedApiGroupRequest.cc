@@ -25,17 +25,6 @@ DescribePurchasedApiGroupRequest::DescribePurchasedApiGroupRequest() :
 DescribePurchasedApiGroupRequest::~DescribePurchasedApiGroupRequest()
 {}
 
-std::string DescribePurchasedApiGroupRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribePurchasedApiGroupRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribePurchasedApiGroupRequest::getGroupId()const
 {
 	return groupId_;
@@ -56,5 +45,16 @@ void DescribePurchasedApiGroupRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribePurchasedApiGroupRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribePurchasedApiGroupRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -25,6 +25,17 @@ SetVpcAccessRequest::SetVpcAccessRequest() :
 SetVpcAccessRequest::~SetVpcAccessRequest()
 {}
 
+std::string SetVpcAccessRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetVpcAccessRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string SetVpcAccessRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -78,16 +89,5 @@ void SetVpcAccessRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string SetVpcAccessRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetVpcAccessRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

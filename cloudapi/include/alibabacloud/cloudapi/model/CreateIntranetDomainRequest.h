@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CreateIntranetDomainRequest();
 				~CreateIntranetDomainRequest();
 
-				bool getDeleteInternetDomain()const;
-				void setDeleteInternetDomain(bool deleteInternetDomain);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				bool getDeleteInternetDomain()const;
+				void setDeleteInternetDomain(bool deleteInternetDomain);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				bool deleteInternetDomain_;
-				std::string securityToken_;
 				std::string groupId_;
 				std::string accessKeyId_;
+				bool deleteInternetDomain_;
+				std::string securityToken_;
 
 			};
 		}

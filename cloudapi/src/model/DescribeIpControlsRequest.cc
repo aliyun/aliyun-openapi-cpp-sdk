@@ -25,28 +25,6 @@ DescribeIpControlsRequest::DescribeIpControlsRequest() :
 DescribeIpControlsRequest::~DescribeIpControlsRequest()
 {}
 
-std::string DescribeIpControlsRequest::getIpControlId()const
-{
-	return ipControlId_;
-}
-
-void DescribeIpControlsRequest::setIpControlId(const std::string& ipControlId)
-{
-	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
-}
-
-std::string DescribeIpControlsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeIpControlsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeIpControlsRequest::getIpControlName()const
 {
 	return ipControlName_;
@@ -56,28 +34,6 @@ void DescribeIpControlsRequest::setIpControlName(const std::string& ipControlNam
 {
 	ipControlName_ = ipControlName;
 	setCoreParameter("IpControlName", ipControlName);
-}
-
-std::string DescribeIpControlsRequest::getIpControlType()const
-{
-	return ipControlType_;
-}
-
-void DescribeIpControlsRequest::setIpControlType(const std::string& ipControlType)
-{
-	ipControlType_ = ipControlType;
-	setCoreParameter("IpControlType", ipControlType);
-}
-
-int DescribeIpControlsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeIpControlsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeIpControlsRequest::getPageNumber()const
@@ -100,5 +56,49 @@ void DescribeIpControlsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeIpControlsRequest::getIpControlId()const
+{
+	return ipControlId_;
+}
+
+void DescribeIpControlsRequest::setIpControlId(const std::string& ipControlId)
+{
+	ipControlId_ = ipControlId;
+	setCoreParameter("IpControlId", ipControlId);
+}
+
+std::string DescribeIpControlsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeIpControlsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeIpControlsRequest::getIpControlType()const
+{
+	return ipControlType_;
+}
+
+void DescribeIpControlsRequest::setIpControlType(const std::string& ipControlType)
+{
+	ipControlType_ = ipControlType;
+	setCoreParameter("IpControlType", ipControlType);
+}
+
+int DescribeIpControlsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeIpControlsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

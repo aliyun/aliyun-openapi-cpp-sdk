@@ -25,17 +25,6 @@ DeleteDomainRequest::DeleteDomainRequest() :
 DeleteDomainRequest::~DeleteDomainRequest()
 {}
 
-std::string DeleteDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DeleteDomainRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,5 +56,16 @@ void DeleteDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

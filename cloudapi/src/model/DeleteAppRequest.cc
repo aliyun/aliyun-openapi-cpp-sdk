@@ -25,6 +25,17 @@ DeleteAppRequest::DeleteAppRequest() :
 DeleteAppRequest::~DeleteAppRequest()
 {}
 
+std::string DeleteAppRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteAppRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteAppRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -62,16 +73,5 @@ void DeleteAppRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-std::string DeleteAppRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteAppRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -36,28 +36,6 @@ void DescribeAuthorizedAppsRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string DescribeAuthorizedAppsRequest::getAppName()const
-{
-	return appName_;
-}
-
-void DescribeAuthorizedAppsRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
-}
-
-std::string DescribeAuthorizedAppsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeAuthorizedAppsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeAuthorizedAppsRequest::getGroupId()const
 {
 	return groupId_;
@@ -69,17 +47,6 @@ void DescribeAuthorizedAppsRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
-long DescribeAuthorizedAppsRequest::getAppId()const
-{
-	return appId_;
-}
-
-void DescribeAuthorizedAppsRequest::setAppId(long appId)
-{
-	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
-}
-
 long DescribeAuthorizedAppsRequest::getAppOwnerId()const
 {
 	return appOwnerId_;
@@ -89,28 +56,6 @@ void DescribeAuthorizedAppsRequest::setAppOwnerId(long appOwnerId)
 {
 	appOwnerId_ = appOwnerId;
 	setCoreParameter("AppOwnerId", std::to_string(appOwnerId));
-}
-
-int DescribeAuthorizedAppsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeAuthorizedAppsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeAuthorizedAppsRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeAuthorizedAppsRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
 }
 
 int DescribeAuthorizedAppsRequest::getPageNumber()const
@@ -133,5 +78,60 @@ void DescribeAuthorizedAppsRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeAuthorizedAppsRequest::getAppName()const
+{
+	return appName_;
+}
+
+void DescribeAuthorizedAppsRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+std::string DescribeAuthorizedAppsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeAuthorizedAppsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+long DescribeAuthorizedAppsRequest::getAppId()const
+{
+	return appId_;
+}
+
+void DescribeAuthorizedAppsRequest::setAppId(long appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", std::to_string(appId));
+}
+
+int DescribeAuthorizedAppsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeAuthorizedAppsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeAuthorizedAppsRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeAuthorizedAppsRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

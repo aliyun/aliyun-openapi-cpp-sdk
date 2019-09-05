@@ -25,6 +25,17 @@ DescribeAppSecurityRequest::DescribeAppSecurityRequest() :
 DescribeAppSecurityRequest::~DescribeAppSecurityRequest()
 {}
 
+std::string DescribeAppSecurityRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeAppSecurityRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeAppSecurityRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -62,16 +73,5 @@ void DescribeAppSecurityRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-std::string DescribeAppSecurityRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeAppSecurityRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

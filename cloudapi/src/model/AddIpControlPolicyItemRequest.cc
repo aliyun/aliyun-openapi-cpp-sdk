@@ -25,6 +25,17 @@ AddIpControlPolicyItemRequest::AddIpControlPolicyItemRequest() :
 AddIpControlPolicyItemRequest::~AddIpControlPolicyItemRequest()
 {}
 
+std::string AddIpControlPolicyItemRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddIpControlPolicyItemRequest::getIpControlId()const
 {
 	return ipControlId_;
@@ -67,16 +78,5 @@ void AddIpControlPolicyItemRequest::setCidrIp(const std::string& cidrIp)
 {
 	cidrIp_ = cidrIp;
 	setCoreParameter("CidrIp", cidrIp);
-}
-
-std::string AddIpControlPolicyItemRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

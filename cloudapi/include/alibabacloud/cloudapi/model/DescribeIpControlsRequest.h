@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				DescribeIpControlsRequest();
 				~DescribeIpControlsRequest();
 
-				std::string getIpControlId()const;
-				void setIpControlId(const std::string& ipControlId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getIpControlName()const;
 				void setIpControlName(const std::string& ipControlName);
-				std::string getIpControlType()const;
-				void setIpControlType(const std::string& ipControlType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIpControlId()const;
+				void setIpControlId(const std::string& ipControlId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getIpControlType()const;
+				void setIpControlType(const std::string& ipControlType);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string ipControlId_;
-				std::string securityToken_;
 				std::string ipControlName_;
-				std::string ipControlType_;
-				int pageSize_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string ipControlId_;
+				std::string securityToken_;
+				std::string ipControlType_;
+				int pageSize_;
 
 			};
 		}

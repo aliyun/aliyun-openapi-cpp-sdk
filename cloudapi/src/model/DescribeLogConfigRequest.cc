@@ -25,6 +25,17 @@ DescribeLogConfigRequest::DescribeLogConfigRequest() :
 DescribeLogConfigRequest::~DescribeLogConfigRequest()
 {}
 
+std::string DescribeLogConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeLogConfigRequest::getLogType()const
 {
 	return logType_;
@@ -45,27 +56,5 @@ void DescribeLogConfigRequest::setSecurityToken(const std::string& securityToken
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeLogConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLogConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeLogConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

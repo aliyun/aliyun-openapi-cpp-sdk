@@ -47,17 +47,6 @@ void DescribeTrafficControlsRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string DescribeTrafficControlsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeTrafficControlsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeTrafficControlsRequest::getTrafficControlName()const
 {
 	return trafficControlName_;
@@ -80,28 +69,6 @@ void DescribeTrafficControlsRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
-int DescribeTrafficControlsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeTrafficControlsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeTrafficControlsRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeTrafficControlsRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 int DescribeTrafficControlsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -122,5 +89,38 @@ void DescribeTrafficControlsRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeTrafficControlsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeTrafficControlsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeTrafficControlsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeTrafficControlsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeTrafficControlsRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeTrafficControlsRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

@@ -25,17 +25,6 @@ DescribeApiErrorDataRequest::DescribeApiErrorDataRequest() :
 DescribeApiErrorDataRequest::~DescribeApiErrorDataRequest()
 {}
 
-std::string DescribeApiErrorDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiErrorDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiErrorDataRequest::getGroupId()const
 {
 	return groupId_;
@@ -69,17 +58,6 @@ void DescribeApiErrorDataRequest::setStartTime(const std::string& startTime)
 	setCoreParameter("StartTime", startTime);
 }
 
-std::string DescribeApiErrorDataRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeApiErrorDataRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 std::string DescribeApiErrorDataRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +67,27 @@ void DescribeApiErrorDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiErrorDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiErrorDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeApiErrorDataRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeApiErrorDataRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

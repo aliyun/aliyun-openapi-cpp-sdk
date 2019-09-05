@@ -25,6 +25,17 @@ ResetAppCodeRequest::ResetAppCodeRequest() :
 ResetAppCodeRequest::~ResetAppCodeRequest()
 {}
 
+std::string ResetAppCodeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ResetAppCodeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ResetAppCodeRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,16 +56,5 @@ void ResetAppCodeRequest::setAppCode(const std::string& appCode)
 {
 	appCode_ = appCode;
 	setCoreParameter("AppCode", appCode);
-}
-
-std::string ResetAppCodeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ResetAppCodeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

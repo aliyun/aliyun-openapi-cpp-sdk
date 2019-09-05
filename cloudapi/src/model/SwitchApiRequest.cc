@@ -36,17 +36,6 @@ void SwitchApiRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string SwitchApiRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SwitchApiRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SwitchApiRequest::getGroupId()const
 {
 	return groupId_;
@@ -69,6 +58,28 @@ void SwitchApiRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
+std::string SwitchApiRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SwitchApiRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SwitchApiRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SwitchApiRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
 std::string SwitchApiRequest::getApiId()const
 {
 	return apiId_;
@@ -89,16 +100,5 @@ void SwitchApiRequest::setHistoryVersion(const std::string& historyVersion)
 {
 	historyVersion_ = historyVersion;
 	setCoreParameter("HistoryVersion", historyVersion);
-}
-
-std::string SwitchApiRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SwitchApiRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

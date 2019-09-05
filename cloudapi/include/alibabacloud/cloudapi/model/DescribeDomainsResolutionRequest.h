@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeDomainsResolutionRequest();
 				~DescribeDomainsResolutionRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainNames()const;
 				void setDomainNames(const std::string& domainNames);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				std::string domainNames_;
 				std::string groupId_;
 				std::string accessKeyId_;
+				std::string securityToken_;
 
 			};
 		}

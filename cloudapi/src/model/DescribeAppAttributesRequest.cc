@@ -25,6 +25,39 @@ DescribeAppAttributesRequest::DescribeAppAttributesRequest() :
 DescribeAppAttributesRequest::~DescribeAppAttributesRequest()
 {}
 
+bool DescribeAppAttributesRequest::getEnableTagAuth()const
+{
+	return enableTagAuth_;
+}
+
+void DescribeAppAttributesRequest::setEnableTagAuth(bool enableTagAuth)
+{
+	enableTagAuth_ = enableTagAuth;
+	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
+}
+
+int DescribeAppAttributesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeAppAttributesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeAppAttributesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeAppAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeAppAttributesRequest::getAppName()const
 {
 	return appName_;
@@ -84,38 +117,5 @@ void DescribeAppAttributesRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-bool DescribeAppAttributesRequest::getEnableTagAuth()const
-{
-	return enableTagAuth_;
-}
-
-void DescribeAppAttributesRequest::setEnableTagAuth(bool enableTagAuth)
-{
-	enableTagAuth_ = enableTagAuth;
-	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
-}
-
-int DescribeAppAttributesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeAppAttributesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeAppAttributesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeAppAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

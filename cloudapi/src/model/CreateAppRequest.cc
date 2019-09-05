@@ -25,6 +25,28 @@ CreateAppRequest::CreateAppRequest() :
 CreateAppRequest::~CreateAppRequest()
 {}
 
+std::string CreateAppRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateAppRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string CreateAppRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateAppRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string CreateAppRequest::getAppName()const
 {
 	return appName_;
@@ -47,17 +69,6 @@ void CreateAppRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string CreateAppRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateAppRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 std::vector<CreateAppRequest::Tag> CreateAppRequest::getTag()const
 {
 	return tag_;
@@ -73,16 +84,5 @@ void CreateAppRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-std::string CreateAppRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateAppRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

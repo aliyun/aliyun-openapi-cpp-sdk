@@ -25,17 +25,6 @@ DescribeApiQpsDataRequest::DescribeApiQpsDataRequest() :
 DescribeApiQpsDataRequest::~DescribeApiQpsDataRequest()
 {}
 
-std::string DescribeApiQpsDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiQpsDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiQpsDataRequest::getGroupId()const
 {
 	return groupId_;
@@ -69,17 +58,6 @@ void DescribeApiQpsDataRequest::setStartTime(const std::string& startTime)
 	setCoreParameter("StartTime", startTime);
 }
 
-std::string DescribeApiQpsDataRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeApiQpsDataRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 std::string DescribeApiQpsDataRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +67,27 @@ void DescribeApiQpsDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiQpsDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiQpsDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeApiQpsDataRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeApiQpsDataRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

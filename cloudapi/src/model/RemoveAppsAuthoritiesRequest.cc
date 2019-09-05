@@ -36,6 +36,28 @@ void RemoveAppsAuthoritiesRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
+std::string RemoveAppsAuthoritiesRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void RemoveAppsAuthoritiesRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string RemoveAppsAuthoritiesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RemoveAppsAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RemoveAppsAuthoritiesRequest::getAppIds()const
 {
 	return appIds_;
@@ -58,17 +80,6 @@ void RemoveAppsAuthoritiesRequest::setSecurityToken(const std::string& securityT
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string RemoveAppsAuthoritiesRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void RemoveAppsAuthoritiesRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
 std::string RemoveAppsAuthoritiesRequest::getApiId()const
 {
 	return apiId_;
@@ -78,16 +89,5 @@ void RemoveAppsAuthoritiesRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
 	setCoreParameter("ApiId", apiId);
-}
-
-std::string RemoveAppsAuthoritiesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RemoveAppsAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

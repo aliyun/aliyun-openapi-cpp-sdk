@@ -25,28 +25,6 @@ CreateApiGroupRequest::CreateApiGroupRequest() :
 CreateApiGroupRequest::~CreateApiGroupRequest()
 {}
 
-std::string CreateApiGroupRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateApiGroupRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string CreateApiGroupRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CreateApiGroupRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string CreateApiGroupRequest::getDescription()const
 {
 	return description_;
@@ -69,23 +47,6 @@ void CreateApiGroupRequest::setSource(const std::string& source)
 	setCoreParameter("Source", source);
 }
 
-std::vector<CreateApiGroupRequest::Tag> CreateApiGroupRequest::getTag()const
-{
-	return tag_;
-}
-
-void CreateApiGroupRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
-	}
-}
-
 std::string CreateApiGroupRequest::getGroupName()const
 {
 	return groupName_;
@@ -106,5 +67,44 @@ void CreateApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateApiGroupRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateApiGroupRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string CreateApiGroupRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void CreateApiGroupRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::vector<CreateApiGroupRequest::Tag> CreateApiGroupRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateApiGroupRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 

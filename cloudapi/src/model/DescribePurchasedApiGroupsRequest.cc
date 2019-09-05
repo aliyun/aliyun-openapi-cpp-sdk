@@ -25,28 +25,6 @@ DescribePurchasedApiGroupsRequest::DescribePurchasedApiGroupsRequest() :
 DescribePurchasedApiGroupsRequest::~DescribePurchasedApiGroupsRequest()
 {}
 
-std::string DescribePurchasedApiGroupsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribePurchasedApiGroupsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-int DescribePurchasedApiGroupsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribePurchasedApiGroupsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int DescribePurchasedApiGroupsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -67,5 +45,27 @@ void DescribePurchasedApiGroupsRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribePurchasedApiGroupsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribePurchasedApiGroupsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribePurchasedApiGroupsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribePurchasedApiGroupsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

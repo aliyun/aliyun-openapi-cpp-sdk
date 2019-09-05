@@ -25,28 +25,6 @@ DescribeVpcAccessesRequest::DescribeVpcAccessesRequest() :
 DescribeVpcAccessesRequest::~DescribeVpcAccessesRequest()
 {}
 
-std::string DescribeVpcAccessesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeVpcAccessesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-int DescribeVpcAccessesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeVpcAccessesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int DescribeVpcAccessesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -67,5 +45,27 @@ void DescribeVpcAccessesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeVpcAccessesRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeVpcAccessesRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeVpcAccessesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeVpcAccessesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

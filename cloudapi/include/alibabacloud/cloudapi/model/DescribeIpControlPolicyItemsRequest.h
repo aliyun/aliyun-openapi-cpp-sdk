@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				DescribeIpControlPolicyItemsRequest();
 				~DescribeIpControlPolicyItemsRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIpControlId()const;
 				void setIpControlId(const std::string& ipControlId);
 				std::string getPolicyItemId()const;
@@ -43,18 +47,14 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				int pageNumber_;
+				std::string accessKeyId_;
 				std::string ipControlId_;
 				std::string policyItemId_;
 				std::string securityToken_;
 				int pageSize_;
-				int pageNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

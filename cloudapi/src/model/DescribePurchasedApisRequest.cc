@@ -36,17 +36,6 @@ void DescribePurchasedApisRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string DescribePurchasedApisRequest::getApiName()const
-{
-	return apiName_;
-}
-
-void DescribePurchasedApisRequest::setApiName(const std::string& apiName)
-{
-	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
-}
-
 std::string DescribePurchasedApisRequest::getVisibility()const
 {
 	return visibility_;
@@ -58,17 +47,6 @@ void DescribePurchasedApisRequest::setVisibility(const std::string& visibility)
 	setCoreParameter("Visibility", visibility);
 }
 
-std::string DescribePurchasedApisRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribePurchasedApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribePurchasedApisRequest::getGroupId()const
 {
 	return groupId_;
@@ -78,28 +56,6 @@ void DescribePurchasedApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-int DescribePurchasedApisRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribePurchasedApisRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribePurchasedApisRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribePurchasedApisRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
 }
 
 int DescribePurchasedApisRequest::getPageNumber()const
@@ -122,5 +78,49 @@ void DescribePurchasedApisRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribePurchasedApisRequest::getApiName()const
+{
+	return apiName_;
+}
+
+void DescribePurchasedApisRequest::setApiName(const std::string& apiName)
+{
+	apiName_ = apiName;
+	setCoreParameter("ApiName", apiName);
+}
+
+std::string DescribePurchasedApisRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribePurchasedApisRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribePurchasedApisRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribePurchasedApisRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribePurchasedApisRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribePurchasedApisRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

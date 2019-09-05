@@ -47,17 +47,6 @@ void SetApisAuthoritiesRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string SetApisAuthoritiesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetApisAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetApisAuthoritiesRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,17 +56,6 @@ void SetApisAuthoritiesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-long SetApisAuthoritiesRequest::getAppId()const
-{
-	return appId_;
-}
-
-void SetApisAuthoritiesRequest::setAppId(long appId)
-{
-	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string SetApisAuthoritiesRequest::getDescription()const
@@ -111,6 +89,28 @@ void SetApisAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetApisAuthoritiesRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetApisAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+long SetApisAuthoritiesRequest::getAppId()const
+{
+	return appId_;
+}
+
+void SetApisAuthoritiesRequest::setAppId(long appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string SetApisAuthoritiesRequest::getApiIds()const

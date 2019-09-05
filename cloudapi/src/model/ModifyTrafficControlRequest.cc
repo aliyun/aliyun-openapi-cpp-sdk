@@ -36,28 +36,6 @@ void ModifyTrafficControlRequest::setTrafficControlId(const std::string& traffic
 	setCoreParameter("TrafficControlId", trafficControlId);
 }
 
-int ModifyTrafficControlRequest::getApiDefault()const
-{
-	return apiDefault_;
-}
-
-void ModifyTrafficControlRequest::setApiDefault(int apiDefault)
-{
-	apiDefault_ = apiDefault;
-	setCoreParameter("ApiDefault", std::to_string(apiDefault));
-}
-
-std::string ModifyTrafficControlRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ModifyTrafficControlRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string ModifyTrafficControlRequest::getTrafficControlName()const
 {
 	return trafficControlName_;
@@ -67,17 +45,6 @@ void ModifyTrafficControlRequest::setTrafficControlName(const std::string& traff
 {
 	trafficControlName_ = trafficControlName;
 	setCoreParameter("TrafficControlName", trafficControlName);
-}
-
-std::string ModifyTrafficControlRequest::getTrafficControlUnit()const
-{
-	return trafficControlUnit_;
-}
-
-void ModifyTrafficControlRequest::setTrafficControlUnit(const std::string& trafficControlUnit)
-{
-	trafficControlUnit_ = trafficControlUnit;
-	setCoreParameter("TrafficControlUnit", trafficControlUnit);
 }
 
 std::string ModifyTrafficControlRequest::getDescription()const
@@ -102,17 +69,6 @@ void ModifyTrafficControlRequest::setUserDefault(int userDefault)
 	setCoreParameter("UserDefault", std::to_string(userDefault));
 }
 
-int ModifyTrafficControlRequest::getAppDefault()const
-{
-	return appDefault_;
-}
-
-void ModifyTrafficControlRequest::setAppDefault(int appDefault)
-{
-	appDefault_ = appDefault;
-	setCoreParameter("AppDefault", std::to_string(appDefault));
-}
-
 std::string ModifyTrafficControlRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -122,5 +78,49 @@ void ModifyTrafficControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ModifyTrafficControlRequest::getApiDefault()const
+{
+	return apiDefault_;
+}
+
+void ModifyTrafficControlRequest::setApiDefault(int apiDefault)
+{
+	apiDefault_ = apiDefault;
+	setCoreParameter("ApiDefault", std::to_string(apiDefault));
+}
+
+std::string ModifyTrafficControlRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ModifyTrafficControlRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string ModifyTrafficControlRequest::getTrafficControlUnit()const
+{
+	return trafficControlUnit_;
+}
+
+void ModifyTrafficControlRequest::setTrafficControlUnit(const std::string& trafficControlUnit)
+{
+	trafficControlUnit_ = trafficControlUnit;
+	setCoreParameter("TrafficControlUnit", trafficControlUnit);
+}
+
+int ModifyTrafficControlRequest::getAppDefault()const
+{
+	return appDefault_;
+}
+
+void ModifyTrafficControlRequest::setAppDefault(int appDefault)
+{
+	appDefault_ = appDefault;
+	setCoreParameter("AppDefault", std::to_string(appDefault));
 }
 

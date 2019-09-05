@@ -25,17 +25,6 @@ DescribeApiTrafficDataRequest::DescribeApiTrafficDataRequest() :
 DescribeApiTrafficDataRequest::~DescribeApiTrafficDataRequest()
 {}
 
-std::string DescribeApiTrafficDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiTrafficDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiTrafficDataRequest::getGroupId()const
 {
 	return groupId_;
@@ -69,17 +58,6 @@ void DescribeApiTrafficDataRequest::setStartTime(const std::string& startTime)
 	setCoreParameter("StartTime", startTime);
 }
 
-std::string DescribeApiTrafficDataRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeApiTrafficDataRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 std::string DescribeApiTrafficDataRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +67,27 @@ void DescribeApiTrafficDataRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiTrafficDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiTrafficDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeApiTrafficDataRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeApiTrafficDataRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

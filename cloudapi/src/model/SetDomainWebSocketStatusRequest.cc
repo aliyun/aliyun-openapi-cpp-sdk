@@ -25,17 +25,6 @@ SetDomainWebSocketStatusRequest::SetDomainWebSocketStatusRequest() :
 SetDomainWebSocketStatusRequest::~SetDomainWebSocketStatusRequest()
 {}
 
-std::string SetDomainWebSocketStatusRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetDomainWebSocketStatusRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetDomainWebSocketStatusRequest::getGroupId()const
 {
 	return groupId_;
@@ -58,17 +47,6 @@ void SetDomainWebSocketStatusRequest::setDomainName(const std::string& domainNam
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string SetDomainWebSocketStatusRequest::getActionValue()const
-{
-	return actionValue_;
-}
-
-void SetDomainWebSocketStatusRequest::setActionValue(const std::string& actionValue)
-{
-	actionValue_ = actionValue;
-	setCoreParameter("ActionValue", actionValue);
-}
-
 std::string SetDomainWebSocketStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +56,27 @@ void SetDomainWebSocketStatusRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetDomainWebSocketStatusRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetDomainWebSocketStatusRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetDomainWebSocketStatusRequest::getActionValue()const
+{
+	return actionValue_;
+}
+
+void SetDomainWebSocketStatusRequest::setActionValue(const std::string& actionValue)
+{
+	actionValue_ = actionValue;
+	setCoreParameter("ActionValue", actionValue);
 }
 

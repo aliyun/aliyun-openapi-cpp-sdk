@@ -47,17 +47,6 @@ void AddTrafficSpecialControlRequest::setSpecialKey(const std::string& specialKe
 	setCoreParameter("SpecialKey", specialKey);
 }
 
-std::string AddTrafficSpecialControlRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void AddTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 int AddTrafficSpecialControlRequest::getTrafficValue()const
 {
 	return trafficValue_;
@@ -69,17 +58,6 @@ void AddTrafficSpecialControlRequest::setTrafficValue(int trafficValue)
 	setCoreParameter("TrafficValue", std::to_string(trafficValue));
 }
 
-std::string AddTrafficSpecialControlRequest::getSpecialType()const
-{
-	return specialType_;
-}
-
-void AddTrafficSpecialControlRequest::setSpecialType(const std::string& specialType)
-{
-	specialType_ = specialType;
-	setCoreParameter("SpecialType", specialType);
-}
-
 std::string AddTrafficSpecialControlRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +67,27 @@ void AddTrafficSpecialControlRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AddTrafficSpecialControlRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void AddTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string AddTrafficSpecialControlRequest::getSpecialType()const
+{
+	return specialType_;
+}
+
+void AddTrafficSpecialControlRequest::setSpecialType(const std::string& specialType)
+{
+	specialType_ = specialType;
+	setCoreParameter("SpecialType", specialType);
 }
 

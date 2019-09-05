@@ -36,17 +36,6 @@ void DescribeApiHistoryRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string DescribeApiHistoryRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeApiHistoryRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeApiHistoryRequest::getGroupId()const
 {
 	return groupId_;
@@ -56,6 +45,28 @@ void DescribeApiHistoryRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeApiHistoryRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeApiHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiHistoryRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeApiHistoryRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiHistoryRequest::getApiId()const
@@ -78,16 +89,5 @@ void DescribeApiHistoryRequest::setHistoryVersion(const std::string& historyVers
 {
 	historyVersion_ = historyVersion;
 	setCoreParameter("HistoryVersion", historyVersion);
-}
-
-std::string DescribeApiHistoryRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeApiHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -36,17 +36,6 @@ void SetSignatureApisRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string SetSignatureApisRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetSignatureApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetSignatureApisRequest::getGroupId()const
 {
 	return groupId_;
@@ -78,6 +67,17 @@ void SetSignatureApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetSignatureApisRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetSignatureApisRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetSignatureApisRequest::getApiIds()const

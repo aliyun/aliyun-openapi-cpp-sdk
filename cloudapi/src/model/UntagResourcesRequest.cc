@@ -48,6 +48,28 @@ void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resour
 		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
 }
 
+std::string UntagResourcesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void UntagResourcesRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
+std::string UntagResourcesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UntagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UntagResourcesRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -69,27 +91,5 @@ void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 	tagKey_ = tagKey;
 	for(int i = 0; i!= tagKey.size(); i++)
 		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
-}
-
-std::string UntagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void UntagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
-}
-
-std::string UntagResourcesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UntagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

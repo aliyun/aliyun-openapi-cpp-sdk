@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DescribeApisBySignatureRequest();
 				~DescribeApisBySignatureRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getSignatureId()const;
 				void setSignatureId(const std::string& signatureId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string securityToken_;
-				int pageSize_;
 				std::string signatureId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				int pageSize_;
 
 			};
 		}

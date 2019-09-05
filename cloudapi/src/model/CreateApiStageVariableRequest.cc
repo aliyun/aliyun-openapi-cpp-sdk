@@ -36,28 +36,6 @@ void CreateApiStageVariableRequest::setSupportRoute(bool supportRoute)
 	setCoreParameter("SupportRoute", supportRoute ? "true" : "false");
 }
 
-std::string CreateApiStageVariableRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CreateApiStageVariableRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string CreateApiStageVariableRequest::getVariableName()const
-{
-	return variableName_;
-}
-
-void CreateApiStageVariableRequest::setVariableName(const std::string& variableName)
-{
-	variableName_ = variableName;
-	setCoreParameter("VariableName", variableName);
-}
-
 std::string CreateApiStageVariableRequest::getVariableValue()const
 {
 	return variableValue_;
@@ -100,6 +78,28 @@ void CreateApiStageVariableRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateApiStageVariableRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void CreateApiStageVariableRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string CreateApiStageVariableRequest::getVariableName()const
+{
+	return variableName_;
+}
+
+void CreateApiStageVariableRequest::setVariableName(const std::string& variableName)
+{
+	variableName_ = variableName;
+	setCoreParameter("VariableName", variableName);
 }
 
 std::string CreateApiStageVariableRequest::getStageId()const

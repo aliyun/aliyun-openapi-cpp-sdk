@@ -36,28 +36,6 @@ void SetIpControlApisRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string SetIpControlApisRequest::getIpControlId()const
-{
-	return ipControlId_;
-}
-
-void SetIpControlApisRequest::setIpControlId(const std::string& ipControlId)
-{
-	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
-}
-
-std::string SetIpControlApisRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetIpControlApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetIpControlApisRequest::getGroupId()const
 {
 	return groupId_;
@@ -78,6 +56,28 @@ void SetIpControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetIpControlApisRequest::getIpControlId()const
+{
+	return ipControlId_;
+}
+
+void SetIpControlApisRequest::setIpControlId(const std::string& ipControlId)
+{
+	ipControlId_ = ipControlId;
+	setCoreParameter("IpControlId", ipControlId);
+}
+
+std::string SetIpControlApisRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetIpControlApisRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetIpControlApisRequest::getApiIds()const

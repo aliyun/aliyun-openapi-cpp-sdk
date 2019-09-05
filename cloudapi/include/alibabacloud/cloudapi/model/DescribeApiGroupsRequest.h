@@ -40,14 +40,8 @@ namespace AlibabaCloud
 				DescribeApiGroupsRequest();
 				~DescribeApiGroupsRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				bool getEnableTagAuth()const;
 				void setEnableTagAuth(bool enableTagAuth);
 				std::string getGroupName()const;
@@ -56,16 +50,22 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
-				std::string securityToken_;
 				std::string groupId_;
-				int pageSize_;
-				std::vector<Tag> tag_;
 				bool enableTagAuth_;
 				std::string groupName_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				int pageSize_;
+				std::vector<Tag> tag_;
 
 			};
 		}

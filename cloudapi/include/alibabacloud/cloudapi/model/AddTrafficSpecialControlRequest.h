@@ -39,22 +39,22 @@ namespace AlibabaCloud
 				void setTrafficControlId(const std::string& trafficControlId);
 				std::string getSpecialKey()const;
 				void setSpecialKey(const std::string& specialKey);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				int getTrafficValue()const;
 				void setTrafficValue(int trafficValue);
-				std::string getSpecialType()const;
-				void setSpecialType(const std::string& specialType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getSpecialType()const;
+				void setSpecialType(const std::string& specialType);
 
             private:
 				std::string trafficControlId_;
 				std::string specialKey_;
-				std::string securityToken_;
 				int trafficValue_;
-				std::string specialType_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string specialType_;
 
 			};
 		}

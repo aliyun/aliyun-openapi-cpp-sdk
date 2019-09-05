@@ -36,28 +36,6 @@ void DescribeHistoryApisRequest::setStageName(const std::string& stageName)
 	setCoreParameter("StageName", stageName);
 }
 
-std::string DescribeHistoryApisRequest::getApiName()const
-{
-	return apiName_;
-}
-
-void DescribeHistoryApisRequest::setApiName(const std::string& apiName)
-{
-	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
-}
-
-std::string DescribeHistoryApisRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeHistoryApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeHistoryApisRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,28 +45,6 @@ void DescribeHistoryApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-std::string DescribeHistoryApisRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeHistoryApisRequest::setPageSize(const std::string& pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
-}
-
-std::string DescribeHistoryApisRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DescribeHistoryApisRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
 }
 
 std::string DescribeHistoryApisRequest::getPageNumber()const
@@ -111,5 +67,49 @@ void DescribeHistoryApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeHistoryApisRequest::getApiName()const
+{
+	return apiName_;
+}
+
+void DescribeHistoryApisRequest::setApiName(const std::string& apiName)
+{
+	apiName_ = apiName;
+	setCoreParameter("ApiName", apiName);
+}
+
+std::string DescribeHistoryApisRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeHistoryApisRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeHistoryApisRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeHistoryApisRequest::setPageSize(const std::string& pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", pageSize);
+}
+
+std::string DescribeHistoryApisRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DescribeHistoryApisRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

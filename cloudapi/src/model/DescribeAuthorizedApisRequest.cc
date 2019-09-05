@@ -25,6 +25,28 @@ DescribeAuthorizedApisRequest::DescribeAuthorizedApisRequest() :
 DescribeAuthorizedApisRequest::~DescribeAuthorizedApisRequest()
 {}
 
+int DescribeAuthorizedApisRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeAuthorizedApisRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeAuthorizedApisRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeAuthorizedApisRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeAuthorizedApisRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -56,27 +78,5 @@ void DescribeAuthorizedApisRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeAuthorizedApisRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeAuthorizedApisRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeAuthorizedApisRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeAuthorizedApisRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

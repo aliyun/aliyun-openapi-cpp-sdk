@@ -25,17 +25,6 @@ DeleteApiRequest::DeleteApiRequest() :
 DeleteApiRequest::~DeleteApiRequest()
 {}
 
-std::string DeleteApiRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteApiRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DeleteApiRequest::getGroupId()const
 {
 	return groupId_;
@@ -47,17 +36,6 @@ void DeleteApiRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
-std::string DeleteApiRequest::getApiId()const
-{
-	return apiId_;
-}
-
-void DeleteApiRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
-}
-
 std::string DeleteApiRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,27 @@ void DeleteApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteApiRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteApiRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DeleteApiRequest::getApiId()const
+{
+	return apiId_;
+}
+
+void DeleteApiRequest::setApiId(const std::string& apiId)
+{
+	apiId_ = apiId;
+	setCoreParameter("ApiId", apiId);
 }
 

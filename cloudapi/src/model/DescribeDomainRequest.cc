@@ -25,17 +25,6 @@ DescribeDomainRequest::DescribeDomainRequest() :
 DescribeDomainRequest::~DescribeDomainRequest()
 {}
 
-std::string DescribeDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeDomainRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,5 +56,16 @@ void DescribeDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

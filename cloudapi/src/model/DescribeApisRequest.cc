@@ -25,6 +25,61 @@ DescribeApisRequest::DescribeApisRequest() :
 DescribeApisRequest::~DescribeApisRequest()
 {}
 
+std::string DescribeApisRequest::getVisibility()const
+{
+	return visibility_;
+}
+
+void DescribeApisRequest::setVisibility(const std::string& visibility)
+{
+	visibility_ = visibility;
+	setCoreParameter("Visibility", visibility);
+}
+
+std::string DescribeApisRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeApisRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+bool DescribeApisRequest::getEnableTagAuth()const
+{
+	return enableTagAuth_;
+}
+
+void DescribeApisRequest::setEnableTagAuth(bool enableTagAuth)
+{
+	enableTagAuth_ = enableTagAuth;
+	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
+}
+
+int DescribeApisRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeApisRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeApisRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeApisRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeApisRequest::getApiName()const
 {
 	return apiName_;
@@ -47,17 +102,6 @@ void DescribeApisRequest::setCatalogId(const std::string& catalogId)
 	setCoreParameter("CatalogId", catalogId);
 }
 
-std::string DescribeApisRequest::getVisibility()const
-{
-	return visibility_;
-}
-
-void DescribeApisRequest::setVisibility(const std::string& visibility)
-{
-	visibility_ = visibility;
-	setCoreParameter("Visibility", visibility);
-}
-
 std::string DescribeApisRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -67,17 +111,6 @@ void DescribeApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeApisRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeApisRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
 }
 
 int DescribeApisRequest::getPageSize()const
@@ -108,17 +141,6 @@ void DescribeApisRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
-bool DescribeApisRequest::getEnableTagAuth()const
-{
-	return enableTagAuth_;
-}
-
-void DescribeApisRequest::setEnableTagAuth(bool enableTagAuth)
-{
-	enableTagAuth_ = enableTagAuth;
-	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
-}
-
 std::string DescribeApisRequest::getApiId()const
 {
 	return apiId_;
@@ -128,27 +150,5 @@ void DescribeApisRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
 	setCoreParameter("ApiId", apiId);
-}
-
-int DescribeApisRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeApisRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeApisRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeApisRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

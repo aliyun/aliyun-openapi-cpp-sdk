@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ResetAppCodeRequest();
 				~ResetAppCodeRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getAppCode()const;
 				void setAppCode(const std::string& appCode);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string appCode_;
-				std::string accessKeyId_;
 
 			};
 		}

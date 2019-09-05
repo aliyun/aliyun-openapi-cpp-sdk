@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DescribeApisByAppRequest();
 				~DescribeApisByAppRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				long getAppId()const;
 				void setAppId(long appId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				int pageNumber_;
+				std::string accessKeyId_;
 				std::string securityToken_;
 				long appId_;
 				int pageSize_;
-				int pageNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

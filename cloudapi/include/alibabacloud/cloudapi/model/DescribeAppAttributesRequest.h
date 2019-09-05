@@ -40,6 +40,12 @@ namespace AlibabaCloud
 				DescribeAppAttributesRequest();
 				~DescribeAppAttributesRequest();
 
+				bool getEnableTagAuth()const;
+				void setEnableTagAuth(bool enableTagAuth);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
@@ -50,22 +56,16 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
-				bool getEnableTagAuth()const;
-				void setEnableTagAuth(bool enableTagAuth);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				bool enableTagAuth_;
+				int pageNumber_;
+				std::string accessKeyId_;
 				std::string appName_;
 				std::string securityToken_;
 				long appId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
-				bool enableTagAuth_;
-				int pageNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

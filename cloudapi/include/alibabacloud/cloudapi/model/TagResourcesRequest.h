@@ -42,21 +42,21 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getResourceId()const;
 				void setResourceId(const std::vector<std::string>& resourceId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
 				std::vector<std::string> resourceId_;
-				std::string securityToken_;
-				std::vector<Tag> tag_;
 				std::string resourceType_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::vector<Tag> tag_;
 
 			};
 		}

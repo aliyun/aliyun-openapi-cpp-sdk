@@ -40,20 +40,20 @@ namespace AlibabaCloud
 				DescribeApiGroupRequest();
 				~DescribeApiGroupRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
-				std::string securityToken_;
 				std::string groupId_;
-				std::vector<Tag> tag_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::vector<Tag> tag_;
 
 			};
 		}
