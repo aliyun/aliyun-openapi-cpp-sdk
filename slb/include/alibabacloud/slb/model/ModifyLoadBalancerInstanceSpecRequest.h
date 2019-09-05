@@ -37,16 +37,14 @@ namespace AlibabaCloud
 
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
-				std::string getLoadBalancerSpec()const;
-				void setLoadBalancerSpec(const std::string& loadBalancerSpec);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
-				bool getAutoPay()const;
-				void setAutoPay(bool autoPay);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getLoadBalancerSpec()const;
+				void setLoadBalancerSpec(const std::string& loadBalancerSpec);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -55,18 +53,20 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
+				std::string getLoadBalancerId()const;
+				void setLoadBalancerId(const std::string& loadBalancerId);
 
             private:
 				std::string access_key_id_;
-				std::string loadBalancerSpec_;
 				long resourceOwnerId_;
-				std::string loadBalancerId_;
-				bool autoPay_;
 				std::string regionId_;
+				std::string loadBalancerSpec_;
+				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string tags_;
+				std::string loadBalancerId_;
 
 			};
 		}

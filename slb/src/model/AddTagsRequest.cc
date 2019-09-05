@@ -47,15 +47,15 @@ void AddTagsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string AddTagsRequest::getLoadBalancerId()const
+std::string AddTagsRequest::getRegionId()const
 {
-	return loadBalancerId_;
+	return regionId_;
 }
 
-void AddTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
+void AddTagsRequest::setRegionId(const std::string& regionId)
 {
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddTagsRequest::getResourceOwnerAccount()const
@@ -67,17 +67,6 @@ void AddTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAcc
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string AddTagsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AddTagsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddTagsRequest::getOwnerAccount()const
@@ -111,5 +100,16 @@ void AddTagsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string AddTagsRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void AddTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

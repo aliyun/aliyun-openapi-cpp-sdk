@@ -47,28 +47,6 @@ void DescribeListenerAccessControlAttributeRequest::setResourceOwnerId(long reso
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int DescribeListenerAccessControlAttributeRequest::getListenerPort()const
-{
-	return listenerPort_;
-}
-
-void DescribeListenerAccessControlAttributeRequest::setListenerPort(int listenerPort)
-{
-	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
-}
-
-std::string DescribeListenerAccessControlAttributeRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void DescribeListenerAccessControlAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string DescribeListenerAccessControlAttributeRequest::getRegionId()const
 {
 	return regionId_;
@@ -78,6 +56,17 @@ void DescribeListenerAccessControlAttributeRequest::setRegionId(const std::strin
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeListenerAccessControlAttributeRequest::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+void DescribeListenerAccessControlAttributeRequest::setListenerPort(int listenerPort)
+{
+	listenerPort_ = listenerPort;
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getResourceOwnerAccount()const
@@ -133,5 +122,16 @@ void DescribeListenerAccessControlAttributeRequest::setTags(const std::string& t
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeListenerAccessControlAttributeRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void DescribeListenerAccessControlAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

@@ -47,15 +47,15 @@ void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
+std::string DescribeAvailableResourceRequest::getAddressIPVersion()const
 {
-	return resourceOwnerAccount_;
+	return addressIPVersion_;
 }
 
-void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeAvailableResourceRequest::setAddressIPVersion(const std::string& addressIPVersion)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	addressIPVersion_ = addressIPVersion;
+	setCoreParameter("AddressIPVersion", addressIPVersion);
 }
 
 std::string DescribeAvailableResourceRequest::getRegionId()const
@@ -69,17 +69,6 @@ void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeAvailableResourceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string DescribeAvailableResourceRequest::getAddressType()const
 {
 	return addressType_;
@@ -91,6 +80,28 @@ void DescribeAvailableResourceRequest::setAddressType(const std::string& address
 	setCoreParameter("AddressType", addressType);
 }
 
+std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAvailableResourceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeAvailableResourceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeAvailableResourceRequest::getAddressIPVersion()const
-{
-	return addressIPVersion_;
-}
-
-void DescribeAvailableResourceRequest::setAddressIPVersion(const std::string& addressIPVersion)
-{
-	addressIPVersion_ = addressIPVersion;
-	setCoreParameter("AddressIPVersion", addressIPVersion);
 }
 

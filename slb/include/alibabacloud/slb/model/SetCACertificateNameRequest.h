@@ -41,10 +41,10 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getCACertificateName()const;
 				void setCACertificateName(const std::string& cACertificateName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -56,8 +56,8 @@ namespace AlibabaCloud
 				std::string access_key_id_;
 				long resourceOwnerId_;
 				std::string cACertificateName_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string cACertificateId_;

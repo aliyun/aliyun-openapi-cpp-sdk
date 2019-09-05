@@ -80,17 +80,6 @@ void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeRegionsRequest::getAcceptLanguage()const
-{
-	return acceptLanguage_;
-}
-
-void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
-{
-	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
-}
-
 long DescribeRegionsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +100,16 @@ void DescribeRegionsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeRegionsRequest::getAcceptLanguage()const
+{
+	return acceptLanguage_;
+}
+
+void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
+{
+	acceptLanguage_ = acceptLanguage;
+	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 

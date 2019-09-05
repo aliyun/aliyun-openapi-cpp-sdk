@@ -35,13 +35,9 @@ DescribeLoadBalancerHTTPListenerAttributeResult::~DescribeLoadBalancerHTTPListen
 
 void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allRules = value["Rules"]["Rule"];
 	for (auto value : allRules)
@@ -103,6 +99,8 @@ void DescribeLoadBalancerHTTPListenerAttributeResult::parse(const std::string &p
 		healthCheckHttpCode_ = value["HealthCheckHttpCode"].asString();
 	if(!value["HealthCheckMethod"].isNull())
 		healthCheckMethod_ = value["HealthCheckMethod"].asString();
+	if(!value["HealthCheckHttpVersion"].isNull())
+		healthCheckHttpVersion_ = value["HealthCheckHttpVersion"].asString();
 	if(!value["MaxConnection"].isNull())
 		maxConnection_ = std::stoi(value["MaxConnection"].asString());
 	if(!value["VServerGroupId"].isNull())
@@ -259,6 +257,11 @@ int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckInterval()con
 std::string DescribeLoadBalancerHTTPListenerAttributeResult::getAclId()const
 {
 	return aclId_;
+}
+
+std::string DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckHttpVersion()const
+{
+	return healthCheckHttpVersion_;
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeResult::getHealthCheckTimeout()const

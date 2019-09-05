@@ -58,17 +58,6 @@ void SetLoadBalancerNameRequest::setLoadBalancerName(const std::string& loadBala
 	setCoreParameter("LoadBalancerName", loadBalancerName);
 }
 
-std::string SetLoadBalancerNameRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void SetLoadBalancerNameRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string SetLoadBalancerNameRequest::getRegionId()const
 {
 	return regionId_;
@@ -122,5 +111,16 @@ void SetLoadBalancerNameRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string SetLoadBalancerNameRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void SetLoadBalancerNameRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

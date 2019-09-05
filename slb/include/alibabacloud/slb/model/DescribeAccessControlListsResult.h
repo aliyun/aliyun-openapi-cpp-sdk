@@ -50,12 +50,20 @@ namespace AlibabaCloud
 				DescribeAccessControlListsResult();
 				explicit DescribeAccessControlListsResult(const std::string &payload);
 				~DescribeAccessControlListsResult();
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				std::vector<Acl> getAcls()const;
+				int getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
+				int pageSize_;
+				int pageNumber_;
 				std::vector<Acl> acls_;
+				int count_;
 
 			};
 		}

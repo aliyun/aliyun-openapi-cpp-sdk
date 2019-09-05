@@ -36,17 +36,6 @@ void DeleteAccessControlListRequest::setAccess_key_id(const std::string& access_
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string DeleteAccessControlListRequest::getAclId()const
-{
-	return aclId_;
-}
-
-void DeleteAccessControlListRequest::setAclId(const std::string& aclId)
-{
-	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
-}
-
 long DeleteAccessControlListRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +47,15 @@ void DeleteAccessControlListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteAccessControlListRequest::getResourceOwnerAccount()const
+std::string DeleteAccessControlListRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void DeleteAccessControlListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DeleteAccessControlListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteAccessControlListRequest::getRegionId()const
@@ -78,6 +67,28 @@ void DeleteAccessControlListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteAccessControlListRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void DeleteAccessControlListRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setCoreParameter("AclId", aclId);
+}
+
+std::string DeleteAccessControlListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteAccessControlListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteAccessControlListRequest::getOwnerAccount()const
@@ -100,17 +111,6 @@ void DeleteAccessControlListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteAccessControlListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteAccessControlListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteAccessControlListRequest::getTags()const

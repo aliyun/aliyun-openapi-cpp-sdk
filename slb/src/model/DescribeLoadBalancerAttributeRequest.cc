@@ -36,17 +36,6 @@ void DescribeLoadBalancerAttributeRequest::setAccess_key_id(const std::string& a
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-bool DescribeLoadBalancerAttributeRequest::getIncludeReservedData()const
-{
-	return includeReservedData_;
-}
-
-void DescribeLoadBalancerAttributeRequest::setIncludeReservedData(bool includeReservedData)
-{
-	includeReservedData_ = includeReservedData;
-	setCoreParameter("IncludeReservedData", includeReservedData ? "true" : "false");
-}
-
 long DescribeLoadBalancerAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +47,15 @@ void DescribeLoadBalancerAttributeRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeLoadBalancerAttributeRequest::getLoadBalancerId()const
+bool DescribeLoadBalancerAttributeRequest::getIncludeReservedData()const
 {
-	return loadBalancerId_;
+	return includeReservedData_;
 }
 
-void DescribeLoadBalancerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
+void DescribeLoadBalancerAttributeRequest::setIncludeReservedData(bool includeReservedData)
 {
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	includeReservedData_ = includeReservedData;
+	setCoreParameter("IncludeReservedData", includeReservedData ? "true" : "false");
 }
 
 std::string DescribeLoadBalancerAttributeRequest::getRegionId()const
@@ -122,5 +111,16 @@ void DescribeLoadBalancerAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeLoadBalancerAttributeRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void DescribeLoadBalancerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

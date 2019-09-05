@@ -47,17 +47,6 @@ void DeleteDomainExtensionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteDomainExtensionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteDomainExtensionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteDomainExtensionRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,6 +56,28 @@ void DeleteDomainExtensionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteDomainExtensionRequest::getDomainExtensionId()const
+{
+	return domainExtensionId_;
+}
+
+void DeleteDomainExtensionRequest::setDomainExtensionId(const std::string& domainExtensionId)
+{
+	domainExtensionId_ = domainExtensionId;
+	setCoreParameter("DomainExtensionId", domainExtensionId);
+}
+
+std::string DeleteDomainExtensionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteDomainExtensionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDomainExtensionRequest::getOwnerAccount()const
@@ -100,16 +111,5 @@ void DeleteDomainExtensionRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
-}
-
-std::string DeleteDomainExtensionRequest::getDomainExtensionId()const
-{
-	return domainExtensionId_;
-}
-
-void DeleteDomainExtensionRequest::setDomainExtensionId(const std::string& domainExtensionId)
-{
-	domainExtensionId_ = domainExtensionId;
-	setCoreParameter("DomainExtensionId", domainExtensionId);
 }
 

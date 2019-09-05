@@ -46,20 +46,12 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAclName()const;
 				void setAclName(const std::string& aclName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAddressIPVersion()const;
 				void setAddressIPVersion(const std::string& addressIPVersion);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getTags()const;
-				void setTags(const std::string& tags);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
@@ -68,22 +60,30 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
 				std::string aclName_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
 				std::string addressIPVersion_;
 				int pageNumber_;
 				std::string accessKeyId_;
-				std::string tags_;
 				std::string resourceGroupId_;
 				std::string regionId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string tags_;
 
 			};
 		}

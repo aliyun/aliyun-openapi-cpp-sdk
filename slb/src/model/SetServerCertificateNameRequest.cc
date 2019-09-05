@@ -47,17 +47,6 @@ void SetServerCertificateNameRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SetServerCertificateNameRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SetServerCertificateNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string SetServerCertificateNameRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,6 +56,17 @@ void SetServerCertificateNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string SetServerCertificateNameRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void SetServerCertificateNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetServerCertificateNameRequest::getOwnerAccount()const
@@ -102,17 +102,6 @@ void SetServerCertificateNameRequest::setServerCertificateId(const std::string& 
 	setCoreParameter("ServerCertificateId", serverCertificateId);
 }
 
-std::string SetServerCertificateNameRequest::getServerCertificateName()const
-{
-	return serverCertificateName_;
-}
-
-void SetServerCertificateNameRequest::setServerCertificateName(const std::string& serverCertificateName)
-{
-	serverCertificateName_ = serverCertificateName;
-	setCoreParameter("ServerCertificateName", serverCertificateName);
-}
-
 std::string SetServerCertificateNameRequest::getTags()const
 {
 	return tags_;
@@ -122,5 +111,16 @@ void SetServerCertificateNameRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string SetServerCertificateNameRequest::getServerCertificateName()const
+{
+	return serverCertificateName_;
+}
+
+void SetServerCertificateNameRequest::setServerCertificateName(const std::string& serverCertificateName)
+{
+	serverCertificateName_ = serverCertificateName;
+	setCoreParameter("ServerCertificateName", serverCertificateName);
 }
 

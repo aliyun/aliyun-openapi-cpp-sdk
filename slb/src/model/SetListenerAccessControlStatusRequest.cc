@@ -47,28 +47,6 @@ void SetListenerAccessControlStatusRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int SetListenerAccessControlStatusRequest::getListenerPort()const
-{
-	return listenerPort_;
-}
-
-void SetListenerAccessControlStatusRequest::setListenerPort(int listenerPort)
-{
-	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
-}
-
-std::string SetListenerAccessControlStatusRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void SetListenerAccessControlStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string SetListenerAccessControlStatusRequest::getRegionId()const
 {
 	return regionId_;
@@ -78,6 +56,28 @@ void SetListenerAccessControlStatusRequest::setRegionId(const std::string& regio
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string SetListenerAccessControlStatusRequest::getAccessControlStatus()const
+{
+	return accessControlStatus_;
+}
+
+void SetListenerAccessControlStatusRequest::setAccessControlStatus(const std::string& accessControlStatus)
+{
+	accessControlStatus_ = accessControlStatus;
+	setCoreParameter("AccessControlStatus", accessControlStatus);
+}
+
+int SetListenerAccessControlStatusRequest::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+void SetListenerAccessControlStatusRequest::setListenerPort(int listenerPort)
+{
+	listenerPort_ = listenerPort;
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string SetListenerAccessControlStatusRequest::getResourceOwnerAccount()const
@@ -100,17 +100,6 @@ void SetListenerAccessControlStatusRequest::setOwnerAccount(const std::string& o
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string SetListenerAccessControlStatusRequest::getAccessControlStatus()const
-{
-	return accessControlStatus_;
-}
-
-void SetListenerAccessControlStatusRequest::setAccessControlStatus(const std::string& accessControlStatus)
-{
-	accessControlStatus_ = accessControlStatus;
-	setCoreParameter("AccessControlStatus", accessControlStatus);
 }
 
 long SetListenerAccessControlStatusRequest::getOwnerId()const
@@ -144,5 +133,16 @@ void SetListenerAccessControlStatusRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string SetListenerAccessControlStatusRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void SetListenerAccessControlStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

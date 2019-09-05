@@ -47,26 +47,15 @@ void CreateVServerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateVServerGroupRequest::getLoadBalancerId()const
+std::string CreateVServerGroupRequest::getBackendServers()const
 {
-	return loadBalancerId_;
+	return backendServers_;
 }
 
-void CreateVServerGroupRequest::setLoadBalancerId(const std::string& loadBalancerId)
+void CreateVServerGroupRequest::setBackendServers(const std::string& backendServers)
 {
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
-std::string CreateVServerGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateVServerGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	backendServers_ = backendServers;
+	setCoreParameter("BackendServers", backendServers);
 }
 
 std::string CreateVServerGroupRequest::getRegionId()const
@@ -78,6 +67,17 @@ void CreateVServerGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateVServerGroupRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateVServerGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateVServerGroupRequest::getOwnerAccount()const
@@ -102,17 +102,6 @@ void CreateVServerGroupRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateVServerGroupRequest::getBackendServers()const
-{
-	return backendServers_;
-}
-
-void CreateVServerGroupRequest::setBackendServers(const std::string& backendServers)
-{
-	backendServers_ = backendServers;
-	setCoreParameter("BackendServers", backendServers);
-}
-
 std::string CreateVServerGroupRequest::getTags()const
 {
 	return tags_;
@@ -133,5 +122,16 @@ void CreateVServerGroupRequest::setVServerGroupName(const std::string& vServerGr
 {
 	vServerGroupName_ = vServerGroupName;
 	setCoreParameter("VServerGroupName", vServerGroupName);
+}
+
+std::string CreateVServerGroupRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void CreateVServerGroupRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

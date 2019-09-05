@@ -35,13 +35,9 @@ DescribeLoadBalancerAttributeResult::~DescribeLoadBalancerAttributeResult()
 
 void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allListenerPortsAndProtocal = value["ListenerPortsAndProtocal"]["ListenerPortAndProtocal"];
 	for (auto value : allListenerPortsAndProtocal)
@@ -156,6 +152,14 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 		reservedInfoActiveTime_ = value["ReservedInfoActiveTime"].asString();
 	if(!value["DeleteProtection"].isNull())
 		deleteProtection_ = value["DeleteProtection"].asString();
+	if(!value["CloudInstanceType"].isNull())
+		cloudInstanceType_ = value["CloudInstanceType"].asString();
+	if(!value["CloudInstanceId"].isNull())
+		cloudInstanceId_ = value["CloudInstanceId"].asString();
+	if(!value["TunnelType"].isNull())
+		tunnelType_ = value["TunnelType"].asString();
+	if(!value["CloudInstanceUid"].isNull())
+		cloudInstanceUid_ = std::stol(value["CloudInstanceUid"].asString());
 
 }
 
@@ -239,9 +243,19 @@ std::string DescribeLoadBalancerAttributeResult::getMasterZoneId()const
 	return masterZoneId_;
 }
 
+std::string DescribeLoadBalancerAttributeResult::getTunnelType()const
+{
+	return tunnelType_;
+}
+
 std::string DescribeLoadBalancerAttributeResult::getCloudType()const
 {
 	return cloudType_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getCloudInstanceType()const
+{
+	return cloudInstanceType_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getVSwitchId()const
@@ -259,6 +273,11 @@ std::string DescribeLoadBalancerAttributeResult::getRenewalStatus()const
 	return renewalStatus_;
 }
 
+long DescribeLoadBalancerAttributeResult::getCloudInstanceUid()const
+{
+	return cloudInstanceUid_;
+}
+
 std::string DescribeLoadBalancerAttributeResult::getRenewalCycUnit()const
 {
 	return renewalCycUnit_;
@@ -272,6 +291,11 @@ std::string DescribeLoadBalancerAttributeResult::getPayType()const
 std::string DescribeLoadBalancerAttributeResult::getReservedInfoActiveTime()const
 {
 	return reservedInfoActiveTime_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getCloudInstanceId()const
+{
+	return cloudInstanceId_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getSlaveZoneId()const

@@ -36,17 +36,6 @@ void DescribeServerCertificatesRequest::setAccess_key_id(const std::string& acce
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string DescribeServerCertificatesRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeServerCertificatesRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 long DescribeServerCertificatesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +47,15 @@ void DescribeServerCertificatesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeServerCertificatesRequest::getResourceOwnerAccount()const
+std::string DescribeServerCertificatesRequest::getResourceGroupId()const
 {
-	return resourceOwnerAccount_;
+	return resourceGroupId_;
 }
 
-void DescribeServerCertificatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeServerCertificatesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeServerCertificatesRequest::getRegionId()const
@@ -78,17 +67,6 @@ void DescribeServerCertificatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeServerCertificatesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeServerCertificatesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::vector<DescribeServerCertificatesRequest::Tag> DescribeServerCertificatesRequest::getTag()const
@@ -106,6 +84,28 @@ void DescribeServerCertificatesRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
+}
+
+std::string DescribeServerCertificatesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeServerCertificatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeServerCertificatesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeServerCertificatesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeServerCertificatesRequest::getOwnerId()const

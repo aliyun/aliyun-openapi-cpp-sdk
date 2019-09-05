@@ -47,6 +47,28 @@ void DescribeMasterSlaveVServerGroupAttributeRequest::setResourceOwnerId(long re
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeMasterSlaveVServerGroupAttributeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeMasterSlaveVServerGroupAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeMasterSlaveVServerGroupAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeMasterSlaveVServerGroupAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string DescribeMasterSlaveVServerGroupAttributeRequest::getMasterSlaveVServerGroupId()const
 {
 	return masterSlaveVServerGroupId_;
@@ -69,17 +91,6 @@ void DescribeMasterSlaveVServerGroupAttributeRequest::setResourceOwnerAccount(co
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeMasterSlaveVServerGroupAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeMasterSlaveVServerGroupAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeMasterSlaveVServerGroupAttributeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -100,17 +111,6 @@ void DescribeMasterSlaveVServerGroupAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeMasterSlaveVServerGroupAttributeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeMasterSlaveVServerGroupAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeMasterSlaveVServerGroupAttributeRequest::getTags()const

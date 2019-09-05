@@ -47,15 +47,15 @@ void DeleteRulesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteRulesRequest::getRuleIds()const
+std::string DeleteRulesRequest::getRegionId()const
 {
-	return ruleIds_;
+	return regionId_;
 }
 
-void DeleteRulesRequest::setRuleIds(const std::string& ruleIds)
+void DeleteRulesRequest::setRegionId(const std::string& regionId)
 {
-	ruleIds_ = ruleIds;
-	setCoreParameter("RuleIds", ruleIds);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteRulesRequest::getResourceOwnerAccount()const
@@ -67,17 +67,6 @@ void DeleteRulesRequest::setResourceOwnerAccount(const std::string& resourceOwne
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteRulesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteRulesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteRulesRequest::getOwnerAccount()const
@@ -111,5 +100,16 @@ void DeleteRulesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DeleteRulesRequest::getRuleIds()const
+{
+	return ruleIds_;
+}
+
+void DeleteRulesRequest::setRuleIds(const std::string& ruleIds)
+{
+	ruleIds_ = ruleIds;
+	setCoreParameter("RuleIds", ruleIds);
 }
 

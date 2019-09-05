@@ -47,17 +47,6 @@ void SetLoadBalancerDeleteProtectionRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SetLoadBalancerDeleteProtectionRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void SetLoadBalancerDeleteProtectionRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string SetLoadBalancerDeleteProtectionRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,6 +56,17 @@ void SetLoadBalancerDeleteProtectionRequest::setRegionId(const std::string& regi
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string SetLoadBalancerDeleteProtectionRequest::getDeleteProtection()const
+{
+	return deleteProtection_;
+}
+
+void SetLoadBalancerDeleteProtectionRequest::setDeleteProtection(const std::string& deleteProtection)
+{
+	deleteProtection_ = deleteProtection;
+	setCoreParameter("DeleteProtection", deleteProtection);
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getResourceOwnerAccount()const
@@ -102,17 +102,6 @@ void SetLoadBalancerDeleteProtectionRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetLoadBalancerDeleteProtectionRequest::getDeleteProtection()const
-{
-	return deleteProtection_;
-}
-
-void SetLoadBalancerDeleteProtectionRequest::setDeleteProtection(const std::string& deleteProtection)
-{
-	deleteProtection_ = deleteProtection;
-	setCoreParameter("DeleteProtection", deleteProtection);
-}
-
 std::string SetLoadBalancerDeleteProtectionRequest::getTags()const
 {
 	return tags_;
@@ -122,5 +111,16 @@ void SetLoadBalancerDeleteProtectionRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string SetLoadBalancerDeleteProtectionRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void SetLoadBalancerDeleteProtectionRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

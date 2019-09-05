@@ -47,6 +47,17 @@ void ModifyLoadBalancerInternetSpecRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyLoadBalancerInternetSpecRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyLoadBalancerInternetSpecRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 bool ModifyLoadBalancerInternetSpecRequest::getAutoPay()const
 {
 	return autoPay_;
@@ -122,17 +133,6 @@ void ModifyLoadBalancerInternetSpecRequest::setLoadBalancerId(const std::string&
 {
 	loadBalancerId_ = loadBalancerId;
 	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
-std::string ModifyLoadBalancerInternetSpecRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyLoadBalancerInternetSpecRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getInternetChargeType()const

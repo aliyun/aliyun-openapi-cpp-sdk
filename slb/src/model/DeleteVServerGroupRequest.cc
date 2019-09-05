@@ -36,17 +36,6 @@ void DeleteVServerGroupRequest::setAccess_key_id(const std::string& access_key_i
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string DeleteVServerGroupRequest::getVServerGroupId()const
-{
-	return vServerGroupId_;
-}
-
-void DeleteVServerGroupRequest::setVServerGroupId(const std::string& vServerGroupId)
-{
-	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
-}
-
 long DeleteVServerGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,17 +47,6 @@ void DeleteVServerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteVServerGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteVServerGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteVServerGroupRequest::getRegionId()const
 {
 	return regionId_;
@@ -78,6 +56,28 @@ void DeleteVServerGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteVServerGroupRequest::getVServerGroupId()const
+{
+	return vServerGroupId_;
+}
+
+void DeleteVServerGroupRequest::setVServerGroupId(const std::string& vServerGroupId)
+{
+	vServerGroupId_ = vServerGroupId;
+	setCoreParameter("VServerGroupId", vServerGroupId);
+}
+
+std::string DeleteVServerGroupRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteVServerGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteVServerGroupRequest::getOwnerAccount()const

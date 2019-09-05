@@ -36,17 +36,6 @@ void UploadCACertificateRequest::setAccess_key_id(const std::string& access_key_
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string UploadCACertificateRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void UploadCACertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 long UploadCACertificateRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +47,15 @@ void UploadCACertificateRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UploadCACertificateRequest::getCACertificate()const
+std::string UploadCACertificateRequest::getResourceGroupId()const
 {
-	return cACertificate_;
+	return resourceGroupId_;
 }
 
-void UploadCACertificateRequest::setCACertificate(const std::string& cACertificate)
+void UploadCACertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	cACertificate_ = cACertificate;
-	setCoreParameter("CACertificate", cACertificate);
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UploadCACertificateRequest::getCACertificateName()const
@@ -80,17 +69,6 @@ void UploadCACertificateRequest::setCACertificateName(const std::string& cACerti
 	setCoreParameter("CACertificateName", cACertificateName);
 }
 
-std::string UploadCACertificateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UploadCACertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string UploadCACertificateRequest::getRegionId()const
 {
 	return regionId_;
@@ -100,6 +78,28 @@ void UploadCACertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string UploadCACertificateRequest::getCACertificate()const
+{
+	return cACertificate_;
+}
+
+void UploadCACertificateRequest::setCACertificate(const std::string& cACertificate)
+{
+	cACertificate_ = cACertificate;
+	setCoreParameter("CACertificate", cACertificate);
+}
+
+std::string UploadCACertificateRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UploadCACertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UploadCACertificateRequest::getOwnerAccount()const

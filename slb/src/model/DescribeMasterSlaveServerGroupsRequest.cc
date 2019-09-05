@@ -47,26 +47,15 @@ void DescribeMasterSlaveServerGroupsRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeMasterSlaveServerGroupsRequest::getLoadBalancerId()const
+bool DescribeMasterSlaveServerGroupsRequest::getIncludeListener()const
 {
-	return loadBalancerId_;
+	return includeListener_;
 }
 
-void DescribeMasterSlaveServerGroupsRequest::setLoadBalancerId(const std::string& loadBalancerId)
+void DescribeMasterSlaveServerGroupsRequest::setIncludeListener(bool includeListener)
 {
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
-std::string DescribeMasterSlaveServerGroupsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeMasterSlaveServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	includeListener_ = includeListener;
+	setCoreParameter("IncludeListener", includeListener ? "true" : "false");
 }
 
 std::string DescribeMasterSlaveServerGroupsRequest::getRegionId()const
@@ -80,15 +69,15 @@ void DescribeMasterSlaveServerGroupsRequest::setRegionId(const std::string& regi
 	setCoreParameter("RegionId", regionId);
 }
 
-bool DescribeMasterSlaveServerGroupsRequest::getIncludeListener()const
+std::string DescribeMasterSlaveServerGroupsRequest::getResourceOwnerAccount()const
 {
-	return includeListener_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeMasterSlaveServerGroupsRequest::setIncludeListener(bool includeListener)
+void DescribeMasterSlaveServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	includeListener_ = includeListener;
-	setCoreParameter("IncludeListener", includeListener ? "true" : "false");
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeMasterSlaveServerGroupsRequest::getOwnerAccount()const
@@ -122,5 +111,16 @@ void DescribeMasterSlaveServerGroupsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeMasterSlaveServerGroupsRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void DescribeMasterSlaveServerGroupsRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

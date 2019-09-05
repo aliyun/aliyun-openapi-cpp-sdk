@@ -47,28 +47,6 @@ void AddListenerWhiteListItemRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int AddListenerWhiteListItemRequest::getListenerPort()const
-{
-	return listenerPort_;
-}
-
-void AddListenerWhiteListItemRequest::setListenerPort(int listenerPort)
-{
-	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
-}
-
-std::string AddListenerWhiteListItemRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void AddListenerWhiteListItemRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string AddListenerWhiteListItemRequest::getSourceItems()const
 {
 	return sourceItems_;
@@ -89,6 +67,17 @@ void AddListenerWhiteListItemRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+int AddListenerWhiteListItemRequest::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+void AddListenerWhiteListItemRequest::setListenerPort(int listenerPort)
+{
+	listenerPort_ = listenerPort;
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string AddListenerWhiteListItemRequest::getResourceOwnerAccount()const
@@ -144,5 +133,16 @@ void AddListenerWhiteListItemRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string AddListenerWhiteListItemRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void AddListenerWhiteListItemRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

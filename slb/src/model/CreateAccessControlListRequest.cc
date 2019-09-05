@@ -36,17 +36,6 @@ void CreateAccessControlListRequest::setAccess_key_id(const std::string& access_
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string CreateAccessControlListRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void CreateAccessControlListRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 long CreateAccessControlListRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -69,15 +58,37 @@ void CreateAccessControlListRequest::setAclName(const std::string& aclName)
 	setCoreParameter("AclName", aclName);
 }
 
-std::string CreateAccessControlListRequest::getResourceOwnerAccount()const
+std::string CreateAccessControlListRequest::getAddressIPVersion()const
 {
-	return resourceOwnerAccount_;
+	return addressIPVersion_;
 }
 
-void CreateAccessControlListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void CreateAccessControlListRequest::setAddressIPVersion(const std::string& addressIPVersion)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	addressIPVersion_ = addressIPVersion;
+	setCoreParameter("AddressIPVersion", addressIPVersion);
+}
+
+std::string CreateAccessControlListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateAccessControlListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateAccessControlListRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateAccessControlListRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateAccessControlListRequest::getRegionId()const
@@ -89,6 +100,17 @@ void CreateAccessControlListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateAccessControlListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateAccessControlListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateAccessControlListRequest::getOwnerAccount()const
@@ -111,28 +133,6 @@ void CreateAccessControlListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateAccessControlListRequest::getAddressIPVersion()const
-{
-	return addressIPVersion_;
-}
-
-void CreateAccessControlListRequest::setAddressIPVersion(const std::string& addressIPVersion)
-{
-	addressIPVersion_ = addressIPVersion;
-	setCoreParameter("AddressIPVersion", addressIPVersion);
-}
-
-std::string CreateAccessControlListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateAccessControlListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateAccessControlListRequest::getTags()const

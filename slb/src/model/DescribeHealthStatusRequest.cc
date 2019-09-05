@@ -47,6 +47,17 @@ void DescribeHealthStatusRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeHealthStatusRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeHealthStatusRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 int DescribeHealthStatusRequest::getListenerPort()const
 {
 	return listenerPort_;
@@ -58,17 +69,6 @@ void DescribeHealthStatusRequest::setListenerPort(int listenerPort)
 	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
-std::string DescribeHealthStatusRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void DescribeHealthStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string DescribeHealthStatusRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -78,17 +78,6 @@ void DescribeHealthStatusRequest::setResourceOwnerAccount(const std::string& res
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeHealthStatusRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeHealthStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeHealthStatusRequest::getOwnerAccount()const
@@ -133,5 +122,16 @@ void DescribeHealthStatusRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeHealthStatusRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void DescribeHealthStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

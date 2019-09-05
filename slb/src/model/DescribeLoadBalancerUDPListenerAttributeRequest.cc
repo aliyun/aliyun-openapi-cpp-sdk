@@ -47,28 +47,6 @@ void DescribeLoadBalancerUDPListenerAttributeRequest::setResourceOwnerId(long re
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int DescribeLoadBalancerUDPListenerAttributeRequest::getListenerPort()const
-{
-	return listenerPort_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeRequest::setListenerPort(int listenerPort)
-{
-	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
-}
-
-std::string DescribeLoadBalancerUDPListenerAttributeRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void DescribeLoadBalancerUDPListenerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string DescribeLoadBalancerUDPListenerAttributeRequest::getRegionId()const
 {
 	return regionId_;
@@ -78,6 +56,17 @@ void DescribeLoadBalancerUDPListenerAttributeRequest::setRegionId(const std::str
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeLoadBalancerUDPListenerAttributeRequest::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+void DescribeLoadBalancerUDPListenerAttributeRequest::setListenerPort(int listenerPort)
+{
+	listenerPort_ = listenerPort;
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeRequest::getResourceOwnerAccount()const
@@ -122,5 +111,16 @@ void DescribeLoadBalancerUDPListenerAttributeRequest::setTags(const std::string&
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void DescribeLoadBalancerUDPListenerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

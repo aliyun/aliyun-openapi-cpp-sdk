@@ -47,15 +47,15 @@ void DescribeMasterSlaveServerGroupAttributeRequest::setResourceOwnerId(long res
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeMasterSlaveServerGroupAttributeRequest::getMasterSlaveServerGroupId()const
+std::string DescribeMasterSlaveServerGroupAttributeRequest::getRegionId()const
 {
-	return masterSlaveServerGroupId_;
+	return regionId_;
 }
 
-void DescribeMasterSlaveServerGroupAttributeRequest::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
+void DescribeMasterSlaveServerGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
-	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
-	setCoreParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getResourceOwnerAccount()const
@@ -67,17 +67,6 @@ void DescribeMasterSlaveServerGroupAttributeRequest::setResourceOwnerAccount(con
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeMasterSlaveServerGroupAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeMasterSlaveServerGroupAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getOwnerAccount()const
@@ -111,5 +100,16 @@ void DescribeMasterSlaveServerGroupAttributeRequest::setTags(const std::string& 
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeMasterSlaveServerGroupAttributeRequest::getMasterSlaveServerGroupId()const
+{
+	return masterSlaveServerGroupId_;
+}
+
+void DescribeMasterSlaveServerGroupAttributeRequest::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
+{
+	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
+	setCoreParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
 }
 

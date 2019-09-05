@@ -58,28 +58,6 @@ void UploadServerCertificateRequest::setServerCertificate(const std::string& ser
 	setCoreParameter("ServerCertificate", serverCertificate);
 }
 
-std::string UploadServerCertificateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UploadServerCertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string UploadServerCertificateRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void UploadServerCertificateRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string UploadServerCertificateRequest::getAliCloudCertificateName()const
 {
 	return aliCloudCertificateName_;
@@ -100,28 +78,6 @@ void UploadServerCertificateRequest::setAliCloudCertificateId(const std::string&
 {
 	aliCloudCertificateId_ = aliCloudCertificateId;
 	setCoreParameter("AliCloudCertificateId", aliCloudCertificateId);
-}
-
-long UploadServerCertificateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UploadServerCertificateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string UploadServerCertificateRequest::getTags()const
-{
-	return tags_;
-}
-
-void UploadServerCertificateRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setCoreParameter("Tags", tags);
 }
 
 std::string UploadServerCertificateRequest::getPrivateKey()const
@@ -155,6 +111,50 @@ void UploadServerCertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string UploadServerCertificateRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UploadServerCertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string UploadServerCertificateRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void UploadServerCertificateRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long UploadServerCertificateRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void UploadServerCertificateRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UploadServerCertificateRequest::getTags()const
+{
+	return tags_;
+}
+
+void UploadServerCertificateRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setCoreParameter("Tags", tags);
 }
 
 std::string UploadServerCertificateRequest::getServerCertificateName()const

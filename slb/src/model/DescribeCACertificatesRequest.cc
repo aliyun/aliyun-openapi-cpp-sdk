@@ -36,17 +36,6 @@ void DescribeCACertificatesRequest::setAccess_key_id(const std::string& access_k
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string DescribeCACertificatesRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeCACertificatesRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 long DescribeCACertificatesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +47,15 @@ void DescribeCACertificatesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeCACertificatesRequest::getResourceOwnerAccount()const
+std::string DescribeCACertificatesRequest::getResourceGroupId()const
 {
-	return resourceOwnerAccount_;
+	return resourceGroupId_;
 }
 
-void DescribeCACertificatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeCACertificatesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeCACertificatesRequest::getRegionId()const
@@ -78,17 +67,6 @@ void DescribeCACertificatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeCACertificatesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeCACertificatesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::vector<DescribeCACertificatesRequest::Tag> DescribeCACertificatesRequest::getTag()const
@@ -106,6 +84,28 @@ void DescribeCACertificatesRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
+}
+
+std::string DescribeCACertificatesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeCACertificatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeCACertificatesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeCACertificatesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCACertificatesRequest::getOwnerId()const

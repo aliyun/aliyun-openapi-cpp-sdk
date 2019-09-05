@@ -39,6 +39,10 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
@@ -49,12 +53,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
-				int getDuration()const;
-				void setDuration(int duration);
 				std::string getLoadBalancerId()const;
 				void setLoadBalancerId(const std::string& loadBalancerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 				std::string getPricingCycle()const;
@@ -63,14 +63,14 @@ namespace AlibabaCloud
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
+				int duration_;
+				std::string regionId_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string tags_;
-				int duration_;
 				std::string loadBalancerId_;
-				std::string regionId_;
 				std::string payType_;
 				std::string pricingCycle_;
 

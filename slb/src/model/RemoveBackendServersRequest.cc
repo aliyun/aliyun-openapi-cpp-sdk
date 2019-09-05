@@ -47,15 +47,15 @@ void RemoveBackendServersRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RemoveBackendServersRequest::getLoadBalancerId()const
+std::string RemoveBackendServersRequest::getBackendServers()const
 {
-	return loadBalancerId_;
+	return backendServers_;
 }
 
-void RemoveBackendServersRequest::setLoadBalancerId(const std::string& loadBalancerId)
+void RemoveBackendServersRequest::setBackendServers(const std::string& backendServers)
 {
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	backendServers_ = backendServers;
+	setCoreParameter("BackendServers", backendServers);
 }
 
 std::string RemoveBackendServersRequest::getRegionId()const
@@ -102,17 +102,6 @@ void RemoveBackendServersRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string RemoveBackendServersRequest::getBackendServers()const
-{
-	return backendServers_;
-}
-
-void RemoveBackendServersRequest::setBackendServers(const std::string& backendServers)
-{
-	backendServers_ = backendServers;
-	setCoreParameter("BackendServers", backendServers);
-}
-
 std::string RemoveBackendServersRequest::getTags()const
 {
 	return tags_;
@@ -122,5 +111,16 @@ void RemoveBackendServersRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string RemoveBackendServersRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void RemoveBackendServersRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

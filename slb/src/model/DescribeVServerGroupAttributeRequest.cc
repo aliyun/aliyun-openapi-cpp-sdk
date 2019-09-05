@@ -36,17 +36,6 @@ void DescribeVServerGroupAttributeRequest::setAccess_key_id(const std::string& a
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string DescribeVServerGroupAttributeRequest::getVServerGroupId()const
-{
-	return vServerGroupId_;
-}
-
-void DescribeVServerGroupAttributeRequest::setVServerGroupId(const std::string& vServerGroupId)
-{
-	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
-}
-
 long DescribeVServerGroupAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,17 +47,6 @@ void DescribeVServerGroupAttributeRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeVServerGroupAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeVServerGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeVServerGroupAttributeRequest::getRegionId()const
 {
 	return regionId_;
@@ -78,6 +56,28 @@ void DescribeVServerGroupAttributeRequest::setRegionId(const std::string& region
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeVServerGroupAttributeRequest::getVServerGroupId()const
+{
+	return vServerGroupId_;
+}
+
+void DescribeVServerGroupAttributeRequest::setVServerGroupId(const std::string& vServerGroupId)
+{
+	vServerGroupId_ = vServerGroupId;
+	setCoreParameter("VServerGroupId", vServerGroupId);
+}
+
+std::string DescribeVServerGroupAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeVServerGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVServerGroupAttributeRequest::getOwnerAccount()const

@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
+				std::string getBackendServers()const;
+				void setBackendServers(const std::string& backendServers);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
@@ -49,21 +49,21 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getBackendServers()const;
-				void setBackendServers(const std::string& backendServers);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
+				std::string getLoadBalancerId()const;
+				void setLoadBalancerId(const std::string& loadBalancerId);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
-				std::string loadBalancerId_;
+				std::string backendServers_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string backendServers_;
 				std::string tags_;
+				std::string loadBalancerId_;
 
 			};
 		}

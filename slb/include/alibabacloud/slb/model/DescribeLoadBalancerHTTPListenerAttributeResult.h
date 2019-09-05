@@ -70,6 +70,7 @@ namespace AlibabaCloud
 				int getRequestTimeout()const;
 				int getHealthCheckInterval()const;
 				std::string getAclId()const;
+				std::string getHealthCheckHttpVersion()const;
 				int getHealthCheckTimeout()const;
 				std::vector<Rule> getRules()const;
 				std::string getListenerForward()const;
@@ -112,6 +113,7 @@ namespace AlibabaCloud
 				int requestTimeout_;
 				int healthCheckInterval_;
 				std::string aclId_;
+				std::string healthCheckHttpVersion_;
 				int healthCheckTimeout_;
 				std::vector<Rule> rules_;
 				std::string listenerForward_;

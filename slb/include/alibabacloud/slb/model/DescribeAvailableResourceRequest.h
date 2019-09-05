@@ -39,28 +39,28 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getAddressType()const;
-				void setAddressType(const std::string& addressType);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAddressIPVersion()const;
 				void setAddressIPVersion(const std::string& addressIPVersion);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getAddressType()const;
+				void setAddressType(const std::string& addressType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				std::string addressType_;
-				long ownerId_;
 				std::string addressIPVersion_;
+				std::string regionId_;
+				std::string addressType_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 
 			};
 		}

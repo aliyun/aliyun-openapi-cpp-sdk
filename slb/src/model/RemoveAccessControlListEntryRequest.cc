@@ -36,17 +36,6 @@ void RemoveAccessControlListEntryRequest::setAccess_key_id(const std::string& ac
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string RemoveAccessControlListEntryRequest::getAclId()const
-{
-	return aclId_;
-}
-
-void RemoveAccessControlListEntryRequest::setAclId(const std::string& aclId)
-{
-	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
-}
-
 long RemoveAccessControlListEntryRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,39 +45,6 @@ void RemoveAccessControlListEntryRequest::setResourceOwnerId(long resourceOwnerI
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string RemoveAccessControlListEntryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void RemoveAccessControlListEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string RemoveAccessControlListEntryRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RemoveAccessControlListEntryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string RemoveAccessControlListEntryRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void RemoveAccessControlListEntryRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RemoveAccessControlListEntryRequest::getAclEntrys()const
@@ -102,17 +58,6 @@ void RemoveAccessControlListEntryRequest::setAclEntrys(const std::string& aclEnt
 	setCoreParameter("AclEntrys", aclEntrys);
 }
 
-long RemoveAccessControlListEntryRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void RemoveAccessControlListEntryRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string RemoveAccessControlListEntryRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -122,6 +67,61 @@ void RemoveAccessControlListEntryRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RemoveAccessControlListEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RemoveAccessControlListEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string RemoveAccessControlListEntryRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void RemoveAccessControlListEntryRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setCoreParameter("AclId", aclId);
+}
+
+std::string RemoveAccessControlListEntryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void RemoveAccessControlListEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string RemoveAccessControlListEntryRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void RemoveAccessControlListEntryRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long RemoveAccessControlListEntryRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void RemoveAccessControlListEntryRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveAccessControlListEntryRequest::getTags()const

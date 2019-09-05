@@ -47,17 +47,6 @@ void DescribeRuleAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRuleAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeRuleAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeRuleAttributeRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,6 +56,17 @@ void DescribeRuleAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeRuleAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeRuleAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRuleAttributeRequest::getOwnerAccount()const
@@ -91,17 +91,6 @@ void DescribeRuleAttributeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRuleAttributeRequest::getRuleId()const
-{
-	return ruleId_;
-}
-
-void DescribeRuleAttributeRequest::setRuleId(const std::string& ruleId)
-{
-	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
-}
-
 std::string DescribeRuleAttributeRequest::getTags()const
 {
 	return tags_;
@@ -111,5 +100,16 @@ void DescribeRuleAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeRuleAttributeRequest::getRuleId()const
+{
+	return ruleId_;
+}
+
+void DescribeRuleAttributeRequest::setRuleId(const std::string& ruleId)
+{
+	ruleId_ = ruleId;
+	setCoreParameter("RuleId", ruleId);
 }
 

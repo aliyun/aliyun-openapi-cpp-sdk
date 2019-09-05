@@ -39,10 +39,12 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getDomainExtensionId()const;
+				void setDomainExtensionId(const std::string& domainExtensionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -51,19 +53,17 @@ namespace AlibabaCloud
 				void setServerCertificateId(const std::string& serverCertificateId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
-				std::string getDomainExtensionId()const;
-				void setDomainExtensionId(const std::string& domainExtensionId);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				std::string domainExtensionId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string serverCertificateId_;
 				std::string tags_;
-				std::string domainExtensionId_;
 
 			};
 		}

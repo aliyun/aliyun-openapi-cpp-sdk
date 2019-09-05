@@ -35,13 +35,9 @@ DescribeAccessControlListsResult::~DescribeAccessControlListsResult()
 
 void DescribeAccessControlListsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allAcls = value["Acls"]["Acl"];
 	for (auto value : allAcls)
@@ -67,11 +63,39 @@ void DescribeAccessControlListsResult::parse(const std::string &payload)
 		}
 		acls_.push_back(aclsObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
+}
+
+int DescribeAccessControlListsResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+int DescribeAccessControlListsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribeAccessControlListsResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::vector<DescribeAccessControlListsResult::Acl> DescribeAccessControlListsResult::getAcls()const
 {
 	return acls_;
+}
+
+int DescribeAccessControlListsResult::getCount()const
+{
+	return count_;
 }
 

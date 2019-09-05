@@ -36,17 +36,6 @@ void RemoveVServerGroupBackendServersRequest::setAccess_key_id(const std::string
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string RemoveVServerGroupBackendServersRequest::getVServerGroupId()const
-{
-	return vServerGroupId_;
-}
-
-void RemoveVServerGroupBackendServersRequest::setVServerGroupId(const std::string& vServerGroupId)
-{
-	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
-}
-
 long RemoveVServerGroupBackendServersRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +47,15 @@ void RemoveVServerGroupBackendServersRequest::setResourceOwnerId(long resourceOw
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RemoveVServerGroupBackendServersRequest::getResourceOwnerAccount()const
+std::string RemoveVServerGroupBackendServersRequest::getBackendServers()const
 {
-	return resourceOwnerAccount_;
+	return backendServers_;
 }
 
-void RemoveVServerGroupBackendServersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void RemoveVServerGroupBackendServersRequest::setBackendServers(const std::string& backendServers)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	backendServers_ = backendServers;
+	setCoreParameter("BackendServers", backendServers);
 }
 
 std::string RemoveVServerGroupBackendServersRequest::getRegionId()const
@@ -78,6 +67,28 @@ void RemoveVServerGroupBackendServersRequest::setRegionId(const std::string& reg
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string RemoveVServerGroupBackendServersRequest::getVServerGroupId()const
+{
+	return vServerGroupId_;
+}
+
+void RemoveVServerGroupBackendServersRequest::setVServerGroupId(const std::string& vServerGroupId)
+{
+	vServerGroupId_ = vServerGroupId;
+	setCoreParameter("VServerGroupId", vServerGroupId);
+}
+
+std::string RemoveVServerGroupBackendServersRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void RemoveVServerGroupBackendServersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveVServerGroupBackendServersRequest::getOwnerAccount()const
@@ -100,17 +111,6 @@ void RemoveVServerGroupBackendServersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RemoveVServerGroupBackendServersRequest::getBackendServers()const
-{
-	return backendServers_;
-}
-
-void RemoveVServerGroupBackendServersRequest::setBackendServers(const std::string& backendServers)
-{
-	backendServers_ = backendServers;
-	setCoreParameter("BackendServers", backendServers);
 }
 
 std::string RemoveVServerGroupBackendServersRequest::getTags()const

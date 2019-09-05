@@ -81,6 +81,7 @@ namespace AlibabaCloud
 				std::string getTLSCipherPolicy()const;
 				std::string getCACertificateId()const;
 				std::string getAclId()const;
+				std::string getHealthCheckHttpVersion()const;
 				int getHealthCheckTimeout()const;
 				std::vector<Rule> getRules()const;
 				std::string getStickySession()const;
@@ -127,6 +128,7 @@ namespace AlibabaCloud
 				std::string tLSCipherPolicy_;
 				std::string cACertificateId_;
 				std::string aclId_;
+				std::string healthCheckHttpVersion_;
 				int healthCheckTimeout_;
 				std::vector<Rule> rules_;
 				std::string stickySession_;

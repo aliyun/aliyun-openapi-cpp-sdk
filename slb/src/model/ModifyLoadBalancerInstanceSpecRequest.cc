@@ -36,17 +36,6 @@ void ModifyLoadBalancerInstanceSpecRequest::setAccess_key_id(const std::string& 
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerSpec()const
-{
-	return loadBalancerSpec_;
-}
-
-void ModifyLoadBalancerInstanceSpecRequest::setLoadBalancerSpec(const std::string& loadBalancerSpec)
-{
-	loadBalancerSpec_ = loadBalancerSpec;
-	setCoreParameter("LoadBalancerSpec", loadBalancerSpec);
-}
-
 long ModifyLoadBalancerInstanceSpecRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +47,26 @@ void ModifyLoadBalancerInstanceSpecRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerId()const
+std::string ModifyLoadBalancerInstanceSpecRequest::getRegionId()const
 {
-	return loadBalancerId_;
+	return regionId_;
 }
 
-void ModifyLoadBalancerInstanceSpecRequest::setLoadBalancerId(const std::string& loadBalancerId)
+void ModifyLoadBalancerInstanceSpecRequest::setRegionId(const std::string& regionId)
 {
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerSpec()const
+{
+	return loadBalancerSpec_;
+}
+
+void ModifyLoadBalancerInstanceSpecRequest::setLoadBalancerSpec(const std::string& loadBalancerSpec)
+{
+	loadBalancerSpec_ = loadBalancerSpec;
+	setCoreParameter("LoadBalancerSpec", loadBalancerSpec);
 }
 
 bool ModifyLoadBalancerInstanceSpecRequest::getAutoPay()const
@@ -78,17 +78,6 @@ void ModifyLoadBalancerInstanceSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
 	setCoreParameter("AutoPay", autoPay ? "true" : "false");
-}
-
-std::string ModifyLoadBalancerInstanceSpecRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyLoadBalancerInstanceSpecRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getResourceOwnerAccount()const
@@ -133,5 +122,16 @@ void ModifyLoadBalancerInstanceSpecRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void ModifyLoadBalancerInstanceSpecRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

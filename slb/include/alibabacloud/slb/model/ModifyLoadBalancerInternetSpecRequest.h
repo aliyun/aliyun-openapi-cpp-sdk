@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
@@ -53,8 +55,6 @@ namespace AlibabaCloud
 				void setTags(const std::string& tags);
 				std::string getLoadBalancerId()const;
 				void setLoadBalancerId(const std::string& loadBalancerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
 				int getRatio()const;
@@ -63,6 +63,7 @@ namespace AlibabaCloud
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
+				std::string regionId_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
@@ -70,7 +71,6 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string tags_;
 				std::string loadBalancerId_;
-				std::string regionId_;
 				std::string internetChargeType_;
 				int ratio_;
 

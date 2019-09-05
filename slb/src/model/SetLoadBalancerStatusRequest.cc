@@ -47,17 +47,6 @@ void SetLoadBalancerStatusRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SetLoadBalancerStatusRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void SetLoadBalancerStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string SetLoadBalancerStatusRequest::getRegionId()const
 {
 	return regionId_;
@@ -122,5 +111,16 @@ void SetLoadBalancerStatusRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string SetLoadBalancerStatusRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void SetLoadBalancerStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

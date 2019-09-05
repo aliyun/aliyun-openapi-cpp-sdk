@@ -47,26 +47,15 @@ void DescribeTagsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeTagsRequest::getLoadBalancerId()const
+int DescribeTagsRequest::getPageNumber()const
 {
-	return loadBalancerId_;
+	return pageNumber_;
 }
 
-void DescribeTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
+void DescribeTagsRequest::setPageNumber(int pageNumber)
 {
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
-std::string DescribeTagsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeTagsRequest::getRegionId()const
@@ -80,17 +69,6 @@ void DescribeTagsRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeTagsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeTagsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 int DescribeTagsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -100,6 +78,28 @@ void DescribeTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeTagsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeTagsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeTagsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool DescribeTagsRequest::getDistinctKey()const
@@ -124,17 +124,6 @@ void DescribeTagsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeTagsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeTagsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
 std::string DescribeTagsRequest::getTags()const
 {
 	return tags_;
@@ -144,5 +133,16 @@ void DescribeTagsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeTagsRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void DescribeTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

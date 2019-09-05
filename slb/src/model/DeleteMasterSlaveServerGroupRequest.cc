@@ -47,15 +47,15 @@ void DeleteMasterSlaveServerGroupRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteMasterSlaveServerGroupRequest::getMasterSlaveServerGroupId()const
+std::string DeleteMasterSlaveServerGroupRequest::getRegionId()const
 {
-	return masterSlaveServerGroupId_;
+	return regionId_;
 }
 
-void DeleteMasterSlaveServerGroupRequest::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
+void DeleteMasterSlaveServerGroupRequest::setRegionId(const std::string& regionId)
 {
-	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
-	setCoreParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteMasterSlaveServerGroupRequest::getResourceOwnerAccount()const
@@ -67,17 +67,6 @@ void DeleteMasterSlaveServerGroupRequest::setResourceOwnerAccount(const std::str
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteMasterSlaveServerGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteMasterSlaveServerGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteMasterSlaveServerGroupRequest::getOwnerAccount()const
@@ -111,5 +100,16 @@ void DeleteMasterSlaveServerGroupRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DeleteMasterSlaveServerGroupRequest::getMasterSlaveServerGroupId()const
+{
+	return masterSlaveServerGroupId_;
+}
+
+void DeleteMasterSlaveServerGroupRequest::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
+{
+	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
+	setCoreParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
 }
 

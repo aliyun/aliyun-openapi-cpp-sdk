@@ -47,6 +47,17 @@ void DescribeRulesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeRulesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeRulesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 int DescribeRulesRequest::getListenerPort()const
 {
 	return listenerPort_;
@@ -58,17 +69,6 @@ void DescribeRulesRequest::setListenerPort(int listenerPort)
 	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
-std::string DescribeRulesRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void DescribeRulesRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
 std::string DescribeRulesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -78,17 +78,6 @@ void DescribeRulesRequest::setResourceOwnerAccount(const std::string& resourceOw
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeRulesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRulesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRulesRequest::getOwnerAccount()const
@@ -133,5 +122,16 @@ void DescribeRulesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeRulesRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void DescribeRulesRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 

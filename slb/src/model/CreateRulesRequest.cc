@@ -47,39 +47,6 @@ void CreateRulesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int CreateRulesRequest::getListenerPort()const
-{
-	return listenerPort_;
-}
-
-void CreateRulesRequest::setListenerPort(int listenerPort)
-{
-	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
-}
-
-std::string CreateRulesRequest::getLoadBalancerId()const
-{
-	return loadBalancerId_;
-}
-
-void CreateRulesRequest::setLoadBalancerId(const std::string& loadBalancerId)
-{
-	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
-}
-
-std::string CreateRulesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateRulesRequest::getRegionId()const
 {
 	return regionId_;
@@ -100,6 +67,28 @@ void CreateRulesRequest::setRuleList(const std::string& ruleList)
 {
 	ruleList_ = ruleList;
 	setCoreParameter("RuleList", ruleList);
+}
+
+int CreateRulesRequest::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+void CreateRulesRequest::setListenerPort(int listenerPort)
+{
+	listenerPort_ = listenerPort;
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+}
+
+std::string CreateRulesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateRulesRequest::getOwnerAccount()const
@@ -144,5 +133,16 @@ void CreateRulesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string CreateRulesRequest::getLoadBalancerId()const
+{
+	return loadBalancerId_;
+}
+
+void CreateRulesRequest::setLoadBalancerId(const std::string& loadBalancerId)
+{
+	loadBalancerId_ = loadBalancerId;
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
