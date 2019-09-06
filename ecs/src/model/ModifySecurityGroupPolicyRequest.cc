@@ -25,17 +25,6 @@ ModifySecurityGroupPolicyRequest::ModifySecurityGroupPolicyRequest() :
 ModifySecurityGroupPolicyRequest::~ModifySecurityGroupPolicyRequest()
 {}
 
-std::string ModifySecurityGroupPolicyRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifySecurityGroupPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ModifySecurityGroupPolicyRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void ModifySecurityGroupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifySecurityGroupPolicyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifySecurityGroupPolicyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifySecurityGroupPolicyRequest::getClientToken()const
 {
 	return clientToken_;
@@ -67,6 +45,39 @@ void ModifySecurityGroupPolicyRequest::setClientToken(const std::string& clientT
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string ModifySecurityGroupPolicyRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void ModifySecurityGroupPolicyRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setCoreParameter("SecurityGroupId", securityGroupId);
+}
+
+std::string ModifySecurityGroupPolicyRequest::getInnerAccessPolicy()const
+{
+	return innerAccessPolicy_;
+}
+
+void ModifySecurityGroupPolicyRequest::setInnerAccessPolicy(const std::string& innerAccessPolicy)
+{
+	innerAccessPolicy_ = innerAccessPolicy;
+	setCoreParameter("InnerAccessPolicy", innerAccessPolicy);
+}
+
+std::string ModifySecurityGroupPolicyRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifySecurityGroupPolicyRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifySecurityGroupPolicyRequest::getResourceOwnerAccount()const
@@ -91,17 +102,6 @@ void ModifySecurityGroupPolicyRequest::setOwnerAccount(const std::string& ownerA
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifySecurityGroupPolicyRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void ModifySecurityGroupPolicyRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
-}
-
 long ModifySecurityGroupPolicyRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,16 +111,5 @@ void ModifySecurityGroupPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifySecurityGroupPolicyRequest::getInnerAccessPolicy()const
-{
-	return innerAccessPolicy_;
-}
-
-void ModifySecurityGroupPolicyRequest::setInnerAccessPolicy(const std::string& innerAccessPolicy)
-{
-	innerAccessPolicy_ = innerAccessPolicy;
-	setCoreParameter("InnerAccessPolicy", innerAccessPolicy);
 }
 

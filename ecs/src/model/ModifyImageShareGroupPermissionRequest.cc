@@ -25,17 +25,6 @@ ModifyImageShareGroupPermissionRequest::ModifyImageShareGroupPermissionRequest()
 ModifyImageShareGroupPermissionRequest::~ModifyImageShareGroupPermissionRequest()
 {}
 
-std::string ModifyImageShareGroupPermissionRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyImageShareGroupPermissionRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ModifyImageShareGroupPermissionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -69,17 +58,6 @@ void ModifyImageShareGroupPermissionRequest::setAddGroup1(const std::string& add
 	setCoreParameter("AddGroup1", addGroup1);
 }
 
-std::string ModifyImageShareGroupPermissionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyImageShareGroupPermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyImageShareGroupPermissionRequest::getRegionId()const
 {
 	return regionId_;
@@ -89,6 +67,17 @@ void ModifyImageShareGroupPermissionRequest::setRegionId(const std::string& regi
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyImageShareGroupPermissionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyImageShareGroupPermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyImageShareGroupPermissionRequest::getOwnerAccount()const
@@ -102,17 +91,6 @@ void ModifyImageShareGroupPermissionRequest::setOwnerAccount(const std::string& 
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyImageShareGroupPermissionRequest::getRemoveGroup1()const
-{
-	return removeGroup1_;
-}
-
-void ModifyImageShareGroupPermissionRequest::setRemoveGroup1(const std::string& removeGroup1)
-{
-	removeGroup1_ = removeGroup1;
-	setCoreParameter("RemoveGroup1", removeGroup1);
-}
-
 long ModifyImageShareGroupPermissionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,5 +100,16 @@ void ModifyImageShareGroupPermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyImageShareGroupPermissionRequest::getRemoveGroup1()const
+{
+	return removeGroup1_;
+}
+
+void ModifyImageShareGroupPermissionRequest::setRemoveGroup1(const std::string& removeGroup1)
+{
+	removeGroup1_ = removeGroup1;
+	setCoreParameter("RemoveGroup1", removeGroup1);
 }
 

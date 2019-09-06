@@ -35,27 +35,24 @@ namespace AlibabaCloud
 				DeleteDeploymentSetRequest();
 				~DeleteDeploymentSetRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getDeploymentSetId()const;
-				void setDeploymentSetId(const std::string& deploymentSetId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getDeploymentSetId()const;
+				void setDeploymentSetId(const std::string& deploymentSetId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string sourceRegionId_;
-				std::string deploymentSetId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				std::string deploymentSetId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 

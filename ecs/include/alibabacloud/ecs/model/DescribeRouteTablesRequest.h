@@ -39,40 +39,40 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getVRouterId()const;
 				void setVRouterId(const std::string& vRouterId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getRouteTableName()const;
+				void setRouteTableName(const std::string& routeTableName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getRouteTableId()const;
+				void setRouteTableId(const std::string& routeTableId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getRouterType()const;
 				void setRouterType(const std::string& routerType);
-				std::string getRouteTableName()const;
-				void setRouteTableName(const std::string& routeTableName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getRouterId()const;
 				void setRouterId(const std::string& routerId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getRouteTableId()const;
-				void setRouteTableId(const std::string& routeTableId);
 
             private:
 				long resourceOwnerId_;
 				std::string vRouterId_;
+				int pageNumber_;
+				std::string routeTableName_;
+				std::string regionId_;
+				int pageSize_;
+				std::string routeTableId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				int pageNumber_;
 				std::string routerType_;
-				std::string routeTableName_;
-				std::string regionId_;
 				std::string routerId_;
-				int pageSize_;
-				std::string routeTableId_;
 
 			};
 		}

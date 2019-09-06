@@ -36,6 +36,39 @@ void DescribeNewProjectEipMonitorDataRequest::setResourceOwnerId(long resourceOw
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeNewProjectEipMonitorDataRequest::getAllocationId()const
+{
+	return allocationId_;
+}
+
+void DescribeNewProjectEipMonitorDataRequest::setAllocationId(const std::string& allocationId)
+{
+	allocationId_ = allocationId;
+	setCoreParameter("AllocationId", allocationId);
+}
+
+std::string DescribeNewProjectEipMonitorDataRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeNewProjectEipMonitorDataRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+std::string DescribeNewProjectEipMonitorDataRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeNewProjectEipMonitorDataRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 int DescribeNewProjectEipMonitorDataRequest::getPeriod()const
 {
 	return period_;
@@ -58,17 +91,6 @@ void DescribeNewProjectEipMonitorDataRequest::setResourceOwnerAccount(const std:
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeNewProjectEipMonitorDataRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeNewProjectEipMonitorDataRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeNewProjectEipMonitorDataRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,28 +111,6 @@ void DescribeNewProjectEipMonitorDataRequest::setEndTime(const std::string& endT
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeNewProjectEipMonitorDataRequest::getAllocationId()const
-{
-	return allocationId_;
-}
-
-void DescribeNewProjectEipMonitorDataRequest::setAllocationId(const std::string& allocationId)
-{
-	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
-}
-
-std::string DescribeNewProjectEipMonitorDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeNewProjectEipMonitorDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeNewProjectEipMonitorDataRequest::getOwnerId()const

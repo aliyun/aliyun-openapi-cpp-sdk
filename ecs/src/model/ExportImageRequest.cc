@@ -25,17 +25,6 @@ ExportImageRequest::ExportImageRequest() :
 ExportImageRequest::~ExportImageRequest()
 {}
 
-std::string ExportImageRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ExportImageRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ExportImageRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,6 +45,28 @@ void ExportImageRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
 	setCoreParameter("ImageId", imageId);
+}
+
+std::string ExportImageRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ExportImageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ExportImageRequest::getImageFormat()const
+{
+	return imageFormat_;
+}
+
+void ExportImageRequest::setImageFormat(const std::string& imageFormat)
+{
+	imageFormat_ = imageFormat;
+	setCoreParameter("ImageFormat", imageFormat);
 }
 
 std::string ExportImageRequest::getOSSBucket()const
@@ -80,28 +91,6 @@ void ExportImageRequest::setResourceOwnerAccount(const std::string& resourceOwne
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ExportImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ExportImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ExportImageRequest::getOSSPrefix()const
-{
-	return oSSPrefix_;
-}
-
-void ExportImageRequest::setOSSPrefix(const std::string& oSSPrefix)
-{
-	oSSPrefix_ = oSSPrefix;
-	setCoreParameter("OSSPrefix", oSSPrefix);
-}
-
 std::string ExportImageRequest::getRoleName()const
 {
 	return roleName_;
@@ -124,14 +113,14 @@ void ExportImageRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ExportImageRequest::getImageFormat()const
+std::string ExportImageRequest::getOSSPrefix()const
 {
-	return imageFormat_;
+	return oSSPrefix_;
 }
 
-void ExportImageRequest::setImageFormat(const std::string& imageFormat)
+void ExportImageRequest::setOSSPrefix(const std::string& oSSPrefix)
 {
-	imageFormat_ = imageFormat;
-	setCoreParameter("ImageFormat", imageFormat);
+	oSSPrefix_ = oSSPrefix;
+	setCoreParameter("OSSPrefix", oSSPrefix);
 }
 

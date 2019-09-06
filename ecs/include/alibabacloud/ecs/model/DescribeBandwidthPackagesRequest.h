@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getBandwidthPackageId()const;
-				void setBandwidthPackageId(const std::string& bandwidthPackageId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getNatGatewayId()const;
 				void setNatGatewayId(const std::string& natGatewayId);
+				std::string getBandwidthPackageId()const;
+				void setBandwidthPackageId(const std::string& bandwidthPackageId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
 				long resourceOwnerId_;
-				std::string bandwidthPackageId_;
-				std::string resourceOwnerAccount_;
+				int pageNumber_;
 				std::string regionId_;
-				std::string ownerAccount_;
 				int pageSize_;
 				std::string natGatewayId_;
+				std::string bandwidthPackageId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
-				int pageNumber_;
 
 			};
 		}

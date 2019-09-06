@@ -25,17 +25,6 @@ DescribeUserDataRequest::DescribeUserDataRequest() :
 DescribeUserDataRequest::~DescribeUserDataRequest()
 {}
 
-std::string DescribeUserDataRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeUserDataRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DescribeUserDataRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,28 +34,6 @@ void DescribeUserDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeUserDataRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeUserDataRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DescribeUserDataRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeUserDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUserDataRequest::getRegionId()const
@@ -80,6 +47,17 @@ void DescribeUserDataRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string DescribeUserDataRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeUserDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long DescribeUserDataRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +67,16 @@ void DescribeUserDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeUserDataRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeUserDataRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

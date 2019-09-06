@@ -35,35 +35,32 @@ namespace AlibabaCloud
 				ModifyImageShareGroupPermissionRequest();
 				~ModifyImageShareGroupPermissionRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getAddGroup1()const;
 				void setAddGroup1(const std::string& addGroup1);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getRemoveGroup1()const;
-				void setRemoveGroup1(const std::string& removeGroup1);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getRemoveGroup1()const;
+				void setRemoveGroup1(const std::string& removeGroup1);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string imageId_;
 				std::string addGroup1_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string removeGroup1_;
 				long ownerId_;
+				std::string removeGroup1_;
 
 			};
 		}

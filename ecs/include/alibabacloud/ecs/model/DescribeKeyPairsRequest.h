@@ -40,41 +40,38 @@ namespace AlibabaCloud
 				DescribeKeyPairsRequest();
 				~DescribeKeyPairsRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getKeyPairFingerPrint()const;
 				void setKeyPairFingerPrint(const std::string& keyPairFingerPrint);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string sourceRegionId_;
-				std::string resourceGroupId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string keyPairFingerPrint_;
-				int pageSize_;
 				std::string keyPairName_;
-				std::vector<Tag> tag_;
-				long ownerId_;
 				int pageNumber_;
+				std::string resourceGroupId_;
+				std::string regionId_;
+				int pageSize_;
+				std::vector<Tag> tag_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
 
 			};
 		}

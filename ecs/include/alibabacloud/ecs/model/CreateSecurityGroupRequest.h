@@ -42,45 +42,42 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getSecurityGroupName()const;
 				void setSecurityGroupName(const std::string& securityGroupName);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getSecurityGroupType()const;
-				void setSecurityGroupType(const std::string& securityGroupType);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getSecurityGroupType()const;
+				void setSecurityGroupType(const std::string& securityGroupType);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
 				std::string description_;
-				long ownerId_;
 				std::string securityGroupName_;
-				std::string sourceRegionId_;
-				std::string securityGroupType_;
 				std::string resourceGroupId_;
 				std::string regionId_;
-				std::string vpcId_;
 				std::vector<Tag> tag_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string securityGroupType_;
+				std::string vpcId_;
 
 			};
 		}

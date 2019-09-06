@@ -25,17 +25,6 @@ DescribeClassicLinkInstancesRequest::DescribeClassicLinkInstancesRequest() :
 DescribeClassicLinkInstancesRequest::~DescribeClassicLinkInstancesRequest()
 {}
 
-std::string DescribeClassicLinkInstancesRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeClassicLinkInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DescribeClassicLinkInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,26 +36,15 @@ void DescribeClassicLinkInstancesRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeClassicLinkInstancesRequest::getInstanceId()const
+std::string DescribeClassicLinkInstancesRequest::getPageNumber()const
 {
-	return instanceId_;
+	return pageNumber_;
 }
 
-void DescribeClassicLinkInstancesRequest::setInstanceId(const std::string& instanceId)
+void DescribeClassicLinkInstancesRequest::setPageNumber(const std::string& pageNumber)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DescribeClassicLinkInstancesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeClassicLinkInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeClassicLinkInstancesRequest::getRegionId()const
@@ -80,17 +58,6 @@ void DescribeClassicLinkInstancesRequest::setRegionId(const std::string& regionI
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeClassicLinkInstancesRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void DescribeClassicLinkInstancesRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
 std::string DescribeClassicLinkInstancesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -100,6 +67,17 @@ void DescribeClassicLinkInstancesRequest::setPageSize(const std::string& pageSiz
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", pageSize);
+}
+
+std::string DescribeClassicLinkInstancesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeClassicLinkInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeClassicLinkInstancesRequest::getOwnerId()const
@@ -113,14 +91,25 @@ void DescribeClassicLinkInstancesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeClassicLinkInstancesRequest::getPageNumber()const
+std::string DescribeClassicLinkInstancesRequest::getInstanceId()const
 {
-	return pageNumber_;
+	return instanceId_;
 }
 
-void DescribeClassicLinkInstancesRequest::setPageNumber(const std::string& pageNumber)
+void DescribeClassicLinkInstancesRequest::setInstanceId(const std::string& instanceId)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string DescribeClassicLinkInstancesRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void DescribeClassicLinkInstancesRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
 }
 

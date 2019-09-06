@@ -25,17 +25,6 @@ ModifyAutoSnapshotPolicyExRequest::ModifyAutoSnapshotPolicyExRequest() :
 ModifyAutoSnapshotPolicyExRequest::~ModifyAutoSnapshotPolicyExRequest()
 {}
 
-std::string ModifyAutoSnapshotPolicyExRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyAutoSnapshotPolicyExRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ModifyAutoSnapshotPolicyExRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,28 +34,6 @@ void ModifyAutoSnapshotPolicyExRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ModifyAutoSnapshotPolicyExRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyAutoSnapshotPolicyExRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyAutoSnapshotPolicyExRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyAutoSnapshotPolicyExRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyId()const
@@ -91,15 +58,37 @@ void ModifyAutoSnapshotPolicyExRequest::setTimePoints(const std::string& timePoi
 	setCoreParameter("TimePoints", timePoints);
 }
 
-int ModifyAutoSnapshotPolicyExRequest::getRetentionDays()const
+std::string ModifyAutoSnapshotPolicyExRequest::getRepeatWeekdays()const
 {
-	return retentionDays_;
+	return repeatWeekdays_;
 }
 
-void ModifyAutoSnapshotPolicyExRequest::setRetentionDays(int retentionDays)
+void ModifyAutoSnapshotPolicyExRequest::setRepeatWeekdays(const std::string& repeatWeekdays)
 {
-	retentionDays_ = retentionDays;
-	setCoreParameter("RetentionDays", std::to_string(retentionDays));
+	repeatWeekdays_ = repeatWeekdays;
+	setCoreParameter("RepeatWeekdays", repeatWeekdays);
+}
+
+std::string ModifyAutoSnapshotPolicyExRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyAutoSnapshotPolicyExRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyAutoSnapshotPolicyExRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyAutoSnapshotPolicyExRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyAutoSnapshotPolicyExRequest::getOwnerId()const
@@ -113,17 +102,6 @@ void ModifyAutoSnapshotPolicyExRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyAutoSnapshotPolicyExRequest::getRepeatWeekdays()const
-{
-	return repeatWeekdays_;
-}
-
-void ModifyAutoSnapshotPolicyExRequest::setRepeatWeekdays(const std::string& repeatWeekdays)
-{
-	repeatWeekdays_ = repeatWeekdays;
-	setCoreParameter("RepeatWeekdays", repeatWeekdays);
-}
-
 std::string ModifyAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyName()const
 {
 	return autoSnapshotPolicyName_;
@@ -133,5 +111,16 @@ void ModifyAutoSnapshotPolicyExRequest::setAutoSnapshotPolicyName(const std::str
 {
 	autoSnapshotPolicyName_ = autoSnapshotPolicyName;
 	setCoreParameter("AutoSnapshotPolicyName", autoSnapshotPolicyName);
+}
+
+int ModifyAutoSnapshotPolicyExRequest::getRetentionDays()const
+{
+	return retentionDays_;
+}
+
+void ModifyAutoSnapshotPolicyExRequest::setRetentionDays(int retentionDays)
+{
+	retentionDays_ = retentionDays;
+	setCoreParameter("RetentionDays", std::to_string(retentionDays));
 }
 

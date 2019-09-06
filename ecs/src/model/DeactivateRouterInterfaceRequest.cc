@@ -47,17 +47,6 @@ void DeactivateRouterInterfaceRequest::setResourceOwnerAccount(const std::string
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DeactivateRouterInterfaceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeactivateRouterInterfaceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long DeactivateRouterInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,5 +67,16 @@ void DeactivateRouterInterfaceRequest::setRouterInterfaceId(const std::string& r
 {
 	routerInterfaceId_ = routerInterfaceId;
 	setCoreParameter("RouterInterfaceId", routerInterfaceId);
+}
+
+std::string DeactivateRouterInterfaceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeactivateRouterInterfaceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

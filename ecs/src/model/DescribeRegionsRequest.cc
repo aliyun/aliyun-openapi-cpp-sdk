@@ -25,17 +25,6 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
 
-std::string DescribeRegionsRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeRegionsRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DescribeRegionsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,17 @@ void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeRegionsRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void DescribeRegionsRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
@@ -69,17 +69,6 @@ void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeRegionsRequest::getAcceptLanguage()const
-{
-	return acceptLanguage_;
-}
-
-void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
-{
-	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
-}
-
 long DescribeRegionsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -91,17 +80,6 @@ void DescribeRegionsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRegionsRequest::getInstanceChargeType()const
-{
-	return instanceChargeType_;
-}
-
-void DescribeRegionsRequest::setInstanceChargeType(const std::string& instanceChargeType)
-{
-	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
-}
-
 std::string DescribeRegionsRequest::getResourceType()const
 {
 	return resourceType_;
@@ -111,5 +89,16 @@ void DescribeRegionsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
+}
+
+std::string DescribeRegionsRequest::getAcceptLanguage()const
+{
+	return acceptLanguage_;
+}
+
+void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
+{
+	acceptLanguage_ = acceptLanguage;
+	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 

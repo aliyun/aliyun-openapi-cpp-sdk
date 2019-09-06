@@ -35,41 +35,38 @@ namespace AlibabaCloud
 				DescribeSnapshotLinksRequest();
 				~DescribeSnapshotLinksRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getDiskIds()const;
 				void setDiskIds(const std::string& diskIds);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getSnapshotLinkIds()const;
 				void setSnapshotLinkIds(const std::string& snapshotLinkIds);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string instanceId_;
-				std::string resourceOwnerAccount_;
+				int pageNumber_;
 				std::string regionId_;
-				std::string ownerAccount_;
 				int pageSize_;
 				std::string diskIds_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				std::string snapshotLinkIds_;
 				long ownerId_;
-				int pageNumber_;
+				std::string instanceId_;
 
 			};
 		}

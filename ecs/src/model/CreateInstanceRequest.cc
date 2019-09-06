@@ -80,17 +80,6 @@ void CreateInstanceRequest::setSpotPriceLimit(float spotPriceLimit)
 	setCoreParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
 }
 
-std::string CreateInstanceRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void CreateInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 bool CreateInstanceRequest::getDeletionProtection()const
 {
 	return deletionProtection_;
@@ -652,6 +641,17 @@ void CreateInstanceRequest::setCreditSpecification(const std::string& creditSpec
 {
 	creditSpecification_ = creditSpecification;
 	setCoreParameter("CreditSpecification", creditSpecification);
+}
+
+int CreateInstanceRequest::getSpotDuration()const
+{
+	return spotDuration_;
+}
+
+void CreateInstanceRequest::setSpotDuration(int spotDuration)
+{
+	spotDuration_ = spotDuration;
+	setCoreParameter("SpotDuration", std::to_string(spotDuration));
 }
 
 std::vector<CreateInstanceRequest::DataDisk> CreateInstanceRequest::getDataDisk()const

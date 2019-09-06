@@ -35,41 +35,38 @@ namespace AlibabaCloud
 				StopInstanceRequest();
 				~StopInstanceRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				bool getDryRun()const;
-				void setDryRun(bool dryRun);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				bool getConfirmStop()const;
-				void setConfirmStop(bool confirmStop);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getStoppedMode()const;
 				void setStoppedMode(const std::string& stoppedMode);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				bool getHibernate()const;
 				void setHibernate(bool hibernate);
 				bool getForceStop()const;
 				void setForceStop(bool forceStop);
+				bool getConfirmStop()const;
+				void setConfirmStop(bool confirmStop);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string instanceId_;
-				bool dryRun_;
-				std::string resourceOwnerAccount_;
-				bool confirmStop_;
-				std::string ownerAccount_;
 				std::string stoppedMode_;
-				long ownerId_;
 				bool hibernate_;
 				bool forceStop_;
+				bool confirmStop_;
+				bool dryRun_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string instanceId_;
 
 			};
 		}

@@ -35,41 +35,38 @@ namespace AlibabaCloud
 				ModifyDiskChargeTypeRequest();
 				~ModifyDiskChargeTypeRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getDiskChargeType()const;
 				void setDiskChargeType(const std::string& diskChargeType);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getDiskIds()const;
+				void setDiskIds(const std::string& diskIds);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDiskIds()const;
-				void setDiskIds(const std::string& diskIds);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
+				std::string clientToken_;
 				std::string diskChargeType_;
-				std::string instanceId_;
+				std::string regionId_;
+				std::string diskIds_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string clientToken_;
 				std::string ownerAccount_;
-				std::string diskIds_;
 				long ownerId_;
+				std::string instanceId_;
 
 			};
 		}

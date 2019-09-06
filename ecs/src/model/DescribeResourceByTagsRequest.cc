@@ -25,17 +25,6 @@ DescribeResourceByTagsRequest::DescribeResourceByTagsRequest() :
 DescribeResourceByTagsRequest::~DescribeResourceByTagsRequest()
 {}
 
-std::string DescribeResourceByTagsRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeResourceByTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DescribeResourceByTagsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void DescribeResourceByTagsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeResourceByTagsRequest::getResourceOwnerAccount()const
+int DescribeResourceByTagsRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void DescribeResourceByTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeResourceByTagsRequest::setPageNumber(int pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeResourceByTagsRequest::getRegionId()const
@@ -97,6 +86,17 @@ void DescribeResourceByTagsRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string DescribeResourceByTagsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeResourceByTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long DescribeResourceByTagsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -117,16 +117,5 @@ void DescribeResourceByTagsRequest::setResourceType(const std::string& resourceT
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
-}
-
-int DescribeResourceByTagsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeResourceByTagsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

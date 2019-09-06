@@ -36,17 +36,6 @@ void DescribeDisksRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDisksRequest::getSnapshotId()const
-{
-	return snapshotId_;
-}
-
-void DescribeDisksRequest::setSnapshotId(const std::string& snapshotId)
-{
-	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", snapshotId);
-}
-
 std::string DescribeDisksRequest::getFilter2Value()const
 {
 	return filter2Value_;
@@ -67,28 +56,6 @@ void DescribeDisksRequest::setAutoSnapshotPolicyId(const std::string& autoSnapsh
 {
 	autoSnapshotPolicyId_ = autoSnapshotPolicyId;
 	setCoreParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
-}
-
-int DescribeDisksRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeDisksRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeDisksRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeDisksRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeDisksRequest::getDiskName()const
@@ -157,6 +124,145 @@ void DescribeDisksRequest::setFilter1Key(const std::string& filter1Key)
 	setCoreParameter("Filter1Key", filter1Key);
 }
 
+std::vector<DescribeDisksRequest::Tag> DescribeDisksRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeDisksRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
+bool DescribeDisksRequest::getEnableAutoSnapshot()const
+{
+	return enableAutoSnapshot_;
+}
+
+void DescribeDisksRequest::setEnableAutoSnapshot(bool enableAutoSnapshot)
+{
+	enableAutoSnapshot_ = enableAutoSnapshot;
+	setCoreParameter("EnableAutoSnapshot", enableAutoSnapshot ? "true" : "false");
+}
+
+bool DescribeDisksRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void DescribeDisksRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
+}
+
+std::string DescribeDisksRequest::getFilter1Value()const
+{
+	return filter1Value_;
+}
+
+void DescribeDisksRequest::setFilter1Value(const std::string& filter1Value)
+{
+	filter1Value_ = filter1Value;
+	setCoreParameter("Filter1Value", filter1Value);
+}
+
+bool DescribeDisksRequest::getPortable()const
+{
+	return portable_;
+}
+
+void DescribeDisksRequest::setPortable(bool portable)
+{
+	portable_ = portable;
+	setCoreParameter("Portable", portable ? "true" : "false");
+}
+
+long DescribeDisksRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeDisksRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::vector<std::string> DescribeDisksRequest::getAdditionalAttributes()const
+{
+	return additionalAttributes_;
+}
+
+void DescribeDisksRequest::setAdditionalAttributes(const std::vector<std::string>& additionalAttributes)
+{
+	additionalAttributes_ = additionalAttributes;
+	for(int i = 0; i!= additionalAttributes.size(); i++)
+		setCoreParameter("AdditionalAttributes."+ std::to_string(i), additionalAttributes.at(i));
+}
+
+std::string DescribeDisksRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeDisksRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string DescribeDisksRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeDisksRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
+}
+
+std::string DescribeDisksRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeDisksRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setCoreParameter("Status", status);
+}
+
+std::string DescribeDisksRequest::getSnapshotId()const
+{
+	return snapshotId_;
+}
+
+void DescribeDisksRequest::setSnapshotId(const std::string& snapshotId)
+{
+	snapshotId_ = snapshotId;
+	setCoreParameter("SnapshotId", snapshotId);
+}
+
+int DescribeDisksRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDisksRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeDisksRequest::getRegionId()const
 {
 	return regionId_;
@@ -190,23 +296,6 @@ void DescribeDisksRequest::setDiskIds(const std::string& diskIds)
 	setCoreParameter("DiskIds", diskIds);
 }
 
-std::vector<DescribeDisksRequest::Tag> DescribeDisksRequest::getTag()const
-{
-	return tag_;
-}
-
-void DescribeDisksRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
-	}
-}
-
 bool DescribeDisksRequest::getDeleteWithInstance()const
 {
 	return deleteWithInstance_;
@@ -216,28 +305,6 @@ void DescribeDisksRequest::setDeleteWithInstance(bool deleteWithInstance)
 {
 	deleteWithInstance_ = deleteWithInstance;
 	setCoreParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
-}
-
-bool DescribeDisksRequest::getEnableAutoSnapshot()const
-{
-	return enableAutoSnapshot_;
-}
-
-void DescribeDisksRequest::setEnableAutoSnapshot(bool enableAutoSnapshot)
-{
-	enableAutoSnapshot_ = enableAutoSnapshot;
-	setCoreParameter("EnableAutoSnapshot", enableAutoSnapshot ? "true" : "false");
-}
-
-bool DescribeDisksRequest::getDryRun()const
-{
-	return dryRun_;
-}
-
-void DescribeDisksRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeDisksRequest::getResourceOwnerAccount()const
@@ -262,28 +329,6 @@ void DescribeDisksRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeDisksRequest::getFilter1Value()const
-{
-	return filter1Value_;
-}
-
-void DescribeDisksRequest::setFilter1Value(const std::string& filter1Value)
-{
-	filter1Value_ = filter1Value;
-	setCoreParameter("Filter1Value", filter1Value);
-}
-
-bool DescribeDisksRequest::getPortable()const
-{
-	return portable_;
-}
-
-void DescribeDisksRequest::setPortable(bool portable)
-{
-	portable_ = portable;
-	setCoreParameter("Portable", portable ? "true" : "false");
-}
-
 bool DescribeDisksRequest::getEnableAutomatedSnapshotPolicy()const
 {
 	return enableAutomatedSnapshotPolicy_;
@@ -306,17 +351,6 @@ void DescribeDisksRequest::setFilter2Key(const std::string& filter2Key)
 	setCoreParameter("Filter2Key", filter2Key);
 }
 
-long DescribeDisksRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeDisksRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeDisksRequest::getDiskType()const
 {
 	return diskType_;
@@ -326,18 +360,6 @@ void DescribeDisksRequest::setDiskType(const std::string& diskType)
 {
 	diskType_ = diskType;
 	setCoreParameter("DiskType", diskType);
-}
-
-std::vector<std::string> DescribeDisksRequest::getAdditionalAttributes()const
-{
-	return additionalAttributes_;
-}
-
-void DescribeDisksRequest::setAdditionalAttributes(const std::vector<std::string>& additionalAttributes)
-{
-	additionalAttributes_ = additionalAttributes;
-	for(int i = 0; i!= additionalAttributes.size(); i++)
-		setCoreParameter("AdditionalAttributes."+ std::to_string(i), additionalAttributes.at(i));
 }
 
 bool DescribeDisksRequest::getEnableShared()const
@@ -351,17 +373,6 @@ void DescribeDisksRequest::setEnableShared(bool enableShared)
 	setCoreParameter("EnableShared", enableShared ? "true" : "false");
 }
 
-std::string DescribeDisksRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeDisksRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 bool DescribeDisksRequest::getEncrypted()const
 {
 	return encrypted_;
@@ -371,17 +382,6 @@ void DescribeDisksRequest::setEncrypted(bool encrypted)
 {
 	encrypted_ = encrypted;
 	setCoreParameter("Encrypted", encrypted ? "true" : "false");
-}
-
-std::string DescribeDisksRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void DescribeDisksRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeDisksRequest::getCategory()const
@@ -404,16 +404,5 @@ void DescribeDisksRequest::setKMSKeyId(const std::string& kMSKeyId)
 {
 	kMSKeyId_ = kMSKeyId;
 	setCoreParameter("KMSKeyId", kMSKeyId);
-}
-
-std::string DescribeDisksRequest::getStatus()const
-{
-	return status_;
-}
-
-void DescribeDisksRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setCoreParameter("Status", status);
 }
 

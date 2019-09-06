@@ -25,17 +25,6 @@ ModifyDedicatedHostAutoReleaseTimeRequest::ModifyDedicatedHostAutoReleaseTimeReq
 ModifyDedicatedHostAutoReleaseTimeRequest::~ModifyDedicatedHostAutoReleaseTimeRequest()
 {}
 
-std::string ModifyDedicatedHostAutoReleaseTimeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyDedicatedHostAutoReleaseTimeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ModifyDedicatedHostAutoReleaseTimeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void ModifyDedicatedHostAutoReleaseTimeRequest::setResourceOwnerId(long resource
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDedicatedHostAutoReleaseTimeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyDedicatedHostAutoReleaseTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyDedicatedHostAutoReleaseTimeRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,6 +45,17 @@ void ModifyDedicatedHostAutoReleaseTimeRequest::setRegionId(const std::string& r
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyDedicatedHostAutoReleaseTimeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyDedicatedHostAutoReleaseTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDedicatedHostAutoReleaseTimeRequest::getOwnerAccount()const

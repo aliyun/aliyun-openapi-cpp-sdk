@@ -25,17 +25,6 @@ ModifyHaVipAttributeRequest::ModifyHaVipAttributeRequest() :
 ModifyHaVipAttributeRequest::~ModifyHaVipAttributeRequest()
 {}
 
-std::string ModifyHaVipAttributeRequest::getHaVipId()const
-{
-	return haVipId_;
-}
-
-void ModifyHaVipAttributeRequest::setHaVipId(const std::string& haVipId)
-{
-	haVipId_ = haVipId;
-	setCoreParameter("HaVipId", haVipId);
-}
-
 long ModifyHaVipAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void ModifyHaVipAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ModifyHaVipAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyHaVipAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyHaVipAttributeRequest::getClientToken()const
@@ -69,6 +47,17 @@ void ModifyHaVipAttributeRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
+std::string ModifyHaVipAttributeRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyHaVipAttributeRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
 std::string ModifyHaVipAttributeRequest::getRegionId()const
 {
 	return regionId_;
@@ -80,6 +69,28 @@ void ModifyHaVipAttributeRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string ModifyHaVipAttributeRequest::getHaVipId()const
+{
+	return haVipId_;
+}
+
+void ModifyHaVipAttributeRequest::setHaVipId(const std::string& haVipId)
+{
+	haVipId_ = haVipId;
+	setCoreParameter("HaVipId", haVipId);
+}
+
+std::string ModifyHaVipAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyHaVipAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string ModifyHaVipAttributeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,17 +100,6 @@ void ModifyHaVipAttributeRequest::setOwnerAccount(const std::string& ownerAccoun
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyHaVipAttributeRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyHaVipAttributeRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 long ModifyHaVipAttributeRequest::getOwnerId()const

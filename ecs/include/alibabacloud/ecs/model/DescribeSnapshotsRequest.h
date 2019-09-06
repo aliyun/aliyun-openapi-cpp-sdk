@@ -54,8 +54,6 @@ namespace AlibabaCloud
 				void setSnapshotName(const std::string& snapshotName);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getFilter1Key()const;
@@ -101,7 +99,6 @@ namespace AlibabaCloud
 				std::string snapshotLinkId_;
 				std::string snapshotName_;
 				int pageNumber_;
-				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				std::string filter1Key_;
 				std::string regionId_;

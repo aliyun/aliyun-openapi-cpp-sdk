@@ -35,24 +35,26 @@ DescribeRecommendInstanceTypeResult::~DescribeRecommendInstanceTypeResult()
 
 void DescribeRecommendInstanceTypeResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allData = value["Data"]["RecommendInstanceType"];
 	for (auto value : allData)
 	{
 		RecommendInstanceType dataObject;
-		if(!value["RegionNo"].isNull())
-			dataObject.regionNo = value["RegionNo"].asString();
+		if(!value["RegionId"].isNull())
+			dataObject.regionId = value["RegionId"].asString();
 		if(!value["CommodityCode"].isNull())
 			dataObject.commodityCode = value["CommodityCode"].asString();
 		if(!value["Scene"].isNull())
 			dataObject.scene = value["Scene"].asString();
+		if(!value["InstanceChargeType"].isNull())
+			dataObject.instanceChargeType = value["InstanceChargeType"].asString();
+		if(!value["SpotStrategy"].isNull())
+			dataObject.spotStrategy = value["SpotStrategy"].asString();
+		if(!value["Priority"].isNull())
+			dataObject.priority = std::stoi(value["Priority"].asString());
 		auto allZones = value["Zones"]["zone"];
 		for (auto value : allZones)
 		{

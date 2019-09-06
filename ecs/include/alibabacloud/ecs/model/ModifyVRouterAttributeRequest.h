@@ -35,31 +35,31 @@ namespace AlibabaCloud
 				ModifyVRouterAttributeRequest();
 				~ModifyVRouterAttributeRequest();
 
-				std::string getVRouterName()const;
-				void setVRouterName(const std::string& vRouterName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getVRouterId()const;
 				void setVRouterId(const std::string& vRouterId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getVRouterName()const;
+				void setVRouterName(const std::string& vRouterName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string vRouterName_;
 				long resourceOwnerId_;
 				std::string vRouterId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
 				std::string description_;
+				std::string vRouterName_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
 
 			};

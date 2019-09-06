@@ -47,17 +47,6 @@ void ModifyRouterInterfaceAttributeRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyRouterInterfaceAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyRouterInterfaceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyRouterInterfaceAttributeRequest::getDescription()const
 {
 	return description_;
@@ -78,6 +67,39 @@ void ModifyRouterInterfaceAttributeRequest::setHealthCheckTargetIp(const std::st
 {
 	healthCheckTargetIp_ = healthCheckTargetIp;
 	setCoreParameter("HealthCheckTargetIp", healthCheckTargetIp);
+}
+
+std::string ModifyRouterInterfaceAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyRouterInterfaceAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyRouterInterfaceAttributeRequest::getOppositeInterfaceId()const
+{
+	return oppositeInterfaceId_;
+}
+
+void ModifyRouterInterfaceAttributeRequest::setOppositeInterfaceId(const std::string& oppositeInterfaceId)
+{
+	oppositeInterfaceId_ = oppositeInterfaceId;
+	setCoreParameter("OppositeInterfaceId", oppositeInterfaceId);
+}
+
+std::string ModifyRouterInterfaceAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyRouterInterfaceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyRouterInterfaceAttributeRequest::getOwnerId()const
@@ -113,17 +135,6 @@ void ModifyRouterInterfaceAttributeRequest::setOppositeInterfaceOwnerId(long opp
 	setCoreParameter("OppositeInterfaceOwnerId", std::to_string(oppositeInterfaceOwnerId));
 }
 
-std::string ModifyRouterInterfaceAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyRouterInterfaceAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyRouterInterfaceAttributeRequest::getHealthCheckSourceIp()const
 {
 	return healthCheckSourceIp_;
@@ -155,16 +166,5 @@ void ModifyRouterInterfaceAttributeRequest::setOppositeRouterType(const std::str
 {
 	oppositeRouterType_ = oppositeRouterType;
 	setCoreParameter("OppositeRouterType", oppositeRouterType);
-}
-
-std::string ModifyRouterInterfaceAttributeRequest::getOppositeInterfaceId()const
-{
-	return oppositeInterfaceId_;
-}
-
-void ModifyRouterInterfaceAttributeRequest::setOppositeInterfaceId(const std::string& oppositeInterfaceId)
-{
-	oppositeInterfaceId_ = oppositeInterfaceId;
-	setCoreParameter("OppositeInterfaceId", oppositeInterfaceId);
 }
 

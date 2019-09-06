@@ -47,17 +47,6 @@ void CreateDiskRequest::setSnapshotId(const std::string& snapshotId)
 	setCoreParameter("SnapshotId", snapshotId);
 }
 
-std::string CreateDiskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateDiskRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,28 +58,6 @@ void CreateDiskRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string CreateDiskRequest::getPerformanceLevel()const
-{
-	return performanceLevel_;
-}
-
-void CreateDiskRequest::setPerformanceLevel(const std::string& performanceLevel)
-{
-	performanceLevel_ = performanceLevel;
-	setCoreParameter("PerformanceLevel", performanceLevel);
-}
-
-std::string CreateDiskRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateDiskRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string CreateDiskRequest::getDescription()const
 {
 	return description_;
@@ -100,28 +67,6 @@ void CreateDiskRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long CreateDiskRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateDiskRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateDiskRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void CreateDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string CreateDiskRequest::getDiskName()const
@@ -146,50 +91,6 @@ void CreateDiskRequest::setResourceGroupId(const std::string& resourceGroupId)
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string CreateDiskRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateDiskRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string CreateDiskRequest::getStorageSetId()const
-{
-	return storageSetId_;
-}
-
-void CreateDiskRequest::setStorageSetId(const std::string& storageSetId)
-{
-	storageSetId_ = storageSetId;
-	setCoreParameter("StorageSetId", storageSetId);
-}
-
-int CreateDiskRequest::getSize()const
-{
-	return size_;
-}
-
-void CreateDiskRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
-bool CreateDiskRequest::getEncrypted()const
-{
-	return encrypted_;
-}
-
-void CreateDiskRequest::setEncrypted(bool encrypted)
-{
-	encrypted_ = encrypted;
-	setCoreParameter("Encrypted", encrypted ? "true" : "false");
-}
-
 std::string CreateDiskRequest::getRegionId()const
 {
 	return regionId_;
@@ -210,17 +111,6 @@ void CreateDiskRequest::setDiskCategory(const std::string& diskCategory)
 {
 	diskCategory_ = diskCategory;
 	setCoreParameter("DiskCategory", diskCategory);
-}
-
-std::string CreateDiskRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void CreateDiskRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
 }
 
 int CreateDiskRequest::getStorageSetPartitionNumber()const
@@ -269,17 +159,6 @@ void CreateDiskRequest::setArn(const std::vector<Arn>& arn)
 	}
 }
 
-std::string CreateDiskRequest::getKMSKeyId()const
-{
-	return kMSKeyId_;
-}
-
-void CreateDiskRequest::setKMSKeyId(const std::string& kMSKeyId)
-{
-	kMSKeyId_ = kMSKeyId;
-	setCoreParameter("KMSKeyId", kMSKeyId);
-}
-
 std::string CreateDiskRequest::getAdvancedFeatures()const
 {
 	return advancedFeatures_;
@@ -289,5 +168,115 @@ void CreateDiskRequest::setAdvancedFeatures(const std::string& advancedFeatures)
 {
 	advancedFeatures_ = advancedFeatures;
 	setCoreParameter("AdvancedFeatures", advancedFeatures);
+}
+
+std::string CreateDiskRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateDiskRequest::getPerformanceLevel()const
+{
+	return performanceLevel_;
+}
+
+void CreateDiskRequest::setPerformanceLevel(const std::string& performanceLevel)
+{
+	performanceLevel_ = performanceLevel;
+	setCoreParameter("PerformanceLevel", performanceLevel);
+}
+
+std::string CreateDiskRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateDiskRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateDiskRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateDiskRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateDiskRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateDiskRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string CreateDiskRequest::getStorageSetId()const
+{
+	return storageSetId_;
+}
+
+void CreateDiskRequest::setStorageSetId(const std::string& storageSetId)
+{
+	storageSetId_ = storageSetId;
+	setCoreParameter("StorageSetId", storageSetId);
+}
+
+int CreateDiskRequest::getSize()const
+{
+	return size_;
+}
+
+void CreateDiskRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
+}
+
+bool CreateDiskRequest::getEncrypted()const
+{
+	return encrypted_;
+}
+
+void CreateDiskRequest::setEncrypted(bool encrypted)
+{
+	encrypted_ = encrypted;
+	setCoreParameter("Encrypted", encrypted ? "true" : "false");
+}
+
+std::string CreateDiskRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void CreateDiskRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
+}
+
+std::string CreateDiskRequest::getKMSKeyId()const
+{
+	return kMSKeyId_;
+}
+
+void CreateDiskRequest::setKMSKeyId(const std::string& kMSKeyId)
+{
+	kMSKeyId_ = kMSKeyId;
+	setCoreParameter("KMSKeyId", kMSKeyId);
 }
 

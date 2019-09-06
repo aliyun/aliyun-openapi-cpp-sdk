@@ -25,17 +25,6 @@ DeleteAutoSnapshotPolicyRequest::DeleteAutoSnapshotPolicyRequest() :
 DeleteAutoSnapshotPolicyRequest::~DeleteAutoSnapshotPolicyRequest()
 {}
 
-std::string DeleteAutoSnapshotPolicyRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DeleteAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DeleteAutoSnapshotPolicyRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void DeleteAutoSnapshotPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
+std::string DeleteAutoSnapshotPolicyRequest::getAutoSnapshotPolicyId()const
 {
-	return resourceOwnerAccount_;
+	return autoSnapshotPolicyId_;
 }
 
-void DeleteAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DeleteAutoSnapshotPolicyRequest::setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	autoSnapshotPolicyId_ = autoSnapshotPolicyId;
+	setCoreParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
 }
 
 std::string DeleteAutoSnapshotPolicyRequest::getRegionId()const
@@ -69,15 +58,15 @@ void DeleteAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DeleteAutoSnapshotPolicyRequest::getAutoSnapshotPolicyId()const
+std::string DeleteAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
 {
-	return autoSnapshotPolicyId_;
+	return resourceOwnerAccount_;
 }
 
-void DeleteAutoSnapshotPolicyRequest::setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId)
+void DeleteAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	autoSnapshotPolicyId_ = autoSnapshotPolicyId;
-	setCoreParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteAutoSnapshotPolicyRequest::getOwnerId()const

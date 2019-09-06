@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				AttachClassicLinkVpcRequest();
 				~AttachClassicLinkVpcRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string instanceId_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
-				std::string vpcId_;
+				std::string resourceOwnerAccount_;
 				long ownerId_;
+				std::string instanceId_;
+				std::string vpcId_;
 
 			};
 		}

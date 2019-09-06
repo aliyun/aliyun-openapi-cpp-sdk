@@ -36,6 +36,50 @@ void ModifyInstanceChargeTypeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyInstanceChargeTypeRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ModifyInstanceChargeTypeRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string ModifyInstanceChargeTypeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyInstanceChargeTypeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+bool ModifyInstanceChargeTypeRequest::getIsDetailFee()const
+{
+	return isDetailFee_;
+}
+
+void ModifyInstanceChargeTypeRequest::setIsDetailFee(bool isDetailFee)
+{
+	isDetailFee_ = isDetailFee;
+	setCoreParameter("IsDetailFee", isDetailFee ? "true" : "false");
+}
+
+std::string ModifyInstanceChargeTypeRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void ModifyInstanceChargeTypeRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setCoreParameter("InstanceChargeType", instanceChargeType);
+}
+
 int ModifyInstanceChargeTypeRequest::getPeriod()const
 {
 	return period_;
@@ -91,17 +135,6 @@ void ModifyInstanceChargeTypeRequest::setResourceOwnerAccount(const std::string&
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyInstanceChargeTypeRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void ModifyInstanceChargeTypeRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
 std::string ModifyInstanceChargeTypeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -124,17 +157,6 @@ void ModifyInstanceChargeTypeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyInstanceChargeTypeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyInstanceChargeTypeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 std::string ModifyInstanceChargeTypeRequest::getPeriodUnit()const
 {
 	return periodUnit_;
@@ -155,38 +177,5 @@ void ModifyInstanceChargeTypeRequest::setInstanceIds(const std::string& instance
 {
 	instanceIds_ = instanceIds;
 	setCoreParameter("InstanceIds", instanceIds);
-}
-
-std::string ModifyInstanceChargeTypeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyInstanceChargeTypeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-bool ModifyInstanceChargeTypeRequest::getIsDetailFee()const
-{
-	return isDetailFee_;
-}
-
-void ModifyInstanceChargeTypeRequest::setIsDetailFee(bool isDetailFee)
-{
-	isDetailFee_ = isDetailFee;
-	setCoreParameter("IsDetailFee", isDetailFee ? "true" : "false");
-}
-
-std::string ModifyInstanceChargeTypeRequest::getInstanceChargeType()const
-{
-	return instanceChargeType_;
-}
-
-void ModifyInstanceChargeTypeRequest::setInstanceChargeType(const std::string& instanceChargeType)
-{
-	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 

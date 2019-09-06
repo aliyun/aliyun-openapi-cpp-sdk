@@ -25,17 +25,6 @@ ReleasePublicIpAddressRequest::ReleasePublicIpAddressRequest() :
 ReleasePublicIpAddressRequest::~ReleasePublicIpAddressRequest()
 {}
 
-std::string ReleasePublicIpAddressRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ReleasePublicIpAddressRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ReleasePublicIpAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,28 +34,6 @@ void ReleasePublicIpAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ReleasePublicIpAddressRequest::getPublicIpAddress()const
-{
-	return publicIpAddress_;
-}
-
-void ReleasePublicIpAddressRequest::setPublicIpAddress(const std::string& publicIpAddress)
-{
-	publicIpAddress_ = publicIpAddress;
-	setCoreParameter("PublicIpAddress", publicIpAddress);
-}
-
-std::string ReleasePublicIpAddressRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ReleasePublicIpAddressRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ReleasePublicIpAddressRequest::getResourceOwnerAccount()const
@@ -100,5 +67,27 @@ void ReleasePublicIpAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ReleasePublicIpAddressRequest::getPublicIpAddress()const
+{
+	return publicIpAddress_;
+}
+
+void ReleasePublicIpAddressRequest::setPublicIpAddress(const std::string& publicIpAddress)
+{
+	publicIpAddress_ = publicIpAddress;
+	setCoreParameter("PublicIpAddress", publicIpAddress);
+}
+
+std::string ReleasePublicIpAddressRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ReleasePublicIpAddressRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

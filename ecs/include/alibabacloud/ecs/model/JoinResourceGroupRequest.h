@@ -35,18 +35,16 @@ namespace AlibabaCloud
 				JoinResourceGroupRequest();
 				~JoinResourceGroupRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getResourceId()const;
 				void setResourceId(const std::string& resourceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -55,12 +53,11 @@ namespace AlibabaCloud
 				void setResourceType(const std::string& resourceType);
 
             private:
-				std::string sourceRegionId_;
-				std::string resourceGroupId_;
 				long resourceOwnerId_;
+				std::string resourceGroupId_;
+				std::string regionId_;
 				std::string resourceId_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string resourceType_;

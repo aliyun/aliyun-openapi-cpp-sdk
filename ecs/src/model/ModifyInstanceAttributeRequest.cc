@@ -36,17 +36,6 @@ void ModifyInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyInstanceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 bool ModifyInstanceAttributeRequest::getRecyclable()const
 {
 	return recyclable_;
@@ -58,17 +47,6 @@ void ModifyInstanceAttributeRequest::setRecyclable(bool recyclable)
 	setCoreParameter("Recyclable", recyclable ? "true" : "false");
 }
 
-std::string ModifyInstanceAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyInstanceAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string ModifyInstanceAttributeRequest::getDescription()const
 {
 	return description_;
@@ -78,39 +56,6 @@ void ModifyInstanceAttributeRequest::setDescription(const std::string& descripti
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-std::string ModifyInstanceAttributeRequest::getCreditSpecification()const
-{
-	return creditSpecification_;
-}
-
-void ModifyInstanceAttributeRequest::setCreditSpecification(const std::string& creditSpecification)
-{
-	creditSpecification_ = creditSpecification;
-	setCoreParameter("CreditSpecification", creditSpecification);
-}
-
-long ModifyInstanceAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyInstanceAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyInstanceAttributeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyInstanceAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 bool ModifyInstanceAttributeRequest::getDeletionProtection()const
@@ -155,6 +100,50 @@ void ModifyInstanceAttributeRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
 	setCoreParameter("HostName", hostName);
+}
+
+std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyInstanceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyInstanceAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyInstanceAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string ModifyInstanceAttributeRequest::getCreditSpecification()const
+{
+	return creditSpecification_;
+}
+
+void ModifyInstanceAttributeRequest::setCreditSpecification(const std::string& creditSpecification)
+{
+	creditSpecification_ = creditSpecification;
+	setCoreParameter("CreditSpecification", creditSpecification);
+}
+
+long ModifyInstanceAttributeRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyInstanceAttributeRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceAttributeRequest::getInstanceId()const

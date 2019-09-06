@@ -35,38 +35,35 @@ namespace AlibabaCloud
 				ExportImageRequest();
 				~ExportImageRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getImageFormat()const;
+				void setImageFormat(const std::string& imageFormat);
 				std::string getOSSBucket()const;
 				void setOSSBucket(const std::string& oSSBucket);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOSSPrefix()const;
-				void setOSSPrefix(const std::string& oSSPrefix);
 				std::string getRoleName()const;
 				void setRoleName(const std::string& roleName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getImageFormat()const;
-				void setImageFormat(const std::string& imageFormat);
+				std::string getOSSPrefix()const;
+				void setOSSPrefix(const std::string& oSSPrefix);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string imageId_;
+				std::string regionId_;
+				std::string imageFormat_;
 				std::string oSSBucket_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string oSSPrefix_;
 				std::string roleName_;
 				long ownerId_;
-				std::string imageFormat_;
+				std::string oSSPrefix_;
 
 			};
 		}

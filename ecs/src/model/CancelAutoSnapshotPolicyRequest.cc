@@ -25,17 +25,6 @@ CancelAutoSnapshotPolicyRequest::CancelAutoSnapshotPolicyRequest() :
 CancelAutoSnapshotPolicyRequest::~CancelAutoSnapshotPolicyRequest()
 {}
 
-std::string CancelAutoSnapshotPolicyRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void CancelAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long CancelAutoSnapshotPolicyRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void CancelAutoSnapshotPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string CancelAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CancelAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelAutoSnapshotPolicyRequest::getRegionId()const
@@ -78,6 +56,17 @@ void CancelAutoSnapshotPolicyRequest::setDiskIds(const std::string& diskIds)
 {
 	diskIds_ = diskIds;
 	setCoreParameter("DiskIds", diskIds);
+}
+
+std::string CancelAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CancelAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long CancelAutoSnapshotPolicyRequest::getOwnerId()const

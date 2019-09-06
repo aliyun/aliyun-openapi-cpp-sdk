@@ -36,17 +36,6 @@ void CreateSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateSnapshotRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateSnapshotRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateSnapshotRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,17 +45,6 @@ void CreateSnapshotRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string CreateSnapshotRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateSnapshotRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateSnapshotRequest::getDescription()const
@@ -91,50 +69,6 @@ void CreateSnapshotRequest::setSnapshotName(const std::string& snapshotName)
 	setCoreParameter("SnapshotName", snapshotName);
 }
 
-long CreateSnapshotRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateSnapshotRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateSnapshotRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void CreateSnapshotRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
-std::string CreateSnapshotRequest::getSourceSnapshotId()const
-{
-	return sourceSnapshotId_;
-}
-
-void CreateSnapshotRequest::setSourceSnapshotId(const std::string& sourceSnapshotId)
-{
-	sourceSnapshotId_ = sourceSnapshotId;
-	setCoreParameter("SourceSnapshotId", sourceSnapshotId);
-}
-
-bool CreateSnapshotRequest::getRemoveSourceSnapshot()const
-{
-	return removeSourceSnapshot_;
-}
-
-void CreateSnapshotRequest::setRemoveSourceSnapshot(bool removeSourceSnapshot)
-{
-	removeSourceSnapshot_ = removeSourceSnapshot;
-	setCoreParameter("RemoveSourceSnapshot", removeSourceSnapshot ? "true" : "false");
-}
-
 std::string CreateSnapshotRequest::getDiskId()const
 {
 	return diskId_;
@@ -144,17 +78,6 @@ void CreateSnapshotRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
 	setCoreParameter("DiskId", diskId);
-}
-
-int CreateSnapshotRequest::getRetentionDays()const
-{
-	return retentionDays_;
-}
-
-void CreateSnapshotRequest::setRetentionDays(int retentionDays)
-{
-	retentionDays_ = retentionDays;
-	setCoreParameter("RetentionDays", std::to_string(retentionDays));
 }
 
 std::vector<CreateSnapshotRequest::Tag> CreateSnapshotRequest::getTag()const
@@ -174,14 +97,47 @@ void CreateSnapshotRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
-std::string CreateSnapshotRequest::getCategory()const
+std::string CreateSnapshotRequest::getResourceOwnerAccount()const
 {
-	return category_;
+	return resourceOwnerAccount_;
 }
 
-void CreateSnapshotRequest::setCategory(const std::string& category)
+void CreateSnapshotRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	category_ = category;
-	setCoreParameter("Category", category);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateSnapshotRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateSnapshotRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateSnapshotRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateSnapshotRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+int CreateSnapshotRequest::getRetentionDays()const
+{
+	return retentionDays_;
+}
+
+void CreateSnapshotRequest::setRetentionDays(int retentionDays)
+{
+	retentionDays_ = retentionDays;
+	setCoreParameter("RetentionDays", std::to_string(retentionDays));
 }
 

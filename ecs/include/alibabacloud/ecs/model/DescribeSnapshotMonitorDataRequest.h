@@ -35,34 +35,31 @@ namespace AlibabaCloud
 				DescribeSnapshotMonitorDataRequest();
 				~DescribeSnapshotMonitorDataRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				int getPeriod()const;
 				void setPeriod(int period);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
+				std::string startTime_;
+				std::string regionId_;
 				int period_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
 
 			};

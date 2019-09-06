@@ -36,6 +36,17 @@ void DeleteBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteBandwidthPackageRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteBandwidthPackageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string DeleteBandwidthPackageRequest::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -56,17 +67,6 @@ void DeleteBandwidthPackageRequest::setResourceOwnerAccount(const std::string& r
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteBandwidthPackageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteBandwidthPackageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteBandwidthPackageRequest::getOwnerAccount()const

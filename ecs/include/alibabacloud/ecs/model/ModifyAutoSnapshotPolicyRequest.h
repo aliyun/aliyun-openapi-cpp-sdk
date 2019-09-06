@@ -41,10 +41,14 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				int getDataDiskPolicyRetentionDays()const;
 				void setDataDiskPolicyRetentionDays(int dataDiskPolicyRetentionDays);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				bool getSystemDiskPolicyRetentionLastWeek()const;
 				void setSystemDiskPolicyRetentionLastWeek(bool systemDiskPolicyRetentionLastWeek);
+				int getSystemDiskPolicyRetentionDays()const;
+				void setSystemDiskPolicyRetentionDays(int systemDiskPolicyRetentionDays);
+				int getDataDiskPolicyTimePeriod()const;
+				void setDataDiskPolicyTimePeriod(int dataDiskPolicyTimePeriod);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getSystemDiskPolicyTimePeriod()const;
@@ -53,10 +57,6 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				bool getDataDiskPolicyRetentionLastWeek()const;
 				void setDataDiskPolicyRetentionLastWeek(bool dataDiskPolicyRetentionLastWeek);
-				int getSystemDiskPolicyRetentionDays()const;
-				void setSystemDiskPolicyRetentionDays(int systemDiskPolicyRetentionDays);
-				int getDataDiskPolicyTimePeriod()const;
-				void setDataDiskPolicyTimePeriod(int dataDiskPolicyTimePeriod);
 				bool getSystemDiskPolicyEnabled()const;
 				void setSystemDiskPolicyEnabled(bool systemDiskPolicyEnabled);
 
@@ -64,14 +64,14 @@ namespace AlibabaCloud
 				bool dataDiskPolicyEnabled_;
 				long resourceOwnerId_;
 				int dataDiskPolicyRetentionDays_;
-				std::string resourceOwnerAccount_;
 				bool systemDiskPolicyRetentionLastWeek_;
+				int systemDiskPolicyRetentionDays_;
+				int dataDiskPolicyTimePeriod_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				int systemDiskPolicyTimePeriod_;
 				long ownerId_;
 				bool dataDiskPolicyRetentionLastWeek_;
-				int systemDiskPolicyRetentionDays_;
-				int dataDiskPolicyTimePeriod_;
 				bool systemDiskPolicyEnabled_;
 
 			};

@@ -25,17 +25,6 @@ AssociateHaVipRequest::AssociateHaVipRequest() :
 AssociateHaVipRequest::~AssociateHaVipRequest()
 {}
 
-std::string AssociateHaVipRequest::getHaVipId()const
-{
-	return haVipId_;
-}
-
-void AssociateHaVipRequest::setHaVipId(const std::string& haVipId)
-{
-	haVipId_ = haVipId;
-	setCoreParameter("HaVipId", haVipId);
-}
-
 long AssociateHaVipRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,28 +34,6 @@ void AssociateHaVipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string AssociateHaVipRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void AssociateHaVipRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string AssociateHaVipRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AssociateHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AssociateHaVipRequest::getClientToken()const
@@ -91,6 +58,28 @@ void AssociateHaVipRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string AssociateHaVipRequest::getHaVipId()const
+{
+	return haVipId_;
+}
+
+void AssociateHaVipRequest::setHaVipId(const std::string& haVipId)
+{
+	haVipId_ = haVipId;
+	setCoreParameter("HaVipId", haVipId);
+}
+
+std::string AssociateHaVipRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void AssociateHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string AssociateHaVipRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -111,5 +100,16 @@ void AssociateHaVipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AssociateHaVipRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void AssociateHaVipRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

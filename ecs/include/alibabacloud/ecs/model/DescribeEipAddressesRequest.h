@@ -37,22 +37,12 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getFilter2Value()const;
 				void setFilter2Value(const std::string& filter2Value);
 				std::string getISP()const;
 				void setISP(const std::string& iSP);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getAllocationId()const;
 				void setAllocationId(const std::string& allocationId);
-				std::string getFilter1Value()const;
-				void setFilter1Value(const std::string& filter1Value);
-				std::string getFilter2Key()const;
-				void setFilter2Key(const std::string& filter2Key);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getEipAddress()const;
 				void setEipAddress(const std::string& eipAddress);
 				int getPageNumber()const;
@@ -67,6 +57,16 @@ namespace AlibabaCloud
 				void setAssociatedInstanceType(const std::string& associatedInstanceType);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getFilter1Value()const;
+				void setFilter1Value(const std::string& filter1Value);
+				std::string getFilter2Key()const;
+				void setFilter2Key(const std::string& filter2Key);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
 				std::string getAssociatedInstanceId()const;
@@ -76,14 +76,9 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string filter2Value_;
 				std::string iSP_;
-				std::string ownerAccount_;
 				std::string allocationId_;
-				std::string filter1Value_;
-				std::string filter2Key_;
-				long ownerId_;
 				std::string eipAddress_;
 				int pageNumber_;
 				std::string lockReason_;
@@ -91,6 +86,11 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string associatedInstanceType_;
 				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string filter1Value_;
+				std::string filter2Key_;
+				long ownerId_;
 				std::string chargeType_;
 				std::string associatedInstanceId_;
 				std::string status_;

@@ -25,17 +25,6 @@ ImportKeyPairRequest::ImportKeyPairRequest() :
 ImportKeyPairRequest::~ImportKeyPairRequest()
 {}
 
-std::string ImportKeyPairRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ImportKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ImportKeyPairRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void ImportKeyPairRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ImportKeyPairRequest::getResourceOwnerAccount()const
+std::string ImportKeyPairRequest::getKeyPairName()const
 {
-	return resourceOwnerAccount_;
+	return keyPairName_;
 }
 
-void ImportKeyPairRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ImportKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	keyPairName_ = keyPairName;
+	setCoreParameter("KeyPairName", keyPairName);
 }
 
 std::string ImportKeyPairRequest::getRegionId()const
@@ -69,6 +58,17 @@ void ImportKeyPairRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string ImportKeyPairRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ImportKeyPairRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string ImportKeyPairRequest::getPublicKeyBody()const
 {
 	return publicKeyBody_;
@@ -78,17 +78,6 @@ void ImportKeyPairRequest::setPublicKeyBody(const std::string& publicKeyBody)
 {
 	publicKeyBody_ = publicKeyBody;
 	setCoreParameter("PublicKeyBody", publicKeyBody);
-}
-
-std::string ImportKeyPairRequest::getKeyPairName()const
-{
-	return keyPairName_;
-}
-
-void ImportKeyPairRequest::setKeyPairName(const std::string& keyPairName)
-{
-	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
 }
 
 long ImportKeyPairRequest::getOwnerId()const

@@ -35,38 +35,35 @@ namespace AlibabaCloud
 				DescribeZonesRequest();
 				~DescribeZonesRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getSpotStrategy()const;
-				void setSpotStrategy(const std::string& spotStrategy);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				bool getVerbose()const;
 				void setVerbose(bool verbose);
+				std::string getSpotStrategy()const;
+				void setSpotStrategy(const std::string& spotStrategy);
+				std::string getAcceptLanguage()const;
+				void setAcceptLanguage(const std::string& acceptLanguage);
 
             private:
-				std::string sourceRegionId_;
-				std::string spotStrategy_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
-				std::string ownerAccount_;
-				std::string acceptLanguage_;
-				long ownerId_;
 				std::string instanceChargeType_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 				bool verbose_;
+				std::string spotStrategy_;
+				std::string acceptLanguage_;
 
 			};
 		}

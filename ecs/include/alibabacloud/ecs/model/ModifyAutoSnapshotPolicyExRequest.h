@@ -35,38 +35,35 @@ namespace AlibabaCloud
 				ModifyAutoSnapshotPolicyExRequest();
 				~ModifyAutoSnapshotPolicyExRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getAutoSnapshotPolicyId()const;
 				void setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId);
 				std::string getTimePoints()const;
 				void setTimePoints(const std::string& timePoints);
-				int getRetentionDays()const;
-				void setRetentionDays(int retentionDays);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getRepeatWeekdays()const;
 				void setRepeatWeekdays(const std::string& repeatWeekdays);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getAutoSnapshotPolicyName()const;
 				void setAutoSnapshotPolicyName(const std::string& autoSnapshotPolicyName);
+				int getRetentionDays()const;
+				void setRetentionDays(int retentionDays);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string autoSnapshotPolicyId_;
 				std::string timePoints_;
-				int retentionDays_;
-				long ownerId_;
 				std::string repeatWeekdays_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
 				std::string autoSnapshotPolicyName_;
+				int retentionDays_;
 
 			};
 		}

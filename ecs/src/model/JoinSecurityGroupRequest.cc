@@ -25,17 +25,6 @@ JoinSecurityGroupRequest::JoinSecurityGroupRequest() :
 JoinSecurityGroupRequest::~JoinSecurityGroupRequest()
 {}
 
-std::string JoinSecurityGroupRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void JoinSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long JoinSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void JoinSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string JoinSecurityGroupRequest::getInstanceId()const
+std::string JoinSecurityGroupRequest::getSecurityGroupId()const
 {
-	return instanceId_;
+	return securityGroupId_;
 }
 
-void JoinSecurityGroupRequest::setInstanceId(const std::string& instanceId)
+void JoinSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	securityGroupId_ = securityGroupId;
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string JoinSecurityGroupRequest::getResourceOwnerAccount()const
@@ -80,17 +69,6 @@ void JoinSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string JoinSecurityGroupRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void JoinSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
-}
-
 long JoinSecurityGroupRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +78,16 @@ void JoinSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string JoinSecurityGroupRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void JoinSecurityGroupRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

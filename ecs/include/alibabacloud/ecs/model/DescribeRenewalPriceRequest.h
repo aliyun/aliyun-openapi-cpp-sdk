@@ -35,36 +35,33 @@ namespace AlibabaCloud
 				DescribeRenewalPriceRequest();
 				~DescribeRenewalPriceRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getPriceUnit()const;
+				void setPriceUnit(const std::string& priceUnit);
 				std::string getResourceId()const;
 				void setResourceId(const std::string& resourceId);
 				int getPeriod()const;
 				void setPeriod(int period);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getPriceUnit()const;
-				void setPriceUnit(const std::string& priceUnit);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
+				std::string regionId_;
+				std::string priceUnit_;
 				std::string resourceId_;
 				int period_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
-				std::string priceUnit_;
 				long ownerId_;
 				std::string resourceType_;
 

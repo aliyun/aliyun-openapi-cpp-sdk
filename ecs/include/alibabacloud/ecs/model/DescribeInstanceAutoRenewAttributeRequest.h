@@ -35,38 +35,35 @@ namespace AlibabaCloud
 				DescribeInstanceAutoRenewAttributeRequest();
 				~DescribeInstanceAutoRenewAttributeRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getPageNumber()const;
+				void setPageNumber(const std::string& pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getRenewalStatus()const;
 				void setRenewalStatus(const std::string& renewalStatus);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPageNumber()const;
-				void setPageNumber(const std::string& pageNumber);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string instanceId_;
-				std::string resourceOwnerAccount_;
+				std::string pageNumber_;
 				std::string regionId_;
-				std::string ownerAccount_;
 				std::string renewalStatus_;
 				std::string pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
-				std::string pageNumber_;
+				std::string instanceId_;
 
 			};
 		}

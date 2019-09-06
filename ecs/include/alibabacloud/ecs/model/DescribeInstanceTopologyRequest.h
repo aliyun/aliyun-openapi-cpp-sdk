@@ -35,26 +35,23 @@ namespace AlibabaCloud
 				DescribeInstanceTopologyRequest();
 				~DescribeInstanceTopologyRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getInstanceIds()const;
-				void setInstanceIds(const std::string& instanceIds);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceIds()const;
+				void setInstanceIds(const std::string& instanceIds);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
-				std::string instanceIds_;
+				std::string resourceOwnerAccount_;
 				long ownerId_;
+				std::string instanceIds_;
 
 			};
 		}

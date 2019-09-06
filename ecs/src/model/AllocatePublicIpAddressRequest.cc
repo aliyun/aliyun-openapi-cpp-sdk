@@ -25,17 +25,6 @@ AllocatePublicIpAddressRequest::AllocatePublicIpAddressRequest() :
 AllocatePublicIpAddressRequest::~AllocatePublicIpAddressRequest()
 {}
 
-std::string AllocatePublicIpAddressRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void AllocatePublicIpAddressRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 std::string AllocatePublicIpAddressRequest::getIpAddress()const
 {
 	return ipAddress_;
@@ -58,15 +47,15 @@ void AllocatePublicIpAddressRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string AllocatePublicIpAddressRequest::getInstanceId()const
+std::string AllocatePublicIpAddressRequest::getVlanId()const
 {
-	return instanceId_;
+	return vlanId_;
 }
 
-void AllocatePublicIpAddressRequest::setInstanceId(const std::string& instanceId)
+void AllocatePublicIpAddressRequest::setVlanId(const std::string& vlanId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	vlanId_ = vlanId;
+	setCoreParameter("VlanId", vlanId);
 }
 
 std::string AllocatePublicIpAddressRequest::getResourceOwnerAccount()const
@@ -78,17 +67,6 @@ void AllocatePublicIpAddressRequest::setResourceOwnerAccount(const std::string& 
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string AllocatePublicIpAddressRequest::getVlanId()const
-{
-	return vlanId_;
-}
-
-void AllocatePublicIpAddressRequest::setVlanId(const std::string& vlanId)
-{
-	vlanId_ = vlanId;
-	setCoreParameter("VlanId", vlanId);
 }
 
 std::string AllocatePublicIpAddressRequest::getOwnerAccount()const
@@ -111,5 +89,16 @@ void AllocatePublicIpAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AllocatePublicIpAddressRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void AllocatePublicIpAddressRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

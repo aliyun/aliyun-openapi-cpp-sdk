@@ -25,17 +25,6 @@ ApplyAutoSnapshotPolicyRequest::ApplyAutoSnapshotPolicyRequest() :
 ApplyAutoSnapshotPolicyRequest::~ApplyAutoSnapshotPolicyRequest()
 {}
 
-std::string ApplyAutoSnapshotPolicyRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ApplyAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ApplyAutoSnapshotPolicyRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,28 +34,6 @@ void ApplyAutoSnapshotPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ApplyAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ApplyAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ApplyAutoSnapshotPolicyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ApplyAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ApplyAutoSnapshotPolicyRequest::getAutoSnapshotPolicyId()const
@@ -80,6 +47,17 @@ void ApplyAutoSnapshotPolicyRequest::setAutoSnapshotPolicyId(const std::string& 
 	setCoreParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
 }
 
+std::string ApplyAutoSnapshotPolicyRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ApplyAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string ApplyAutoSnapshotPolicyRequest::getDiskIds()const
 {
 	return diskIds_;
@@ -89,6 +67,17 @@ void ApplyAutoSnapshotPolicyRequest::setDiskIds(const std::string& diskIds)
 {
 	diskIds_ = diskIds;
 	setCoreParameter("DiskIds", diskIds);
+}
+
+std::string ApplyAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ApplyAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ApplyAutoSnapshotPolicyRequest::getOwnerId()const

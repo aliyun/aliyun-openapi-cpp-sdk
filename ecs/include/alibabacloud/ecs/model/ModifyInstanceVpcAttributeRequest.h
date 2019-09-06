@@ -35,32 +35,29 @@ namespace AlibabaCloud
 				ModifyInstanceVpcAttributeRequest();
 				~ModifyInstanceVpcAttributeRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
-				std::string getPrivateIpAddress()const;
-				void setPrivateIpAddress(const std::string& privateIpAddress);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
+				std::string getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::string& privateIpAddress);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string sourceRegionId_;
-				std::string vSwitchId_;
-				std::string privateIpAddress_;
 				long resourceOwnerId_;
-				std::string instanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string vSwitchId_;
+				std::string privateIpAddress_;
+				std::string instanceId_;
 
 			};
 		}

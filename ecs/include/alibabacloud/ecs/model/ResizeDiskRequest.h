@@ -35,35 +35,32 @@ namespace AlibabaCloud
 				ResizeDiskRequest();
 				~ResizeDiskRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getDiskId()const;
+				void setDiskId(const std::string& diskId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getNewSize()const;
 				void setNewSize(int newSize);
-				std::string getDiskId()const;
-				void setDiskId(const std::string& diskId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getType()const;
-				void setType(const std::string& type);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
+				std::string type_;
+				std::string diskId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				int newSize_;
-				std::string diskId_;
 				long ownerId_;
-				std::string type_;
 
 			};
 		}

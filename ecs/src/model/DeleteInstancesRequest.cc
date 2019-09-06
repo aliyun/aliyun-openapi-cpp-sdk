@@ -25,17 +25,6 @@ DeleteInstancesRequest::DeleteInstancesRequest() :
 DeleteInstancesRequest::~DeleteInstancesRequest()
 {}
 
-std::string DeleteInstancesRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DeleteInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DeleteInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,16 +36,37 @@ void DeleteInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::vector<std::string> DeleteInstancesRequest::getInstanceId()const
+std::string DeleteInstancesRequest::getClientToken()const
 {
-	return instanceId_;
+	return clientToken_;
 }
 
-void DeleteInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
+void DeleteInstancesRequest::setClientToken(const std::string& clientToken)
 {
-	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string DeleteInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+bool DeleteInstancesRequest::getTerminateSubscription()const
+{
+	return terminateSubscription_;
+}
+
+void DeleteInstancesRequest::setTerminateSubscription(bool terminateSubscription)
+{
+	terminateSubscription_ = terminateSubscription;
+	setCoreParameter("TerminateSubscription", terminateSubscription ? "true" : "false");
 }
 
 bool DeleteInstancesRequest::getDryRun()const
@@ -81,17 +91,6 @@ void DeleteInstancesRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DeleteInstancesRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void DeleteInstancesRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
 std::string DeleteInstancesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -103,15 +102,27 @@ void DeleteInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DeleteInstancesRequest::getTerminateSubscription()const
+long DeleteInstancesRequest::getOwnerId()const
 {
-	return terminateSubscription_;
+	return ownerId_;
 }
 
-void DeleteInstancesRequest::setTerminateSubscription(bool terminateSubscription)
+void DeleteInstancesRequest::setOwnerId(long ownerId)
 {
-	terminateSubscription_ = terminateSubscription;
-	setCoreParameter("TerminateSubscription", terminateSubscription ? "true" : "false");
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::vector<std::string> DeleteInstancesRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DeleteInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
+{
+	instanceId_ = instanceId;
+	for(int i = 0; i!= instanceId.size(); i++)
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 
 bool DeleteInstancesRequest::getForce()const
@@ -123,16 +134,5 @@ void DeleteInstancesRequest::setForce(bool force)
 {
 	force_ = force;
 	setCoreParameter("Force", force ? "true" : "false");
-}
-
-long DeleteInstancesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteInstancesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

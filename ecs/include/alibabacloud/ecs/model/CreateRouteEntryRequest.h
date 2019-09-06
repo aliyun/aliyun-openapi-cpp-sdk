@@ -42,39 +42,39 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getNextHopId()const;
+				void setNextHopId(const std::string& nextHopId);
+				std::string getNextHopType()const;
+				void setNextHopType(const std::string& nextHopType);
+				std::string getRouteTableId()const;
+				void setRouteTableId(const std::string& routeTableId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDestinationCidrBlock()const;
 				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getNextHopId()const;
-				void setNextHopId(const std::string& nextHopId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getNextHopType()const;
-				void setNextHopType(const std::string& nextHopType);
 				std::vector<NextHopList> getNextHopList()const;
 				void setNextHopList(const std::vector<NextHopList>& nextHopList);
-				std::string getRouteTableId()const;
-				void setRouteTableId(const std::string& routeTableId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
+				std::string regionId_;
+				std::string nextHopId_;
+				std::string nextHopType_;
+				std::string routeTableId_;
+				std::string resourceOwnerAccount_;
 				std::string destinationCidrBlock_;
 				std::string ownerAccount_;
-				std::string nextHopId_;
 				long ownerId_;
-				std::string nextHopType_;
 				std::vector<NextHopList> nextHopList_;
-				std::string routeTableId_;
 
 			};
 		}

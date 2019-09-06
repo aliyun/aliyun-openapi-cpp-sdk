@@ -42,48 +42,36 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getSnapshotName()const;
 				void setSnapshotName(const std::string& snapshotName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getSourceSnapshotId()const;
-				void setSourceSnapshotId(const std::string& sourceSnapshotId);
-				bool getRemoveSourceSnapshot()const;
-				void setRemoveSourceSnapshot(bool removeSourceSnapshot);
 				std::string getDiskId()const;
 				void setDiskId(const std::string& diskId);
-				int getRetentionDays()const;
-				void setRetentionDays(int retentionDays);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getRetentionDays()const;
+				void setRetentionDays(int retentionDays);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
 				std::string description_;
 				std::string snapshotName_;
-				long ownerId_;
-				std::string sourceRegionId_;
-				std::string sourceSnapshotId_;
-				bool removeSourceSnapshot_;
 				std::string diskId_;
-				int retentionDays_;
 				std::vector<Tag> tag_;
-				std::string category_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				int retentionDays_;
 
 			};
 		}

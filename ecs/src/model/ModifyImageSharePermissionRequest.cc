@@ -25,17 +25,6 @@ ModifyImageSharePermissionRequest::ModifyImageSharePermissionRequest() :
 ModifyImageSharePermissionRequest::~ModifyImageSharePermissionRequest()
 {}
 
-std::string ModifyImageSharePermissionRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyImageSharePermissionRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ModifyImageSharePermissionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,29 +47,6 @@ void ModifyImageSharePermissionRequest::setImageId(const std::string& imageId)
 	setCoreParameter("ImageId", imageId);
 }
 
-std::vector<std::string> ModifyImageSharePermissionRequest::getAddAccount()const
-{
-	return addAccount_;
-}
-
-void ModifyImageSharePermissionRequest::setAddAccount(const std::vector<std::string>& addAccount)
-{
-	addAccount_ = addAccount;
-	for(int i = 0; i!= addAccount.size(); i++)
-		setCoreParameter("AddAccount."+ std::to_string(i), addAccount.at(i));
-}
-
-std::string ModifyImageSharePermissionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyImageSharePermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyImageSharePermissionRequest::getRegionId()const
 {
 	return regionId_;
@@ -92,16 +58,15 @@ void ModifyImageSharePermissionRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::vector<std::string> ModifyImageSharePermissionRequest::getRemoveAccount()const
+std::string ModifyImageSharePermissionRequest::getResourceOwnerAccount()const
 {
-	return removeAccount_;
+	return resourceOwnerAccount_;
 }
 
-void ModifyImageSharePermissionRequest::setRemoveAccount(const std::vector<std::string>& removeAccount)
+void ModifyImageSharePermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	removeAccount_ = removeAccount;
-	for(int i = 0; i!= removeAccount.size(); i++)
-		setCoreParameter("RemoveAccount."+ std::to_string(i), removeAccount.at(i));
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyImageSharePermissionRequest::getOwnerAccount()const
@@ -124,5 +89,29 @@ void ModifyImageSharePermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::vector<std::string> ModifyImageSharePermissionRequest::getAddAccount()const
+{
+	return addAccount_;
+}
+
+void ModifyImageSharePermissionRequest::setAddAccount(const std::vector<std::string>& addAccount)
+{
+	addAccount_ = addAccount;
+	for(int i = 0; i!= addAccount.size(); i++)
+		setCoreParameter("AddAccount."+ std::to_string(i), addAccount.at(i));
+}
+
+std::vector<std::string> ModifyImageSharePermissionRequest::getRemoveAccount()const
+{
+	return removeAccount_;
+}
+
+void ModifyImageSharePermissionRequest::setRemoveAccount(const std::vector<std::string>& removeAccount)
+{
+	removeAccount_ = removeAccount;
+	for(int i = 0; i!= removeAccount.size(); i++)
+		setCoreParameter("RemoveAccount."+ std::to_string(i), removeAccount.at(i));
 }
 

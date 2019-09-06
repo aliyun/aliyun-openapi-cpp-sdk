@@ -36,17 +36,6 @@ void CreateDeploymentSetRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateDeploymentSetRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateDeploymentSetRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateDeploymentSetRequest::getClientToken()const
 {
 	return clientToken_;
@@ -58,17 +47,6 @@ void CreateDeploymentSetRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string CreateDeploymentSetRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateDeploymentSetRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string CreateDeploymentSetRequest::getDescription()const
 {
 	return description_;
@@ -78,6 +56,39 @@ void CreateDeploymentSetRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
+}
+
+std::string CreateDeploymentSetRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateDeploymentSetRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateDeploymentSetRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateDeploymentSetRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateDeploymentSetRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateDeploymentSetRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateDeploymentSetRequest::getDeploymentSetName()const
@@ -100,28 +111,6 @@ void CreateDeploymentSetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateDeploymentSetRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void CreateDeploymentSetRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
-std::string CreateDeploymentSetRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateDeploymentSetRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateDeploymentSetRequest::getOnUnableToRedeployFailedInstance()const

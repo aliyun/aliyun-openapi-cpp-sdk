@@ -25,17 +25,6 @@ ReActivateInstancesRequest::ReActivateInstancesRequest() :
 ReActivateInstancesRequest::~ReActivateInstancesRequest()
 {}
 
-std::string ReActivateInstancesRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ReActivateInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ReActivateInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void ReActivateInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ReActivateInstancesRequest::getInstanceId()const
+std::string ReActivateInstancesRequest::getRegionId()const
 {
-	return instanceId_;
+	return regionId_;
 }
 
-void ReActivateInstancesRequest::setInstanceId(const std::string& instanceId)
+void ReActivateInstancesRequest::setRegionId(const std::string& regionId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ReActivateInstancesRequest::getResourceOwnerAccount()const
@@ -67,17 +56,6 @@ void ReActivateInstancesRequest::setResourceOwnerAccount(const std::string& reso
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ReActivateInstancesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ReActivateInstancesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ReActivateInstancesRequest::getOwnerAccount()const
@@ -100,5 +78,16 @@ void ReActivateInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ReActivateInstancesRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ReActivateInstancesRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

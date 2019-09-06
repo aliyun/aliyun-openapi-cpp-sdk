@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				ModifyVpcAttributeRequest();
 				~ModifyVpcAttributeRequest();
 
-				std::string getVpcName()const;
-				void setVpcName(const std::string& vpcName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getCidrBlock()const;
-				void setCidrBlock(const std::string& cidrBlock);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getVpcName()const;
+				void setVpcName(const std::string& vpcName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getUserCidr()const;
 				void setUserCidr(const std::string& userCidr);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
+				std::string getCidrBlock()const;
+				void setCidrBlock(const std::string& cidrBlock);
 
             private:
-				std::string vpcName_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string vpcId_;
-				std::string ownerAccount_;
-				std::string cidrBlock_;
 				std::string description_;
+				std::string vpcName_;
+				std::string regionId_;
 				std::string userCidr_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
+				std::string vpcId_;
+				std::string cidrBlock_;
 
 			};
 		}

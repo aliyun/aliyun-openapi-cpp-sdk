@@ -25,17 +25,6 @@ ReInitDiskRequest::ReInitDiskRequest() :
 ReInitDiskRequest::~ReInitDiskRequest()
 {}
 
-std::string ReInitDiskRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ReInitDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ReInitDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,28 +36,6 @@ void ReInitDiskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ReInitDiskRequest::getPassword()const
-{
-	return password_;
-}
-
-void ReInitDiskRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setCoreParameter("Password", password);
-}
-
-std::string ReInitDiskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ReInitDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 bool ReInitDiskRequest::getAutoStartInstance()const
 {
 	return autoStartInstance_;
@@ -78,28 +45,6 @@ void ReInitDiskRequest::setAutoStartInstance(bool autoStartInstance)
 {
 	autoStartInstance_ = autoStartInstance;
 	setCoreParameter("AutoStartInstance", autoStartInstance ? "true" : "false");
-}
-
-std::string ReInitDiskRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ReInitDiskRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ReInitDiskRequest::getDiskId()const
-{
-	return diskId_;
-}
-
-void ReInitDiskRequest::setDiskId(const std::string& diskId)
-{
-	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
 }
 
 std::string ReInitDiskRequest::getSecurityEnhancementStrategy()const
@@ -122,6 +67,50 @@ void ReInitDiskRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
 	setCoreParameter("KeyPairName", keyPairName);
+}
+
+std::string ReInitDiskRequest::getPassword()const
+{
+	return password_;
+}
+
+void ReInitDiskRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setCoreParameter("Password", password);
+}
+
+std::string ReInitDiskRequest::getDiskId()const
+{
+	return diskId_;
+}
+
+void ReInitDiskRequest::setDiskId(const std::string& diskId)
+{
+	diskId_ = diskId;
+	setCoreParameter("DiskId", diskId);
+}
+
+std::string ReInitDiskRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ReInitDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ReInitDiskRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ReInitDiskRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ReInitDiskRequest::getOwnerId()const

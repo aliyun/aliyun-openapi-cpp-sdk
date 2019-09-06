@@ -57,28 +57,6 @@ void ImportImageRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ImportImageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ImportImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ImportImageRequest::getRoleName()const
-{
-	return roleName_;
-}
-
-void ImportImageRequest::setRoleName(const std::string& roleName)
-{
-	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
-}
-
 std::string ImportImageRequest::getDescription()const
 {
 	return description_;
@@ -90,28 +68,6 @@ void ImportImageRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-std::string ImportImageRequest::getOSType()const
-{
-	return oSType_;
-}
-
-void ImportImageRequest::setOSType(const std::string& oSType)
-{
-	oSType_ = oSType;
-	setCoreParameter("OSType", oSType);
-}
-
-long ImportImageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ImportImageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string ImportImageRequest::getPlatform()const
 {
 	return platform_;
@@ -121,17 +77,6 @@ void ImportImageRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
 	setCoreParameter("Platform", platform);
-}
-
-std::string ImportImageRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ImportImageRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string ImportImageRequest::getRegionId()const
@@ -165,5 +110,60 @@ void ImportImageRequest::setArchitecture(const std::string& architecture)
 {
 	architecture_ = architecture;
 	setCoreParameter("Architecture", architecture);
+}
+
+std::string ImportImageRequest::getLicenseType()const
+{
+	return licenseType_;
+}
+
+void ImportImageRequest::setLicenseType(const std::string& licenseType)
+{
+	licenseType_ = licenseType;
+	setCoreParameter("LicenseType", licenseType);
+}
+
+std::string ImportImageRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ImportImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ImportImageRequest::getRoleName()const
+{
+	return roleName_;
+}
+
+void ImportImageRequest::setRoleName(const std::string& roleName)
+{
+	roleName_ = roleName;
+	setCoreParameter("RoleName", roleName);
+}
+
+std::string ImportImageRequest::getOSType()const
+{
+	return oSType_;
+}
+
+void ImportImageRequest::setOSType(const std::string& oSType)
+{
+	oSType_ = oSType;
+	setCoreParameter("OSType", oSType);
+}
+
+long ImportImageRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ImportImageRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

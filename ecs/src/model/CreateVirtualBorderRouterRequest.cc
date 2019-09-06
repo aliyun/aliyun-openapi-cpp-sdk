@@ -69,28 +69,6 @@ void CreateVirtualBorderRouterRequest::setClientToken(const std::string& clientT
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string CreateVirtualBorderRouterRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateVirtualBorderRouterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateVirtualBorderRouterRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateVirtualBorderRouterRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string CreateVirtualBorderRouterRequest::getDescription()const
 {
 	return description_;
@@ -100,17 +78,6 @@ void CreateVirtualBorderRouterRequest::setDescription(const std::string& descrip
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long CreateVirtualBorderRouterRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateVirtualBorderRouterRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateVirtualBorderRouterRequest::getPeerGatewayIp()const
@@ -146,28 +113,6 @@ void CreateVirtualBorderRouterRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string CreateVirtualBorderRouterRequest::getPhysicalConnectionId()const
-{
-	return physicalConnectionId_;
-}
-
-void CreateVirtualBorderRouterRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
-{
-	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
-}
-
-std::string CreateVirtualBorderRouterRequest::getName()const
-{
-	return name_;
-}
-
-void CreateVirtualBorderRouterRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateVirtualBorderRouterRequest::getLocalGatewayIp()const
 {
 	return localGatewayIp_;
@@ -188,6 +133,61 @@ void CreateVirtualBorderRouterRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
 	setCoreParameter("UserCidr", userCidr);
+}
+
+std::string CreateVirtualBorderRouterRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateVirtualBorderRouterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateVirtualBorderRouterRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateVirtualBorderRouterRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateVirtualBorderRouterRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateVirtualBorderRouterRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateVirtualBorderRouterRequest::getPhysicalConnectionId()const
+{
+	return physicalConnectionId_;
+}
+
+void CreateVirtualBorderRouterRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
+{
+	physicalConnectionId_ = physicalConnectionId;
+	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+}
+
+std::string CreateVirtualBorderRouterRequest::getName()const
+{
+	return name_;
+}
+
+void CreateVirtualBorderRouterRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 long CreateVirtualBorderRouterRequest::getVbrOwnerId()const

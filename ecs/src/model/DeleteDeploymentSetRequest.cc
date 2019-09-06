@@ -25,15 +25,26 @@ DeleteDeploymentSetRequest::DeleteDeploymentSetRequest() :
 DeleteDeploymentSetRequest::~DeleteDeploymentSetRequest()
 {}
 
-std::string DeleteDeploymentSetRequest::getSourceRegionId()const
+long DeleteDeploymentSetRequest::getResourceOwnerId()const
 {
-	return sourceRegionId_;
+	return resourceOwnerId_;
 }
 
-void DeleteDeploymentSetRequest::setSourceRegionId(const std::string& sourceRegionId)
+void DeleteDeploymentSetRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DeleteDeploymentSetRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteDeploymentSetRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteDeploymentSetRequest::getDeploymentSetId()const
@@ -47,17 +58,6 @@ void DeleteDeploymentSetRequest::setDeploymentSetId(const std::string& deploymen
 	setCoreParameter("DeploymentSetId", deploymentSetId);
 }
 
-long DeleteDeploymentSetRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DeleteDeploymentSetRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DeleteDeploymentSetRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +67,6 @@ void DeleteDeploymentSetRequest::setResourceOwnerAccount(const std::string& reso
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteDeploymentSetRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteDeploymentSetRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteDeploymentSetRequest::getOwnerAccount()const

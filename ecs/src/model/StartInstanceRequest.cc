@@ -25,6 +25,17 @@ StartInstanceRequest::StartInstanceRequest() :
 StartInstanceRequest::~StartInstanceRequest()
 {}
 
+long StartInstanceRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void StartInstanceRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
 std::string StartInstanceRequest::getSourceRegionId()const
 {
 	return sourceRegionId_;
@@ -45,28 +56,6 @@ void StartInstanceRequest::setInitLocalDisk(bool initLocalDisk)
 {
 	initLocalDisk_ = initLocalDisk;
 	setCoreParameter("InitLocalDisk", initLocalDisk ? "true" : "false");
-}
-
-long StartInstanceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void StartInstanceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string StartInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void StartInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
 }
 
 bool StartInstanceRequest::getDryRun()const
@@ -111,5 +100,16 @@ void StartInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string StartInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void StartInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

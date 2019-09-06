@@ -25,17 +25,6 @@ DescribeSecurityGroupAttributeRequest::DescribeSecurityGroupAttributeRequest() :
 DescribeSecurityGroupAttributeRequest::~DescribeSecurityGroupAttributeRequest()
 {}
 
-std::string DescribeSecurityGroupAttributeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeSecurityGroupAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 std::string DescribeSecurityGroupAttributeRequest::getNicType()const
 {
 	return nicType_;
@@ -58,15 +47,15 @@ void DescribeSecurityGroupAttributeRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSecurityGroupAttributeRequest::getResourceOwnerAccount()const
+std::string DescribeSecurityGroupAttributeRequest::getSecurityGroupId()const
 {
-	return resourceOwnerAccount_;
+	return securityGroupId_;
 }
 
-void DescribeSecurityGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeSecurityGroupAttributeRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	securityGroupId_ = securityGroupId;
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getRegionId()const
@@ -80,6 +69,28 @@ void DescribeSecurityGroupAttributeRequest::setRegionId(const std::string& regio
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string DescribeSecurityGroupAttributeRequest::getDirection()const
+{
+	return direction_;
+}
+
+void DescribeSecurityGroupAttributeRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
+}
+
+std::string DescribeSecurityGroupAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSecurityGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string DescribeSecurityGroupAttributeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -91,17 +102,6 @@ void DescribeSecurityGroupAttributeRequest::setOwnerAccount(const std::string& o
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeSecurityGroupAttributeRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void DescribeSecurityGroupAttributeRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
-}
-
 long DescribeSecurityGroupAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,16 +111,5 @@ void DescribeSecurityGroupAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeSecurityGroupAttributeRequest::getDirection()const
-{
-	return direction_;
-}
-
-void DescribeSecurityGroupAttributeRequest::setDirection(const std::string& direction)
-{
-	direction_ = direction;
-	setCoreParameter("Direction", direction);
 }
 

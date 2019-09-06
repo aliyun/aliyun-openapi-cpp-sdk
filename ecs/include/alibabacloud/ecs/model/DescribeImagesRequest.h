@@ -59,8 +59,6 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getImageOwnerAlias()const;
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				bool getIsSupportIoOptimized()const;
@@ -104,7 +102,6 @@ namespace AlibabaCloud
 				std::string usage_;
 				int pageNumber_;
 				std::string imageOwnerAlias_;
-				std::string sourceRegionId_;
 				std::string resourceGroupId_;
 				bool isSupportIoOptimized_;
 				std::string regionId_;

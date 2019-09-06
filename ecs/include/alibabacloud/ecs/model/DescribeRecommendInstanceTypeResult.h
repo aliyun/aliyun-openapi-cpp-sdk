@@ -48,10 +48,13 @@ namespace AlibabaCloud
 						std::vector<std::string> networkTypes;
 						std::string zoneNo;
 					};
-					std::string regionNo;
+					std::string instanceChargeType;
+					int priority;
 					std::string commodityCode;
+					std::string regionId;
 					InstanceType instanceType;
 					std::string scene;
+					std::string spotStrategy;
 					std::vector<RecommendInstanceType::Zone> zones;
 				};
 

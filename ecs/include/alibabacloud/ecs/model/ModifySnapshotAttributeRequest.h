@@ -35,31 +35,28 @@ namespace AlibabaCloud
 				ModifySnapshotAttributeRequest();
 				~ModifySnapshotAttributeRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSnapshotId()const;
 				void setSnapshotId(const std::string& snapshotId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getSnapshotName()const;
 				void setSnapshotName(const std::string& snapshotName);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string snapshotId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				std::string description_;
 				std::string snapshotName_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
 
 			};

@@ -25,28 +25,6 @@ DescribeKeyPairsRequest::DescribeKeyPairsRequest() :
 DescribeKeyPairsRequest::~DescribeKeyPairsRequest()
 {}
 
-std::string DescribeKeyPairsRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeKeyPairsRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
-std::string DescribeKeyPairsRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeKeyPairsRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 long DescribeKeyPairsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,28 +34,6 @@ void DescribeKeyPairsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeKeyPairsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeKeyPairsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeKeyPairsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeKeyPairsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeKeyPairsRequest::getKeyPairFingerPrint()const
@@ -91,17 +47,6 @@ void DescribeKeyPairsRequest::setKeyPairFingerPrint(const std::string& keyPairFi
 	setCoreParameter("KeyPairFingerPrint", keyPairFingerPrint);
 }
 
-int DescribeKeyPairsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeKeyPairsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeKeyPairsRequest::getKeyPairName()const
 {
 	return keyPairName_;
@@ -111,6 +56,50 @@ void DescribeKeyPairsRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
 	setCoreParameter("KeyPairName", keyPairName);
+}
+
+int DescribeKeyPairsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeKeyPairsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeKeyPairsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeKeyPairsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeKeyPairsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeKeyPairsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeKeyPairsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeKeyPairsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeKeyPairsRequest::Tag> DescribeKeyPairsRequest::getTag()const
@@ -130,6 +119,17 @@ void DescribeKeyPairsRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string DescribeKeyPairsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeKeyPairsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long DescribeKeyPairsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -139,16 +139,5 @@ void DescribeKeyPairsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeKeyPairsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeKeyPairsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

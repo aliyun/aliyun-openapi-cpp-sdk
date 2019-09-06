@@ -36,17 +36,6 @@ void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyInstanceSpecRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,17 +58,6 @@ void ModifyInstanceSpecRequest::setAllowMigrateAcrossZone(bool allowMigrateAcros
 	setCoreParameter("AllowMigrateAcrossZone", allowMigrateAcrossZone ? "true" : "false");
 }
 
-std::string ModifyInstanceSpecRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 int ModifyInstanceSpecRequest::getInternetMaxBandwidthOut()const
 {
 	return internetMaxBandwidthOut_;
@@ -89,6 +67,61 @@ void ModifyInstanceSpecRequest::setInternetMaxBandwidthOut(int internetMaxBandwi
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
 	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+}
+
+std::string ModifyInstanceSpecRequest::getSystemDiskCategory()const
+{
+	return systemDiskCategory_;
+}
+
+void ModifyInstanceSpecRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
+{
+	systemDiskCategory_ = systemDiskCategory;
+	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+}
+
+std::string ModifyInstanceSpecRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void ModifyInstanceSpecRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string ModifyInstanceSpecRequest::getTemporaryEndTime()const
+{
+	return temporaryEndTime_;
+}
+
+void ModifyInstanceSpecRequest::setTemporaryEndTime(const std::string& temporaryEndTime)
+{
+	temporaryEndTime_ = temporaryEndTime;
+	setCoreParameter("TemporaryEndTime", temporaryEndTime);
+}
+
+std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyInstanceSpecRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceSpecRequest::getOwnerId()const
@@ -113,17 +146,6 @@ void ModifyInstanceSpecRequest::setTemporaryInternetMaxBandwidthOut(int temporar
 	setCoreParameter("TemporaryInternetMaxBandwidthOut", std::to_string(temporaryInternetMaxBandwidthOut));
 }
 
-std::string ModifyInstanceSpecRequest::getSystemDiskCategory()const
-{
-	return systemDiskCategory_;
-}
-
-void ModifyInstanceSpecRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
-{
-	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", systemDiskCategory);
-}
-
 std::string ModifyInstanceSpecRequest::getTemporaryStartTime()const
 {
 	return temporaryStartTime_;
@@ -133,17 +155,6 @@ void ModifyInstanceSpecRequest::setTemporaryStartTime(const std::string& tempora
 {
 	temporaryStartTime_ = temporaryStartTime;
 	setCoreParameter("TemporaryStartTime", temporaryStartTime);
-}
-
-std::string ModifyInstanceSpecRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyInstanceSpecRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 bool ModifyInstanceSpecRequest::getAsync()const
@@ -166,28 +177,6 @@ void ModifyInstanceSpecRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string ModifyInstanceSpecRequest::getInstanceType()const
-{
-	return instanceType_;
-}
-
-void ModifyInstanceSpecRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
-}
-
-std::string ModifyInstanceSpecRequest::getTemporaryEndTime()const
-{
-	return temporaryEndTime_;
-}
-
-void ModifyInstanceSpecRequest::setTemporaryEndTime(const std::string& temporaryEndTime)
-{
-	temporaryEndTime_ = temporaryEndTime;
-	setCoreParameter("TemporaryEndTime", temporaryEndTime);
 }
 
 int ModifyInstanceSpecRequest::getInternetMaxBandwidthIn()const

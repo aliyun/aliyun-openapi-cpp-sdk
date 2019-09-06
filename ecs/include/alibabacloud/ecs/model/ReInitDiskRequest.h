@@ -35,37 +35,34 @@ namespace AlibabaCloud
 				ReInitDiskRequest();
 				~ReInitDiskRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPassword()const;
-				void setPassword(const std::string& password);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				bool getAutoStartInstance()const;
 				void setAutoStartInstance(bool autoStartInstance);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDiskId()const;
-				void setDiskId(const std::string& diskId);
 				std::string getSecurityEnhancementStrategy()const;
 				void setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
+				std::string getPassword()const;
+				void setPassword(const std::string& password);
+				std::string getDiskId()const;
+				void setDiskId(const std::string& diskId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string password_;
-				std::string resourceOwnerAccount_;
 				bool autoStartInstance_;
-				std::string ownerAccount_;
-				std::string diskId_;
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
+				std::string password_;
+				std::string diskId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
 
 			};

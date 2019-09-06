@@ -69,8 +69,6 @@ namespace AlibabaCloud
 				void setKeyPairName(const std::string& keyPairName);
 				float getSpotPriceLimit()const;
 				void setSpotPriceLimit(float spotPriceLimit);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				bool getDeletionProtection()const;
 				void setDeletionProtection(bool deletionProtection);
 				std::string getResourceGroupId()const;
@@ -171,6 +169,8 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::string getCreditSpecification()const;
 				void setCreditSpecification(const std::string& creditSpecification);
+				int getSpotDuration()const;
+				void setSpotDuration(int spotDuration);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				std::string getStorageSetId()const;
@@ -186,7 +186,6 @@ namespace AlibabaCloud
 				std::string securityEnhancementStrategy_;
 				std::string keyPairName_;
 				float spotPriceLimit_;
-				std::string sourceRegionId_;
 				bool deletionProtection_;
 				std::string resourceGroupId_;
 				std::string hostName_;
@@ -237,6 +236,7 @@ namespace AlibabaCloud
 				std::string dedicatedHostId_;
 				std::string clusterId_;
 				std::string creditSpecification_;
+				int spotDuration_;
 				std::vector<DataDisk> dataDisk_;
 				std::string storageSetId_;
 				int systemDiskSize_;

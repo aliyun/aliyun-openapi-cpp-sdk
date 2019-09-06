@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				ReleasePublicIpAddressRequest();
 				~ReleasePublicIpAddressRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPublicIpAddress()const;
-				void setPublicIpAddress(const std::string& publicIpAddress);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPublicIpAddress()const;
+				void setPublicIpAddress(const std::string& publicIpAddress);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string publicIpAddress_;
-				std::string instanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string publicIpAddress_;
+				std::string instanceId_;
 
 			};
 		}

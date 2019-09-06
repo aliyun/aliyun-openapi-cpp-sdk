@@ -35,41 +35,38 @@ namespace AlibabaCloud
 				ModifyDedicatedHostAutoRenewAttributeRequest();
 				~ModifyDedicatedHostAutoRenewAttributeRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				int getDuration()const;
-				void setDuration(int duration);
 				std::string getDedicatedHostIds()const;
 				void setDedicatedHostIds(const std::string& dedicatedHostIds);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getRenewalStatus()const;
+				void setRenewalStatus(const std::string& renewalStatus);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getPeriodUnit()const;
 				void setPeriodUnit(const std::string& periodUnit);
 				bool getAutoRenew()const;
 				void setAutoRenew(bool autoRenew);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getRenewalStatus()const;
-				void setRenewalStatus(const std::string& renewalStatus);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
             private:
-				std::string sourceRegionId_;
-				int duration_;
 				std::string dedicatedHostIds_;
 				long resourceOwnerId_;
+				int duration_;
+				std::string regionId_;
+				std::string renewalStatus_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 				std::string periodUnit_;
 				bool autoRenew_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				std::string renewalStatus_;
-				long ownerId_;
 
 			};
 		}

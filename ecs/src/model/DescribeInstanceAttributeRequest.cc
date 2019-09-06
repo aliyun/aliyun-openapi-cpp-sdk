@@ -25,17 +25,6 @@ DescribeInstanceAttributeRequest::DescribeInstanceAttributeRequest() :
 DescribeInstanceAttributeRequest::~DescribeInstanceAttributeRequest()
 {}
 
-std::string DescribeInstanceAttributeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeInstanceAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DescribeInstanceAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void DescribeInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeInstanceAttributeRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeInstanceAttributeRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeInstanceAttributeRequest::getResourceOwnerAccount()const
@@ -89,5 +67,16 @@ void DescribeInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeInstanceAttributeRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeInstanceAttributeRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

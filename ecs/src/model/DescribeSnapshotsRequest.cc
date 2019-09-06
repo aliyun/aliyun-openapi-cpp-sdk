@@ -102,17 +102,6 @@ void DescribeSnapshotsRequest::setPageNumber(int pageNumber)
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeSnapshotsRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeSnapshotsRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 std::string DescribeSnapshotsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

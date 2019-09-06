@@ -37,6 +37,14 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				bool getIsDetailFee()const;
+				void setIsDetailFee(bool isDetailFee);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
 				int getPeriod()const;
 				void setPeriod(int period);
 				bool getDryRun()const;
@@ -47,41 +55,30 @@ namespace AlibabaCloud
 				void setIncludeDataDisks(bool includeDataDisks);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getPeriodUnit()const;
 				void setPeriodUnit(const std::string& periodUnit);
 				std::string getInstanceIds()const;
 				void setInstanceIds(const std::string& instanceIds);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				bool getIsDetailFee()const;
-				void setIsDetailFee(bool isDetailFee);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string regionId_;
+				bool isDetailFee_;
+				std::string instanceChargeType_;
 				int period_;
 				bool dryRun_;
 				bool autoPay_;
 				bool includeDataDisks_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string sourceRegionId_;
 				std::string periodUnit_;
 				std::string instanceIds_;
-				std::string regionId_;
-				bool isDetailFee_;
-				std::string instanceChargeType_;
 
 			};
 		}

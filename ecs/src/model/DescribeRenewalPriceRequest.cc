@@ -25,17 +25,6 @@ DescribeRenewalPriceRequest::DescribeRenewalPriceRequest() :
 DescribeRenewalPriceRequest::~DescribeRenewalPriceRequest()
 {}
 
-std::string DescribeRenewalPriceRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeRenewalPriceRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DescribeRenewalPriceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void DescribeRenewalPriceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeRenewalPriceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeRenewalPriceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeRenewalPriceRequest::getPriceUnit()const
+{
+	return priceUnit_;
+}
+
+void DescribeRenewalPriceRequest::setPriceUnit(const std::string& priceUnit)
+{
+	priceUnit_ = priceUnit;
+	setCoreParameter("PriceUnit", priceUnit);
 }
 
 std::string DescribeRenewalPriceRequest::getResourceId()const
@@ -80,17 +91,6 @@ void DescribeRenewalPriceRequest::setResourceOwnerAccount(const std::string& res
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeRenewalPriceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRenewalPriceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeRenewalPriceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -100,17 +100,6 @@ void DescribeRenewalPriceRequest::setOwnerAccount(const std::string& ownerAccoun
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeRenewalPriceRequest::getPriceUnit()const
-{
-	return priceUnit_;
-}
-
-void DescribeRenewalPriceRequest::setPriceUnit(const std::string& priceUnit)
-{
-	priceUnit_ = priceUnit;
-	setCoreParameter("PriceUnit", priceUnit);
 }
 
 long DescribeRenewalPriceRequest::getOwnerId()const

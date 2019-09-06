@@ -25,17 +25,6 @@ DescribeInstanceAutoRenewAttributeRequest::DescribeInstanceAutoRenewAttributeReq
 DescribeInstanceAutoRenewAttributeRequest::~DescribeInstanceAutoRenewAttributeRequest()
 {}
 
-std::string DescribeInstanceAutoRenewAttributeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeInstanceAutoRenewAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long DescribeInstanceAutoRenewAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,26 +36,15 @@ void DescribeInstanceAutoRenewAttributeRequest::setResourceOwnerId(long resource
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeInstanceAutoRenewAttributeRequest::getInstanceId()const
+std::string DescribeInstanceAutoRenewAttributeRequest::getPageNumber()const
 {
-	return instanceId_;
+	return pageNumber_;
 }
 
-void DescribeInstanceAutoRenewAttributeRequest::setInstanceId(const std::string& instanceId)
+void DescribeInstanceAutoRenewAttributeRequest::setPageNumber(const std::string& pageNumber)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DescribeInstanceAutoRenewAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeInstanceAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeInstanceAutoRenewAttributeRequest::getRegionId()const
@@ -78,17 +56,6 @@ void DescribeInstanceAutoRenewAttributeRequest::setRegionId(const std::string& r
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeInstanceAutoRenewAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeInstanceAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeInstanceAutoRenewAttributeRequest::getRenewalStatus()const
@@ -113,6 +80,28 @@ void DescribeInstanceAutoRenewAttributeRequest::setPageSize(const std::string& p
 	setCoreParameter("PageSize", pageSize);
 }
 
+std::string DescribeInstanceAutoRenewAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeInstanceAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeInstanceAutoRenewAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeInstanceAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeInstanceAutoRenewAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,14 +113,14 @@ void DescribeInstanceAutoRenewAttributeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeInstanceAutoRenewAttributeRequest::getPageNumber()const
+std::string DescribeInstanceAutoRenewAttributeRequest::getInstanceId()const
 {
-	return pageNumber_;
+	return instanceId_;
 }
 
-void DescribeInstanceAutoRenewAttributeRequest::setPageNumber(const std::string& pageNumber)
+void DescribeInstanceAutoRenewAttributeRequest::setInstanceId(const std::string& instanceId)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

@@ -25,23 +25,6 @@ DescribeAccessPointsRequest::DescribeAccessPointsRequest() :
 DescribeAccessPointsRequest::~DescribeAccessPointsRequest()
 {}
 
-std::vector<DescribeAccessPointsRequest::Filter> DescribeAccessPointsRequest::getFilter()const
-{
-	return filter_;
-}
-
-void DescribeAccessPointsRequest::setFilter(const std::vector<Filter>& filter)
-{
-	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
-	}
-}
-
 long DescribeAccessPointsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -53,15 +36,26 @@ void DescribeAccessPointsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAccessPointsRequest::getResourceOwnerAccount()const
+std::string DescribeAccessPointsRequest::getType()const
 {
-	return resourceOwnerAccount_;
+	return type_;
 }
 
-void DescribeAccessPointsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeAccessPointsRequest::setType(const std::string& type)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+int DescribeAccessPointsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeAccessPointsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAccessPointsRequest::getRegionId()const
@@ -86,6 +80,17 @@ void DescribeAccessPointsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeAccessPointsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAccessPointsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long DescribeAccessPointsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -97,25 +102,20 @@ void DescribeAccessPointsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeAccessPointsRequest::getType()const
+std::vector<DescribeAccessPointsRequest::Filter> DescribeAccessPointsRequest::getFilter()const
 {
-	return type_;
+	return filter_;
 }
 
-void DescribeAccessPointsRequest::setType(const std::string& type)
+void DescribeAccessPointsRequest::setFilter(const std::vector<Filter>& filter)
 {
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
-int DescribeAccessPointsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeAccessPointsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	filter_ = filter;
+	int i = 0;
+	for(int i = 0; i!= filter.size(); i++)	{
+		auto obj = filter.at(i);
+		std::string str ="Filter."+ std::to_string(i);
+		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 

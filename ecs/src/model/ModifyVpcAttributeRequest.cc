@@ -25,17 +25,6 @@ ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() :
 ModifyVpcAttributeRequest::~ModifyVpcAttributeRequest()
 {}
 
-std::string ModifyVpcAttributeRequest::getVpcName()const
-{
-	return vpcName_;
-}
-
-void ModifyVpcAttributeRequest::setVpcName(const std::string& vpcName)
-{
-	vpcName_ = vpcName;
-	setCoreParameter("VpcName", vpcName);
-}
-
 long ModifyVpcAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,61 +34,6 @@ void ModifyVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ModifyVpcAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyVpcAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyVpcAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyVpcAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyVpcAttributeRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void ModifyVpcAttributeRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
-std::string ModifyVpcAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyVpcAttributeRequest::getCidrBlock()const
-{
-	return cidrBlock_;
-}
-
-void ModifyVpcAttributeRequest::setCidrBlock(const std::string& cidrBlock)
-{
-	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
 }
 
 std::string ModifyVpcAttributeRequest::getDescription()const
@@ -113,6 +47,28 @@ void ModifyVpcAttributeRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
+std::string ModifyVpcAttributeRequest::getVpcName()const
+{
+	return vpcName_;
+}
+
+void ModifyVpcAttributeRequest::setVpcName(const std::string& vpcName)
+{
+	vpcName_ = vpcName;
+	setCoreParameter("VpcName", vpcName);
+}
+
+std::string ModifyVpcAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyVpcAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string ModifyVpcAttributeRequest::getUserCidr()const
 {
 	return userCidr_;
@@ -124,6 +80,28 @@ void ModifyVpcAttributeRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
+std::string ModifyVpcAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyVpcAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyVpcAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ModifyVpcAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -133,5 +111,27 @@ void ModifyVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyVpcAttributeRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void ModifyVpcAttributeRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
+}
+
+std::string ModifyVpcAttributeRequest::getCidrBlock()const
+{
+	return cidrBlock_;
+}
+
+void ModifyVpcAttributeRequest::setCidrBlock(const std::string& cidrBlock)
+{
+	cidrBlock_ = cidrBlock;
+	setCoreParameter("CidrBlock", cidrBlock);
 }
 

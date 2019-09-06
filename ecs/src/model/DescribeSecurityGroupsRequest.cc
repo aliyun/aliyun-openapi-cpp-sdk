@@ -36,17 +36,6 @@ void DescribeSecurityGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-bool DescribeSecurityGroupsRequest::getDryRun()const
-{
-	return dryRun_;
-}
-
-void DescribeSecurityGroupsRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
-}
-
 bool DescribeSecurityGroupsRequest::getFuzzyQuery()const
 {
 	return fuzzyQuery_;
@@ -56,28 +45,6 @@ void DescribeSecurityGroupsRequest::setFuzzyQuery(bool fuzzyQuery)
 {
 	fuzzyQuery_ = fuzzyQuery;
 	setCoreParameter("FuzzyQuery", fuzzyQuery ? "true" : "false");
-}
-
-std::string DescribeSecurityGroupsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeSecurityGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeSecurityGroupsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeSecurityGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeSecurityGroupsRequest::getSecurityGroupId()const
@@ -113,28 +80,6 @@ void DescribeSecurityGroupsRequest::setNetworkType(const std::string& networkTyp
 	setCoreParameter("NetworkType", networkType);
 }
 
-long DescribeSecurityGroupsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeSecurityGroupsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeSecurityGroupsRequest::getSecurityGroupIds()const
-{
-	return securityGroupIds_;
-}
-
-void DescribeSecurityGroupsRequest::setSecurityGroupIds(const std::string& securityGroupIds)
-{
-	securityGroupIds_ = securityGroupIds;
-	setCoreParameter("SecurityGroupIds", securityGroupIds);
-}
-
 std::string DescribeSecurityGroupsRequest::getSecurityGroupName()const
 {
 	return securityGroupName_;
@@ -157,17 +102,6 @@ void DescribeSecurityGroupsRequest::setPageNumber(int pageNumber)
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeSecurityGroupsRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeSecurityGroupsRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 std::string DescribeSecurityGroupsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -188,17 +122,6 @@ void DescribeSecurityGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeSecurityGroupsRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void DescribeSecurityGroupsRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
 }
 
 int DescribeSecurityGroupsRequest::getPageSize()const
@@ -227,5 +150,71 @@ void DescribeSecurityGroupsRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
+}
+
+bool DescribeSecurityGroupsRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void DescribeSecurityGroupsRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
+}
+
+std::string DescribeSecurityGroupsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSecurityGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeSecurityGroupsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeSecurityGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeSecurityGroupsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeSecurityGroupsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeSecurityGroupsRequest::getSecurityGroupIds()const
+{
+	return securityGroupIds_;
+}
+
+void DescribeSecurityGroupsRequest::setSecurityGroupIds(const std::string& securityGroupIds)
+{
+	securityGroupIds_ = securityGroupIds;
+	setCoreParameter("SecurityGroupIds", securityGroupIds);
+}
+
+std::string DescribeSecurityGroupsRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void DescribeSecurityGroupsRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
 }
 

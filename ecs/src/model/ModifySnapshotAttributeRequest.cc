@@ -25,17 +25,6 @@ ModifySnapshotAttributeRequest::ModifySnapshotAttributeRequest() :
 ModifySnapshotAttributeRequest::~ModifySnapshotAttributeRequest()
 {}
 
-std::string ModifySnapshotAttributeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifySnapshotAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ModifySnapshotAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,28 +47,6 @@ void ModifySnapshotAttributeRequest::setSnapshotId(const std::string& snapshotId
 	setCoreParameter("SnapshotId", snapshotId);
 }
 
-std::string ModifySnapshotAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifySnapshotAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifySnapshotAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifySnapshotAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string ModifySnapshotAttributeRequest::getDescription()const
 {
 	return description_;
@@ -100,6 +67,28 @@ void ModifySnapshotAttributeRequest::setSnapshotName(const std::string& snapshot
 {
 	snapshotName_ = snapshotName;
 	setCoreParameter("SnapshotName", snapshotName);
+}
+
+std::string ModifySnapshotAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifySnapshotAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifySnapshotAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifySnapshotAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifySnapshotAttributeRequest::getOwnerId()const

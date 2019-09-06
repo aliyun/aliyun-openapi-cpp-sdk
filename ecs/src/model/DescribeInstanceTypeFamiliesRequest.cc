@@ -25,15 +25,26 @@ DescribeInstanceTypeFamiliesRequest::DescribeInstanceTypeFamiliesRequest() :
 DescribeInstanceTypeFamiliesRequest::~DescribeInstanceTypeFamiliesRequest()
 {}
 
-std::string DescribeInstanceTypeFamiliesRequest::getSourceRegionId()const
+long DescribeInstanceTypeFamiliesRequest::getResourceOwnerId()const
 {
-	return sourceRegionId_;
+	return resourceOwnerId_;
 }
 
-void DescribeInstanceTypeFamiliesRequest::setSourceRegionId(const std::string& sourceRegionId)
+void DescribeInstanceTypeFamiliesRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeInstanceTypeFamiliesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeInstanceTypeFamiliesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeInstanceTypeFamiliesRequest::getGeneration()const
@@ -47,17 +58,6 @@ void DescribeInstanceTypeFamiliesRequest::setGeneration(const std::string& gener
 	setCoreParameter("Generation", generation);
 }
 
-long DescribeInstanceTypeFamiliesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeInstanceTypeFamiliesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeInstanceTypeFamiliesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +67,6 @@ void DescribeInstanceTypeFamiliesRequest::setResourceOwnerAccount(const std::str
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeInstanceTypeFamiliesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeInstanceTypeFamiliesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeInstanceTypeFamiliesRequest::getOwnerAccount()const

@@ -39,43 +39,43 @@ namespace AlibabaCloud
 				void setOppositeRouterId(const std::string& oppositeRouterId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getHealthCheckTargetIp()const;
 				void setHealthCheckTargetIp(const std::string& healthCheckTargetIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getOppositeInterfaceId()const;
+				void setOppositeInterfaceId(const std::string& oppositeInterfaceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getRouterInterfaceId()const;
 				void setRouterInterfaceId(const std::string& routerInterfaceId);
 				long getOppositeInterfaceOwnerId()const;
 				void setOppositeInterfaceOwnerId(long oppositeInterfaceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getHealthCheckSourceIp()const;
 				void setHealthCheckSourceIp(const std::string& healthCheckSourceIp);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getOppositeRouterType()const;
 				void setOppositeRouterType(const std::string& oppositeRouterType);
-				std::string getOppositeInterfaceId()const;
-				void setOppositeInterfaceId(const std::string& oppositeInterfaceId);
 
             private:
 				std::string oppositeRouterId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string description_;
 				std::string healthCheckTargetIp_;
+				std::string regionId_;
+				std::string oppositeInterfaceId_;
+				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::string routerInterfaceId_;
 				long oppositeInterfaceOwnerId_;
-				std::string regionId_;
 				std::string healthCheckSourceIp_;
 				std::string name_;
 				std::string oppositeRouterType_;
-				std::string oppositeInterfaceId_;
 
 			};
 		}

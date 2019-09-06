@@ -36,15 +36,15 @@ void ModifyEipAddressAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyEipAddressAttributeRequest::getResourceOwnerAccount()const
+std::string ModifyEipAddressAttributeRequest::getAllocationId()const
 {
-	return resourceOwnerAccount_;
+	return allocationId_;
 }
 
-void ModifyEipAddressAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ModifyEipAddressAttributeRequest::setAllocationId(const std::string& allocationId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	allocationId_ = allocationId;
+	setCoreParameter("AllocationId", allocationId);
 }
 
 std::string ModifyEipAddressAttributeRequest::getRegionId()const
@@ -56,6 +56,17 @@ void ModifyEipAddressAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyEipAddressAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyEipAddressAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyEipAddressAttributeRequest::getBandwidth()const
@@ -78,17 +89,6 @@ void ModifyEipAddressAttributeRequest::setOwnerAccount(const std::string& ownerA
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyEipAddressAttributeRequest::getAllocationId()const
-{
-	return allocationId_;
-}
-
-void ModifyEipAddressAttributeRequest::setAllocationId(const std::string& allocationId)
-{
-	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
 }
 
 long ModifyEipAddressAttributeRequest::getOwnerId()const

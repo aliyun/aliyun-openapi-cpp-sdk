@@ -35,35 +35,32 @@ namespace AlibabaCloud
 				AttachDiskRequest();
 				~AttachDiskRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getDiskId()const;
+				void setDiskId(const std::string& diskId);
+				bool getDeleteWithInstance()const;
+				void setDeleteWithInstance(bool deleteWithInstance);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDiskId()const;
-				void setDiskId(const std::string& diskId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getDevice()const;
 				void setDevice(const std::string& device);
-				bool getDeleteWithInstance()const;
-				void setDeleteWithInstance(bool deleteWithInstance);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string instanceId_;
+				std::string diskId_;
+				bool deleteWithInstance_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string diskId_;
 				long ownerId_;
+				std::string instanceId_;
 				std::string device_;
-				bool deleteWithInstance_;
 
 			};
 		}

@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				DeleteInstancesRequest();
 				~DeleteInstancesRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				bool getTerminateSubscription()const;
+				void setTerminateSubscription(bool terminateSubscription);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getTerminateSubscription()const;
-				void setTerminateSubscription(bool terminateSubscription);
-				bool getForce()const;
-				void setForce(bool force);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::vector<std::string> getInstanceId()const;
+				void setInstanceId(const std::vector<std::string>& instanceId);
+				bool getForce()const;
+				void setForce(bool force);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::vector<std::string> instanceId_;
+				std::string clientToken_;
+				std::string regionId_;
+				bool terminateSubscription_;
 				bool dryRun_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
 				std::string ownerAccount_;
-				bool terminateSubscription_;
-				bool force_;
 				long ownerId_;
+				std::vector<std::string> instanceId_;
+				bool force_;
 
 			};
 		}

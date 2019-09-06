@@ -36,94 +36,6 @@ void DescribeBandwidthLimitationRequest::setResourceOwnerId(long resourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-long DescribeBandwidthLimitationRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeBandwidthLimitationRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeBandwidthLimitationRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeBandwidthLimitationRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string DescribeBandwidthLimitationRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeBandwidthLimitationRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeBandwidthLimitationRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeBandwidthLimitationRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeBandwidthLimitationRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeBandwidthLimitationRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string DescribeBandwidthLimitationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeBandwidthLimitationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeBandwidthLimitationRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeBandwidthLimitationRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
-std::string DescribeBandwidthLimitationRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeBandwidthLimitationRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeBandwidthLimitationRequest::getRegionId()const
 {
 	return regionId_;
@@ -133,39 +45,6 @@ void DescribeBandwidthLimitationRequest::setRegionId(const std::string& regionId
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-bool DescribeBandwidthLimitationRequest::getEnable()const
-{
-	return enable_;
-}
-
-void DescribeBandwidthLimitationRequest::setEnable(bool enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
-}
-
-std::string DescribeBandwidthLimitationRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeBandwidthLimitationRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string DescribeBandwidthLimitationRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeBandwidthLimitationRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeBandwidthLimitationRequest::getInstanceType()const
@@ -188,39 +67,6 @@ void DescribeBandwidthLimitationRequest::setInstanceChargeType(const std::string
 {
 	instanceChargeType_ = instanceChargeType;
 	setCoreParameter("InstanceChargeType", instanceChargeType);
-}
-
-std::string DescribeBandwidthLimitationRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeBandwidthLimitationRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeBandwidthLimitationRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeBandwidthLimitationRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string DescribeBandwidthLimitationRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeBandwidthLimitationRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeBandwidthLimitationRequest::getResourceId()const
@@ -256,17 +102,6 @@ void DescribeBandwidthLimitationRequest::setOwnerAccount(const std::string& owne
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeBandwidthLimitationRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeBandwidthLimitationRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 std::string DescribeBandwidthLimitationRequest::getOperationType()const
 {
 	return operationType_;
@@ -289,39 +124,6 @@ void DescribeBandwidthLimitationRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-bool DescribeBandwidthLimitationRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeBandwidthLimitationRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool DescribeBandwidthLimitationRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeBandwidthLimitationRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool DescribeBandwidthLimitationRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeBandwidthLimitationRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
 std::string DescribeBandwidthLimitationRequest::getSpotStrategy()const
 {
 	return spotStrategy_;
@@ -331,27 +133,5 @@ void DescribeBandwidthLimitationRequest::setSpotStrategy(const std::string& spot
 {
 	spotStrategy_ = spotStrategy;
 	setCoreParameter("SpotStrategy", spotStrategy);
-}
-
-std::string DescribeBandwidthLimitationRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeBandwidthLimitationRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
-std::string DescribeBandwidthLimitationRequest::getAkProxy()const
-{
-	return akProxy_;
-}
-
-void DescribeBandwidthLimitationRequest::setAkProxy(const std::string& akProxy)
-{
-	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
 }
 

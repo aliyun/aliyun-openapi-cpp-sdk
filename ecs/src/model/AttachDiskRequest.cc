@@ -25,17 +25,6 @@ AttachDiskRequest::AttachDiskRequest() :
 AttachDiskRequest::~AttachDiskRequest()
 {}
 
-std::string AttachDiskRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void AttachDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long AttachDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,26 @@ void AttachDiskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string AttachDiskRequest::getInstanceId()const
+std::string AttachDiskRequest::getDiskId()const
 {
-	return instanceId_;
+	return diskId_;
 }
 
-void AttachDiskRequest::setInstanceId(const std::string& instanceId)
+void AttachDiskRequest::setDiskId(const std::string& diskId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	diskId_ = diskId;
+	setCoreParameter("DiskId", diskId);
+}
+
+bool AttachDiskRequest::getDeleteWithInstance()const
+{
+	return deleteWithInstance_;
+}
+
+void AttachDiskRequest::setDeleteWithInstance(bool deleteWithInstance)
+{
+	deleteWithInstance_ = deleteWithInstance;
+	setCoreParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
 }
 
 std::string AttachDiskRequest::getResourceOwnerAccount()const
@@ -80,17 +80,6 @@ void AttachDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string AttachDiskRequest::getDiskId()const
-{
-	return diskId_;
-}
-
-void AttachDiskRequest::setDiskId(const std::string& diskId)
-{
-	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
-}
-
 long AttachDiskRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,6 +91,17 @@ void AttachDiskRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string AttachDiskRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void AttachDiskRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
 std::string AttachDiskRequest::getDevice()const
 {
 	return device_;
@@ -111,16 +111,5 @@ void AttachDiskRequest::setDevice(const std::string& device)
 {
 	device_ = device;
 	setCoreParameter("Device", device);
-}
-
-bool AttachDiskRequest::getDeleteWithInstance()const
-{
-	return deleteWithInstance_;
-}
-
-void AttachDiskRequest::setDeleteWithInstance(bool deleteWithInstance)
-{
-	deleteWithInstance_ = deleteWithInstance;
-	setCoreParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
 }
 

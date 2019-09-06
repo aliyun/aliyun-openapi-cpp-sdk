@@ -25,17 +25,6 @@ RenewInstanceRequest::RenewInstanceRequest() :
 RenewInstanceRequest::~RenewInstanceRequest()
 {}
 
-std::string RenewInstanceRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void RenewInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long RenewInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,39 +36,6 @@ void RenewInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int RenewInstanceRequest::getPeriod()const
-{
-	return period_;
-}
-
-void RenewInstanceRequest::setPeriod(int period)
-{
-	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
-}
-
-std::string RenewInstanceRequest::getPeriodUnit()const
-{
-	return periodUnit_;
-}
-
-void RenewInstanceRequest::setPeriodUnit(const std::string& periodUnit)
-{
-	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
-}
-
-std::string RenewInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string RenewInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -89,6 +45,17 @@ void RenewInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
+}
+
+int RenewInstanceRequest::getPeriod()const
+{
+	return period_;
+}
+
+void RenewInstanceRequest::setPeriod(int period)
+{
+	period_ = period;
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string RenewInstanceRequest::getResourceOwnerAccount()const
@@ -122,5 +89,27 @@ void RenewInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string RenewInstanceRequest::getPeriodUnit()const
+{
+	return periodUnit_;
+}
+
+void RenewInstanceRequest::setPeriodUnit(const std::string& periodUnit)
+{
+	periodUnit_ = periodUnit;
+	setCoreParameter("PeriodUnit", periodUnit);
+}
+
+std::string RenewInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

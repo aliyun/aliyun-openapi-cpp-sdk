@@ -43,36 +43,36 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::vector<BandwidthPackage> getBandwidthPackage()const;
+				void setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::vector<BandwidthPackage> getBandwidthPackage()const;
-				void setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
+				std::string description_;
+				std::string regionId_;
+				std::vector<BandwidthPackage> bandwidthPackage_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				long ownerId_;
 				std::string vpcId_;
 				std::string name_;
-				std::string description_;
-				long ownerId_;
-				std::vector<BandwidthPackage> bandwidthPackage_;
 
 			};
 		}

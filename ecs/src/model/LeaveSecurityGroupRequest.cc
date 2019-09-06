@@ -25,17 +25,6 @@ LeaveSecurityGroupRequest::LeaveSecurityGroupRequest() :
 LeaveSecurityGroupRequest::~LeaveSecurityGroupRequest()
 {}
 
-std::string LeaveSecurityGroupRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void LeaveSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long LeaveSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void LeaveSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string LeaveSecurityGroupRequest::getInstanceId()const
+std::string LeaveSecurityGroupRequest::getSecurityGroupId()const
 {
-	return instanceId_;
+	return securityGroupId_;
 }
 
-void LeaveSecurityGroupRequest::setInstanceId(const std::string& instanceId)
+void LeaveSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	securityGroupId_ = securityGroupId;
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string LeaveSecurityGroupRequest::getResourceOwnerAccount()const
@@ -80,17 +69,6 @@ void LeaveSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string LeaveSecurityGroupRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void LeaveSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
-}
-
 long LeaveSecurityGroupRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +78,16 @@ void LeaveSecurityGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string LeaveSecurityGroupRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void LeaveSecurityGroupRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

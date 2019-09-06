@@ -36,26 +36,15 @@ void UnassociateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UnassociateEipAddressRequest::getInstanceId()const
+std::string UnassociateEipAddressRequest::getAllocationId()const
 {
-	return instanceId_;
+	return allocationId_;
 }
 
-void UnassociateEipAddressRequest::setInstanceId(const std::string& instanceId)
+void UnassociateEipAddressRequest::setAllocationId(const std::string& allocationId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string UnassociateEipAddressRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UnassociateEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	allocationId_ = allocationId;
+	setCoreParameter("AllocationId", allocationId);
 }
 
 std::string UnassociateEipAddressRequest::getRegionId()const
@@ -69,17 +58,6 @@ void UnassociateEipAddressRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string UnassociateEipAddressRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void UnassociateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string UnassociateEipAddressRequest::getInstanceType()const
 {
 	return instanceType_;
@@ -91,15 +69,26 @@ void UnassociateEipAddressRequest::setInstanceType(const std::string& instanceTy
 	setCoreParameter("InstanceType", instanceType);
 }
 
-std::string UnassociateEipAddressRequest::getAllocationId()const
+std::string UnassociateEipAddressRequest::getResourceOwnerAccount()const
 {
-	return allocationId_;
+	return resourceOwnerAccount_;
 }
 
-void UnassociateEipAddressRequest::setAllocationId(const std::string& allocationId)
+void UnassociateEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string UnassociateEipAddressRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void UnassociateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UnassociateEipAddressRequest::getOwnerId()const
@@ -111,5 +100,16 @@ void UnassociateEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UnassociateEipAddressRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void UnassociateEipAddressRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

@@ -35,28 +35,25 @@ namespace AlibabaCloud
 				DescribeSecurityGroupReferencesRequest();
 				~DescribeSecurityGroupReferencesRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::vector<std::string> getSecurityGroupId()const;
+				void setSecurityGroupId(const std::vector<std::string>& securityGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::vector<std::string> getSecurityGroupId()const;
-				void setSecurityGroupId(const std::vector<std::string>& securityGroupId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
+				std::vector<std::string> securityGroupId_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::vector<std::string> securityGroupId_;
 				long ownerId_;
 
 			};

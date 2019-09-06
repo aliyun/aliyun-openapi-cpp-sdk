@@ -37,24 +37,22 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				int getInternetMaxBandwidthOut()const;
+				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				int getInternetMaxBandwidthOut()const;
-				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getNetworkChargeType()const;
@@ -66,15 +64,14 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				int internetMaxBandwidthOut_;
+				std::string startTime_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
 				std::string ownerAccount_;
-				int internetMaxBandwidthOut_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
-				std::string sourceRegionId_;
 				std::string instanceId_;
 				std::string networkChargeType_;
 				int internetMaxBandwidthIn_;

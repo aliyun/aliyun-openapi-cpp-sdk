@@ -36,61 +36,6 @@ void DescribeDemandsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-long DescribeDemandsRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeDemandsRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeDemandsRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeDemandsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string DescribeDemandsRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeDemandsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeDemandsRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeDemandsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeDemandsRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeDemandsRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
 int DescribeDemandsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -100,28 +45,6 @@ void DescribeDemandsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeDemandsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDemandsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeDemandsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDemandsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDemandsRequest::getRegionId()const
@@ -135,28 +58,6 @@ void DescribeDemandsRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-bool DescribeDemandsRequest::getEnable()const
-{
-	return enable_;
-}
-
-void DescribeDemandsRequest::setEnable(bool enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
-}
-
-std::string DescribeDemandsRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeDemandsRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
 int DescribeDemandsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -166,17 +67,6 @@ void DescribeDemandsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeDemandsRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeDemandsRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDemandsRequest::getInstanceType()const
@@ -216,39 +106,6 @@ void DescribeDemandsRequest::setInstanceChargeType(const std::string& instanceCh
 {
 	instanceChargeType_ = instanceChargeType;
 	setCoreParameter("InstanceChargeType", instanceChargeType);
-}
-
-std::string DescribeDemandsRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeDemandsRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeDemandsRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeDemandsRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string DescribeDemandsRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeDemandsRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
 }
 
 bool DescribeDemandsRequest::getDryRun()const
@@ -295,17 +152,6 @@ void DescribeDemandsRequest::setInstanceTypeFamily(const std::string& instanceTy
 	setCoreParameter("InstanceTypeFamily", instanceTypeFamily);
 }
 
-std::string DescribeDemandsRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeDemandsRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long DescribeDemandsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -327,61 +173,6 @@ void DescribeDemandsRequest::setDemandStatus(const std::vector<std::string>& dem
 	demandStatus_ = demandStatus;
 	for(int i = 0; i!= demandStatus.size(); i++)
 		setCoreParameter("DemandStatus."+ std::to_string(i), demandStatus.at(i));
-}
-
-bool DescribeDemandsRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeDemandsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool DescribeDemandsRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeDemandsRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool DescribeDemandsRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeDemandsRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string DescribeDemandsRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeDemandsRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
-std::string DescribeDemandsRequest::getAkProxy()const
-{
-	return akProxy_;
-}
-
-void DescribeDemandsRequest::setAkProxy(const std::string& akProxy)
-{
-	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string DescribeDemandsRequest::getZoneId()const

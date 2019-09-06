@@ -25,17 +25,6 @@ ModifyInstanceAutoReleaseTimeRequest::ModifyInstanceAutoReleaseTimeRequest() :
 ModifyInstanceAutoReleaseTimeRequest::~ModifyInstanceAutoReleaseTimeRequest()
 {}
 
-std::string ModifyInstanceAutoReleaseTimeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyInstanceAutoReleaseTimeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 long ModifyInstanceAutoReleaseTimeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void ModifyInstanceAutoReleaseTimeRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceAutoReleaseTimeRequest::getInstanceId()const
+std::string ModifyInstanceAutoReleaseTimeRequest::getRegionId()const
 {
-	return instanceId_;
+	return regionId_;
 }
 
-void ModifyInstanceAutoReleaseTimeRequest::setInstanceId(const std::string& instanceId)
+void ModifyInstanceAutoReleaseTimeRequest::setRegionId(const std::string& regionId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceAutoReleaseTimeRequest::getResourceOwnerAccount()const
@@ -67,17 +56,6 @@ void ModifyInstanceAutoReleaseTimeRequest::setResourceOwnerAccount(const std::st
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyInstanceAutoReleaseTimeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyInstanceAutoReleaseTimeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceAutoReleaseTimeRequest::getOwnerAccount()const
@@ -111,5 +89,16 @@ void ModifyInstanceAutoReleaseTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyInstanceAutoReleaseTimeRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyInstanceAutoReleaseTimeRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

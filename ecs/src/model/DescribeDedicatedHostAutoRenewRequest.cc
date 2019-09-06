@@ -25,17 +25,6 @@ DescribeDedicatedHostAutoRenewRequest::DescribeDedicatedHostAutoRenewRequest() :
 DescribeDedicatedHostAutoRenewRequest::~DescribeDedicatedHostAutoRenewRequest()
 {}
 
-std::string DescribeDedicatedHostAutoRenewRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeDedicatedHostAutoRenewRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
 std::string DescribeDedicatedHostAutoRenewRequest::getDedicatedHostIds()const
 {
 	return dedicatedHostIds_;
@@ -58,17 +47,6 @@ void DescribeDedicatedHostAutoRenewRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDedicatedHostAutoRenewRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeDedicatedHostAutoRenewRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeDedicatedHostAutoRenewRequest::getRegionId()const
 {
 	return regionId_;
@@ -78,6 +56,17 @@ void DescribeDedicatedHostAutoRenewRequest::setRegionId(const std::string& regio
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeDedicatedHostAutoRenewRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeDedicatedHostAutoRenewRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDedicatedHostAutoRenewRequest::getOwnerAccount()const

@@ -47,28 +47,6 @@ void CopyImageRequest::setImageId(const std::string& imageId)
 	setCoreParameter("ImageId", imageId);
 }
 
-std::string CopyImageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CopyImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CopyImageRequest::getDestinationImageName()const
-{
-	return destinationImageName_;
-}
-
-void CopyImageRequest::setDestinationImageName(const std::string& destinationImageName)
-{
-	destinationImageName_ = destinationImageName;
-	setCoreParameter("DestinationImageName", destinationImageName);
-}
-
 std::string CopyImageRequest::getDestinationRegionId()const
 {
 	return destinationRegionId_;
@@ -78,50 +56,6 @@ void CopyImageRequest::setDestinationRegionId(const std::string& destinationRegi
 {
 	destinationRegionId_ = destinationRegionId;
 	setCoreParameter("DestinationRegionId", destinationRegionId);
-}
-
-std::string CopyImageRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CopyImageRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long CopyImageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CopyImageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CopyImageRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void CopyImageRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
-bool CopyImageRequest::getEncrypted()const
-{
-	return encrypted_;
-}
-
-void CopyImageRequest::setEncrypted(bool encrypted)
-{
-	encrypted_ = encrypted;
-	setCoreParameter("Encrypted", encrypted ? "true" : "false");
 }
 
 std::string CopyImageRequest::getRegionId()const
@@ -150,6 +84,61 @@ void CopyImageRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
+}
+
+std::string CopyImageRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CopyImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CopyImageRequest::getDestinationImageName()const
+{
+	return destinationImageName_;
+}
+
+void CopyImageRequest::setDestinationImageName(const std::string& destinationImageName)
+{
+	destinationImageName_ = destinationImageName;
+	setCoreParameter("DestinationImageName", destinationImageName);
+}
+
+std::string CopyImageRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CopyImageRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CopyImageRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CopyImageRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool CopyImageRequest::getEncrypted()const
+{
+	return encrypted_;
+}
+
+void CopyImageRequest::setEncrypted(bool encrypted)
+{
+	encrypted_ = encrypted;
+	setCoreParameter("Encrypted", encrypted ? "true" : "false");
 }
 
 std::string CopyImageRequest::getKMSKeyId()const

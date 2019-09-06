@@ -40,41 +40,38 @@ namespace AlibabaCloud
 				DescribeTagsRequest();
 				~DescribeTagsRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceId()const;
-				void setResourceId(const std::string& resourceId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getResourceId()const;
+				void setResourceId(const std::string& resourceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string resourceId_;
-				std::string resourceOwnerAccount_;
+				int pageNumber_;
 				std::string regionId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
+				std::string resourceId_;
+				std::string resourceOwnerAccount_;
 				long ownerId_;
-				std::string category_;
 				std::string resourceType_;
-				int pageNumber_;
+				std::string category_;
 
 			};
 		}

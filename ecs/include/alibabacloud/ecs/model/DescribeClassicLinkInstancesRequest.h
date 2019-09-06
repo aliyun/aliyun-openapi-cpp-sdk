@@ -35,35 +35,32 @@ namespace AlibabaCloud
 				DescribeClassicLinkInstancesRequest();
 				~DescribeClassicLinkInstancesRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getPageNumber()const;
 				void setPageNumber(const std::string& pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
-				std::string instanceId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string vpcId_;
-				std::string pageSize_;
-				long ownerId_;
 				std::string pageNumber_;
+				std::string regionId_;
+				std::string pageSize_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::string instanceId_;
+				std::string vpcId_;
 
 			};
 		}

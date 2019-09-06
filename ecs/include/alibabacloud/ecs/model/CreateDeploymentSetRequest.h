@@ -37,22 +37,20 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDeploymentSetName()const;
 				void setDeploymentSetName(const std::string& deploymentSetName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOnUnableToRedeployFailedInstance()const;
 				void setOnUnableToRedeployFailedInstance(const std::string& onUnableToRedeployFailedInstance);
 				std::string getGranularity()const;
@@ -64,14 +62,13 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
 				std::string description_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				std::string deploymentSetName_;
 				long ownerId_;
-				std::string sourceRegionId_;
-				std::string regionId_;
 				std::string onUnableToRedeployFailedInstance_;
 				std::string granularity_;
 				std::string domain_;

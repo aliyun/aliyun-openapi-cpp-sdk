@@ -36,15 +36,15 @@ void ReleaseEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ReleaseEipAddressRequest::getResourceOwnerAccount()const
+std::string ReleaseEipAddressRequest::getAllocationId()const
 {
-	return resourceOwnerAccount_;
+	return allocationId_;
 }
 
-void ReleaseEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ReleaseEipAddressRequest::setAllocationId(const std::string& allocationId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	allocationId_ = allocationId;
+	setCoreParameter("AllocationId", allocationId);
 }
 
 std::string ReleaseEipAddressRequest::getRegionId()const
@@ -58,6 +58,17 @@ void ReleaseEipAddressRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string ReleaseEipAddressRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ReleaseEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string ReleaseEipAddressRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -67,17 +78,6 @@ void ReleaseEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ReleaseEipAddressRequest::getAllocationId()const
-{
-	return allocationId_;
-}
-
-void ReleaseEipAddressRequest::setAllocationId(const std::string& allocationId)
-{
-	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
 }
 
 long ReleaseEipAddressRequest::getOwnerId()const

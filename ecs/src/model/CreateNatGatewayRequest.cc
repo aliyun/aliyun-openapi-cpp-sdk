@@ -36,15 +36,26 @@ void CreateNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
+std::string CreateNatGatewayRequest::getClientToken()const
 {
-	return resourceOwnerAccount_;
+	return clientToken_;
 }
 
-void CreateNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void CreateNatGatewayRequest::setClientToken(const std::string& clientToken)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string CreateNatGatewayRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateNatGatewayRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
 }
 
 std::string CreateNatGatewayRequest::getRegionId()const
@@ -58,15 +69,33 @@ void CreateNatGatewayRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string CreateNatGatewayRequest::getClientToken()const
+std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::getBandwidthPackage()const
 {
-	return clientToken_;
+	return bandwidthPackage_;
 }
 
-void CreateNatGatewayRequest::setClientToken(const std::string& clientToken)
+void CreateNatGatewayRequest::setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage)
 {
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	bandwidthPackage_ = bandwidthPackage;
+	int i = 0;
+	for(int i = 0; i!= bandwidthPackage.size(); i++)	{
+		auto obj = bandwidthPackage.at(i);
+		std::string str ="BandwidthPackage."+ std::to_string(i);
+		setCoreParameter(str + ".Bandwidth", std::to_string(obj.bandwidth));
+		setCoreParameter(str + ".Zone", obj.zone);
+		setCoreParameter(str + ".IpCount", std::to_string(obj.ipCount));
+	}
+}
+
+std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateNatGatewayRequest::getOwnerAccount()const
@@ -78,6 +107,17 @@ void CreateNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateNatGatewayRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateNatGatewayRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateNatGatewayRequest::getVpcId()const
@@ -100,45 +140,5 @@ void CreateNatGatewayRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string CreateNatGatewayRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateNatGatewayRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
-long CreateNatGatewayRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateNatGatewayRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::getBandwidthPackage()const
-{
-	return bandwidthPackage_;
-}
-
-void CreateNatGatewayRequest::setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage)
-{
-	bandwidthPackage_ = bandwidthPackage;
-	int i = 0;
-	for(int i = 0; i!= bandwidthPackage.size(); i++)	{
-		auto obj = bandwidthPackage.at(i);
-		std::string str ="BandwidthPackage."+ std::to_string(i);
-		setCoreParameter(str + ".Bandwidth", std::to_string(obj.bandwidth));
-		setCoreParameter(str + ".Zone", obj.zone);
-		setCoreParameter(str + ".IpCount", std::to_string(obj.ipCount));
-	}
 }
 

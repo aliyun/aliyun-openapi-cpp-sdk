@@ -25,17 +25,6 @@ DeleteHaVipRequest::DeleteHaVipRequest() :
 DeleteHaVipRequest::~DeleteHaVipRequest()
 {}
 
-std::string DeleteHaVipRequest::getHaVipId()const
-{
-	return haVipId_;
-}
-
-void DeleteHaVipRequest::setHaVipId(const std::string& haVipId)
-{
-	haVipId_ = haVipId;
-	setCoreParameter("HaVipId", haVipId);
-}
-
 long DeleteHaVipRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void DeleteHaVipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DeleteHaVipRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteHaVipRequest::getClientToken()const
@@ -78,6 +56,28 @@ void DeleteHaVipRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteHaVipRequest::getHaVipId()const
+{
+	return haVipId_;
+}
+
+void DeleteHaVipRequest::setHaVipId(const std::string& haVipId)
+{
+	haVipId_ = haVipId;
+	setCoreParameter("HaVipId", haVipId);
+}
+
+std::string DeleteHaVipRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteHaVipRequest::getOwnerAccount()const

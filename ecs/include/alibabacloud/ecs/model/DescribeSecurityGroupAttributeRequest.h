@@ -35,35 +35,32 @@ namespace AlibabaCloud
 				DescribeSecurityGroupAttributeRequest();
 				~DescribeSecurityGroupAttributeRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				std::string getNicType()const;
 				void setNicType(const std::string& nicType);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getSecurityGroupId()const;
 				void setSecurityGroupId(const std::string& securityGroupId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDirection()const;
 				void setDirection(const std::string& direction);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string sourceRegionId_;
 				std::string nicType_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
 				std::string securityGroupId_;
-				long ownerId_;
+				std::string regionId_;
 				std::string direction_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 
 			};
 		}

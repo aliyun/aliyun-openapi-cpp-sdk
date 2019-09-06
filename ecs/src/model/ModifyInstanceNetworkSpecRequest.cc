@@ -36,6 +36,39 @@ void ModifyInstanceNetworkSpecRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyInstanceNetworkSpecRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ModifyInstanceNetworkSpecRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+int ModifyInstanceNetworkSpecRequest::getInternetMaxBandwidthOut()const
+{
+	return internetMaxBandwidthOut_;
+}
+
+void ModifyInstanceNetworkSpecRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
+{
+	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
+	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+}
+
+std::string ModifyInstanceNetworkSpecRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void ModifyInstanceNetworkSpecRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
 bool ModifyInstanceNetworkSpecRequest::getAutoPay()const
 {
 	return autoPay_;
@@ -58,17 +91,6 @@ void ModifyInstanceNetworkSpecRequest::setResourceOwnerAccount(const std::string
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyInstanceNetworkSpecRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void ModifyInstanceNetworkSpecRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
 std::string ModifyInstanceNetworkSpecRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,17 +100,6 @@ void ModifyInstanceNetworkSpecRequest::setOwnerAccount(const std::string& ownerA
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int ModifyInstanceNetworkSpecRequest::getInternetMaxBandwidthOut()const
-{
-	return internetMaxBandwidthOut_;
-}
-
-void ModifyInstanceNetworkSpecRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
-{
-	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
 std::string ModifyInstanceNetworkSpecRequest::getEndTime()const
@@ -102,17 +113,6 @@ void ModifyInstanceNetworkSpecRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string ModifyInstanceNetworkSpecRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void ModifyInstanceNetworkSpecRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long ModifyInstanceNetworkSpecRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,17 +122,6 @@ void ModifyInstanceNetworkSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyInstanceNetworkSpecRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyInstanceNetworkSpecRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string ModifyInstanceNetworkSpecRequest::getInstanceId()const

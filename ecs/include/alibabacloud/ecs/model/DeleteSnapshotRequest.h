@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				DeleteSnapshotRequest();
 				~DeleteSnapshotRequest();
 
-				std::string getSourceRegionId()const;
-				void setSourceRegionId(const std::string& sourceRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSnapshotId()const;
@@ -45,19 +43,18 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getForce()const;
-				void setForce(bool force);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				bool getForce()const;
+				void setForce(bool force);
 
             private:
-				std::string sourceRegionId_;
 				long resourceOwnerId_;
 				std::string snapshotId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				bool force_;
 				long ownerId_;
+				bool force_;
 
 			};
 		}
