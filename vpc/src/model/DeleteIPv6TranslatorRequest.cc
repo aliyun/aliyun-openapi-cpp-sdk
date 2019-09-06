@@ -36,17 +36,6 @@ void DeleteIPv6TranslatorRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteIPv6TranslatorRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteIPv6TranslatorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteIPv6TranslatorRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,6 +58,17 @@ void DeleteIPv6TranslatorRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string DeleteIPv6TranslatorRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteIPv6TranslatorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string DeleteIPv6TranslatorRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -80,17 +80,6 @@ void DeleteIPv6TranslatorRequest::setOwnerAccount(const std::string& ownerAccoun
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeleteIPv6TranslatorRequest::getIpv6TranslatorId()const
-{
-	return ipv6TranslatorId_;
-}
-
-void DeleteIPv6TranslatorRequest::setIpv6TranslatorId(const std::string& ipv6TranslatorId)
-{
-	ipv6TranslatorId_ = ipv6TranslatorId;
-	setCoreParameter("Ipv6TranslatorId", ipv6TranslatorId);
-}
-
 long DeleteIPv6TranslatorRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void DeleteIPv6TranslatorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteIPv6TranslatorRequest::getIpv6TranslatorId()const
+{
+	return ipv6TranslatorId_;
+}
+
+void DeleteIPv6TranslatorRequest::setIpv6TranslatorId(const std::string& ipv6TranslatorId)
+{
+	ipv6TranslatorId_ = ipv6TranslatorId;
+	setCoreParameter("Ipv6TranslatorId", ipv6TranslatorId);
 }
 

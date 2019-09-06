@@ -36,61 +36,6 @@ void DescribeCustomerGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeCustomerGatewaysRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeCustomerGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeCustomerGatewaysRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCustomerGatewaysRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeCustomerGatewaysRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeCustomerGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeCustomerGatewaysRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeCustomerGatewaysRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeCustomerGatewaysRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeCustomerGatewaysRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeCustomerGatewaysRequest::getCustomerGatewayId()const
 {
 	return customerGatewayId_;
@@ -111,5 +56,60 @@ void DescribeCustomerGatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeCustomerGatewaysRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeCustomerGatewaysRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeCustomerGatewaysRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeCustomerGatewaysRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeCustomerGatewaysRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeCustomerGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeCustomerGatewaysRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeCustomerGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeCustomerGatewaysRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeCustomerGatewaysRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

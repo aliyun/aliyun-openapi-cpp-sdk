@@ -36,15 +36,26 @@ void ModifyVpnGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getResourceOwnerAccount()const
+std::string ModifyVpnGatewayAttributeRequest::getClientToken()const
 {
-	return resourceOwnerAccount_;
+	return clientToken_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ModifyVpnGatewayAttributeRequest::setClientToken(const std::string& clientToken)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string ModifyVpnGatewayAttributeRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyVpnGatewayAttributeRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyVpnGatewayAttributeRequest::getRegionId()const
@@ -58,15 +69,15 @@ void ModifyVpnGatewayAttributeRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getClientToken()const
+std::string ModifyVpnGatewayAttributeRequest::getResourceOwnerAccount()const
 {
-	return clientToken_;
+	return resourceOwnerAccount_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setClientToken(const std::string& clientToken)
+void ModifyVpnGatewayAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyVpnGatewayAttributeRequest::getOwnerAccount()const
@@ -78,28 +89,6 @@ void ModifyVpnGatewayAttributeRequest::setOwnerAccount(const std::string& ownerA
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyVpnGatewayAttributeRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyVpnGatewayAttributeRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string ModifyVpnGatewayAttributeRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyVpnGatewayAttributeRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 std::string ModifyVpnGatewayAttributeRequest::getVpnGatewayId()const
@@ -122,5 +111,16 @@ void ModifyVpnGatewayAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyVpnGatewayAttributeRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyVpnGatewayAttributeRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

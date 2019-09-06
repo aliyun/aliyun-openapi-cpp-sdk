@@ -35,40 +35,40 @@ namespace AlibabaCloud
 				DescribeVpnGatewaysRequest();
 				~DescribeVpnGatewaysRequest();
 
-				std::string getBusinessStatus()const;
-				void setBusinessStatus(const std::string& businessStatus);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getBusinessStatus()const;
+				void setBusinessStatus(const std::string& businessStatus);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getVpnGatewayId()const;
 				void setVpnGatewayId(const std::string& vpnGatewayId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
-				std::string businessStatus_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
+				int pageNumber_;
 				std::string regionId_;
-				std::string ownerAccount_;
-				std::string vpcId_;
 				int pageSize_;
+				std::string businessStatus_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				std::string vpnGatewayId_;
 				long ownerId_;
-				int pageNumber_;
+				std::string vpcId_;
 				std::string status_;
 
 			};

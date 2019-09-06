@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_DELETENQARESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_DELETENQARESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_DELETIONPROTECTIONRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_DELETIONPROTECTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT DeleteNqaResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT DeletionProtectionResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteNqaResult();
-				explicit DeleteNqaResult(const std::string &payload);
-				~DeleteNqaResult();
+				DeletionProtectionResult();
+				explicit DeletionProtectionResult(const std::string &payload);
+				~DeletionProtectionResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_DELETENQARESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_DELETIONPROTECTIONRESULT_H_

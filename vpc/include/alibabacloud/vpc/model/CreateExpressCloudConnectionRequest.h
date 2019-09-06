@@ -37,24 +37,26 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPeerLocation()const;
-				void setPeerLocation(const std::string& peerLocation);
 				std::string getPortType()const;
 				void setPortType(const std::string& portType);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getRedundantEccId()const;
+				void setRedundantEccId(const std::string& redundantEccId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getPeerLocation()const;
+				void setPeerLocation(const std::string& peerLocation);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getPeerCity()const;
 				void setPeerCity(const std::string& peerCity);
 				std::string getIDCardNo()const;
 				void setIDCardNo(const std::string& iDCardNo);
-				std::string getRedundantEccId()const;
-				void setRedundantEccId(const std::string& redundantEccId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getContactMail()const;
@@ -63,27 +65,25 @@ namespace AlibabaCloud
 				void setContactTel(const std::string& contactTel);
 				std::string getIdcSP()const;
 				void setIdcSP(const std::string& idcSP);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getName()const;
 				void setName(const std::string& name);
 
             private:
 				long resourceOwnerId_;
-				std::string peerLocation_;
 				std::string portType_;
+				std::string description_;
+				std::string redundantEccId_;
+				std::string regionId_;
+				std::string peerLocation_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
 				std::string ownerAccount_;
-				std::string description_;
 				std::string peerCity_;
 				std::string iDCardNo_;
-				std::string redundantEccId_;
 				long ownerId_;
 				std::string contactMail_;
 				std::string contactTel_;
 				std::string idcSP_;
-				std::string regionId_;
 				std::string name_;
 
 			};

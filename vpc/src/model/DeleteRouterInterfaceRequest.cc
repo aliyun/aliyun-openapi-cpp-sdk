@@ -36,6 +36,17 @@ void DeleteRouterInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteRouterInterfaceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DeleteRouterInterfaceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
 std::string DeleteRouterInterfaceRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,17 +67,6 @@ void DeleteRouterInterfaceRequest::setResourceOwnerAccount(const std::string& re
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteRouterInterfaceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void DeleteRouterInterfaceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DeleteRouterInterfaceRequest::getOwnerAccount()const

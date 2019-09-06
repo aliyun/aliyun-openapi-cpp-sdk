@@ -36,39 +36,6 @@ void ModifyRouteTableAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyRouteTableAttributesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyRouteTableAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyRouteTableAttributesRequest::getBandwidth()const
-{
-	return bandwidth_;
-}
-
-void ModifyRouteTableAttributesRequest::setBandwidth(const std::string& bandwidth)
-{
-	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
-}
-
-std::string ModifyRouteTableAttributesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyRouteTableAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string ModifyRouteTableAttributesRequest::getDescription()const
 {
 	return description_;
@@ -78,28 +45,6 @@ void ModifyRouteTableAttributesRequest::setDescription(const std::string& descri
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long ModifyRouteTableAttributesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyRouteTableAttributesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyRouteTableAttributesRequest::getKbpsBandwidth()const
-{
-	return kbpsBandwidth_;
-}
-
-void ModifyRouteTableAttributesRequest::setKbpsBandwidth(const std::string& kbpsBandwidth)
-{
-	kbpsBandwidth_ = kbpsBandwidth;
-	setCoreParameter("KbpsBandwidth", kbpsBandwidth);
 }
 
 std::string ModifyRouteTableAttributesRequest::getRouteTableName()const
@@ -135,17 +80,6 @@ void ModifyRouteTableAttributesRequest::setResourceUid(long resourceUid)
 	setCoreParameter("ResourceUid", std::to_string(resourceUid));
 }
 
-std::string ModifyRouteTableAttributesRequest::getResourceBid()const
-{
-	return resourceBid_;
-}
-
-void ModifyRouteTableAttributesRequest::setResourceBid(const std::string& resourceBid)
-{
-	resourceBid_ = resourceBid;
-	setCoreParameter("ResourceBid", resourceBid);
-}
-
 std::string ModifyRouteTableAttributesRequest::getRouteTableId()const
 {
 	return routeTableId_;
@@ -155,5 +89,71 @@ void ModifyRouteTableAttributesRequest::setRouteTableId(const std::string& route
 {
 	routeTableId_ = routeTableId;
 	setCoreParameter("RouteTableId", routeTableId);
+}
+
+std::string ModifyRouteTableAttributesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyRouteTableAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyRouteTableAttributesRequest::getBandwidth()const
+{
+	return bandwidth_;
+}
+
+void ModifyRouteTableAttributesRequest::setBandwidth(const std::string& bandwidth)
+{
+	bandwidth_ = bandwidth;
+	setCoreParameter("Bandwidth", bandwidth);
+}
+
+std::string ModifyRouteTableAttributesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyRouteTableAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long ModifyRouteTableAttributesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyRouteTableAttributesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyRouteTableAttributesRequest::getKbpsBandwidth()const
+{
+	return kbpsBandwidth_;
+}
+
+void ModifyRouteTableAttributesRequest::setKbpsBandwidth(const std::string& kbpsBandwidth)
+{
+	kbpsBandwidth_ = kbpsBandwidth;
+	setCoreParameter("KbpsBandwidth", kbpsBandwidth);
+}
+
+std::string ModifyRouteTableAttributesRequest::getResourceBid()const
+{
+	return resourceBid_;
+}
+
+void ModifyRouteTableAttributesRequest::setResourceBid(const std::string& resourceBid)
+{
+	resourceBid_ = resourceBid;
+	setCoreParameter("ResourceBid", resourceBid);
 }
 

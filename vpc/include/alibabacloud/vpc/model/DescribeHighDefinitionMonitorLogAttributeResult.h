@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBENQASRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_DESCRIBENQASRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEHIGHDEFINITIONMONITORLOGATTRIBUTERESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_DESCRIBEHIGHDEFINITIONMONITORLOGATTRIBUTERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT DescribeNqasResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT DescribeHighDefinitionMonitorLogAttributeResult : public ServiceResult
 			{
 			public:
-				struct Nqa
-				{
-					std::string status;
-					std::string destinationIp;
-					std::string nqaId;
-					std::string routerId;
-					std::string regionId;
-				};
 
 
-				DescribeNqasResult();
-				explicit DescribeNqasResult(const std::string &payload);
-				~DescribeNqasResult();
-				std::vector<Nqa> getNqas()const;
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
+				DescribeHighDefinitionMonitorLogAttributeResult();
+				explicit DescribeHighDefinitionMonitorLogAttributeResult(const std::string &payload);
+				~DescribeHighDefinitionMonitorLogAttributeResult();
+				std::string getInstanceId()const;
+				std::string getLogStore()const;
+				std::string getInstanceType()const;
+				std::string getSuccess()const;
+				std::string getLogProject()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Nqa> nqas_;
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
+				std::string instanceId_;
+				std::string logStore_;
+				std::string instanceType_;
+				std::string success_;
+				std::string logProject_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBENQASRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEHIGHDEFINITIONMONITORLOGATTRIBUTERESULT_H_

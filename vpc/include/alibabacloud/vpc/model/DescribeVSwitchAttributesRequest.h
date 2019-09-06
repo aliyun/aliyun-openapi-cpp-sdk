@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				DescribeVSwitchAttributesRequest();
 				~DescribeVSwitchAttributesRequest();
 
-				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 
             private:
-				std::string vSwitchId_;
 				long resourceOwnerId_;
+				std::string regionId_;
 				bool dryRun_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string vSwitchId_;
 
 			};
 		}

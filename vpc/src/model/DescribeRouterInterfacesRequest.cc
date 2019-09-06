@@ -25,23 +25,6 @@ DescribeRouterInterfacesRequest::DescribeRouterInterfacesRequest() :
 DescribeRouterInterfacesRequest::~DescribeRouterInterfacesRequest()
 {}
 
-std::vector<DescribeRouterInterfacesRequest::Filter> DescribeRouterInterfacesRequest::getFilter()const
-{
-	return filter_;
-}
-
-void DescribeRouterInterfacesRequest::setFilter(const std::vector<Filter>& filter)
-{
-	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
-	}
-}
-
 long DescribeRouterInterfacesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -53,15 +36,26 @@ void DescribeRouterInterfacesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRouterInterfacesRequest::getResourceOwnerAccount()const
+bool DescribeRouterInterfacesRequest::getIncludeReservationData()const
 {
-	return resourceOwnerAccount_;
+	return includeReservationData_;
 }
 
-void DescribeRouterInterfacesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeRouterInterfacesRequest::setIncludeReservationData(bool includeReservationData)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	includeReservationData_ = includeReservationData;
+	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+}
+
+int DescribeRouterInterfacesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeRouterInterfacesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeRouterInterfacesRequest::getRegionId()const
@@ -86,6 +80,17 @@ void DescribeRouterInterfacesRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeRouterInterfacesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeRouterInterfacesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long DescribeRouterInterfacesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -97,25 +102,20 @@ void DescribeRouterInterfacesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-bool DescribeRouterInterfacesRequest::getIncludeReservationData()const
+std::vector<DescribeRouterInterfacesRequest::Filter> DescribeRouterInterfacesRequest::getFilter()const
 {
-	return includeReservationData_;
+	return filter_;
 }
 
-void DescribeRouterInterfacesRequest::setIncludeReservationData(bool includeReservationData)
+void DescribeRouterInterfacesRequest::setFilter(const std::vector<Filter>& filter)
 {
-	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
-}
-
-int DescribeRouterInterfacesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeRouterInterfacesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	filter_ = filter;
+	int i = 0;
+	for(int i = 0; i!= filter.size(); i++)	{
+		auto obj = filter.at(i);
+		std::string str ="Filter."+ std::to_string(i);
+		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 

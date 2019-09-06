@@ -25,6 +25,83 @@ DescribeExpressCloudConnectionsRequest::DescribeExpressCloudConnectionsRequest()
 DescribeExpressCloudConnectionsRequest::~DescribeExpressCloudConnectionsRequest()
 {}
 
+long DescribeExpressCloudConnectionsRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DescribeExpressCloudConnectionsRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+int DescribeExpressCloudConnectionsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeExpressCloudConnectionsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeExpressCloudConnectionsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeExpressCloudConnectionsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeExpressCloudConnectionsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeExpressCloudConnectionsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeExpressCloudConnectionsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeExpressCloudConnectionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeExpressCloudConnectionsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeExpressCloudConnectionsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeExpressCloudConnectionsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeExpressCloudConnectionsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::vector<DescribeExpressCloudConnectionsRequest::Filter> DescribeExpressCloudConnectionsRequest::getFilter()const
 {
 	return filter_;
@@ -40,82 +117,5 @@ void DescribeExpressCloudConnectionsRequest::setFilter(const std::vector<Filter>
 		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-long DescribeExpressCloudConnectionsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeExpressCloudConnectionsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeExpressCloudConnectionsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeExpressCloudConnectionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeExpressCloudConnectionsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeExpressCloudConnectionsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeExpressCloudConnectionsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeExpressCloudConnectionsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeExpressCloudConnectionsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeExpressCloudConnectionsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeExpressCloudConnectionsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeExpressCloudConnectionsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeExpressCloudConnectionsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeExpressCloudConnectionsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

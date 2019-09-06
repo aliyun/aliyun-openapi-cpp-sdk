@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeIPv6TranslatorAclListsRequest();
 				~DescribeIPv6TranslatorAclListsRequest();
 
-				std::string getAclId()const;
-				void setAclId(const std::string& aclId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAclName()const;
 				void setAclName(const std::string& aclName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getAclId()const;
+				void setAclId(const std::string& aclId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string aclId_;
 				long resourceOwnerId_;
 				std::string aclName_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				int pageSize_;
-				long ownerId_;
 				int pageNumber_;
+				std::string regionId_;
+				int pageSize_;
+				std::string aclId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 
 			};
 		}

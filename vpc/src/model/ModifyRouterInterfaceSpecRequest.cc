@@ -36,6 +36,28 @@ void ModifyRouterInterfaceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyRouterInterfaceSpecRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ModifyRouterInterfaceSpecRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string ModifyRouterInterfaceSpecRequest::getSpec()const
+{
+	return spec_;
+}
+
+void ModifyRouterInterfaceSpecRequest::setSpec(const std::string& spec)
+{
+	spec_ = spec;
+	setCoreParameter("Spec", spec);
+}
+
 std::string ModifyRouterInterfaceSpecRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,17 +78,6 @@ void ModifyRouterInterfaceSpecRequest::setResourceOwnerAccount(const std::string
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyRouterInterfaceSpecRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void ModifyRouterInterfaceSpecRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getOwnerAccount()const
@@ -100,16 +111,5 @@ void ModifyRouterInterfaceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyRouterInterfaceSpecRequest::getSpec()const
-{
-	return spec_;
-}
-
-void ModifyRouterInterfaceSpecRequest::setSpec(const std::string& spec)
-{
-	spec_ = spec;
-	setCoreParameter("Spec", spec);
 }
 

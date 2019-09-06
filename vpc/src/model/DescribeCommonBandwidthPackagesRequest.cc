@@ -25,6 +25,39 @@ DescribeCommonBandwidthPackagesRequest::DescribeCommonBandwidthPackagesRequest()
 DescribeCommonBandwidthPackagesRequest::~DescribeCommonBandwidthPackagesRequest()
 {}
 
+long DescribeCommonBandwidthPackagesRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DescribeCommonBandwidthPackagesRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+bool DescribeCommonBandwidthPackagesRequest::getIncludeReservationData()const
+{
+	return includeReservationData_;
+}
+
+void DescribeCommonBandwidthPackagesRequest::setIncludeReservationData(bool includeReservationData)
+{
+	includeReservationData_ = includeReservationData;
+	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+}
+
+int DescribeCommonBandwidthPackagesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeCommonBandwidthPackagesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeCommonBandwidthPackagesRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -36,15 +69,26 @@ void DescribeCommonBandwidthPackagesRequest::setResourceGroupId(const std::strin
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-long DescribeCommonBandwidthPackagesRequest::getResourceOwnerId()const
+std::string DescribeCommonBandwidthPackagesRequest::getRegionId()const
 {
-	return resourceOwnerId_;
+	return regionId_;
 }
 
-void DescribeCommonBandwidthPackagesRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeCommonBandwidthPackagesRequest::setRegionId(const std::string& regionId)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeCommonBandwidthPackagesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeCommonBandwidthPackagesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCommonBandwidthPackagesRequest::getBandwidthPackageId()const
@@ -69,17 +113,6 @@ void DescribeCommonBandwidthPackagesRequest::setResourceOwnerAccount(const std::
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeCommonBandwidthPackagesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCommonBandwidthPackagesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeCommonBandwidthPackagesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,28 +122,6 @@ void DescribeCommonBandwidthPackagesRequest::setOwnerAccount(const std::string& 
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeCommonBandwidthPackagesRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeCommonBandwidthPackagesRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-int DescribeCommonBandwidthPackagesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeCommonBandwidthPackagesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeCommonBandwidthPackagesRequest::getOwnerId()const
@@ -124,25 +135,14 @@ void DescribeCommonBandwidthPackagesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-bool DescribeCommonBandwidthPackagesRequest::getIncludeReservationData()const
+std::string DescribeCommonBandwidthPackagesRequest::getName()const
 {
-	return includeReservationData_;
+	return name_;
 }
 
-void DescribeCommonBandwidthPackagesRequest::setIncludeReservationData(bool includeReservationData)
+void DescribeCommonBandwidthPackagesRequest::setName(const std::string& name)
 {
-	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
-}
-
-int DescribeCommonBandwidthPackagesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeCommonBandwidthPackagesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

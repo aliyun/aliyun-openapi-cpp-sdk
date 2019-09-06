@@ -42,48 +42,48 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
-				std::string getRouterType()const;
-				void setRouterType(const std::string& routerType);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRouteTableName()const;
 				void setRouteTableName(const std::string& routeTableName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getRouterId()const;
-				void setRouterId(const std::string& routerId);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::string getRouteTableId()const;
 				void setRouteTableId(const std::string& routeTableId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getRouterType()const;
+				void setRouterType(const std::string& routerType);
+				std::string getRouterId()const;
+				void setRouterId(const std::string& routerId);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
 				int pageNumber_;
-				std::string routerType_;
 				std::string resourceGroupId_;
 				std::string routeTableName_;
 				std::string regionId_;
-				std::string routerId_;
-				std::string vpcId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
 				std::string routeTableId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string routerType_;
+				std::string routerId_;
+				std::string vpcId_;
 
 			};
 		}

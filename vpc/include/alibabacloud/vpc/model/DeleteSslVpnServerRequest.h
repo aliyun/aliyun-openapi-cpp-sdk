@@ -35,27 +35,27 @@ namespace AlibabaCloud
 				DeleteSslVpnServerRequest();
 				~DeleteSslVpnServerRequest();
 
-				std::string getSslVpnServerId()const;
-				void setSslVpnServerId(const std::string& sslVpnServerId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getSslVpnServerId()const;
+				void setSslVpnServerId(const std::string& sslVpnServerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string sslVpnServerId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
+				std::string sslVpnServerId_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 

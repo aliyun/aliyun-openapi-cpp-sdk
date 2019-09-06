@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				AddIPv6TranslatorAclListEntryRequest();
 				~AddIPv6TranslatorAclListEntryRequest();
 
-				std::string getAclId()const;
-				void setAclId(const std::string& aclId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getAclId()const;
+				void setAclId(const std::string& aclId);
 				std::string getAclEntryIp()const;
 				void setAclEntryIp(const std::string& aclEntryIp);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getAclEntryComment()const;
@@ -53,11 +53,11 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
-				std::string aclId_;
 				long resourceOwnerId_;
+				std::string regionId_;
+				std::string aclId_;
 				std::string aclEntryIp_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
 				std::string aclEntryComment_;
 				long ownerId_;

@@ -47,17 +47,6 @@ void ModifyNetworkAclAttributesRequest::setClientToken(const std::string& client
 	setCoreParameter("ClientToken", clientToken);
 }
 
-long ModifyNetworkAclAttributesRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void ModifyNetworkAclAttributesRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
 std::string ModifyNetworkAclAttributesRequest::getDescription()const
 {
 	return description_;
@@ -67,61 +56,6 @@ void ModifyNetworkAclAttributesRequest::setDescription(const std::string& descri
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-bool ModifyNetworkAclAttributesRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void ModifyNetworkAclAttributesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string ModifyNetworkAclAttributesRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void ModifyNetworkAclAttributesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string ModifyNetworkAclAttributesRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void ModifyNetworkAclAttributesRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string ModifyNetworkAclAttributesRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void ModifyNetworkAclAttributesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string ModifyNetworkAclAttributesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyNetworkAclAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyNetworkAclAttributesRequest::getRegionId()const
@@ -135,50 +69,6 @@ void ModifyNetworkAclAttributesRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string ModifyNetworkAclAttributesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ModifyNetworkAclAttributesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-bool ModifyNetworkAclAttributesRequest::getEnable()const
-{
-	return enable_;
-}
-
-void ModifyNetworkAclAttributesRequest::setEnable(bool enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
-}
-
-std::string ModifyNetworkAclAttributesRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void ModifyNetworkAclAttributesRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string ModifyNetworkAclAttributesRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void ModifyNetworkAclAttributesRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
 std::string ModifyNetworkAclAttributesRequest::getNetworkAclId()const
 {
 	return networkAclId_;
@@ -188,39 +78,6 @@ void ModifyNetworkAclAttributesRequest::setNetworkAclId(const std::string& netwo
 {
 	networkAclId_ = networkAclId;
 	setCoreParameter("NetworkAclId", networkAclId);
-}
-
-std::string ModifyNetworkAclAttributesRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void ModifyNetworkAclAttributesRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long ModifyNetworkAclAttributesRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void ModifyNetworkAclAttributesRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string ModifyNetworkAclAttributesRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void ModifyNetworkAclAttributesRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyNetworkAclAttributesRequest::getResourceOwnerAccount()const
@@ -245,17 +102,6 @@ void ModifyNetworkAclAttributesRequest::setNetworkAclName(const std::string& net
 	setCoreParameter("NetworkAclName", networkAclName);
 }
 
-std::string ModifyNetworkAclAttributesRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void ModifyNetworkAclAttributesRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long ModifyNetworkAclAttributesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -265,49 +111,5 @@ void ModifyNetworkAclAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-bool ModifyNetworkAclAttributesRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void ModifyNetworkAclAttributesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool ModifyNetworkAclAttributesRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void ModifyNetworkAclAttributesRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool ModifyNetworkAclAttributesRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void ModifyNetworkAclAttributesRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string ModifyNetworkAclAttributesRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void ModifyNetworkAclAttributesRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 

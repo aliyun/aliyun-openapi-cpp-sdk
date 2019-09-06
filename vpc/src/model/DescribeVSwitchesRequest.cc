@@ -36,6 +36,89 @@ void DescribeVSwitchesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int DescribeVSwitchesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeVSwitchesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeVSwitchesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeVSwitchesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeVSwitchesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeVSwitchesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeVSwitchesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeVSwitchesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeVSwitchesRequest::Tag> DescribeVSwitchesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeVSwitchesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
+bool DescribeVSwitchesRequest::getIsDefault()const
+{
+	return isDefault_;
+}
+
+void DescribeVSwitchesRequest::setIsDefault(bool isDefault)
+{
+	isDefault_ = isDefault;
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+}
+
+std::string DescribeVSwitchesRequest::getRouteTableId()const
+{
+	return routeTableId_;
+}
+
+void DescribeVSwitchesRequest::setRouteTableId(const std::string& routeTableId)
+{
+	routeTableId_ = routeTableId;
+	setCoreParameter("RouteTableId", routeTableId);
+}
+
 bool DescribeVSwitchesRequest::getDryRun()const
 {
 	return dryRun_;
@@ -80,17 +163,6 @@ void DescribeVSwitchesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeVSwitchesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeVSwitchesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
 std::string DescribeVSwitchesRequest::getVSwitchId()const
 {
 	return vSwitchId_;
@@ -100,28 +172,6 @@ void DescribeVSwitchesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
 	setCoreParameter("VSwitchId", vSwitchId);
-}
-
-std::string DescribeVSwitchesRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeVSwitchesRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string DescribeVSwitchesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeVSwitchesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVSwitchesRequest::getVpcId()const
@@ -146,17 +196,6 @@ void DescribeVSwitchesRequest::setVSwitchName(const std::string& vSwitchName)
 	setCoreParameter("VSwitchName", vSwitchName);
 }
 
-int DescribeVSwitchesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeVSwitchesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeVSwitchesRequest::getZoneId()const
 {
 	return zoneId_;
@@ -166,44 +205,5 @@ void DescribeVSwitchesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
-}
-
-std::vector<DescribeVSwitchesRequest::Tag> DescribeVSwitchesRequest::getTag()const
-{
-	return tag_;
-}
-
-void DescribeVSwitchesRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
-	}
-}
-
-bool DescribeVSwitchesRequest::getIsDefault()const
-{
-	return isDefault_;
-}
-
-void DescribeVSwitchesRequest::setIsDefault(bool isDefault)
-{
-	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
-}
-
-std::string DescribeVSwitchesRequest::getRouteTableId()const
-{
-	return routeTableId_;
-}
-
-void DescribeVSwitchesRequest::setRouteTableId(const std::string& routeTableId)
-{
-	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
 }
 

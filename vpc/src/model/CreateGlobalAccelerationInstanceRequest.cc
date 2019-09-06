@@ -47,6 +47,39 @@ void CreateGlobalAccelerationInstanceRequest::setBandwidthType(const std::string
 	setCoreParameter("BandwidthType", bandwidthType);
 }
 
+std::string CreateGlobalAccelerationInstanceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateGlobalAccelerationInstanceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string CreateGlobalAccelerationInstanceRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateGlobalAccelerationInstanceRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string CreateGlobalAccelerationInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateGlobalAccelerationInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string CreateGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,17 +113,6 @@ void CreateGlobalAccelerationInstanceRequest::setBandwidth(const std::string& ba
 	setCoreParameter("Bandwidth", bandwidth);
 }
 
-std::string CreateGlobalAccelerationInstanceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void CreateGlobalAccelerationInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
 std::string CreateGlobalAccelerationInstanceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,17 +124,6 @@ void CreateGlobalAccelerationInstanceRequest::setOwnerAccount(const std::string&
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateGlobalAccelerationInstanceRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateGlobalAccelerationInstanceRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 long CreateGlobalAccelerationInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,17 +133,6 @@ void CreateGlobalAccelerationInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateGlobalAccelerationInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateGlobalAccelerationInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getInternetChargeType()const

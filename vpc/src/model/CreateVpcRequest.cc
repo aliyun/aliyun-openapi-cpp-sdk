@@ -36,17 +36,6 @@ void CreateVpcRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateVpcRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateVpcRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,17 +45,6 @@ void CreateVpcRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string CreateVpcRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateVpcRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool CreateVpcRequest::getEnableIpv6()const
@@ -89,28 +67,6 @@ void CreateVpcRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long CreateVpcRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateVpcRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateVpcRequest::getIpv6CidrBlock()const
-{
-	return ipv6CidrBlock_;
-}
-
-void CreateVpcRequest::setIpv6CidrBlock(const std::string& ipv6CidrBlock)
-{
-	ipv6CidrBlock_ = ipv6CidrBlock;
-	setCoreParameter("Ipv6CidrBlock", ipv6CidrBlock);
 }
 
 std::string CreateVpcRequest::getVpcName()const
@@ -146,17 +102,6 @@ void CreateVpcRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string CreateVpcRequest::getCidrBlock()const
-{
-	return cidrBlock_;
-}
-
-void CreateVpcRequest::setCidrBlock(const std::string& cidrBlock)
-{
-	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
-}
-
 std::string CreateVpcRequest::getUserCidr()const
 {
 	return userCidr_;
@@ -166,5 +111,71 @@ void CreateVpcRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
 	setCoreParameter("UserCidr", userCidr);
+}
+
+bool CreateVpcRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void CreateVpcRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
+}
+
+std::string CreateVpcRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateVpcRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateVpcRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateVpcRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateVpcRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateVpcRequest::getIpv6CidrBlock()const
+{
+	return ipv6CidrBlock_;
+}
+
+void CreateVpcRequest::setIpv6CidrBlock(const std::string& ipv6CidrBlock)
+{
+	ipv6CidrBlock_ = ipv6CidrBlock;
+	setCoreParameter("Ipv6CidrBlock", ipv6CidrBlock);
+}
+
+std::string CreateVpcRequest::getCidrBlock()const
+{
+	return cidrBlock_;
+}
+
+void CreateVpcRequest::setCidrBlock(const std::string& cidrBlock)
+{
+	cidrBlock_ = cidrBlock;
+	setCoreParameter("CidrBlock", cidrBlock);
 }
 

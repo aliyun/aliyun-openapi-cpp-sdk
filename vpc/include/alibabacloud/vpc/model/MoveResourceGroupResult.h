@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEPHYSICALCONNECTIONORDERRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_DESCRIBEPHYSICALCONNECTIONORDERRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_MOVERESOURCEGROUPRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_MOVERESOURCEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT DescribePhysicalConnectionOrderResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT MoveResourceGroupResult : public ServiceResult
 			{
 			public:
 
 
-				DescribePhysicalConnectionOrderResult();
-				explicit DescribePhysicalConnectionOrderResult(const std::string &payload);
-				~DescribePhysicalConnectionOrderResult();
-				std::string getInstanceId()const;
-				std::string getOrderId()const;
+				MoveResourceGroupResult();
+				explicit MoveResourceGroupResult(const std::string &payload);
+				~MoveResourceGroupResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string instanceId_;
-				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEPHYSICALCONNECTIONORDERRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_MOVERESOURCEGROUPRESULT_H_

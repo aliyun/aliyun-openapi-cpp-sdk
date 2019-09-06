@@ -37,20 +37,20 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				int getIpv6CidrBlock()const;
 				void setIpv6CidrBlock(int ipv6CidrBlock);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getVSwitchName()const;
@@ -62,13 +62,13 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
 				std::string description_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
 				int ipv6CidrBlock_;
-				std::string regionId_;
 				std::string vpcId_;
 				std::string vSwitchName_;
 				std::string cidrBlock_;

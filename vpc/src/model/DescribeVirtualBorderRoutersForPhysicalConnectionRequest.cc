@@ -25,6 +25,72 @@ DescribeVirtualBorderRoutersForPhysicalConnectionRequest::DescribeVirtualBorderR
 DescribeVirtualBorderRoutersForPhysicalConnectionRequest::~DescribeVirtualBorderRoutersForPhysicalConnectionRequest()
 {}
 
+long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::vector<DescribeVirtualBorderRoutersForPhysicalConnectionRequest::Filter> DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getFilter()const
 {
 	return filter_;
@@ -42,39 +108,6 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setFilter(const s
 	}
 }
 
-long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPhysicalConnectionId()const
 {
 	return physicalConnectionId_;
@@ -84,38 +117,5 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPhysicalConnec
 {
 	physicalConnectionId_ = physicalConnectionId;
 	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
-}
-
-int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

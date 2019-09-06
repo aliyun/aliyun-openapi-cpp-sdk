@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				DescribeCommonBandwidthPackagesRequest();
 				~DescribeCommonBandwidthPackagesRequest();
 
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getBandwidthPackageId()const;
-				void setBandwidthPackageId(const std::string& bandwidthPackageId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				bool getIncludeReservationData()const;
 				void setIncludeReservationData(bool includeReservationData);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getBandwidthPackageId()const;
+				void setBandwidthPackageId(const std::string& bandwidthPackageId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string resourceGroupId_;
 				long resourceOwnerId_;
-				std::string bandwidthPackageId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				std::string name_;
-				int pageSize_;
-				long ownerId_;
 				bool includeReservationData_;
 				int pageNumber_;
+				std::string resourceGroupId_;
+				std::string regionId_;
+				int pageSize_;
+				std::string bandwidthPackageId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string name_;
 
 			};
 		}

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_MODIFYNQAREQUEST_H_
-#define ALIBABACLOUD_VPC_MODEL_MODIFYNQAREQUEST_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEHIGHDEFINITIONMONITORLOGATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_VPC_MODEL_DESCRIBEHIGHDEFINITIONMONITORLOGATTRIBUTEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT ModifyNqaRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VPC_EXPORT DescribeHighDefinitionMonitorLogAttributeRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyNqaRequest();
-				~ModifyNqaRequest();
+				DescribeHighDefinitionMonitorLogAttributeRequest();
+				~DescribeHighDefinitionMonitorLogAttributeRequest();
 
-				std::string getDestinationIp()const;
-				void setDestinationIp(const std::string& destinationIp);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getNqaId()const;
-				void setNqaId(const std::string& nqaId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string destinationIp_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
-				std::string clientToken_;
+				std::string instanceType_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string nqaId_;
 				long ownerId_;
+				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_MODIFYNQAREQUEST_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEHIGHDEFINITIONMONITORLOGATTRIBUTEREQUEST_H_

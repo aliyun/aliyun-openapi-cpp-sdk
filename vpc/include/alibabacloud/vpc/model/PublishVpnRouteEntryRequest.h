@@ -37,14 +37,16 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				bool getPublishVpc()const;
-				void setPublishVpc(bool publishVpc);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getRouteType()const;
+				void setRouteType(const std::string& routeType);
+				bool getPublishVpc()const;
+				void setPublishVpc(bool publishVpc);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getVpnGatewayId()const;
@@ -55,21 +57,19 @@ namespace AlibabaCloud
 				void setRouteDest(const std::string& routeDest);
 				std::string getNextHop()const;
 				void setNextHop(const std::string& nextHop);
-				std::string getRouteType()const;
-				void setRouteType(const std::string& routeType);
 
             private:
 				long resourceOwnerId_;
-				bool publishVpc_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
+				std::string routeType_;
+				bool publishVpc_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string vpnGatewayId_;
 				long ownerId_;
 				std::string routeDest_;
 				std::string nextHop_;
-				std::string routeType_;
 
 			};
 		}

@@ -36,17 +36,6 @@ void DeleteRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteRouteEntryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteRouteEntryRequest::getRegionId()const
 {
 	return regionId_;
@@ -58,15 +47,37 @@ void DeleteRouteEntryRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DeleteRouteEntryRequest::getRouteEntryId()const
+std::string DeleteRouteEntryRequest::getNextHopId()const
 {
-	return routeEntryId_;
+	return nextHopId_;
 }
 
-void DeleteRouteEntryRequest::setRouteEntryId(const std::string& routeEntryId)
+void DeleteRouteEntryRequest::setNextHopId(const std::string& nextHopId)
 {
-	routeEntryId_ = routeEntryId;
-	setCoreParameter("RouteEntryId", routeEntryId);
+	nextHopId_ = nextHopId;
+	setCoreParameter("NextHopId", nextHopId);
+}
+
+std::string DeleteRouteEntryRequest::getRouteTableId()const
+{
+	return routeTableId_;
+}
+
+void DeleteRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
+{
+	routeTableId_ = routeTableId;
+	setCoreParameter("RouteTableId", routeTableId);
+}
+
+std::string DeleteRouteEntryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteRouteEntryRequest::getDestinationCidrBlock()const
@@ -91,17 +102,6 @@ void DeleteRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeleteRouteEntryRequest::getNextHopId()const
-{
-	return nextHopId_;
-}
-
-void DeleteRouteEntryRequest::setNextHopId(const std::string& nextHopId)
-{
-	nextHopId_ = nextHopId;
-	setCoreParameter("NextHopId", nextHopId);
-}
-
 long DeleteRouteEntryRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,6 +111,17 @@ void DeleteRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteRouteEntryRequest::getRouteEntryId()const
+{
+	return routeEntryId_;
+}
+
+void DeleteRouteEntryRequest::setRouteEntryId(const std::string& routeEntryId)
+{
+	routeEntryId_ = routeEntryId;
+	setCoreParameter("RouteEntryId", routeEntryId);
 }
 
 std::vector<DeleteRouteEntryRequest::NextHopList> DeleteRouteEntryRequest::getNextHopList()const
@@ -128,16 +139,5 @@ void DeleteRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nex
 		setCoreParameter(str + ".NextHopId", obj.nextHopId);
 		setCoreParameter(str + ".NextHopType", obj.nextHopType);
 	}
-}
-
-std::string DeleteRouteEntryRequest::getRouteTableId()const
-{
-	return routeTableId_;
-}
-
-void DeleteRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
-{
-	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
 }
 

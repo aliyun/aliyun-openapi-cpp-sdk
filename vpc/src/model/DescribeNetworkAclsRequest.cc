@@ -47,39 +47,6 @@ void DescribeNetworkAclsRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-long DescribeNetworkAclsRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeNetworkAclsRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeNetworkAclsRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeNetworkAclsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string DescribeNetworkAclsRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeNetworkAclsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
 int DescribeNetworkAclsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -89,39 +56,6 @@ void DescribeNetworkAclsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeNetworkAclsRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeNetworkAclsRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string DescribeNetworkAclsRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeNetworkAclsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeNetworkAclsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeNetworkAclsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeNetworkAclsRequest::getRegionId()const
@@ -135,39 +69,6 @@ void DescribeNetworkAclsRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeNetworkAclsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeNetworkAclsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-bool DescribeNetworkAclsRequest::getEnable()const
-{
-	return enable_;
-}
-
-void DescribeNetworkAclsRequest::setEnable(bool enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
-}
-
-std::string DescribeNetworkAclsRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeNetworkAclsRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
 int DescribeNetworkAclsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -179,17 +80,6 @@ void DescribeNetworkAclsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeNetworkAclsRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeNetworkAclsRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
 std::string DescribeNetworkAclsRequest::getNetworkAclId()const
 {
 	return networkAclId_;
@@ -199,39 +89,6 @@ void DescribeNetworkAclsRequest::setNetworkAclId(const std::string& networkAclId
 {
 	networkAclId_ = networkAclId;
 	setCoreParameter("NetworkAclId", networkAclId);
-}
-
-std::string DescribeNetworkAclsRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeNetworkAclsRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeNetworkAclsRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeNetworkAclsRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string DescribeNetworkAclsRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeNetworkAclsRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeNetworkAclsRequest::getResourceId()const
@@ -267,17 +124,6 @@ void DescribeNetworkAclsRequest::setNetworkAclName(const std::string& networkAcl
 	setCoreParameter("NetworkAclName", networkAclName);
 }
 
-std::string DescribeNetworkAclsRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeNetworkAclsRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long DescribeNetworkAclsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -298,50 +144,6 @@ void DescribeNetworkAclsRequest::setResourceType(const std::string& resourceType
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
-}
-
-bool DescribeNetworkAclsRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeNetworkAclsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool DescribeNetworkAclsRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeNetworkAclsRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool DescribeNetworkAclsRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeNetworkAclsRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string DescribeNetworkAclsRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeNetworkAclsRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeNetworkAclsRequest::getVpcId()const

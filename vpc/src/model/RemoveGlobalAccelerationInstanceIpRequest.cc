@@ -36,15 +36,15 @@ void RemoveGlobalAccelerationInstanceIpRequest::setResourceOwnerId(long resource
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RemoveGlobalAccelerationInstanceIpRequest::getResourceOwnerAccount()const
+std::string RemoveGlobalAccelerationInstanceIpRequest::getGlobalAccelerationInstanceId()const
 {
-	return resourceOwnerAccount_;
+	return globalAccelerationInstanceId_;
 }
 
-void RemoveGlobalAccelerationInstanceIpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void RemoveGlobalAccelerationInstanceIpRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
+	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string RemoveGlobalAccelerationInstanceIpRequest::getRegionId()const
@@ -58,6 +58,17 @@ void RemoveGlobalAccelerationInstanceIpRequest::setRegionId(const std::string& r
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string RemoveGlobalAccelerationInstanceIpRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void RemoveGlobalAccelerationInstanceIpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string RemoveGlobalAccelerationInstanceIpRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -67,17 +78,6 @@ void RemoveGlobalAccelerationInstanceIpRequest::setOwnerAccount(const std::strin
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string RemoveGlobalAccelerationInstanceIpRequest::getIpInstanceId()const
-{
-	return ipInstanceId_;
-}
-
-void RemoveGlobalAccelerationInstanceIpRequest::setIpInstanceId(const std::string& ipInstanceId)
-{
-	ipInstanceId_ = ipInstanceId;
-	setCoreParameter("IpInstanceId", ipInstanceId);
 }
 
 long RemoveGlobalAccelerationInstanceIpRequest::getOwnerId()const
@@ -91,14 +91,14 @@ void RemoveGlobalAccelerationInstanceIpRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string RemoveGlobalAccelerationInstanceIpRequest::getGlobalAccelerationInstanceId()const
+std::string RemoveGlobalAccelerationInstanceIpRequest::getIpInstanceId()const
 {
-	return globalAccelerationInstanceId_;
+	return ipInstanceId_;
 }
 
-void RemoveGlobalAccelerationInstanceIpRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
+void RemoveGlobalAccelerationInstanceIpRequest::setIpInstanceId(const std::string& ipInstanceId)
 {
-	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	ipInstanceId_ = ipInstanceId;
+	setCoreParameter("IpInstanceId", ipInstanceId);
 }
 

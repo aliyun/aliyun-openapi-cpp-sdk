@@ -25,6 +25,83 @@ DescribeHaVipsRequest::DescribeHaVipsRequest() :
 DescribeHaVipsRequest::~DescribeHaVipsRequest()
 {}
 
+long DescribeHaVipsRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DescribeHaVipsRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+int DescribeHaVipsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeHaVipsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeHaVipsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeHaVipsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeHaVipsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeHaVipsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeHaVipsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeHaVipsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeHaVipsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeHaVipsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeHaVipsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeHaVipsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::vector<DescribeHaVipsRequest::Filter> DescribeHaVipsRequest::getFilter()const
 {
 	return filter_;
@@ -40,82 +117,5 @@ void DescribeHaVipsRequest::setFilter(const std::vector<Filter>& filter)
 		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-long DescribeHaVipsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeHaVipsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeHaVipsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeHaVipsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeHaVipsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeHaVipsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeHaVipsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeHaVipsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeHaVipsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeHaVipsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeHaVipsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeHaVipsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeHaVipsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeHaVipsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

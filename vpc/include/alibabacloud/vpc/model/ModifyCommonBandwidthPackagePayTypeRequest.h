@@ -37,6 +37,12 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				long getResourceUid()const;
+				void setResourceUid(long resourceUid);
 				std::string getBandwidthPackageId()const;
 				void setBandwidthPackageId(const std::string& bandwidthPackageId);
 				bool getAutoPay()const;
@@ -49,14 +55,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getDuration()const;
-				void setDuration(int duration);
 				std::string getKbpsBandwidth()const;
 				void setKbpsBandwidth(const std::string& kbpsBandwidth);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				long getResourceUid()const;
-				void setResourceUid(long resourceUid);
 				std::string getResourceBid()const;
 				void setResourceBid(const std::string& resourceBid);
 				std::string getPayType()const;
@@ -66,16 +66,16 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				int duration_;
+				std::string regionId_;
+				long resourceUid_;
 				std::string bandwidthPackageId_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string bandwidth_;
 				std::string ownerAccount_;
 				long ownerId_;
-				int duration_;
 				std::string kbpsBandwidth_;
-				std::string regionId_;
-				long resourceUid_;
 				std::string resourceBid_;
 				std::string payType_;
 				std::string pricingCycle_;

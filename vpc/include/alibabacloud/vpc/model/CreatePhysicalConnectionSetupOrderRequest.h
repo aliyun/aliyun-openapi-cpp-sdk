@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getAccessPointId()const;
 				void setAccessPointId(const std::string& accessPointId);
-				std::string getRedundantPhysicalConnectionId()const;
-				void setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getPortType()const;
 				void setPortType(const std::string& portType);
-				bool getAutoPay()const;
-				void setAutoPay(bool autoPay);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getRedundantPhysicalConnectionId()const;
+				void setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -60,12 +60,12 @@ namespace AlibabaCloud
 
             private:
 				std::string accessPointId_;
-				std::string redundantPhysicalConnectionId_;
 				long resourceOwnerId_;
 				std::string portType_;
-				bool autoPay_;
-				std::string regionId_;
 				std::string clientToken_;
+				std::string regionId_;
+				std::string redundantPhysicalConnectionId_;
+				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

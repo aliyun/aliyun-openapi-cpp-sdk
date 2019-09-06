@@ -36,17 +36,6 @@ void DeleteFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteFlowLogRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteFlowLogRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void DeleteFlowLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteFlowLogRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteFlowLogRequest::getOwnerAccount()const

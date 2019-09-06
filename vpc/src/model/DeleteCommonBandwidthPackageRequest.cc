@@ -36,6 +36,17 @@ void DeleteCommonBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteCommonBandwidthPackageRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteCommonBandwidthPackageRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string DeleteCommonBandwidthPackageRequest::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -58,17 +69,6 @@ void DeleteCommonBandwidthPackageRequest::setResourceOwnerAccount(const std::str
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DeleteCommonBandwidthPackageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteCommonBandwidthPackageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteCommonBandwidthPackageRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -80,17 +80,6 @@ void DeleteCommonBandwidthPackageRequest::setOwnerAccount(const std::string& own
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeleteCommonBandwidthPackageRequest::getForce()const
-{
-	return force_;
-}
-
-void DeleteCommonBandwidthPackageRequest::setForce(const std::string& force)
-{
-	force_ = force;
-	setCoreParameter("Force", force);
-}
-
 long DeleteCommonBandwidthPackageRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void DeleteCommonBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteCommonBandwidthPackageRequest::getForce()const
+{
+	return force_;
+}
+
+void DeleteCommonBandwidthPackageRequest::setForce(const std::string& force)
+{
+	force_ = force;
+	setCoreParameter("Force", force);
 }
 

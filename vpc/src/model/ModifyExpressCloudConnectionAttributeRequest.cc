@@ -36,15 +36,15 @@ void ModifyExpressCloudConnectionAttributeRequest::setResourceOwnerId(long resou
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyExpressCloudConnectionAttributeRequest::getResourceOwnerAccount()const
+std::string ModifyExpressCloudConnectionAttributeRequest::getDescription()const
 {
-	return resourceOwnerAccount_;
+	return description_;
 }
 
-void ModifyExpressCloudConnectionAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ModifyExpressCloudConnectionAttributeRequest::setDescription(const std::string& description)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	description_ = description;
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyExpressCloudConnectionAttributeRequest::getRegionId()const
@@ -58,6 +58,28 @@ void ModifyExpressCloudConnectionAttributeRequest::setRegionId(const std::string
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string ModifyExpressCloudConnectionAttributeRequest::getEccId()const
+{
+	return eccId_;
+}
+
+void ModifyExpressCloudConnectionAttributeRequest::setEccId(const std::string& eccId)
+{
+	eccId_ = eccId;
+	setCoreParameter("EccId", eccId);
+}
+
+std::string ModifyExpressCloudConnectionAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyExpressCloudConnectionAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string ModifyExpressCloudConnectionAttributeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -67,28 +89,6 @@ void ModifyExpressCloudConnectionAttributeRequest::setOwnerAccount(const std::st
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyExpressCloudConnectionAttributeRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyExpressCloudConnectionAttributeRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string ModifyExpressCloudConnectionAttributeRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyExpressCloudConnectionAttributeRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 long ModifyExpressCloudConnectionAttributeRequest::getOwnerId()const
@@ -102,14 +102,14 @@ void ModifyExpressCloudConnectionAttributeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyExpressCloudConnectionAttributeRequest::getEccId()const
+std::string ModifyExpressCloudConnectionAttributeRequest::getName()const
 {
-	return eccId_;
+	return name_;
 }
 
-void ModifyExpressCloudConnectionAttributeRequest::setEccId(const std::string& eccId)
+void ModifyExpressCloudConnectionAttributeRequest::setName(const std::string& name)
 {
-	eccId_ = eccId;
-	setCoreParameter("EccId", eccId);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

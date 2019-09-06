@@ -47,28 +47,6 @@ void ModifyVpnConnectionAttributeRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyVpnConnectionAttributeRequest::getRemoteSubnet()const
-{
-	return remoteSubnet_;
-}
-
-void ModifyVpnConnectionAttributeRequest::setRemoteSubnet(const std::string& remoteSubnet)
-{
-	remoteSubnet_ = remoteSubnet;
-	setCoreParameter("RemoteSubnet", remoteSubnet);
-}
-
-bool ModifyVpnConnectionAttributeRequest::getEffectImmediately()const
-{
-	return effectImmediately_;
-}
-
-void ModifyVpnConnectionAttributeRequest::setEffectImmediately(bool effectImmediately)
-{
-	effectImmediately_ = effectImmediately;
-	setCoreParameter("EffectImmediately", effectImmediately ? "true" : "false");
-}
-
 bool ModifyVpnConnectionAttributeRequest::getAutoConfigRoute()const
 {
 	return autoConfigRoute_;
@@ -78,17 +56,6 @@ void ModifyVpnConnectionAttributeRequest::setAutoConfigRoute(bool autoConfigRout
 {
 	autoConfigRoute_ = autoConfigRoute;
 	setCoreParameter("AutoConfigRoute", autoConfigRoute ? "true" : "false");
-}
-
-std::string ModifyVpnConnectionAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyVpnConnectionAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyVpnConnectionAttributeRequest::getClientToken()const
@@ -102,17 +69,6 @@ void ModifyVpnConnectionAttributeRequest::setClientToken(const std::string& clie
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string ModifyVpnConnectionAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyVpnConnectionAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string ModifyVpnConnectionAttributeRequest::getIpsecConfig()const
 {
 	return ipsecConfig_;
@@ -122,17 +78,6 @@ void ModifyVpnConnectionAttributeRequest::setIpsecConfig(const std::string& ipse
 {
 	ipsecConfig_ = ipsecConfig;
 	setCoreParameter("IpsecConfig", ipsecConfig);
-}
-
-long ModifyVpnConnectionAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyVpnConnectionAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyVpnConnectionAttributeRequest::getHealthCheckConfig()const
@@ -166,6 +111,61 @@ void ModifyVpnConnectionAttributeRequest::setRegionId(const std::string& regionI
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyVpnConnectionAttributeRequest::getRemoteSubnet()const
+{
+	return remoteSubnet_;
+}
+
+void ModifyVpnConnectionAttributeRequest::setRemoteSubnet(const std::string& remoteSubnet)
+{
+	remoteSubnet_ = remoteSubnet;
+	setCoreParameter("RemoteSubnet", remoteSubnet);
+}
+
+bool ModifyVpnConnectionAttributeRequest::getEffectImmediately()const
+{
+	return effectImmediately_;
+}
+
+void ModifyVpnConnectionAttributeRequest::setEffectImmediately(bool effectImmediately)
+{
+	effectImmediately_ = effectImmediately;
+	setCoreParameter("EffectImmediately", effectImmediately ? "true" : "false");
+}
+
+std::string ModifyVpnConnectionAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyVpnConnectionAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyVpnConnectionAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyVpnConnectionAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long ModifyVpnConnectionAttributeRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyVpnConnectionAttributeRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyVpnConnectionAttributeRequest::getVpnConnectionId()const

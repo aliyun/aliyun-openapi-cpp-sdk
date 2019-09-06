@@ -14,31 +14,30 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vpc/model/DeleteNqaResult.h>
+#include <alibabacloud/vpc/model/MoveResourceGroupResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Vpc;
 using namespace AlibabaCloud::Vpc::Model;
 
-DeleteNqaResult::DeleteNqaResult() :
+MoveResourceGroupResult::MoveResourceGroupResult() :
 	ServiceResult()
 {}
 
-DeleteNqaResult::DeleteNqaResult(const std::string &payload) :
+MoveResourceGroupResult::MoveResourceGroupResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteNqaResult::~DeleteNqaResult()
+MoveResourceGroupResult::~MoveResourceGroupResult()
 {}
 
-void DeleteNqaResult::parse(const std::string &payload)
+void MoveResourceGroupResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
-
 	setRequestId(value["RequestId"].asString());
 
 }

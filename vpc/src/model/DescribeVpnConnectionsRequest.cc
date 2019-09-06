@@ -36,15 +36,26 @@ void DescribeVpnConnectionsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeVpnConnectionsRequest::getResourceOwnerAccount()const
+std::string DescribeVpnConnectionsRequest::getCustomerGatewayId()const
 {
-	return resourceOwnerAccount_;
+	return customerGatewayId_;
 }
 
-void DescribeVpnConnectionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeVpnConnectionsRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	customerGatewayId_ = customerGatewayId;
+	setCoreParameter("CustomerGatewayId", customerGatewayId);
+}
+
+int DescribeVpnConnectionsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeVpnConnectionsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVpnConnectionsRequest::getRegionId()const
@@ -58,15 +69,26 @@ void DescribeVpnConnectionsRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeVpnConnectionsRequest::getVpnConnectionId()const
+int DescribeVpnConnectionsRequest::getPageSize()const
 {
-	return vpnConnectionId_;
+	return pageSize_;
 }
 
-void DescribeVpnConnectionsRequest::setVpnConnectionId(const std::string& vpnConnectionId)
+void DescribeVpnConnectionsRequest::setPageSize(int pageSize)
 {
-	vpnConnectionId_ = vpnConnectionId;
-	setCoreParameter("VpnConnectionId", vpnConnectionId);
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeVpnConnectionsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeVpnConnectionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpnConnectionsRequest::getOwnerAccount()const
@@ -78,17 +100,6 @@ void DescribeVpnConnectionsRequest::setOwnerAccount(const std::string& ownerAcco
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeVpnConnectionsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeVpnConnectionsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVpnConnectionsRequest::getVpnGatewayId()const
@@ -113,25 +124,14 @@ void DescribeVpnConnectionsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeVpnConnectionsRequest::getCustomerGatewayId()const
+std::string DescribeVpnConnectionsRequest::getVpnConnectionId()const
 {
-	return customerGatewayId_;
+	return vpnConnectionId_;
 }
 
-void DescribeVpnConnectionsRequest::setCustomerGatewayId(const std::string& customerGatewayId)
+void DescribeVpnConnectionsRequest::setVpnConnectionId(const std::string& vpnConnectionId)
 {
-	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", customerGatewayId);
-}
-
-int DescribeVpnConnectionsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeVpnConnectionsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	vpnConnectionId_ = vpnConnectionId;
+	setCoreParameter("VpnConnectionId", vpnConnectionId);
 }
 

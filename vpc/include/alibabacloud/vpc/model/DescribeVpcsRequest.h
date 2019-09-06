@@ -42,14 +42,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				bool getDryRun()const;
-				void setDryRun(bool dryRun);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getVpcName()const;
@@ -58,29 +50,37 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				bool getIsDefault()const;
 				void setIsDefault(bool isDefault);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
 				long resourceOwnerId_;
-				bool dryRun_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
 				int pageNumber_;
 				std::string vpcName_;
 				std::string resourceGroupId_;
 				std::string regionId_;
-				std::string vpcId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
 				bool isDefault_;
+				bool dryRun_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string vpcId_;
 
 			};
 		}

@@ -37,6 +37,12 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getEnableIpsec()const;
+				void setEnableIpsec(bool enableIpsec);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
 				int getPeriod()const;
 				void setPeriod(int period);
 				bool getAutoPay()const;
@@ -45,40 +51,37 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
-				bool getEnableIpsec()const;
-				void setEnableIpsec(bool enableIpsec);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 				bool getEnableSsl()const;
 				void setEnableSsl(bool enableSsl);
 				int getSslConnections()const;
 				void setSslConnections(int sslConnections);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
 
             private:
 				long resourceOwnerId_;
+				bool enableIpsec_;
+				std::string regionId_;
+				std::string instanceChargeType_;
 				int period_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
-				bool enableIpsec_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string vSwitchId_;
 				bool enableSsl_;
 				int sslConnections_;
-				std::string regionId_;
 				std::string vpcId_;
 				std::string name_;
-				std::string instanceChargeType_;
 
 			};
 		}

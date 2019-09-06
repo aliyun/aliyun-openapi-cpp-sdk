@@ -36,6 +36,28 @@ void ModifyBandwidthPackageAttributeRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyBandwidthPackageAttributeRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyBandwidthPackageAttributeRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string ModifyBandwidthPackageAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyBandwidthPackageAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string ModifyBandwidthPackageAttributeRequest::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -58,17 +80,6 @@ void ModifyBandwidthPackageAttributeRequest::setResourceOwnerAccount(const std::
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyBandwidthPackageAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyBandwidthPackageAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyBandwidthPackageAttributeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -80,28 +91,6 @@ void ModifyBandwidthPackageAttributeRequest::setOwnerAccount(const std::string& 
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyBandwidthPackageAttributeRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyBandwidthPackageAttributeRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string ModifyBandwidthPackageAttributeRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyBandwidthPackageAttributeRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 long ModifyBandwidthPackageAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +100,16 @@ void ModifyBandwidthPackageAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyBandwidthPackageAttributeRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyBandwidthPackageAttributeRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

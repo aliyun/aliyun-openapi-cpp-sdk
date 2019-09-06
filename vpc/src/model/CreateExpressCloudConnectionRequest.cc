@@ -36,17 +36,6 @@ void CreateExpressCloudConnectionRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateExpressCloudConnectionRequest::getPeerLocation()const
-{
-	return peerLocation_;
-}
-
-void CreateExpressCloudConnectionRequest::setPeerLocation(const std::string& peerLocation)
-{
-	peerLocation_ = peerLocation;
-	setCoreParameter("PeerLocation", peerLocation);
-}
-
 std::string CreateExpressCloudConnectionRequest::getPortType()const
 {
 	return portType_;
@@ -56,6 +45,50 @@ void CreateExpressCloudConnectionRequest::setPortType(const std::string& portTyp
 {
 	portType_ = portType;
 	setCoreParameter("PortType", portType);
+}
+
+std::string CreateExpressCloudConnectionRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateExpressCloudConnectionRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string CreateExpressCloudConnectionRequest::getRedundantEccId()const
+{
+	return redundantEccId_;
+}
+
+void CreateExpressCloudConnectionRequest::setRedundantEccId(const std::string& redundantEccId)
+{
+	redundantEccId_ = redundantEccId;
+	setCoreParameter("RedundantEccId", redundantEccId);
+}
+
+std::string CreateExpressCloudConnectionRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateExpressCloudConnectionRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateExpressCloudConnectionRequest::getPeerLocation()const
+{
+	return peerLocation_;
+}
+
+void CreateExpressCloudConnectionRequest::setPeerLocation(const std::string& peerLocation)
+{
+	peerLocation_ = peerLocation;
+	setCoreParameter("PeerLocation", peerLocation);
 }
 
 std::string CreateExpressCloudConnectionRequest::getResourceOwnerAccount()const
@@ -91,17 +124,6 @@ void CreateExpressCloudConnectionRequest::setOwnerAccount(const std::string& own
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateExpressCloudConnectionRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateExpressCloudConnectionRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 std::string CreateExpressCloudConnectionRequest::getPeerCity()const
 {
 	return peerCity_;
@@ -122,17 +144,6 @@ void CreateExpressCloudConnectionRequest::setIDCardNo(const std::string& iDCardN
 {
 	iDCardNo_ = iDCardNo;
 	setCoreParameter("IDCardNo", iDCardNo);
-}
-
-std::string CreateExpressCloudConnectionRequest::getRedundantEccId()const
-{
-	return redundantEccId_;
-}
-
-void CreateExpressCloudConnectionRequest::setRedundantEccId(const std::string& redundantEccId)
-{
-	redundantEccId_ = redundantEccId;
-	setCoreParameter("RedundantEccId", redundantEccId);
 }
 
 long CreateExpressCloudConnectionRequest::getOwnerId()const
@@ -177,17 +188,6 @@ void CreateExpressCloudConnectionRequest::setIdcSP(const std::string& idcSP)
 {
 	idcSP_ = idcSP;
 	setCoreParameter("IdcSP", idcSP);
-}
-
-std::string CreateExpressCloudConnectionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateExpressCloudConnectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateExpressCloudConnectionRequest::getName()const

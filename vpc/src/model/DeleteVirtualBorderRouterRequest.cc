@@ -36,6 +36,28 @@ void DeleteVirtualBorderRouterRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteVirtualBorderRouterRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DeleteVirtualBorderRouterRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string DeleteVirtualBorderRouterRequest::getVbrId()const
+{
+	return vbrId_;
+}
+
+void DeleteVirtualBorderRouterRequest::setVbrId(const std::string& vbrId)
+{
+	vbrId_ = vbrId;
+	setCoreParameter("VbrId", vbrId);
+}
+
 std::string DeleteVirtualBorderRouterRequest::getRegionId()const
 {
 	return regionId_;
@@ -58,17 +80,6 @@ void DeleteVirtualBorderRouterRequest::setResourceOwnerAccount(const std::string
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DeleteVirtualBorderRouterRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void DeleteVirtualBorderRouterRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
 std::string DeleteVirtualBorderRouterRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,17 +89,6 @@ void DeleteVirtualBorderRouterRequest::setOwnerAccount(const std::string& ownerA
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DeleteVirtualBorderRouterRequest::getVbrId()const
-{
-	return vbrId_;
-}
-
-void DeleteVirtualBorderRouterRequest::setVbrId(const std::string& vbrId)
-{
-	vbrId_ = vbrId;
-	setCoreParameter("VbrId", vbrId);
 }
 
 long DeleteVirtualBorderRouterRequest::getOwnerId()const

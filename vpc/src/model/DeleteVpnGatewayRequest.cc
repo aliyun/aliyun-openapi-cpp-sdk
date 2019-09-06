@@ -36,15 +36,15 @@ void DeleteVpnGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteVpnGatewayRequest::getResourceOwnerAccount()const
+std::string DeleteVpnGatewayRequest::getClientToken()const
 {
-	return resourceOwnerAccount_;
+	return clientToken_;
 }
 
-void DeleteVpnGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DeleteVpnGatewayRequest::setClientToken(const std::string& clientToken)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DeleteVpnGatewayRequest::getRegionId()const
@@ -58,15 +58,15 @@ void DeleteVpnGatewayRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DeleteVpnGatewayRequest::getClientToken()const
+std::string DeleteVpnGatewayRequest::getResourceOwnerAccount()const
 {
-	return clientToken_;
+	return resourceOwnerAccount_;
 }
 
-void DeleteVpnGatewayRequest::setClientToken(const std::string& clientToken)
+void DeleteVpnGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteVpnGatewayRequest::getOwnerAccount()const

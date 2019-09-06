@@ -14,36 +14,31 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_MODIFYNQARESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_MODIFYNQARESULT_H_
+#include <alibabacloud/vpc/model/DeletionProtectionResult.h>
+#include <json/json.h>
 
-#include <string>
-#include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
-#include <alibabacloud/vpc/VpcExport.h>
+using namespace AlibabaCloud::Vpc;
+using namespace AlibabaCloud::Vpc::Model;
 
-namespace AlibabaCloud
+DeletionProtectionResult::DeletionProtectionResult() :
+	ServiceResult()
+{}
+
+DeletionProtectionResult::DeletionProtectionResult(const std::string &payload) :
+	ServiceResult()
 {
-	namespace Vpc
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_VPC_EXPORT ModifyNqaResult : public ServiceResult
-			{
-			public:
-
-
-				ModifyNqaResult();
-				explicit ModifyNqaResult(const std::string &payload);
-				~ModifyNqaResult();
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-
-			};
-		}
-	}
+	parse(payload);
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_MODIFYNQARESULT_H_
+
+DeletionProtectionResult::~DeletionProtectionResult()
+{}
+
+void DeletionProtectionResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+
+}
+

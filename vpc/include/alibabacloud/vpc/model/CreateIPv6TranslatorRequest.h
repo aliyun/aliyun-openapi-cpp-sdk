@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				bool getAutoPay()const;
-				void setAutoPay(bool autoPay);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				int getBandwidth()const;
-				void setBandwidth(int bandwidth);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getSpec()const;
 				void setSpec(const std::string& spec);
 				int getDuration()const;
 				void setDuration(int duration);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getBandwidth()const;
+				void setBandwidth(int bandwidth);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getPayType()const;
@@ -64,15 +64,15 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				bool autoPay_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				int bandwidth_;
-				std::string ownerAccount_;
-				long ownerId_;
 				std::string spec_;
 				int duration_;
 				std::string regionId_;
+				bool autoPay_;
+				std::string resourceOwnerAccount_;
+				int bandwidth_;
+				std::string ownerAccount_;
+				long ownerId_;
 				std::string name_;
 				std::string payType_;
 				std::string pricingCycle_;

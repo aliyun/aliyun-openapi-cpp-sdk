@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getVbrId()const;
+				void setVbrId(const std::string& vbrId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getPhysicalConnectionId()const;
-				void setPhysicalConnectionId(const std::string& physicalConnectionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getVbrId()const;
-				void setVbrId(const std::string& vbrId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPhysicalConnectionId()const;
+				void setPhysicalConnectionId(const std::string& physicalConnectionId);
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string vbrId_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
-				std::string physicalConnectionId_;
 				std::string ownerAccount_;
-				std::string vbrId_;
 				long ownerId_;
+				std::string physicalConnectionId_;
 
 			};
 		}

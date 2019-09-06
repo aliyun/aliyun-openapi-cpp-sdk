@@ -45,16 +45,20 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPeerLocation()const;
-				void setPeerLocation(const std::string& peerLocation);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getLineType()const;
+				void setLineType(const std::string& lineType);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getSi()const;
+				void setSi(const std::string& si);
+				std::string getPeerLocation()const;
+				void setPeerLocation(const std::string& peerLocation);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
-				std::string getLineType()const;
-				void setLineType(const std::string& lineType);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getConstructionTime()const;
@@ -63,29 +67,25 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getCompanyName()const;
 				void setCompanyName(const std::string& companyName);
-				std::string getSi()const;
-				void setSi(const std::string& si);
 				std::vector<PMInfo> getPMInfo()const;
 				void setPMInfo(const std::vector<PMInfo>& pMInfo);
 
             private:
 				long resourceOwnerId_;
-				std::string peerLocation_;
 				std::string clientToken_;
+				std::string lineType_;
+				std::string regionId_;
+				std::string si_;
+				std::string peerLocation_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
-				std::string lineType_;
 				std::string ownerAccount_;
 				std::string constructionTime_;
 				long ownerId_;
 				std::string instanceId_;
-				std::string regionId_;
 				std::string companyName_;
-				std::string si_;
 				std::vector<PMInfo> pMInfo_;
 
 			};

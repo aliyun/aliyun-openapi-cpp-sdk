@@ -43,20 +43,12 @@ namespace AlibabaCloud
 				void setAssociatedPhysicalConnections(const std::string& associatedPhysicalConnections);
 				int getVlanId()const;
 				void setVlanId(int vlanId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getVbrId()const;
 				void setVbrId(const std::string& vbrId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				long getMinRxInterval()const;
-				void setMinRxInterval(long minRxInterval);
 				std::string getPeerGatewayIp()const;
 				void setPeerGatewayIp(const std::string& peerGatewayIp);
 				long getDetectMultiplier()const;
@@ -65,32 +57,40 @@ namespace AlibabaCloud
 				void setPeeringSubnetMask(const std::string& peeringSubnetMask);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getLocalGatewayIp()const;
 				void setLocalGatewayIp(const std::string& localGatewayIp);
 				long getMinTxInterval()const;
 				void setMinTxInterval(long minTxInterval);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				long getMinRxInterval()const;
+				void setMinRxInterval(long minRxInterval);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				long resourceOwnerId_;
 				std::string circuitCode_;
 				std::string associatedPhysicalConnections_;
 				int vlanId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
 				std::string description_;
 				std::string vbrId_;
-				long ownerId_;
-				long minRxInterval_;
 				std::string peerGatewayIp_;
 				long detectMultiplier_;
 				std::string peeringSubnetMask_;
 				std::string regionId_;
-				std::string name_;
 				std::string localGatewayIp_;
 				long minTxInterval_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				long minRxInterval_;
+				std::string name_;
 
 			};
 		}

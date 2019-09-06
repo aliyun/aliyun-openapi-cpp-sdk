@@ -36,6 +36,17 @@ void ModifyCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerId(long res
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyCommonBandwidthPackageIpBandwidthRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -56,17 +67,6 @@ void ModifyCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerAccount(con
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyCommonBandwidthPackageIpBandwidthRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getBandwidth()const

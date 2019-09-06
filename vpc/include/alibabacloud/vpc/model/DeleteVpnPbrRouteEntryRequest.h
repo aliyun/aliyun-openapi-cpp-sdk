@@ -39,10 +39,12 @@ namespace AlibabaCloud
 				void setRouteSource(const std::string& routeSource);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getWeight()const;
@@ -55,23 +57,21 @@ namespace AlibabaCloud
 				void setRouteDest(const std::string& routeDest);
 				std::string getNextHop()const;
 				void setNextHop(const std::string& nextHop);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOverlayMode()const;
 				void setOverlayMode(const std::string& overlayMode);
 
             private:
 				std::string routeSource_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				int weight_;
 				std::string vpnGatewayId_;
 				long ownerId_;
 				std::string routeDest_;
 				std::string nextHop_;
-				std::string regionId_;
 				std::string overlayMode_;
 
 			};

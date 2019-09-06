@@ -47,17 +47,6 @@ void ModifyRouteEntryRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string ModifyRouteEntryRequest::getRouteEntryId()const
-{
-	return routeEntryId_;
-}
-
-void ModifyRouteEntryRequest::setRouteEntryId(const std::string& routeEntryId)
-{
-	routeEntryId_ = routeEntryId;
-	setCoreParameter("RouteEntryId", routeEntryId);
-}
-
 std::string ModifyRouteEntryRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -89,5 +78,16 @@ void ModifyRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyRouteEntryRequest::getRouteEntryId()const
+{
+	return routeEntryId_;
+}
+
+void ModifyRouteEntryRequest::setRouteEntryId(const std::string& routeEntryId)
+{
+	routeEntryId_ = routeEntryId;
+	setCoreParameter("RouteEntryId", routeEntryId);
 }
 

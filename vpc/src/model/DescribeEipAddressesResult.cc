@@ -35,13 +35,9 @@ DescribeEipAddressesResult::~DescribeEipAddressesResult()
 
 void DescribeEipAddressesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allEipAddresses = value["EipAddresses"]["EipAddress"];
 	for (auto value : allEipAddresses)
@@ -103,6 +99,8 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.reservationOrderType = value["ReservationOrderType"].asString();
 		if(!value["Mode"].isNull())
 			eipAddressesObject.mode = value["Mode"].asString();
+		if(!value["DeletionProtection"].isNull())
+			eipAddressesObject.deletionProtection = value["DeletionProtection"].asString() == "true";
 		if(!value["SecondLimited"].isNull())
 			eipAddressesObject.secondLimited = value["SecondLimited"].asString() == "true";
 		auto allOperationLocks = value["OperationLocks"]["LockReason"];

@@ -36,6 +36,50 @@ void ModifyNatGatewaySpecRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyNatGatewaySpecRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ModifyNatGatewaySpecRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string ModifyNatGatewaySpecRequest::getSpec()const
+{
+	return spec_;
+}
+
+void ModifyNatGatewaySpecRequest::setSpec(const std::string& spec)
+{
+	spec_ = spec;
+	setCoreParameter("Spec", spec);
+}
+
+std::string ModifyNatGatewaySpecRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyNatGatewaySpecRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyNatGatewaySpecRequest::getNatGatewayId()const
+{
+	return natGatewayId_;
+}
+
+void ModifyNatGatewaySpecRequest::setNatGatewayId(const std::string& natGatewayId)
+{
+	natGatewayId_ = natGatewayId;
+	setCoreParameter("NatGatewayId", natGatewayId);
+}
+
 bool ModifyNatGatewaySpecRequest::getAutoPay()const
 {
 	return autoPay_;
@@ -58,28 +102,6 @@ void ModifyNatGatewaySpecRequest::setResourceOwnerAccount(const std::string& res
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyNatGatewaySpecRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyNatGatewaySpecRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyNatGatewaySpecRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void ModifyNatGatewaySpecRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
 std::string ModifyNatGatewaySpecRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -91,17 +113,6 @@ void ModifyNatGatewaySpecRequest::setOwnerAccount(const std::string& ownerAccoun
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyNatGatewaySpecRequest::getNatGatewayId()const
-{
-	return natGatewayId_;
-}
-
-void ModifyNatGatewaySpecRequest::setNatGatewayId(const std::string& natGatewayId)
-{
-	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
-}
-
 long ModifyNatGatewaySpecRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,16 +122,5 @@ void ModifyNatGatewaySpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyNatGatewaySpecRequest::getSpec()const
-{
-	return spec_;
-}
-
-void ModifyNatGatewaySpecRequest::setSpec(const std::string& spec)
-{
-	spec_ = spec;
-	setCoreParameter("Spec", spec);
 }
 

@@ -47,15 +47,15 @@ void CreateIPv6TranslatorAclListRequest::setAclName(const std::string& aclName)
 	setCoreParameter("AclName", aclName);
 }
 
-std::string CreateIPv6TranslatorAclListRequest::getResourceOwnerAccount()const
+std::string CreateIPv6TranslatorAclListRequest::getClientToken()const
 {
-	return resourceOwnerAccount_;
+	return clientToken_;
 }
 
-void CreateIPv6TranslatorAclListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void CreateIPv6TranslatorAclListRequest::setClientToken(const std::string& clientToken)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateIPv6TranslatorAclListRequest::getRegionId()const
@@ -69,15 +69,15 @@ void CreateIPv6TranslatorAclListRequest::setRegionId(const std::string& regionId
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string CreateIPv6TranslatorAclListRequest::getClientToken()const
+std::string CreateIPv6TranslatorAclListRequest::getResourceOwnerAccount()const
 {
-	return clientToken_;
+	return resourceOwnerAccount_;
 }
 
-void CreateIPv6TranslatorAclListRequest::setClientToken(const std::string& clientToken)
+void CreateIPv6TranslatorAclListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateIPv6TranslatorAclListRequest::getOwnerAccount()const

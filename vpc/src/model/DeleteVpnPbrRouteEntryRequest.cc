@@ -47,17 +47,6 @@ void DeleteVpnPbrRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteVpnPbrRouteEntryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteVpnPbrRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteVpnPbrRouteEntryRequest::getClientToken()const
 {
 	return clientToken_;
@@ -67,6 +56,28 @@ void DeleteVpnPbrRouteEntryRequest::setClientToken(const std::string& clientToke
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string DeleteVpnPbrRouteEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteVpnPbrRouteEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteVpnPbrRouteEntryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteVpnPbrRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteVpnPbrRouteEntryRequest::getOwnerAccount()const
@@ -133,17 +144,6 @@ void DeleteVpnPbrRouteEntryRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
 	setCoreParameter("NextHop", nextHop);
-}
-
-std::string DeleteVpnPbrRouteEntryRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteVpnPbrRouteEntryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteVpnPbrRouteEntryRequest::getOverlayMode()const

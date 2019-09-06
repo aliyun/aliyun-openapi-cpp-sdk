@@ -36,15 +36,15 @@ void DeleteGlobalAccelerationInstanceRequest::setResourceOwnerId(long resourceOw
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
+std::string DeleteGlobalAccelerationInstanceRequest::getGlobalAccelerationInstanceId()const
 {
-	return resourceOwnerAccount_;
+	return globalAccelerationInstanceId_;
 }
 
-void DeleteGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DeleteGlobalAccelerationInstanceRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
+	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string DeleteGlobalAccelerationInstanceRequest::getRegionId()const
@@ -56,6 +56,17 @@ void DeleteGlobalAccelerationInstanceRequest::setRegionId(const std::string& reg
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteGlobalAccelerationInstanceRequest::getOwnerAccount()const
@@ -78,16 +89,5 @@ void DeleteGlobalAccelerationInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteGlobalAccelerationInstanceRequest::getGlobalAccelerationInstanceId()const
-{
-	return globalAccelerationInstanceId_;
-}
-
-void DeleteGlobalAccelerationInstanceRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
-{
-	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 

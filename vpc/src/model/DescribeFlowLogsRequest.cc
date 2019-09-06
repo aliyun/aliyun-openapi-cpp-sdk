@@ -36,6 +36,50 @@ void DescribeFlowLogsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeFlowLogsRequest::getDescription()const
+{
+	return description_;
+}
+
+void DescribeFlowLogsRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+int DescribeFlowLogsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeFlowLogsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeFlowLogsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeFlowLogsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeFlowLogsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeFlowLogsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string DescribeFlowLogsRequest::getResourceId()const
 {
 	return resourceId_;
@@ -91,17 +135,6 @@ void DescribeFlowLogsRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeFlowLogsRequest::getDescription()const
-{
-	return description_;
-}
-
-void DescribeFlowLogsRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 long DescribeFlowLogsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,39 +155,6 @@ void DescribeFlowLogsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
-}
-
-int DescribeFlowLogsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeFlowLogsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeFlowLogsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeFlowLogsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int DescribeFlowLogsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeFlowLogsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeFlowLogsRequest::getTrafficType()const

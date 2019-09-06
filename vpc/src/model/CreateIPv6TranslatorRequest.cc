@@ -36,28 +36,6 @@ void CreateIPv6TranslatorRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-bool CreateIPv6TranslatorRequest::getAutoPay()const
-{
-	return autoPay_;
-}
-
-void CreateIPv6TranslatorRequest::setAutoPay(bool autoPay)
-{
-	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
-}
-
-std::string CreateIPv6TranslatorRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateIPv6TranslatorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateIPv6TranslatorRequest::getClientToken()const
 {
 	return clientToken_;
@@ -67,39 +45,6 @@ void CreateIPv6TranslatorRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-int CreateIPv6TranslatorRequest::getBandwidth()const
-{
-	return bandwidth_;
-}
-
-void CreateIPv6TranslatorRequest::setBandwidth(int bandwidth)
-{
-	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
-}
-
-std::string CreateIPv6TranslatorRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateIPv6TranslatorRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long CreateIPv6TranslatorRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateIPv6TranslatorRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateIPv6TranslatorRequest::getSpec()const
@@ -133,6 +78,61 @@ void CreateIPv6TranslatorRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+bool CreateIPv6TranslatorRequest::getAutoPay()const
+{
+	return autoPay_;
+}
+
+void CreateIPv6TranslatorRequest::setAutoPay(bool autoPay)
+{
+	autoPay_ = autoPay;
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+}
+
+std::string CreateIPv6TranslatorRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateIPv6TranslatorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+int CreateIPv6TranslatorRequest::getBandwidth()const
+{
+	return bandwidth_;
+}
+
+void CreateIPv6TranslatorRequest::setBandwidth(int bandwidth)
+{
+	bandwidth_ = bandwidth;
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+}
+
+std::string CreateIPv6TranslatorRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateIPv6TranslatorRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateIPv6TranslatorRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateIPv6TranslatorRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateIPv6TranslatorRequest::getName()const

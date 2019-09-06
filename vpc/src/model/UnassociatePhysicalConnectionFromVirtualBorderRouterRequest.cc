@@ -36,6 +36,28 @@ void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setResourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getVbrId()const
+{
+	return vbrId_;
+}
+
+void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setVbrId(const std::string& vbrId)
+{
+	vbrId_ = vbrId;
+	setCoreParameter("VbrId", vbrId);
+}
+
 std::string UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getRegionId()const
 {
 	return regionId_;
@@ -58,28 +80,6 @@ void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setResourceOwn
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getPhysicalConnectionId()const
-{
-	return physicalConnectionId_;
-}
-
-void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
-{
-	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
-}
-
 std::string UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -91,17 +91,6 @@ void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setOwnerAccoun
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getVbrId()const
-{
-	return vbrId_;
-}
-
-void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setVbrId(const std::string& vbrId)
-{
-	vbrId_ = vbrId;
-	setCoreParameter("VbrId", vbrId);
-}
-
 long UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +100,16 @@ void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setOwnerId(lon
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::getPhysicalConnectionId()const
+{
+	return physicalConnectionId_;
+}
+
+void UnassociatePhysicalConnectionFromVirtualBorderRouterRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
+{
+	physicalConnectionId_ = physicalConnectionId;
+	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
 }
 

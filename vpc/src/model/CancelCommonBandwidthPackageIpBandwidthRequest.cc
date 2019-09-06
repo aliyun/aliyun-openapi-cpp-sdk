@@ -36,6 +36,17 @@ void CancelCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerId(long res
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CancelCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CancelCommonBandwidthPackageIpBandwidthRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -56,17 +67,6 @@ void CancelCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerAccount(con
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CancelCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CancelCommonBandwidthPackageIpBandwidthRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerAccount()const

@@ -47,17 +47,6 @@ void DescribeZonesRequest::setResourceOwnerAccount(const std::string& resourceOw
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeZonesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeZonesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeZonesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,5 +67,16 @@ void DescribeZonesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeZonesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeZonesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

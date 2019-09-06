@@ -36,15 +36,15 @@ void ModifyGlobalAccelerationInstanceSpecRequest::setResourceOwnerId(long resour
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyGlobalAccelerationInstanceSpecRequest::getResourceOwnerAccount()const
+std::string ModifyGlobalAccelerationInstanceSpecRequest::getGlobalAccelerationInstanceId()const
 {
-	return resourceOwnerAccount_;
+	return globalAccelerationInstanceId_;
 }
 
-void ModifyGlobalAccelerationInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ModifyGlobalAccelerationInstanceSpecRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
+	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getRegionId()const
@@ -56,6 +56,17 @@ void ModifyGlobalAccelerationInstanceSpecRequest::setRegionId(const std::string&
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyGlobalAccelerationInstanceSpecRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyGlobalAccelerationInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getBandwidth()const
@@ -89,16 +100,5 @@ void ModifyGlobalAccelerationInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyGlobalAccelerationInstanceSpecRequest::getGlobalAccelerationInstanceId()const
-{
-	return globalAccelerationInstanceId_;
-}
-
-void ModifyGlobalAccelerationInstanceSpecRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
-{
-	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 

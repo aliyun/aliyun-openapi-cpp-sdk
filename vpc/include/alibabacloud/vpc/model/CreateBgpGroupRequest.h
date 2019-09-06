@@ -39,40 +39,43 @@ namespace AlibabaCloud
 				void setAuthKey(const std::string& authKey);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				long getPeerAsn()const;
 				void setPeerAsn(long peerAsn);
 				bool getIsFakeAsn()const;
 				void setIsFakeAsn(bool isFakeAsn);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getRouterId()const;
 				void setRouterId(const std::string& routerId);
 				std::string getName()const;
 				void setName(const std::string& name);
+				long getLocalAsn()const;
+				void setLocalAsn(long localAsn);
 
             private:
 				std::string authKey_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
 				std::string description_;
-				long ownerId_;
 				long peerAsn_;
 				bool isFakeAsn_;
 				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 				std::string routerId_;
 				std::string name_;
+				long localAsn_;
 
 			};
 		}

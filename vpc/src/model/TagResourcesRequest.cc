@@ -25,16 +25,15 @@ TagResourcesRequest::TagResourcesRequest() :
 TagResourcesRequest::~TagResourcesRequest()
 {}
 
-std::vector<std::string> TagResourcesRequest::getResourceId()const
+long TagResourcesRequest::getResourceOwnerId()const
 {
-	return resourceId_;
+	return resourceOwnerId_;
 }
 
-void TagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+void TagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string TagResourcesRequest::getRegionId()const
@@ -63,6 +62,51 @@ void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
+}
+
+std::vector<std::string> TagResourcesRequest::getResourceId()const
+{
+	return resourceId_;
+}
+
+void TagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+{
+	resourceId_ = resourceId;
+	for(int i = 0; i!= resourceId.size(); i++)
+		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+}
+
+std::string TagResourcesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void TagResourcesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string TagResourcesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void TagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long TagResourcesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void TagResourcesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string TagResourcesRequest::getResourceType()const

@@ -36,28 +36,6 @@ void CreateNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-bool CreateNatGatewayRequest::getAutoPay()const
-{
-	return autoPay_;
-}
-
-void CreateNatGatewayRequest::setAutoPay(bool autoPay)
-{
-	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
-}
-
-std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateNatGatewayRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,17 +47,6 @@ void CreateNatGatewayRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string CreateNatGatewayRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string CreateNatGatewayRequest::getDescription()const
 {
 	return description_;
@@ -89,17 +56,6 @@ void CreateNatGatewayRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long CreateNatGatewayRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateNatGatewayRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateNatGatewayRequest::getSpec()const
@@ -135,28 +91,6 @@ void CreateNatGatewayRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string CreateNatGatewayRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void CreateNatGatewayRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
-std::string CreateNatGatewayRequest::getName()const
-{
-	return name_;
-}
-
-void CreateNatGatewayRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::getBandwidthPackage()const
 {
 	return bandwidthPackage_;
@@ -186,6 +120,72 @@ void CreateNatGatewayRequest::setInstanceChargeType(const std::string& instanceC
 {
 	instanceChargeType_ = instanceChargeType;
 	setCoreParameter("InstanceChargeType", instanceChargeType);
+}
+
+bool CreateNatGatewayRequest::getAutoPay()const
+{
+	return autoPay_;
+}
+
+void CreateNatGatewayRequest::setAutoPay(bool autoPay)
+{
+	autoPay_ = autoPay;
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+}
+
+std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateNatGatewayRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateNatGatewayRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateNatGatewayRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateNatGatewayRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void CreateNatGatewayRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
+}
+
+std::string CreateNatGatewayRequest::getName()const
+{
+	return name_;
+}
+
+void CreateNatGatewayRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string CreateNatGatewayRequest::getPricingCycle()const

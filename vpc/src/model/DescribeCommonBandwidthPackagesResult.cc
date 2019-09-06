@@ -35,13 +35,9 @@ DescribeCommonBandwidthPackagesResult::~DescribeCommonBandwidthPackagesResult()
 
 void DescribeCommonBandwidthPackagesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allCommonBandwidthPackages = value["CommonBandwidthPackages"]["CommonBandwidthPackage"];
 	for (auto value : allCommonBandwidthPackages)
@@ -85,6 +81,8 @@ void DescribeCommonBandwidthPackagesResult::parse(const std::string &payload)
 			commonBandwidthPackagesObject.reservationOrderType = value["ReservationOrderType"].asString();
 		if(!value["ISP"].isNull())
 			commonBandwidthPackagesObject.iSP = value["ISP"].asString();
+		if(!value["DeletionProtection"].isNull())
+			commonBandwidthPackagesObject.deletionProtection = value["DeletionProtection"].asString() == "true";
 		auto allPublicIpAddresses = value["PublicIpAddresses"]["PublicIpAddresse"];
 		for (auto value : allPublicIpAddresses)
 		{

@@ -36,17 +36,6 @@ void CreateBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateBandwidthPackageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateBandwidthPackageRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,28 +45,6 @@ void CreateBandwidthPackageRequest::setClientToken(const std::string& clientToke
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-int CreateBandwidthPackageRequest::getBandwidth()const
-{
-	return bandwidth_;
-}
-
-void CreateBandwidthPackageRequest::setBandwidth(int bandwidth)
-{
-	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
-}
-
-std::string CreateBandwidthPackageRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateBandwidthPackageRequest::getISP()const
@@ -102,17 +69,6 @@ void CreateBandwidthPackageRequest::setDescription(const std::string& descriptio
 	setCoreParameter("Description", description);
 }
 
-long CreateBandwidthPackageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateBandwidthPackageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string CreateBandwidthPackageRequest::getRegionId()const
 {
 	return regionId_;
@@ -135,6 +91,61 @@ void CreateBandwidthPackageRequest::setZone(const std::string& zone)
 	setCoreParameter("Zone", zone);
 }
 
+std::string CreateBandwidthPackageRequest::getNatGatewayId()const
+{
+	return natGatewayId_;
+}
+
+void CreateBandwidthPackageRequest::setNatGatewayId(const std::string& natGatewayId)
+{
+	natGatewayId_ = natGatewayId;
+	setCoreParameter("NatGatewayId", natGatewayId);
+}
+
+std::string CreateBandwidthPackageRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+int CreateBandwidthPackageRequest::getBandwidth()const
+{
+	return bandwidth_;
+}
+
+void CreateBandwidthPackageRequest::setBandwidth(int bandwidth)
+{
+	bandwidth_ = bandwidth;
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+}
+
+std::string CreateBandwidthPackageRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateBandwidthPackageRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateBandwidthPackageRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::string CreateBandwidthPackageRequest::getInternetChargeType()const
 {
 	return internetChargeType_;
@@ -155,17 +166,6 @@ void CreateBandwidthPackageRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string CreateBandwidthPackageRequest::getNatGatewayId()const
-{
-	return natGatewayId_;
-}
-
-void CreateBandwidthPackageRequest::setNatGatewayId(const std::string& natGatewayId)
-{
-	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
 }
 
 int CreateBandwidthPackageRequest::getIpCount()const

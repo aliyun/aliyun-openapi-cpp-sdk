@@ -25,17 +25,6 @@ ModifyVSwitchAttributeRequest::ModifyVSwitchAttributeRequest() :
 ModifyVSwitchAttributeRequest::~ModifyVSwitchAttributeRequest()
 {}
 
-std::string ModifyVSwitchAttributeRequest::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void ModifyVSwitchAttributeRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
-}
-
 long ModifyVSwitchAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void ModifyVSwitchAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyVSwitchAttributeRequest::getResourceOwnerAccount()const
+std::string ModifyVSwitchAttributeRequest::getDescription()const
 {
-	return resourceOwnerAccount_;
+	return description_;
 }
 
-void ModifyVSwitchAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ModifyVSwitchAttributeRequest::setDescription(const std::string& description)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	description_ = description;
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyVSwitchAttributeRequest::getRegionId()const
@@ -69,15 +58,15 @@ void ModifyVSwitchAttributeRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string ModifyVSwitchAttributeRequest::getVSwitchName()const
+std::string ModifyVSwitchAttributeRequest::getResourceOwnerAccount()const
 {
-	return vSwitchName_;
+	return resourceOwnerAccount_;
 }
 
-void ModifyVSwitchAttributeRequest::setVSwitchName(const std::string& vSwitchName)
+void ModifyVSwitchAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	vSwitchName_ = vSwitchName;
-	setCoreParameter("VSwitchName", vSwitchName);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyVSwitchAttributeRequest::getOwnerAccount()const
@@ -89,17 +78,6 @@ void ModifyVSwitchAttributeRequest::setOwnerAccount(const std::string& ownerAcco
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyVSwitchAttributeRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyVSwitchAttributeRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 long ModifyVSwitchAttributeRequest::getOwnerId()const
@@ -122,5 +100,27 @@ void ModifyVSwitchAttributeRequest::setIpv6CidrBlock(int ipv6CidrBlock)
 {
 	ipv6CidrBlock_ = ipv6CidrBlock;
 	setCoreParameter("Ipv6CidrBlock", std::to_string(ipv6CidrBlock));
+}
+
+std::string ModifyVSwitchAttributeRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void ModifyVSwitchAttributeRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setCoreParameter("VSwitchId", vSwitchId);
+}
+
+std::string ModifyVSwitchAttributeRequest::getVSwitchName()const
+{
+	return vSwitchName_;
+}
+
+void ModifyVSwitchAttributeRequest::setVSwitchName(const std::string& vSwitchName)
+{
+	vSwitchName_ = vSwitchName;
+	setCoreParameter("VSwitchName", vSwitchName);
 }
 

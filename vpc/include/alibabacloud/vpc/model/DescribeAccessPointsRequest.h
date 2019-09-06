@@ -40,38 +40,38 @@ namespace AlibabaCloud
 				DescribeAccessPointsRequest();
 				~DescribeAccessPointsRequest();
 
-				std::vector<Filter> getFilter()const;
-				void setFilter(const std::vector<Filter>& filter);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getHostOperator()const;
-				void setHostOperator(const std::string& hostOperator);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getType()const;
 				void setType(const std::string& type);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<Filter> getFilter()const;
+				void setFilter(const std::vector<Filter>& filter);
+				std::string getHostOperator()const;
+				void setHostOperator(const std::string& hostOperator);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::vector<Filter> filter_;
 				long resourceOwnerId_;
-				std::string hostOperator_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string name_;
-				int pageSize_;
-				long ownerId_;
 				std::string type_;
 				int pageNumber_;
+				std::string regionId_;
+				int pageSize_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::vector<Filter> filter_;
+				std::string hostOperator_;
+				std::string name_;
 
 			};
 		}

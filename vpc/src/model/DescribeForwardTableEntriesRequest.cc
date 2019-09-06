@@ -36,50 +36,6 @@ void DescribeForwardTableEntriesRequest::setResourceOwnerId(long resourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeForwardTableEntriesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeForwardTableEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeForwardTableEntriesRequest::getIpProtocol()const
-{
-	return ipProtocol_;
-}
-
-void DescribeForwardTableEntriesRequest::setIpProtocol(const std::string& ipProtocol)
-{
-	ipProtocol_ = ipProtocol;
-	setCoreParameter("IpProtocol", ipProtocol);
-}
-
-std::string DescribeForwardTableEntriesRequest::getForwardEntryName()const
-{
-	return forwardEntryName_;
-}
-
-void DescribeForwardTableEntriesRequest::setForwardEntryName(const std::string& forwardEntryName)
-{
-	forwardEntryName_ = forwardEntryName;
-	setCoreParameter("ForwardEntryName", forwardEntryName);
-}
-
-std::string DescribeForwardTableEntriesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeForwardTableEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string DescribeForwardTableEntriesRequest::getForwardTableId()const
 {
 	return forwardTableId_;
@@ -89,17 +45,6 @@ void DescribeForwardTableEntriesRequest::setForwardTableId(const std::string& fo
 {
 	forwardTableId_ = forwardTableId;
 	setCoreParameter("ForwardTableId", forwardTableId);
-}
-
-long DescribeForwardTableEntriesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeForwardTableEntriesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeForwardTableEntriesRequest::getInternalIp()const
@@ -146,17 +91,6 @@ void DescribeForwardTableEntriesRequest::setForwardEntryId(const std::string& fo
 	setCoreParameter("ForwardEntryId", forwardEntryId);
 }
 
-std::string DescribeForwardTableEntriesRequest::getInternalPort()const
-{
-	return internalPort_;
-}
-
-void DescribeForwardTableEntriesRequest::setInternalPort(const std::string& internalPort)
-{
-	internalPort_ = internalPort;
-	setCoreParameter("InternalPort", internalPort);
-}
-
 int DescribeForwardTableEntriesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -177,6 +111,72 @@ void DescribeForwardTableEntriesRequest::setExternalIp(const std::string& extern
 {
 	externalIp_ = externalIp;
 	setCoreParameter("ExternalIp", externalIp);
+}
+
+std::string DescribeForwardTableEntriesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeForwardTableEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeForwardTableEntriesRequest::getIpProtocol()const
+{
+	return ipProtocol_;
+}
+
+void DescribeForwardTableEntriesRequest::setIpProtocol(const std::string& ipProtocol)
+{
+	ipProtocol_ = ipProtocol;
+	setCoreParameter("IpProtocol", ipProtocol);
+}
+
+std::string DescribeForwardTableEntriesRequest::getForwardEntryName()const
+{
+	return forwardEntryName_;
+}
+
+void DescribeForwardTableEntriesRequest::setForwardEntryName(const std::string& forwardEntryName)
+{
+	forwardEntryName_ = forwardEntryName;
+	setCoreParameter("ForwardEntryName", forwardEntryName);
+}
+
+std::string DescribeForwardTableEntriesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeForwardTableEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeForwardTableEntriesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeForwardTableEntriesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeForwardTableEntriesRequest::getInternalPort()const
+{
+	return internalPort_;
+}
+
+void DescribeForwardTableEntriesRequest::setInternalPort(const std::string& internalPort)
+{
+	internalPort_ = internalPort;
+	setCoreParameter("InternalPort", internalPort);
 }
 
 std::string DescribeForwardTableEntriesRequest::getExternalPort()const

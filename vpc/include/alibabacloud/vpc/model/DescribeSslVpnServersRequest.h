@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				DescribeSslVpnServersRequest();
 				~DescribeSslVpnServersRequest();
 
-				std::string getSslVpnServerId()const;
-				void setSslVpnServerId(const std::string& sslVpnServerId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getSslVpnServerId()const;
+				void setSslVpnServerId(const std::string& sslVpnServerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getVpnGatewayId()const;
 				void setVpnGatewayId(const std::string& vpnGatewayId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string sslVpnServerId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
+				int pageNumber_;
+				std::string sslVpnServerId_;
 				std::string regionId_;
-				std::string ownerAccount_;
-				std::string name_;
 				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				std::string vpnGatewayId_;
 				long ownerId_;
-				int pageNumber_;
+				std::string name_;
 
 			};
 		}

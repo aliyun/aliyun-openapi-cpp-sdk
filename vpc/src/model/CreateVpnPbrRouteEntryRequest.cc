@@ -47,17 +47,6 @@ void CreateVpnPbrRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateVpnPbrRouteEntryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateVpnPbrRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateVpnPbrRouteEntryRequest::getClientToken()const
 {
 	return clientToken_;
@@ -67,6 +56,50 @@ void CreateVpnPbrRouteEntryRequest::setClientToken(const std::string& clientToke
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string CreateVpnPbrRouteEntryRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateVpnPbrRouteEntryRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+bool CreateVpnPbrRouteEntryRequest::getPublishVpc()const
+{
+	return publishVpc_;
+}
+
+void CreateVpnPbrRouteEntryRequest::setPublishVpc(bool publishVpc)
+{
+	publishVpc_ = publishVpc;
+	setCoreParameter("PublishVpc", publishVpc ? "true" : "false");
+}
+
+std::string CreateVpnPbrRouteEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateVpnPbrRouteEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateVpnPbrRouteEntryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateVpnPbrRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getOwnerAccount()const
@@ -89,17 +122,6 @@ void CreateVpnPbrRouteEntryRequest::setWeight(int weight)
 {
 	weight_ = weight;
 	setCoreParameter("Weight", std::to_string(weight));
-}
-
-std::string CreateVpnPbrRouteEntryRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateVpnPbrRouteEntryRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getVpnGatewayId()const
@@ -144,28 +166,6 @@ void CreateVpnPbrRouteEntryRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
 	setCoreParameter("NextHop", nextHop);
-}
-
-bool CreateVpnPbrRouteEntryRequest::getPublishVpc()const
-{
-	return publishVpc_;
-}
-
-void CreateVpnPbrRouteEntryRequest::setPublishVpc(bool publishVpc)
-{
-	publishVpc_ = publishVpc;
-	setCoreParameter("PublishVpc", publishVpc ? "true" : "false");
-}
-
-std::string CreateVpnPbrRouteEntryRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateVpnPbrRouteEntryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getOverlayMode()const

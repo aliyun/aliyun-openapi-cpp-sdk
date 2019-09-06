@@ -36,17 +36,6 @@ void DeleteSnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteSnatEntryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteSnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteSnatEntryRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,28 @@ void DeleteSnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteSnatEntryRequest::getSnatEntryId()const
+{
+	return snatEntryId_;
+}
+
+void DeleteSnatEntryRequest::setSnatEntryId(const std::string& snatEntryId)
+{
+	snatEntryId_ = snatEntryId;
+	setCoreParameter("SnatEntryId", snatEntryId);
+}
+
+std::string DeleteSnatEntryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteSnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteSnatEntryRequest::getOwnerAccount()const
@@ -78,17 +89,6 @@ void DeleteSnatEntryRequest::setSnatTableId(const std::string& snatTableId)
 {
 	snatTableId_ = snatTableId;
 	setCoreParameter("SnatTableId", snatTableId);
-}
-
-std::string DeleteSnatEntryRequest::getSnatEntryId()const
-{
-	return snatEntryId_;
-}
-
-void DeleteSnatEntryRequest::setSnatEntryId(const std::string& snatEntryId)
-{
-	snatEntryId_ = snatEntryId;
-	setCoreParameter("SnatEntryId", snatEntryId);
 }
 
 long DeleteSnatEntryRequest::getOwnerId()const

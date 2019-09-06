@@ -25,23 +25,6 @@ DescribeVirtualBorderRoutersRequest::DescribeVirtualBorderRoutersRequest() :
 DescribeVirtualBorderRoutersRequest::~DescribeVirtualBorderRoutersRequest()
 {}
 
-std::vector<DescribeVirtualBorderRoutersRequest::Filter> DescribeVirtualBorderRoutersRequest::getFilter()const
-{
-	return filter_;
-}
-
-void DescribeVirtualBorderRoutersRequest::setFilter(const std::vector<Filter>& filter)
-{
-	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
-	}
-}
-
 long DescribeVirtualBorderRoutersRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -53,15 +36,15 @@ void DescribeVirtualBorderRoutersRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeVirtualBorderRoutersRequest::getResourceOwnerAccount()const
+int DescribeVirtualBorderRoutersRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void DescribeVirtualBorderRoutersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeVirtualBorderRoutersRequest::setPageNumber(int pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVirtualBorderRoutersRequest::getRegionId()const
@@ -86,6 +69,17 @@ void DescribeVirtualBorderRoutersRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeVirtualBorderRoutersRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeVirtualBorderRoutersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long DescribeVirtualBorderRoutersRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -97,14 +91,20 @@ void DescribeVirtualBorderRoutersRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeVirtualBorderRoutersRequest::getPageNumber()const
+std::vector<DescribeVirtualBorderRoutersRequest::Filter> DescribeVirtualBorderRoutersRequest::getFilter()const
 {
-	return pageNumber_;
+	return filter_;
 }
 
-void DescribeVirtualBorderRoutersRequest::setPageNumber(int pageNumber)
+void DescribeVirtualBorderRoutersRequest::setFilter(const std::vector<Filter>& filter)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	filter_ = filter;
+	int i = 0;
+	for(int i = 0; i!= filter.size(); i++)	{
+		auto obj = filter.at(i);
+		std::string str ="Filter."+ std::to_string(i);
+		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 

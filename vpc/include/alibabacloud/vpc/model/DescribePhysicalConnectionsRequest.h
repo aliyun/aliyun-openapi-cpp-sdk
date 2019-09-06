@@ -40,38 +40,38 @@ namespace AlibabaCloud
 				DescribePhysicalConnectionsRequest();
 				~DescribePhysicalConnectionsRequest();
 
-				std::vector<Filter> getFilter()const;
-				void setFilter(const std::vector<Filter>& filter);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				bool getIncludeReservationData()const;
 				void setIncludeReservationData(bool includeReservationData);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<Filter> getFilter()const;
+				void setFilter(const std::vector<Filter>& filter);
 
             private:
-				std::vector<Filter> filter_;
 				long resourceOwnerId_;
-				std::string regionId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
-				int pageSize_;
-				long ownerId_;
 				bool includeReservationData_;
 				int pageNumber_;
+				std::string regionId_;
+				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::vector<Filter> filter_;
 
 			};
 		}

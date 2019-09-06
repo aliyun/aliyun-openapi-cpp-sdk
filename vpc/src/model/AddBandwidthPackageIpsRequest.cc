@@ -36,6 +36,28 @@ void AddBandwidthPackageIpsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddBandwidthPackageIpsRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddBandwidthPackageIpsRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string AddBandwidthPackageIpsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AddBandwidthPackageIpsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string AddBandwidthPackageIpsRequest::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -56,28 +78,6 @@ void AddBandwidthPackageIpsRequest::setResourceOwnerAccount(const std::string& r
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string AddBandwidthPackageIpsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AddBandwidthPackageIpsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string AddBandwidthPackageIpsRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void AddBandwidthPackageIpsRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string AddBandwidthPackageIpsRequest::getOwnerAccount()const

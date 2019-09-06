@@ -47,17 +47,6 @@ void CreateRouteEntryRequest::setRouteEntryName(const std::string& routeEntryNam
 	setCoreParameter("RouteEntryName", routeEntryName);
 }
 
-std::string CreateRouteEntryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateRouteEntryRequest::getClientToken()const
 {
 	return clientToken_;
@@ -67,6 +56,61 @@ void CreateRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string CreateRouteEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateRouteEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateRouteEntryRequest::getNextHopId()const
+{
+	return nextHopId_;
+}
+
+void CreateRouteEntryRequest::setNextHopId(const std::string& nextHopId)
+{
+	nextHopId_ = nextHopId;
+	setCoreParameter("NextHopId", nextHopId);
+}
+
+std::string CreateRouteEntryRequest::getNextHopType()const
+{
+	return nextHopType_;
+}
+
+void CreateRouteEntryRequest::setNextHopType(const std::string& nextHopType)
+{
+	nextHopType_ = nextHopType;
+	setCoreParameter("NextHopType", nextHopType);
+}
+
+std::string CreateRouteEntryRequest::getRouteTableId()const
+{
+	return routeTableId_;
+}
+
+void CreateRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
+{
+	routeTableId_ = routeTableId;
+	setCoreParameter("RouteTableId", routeTableId);
+}
+
+std::string CreateRouteEntryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateRouteEntryRequest::getDestinationCidrBlock()const
@@ -113,39 +157,6 @@ void CreateRouteEntryRequest::setPrivateIpAddress(const std::string& privateIpAd
 	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
-std::string CreateRouteEntryRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateRouteEntryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateRouteEntryRequest::getNextHopId()const
-{
-	return nextHopId_;
-}
-
-void CreateRouteEntryRequest::setNextHopId(const std::string& nextHopId)
-{
-	nextHopId_ = nextHopId;
-	setCoreParameter("NextHopId", nextHopId);
-}
-
-std::string CreateRouteEntryRequest::getNextHopType()const
-{
-	return nextHopType_;
-}
-
-void CreateRouteEntryRequest::setNextHopType(const std::string& nextHopType)
-{
-	nextHopType_ = nextHopType;
-	setCoreParameter("NextHopType", nextHopType);
-}
-
 std::vector<CreateRouteEntryRequest::NextHopList> CreateRouteEntryRequest::getNextHopList()const
 {
 	return nextHopList_;
@@ -162,16 +173,5 @@ void CreateRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nex
 		setCoreParameter(str + ".NextHopId", obj.nextHopId);
 		setCoreParameter(str + ".NextHopType", obj.nextHopType);
 	}
-}
-
-std::string CreateRouteEntryRequest::getRouteTableId()const
-{
-	return routeTableId_;
-}
-
-void CreateRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
-{
-	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
 }
 

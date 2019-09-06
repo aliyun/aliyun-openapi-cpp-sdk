@@ -37,6 +37,18 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getISP()const;
+				void setISP(const std::string& iSP);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getNetmode()const;
+				void setNetmode(const std::string& netmode);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
 				int getPeriod()const;
 				void setPeriod(int period);
 				bool getAutoPay()const;
@@ -45,46 +57,34 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getBandwidth()const;
 				void setBandwidth(const std::string& bandwidth);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getISP()const;
-				void setISP(const std::string& iSP);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				long getActivityId()const;
 				void setActivityId(long activityId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
-				std::string getNetmode()const;
-				void setNetmode(const std::string& netmode);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string iSP_;
+				std::string resourceGroupId_;
+				std::string regionId_;
+				std::string netmode_;
+				std::string instanceChargeType_;
 				int period_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string bandwidth_;
-				std::string clientToken_;
-				std::string iSP_;
 				std::string ownerAccount_;
 				long ownerId_;
 				long activityId_;
-				std::string resourceGroupId_;
-				std::string regionId_;
 				std::string internetChargeType_;
-				std::string netmode_;
 				std::string pricingCycle_;
-				std::string instanceChargeType_;
 
 			};
 		}

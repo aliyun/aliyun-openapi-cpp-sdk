@@ -36,6 +36,17 @@ void DeleteExpressConnectRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteExpressConnectRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DeleteExpressConnectRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
 std::string DeleteExpressConnectRequest::getRegionId()const
 {
 	return regionId_;
@@ -58,17 +69,6 @@ void DeleteExpressConnectRequest::setResourceOwnerAccount(const std::string& res
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DeleteExpressConnectRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void DeleteExpressConnectRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
 std::string DeleteExpressConnectRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,17 +78,6 @@ void DeleteExpressConnectRequest::setOwnerAccount(const std::string& ownerAccoun
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-bool DeleteExpressConnectRequest::getForce()const
-{
-	return force_;
-}
-
-void DeleteExpressConnectRequest::setForce(bool force)
-{
-	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
 }
 
 std::string DeleteExpressConnectRequest::getRouterInterfaceId()const
@@ -111,5 +100,16 @@ void DeleteExpressConnectRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool DeleteExpressConnectRequest::getForce()const
+{
+	return force_;
+}
+
+void DeleteExpressConnectRequest::setForce(bool force)
+{
+	force_ = force;
+	setCoreParameter("Force", force ? "true" : "false");
 }
 

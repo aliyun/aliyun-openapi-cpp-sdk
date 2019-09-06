@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				AssociateEipAddressRequest();
 				~AssociateEipAddressRequest();
 
-				std::string getPrivateIpAddress()const;
-				void setPrivateIpAddress(const std::string& privateIpAddress);
-				std::string getMode()const;
-				void setMode(const std::string& mode);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getAllocationId()const;
+				void setAllocationId(const std::string& allocationId);
+				std::string getMode()const;
+				void setMode(const std::string& mode);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getInstanceRegionId()const;
 				void setInstanceRegionId(const std::string& instanceRegionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
-				std::string getAllocationId()const;
-				void setAllocationId(const std::string& allocationId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::string& privateIpAddress);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string privateIpAddress_;
-				std::string mode_;
 				long resourceOwnerId_;
-				std::string instanceId_;
-				std::string resourceOwnerAccount_;
+				std::string allocationId_;
+				std::string mode_;
 				std::string regionId_;
 				std::string instanceRegionId_;
-				std::string ownerAccount_;
 				std::string instanceType_;
-				std::string allocationId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
+				std::string privateIpAddress_;
+				std::string instanceId_;
 
 			};
 		}

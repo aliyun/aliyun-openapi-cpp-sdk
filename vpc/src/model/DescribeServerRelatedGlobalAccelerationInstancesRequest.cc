@@ -47,17 +47,6 @@ void DescribeServerRelatedGlobalAccelerationInstancesRequest::setServerType(cons
 	setCoreParameter("ServerType", serverType);
 }
 
-std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeServerRelatedGlobalAccelerationInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,6 +56,17 @@ void DescribeServerRelatedGlobalAccelerationInstancesRequest::setRegionId(const 
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeServerRelatedGlobalAccelerationInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerAccount()const

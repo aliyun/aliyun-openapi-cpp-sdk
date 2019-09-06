@@ -41,41 +41,41 @@ namespace AlibabaCloud
 				void setCircuitCode(const std::string& circuitCode);
 				std::string getVlanId()const;
 				void setVlanId(const std::string& vlanId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getVbrId()const;
 				void setVbrId(const std::string& vbrId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getPeerGatewayIp()const;
 				void setPeerGatewayIp(const std::string& peerGatewayIp);
 				std::string getPeeringSubnetMask()const;
 				void setPeeringSubnetMask(const std::string& peeringSubnetMask);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getPhysicalConnectionId()const;
-				void setPhysicalConnectionId(const std::string& physicalConnectionId);
 				std::string getLocalGatewayIp()const;
 				void setLocalGatewayIp(const std::string& localGatewayIp);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getPhysicalConnectionId()const;
+				void setPhysicalConnectionId(const std::string& physicalConnectionId);
 
             private:
 				long resourceOwnerId_;
 				std::string circuitCode_;
 				std::string vlanId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
 				std::string vbrId_;
-				long ownerId_;
 				std::string peerGatewayIp_;
 				std::string peeringSubnetMask_;
 				std::string regionId_;
-				std::string physicalConnectionId_;
 				std::string localGatewayIp_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string physicalConnectionId_;
 
 			};
 		}

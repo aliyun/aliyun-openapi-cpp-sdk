@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getCustomerGatewayId()const;
 				void setCustomerGatewayId(const std::string& customerGatewayId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
-				std::string ownerAccount_;
-				std::string name_;
 				std::string description_;
-				long ownerId_;
 				std::string customerGatewayId_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string name_;
 
 			};
 		}

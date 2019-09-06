@@ -36,39 +36,6 @@ void RevokeInstanceFromCenRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RevokeInstanceFromCenRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void RevokeInstanceFromCenRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string RevokeInstanceFromCenRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void RevokeInstanceFromCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string RevokeInstanceFromCenRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RevokeInstanceFromCenRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string RevokeInstanceFromCenRequest::getCenId()const
 {
 	return cenId_;
@@ -91,15 +58,26 @@ void RevokeInstanceFromCenRequest::setClientToken(const std::string& clientToken
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string RevokeInstanceFromCenRequest::getOwnerAccount()const
+long RevokeInstanceFromCenRequest::getCenOwnerId()const
 {
-	return ownerAccount_;
+	return cenOwnerId_;
 }
 
-void RevokeInstanceFromCenRequest::setOwnerAccount(const std::string& ownerAccount)
+void RevokeInstanceFromCenRequest::setCenOwnerId(long cenOwnerId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	cenOwnerId_ = cenOwnerId;
+	setCoreParameter("CenOwnerId", std::to_string(cenOwnerId));
+}
+
+std::string RevokeInstanceFromCenRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RevokeInstanceFromCenRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RevokeInstanceFromCenRequest::getInstanceType()const
@@ -113,15 +91,26 @@ void RevokeInstanceFromCenRequest::setInstanceType(const std::string& instanceTy
 	setCoreParameter("InstanceType", instanceType);
 }
 
-long RevokeInstanceFromCenRequest::getCenOwnerId()const
+std::string RevokeInstanceFromCenRequest::getResourceOwnerAccount()const
 {
-	return cenOwnerId_;
+	return resourceOwnerAccount_;
 }
 
-void RevokeInstanceFromCenRequest::setCenOwnerId(long cenOwnerId)
+void RevokeInstanceFromCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	cenOwnerId_ = cenOwnerId;
-	setCoreParameter("CenOwnerId", std::to_string(cenOwnerId));
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string RevokeInstanceFromCenRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void RevokeInstanceFromCenRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RevokeInstanceFromCenRequest::getOwnerId()const
@@ -133,5 +122,16 @@ void RevokeInstanceFromCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string RevokeInstanceFromCenRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void RevokeInstanceFromCenRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

@@ -25,17 +25,6 @@ DeleteSslVpnServerRequest::DeleteSslVpnServerRequest() :
 DeleteSslVpnServerRequest::~DeleteSslVpnServerRequest()
 {}
 
-std::string DeleteSslVpnServerRequest::getSslVpnServerId()const
-{
-	return sslVpnServerId_;
-}
-
-void DeleteSslVpnServerRequest::setSslVpnServerId(const std::string& sslVpnServerId)
-{
-	sslVpnServerId_ = sslVpnServerId;
-	setCoreParameter("SslVpnServerId", sslVpnServerId);
-}
-
 long DeleteSslVpnServerRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,26 @@ void DeleteSslVpnServerRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteSslVpnServerRequest::getResourceOwnerAccount()const
+std::string DeleteSslVpnServerRequest::getClientToken()const
 {
-	return resourceOwnerAccount_;
+	return clientToken_;
 }
 
-void DeleteSslVpnServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DeleteSslVpnServerRequest::setClientToken(const std::string& clientToken)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string DeleteSslVpnServerRequest::getSslVpnServerId()const
+{
+	return sslVpnServerId_;
+}
+
+void DeleteSslVpnServerRequest::setSslVpnServerId(const std::string& sslVpnServerId)
+{
+	sslVpnServerId_ = sslVpnServerId;
+	setCoreParameter("SslVpnServerId", sslVpnServerId);
 }
 
 std::string DeleteSslVpnServerRequest::getRegionId()const
@@ -69,15 +69,15 @@ void DeleteSslVpnServerRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DeleteSslVpnServerRequest::getClientToken()const
+std::string DeleteSslVpnServerRequest::getResourceOwnerAccount()const
 {
-	return clientToken_;
+	return resourceOwnerAccount_;
 }
 
-void DeleteSslVpnServerRequest::setClientToken(const std::string& clientToken)
+void DeleteSslVpnServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteSslVpnServerRequest::getOwnerAccount()const

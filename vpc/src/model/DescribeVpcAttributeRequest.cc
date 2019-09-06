@@ -36,6 +36,28 @@ void DescribeVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeVpcAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeVpcAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+bool DescribeVpcAttributeRequest::getIsDefault()const
+{
+	return isDefault_;
+}
+
+void DescribeVpcAttributeRequest::setIsDefault(bool isDefault)
+{
+	isDefault_ = isDefault;
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+}
+
 bool DescribeVpcAttributeRequest::getDryRun()const
 {
 	return dryRun_;
@@ -58,28 +80,6 @@ void DescribeVpcAttributeRequest::setResourceOwnerAccount(const std::string& res
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeVpcAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeVpcAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeVpcAttributeRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void DescribeVpcAttributeRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
 std::string DescribeVpcAttributeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -91,17 +91,6 @@ void DescribeVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccoun
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-bool DescribeVpcAttributeRequest::getIsDefault()const
-{
-	return isDefault_;
-}
-
-void DescribeVpcAttributeRequest::setIsDefault(bool isDefault)
-{
-	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
-}
-
 long DescribeVpcAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +100,16 @@ void DescribeVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeVpcAttributeRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void DescribeVpcAttributeRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
 }
 

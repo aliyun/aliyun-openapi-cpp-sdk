@@ -36,6 +36,17 @@ void EnablePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string EnablePhysicalConnectionRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void EnablePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
 std::string EnablePhysicalConnectionRequest::getRegionId()const
 {
 	return regionId_;
@@ -58,28 +69,6 @@ void EnablePhysicalConnectionRequest::setResourceOwnerAccount(const std::string&
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string EnablePhysicalConnectionRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void EnablePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string EnablePhysicalConnectionRequest::getPhysicalConnectionId()const
-{
-	return physicalConnectionId_;
-}
-
-void EnablePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
-{
-	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
-}
-
 std::string EnablePhysicalConnectionRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -100,5 +89,16 @@ void EnablePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string EnablePhysicalConnectionRequest::getPhysicalConnectionId()const
+{
+	return physicalConnectionId_;
+}
+
+void EnablePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
+{
+	physicalConnectionId_ = physicalConnectionId;
+	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
 }
 

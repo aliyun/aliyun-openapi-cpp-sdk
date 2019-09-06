@@ -37,16 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getSourceCIDR()const;
 				void setSourceCIDR(const std::string& sourceCIDR);
-				std::string getSnatTableId()const;
-				void setSnatTableId(const std::string& snatTableId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getSnatIp()const;
 				void setSnatIp(const std::string& snatIp);
 				int getPageNumber()const;
@@ -55,27 +47,35 @@ namespace AlibabaCloud
 				void setSourceVSwitchId(const std::string& sourceVSwitchId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getSnatEntryName()const;
-				void setSnatEntryName(const std::string& snatEntryName);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getSnatEntryId()const;
 				void setSnatEntryId(const std::string& snatEntryId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getSnatTableId()const;
+				void setSnatTableId(const std::string& snatTableId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getSnatEntryName()const;
+				void setSnatEntryName(const std::string& snatEntryName);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				std::string sourceCIDR_;
-				std::string snatTableId_;
-				long ownerId_;
 				std::string snatIp_;
 				int pageNumber_;
 				std::string sourceVSwitchId_;
 				std::string regionId_;
-				std::string snatEntryName_;
 				int pageSize_;
 				std::string snatEntryId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string snatTableId_;
+				long ownerId_;
+				std::string snatEntryName_;
 
 			};
 		}

@@ -37,24 +37,12 @@ namespace AlibabaCloud
 
 				int getBackendIpv4Port()const;
 				void setBackendIpv4Port(int backendIpv4Port);
-				std::string getAclId()const;
-				void setAclId(const std::string& aclId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getIpv6TranslatorEntryId()const;
-				void setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getEntryName()const;
 				void setEntryName(const std::string& entryName);
-				std::string getAllocateIpv6Addr()const;
-				void setAllocateIpv6Addr(const std::string& allocateIpv6Addr);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAclStatus()const;
 				void setAclStatus(const std::string& aclStatus);
 				int getPageNumber()const;
@@ -69,6 +57,18 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getBackendIpv4Addr()const;
 				void setBackendIpv4Addr(const std::string& backendIpv4Addr);
+				std::string getAclId()const;
+				void setAclId(const std::string& aclId);
+				std::string getIpv6TranslatorEntryId()const;
+				void setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getAllocateIpv6Addr()const;
+				void setAllocateIpv6Addr(const std::string& allocateIpv6Addr);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getTransProtocol()const;
 				void setTransProtocol(const std::string& transProtocol);
 				std::string getIpv6TranslatorId()const;
@@ -76,15 +76,9 @@ namespace AlibabaCloud
 
             private:
 				int backendIpv4Port_;
-				std::string aclId_;
 				long resourceOwnerId_;
-				std::string ipv6TranslatorEntryId_;
-				std::string resourceOwnerAccount_;
 				std::string entryName_;
-				std::string allocateIpv6Addr_;
 				std::string clientToken_;
-				std::string ownerAccount_;
-				long ownerId_;
 				std::string aclStatus_;
 				int pageNumber_;
 				std::string aclType_;
@@ -92,6 +86,12 @@ namespace AlibabaCloud
 				std::string regionId_;
 				int pageSize_;
 				std::string backendIpv4Addr_;
+				std::string aclId_;
+				std::string ipv6TranslatorEntryId_;
+				std::string resourceOwnerAccount_;
+				std::string allocateIpv6Addr_;
+				std::string ownerAccount_;
+				long ownerId_;
 				std::string transProtocol_;
 				std::string ipv6TranslatorId_;
 

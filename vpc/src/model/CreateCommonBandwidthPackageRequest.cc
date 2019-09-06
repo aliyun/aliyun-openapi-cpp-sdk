@@ -36,17 +36,6 @@ void CreateCommonBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateCommonBandwidthPackageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateCommonBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateCommonBandwidthPackageRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,28 +45,6 @@ void CreateCommonBandwidthPackageRequest::setClientToken(const std::string& clie
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-int CreateCommonBandwidthPackageRequest::getBandwidth()const
-{
-	return bandwidth_;
-}
-
-void CreateCommonBandwidthPackageRequest::setBandwidth(int bandwidth)
-{
-	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
-}
-
-std::string CreateCommonBandwidthPackageRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateCommonBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getISP()const
@@ -100,17 +67,6 @@ void CreateCommonBandwidthPackageRequest::setDescription(const std::string& desc
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long CreateCommonBandwidthPackageRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateCommonBandwidthPackageRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateCommonBandwidthPackageRequest::getResourceGroupId()const
@@ -144,6 +100,50 @@ void CreateCommonBandwidthPackageRequest::setZone(const std::string& zone)
 {
 	zone_ = zone;
 	setCoreParameter("Zone", zone);
+}
+
+std::string CreateCommonBandwidthPackageRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateCommonBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+int CreateCommonBandwidthPackageRequest::getBandwidth()const
+{
+	return bandwidth_;
+}
+
+void CreateCommonBandwidthPackageRequest::setBandwidth(int bandwidth)
+{
+	bandwidth_ = bandwidth;
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+}
+
+std::string CreateCommonBandwidthPackageRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateCommonBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateCommonBandwidthPackageRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateCommonBandwidthPackageRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateCommonBandwidthPackageRequest::getInternetChargeType()const

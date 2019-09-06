@@ -40,19 +40,31 @@ namespace AlibabaCloud
 				TagResourcesRequest();
 				~TagResourcesRequest();
 
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::vector<std::string> getResourceId()const;
+				void setResourceId(const std::vector<std::string>& resourceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 
             private:
-				std::vector<std::string> resourceId_;
+				long resourceOwnerId_;
 				std::string regionId_;
 				std::vector<Tag> tag_;
+				std::vector<std::string> resourceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 				std::string resourceType_;
 
 			};

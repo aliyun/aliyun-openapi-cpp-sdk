@@ -36,6 +36,17 @@ void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeRegionsRequest::getProductType()const
+{
+	return productType_;
+}
+
+void DescribeRegionsRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setCoreParameter("ProductType", productType);
+}
+
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,17 +69,6 @@ void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeRegionsRequest::getAcceptLanguage()const
-{
-	return acceptLanguage_;
-}
-
-void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
-{
-	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
-}
-
 long DescribeRegionsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -80,14 +80,14 @@ void DescribeRegionsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRegionsRequest::getProductType()const
+std::string DescribeRegionsRequest::getAcceptLanguage()const
 {
-	return productType_;
+	return acceptLanguage_;
 }
 
-void DescribeRegionsRequest::setProductType(const std::string& productType)
+void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
-	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	acceptLanguage_ = acceptLanguage;
+	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 

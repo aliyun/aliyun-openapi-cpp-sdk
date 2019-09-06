@@ -36,39 +36,6 @@ void DescribeNatGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeNatGatewaysRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeNatGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeNatGatewaysRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeNatGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long DescribeNatGatewaysRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeNatGatewaysRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeNatGatewaysRequest::getSpec()const
 {
 	return spec_;
@@ -102,28 +69,6 @@ void DescribeNatGatewaysRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeNatGatewaysRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void DescribeNatGatewaysRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
-std::string DescribeNatGatewaysRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeNatGatewaysRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 int DescribeNatGatewaysRequest::getPageSize()const
 {
 	return pageSize_;
@@ -155,5 +100,60 @@ void DescribeNatGatewaysRequest::setInstanceChargeType(const std::string& instan
 {
 	instanceChargeType_ = instanceChargeType;
 	setCoreParameter("InstanceChargeType", instanceChargeType);
+}
+
+std::string DescribeNatGatewaysRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeNatGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeNatGatewaysRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeNatGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeNatGatewaysRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeNatGatewaysRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeNatGatewaysRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void DescribeNatGatewaysRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
+}
+
+std::string DescribeNatGatewaysRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeNatGatewaysRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

@@ -36,39 +36,6 @@ void GrantInstanceToCenRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GrantInstanceToCenRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void GrantInstanceToCenRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string GrantInstanceToCenRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GrantInstanceToCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string GrantInstanceToCenRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GrantInstanceToCenRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GrantInstanceToCenRequest::getCenId()const
 {
 	return cenId_;
@@ -91,15 +58,26 @@ void GrantInstanceToCenRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string GrantInstanceToCenRequest::getOwnerAccount()const
+long GrantInstanceToCenRequest::getCenOwnerId()const
 {
-	return ownerAccount_;
+	return cenOwnerId_;
 }
 
-void GrantInstanceToCenRequest::setOwnerAccount(const std::string& ownerAccount)
+void GrantInstanceToCenRequest::setCenOwnerId(long cenOwnerId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	cenOwnerId_ = cenOwnerId;
+	setCoreParameter("CenOwnerId", std::to_string(cenOwnerId));
+}
+
+std::string GrantInstanceToCenRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GrantInstanceToCenRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GrantInstanceToCenRequest::getInstanceType()const
@@ -113,15 +91,26 @@ void GrantInstanceToCenRequest::setInstanceType(const std::string& instanceType)
 	setCoreParameter("InstanceType", instanceType);
 }
 
-long GrantInstanceToCenRequest::getCenOwnerId()const
+std::string GrantInstanceToCenRequest::getResourceOwnerAccount()const
 {
-	return cenOwnerId_;
+	return resourceOwnerAccount_;
 }
 
-void GrantInstanceToCenRequest::setCenOwnerId(long cenOwnerId)
+void GrantInstanceToCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	cenOwnerId_ = cenOwnerId;
-	setCoreParameter("CenOwnerId", std::to_string(cenOwnerId));
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string GrantInstanceToCenRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void GrantInstanceToCenRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long GrantInstanceToCenRequest::getOwnerId()const
@@ -133,5 +122,16 @@ void GrantInstanceToCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string GrantInstanceToCenRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GrantInstanceToCenRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

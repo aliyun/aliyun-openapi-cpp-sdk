@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getVpnConnectionId()const;
-				void setVpnConnectionId(const std::string& vpnConnectionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getVpnGatewayId()const;
-				void setVpnGatewayId(const std::string& vpnGatewayId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getCustomerGatewayId()const;
 				void setCustomerGatewayId(const std::string& customerGatewayId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getVpnGatewayId()const;
+				void setVpnGatewayId(const std::string& vpnGatewayId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getVpnConnectionId()const;
+				void setVpnConnectionId(const std::string& vpnConnectionId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string vpnConnectionId_;
-				std::string ownerAccount_;
-				int pageSize_;
-				std::string vpnGatewayId_;
-				long ownerId_;
 				std::string customerGatewayId_;
 				int pageNumber_;
+				std::string regionId_;
+				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string vpnGatewayId_;
+				long ownerId_;
+				std::string vpnConnectionId_;
 
 			};
 		}

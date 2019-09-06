@@ -35,13 +35,9 @@ DescribeNatGatewaysResult::~DescribeNatGatewaysResult()
 
 void DescribeNatGatewaysResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allNatGateways = value["NatGateways"]["NatGateway"];
 	for (auto value : allNatGateways)
@@ -71,6 +67,8 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.creationTime = value["CreationTime"].asString();
 		if(!value["Status"].isNull())
 			natGatewaysObject.status = value["Status"].asString();
+		if(!value["DeletionProtection"].isNull())
+			natGatewaysObject.deletionProtection = value["DeletionProtection"].asString() == "true";
 		auto allIpLists = value["IpLists"]["IpList"];
 		for (auto value : allIpLists)
 		{

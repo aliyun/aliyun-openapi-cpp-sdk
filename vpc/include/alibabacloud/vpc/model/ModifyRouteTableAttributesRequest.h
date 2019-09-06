@@ -37,42 +37,42 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getBandwidth()const;
-				void setBandwidth(const std::string& bandwidth);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getKbpsBandwidth()const;
-				void setKbpsBandwidth(const std::string& kbpsBandwidth);
 				std::string getRouteTableName()const;
 				void setRouteTableName(const std::string& routeTableName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				long getResourceUid()const;
 				void setResourceUid(long resourceUid);
-				std::string getResourceBid()const;
-				void setResourceBid(const std::string& resourceBid);
 				std::string getRouteTableId()const;
 				void setRouteTableId(const std::string& routeTableId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getBandwidth()const;
+				void setBandwidth(const std::string& bandwidth);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getKbpsBandwidth()const;
+				void setKbpsBandwidth(const std::string& kbpsBandwidth);
+				std::string getResourceBid()const;
+				void setResourceBid(const std::string& resourceBid);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string bandwidth_;
-				std::string ownerAccount_;
 				std::string description_;
-				long ownerId_;
-				std::string kbpsBandwidth_;
 				std::string routeTableName_;
 				std::string regionId_;
 				long resourceUid_;
-				std::string resourceBid_;
 				std::string routeTableId_;
+				std::string resourceOwnerAccount_;
+				std::string bandwidth_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string kbpsBandwidth_;
+				std::string resourceBid_;
 
 			};
 		}

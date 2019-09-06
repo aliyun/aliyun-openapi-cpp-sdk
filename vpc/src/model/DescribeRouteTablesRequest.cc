@@ -47,39 +47,6 @@ void DescribeRouteTablesRequest::setVRouterId(const std::string& vRouterId)
 	setCoreParameter("VRouterId", vRouterId);
 }
 
-std::string DescribeRouteTablesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeRouteTablesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeRouteTablesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeRouteTablesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long DescribeRouteTablesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeRouteTablesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeRouteTablesRequest::getType()const
 {
 	return type_;
@@ -100,17 +67,6 @@ void DescribeRouteTablesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeRouteTablesRequest::getRouterType()const
-{
-	return routerType_;
-}
-
-void DescribeRouteTablesRequest::setRouterType(const std::string& routerType)
-{
-	routerType_ = routerType;
-	setCoreParameter("RouterType", routerType);
 }
 
 std::string DescribeRouteTablesRequest::getResourceGroupId()const
@@ -146,17 +102,6 @@ void DescribeRouteTablesRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeRouteTablesRequest::getRouterId()const
-{
-	return routerId_;
-}
-
-void DescribeRouteTablesRequest::setRouterId(const std::string& routerId)
-{
-	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
-}
-
 int DescribeRouteTablesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -177,5 +122,60 @@ void DescribeRouteTablesRequest::setRouteTableId(const std::string& routeTableId
 {
 	routeTableId_ = routeTableId;
 	setCoreParameter("RouteTableId", routeTableId);
+}
+
+std::string DescribeRouteTablesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeRouteTablesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeRouteTablesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeRouteTablesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeRouteTablesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeRouteTablesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeRouteTablesRequest::getRouterType()const
+{
+	return routerType_;
+}
+
+void DescribeRouteTablesRequest::setRouterType(const std::string& routerType)
+{
+	routerType_ = routerType;
+	setCoreParameter("RouterType", routerType);
+}
+
+std::string DescribeRouteTablesRequest::getRouterId()const
+{
+	return routerId_;
+}
+
+void DescribeRouteTablesRequest::setRouterId(const std::string& routerId)
+{
+	routerId_ = routerId;
+	setCoreParameter("RouterId", routerId);
 }
 

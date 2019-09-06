@@ -35,40 +35,40 @@ namespace AlibabaCloud
 				CreatePhysicalConnectionOccupancyOrderRequest();
 				~CreatePhysicalConnectionOccupancyOrderRequest();
 
-				int getPeriod()const;
-				void setPeriod(int period);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				bool getAutoPay()const;
-				void setAutoPay(bool autoPay);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getPhysicalConnectionId()const;
-				void setPhysicalConnectionId(const std::string& physicalConnectionId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
+				int getPeriod()const;
+				void setPeriod(int period);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
+				std::string getPhysicalConnectionId()const;
+				void setPhysicalConnectionId(const std::string& physicalConnectionId);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
 
             private:
-				int period_;
 				long resourceOwnerId_;
-				bool autoPay_;
-				std::string regionId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string physicalConnectionId_;
+				std::string regionId_;
+				std::string instanceChargeType_;
+				int period_;
+				bool autoPay_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string instanceChargeType_;
+				std::string physicalConnectionId_;
 				std::string pricingCycle_;
 
 			};

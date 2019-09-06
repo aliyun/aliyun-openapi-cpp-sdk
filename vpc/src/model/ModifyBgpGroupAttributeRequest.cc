@@ -47,17 +47,6 @@ void ModifyBgpGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyBgpGroupAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyBgpGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyBgpGroupAttributeRequest::getClientToken()const
 {
 	return clientToken_;
@@ -67,17 +56,6 @@ void ModifyBgpGroupAttributeRequest::setClientToken(const std::string& clientTok
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string ModifyBgpGroupAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyBgpGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyBgpGroupAttributeRequest::getBgpGroupId()const
@@ -100,17 +78,6 @@ void ModifyBgpGroupAttributeRequest::setDescription(const std::string& descripti
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long ModifyBgpGroupAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyBgpGroupAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long ModifyBgpGroupAttributeRequest::getPeerAsn()const
@@ -146,6 +113,39 @@ void ModifyBgpGroupAttributeRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+std::string ModifyBgpGroupAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyBgpGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyBgpGroupAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyBgpGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long ModifyBgpGroupAttributeRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyBgpGroupAttributeRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::string ModifyBgpGroupAttributeRequest::getName()const
 {
 	return name_;
@@ -155,5 +155,16 @@ void ModifyBgpGroupAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
+}
+
+long ModifyBgpGroupAttributeRequest::getLocalAsn()const
+{
+	return localAsn_;
+}
+
+void ModifyBgpGroupAttributeRequest::setLocalAsn(long localAsn)
+{
+	localAsn_ = localAsn;
+	setCoreParameter("LocalAsn", std::to_string(localAsn));
 }
 

@@ -36,17 +36,6 @@ void ModifyIPv6TranslatorEntryRequest::setBackendIpv4Port(int backendIpv4Port)
 	setCoreParameter("BackendIpv4Port", std::to_string(backendIpv4Port));
 }
 
-std::string ModifyIPv6TranslatorEntryRequest::getAclId()const
-{
-	return aclId_;
-}
-
-void ModifyIPv6TranslatorEntryRequest::setAclId(const std::string& aclId)
-{
-	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
-}
-
 long ModifyIPv6TranslatorEntryRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,28 +47,6 @@ void ModifyIPv6TranslatorEntryRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyIPv6TranslatorEntryRequest::getIpv6TranslatorEntryId()const
-{
-	return ipv6TranslatorEntryId_;
-}
-
-void ModifyIPv6TranslatorEntryRequest::setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId)
-{
-	ipv6TranslatorEntryId_ = ipv6TranslatorEntryId;
-	setCoreParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
-}
-
-std::string ModifyIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyIPv6TranslatorEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyIPv6TranslatorEntryRequest::getEntryName()const
 {
 	return entryName_;
@@ -89,28 +56,6 @@ void ModifyIPv6TranslatorEntryRequest::setEntryName(const std::string& entryName
 {
 	entryName_ = entryName;
 	setCoreParameter("EntryName", entryName);
-}
-
-std::string ModifyIPv6TranslatorEntryRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyIPv6TranslatorEntryRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long ModifyIPv6TranslatorEntryRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyIPv6TranslatorEntryRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getAclStatus()const
@@ -188,6 +133,61 @@ void ModifyIPv6TranslatorEntryRequest::setBackendIpv4Addr(const std::string& bac
 {
 	backendIpv4Addr_ = backendIpv4Addr;
 	setCoreParameter("BackendIpv4Addr", backendIpv4Addr);
+}
+
+std::string ModifyIPv6TranslatorEntryRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void ModifyIPv6TranslatorEntryRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setCoreParameter("AclId", aclId);
+}
+
+std::string ModifyIPv6TranslatorEntryRequest::getIpv6TranslatorEntryId()const
+{
+	return ipv6TranslatorEntryId_;
+}
+
+void ModifyIPv6TranslatorEntryRequest::setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId)
+{
+	ipv6TranslatorEntryId_ = ipv6TranslatorEntryId;
+	setCoreParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
+}
+
+std::string ModifyIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyIPv6TranslatorEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyIPv6TranslatorEntryRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyIPv6TranslatorEntryRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long ModifyIPv6TranslatorEntryRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyIPv6TranslatorEntryRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getTransProtocol()const

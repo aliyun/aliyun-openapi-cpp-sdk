@@ -36,28 +36,6 @@ void DeletePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeletePhysicalConnectionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeletePhysicalConnectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DeletePhysicalConnectionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeletePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeletePhysicalConnectionRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,26 +47,15 @@ void DeletePhysicalConnectionRequest::setClientToken(const std::string& clientTo
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string DeletePhysicalConnectionRequest::getPhysicalConnectionId()const
+std::string DeletePhysicalConnectionRequest::getRegionId()const
 {
-	return physicalConnectionId_;
+	return regionId_;
 }
 
-void DeletePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
+void DeletePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
-	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
-}
-
-std::string DeletePhysicalConnectionRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DeletePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeletePhysicalConnectionRequest::getUserCidr()const
@@ -102,6 +69,28 @@ void DeletePhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
 	setCoreParameter("UserCidr", userCidr);
 }
 
+std::string DeletePhysicalConnectionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeletePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DeletePhysicalConnectionRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DeletePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DeletePhysicalConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +100,16 @@ void DeletePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeletePhysicalConnectionRequest::getPhysicalConnectionId()const
+{
+	return physicalConnectionId_;
+}
+
+void DeletePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
+{
+	physicalConnectionId_ = physicalConnectionId;
+	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
 }
 

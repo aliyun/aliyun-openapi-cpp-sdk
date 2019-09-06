@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_CREATENQAREQUEST_H_
-#define ALIBABACLOUD_VPC_MODEL_CREATENQAREQUEST_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_DELETIONPROTECTIONREQUEST_H_
+#define ALIBABACLOUD_VPC_MODEL_DELETIONPROTECTIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT CreateNqaRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VPC_EXPORT DeletionProtectionRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateNqaRequest();
-				~CreateNqaRequest();
+				DeletionProtectionRequest();
+				~DeletionProtectionRequest();
 
-				std::string getDestinationIp()const;
-				void setDestinationIp(const std::string& destinationIp);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getRouterId()const;
-				void setRouterId(const std::string& routerId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				bool getProtectionEnable()const;
+				void setProtectionEnable(bool protectionEnable);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string destinationIp_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string clientToken_;
-				std::string routerId_;
-				std::string ownerAccount_;
+				bool protectionEnable_;
+				std::string type_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
 				long ownerId_;
+				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_CREATENQAREQUEST_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_DELETIONPROTECTIONREQUEST_H_

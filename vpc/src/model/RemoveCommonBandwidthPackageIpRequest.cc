@@ -36,6 +36,17 @@ void RemoveCommonBandwidthPackageIpRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RemoveCommonBandwidthPackageIpRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RemoveCommonBandwidthPackageIpRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string RemoveCommonBandwidthPackageIpRequest::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -58,17 +69,6 @@ void RemoveCommonBandwidthPackageIpRequest::setResourceOwnerAccount(const std::s
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string RemoveCommonBandwidthPackageIpRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RemoveCommonBandwidthPackageIpRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string RemoveCommonBandwidthPackageIpRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -80,17 +80,6 @@ void RemoveCommonBandwidthPackageIpRequest::setOwnerAccount(const std::string& o
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string RemoveCommonBandwidthPackageIpRequest::getIpInstanceId()const
-{
-	return ipInstanceId_;
-}
-
-void RemoveCommonBandwidthPackageIpRequest::setIpInstanceId(const std::string& ipInstanceId)
-{
-	ipInstanceId_ = ipInstanceId;
-	setCoreParameter("IpInstanceId", ipInstanceId);
-}
-
 long RemoveCommonBandwidthPackageIpRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void RemoveCommonBandwidthPackageIpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string RemoveCommonBandwidthPackageIpRequest::getIpInstanceId()const
+{
+	return ipInstanceId_;
+}
+
+void RemoveCommonBandwidthPackageIpRequest::setIpInstanceId(const std::string& ipInstanceId)
+{
+	ipInstanceId_ = ipInstanceId;
+	setCoreParameter("IpInstanceId", ipInstanceId);
 }
 

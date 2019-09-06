@@ -36,6 +36,72 @@ void AllocateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AllocateEipAddressRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AllocateEipAddressRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string AllocateEipAddressRequest::getISP()const
+{
+	return iSP_;
+}
+
+void AllocateEipAddressRequest::setISP(const std::string& iSP)
+{
+	iSP_ = iSP;
+	setCoreParameter("ISP", iSP);
+}
+
+std::string AllocateEipAddressRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void AllocateEipAddressRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string AllocateEipAddressRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AllocateEipAddressRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string AllocateEipAddressRequest::getNetmode()const
+{
+	return netmode_;
+}
+
+void AllocateEipAddressRequest::setNetmode(const std::string& netmode)
+{
+	netmode_ = netmode;
+	setCoreParameter("Netmode", netmode);
+}
+
+std::string AllocateEipAddressRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void AllocateEipAddressRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setCoreParameter("InstanceChargeType", instanceChargeType);
+}
+
 int AllocateEipAddressRequest::getPeriod()const
 {
 	return period_;
@@ -80,28 +146,6 @@ void AllocateEipAddressRequest::setBandwidth(const std::string& bandwidth)
 	setCoreParameter("Bandwidth", bandwidth);
 }
 
-std::string AllocateEipAddressRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void AllocateEipAddressRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string AllocateEipAddressRequest::getISP()const
-{
-	return iSP_;
-}
-
-void AllocateEipAddressRequest::setISP(const std::string& iSP)
-{
-	iSP_ = iSP;
-	setCoreParameter("ISP", iSP);
-}
-
 std::string AllocateEipAddressRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -135,28 +179,6 @@ void AllocateEipAddressRequest::setActivityId(long activityId)
 	setCoreParameter("ActivityId", std::to_string(activityId));
 }
 
-std::string AllocateEipAddressRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void AllocateEipAddressRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string AllocateEipAddressRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AllocateEipAddressRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string AllocateEipAddressRequest::getInternetChargeType()const
 {
 	return internetChargeType_;
@@ -168,17 +190,6 @@ void AllocateEipAddressRequest::setInternetChargeType(const std::string& interne
 	setCoreParameter("InternetChargeType", internetChargeType);
 }
 
-std::string AllocateEipAddressRequest::getNetmode()const
-{
-	return netmode_;
-}
-
-void AllocateEipAddressRequest::setNetmode(const std::string& netmode)
-{
-	netmode_ = netmode;
-	setCoreParameter("Netmode", netmode);
-}
-
 std::string AllocateEipAddressRequest::getPricingCycle()const
 {
 	return pricingCycle_;
@@ -188,16 +199,5 @@ void AllocateEipAddressRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
 	setCoreParameter("PricingCycle", pricingCycle);
-}
-
-std::string AllocateEipAddressRequest::getInstanceChargeType()const
-{
-	return instanceChargeType_;
-}
-
-void AllocateEipAddressRequest::setInstanceChargeType(const std::string& instanceChargeType)
-{
-	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 

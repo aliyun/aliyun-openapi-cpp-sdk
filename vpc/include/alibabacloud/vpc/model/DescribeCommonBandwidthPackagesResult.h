@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string instanceChargeType;
 					std::string iSP;
 					std::string hasReservationData;
+					bool deletionProtection;
 					std::string businessStatus;
 					std::string name;
 					std::string internetChargeType;

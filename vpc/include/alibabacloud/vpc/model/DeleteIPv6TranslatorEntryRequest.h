@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getIpv6TranslatorEntryId()const;
-				void setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getIpv6TranslatorEntryId()const;
+				void setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getIpv6TranslatorId()const;
-				void setIpv6TranslatorId(const std::string& ipv6TranslatorId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getIpv6TranslatorId()const;
+				void setIpv6TranslatorId(const std::string& ipv6TranslatorId);
 
             private:
 				long resourceOwnerId_;
-				std::string ipv6TranslatorEntryId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string regionId_;
+				std::string ipv6TranslatorEntryId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string ipv6TranslatorId_;
 				long ownerId_;
+				std::string ipv6TranslatorId_;
 
 			};
 		}

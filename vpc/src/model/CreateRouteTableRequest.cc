@@ -47,17 +47,6 @@ void CreateRouteTableRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-long CreateRouteTableRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void CreateRouteTableRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
 std::string CreateRouteTableRequest::getDescription()const
 {
 	return description_;
@@ -67,72 +56,6 @@ void CreateRouteTableRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-bool CreateRouteTableRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void CreateRouteTableRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string CreateRouteTableRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void CreateRouteTableRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string CreateRouteTableRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void CreateRouteTableRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string CreateRouteTableRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void CreateRouteTableRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string CreateRouteTableRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateRouteTableRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void CreateRouteTableRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateRouteTableRequest::getRouteTableName()const
@@ -157,83 +80,6 @@ void CreateRouteTableRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string CreateRouteTableRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CreateRouteTableRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-bool CreateRouteTableRequest::getEnable()const
-{
-	return enable_;
-}
-
-void CreateRouteTableRequest::setEnable(bool enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
-}
-
-std::string CreateRouteTableRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void CreateRouteTableRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string CreateRouteTableRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void CreateRouteTableRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string CreateRouteTableRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void CreateRouteTableRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long CreateRouteTableRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void CreateRouteTableRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string CreateRouteTableRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void CreateRouteTableRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
 std::string CreateRouteTableRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -256,17 +102,6 @@ void CreateRouteTableRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateRouteTableRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void CreateRouteTableRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long CreateRouteTableRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -276,50 +111,6 @@ void CreateRouteTableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-bool CreateRouteTableRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void CreateRouteTableRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool CreateRouteTableRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void CreateRouteTableRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool CreateRouteTableRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void CreateRouteTableRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string CreateRouteTableRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void CreateRouteTableRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateRouteTableRequest::getVpcId()const

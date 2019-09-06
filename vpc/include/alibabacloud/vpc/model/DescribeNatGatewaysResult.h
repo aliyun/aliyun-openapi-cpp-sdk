@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::vector<NatGateway::IpList> ipLists;
 					std::vector<std::string> bandwidthPackageIds;
 					bool autoPay;
+					bool deletionProtection;
 					std::string businessStatus;
 					std::string name;
 					std::string vpcId;

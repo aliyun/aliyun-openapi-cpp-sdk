@@ -36,17 +36,6 @@ void DescribeIPv6TranslatorEntriesRequest::setBackendIpv4Port(int backendIpv4Por
 	setCoreParameter("BackendIpv4Port", std::to_string(backendIpv4Port));
 }
 
-std::string DescribeIPv6TranslatorEntriesRequest::getAclId()const
-{
-	return aclId_;
-}
-
-void DescribeIPv6TranslatorEntriesRequest::setAclId(const std::string& aclId)
-{
-	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
-}
-
 long DescribeIPv6TranslatorEntriesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,28 +45,6 @@ void DescribeIPv6TranslatorEntriesRequest::setResourceOwnerId(long resourceOwner
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeIPv6TranslatorEntriesRequest::getIpv6TranslatorEntryId()const
-{
-	return ipv6TranslatorEntryId_;
-}
-
-void DescribeIPv6TranslatorEntriesRequest::setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId)
-{
-	ipv6TranslatorEntryId_ = ipv6TranslatorEntryId;
-	setCoreParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
-}
-
-std::string DescribeIPv6TranslatorEntriesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeIPv6TranslatorEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getEntryName()const
@@ -91,17 +58,6 @@ void DescribeIPv6TranslatorEntriesRequest::setEntryName(const std::string& entry
 	setCoreParameter("EntryName", entryName);
 }
 
-std::string DescribeIPv6TranslatorEntriesRequest::getAllocateIpv6Addr()const
-{
-	return allocateIpv6Addr_;
-}
-
-void DescribeIPv6TranslatorEntriesRequest::setAllocateIpv6Addr(const std::string& allocateIpv6Addr)
-{
-	allocateIpv6Addr_ = allocateIpv6Addr;
-	setCoreParameter("AllocateIpv6Addr", allocateIpv6Addr);
-}
-
 std::string DescribeIPv6TranslatorEntriesRequest::getClientToken()const
 {
 	return clientToken_;
@@ -111,28 +67,6 @@ void DescribeIPv6TranslatorEntriesRequest::setClientToken(const std::string& cli
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string DescribeIPv6TranslatorEntriesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeIPv6TranslatorEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long DescribeIPv6TranslatorEntriesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeIPv6TranslatorEntriesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getAclStatus()const
@@ -210,6 +144,72 @@ void DescribeIPv6TranslatorEntriesRequest::setBackendIpv4Addr(const std::string&
 {
 	backendIpv4Addr_ = backendIpv4Addr;
 	setCoreParameter("BackendIpv4Addr", backendIpv4Addr);
+}
+
+std::string DescribeIPv6TranslatorEntriesRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void DescribeIPv6TranslatorEntriesRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setCoreParameter("AclId", aclId);
+}
+
+std::string DescribeIPv6TranslatorEntriesRequest::getIpv6TranslatorEntryId()const
+{
+	return ipv6TranslatorEntryId_;
+}
+
+void DescribeIPv6TranslatorEntriesRequest::setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId)
+{
+	ipv6TranslatorEntryId_ = ipv6TranslatorEntryId;
+	setCoreParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
+}
+
+std::string DescribeIPv6TranslatorEntriesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeIPv6TranslatorEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeIPv6TranslatorEntriesRequest::getAllocateIpv6Addr()const
+{
+	return allocateIpv6Addr_;
+}
+
+void DescribeIPv6TranslatorEntriesRequest::setAllocateIpv6Addr(const std::string& allocateIpv6Addr)
+{
+	allocateIpv6Addr_ = allocateIpv6Addr;
+	setCoreParameter("AllocateIpv6Addr", allocateIpv6Addr);
+}
+
+std::string DescribeIPv6TranslatorEntriesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeIPv6TranslatorEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeIPv6TranslatorEntriesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeIPv6TranslatorEntriesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getTransProtocol()const

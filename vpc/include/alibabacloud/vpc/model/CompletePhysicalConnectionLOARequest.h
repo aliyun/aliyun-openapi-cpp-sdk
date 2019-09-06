@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				CompletePhysicalConnectionLOARequest();
 				~CompletePhysicalConnectionLOARequest();
 
-				std::string getLineLabel()const;
-				void setLineLabel(const std::string& lineLabel);
 				std::string getLineCode()const;
 				void setLineCode(const std::string& lineCode);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getLineLabel()const;
+				void setLineLabel(const std::string& lineLabel);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string lineLabel_;
 				std::string lineCode_;
 				long resourceOwnerId_;
-				std::string instanceId_;
 				std::string clientToken_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				std::string lineLabel_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string instanceId_;
 
 			};
 		}

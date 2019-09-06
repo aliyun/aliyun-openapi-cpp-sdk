@@ -25,17 +25,6 @@ DescribeSslVpnClientCertsRequest::DescribeSslVpnClientCertsRequest() :
 DescribeSslVpnClientCertsRequest::~DescribeSslVpnClientCertsRequest()
 {}
 
-std::string DescribeSslVpnClientCertsRequest::getSslVpnServerId()const
-{
-	return sslVpnServerId_;
-}
-
-void DescribeSslVpnClientCertsRequest::setSslVpnServerId(const std::string& sslVpnServerId)
-{
-	sslVpnServerId_ = sslVpnServerId;
-	setCoreParameter("SslVpnServerId", sslVpnServerId);
-}
-
 long DescribeSslVpnClientCertsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,26 @@ void DescribeSslVpnClientCertsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSslVpnClientCertsRequest::getResourceOwnerAccount()const
+int DescribeSslVpnClientCertsRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void DescribeSslVpnClientCertsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeSslVpnClientCertsRequest::setPageNumber(int pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeSslVpnClientCertsRequest::getSslVpnServerId()const
+{
+	return sslVpnServerId_;
+}
+
+void DescribeSslVpnClientCertsRequest::setSslVpnServerId(const std::string& sslVpnServerId)
+{
+	sslVpnServerId_ = sslVpnServerId;
+	setCoreParameter("SslVpnServerId", sslVpnServerId);
 }
 
 std::string DescribeSslVpnClientCertsRequest::getRegionId()const
@@ -69,28 +69,6 @@ void DescribeSslVpnClientCertsRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeSslVpnClientCertsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeSslVpnClientCertsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeSslVpnClientCertsRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeSslVpnClientCertsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 int DescribeSslVpnClientCertsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -100,17 +78,6 @@ void DescribeSslVpnClientCertsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeSslVpnClientCertsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeSslVpnClientCertsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSslVpnClientCertsRequest::getSslVpnClientCertId()const
@@ -124,14 +91,47 @@ void DescribeSslVpnClientCertsRequest::setSslVpnClientCertId(const std::string& 
 	setCoreParameter("SslVpnClientCertId", sslVpnClientCertId);
 }
 
-int DescribeSslVpnClientCertsRequest::getPageNumber()const
+std::string DescribeSslVpnClientCertsRequest::getResourceOwnerAccount()const
 {
-	return pageNumber_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeSslVpnClientCertsRequest::setPageNumber(int pageNumber)
+void DescribeSslVpnClientCertsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeSslVpnClientCertsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeSslVpnClientCertsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeSslVpnClientCertsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeSslVpnClientCertsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeSslVpnClientCertsRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeSslVpnClientCertsRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

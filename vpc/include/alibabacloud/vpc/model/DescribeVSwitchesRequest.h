@@ -42,6 +42,20 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				bool getIsDefault()const;
+				void setIsDefault(bool isDefault);
+				std::string getRouteTableId()const;
+				void setRouteTableId(const std::string& routeTableId);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
@@ -50,46 +64,32 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getVSwitchName()const;
 				void setVSwitchName(const std::string& vSwitchName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-				bool getIsDefault()const;
-				void setIsDefault(bool isDefault);
-				std::string getRouteTableId()const;
-				void setRouteTableId(const std::string& routeTableId);
 
             private:
 				long resourceOwnerId_;
+				int pageNumber_;
+				std::string resourceGroupId_;
+				std::string regionId_;
+				int pageSize_;
+				std::vector<Tag> tag_;
+				bool isDefault_;
+				std::string routeTableId_;
 				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				int pageNumber_;
 				std::string vSwitchId_;
-				std::string resourceGroupId_;
-				std::string regionId_;
 				std::string vpcId_;
 				std::string vSwitchName_;
-				int pageSize_;
 				std::string zoneId_;
-				std::vector<Tag> tag_;
-				bool isDefault_;
-				std::string routeTableId_;
 
 			};
 		}

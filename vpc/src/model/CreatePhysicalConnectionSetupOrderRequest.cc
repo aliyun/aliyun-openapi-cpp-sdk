@@ -36,17 +36,6 @@ void CreatePhysicalConnectionSetupOrderRequest::setAccessPointId(const std::stri
 	setCoreParameter("AccessPointId", accessPointId);
 }
 
-std::string CreatePhysicalConnectionSetupOrderRequest::getRedundantPhysicalConnectionId()const
-{
-	return redundantPhysicalConnectionId_;
-}
-
-void CreatePhysicalConnectionSetupOrderRequest::setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId)
-{
-	redundantPhysicalConnectionId_ = redundantPhysicalConnectionId;
-	setCoreParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
-}
-
 long CreatePhysicalConnectionSetupOrderRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -69,15 +58,15 @@ void CreatePhysicalConnectionSetupOrderRequest::setPortType(const std::string& p
 	setCoreParameter("PortType", portType);
 }
 
-bool CreatePhysicalConnectionSetupOrderRequest::getAutoPay()const
+std::string CreatePhysicalConnectionSetupOrderRequest::getClientToken()const
 {
-	return autoPay_;
+	return clientToken_;
 }
 
-void CreatePhysicalConnectionSetupOrderRequest::setAutoPay(bool autoPay)
+void CreatePhysicalConnectionSetupOrderRequest::setClientToken(const std::string& clientToken)
 {
-	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getRegionId()const
@@ -91,15 +80,26 @@ void CreatePhysicalConnectionSetupOrderRequest::setRegionId(const std::string& r
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string CreatePhysicalConnectionSetupOrderRequest::getClientToken()const
+std::string CreatePhysicalConnectionSetupOrderRequest::getRedundantPhysicalConnectionId()const
 {
-	return clientToken_;
+	return redundantPhysicalConnectionId_;
 }
 
-void CreatePhysicalConnectionSetupOrderRequest::setClientToken(const std::string& clientToken)
+void CreatePhysicalConnectionSetupOrderRequest::setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId)
 {
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	redundantPhysicalConnectionId_ = redundantPhysicalConnectionId;
+	setCoreParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
+}
+
+bool CreatePhysicalConnectionSetupOrderRequest::getAutoPay()const
+{
+	return autoPay_;
+}
+
+void CreatePhysicalConnectionSetupOrderRequest::setAutoPay(bool autoPay)
+{
+	autoPay_ = autoPay;
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getResourceOwnerAccount()const

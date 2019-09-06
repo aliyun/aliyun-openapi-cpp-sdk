@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getBgpGroupId()const;
+				void setBgpGroupId(const std::string& bgpGroupId);
+				std::string getPeerIpAddress()const;
+				void setPeerIpAddress(const std::string& peerIpAddress);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				bool getEnableBfd()const;
 				void setEnableBfd(bool enableBfd);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getBgpGroupId()const;
-				void setBgpGroupId(const std::string& bgpGroupId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPeerIpAddress()const;
-				void setPeerIpAddress(const std::string& peerIpAddress);
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string bgpGroupId_;
+				std::string peerIpAddress_;
+				std::string regionId_;
 				bool enableBfd_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string clientToken_;
 				std::string ownerAccount_;
-				std::string bgpGroupId_;
 				long ownerId_;
-				std::string peerIpAddress_;
 
 			};
 		}

@@ -36,15 +36,15 @@ void UnassociateGlobalAccelerationInstanceRequest::setResourceOwnerId(long resou
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UnassociateGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
+std::string UnassociateGlobalAccelerationInstanceRequest::getGlobalAccelerationInstanceId()const
 {
-	return resourceOwnerAccount_;
+	return globalAccelerationInstanceId_;
 }
 
-void UnassociateGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void UnassociateGlobalAccelerationInstanceRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
+	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string UnassociateGlobalAccelerationInstanceRequest::getRegionId()const
@@ -58,17 +58,6 @@ void UnassociateGlobalAccelerationInstanceRequest::setRegionId(const std::string
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string UnassociateGlobalAccelerationInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void UnassociateGlobalAccelerationInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string UnassociateGlobalAccelerationInstanceRequest::getInstanceType()const
 {
 	return instanceType_;
@@ -80,6 +69,28 @@ void UnassociateGlobalAccelerationInstanceRequest::setInstanceType(const std::st
 	setCoreParameter("InstanceType", instanceType);
 }
 
+std::string UnassociateGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UnassociateGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string UnassociateGlobalAccelerationInstanceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void UnassociateGlobalAccelerationInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long UnassociateGlobalAccelerationInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,16 +100,5 @@ void UnassociateGlobalAccelerationInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string UnassociateGlobalAccelerationInstanceRequest::getGlobalAccelerationInstanceId()const
-{
-	return globalAccelerationInstanceId_;
-}
-
-void UnassociateGlobalAccelerationInstanceRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
-{
-	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 

@@ -36,17 +36,6 @@ void DeleteNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteNatGatewayRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteNatGatewayRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,28 +45,6 @@ void DeleteNatGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string DeleteNatGatewayRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DeleteNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-bool DeleteNatGatewayRequest::getForce()const
-{
-	return force_;
-}
-
-void DeleteNatGatewayRequest::setForce(bool force)
-{
-	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
 }
 
 std::string DeleteNatGatewayRequest::getNatGatewayId()const
@@ -91,6 +58,28 @@ void DeleteNatGatewayRequest::setNatGatewayId(const std::string& natGatewayId)
 	setCoreParameter("NatGatewayId", natGatewayId);
 }
 
+std::string DeleteNatGatewayRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DeleteNatGatewayRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DeleteNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DeleteNatGatewayRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void DeleteNatGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool DeleteNatGatewayRequest::getForce()const
+{
+	return force_;
+}
+
+void DeleteNatGatewayRequest::setForce(bool force)
+{
+	force_ = force;
+	setCoreParameter("Force", force ? "true" : "false");
 }
 

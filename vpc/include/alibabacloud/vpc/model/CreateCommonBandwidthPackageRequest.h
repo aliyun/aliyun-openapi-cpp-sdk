@@ -37,26 +37,26 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				int getBandwidth()const;
-				void setBandwidth(int bandwidth);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getISP()const;
 				void setISP(const std::string& iSP);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getZone()const;
 				void setZone(const std::string& zone);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getBandwidth()const;
+				void setBandwidth(int bandwidth);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getName()const;
@@ -66,16 +66,16 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				int bandwidth_;
-				std::string ownerAccount_;
 				std::string iSP_;
 				std::string description_;
-				long ownerId_;
 				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string zone_;
+				std::string resourceOwnerAccount_;
+				int bandwidth_;
+				std::string ownerAccount_;
+				long ownerId_;
 				std::string internetChargeType_;
 				std::string name_;
 				int ratio_;

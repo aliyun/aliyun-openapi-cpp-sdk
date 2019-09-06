@@ -36,15 +36,15 @@ void DescribeVpnPbrRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeVpnPbrRouteEntriesRequest::getResourceOwnerAccount()const
+int DescribeVpnPbrRouteEntriesRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void DescribeVpnPbrRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeVpnPbrRouteEntriesRequest::setPageNumber(int pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVpnPbrRouteEntriesRequest::getRegionId()const
@@ -58,17 +58,6 @@ void DescribeVpnPbrRouteEntriesRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeVpnPbrRouteEntriesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeVpnPbrRouteEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 int DescribeVpnPbrRouteEntriesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -78,6 +67,28 @@ void DescribeVpnPbrRouteEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeVpnPbrRouteEntriesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeVpnPbrRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeVpnPbrRouteEntriesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeVpnPbrRouteEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeVpnPbrRouteEntriesRequest::getVpnGatewayId()const
@@ -100,16 +111,5 @@ void DescribeVpnPbrRouteEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeVpnPbrRouteEntriesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeVpnPbrRouteEntriesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

@@ -45,10 +45,18 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRouteEntryName()const;
 				void setRouteEntryName(const std::string& routeEntryName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getNextHopId()const;
+				void setNextHopId(const std::string& nextHopId);
+				std::string getNextHopType()const;
+				void setNextHopType(const std::string& nextHopType);
+				std::string getRouteTableId()const;
+				void setRouteTableId(const std::string& routeTableId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDestinationCidrBlock()const;
 				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
 				std::string getOwnerAccount()const;
@@ -57,31 +65,23 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNextHopId()const;
-				void setNextHopId(const std::string& nextHopId);
-				std::string getNextHopType()const;
-				void setNextHopType(const std::string& nextHopType);
 				std::vector<NextHopList> getNextHopList()const;
 				void setNextHopList(const std::vector<NextHopList>& nextHopList);
-				std::string getRouteTableId()const;
-				void setRouteTableId(const std::string& routeTableId);
 
             private:
 				long resourceOwnerId_;
 				std::string routeEntryName_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
+				std::string regionId_;
+				std::string nextHopId_;
+				std::string nextHopType_;
+				std::string routeTableId_;
+				std::string resourceOwnerAccount_;
 				std::string destinationCidrBlock_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string privateIpAddress_;
-				std::string regionId_;
-				std::string nextHopId_;
-				std::string nextHopType_;
 				std::vector<NextHopList> nextHopList_;
-				std::string routeTableId_;
 
 			};
 		}

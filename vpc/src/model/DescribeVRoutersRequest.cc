@@ -47,15 +47,15 @@ void DescribeVRoutersRequest::setVRouterId(const std::string& vRouterId)
 	setCoreParameter("VRouterId", vRouterId);
 }
 
-std::string DescribeVRoutersRequest::getResourceOwnerAccount()const
+int DescribeVRoutersRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void DescribeVRoutersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeVRoutersRequest::setPageNumber(int pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVRoutersRequest::getRegionId()const
@@ -69,17 +69,6 @@ void DescribeVRoutersRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeVRoutersRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeVRoutersRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 int DescribeVRoutersRequest::getPageSize()const
 {
 	return pageSize_;
@@ -91,6 +80,28 @@ void DescribeVRoutersRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeVRoutersRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeVRoutersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeVRoutersRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeVRoutersRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeVRoutersRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void DescribeVRoutersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeVRoutersRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeVRoutersRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

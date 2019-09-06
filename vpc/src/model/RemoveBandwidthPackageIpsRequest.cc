@@ -25,6 +25,39 @@ RemoveBandwidthPackageIpsRequest::RemoveBandwidthPackageIpsRequest() :
 RemoveBandwidthPackageIpsRequest::~RemoveBandwidthPackageIpsRequest()
 {}
 
+long RemoveBandwidthPackageIpsRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void RemoveBandwidthPackageIpsRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string RemoveBandwidthPackageIpsRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void RemoveBandwidthPackageIpsRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string RemoveBandwidthPackageIpsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RemoveBandwidthPackageIpsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::vector<std::string> RemoveBandwidthPackageIpsRequest::getRemovedIpAddresses()const
 {
 	return removedIpAddresses_;
@@ -35,17 +68,6 @@ void RemoveBandwidthPackageIpsRequest::setRemovedIpAddresses(const std::vector<s
 	removedIpAddresses_ = removedIpAddresses;
 	for(int i = 0; i!= removedIpAddresses.size(); i++)
 		setCoreParameter("RemovedIpAddresses."+ std::to_string(i), removedIpAddresses.at(i));
-}
-
-long RemoveBandwidthPackageIpsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void RemoveBandwidthPackageIpsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getBandwidthPackageId()const
@@ -68,28 +90,6 @@ void RemoveBandwidthPackageIpsRequest::setResourceOwnerAccount(const std::string
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string RemoveBandwidthPackageIpsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RemoveBandwidthPackageIpsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string RemoveBandwidthPackageIpsRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void RemoveBandwidthPackageIpsRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getOwnerAccount()const

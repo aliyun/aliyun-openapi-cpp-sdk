@@ -47,28 +47,6 @@ void ModifyRouterInterfaceAttributeRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyRouterInterfaceAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyRouterInterfaceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-bool ModifyRouterInterfaceAttributeRequest::getDeleteHealthCheckIp()const
-{
-	return deleteHealthCheckIp_;
-}
-
-void ModifyRouterInterfaceAttributeRequest::setDeleteHealthCheckIp(bool deleteHealthCheckIp)
-{
-	deleteHealthCheckIp_ = deleteHealthCheckIp;
-	setCoreParameter("DeleteHealthCheckIp", deleteHealthCheckIp ? "true" : "false");
-}
-
 std::string ModifyRouterInterfaceAttributeRequest::getDescription()const
 {
 	return description_;
@@ -89,6 +67,61 @@ void ModifyRouterInterfaceAttributeRequest::setHealthCheckTargetIp(const std::st
 {
 	healthCheckTargetIp_ = healthCheckTargetIp;
 	setCoreParameter("HealthCheckTargetIp", healthCheckTargetIp);
+}
+
+std::string ModifyRouterInterfaceAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyRouterInterfaceAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyRouterInterfaceAttributeRequest::getOppositeInterfaceId()const
+{
+	return oppositeInterfaceId_;
+}
+
+void ModifyRouterInterfaceAttributeRequest::setOppositeInterfaceId(const std::string& oppositeInterfaceId)
+{
+	oppositeInterfaceId_ = oppositeInterfaceId;
+	setCoreParameter("OppositeInterfaceId", oppositeInterfaceId);
+}
+
+int ModifyRouterInterfaceAttributeRequest::getHcThreshold()const
+{
+	return hcThreshold_;
+}
+
+void ModifyRouterInterfaceAttributeRequest::setHcThreshold(int hcThreshold)
+{
+	hcThreshold_ = hcThreshold;
+	setCoreParameter("HcThreshold", std::to_string(hcThreshold));
+}
+
+std::string ModifyRouterInterfaceAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyRouterInterfaceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+bool ModifyRouterInterfaceAttributeRequest::getDeleteHealthCheckIp()const
+{
+	return deleteHealthCheckIp_;
+}
+
+void ModifyRouterInterfaceAttributeRequest::setDeleteHealthCheckIp(bool deleteHealthCheckIp)
+{
+	deleteHealthCheckIp_ = deleteHealthCheckIp;
+	setCoreParameter("DeleteHealthCheckIp", deleteHealthCheckIp ? "true" : "false");
 }
 
 long ModifyRouterInterfaceAttributeRequest::getOwnerId()const
@@ -124,17 +157,6 @@ void ModifyRouterInterfaceAttributeRequest::setOppositeInterfaceOwnerId(long opp
 	setCoreParameter("OppositeInterfaceOwnerId", std::to_string(oppositeInterfaceOwnerId));
 }
 
-std::string ModifyRouterInterfaceAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyRouterInterfaceAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyRouterInterfaceAttributeRequest::getHealthCheckSourceIp()const
 {
 	return healthCheckSourceIp_;
@@ -168,14 +190,14 @@ void ModifyRouterInterfaceAttributeRequest::setOppositeRouterType(const std::str
 	setCoreParameter("OppositeRouterType", oppositeRouterType);
 }
 
-std::string ModifyRouterInterfaceAttributeRequest::getOppositeInterfaceId()const
+int ModifyRouterInterfaceAttributeRequest::getHcRate()const
 {
-	return oppositeInterfaceId_;
+	return hcRate_;
 }
 
-void ModifyRouterInterfaceAttributeRequest::setOppositeInterfaceId(const std::string& oppositeInterfaceId)
+void ModifyRouterInterfaceAttributeRequest::setHcRate(int hcRate)
 {
-	oppositeInterfaceId_ = oppositeInterfaceId;
-	setCoreParameter("OppositeInterfaceId", oppositeInterfaceId);
+	hcRate_ = hcRate;
+	setCoreParameter("HcRate", std::to_string(hcRate));
 }
 
