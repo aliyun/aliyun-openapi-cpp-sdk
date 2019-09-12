@@ -159,42 +159,6 @@ CloudAPIClient::UntagResourcesOutcomeCallable CloudAPIClient::untagResourcesCall
 	return task->get_future();
 }
 
-CloudAPIClient::DescribeLogConfigOutcome CloudAPIClient::describeLogConfig(const DescribeLogConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLogConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLogConfigOutcome(DescribeLogConfigResult(outcome.result()));
-	else
-		return DescribeLogConfigOutcome(outcome.error());
-}
-
-void CloudAPIClient::describeLogConfigAsync(const DescribeLogConfigRequest& request, const DescribeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLogConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::DescribeLogConfigOutcomeCallable CloudAPIClient::describeLogConfigCallable(const DescribeLogConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLogConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLogConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::SetApisAuthoritiesOutcome CloudAPIClient::setApisAuthorities(const SetApisAuthoritiesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +189,42 @@ CloudAPIClient::SetApisAuthoritiesOutcomeCallable CloudAPIClient::setApisAuthori
 			[this, request]()
 			{
 			return this->setApisAuthorities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeLogConfigOutcome CloudAPIClient::describeLogConfig(const DescribeLogConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLogConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLogConfigOutcome(DescribeLogConfigResult(outcome.result()));
+	else
+		return DescribeLogConfigOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeLogConfigAsync(const DescribeLogConfigRequest& request, const DescribeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLogConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeLogConfigOutcomeCallable CloudAPIClient::describeLogConfigCallable(const DescribeLogConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLogConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLogConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,42 +1311,6 @@ CloudAPIClient::DescribeApiDocOutcomeCallable CloudAPIClient::describeApiDocCall
 	return task->get_future();
 }
 
-CloudAPIClient::CreateTrafficControlOutcome CloudAPIClient::createTrafficControl(const CreateTrafficControlRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateTrafficControlOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateTrafficControlOutcome(CreateTrafficControlResult(outcome.result()));
-	else
-		return CreateTrafficControlOutcome(outcome.error());
-}
-
-void CloudAPIClient::createTrafficControlAsync(const CreateTrafficControlRequest& request, const CreateTrafficControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createTrafficControl(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::CreateTrafficControlOutcomeCallable CloudAPIClient::createTrafficControlCallable(const CreateTrafficControlRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateTrafficControlOutcome()>>(
-			[this, request]()
-			{
-			return this->createTrafficControl(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::DeleteDomainCertificateOutcome CloudAPIClient::deleteDomainCertificate(const DeleteDomainCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1377,42 @@ CloudAPIClient::SdkGenerateByAppOutcomeCallable CloudAPIClient::sdkGenerateByApp
 			[this, request]()
 			{
 			return this->sdkGenerateByApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::CreateTrafficControlOutcome CloudAPIClient::createTrafficControl(const CreateTrafficControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTrafficControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTrafficControlOutcome(CreateTrafficControlResult(outcome.result()));
+	else
+		return CreateTrafficControlOutcome(outcome.error());
+}
+
+void CloudAPIClient::createTrafficControlAsync(const CreateTrafficControlRequest& request, const CreateTrafficControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTrafficControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreateTrafficControlOutcomeCallable CloudAPIClient::createTrafficControlCallable(const CreateTrafficControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTrafficControlOutcome()>>(
+			[this, request]()
+			{
+			return this->createTrafficControl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,42 +1491,6 @@ CloudAPIClient::DescribeSignaturesOutcomeCallable CloudAPIClient::describeSignat
 	return task->get_future();
 }
 
-CloudAPIClient::SdkGenerateByGroupOutcome CloudAPIClient::sdkGenerateByGroup(const SdkGenerateByGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SdkGenerateByGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SdkGenerateByGroupOutcome(SdkGenerateByGroupResult(outcome.result()));
-	else
-		return SdkGenerateByGroupOutcome(outcome.error());
-}
-
-void CloudAPIClient::sdkGenerateByGroupAsync(const SdkGenerateByGroupRequest& request, const SdkGenerateByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, sdkGenerateByGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::SdkGenerateByGroupOutcomeCallable CloudAPIClient::sdkGenerateByGroupCallable(const SdkGenerateByGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SdkGenerateByGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->sdkGenerateByGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::SetAppsAuthoritiesOutcome CloudAPIClient::setAppsAuthorities(const SetAppsAuthoritiesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1521,42 @@ CloudAPIClient::SetAppsAuthoritiesOutcomeCallable CloudAPIClient::setAppsAuthori
 			[this, request]()
 			{
 			return this->setAppsAuthorities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::SdkGenerateByGroupOutcome CloudAPIClient::sdkGenerateByGroup(const SdkGenerateByGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SdkGenerateByGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SdkGenerateByGroupOutcome(SdkGenerateByGroupResult(outcome.result()));
+	else
+		return SdkGenerateByGroupOutcome(outcome.error());
+}
+
+void CloudAPIClient::sdkGenerateByGroupAsync(const SdkGenerateByGroupRequest& request, const SdkGenerateByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sdkGenerateByGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::SdkGenerateByGroupOutcomeCallable CloudAPIClient::sdkGenerateByGroupCallable(const SdkGenerateByGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SdkGenerateByGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->sdkGenerateByGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1743,42 +1743,6 @@ CloudAPIClient::ResetAppCodeOutcomeCallable CloudAPIClient::resetAppCodeCallable
 	return task->get_future();
 }
 
-CloudAPIClient::DescribeApisByTrafficControlOutcome CloudAPIClient::describeApisByTrafficControl(const DescribeApisByTrafficControlRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeApisByTrafficControlOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeApisByTrafficControlOutcome(DescribeApisByTrafficControlResult(outcome.result()));
-	else
-		return DescribeApisByTrafficControlOutcome(outcome.error());
-}
-
-void CloudAPIClient::describeApisByTrafficControlAsync(const DescribeApisByTrafficControlRequest& request, const DescribeApisByTrafficControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeApisByTrafficControl(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::DescribeApisByTrafficControlOutcomeCallable CloudAPIClient::describeApisByTrafficControlCallable(const DescribeApisByTrafficControlRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeApisByTrafficControlOutcome()>>(
-			[this, request]()
-			{
-			return this->describeApisByTrafficControl(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::RemoveVpcAccessOutcome CloudAPIClient::removeVpcAccess(const RemoveVpcAccessRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,6 +1773,42 @@ CloudAPIClient::RemoveVpcAccessOutcomeCallable CloudAPIClient::removeVpcAccessCa
 			[this, request]()
 			{
 			return this->removeVpcAccess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeApisByTrafficControlOutcome CloudAPIClient::describeApisByTrafficControl(const DescribeApisByTrafficControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApisByTrafficControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApisByTrafficControlOutcome(DescribeApisByTrafficControlResult(outcome.result()));
+	else
+		return DescribeApisByTrafficControlOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeApisByTrafficControlAsync(const DescribeApisByTrafficControlRequest& request, const DescribeApisByTrafficControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApisByTrafficControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeApisByTrafficControlOutcomeCallable CloudAPIClient::describeApisByTrafficControlCallable(const DescribeApisByTrafficControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApisByTrafficControlOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApisByTrafficControl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2139,42 +2139,6 @@ CloudAPIClient::CreateInstanceOutcomeCallable CloudAPIClient::createInstanceCall
 	return task->get_future();
 }
 
-CloudAPIClient::DescribeDomainOutcome CloudAPIClient::describeDomain(const DescribeDomainRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainOutcome(DescribeDomainResult(outcome.result()));
-	else
-		return DescribeDomainOutcome(outcome.error());
-}
-
-void CloudAPIClient::describeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomain(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::DescribeDomainOutcomeCallable CloudAPIClient::describeDomainCallable(const DescribeDomainRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::DescribeApiQpsDataOutcome CloudAPIClient::describeApiQpsData(const DescribeApiQpsDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2205,6 +2169,42 @@ CloudAPIClient::DescribeApiQpsDataOutcomeCallable CloudAPIClient::describeApiQps
 			[this, request]()
 			{
 			return this->describeApiQpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeDomainOutcome CloudAPIClient::describeDomain(const DescribeDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainOutcome(DescribeDomainResult(outcome.result()));
+	else
+		return DescribeDomainOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeDomainOutcomeCallable CloudAPIClient::describeDomainCallable(const DescribeDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,42 +2607,6 @@ CloudAPIClient::CreateIpControlOutcomeCallable CloudAPIClient::createIpControlCa
 	return task->get_future();
 }
 
-CloudAPIClient::RemoveApisAuthoritiesOutcome CloudAPIClient::removeApisAuthorities(const RemoveApisAuthoritiesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveApisAuthoritiesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveApisAuthoritiesOutcome(RemoveApisAuthoritiesResult(outcome.result()));
-	else
-		return RemoveApisAuthoritiesOutcome(outcome.error());
-}
-
-void CloudAPIClient::removeApisAuthoritiesAsync(const RemoveApisAuthoritiesRequest& request, const RemoveApisAuthoritiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeApisAuthorities(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::RemoveApisAuthoritiesOutcomeCallable CloudAPIClient::removeApisAuthoritiesCallable(const RemoveApisAuthoritiesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveApisAuthoritiesOutcome()>>(
-			[this, request]()
-			{
-			return this->removeApisAuthorities(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::SetVpcAccessOutcome CloudAPIClient::setVpcAccess(const SetVpcAccessRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +2637,42 @@ CloudAPIClient::SetVpcAccessOutcomeCallable CloudAPIClient::setVpcAccessCallable
 			[this, request]()
 			{
 			return this->setVpcAccess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::RemoveApisAuthoritiesOutcome CloudAPIClient::removeApisAuthorities(const RemoveApisAuthoritiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveApisAuthoritiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveApisAuthoritiesOutcome(RemoveApisAuthoritiesResult(outcome.result()));
+	else
+		return RemoveApisAuthoritiesOutcome(outcome.error());
+}
+
+void CloudAPIClient::removeApisAuthoritiesAsync(const RemoveApisAuthoritiesRequest& request, const RemoveApisAuthoritiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeApisAuthorities(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::RemoveApisAuthoritiesOutcomeCallable CloudAPIClient::removeApisAuthoritiesCallable(const RemoveApisAuthoritiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveApisAuthoritiesOutcome()>>(
+			[this, request]()
+			{
+			return this->removeApisAuthorities(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2715,42 +2715,6 @@ CloudAPIClient::CreateSignatureOutcomeCallable CloudAPIClient::createSignatureCa
 	return task->get_future();
 }
 
-CloudAPIClient::ModifyApiOutcome CloudAPIClient::modifyApi(const ModifyApiRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyApiOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyApiOutcome(ModifyApiResult(outcome.result()));
-	else
-		return ModifyApiOutcome(outcome.error());
-}
-
-void CloudAPIClient::modifyApiAsync(const ModifyApiRequest& request, const ModifyApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyApi(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::ModifyApiOutcomeCallable CloudAPIClient::modifyApiCallable(const ModifyApiRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyApiOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyApi(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::DescribeSignaturesByApiOutcome CloudAPIClient::describeSignaturesByApi(const DescribeSignaturesByApiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2781,6 +2745,42 @@ CloudAPIClient::DescribeSignaturesByApiOutcomeCallable CloudAPIClient::describeS
 			[this, request]()
 			{
 			return this->describeSignaturesByApi(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ModifyApiOutcome CloudAPIClient::modifyApi(const ModifyApiRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyApiOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyApiOutcome(ModifyApiResult(outcome.result()));
+	else
+		return ModifyApiOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyApiAsync(const ModifyApiRequest& request, const ModifyApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyApi(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyApiOutcomeCallable CloudAPIClient::modifyApiCallable(const ModifyApiRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyApiOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyApi(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2823,36 +2823,36 @@ CloudAPIClient::ResetAppSecretOutcomeCallable CloudAPIClient::resetAppSecretCall
 	return task->get_future();
 }
 
-CloudAPIClient::SetDomainWebSocketStatusOutcome CloudAPIClient::setDomainWebSocketStatus(const SetDomainWebSocketStatusRequest &request) const
+CloudAPIClient::ModifyAppOutcome CloudAPIClient::modifyApp(const ModifyAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SetDomainWebSocketStatusOutcome(endpointOutcome.error());
+		return ModifyAppOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SetDomainWebSocketStatusOutcome(SetDomainWebSocketStatusResult(outcome.result()));
+		return ModifyAppOutcome(ModifyAppResult(outcome.result()));
 	else
-		return SetDomainWebSocketStatusOutcome(outcome.error());
+		return ModifyAppOutcome(outcome.error());
 }
 
-void CloudAPIClient::setDomainWebSocketStatusAsync(const SetDomainWebSocketStatusRequest& request, const SetDomainWebSocketStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudAPIClient::modifyAppAsync(const ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, setDomainWebSocketStatus(request), context);
+		handler(this, request, modifyApp(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudAPIClient::SetDomainWebSocketStatusOutcomeCallable CloudAPIClient::setDomainWebSocketStatusCallable(const SetDomainWebSocketStatusRequest &request) const
+CloudAPIClient::ModifyAppOutcomeCallable CloudAPIClient::modifyAppCallable(const ModifyAppRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SetDomainWebSocketStatusOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyAppOutcome()>>(
 			[this, request]()
 			{
-			return this->setDomainWebSocketStatus(request);
+			return this->modifyApp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2931,36 +2931,36 @@ CloudAPIClient::DeployApiOutcomeCallable CloudAPIClient::deployApiCallable(const
 	return task->get_future();
 }
 
-CloudAPIClient::ModifyAppOutcome CloudAPIClient::modifyApp(const ModifyAppRequest &request) const
+CloudAPIClient::SetDomainWebSocketStatusOutcome CloudAPIClient::setDomainWebSocketStatus(const SetDomainWebSocketStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyAppOutcome(endpointOutcome.error());
+		return SetDomainWebSocketStatusOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyAppOutcome(ModifyAppResult(outcome.result()));
+		return SetDomainWebSocketStatusOutcome(SetDomainWebSocketStatusResult(outcome.result()));
 	else
-		return ModifyAppOutcome(outcome.error());
+		return SetDomainWebSocketStatusOutcome(outcome.error());
 }
 
-void CloudAPIClient::modifyAppAsync(const ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudAPIClient::setDomainWebSocketStatusAsync(const SetDomainWebSocketStatusRequest& request, const SetDomainWebSocketStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyApp(request), context);
+		handler(this, request, setDomainWebSocketStatus(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudAPIClient::ModifyAppOutcomeCallable CloudAPIClient::modifyAppCallable(const ModifyAppRequest &request) const
+CloudAPIClient::SetDomainWebSocketStatusOutcomeCallable CloudAPIClient::setDomainWebSocketStatusCallable(const SetDomainWebSocketStatusRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyAppOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SetDomainWebSocketStatusOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyApp(request);
+			return this->setDomainWebSocketStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3219,42 +3219,6 @@ CloudAPIClient::DescribeApiTrafficControlsOutcomeCallable CloudAPIClient::descri
 	return task->get_future();
 }
 
-CloudAPIClient::ReactivateDomainOutcome CloudAPIClient::reactivateDomain(const ReactivateDomainRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReactivateDomainOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReactivateDomainOutcome(ReactivateDomainResult(outcome.result()));
-	else
-		return ReactivateDomainOutcome(outcome.error());
-}
-
-void CloudAPIClient::reactivateDomainAsync(const ReactivateDomainRequest& request, const ReactivateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, reactivateDomain(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::ReactivateDomainOutcomeCallable CloudAPIClient::reactivateDomainCallable(const ReactivateDomainRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReactivateDomainOutcome()>>(
-			[this, request]()
-			{
-			return this->reactivateDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::SetSignatureApisOutcome CloudAPIClient::setSignatureApis(const SetSignatureApisRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3285,6 +3249,42 @@ CloudAPIClient::SetSignatureApisOutcomeCallable CloudAPIClient::setSignatureApis
 			[this, request]()
 			{
 			return this->setSignatureApis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ReactivateDomainOutcome CloudAPIClient::reactivateDomain(const ReactivateDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReactivateDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReactivateDomainOutcome(ReactivateDomainResult(outcome.result()));
+	else
+		return ReactivateDomainOutcome(outcome.error());
+}
+
+void CloudAPIClient::reactivateDomainAsync(const ReactivateDomainRequest& request, const ReactivateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reactivateDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ReactivateDomainOutcomeCallable CloudAPIClient::reactivateDomainCallable(const ReactivateDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReactivateDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->reactivateDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3507,42 +3507,6 @@ CloudAPIClient::CreateApiStageVariableOutcomeCallable CloudAPIClient::createApiS
 	return task->get_future();
 }
 
-CloudAPIClient::DescribeIpControlPolicyItemsOutcome CloudAPIClient::describeIpControlPolicyItems(const DescribeIpControlPolicyItemsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeIpControlPolicyItemsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeIpControlPolicyItemsOutcome(DescribeIpControlPolicyItemsResult(outcome.result()));
-	else
-		return DescribeIpControlPolicyItemsOutcome(outcome.error());
-}
-
-void CloudAPIClient::describeIpControlPolicyItemsAsync(const DescribeIpControlPolicyItemsRequest& request, const DescribeIpControlPolicyItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeIpControlPolicyItems(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::DescribeIpControlPolicyItemsOutcomeCallable CloudAPIClient::describeIpControlPolicyItemsCallable(const DescribeIpControlPolicyItemsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeIpControlPolicyItemsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeIpControlPolicyItems(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::DescribeApiSignaturesOutcome CloudAPIClient::describeApiSignatures(const DescribeApiSignaturesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3573,6 +3537,42 @@ CloudAPIClient::DescribeApiSignaturesOutcomeCallable CloudAPIClient::describeApi
 			[this, request]()
 			{
 			return this->describeApiSignatures(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeIpControlPolicyItemsOutcome CloudAPIClient::describeIpControlPolicyItems(const DescribeIpControlPolicyItemsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIpControlPolicyItemsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIpControlPolicyItemsOutcome(DescribeIpControlPolicyItemsResult(outcome.result()));
+	else
+		return DescribeIpControlPolicyItemsOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeIpControlPolicyItemsAsync(const DescribeIpControlPolicyItemsRequest& request, const DescribeIpControlPolicyItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIpControlPolicyItems(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeIpControlPolicyItemsOutcomeCallable CloudAPIClient::describeIpControlPolicyItemsCallable(const DescribeIpControlPolicyItemsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIpControlPolicyItemsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIpControlPolicyItems(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

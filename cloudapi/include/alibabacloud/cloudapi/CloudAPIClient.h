@@ -28,10 +28,10 @@
 #include "model/DescribePurchasedApiGroupsResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
-#include "model/DescribeLogConfigRequest.h"
-#include "model/DescribeLogConfigResult.h"
 #include "model/SetApisAuthoritiesRequest.h"
 #include "model/SetApisAuthoritiesResult.h"
+#include "model/DescribeLogConfigRequest.h"
+#include "model/DescribeLogConfigResult.h"
 #include "model/DescribeTrafficControlsRequest.h"
 #include "model/DescribeTrafficControlsResult.h"
 #include "model/SetDomainRequest.h"
@@ -92,20 +92,20 @@
 #include "model/ModifyIpControlPolicyItemResult.h"
 #include "model/DescribeApiDocRequest.h"
 #include "model/DescribeApiDocResult.h"
-#include "model/CreateTrafficControlRequest.h"
-#include "model/CreateTrafficControlResult.h"
 #include "model/DeleteDomainCertificateRequest.h"
 #include "model/DeleteDomainCertificateResult.h"
 #include "model/SdkGenerateByAppRequest.h"
 #include "model/SdkGenerateByAppResult.h"
+#include "model/CreateTrafficControlRequest.h"
+#include "model/CreateTrafficControlResult.h"
 #include "model/SetDomainCertificateRequest.h"
 #include "model/SetDomainCertificateResult.h"
 #include "model/DescribeSignaturesRequest.h"
 #include "model/DescribeSignaturesResult.h"
-#include "model/SdkGenerateByGroupRequest.h"
-#include "model/SdkGenerateByGroupResult.h"
 #include "model/SetAppsAuthoritiesRequest.h"
 #include "model/SetAppsAuthoritiesResult.h"
+#include "model/SdkGenerateByGroupRequest.h"
+#include "model/SdkGenerateByGroupResult.h"
 #include "model/DescribeApiStageRequest.h"
 #include "model/DescribeApiStageResult.h"
 #include "model/TagResourcesRequest.h"
@@ -116,10 +116,10 @@
 #include "model/CreateAppResult.h"
 #include "model/ResetAppCodeRequest.h"
 #include "model/ResetAppCodeResult.h"
-#include "model/DescribeApisByTrafficControlRequest.h"
-#include "model/DescribeApisByTrafficControlResult.h"
 #include "model/RemoveVpcAccessRequest.h"
 #include "model/RemoveVpcAccessResult.h"
+#include "model/DescribeApisByTrafficControlRequest.h"
+#include "model/DescribeApisByTrafficControlResult.h"
 #include "model/ModifyIpControlRequest.h"
 #include "model/ModifyIpControlResult.h"
 #include "model/DeleteInstanceRequest.h"
@@ -138,10 +138,10 @@
 #include "model/AddIpControlPolicyItemResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
-#include "model/DescribeDomainRequest.h"
-#include "model/DescribeDomainResult.h"
 #include "model/DescribeApiQpsDataRequest.h"
 #include "model/DescribeApiQpsDataResult.h"
+#include "model/DescribeDomainRequest.h"
+#include "model/DescribeDomainResult.h"
 #include "model/DescribeAppSecurityRequest.h"
 #include "model/DescribeAppSecurityResult.h"
 #include "model/DescribeIpControlsRequest.h"
@@ -164,26 +164,26 @@
 #include "model/DescribeApisBySignatureResult.h"
 #include "model/CreateIpControlRequest.h"
 #include "model/CreateIpControlResult.h"
-#include "model/RemoveApisAuthoritiesRequest.h"
-#include "model/RemoveApisAuthoritiesResult.h"
 #include "model/SetVpcAccessRequest.h"
 #include "model/SetVpcAccessResult.h"
+#include "model/RemoveApisAuthoritiesRequest.h"
+#include "model/RemoveApisAuthoritiesResult.h"
 #include "model/CreateSignatureRequest.h"
 #include "model/CreateSignatureResult.h"
-#include "model/ModifyApiRequest.h"
-#include "model/ModifyApiResult.h"
 #include "model/DescribeSignaturesByApiRequest.h"
 #include "model/DescribeSignaturesByApiResult.h"
+#include "model/ModifyApiRequest.h"
+#include "model/ModifyApiResult.h"
 #include "model/ResetAppSecretRequest.h"
 #include "model/ResetAppSecretResult.h"
-#include "model/SetDomainWebSocketStatusRequest.h"
-#include "model/SetDomainWebSocketStatusResult.h"
+#include "model/ModifyAppRequest.h"
+#include "model/ModifyAppResult.h"
 #include "model/AddTrafficSpecialControlRequest.h"
 #include "model/AddTrafficSpecialControlResult.h"
 #include "model/DeployApiRequest.h"
 #include "model/DeployApiResult.h"
-#include "model/ModifyAppRequest.h"
-#include "model/ModifyAppResult.h"
+#include "model/SetDomainWebSocketStatusRequest.h"
+#include "model/SetDomainWebSocketStatusResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribePurchasedApisRequest.h"
@@ -198,10 +198,10 @@
 #include "model/DeleteLogConfigResult.h"
 #include "model/DescribeApiTrafficControlsRequest.h"
 #include "model/DescribeApiTrafficControlsResult.h"
-#include "model/ReactivateDomainRequest.h"
-#include "model/ReactivateDomainResult.h"
 #include "model/SetSignatureApisRequest.h"
 #include "model/SetSignatureApisResult.h"
+#include "model/ReactivateDomainRequest.h"
+#include "model/ReactivateDomainResult.h"
 #include "model/DescribeAppRequest.h"
 #include "model/DescribeAppResult.h"
 #include "model/RemoveIpControlPolicyItemRequest.h"
@@ -214,10 +214,10 @@
 #include "model/CreateLogConfigResult.h"
 #include "model/CreateApiStageVariableRequest.h"
 #include "model/CreateApiStageVariableResult.h"
-#include "model/DescribeIpControlPolicyItemsRequest.h"
-#include "model/DescribeIpControlPolicyItemsResult.h"
 #include "model/DescribeApiSignaturesRequest.h"
 #include "model/DescribeApiSignaturesResult.h"
+#include "model/DescribeIpControlPolicyItemsRequest.h"
+#include "model/DescribeIpControlPolicyItemsResult.h"
 #include "model/DeleteDomainRequest.h"
 #include "model/DeleteDomainResult.h"
 #include "model/SetTrafficControlApisRequest.h"
@@ -248,12 +248,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLogConfigResult> DescribeLogConfigOutcome;
-			typedef std::future<DescribeLogConfigOutcome> DescribeLogConfigOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::DescribeLogConfigRequest&, const DescribeLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetApisAuthoritiesResult> SetApisAuthoritiesOutcome;
 			typedef std::future<SetApisAuthoritiesOutcome> SetApisAuthoritiesOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::SetApisAuthoritiesRequest&, const SetApisAuthoritiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetApisAuthoritiesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLogConfigResult> DescribeLogConfigOutcome;
+			typedef std::future<DescribeLogConfigOutcome> DescribeLogConfigOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::DescribeLogConfigRequest&, const DescribeLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTrafficControlsResult> DescribeTrafficControlsOutcome;
 			typedef std::future<DescribeTrafficControlsOutcome> DescribeTrafficControlsOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeTrafficControlsRequest&, const DescribeTrafficControlsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficControlsAsyncHandler;
@@ -344,27 +344,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeApiDocResult> DescribeApiDocOutcome;
 			typedef std::future<DescribeApiDocOutcome> DescribeApiDocOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApiDocRequest&, const DescribeApiDocOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiDocAsyncHandler;
-			typedef Outcome<Error, Model::CreateTrafficControlResult> CreateTrafficControlOutcome;
-			typedef std::future<CreateTrafficControlOutcome> CreateTrafficControlOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::CreateTrafficControlRequest&, const CreateTrafficControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficControlAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDomainCertificateResult> DeleteDomainCertificateOutcome;
 			typedef std::future<DeleteDomainCertificateOutcome> DeleteDomainCertificateOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DeleteDomainCertificateRequest&, const DeleteDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainCertificateAsyncHandler;
 			typedef Outcome<Error, Model::SdkGenerateByAppResult> SdkGenerateByAppOutcome;
 			typedef std::future<SdkGenerateByAppOutcome> SdkGenerateByAppOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::SdkGenerateByAppRequest&, const SdkGenerateByAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SdkGenerateByAppAsyncHandler;
+			typedef Outcome<Error, Model::CreateTrafficControlResult> CreateTrafficControlOutcome;
+			typedef std::future<CreateTrafficControlOutcome> CreateTrafficControlOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::CreateTrafficControlRequest&, const CreateTrafficControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficControlAsyncHandler;
 			typedef Outcome<Error, Model::SetDomainCertificateResult> SetDomainCertificateOutcome;
 			typedef std::future<SetDomainCertificateOutcome> SetDomainCertificateOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::SetDomainCertificateRequest&, const SetDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainCertificateAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSignaturesResult> DescribeSignaturesOutcome;
 			typedef std::future<DescribeSignaturesOutcome> DescribeSignaturesOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeSignaturesRequest&, const DescribeSignaturesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSignaturesAsyncHandler;
-			typedef Outcome<Error, Model::SdkGenerateByGroupResult> SdkGenerateByGroupOutcome;
-			typedef std::future<SdkGenerateByGroupOutcome> SdkGenerateByGroupOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::SdkGenerateByGroupRequest&, const SdkGenerateByGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SdkGenerateByGroupAsyncHandler;
 			typedef Outcome<Error, Model::SetAppsAuthoritiesResult> SetAppsAuthoritiesOutcome;
 			typedef std::future<SetAppsAuthoritiesOutcome> SetAppsAuthoritiesOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::SetAppsAuthoritiesRequest&, const SetAppsAuthoritiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAppsAuthoritiesAsyncHandler;
+			typedef Outcome<Error, Model::SdkGenerateByGroupResult> SdkGenerateByGroupOutcome;
+			typedef std::future<SdkGenerateByGroupOutcome> SdkGenerateByGroupOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::SdkGenerateByGroupRequest&, const SdkGenerateByGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SdkGenerateByGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApiStageResult> DescribeApiStageOutcome;
 			typedef std::future<DescribeApiStageOutcome> DescribeApiStageOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApiStageRequest&, const DescribeApiStageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiStageAsyncHandler;
@@ -380,12 +380,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResetAppCodeResult> ResetAppCodeOutcome;
 			typedef std::future<ResetAppCodeOutcome> ResetAppCodeOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::ResetAppCodeRequest&, const ResetAppCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAppCodeAsyncHandler;
-			typedef Outcome<Error, Model::DescribeApisByTrafficControlResult> DescribeApisByTrafficControlOutcome;
-			typedef std::future<DescribeApisByTrafficControlOutcome> DescribeApisByTrafficControlOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApisByTrafficControlRequest&, const DescribeApisByTrafficControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApisByTrafficControlAsyncHandler;
 			typedef Outcome<Error, Model::RemoveVpcAccessResult> RemoveVpcAccessOutcome;
 			typedef std::future<RemoveVpcAccessOutcome> RemoveVpcAccessOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::RemoveVpcAccessRequest&, const RemoveVpcAccessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveVpcAccessAsyncHandler;
+			typedef Outcome<Error, Model::DescribeApisByTrafficControlResult> DescribeApisByTrafficControlOutcome;
+			typedef std::future<DescribeApisByTrafficControlOutcome> DescribeApisByTrafficControlOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApisByTrafficControlRequest&, const DescribeApisByTrafficControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApisByTrafficControlAsyncHandler;
 			typedef Outcome<Error, Model::ModifyIpControlResult> ModifyIpControlOutcome;
 			typedef std::future<ModifyIpControlOutcome> ModifyIpControlOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::ModifyIpControlRequest&, const ModifyIpControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpControlAsyncHandler;
@@ -413,12 +413,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDomainResult> DescribeDomainOutcome;
-			typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::DescribeDomainRequest&, const DescribeDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApiQpsDataResult> DescribeApiQpsDataOutcome;
 			typedef std::future<DescribeApiQpsDataOutcome> DescribeApiQpsDataOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApiQpsDataRequest&, const DescribeApiQpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiQpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainResult> DescribeDomainOutcome;
+			typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::DescribeDomainRequest&, const DescribeDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAppSecurityResult> DescribeAppSecurityOutcome;
 			typedef std::future<DescribeAppSecurityOutcome> DescribeAppSecurityOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeAppSecurityRequest&, const DescribeAppSecurityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppSecurityAsyncHandler;
@@ -452,36 +452,36 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateIpControlResult> CreateIpControlOutcome;
 			typedef std::future<CreateIpControlOutcome> CreateIpControlOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::CreateIpControlRequest&, const CreateIpControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIpControlAsyncHandler;
-			typedef Outcome<Error, Model::RemoveApisAuthoritiesResult> RemoveApisAuthoritiesOutcome;
-			typedef std::future<RemoveApisAuthoritiesOutcome> RemoveApisAuthoritiesOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::RemoveApisAuthoritiesRequest&, const RemoveApisAuthoritiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveApisAuthoritiesAsyncHandler;
 			typedef Outcome<Error, Model::SetVpcAccessResult> SetVpcAccessOutcome;
 			typedef std::future<SetVpcAccessOutcome> SetVpcAccessOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::SetVpcAccessRequest&, const SetVpcAccessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetVpcAccessAsyncHandler;
+			typedef Outcome<Error, Model::RemoveApisAuthoritiesResult> RemoveApisAuthoritiesOutcome;
+			typedef std::future<RemoveApisAuthoritiesOutcome> RemoveApisAuthoritiesOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::RemoveApisAuthoritiesRequest&, const RemoveApisAuthoritiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveApisAuthoritiesAsyncHandler;
 			typedef Outcome<Error, Model::CreateSignatureResult> CreateSignatureOutcome;
 			typedef std::future<CreateSignatureOutcome> CreateSignatureOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::CreateSignatureRequest&, const CreateSignatureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSignatureAsyncHandler;
-			typedef Outcome<Error, Model::ModifyApiResult> ModifyApiOutcome;
-			typedef std::future<ModifyApiOutcome> ModifyApiOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::ModifyApiRequest&, const ModifyApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSignaturesByApiResult> DescribeSignaturesByApiOutcome;
 			typedef std::future<DescribeSignaturesByApiOutcome> DescribeSignaturesByApiOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeSignaturesByApiRequest&, const DescribeSignaturesByApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSignaturesByApiAsyncHandler;
+			typedef Outcome<Error, Model::ModifyApiResult> ModifyApiOutcome;
+			typedef std::future<ModifyApiOutcome> ModifyApiOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::ModifyApiRequest&, const ModifyApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiAsyncHandler;
 			typedef Outcome<Error, Model::ResetAppSecretResult> ResetAppSecretOutcome;
 			typedef std::future<ResetAppSecretOutcome> ResetAppSecretOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::ResetAppSecretRequest&, const ResetAppSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAppSecretAsyncHandler;
-			typedef Outcome<Error, Model::SetDomainWebSocketStatusResult> SetDomainWebSocketStatusOutcome;
-			typedef std::future<SetDomainWebSocketStatusOutcome> SetDomainWebSocketStatusOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::SetDomainWebSocketStatusRequest&, const SetDomainWebSocketStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainWebSocketStatusAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAppResult> ModifyAppOutcome;
+			typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::ModifyAppRequest&, const ModifyAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
 			typedef Outcome<Error, Model::AddTrafficSpecialControlResult> AddTrafficSpecialControlOutcome;
 			typedef std::future<AddTrafficSpecialControlOutcome> AddTrafficSpecialControlOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::AddTrafficSpecialControlRequest&, const AddTrafficSpecialControlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTrafficSpecialControlAsyncHandler;
 			typedef Outcome<Error, Model::DeployApiResult> DeployApiOutcome;
 			typedef std::future<DeployApiOutcome> DeployApiOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DeployApiRequest&, const DeployApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeployApiAsyncHandler;
-			typedef Outcome<Error, Model::ModifyAppResult> ModifyAppOutcome;
-			typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::ModifyAppRequest&, const ModifyAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
+			typedef Outcome<Error, Model::SetDomainWebSocketStatusResult> SetDomainWebSocketStatusOutcome;
+			typedef std::future<SetDomainWebSocketStatusOutcome> SetDomainWebSocketStatusOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::SetDomainWebSocketStatusRequest&, const SetDomainWebSocketStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainWebSocketStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -503,12 +503,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeApiTrafficControlsResult> DescribeApiTrafficControlsOutcome;
 			typedef std::future<DescribeApiTrafficControlsOutcome> DescribeApiTrafficControlsOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApiTrafficControlsRequest&, const DescribeApiTrafficControlsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiTrafficControlsAsyncHandler;
-			typedef Outcome<Error, Model::ReactivateDomainResult> ReactivateDomainOutcome;
-			typedef std::future<ReactivateDomainOutcome> ReactivateDomainOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::ReactivateDomainRequest&, const ReactivateDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReactivateDomainAsyncHandler;
 			typedef Outcome<Error, Model::SetSignatureApisResult> SetSignatureApisOutcome;
 			typedef std::future<SetSignatureApisOutcome> SetSignatureApisOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::SetSignatureApisRequest&, const SetSignatureApisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSignatureApisAsyncHandler;
+			typedef Outcome<Error, Model::ReactivateDomainResult> ReactivateDomainOutcome;
+			typedef std::future<ReactivateDomainOutcome> ReactivateDomainOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::ReactivateDomainRequest&, const ReactivateDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReactivateDomainAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAppResult> DescribeAppOutcome;
 			typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeAppRequest&, const DescribeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppAsyncHandler;
@@ -527,12 +527,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateApiStageVariableResult> CreateApiStageVariableOutcome;
 			typedef std::future<CreateApiStageVariableOutcome> CreateApiStageVariableOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::CreateApiStageVariableRequest&, const CreateApiStageVariableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApiStageVariableAsyncHandler;
-			typedef Outcome<Error, Model::DescribeIpControlPolicyItemsResult> DescribeIpControlPolicyItemsOutcome;
-			typedef std::future<DescribeIpControlPolicyItemsOutcome> DescribeIpControlPolicyItemsOutcomeCallable;
-			typedef std::function<void(const CloudAPIClient*, const Model::DescribeIpControlPolicyItemsRequest&, const DescribeIpControlPolicyItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpControlPolicyItemsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApiSignaturesResult> DescribeApiSignaturesOutcome;
 			typedef std::future<DescribeApiSignaturesOutcome> DescribeApiSignaturesOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeApiSignaturesRequest&, const DescribeApiSignaturesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiSignaturesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIpControlPolicyItemsResult> DescribeIpControlPolicyItemsOutcome;
+			typedef std::future<DescribeIpControlPolicyItemsOutcome> DescribeIpControlPolicyItemsOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::DescribeIpControlPolicyItemsRequest&, const DescribeIpControlPolicyItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpControlPolicyItemsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDomainResult> DeleteDomainOutcome;
 			typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DeleteDomainRequest&, const DeleteDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
@@ -565,12 +565,12 @@ namespace AlibabaCloud
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
-			DescribeLogConfigOutcome describeLogConfig(const Model::DescribeLogConfigRequest &request)const;
-			void describeLogConfigAsync(const Model::DescribeLogConfigRequest& request, const DescribeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLogConfigOutcomeCallable describeLogConfigCallable(const Model::DescribeLogConfigRequest& request) const;
 			SetApisAuthoritiesOutcome setApisAuthorities(const Model::SetApisAuthoritiesRequest &request)const;
 			void setApisAuthoritiesAsync(const Model::SetApisAuthoritiesRequest& request, const SetApisAuthoritiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetApisAuthoritiesOutcomeCallable setApisAuthoritiesCallable(const Model::SetApisAuthoritiesRequest& request) const;
+			DescribeLogConfigOutcome describeLogConfig(const Model::DescribeLogConfigRequest &request)const;
+			void describeLogConfigAsync(const Model::DescribeLogConfigRequest& request, const DescribeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLogConfigOutcomeCallable describeLogConfigCallable(const Model::DescribeLogConfigRequest& request) const;
 			DescribeTrafficControlsOutcome describeTrafficControls(const Model::DescribeTrafficControlsRequest &request)const;
 			void describeTrafficControlsAsync(const Model::DescribeTrafficControlsRequest& request, const DescribeTrafficControlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTrafficControlsOutcomeCallable describeTrafficControlsCallable(const Model::DescribeTrafficControlsRequest& request) const;
@@ -661,27 +661,27 @@ namespace AlibabaCloud
 			DescribeApiDocOutcome describeApiDoc(const Model::DescribeApiDocRequest &request)const;
 			void describeApiDocAsync(const Model::DescribeApiDocRequest& request, const DescribeApiDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApiDocOutcomeCallable describeApiDocCallable(const Model::DescribeApiDocRequest& request) const;
-			CreateTrafficControlOutcome createTrafficControl(const Model::CreateTrafficControlRequest &request)const;
-			void createTrafficControlAsync(const Model::CreateTrafficControlRequest& request, const CreateTrafficControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateTrafficControlOutcomeCallable createTrafficControlCallable(const Model::CreateTrafficControlRequest& request) const;
 			DeleteDomainCertificateOutcome deleteDomainCertificate(const Model::DeleteDomainCertificateRequest &request)const;
 			void deleteDomainCertificateAsync(const Model::DeleteDomainCertificateRequest& request, const DeleteDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDomainCertificateOutcomeCallable deleteDomainCertificateCallable(const Model::DeleteDomainCertificateRequest& request) const;
 			SdkGenerateByAppOutcome sdkGenerateByApp(const Model::SdkGenerateByAppRequest &request)const;
 			void sdkGenerateByAppAsync(const Model::SdkGenerateByAppRequest& request, const SdkGenerateByAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SdkGenerateByAppOutcomeCallable sdkGenerateByAppCallable(const Model::SdkGenerateByAppRequest& request) const;
+			CreateTrafficControlOutcome createTrafficControl(const Model::CreateTrafficControlRequest &request)const;
+			void createTrafficControlAsync(const Model::CreateTrafficControlRequest& request, const CreateTrafficControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTrafficControlOutcomeCallable createTrafficControlCallable(const Model::CreateTrafficControlRequest& request) const;
 			SetDomainCertificateOutcome setDomainCertificate(const Model::SetDomainCertificateRequest &request)const;
 			void setDomainCertificateAsync(const Model::SetDomainCertificateRequest& request, const SetDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDomainCertificateOutcomeCallable setDomainCertificateCallable(const Model::SetDomainCertificateRequest& request) const;
 			DescribeSignaturesOutcome describeSignatures(const Model::DescribeSignaturesRequest &request)const;
 			void describeSignaturesAsync(const Model::DescribeSignaturesRequest& request, const DescribeSignaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSignaturesOutcomeCallable describeSignaturesCallable(const Model::DescribeSignaturesRequest& request) const;
-			SdkGenerateByGroupOutcome sdkGenerateByGroup(const Model::SdkGenerateByGroupRequest &request)const;
-			void sdkGenerateByGroupAsync(const Model::SdkGenerateByGroupRequest& request, const SdkGenerateByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SdkGenerateByGroupOutcomeCallable sdkGenerateByGroupCallable(const Model::SdkGenerateByGroupRequest& request) const;
 			SetAppsAuthoritiesOutcome setAppsAuthorities(const Model::SetAppsAuthoritiesRequest &request)const;
 			void setAppsAuthoritiesAsync(const Model::SetAppsAuthoritiesRequest& request, const SetAppsAuthoritiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetAppsAuthoritiesOutcomeCallable setAppsAuthoritiesCallable(const Model::SetAppsAuthoritiesRequest& request) const;
+			SdkGenerateByGroupOutcome sdkGenerateByGroup(const Model::SdkGenerateByGroupRequest &request)const;
+			void sdkGenerateByGroupAsync(const Model::SdkGenerateByGroupRequest& request, const SdkGenerateByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SdkGenerateByGroupOutcomeCallable sdkGenerateByGroupCallable(const Model::SdkGenerateByGroupRequest& request) const;
 			DescribeApiStageOutcome describeApiStage(const Model::DescribeApiStageRequest &request)const;
 			void describeApiStageAsync(const Model::DescribeApiStageRequest& request, const DescribeApiStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApiStageOutcomeCallable describeApiStageCallable(const Model::DescribeApiStageRequest& request) const;
@@ -697,12 +697,12 @@ namespace AlibabaCloud
 			ResetAppCodeOutcome resetAppCode(const Model::ResetAppCodeRequest &request)const;
 			void resetAppCodeAsync(const Model::ResetAppCodeRequest& request, const ResetAppCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAppCodeOutcomeCallable resetAppCodeCallable(const Model::ResetAppCodeRequest& request) const;
-			DescribeApisByTrafficControlOutcome describeApisByTrafficControl(const Model::DescribeApisByTrafficControlRequest &request)const;
-			void describeApisByTrafficControlAsync(const Model::DescribeApisByTrafficControlRequest& request, const DescribeApisByTrafficControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeApisByTrafficControlOutcomeCallable describeApisByTrafficControlCallable(const Model::DescribeApisByTrafficControlRequest& request) const;
 			RemoveVpcAccessOutcome removeVpcAccess(const Model::RemoveVpcAccessRequest &request)const;
 			void removeVpcAccessAsync(const Model::RemoveVpcAccessRequest& request, const RemoveVpcAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveVpcAccessOutcomeCallable removeVpcAccessCallable(const Model::RemoveVpcAccessRequest& request) const;
+			DescribeApisByTrafficControlOutcome describeApisByTrafficControl(const Model::DescribeApisByTrafficControlRequest &request)const;
+			void describeApisByTrafficControlAsync(const Model::DescribeApisByTrafficControlRequest& request, const DescribeApisByTrafficControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeApisByTrafficControlOutcomeCallable describeApisByTrafficControlCallable(const Model::DescribeApisByTrafficControlRequest& request) const;
 			ModifyIpControlOutcome modifyIpControl(const Model::ModifyIpControlRequest &request)const;
 			void modifyIpControlAsync(const Model::ModifyIpControlRequest& request, const ModifyIpControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyIpControlOutcomeCallable modifyIpControlCallable(const Model::ModifyIpControlRequest& request) const;
@@ -730,12 +730,12 @@ namespace AlibabaCloud
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
-			DescribeDomainOutcome describeDomain(const Model::DescribeDomainRequest &request)const;
-			void describeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDomainOutcomeCallable describeDomainCallable(const Model::DescribeDomainRequest& request) const;
 			DescribeApiQpsDataOutcome describeApiQpsData(const Model::DescribeApiQpsDataRequest &request)const;
 			void describeApiQpsDataAsync(const Model::DescribeApiQpsDataRequest& request, const DescribeApiQpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApiQpsDataOutcomeCallable describeApiQpsDataCallable(const Model::DescribeApiQpsDataRequest& request) const;
+			DescribeDomainOutcome describeDomain(const Model::DescribeDomainRequest &request)const;
+			void describeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainOutcomeCallable describeDomainCallable(const Model::DescribeDomainRequest& request) const;
 			DescribeAppSecurityOutcome describeAppSecurity(const Model::DescribeAppSecurityRequest &request)const;
 			void describeAppSecurityAsync(const Model::DescribeAppSecurityRequest& request, const DescribeAppSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppSecurityOutcomeCallable describeAppSecurityCallable(const Model::DescribeAppSecurityRequest& request) const;
@@ -769,36 +769,36 @@ namespace AlibabaCloud
 			CreateIpControlOutcome createIpControl(const Model::CreateIpControlRequest &request)const;
 			void createIpControlAsync(const Model::CreateIpControlRequest& request, const CreateIpControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateIpControlOutcomeCallable createIpControlCallable(const Model::CreateIpControlRequest& request) const;
-			RemoveApisAuthoritiesOutcome removeApisAuthorities(const Model::RemoveApisAuthoritiesRequest &request)const;
-			void removeApisAuthoritiesAsync(const Model::RemoveApisAuthoritiesRequest& request, const RemoveApisAuthoritiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RemoveApisAuthoritiesOutcomeCallable removeApisAuthoritiesCallable(const Model::RemoveApisAuthoritiesRequest& request) const;
 			SetVpcAccessOutcome setVpcAccess(const Model::SetVpcAccessRequest &request)const;
 			void setVpcAccessAsync(const Model::SetVpcAccessRequest& request, const SetVpcAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetVpcAccessOutcomeCallable setVpcAccessCallable(const Model::SetVpcAccessRequest& request) const;
+			RemoveApisAuthoritiesOutcome removeApisAuthorities(const Model::RemoveApisAuthoritiesRequest &request)const;
+			void removeApisAuthoritiesAsync(const Model::RemoveApisAuthoritiesRequest& request, const RemoveApisAuthoritiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveApisAuthoritiesOutcomeCallable removeApisAuthoritiesCallable(const Model::RemoveApisAuthoritiesRequest& request) const;
 			CreateSignatureOutcome createSignature(const Model::CreateSignatureRequest &request)const;
 			void createSignatureAsync(const Model::CreateSignatureRequest& request, const CreateSignatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSignatureOutcomeCallable createSignatureCallable(const Model::CreateSignatureRequest& request) const;
-			ModifyApiOutcome modifyApi(const Model::ModifyApiRequest &request)const;
-			void modifyApiAsync(const Model::ModifyApiRequest& request, const ModifyApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyApiOutcomeCallable modifyApiCallable(const Model::ModifyApiRequest& request) const;
 			DescribeSignaturesByApiOutcome describeSignaturesByApi(const Model::DescribeSignaturesByApiRequest &request)const;
 			void describeSignaturesByApiAsync(const Model::DescribeSignaturesByApiRequest& request, const DescribeSignaturesByApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSignaturesByApiOutcomeCallable describeSignaturesByApiCallable(const Model::DescribeSignaturesByApiRequest& request) const;
+			ModifyApiOutcome modifyApi(const Model::ModifyApiRequest &request)const;
+			void modifyApiAsync(const Model::ModifyApiRequest& request, const ModifyApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyApiOutcomeCallable modifyApiCallable(const Model::ModifyApiRequest& request) const;
 			ResetAppSecretOutcome resetAppSecret(const Model::ResetAppSecretRequest &request)const;
 			void resetAppSecretAsync(const Model::ResetAppSecretRequest& request, const ResetAppSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAppSecretOutcomeCallable resetAppSecretCallable(const Model::ResetAppSecretRequest& request) const;
-			SetDomainWebSocketStatusOutcome setDomainWebSocketStatus(const Model::SetDomainWebSocketStatusRequest &request)const;
-			void setDomainWebSocketStatusAsync(const Model::SetDomainWebSocketStatusRequest& request, const SetDomainWebSocketStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetDomainWebSocketStatusOutcomeCallable setDomainWebSocketStatusCallable(const Model::SetDomainWebSocketStatusRequest& request) const;
+			ModifyAppOutcome modifyApp(const Model::ModifyAppRequest &request)const;
+			void modifyAppAsync(const Model::ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAppOutcomeCallable modifyAppCallable(const Model::ModifyAppRequest& request) const;
 			AddTrafficSpecialControlOutcome addTrafficSpecialControl(const Model::AddTrafficSpecialControlRequest &request)const;
 			void addTrafficSpecialControlAsync(const Model::AddTrafficSpecialControlRequest& request, const AddTrafficSpecialControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddTrafficSpecialControlOutcomeCallable addTrafficSpecialControlCallable(const Model::AddTrafficSpecialControlRequest& request) const;
 			DeployApiOutcome deployApi(const Model::DeployApiRequest &request)const;
 			void deployApiAsync(const Model::DeployApiRequest& request, const DeployApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeployApiOutcomeCallable deployApiCallable(const Model::DeployApiRequest& request) const;
-			ModifyAppOutcome modifyApp(const Model::ModifyAppRequest &request)const;
-			void modifyAppAsync(const Model::ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyAppOutcomeCallable modifyAppCallable(const Model::ModifyAppRequest& request) const;
+			SetDomainWebSocketStatusOutcome setDomainWebSocketStatus(const Model::SetDomainWebSocketStatusRequest &request)const;
+			void setDomainWebSocketStatusAsync(const Model::SetDomainWebSocketStatusRequest& request, const SetDomainWebSocketStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDomainWebSocketStatusOutcomeCallable setDomainWebSocketStatusCallable(const Model::SetDomainWebSocketStatusRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -820,12 +820,12 @@ namespace AlibabaCloud
 			DescribeApiTrafficControlsOutcome describeApiTrafficControls(const Model::DescribeApiTrafficControlsRequest &request)const;
 			void describeApiTrafficControlsAsync(const Model::DescribeApiTrafficControlsRequest& request, const DescribeApiTrafficControlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApiTrafficControlsOutcomeCallable describeApiTrafficControlsCallable(const Model::DescribeApiTrafficControlsRequest& request) const;
-			ReactivateDomainOutcome reactivateDomain(const Model::ReactivateDomainRequest &request)const;
-			void reactivateDomainAsync(const Model::ReactivateDomainRequest& request, const ReactivateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ReactivateDomainOutcomeCallable reactivateDomainCallable(const Model::ReactivateDomainRequest& request) const;
 			SetSignatureApisOutcome setSignatureApis(const Model::SetSignatureApisRequest &request)const;
 			void setSignatureApisAsync(const Model::SetSignatureApisRequest& request, const SetSignatureApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetSignatureApisOutcomeCallable setSignatureApisCallable(const Model::SetSignatureApisRequest& request) const;
+			ReactivateDomainOutcome reactivateDomain(const Model::ReactivateDomainRequest &request)const;
+			void reactivateDomainAsync(const Model::ReactivateDomainRequest& request, const ReactivateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReactivateDomainOutcomeCallable reactivateDomainCallable(const Model::ReactivateDomainRequest& request) const;
 			DescribeAppOutcome describeApp(const Model::DescribeAppRequest &request)const;
 			void describeAppAsync(const Model::DescribeAppRequest& request, const DescribeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppOutcomeCallable describeAppCallable(const Model::DescribeAppRequest& request) const;
@@ -844,12 +844,12 @@ namespace AlibabaCloud
 			CreateApiStageVariableOutcome createApiStageVariable(const Model::CreateApiStageVariableRequest &request)const;
 			void createApiStageVariableAsync(const Model::CreateApiStageVariableRequest& request, const CreateApiStageVariableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateApiStageVariableOutcomeCallable createApiStageVariableCallable(const Model::CreateApiStageVariableRequest& request) const;
-			DescribeIpControlPolicyItemsOutcome describeIpControlPolicyItems(const Model::DescribeIpControlPolicyItemsRequest &request)const;
-			void describeIpControlPolicyItemsAsync(const Model::DescribeIpControlPolicyItemsRequest& request, const DescribeIpControlPolicyItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeIpControlPolicyItemsOutcomeCallable describeIpControlPolicyItemsCallable(const Model::DescribeIpControlPolicyItemsRequest& request) const;
 			DescribeApiSignaturesOutcome describeApiSignatures(const Model::DescribeApiSignaturesRequest &request)const;
 			void describeApiSignaturesAsync(const Model::DescribeApiSignaturesRequest& request, const DescribeApiSignaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApiSignaturesOutcomeCallable describeApiSignaturesCallable(const Model::DescribeApiSignaturesRequest& request) const;
+			DescribeIpControlPolicyItemsOutcome describeIpControlPolicyItems(const Model::DescribeIpControlPolicyItemsRequest &request)const;
+			void describeIpControlPolicyItemsAsync(const Model::DescribeIpControlPolicyItemsRequest& request, const DescribeIpControlPolicyItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIpControlPolicyItemsOutcomeCallable describeIpControlPolicyItemsCallable(const Model::DescribeIpControlPolicyItemsRequest& request) const;
 			DeleteDomainOutcome deleteDomain(const Model::DeleteDomainRequest &request)const;
 			void deleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDomainOutcomeCallable deleteDomainCallable(const Model::DeleteDomainRequest& request) const;

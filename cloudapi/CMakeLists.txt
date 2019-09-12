@@ -27,10 +27,10 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/DescribePurchasedApiGroupsResult.h
 	include/alibabacloud/cloudapi/model/UntagResourcesRequest.h
 	include/alibabacloud/cloudapi/model/UntagResourcesResult.h
-	include/alibabacloud/cloudapi/model/DescribeLogConfigRequest.h
-	include/alibabacloud/cloudapi/model/DescribeLogConfigResult.h
 	include/alibabacloud/cloudapi/model/SetApisAuthoritiesRequest.h
 	include/alibabacloud/cloudapi/model/SetApisAuthoritiesResult.h
+	include/alibabacloud/cloudapi/model/DescribeLogConfigRequest.h
+	include/alibabacloud/cloudapi/model/DescribeLogConfigResult.h
 	include/alibabacloud/cloudapi/model/DescribeTrafficControlsRequest.h
 	include/alibabacloud/cloudapi/model/DescribeTrafficControlsResult.h
 	include/alibabacloud/cloudapi/model/SetDomainRequest.h
@@ -91,20 +91,20 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/ModifyIpControlPolicyItemResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiDocRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiDocResult.h
-	include/alibabacloud/cloudapi/model/CreateTrafficControlRequest.h
-	include/alibabacloud/cloudapi/model/CreateTrafficControlResult.h
 	include/alibabacloud/cloudapi/model/DeleteDomainCertificateRequest.h
 	include/alibabacloud/cloudapi/model/DeleteDomainCertificateResult.h
 	include/alibabacloud/cloudapi/model/SdkGenerateByAppRequest.h
 	include/alibabacloud/cloudapi/model/SdkGenerateByAppResult.h
+	include/alibabacloud/cloudapi/model/CreateTrafficControlRequest.h
+	include/alibabacloud/cloudapi/model/CreateTrafficControlResult.h
 	include/alibabacloud/cloudapi/model/SetDomainCertificateRequest.h
 	include/alibabacloud/cloudapi/model/SetDomainCertificateResult.h
 	include/alibabacloud/cloudapi/model/DescribeSignaturesRequest.h
 	include/alibabacloud/cloudapi/model/DescribeSignaturesResult.h
-	include/alibabacloud/cloudapi/model/SdkGenerateByGroupRequest.h
-	include/alibabacloud/cloudapi/model/SdkGenerateByGroupResult.h
 	include/alibabacloud/cloudapi/model/SetAppsAuthoritiesRequest.h
 	include/alibabacloud/cloudapi/model/SetAppsAuthoritiesResult.h
+	include/alibabacloud/cloudapi/model/SdkGenerateByGroupRequest.h
+	include/alibabacloud/cloudapi/model/SdkGenerateByGroupResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiStageRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiStageResult.h
 	include/alibabacloud/cloudapi/model/TagResourcesRequest.h
@@ -115,10 +115,10 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/CreateAppResult.h
 	include/alibabacloud/cloudapi/model/ResetAppCodeRequest.h
 	include/alibabacloud/cloudapi/model/ResetAppCodeResult.h
-	include/alibabacloud/cloudapi/model/DescribeApisByTrafficControlRequest.h
-	include/alibabacloud/cloudapi/model/DescribeApisByTrafficControlResult.h
 	include/alibabacloud/cloudapi/model/RemoveVpcAccessRequest.h
 	include/alibabacloud/cloudapi/model/RemoveVpcAccessResult.h
+	include/alibabacloud/cloudapi/model/DescribeApisByTrafficControlRequest.h
+	include/alibabacloud/cloudapi/model/DescribeApisByTrafficControlResult.h
 	include/alibabacloud/cloudapi/model/ModifyIpControlRequest.h
 	include/alibabacloud/cloudapi/model/ModifyIpControlResult.h
 	include/alibabacloud/cloudapi/model/DeleteInstanceRequest.h
@@ -137,10 +137,10 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/AddIpControlPolicyItemResult.h
 	include/alibabacloud/cloudapi/model/CreateInstanceRequest.h
 	include/alibabacloud/cloudapi/model/CreateInstanceResult.h
-	include/alibabacloud/cloudapi/model/DescribeDomainRequest.h
-	include/alibabacloud/cloudapi/model/DescribeDomainResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiQpsDataRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiQpsDataResult.h
+	include/alibabacloud/cloudapi/model/DescribeDomainRequest.h
+	include/alibabacloud/cloudapi/model/DescribeDomainResult.h
 	include/alibabacloud/cloudapi/model/DescribeAppSecurityRequest.h
 	include/alibabacloud/cloudapi/model/DescribeAppSecurityResult.h
 	include/alibabacloud/cloudapi/model/DescribeIpControlsRequest.h
@@ -163,26 +163,26 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/DescribeApisBySignatureResult.h
 	include/alibabacloud/cloudapi/model/CreateIpControlRequest.h
 	include/alibabacloud/cloudapi/model/CreateIpControlResult.h
-	include/alibabacloud/cloudapi/model/RemoveApisAuthoritiesRequest.h
-	include/alibabacloud/cloudapi/model/RemoveApisAuthoritiesResult.h
 	include/alibabacloud/cloudapi/model/SetVpcAccessRequest.h
 	include/alibabacloud/cloudapi/model/SetVpcAccessResult.h
+	include/alibabacloud/cloudapi/model/RemoveApisAuthoritiesRequest.h
+	include/alibabacloud/cloudapi/model/RemoveApisAuthoritiesResult.h
 	include/alibabacloud/cloudapi/model/CreateSignatureRequest.h
 	include/alibabacloud/cloudapi/model/CreateSignatureResult.h
-	include/alibabacloud/cloudapi/model/ModifyApiRequest.h
-	include/alibabacloud/cloudapi/model/ModifyApiResult.h
 	include/alibabacloud/cloudapi/model/DescribeSignaturesByApiRequest.h
 	include/alibabacloud/cloudapi/model/DescribeSignaturesByApiResult.h
+	include/alibabacloud/cloudapi/model/ModifyApiRequest.h
+	include/alibabacloud/cloudapi/model/ModifyApiResult.h
 	include/alibabacloud/cloudapi/model/ResetAppSecretRequest.h
 	include/alibabacloud/cloudapi/model/ResetAppSecretResult.h
-	include/alibabacloud/cloudapi/model/SetDomainWebSocketStatusRequest.h
-	include/alibabacloud/cloudapi/model/SetDomainWebSocketStatusResult.h
+	include/alibabacloud/cloudapi/model/ModifyAppRequest.h
+	include/alibabacloud/cloudapi/model/ModifyAppResult.h
 	include/alibabacloud/cloudapi/model/AddTrafficSpecialControlRequest.h
 	include/alibabacloud/cloudapi/model/AddTrafficSpecialControlResult.h
 	include/alibabacloud/cloudapi/model/DeployApiRequest.h
 	include/alibabacloud/cloudapi/model/DeployApiResult.h
-	include/alibabacloud/cloudapi/model/ModifyAppRequest.h
-	include/alibabacloud/cloudapi/model/ModifyAppResult.h
+	include/alibabacloud/cloudapi/model/SetDomainWebSocketStatusRequest.h
+	include/alibabacloud/cloudapi/model/SetDomainWebSocketStatusResult.h
 	include/alibabacloud/cloudapi/model/DescribeRegionsRequest.h
 	include/alibabacloud/cloudapi/model/DescribeRegionsResult.h
 	include/alibabacloud/cloudapi/model/DescribePurchasedApisRequest.h
@@ -197,10 +197,10 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/DeleteLogConfigResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiTrafficControlsRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiTrafficControlsResult.h
-	include/alibabacloud/cloudapi/model/ReactivateDomainRequest.h
-	include/alibabacloud/cloudapi/model/ReactivateDomainResult.h
 	include/alibabacloud/cloudapi/model/SetSignatureApisRequest.h
 	include/alibabacloud/cloudapi/model/SetSignatureApisResult.h
+	include/alibabacloud/cloudapi/model/ReactivateDomainRequest.h
+	include/alibabacloud/cloudapi/model/ReactivateDomainResult.h
 	include/alibabacloud/cloudapi/model/DescribeAppRequest.h
 	include/alibabacloud/cloudapi/model/DescribeAppResult.h
 	include/alibabacloud/cloudapi/model/RemoveIpControlPolicyItemRequest.h
@@ -213,10 +213,10 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/CreateLogConfigResult.h
 	include/alibabacloud/cloudapi/model/CreateApiStageVariableRequest.h
 	include/alibabacloud/cloudapi/model/CreateApiStageVariableResult.h
-	include/alibabacloud/cloudapi/model/DescribeIpControlPolicyItemsRequest.h
-	include/alibabacloud/cloudapi/model/DescribeIpControlPolicyItemsResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiSignaturesRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiSignaturesResult.h
+	include/alibabacloud/cloudapi/model/DescribeIpControlPolicyItemsRequest.h
+	include/alibabacloud/cloudapi/model/DescribeIpControlPolicyItemsResult.h
 	include/alibabacloud/cloudapi/model/DeleteDomainRequest.h
 	include/alibabacloud/cloudapi/model/DeleteDomainResult.h
 	include/alibabacloud/cloudapi/model/SetTrafficControlApisRequest.h
@@ -231,17 +231,17 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/DescribeApiResult.h )
 
 set(cloudapi_src 
-	src/com.aliyun.pop.sdk.domain.Product@383790cfClient.cc
+	src/CloudAPIClient.cc
 	src/model/DescribeAuthorizedAppsRequest.cc
 	src/model/DescribeAuthorizedAppsResult.cc
 	src/model/DescribePurchasedApiGroupsRequest.cc
 	src/model/DescribePurchasedApiGroupsResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
-	src/model/DescribeLogConfigRequest.cc
-	src/model/DescribeLogConfigResult.cc
 	src/model/SetApisAuthoritiesRequest.cc
 	src/model/SetApisAuthoritiesResult.cc
+	src/model/DescribeLogConfigRequest.cc
+	src/model/DescribeLogConfigResult.cc
 	src/model/DescribeTrafficControlsRequest.cc
 	src/model/DescribeTrafficControlsResult.cc
 	src/model/SetDomainRequest.cc
@@ -302,20 +302,20 @@ set(cloudapi_src
 	src/model/ModifyIpControlPolicyItemResult.cc
 	src/model/DescribeApiDocRequest.cc
 	src/model/DescribeApiDocResult.cc
-	src/model/CreateTrafficControlRequest.cc
-	src/model/CreateTrafficControlResult.cc
 	src/model/DeleteDomainCertificateRequest.cc
 	src/model/DeleteDomainCertificateResult.cc
 	src/model/SdkGenerateByAppRequest.cc
 	src/model/SdkGenerateByAppResult.cc
+	src/model/CreateTrafficControlRequest.cc
+	src/model/CreateTrafficControlResult.cc
 	src/model/SetDomainCertificateRequest.cc
 	src/model/SetDomainCertificateResult.cc
 	src/model/DescribeSignaturesRequest.cc
 	src/model/DescribeSignaturesResult.cc
-	src/model/SdkGenerateByGroupRequest.cc
-	src/model/SdkGenerateByGroupResult.cc
 	src/model/SetAppsAuthoritiesRequest.cc
 	src/model/SetAppsAuthoritiesResult.cc
+	src/model/SdkGenerateByGroupRequest.cc
+	src/model/SdkGenerateByGroupResult.cc
 	src/model/DescribeApiStageRequest.cc
 	src/model/DescribeApiStageResult.cc
 	src/model/TagResourcesRequest.cc
@@ -326,10 +326,10 @@ set(cloudapi_src
 	src/model/CreateAppResult.cc
 	src/model/ResetAppCodeRequest.cc
 	src/model/ResetAppCodeResult.cc
-	src/model/DescribeApisByTrafficControlRequest.cc
-	src/model/DescribeApisByTrafficControlResult.cc
 	src/model/RemoveVpcAccessRequest.cc
 	src/model/RemoveVpcAccessResult.cc
+	src/model/DescribeApisByTrafficControlRequest.cc
+	src/model/DescribeApisByTrafficControlResult.cc
 	src/model/ModifyIpControlRequest.cc
 	src/model/ModifyIpControlResult.cc
 	src/model/DeleteInstanceRequest.cc
@@ -348,10 +348,10 @@ set(cloudapi_src
 	src/model/AddIpControlPolicyItemResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
-	src/model/DescribeDomainRequest.cc
-	src/model/DescribeDomainResult.cc
 	src/model/DescribeApiQpsDataRequest.cc
 	src/model/DescribeApiQpsDataResult.cc
+	src/model/DescribeDomainRequest.cc
+	src/model/DescribeDomainResult.cc
 	src/model/DescribeAppSecurityRequest.cc
 	src/model/DescribeAppSecurityResult.cc
 	src/model/DescribeIpControlsRequest.cc
@@ -374,26 +374,26 @@ set(cloudapi_src
 	src/model/DescribeApisBySignatureResult.cc
 	src/model/CreateIpControlRequest.cc
 	src/model/CreateIpControlResult.cc
-	src/model/RemoveApisAuthoritiesRequest.cc
-	src/model/RemoveApisAuthoritiesResult.cc
 	src/model/SetVpcAccessRequest.cc
 	src/model/SetVpcAccessResult.cc
+	src/model/RemoveApisAuthoritiesRequest.cc
+	src/model/RemoveApisAuthoritiesResult.cc
 	src/model/CreateSignatureRequest.cc
 	src/model/CreateSignatureResult.cc
-	src/model/ModifyApiRequest.cc
-	src/model/ModifyApiResult.cc
 	src/model/DescribeSignaturesByApiRequest.cc
 	src/model/DescribeSignaturesByApiResult.cc
+	src/model/ModifyApiRequest.cc
+	src/model/ModifyApiResult.cc
 	src/model/ResetAppSecretRequest.cc
 	src/model/ResetAppSecretResult.cc
-	src/model/SetDomainWebSocketStatusRequest.cc
-	src/model/SetDomainWebSocketStatusResult.cc
+	src/model/ModifyAppRequest.cc
+	src/model/ModifyAppResult.cc
 	src/model/AddTrafficSpecialControlRequest.cc
 	src/model/AddTrafficSpecialControlResult.cc
 	src/model/DeployApiRequest.cc
 	src/model/DeployApiResult.cc
-	src/model/ModifyAppRequest.cc
-	src/model/ModifyAppResult.cc
+	src/model/SetDomainWebSocketStatusRequest.cc
+	src/model/SetDomainWebSocketStatusResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribePurchasedApisRequest.cc
@@ -408,10 +408,10 @@ set(cloudapi_src
 	src/model/DeleteLogConfigResult.cc
 	src/model/DescribeApiTrafficControlsRequest.cc
 	src/model/DescribeApiTrafficControlsResult.cc
-	src/model/ReactivateDomainRequest.cc
-	src/model/ReactivateDomainResult.cc
 	src/model/SetSignatureApisRequest.cc
 	src/model/SetSignatureApisResult.cc
+	src/model/ReactivateDomainRequest.cc
+	src/model/ReactivateDomainResult.cc
 	src/model/DescribeAppRequest.cc
 	src/model/DescribeAppResult.cc
 	src/model/RemoveIpControlPolicyItemRequest.cc
@@ -424,10 +424,10 @@ set(cloudapi_src
 	src/model/CreateLogConfigResult.cc
 	src/model/CreateApiStageVariableRequest.cc
 	src/model/CreateApiStageVariableResult.cc
-	src/model/DescribeIpControlPolicyItemsRequest.cc
-	src/model/DescribeIpControlPolicyItemsResult.cc
 	src/model/DescribeApiSignaturesRequest.cc
 	src/model/DescribeApiSignaturesResult.cc
+	src/model/DescribeIpControlPolicyItemsRequest.cc
+	src/model/DescribeIpControlPolicyItemsResult.cc
 	src/model/DeleteDomainRequest.cc
 	src/model/DeleteDomainResult.cc
 	src/model/SetTrafficControlApisRequest.cc
