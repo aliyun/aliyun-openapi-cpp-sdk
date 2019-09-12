@@ -91,6 +91,17 @@ void DescribeAvailableResourceRequest::setDBInstanceId(const std::string& dBInst
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeAvailableResourceRequest::getDBInstanceStorageType()const
+{
+	return dBInstanceStorageType_;
+}
+
+void DescribeAvailableResourceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
+{
+	dBInstanceStorageType_ = dBInstanceStorageType;
+	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
 std::string DescribeAvailableResourceRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;

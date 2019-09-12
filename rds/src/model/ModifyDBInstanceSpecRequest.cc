@@ -102,6 +102,17 @@ void ModifyDBInstanceSpecRequest::setDBInstanceId(const std::string& dBInstanceI
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string ModifyDBInstanceSpecRequest::getDBInstanceStorageType()const
+{
+	return dBInstanceStorageType_;
+}
+
+void ModifyDBInstanceSpecRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
+{
+	dBInstanceStorageType_ = dBInstanceStorageType;
+	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
 std::string ModifyDBInstanceSpecRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
