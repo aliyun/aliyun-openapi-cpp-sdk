@@ -46,6 +46,8 @@ void GetContactInfoByOutboundTaskIdResult::parse(const std::string &payload)
 		contactIdentity_.jobGroupId = contactIdentityNode["JobGroupId"].asString();
 	if(!contactIdentityNode["UserPhone"].isNull())
 		contactIdentity_.userPhone = contactIdentityNode["UserPhone"].asString();
+	if(!contactIdentityNode["Caller"].isNull())
+		contactIdentity_.caller = contactIdentityNode["Caller"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

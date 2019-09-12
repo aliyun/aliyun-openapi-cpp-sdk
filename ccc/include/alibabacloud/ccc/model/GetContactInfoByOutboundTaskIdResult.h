@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string jobGroupId;
 					std::string userPhone;
+					std::string caller;
 					std::string contactReferrnceId;
 				};
 

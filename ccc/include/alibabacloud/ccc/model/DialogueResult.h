@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Feedback
 				{
 					std::string action;
+					bool interruptible;
 					std::string content;
 					std::string actionParams;
 				};

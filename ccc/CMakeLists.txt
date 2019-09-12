@@ -343,7 +343,7 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/DeleteJobGroupResult.h )
 
 set(ccc_src 
-	src/com.aliyun.pop.sdk.domain.Product@7b78ed6aClient.cc
+	src/CCCClient.cc
 	src/model/SaveWebRTCStatsRequest.cc
 	src/model/SaveWebRTCStatsResult.cc
 	src/model/GetContactIdentifyByOutBoundTaskIdRequest.cc
