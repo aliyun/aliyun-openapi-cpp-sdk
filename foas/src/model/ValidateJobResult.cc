@@ -52,6 +52,8 @@ void ValidateJobResult::parse(const std::string &payload)
 			inputObject.name = value["Name"].asString();
 		if(!value["Properties"].isNull())
 			inputObject.properties = value["Properties"].asString();
+		if(!value["Alias"].isNull())
+			inputObject.alias = value["Alias"].asString();
 		jobInOut_.inputs.push_back(inputObject);
 	}
 	auto allOutputs = value["Outputs"]["Output"];
@@ -66,7 +68,25 @@ void ValidateJobResult::parse(const std::string &payload)
 			outputObject.name = value["Name"].asString();
 		if(!value["Properties"].isNull())
 			outputObject.properties = value["Properties"].asString();
+		if(!value["Alias"].isNull())
+			outputObject.alias = value["Alias"].asString();
 		jobInOut_.outputs.push_back(outputObject);
+	}
+	auto allDims = value["Dims"]["Dim"];
+	for (auto value : allDims)
+	{
+		JobInOut::Dim dimObject;
+		if(!value["Type"].isNull())
+			dimObject.type = value["Type"].asString();
+		if(!value["Workspace"].isNull())
+			dimObject.workspace = value["Workspace"].asString();
+		if(!value["Name"].isNull())
+			dimObject.name = value["Name"].asString();
+		if(!value["Properties"].isNull())
+			dimObject.properties = value["Properties"].asString();
+		if(!value["Alias"].isNull())
+			dimObject.alias = value["Alias"].asString();
+		jobInOut_.dims.push_back(dimObject);
 	}
 
 }

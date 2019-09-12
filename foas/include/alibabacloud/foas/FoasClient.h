@@ -36,18 +36,18 @@
 #include "model/ListJobResult.h"
 #include "model/GetInstanceHistoryAutoScalePlanListRequest.h"
 #include "model/GetInstanceHistoryAutoScalePlanListResult.h"
-#include "model/DeleteFolderRequest.h"
-#include "model/DeleteFolderResult.h"
 #include "model/GetInstanceVertexTaskManagersRequest.h"
 #include "model/GetInstanceVertexTaskManagersResult.h"
+#include "model/DeleteFolderRequest.h"
+#include "model/DeleteFolderResult.h"
 #include "model/CreateJobRequest.h"
 #include "model/CreateJobResult.h"
 #include "model/GetInstanceDetailRequest.h"
 #include "model/GetInstanceDetailResult.h"
-#include "model/GetFolderRequest.h"
-#include "model/GetFolderResult.h"
 #include "model/ListClusterRequest.h"
 #include "model/ListClusterResult.h"
+#include "model/GetFolderRequest.h"
+#include "model/GetFolderResult.h"
 #include "model/MVFolderRequest.h"
 #include "model/MVFolderResult.h"
 #include "model/GetInstanceMetricRequest.h"
@@ -56,10 +56,10 @@
 #include "model/CheckRawPlanJsonResult.h"
 #include "model/ListProjectBindQueueRequest.h"
 #include "model/ListProjectBindQueueResult.h"
-#include "model/GetClusterMetricsRequest.h"
-#include "model/GetClusterMetricsResult.h"
 #include "model/GetProjectRequest.h"
 #include "model/GetProjectResult.h"
+#include "model/GetClusterMetricsRequest.h"
+#include "model/GetClusterMetricsResult.h"
 #include "model/GetRawPlanJsonRequest.h"
 #include "model/GetRawPlanJsonResult.h"
 #include "model/GetInstanceResourceRequest.h"
@@ -70,12 +70,12 @@
 #include "model/GetInstanceResult.h"
 #include "model/GetInstanceRunSummaryRequest.h"
 #include "model/GetInstanceRunSummaryResult.h"
-#include "model/DeletePackageRequest.h"
-#include "model/DeletePackageResult.h"
-#include "model/DeleteProjectRequest.h"
-#include "model/DeleteProjectResult.h"
 #include "model/GetPackageRequest.h"
 #include "model/GetPackageResult.h"
+#include "model/DeleteProjectRequest.h"
+#include "model/DeleteProjectResult.h"
+#include "model/DeletePackageRequest.h"
+#include "model/DeletePackageResult.h"
 #include "model/GetInstanceHistoryAutoScalePlanContentRequest.h"
 #include "model/GetInstanceHistoryAutoScalePlanContentResult.h"
 #include "model/GetRefPackageJobRequest.h"
@@ -102,16 +102,16 @@
 #include "model/ListProjectBindQueueResourceResult.h"
 #include "model/GetJobRequest.h"
 #include "model/GetJobResult.h"
-#include "model/CreateProjectRequest.h"
-#include "model/CreateProjectResult.h"
 #include "model/DestroyClusterRequest.h"
 #include "model/DestroyClusterResult.h"
+#include "model/CreateProjectRequest.h"
+#include "model/CreateProjectResult.h"
 #include "model/OfflineJobRequest.h"
 #include "model/OfflineJobResult.h"
-#include "model/StartJobRequest.h"
-#include "model/StartJobResult.h"
 #include "model/GetClusterDetailsRequest.h"
 #include "model/GetClusterDetailsResult.h"
+#include "model/StartJobRequest.h"
+#include "model/StartJobResult.h"
 #include "model/ValidateJobRequest.h"
 #include "model/ValidateJobResult.h"
 #include "model/GetInstanceConfigRequest.h"
@@ -176,24 +176,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceHistoryAutoScalePlanListResult> GetInstanceHistoryAutoScalePlanListOutcome;
 			typedef std::future<GetInstanceHistoryAutoScalePlanListOutcome> GetInstanceHistoryAutoScalePlanListOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetInstanceHistoryAutoScalePlanListRequest&, const GetInstanceHistoryAutoScalePlanListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceHistoryAutoScalePlanListAsyncHandler;
-			typedef Outcome<Error, Model::DeleteFolderResult> DeleteFolderOutcome;
-			typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
-			typedef std::function<void(const FoasClient*, const Model::DeleteFolderRequest&, const DeleteFolderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFolderAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceVertexTaskManagersResult> GetInstanceVertexTaskManagersOutcome;
 			typedef std::future<GetInstanceVertexTaskManagersOutcome> GetInstanceVertexTaskManagersOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetInstanceVertexTaskManagersRequest&, const GetInstanceVertexTaskManagersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceVertexTaskManagersAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFolderResult> DeleteFolderOutcome;
+			typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::DeleteFolderRequest&, const DeleteFolderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFolderAsyncHandler;
 			typedef Outcome<Error, Model::CreateJobResult> CreateJobOutcome;
 			typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::CreateJobRequest&, const CreateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceDetailResult> GetInstanceDetailOutcome;
 			typedef std::future<GetInstanceDetailOutcome> GetInstanceDetailOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetInstanceDetailRequest&, const GetInstanceDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceDetailAsyncHandler;
-			typedef Outcome<Error, Model::GetFolderResult> GetFolderOutcome;
-			typedef std::future<GetFolderOutcome> GetFolderOutcomeCallable;
-			typedef std::function<void(const FoasClient*, const Model::GetFolderRequest&, const GetFolderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFolderAsyncHandler;
 			typedef Outcome<Error, Model::ListClusterResult> ListClusterOutcome;
 			typedef std::future<ListClusterOutcome> ListClusterOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::ListClusterRequest&, const ListClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterAsyncHandler;
+			typedef Outcome<Error, Model::GetFolderResult> GetFolderOutcome;
+			typedef std::future<GetFolderOutcome> GetFolderOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::GetFolderRequest&, const GetFolderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFolderAsyncHandler;
 			typedef Outcome<Error, Model::MVFolderResult> MVFolderOutcome;
 			typedef std::future<MVFolderOutcome> MVFolderOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::MVFolderRequest&, const MVFolderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MVFolderAsyncHandler;
@@ -206,12 +206,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListProjectBindQueueResult> ListProjectBindQueueOutcome;
 			typedef std::future<ListProjectBindQueueOutcome> ListProjectBindQueueOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::ListProjectBindQueueRequest&, const ListProjectBindQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectBindQueueAsyncHandler;
-			typedef Outcome<Error, Model::GetClusterMetricsResult> GetClusterMetricsOutcome;
-			typedef std::future<GetClusterMetricsOutcome> GetClusterMetricsOutcomeCallable;
-			typedef std::function<void(const FoasClient*, const Model::GetClusterMetricsRequest&, const GetClusterMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterMetricsAsyncHandler;
 			typedef Outcome<Error, Model::GetProjectResult> GetProjectOutcome;
 			typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetProjectRequest&, const GetProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectAsyncHandler;
+			typedef Outcome<Error, Model::GetClusterMetricsResult> GetClusterMetricsOutcome;
+			typedef std::future<GetClusterMetricsOutcome> GetClusterMetricsOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::GetClusterMetricsRequest&, const GetClusterMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterMetricsAsyncHandler;
 			typedef Outcome<Error, Model::GetRawPlanJsonResult> GetRawPlanJsonOutcome;
 			typedef std::future<GetRawPlanJsonOutcome> GetRawPlanJsonOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetRawPlanJsonRequest&, const GetRawPlanJsonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRawPlanJsonAsyncHandler;
@@ -227,15 +227,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceRunSummaryResult> GetInstanceRunSummaryOutcome;
 			typedef std::future<GetInstanceRunSummaryOutcome> GetInstanceRunSummaryOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetInstanceRunSummaryRequest&, const GetInstanceRunSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceRunSummaryAsyncHandler;
-			typedef Outcome<Error, Model::DeletePackageResult> DeletePackageOutcome;
-			typedef std::future<DeletePackageOutcome> DeletePackageOutcomeCallable;
-			typedef std::function<void(const FoasClient*, const Model::DeletePackageRequest&, const DeletePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePackageAsyncHandler;
-			typedef Outcome<Error, Model::DeleteProjectResult> DeleteProjectOutcome;
-			typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
-			typedef std::function<void(const FoasClient*, const Model::DeleteProjectRequest&, const DeleteProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
 			typedef Outcome<Error, Model::GetPackageResult> GetPackageOutcome;
 			typedef std::future<GetPackageOutcome> GetPackageOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetPackageRequest&, const GetPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPackageAsyncHandler;
+			typedef Outcome<Error, Model::DeleteProjectResult> DeleteProjectOutcome;
+			typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::DeleteProjectRequest&, const DeleteProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
+			typedef Outcome<Error, Model::DeletePackageResult> DeletePackageOutcome;
+			typedef std::future<DeletePackageOutcome> DeletePackageOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::DeletePackageRequest&, const DeletePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePackageAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceHistoryAutoScalePlanContentResult> GetInstanceHistoryAutoScalePlanContentOutcome;
 			typedef std::future<GetInstanceHistoryAutoScalePlanContentOutcome> GetInstanceHistoryAutoScalePlanContentOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetInstanceHistoryAutoScalePlanContentRequest&, const GetInstanceHistoryAutoScalePlanContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceHistoryAutoScalePlanContentAsyncHandler;
@@ -275,21 +275,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetJobResult> GetJobOutcome;
 			typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetJobRequest&, const GetJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobAsyncHandler;
-			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
-			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
-			typedef std::function<void(const FoasClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
 			typedef Outcome<Error, Model::DestroyClusterResult> DestroyClusterOutcome;
 			typedef std::future<DestroyClusterOutcome> DestroyClusterOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::DestroyClusterRequest&, const DestroyClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DestroyClusterAsyncHandler;
+			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
+			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
 			typedef Outcome<Error, Model::OfflineJobResult> OfflineJobOutcome;
 			typedef std::future<OfflineJobOutcome> OfflineJobOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::OfflineJobRequest&, const OfflineJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OfflineJobAsyncHandler;
-			typedef Outcome<Error, Model::StartJobResult> StartJobOutcome;
-			typedef std::future<StartJobOutcome> StartJobOutcomeCallable;
-			typedef std::function<void(const FoasClient*, const Model::StartJobRequest&, const StartJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartJobAsyncHandler;
 			typedef Outcome<Error, Model::GetClusterDetailsResult> GetClusterDetailsOutcome;
 			typedef std::future<GetClusterDetailsOutcome> GetClusterDetailsOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::GetClusterDetailsRequest&, const GetClusterDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterDetailsAsyncHandler;
+			typedef Outcome<Error, Model::StartJobResult> StartJobOutcome;
+			typedef std::future<StartJobOutcome> StartJobOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::StartJobRequest&, const StartJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartJobAsyncHandler;
 			typedef Outcome<Error, Model::ValidateJobResult> ValidateJobOutcome;
 			typedef std::future<ValidateJobOutcome> ValidateJobOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::ValidateJobRequest&, const ValidateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateJobAsyncHandler;
@@ -367,24 +367,24 @@ namespace AlibabaCloud
 			GetInstanceHistoryAutoScalePlanListOutcome getInstanceHistoryAutoScalePlanList(const Model::GetInstanceHistoryAutoScalePlanListRequest &request)const;
 			void getInstanceHistoryAutoScalePlanListAsync(const Model::GetInstanceHistoryAutoScalePlanListRequest& request, const GetInstanceHistoryAutoScalePlanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceHistoryAutoScalePlanListOutcomeCallable getInstanceHistoryAutoScalePlanListCallable(const Model::GetInstanceHistoryAutoScalePlanListRequest& request) const;
-			DeleteFolderOutcome deleteFolder(const Model::DeleteFolderRequest &request)const;
-			void deleteFolderAsync(const Model::DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteFolderOutcomeCallable deleteFolderCallable(const Model::DeleteFolderRequest& request) const;
 			GetInstanceVertexTaskManagersOutcome getInstanceVertexTaskManagers(const Model::GetInstanceVertexTaskManagersRequest &request)const;
 			void getInstanceVertexTaskManagersAsync(const Model::GetInstanceVertexTaskManagersRequest& request, const GetInstanceVertexTaskManagersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceVertexTaskManagersOutcomeCallable getInstanceVertexTaskManagersCallable(const Model::GetInstanceVertexTaskManagersRequest& request) const;
+			DeleteFolderOutcome deleteFolder(const Model::DeleteFolderRequest &request)const;
+			void deleteFolderAsync(const Model::DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFolderOutcomeCallable deleteFolderCallable(const Model::DeleteFolderRequest& request) const;
 			CreateJobOutcome createJob(const Model::CreateJobRequest &request)const;
 			void createJobAsync(const Model::CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateJobOutcomeCallable createJobCallable(const Model::CreateJobRequest& request) const;
 			GetInstanceDetailOutcome getInstanceDetail(const Model::GetInstanceDetailRequest &request)const;
 			void getInstanceDetailAsync(const Model::GetInstanceDetailRequest& request, const GetInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceDetailOutcomeCallable getInstanceDetailCallable(const Model::GetInstanceDetailRequest& request) const;
-			GetFolderOutcome getFolder(const Model::GetFolderRequest &request)const;
-			void getFolderAsync(const Model::GetFolderRequest& request, const GetFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetFolderOutcomeCallable getFolderCallable(const Model::GetFolderRequest& request) const;
 			ListClusterOutcome listCluster(const Model::ListClusterRequest &request)const;
 			void listClusterAsync(const Model::ListClusterRequest& request, const ListClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClusterOutcomeCallable listClusterCallable(const Model::ListClusterRequest& request) const;
+			GetFolderOutcome getFolder(const Model::GetFolderRequest &request)const;
+			void getFolderAsync(const Model::GetFolderRequest& request, const GetFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFolderOutcomeCallable getFolderCallable(const Model::GetFolderRequest& request) const;
 			MVFolderOutcome mVFolder(const Model::MVFolderRequest &request)const;
 			void mVFolderAsync(const Model::MVFolderRequest& request, const MVFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MVFolderOutcomeCallable mVFolderCallable(const Model::MVFolderRequest& request) const;
@@ -397,12 +397,12 @@ namespace AlibabaCloud
 			ListProjectBindQueueOutcome listProjectBindQueue(const Model::ListProjectBindQueueRequest &request)const;
 			void listProjectBindQueueAsync(const Model::ListProjectBindQueueRequest& request, const ListProjectBindQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProjectBindQueueOutcomeCallable listProjectBindQueueCallable(const Model::ListProjectBindQueueRequest& request) const;
-			GetClusterMetricsOutcome getClusterMetrics(const Model::GetClusterMetricsRequest &request)const;
-			void getClusterMetricsAsync(const Model::GetClusterMetricsRequest& request, const GetClusterMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetClusterMetricsOutcomeCallable getClusterMetricsCallable(const Model::GetClusterMetricsRequest& request) const;
 			GetProjectOutcome getProject(const Model::GetProjectRequest &request)const;
 			void getProjectAsync(const Model::GetProjectRequest& request, const GetProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProjectOutcomeCallable getProjectCallable(const Model::GetProjectRequest& request) const;
+			GetClusterMetricsOutcome getClusterMetrics(const Model::GetClusterMetricsRequest &request)const;
+			void getClusterMetricsAsync(const Model::GetClusterMetricsRequest& request, const GetClusterMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetClusterMetricsOutcomeCallable getClusterMetricsCallable(const Model::GetClusterMetricsRequest& request) const;
 			GetRawPlanJsonOutcome getRawPlanJson(const Model::GetRawPlanJsonRequest &request)const;
 			void getRawPlanJsonAsync(const Model::GetRawPlanJsonRequest& request, const GetRawPlanJsonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRawPlanJsonOutcomeCallable getRawPlanJsonCallable(const Model::GetRawPlanJsonRequest& request) const;
@@ -418,15 +418,15 @@ namespace AlibabaCloud
 			GetInstanceRunSummaryOutcome getInstanceRunSummary(const Model::GetInstanceRunSummaryRequest &request)const;
 			void getInstanceRunSummaryAsync(const Model::GetInstanceRunSummaryRequest& request, const GetInstanceRunSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceRunSummaryOutcomeCallable getInstanceRunSummaryCallable(const Model::GetInstanceRunSummaryRequest& request) const;
-			DeletePackageOutcome deletePackage(const Model::DeletePackageRequest &request)const;
-			void deletePackageAsync(const Model::DeletePackageRequest& request, const DeletePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeletePackageOutcomeCallable deletePackageCallable(const Model::DeletePackageRequest& request) const;
-			DeleteProjectOutcome deleteProject(const Model::DeleteProjectRequest &request)const;
-			void deleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteProjectOutcomeCallable deleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 			GetPackageOutcome getPackage(const Model::GetPackageRequest &request)const;
 			void getPackageAsync(const Model::GetPackageRequest& request, const GetPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPackageOutcomeCallable getPackageCallable(const Model::GetPackageRequest& request) const;
+			DeleteProjectOutcome deleteProject(const Model::DeleteProjectRequest &request)const;
+			void deleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteProjectOutcomeCallable deleteProjectCallable(const Model::DeleteProjectRequest& request) const;
+			DeletePackageOutcome deletePackage(const Model::DeletePackageRequest &request)const;
+			void deletePackageAsync(const Model::DeletePackageRequest& request, const DeletePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePackageOutcomeCallable deletePackageCallable(const Model::DeletePackageRequest& request) const;
 			GetInstanceHistoryAutoScalePlanContentOutcome getInstanceHistoryAutoScalePlanContent(const Model::GetInstanceHistoryAutoScalePlanContentRequest &request)const;
 			void getInstanceHistoryAutoScalePlanContentAsync(const Model::GetInstanceHistoryAutoScalePlanContentRequest& request, const GetInstanceHistoryAutoScalePlanContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceHistoryAutoScalePlanContentOutcomeCallable getInstanceHistoryAutoScalePlanContentCallable(const Model::GetInstanceHistoryAutoScalePlanContentRequest& request) const;
@@ -466,21 +466,21 @@ namespace AlibabaCloud
 			GetJobOutcome getJob(const Model::GetJobRequest &request)const;
 			void getJobAsync(const Model::GetJobRequest& request, const GetJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobOutcomeCallable getJobCallable(const Model::GetJobRequest& request) const;
-			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
-			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
 			DestroyClusterOutcome destroyCluster(const Model::DestroyClusterRequest &request)const;
 			void destroyClusterAsync(const Model::DestroyClusterRequest& request, const DestroyClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DestroyClusterOutcomeCallable destroyClusterCallable(const Model::DestroyClusterRequest& request) const;
+			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
+			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
 			OfflineJobOutcome offlineJob(const Model::OfflineJobRequest &request)const;
 			void offlineJobAsync(const Model::OfflineJobRequest& request, const OfflineJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OfflineJobOutcomeCallable offlineJobCallable(const Model::OfflineJobRequest& request) const;
-			StartJobOutcome startJob(const Model::StartJobRequest &request)const;
-			void startJobAsync(const Model::StartJobRequest& request, const StartJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StartJobOutcomeCallable startJobCallable(const Model::StartJobRequest& request) const;
 			GetClusterDetailsOutcome getClusterDetails(const Model::GetClusterDetailsRequest &request)const;
 			void getClusterDetailsAsync(const Model::GetClusterDetailsRequest& request, const GetClusterDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetClusterDetailsOutcomeCallable getClusterDetailsCallable(const Model::GetClusterDetailsRequest& request) const;
+			StartJobOutcome startJob(const Model::StartJobRequest &request)const;
+			void startJobAsync(const Model::StartJobRequest& request, const StartJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartJobOutcomeCallable startJobCallable(const Model::StartJobRequest& request) const;
 			ValidateJobOutcome validateJob(const Model::ValidateJobRequest &request)const;
 			void validateJobAsync(const Model::ValidateJobRequest& request, const ValidateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateJobOutcomeCallable validateJobCallable(const Model::ValidateJobRequest& request) const;

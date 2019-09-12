@@ -35,18 +35,18 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/ListJobResult.h
 	include/alibabacloud/foas/model/GetInstanceHistoryAutoScalePlanListRequest.h
 	include/alibabacloud/foas/model/GetInstanceHistoryAutoScalePlanListResult.h
-	include/alibabacloud/foas/model/DeleteFolderRequest.h
-	include/alibabacloud/foas/model/DeleteFolderResult.h
 	include/alibabacloud/foas/model/GetInstanceVertexTaskManagersRequest.h
 	include/alibabacloud/foas/model/GetInstanceVertexTaskManagersResult.h
+	include/alibabacloud/foas/model/DeleteFolderRequest.h
+	include/alibabacloud/foas/model/DeleteFolderResult.h
 	include/alibabacloud/foas/model/CreateJobRequest.h
 	include/alibabacloud/foas/model/CreateJobResult.h
 	include/alibabacloud/foas/model/GetInstanceDetailRequest.h
 	include/alibabacloud/foas/model/GetInstanceDetailResult.h
-	include/alibabacloud/foas/model/GetFolderRequest.h
-	include/alibabacloud/foas/model/GetFolderResult.h
 	include/alibabacloud/foas/model/ListClusterRequest.h
 	include/alibabacloud/foas/model/ListClusterResult.h
+	include/alibabacloud/foas/model/GetFolderRequest.h
+	include/alibabacloud/foas/model/GetFolderResult.h
 	include/alibabacloud/foas/model/MVFolderRequest.h
 	include/alibabacloud/foas/model/MVFolderResult.h
 	include/alibabacloud/foas/model/GetInstanceMetricRequest.h
@@ -55,10 +55,10 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/CheckRawPlanJsonResult.h
 	include/alibabacloud/foas/model/ListProjectBindQueueRequest.h
 	include/alibabacloud/foas/model/ListProjectBindQueueResult.h
-	include/alibabacloud/foas/model/GetClusterMetricsRequest.h
-	include/alibabacloud/foas/model/GetClusterMetricsResult.h
 	include/alibabacloud/foas/model/GetProjectRequest.h
 	include/alibabacloud/foas/model/GetProjectResult.h
+	include/alibabacloud/foas/model/GetClusterMetricsRequest.h
+	include/alibabacloud/foas/model/GetClusterMetricsResult.h
 	include/alibabacloud/foas/model/GetRawPlanJsonRequest.h
 	include/alibabacloud/foas/model/GetRawPlanJsonResult.h
 	include/alibabacloud/foas/model/GetInstanceResourceRequest.h
@@ -69,12 +69,12 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/GetInstanceResult.h
 	include/alibabacloud/foas/model/GetInstanceRunSummaryRequest.h
 	include/alibabacloud/foas/model/GetInstanceRunSummaryResult.h
-	include/alibabacloud/foas/model/DeletePackageRequest.h
-	include/alibabacloud/foas/model/DeletePackageResult.h
-	include/alibabacloud/foas/model/DeleteProjectRequest.h
-	include/alibabacloud/foas/model/DeleteProjectResult.h
 	include/alibabacloud/foas/model/GetPackageRequest.h
 	include/alibabacloud/foas/model/GetPackageResult.h
+	include/alibabacloud/foas/model/DeleteProjectRequest.h
+	include/alibabacloud/foas/model/DeleteProjectResult.h
+	include/alibabacloud/foas/model/DeletePackageRequest.h
+	include/alibabacloud/foas/model/DeletePackageResult.h
 	include/alibabacloud/foas/model/GetInstanceHistoryAutoScalePlanContentRequest.h
 	include/alibabacloud/foas/model/GetInstanceHistoryAutoScalePlanContentResult.h
 	include/alibabacloud/foas/model/GetRefPackageJobRequest.h
@@ -101,16 +101,16 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/ListProjectBindQueueResourceResult.h
 	include/alibabacloud/foas/model/GetJobRequest.h
 	include/alibabacloud/foas/model/GetJobResult.h
-	include/alibabacloud/foas/model/CreateProjectRequest.h
-	include/alibabacloud/foas/model/CreateProjectResult.h
 	include/alibabacloud/foas/model/DestroyClusterRequest.h
 	include/alibabacloud/foas/model/DestroyClusterResult.h
+	include/alibabacloud/foas/model/CreateProjectRequest.h
+	include/alibabacloud/foas/model/CreateProjectResult.h
 	include/alibabacloud/foas/model/OfflineJobRequest.h
 	include/alibabacloud/foas/model/OfflineJobResult.h
-	include/alibabacloud/foas/model/StartJobRequest.h
-	include/alibabacloud/foas/model/StartJobResult.h
 	include/alibabacloud/foas/model/GetClusterDetailsRequest.h
 	include/alibabacloud/foas/model/GetClusterDetailsResult.h
+	include/alibabacloud/foas/model/StartJobRequest.h
+	include/alibabacloud/foas/model/StartJobResult.h
 	include/alibabacloud/foas/model/ValidateJobRequest.h
 	include/alibabacloud/foas/model/ValidateJobResult.h
 	include/alibabacloud/foas/model/GetInstanceConfigRequest.h
@@ -147,7 +147,7 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/GetJobLatestAutoScalePlanResult.h )
 
 set(foas_src 
-	src/com.aliyun.pop.sdk.domain.Product@57eda880Client.cc
+	src/FoasClient.cc
 	src/model/ListInstanceRequest.cc
 	src/model/ListInstanceResult.cc
 	src/model/UpdateAutoScaleConfigRequest.cc
@@ -162,18 +162,18 @@ set(foas_src
 	src/model/ListJobResult.cc
 	src/model/GetInstanceHistoryAutoScalePlanListRequest.cc
 	src/model/GetInstanceHistoryAutoScalePlanListResult.cc
-	src/model/DeleteFolderRequest.cc
-	src/model/DeleteFolderResult.cc
 	src/model/GetInstanceVertexTaskManagersRequest.cc
 	src/model/GetInstanceVertexTaskManagersResult.cc
+	src/model/DeleteFolderRequest.cc
+	src/model/DeleteFolderResult.cc
 	src/model/CreateJobRequest.cc
 	src/model/CreateJobResult.cc
 	src/model/GetInstanceDetailRequest.cc
 	src/model/GetInstanceDetailResult.cc
-	src/model/GetFolderRequest.cc
-	src/model/GetFolderResult.cc
 	src/model/ListClusterRequest.cc
 	src/model/ListClusterResult.cc
+	src/model/GetFolderRequest.cc
+	src/model/GetFolderResult.cc
 	src/model/MVFolderRequest.cc
 	src/model/MVFolderResult.cc
 	src/model/GetInstanceMetricRequest.cc
@@ -182,10 +182,10 @@ set(foas_src
 	src/model/CheckRawPlanJsonResult.cc
 	src/model/ListProjectBindQueueRequest.cc
 	src/model/ListProjectBindQueueResult.cc
-	src/model/GetClusterMetricsRequest.cc
-	src/model/GetClusterMetricsResult.cc
 	src/model/GetProjectRequest.cc
 	src/model/GetProjectResult.cc
+	src/model/GetClusterMetricsRequest.cc
+	src/model/GetClusterMetricsResult.cc
 	src/model/GetRawPlanJsonRequest.cc
 	src/model/GetRawPlanJsonResult.cc
 	src/model/GetInstanceResourceRequest.cc
@@ -196,12 +196,12 @@ set(foas_src
 	src/model/GetInstanceResult.cc
 	src/model/GetInstanceRunSummaryRequest.cc
 	src/model/GetInstanceRunSummaryResult.cc
-	src/model/DeletePackageRequest.cc
-	src/model/DeletePackageResult.cc
-	src/model/DeleteProjectRequest.cc
-	src/model/DeleteProjectResult.cc
 	src/model/GetPackageRequest.cc
 	src/model/GetPackageResult.cc
+	src/model/DeleteProjectRequest.cc
+	src/model/DeleteProjectResult.cc
+	src/model/DeletePackageRequest.cc
+	src/model/DeletePackageResult.cc
 	src/model/GetInstanceHistoryAutoScalePlanContentRequest.cc
 	src/model/GetInstanceHistoryAutoScalePlanContentResult.cc
 	src/model/GetRefPackageJobRequest.cc
@@ -228,16 +228,16 @@ set(foas_src
 	src/model/ListProjectBindQueueResourceResult.cc
 	src/model/GetJobRequest.cc
 	src/model/GetJobResult.cc
-	src/model/CreateProjectRequest.cc
-	src/model/CreateProjectResult.cc
 	src/model/DestroyClusterRequest.cc
 	src/model/DestroyClusterResult.cc
+	src/model/CreateProjectRequest.cc
+	src/model/CreateProjectResult.cc
 	src/model/OfflineJobRequest.cc
 	src/model/OfflineJobResult.cc
-	src/model/StartJobRequest.cc
-	src/model/StartJobResult.cc
 	src/model/GetClusterDetailsRequest.cc
 	src/model/GetClusterDetailsResult.cc
+	src/model/StartJobRequest.cc
+	src/model/StartJobResult.cc
 	src/model/ValidateJobRequest.cc
 	src/model/ValidateJobResult.cc
 	src/model/GetInstanceConfigRequest.cc

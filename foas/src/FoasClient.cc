@@ -303,42 +303,6 @@ FoasClient::GetInstanceHistoryAutoScalePlanListOutcomeCallable FoasClient::getIn
 	return task->get_future();
 }
 
-FoasClient::DeleteFolderOutcome FoasClient::deleteFolder(const DeleteFolderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteFolderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteFolderOutcome(DeleteFolderResult(outcome.result()));
-	else
-		return DeleteFolderOutcome(outcome.error());
-}
-
-void FoasClient::deleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteFolder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FoasClient::DeleteFolderOutcomeCallable FoasClient::deleteFolderCallable(const DeleteFolderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteFolderOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteFolder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FoasClient::GetInstanceVertexTaskManagersOutcome FoasClient::getInstanceVertexTaskManagers(const GetInstanceVertexTaskManagersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +333,42 @@ FoasClient::GetInstanceVertexTaskManagersOutcomeCallable FoasClient::getInstance
 			[this, request]()
 			{
 			return this->getInstanceVertexTaskManagers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FoasClient::DeleteFolderOutcome FoasClient::deleteFolder(const DeleteFolderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFolderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFolderOutcome(DeleteFolderResult(outcome.result()));
+	else
+		return DeleteFolderOutcome(outcome.error());
+}
+
+void FoasClient::deleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFolder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::DeleteFolderOutcomeCallable FoasClient::deleteFolderCallable(const DeleteFolderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFolderOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFolder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -447,42 +447,6 @@ FoasClient::GetInstanceDetailOutcomeCallable FoasClient::getInstanceDetailCallab
 	return task->get_future();
 }
 
-FoasClient::GetFolderOutcome FoasClient::getFolder(const GetFolderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetFolderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetFolderOutcome(GetFolderResult(outcome.result()));
-	else
-		return GetFolderOutcome(outcome.error());
-}
-
-void FoasClient::getFolderAsync(const GetFolderRequest& request, const GetFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getFolder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FoasClient::GetFolderOutcomeCallable FoasClient::getFolderCallable(const GetFolderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetFolderOutcome()>>(
-			[this, request]()
-			{
-			return this->getFolder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FoasClient::ListClusterOutcome FoasClient::listCluster(const ListClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +477,42 @@ FoasClient::ListClusterOutcomeCallable FoasClient::listClusterCallable(const Lis
 			[this, request]()
 			{
 			return this->listCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FoasClient::GetFolderOutcome FoasClient::getFolder(const GetFolderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFolderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFolderOutcome(GetFolderResult(outcome.result()));
+	else
+		return GetFolderOutcome(outcome.error());
+}
+
+void FoasClient::getFolderAsync(const GetFolderRequest& request, const GetFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFolder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::GetFolderOutcomeCallable FoasClient::getFolderCallable(const GetFolderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFolderOutcome()>>(
+			[this, request]()
+			{
+			return this->getFolder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,42 +663,6 @@ FoasClient::ListProjectBindQueueOutcomeCallable FoasClient::listProjectBindQueue
 	return task->get_future();
 }
 
-FoasClient::GetClusterMetricsOutcome FoasClient::getClusterMetrics(const GetClusterMetricsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetClusterMetricsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetClusterMetricsOutcome(GetClusterMetricsResult(outcome.result()));
-	else
-		return GetClusterMetricsOutcome(outcome.error());
-}
-
-void FoasClient::getClusterMetricsAsync(const GetClusterMetricsRequest& request, const GetClusterMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getClusterMetrics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FoasClient::GetClusterMetricsOutcomeCallable FoasClient::getClusterMetricsCallable(const GetClusterMetricsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetClusterMetricsOutcome()>>(
-			[this, request]()
-			{
-			return this->getClusterMetrics(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FoasClient::GetProjectOutcome FoasClient::getProject(const GetProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +693,42 @@ FoasClient::GetProjectOutcomeCallable FoasClient::getProjectCallable(const GetPr
 			[this, request]()
 			{
 			return this->getProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FoasClient::GetClusterMetricsOutcome FoasClient::getClusterMetrics(const GetClusterMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetClusterMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetClusterMetricsOutcome(GetClusterMetricsResult(outcome.result()));
+	else
+		return GetClusterMetricsOutcome(outcome.error());
+}
+
+void FoasClient::getClusterMetricsAsync(const GetClusterMetricsRequest& request, const GetClusterMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getClusterMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::GetClusterMetricsOutcomeCallable FoasClient::getClusterMetricsCallable(const GetClusterMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetClusterMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->getClusterMetrics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,36 +915,36 @@ FoasClient::GetInstanceRunSummaryOutcomeCallable FoasClient::getInstanceRunSumma
 	return task->get_future();
 }
 
-FoasClient::DeletePackageOutcome FoasClient::deletePackage(const DeletePackageRequest &request) const
+FoasClient::GetPackageOutcome FoasClient::getPackage(const GetPackageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeletePackageOutcome(endpointOutcome.error());
+		return GetPackageOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeletePackageOutcome(DeletePackageResult(outcome.result()));
+		return GetPackageOutcome(GetPackageResult(outcome.result()));
 	else
-		return DeletePackageOutcome(outcome.error());
+		return GetPackageOutcome(outcome.error());
 }
 
-void FoasClient::deletePackageAsync(const DeletePackageRequest& request, const DeletePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void FoasClient::getPackageAsync(const GetPackageRequest& request, const GetPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deletePackage(request), context);
+		handler(this, request, getPackage(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-FoasClient::DeletePackageOutcomeCallable FoasClient::deletePackageCallable(const DeletePackageRequest &request) const
+FoasClient::GetPackageOutcomeCallable FoasClient::getPackageCallable(const GetPackageRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeletePackageOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetPackageOutcome()>>(
 			[this, request]()
 			{
-			return this->deletePackage(request);
+			return this->getPackage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,36 +987,36 @@ FoasClient::DeleteProjectOutcomeCallable FoasClient::deleteProjectCallable(const
 	return task->get_future();
 }
 
-FoasClient::GetPackageOutcome FoasClient::getPackage(const GetPackageRequest &request) const
+FoasClient::DeletePackageOutcome FoasClient::deletePackage(const DeletePackageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetPackageOutcome(endpointOutcome.error());
+		return DeletePackageOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetPackageOutcome(GetPackageResult(outcome.result()));
+		return DeletePackageOutcome(DeletePackageResult(outcome.result()));
 	else
-		return GetPackageOutcome(outcome.error());
+		return DeletePackageOutcome(outcome.error());
 }
 
-void FoasClient::getPackageAsync(const GetPackageRequest& request, const GetPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void FoasClient::deletePackageAsync(const DeletePackageRequest& request, const DeletePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getPackage(request), context);
+		handler(this, request, deletePackage(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-FoasClient::GetPackageOutcomeCallable FoasClient::getPackageCallable(const GetPackageRequest &request) const
+FoasClient::DeletePackageOutcomeCallable FoasClient::deletePackageCallable(const DeletePackageRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetPackageOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeletePackageOutcome()>>(
 			[this, request]()
 			{
-			return this->getPackage(request);
+			return this->deletePackage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,42 +1491,6 @@ FoasClient::GetJobOutcomeCallable FoasClient::getJobCallable(const GetJobRequest
 	return task->get_future();
 }
 
-FoasClient::CreateProjectOutcome FoasClient::createProject(const CreateProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateProjectOutcome(CreateProjectResult(outcome.result()));
-	else
-		return CreateProjectOutcome(outcome.error());
-}
-
-void FoasClient::createProjectAsync(const CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FoasClient::CreateProjectOutcomeCallable FoasClient::createProjectCallable(const CreateProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->createProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FoasClient::DestroyClusterOutcome FoasClient::destroyCluster(const DestroyClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1521,42 @@ FoasClient::DestroyClusterOutcomeCallable FoasClient::destroyClusterCallable(con
 			[this, request]()
 			{
 			return this->destroyCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FoasClient::CreateProjectOutcome FoasClient::createProject(const CreateProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateProjectOutcome(CreateProjectResult(outcome.result()));
+	else
+		return CreateProjectOutcome(outcome.error());
+}
+
+void FoasClient::createProjectAsync(const CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::CreateProjectOutcomeCallable FoasClient::createProjectCallable(const CreateProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->createProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1599,42 +1599,6 @@ FoasClient::OfflineJobOutcomeCallable FoasClient::offlineJobCallable(const Offli
 	return task->get_future();
 }
 
-FoasClient::StartJobOutcome FoasClient::startJob(const StartJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartJobOutcome(StartJobResult(outcome.result()));
-	else
-		return StartJobOutcome(outcome.error());
-}
-
-void FoasClient::startJobAsync(const StartJobRequest& request, const StartJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FoasClient::StartJobOutcomeCallable FoasClient::startJobCallable(const StartJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartJobOutcome()>>(
-			[this, request]()
-			{
-			return this->startJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FoasClient::GetClusterDetailsOutcome FoasClient::getClusterDetails(const GetClusterDetailsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1629,42 @@ FoasClient::GetClusterDetailsOutcomeCallable FoasClient::getClusterDetailsCallab
 			[this, request]()
 			{
 			return this->getClusterDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FoasClient::StartJobOutcome FoasClient::startJob(const StartJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartJobOutcome(StartJobResult(outcome.result()));
+	else
+		return StartJobOutcome(outcome.error());
+}
+
+void FoasClient::startJobAsync(const StartJobRequest& request, const StartJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::StartJobOutcomeCallable FoasClient::startJobCallable(const StartJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartJobOutcome()>>(
+			[this, request]()
+			{
+			return this->startJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

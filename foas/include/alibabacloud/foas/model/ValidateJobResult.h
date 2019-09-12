@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct Input
 					{
 						std::string type;
+						std::string alias;
 						std::string properties;
 						std::string workspace;
 						std::string name;
@@ -44,11 +45,21 @@ namespace AlibabaCloud
 					struct Output
 					{
 						std::string type;
+						std::string alias;
+						std::string properties;
+						std::string workspace;
+						std::string name;
+					};
+					struct Dim
+					{
+						std::string type;
+						std::string alias;
 						std::string properties;
 						std::string workspace;
 						std::string name;
 					};
 					std::vector<Output> outputs;
+					std::vector<Dim> dims;
 					std::vector<Input> inputs;
 				};
 
