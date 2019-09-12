@@ -37,10 +37,10 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/RevokeAccountPrivilegeResult.h
 	include/alibabacloud/polardb/model/ModifyAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/ModifyAutoRenewAttributeResult.h
-	include/alibabacloud/polardb/model/ModifyDBClusterParametersRequest.h
-	include/alibabacloud/polardb/model/ModifyDBClusterParametersResult.h
 	include/alibabacloud/polardb/model/UnlockDBClusterDeletionRequest.h
 	include/alibabacloud/polardb/model/UnlockDBClusterDeletionResult.h
+	include/alibabacloud/polardb/model/ModifyDBClusterParametersRequest.h
+	include/alibabacloud/polardb/model/ModifyDBClusterParametersResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassRequest.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassResult.h
 	include/alibabacloud/polardb/model/DeleteDBClusterRequest.h
@@ -69,10 +69,10 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CreateBackupResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAttributeRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAttributeResult.h
-	include/alibabacloud/polardb/model/DescribeDBClustersRequest.h
-	include/alibabacloud/polardb/model/DescribeDBClustersResult.h
 	include/alibabacloud/polardb/model/ContinueDBClusterMigrationRequest.h
 	include/alibabacloud/polardb/model/ContinueDBClusterMigrationResult.h
+	include/alibabacloud/polardb/model/DescribeDBClustersRequest.h
+	include/alibabacloud/polardb/model/DescribeDBClustersResult.h
 	include/alibabacloud/polardb/model/DeleteDBClusterEndpointRequest.h
 	include/alibabacloud/polardb/model/DeleteDBClusterEndpointResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterEndpointRequest.h
@@ -85,10 +85,10 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBClusterMaintainTimeResult.h
 	include/alibabacloud/polardb/model/CloseDBClusterMigrationRequest.h
 	include/alibabacloud/polardb/model/CloseDBClusterMigrationResult.h
-	include/alibabacloud/polardb/model/DescribeBackupsRequest.h
-	include/alibabacloud/polardb/model/DescribeBackupsResult.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeResult.h
+	include/alibabacloud/polardb/model/DescribeBackupsRequest.h
+	include/alibabacloud/polardb/model/DescribeBackupsResult.h
 	include/alibabacloud/polardb/model/DescribeRegionsRequest.h
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
 	include/alibabacloud/polardb/model/CreateDatabaseRequest.h
@@ -125,7 +125,7 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBClusterParametersResult.h )
 
 set(polardb_src 
-	src/com.aliyun.pop.sdk.domain.Product@3ff57625Client.cc
+	src/PolardbClient.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/DeleteBackupRequest.cc
@@ -142,10 +142,10 @@ set(polardb_src
 	src/model/RevokeAccountPrivilegeResult.cc
 	src/model/ModifyAutoRenewAttributeRequest.cc
 	src/model/ModifyAutoRenewAttributeResult.cc
-	src/model/ModifyDBClusterParametersRequest.cc
-	src/model/ModifyDBClusterParametersResult.cc
 	src/model/UnlockDBClusterDeletionRequest.cc
 	src/model/UnlockDBClusterDeletionResult.cc
+	src/model/ModifyDBClusterParametersRequest.cc
+	src/model/ModifyDBClusterParametersResult.cc
 	src/model/ModifyDBNodeClassRequest.cc
 	src/model/ModifyDBNodeClassResult.cc
 	src/model/DeleteDBClusterRequest.cc
@@ -174,10 +174,10 @@ set(polardb_src
 	src/model/CreateBackupResult.cc
 	src/model/DescribeDBClusterAttributeRequest.cc
 	src/model/DescribeDBClusterAttributeResult.cc
-	src/model/DescribeDBClustersRequest.cc
-	src/model/DescribeDBClustersResult.cc
 	src/model/ContinueDBClusterMigrationRequest.cc
 	src/model/ContinueDBClusterMigrationResult.cc
+	src/model/DescribeDBClustersRequest.cc
+	src/model/DescribeDBClustersResult.cc
 	src/model/DeleteDBClusterEndpointRequest.cc
 	src/model/DeleteDBClusterEndpointResult.cc
 	src/model/ModifyDBClusterEndpointRequest.cc
@@ -190,10 +190,10 @@ set(polardb_src
 	src/model/ModifyDBClusterMaintainTimeResult.cc
 	src/model/CloseDBClusterMigrationRequest.cc
 	src/model/CloseDBClusterMigrationResult.cc
-	src/model/DescribeBackupsRequest.cc
-	src/model/DescribeBackupsResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
 	src/model/DescribeAutoRenewAttributeResult.cc
+	src/model/DescribeBackupsRequest.cc
+	src/model/DescribeBackupsResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/CreateDatabaseRequest.cc
