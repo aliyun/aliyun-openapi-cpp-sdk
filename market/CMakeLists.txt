@@ -67,7 +67,7 @@ set(market_public_header_model
 	include/alibabacloud/market/model/UploadCommodityFileResult.h )
 
 set(market_src 
-	src/com.aliyun.pop.sdk.domain.Product@6f1c29b7Client.cc
+	src/MarketClient.cc
 	src/model/NotifyContractEventRequest.cc
 	src/model/NotifyContractEventResult.cc
 	src/model/PushMeteringDataRequest.cc
