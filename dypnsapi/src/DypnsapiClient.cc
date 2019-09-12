@@ -51,42 +51,6 @@ DypnsapiClient::DypnsapiClient(const std::string & accessKeyId, const std::strin
 DypnsapiClient::~DypnsapiClient()
 {}
 
-DypnsapiClient::CreateVerifySchemeOutcome DypnsapiClient::createVerifyScheme(const CreateVerifySchemeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateVerifySchemeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateVerifySchemeOutcome(CreateVerifySchemeResult(outcome.result()));
-	else
-		return CreateVerifySchemeOutcome(outcome.error());
-}
-
-void DypnsapiClient::createVerifySchemeAsync(const CreateVerifySchemeRequest& request, const CreateVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createVerifyScheme(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DypnsapiClient::CreateVerifySchemeOutcomeCallable DypnsapiClient::createVerifySchemeCallable(const CreateVerifySchemeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateVerifySchemeOutcome()>>(
-			[this, request]()
-			{
-			return this->createVerifyScheme(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DypnsapiClient::TwiceTelVerifyOutcome DypnsapiClient::twiceTelVerify(const TwiceTelVerifyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +117,42 @@ DypnsapiClient::GetMobileOutcomeCallable DypnsapiClient::getMobileCallable(const
 			[this, request]()
 			{
 			return this->getMobile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DypnsapiClient::CreateVerifySchemeOutcome DypnsapiClient::createVerifyScheme(const CreateVerifySchemeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVerifySchemeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVerifySchemeOutcome(CreateVerifySchemeResult(outcome.result()));
+	else
+		return CreateVerifySchemeOutcome(outcome.error());
+}
+
+void DypnsapiClient::createVerifySchemeAsync(const CreateVerifySchemeRequest& request, const CreateVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVerifyScheme(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::CreateVerifySchemeOutcomeCallable DypnsapiClient::createVerifySchemeCallable(const CreateVerifySchemeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVerifySchemeOutcome()>>(
+			[this, request]()
+			{
+			return this->createVerifyScheme(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -21,23 +21,23 @@ set(dypnsapi_public_header
 	include/alibabacloud/dypnsapi/DypnsapiExport.h )
 
 set(dypnsapi_public_header_model 
-	include/alibabacloud/dypnsapi/model/CreateVerifySchemeRequest.h
-	include/alibabacloud/dypnsapi/model/CreateVerifySchemeResult.h
 	include/alibabacloud/dypnsapi/model/TwiceTelVerifyRequest.h
 	include/alibabacloud/dypnsapi/model/TwiceTelVerifyResult.h
 	include/alibabacloud/dypnsapi/model/GetMobileRequest.h
 	include/alibabacloud/dypnsapi/model/GetMobileResult.h
+	include/alibabacloud/dypnsapi/model/CreateVerifySchemeRequest.h
+	include/alibabacloud/dypnsapi/model/CreateVerifySchemeResult.h
 	include/alibabacloud/dypnsapi/model/VerifyMobileRequest.h
 	include/alibabacloud/dypnsapi/model/VerifyMobileResult.h )
 
 set(dypnsapi_src 
-	src/com.aliyun.pop.sdk.domain.Product@28f2a10fClient.cc
-	src/model/CreateVerifySchemeRequest.cc
-	src/model/CreateVerifySchemeResult.cc
+	src/DypnsapiClient.cc
 	src/model/TwiceTelVerifyRequest.cc
 	src/model/TwiceTelVerifyResult.cc
 	src/model/GetMobileRequest.cc
 	src/model/GetMobileResult.cc
+	src/model/CreateVerifySchemeRequest.cc
+	src/model/CreateVerifySchemeResult.cc
 	src/model/VerifyMobileRequest.cc
 	src/model/VerifyMobileResult.cc )
 
