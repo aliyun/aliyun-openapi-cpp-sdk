@@ -123,7 +123,7 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DeleteInstanceResult.h )
 
 set(elasticsearch_src 
-	src/com.aliyun.pop.sdk.domain.Product@180da663Client.cc
+	src/ElasticsearchClient.cc
 	src/model/DeactivateZonesRequest.cc
 	src/model/DeactivateZonesResult.cc
 	src/model/InstallUserPluginsRequest.cc
