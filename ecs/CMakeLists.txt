@@ -567,7 +567,7 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyVRouterAttributeResult.h )
 
 set(ecs_src 
-	src/com.aliyun.pop.sdk.domain.Product@5c313224Client.cc
+	src/EcsClient.cc
 	src/model/JoinSecurityGroupRequest.cc
 	src/model/JoinSecurityGroupResult.cc
 	src/model/ModifySnapshotAttributeRequest.cc
