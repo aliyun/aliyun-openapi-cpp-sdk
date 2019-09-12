@@ -459,7 +459,7 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/CreateVpnGatewayResult.h )
 
 set(vpc_src 
-	src/com.aliyun.pop.sdk.domain.Product@3292d91aClient.cc
+	src/VpcClient.cc
 	src/model/DescribeGlobalAccelerationInstancesRequest.cc
 	src/model/DescribeGlobalAccelerationInstancesResult.cc
 	src/model/ModifySslVpnClientCertRequest.cc
