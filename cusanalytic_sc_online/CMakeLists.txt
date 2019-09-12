@@ -51,7 +51,7 @@ set(cusanalytic_sc_online_public_header_model
 	include/alibabacloud/cusanalytic_sc_online/model/SearchPersonByImgResult.h )
 
 set(cusanalytic_sc_online_src 
-	src/com.aliyun.pop.sdk.domain.Product@6c284afClient.cc
+	src/Cusanalytic_sc_onlineClient.cc
 	src/model/DescribeLocationsRequest.cc
 	src/model/DescribeLocationsResult.cc
 	src/model/GetSupportStoreRequest.cc
