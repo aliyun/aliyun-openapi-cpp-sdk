@@ -119,7 +119,7 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryUserOmsDataResult.h )
 
 set(bssopenapi_src 
-	src/com.aliyun.pop.sdk.domain.Product@2fc0cc3Client.cc
+	src/BssOpenApiClient.cc
 	src/model/QueryMonthlyBillRequest.cc
 	src/model/QueryMonthlyBillResult.cc
 	src/model/QueryInstanceGaapCostRequest.cc
