@@ -25,6 +25,17 @@ CreateAlertContactRequest::CreateAlertContactRequest() :
 CreateAlertContactRequest::~CreateAlertContactRequest()
 {}
 
+std::string CreateAlertContactRequest::getPhoneNum()const
+{
+	return phoneNum_;
+}
+
+void CreateAlertContactRequest::setPhoneNum(const std::string& phoneNum)
+{
+	phoneNum_ = phoneNum;
+	setCoreParameter("PhoneNum", phoneNum);
+}
+
 std::string CreateAlertContactRequest::getContactName()const
 {
 	return contactName_;
@@ -45,17 +56,6 @@ void CreateAlertContactRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateAlertContactRequest::getPhoneNum()const
-{
-	return phoneNum_;
-}
-
-void CreateAlertContactRequest::setPhoneNum(const std::string& phoneNum)
-{
-	phoneNum_ = phoneNum;
-	setCoreParameter("PhoneNum", phoneNum);
 }
 
 std::string CreateAlertContactRequest::getDingRobotWebhookUrl()const

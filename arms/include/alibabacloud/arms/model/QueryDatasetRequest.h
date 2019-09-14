@@ -71,8 +71,6 @@ namespace AlibabaCloud
 				void setIsDrillDown(bool isDrillDown);
 				bool getHungryMode()const;
 				void setHungryMode(bool hungryMode);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOrderByKey()const;
 				void setOrderByKey(const std::string& orderByKey);
 				int getLimit()const;
@@ -94,7 +92,6 @@ namespace AlibabaCloud
 				int intervalInSec_;
 				bool isDrillDown_;
 				bool hungryMode_;
-				std::string regionId_;
 				std::string orderByKey_;
 				int limit_;
 				long datasetId_;

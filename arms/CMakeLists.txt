@@ -23,8 +23,6 @@ set(arms_public_header
 set(arms_public_header_model 
 	include/alibabacloud/arms/model/SearchAlertContactRequest.h
 	include/alibabacloud/arms/model/SearchAlertContactResult.h
-	include/alibabacloud/arms/model/GetTraceRequest.h
-	include/alibabacloud/arms/model/GetTraceResult.h
 	include/alibabacloud/arms/model/ListTraceAppsRequest.h
 	include/alibabacloud/arms/model/ListTraceAppsResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
@@ -37,43 +35,25 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CreateAlertContactGroupResult.h
 	include/alibabacloud/arms/model/QueryDatasetRequest.h
 	include/alibabacloud/arms/model/QueryDatasetResult.h
-	include/alibabacloud/arms/model/SearchTraceAppByNameRequest.h
-	include/alibabacloud/arms/model/SearchTraceAppByNameResult.h
 	include/alibabacloud/arms/model/SearchRetcodeAppByPageRequest.h
 	include/alibabacloud/arms/model/SearchRetcodeAppByPageResult.h
+	include/alibabacloud/arms/model/SearchTraceAppByNameRequest.h
+	include/alibabacloud/arms/model/SearchTraceAppByNameResult.h
 	include/alibabacloud/arms/model/ListRetcodeAppsRequest.h
 	include/alibabacloud/arms/model/ListRetcodeAppsResult.h
-	include/alibabacloud/arms/model/GetSpanNamesRequest.h
-	include/alibabacloud/arms/model/GetSpanNamesResult.h
-	include/alibabacloud/arms/model/GetServicesRequest.h
-	include/alibabacloud/arms/model/GetServicesResult.h
-	include/alibabacloud/arms/model/MetricQueryRequest.h
-	include/alibabacloud/arms/model/MetricQueryResult.h
-	include/alibabacloud/arms/model/SearchTracesRequest.h
-	include/alibabacloud/arms/model/SearchTracesResult.h
 	include/alibabacloud/arms/model/SearchAlertContactGroupRequest.h
 	include/alibabacloud/arms/model/SearchAlertContactGroupResult.h
 	include/alibabacloud/arms/model/CreateAlertContactRequest.h
 	include/alibabacloud/arms/model/CreateAlertContactResult.h
 	include/alibabacloud/arms/model/QueryMetricRequest.h
 	include/alibabacloud/arms/model/QueryMetricResult.h
-	include/alibabacloud/arms/model/SearchTraceCountRequest.h
-	include/alibabacloud/arms/model/SearchTraceCountResult.h
-	include/alibabacloud/arms/model/GetTagKeyRequest.h
-	include/alibabacloud/arms/model/GetTagKeyResult.h
-	include/alibabacloud/arms/model/ARMSQueryDataSetRequest.h
-	include/alibabacloud/arms/model/ARMSQueryDataSetResult.h
 	include/alibabacloud/arms/model/CreateRetcodeAppRequest.h
-	include/alibabacloud/arms/model/CreateRetcodeAppResult.h
-	include/alibabacloud/arms/model/GetTagValRequest.h
-	include/alibabacloud/arms/model/GetTagValResult.h )
+	include/alibabacloud/arms/model/CreateRetcodeAppResult.h )
 
 set(arms_src 
 	src/ARMSClient.cc
 	src/model/SearchAlertContactRequest.cc
 	src/model/SearchAlertContactResult.cc
-	src/model/GetTraceRequest.cc
-	src/model/GetTraceResult.cc
 	src/model/ListTraceAppsRequest.cc
 	src/model/ListTraceAppsResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
@@ -86,36 +66,20 @@ set(arms_src
 	src/model/CreateAlertContactGroupResult.cc
 	src/model/QueryDatasetRequest.cc
 	src/model/QueryDatasetResult.cc
-	src/model/SearchTraceAppByNameRequest.cc
-	src/model/SearchTraceAppByNameResult.cc
 	src/model/SearchRetcodeAppByPageRequest.cc
 	src/model/SearchRetcodeAppByPageResult.cc
+	src/model/SearchTraceAppByNameRequest.cc
+	src/model/SearchTraceAppByNameResult.cc
 	src/model/ListRetcodeAppsRequest.cc
 	src/model/ListRetcodeAppsResult.cc
-	src/model/GetSpanNamesRequest.cc
-	src/model/GetSpanNamesResult.cc
-	src/model/GetServicesRequest.cc
-	src/model/GetServicesResult.cc
-	src/model/MetricQueryRequest.cc
-	src/model/MetricQueryResult.cc
-	src/model/SearchTracesRequest.cc
-	src/model/SearchTracesResult.cc
 	src/model/SearchAlertContactGroupRequest.cc
 	src/model/SearchAlertContactGroupResult.cc
 	src/model/CreateAlertContactRequest.cc
 	src/model/CreateAlertContactResult.cc
 	src/model/QueryMetricRequest.cc
 	src/model/QueryMetricResult.cc
-	src/model/SearchTraceCountRequest.cc
-	src/model/SearchTraceCountResult.cc
-	src/model/GetTagKeyRequest.cc
-	src/model/GetTagKeyResult.cc
-	src/model/ARMSQueryDataSetRequest.cc
-	src/model/ARMSQueryDataSetResult.cc
 	src/model/CreateRetcodeAppRequest.cc
-	src/model/CreateRetcodeAppResult.cc
-	src/model/GetTagValRequest.cc
-	src/model/GetTagValResult.cc )
+	src/model/CreateRetcodeAppResult.cc )
 
 add_library(arms ${LIB_TYPE}
 	${arms_public_header}

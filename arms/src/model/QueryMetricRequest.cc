@@ -25,62 +25,6 @@ QueryMetricRequest::QueryMetricRequest() :
 QueryMetricRequest::~QueryMetricRequest()
 {}
 
-std::vector<std::string> QueryMetricRequest::getMeasures()const
-{
-	return measures_;
-}
-
-void QueryMetricRequest::setMeasures(const std::vector<std::string>& measures)
-{
-	measures_ = measures;
-	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
-}
-
-int QueryMetricRequest::getIntervalInSec()const
-{
-	return intervalInSec_;
-}
-
-void QueryMetricRequest::setIntervalInSec(int intervalInSec)
-{
-	intervalInSec_ = intervalInSec;
-	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
-}
-
-std::string QueryMetricRequest::getMetric()const
-{
-	return metric_;
-}
-
-void QueryMetricRequest::setMetric(const std::string& metric)
-{
-	metric_ = metric;
-	setCoreParameter("Metric", metric);
-}
-
-std::string QueryMetricRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void QueryMetricRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int QueryMetricRequest::getLimit()const
-{
-	return limit_;
-}
-
-void QueryMetricRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
-}
-
 long QueryMetricRequest::getEndTime()const
 {
 	return endTime_;
@@ -129,6 +73,51 @@ void QueryMetricRequest::setFilters(const std::vector<Filters>& filters)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
+}
+
+std::vector<std::string> QueryMetricRequest::getMeasures()const
+{
+	return measures_;
+}
+
+void QueryMetricRequest::setMeasures(const std::vector<std::string>& measures)
+{
+	measures_ = measures;
+	for(int i = 0; i!= measures.size(); i++)
+		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
+}
+
+int QueryMetricRequest::getIntervalInSec()const
+{
+	return intervalInSec_;
+}
+
+void QueryMetricRequest::setIntervalInSec(int intervalInSec)
+{
+	intervalInSec_ = intervalInSec;
+	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
+}
+
+std::string QueryMetricRequest::getMetric()const
+{
+	return metric_;
+}
+
+void QueryMetricRequest::setMetric(const std::string& metric)
+{
+	metric_ = metric;
+	setCoreParameter("Metric", metric);
+}
+
+int QueryMetricRequest::getLimit()const
+{
+	return limit_;
+}
+
+void QueryMetricRequest::setLimit(int limit)
+{
+	limit_ = limit;
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::vector<std::string> QueryMetricRequest::getDimensions()const

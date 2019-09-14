@@ -40,16 +40,6 @@ namespace AlibabaCloud
 				QueryMetricRequest();
 				~QueryMetricRequest();
 
-				std::vector<std::string> getMeasures()const;
-				void setMeasures(const std::vector<std::string>& measures);
-				int getIntervalInSec()const;
-				void setIntervalInSec(int intervalInSec);
-				std::string getMetric()const;
-				void setMetric(const std::string& metric);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getLimit()const;
-				void setLimit(int limit);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				std::string getOrderBy()const;
@@ -58,21 +48,28 @@ namespace AlibabaCloud
 				void setStartTime(long startTime);
 				std::vector<Filters> getFilters()const;
 				void setFilters(const std::vector<Filters>& filters);
+				std::vector<std::string> getMeasures()const;
+				void setMeasures(const std::vector<std::string>& measures);
+				int getIntervalInSec()const;
+				void setIntervalInSec(int intervalInSec);
+				std::string getMetric()const;
+				void setMetric(const std::string& metric);
+				int getLimit()const;
+				void setLimit(int limit);
 				std::vector<std::string> getDimensions()const;
 				void setDimensions(const std::vector<std::string>& dimensions);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
 
             private:
-				std::vector<std::string> measures_;
-				int intervalInSec_;
-				std::string metric_;
-				std::string regionId_;
-				int limit_;
 				long endTime_;
 				std::string orderBy_;
 				long startTime_;
 				std::vector<Filters> filters_;
+				std::vector<std::string> measures_;
+				int intervalInSec_;
+				std::string metric_;
+				int limit_;
 				std::vector<std::string> dimensions_;
 				std::string order_;
 

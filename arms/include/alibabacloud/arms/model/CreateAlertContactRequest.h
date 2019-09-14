@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				CreateAlertContactRequest();
 				~CreateAlertContactRequest();
 
+				std::string getPhoneNum()const;
+				void setPhoneNum(const std::string& phoneNum);
 				std::string getContactName()const;
 				void setContactName(const std::string& contactName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getPhoneNum()const;
-				void setPhoneNum(const std::string& phoneNum);
 				std::string getDingRobotWebhookUrl()const;
 				void setDingRobotWebhookUrl(const std::string& dingRobotWebhookUrl);
 				std::string getEmail()const;
@@ -49,9 +49,9 @@ namespace AlibabaCloud
 				void setSystemNoc(bool systemNoc);
 
             private:
+				std::string phoneNum_;
 				std::string contactName_;
 				std::string regionId_;
-				std::string phoneNum_;
 				std::string dingRobotWebhookUrl_;
 				std::string email_;
 				bool systemNoc_;

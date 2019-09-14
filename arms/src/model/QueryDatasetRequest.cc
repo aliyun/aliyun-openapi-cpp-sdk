@@ -132,17 +132,6 @@ void QueryDatasetRequest::setHungryMode(bool hungryMode)
 	setCoreParameter("HungryMode", hungryMode ? "true" : "false");
 }
 
-std::string QueryDatasetRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void QueryDatasetRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string QueryDatasetRequest::getOrderByKey()const
 {
 	return orderByKey_;

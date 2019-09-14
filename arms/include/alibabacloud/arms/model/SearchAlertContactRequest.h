@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SearchAlertContactRequest();
 				~SearchAlertContactRequest();
 
+				std::string getCurrentPage()const;
+				void setCurrentPage(const std::string& currentPage);
 				std::string getContactName()const;
 				void setContactName(const std::string& contactName);
 				std::string getPhone()const;
@@ -43,17 +45,15 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
-				std::string getCurrentPage()const;
-				void setCurrentPage(const std::string& currentPage);
 				std::string getEmail()const;
 				void setEmail(const std::string& email);
 
             private:
+				std::string currentPage_;
 				std::string contactName_;
 				std::string phone_;
 				std::string regionId_;
 				std::string pageSize_;
-				std::string currentPage_;
 				std::string email_;
 
 			};

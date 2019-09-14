@@ -25,6 +25,17 @@ SearchAlertContactRequest::SearchAlertContactRequest() :
 SearchAlertContactRequest::~SearchAlertContactRequest()
 {}
 
+std::string SearchAlertContactRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void SearchAlertContactRequest::setCurrentPage(const std::string& currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", currentPage);
+}
+
 std::string SearchAlertContactRequest::getContactName()const
 {
 	return contactName_;
@@ -67,17 +78,6 @@ void SearchAlertContactRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", pageSize);
-}
-
-std::string SearchAlertContactRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void SearchAlertContactRequest::setCurrentPage(const std::string& currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string SearchAlertContactRequest::getEmail()const
