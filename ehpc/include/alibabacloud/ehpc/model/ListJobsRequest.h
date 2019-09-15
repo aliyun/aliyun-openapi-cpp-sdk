@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				std::string getOwner()const;
 				void setOwner(const std::string& owner);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getState()const;
-				void setState(const std::string& state);
 				std::string getRerunable()const;
 				void setRerunable(const std::string& rerunable);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getState()const;
+				void setState(const std::string& state);
 
             private:
 				std::string owner_;
-				int pageSize_;
 				std::string clusterId_;
-				std::string state_;
 				std::string rerunable_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				int pageSize_;
+				std::string state_;
 
 			};
 		}

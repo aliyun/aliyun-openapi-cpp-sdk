@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				AddContainerAppRequest();
 				~AddContainerAppRequest();
 
-				std::string getContainerType()const;
-				void setContainerType(const std::string& containerType);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getRepository()const;
 				void setRepository(const std::string& repository);
-				std::string getImageTag()const;
-				void setImageTag(const std::string& imageTag);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getContainerType()const;
+				void setContainerType(const std::string& containerType);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getImageTag()const;
+				void setImageTag(const std::string& imageTag);
 
             private:
-				std::string containerType_;
-				std::string name_;
 				std::string description_;
 				std::string repository_;
-				std::string imageTag_;
 				std::string accessKeyId_;
+				std::string containerType_;
+				std::string name_;
+				std::string imageTag_;
 
 			};
 		}

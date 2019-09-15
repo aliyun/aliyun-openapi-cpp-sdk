@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeNFSClientStatusRequest();
 				~DescribeNFSClientStatusRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				std::string accessKeyId_;
+				std::string instanceId_;
 
 			};
 		}

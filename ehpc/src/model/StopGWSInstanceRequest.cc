@@ -25,17 +25,6 @@ StopGWSInstanceRequest::StopGWSInstanceRequest() :
 StopGWSInstanceRequest::~StopGWSInstanceRequest()
 {}
 
-std::string StopGWSInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void StopGWSInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string StopGWSInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void StopGWSInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string StopGWSInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void StopGWSInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

@@ -25,17 +25,6 @@ ModifyVisualServicePasswdRequest::ModifyVisualServicePasswdRequest() :
 ModifyVisualServicePasswdRequest::~ModifyVisualServicePasswdRequest()
 {}
 
-std::string ModifyVisualServicePasswdRequest::getPasswd()const
-{
-	return passwd_;
-}
-
-void ModifyVisualServicePasswdRequest::setPasswd(const std::string& passwd)
-{
-	passwd_ = passwd;
-	setCoreParameter("Passwd", passwd);
-}
-
 std::string ModifyVisualServicePasswdRequest::getRunasUserPassword()const
 {
 	return runasUserPassword_;
@@ -78,5 +67,16 @@ void ModifyVisualServicePasswdRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyVisualServicePasswdRequest::getPasswd()const
+{
+	return passwd_;
+}
+
+void ModifyVisualServicePasswdRequest::setPasswd(const std::string& passwd)
+{
+	passwd_ = passwd;
+	setCoreParameter("Passwd", passwd);
 }
 

@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				SetGWSInstanceUserRequest();
 				~SetGWSInstanceUserRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getUserUid()const;
 				void setUserUid(const std::string& userUid);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string userUid_;
-				std::string accessKeyId_;
 				std::string userName_;
 
 			};

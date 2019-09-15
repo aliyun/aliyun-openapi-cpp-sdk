@@ -69,17 +69,6 @@ void RecoverClusterRequest::setAccountType(const std::string& accountType)
 	setCoreParameter("AccountType", accountType);
 }
 
-std::string RecoverClusterRequest::getSchedulerType()const
-{
-	return schedulerType_;
-}
-
-void RecoverClusterRequest::setSchedulerType(const std::string& schedulerType)
-{
-	schedulerType_ = schedulerType;
-	setCoreParameter("SchedulerType", schedulerType);
-}
-
 std::string RecoverClusterRequest::getClusterId()const
 {
 	return clusterId_;
@@ -111,5 +100,16 @@ void RecoverClusterRequest::setImageOwnerAlias(const std::string& imageOwnerAlia
 {
 	imageOwnerAlias_ = imageOwnerAlias;
 	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
+}
+
+std::string RecoverClusterRequest::getSchedulerType()const
+{
+	return schedulerType_;
+}
+
+void RecoverClusterRequest::setSchedulerType(const std::string& schedulerType)
+{
+	schedulerType_ = schedulerType;
+	setCoreParameter("SchedulerType", schedulerType);
 }
 

@@ -25,17 +25,6 @@ DeleteImageRequest::DeleteImageRequest() :
 DeleteImageRequest::~DeleteImageRequest()
 {}
 
-std::string DeleteImageRequest::getContainerType()const
-{
-	return containerType_;
-}
-
-void DeleteImageRequest::setContainerType(const std::string& containerType)
-{
-	containerType_ = containerType;
-	setCoreParameter("ContainerType", containerType);
-}
-
 std::string DeleteImageRequest::getClusterId()const
 {
 	return clusterId_;
@@ -58,17 +47,6 @@ void DeleteImageRequest::setRepository(const std::string& repository)
 	setCoreParameter("Repository", repository);
 }
 
-std::string DeleteImageRequest::getImageTag()const
-{
-	return imageTag_;
-}
-
-void DeleteImageRequest::setImageTag(const std::string& imageTag)
-{
-	imageTag_ = imageTag;
-	setCoreParameter("ImageTag", imageTag);
-}
-
 std::string DeleteImageRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +56,27 @@ void DeleteImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteImageRequest::getContainerType()const
+{
+	return containerType_;
+}
+
+void DeleteImageRequest::setContainerType(const std::string& containerType)
+{
+	containerType_ = containerType;
+	setCoreParameter("ContainerType", containerType);
+}
+
+std::string DeleteImageRequest::getImageTag()const
+{
+	return imageTag_;
+}
+
+void DeleteImageRequest::setImageTag(const std::string& imageTag)
+{
+	imageTag_ = imageTag;
+	setCoreParameter("ImageTag", imageTag);
 }
 

@@ -25,17 +25,6 @@ InstallNFSClientRequest::InstallNFSClientRequest() :
 InstallNFSClientRequest::~InstallNFSClientRequest()
 {}
 
-std::string InstallNFSClientRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void InstallNFSClientRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string InstallNFSClientRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void InstallNFSClientRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string InstallNFSClientRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void InstallNFSClientRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

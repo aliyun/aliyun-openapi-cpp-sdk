@@ -25,17 +25,6 @@ ListCustomImagesRequest::ListCustomImagesRequest() :
 ListCustomImagesRequest::~ListCustomImagesRequest()
 {}
 
-std::string ListCustomImagesRequest::getBaseOsTag()const
-{
-	return baseOsTag_;
-}
-
-void ListCustomImagesRequest::setBaseOsTag(const std::string& baseOsTag)
-{
-	baseOsTag_ = baseOsTag;
-	setCoreParameter("BaseOsTag", baseOsTag);
-}
-
 std::string ListCustomImagesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void ListCustomImagesRequest::setImageOwnerAlias(const std::string& imageOwnerAl
 {
 	imageOwnerAlias_ = imageOwnerAlias;
 	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
+}
+
+std::string ListCustomImagesRequest::getBaseOsTag()const
+{
+	return baseOsTag_;
+}
+
+void ListCustomImagesRequest::setBaseOsTag(const std::string& baseOsTag)
+{
+	baseOsTag_ = baseOsTag;
+	setCoreParameter("BaseOsTag", baseOsTag);
 }
 

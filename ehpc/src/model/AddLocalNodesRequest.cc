@@ -25,17 +25,6 @@ AddLocalNodesRequest::AddLocalNodesRequest() :
 AddLocalNodesRequest::~AddLocalNodesRequest()
 {}
 
-std::string AddLocalNodesRequest::getNodes()const
-{
-	return nodes_;
-}
-
-void AddLocalNodesRequest::setNodes(const std::string& nodes)
-{
-	nodes_ = nodes;
-	setCoreParameter("Nodes", nodes);
-}
-
 std::string AddLocalNodesRequest::getClusterId()const
 {
 	return clusterId_;
@@ -56,5 +45,16 @@ void AddLocalNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AddLocalNodesRequest::getNodes()const
+{
+	return nodes_;
+}
+
+void AddLocalNodesRequest::setNodes(const std::string& nodes)
+{
+	nodes_ = nodes;
+	setCoreParameter("Nodes", nodes);
 }
 

@@ -36,17 +36,6 @@ void UpdateQueueConfigRequest::setQueueName(const std::string& queueName)
 	setCoreParameter("QueueName", queueName);
 }
 
-std::string UpdateQueueConfigRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void UpdateQueueConfigRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string UpdateQueueConfigRequest::getClusterId()const
 {
 	return clusterId_;
@@ -58,17 +47,6 @@ void UpdateQueueConfigRequest::setClusterId(const std::string& clusterId)
 	setCoreParameter("ClusterId", clusterId);
 }
 
-std::string UpdateQueueConfigRequest::getComputeInstanceType()const
-{
-	return computeInstanceType_;
-}
-
-void UpdateQueueConfigRequest::setComputeInstanceType(const std::string& computeInstanceType)
-{
-	computeInstanceType_ = computeInstanceType;
-	setCoreParameter("ComputeInstanceType", computeInstanceType);
-}
-
 std::string UpdateQueueConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +56,27 @@ void UpdateQueueConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateQueueConfigRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void UpdateQueueConfigRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string UpdateQueueConfigRequest::getComputeInstanceType()const
+{
+	return computeInstanceType_;
+}
+
+void UpdateQueueConfigRequest::setComputeInstanceType(const std::string& computeInstanceType)
+{
+	computeInstanceType_ = computeInstanceType;
+	setCoreParameter("ComputeInstanceType", computeInstanceType);
 }
 

@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				GetCloudMetricLogsRequest();
 				~GetCloudMetricLogsRequest();
 
-				std::string getAggregationType()const;
-				void setAggregationType(const std::string& aggregationType);
-				std::string getFilter()const;
-				void setFilter(const std::string& filter);
-				std::string getMetricCategories()const;
-				void setMetricCategories(const std::string& metricCategories);
 				std::string getMetricScope()const;
 				void setMetricScope(const std::string& metricScope);
-				int getFrom()const;
-				void setFrom(int from);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				int getTo()const;
-				void setTo(int to);
 				int getAggregationInterval()const;
 				void setAggregationInterval(int aggregationInterval);
 				bool getReverse()const;
 				void setReverse(bool reverse);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAggregationType()const;
+				void setAggregationType(const std::string& aggregationType);
+				std::string getFilter()const;
+				void setFilter(const std::string& filter);
+				std::string getMetricCategories()const;
+				void setMetricCategories(const std::string& metricCategories);
+				int getFrom()const;
+				void setFrom(int from);
+				int getTo()const;
+				void setTo(int to);
 
             private:
-				std::string aggregationType_;
-				std::string filter_;
-				std::string metricCategories_;
 				std::string metricScope_;
-				int from_;
 				std::string clusterId_;
-				int to_;
 				int aggregationInterval_;
 				bool reverse_;
 				std::string accessKeyId_;
+				std::string aggregationType_;
+				std::string filter_;
+				std::string metricCategories_;
+				int from_;
+				int to_;
 
 			};
 		}

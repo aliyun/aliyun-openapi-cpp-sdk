@@ -25,6 +25,17 @@ ListPreferredEcsTypesRequest::ListPreferredEcsTypesRequest() :
 ListPreferredEcsTypesRequest::~ListPreferredEcsTypesRequest()
 {}
 
+std::string ListPreferredEcsTypesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListPreferredEcsTypesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListPreferredEcsTypesRequest::getSpotStrategy()const
 {
 	return spotStrategy_;
@@ -56,16 +67,5 @@ void ListPreferredEcsTypesRequest::setInstanceChargeType(const std::string& inst
 {
 	instanceChargeType_ = instanceChargeType;
 	setCoreParameter("InstanceChargeType", instanceChargeType);
-}
-
-std::string ListPreferredEcsTypesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListPreferredEcsTypesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

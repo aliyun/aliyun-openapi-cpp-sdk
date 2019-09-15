@@ -34,7 +34,14 @@ namespace AlibabaCloud
 				{
 					std::string spotStrategy;
 					std::string queueName;
-					RepeatList instanceTypes;
+					struct InstanceTypes
+					{
+						std::string spotStrategy;
+						std::string vSwitchId;
+						std::string instanceType;
+						std::string zoneId;
+						float spotPriceLimit;
+					};
 					std::string instanceType;
 					bool enableAutoGrow;
 					float spotPriceLimit;
@@ -45,6 +52,14 @@ namespace AlibabaCloud
 				SetAutoScaleConfigRequest();
 				~SetAutoScaleConfigRequest();
 
+				float getSpotPriceLimit()const;
+				void setSpotPriceLimit(float spotPriceLimit);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getExcludeNodes()const;
+				void setExcludeNodes(const std::string& excludeNodes);
+				int getExtraNodesGrowRatio()const;
+				void setExtraNodesGrowRatio(int extraNodesGrowRatio);
 				int getShrinkIdleTimes()const;
 				void setShrinkIdleTimes(int shrinkIdleTimes);
 				int getGrowTimeoutInMinutes()const;
@@ -53,43 +68,37 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				bool getEnableAutoGrow()const;
 				void setEnableAutoGrow(bool enableAutoGrow);
-				float getSpotPriceLimit()const;
-				void setSpotPriceLimit(float spotPriceLimit);
 				bool getEnableAutoShrink()const;
 				void setEnableAutoShrink(bool enableAutoShrink);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSpotStrategy()const;
 				void setSpotStrategy(const std::string& spotStrategy);
 				int getMaxNodesInCluster()const;
 				void setMaxNodesInCluster(int maxNodesInCluster);
-				std::string getExcludeNodes()const;
-				void setExcludeNodes(const std::string& excludeNodes);
 				int getShrinkIntervalInMinutes()const;
 				void setShrinkIntervalInMinutes(int shrinkIntervalInMinutes);
 				std::vector<Queues> getQueues()const;
 				void setQueues(const std::vector<Queues>& queues);
-				int getExtraNodesGrowRatio()const;
-				void setExtraNodesGrowRatio(int extraNodesGrowRatio);
+				std::vector<InstanceTypes> getInstanceTypes()const;
+				void setInstanceTypes(const std::vector<InstanceTypes>& instanceTypes);
 				int getGrowIntervalInMinutes()const;
 				void setGrowIntervalInMinutes(int growIntervalInMinutes);
 				int getGrowRatio()const;
 				void setGrowRatio(int growRatio);
 
             private:
+				float spotPriceLimit_;
+				std::string accessKeyId_;
+				std::string excludeNodes_;
+				int extraNodesGrowRatio_;
 				int shrinkIdleTimes_;
 				int growTimeoutInMinutes_;
 				std::string clusterId_;
 				bool enableAutoGrow_;
-				float spotPriceLimit_;
 				bool enableAutoShrink_;
-				std::string accessKeyId_;
 				std::string spotStrategy_;
 				int maxNodesInCluster_;
-				std::string excludeNodes_;
 				int shrinkIntervalInMinutes_;
 				std::vector<Queues> queues_;
-				int extraNodesGrowRatio_;
 				int growIntervalInMinutes_;
 				int growRatio_;
 

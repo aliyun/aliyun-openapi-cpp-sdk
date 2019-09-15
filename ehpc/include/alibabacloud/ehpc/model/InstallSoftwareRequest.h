@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				InstallSoftwareRequest();
 				~InstallSoftwareRequest();
 
-				std::string getApplication()const;
-				void setApplication(const std::string& application);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getApplication()const;
+				void setApplication(const std::string& application);
 
             private:
-				std::string application_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string application_;
 
 			};
 		}

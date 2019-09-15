@@ -36,6 +36,17 @@ void ModifyUserPasswordsRequest::setClusterId(const std::string& clusterId)
 	setCoreParameter("ClusterId", clusterId);
 }
 
+std::string ModifyUserPasswordsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyUserPasswordsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<ModifyUserPasswordsRequest::User> ModifyUserPasswordsRequest::getUser()const
 {
 	return user_;
@@ -51,16 +62,5 @@ void ModifyUserPasswordsRequest::setUser(const std::vector<User>& user)
 		setCoreParameter(str + ".Password", obj.password);
 		setCoreParameter(str + ".Name", obj.name);
 	}
-}
-
-std::string ModifyUserPasswordsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyUserPasswordsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

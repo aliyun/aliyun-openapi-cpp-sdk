@@ -36,6 +36,17 @@ void DeleteUsersRequest::setClusterId(const std::string& clusterId)
 	setCoreParameter("ClusterId", clusterId);
 }
 
+std::string DeleteUsersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteUsersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<DeleteUsersRequest::User> DeleteUsersRequest::getUser()const
 {
 	return user_;
@@ -50,16 +61,5 @@ void DeleteUsersRequest::setUser(const std::vector<User>& user)
 		std::string str ="User."+ std::to_string(i);
 		setCoreParameter(str + ".Name", obj.name);
 	}
-}
-
-std::string DeleteUsersRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteUsersRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

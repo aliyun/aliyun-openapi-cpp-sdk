@@ -25,28 +25,6 @@ AddNodesRequest::AddNodesRequest() :
 AddNodesRequest::~AddNodesRequest()
 {}
 
-int AddNodesRequest::getAutoRenewPeriod()const
-{
-	return autoRenewPeriod_;
-}
-
-void AddNodesRequest::setAutoRenewPeriod(int autoRenewPeriod)
-{
-	autoRenewPeriod_ = autoRenewPeriod;
-	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
-}
-
-int AddNodesRequest::getPeriod()const
-{
-	return period_;
-}
-
-void AddNodesRequest::setPeriod(int period)
-{
-	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
-}
-
 std::string AddNodesRequest::getImageId()const
 {
 	return imageId_;
@@ -56,39 +34,6 @@ void AddNodesRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
 	setCoreParameter("ImageId", imageId);
-}
-
-int AddNodesRequest::getCount()const
-{
-	return count_;
-}
-
-void AddNodesRequest::setCount(int count)
-{
-	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
-}
-
-std::string AddNodesRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void AddNodesRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string AddNodesRequest::getComputeSpotStrategy()const
-{
-	return computeSpotStrategy_;
-}
-
-void AddNodesRequest::setComputeSpotStrategy(const std::string& computeSpotStrategy)
-{
-	computeSpotStrategy_ = computeSpotStrategy;
-	setCoreParameter("ComputeSpotStrategy", computeSpotStrategy);
 }
 
 std::string AddNodesRequest::getJobQueue()const
@@ -133,6 +78,94 @@ void AddNodesRequest::setSystemDiskType(const std::string& systemDiskType)
 {
 	systemDiskType_ = systemDiskType;
 	setCoreParameter("SystemDiskType", systemDiskType);
+}
+
+int AddNodesRequest::getSystemDiskSize()const
+{
+	return systemDiskSize_;
+}
+
+void AddNodesRequest::setSystemDiskSize(int systemDiskSize)
+{
+	systemDiskSize_ = systemDiskSize;
+	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+}
+
+std::string AddNodesRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void AddNodesRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string AddNodesRequest::getComputeSpotPriceLimit()const
+{
+	return computeSpotPriceLimit_;
+}
+
+void AddNodesRequest::setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit)
+{
+	computeSpotPriceLimit_ = computeSpotPriceLimit;
+	setCoreParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
+}
+
+int AddNodesRequest::getAutoRenewPeriod()const
+{
+	return autoRenewPeriod_;
+}
+
+void AddNodesRequest::setAutoRenewPeriod(int autoRenewPeriod)
+{
+	autoRenewPeriod_ = autoRenewPeriod;
+	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+}
+
+int AddNodesRequest::getPeriod()const
+{
+	return period_;
+}
+
+void AddNodesRequest::setPeriod(int period)
+{
+	period_ = period;
+	setCoreParameter("Period", std::to_string(period));
+}
+
+int AddNodesRequest::getCount()const
+{
+	return count_;
+}
+
+void AddNodesRequest::setCount(int count)
+{
+	count_ = count;
+	setCoreParameter("Count", std::to_string(count));
+}
+
+std::string AddNodesRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void AddNodesRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string AddNodesRequest::getComputeSpotStrategy()const
+{
+	return computeSpotStrategy_;
+}
+
+void AddNodesRequest::setComputeSpotStrategy(const std::string& computeSpotStrategy)
+{
+	computeSpotStrategy_ = computeSpotStrategy;
+	setCoreParameter("ComputeSpotStrategy", computeSpotStrategy);
 }
 
 std::string AddNodesRequest::getVSwitchId()const
@@ -190,28 +223,6 @@ void AddNodesRequest::setCreateMode(const std::string& createMode)
 	setCoreParameter("CreateMode", createMode);
 }
 
-int AddNodesRequest::getSystemDiskSize()const
-{
-	return systemDiskSize_;
-}
-
-void AddNodesRequest::setSystemDiskSize(int systemDiskSize)
-{
-	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
-}
-
-std::string AddNodesRequest::getInstanceType()const
-{
-	return instanceType_;
-}
-
-void AddNodesRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
-}
-
 std::string AddNodesRequest::getZoneId()const
 {
 	return zoneId_;
@@ -221,16 +232,5 @@ void AddNodesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
-}
-
-std::string AddNodesRequest::getComputeSpotPriceLimit()const
-{
-	return computeSpotPriceLimit_;
-}
-
-void AddNodesRequest::setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit)
-{
-	computeSpotPriceLimit_ = computeSpotPriceLimit;
-	setCoreParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
 }
 

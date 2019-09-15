@@ -37,6 +37,16 @@ namespace AlibabaCloud
 
 				std::string getStderrRedirectPath()const;
 				void setStderrRedirectPath(const std::string& stderrRedirectPath);
+				std::string getCommandLine()const;
+				void setCommandLine(const std::string& commandLine);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getArrayRequest()const;
+				void setArrayRequest(const std::string& arrayRequest);
+				std::string getPackagePath()const;
+				void setPackagePath(const std::string& packagePath);
+				std::string getStdoutRedirectPath()const;
+				void setStdoutRedirectPath(const std::string& stdoutRedirectPath);
 				std::string getVariables()const;
 				void setVariables(const std::string& variables);
 				std::string getRunasUser()const;
@@ -47,32 +57,22 @@ namespace AlibabaCloud
 				void setTemplateId(const std::string& templateId);
 				int getPriority()const;
 				void setPriority(int priority);
-				std::string getCommandLine()const;
-				void setCommandLine(const std::string& commandLine);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getArrayRequest()const;
-				void setArrayRequest(const std::string& arrayRequest);
-				std::string getPackagePath()const;
-				void setPackagePath(const std::string& packagePath);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getStdoutRedirectPath()const;
-				void setStdoutRedirectPath(const std::string& stdoutRedirectPath);
 
             private:
 				std::string stderrRedirectPath_;
+				std::string commandLine_;
+				std::string accessKeyId_;
+				std::string arrayRequest_;
+				std::string packagePath_;
+				std::string stdoutRedirectPath_;
 				std::string variables_;
 				std::string runasUser_;
 				bool reRunable_;
 				std::string templateId_;
 				int priority_;
-				std::string commandLine_;
-				std::string accessKeyId_;
-				std::string arrayRequest_;
-				std::string packagePath_;
 				std::string name_;
-				std::string stdoutRedirectPath_;
 
 			};
 		}

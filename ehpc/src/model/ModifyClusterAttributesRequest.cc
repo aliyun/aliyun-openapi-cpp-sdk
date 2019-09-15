@@ -25,17 +25,6 @@ ModifyClusterAttributesRequest::ModifyClusterAttributesRequest() :
 ModifyClusterAttributesRequest::~ModifyClusterAttributesRequest()
 {}
 
-std::string ModifyClusterAttributesRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyClusterAttributesRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string ModifyClusterAttributesRequest::getDescription()const
 {
 	return description_;
@@ -67,5 +56,16 @@ void ModifyClusterAttributesRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyClusterAttributesRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyClusterAttributesRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

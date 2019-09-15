@@ -36,6 +36,17 @@ void AddUsersRequest::setClusterId(const std::string& clusterId)
 	setCoreParameter("ClusterId", clusterId);
 }
 
+std::string AddUsersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddUsersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<AddUsersRequest::User> AddUsersRequest::getUser()const
 {
 	return user_;
@@ -52,16 +63,5 @@ void AddUsersRequest::setUser(const std::vector<User>& user)
 		setCoreParameter(str + ".Name", obj.name);
 		setCoreParameter(str + ".Group", obj.group);
 	}
-}
-
-std::string AddUsersRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddUsersRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,17 +25,6 @@ DeleteNodesRequest::DeleteNodesRequest() :
 DeleteNodesRequest::~DeleteNodesRequest()
 {}
 
-bool DeleteNodesRequest::getReleaseInstance()const
-{
-	return releaseInstance_;
-}
-
-void DeleteNodesRequest::setReleaseInstance(bool releaseInstance)
-{
-	releaseInstance_ = releaseInstance;
-	setCoreParameter("ReleaseInstance", releaseInstance ? "true" : "false");
-}
-
 std::vector<DeleteNodesRequest::Instance> DeleteNodesRequest::getInstance()const
 {
 	return instance_;
@@ -72,5 +61,16 @@ void DeleteNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+bool DeleteNodesRequest::getReleaseInstance()const
+{
+	return releaseInstance_;
+}
+
+void DeleteNodesRequest::setReleaseInstance(bool releaseInstance)
+{
+	releaseInstance_ = releaseInstance;
+	setCoreParameter("ReleaseInstance", releaseInstance ? "true" : "false");
 }
 

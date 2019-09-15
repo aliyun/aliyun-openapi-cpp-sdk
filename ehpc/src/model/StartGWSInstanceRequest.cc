@@ -25,17 +25,6 @@ StartGWSInstanceRequest::StartGWSInstanceRequest() :
 StartGWSInstanceRequest::~StartGWSInstanceRequest()
 {}
 
-std::string StartGWSInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void StartGWSInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string StartGWSInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void StartGWSInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string StartGWSInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void StartGWSInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

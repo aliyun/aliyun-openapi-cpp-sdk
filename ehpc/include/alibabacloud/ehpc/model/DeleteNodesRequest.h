@@ -39,20 +39,20 @@ namespace AlibabaCloud
 				DeleteNodesRequest();
 				~DeleteNodesRequest();
 
-				bool getReleaseInstance()const;
-				void setReleaseInstance(bool releaseInstance);
 				std::vector<Instance> getInstance()const;
 				void setInstance(const std::vector<Instance>& instance);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				bool getReleaseInstance()const;
+				void setReleaseInstance(bool releaseInstance);
 
             private:
-				bool releaseInstance_;
 				std::vector<Instance> instance_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				bool releaseInstance_;
 
 			};
 		}

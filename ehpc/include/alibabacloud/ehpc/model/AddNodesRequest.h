@@ -35,18 +35,8 @@ namespace AlibabaCloud
 				AddNodesRequest();
 				~AddNodesRequest();
 
-				int getAutoRenewPeriod()const;
-				void setAutoRenewPeriod(int autoRenewPeriod);
-				int getPeriod()const;
-				void setPeriod(int period);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
-				int getCount()const;
-				void setCount(int count);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getComputeSpotStrategy()const;
-				void setComputeSpotStrategy(const std::string& computeSpotStrategy);
 				std::string getJobQueue()const;
 				void setJobQueue(const std::string& jobQueue);
 				std::string getAccessKeyId()const;
@@ -55,6 +45,22 @@ namespace AlibabaCloud
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 				std::string getSystemDiskType()const;
 				void setSystemDiskType(const std::string& systemDiskType);
+				int getSystemDiskSize()const;
+				void setSystemDiskSize(int systemDiskSize);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
+				std::string getComputeSpotPriceLimit()const;
+				void setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit);
+				int getAutoRenewPeriod()const;
+				void setAutoRenewPeriod(int autoRenewPeriod);
+				int getPeriod()const;
+				void setPeriod(int period);
+				int getCount()const;
+				void setCount(int count);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getComputeSpotStrategy()const;
+				void setComputeSpotStrategy(const std::string& computeSpotStrategy);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPeriodUnit()const;
@@ -65,35 +71,29 @@ namespace AlibabaCloud
 				void setEcsChargeType(const std::string& ecsChargeType);
 				std::string getCreateMode()const;
 				void setCreateMode(const std::string& createMode);
-				int getSystemDiskSize()const;
-				void setSystemDiskSize(int systemDiskSize);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
-				std::string getComputeSpotPriceLimit()const;
-				void setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit);
 
             private:
-				int autoRenewPeriod_;
-				int period_;
 				std::string imageId_;
-				int count_;
-				std::string clusterId_;
-				std::string computeSpotStrategy_;
 				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
 				std::string systemDiskType_;
+				int systemDiskSize_;
+				std::string instanceType_;
+				std::string computeSpotPriceLimit_;
+				int autoRenewPeriod_;
+				int period_;
+				int count_;
+				std::string clusterId_;
+				std::string computeSpotStrategy_;
 				std::string vSwitchId_;
 				std::string periodUnit_;
 				std::string autoRenew_;
 				std::string ecsChargeType_;
 				std::string createMode_;
-				int systemDiskSize_;
-				std::string instanceType_;
 				std::string zoneId_;
-				std::string computeSpotPriceLimit_;
 
 			};
 		}

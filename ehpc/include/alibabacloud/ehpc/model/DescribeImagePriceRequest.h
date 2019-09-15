@@ -41,12 +41,12 @@ namespace AlibabaCloud
 				void setAmount(int amount);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
-				std::string getPriceUnit()const;
-				void setPriceUnit(const std::string& priceUnit);
 				std::string getSkuCode()const;
 				void setSkuCode(const std::string& skuCode);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPriceUnit()const;
+				void setPriceUnit(const std::string& priceUnit);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
 
@@ -54,9 +54,9 @@ namespace AlibabaCloud
 				int period_;
 				int amount_;
 				std::string imageId_;
-				std::string priceUnit_;
 				std::string skuCode_;
 				std::string accessKeyId_;
+				std::string priceUnit_;
 				std::string orderType_;
 
 			};

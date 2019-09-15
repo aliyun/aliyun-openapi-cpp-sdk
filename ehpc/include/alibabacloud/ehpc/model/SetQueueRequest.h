@@ -41,18 +41,18 @@ namespace AlibabaCloud
 
 				std::string getQueueName()const;
 				void setQueueName(const std::string& queueName);
-				std::vector<Node> getNode()const;
-				void setNode(const std::vector<Node>& node);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::vector<Node> getNode()const;
+				void setNode(const std::vector<Node>& node);
 
             private:
 				std::string queueName_;
-				std::vector<Node> node_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::vector<Node> node_;
 
 			};
 		}

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				GetHybridClusterConfigRequest();
 				~GetHybridClusterConfigRequest();
 
-				std::string getNode()const;
-				void setNode(const std::string& node);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNode()const;
+				void setNode(const std::string& node);
 
             private:
-				std::string node_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string node_;
 
 			};
 		}

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				StartVisualServiceRequest();
 				~StartVisualServiceRequest();
 
-				int getPort()const;
-				void setPort(int port);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getCidrIp()const;
-				void setCidrIp(const std::string& cidrIp);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPort()const;
+				void setPort(int port);
+				std::string getCidrIp()const;
+				void setCidrIp(const std::string& cidrIp);
 
             private:
-				int port_;
 				std::string clusterId_;
-				std::string cidrIp_;
 				std::string accessKeyId_;
+				int port_;
+				std::string cidrIp_;
 
 			};
 		}

@@ -25,17 +25,6 @@ ListUsersRequest::ListUsersRequest() :
 ListUsersRequest::~ListUsersRequest()
 {}
 
-int ListUsersRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListUsersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListUsersRequest::getClusterId()const
 {
 	return clusterId_;
@@ -67,5 +56,16 @@ void ListUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListUsersRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListUsersRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

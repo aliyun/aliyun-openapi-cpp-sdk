@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				GetCloudMetricProfilingRequest();
 				~GetCloudMetricProfilingRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getProfilingId()const;
-				void setProfilingId(const std::string& profilingId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getProfilingId()const;
+				void setProfilingId(const std::string& profilingId);
 
             private:
-				std::string regionId_;
-				std::string profilingId_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				std::string profilingId_;
 
 			};
 		}

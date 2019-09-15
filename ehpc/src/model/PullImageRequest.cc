@@ -25,17 +25,6 @@ PullImageRequest::PullImageRequest() :
 PullImageRequest::~PullImageRequest()
 {}
 
-std::string PullImageRequest::getContainerType()const
-{
-	return containerType_;
-}
-
-void PullImageRequest::setContainerType(const std::string& containerType)
-{
-	containerType_ = containerType;
-	setCoreParameter("ContainerType", containerType);
-}
-
 std::string PullImageRequest::getClusterId()const
 {
 	return clusterId_;
@@ -58,17 +47,6 @@ void PullImageRequest::setRepository(const std::string& repository)
 	setCoreParameter("Repository", repository);
 }
 
-std::string PullImageRequest::getImageTag()const
-{
-	return imageTag_;
-}
-
-void PullImageRequest::setImageTag(const std::string& imageTag)
-{
-	imageTag_ = imageTag;
-	setCoreParameter("ImageTag", imageTag);
-}
-
 std::string PullImageRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +56,27 @@ void PullImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string PullImageRequest::getContainerType()const
+{
+	return containerType_;
+}
+
+void PullImageRequest::setContainerType(const std::string& containerType)
+{
+	containerType_ = containerType;
+	setCoreParameter("ContainerType", containerType);
+}
+
+std::string PullImageRequest::getImageTag()const
+{
+	return imageTag_;
+}
+
+void PullImageRequest::setImageTag(const std::string& imageTag)
+{
+	imageTag_ = imageTag;
+	setCoreParameter("ImageTag", imageTag);
 }
 

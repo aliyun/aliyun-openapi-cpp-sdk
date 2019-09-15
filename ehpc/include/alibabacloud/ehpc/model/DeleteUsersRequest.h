@@ -41,15 +41,15 @@ namespace AlibabaCloud
 
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::vector<User> getUser()const;
-				void setUser(const std::vector<User>& user);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::vector<User> getUser()const;
+				void setUser(const std::vector<User>& user);
 
             private:
 				std::string clusterId_;
-				std::vector<User> user_;
 				std::string accessKeyId_;
+				std::vector<User> user_;
 
 			};
 		}

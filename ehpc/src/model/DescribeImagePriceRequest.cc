@@ -58,17 +58,6 @@ void DescribeImagePriceRequest::setImageId(const std::string& imageId)
 	setCoreParameter("ImageId", imageId);
 }
 
-std::string DescribeImagePriceRequest::getPriceUnit()const
-{
-	return priceUnit_;
-}
-
-void DescribeImagePriceRequest::setPriceUnit(const std::string& priceUnit)
-{
-	priceUnit_ = priceUnit;
-	setCoreParameter("PriceUnit", priceUnit);
-}
-
 std::string DescribeImagePriceRequest::getSkuCode()const
 {
 	return skuCode_;
@@ -89,6 +78,17 @@ void DescribeImagePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeImagePriceRequest::getPriceUnit()const
+{
+	return priceUnit_;
+}
+
+void DescribeImagePriceRequest::setPriceUnit(const std::string& priceUnit)
+{
+	priceUnit_ = priceUnit;
+	setCoreParameter("PriceUnit", priceUnit);
 }
 
 std::string DescribeImagePriceRequest::getOrderType()const

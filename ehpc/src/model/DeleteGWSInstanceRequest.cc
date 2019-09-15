@@ -25,17 +25,6 @@ DeleteGWSInstanceRequest::DeleteGWSInstanceRequest() :
 DeleteGWSInstanceRequest::~DeleteGWSInstanceRequest()
 {}
 
-std::string DeleteGWSInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DeleteGWSInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string DeleteGWSInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DeleteGWSInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteGWSInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DeleteGWSInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

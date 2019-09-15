@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				AddLocalNodesRequest();
 				~AddLocalNodesRequest();
 
-				std::string getNodes()const;
-				void setNodes(const std::string& nodes);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNodes()const;
+				void setNodes(const std::string& nodes);
 
             private:
-				std::string nodes_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string nodes_;
 
 			};
 		}

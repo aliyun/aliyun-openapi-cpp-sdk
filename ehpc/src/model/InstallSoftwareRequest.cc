@@ -25,17 +25,6 @@ InstallSoftwareRequest::InstallSoftwareRequest() :
 InstallSoftwareRequest::~InstallSoftwareRequest()
 {}
 
-std::string InstallSoftwareRequest::getApplication()const
-{
-	return application_;
-}
-
-void InstallSoftwareRequest::setApplication(const std::string& application)
-{
-	application_ = application;
-	setCoreParameter("Application", application);
-}
-
 std::string InstallSoftwareRequest::getClusterId()const
 {
 	return clusterId_;
@@ -56,5 +45,16 @@ void InstallSoftwareRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string InstallSoftwareRequest::getApplication()const
+{
+	return application_;
+}
+
+void InstallSoftwareRequest::setApplication(const std::string& application)
+{
+	application_ = application;
+	setCoreParameter("Application", application);
 }
 

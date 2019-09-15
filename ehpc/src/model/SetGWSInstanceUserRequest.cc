@@ -25,6 +25,17 @@ SetGWSInstanceUserRequest::SetGWSInstanceUserRequest() :
 SetGWSInstanceUserRequest::~SetGWSInstanceUserRequest()
 {}
 
+std::string SetGWSInstanceUserRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetGWSInstanceUserRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string SetGWSInstanceUserRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -45,17 +56,6 @@ void SetGWSInstanceUserRequest::setUserUid(const std::string& userUid)
 {
 	userUid_ = userUid;
 	setCoreParameter("UserUid", userUid);
-}
-
-std::string SetGWSInstanceUserRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetGWSInstanceUserRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetGWSInstanceUserRequest::getUserName()const

@@ -25,6 +25,17 @@ ListAvailableEcsTypesRequest::ListAvailableEcsTypesRequest() :
 ListAvailableEcsTypesRequest::~ListAvailableEcsTypesRequest()
 {}
 
+std::string ListAvailableEcsTypesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListAvailableEcsTypesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListAvailableEcsTypesRequest::getSpotStrategy()const
 {
 	return spotStrategy_;
@@ -67,16 +78,5 @@ void ListAvailableEcsTypesRequest::setInstanceChargeType(const std::string& inst
 {
 	instanceChargeType_ = instanceChargeType;
 	setCoreParameter("InstanceChargeType", instanceChargeType);
-}
-
-std::string ListAvailableEcsTypesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListAvailableEcsTypesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

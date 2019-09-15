@@ -25,17 +25,6 @@ StopVisualServiceRequest::StopVisualServiceRequest() :
 StopVisualServiceRequest::~StopVisualServiceRequest()
 {}
 
-int StopVisualServiceRequest::getPort()const
-{
-	return port_;
-}
-
-void StopVisualServiceRequest::setPort(int port)
-{
-	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
-}
-
 std::string StopVisualServiceRequest::getClusterId()const
 {
 	return clusterId_;
@@ -47,17 +36,6 @@ void StopVisualServiceRequest::setClusterId(const std::string& clusterId)
 	setCoreParameter("ClusterId", clusterId);
 }
 
-std::string StopVisualServiceRequest::getCidrIp()const
-{
-	return cidrIp_;
-}
-
-void StopVisualServiceRequest::setCidrIp(const std::string& cidrIp)
-{
-	cidrIp_ = cidrIp;
-	setCoreParameter("CidrIp", cidrIp);
-}
-
 std::string StopVisualServiceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,27 @@ void StopVisualServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int StopVisualServiceRequest::getPort()const
+{
+	return port_;
+}
+
+void StopVisualServiceRequest::setPort(int port)
+{
+	port_ = port;
+	setCoreParameter("Port", std::to_string(port));
+}
+
+std::string StopVisualServiceRequest::getCidrIp()const
+{
+	return cidrIp_;
+}
+
+void StopVisualServiceRequest::setCidrIp(const std::string& cidrIp)
+{
+	cidrIp_ = cidrIp;
+	setCoreParameter("CidrIp", cidrIp);
 }
 

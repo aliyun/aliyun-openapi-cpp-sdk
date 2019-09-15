@@ -25,28 +25,6 @@ AddContainerAppRequest::AddContainerAppRequest() :
 AddContainerAppRequest::~AddContainerAppRequest()
 {}
 
-std::string AddContainerAppRequest::getContainerType()const
-{
-	return containerType_;
-}
-
-void AddContainerAppRequest::setContainerType(const std::string& containerType)
-{
-	containerType_ = containerType;
-	setCoreParameter("ContainerType", containerType);
-}
-
-std::string AddContainerAppRequest::getName()const
-{
-	return name_;
-}
-
-void AddContainerAppRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string AddContainerAppRequest::getDescription()const
 {
 	return description_;
@@ -69,17 +47,6 @@ void AddContainerAppRequest::setRepository(const std::string& repository)
 	setCoreParameter("Repository", repository);
 }
 
-std::string AddContainerAppRequest::getImageTag()const
-{
-	return imageTag_;
-}
-
-void AddContainerAppRequest::setImageTag(const std::string& imageTag)
-{
-	imageTag_ = imageTag;
-	setCoreParameter("ImageTag", imageTag);
-}
-
 std::string AddContainerAppRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +56,38 @@ void AddContainerAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AddContainerAppRequest::getContainerType()const
+{
+	return containerType_;
+}
+
+void AddContainerAppRequest::setContainerType(const std::string& containerType)
+{
+	containerType_ = containerType;
+	setCoreParameter("ContainerType", containerType);
+}
+
+std::string AddContainerAppRequest::getName()const
+{
+	return name_;
+}
+
+void AddContainerAppRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string AddContainerAppRequest::getImageTag()const
+{
+	return imageTag_;
+}
+
+void AddContainerAppRequest::setImageTag(const std::string& imageTag)
+{
+	imageTag_ = imageTag;
+	setCoreParameter("ImageTag", imageTag);
 }
 

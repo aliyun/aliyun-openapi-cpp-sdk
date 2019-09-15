@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getQueueName()const;
 				void setQueueName(const std::string& queueName);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getComputeInstanceType()const;
-				void setComputeInstanceType(const std::string& computeInstanceType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getComputeInstanceType()const;
+				void setComputeInstanceType(const std::string& computeInstanceType);
 
             private:
 				std::string queueName_;
-				std::string resourceGroupId_;
 				std::string clusterId_;
-				std::string computeInstanceType_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
+				std::string computeInstanceType_;
 
 			};
 		}

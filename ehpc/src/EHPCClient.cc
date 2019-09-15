@@ -31,21 +31,21 @@ EHPCClient::EHPCClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ehpc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 EHPCClient::EHPCClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ehpc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 EHPCClient::EHPCClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ehpc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 EHPCClient::~EHPCClient()
@@ -195,42 +195,6 @@ EHPCClient::DeleteGWSClusterOutcomeCallable EHPCClient::deleteGWSClusterCallable
 	return task->get_future();
 }
 
-EHPCClient::DescribeClusterOutcome EHPCClient::describeCluster(const DescribeClusterRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeClusterOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeClusterOutcome(DescribeClusterResult(outcome.result()));
-	else
-		return DescribeClusterOutcome(outcome.error());
-}
-
-void EHPCClient::describeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCluster(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::DescribeClusterOutcomeCallable EHPCClient::describeClusterCallable(const DescribeClusterRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeClusterOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCluster(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::ListUsersOutcome EHPCClient::listUsers(const ListUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -267,36 +231,72 @@ EHPCClient::ListUsersOutcomeCallable EHPCClient::listUsersCallable(const ListUse
 	return task->get_future();
 }
 
-EHPCClient::PullImageOutcome EHPCClient::pullImage(const PullImageRequest &request) const
+EHPCClient::DescribeClusterOutcome EHPCClient::describeCluster(const DescribeClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return PullImageOutcome(endpointOutcome.error());
+		return DescribeClusterOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return PullImageOutcome(PullImageResult(outcome.result()));
+		return DescribeClusterOutcome(DescribeClusterResult(outcome.result()));
 	else
-		return PullImageOutcome(outcome.error());
+		return DescribeClusterOutcome(outcome.error());
 }
 
-void EHPCClient::pullImageAsync(const PullImageRequest& request, const PullImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EHPCClient::describeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, pullImage(request), context);
+		handler(this, request, describeCluster(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EHPCClient::PullImageOutcomeCallable EHPCClient::pullImageCallable(const PullImageRequest &request) const
+EHPCClient::DescribeClusterOutcomeCallable EHPCClient::describeClusterCallable(const DescribeClusterRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<PullImageOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeClusterOutcome()>>(
 			[this, request]()
 			{
-			return this->pullImage(request);
+			return this->describeCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::DescribeContainerAppOutcome EHPCClient::describeContainerApp(const DescribeContainerAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeContainerAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeContainerAppOutcome(DescribeContainerAppResult(outcome.result()));
+	else
+		return DescribeContainerAppOutcome(outcome.error());
+}
+
+void EHPCClient::describeContainerAppAsync(const DescribeContainerAppRequest& request, const DescribeContainerAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeContainerApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::DescribeContainerAppOutcomeCallable EHPCClient::describeContainerAppCallable(const DescribeContainerAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeContainerAppOutcome()>>(
+			[this, request]()
+			{
+			return this->describeContainerApp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,36 +339,36 @@ EHPCClient::StopNodesOutcomeCallable EHPCClient::stopNodesCallable(const StopNod
 	return task->get_future();
 }
 
-EHPCClient::DescribeContainerAppOutcome EHPCClient::describeContainerApp(const DescribeContainerAppRequest &request) const
+EHPCClient::PullImageOutcome EHPCClient::pullImage(const PullImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeContainerAppOutcome(endpointOutcome.error());
+		return PullImageOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeContainerAppOutcome(DescribeContainerAppResult(outcome.result()));
+		return PullImageOutcome(PullImageResult(outcome.result()));
 	else
-		return DescribeContainerAppOutcome(outcome.error());
+		return PullImageOutcome(outcome.error());
 }
 
-void EHPCClient::describeContainerAppAsync(const DescribeContainerAppRequest& request, const DescribeContainerAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EHPCClient::pullImageAsync(const PullImageRequest& request, const PullImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeContainerApp(request), context);
+		handler(this, request, pullImage(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EHPCClient::DescribeContainerAppOutcomeCallable EHPCClient::describeContainerAppCallable(const DescribeContainerAppRequest &request) const
+EHPCClient::PullImageOutcomeCallable EHPCClient::pullImageCallable(const PullImageRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeContainerAppOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<PullImageOutcome()>>(
 			[this, request]()
 			{
-			return this->describeContainerApp(request);
+			return this->pullImage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,42 +519,6 @@ EHPCClient::DescribeImagePriceOutcomeCallable EHPCClient::describeImagePriceCall
 	return task->get_future();
 }
 
-EHPCClient::GetAutoScaleConfigOutcome EHPCClient::getAutoScaleConfig(const GetAutoScaleConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetAutoScaleConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetAutoScaleConfigOutcome(GetAutoScaleConfigResult(outcome.result()));
-	else
-		return GetAutoScaleConfigOutcome(outcome.error());
-}
-
-void EHPCClient::getAutoScaleConfigAsync(const GetAutoScaleConfigRequest& request, const GetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getAutoScaleConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::GetAutoScaleConfigOutcomeCallable EHPCClient::getAutoScaleConfigCallable(const GetAutoScaleConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetAutoScaleConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->getAutoScaleConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::StopGWSInstanceOutcome EHPCClient::stopGWSInstance(const StopGWSInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +549,42 @@ EHPCClient::StopGWSInstanceOutcomeCallable EHPCClient::stopGWSInstanceCallable(c
 			[this, request]()
 			{
 			return this->stopGWSInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::GetAutoScaleConfigOutcome EHPCClient::getAutoScaleConfig(const GetAutoScaleConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAutoScaleConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAutoScaleConfigOutcome(GetAutoScaleConfigResult(outcome.result()));
+	else
+		return GetAutoScaleConfigOutcome(outcome.error());
+}
+
+void EHPCClient::getAutoScaleConfigAsync(const GetAutoScaleConfigRequest& request, const GetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAutoScaleConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::GetAutoScaleConfigOutcomeCallable EHPCClient::getAutoScaleConfigCallable(const GetAutoScaleConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAutoScaleConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getAutoScaleConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1131,42 +1131,6 @@ EHPCClient::DescribeGWSClustersOutcomeCallable EHPCClient::describeGWSClustersCa
 	return task->get_future();
 }
 
-EHPCClient::DeleteJobsOutcome EHPCClient::deleteJobs(const DeleteJobsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteJobsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteJobsOutcome(DeleteJobsResult(outcome.result()));
-	else
-		return DeleteJobsOutcome(outcome.error());
-}
-
-void EHPCClient::deleteJobsAsync(const DeleteJobsRequest& request, const DeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteJobs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::DeleteJobsOutcomeCallable EHPCClient::deleteJobsCallable(const DeleteJobsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteJobsOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteJobs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::ListContainerImagesOutcome EHPCClient::listContainerImages(const ListContainerImagesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,6 +1161,42 @@ EHPCClient::ListContainerImagesOutcomeCallable EHPCClient::listContainerImagesCa
 			[this, request]()
 			{
 			return this->listContainerImages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::DeleteJobsOutcome EHPCClient::deleteJobs(const DeleteJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteJobsOutcome(DeleteJobsResult(outcome.result()));
+	else
+		return DeleteJobsOutcome(outcome.error());
+}
+
+void EHPCClient::deleteJobsAsync(const DeleteJobsRequest& request, const DeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::DeleteJobsOutcomeCallable EHPCClient::deleteJobsCallable(const DeleteJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1419,42 +1419,6 @@ EHPCClient::QueryServicePackAndPriceOutcomeCallable EHPCClient::queryServicePack
 	return task->get_future();
 }
 
-EHPCClient::ListVolumesOutcome EHPCClient::listVolumes(const ListVolumesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListVolumesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListVolumesOutcome(ListVolumesResult(outcome.result()));
-	else
-		return ListVolumesOutcome(outcome.error());
-}
-
-void EHPCClient::listVolumesAsync(const ListVolumesRequest& request, const ListVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listVolumes(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::ListVolumesOutcomeCallable EHPCClient::listVolumesCallable(const ListVolumesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListVolumesOutcome()>>(
-			[this, request]()
-			{
-			return this->listVolumes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::DeleteContainerAppsOutcome EHPCClient::deleteContainerApps(const DeleteContainerAppsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1449,42 @@ EHPCClient::DeleteContainerAppsOutcomeCallable EHPCClient::deleteContainerAppsCa
 			[this, request]()
 			{
 			return this->deleteContainerApps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::ListVolumesOutcome EHPCClient::listVolumes(const ListVolumesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVolumesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVolumesOutcome(ListVolumesResult(outcome.result()));
+	else
+		return ListVolumesOutcome(outcome.error());
+}
+
+void EHPCClient::listVolumesAsync(const ListVolumesRequest& request, const ListVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVolumes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListVolumesOutcomeCallable EHPCClient::listVolumesCallable(const ListVolumesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVolumesOutcome()>>(
+			[this, request]()
+			{
+			return this->listVolumes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2067,42 +2067,6 @@ EHPCClient::CreateGWSInstanceOutcomeCallable EHPCClient::createGWSInstanceCallab
 	return task->get_future();
 }
 
-EHPCClient::UpdateClusterVolumesOutcome EHPCClient::updateClusterVolumes(const UpdateClusterVolumesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateClusterVolumesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateClusterVolumesOutcome(UpdateClusterVolumesResult(outcome.result()));
-	else
-		return UpdateClusterVolumesOutcome(outcome.error());
-}
-
-void EHPCClient::updateClusterVolumesAsync(const UpdateClusterVolumesRequest& request, const UpdateClusterVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateClusterVolumes(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::UpdateClusterVolumesOutcomeCallable EHPCClient::updateClusterVolumesCallable(const UpdateClusterVolumesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateClusterVolumesOutcome()>>(
-			[this, request]()
-			{
-			return this->updateClusterVolumes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::ListCurrentClientVersionOutcome EHPCClient::listCurrentClientVersion(const ListCurrentClientVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2097,42 @@ EHPCClient::ListCurrentClientVersionOutcomeCallable EHPCClient::listCurrentClien
 			[this, request]()
 			{
 			return this->listCurrentClientVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::UpdateClusterVolumesOutcome EHPCClient::updateClusterVolumes(const UpdateClusterVolumesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateClusterVolumesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateClusterVolumesOutcome(UpdateClusterVolumesResult(outcome.result()));
+	else
+		return UpdateClusterVolumesOutcome(outcome.error());
+}
+
+void EHPCClient::updateClusterVolumesAsync(const UpdateClusterVolumesRequest& request, const UpdateClusterVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateClusterVolumes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::UpdateClusterVolumesOutcomeCallable EHPCClient::updateClusterVolumesCallable(const UpdateClusterVolumesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateClusterVolumesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateClusterVolumes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2247,42 +2247,6 @@ EHPCClient::SetAutoScaleConfigOutcomeCallable EHPCClient::setAutoScaleConfigCall
 	return task->get_future();
 }
 
-EHPCClient::ListSoftwaresOutcome EHPCClient::listSoftwares(const ListSoftwaresRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListSoftwaresOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListSoftwaresOutcome(ListSoftwaresResult(outcome.result()));
-	else
-		return ListSoftwaresOutcome(outcome.error());
-}
-
-void EHPCClient::listSoftwaresAsync(const ListSoftwaresRequest& request, const ListSoftwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listSoftwares(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::ListSoftwaresOutcomeCallable EHPCClient::listSoftwaresCallable(const ListSoftwaresRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListSoftwaresOutcome()>>(
-			[this, request]()
-			{
-			return this->listSoftwares(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::AddNodesOutcome EHPCClient::addNodes(const AddNodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2277,42 @@ EHPCClient::AddNodesOutcomeCallable EHPCClient::addNodesCallable(const AddNodesR
 			[this, request]()
 			{
 			return this->addNodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::ListSoftwaresOutcome EHPCClient::listSoftwares(const ListSoftwaresRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSoftwaresOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSoftwaresOutcome(ListSoftwaresResult(outcome.result()));
+	else
+		return ListSoftwaresOutcome(outcome.error());
+}
+
+void EHPCClient::listSoftwaresAsync(const ListSoftwaresRequest& request, const ListSoftwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSoftwares(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListSoftwaresOutcomeCallable EHPCClient::listSoftwaresCallable(const ListSoftwaresRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSoftwaresOutcome()>>(
+			[this, request]()
+			{
+			return this->listSoftwares(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2463,42 +2463,6 @@ EHPCClient::ModifyUserGroupsOutcomeCallable EHPCClient::modifyUserGroupsCallable
 	return task->get_future();
 }
 
-EHPCClient::StartClusterOutcome EHPCClient::startCluster(const StartClusterRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartClusterOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartClusterOutcome(StartClusterResult(outcome.result()));
-	else
-		return StartClusterOutcome(outcome.error());
-}
-
-void EHPCClient::startClusterAsync(const StartClusterRequest& request, const StartClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startCluster(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::StartClusterOutcomeCallable EHPCClient::startClusterCallable(const StartClusterRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartClusterOutcome()>>(
-			[this, request]()
-			{
-			return this->startCluster(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::SetQueueOutcome EHPCClient::setQueue(const SetQueueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2535,6 +2499,42 @@ EHPCClient::SetQueueOutcomeCallable EHPCClient::setQueueCallable(const SetQueueR
 	return task->get_future();
 }
 
+EHPCClient::StartClusterOutcome EHPCClient::startCluster(const StartClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartClusterOutcome(StartClusterResult(outcome.result()));
+	else
+		return StartClusterOutcome(outcome.error());
+}
+
+void EHPCClient::startClusterAsync(const StartClusterRequest& request, const StartClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::StartClusterOutcomeCallable EHPCClient::startClusterCallable(const StartClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->startCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::ListCustomImagesOutcome EHPCClient::listCustomImages(const ListCustomImagesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2565,6 +2565,42 @@ EHPCClient::ListCustomImagesOutcomeCallable EHPCClient::listCustomImagesCallable
 			[this, request]()
 			{
 			return this->listCustomImages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::CreateGWSClusterOutcome EHPCClient::createGWSCluster(const CreateGWSClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGWSClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGWSClusterOutcome(CreateGWSClusterResult(outcome.result()));
+	else
+		return CreateGWSClusterOutcome(outcome.error());
+}
+
+void EHPCClient::createGWSClusterAsync(const CreateGWSClusterRequest& request, const CreateGWSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGWSCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::CreateGWSClusterOutcomeCallable EHPCClient::createGWSClusterCallable(const CreateGWSClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGWSClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createGWSCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2637,42 +2673,6 @@ EHPCClient::ListJobTemplatesOutcomeCallable EHPCClient::listJobTemplatesCallable
 			[this, request]()
 			{
 			return this->listJobTemplates(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EHPCClient::CreateGWSClusterOutcome EHPCClient::createGWSCluster(const CreateGWSClusterRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateGWSClusterOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateGWSClusterOutcome(CreateGWSClusterResult(outcome.result()));
-	else
-		return CreateGWSClusterOutcome(outcome.error());
-}
-
-void EHPCClient::createGWSClusterAsync(const CreateGWSClusterRequest& request, const CreateGWSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createGWSCluster(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::CreateGWSClusterOutcomeCallable EHPCClient::createGWSClusterCallable(const CreateGWSClusterRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateGWSClusterOutcome()>>(
-			[this, request]()
-			{
-			return this->createGWSCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2931,6 +2931,42 @@ EHPCClient::StopVisualServiceOutcomeCallable EHPCClient::stopVisualServiceCallab
 	return task->get_future();
 }
 
+EHPCClient::DescribeImageOutcome EHPCClient::describeImage(const DescribeImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImageOutcome(DescribeImageResult(outcome.result()));
+	else
+		return DescribeImageOutcome(outcome.error());
+}
+
+void EHPCClient::describeImageAsync(const DescribeImageRequest& request, const DescribeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::DescribeImageOutcomeCallable EHPCClient::describeImageCallable(const DescribeImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::CreateClusterOutcome EHPCClient::createCluster(const CreateClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2997,42 +3033,6 @@ EHPCClient::ModifyUserPasswordsOutcomeCallable EHPCClient::modifyUserPasswordsCa
 			[this, request]()
 			{
 			return this->modifyUserPasswords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EHPCClient::DescribeImageOutcome EHPCClient::describeImage(const DescribeImageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeImageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeImageOutcome(DescribeImageResult(outcome.result()));
-	else
-		return DescribeImageOutcome(outcome.error());
-}
-
-void EHPCClient::describeImageAsync(const DescribeImageRequest& request, const DescribeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeImage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::DescribeImageOutcomeCallable EHPCClient::describeImageCallable(const DescribeImageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeImageOutcome()>>(
-			[this, request]()
-			{
-			return this->describeImage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -25,6 +25,57 @@ ModifyImageGatewayConfigRequest::ModifyImageGatewayConfigRequest() :
 ModifyImageGatewayConfigRequest::~ModifyImageGatewayConfigRequest()
 {}
 
+std::vector<ModifyImageGatewayConfigRequest::Repo> ModifyImageGatewayConfigRequest::getRepo()const
+{
+	return repo_;
+}
+
+void ModifyImageGatewayConfigRequest::setRepo(const std::vector<Repo>& repo)
+{
+	repo_ = repo;
+	int i = 0;
+	for(int i = 0; i!= repo.size(); i++)	{
+		auto obj = repo.at(i);
+		std::string str ="Repo."+ std::to_string(i);
+		setCoreParameter(str + ".Auth", obj.auth);
+		setCoreParameter(str + ".Location", obj.location);
+		setCoreParameter(str + ".URL", obj.uRL);
+	}
+}
+
+std::string ModifyImageGatewayConfigRequest::getDBServerInfo()const
+{
+	return dBServerInfo_;
+}
+
+void ModifyImageGatewayConfigRequest::setDBServerInfo(const std::string& dBServerInfo)
+{
+	dBServerInfo_ = dBServerInfo;
+	setCoreParameter("DBServerInfo", dBServerInfo);
+}
+
+std::string ModifyImageGatewayConfigRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ModifyImageGatewayConfigRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ModifyImageGatewayConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyImageGatewayConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyImageGatewayConfigRequest::getDefaultRepoLocation()const
 {
 	return defaultRepoLocation_;
@@ -45,24 +96,6 @@ void ModifyImageGatewayConfigRequest::setDBPassword(const std::string& dBPasswor
 {
 	dBPassword_ = dBPassword;
 	setCoreParameter("DBPassword", dBPassword);
-}
-
-std::vector<ModifyImageGatewayConfigRequest::Repo> ModifyImageGatewayConfigRequest::getRepo()const
-{
-	return repo_;
-}
-
-void ModifyImageGatewayConfigRequest::setRepo(const std::vector<Repo>& repo)
-{
-	repo_ = repo;
-	int i = 0;
-	for(int i = 0; i!= repo.size(); i++)	{
-		auto obj = repo.at(i);
-		std::string str ="Repo."+ std::to_string(i);
-		setCoreParameter(str + ".Auth", obj.auth);
-		setCoreParameter(str + ".Location", obj.location);
-		setCoreParameter(str + ".URL", obj.uRL);
-	}
 }
 
 std::string ModifyImageGatewayConfigRequest::getDBType()const
@@ -87,17 +120,6 @@ void ModifyImageGatewayConfigRequest::setDBUsername(const std::string& dBUsernam
 	setCoreParameter("DBUsername", dBUsername);
 }
 
-std::string ModifyImageGatewayConfigRequest::getDBServerInfo()const
-{
-	return dBServerInfo_;
-}
-
-void ModifyImageGatewayConfigRequest::setDBServerInfo(const std::string& dBServerInfo)
-{
-	dBServerInfo_ = dBServerInfo;
-	setCoreParameter("DBServerInfo", dBServerInfo);
-}
-
 int ModifyImageGatewayConfigRequest::getPullUpdateTimeout()const
 {
 	return pullUpdateTimeout_;
@@ -107,28 +129,6 @@ void ModifyImageGatewayConfigRequest::setPullUpdateTimeout(int pullUpdateTimeout
 {
 	pullUpdateTimeout_ = pullUpdateTimeout;
 	setCoreParameter("PullUpdateTimeout", std::to_string(pullUpdateTimeout));
-}
-
-std::string ModifyImageGatewayConfigRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ModifyImageGatewayConfigRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string ModifyImageGatewayConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyImageGatewayConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyImageGatewayConfigRequest::getImageExpirationTimeout()const

@@ -41,28 +41,6 @@ void ListInvocationResultsRequest::setInstance(const std::vector<Instance>& inst
 	}
 }
 
-std::string ListInvocationResultsRequest::getInvokeRecordStatus()const
-{
-	return invokeRecordStatus_;
-}
-
-void ListInvocationResultsRequest::setInvokeRecordStatus(const std::string& invokeRecordStatus)
-{
-	invokeRecordStatus_ = invokeRecordStatus;
-	setCoreParameter("InvokeRecordStatus", invokeRecordStatus);
-}
-
-int ListInvocationResultsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListInvocationResultsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListInvocationResultsRequest::getClusterId()const
 {
 	return clusterId_;
@@ -105,5 +83,27 @@ void ListInvocationResultsRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListInvocationResultsRequest::getInvokeRecordStatus()const
+{
+	return invokeRecordStatus_;
+}
+
+void ListInvocationResultsRequest::setInvokeRecordStatus(const std::string& invokeRecordStatus)
+{
+	invokeRecordStatus_ = invokeRecordStatus;
+	setCoreParameter("InvokeRecordStatus", invokeRecordStatus);
+}
+
+int ListInvocationResultsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListInvocationResultsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

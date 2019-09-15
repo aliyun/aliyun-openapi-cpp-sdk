@@ -25,17 +25,6 @@ DescribeJobRequest::DescribeJobRequest() :
 DescribeJobRequest::~DescribeJobRequest()
 {}
 
-std::string DescribeJobRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void DescribeJobRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
-}
-
 std::string DescribeJobRequest::getClusterId()const
 {
 	return clusterId_;
@@ -56,5 +45,16 @@ void DescribeJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeJobRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void DescribeJobRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setCoreParameter("JobId", jobId);
 }
 

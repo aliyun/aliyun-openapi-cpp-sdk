@@ -36,17 +36,6 @@ void SubmitJobRequest::setStderrRedirectPath(const std::string& stderrRedirectPa
 	setCoreParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
-std::string SubmitJobRequest::getVariables()const
-{
-	return variables_;
-}
-
-void SubmitJobRequest::setVariables(const std::string& variables)
-{
-	variables_ = variables;
-	setCoreParameter("Variables", variables);
-}
-
 std::string SubmitJobRequest::getRunasUserPassword()const
 {
 	return runasUserPassword_;
@@ -56,61 +45,6 @@ void SubmitJobRequest::setRunasUserPassword(const std::string& runasUserPassword
 {
 	runasUserPassword_ = runasUserPassword;
 	setCoreParameter("RunasUserPassword", runasUserPassword);
-}
-
-std::string SubmitJobRequest::getPostCmdLine()const
-{
-	return postCmdLine_;
-}
-
-void SubmitJobRequest::setPostCmdLine(const std::string& postCmdLine)
-{
-	postCmdLine_ = postCmdLine;
-	setCoreParameter("PostCmdLine", postCmdLine);
-}
-
-std::string SubmitJobRequest::getRunasUser()const
-{
-	return runasUser_;
-}
-
-void SubmitJobRequest::setRunasUser(const std::string& runasUser)
-{
-	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
-}
-
-std::string SubmitJobRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void SubmitJobRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-bool SubmitJobRequest::getReRunable()const
-{
-	return reRunable_;
-}
-
-void SubmitJobRequest::setReRunable(bool reRunable)
-{
-	reRunable_ = reRunable;
-	setCoreParameter("ReRunable", reRunable ? "true" : "false");
-}
-
-int SubmitJobRequest::getPriority()const
-{
-	return priority_;
-}
-
-void SubmitJobRequest::setPriority(int priority)
-{
-	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
 }
 
 std::string SubmitJobRequest::getCommandLine()const
@@ -179,6 +113,83 @@ void SubmitJobRequest::setPackagePath(const std::string& packagePath)
 	setCoreParameter("PackagePath", packagePath);
 }
 
+std::string SubmitJobRequest::getStdoutRedirectPath()const
+{
+	return stdoutRedirectPath_;
+}
+
+void SubmitJobRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
+{
+	stdoutRedirectPath_ = stdoutRedirectPath;
+	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
+}
+
+std::string SubmitJobRequest::getVariables()const
+{
+	return variables_;
+}
+
+void SubmitJobRequest::setVariables(const std::string& variables)
+{
+	variables_ = variables;
+	setCoreParameter("Variables", variables);
+}
+
+std::string SubmitJobRequest::getPostCmdLine()const
+{
+	return postCmdLine_;
+}
+
+void SubmitJobRequest::setPostCmdLine(const std::string& postCmdLine)
+{
+	postCmdLine_ = postCmdLine;
+	setCoreParameter("PostCmdLine", postCmdLine);
+}
+
+std::string SubmitJobRequest::getRunasUser()const
+{
+	return runasUser_;
+}
+
+void SubmitJobRequest::setRunasUser(const std::string& runasUser)
+{
+	runasUser_ = runasUser;
+	setCoreParameter("RunasUser", runasUser);
+}
+
+std::string SubmitJobRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void SubmitJobRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+bool SubmitJobRequest::getReRunable()const
+{
+	return reRunable_;
+}
+
+void SubmitJobRequest::setReRunable(bool reRunable)
+{
+	reRunable_ = reRunable;
+	setCoreParameter("ReRunable", reRunable ? "true" : "false");
+}
+
+int SubmitJobRequest::getPriority()const
+{
+	return priority_;
+}
+
+void SubmitJobRequest::setPriority(int priority)
+{
+	priority_ = priority;
+	setCoreParameter("Priority", std::to_string(priority));
+}
+
 std::string SubmitJobRequest::getInputFileUrl()const
 {
 	return inputFileUrl_;
@@ -199,17 +210,6 @@ void SubmitJobRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string SubmitJobRequest::getStdoutRedirectPath()const
-{
-	return stdoutRedirectPath_;
-}
-
-void SubmitJobRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
-{
-	stdoutRedirectPath_ = stdoutRedirectPath;
-	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 
 std::string SubmitJobRequest::getContainerId()const

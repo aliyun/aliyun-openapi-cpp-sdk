@@ -36,17 +36,6 @@ void ModifyContainerAppAttributesRequest::setDescription(const std::string& desc
 	setCoreParameter("Description", description);
 }
 
-std::string ModifyContainerAppAttributesRequest::getContainerId()const
-{
-	return containerId_;
-}
-
-void ModifyContainerAppAttributesRequest::setContainerId(const std::string& containerId)
-{
-	containerId_ = containerId;
-	setCoreParameter("ContainerId", containerId);
-}
-
 std::string ModifyContainerAppAttributesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void ModifyContainerAppAttributesRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyContainerAppAttributesRequest::getContainerId()const
+{
+	return containerId_;
+}
+
+void ModifyContainerAppAttributesRequest::setContainerId(const std::string& containerId)
+{
+	containerId_ = containerId;
+	setCoreParameter("ContainerId", containerId);
 }
 

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CreateGWSClusterRequest();
 				~CreateGWSClusterRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getClusterType()const;
 				void setClusterType(const std::string& clusterType);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string clusterType_;
 				std::string vpcId_;
 				std::string name_;
-				std::string accessKeyId_;
 
 			};
 		}

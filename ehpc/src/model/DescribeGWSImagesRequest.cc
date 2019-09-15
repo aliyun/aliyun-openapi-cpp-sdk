@@ -25,17 +25,6 @@ DescribeGWSImagesRequest::DescribeGWSImagesRequest() :
 DescribeGWSImagesRequest::~DescribeGWSImagesRequest()
 {}
 
-int DescribeGWSImagesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeGWSImagesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int DescribeGWSImagesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -56,5 +45,16 @@ void DescribeGWSImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int DescribeGWSImagesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeGWSImagesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

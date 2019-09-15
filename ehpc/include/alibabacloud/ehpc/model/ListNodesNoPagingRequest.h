@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ListNodesNoPagingRequest();
 				~ListNodesNoPagingRequest();
 
-				std::string getHostName()const;
-				void setHostName(const std::string& hostName);
 				std::string getRole()const;
 				void setRole(const std::string& role);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				bool getOnlyDetached()const;
-				void setOnlyDetached(bool onlyDetached);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getHostName()const;
+				void setHostName(const std::string& hostName);
+				bool getOnlyDetached()const;
+				void setOnlyDetached(bool onlyDetached);
 
             private:
-				std::string hostName_;
 				std::string role_;
 				std::string clusterId_;
-				bool onlyDetached_;
 				std::string accessKeyId_;
+				std::string hostName_;
+				bool onlyDetached_;
 
 			};
 		}

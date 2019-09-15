@@ -25,28 +25,6 @@ ListCloudMetricProfilingsRequest::ListCloudMetricProfilingsRequest() :
 ListCloudMetricProfilingsRequest::~ListCloudMetricProfilingsRequest()
 {}
 
-std::string ListCloudMetricProfilingsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListCloudMetricProfilingsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListCloudMetricProfilingsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListCloudMetricProfilingsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListCloudMetricProfilingsRequest::getClusterId()const
 {
 	return clusterId_;
@@ -78,5 +56,27 @@ void ListCloudMetricProfilingsRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListCloudMetricProfilingsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListCloudMetricProfilingsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListCloudMetricProfilingsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListCloudMetricProfilingsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

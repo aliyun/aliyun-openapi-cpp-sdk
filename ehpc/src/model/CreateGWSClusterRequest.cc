@@ -25,6 +25,17 @@ CreateGWSClusterRequest::CreateGWSClusterRequest() :
 CreateGWSClusterRequest::~CreateGWSClusterRequest()
 {}
 
+std::string CreateGWSClusterRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateGWSClusterRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string CreateGWSClusterRequest::getClusterType()const
 {
 	return clusterType_;
@@ -56,16 +67,5 @@ void CreateGWSClusterRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string CreateGWSClusterRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateGWSClusterRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

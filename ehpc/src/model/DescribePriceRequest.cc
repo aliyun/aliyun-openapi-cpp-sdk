@@ -25,17 +25,6 @@ DescribePriceRequest::DescribePriceRequest() :
 DescribePriceRequest::~DescribePriceRequest()
 {}
 
-std::string DescribePriceRequest::getPriceUnit()const
-{
-	return priceUnit_;
-}
-
-void DescribePriceRequest::setPriceUnit(const std::string& priceUnit)
-{
-	priceUnit_ = priceUnit;
-	setCoreParameter("PriceUnit", priceUnit);
-}
-
 std::vector<DescribePriceRequest::Commodities> DescribePriceRequest::getCommodities()const
 {
 	return commodities_;
@@ -58,17 +47,6 @@ void DescribePriceRequest::setCommodities(const std::vector<Commodities>& commod
 	}
 }
 
-std::string DescribePriceRequest::getChargeType()const
-{
-	return chargeType_;
-}
-
-void DescribePriceRequest::setChargeType(const std::string& chargeType)
-{
-	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
-}
-
 std::string DescribePriceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,6 +56,28 @@ void DescribePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribePriceRequest::getPriceUnit()const
+{
+	return priceUnit_;
+}
+
+void DescribePriceRequest::setPriceUnit(const std::string& priceUnit)
+{
+	priceUnit_ = priceUnit;
+	setCoreParameter("PriceUnit", priceUnit);
+}
+
+std::string DescribePriceRequest::getChargeType()const
+{
+	return chargeType_;
+}
+
+void DescribePriceRequest::setChargeType(const std::string& chargeType)
+{
+	chargeType_ = chargeType;
+	setCoreParameter("ChargeType", chargeType);
 }
 
 std::string DescribePriceRequest::getOrderType()const

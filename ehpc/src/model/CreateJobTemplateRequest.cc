@@ -36,6 +36,28 @@ void CreateJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRe
 	setCoreParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
+std::string CreateJobTemplateRequest::getCommandLine()const
+{
+	return commandLine_;
+}
+
+void CreateJobTemplateRequest::setCommandLine(const std::string& commandLine)
+{
+	commandLine_ = commandLine;
+	setCoreParameter("CommandLine", commandLine);
+}
+
+std::string CreateJobTemplateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string CreateJobTemplateRequest::getArrayRequest()const
 {
 	return arrayRequest_;
@@ -58,6 +80,17 @@ void CreateJobTemplateRequest::setPackagePath(const std::string& packagePath)
 	setCoreParameter("PackagePath", packagePath);
 }
 
+std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
+{
+	return stdoutRedirectPath_;
+}
+
+void CreateJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
+{
+	stdoutRedirectPath_ = stdoutRedirectPath;
+	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
+}
+
 std::string CreateJobTemplateRequest::getVariables()const
 {
 	return variables_;
@@ -69,17 +102,6 @@ void CreateJobTemplateRequest::setVariables(const std::string& variables)
 	setCoreParameter("Variables", variables);
 }
 
-std::string CreateJobTemplateRequest::getName()const
-{
-	return name_;
-}
-
-void CreateJobTemplateRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateJobTemplateRequest::getRunasUser()const
 {
 	return runasUser_;
@@ -89,17 +111,6 @@ void CreateJobTemplateRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
 	setCoreParameter("RunasUser", runasUser);
-}
-
-std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
-{
-	return stdoutRedirectPath_;
-}
-
-void CreateJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
-{
-	stdoutRedirectPath_ = stdoutRedirectPath;
-	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 
 bool CreateJobTemplateRequest::getReRunable()const
@@ -124,25 +135,14 @@ void CreateJobTemplateRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string CreateJobTemplateRequest::getCommandLine()const
+std::string CreateJobTemplateRequest::getName()const
 {
-	return commandLine_;
+	return name_;
 }
 
-void CreateJobTemplateRequest::setCommandLine(const std::string& commandLine)
+void CreateJobTemplateRequest::setName(const std::string& name)
 {
-	commandLine_ = commandLine;
-	setCoreParameter("CommandLine", commandLine);
-}
-
-std::string CreateJobTemplateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

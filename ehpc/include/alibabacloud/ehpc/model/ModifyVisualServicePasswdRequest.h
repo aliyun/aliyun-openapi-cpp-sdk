@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ModifyVisualServicePasswdRequest();
 				~ModifyVisualServicePasswdRequest();
 
-				std::string getPasswd()const;
-				void setPasswd(const std::string& passwd);
 				std::string getRunasUserPassword()const;
 				void setRunasUserPassword(const std::string& runasUserPassword);
 				std::string getRunasUser()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPasswd()const;
+				void setPasswd(const std::string& passwd);
 
             private:
-				std::string passwd_;
 				std::string runasUserPassword_;
 				std::string runasUser_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string passwd_;
 
 			};
 		}

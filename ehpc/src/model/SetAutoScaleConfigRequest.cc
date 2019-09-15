@@ -25,6 +25,50 @@ SetAutoScaleConfigRequest::SetAutoScaleConfigRequest() :
 SetAutoScaleConfigRequest::~SetAutoScaleConfigRequest()
 {}
 
+float SetAutoScaleConfigRequest::getSpotPriceLimit()const
+{
+	return spotPriceLimit_;
+}
+
+void SetAutoScaleConfigRequest::setSpotPriceLimit(float spotPriceLimit)
+{
+	spotPriceLimit_ = spotPriceLimit;
+	setCoreParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
+}
+
+std::string SetAutoScaleConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetAutoScaleConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetAutoScaleConfigRequest::getExcludeNodes()const
+{
+	return excludeNodes_;
+}
+
+void SetAutoScaleConfigRequest::setExcludeNodes(const std::string& excludeNodes)
+{
+	excludeNodes_ = excludeNodes;
+	setCoreParameter("ExcludeNodes", excludeNodes);
+}
+
+int SetAutoScaleConfigRequest::getExtraNodesGrowRatio()const
+{
+	return extraNodesGrowRatio_;
+}
+
+void SetAutoScaleConfigRequest::setExtraNodesGrowRatio(int extraNodesGrowRatio)
+{
+	extraNodesGrowRatio_ = extraNodesGrowRatio;
+	setCoreParameter("ExtraNodesGrowRatio", std::to_string(extraNodesGrowRatio));
+}
+
 int SetAutoScaleConfigRequest::getShrinkIdleTimes()const
 {
 	return shrinkIdleTimes_;
@@ -69,17 +113,6 @@ void SetAutoScaleConfigRequest::setEnableAutoGrow(bool enableAutoGrow)
 	setCoreParameter("EnableAutoGrow", enableAutoGrow ? "true" : "false");
 }
 
-float SetAutoScaleConfigRequest::getSpotPriceLimit()const
-{
-	return spotPriceLimit_;
-}
-
-void SetAutoScaleConfigRequest::setSpotPriceLimit(float spotPriceLimit)
-{
-	spotPriceLimit_ = spotPriceLimit;
-	setCoreParameter("SpotPriceLimit", std::to_string(spotPriceLimit));
-}
-
 bool SetAutoScaleConfigRequest::getEnableAutoShrink()const
 {
 	return enableAutoShrink_;
@@ -89,17 +122,6 @@ void SetAutoScaleConfigRequest::setEnableAutoShrink(bool enableAutoShrink)
 {
 	enableAutoShrink_ = enableAutoShrink;
 	setCoreParameter("EnableAutoShrink", enableAutoShrink ? "true" : "false");
-}
-
-std::string SetAutoScaleConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetAutoScaleConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetAutoScaleConfigRequest::getSpotStrategy()const
@@ -122,17 +144,6 @@ void SetAutoScaleConfigRequest::setMaxNodesInCluster(int maxNodesInCluster)
 {
 	maxNodesInCluster_ = maxNodesInCluster;
 	setCoreParameter("MaxNodesInCluster", std::to_string(maxNodesInCluster));
-}
-
-std::string SetAutoScaleConfigRequest::getExcludeNodes()const
-{
-	return excludeNodes_;
-}
-
-void SetAutoScaleConfigRequest::setExcludeNodes(const std::string& excludeNodes)
-{
-	excludeNodes_ = excludeNodes;
-	setCoreParameter("ExcludeNodes", excludeNodes);
 }
 
 int SetAutoScaleConfigRequest::getShrinkIntervalInMinutes()const
@@ -166,17 +177,6 @@ void SetAutoScaleConfigRequest::setQueues(const std::vector<Queues>& queues)
 		setCoreParameter(str + ".SpotPriceLimit", std::to_string(obj.spotPriceLimit));
 		setCoreParameter(str + ".EnableAutoShrink", obj.enableAutoShrink ? "true" : "false");
 	}
-}
-
-int SetAutoScaleConfigRequest::getExtraNodesGrowRatio()const
-{
-	return extraNodesGrowRatio_;
-}
-
-void SetAutoScaleConfigRequest::setExtraNodesGrowRatio(int extraNodesGrowRatio)
-{
-	extraNodesGrowRatio_ = extraNodesGrowRatio;
-	setCoreParameter("ExtraNodesGrowRatio", std::to_string(extraNodesGrowRatio));
 }
 
 int SetAutoScaleConfigRequest::getGrowIntervalInMinutes()const

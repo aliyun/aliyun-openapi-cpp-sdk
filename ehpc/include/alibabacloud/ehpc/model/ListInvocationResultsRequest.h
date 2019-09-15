@@ -41,10 +41,6 @@ namespace AlibabaCloud
 
 				std::vector<Instance> getInstance()const;
 				void setInstance(const std::vector<Instance>& instance);
-				std::string getInvokeRecordStatus()const;
-				void setInvokeRecordStatus(const std::string& invokeRecordStatus);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getCommandId()const;
@@ -53,15 +49,19 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInvokeRecordStatus()const;
+				void setInvokeRecordStatus(const std::string& invokeRecordStatus);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::vector<Instance> instance_;
-				std::string invokeRecordStatus_;
-				int pageSize_;
 				std::string clusterId_;
 				std::string commandId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string invokeRecordStatus_;
+				int pageSize_;
 
 			};
 		}

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				MountNFSRequest();
 				~MountNFSRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getNfsDir()const;
-				void setNfsDir(const std::string& nfsDir);
 				std::string getMountDir()const;
 				void setMountDir(const std::string& mountDir);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getNfsDir()const;
+				void setNfsDir(const std::string& nfsDir);
 
             private:
-				std::string instanceId_;
-				std::string nfsDir_;
 				std::string mountDir_;
 				std::string accessKeyId_;
+				std::string instanceId_;
+				std::string nfsDir_;
 
 			};
 		}

@@ -25,28 +25,6 @@ DescribeGWSInstancesRequest::DescribeGWSInstancesRequest() :
 DescribeGWSInstancesRequest::~DescribeGWSInstancesRequest()
 {}
 
-std::string DescribeGWSInstancesRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeGWSInstancesRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-int DescribeGWSInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeGWSInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeGWSInstancesRequest::getClusterId()const
 {
 	return clusterId_;
@@ -78,5 +56,27 @@ void DescribeGWSInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeGWSInstancesRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeGWSInstancesRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int DescribeGWSInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeGWSInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

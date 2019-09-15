@@ -25,17 +25,6 @@ ListFileSystemWithMountTargetsRequest::ListFileSystemWithMountTargetsRequest() :
 ListFileSystemWithMountTargetsRequest::~ListFileSystemWithMountTargetsRequest()
 {}
 
-int ListFileSystemWithMountTargetsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListFileSystemWithMountTargetsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int ListFileSystemWithMountTargetsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -56,5 +45,16 @@ void ListFileSystemWithMountTargetsRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListFileSystemWithMountTargetsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListFileSystemWithMountTargetsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -25,17 +25,6 @@ DescribeGWSClustersRequest::DescribeGWSClustersRequest() :
 DescribeGWSClustersRequest::~DescribeGWSClustersRequest()
 {}
 
-int DescribeGWSClustersRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeGWSClustersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeGWSClustersRequest::getClusterId()const
 {
 	return clusterId_;
@@ -67,5 +56,16 @@ void DescribeGWSClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int DescribeGWSClustersRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeGWSClustersRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

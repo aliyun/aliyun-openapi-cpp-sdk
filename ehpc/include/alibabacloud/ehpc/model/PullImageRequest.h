@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				PullImageRequest();
 				~PullImageRequest();
 
-				std::string getContainerType()const;
-				void setContainerType(const std::string& containerType);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getRepository()const;
 				void setRepository(const std::string& repository);
-				std::string getImageTag()const;
-				void setImageTag(const std::string& imageTag);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getContainerType()const;
+				void setContainerType(const std::string& containerType);
+				std::string getImageTag()const;
+				void setImageTag(const std::string& imageTag);
 
             private:
-				std::string containerType_;
 				std::string clusterId_;
 				std::string repository_;
-				std::string imageTag_;
 				std::string accessKeyId_;
+				std::string containerType_;
+				std::string imageTag_;
 
 			};
 		}

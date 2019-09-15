@@ -25,17 +25,6 @@ ListCpfsFileSystemsRequest::ListCpfsFileSystemsRequest() :
 ListCpfsFileSystemsRequest::~ListCpfsFileSystemsRequest()
 {}
 
-int ListCpfsFileSystemsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListCpfsFileSystemsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int ListCpfsFileSystemsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -56,6 +45,17 @@ void ListCpfsFileSystemsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListCpfsFileSystemsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListCpfsFileSystemsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListCpfsFileSystemsRequest::getFileSystemId()const

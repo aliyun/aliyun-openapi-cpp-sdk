@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				RunCloudMetricProfilingRequest();
 				~RunCloudMetricProfilingRequest();
 
+				int getFreq()const;
+				void setFreq(int freq);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getDuration()const;
 				void setDuration(int duration);
 				std::string getHostName()const;
@@ -43,21 +49,15 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				int getProcessId()const;
 				void setProcessId(int processId);
-				int getFreq()const;
-				void setFreq(int freq);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				int freq_;
+				std::string clusterId_;
+				std::string accessKeyId_;
 				int duration_;
 				std::string hostName_;
 				std::string regionId_;
 				int processId_;
-				int freq_;
-				std::string clusterId_;
-				std::string accessKeyId_;
 
 			};
 		}

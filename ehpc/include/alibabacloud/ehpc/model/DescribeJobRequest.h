@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeJobRequest();
 				~DescribeJobRequest();
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
 
             private:
-				std::string jobId_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string jobId_;
 
 			};
 		}

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				GetGWSConnectTicketRequest();
 				~GetGWSConnectTicketRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string appName_;
-				std::string accessKeyId_;
 
 			};
 		}

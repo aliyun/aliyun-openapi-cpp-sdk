@@ -25,17 +25,6 @@ CreateGWSInstanceRequest::CreateGWSInstanceRequest() :
 CreateGWSInstanceRequest::~CreateGWSInstanceRequest()
 {}
 
-std::string CreateGWSInstanceRequest::getPeriod()const
-{
-	return period_;
-}
-
-void CreateGWSInstanceRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setCoreParameter("Period", period);
-}
-
 std::string CreateGWSInstanceRequest::getImageId()const
 {
 	return imageId_;
@@ -80,6 +69,72 @@ void CreateGWSInstanceRequest::setInternetMaxBandwidthOut(int internetMaxBandwid
 	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
+std::string CreateGWSInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateGWSInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateGWSInstanceRequest::getSystemDiskCategory()const
+{
+	return systemDiskCategory_;
+}
+
+void CreateGWSInstanceRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
+{
+	systemDiskCategory_ = systemDiskCategory;
+	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+}
+
+int CreateGWSInstanceRequest::getSystemDiskSize()const
+{
+	return systemDiskSize_;
+}
+
+void CreateGWSInstanceRequest::setSystemDiskSize(int systemDiskSize)
+{
+	systemDiskSize_ = systemDiskSize;
+	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+}
+
+std::string CreateGWSInstanceRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void CreateGWSInstanceRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string CreateGWSInstanceRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void CreateGWSInstanceRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setCoreParameter("InstanceChargeType", instanceChargeType);
+}
+
+std::string CreateGWSInstanceRequest::getPeriod()const
+{
+	return period_;
+}
+
+void CreateGWSInstanceRequest::setPeriod(const std::string& period)
+{
+	period_ = period;
+	setCoreParameter("Period", period);
+}
+
 std::string CreateGWSInstanceRequest::getClusterId()const
 {
 	return clusterId_;
@@ -100,17 +155,6 @@ void CreateGWSInstanceRequest::setWorkMode(const std::string& workMode)
 {
 	workMode_ = workMode;
 	setCoreParameter("WorkMode", workMode);
-}
-
-std::string CreateGWSInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateGWSInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateGWSInstanceRequest::getPeriodUnit()const
@@ -135,17 +179,6 @@ void CreateGWSInstanceRequest::setAutoRenew(bool autoRenew)
 	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
-std::string CreateGWSInstanceRequest::getSystemDiskCategory()const
-{
-	return systemDiskCategory_;
-}
-
-void CreateGWSInstanceRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
-{
-	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", systemDiskCategory);
-}
-
 std::string CreateGWSInstanceRequest::getInternetChargeType()const
 {
 	return internetChargeType_;
@@ -157,17 +190,6 @@ void CreateGWSInstanceRequest::setInternetChargeType(const std::string& internet
 	setCoreParameter("InternetChargeType", internetChargeType);
 }
 
-int CreateGWSInstanceRequest::getSystemDiskSize()const
-{
-	return systemDiskSize_;
-}
-
-void CreateGWSInstanceRequest::setSystemDiskSize(int systemDiskSize)
-{
-	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
-}
-
 std::string CreateGWSInstanceRequest::getName()const
 {
 	return name_;
@@ -177,28 +199,6 @@ void CreateGWSInstanceRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string CreateGWSInstanceRequest::getInstanceType()const
-{
-	return instanceType_;
-}
-
-void CreateGWSInstanceRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
-}
-
-std::string CreateGWSInstanceRequest::getInstanceChargeType()const
-{
-	return instanceChargeType_;
-}
-
-void CreateGWSInstanceRequest::setInstanceChargeType(const std::string& instanceChargeType)
-{
-	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 
 int CreateGWSInstanceRequest::getInternetMaxBandwidthIn()const

@@ -37,39 +37,39 @@ namespace AlibabaCloud
 
 				std::string getStderrRedirectPath()const;
 				void setStderrRedirectPath(const std::string& stderrRedirectPath);
-				std::string getArrayRequest()const;
-				void setArrayRequest(const std::string& arrayRequest);
-				std::string getPackagePath()const;
-				void setPackagePath(const std::string& packagePath);
-				std::string getVariables()const;
-				void setVariables(const std::string& variables);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getRunasUser()const;
-				void setRunasUser(const std::string& runasUser);
-				std::string getStdoutRedirectPath()const;
-				void setStdoutRedirectPath(const std::string& stdoutRedirectPath);
-				bool getReRunable()const;
-				void setReRunable(bool reRunable);
-				int getPriority()const;
-				void setPriority(int priority);
 				std::string getCommandLine()const;
 				void setCommandLine(const std::string& commandLine);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getArrayRequest()const;
+				void setArrayRequest(const std::string& arrayRequest);
+				std::string getPackagePath()const;
+				void setPackagePath(const std::string& packagePath);
+				std::string getStdoutRedirectPath()const;
+				void setStdoutRedirectPath(const std::string& stdoutRedirectPath);
+				std::string getVariables()const;
+				void setVariables(const std::string& variables);
+				std::string getRunasUser()const;
+				void setRunasUser(const std::string& runasUser);
+				bool getReRunable()const;
+				void setReRunable(bool reRunable);
+				int getPriority()const;
+				void setPriority(int priority);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string stderrRedirectPath_;
-				std::string arrayRequest_;
-				std::string packagePath_;
-				std::string variables_;
-				std::string name_;
-				std::string runasUser_;
-				std::string stdoutRedirectPath_;
-				bool reRunable_;
-				int priority_;
 				std::string commandLine_;
 				std::string accessKeyId_;
+				std::string arrayRequest_;
+				std::string packagePath_;
+				std::string stdoutRedirectPath_;
+				std::string variables_;
+				std::string runasUser_;
+				bool reRunable_;
+				int priority_;
+				std::string name_;
 
 			};
 		}

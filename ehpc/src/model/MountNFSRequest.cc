@@ -25,28 +25,6 @@ MountNFSRequest::MountNFSRequest() :
 MountNFSRequest::~MountNFSRequest()
 {}
 
-std::string MountNFSRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void MountNFSRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string MountNFSRequest::getNfsDir()const
-{
-	return nfsDir_;
-}
-
-void MountNFSRequest::setNfsDir(const std::string& nfsDir)
-{
-	nfsDir_ = nfsDir;
-	setCoreParameter("NfsDir", nfsDir);
-}
-
 std::string MountNFSRequest::getMountDir()const
 {
 	return mountDir_;
@@ -67,5 +45,27 @@ void MountNFSRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string MountNFSRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void MountNFSRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string MountNFSRequest::getNfsDir()const
+{
+	return nfsDir_;
+}
+
+void MountNFSRequest::setNfsDir(const std::string& nfsDir)
+{
+	nfsDir_ = nfsDir;
+	setCoreParameter("NfsDir", nfsDir);
 }
 

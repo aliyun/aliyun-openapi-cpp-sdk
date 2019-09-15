@@ -25,28 +25,6 @@ ListJobTemplatesRequest::ListJobTemplatesRequest() :
 ListJobTemplatesRequest::~ListJobTemplatesRequest()
 {}
 
-std::string ListJobTemplatesRequest::getName()const
-{
-	return name_;
-}
-
-void ListJobTemplatesRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-int ListJobTemplatesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListJobTemplatesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int ListJobTemplatesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -67,5 +45,27 @@ void ListJobTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListJobTemplatesRequest::getName()const
+{
+	return name_;
+}
+
+void ListJobTemplatesRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+int ListJobTemplatesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListJobTemplatesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

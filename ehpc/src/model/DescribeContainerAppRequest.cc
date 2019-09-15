@@ -25,17 +25,6 @@ DescribeContainerAppRequest::DescribeContainerAppRequest() :
 DescribeContainerAppRequest::~DescribeContainerAppRequest()
 {}
 
-std::string DescribeContainerAppRequest::getContainerId()const
-{
-	return containerId_;
-}
-
-void DescribeContainerAppRequest::setContainerId(const std::string& containerId)
-{
-	containerId_ = containerId;
-	setCoreParameter("ContainerId", containerId);
-}
-
 std::string DescribeContainerAppRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DescribeContainerAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeContainerAppRequest::getContainerId()const
+{
+	return containerId_;
+}
+
+void DescribeContainerAppRequest::setContainerId(const std::string& containerId)
+{
+	containerId_ = containerId;
+	setCoreParameter("ContainerId", containerId);
 }
 

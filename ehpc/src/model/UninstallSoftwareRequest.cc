@@ -25,17 +25,6 @@ UninstallSoftwareRequest::UninstallSoftwareRequest() :
 UninstallSoftwareRequest::~UninstallSoftwareRequest()
 {}
 
-std::string UninstallSoftwareRequest::getApplication()const
-{
-	return application_;
-}
-
-void UninstallSoftwareRequest::setApplication(const std::string& application)
-{
-	application_ = application;
-	setCoreParameter("Application", application);
-}
-
 std::string UninstallSoftwareRequest::getClusterId()const
 {
 	return clusterId_;
@@ -56,5 +45,16 @@ void UninstallSoftwareRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UninstallSoftwareRequest::getApplication()const
+{
+	return application_;
+}
+
+void UninstallSoftwareRequest::setApplication(const std::string& application)
+{
+	application_ = application;
+	setCoreParameter("Application", application);
 }
 

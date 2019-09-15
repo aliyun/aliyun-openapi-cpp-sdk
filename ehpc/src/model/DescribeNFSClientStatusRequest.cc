@@ -25,17 +25,6 @@ DescribeNFSClientStatusRequest::DescribeNFSClientStatusRequest() :
 DescribeNFSClientStatusRequest::~DescribeNFSClientStatusRequest()
 {}
 
-std::string DescribeNFSClientStatusRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeNFSClientStatusRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string DescribeNFSClientStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DescribeNFSClientStatusRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeNFSClientStatusRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeNFSClientStatusRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

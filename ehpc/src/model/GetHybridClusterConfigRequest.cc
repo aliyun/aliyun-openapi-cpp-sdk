@@ -25,17 +25,6 @@ GetHybridClusterConfigRequest::GetHybridClusterConfigRequest() :
 GetHybridClusterConfigRequest::~GetHybridClusterConfigRequest()
 {}
 
-std::string GetHybridClusterConfigRequest::getNode()const
-{
-	return node_;
-}
-
-void GetHybridClusterConfigRequest::setNode(const std::string& node)
-{
-	node_ = node;
-	setCoreParameter("Node", node);
-}
-
 std::string GetHybridClusterConfigRequest::getClusterId()const
 {
 	return clusterId_;
@@ -56,5 +45,16 @@ void GetHybridClusterConfigRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetHybridClusterConfigRequest::getNode()const
+{
+	return node_;
+}
+
+void GetHybridClusterConfigRequest::setNode(const std::string& node)
+{
+	node_ = node;
+	setCoreParameter("Node", node);
 }
 

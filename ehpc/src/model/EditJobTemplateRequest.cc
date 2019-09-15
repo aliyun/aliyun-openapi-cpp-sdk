@@ -36,6 +36,61 @@ void EditJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRedi
 	setCoreParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
+std::string EditJobTemplateRequest::getCommandLine()const
+{
+	return commandLine_;
+}
+
+void EditJobTemplateRequest::setCommandLine(const std::string& commandLine)
+{
+	commandLine_ = commandLine;
+	setCoreParameter("CommandLine", commandLine);
+}
+
+std::string EditJobTemplateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void EditJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string EditJobTemplateRequest::getArrayRequest()const
+{
+	return arrayRequest_;
+}
+
+void EditJobTemplateRequest::setArrayRequest(const std::string& arrayRequest)
+{
+	arrayRequest_ = arrayRequest;
+	setCoreParameter("ArrayRequest", arrayRequest);
+}
+
+std::string EditJobTemplateRequest::getPackagePath()const
+{
+	return packagePath_;
+}
+
+void EditJobTemplateRequest::setPackagePath(const std::string& packagePath)
+{
+	packagePath_ = packagePath;
+	setCoreParameter("PackagePath", packagePath);
+}
+
+std::string EditJobTemplateRequest::getStdoutRedirectPath()const
+{
+	return stdoutRedirectPath_;
+}
+
+void EditJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
+{
+	stdoutRedirectPath_ = stdoutRedirectPath;
+	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
+}
+
 std::string EditJobTemplateRequest::getVariables()const
 {
 	return variables_;
@@ -91,50 +146,6 @@ void EditJobTemplateRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string EditJobTemplateRequest::getCommandLine()const
-{
-	return commandLine_;
-}
-
-void EditJobTemplateRequest::setCommandLine(const std::string& commandLine)
-{
-	commandLine_ = commandLine;
-	setCoreParameter("CommandLine", commandLine);
-}
-
-std::string EditJobTemplateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void EditJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string EditJobTemplateRequest::getArrayRequest()const
-{
-	return arrayRequest_;
-}
-
-void EditJobTemplateRequest::setArrayRequest(const std::string& arrayRequest)
-{
-	arrayRequest_ = arrayRequest;
-	setCoreParameter("ArrayRequest", arrayRequest);
-}
-
-std::string EditJobTemplateRequest::getPackagePath()const
-{
-	return packagePath_;
-}
-
-void EditJobTemplateRequest::setPackagePath(const std::string& packagePath)
-{
-	packagePath_ = packagePath;
-	setCoreParameter("PackagePath", packagePath);
-}
-
 std::string EditJobTemplateRequest::getName()const
 {
 	return name_;
@@ -144,16 +155,5 @@ void EditJobTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string EditJobTemplateRequest::getStdoutRedirectPath()const
-{
-	return stdoutRedirectPath_;
-}
-
-void EditJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
-{
-	stdoutRedirectPath_ = stdoutRedirectPath;
-	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
 }
 

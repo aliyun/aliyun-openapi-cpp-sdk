@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ListPreferredEcsTypesRequest();
 				~ListPreferredEcsTypesRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSpotStrategy()const;
 				void setSpotStrategy(const std::string& spotStrategy);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string spotStrategy_;
 				std::string zoneId_;
 				std::string instanceChargeType_;
-				std::string accessKeyId_;
 
 			};
 		}

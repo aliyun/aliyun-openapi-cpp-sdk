@@ -25,17 +25,6 @@ ListNodesRequest::ListNodesRequest() :
 ListNodesRequest::~ListNodesRequest()
 {}
 
-std::string ListNodesRequest::getHostName()const
-{
-	return hostName_;
-}
-
-void ListNodesRequest::setHostName(const std::string& hostName)
-{
-	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
-}
-
 std::string ListNodesRequest::getRole()const
 {
 	return role_;
@@ -45,17 +34,6 @@ void ListNodesRequest::setRole(const std::string& role)
 {
 	role_ = role;
 	setCoreParameter("Role", role);
-}
-
-int ListNodesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListNodesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListNodesRequest::getClusterId()const
@@ -89,5 +67,27 @@ void ListNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListNodesRequest::getHostName()const
+{
+	return hostName_;
+}
+
+void ListNodesRequest::setHostName(const std::string& hostName)
+{
+	hostName_ = hostName;
+	setCoreParameter("HostName", hostName);
+}
+
+int ListNodesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListNodesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

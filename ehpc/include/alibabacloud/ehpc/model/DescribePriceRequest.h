@@ -45,22 +45,22 @@ namespace AlibabaCloud
 				DescribePriceRequest();
 				~DescribePriceRequest();
 
-				std::string getPriceUnit()const;
-				void setPriceUnit(const std::string& priceUnit);
 				std::vector<Commodities> getCommodities()const;
 				void setCommodities(const std::vector<Commodities>& commodities);
-				std::string getChargeType()const;
-				void setChargeType(const std::string& chargeType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPriceUnit()const;
+				void setPriceUnit(const std::string& priceUnit);
+				std::string getChargeType()const;
+				void setChargeType(const std::string& chargeType);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
 
             private:
-				std::string priceUnit_;
 				std::vector<Commodities> commodities_;
-				std::string chargeType_;
 				std::string accessKeyId_;
+				std::string priceUnit_;
+				std::string chargeType_;
 				std::string orderType_;
 
 			};

@@ -30,16 +30,16 @@
 #include "model/DeleteUsersResult.h"
 #include "model/DeleteGWSClusterRequest.h"
 #include "model/DeleteGWSClusterResult.h"
-#include "model/DescribeClusterRequest.h"
-#include "model/DescribeClusterResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
-#include "model/PullImageRequest.h"
-#include "model/PullImageResult.h"
-#include "model/StopNodesRequest.h"
-#include "model/StopNodesResult.h"
+#include "model/DescribeClusterRequest.h"
+#include "model/DescribeClusterResult.h"
 #include "model/DescribeContainerAppRequest.h"
 #include "model/DescribeContainerAppResult.h"
+#include "model/StopNodesRequest.h"
+#include "model/StopNodesResult.h"
+#include "model/PullImageRequest.h"
+#include "model/PullImageResult.h"
 #include "model/ListNodesByQueueRequest.h"
 #include "model/ListNodesByQueueResult.h"
 #include "model/ModifyContainerAppAttributesRequest.h"
@@ -48,10 +48,10 @@
 #include "model/GetCloudMetricProfilingResult.h"
 #include "model/DescribeImagePriceRequest.h"
 #include "model/DescribeImagePriceResult.h"
-#include "model/GetAutoScaleConfigRequest.h"
-#include "model/GetAutoScaleConfigResult.h"
 #include "model/StopGWSInstanceRequest.h"
 #include "model/StopGWSInstanceResult.h"
+#include "model/GetAutoScaleConfigRequest.h"
+#include "model/GetAutoScaleConfigResult.h"
 #include "model/ListNodesRequest.h"
 #include "model/ListNodesResult.h"
 #include "model/InstallNFSClientRequest.h"
@@ -82,10 +82,10 @@
 #include "model/UninstallSoftwareResult.h"
 #include "model/DescribeGWSClustersRequest.h"
 #include "model/DescribeGWSClustersResult.h"
-#include "model/DeleteJobsRequest.h"
-#include "model/DeleteJobsResult.h"
 #include "model/ListContainerImagesRequest.h"
 #include "model/ListContainerImagesResult.h"
+#include "model/DeleteJobsRequest.h"
+#include "model/DeleteJobsResult.h"
 #include "model/DeleteNodesRequest.h"
 #include "model/DeleteNodesResult.h"
 #include "model/ListJobsRequest.h"
@@ -98,10 +98,10 @@
 #include "model/ListClustersMetaResult.h"
 #include "model/QueryServicePackAndPriceRequest.h"
 #include "model/QueryServicePackAndPriceResult.h"
-#include "model/ListVolumesRequest.h"
-#include "model/ListVolumesResult.h"
 #include "model/DeleteContainerAppsRequest.h"
 #include "model/DeleteContainerAppsResult.h"
+#include "model/ListVolumesRequest.h"
+#include "model/ListVolumesResult.h"
 #include "model/ModifyImageGatewayConfigRequest.h"
 #include "model/ModifyImageGatewayConfigResult.h"
 #include "model/ListInvocationStatusRequest.h"
@@ -134,20 +134,20 @@
 #include "model/AddQueueResult.h"
 #include "model/CreateGWSInstanceRequest.h"
 #include "model/CreateGWSInstanceResult.h"
-#include "model/UpdateClusterVolumesRequest.h"
-#include "model/UpdateClusterVolumesResult.h"
 #include "model/ListCurrentClientVersionRequest.h"
 #include "model/ListCurrentClientVersionResult.h"
+#include "model/UpdateClusterVolumesRequest.h"
+#include "model/UpdateClusterVolumesResult.h"
 #include "model/StartGWSInstanceRequest.h"
 #include "model/StartGWSInstanceResult.h"
 #include "model/ListInvocationResultsRequest.h"
 #include "model/ListInvocationResultsResult.h"
 #include "model/SetAutoScaleConfigRequest.h"
 #include "model/SetAutoScaleConfigResult.h"
-#include "model/ListSoftwaresRequest.h"
-#include "model/ListSoftwaresResult.h"
 #include "model/AddNodesRequest.h"
 #include "model/AddNodesResult.h"
+#include "model/ListSoftwaresRequest.h"
+#include "model/ListSoftwaresResult.h"
 #include "model/DescribeGWSImagesRequest.h"
 #include "model/DescribeGWSImagesResult.h"
 #include "model/StopJobsRequest.h"
@@ -156,18 +156,18 @@
 #include "model/StartNodesResult.h"
 #include "model/ModifyUserGroupsRequest.h"
 #include "model/ModifyUserGroupsResult.h"
-#include "model/StartClusterRequest.h"
-#include "model/StartClusterResult.h"
 #include "model/SetQueueRequest.h"
 #include "model/SetQueueResult.h"
+#include "model/StartClusterRequest.h"
+#include "model/StartClusterResult.h"
 #include "model/ListCustomImagesRequest.h"
 #include "model/ListCustomImagesResult.h"
+#include "model/CreateGWSClusterRequest.h"
+#include "model/CreateGWSClusterResult.h"
 #include "model/AddUsersRequest.h"
 #include "model/AddUsersResult.h"
 #include "model/ListJobTemplatesRequest.h"
 #include "model/ListJobTemplatesResult.h"
-#include "model/CreateGWSClusterRequest.h"
-#include "model/CreateGWSClusterResult.h"
 #include "model/DescribeImageGatewayConfigRequest.h"
 #include "model/DescribeImageGatewayConfigResult.h"
 #include "model/GetGWSConnectTicketRequest.h"
@@ -182,12 +182,12 @@
 #include "model/UpdateQueueConfigResult.h"
 #include "model/StopVisualServiceRequest.h"
 #include "model/StopVisualServiceResult.h"
+#include "model/DescribeImageRequest.h"
+#include "model/DescribeImageResult.h"
 #include "model/CreateClusterRequest.h"
 #include "model/CreateClusterResult.h"
 #include "model/ModifyUserPasswordsRequest.h"
 #include "model/ModifyUserPasswordsResult.h"
-#include "model/DescribeImageRequest.h"
-#include "model/DescribeImageResult.h"
 #include "model/DeleteQueueRequest.h"
 #include "model/DeleteQueueResult.h"
 #include "model/ListInstalledSoftwareRequest.h"
@@ -253,21 +253,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteGWSClusterResult> DeleteGWSClusterOutcome;
 			typedef std::future<DeleteGWSClusterOutcome> DeleteGWSClusterOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DeleteGWSClusterRequest&, const DeleteGWSClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGWSClusterAsyncHandler;
-			typedef Outcome<Error, Model::DescribeClusterResult> DescribeClusterOutcome;
-			typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::DescribeClusterRequest&, const DescribeClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsyncHandler;
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
-			typedef Outcome<Error, Model::PullImageResult> PullImageOutcome;
-			typedef std::future<PullImageOutcome> PullImageOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::PullImageRequest&, const PullImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PullImageAsyncHandler;
-			typedef Outcome<Error, Model::StopNodesResult> StopNodesOutcome;
-			typedef std::future<StopNodesOutcome> StopNodesOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::StopNodesRequest&, const StopNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopNodesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterResult> DescribeClusterOutcome;
+			typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DescribeClusterRequest&, const DescribeClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsyncHandler;
 			typedef Outcome<Error, Model::DescribeContainerAppResult> DescribeContainerAppOutcome;
 			typedef std::future<DescribeContainerAppOutcome> DescribeContainerAppOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribeContainerAppRequest&, const DescribeContainerAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerAppAsyncHandler;
+			typedef Outcome<Error, Model::StopNodesResult> StopNodesOutcome;
+			typedef std::future<StopNodesOutcome> StopNodesOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::StopNodesRequest&, const StopNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopNodesAsyncHandler;
+			typedef Outcome<Error, Model::PullImageResult> PullImageOutcome;
+			typedef std::future<PullImageOutcome> PullImageOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::PullImageRequest&, const PullImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PullImageAsyncHandler;
 			typedef Outcome<Error, Model::ListNodesByQueueResult> ListNodesByQueueOutcome;
 			typedef std::future<ListNodesByQueueOutcome> ListNodesByQueueOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListNodesByQueueRequest&, const ListNodesByQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodesByQueueAsyncHandler;
@@ -280,12 +280,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeImagePriceResult> DescribeImagePriceOutcome;
 			typedef std::future<DescribeImagePriceOutcome> DescribeImagePriceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribeImagePriceRequest&, const DescribeImagePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagePriceAsyncHandler;
-			typedef Outcome<Error, Model::GetAutoScaleConfigResult> GetAutoScaleConfigOutcome;
-			typedef std::future<GetAutoScaleConfigOutcome> GetAutoScaleConfigOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::GetAutoScaleConfigRequest&, const GetAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAutoScaleConfigAsyncHandler;
 			typedef Outcome<Error, Model::StopGWSInstanceResult> StopGWSInstanceOutcome;
 			typedef std::future<StopGWSInstanceOutcome> StopGWSInstanceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::StopGWSInstanceRequest&, const StopGWSInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopGWSInstanceAsyncHandler;
+			typedef Outcome<Error, Model::GetAutoScaleConfigResult> GetAutoScaleConfigOutcome;
+			typedef std::future<GetAutoScaleConfigOutcome> GetAutoScaleConfigOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetAutoScaleConfigRequest&, const GetAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAutoScaleConfigAsyncHandler;
 			typedef Outcome<Error, Model::ListNodesResult> ListNodesOutcome;
 			typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListNodesRequest&, const ListNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodesAsyncHandler;
@@ -331,12 +331,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeGWSClustersResult> DescribeGWSClustersOutcome;
 			typedef std::future<DescribeGWSClustersOutcome> DescribeGWSClustersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribeGWSClustersRequest&, const DescribeGWSClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGWSClustersAsyncHandler;
-			typedef Outcome<Error, Model::DeleteJobsResult> DeleteJobsOutcome;
-			typedef std::future<DeleteJobsOutcome> DeleteJobsOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::DeleteJobsRequest&, const DeleteJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobsAsyncHandler;
 			typedef Outcome<Error, Model::ListContainerImagesResult> ListContainerImagesOutcome;
 			typedef std::future<ListContainerImagesOutcome> ListContainerImagesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListContainerImagesRequest&, const ListContainerImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListContainerImagesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteJobsResult> DeleteJobsOutcome;
+			typedef std::future<DeleteJobsOutcome> DeleteJobsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DeleteJobsRequest&, const DeleteJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteNodesResult> DeleteNodesOutcome;
 			typedef std::future<DeleteNodesOutcome> DeleteNodesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DeleteNodesRequest&, const DeleteNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNodesAsyncHandler;
@@ -355,12 +355,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryServicePackAndPriceResult> QueryServicePackAndPriceOutcome;
 			typedef std::future<QueryServicePackAndPriceOutcome> QueryServicePackAndPriceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::QueryServicePackAndPriceRequest&, const QueryServicePackAndPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryServicePackAndPriceAsyncHandler;
-			typedef Outcome<Error, Model::ListVolumesResult> ListVolumesOutcome;
-			typedef std::future<ListVolumesOutcome> ListVolumesOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::ListVolumesRequest&, const ListVolumesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVolumesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteContainerAppsResult> DeleteContainerAppsOutcome;
 			typedef std::future<DeleteContainerAppsOutcome> DeleteContainerAppsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DeleteContainerAppsRequest&, const DeleteContainerAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContainerAppsAsyncHandler;
+			typedef Outcome<Error, Model::ListVolumesResult> ListVolumesOutcome;
+			typedef std::future<ListVolumesOutcome> ListVolumesOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListVolumesRequest&, const ListVolumesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVolumesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyImageGatewayConfigResult> ModifyImageGatewayConfigOutcome;
 			typedef std::future<ModifyImageGatewayConfigOutcome> ModifyImageGatewayConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ModifyImageGatewayConfigRequest&, const ModifyImageGatewayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageGatewayConfigAsyncHandler;
@@ -409,12 +409,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateGWSInstanceResult> CreateGWSInstanceOutcome;
 			typedef std::future<CreateGWSInstanceOutcome> CreateGWSInstanceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::CreateGWSInstanceRequest&, const CreateGWSInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGWSInstanceAsyncHandler;
-			typedef Outcome<Error, Model::UpdateClusterVolumesResult> UpdateClusterVolumesOutcome;
-			typedef std::future<UpdateClusterVolumesOutcome> UpdateClusterVolumesOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::UpdateClusterVolumesRequest&, const UpdateClusterVolumesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterVolumesAsyncHandler;
 			typedef Outcome<Error, Model::ListCurrentClientVersionResult> ListCurrentClientVersionOutcome;
 			typedef std::future<ListCurrentClientVersionOutcome> ListCurrentClientVersionOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListCurrentClientVersionRequest&, const ListCurrentClientVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCurrentClientVersionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateClusterVolumesResult> UpdateClusterVolumesOutcome;
+			typedef std::future<UpdateClusterVolumesOutcome> UpdateClusterVolumesOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::UpdateClusterVolumesRequest&, const UpdateClusterVolumesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterVolumesAsyncHandler;
 			typedef Outcome<Error, Model::StartGWSInstanceResult> StartGWSInstanceOutcome;
 			typedef std::future<StartGWSInstanceOutcome> StartGWSInstanceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::StartGWSInstanceRequest&, const StartGWSInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartGWSInstanceAsyncHandler;
@@ -424,12 +424,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetAutoScaleConfigResult> SetAutoScaleConfigOutcome;
 			typedef std::future<SetAutoScaleConfigOutcome> SetAutoScaleConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SetAutoScaleConfigRequest&, const SetAutoScaleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScaleConfigAsyncHandler;
-			typedef Outcome<Error, Model::ListSoftwaresResult> ListSoftwaresOutcome;
-			typedef std::future<ListSoftwaresOutcome> ListSoftwaresOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::ListSoftwaresRequest&, const ListSoftwaresOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSoftwaresAsyncHandler;
 			typedef Outcome<Error, Model::AddNodesResult> AddNodesOutcome;
 			typedef std::future<AddNodesOutcome> AddNodesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddNodesRequest&, const AddNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddNodesAsyncHandler;
+			typedef Outcome<Error, Model::ListSoftwaresResult> ListSoftwaresOutcome;
+			typedef std::future<ListSoftwaresOutcome> ListSoftwaresOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListSoftwaresRequest&, const ListSoftwaresOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSoftwaresAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGWSImagesResult> DescribeGWSImagesOutcome;
 			typedef std::future<DescribeGWSImagesOutcome> DescribeGWSImagesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribeGWSImagesRequest&, const DescribeGWSImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGWSImagesAsyncHandler;
@@ -442,24 +442,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyUserGroupsResult> ModifyUserGroupsOutcome;
 			typedef std::future<ModifyUserGroupsOutcome> ModifyUserGroupsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ModifyUserGroupsRequest&, const ModifyUserGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGroupsAsyncHandler;
-			typedef Outcome<Error, Model::StartClusterResult> StartClusterOutcome;
-			typedef std::future<StartClusterOutcome> StartClusterOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::StartClusterRequest&, const StartClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartClusterAsyncHandler;
 			typedef Outcome<Error, Model::SetQueueResult> SetQueueOutcome;
 			typedef std::future<SetQueueOutcome> SetQueueOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::SetQueueRequest&, const SetQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetQueueAsyncHandler;
+			typedef Outcome<Error, Model::StartClusterResult> StartClusterOutcome;
+			typedef std::future<StartClusterOutcome> StartClusterOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::StartClusterRequest&, const StartClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartClusterAsyncHandler;
 			typedef Outcome<Error, Model::ListCustomImagesResult> ListCustomImagesOutcome;
 			typedef std::future<ListCustomImagesOutcome> ListCustomImagesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListCustomImagesRequest&, const ListCustomImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomImagesAsyncHandler;
+			typedef Outcome<Error, Model::CreateGWSClusterResult> CreateGWSClusterOutcome;
+			typedef std::future<CreateGWSClusterOutcome> CreateGWSClusterOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::CreateGWSClusterRequest&, const CreateGWSClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGWSClusterAsyncHandler;
 			typedef Outcome<Error, Model::AddUsersResult> AddUsersOutcome;
 			typedef std::future<AddUsersOutcome> AddUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddUsersRequest&, const AddUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersAsyncHandler;
 			typedef Outcome<Error, Model::ListJobTemplatesResult> ListJobTemplatesOutcome;
 			typedef std::future<ListJobTemplatesOutcome> ListJobTemplatesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListJobTemplatesRequest&, const ListJobTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobTemplatesAsyncHandler;
-			typedef Outcome<Error, Model::CreateGWSClusterResult> CreateGWSClusterOutcome;
-			typedef std::future<CreateGWSClusterOutcome> CreateGWSClusterOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::CreateGWSClusterRequest&, const CreateGWSClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGWSClusterAsyncHandler;
 			typedef Outcome<Error, Model::DescribeImageGatewayConfigResult> DescribeImageGatewayConfigOutcome;
 			typedef std::future<DescribeImageGatewayConfigOutcome> DescribeImageGatewayConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribeImageGatewayConfigRequest&, const DescribeImageGatewayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageGatewayConfigAsyncHandler;
@@ -481,15 +481,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopVisualServiceResult> StopVisualServiceOutcome;
 			typedef std::future<StopVisualServiceOutcome> StopVisualServiceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::StopVisualServiceRequest&, const StopVisualServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopVisualServiceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImageResult> DescribeImageOutcome;
+			typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DescribeImageRequest&, const DescribeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAsyncHandler;
 			typedef Outcome<Error, Model::CreateClusterResult> CreateClusterOutcome;
 			typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::CreateClusterRequest&, const CreateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
 			typedef Outcome<Error, Model::ModifyUserPasswordsResult> ModifyUserPasswordsOutcome;
 			typedef std::future<ModifyUserPasswordsOutcome> ModifyUserPasswordsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ModifyUserPasswordsRequest&, const ModifyUserPasswordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserPasswordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeImageResult> DescribeImageOutcome;
-			typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
-			typedef std::function<void(const EHPCClient*, const Model::DescribeImageRequest&, const DescribeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAsyncHandler;
 			typedef Outcome<Error, Model::DeleteQueueResult> DeleteQueueOutcome;
 			typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DeleteQueueRequest&, const DeleteQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQueueAsyncHandler;
@@ -573,21 +573,21 @@ namespace AlibabaCloud
 			DeleteGWSClusterOutcome deleteGWSCluster(const Model::DeleteGWSClusterRequest &request)const;
 			void deleteGWSClusterAsync(const Model::DeleteGWSClusterRequest& request, const DeleteGWSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGWSClusterOutcomeCallable deleteGWSClusterCallable(const Model::DeleteGWSClusterRequest& request) const;
-			DescribeClusterOutcome describeCluster(const Model::DescribeClusterRequest &request)const;
-			void describeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeClusterOutcomeCallable describeClusterCallable(const Model::DescribeClusterRequest& request) const;
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
-			PullImageOutcome pullImage(const Model::PullImageRequest &request)const;
-			void pullImageAsync(const Model::PullImageRequest& request, const PullImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PullImageOutcomeCallable pullImageCallable(const Model::PullImageRequest& request) const;
-			StopNodesOutcome stopNodes(const Model::StopNodesRequest &request)const;
-			void stopNodesAsync(const Model::StopNodesRequest& request, const StopNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StopNodesOutcomeCallable stopNodesCallable(const Model::StopNodesRequest& request) const;
+			DescribeClusterOutcome describeCluster(const Model::DescribeClusterRequest &request)const;
+			void describeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterOutcomeCallable describeClusterCallable(const Model::DescribeClusterRequest& request) const;
 			DescribeContainerAppOutcome describeContainerApp(const Model::DescribeContainerAppRequest &request)const;
 			void describeContainerAppAsync(const Model::DescribeContainerAppRequest& request, const DescribeContainerAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeContainerAppOutcomeCallable describeContainerAppCallable(const Model::DescribeContainerAppRequest& request) const;
+			StopNodesOutcome stopNodes(const Model::StopNodesRequest &request)const;
+			void stopNodesAsync(const Model::StopNodesRequest& request, const StopNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopNodesOutcomeCallable stopNodesCallable(const Model::StopNodesRequest& request) const;
+			PullImageOutcome pullImage(const Model::PullImageRequest &request)const;
+			void pullImageAsync(const Model::PullImageRequest& request, const PullImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PullImageOutcomeCallable pullImageCallable(const Model::PullImageRequest& request) const;
 			ListNodesByQueueOutcome listNodesByQueue(const Model::ListNodesByQueueRequest &request)const;
 			void listNodesByQueueAsync(const Model::ListNodesByQueueRequest& request, const ListNodesByQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNodesByQueueOutcomeCallable listNodesByQueueCallable(const Model::ListNodesByQueueRequest& request) const;
@@ -600,12 +600,12 @@ namespace AlibabaCloud
 			DescribeImagePriceOutcome describeImagePrice(const Model::DescribeImagePriceRequest &request)const;
 			void describeImagePriceAsync(const Model::DescribeImagePriceRequest& request, const DescribeImagePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImagePriceOutcomeCallable describeImagePriceCallable(const Model::DescribeImagePriceRequest& request) const;
-			GetAutoScaleConfigOutcome getAutoScaleConfig(const Model::GetAutoScaleConfigRequest &request)const;
-			void getAutoScaleConfigAsync(const Model::GetAutoScaleConfigRequest& request, const GetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetAutoScaleConfigOutcomeCallable getAutoScaleConfigCallable(const Model::GetAutoScaleConfigRequest& request) const;
 			StopGWSInstanceOutcome stopGWSInstance(const Model::StopGWSInstanceRequest &request)const;
 			void stopGWSInstanceAsync(const Model::StopGWSInstanceRequest& request, const StopGWSInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopGWSInstanceOutcomeCallable stopGWSInstanceCallable(const Model::StopGWSInstanceRequest& request) const;
+			GetAutoScaleConfigOutcome getAutoScaleConfig(const Model::GetAutoScaleConfigRequest &request)const;
+			void getAutoScaleConfigAsync(const Model::GetAutoScaleConfigRequest& request, const GetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAutoScaleConfigOutcomeCallable getAutoScaleConfigCallable(const Model::GetAutoScaleConfigRequest& request) const;
 			ListNodesOutcome listNodes(const Model::ListNodesRequest &request)const;
 			void listNodesAsync(const Model::ListNodesRequest& request, const ListNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNodesOutcomeCallable listNodesCallable(const Model::ListNodesRequest& request) const;
@@ -651,12 +651,12 @@ namespace AlibabaCloud
 			DescribeGWSClustersOutcome describeGWSClusters(const Model::DescribeGWSClustersRequest &request)const;
 			void describeGWSClustersAsync(const Model::DescribeGWSClustersRequest& request, const DescribeGWSClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGWSClustersOutcomeCallable describeGWSClustersCallable(const Model::DescribeGWSClustersRequest& request) const;
-			DeleteJobsOutcome deleteJobs(const Model::DeleteJobsRequest &request)const;
-			void deleteJobsAsync(const Model::DeleteJobsRequest& request, const DeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteJobsOutcomeCallable deleteJobsCallable(const Model::DeleteJobsRequest& request) const;
 			ListContainerImagesOutcome listContainerImages(const Model::ListContainerImagesRequest &request)const;
 			void listContainerImagesAsync(const Model::ListContainerImagesRequest& request, const ListContainerImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListContainerImagesOutcomeCallable listContainerImagesCallable(const Model::ListContainerImagesRequest& request) const;
+			DeleteJobsOutcome deleteJobs(const Model::DeleteJobsRequest &request)const;
+			void deleteJobsAsync(const Model::DeleteJobsRequest& request, const DeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteJobsOutcomeCallable deleteJobsCallable(const Model::DeleteJobsRequest& request) const;
 			DeleteNodesOutcome deleteNodes(const Model::DeleteNodesRequest &request)const;
 			void deleteNodesAsync(const Model::DeleteNodesRequest& request, const DeleteNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNodesOutcomeCallable deleteNodesCallable(const Model::DeleteNodesRequest& request) const;
@@ -675,12 +675,12 @@ namespace AlibabaCloud
 			QueryServicePackAndPriceOutcome queryServicePackAndPrice(const Model::QueryServicePackAndPriceRequest &request)const;
 			void queryServicePackAndPriceAsync(const Model::QueryServicePackAndPriceRequest& request, const QueryServicePackAndPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryServicePackAndPriceOutcomeCallable queryServicePackAndPriceCallable(const Model::QueryServicePackAndPriceRequest& request) const;
-			ListVolumesOutcome listVolumes(const Model::ListVolumesRequest &request)const;
-			void listVolumesAsync(const Model::ListVolumesRequest& request, const ListVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListVolumesOutcomeCallable listVolumesCallable(const Model::ListVolumesRequest& request) const;
 			DeleteContainerAppsOutcome deleteContainerApps(const Model::DeleteContainerAppsRequest &request)const;
 			void deleteContainerAppsAsync(const Model::DeleteContainerAppsRequest& request, const DeleteContainerAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteContainerAppsOutcomeCallable deleteContainerAppsCallable(const Model::DeleteContainerAppsRequest& request) const;
+			ListVolumesOutcome listVolumes(const Model::ListVolumesRequest &request)const;
+			void listVolumesAsync(const Model::ListVolumesRequest& request, const ListVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListVolumesOutcomeCallable listVolumesCallable(const Model::ListVolumesRequest& request) const;
 			ModifyImageGatewayConfigOutcome modifyImageGatewayConfig(const Model::ModifyImageGatewayConfigRequest &request)const;
 			void modifyImageGatewayConfigAsync(const Model::ModifyImageGatewayConfigRequest& request, const ModifyImageGatewayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyImageGatewayConfigOutcomeCallable modifyImageGatewayConfigCallable(const Model::ModifyImageGatewayConfigRequest& request) const;
@@ -729,12 +729,12 @@ namespace AlibabaCloud
 			CreateGWSInstanceOutcome createGWSInstance(const Model::CreateGWSInstanceRequest &request)const;
 			void createGWSInstanceAsync(const Model::CreateGWSInstanceRequest& request, const CreateGWSInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateGWSInstanceOutcomeCallable createGWSInstanceCallable(const Model::CreateGWSInstanceRequest& request) const;
-			UpdateClusterVolumesOutcome updateClusterVolumes(const Model::UpdateClusterVolumesRequest &request)const;
-			void updateClusterVolumesAsync(const Model::UpdateClusterVolumesRequest& request, const UpdateClusterVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateClusterVolumesOutcomeCallable updateClusterVolumesCallable(const Model::UpdateClusterVolumesRequest& request) const;
 			ListCurrentClientVersionOutcome listCurrentClientVersion(const Model::ListCurrentClientVersionRequest &request)const;
 			void listCurrentClientVersionAsync(const Model::ListCurrentClientVersionRequest& request, const ListCurrentClientVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCurrentClientVersionOutcomeCallable listCurrentClientVersionCallable(const Model::ListCurrentClientVersionRequest& request) const;
+			UpdateClusterVolumesOutcome updateClusterVolumes(const Model::UpdateClusterVolumesRequest &request)const;
+			void updateClusterVolumesAsync(const Model::UpdateClusterVolumesRequest& request, const UpdateClusterVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateClusterVolumesOutcomeCallable updateClusterVolumesCallable(const Model::UpdateClusterVolumesRequest& request) const;
 			StartGWSInstanceOutcome startGWSInstance(const Model::StartGWSInstanceRequest &request)const;
 			void startGWSInstanceAsync(const Model::StartGWSInstanceRequest& request, const StartGWSInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartGWSInstanceOutcomeCallable startGWSInstanceCallable(const Model::StartGWSInstanceRequest& request) const;
@@ -744,12 +744,12 @@ namespace AlibabaCloud
 			SetAutoScaleConfigOutcome setAutoScaleConfig(const Model::SetAutoScaleConfigRequest &request)const;
 			void setAutoScaleConfigAsync(const Model::SetAutoScaleConfigRequest& request, const SetAutoScaleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetAutoScaleConfigOutcomeCallable setAutoScaleConfigCallable(const Model::SetAutoScaleConfigRequest& request) const;
-			ListSoftwaresOutcome listSoftwares(const Model::ListSoftwaresRequest &request)const;
-			void listSoftwaresAsync(const Model::ListSoftwaresRequest& request, const ListSoftwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListSoftwaresOutcomeCallable listSoftwaresCallable(const Model::ListSoftwaresRequest& request) const;
 			AddNodesOutcome addNodes(const Model::AddNodesRequest &request)const;
 			void addNodesAsync(const Model::AddNodesRequest& request, const AddNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddNodesOutcomeCallable addNodesCallable(const Model::AddNodesRequest& request) const;
+			ListSoftwaresOutcome listSoftwares(const Model::ListSoftwaresRequest &request)const;
+			void listSoftwaresAsync(const Model::ListSoftwaresRequest& request, const ListSoftwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSoftwaresOutcomeCallable listSoftwaresCallable(const Model::ListSoftwaresRequest& request) const;
 			DescribeGWSImagesOutcome describeGWSImages(const Model::DescribeGWSImagesRequest &request)const;
 			void describeGWSImagesAsync(const Model::DescribeGWSImagesRequest& request, const DescribeGWSImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGWSImagesOutcomeCallable describeGWSImagesCallable(const Model::DescribeGWSImagesRequest& request) const;
@@ -762,24 +762,24 @@ namespace AlibabaCloud
 			ModifyUserGroupsOutcome modifyUserGroups(const Model::ModifyUserGroupsRequest &request)const;
 			void modifyUserGroupsAsync(const Model::ModifyUserGroupsRequest& request, const ModifyUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyUserGroupsOutcomeCallable modifyUserGroupsCallable(const Model::ModifyUserGroupsRequest& request) const;
-			StartClusterOutcome startCluster(const Model::StartClusterRequest &request)const;
-			void startClusterAsync(const Model::StartClusterRequest& request, const StartClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StartClusterOutcomeCallable startClusterCallable(const Model::StartClusterRequest& request) const;
 			SetQueueOutcome setQueue(const Model::SetQueueRequest &request)const;
 			void setQueueAsync(const Model::SetQueueRequest& request, const SetQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetQueueOutcomeCallable setQueueCallable(const Model::SetQueueRequest& request) const;
+			StartClusterOutcome startCluster(const Model::StartClusterRequest &request)const;
+			void startClusterAsync(const Model::StartClusterRequest& request, const StartClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartClusterOutcomeCallable startClusterCallable(const Model::StartClusterRequest& request) const;
 			ListCustomImagesOutcome listCustomImages(const Model::ListCustomImagesRequest &request)const;
 			void listCustomImagesAsync(const Model::ListCustomImagesRequest& request, const ListCustomImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCustomImagesOutcomeCallable listCustomImagesCallable(const Model::ListCustomImagesRequest& request) const;
+			CreateGWSClusterOutcome createGWSCluster(const Model::CreateGWSClusterRequest &request)const;
+			void createGWSClusterAsync(const Model::CreateGWSClusterRequest& request, const CreateGWSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateGWSClusterOutcomeCallable createGWSClusterCallable(const Model::CreateGWSClusterRequest& request) const;
 			AddUsersOutcome addUsers(const Model::AddUsersRequest &request)const;
 			void addUsersAsync(const Model::AddUsersRequest& request, const AddUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUsersOutcomeCallable addUsersCallable(const Model::AddUsersRequest& request) const;
 			ListJobTemplatesOutcome listJobTemplates(const Model::ListJobTemplatesRequest &request)const;
 			void listJobTemplatesAsync(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListJobTemplatesOutcomeCallable listJobTemplatesCallable(const Model::ListJobTemplatesRequest& request) const;
-			CreateGWSClusterOutcome createGWSCluster(const Model::CreateGWSClusterRequest &request)const;
-			void createGWSClusterAsync(const Model::CreateGWSClusterRequest& request, const CreateGWSClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateGWSClusterOutcomeCallable createGWSClusterCallable(const Model::CreateGWSClusterRequest& request) const;
 			DescribeImageGatewayConfigOutcome describeImageGatewayConfig(const Model::DescribeImageGatewayConfigRequest &request)const;
 			void describeImageGatewayConfigAsync(const Model::DescribeImageGatewayConfigRequest& request, const DescribeImageGatewayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImageGatewayConfigOutcomeCallable describeImageGatewayConfigCallable(const Model::DescribeImageGatewayConfigRequest& request) const;
@@ -801,15 +801,15 @@ namespace AlibabaCloud
 			StopVisualServiceOutcome stopVisualService(const Model::StopVisualServiceRequest &request)const;
 			void stopVisualServiceAsync(const Model::StopVisualServiceRequest& request, const StopVisualServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopVisualServiceOutcomeCallable stopVisualServiceCallable(const Model::StopVisualServiceRequest& request) const;
+			DescribeImageOutcome describeImage(const Model::DescribeImageRequest &request)const;
+			void describeImageAsync(const Model::DescribeImageRequest& request, const DescribeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImageOutcomeCallable describeImageCallable(const Model::DescribeImageRequest& request) const;
 			CreateClusterOutcome createCluster(const Model::CreateClusterRequest &request)const;
 			void createClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
 			ModifyUserPasswordsOutcome modifyUserPasswords(const Model::ModifyUserPasswordsRequest &request)const;
 			void modifyUserPasswordsAsync(const Model::ModifyUserPasswordsRequest& request, const ModifyUserPasswordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyUserPasswordsOutcomeCallable modifyUserPasswordsCallable(const Model::ModifyUserPasswordsRequest& request) const;
-			DescribeImageOutcome describeImage(const Model::DescribeImageRequest &request)const;
-			void describeImageAsync(const Model::DescribeImageRequest& request, const DescribeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeImageOutcomeCallable describeImageCallable(const Model::DescribeImageRequest& request) const;
 			DeleteQueueOutcome deleteQueue(const Model::DeleteQueueRequest &request)const;
 			void deleteQueueAsync(const Model::DeleteQueueRequest& request, const DeleteQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteQueueOutcomeCallable deleteQueueCallable(const Model::DeleteQueueRequest& request) const;

@@ -25,6 +25,17 @@ GetGWSConnectTicketRequest::GetGWSConnectTicketRequest() :
 GetGWSConnectTicketRequest::~GetGWSConnectTicketRequest()
 {}
 
+std::string GetGWSConnectTicketRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetGWSConnectTicketRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetGWSConnectTicketRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -45,16 +56,5 @@ void GetGWSConnectTicketRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
 	setCoreParameter("AppName", appName);
-}
-
-std::string GetGWSConnectTicketRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetGWSConnectTicketRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

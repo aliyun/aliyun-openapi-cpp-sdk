@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ModifyClusterAttributesRequest();
 				~ModifyClusterAttributesRequest();
 
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string name_;
 				std::string description_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string name_;
 
 			};
 		}
