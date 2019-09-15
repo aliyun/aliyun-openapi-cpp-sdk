@@ -25,6 +25,28 @@ DescribeAlarmEventListRequest::DescribeAlarmEventListRequest() :
 DescribeAlarmEventListRequest::~DescribeAlarmEventListRequest()
 {}
 
+std::string DescribeAlarmEventListRequest::getAlarmEventType()const
+{
+	return alarmEventType_;
+}
+
+void DescribeAlarmEventListRequest::setAlarmEventType(const std::string& alarmEventType)
+{
+	alarmEventType_ = alarmEventType;
+	setCoreParameter("AlarmEventType", alarmEventType);
+}
+
+std::string DescribeAlarmEventListRequest::getRemark()const
+{
+	return remark_;
+}
+
+void DescribeAlarmEventListRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
 std::string DescribeAlarmEventListRequest::getAlarmEventName()const
 {
 	return alarmEventName_;
@@ -47,17 +69,6 @@ void DescribeAlarmEventListRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeAlarmEventListRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeAlarmEventListRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
 std::string DescribeAlarmEventListRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,28 +78,6 @@ void DescribeAlarmEventListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", pageSize);
-}
-
-std::string DescribeAlarmEventListRequest::getAlarmEventType()const
-{
-	return alarmEventType_;
-}
-
-void DescribeAlarmEventListRequest::setAlarmEventType(const std::string& alarmEventType)
-{
-	alarmEventType_ = alarmEventType;
-	setCoreParameter("AlarmEventType", alarmEventType);
-}
-
-std::string DescribeAlarmEventListRequest::getDealed()const
-{
-	return dealed_;
-}
-
-void DescribeAlarmEventListRequest::setDealed(const std::string& dealed)
-{
-	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
 }
 
 std::string DescribeAlarmEventListRequest::getFrom()const
@@ -102,15 +91,37 @@ void DescribeAlarmEventListRequest::setFrom(const std::string& from)
 	setCoreParameter("From", from);
 }
 
-std::string DescribeAlarmEventListRequest::getRemark()const
+std::string DescribeAlarmEventListRequest::getLang()const
 {
-	return remark_;
+	return lang_;
 }
 
-void DescribeAlarmEventListRequest::setRemark(const std::string& remark)
+void DescribeAlarmEventListRequest::setLang(const std::string& lang)
 {
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string DescribeAlarmEventListRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeAlarmEventListRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeAlarmEventListRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void DescribeAlarmEventListRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setCoreParameter("Dealed", dealed);
 }
 
 int DescribeAlarmEventListRequest::getCurrentPage()const
@@ -124,15 +135,16 @@ void DescribeAlarmEventListRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeAlarmEventListRequest::getLang()const
+std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList()const
 {
-	return lang_;
+	return operateErrorCodeList_;
 }
 
-void DescribeAlarmEventListRequest::setLang(const std::string& lang)
+void DescribeAlarmEventListRequest::setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList)
 {
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	operateErrorCodeList_ = operateErrorCodeList;
+	for(int i = 0; i!= operateErrorCodeList.size(); i++)
+		setCoreParameter("OperateErrorCodeList."+ std::to_string(i), operateErrorCodeList.at(i));
 }
 
 std::string DescribeAlarmEventListRequest::getLevels()const
@@ -144,17 +156,5 @@ void DescribeAlarmEventListRequest::setLevels(const std::string& levels)
 {
 	levels_ = levels;
 	setCoreParameter("Levels", levels);
-}
-
-std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList()const
-{
-	return operateErrorCodeList_;
-}
-
-void DescribeAlarmEventListRequest::setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList)
-{
-	operateErrorCodeList_ = operateErrorCodeList;
-	for(int i = 0; i!= operateErrorCodeList.size(); i++)
-		setCoreParameter("OperateErrorCodeList."+ std::to_string(i), operateErrorCodeList.at(i));
 }
 

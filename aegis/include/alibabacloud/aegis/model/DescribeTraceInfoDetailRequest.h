@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				DescribeTraceInfoDetailRequest();
 				~DescribeTraceInfoDetailRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getVertexId()const;
 				void setVertexId(const std::string& vertexId);
-				std::string getFrom()const;
-				void setFrom(const std::string& from);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				long getIncidentTime()const;
 				void setIncidentTime(long incidentTime);
 
             private:
-				std::string sourceIp_;
 				std::string vertexId_;
-				std::string from_;
-				std::string lang_;
 				std::string type_;
 				std::string uuid_;
+				std::string sourceIp_;
+				std::string from_;
+				std::string lang_;
 				long incidentTime_;
 
 			};

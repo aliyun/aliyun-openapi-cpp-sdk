@@ -25,6 +25,28 @@ DescribeSuspiciousEventsRequest::DescribeSuspiciousEventsRequest() :
 DescribeSuspiciousEventsRequest::~DescribeSuspiciousEventsRequest()
 {}
 
+std::string DescribeSuspiciousEventsRequest::getRemark()const
+{
+	return remark_;
+}
+
+void DescribeSuspiciousEventsRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string DescribeSuspiciousEventsRequest::getUuid()const
+{
+	return uuid_;
+}
+
+void DescribeSuspiciousEventsRequest::setUuid(const std::string& uuid)
+{
+	uuid_ = uuid;
+	setCoreParameter("Uuid", uuid);
+}
+
 std::string DescribeSuspiciousEventsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -36,17 +58,6 @@ void DescribeSuspiciousEventsRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeSuspiciousEventsRequest::getLevel()const
-{
-	return level_;
-}
-
-void DescribeSuspiciousEventsRequest::setLevel(const std::string& level)
-{
-	level_ = level;
-	setCoreParameter("Level", level);
-}
-
 int DescribeSuspiciousEventsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -56,6 +67,17 @@ void DescribeSuspiciousEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeSuspiciousEventsRequest::getLevel()const
+{
+	return level_;
+}
+
+void DescribeSuspiciousEventsRequest::setLevel(const std::string& level)
+{
+	level_ = level;
+	setCoreParameter("Level", level);
 }
 
 int DescribeSuspiciousEventsRequest::getCurrentPage()const
@@ -80,17 +102,6 @@ void DescribeSuspiciousEventsRequest::setDealed(const std::string& dealed)
 	setCoreParameter("Dealed", dealed);
 }
 
-std::string DescribeSuspiciousEventsRequest::getRemark()const
-{
-	return remark_;
-}
-
-void DescribeSuspiciousEventsRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
-}
-
 std::string DescribeSuspiciousEventsRequest::getEventType()const
 {
 	return eventType_;
@@ -100,16 +111,5 @@ void DescribeSuspiciousEventsRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
 	setCoreParameter("EventType", eventType);
-}
-
-std::string DescribeSuspiciousEventsRequest::getUuid()const
-{
-	return uuid_;
-}
-
-void DescribeSuspiciousEventsRequest::setUuid(const std::string& uuid)
-{
-	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
 }
 

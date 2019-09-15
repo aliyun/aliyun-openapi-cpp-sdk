@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				UpdateCustomizeReportStatusRequest();
 				~UpdateCustomizeReportStatusRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getReportId()const;
 				void setReportId(long reportId);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				int getReportStatus()const;
 				void setReportStatus(int reportStatus);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				long reportId_;
-				std::string lang_;
 				int reportStatus_;
+				std::string sourceIp_;
+				std::string lang_;
 
 			};
 		}

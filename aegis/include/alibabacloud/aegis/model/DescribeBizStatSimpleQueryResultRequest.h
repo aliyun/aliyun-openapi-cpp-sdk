@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				DescribeBizStatSimpleQueryResultRequest();
 				~DescribeBizStatSimpleQueryResultRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				int getCustomTimeRange()const;
 				void setCustomTimeRange(int customTimeRange);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getCustomQuery()const;
 				void setCustomQuery(const std::string& customQuery);
 
             private:
-				std::string sourceIp_;
 				std::string endTime_;
 				std::string startTime_;
 				int customTimeRange_;
+				std::string sourceIp_;
 				std::string customQuery_;
 
 			};

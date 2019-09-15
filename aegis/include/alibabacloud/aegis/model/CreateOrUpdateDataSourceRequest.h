@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				CreateOrUpdateDataSourceRequest();
 				~CreateOrUpdateDataSourceRequest();
 
+				std::string getDatasourceDescription()const;
+				void setDatasourceDescription(const std::string& datasourceDescription);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
 				std::string getConfigType()const;
 				void setConfigType(const std::string& configType);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getLogStoreName()const;
 				void setLogStoreName(const std::string& logStoreName);
-				std::string getDatasourceDescription()const;
-				void setDatasourceDescription(const std::string& datasourceDescription);
-				std::string getFields()const;
-				void setFields(const std::string& fields);
 				std::string getRegionNo()const;
 				void setRegionNo(const std::string& regionNo);
+				std::string getFields()const;
+				void setFields(const std::string& fields);
 
             private:
+				std::string datasourceDescription_;
+				std::string sourceIp_;
 				std::string projectName_;
 				std::string configType_;
-				std::string sourceIp_;
 				std::string logStoreName_;
-				std::string datasourceDescription_;
-				std::string fields_;
 				std::string regionNo_;
+				std::string fields_;
 
 			};
 		}

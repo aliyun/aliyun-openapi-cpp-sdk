@@ -25,17 +25,6 @@ DescribeTraceInfoDetailRequest::DescribeTraceInfoDetailRequest() :
 DescribeTraceInfoDetailRequest::~DescribeTraceInfoDetailRequest()
 {}
 
-std::string DescribeTraceInfoDetailRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeTraceInfoDetailRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeTraceInfoDetailRequest::getVertexId()const
 {
 	return vertexId_;
@@ -45,28 +34,6 @@ void DescribeTraceInfoDetailRequest::setVertexId(const std::string& vertexId)
 {
 	vertexId_ = vertexId;
 	setCoreParameter("VertexId", vertexId);
-}
-
-std::string DescribeTraceInfoDetailRequest::getFrom()const
-{
-	return from_;
-}
-
-void DescribeTraceInfoDetailRequest::setFrom(const std::string& from)
-{
-	from_ = from;
-	setCoreParameter("From", from);
-}
-
-std::string DescribeTraceInfoDetailRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeTraceInfoDetailRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeTraceInfoDetailRequest::getType()const
@@ -89,6 +56,39 @@ void DescribeTraceInfoDetailRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
 	setCoreParameter("Uuid", uuid);
+}
+
+std::string DescribeTraceInfoDetailRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeTraceInfoDetailRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeTraceInfoDetailRequest::getFrom()const
+{
+	return from_;
+}
+
+void DescribeTraceInfoDetailRequest::setFrom(const std::string& from)
+{
+	from_ = from;
+	setCoreParameter("From", from);
+}
+
+std::string DescribeTraceInfoDetailRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeTraceInfoDetailRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeTraceInfoDetailRequest::getIncidentTime()const

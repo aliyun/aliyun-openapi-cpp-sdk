@@ -25,17 +25,6 @@ DescribeScreenCityMonitorDataRequest::DescribeScreenCityMonitorDataRequest() :
 DescribeScreenCityMonitorDataRequest::~DescribeScreenCityMonitorDataRequest()
 {}
 
-int DescribeScreenCityMonitorDataRequest::getScreenId()const
-{
-	return screenId_;
-}
-
-void DescribeScreenCityMonitorDataRequest::setScreenId(int screenId)
-{
-	screenId_ = screenId;
-	setCoreParameter("ScreenId", std::to_string(screenId));
-}
-
 std::string DescribeScreenCityMonitorDataRequest::getDateType()const
 {
 	return dateType_;
@@ -45,6 +34,17 @@ void DescribeScreenCityMonitorDataRequest::setDateType(const std::string& dateTy
 {
 	dateType_ = dateType;
 	setCoreParameter("DateType", dateType);
+}
+
+int DescribeScreenCityMonitorDataRequest::getScreenId()const
+{
+	return screenId_;
+}
+
+void DescribeScreenCityMonitorDataRequest::setScreenId(int screenId)
+{
+	screenId_ = screenId;
+	setCoreParameter("ScreenId", std::to_string(screenId));
 }
 
 std::string DescribeScreenCityMonitorDataRequest::getSourceIp()const

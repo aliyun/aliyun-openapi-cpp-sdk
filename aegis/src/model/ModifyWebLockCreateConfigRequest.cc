@@ -36,28 +36,6 @@ void ModifyWebLockCreateConfigRequest::setLocalBackupDir(const std::string& loca
 	setCoreParameter("LocalBackupDir", localBackupDir);
 }
 
-std::string ModifyWebLockCreateConfigRequest::getMode()const
-{
-	return mode_;
-}
-
-void ModifyWebLockCreateConfigRequest::setMode(const std::string& mode)
-{
-	mode_ = mode;
-	setCoreParameter("Mode", mode);
-}
-
-std::string ModifyWebLockCreateConfigRequest::getInclusiveFileType()const
-{
-	return inclusiveFileType_;
-}
-
-void ModifyWebLockCreateConfigRequest::setInclusiveFileType(const std::string& inclusiveFileType)
-{
-	inclusiveFileType_ = inclusiveFileType;
-	setCoreParameter("InclusiveFileType", inclusiveFileType);
-}
-
 std::string ModifyWebLockCreateConfigRequest::getExclusiveFile()const
 {
 	return exclusiveFile_;
@@ -69,17 +47,6 @@ void ModifyWebLockCreateConfigRequest::setExclusiveFile(const std::string& exclu
 	setCoreParameter("ExclusiveFile", exclusiveFile);
 }
 
-std::string ModifyWebLockCreateConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyWebLockCreateConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyWebLockCreateConfigRequest::getExclusiveFileType()const
 {
 	return exclusiveFileType_;
@@ -89,17 +56,6 @@ void ModifyWebLockCreateConfigRequest::setExclusiveFileType(const std::string& e
 {
 	exclusiveFileType_ = exclusiveFileType;
 	setCoreParameter("ExclusiveFileType", exclusiveFileType);
-}
-
-std::string ModifyWebLockCreateConfigRequest::getLang()const
-{
-	return lang_;
-}
-
-void ModifyWebLockCreateConfigRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyWebLockCreateConfigRequest::getDir()const
@@ -124,6 +80,39 @@ void ModifyWebLockCreateConfigRequest::setUuid(const std::string& uuid)
 	setCoreParameter("Uuid", uuid);
 }
 
+std::string ModifyWebLockCreateConfigRequest::getMode()const
+{
+	return mode_;
+}
+
+void ModifyWebLockCreateConfigRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setCoreParameter("Mode", mode);
+}
+
+std::string ModifyWebLockCreateConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyWebLockCreateConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string ModifyWebLockCreateConfigRequest::getLang()const
+{
+	return lang_;
+}
+
+void ModifyWebLockCreateConfigRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
 std::string ModifyWebLockCreateConfigRequest::getExclusiveDir()const
 {
 	return exclusiveDir_;
@@ -133,5 +122,16 @@ void ModifyWebLockCreateConfigRequest::setExclusiveDir(const std::string& exclus
 {
 	exclusiveDir_ = exclusiveDir;
 	setCoreParameter("ExclusiveDir", exclusiveDir);
+}
+
+std::string ModifyWebLockCreateConfigRequest::getInclusiveFileType()const
+{
+	return inclusiveFileType_;
+}
+
+void ModifyWebLockCreateConfigRequest::setInclusiveFileType(const std::string& inclusiveFileType)
+{
+	inclusiveFileType_ = inclusiveFileType;
+	setCoreParameter("InclusiveFileType", inclusiveFileType);
 }
 

@@ -25,6 +25,28 @@ DescribeLatestActionsRequest::DescribeLatestActionsRequest() :
 DescribeLatestActionsRequest::~DescribeLatestActionsRequest()
 {}
 
+int DescribeLatestActionsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeLatestActionsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeLatestActionsRequest::getSecureToken()const
+{
+	return secureToken_;
+}
+
+void DescribeLatestActionsRequest::setSecureToken(const std::string& secureToken)
+{
+	secureToken_ = secureToken;
+	setCoreParameter("SecureToken", secureToken);
+}
+
 std::string DescribeLatestActionsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,27 +78,5 @@ void DescribeLatestActionsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
 	setCoreParameter("From", from);
-}
-
-int DescribeLatestActionsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeLatestActionsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string DescribeLatestActionsRequest::getSecureToken()const
-{
-	return secureToken_;
-}
-
-void DescribeLatestActionsRequest::setSecureToken(const std::string& secureToken)
-{
-	secureToken_ = secureToken;
-	setCoreParameter("SecureToken", secureToken);
 }
 

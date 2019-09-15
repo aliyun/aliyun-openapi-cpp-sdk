@@ -36,39 +36,6 @@ void ExportSuspEventsRequest::setTimeEnd(const std::string& timeEnd)
 	setCoreParameter("TimeEnd", timeEnd);
 }
 
-std::string ExportSuspEventsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ExportSuspEventsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string ExportSuspEventsRequest::getName()const
-{
-	return name_;
-}
-
-void ExportSuspEventsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string ExportSuspEventsRequest::getDealed()const
-{
-	return dealed_;
-}
-
-void ExportSuspEventsRequest::setDealed(const std::string& dealed)
-{
-	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
-}
-
 std::string ExportSuspEventsRequest::getRemark()const
 {
 	return remark_;
@@ -78,6 +45,17 @@ void ExportSuspEventsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
 	setCoreParameter("Remark", remark);
+}
+
+std::string ExportSuspEventsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ExportSuspEventsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ExportSuspEventsRequest::getFrom()const
@@ -91,17 +69,6 @@ void ExportSuspEventsRequest::setFrom(const std::string& from)
 	setCoreParameter("From", from);
 }
 
-std::string ExportSuspEventsRequest::getTimeStart()const
-{
-	return timeStart_;
-}
-
-void ExportSuspEventsRequest::setTimeStart(const std::string& timeStart)
-{
-	timeStart_ = timeStart;
-	setCoreParameter("TimeStart", timeStart);
-}
-
 std::string ExportSuspEventsRequest::getLang()const
 {
 	return lang_;
@@ -111,6 +78,39 @@ void ExportSuspEventsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+std::string ExportSuspEventsRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void ExportSuspEventsRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setCoreParameter("Dealed", dealed);
+}
+
+std::string ExportSuspEventsRequest::getName()const
+{
+	return name_;
+}
+
+void ExportSuspEventsRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string ExportSuspEventsRequest::getTimeStart()const
+{
+	return timeStart_;
+}
+
+void ExportSuspEventsRequest::setTimeStart(const std::string& timeStart)
+{
+	timeStart_ = timeStart;
+	setCoreParameter("TimeStart", timeStart);
 }
 
 std::string ExportSuspEventsRequest::getLevels()const

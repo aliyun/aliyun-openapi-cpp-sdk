@@ -35,39 +35,39 @@ namespace AlibabaCloud
 				DescribesummaryRequest();
 				~DescribesummaryRequest();
 
-				std::string getTypeNames()const;
-				void setTypeNames(const std::string& typeNames);
-				std::string getRiskName()const;
-				void setRiskName(const std::string& riskName);
 				std::string getStatusList()const;
 				void setStatusList(const std::string& statusList);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getRiskLevels()const;
 				void setRiskLevels(const std::string& riskLevels);
+				std::string getRiskName()const;
+				void setRiskName(const std::string& riskName);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getDealed()const;
 				void setDealed(const std::string& dealed);
-				long getStrategyId()const;
-				void setStrategyId(long strategyId);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getTypeNames()const;
+				void setTypeNames(const std::string& typeNames);
+				long getStrategyId()const;
+				void setStrategyId(long strategyId);
 				std::string getSubTypeNames()const;
 				void setSubTypeNames(const std::string& subTypeNames);
 				std::string getUuids()const;
 				void setUuids(const std::string& uuids);
 
             private:
-				std::string typeNames_;
-				std::string riskName_;
 				std::string statusList_;
-				std::string sourceIp_;
 				std::string riskLevels_;
+				std::string riskName_;
+				std::string sourceIp_;
 				int pageSize_;
 				std::string dealed_;
-				long strategyId_;
 				int currentPage_;
+				std::string typeNames_;
+				long strategyId_;
 				std::string subTypeNames_;
 				std::string uuids_;
 

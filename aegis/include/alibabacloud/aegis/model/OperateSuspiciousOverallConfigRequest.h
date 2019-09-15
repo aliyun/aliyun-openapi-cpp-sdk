@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				OperateSuspiciousOverallConfigRequest();
 				~OperateSuspiciousOverallConfigRequest();
 
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getType()const;
-				void setType(const std::string& type);
 				std::string getConfig()const;
 				void setConfig(const std::string& config);
 
             private:
+				std::string type_;
 				std::string sourceIp_;
 				std::string lang_;
-				std::string type_;
 				std::string config_;
 
 			};

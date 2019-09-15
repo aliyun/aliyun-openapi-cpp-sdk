@@ -25,17 +25,6 @@ DescribeChartListRequest::DescribeChartListRequest() :
 DescribeChartListRequest::~DescribeChartListRequest()
 {}
 
-std::string DescribeChartListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeChartListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeChartListRequest::getProjectCode()const
 {
 	return projectCode_;
@@ -45,6 +34,17 @@ void DescribeChartListRequest::setProjectCode(const std::string& projectCode)
 {
 	projectCode_ = projectCode;
 	setCoreParameter("ProjectCode", projectCode);
+}
+
+std::string DescribeChartListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeChartListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeChartListRequest::getLang()const

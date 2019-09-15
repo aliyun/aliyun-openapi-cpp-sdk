@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeGroupStructRequest();
 				~DescribeGroupStructRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getTagIdList()const;
 				void setTagIdList(const std::string& tagIdList);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string tagIdList_;
 				std::string remark_;
+				std::string sourceIp_;
 
 			};
 		}

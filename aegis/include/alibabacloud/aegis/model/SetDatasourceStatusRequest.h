@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getLogStoreName()const;
 				void setLogStoreName(const std::string& logStoreName);
-				int getStatus()const;
-				void setStatus(int status);
 				std::string getRegionNo()const;
 				void setRegionNo(const std::string& regionNo);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getStatus()const;
+				void setStatus(int status);
 
             private:
 				std::string projectName_;
-				std::string sourceIp_;
 				std::string logStoreName_;
-				int status_;
 				std::string regionNo_;
+				std::string sourceIp_;
+				int status_;
 
 			};
 		}

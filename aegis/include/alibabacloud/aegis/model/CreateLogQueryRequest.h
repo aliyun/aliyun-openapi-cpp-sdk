@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				CreateLogQueryRequest();
 				~CreateLogQueryRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getQueryName()const;
 				void setQueryName(const std::string& queryName);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getConditions()const;
 				void setConditions(const std::string& conditions);
 				std::string getQueryDetail()const;
 				void setQueryDetail(const std::string& queryDetail);
 
             private:
-				std::string sourceIp_;
 				std::string queryName_;
+				std::string sourceIp_;
 				std::string conditions_;
 				std::string queryDetail_;
 

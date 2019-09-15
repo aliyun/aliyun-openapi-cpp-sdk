@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				RollbackQuaraFileRequest();
 				~RollbackQuaraFileRequest();
 
+				std::string getUuid()const;
+				void setUuid(const std::string& uuid);
+				std::string getEventName()const;
+				void setEventName(const std::string& eventName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getEventType()const;
 				void setEventType(const std::string& eventType);
 				std::string getTag()const;
 				void setTag(const std::string& tag);
-				std::string getUuid()const;
-				void setUuid(const std::string& uuid);
-				std::string getEventName()const;
-				void setEventName(const std::string& eventName);
 
             private:
+				std::string uuid_;
+				std::string eventName_;
 				std::string sourceIp_;
 				std::string eventType_;
 				std::string tag_;
-				std::string uuid_;
-				std::string eventName_;
 
 			};
 		}

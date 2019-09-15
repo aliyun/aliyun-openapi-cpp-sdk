@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				DescribeAccesskeyLeakListRequest();
 				~DescribeAccesskeyLeakListRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getQuery()const;
 				void setQuery(const std::string& query);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getStartTs()const;
 				void setStartTs(long startTs);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
-				std::string sourceIp_;
 				std::string query_;
-				int pageSize_;
 				long startTs_;
 				int currentPage_;
+				std::string sourceIp_;
+				int pageSize_;
 				std::string status_;
 
 			};

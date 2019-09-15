@@ -35,13 +35,9 @@ DescribeVulListResult::~DescribeVulListResult()
 
 void DescribeVulListResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allVulRecords = value["VulRecords"]["VulRecord"];
 	for (auto value : allVulRecords)
@@ -73,6 +69,8 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.repairTs = std::stol(value["RepairTs"].asString());
 		if(!value["Status"].isNull())
 			vulRecordsObject.status = std::stoi(value["Status"].asString());
+		if(!value["Progress"].isNull())
+			vulRecordsObject.progress = std::stoi(value["Progress"].asString());
 		if(!value["Related"].isNull())
 			vulRecordsObject.related = value["Related"].asString();
 		if(!value["ResultCode"].isNull())

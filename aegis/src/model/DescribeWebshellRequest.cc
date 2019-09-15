@@ -25,17 +25,6 @@ DescribeWebshellRequest::DescribeWebshellRequest() :
 DescribeWebshellRequest::~DescribeWebshellRequest()
 {}
 
-std::string DescribeWebshellRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeWebshellRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeWebshellRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,6 +56,17 @@ void DescribeWebshellRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
 	setCoreParameter("Dealed", dealed);
+}
+
+std::string DescribeWebshellRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeWebshellRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeWebshellRequest::getTag()const

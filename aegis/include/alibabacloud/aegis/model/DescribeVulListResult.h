@@ -114,6 +114,7 @@ namespace AlibabaCloud
 					std::string canFix;
 					ExtendContentJson extendContentJson;
 					int status;
+					int progress;
 					std::string instanceId;
 					long lastTs;
 					std::string necessity;

@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DescribeScreenCityMonitorDataRequest();
 				~DescribeScreenCityMonitorDataRequest();
 
-				int getScreenId()const;
-				void setScreenId(int screenId);
 				std::string getDateType()const;
 				void setDateType(const std::string& dateType);
+				int getScreenId()const;
+				void setScreenId(int screenId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 
             private:
-				int screenId_;
 				std::string dateType_;
+				int screenId_;
 				std::string sourceIp_;
 
 			};

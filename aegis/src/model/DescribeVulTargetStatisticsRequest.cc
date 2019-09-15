@@ -25,17 +25,6 @@ DescribeVulTargetStatisticsRequest::DescribeVulTargetStatisticsRequest() :
 DescribeVulTargetStatisticsRequest::~DescribeVulTargetStatisticsRequest()
 {}
 
-std::string DescribeVulTargetStatisticsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeVulTargetStatisticsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeVulTargetStatisticsRequest::getType()const
 {
 	return type_;
@@ -45,5 +34,16 @@ void DescribeVulTargetStatisticsRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string DescribeVulTargetStatisticsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeVulTargetStatisticsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

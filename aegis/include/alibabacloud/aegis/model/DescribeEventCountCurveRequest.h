@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				std::string getTypes()const;
 				void setTypes(const std::string& types);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getVulEventLevels()const;
-				void setVulEventLevels(const std::string& vulEventLevels);
 				int getLastDays()const;
 				void setLastDays(int lastDays);
 				std::string getHealthEventLevels()const;
 				void setHealthEventLevels(const std::string& healthEventLevels);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getVulEventLevels()const;
+				void setVulEventLevels(const std::string& vulEventLevels);
 				std::string getSuspiciousEventLevels()const;
 				void setSuspiciousEventLevels(const std::string& suspiciousEventLevels);
 
             private:
 				std::string types_;
-				std::string sourceIp_;
-				std::string vulEventLevels_;
 				int lastDays_;
 				std::string healthEventLevels_;
+				std::string sourceIp_;
+				std::string vulEventLevels_;
 				std::string suspiciousEventLevels_;
 
 			};

@@ -25,17 +25,6 @@ UpdateCustomizeReportStatusRequest::UpdateCustomizeReportStatusRequest() :
 UpdateCustomizeReportStatusRequest::~UpdateCustomizeReportStatusRequest()
 {}
 
-std::string UpdateCustomizeReportStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void UpdateCustomizeReportStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long UpdateCustomizeReportStatusRequest::getReportId()const
 {
 	return reportId_;
@@ -47,17 +36,6 @@ void UpdateCustomizeReportStatusRequest::setReportId(long reportId)
 	setCoreParameter("ReportId", std::to_string(reportId));
 }
 
-std::string UpdateCustomizeReportStatusRequest::getLang()const
-{
-	return lang_;
-}
-
-void UpdateCustomizeReportStatusRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 int UpdateCustomizeReportStatusRequest::getReportStatus()const
 {
 	return reportStatus_;
@@ -67,5 +45,27 @@ void UpdateCustomizeReportStatusRequest::setReportStatus(int reportStatus)
 {
 	reportStatus_ = reportStatus;
 	setCoreParameter("ReportStatus", std::to_string(reportStatus));
+}
+
+std::string UpdateCustomizeReportStatusRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void UpdateCustomizeReportStatusRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string UpdateCustomizeReportStatusRequest::getLang()const
+{
+	return lang_;
+}
+
+void UpdateCustomizeReportStatusRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

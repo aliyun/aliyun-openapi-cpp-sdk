@@ -25,6 +25,17 @@ DeleteVulBatchRequest::DeleteVulBatchRequest() :
 DeleteVulBatchRequest::~DeleteVulBatchRequest()
 {}
 
+std::string DeleteVulBatchRequest::getResource()const
+{
+	return resource_;
+}
+
+void DeleteVulBatchRequest::setResource(const std::string& resource)
+{
+	resource_ = resource;
+	setCoreParameter("Resource", resource);
+}
+
 std::string DeleteVulBatchRequest::getBatchName()const
 {
 	return batchName_;
@@ -45,16 +56,5 @@ void DeleteVulBatchRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DeleteVulBatchRequest::getResource()const
-{
-	return resource_;
-}
-
-void DeleteVulBatchRequest::setResource(const std::string& resource)
-{
-	resource_ = resource;
-	setCoreParameter("Resource", resource);
 }
 

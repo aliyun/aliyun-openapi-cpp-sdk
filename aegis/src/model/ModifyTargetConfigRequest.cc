@@ -25,17 +25,6 @@ ModifyTargetConfigRequest::ModifyTargetConfigRequest() :
 ModifyTargetConfigRequest::~ModifyTargetConfigRequest()
 {}
 
-std::string ModifyTargetConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyTargetConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyTargetConfigRequest::getType()const
 {
 	return type_;
@@ -56,6 +45,17 @@ void ModifyTargetConfigRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
 	setCoreParameter("Uuid", uuid);
+}
+
+std::string ModifyTargetConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyTargetConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyTargetConfigRequest::getConfig()const

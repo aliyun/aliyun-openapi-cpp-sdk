@@ -37,26 +37,26 @@ namespace AlibabaCloud
 
 				std::string getWarnLevel()const;
 				void setWarnLevel(const std::string& warnLevel);
-				long getDataSourceId2()const;
-				void setDataSourceId2(long dataSourceId2);
-				long getDataSourceId1()const;
-				void setDataSourceId1(long dataSourceId1);
-				long getTimeWindow()const;
-				void setTimeWindow(long timeWindow);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
-				std::string getExpression2()const;
-				void setExpression2(const std::string& expression2);
-				std::string getExpression1()const;
-				void setExpression1(const std::string& expression1);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getStatisticsRules()const;
 				void setStatisticsRules(const std::string& statisticsRules);
 				std::string getJoinRelation()const;
 				void setJoinRelation(const std::string& joinRelation);
+				long getDataSourceId2()const;
+				void setDataSourceId2(long dataSourceId2);
+				long getDataSourceId1()const;
+				void setDataSourceId1(long dataSourceId1);
+				long getTimeWindow()const;
+				void setTimeWindow(long timeWindow);
+				std::string getExpression2()const;
+				void setExpression2(const std::string& expression2);
+				std::string getExpression1()const;
+				void setExpression1(const std::string& expression1);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
 				std::string getActions()const;
@@ -64,16 +64,16 @@ namespace AlibabaCloud
 
             private:
 				std::string warnLevel_;
-				long dataSourceId2_;
-				long dataSourceId1_;
-				long timeWindow_;
 				std::string description_;
 				std::string ruleName_;
-				std::string expression2_;
-				std::string expression1_;
 				std::string sourceIp_;
 				std::string statisticsRules_;
 				std::string joinRelation_;
+				long dataSourceId2_;
+				long dataSourceId1_;
+				long timeWindow_;
+				std::string expression2_;
+				std::string expression1_;
 				long ruleId_;
 				std::string actions_;
 

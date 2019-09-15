@@ -25,6 +25,17 @@ DescribeNsasSuspEventTypeRequest::DescribeNsasSuspEventTypeRequest() :
 DescribeNsasSuspEventTypeRequest::~DescribeNsasSuspEventTypeRequest()
 {}
 
+std::string DescribeNsasSuspEventTypeRequest::getRemark()const
+{
+	return remark_;
+}
+
+void DescribeNsasSuspEventTypeRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
 std::string DescribeNsasSuspEventTypeRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void DescribeNsasSuspEventTypeRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string DescribeNsasSuspEventTypeRequest::getRemark()const
-{
-	return remark_;
-}
-
-void DescribeNsasSuspEventTypeRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeNsasSuspEventTypeRequest::getFrom()const

@@ -36,17 +36,6 @@ void DescribeAnalysisLogsRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeAnalysisLogsRequest::getQuery()const
-{
-	return query_;
-}
-
-void DescribeAnalysisLogsRequest::setQuery(const std::string& query)
-{
-	query_ = query;
-	setCoreParameter("Query", query);
-}
-
 int DescribeAnalysisLogsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -69,6 +58,17 @@ void DescribeAnalysisLogsRequest::setFrom(int from)
 	setCoreParameter("From", std::to_string(from));
 }
 
+std::string DescribeAnalysisLogsRequest::getQuery()const
+{
+	return query_;
+}
+
+void DescribeAnalysisLogsRequest::setQuery(const std::string& query)
+{
+	query_ = query;
+	setCoreParameter("Query", query);
+}
+
 int DescribeAnalysisLogsRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -80,17 +80,6 @@ void DescribeAnalysisLogsRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-int DescribeAnalysisLogsRequest::getTo()const
-{
-	return to_;
-}
-
-void DescribeAnalysisLogsRequest::setTo(int to)
-{
-	to_ = to;
-	setCoreParameter("To", std::to_string(to));
-}
-
 bool DescribeAnalysisLogsRequest::getReverse()const
 {
 	return reverse_;
@@ -100,5 +89,16 @@ void DescribeAnalysisLogsRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
 	setCoreParameter("Reverse", reverse ? "true" : "false");
+}
+
+int DescribeAnalysisLogsRequest::getTo()const
+{
+	return to_;
+}
+
+void DescribeAnalysisLogsRequest::setTo(int to)
+{
+	to_ = to;
+	setCoreParameter("To", std::to_string(to));
 }
 

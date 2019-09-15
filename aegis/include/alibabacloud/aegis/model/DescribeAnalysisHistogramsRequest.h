@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				DescribeAnalysisHistogramsRequest();
 				~DescribeAnalysisHistogramsRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getQuery()const;
 				void setQuery(const std::string& query);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				int getFrom()const;
 				void setFrom(int from);
 				int getTo()const;
 				void setTo(int to);
 
             private:
-				std::string sourceIp_;
 				std::string query_;
+				std::string sourceIp_;
 				int from_;
 				int to_;
 

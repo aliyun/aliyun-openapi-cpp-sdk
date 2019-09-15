@@ -25,6 +25,17 @@ AddEventProcessRequest::AddEventProcessRequest() :
 AddEventProcessRequest::~AddEventProcessRequest()
 {}
 
+std::string AddEventProcessRequest::getSuspiciousEventIds()const
+{
+	return suspiciousEventIds_;
+}
+
+void AddEventProcessRequest::setSuspiciousEventIds(const std::string& suspiciousEventIds)
+{
+	suspiciousEventIds_ = suspiciousEventIds;
+	setCoreParameter("SuspiciousEventIds", suspiciousEventIds);
+}
+
 std::string AddEventProcessRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void AddEventProcessRequest::setWarningType(const std::string& warningType)
 {
 	warningType_ = warningType;
 	setCoreParameter("WarningType", warningType);
-}
-
-std::string AddEventProcessRequest::getSuspiciousEventIds()const
-{
-	return suspiciousEventIds_;
-}
-
-void AddEventProcessRequest::setSuspiciousEventIds(const std::string& suspiciousEventIds)
-{
-	suspiciousEventIds_ = suspiciousEventIds;
-	setCoreParameter("SuspiciousEventIds", suspiciousEventIds);
 }
 
 std::string AddEventProcessRequest::getFrom()const

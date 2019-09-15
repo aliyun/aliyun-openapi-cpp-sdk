@@ -25,17 +25,6 @@ DeleteLogQueryRequest::DeleteLogQueryRequest() :
 DeleteLogQueryRequest::~DeleteLogQueryRequest()
 {}
 
-std::string DeleteLogQueryRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DeleteLogQueryRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DeleteLogQueryRequest::getQueryName()const
 {
 	return queryName_;
@@ -45,5 +34,16 @@ void DeleteLogQueryRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
 	setCoreParameter("QueryName", queryName);
+}
+
+std::string DeleteLogQueryRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DeleteLogQueryRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

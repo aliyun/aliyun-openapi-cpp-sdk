@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyStrategyRequest();
 				~ModifyStrategyRequest();
 
+				std::string getCycleDays()const;
+				void setCycleDays(const std::string& cycleDays);
 				std::string getRiskSubTypeName()const;
 				void setRiskSubTypeName(const std::string& riskSubTypeName);
 				std::string getSourceIp()const;
@@ -43,17 +45,15 @@ namespace AlibabaCloud
 				void setCycleStartTime(const std::string& cycleStartTime);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getCycleDays()const;
-				void setCycleDays(const std::string& cycleDays);
 				std::string getId()const;
 				void setId(const std::string& id);
 
             private:
+				std::string cycleDays_;
 				std::string riskSubTypeName_;
 				std::string sourceIp_;
 				std::string cycleStartTime_;
 				std::string name_;
-				std::string cycleDays_;
 				std::string id_;
 
 			};

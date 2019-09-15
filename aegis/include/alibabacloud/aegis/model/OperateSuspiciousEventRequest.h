@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				OperateSuspiciousEventRequest();
 				~OperateSuspiciousEventRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getData()const;
 				void setData(const std::string& data);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getOperateType()const;
 				void setOperateType(const std::string& operateType);
 
             private:
-				std::string sourceIp_;
 				std::string data_;
+				std::string sourceIp_;
 				std::string operateType_;
 
 			};

@@ -25,17 +25,6 @@ DescribeTraceInfoNodeListRequest::DescribeTraceInfoNodeListRequest() :
 DescribeTraceInfoNodeListRequest::~DescribeTraceInfoNodeListRequest()
 {}
 
-std::string DescribeTraceInfoNodeListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeTraceInfoNodeListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeTraceInfoNodeListRequest::getVertexId()const
 {
 	return vertexId_;
@@ -45,61 +34,6 @@ void DescribeTraceInfoNodeListRequest::setVertexId(const std::string& vertexId)
 {
 	vertexId_ = vertexId;
 	setCoreParameter("VertexId", vertexId);
-}
-
-std::string DescribeTraceInfoNodeListRequest::getStartType()const
-{
-	return startType_;
-}
-
-void DescribeTraceInfoNodeListRequest::setStartType(const std::string& startType)
-{
-	startType_ = startType;
-	setCoreParameter("StartType", startType);
-}
-
-int DescribeTraceInfoNodeListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeTraceInfoNodeListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeTraceInfoNodeListRequest::getFrom()const
-{
-	return from_;
-}
-
-void DescribeTraceInfoNodeListRequest::setFrom(const std::string& from)
-{
-	from_ = from;
-	setCoreParameter("From", from);
-}
-
-int DescribeTraceInfoNodeListRequest::getPage()const
-{
-	return page_;
-}
-
-void DescribeTraceInfoNodeListRequest::setPage(int page)
-{
-	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
-}
-
-std::string DescribeTraceInfoNodeListRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeTraceInfoNodeListRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeTraceInfoNodeListRequest::getType()const
@@ -124,6 +58,50 @@ void DescribeTraceInfoNodeListRequest::setUuid(const std::string& uuid)
 	setCoreParameter("Uuid", uuid);
 }
 
+std::string DescribeTraceInfoNodeListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeTraceInfoNodeListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int DescribeTraceInfoNodeListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeTraceInfoNodeListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeTraceInfoNodeListRequest::getFrom()const
+{
+	return from_;
+}
+
+void DescribeTraceInfoNodeListRequest::setFrom(const std::string& from)
+{
+	from_ = from;
+	setCoreParameter("From", from);
+}
+
+std::string DescribeTraceInfoNodeListRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeTraceInfoNodeListRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
 long DescribeTraceInfoNodeListRequest::getIncidentTime()const
 {
 	return incidentTime_;
@@ -133,5 +111,27 @@ void DescribeTraceInfoNodeListRequest::setIncidentTime(long incidentTime)
 {
 	incidentTime_ = incidentTime;
 	setCoreParameter("IncidentTime", std::to_string(incidentTime));
+}
+
+std::string DescribeTraceInfoNodeListRequest::getStartType()const
+{
+	return startType_;
+}
+
+void DescribeTraceInfoNodeListRequest::setStartType(const std::string& startType)
+{
+	startType_ = startType;
+	setCoreParameter("StartType", startType);
+}
+
+int DescribeTraceInfoNodeListRequest::getPage()const
+{
+	return page_;
+}
+
+void DescribeTraceInfoNodeListRequest::setPage(int page)
+{
+	page_ = page;
+	setCoreParameter("Page", std::to_string(page));
 }
 

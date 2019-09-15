@@ -25,17 +25,6 @@ DescribeEntityListRequest::DescribeEntityListRequest() :
 DescribeEntityListRequest::~DescribeEntityListRequest()
 {}
 
-std::string DescribeEntityListRequest::getOs()const
-{
-	return os_;
-}
-
-void DescribeEntityListRequest::setOs(const std::string& os)
-{
-	os_ = os;
-	setCoreParameter("Os", os);
-}
-
 std::string DescribeEntityListRequest::getTagIdList()const
 {
 	return tagIdList_;
@@ -47,39 +36,6 @@ void DescribeEntityListRequest::setTagIdList(const std::string& tagIdList)
 	setCoreParameter("TagIdList", tagIdList);
 }
 
-long DescribeEntityListRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeEntityListRequest::setGroupId(long groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
-}
-
-std::string DescribeEntityListRequest::getHealth()const
-{
-	return health_;
-}
-
-void DescribeEntityListRequest::setHealth(const std::string& health)
-{
-	health_ = health;
-	setCoreParameter("Health", health);
-}
-
-int DescribeEntityListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeEntityListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeEntityListRequest::getRemark()const
 {
 	return remark_;
@@ -89,39 +45,6 @@ void DescribeEntityListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
 	setCoreParameter("Remark", remark);
-}
-
-std::string DescribeEntityListRequest::getTrojan()const
-{
-	return trojan_;
-}
-
-void DescribeEntityListRequest::setTrojan(const std::string& trojan)
-{
-	trojan_ = trojan;
-	setCoreParameter("Trojan", trojan);
-}
-
-std::string DescribeEntityListRequest::getSuspicious()const
-{
-	return suspicious_;
-}
-
-void DescribeEntityListRequest::setSuspicious(const std::string& suspicious)
-{
-	suspicious_ = suspicious;
-	setCoreParameter("Suspicious", suspicious);
-}
-
-std::string DescribeEntityListRequest::getRegionNo()const
-{
-	return regionNo_;
-}
-
-void DescribeEntityListRequest::setRegionNo(const std::string& regionNo)
-{
-	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", regionNo);
 }
 
 std::string DescribeEntityListRequest::getPatch()const
@@ -166,6 +89,83 @@ void DescribeEntityListRequest::setFrom(const std::string& from)
 {
 	from_ = from;
 	setCoreParameter("From", from);
+}
+
+std::string DescribeEntityListRequest::getOs()const
+{
+	return os_;
+}
+
+void DescribeEntityListRequest::setOs(const std::string& os)
+{
+	os_ = os;
+	setCoreParameter("Os", os);
+}
+
+long DescribeEntityListRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeEntityListRequest::setGroupId(long groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", std::to_string(groupId));
+}
+
+std::string DescribeEntityListRequest::getHealth()const
+{
+	return health_;
+}
+
+void DescribeEntityListRequest::setHealth(const std::string& health)
+{
+	health_ = health;
+	setCoreParameter("Health", health);
+}
+
+int DescribeEntityListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeEntityListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeEntityListRequest::getTrojan()const
+{
+	return trojan_;
+}
+
+void DescribeEntityListRequest::setTrojan(const std::string& trojan)
+{
+	trojan_ = trojan;
+	setCoreParameter("Trojan", trojan);
+}
+
+std::string DescribeEntityListRequest::getSuspicious()const
+{
+	return suspicious_;
+}
+
+void DescribeEntityListRequest::setSuspicious(const std::string& suspicious)
+{
+	suspicious_ = suspicious;
+	setCoreParameter("Suspicious", suspicious);
+}
+
+std::string DescribeEntityListRequest::getRegionNo()const
+{
+	return regionNo_;
+}
+
+void DescribeEntityListRequest::setRegionNo(const std::string& regionNo)
+{
+	regionNo_ = regionNo;
+	setCoreParameter("RegionNo", regionNo);
 }
 
 std::string DescribeEntityListRequest::getAccount()const

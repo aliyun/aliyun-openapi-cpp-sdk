@@ -25,17 +25,6 @@ DescribeStrategyTargetRequest::DescribeStrategyTargetRequest() :
 DescribeStrategyTargetRequest::~DescribeStrategyTargetRequest()
 {}
 
-std::string DescribeStrategyTargetRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeStrategyTargetRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeStrategyTargetRequest::getType()const
 {
 	return type_;
@@ -45,6 +34,17 @@ void DescribeStrategyTargetRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string DescribeStrategyTargetRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeStrategyTargetRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeStrategyTargetRequest::getConfig()const

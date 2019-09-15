@@ -25,17 +25,6 @@ DownloadLogRequest::DownloadLogRequest() :
 DownloadLogRequest::~DownloadLogRequest()
 {}
 
-std::string DownloadLogRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DownloadLogRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DownloadLogRequest::getQuery()const
 {
 	return query_;
@@ -67,5 +56,16 @@ void DownloadLogRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
+}
+
+std::string DownloadLogRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DownloadLogRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

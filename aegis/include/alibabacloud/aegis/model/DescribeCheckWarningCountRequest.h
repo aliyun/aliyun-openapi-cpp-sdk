@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				DescribeCheckWarningCountRequest();
 				~DescribeCheckWarningCountRequest();
 
+				long getRiskId()const;
+				void setRiskId(long riskId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getRiskId()const;
-				void setRiskId(long riskId);
 				long getCheckId()const;
 				void setCheckId(long checkId);
 				int getStatus()const;
 				void setStatus(int status);
 
             private:
+				long riskId_;
 				std::string sourceIp_;
 				std::string lang_;
-				long riskId_;
 				long checkId_;
 				int status_;
 

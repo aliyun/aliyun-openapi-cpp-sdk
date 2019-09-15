@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				DescribeWebshellRequest();
 				~DescribeWebshellRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getGroupId()const;
 				void setGroupId(int groupId);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
 				std::string getDealed()const;
 				void setDealed(const std::string& dealed);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				int getTag()const;
 				void setTag(int tag);
 
             private:
-				std::string sourceIp_;
 				int groupId_;
 				std::string remark_;
 				std::string dealed_;
+				std::string sourceIp_;
 				int tag_;
 
 			};

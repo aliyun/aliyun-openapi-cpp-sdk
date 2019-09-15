@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeRiskWhiteListRequest();
 				~DescribeRiskWhiteListRequest();
 
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				std::string getRiskName()const;
 				void setRiskName(const std::string& riskName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 
             private:
+				int currentPage_;
 				std::string riskName_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
 
 			};
 		}

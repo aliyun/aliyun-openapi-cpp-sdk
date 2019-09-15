@@ -25,17 +25,6 @@ DescribeVulBatchRequest::DescribeVulBatchRequest() :
 DescribeVulBatchRequest::~DescribeVulBatchRequest()
 {}
 
-std::string DescribeVulBatchRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeVulBatchRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeVulBatchRequest::getResource()const
 {
 	return resource_;
@@ -45,5 +34,16 @@ void DescribeVulBatchRequest::setResource(const std::string& resource)
 {
 	resource_ = resource;
 	setCoreParameter("Resource", resource);
+}
+
+std::string DescribeVulBatchRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeVulBatchRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

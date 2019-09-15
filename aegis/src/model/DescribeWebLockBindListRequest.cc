@@ -25,28 +25,6 @@ DescribeWebLockBindListRequest::DescribeWebLockBindListRequest() :
 DescribeWebLockBindListRequest::~DescribeWebLockBindListRequest()
 {}
 
-std::string DescribeWebLockBindListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeWebLockBindListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-int DescribeWebLockBindListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeWebLockBindListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeWebLockBindListRequest::getRemark()const
 {
 	return remark_;
@@ -67,6 +45,28 @@ void DescribeWebLockBindListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeWebLockBindListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeWebLockBindListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int DescribeWebLockBindListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeWebLockBindListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeWebLockBindListRequest::getLang()const

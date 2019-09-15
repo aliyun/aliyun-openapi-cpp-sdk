@@ -47,6 +47,39 @@ void ExportWarningRequest::setRiskLevels(const std::string& riskLevels)
 	setCoreParameter("RiskLevels", riskLevels);
 }
 
+std::string ExportWarningRequest::getRiskName()const
+{
+	return riskName_;
+}
+
+void ExportWarningRequest::setRiskName(const std::string& riskName)
+{
+	riskName_ = riskName;
+	setCoreParameter("RiskName", riskName);
+}
+
+std::string ExportWarningRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ExportWarningRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string ExportWarningRequest::getLang()const
+{
+	return lang_;
+}
+
+void ExportWarningRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
 std::string ExportWarningRequest::getExportType()const
 {
 	return exportType_;
@@ -91,17 +124,6 @@ void ExportWarningRequest::setIsSummaryExport(int isSummaryExport)
 	setCoreParameter("IsSummaryExport", std::to_string(isSummaryExport));
 }
 
-std::string ExportWarningRequest::getRiskName()const
-{
-	return riskName_;
-}
-
-void ExportWarningRequest::setRiskName(const std::string& riskName)
-{
-	riskName_ = riskName;
-	setCoreParameter("RiskName", riskName);
-}
-
 std::string ExportWarningRequest::getRiskIds()const
 {
 	return riskIds_;
@@ -113,17 +135,6 @@ void ExportWarningRequest::setRiskIds(const std::string& riskIds)
 	setCoreParameter("RiskIds", riskIds);
 }
 
-std::string ExportWarningRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ExportWarningRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long ExportWarningRequest::getStrategyId()const
 {
 	return strategyId_;
@@ -133,17 +144,6 @@ void ExportWarningRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
 	setCoreParameter("StrategyId", std::to_string(strategyId));
-}
-
-std::string ExportWarningRequest::getLang()const
-{
-	return lang_;
-}
-
-void ExportWarningRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string ExportWarningRequest::getTypeName()const

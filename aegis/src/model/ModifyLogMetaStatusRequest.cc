@@ -25,17 +25,6 @@ ModifyLogMetaStatusRequest::ModifyLogMetaStatusRequest() :
 ModifyLogMetaStatusRequest::~ModifyLogMetaStatusRequest()
 {}
 
-std::string ModifyLogMetaStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyLogMetaStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyLogMetaStatusRequest::getProject()const
 {
 	return project_;
@@ -45,6 +34,17 @@ void ModifyLogMetaStatusRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
+}
+
+std::string ModifyLogMetaStatusRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyLogMetaStatusRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyLogMetaStatusRequest::getFrom()const

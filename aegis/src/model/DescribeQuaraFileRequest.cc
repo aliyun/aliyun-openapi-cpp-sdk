@@ -25,6 +25,17 @@ DescribeQuaraFileRequest::DescribeQuaraFileRequest() :
 DescribeQuaraFileRequest::~DescribeQuaraFileRequest()
 {}
 
+int DescribeQuaraFileRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeQuaraFileRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
 std::string DescribeQuaraFileRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeQuaraFileRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeQuaraFileRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeQuaraFileRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

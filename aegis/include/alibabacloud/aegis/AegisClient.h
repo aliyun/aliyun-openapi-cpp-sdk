@@ -26,10 +26,10 @@
 #include "model/DescribeAnalysisShipperStatusResult.h"
 #include "model/DescribeCanUpgradeSasRequest.h"
 #include "model/DescribeCanUpgradeSasResult.h"
-#include "model/DescribeTraceInfoNodeRequest.h"
-#include "model/DescribeTraceInfoNodeResult.h"
 #include "model/SaveCustomizeReportConfigRequest.h"
 #include "model/SaveCustomizeReportConfigResult.h"
+#include "model/DescribeTraceInfoNodeRequest.h"
+#include "model/DescribeTraceInfoNodeResult.h"
 #include "model/DescribeScreenCloudHcRiskRequest.h"
 #include "model/DescribeScreenCloudHcRiskResult.h"
 #include "model/DescribeScreenAttackAnalysisDataRequest.h"
@@ -44,10 +44,10 @@
 #include "model/DescribeVulnerabilitySummaryResult.h"
 #include "model/SetDatasourceStatusRequest.h"
 #include "model/SetDatasourceStatusResult.h"
-#include "model/OperateSuspiciousEventRequest.h"
-#include "model/OperateSuspiciousEventResult.h"
 #include "model/OperateSuspiciousTargetConfigRequest.h"
 #include "model/OperateSuspiciousTargetConfigResult.h"
+#include "model/OperateSuspiciousEventRequest.h"
+#include "model/OperateSuspiciousEventResult.h"
 #include "model/DescribeAnalysisHistogramsRequest.h"
 #include "model/DescribeAnalysisHistogramsResult.h"
 #include "model/ExportWarningRequest.h"
@@ -76,10 +76,10 @@
 #include "model/ModifyBatchIgnoreVulResult.h"
 #include "model/DescribeStrategyProcessRequest.h"
 #include "model/DescribeStrategyProcessResult.h"
-#include "model/DescribeSummaryInfoRequest.h"
-#include "model/DescribeSummaryInfoResult.h"
 #include "model/DescribeSuspTrendStatisticsRequest.h"
 #include "model/DescribeSuspTrendStatisticsResult.h"
+#include "model/DescribeSummaryInfoRequest.h"
+#include "model/DescribeSummaryInfoResult.h"
 #include "model/DescribeDataSourceRequest.h"
 #include "model/DescribeDataSourceResult.h"
 #include "model/DescribeResultListRequest.h"
@@ -122,10 +122,10 @@
 #include "model/ModifySasAssetStatisticsColumnResult.h"
 #include "model/DescribeTraceInfoNodeListRequest.h"
 #include "model/DescribeTraceInfoNodeListResult.h"
-#include "model/ModifyWebLockCreateConfigRequest.h"
-#include "model/ModifyWebLockCreateConfigResult.h"
 #include "model/DescribeAnalysisSlsIndexRequest.h"
 #include "model/DescribeAnalysisSlsIndexResult.h"
+#include "model/ModifyWebLockCreateConfigRequest.h"
+#include "model/ModifyWebLockCreateConfigResult.h"
 #include "model/DeleteRuleGroupRequest.h"
 #include "model/DeleteRuleGroupResult.h"
 #include "model/DescribeScreenDataMapRequest.h"
@@ -136,18 +136,18 @@
 #include "model/DescribeAlarmEventDetailResult.h"
 #include "model/CreateSuspiciousExportRequest.h"
 #include "model/CreateSuspiciousExportResult.h"
-#include "model/DescribeWebshellListRequest.h"
-#include "model/DescribeWebshellListResult.h"
 #include "model/DescribeBizStatSimpleQueryResultRequest.h"
 #include "model/DescribeBizStatSimpleQueryResultResult.h"
-#include "model/OperateVulRequest.h"
-#include "model/OperateVulResult.h"
+#include "model/DescribeWebshellListRequest.h"
+#include "model/DescribeWebshellListResult.h"
 #include "model/GetCrackStatisticsRequest.h"
 #include "model/GetCrackStatisticsResult.h"
-#include "model/OperateAgentClientInstallRequest.h"
-#include "model/OperateAgentClientInstallResult.h"
+#include "model/OperateVulRequest.h"
+#include "model/OperateVulResult.h"
 #include "model/DescribeConcernNecessityRequest.h"
 #include "model/DescribeConcernNecessityResult.h"
+#include "model/OperateAgentClientInstallRequest.h"
+#include "model/OperateAgentClientInstallResult.h"
 #include "model/DescribeScreenScoreThreadRequest.h"
 #include "model/DescribeScreenScoreThreadResult.h"
 #include "model/DescribeBuySummaryRequest.h"
@@ -158,12 +158,12 @@
 #include "model/DescribeSuspiciousUUIDConfigResult.h"
 #include "model/DescribeTopicListRequest.h"
 #include "model/DescribeTopicListResult.h"
-#include "model/DescribeScreenVersionConfigRequest.h"
-#include "model/DescribeScreenVersionConfigResult.h"
-#include "model/DescribeAssetDetailByUuidRequest.h"
-#include "model/DescribeAssetDetailByUuidResult.h"
 #include "model/CreateScreenSettingRequest.h"
 #include "model/CreateScreenSettingResult.h"
+#include "model/DescribeAssetDetailByUuidRequest.h"
+#include "model/DescribeAssetDetailByUuidResult.h"
+#include "model/DescribeScreenVersionConfigRequest.h"
+#include "model/DescribeScreenVersionConfigResult.h"
 #include "model/DescribeVulExportInfoRequest.h"
 #include "model/DescribeVulExportInfoResult.h"
 #include "model/DeleteRuleRequest.h"
@@ -214,18 +214,18 @@
 #include "model/GetStatisticsByUuidResult.h"
 #include "model/ModifyVulConfigRequest.h"
 #include "model/ModifyVulConfigResult.h"
+#include "model/DescribesummaryRequest.h"
+#include "model/DescribesummaryResult.h"
 #include "model/GetStatisticsRequest.h"
 #include "model/GetStatisticsResult.h"
 #include "model/DescribeSuspEventsRequest.h"
 #include "model/DescribeSuspEventsResult.h"
-#include "model/DescribesummaryRequest.h"
-#include "model/DescribesummaryResult.h"
 #include "model/ModifyAccessKeyLeakDealRequest.h"
 #include "model/ModifyAccessKeyLeakDealResult.h"
-#include "model/DescribeCheckWarningCountRequest.h"
-#include "model/DescribeCheckWarningCountResult.h"
 #include "model/CopyCustomizeReportConfigRequest.h"
 #include "model/CopyCustomizeReportConfigResult.h"
+#include "model/DescribeCheckWarningCountRequest.h"
+#include "model/DescribeCheckWarningCountResult.h"
 #include "model/CreateOrUpdateDataSourceRequest.h"
 #include "model/CreateOrUpdateDataSourceResult.h"
 #include "model/DescribeVulWhitelistRequest.h"
@@ -238,10 +238,10 @@
 #include "model/DescribeWhiteListStrategyListResult.h"
 #include "model/DescribeTraceInfoDetailRequest.h"
 #include "model/DescribeTraceInfoDetailResult.h"
-#include "model/DescribeCanTrySasRequest.h"
-#include "model/DescribeCanTrySasResult.h"
 #include "model/DescribeGroupListRequest.h"
 #include "model/DescribeGroupListResult.h"
+#include "model/DescribeCanTrySasRequest.h"
+#include "model/DescribeCanTrySasResult.h"
 #include "model/DescribeTargetRequest.h"
 #include "model/DescribeTargetResult.h"
 #include "model/DescribeWebshellRequest.h"
@@ -254,10 +254,10 @@
 #include "model/CreateOrUpdateDingTalkResult.h"
 #include "model/DescribeWarningMachinesRequest.h"
 #include "model/DescribeWarningMachinesResult.h"
-#include "model/ModifySearchConditionRequest.h"
-#include "model/ModifySearchConditionResult.h"
 #include "model/DescribeScreenTitlesRequest.h"
 #include "model/DescribeScreenTitlesResult.h"
+#include "model/ModifySearchConditionRequest.h"
+#include "model/ModifySearchConditionResult.h"
 #include "model/DescribeWhiteListStrategyUuidCountRequest.h"
 #include "model/DescribeWhiteListStrategyUuidCountResult.h"
 #include "model/DeleteCustomizeReportRequest.h"
@@ -282,18 +282,18 @@
 #include "model/DescribeSuspiciousOverallConfigResult.h"
 #include "model/DescribeAccesskeyLeakListRequest.h"
 #include "model/DescribeAccesskeyLeakListResult.h"
-#include "model/DescribeScreenAlarmEventListRequest.h"
-#include "model/DescribeScreenAlarmEventListResult.h"
 #include "model/DescribeAnalysisCurveRequest.h"
 #include "model/DescribeAnalysisCurveResult.h"
+#include "model/DescribeScreenAlarmEventListRequest.h"
+#include "model/DescribeScreenAlarmEventListResult.h"
 #include "model/CreatScreenSettingRequest.h"
 #include "model/CreatScreenSettingResult.h"
 #include "model/DescribeAlarmEventListRequest.h"
 #include "model/DescribeAlarmEventListResult.h"
-#include "model/CanTrySasRequest.h"
-#include "model/CanTrySasResult.h"
 #include "model/DescribeScreenSummaryInfoRequest.h"
 #include "model/DescribeScreenSummaryInfoResult.h"
+#include "model/CanTrySasRequest.h"
+#include "model/CanTrySasResult.h"
 #include "model/OperateWarningRequest.h"
 #include "model/OperateWarningResult.h"
 #include "model/ExecuteRuleEngineActualTimeRequest.h"
@@ -310,30 +310,30 @@
 #include "model/DescribeQuaraFileResult.h"
 #include "model/DescribeScreenCityMonitorDataRequest.h"
 #include "model/DescribeScreenCityMonitorDataResult.h"
-#include "model/DescribeWhiteListStrategyStatisticsRequest.h"
-#include "model/DescribeWhiteListStrategyStatisticsResult.h"
 #include "model/DescribeTotalStatisticsRequest.h"
 #include "model/DescribeTotalStatisticsResult.h"
+#include "model/DescribeWhiteListStrategyStatisticsRequest.h"
+#include "model/DescribeWhiteListStrategyStatisticsResult.h"
 #include "model/AutoUpgradeToSasAdvancedVersionRequest.h"
 #include "model/AutoUpgradeToSasAdvancedVersionResult.h"
 #include "model/DescribeStratetyRequest.h"
 #include "model/DescribeStratetyResult.h"
-#include "model/DescribeAnalysisStatisticsRequest.h"
-#include "model/DescribeAnalysisStatisticsResult.h"
 #include "model/DescribeWebLockConfigListRequest.h"
 #include "model/DescribeWebLockConfigListResult.h"
+#include "model/DescribeAnalysisStatisticsRequest.h"
+#include "model/DescribeAnalysisStatisticsResult.h"
 #include "model/DescribeVulStatisticsRequest.h"
 #include "model/DescribeVulStatisticsResult.h"
 #include "model/ModifyAutoDelConfigRequest.h"
 #include "model/ModifyAutoDelConfigResult.h"
-#include "model/DescribeVulBatchRequest.h"
-#include "model/DescribeVulBatchResult.h"
 #include "model/DescribeUserSettingRequest.h"
 #include "model/DescribeUserSettingResult.h"
-#include "model/DescribeEntityListRequest.h"
-#include "model/DescribeEntityListResult.h"
+#include "model/DescribeVulBatchRequest.h"
+#include "model/DescribeVulBatchResult.h"
 #include "model/ReleaseInstanceRequest.h"
 #include "model/ReleaseInstanceResult.h"
+#include "model/DescribeEntityListRequest.h"
+#include "model/DescribeEntityListResult.h"
 #include "model/DescribeVulLevelRequest.h"
 #include "model/DescribeVulLevelResult.h"
 #include "model/ModifyWebLockOperateEventsRequest.h"
@@ -388,10 +388,10 @@
 #include "model/DescribeSasAssetStatisticsColumnResult.h"
 #include "model/CreateOrUpdateRuleRequest.h"
 #include "model/CreateOrUpdateRuleResult.h"
-#include "model/DescribeYesterdayStatisticsRequest.h"
-#include "model/DescribeYesterdayStatisticsResult.h"
 #include "model/ModifyLogMetaStatusRequest.h"
 #include "model/ModifyLogMetaStatusResult.h"
+#include "model/DescribeYesterdayStatisticsRequest.h"
+#include "model/DescribeYesterdayStatisticsResult.h"
 #include "model/DescribeSuspiciousExportInfoRequest.h"
 #include "model/DescribeSuspiciousExportInfoResult.h"
 #include "model/DeleteScreenSettingRequest.h"
@@ -404,20 +404,20 @@
 #include "model/GetEntityListResult.h"
 #include "model/ExportVulRequest.h"
 #include "model/ExportVulResult.h"
-#include "model/DescribeVulTargetStatisticsRequest.h"
-#include "model/DescribeVulTargetStatisticsResult.h"
 #include "model/DescribeSuspiciousEventsRequest.h"
 #include "model/DescribeSuspiciousEventsResult.h"
+#include "model/DescribeVulTargetStatisticsRequest.h"
+#include "model/DescribeVulTargetStatisticsResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
 #include "model/DescribeMachineConfigRequest.h"
 #include "model/DescribeMachineConfigResult.h"
 #include "model/QueryLoginEventRequest.h"
 #include "model/QueryLoginEventResult.h"
-#include "model/TransformLeakageRequest.h"
-#include "model/TransformLeakageResult.h"
 #include "model/DescribeAssetListRequest.h"
 #include "model/DescribeAssetListResult.h"
+#include "model/TransformLeakageRequest.h"
+#include "model/TransformLeakageResult.h"
 #include "model/DescribeVersionConfigRequest.h"
 #include "model/DescribeVersionConfigResult.h"
 #include "model/ModifyMachineConfigRequest.h"
@@ -426,16 +426,16 @@
 #include "model/AddEventProcessResult.h"
 #include "model/DescribeChartDataRequest.h"
 #include "model/DescribeChartDataResult.h"
-#include "model/RollbackQuaraFileRequest.h"
-#include "model/RollbackQuaraFileResult.h"
 #include "model/DescribeMacConfigRequest.h"
 #include "model/DescribeMacConfigResult.h"
+#include "model/RollbackQuaraFileRequest.h"
+#include "model/RollbackQuaraFileResult.h"
 #include "model/DescribeApiBuySummaryRequest.h"
 #include "model/DescribeApiBuySummaryResult.h"
-#include "model/DeleteVulBatchRequest.h"
-#include "model/DeleteVulBatchResult.h"
 #include "model/DescribeWebLockMachineListRequest.h"
 #include "model/DescribeWebLockMachineListResult.h"
+#include "model/DeleteVulBatchRequest.h"
+#include "model/DeleteVulBatchResult.h"
 #include "model/ModifyWebLockStatusRequest.h"
 #include "model/ModifyWebLockStatusResult.h"
 #include "model/UpdateWhiteListProcessStatusRequest.h"
@@ -462,20 +462,20 @@
 #include "model/ModifyOpenLogShipperResult.h"
 #include "model/UpdateWhiteListStrategyStatusRequest.h"
 #include "model/UpdateWhiteListStrategyStatusResult.h"
-#include "model/DeleteVulWhitelistRequest.h"
-#include "model/DeleteVulWhitelistResult.h"
 #include "model/DescribeVulMachineListRequest.h"
 #include "model/DescribeVulMachineListResult.h"
 #include "model/DescribeAnalysisLogsRequest.h"
 #include "model/DescribeAnalysisLogsResult.h"
+#include "model/DeleteVulWhitelistRequest.h"
+#include "model/DeleteVulWhitelistResult.h"
 #include "model/DescribeStratetyDetailRequest.h"
 #include "model/DescribeStratetyDetailResult.h"
 #include "model/DescribeHistogramRequest.h"
 #include "model/DescribeHistogramResult.h"
-#include "model/DescribeLoginLogsRequest.h"
-#include "model/DescribeLoginLogsResult.h"
 #include "model/DescribeDingTalkRequest.h"
 #include "model/DescribeDingTalkResult.h"
+#include "model/DescribeLoginLogsRequest.h"
+#include "model/DescribeLoginLogsResult.h"
 #include "model/DescribeMetaDataRequest.h"
 #include "model/DescribeMetaDataResult.h"
 #include "model/DescribeWebLockStatusRequest.h"
@@ -500,18 +500,18 @@
 #include "model/CreateOrUpdateJoinRuleResult.h"
 #include "model/ValidateHcWarningsRequest.h"
 #include "model/ValidateHcWarningsResult.h"
-#include "model/AutoUpgradeSasRequest.h"
-#include "model/AutoUpgradeSasResult.h"
 #include "model/ModifyRefreshProcessInfoRequest.h"
 #include "model/ModifyRefreshProcessInfoResult.h"
+#include "model/AutoUpgradeSasRequest.h"
+#include "model/AutoUpgradeSasResult.h"
 #include "model/DescribeEmgUserAgreementRequest.h"
 #include "model/DescribeEmgUserAgreementResult.h"
 #include "model/ModifyEmgVulSubmitRequest.h"
 #include "model/ModifyEmgVulSubmitResult.h"
-#include "model/DeleteLogQueryRequest.h"
-#include "model/DeleteLogQueryResult.h"
 #include "model/ModifyWebLockMachineListRequest.h"
 #include "model/ModifyWebLockMachineListResult.h"
+#include "model/DeleteLogQueryRequest.h"
+#include "model/DeleteLogQueryResult.h"
 #include "model/ModifyTargetConfigRequest.h"
 #include "model/ModifyTargetConfigResult.h"
 #include "model/IgnoreHcCheckWarningsRequest.h"
@@ -530,10 +530,10 @@
 #include "model/DescribeEventCountCurveResult.h"
 #include "model/DescribeWhiteListAssetRequest.h"
 #include "model/DescribeWhiteListAssetResult.h"
-#include "model/UpdateCustomizeReportStatusRequest.h"
-#include "model/UpdateCustomizeReportStatusResult.h"
 #include "model/ModifyClearLogstoreStorageRequest.h"
 #include "model/ModifyClearLogstoreStorageResult.h"
+#include "model/UpdateCustomizeReportStatusRequest.h"
+#include "model/UpdateCustomizeReportStatusResult.h"
 #include "model/ModifyStrategyTargetRequest.h"
 #include "model/ModifyStrategyTargetResult.h"
 #include "model/DescribeCheckWarningsRequest.h"
@@ -542,18 +542,18 @@
 #include "model/DeleteSuspEventNodeResult.h"
 #include "model/DescribeHostStatisticsRequest.h"
 #include "model/DescribeHostStatisticsResult.h"
-#include "model/SaveWhiteListStrategyRequest.h"
-#include "model/SaveWhiteListStrategyResult.h"
 #include "model/DescribeSecurityStatInfoRequest.h"
 #include "model/DescribeSecurityStatInfoResult.h"
+#include "model/SaveWhiteListStrategyRequest.h"
+#include "model/SaveWhiteListStrategyResult.h"
 #include "model/DescribeFilterFieldsRequest.h"
 #include "model/DescribeFilterFieldsResult.h"
 #include "model/DescribeInstanceStatisticsRequest.h"
 #include "model/DescribeInstanceStatisticsResult.h"
-#include "model/DescribeScreenSecurityStatInfoRequest.h"
-#include "model/DescribeScreenSecurityStatInfoResult.h"
 #include "model/OperateSuspiciousOverallConfigRequest.h"
 #include "model/OperateSuspiciousOverallConfigResult.h"
+#include "model/DescribeScreenSecurityStatInfoRequest.h"
+#include "model/DescribeScreenSecurityStatInfoResult.h"
 
 
 namespace AlibabaCloud
@@ -569,12 +569,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCanUpgradeSasResult> DescribeCanUpgradeSasOutcome;
 			typedef std::future<DescribeCanUpgradeSasOutcome> DescribeCanUpgradeSasOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeCanUpgradeSasRequest&, const DescribeCanUpgradeSasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCanUpgradeSasAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTraceInfoNodeResult> DescribeTraceInfoNodeOutcome;
-			typedef std::future<DescribeTraceInfoNodeOutcome> DescribeTraceInfoNodeOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeTraceInfoNodeRequest&, const DescribeTraceInfoNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceInfoNodeAsyncHandler;
 			typedef Outcome<Error, Model::SaveCustomizeReportConfigResult> SaveCustomizeReportConfigOutcome;
 			typedef std::future<SaveCustomizeReportConfigOutcome> SaveCustomizeReportConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::SaveCustomizeReportConfigRequest&, const SaveCustomizeReportConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveCustomizeReportConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTraceInfoNodeResult> DescribeTraceInfoNodeOutcome;
+			typedef std::future<DescribeTraceInfoNodeOutcome> DescribeTraceInfoNodeOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeTraceInfoNodeRequest&, const DescribeTraceInfoNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceInfoNodeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScreenCloudHcRiskResult> DescribeScreenCloudHcRiskOutcome;
 			typedef std::future<DescribeScreenCloudHcRiskOutcome> DescribeScreenCloudHcRiskOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeScreenCloudHcRiskRequest&, const DescribeScreenCloudHcRiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenCloudHcRiskAsyncHandler;
@@ -596,12 +596,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDatasourceStatusResult> SetDatasourceStatusOutcome;
 			typedef std::future<SetDatasourceStatusOutcome> SetDatasourceStatusOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::SetDatasourceStatusRequest&, const SetDatasourceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDatasourceStatusAsyncHandler;
-			typedef Outcome<Error, Model::OperateSuspiciousEventResult> OperateSuspiciousEventOutcome;
-			typedef std::future<OperateSuspiciousEventOutcome> OperateSuspiciousEventOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::OperateSuspiciousEventRequest&, const OperateSuspiciousEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateSuspiciousEventAsyncHandler;
 			typedef Outcome<Error, Model::OperateSuspiciousTargetConfigResult> OperateSuspiciousTargetConfigOutcome;
 			typedef std::future<OperateSuspiciousTargetConfigOutcome> OperateSuspiciousTargetConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::OperateSuspiciousTargetConfigRequest&, const OperateSuspiciousTargetConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateSuspiciousTargetConfigAsyncHandler;
+			typedef Outcome<Error, Model::OperateSuspiciousEventResult> OperateSuspiciousEventOutcome;
+			typedef std::future<OperateSuspiciousEventOutcome> OperateSuspiciousEventOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::OperateSuspiciousEventRequest&, const OperateSuspiciousEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateSuspiciousEventAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAnalysisHistogramsResult> DescribeAnalysisHistogramsOutcome;
 			typedef std::future<DescribeAnalysisHistogramsOutcome> DescribeAnalysisHistogramsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeAnalysisHistogramsRequest&, const DescribeAnalysisHistogramsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnalysisHistogramsAsyncHandler;
@@ -644,12 +644,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeStrategyProcessResult> DescribeStrategyProcessOutcome;
 			typedef std::future<DescribeStrategyProcessOutcome> DescribeStrategyProcessOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeStrategyProcessRequest&, const DescribeStrategyProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStrategyProcessAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSummaryInfoResult> DescribeSummaryInfoOutcome;
-			typedef std::future<DescribeSummaryInfoOutcome> DescribeSummaryInfoOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeSummaryInfoRequest&, const DescribeSummaryInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSummaryInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSuspTrendStatisticsResult> DescribeSuspTrendStatisticsOutcome;
 			typedef std::future<DescribeSuspTrendStatisticsOutcome> DescribeSuspTrendStatisticsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeSuspTrendStatisticsRequest&, const DescribeSuspTrendStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuspTrendStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSummaryInfoResult> DescribeSummaryInfoOutcome;
+			typedef std::future<DescribeSummaryInfoOutcome> DescribeSummaryInfoOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeSummaryInfoRequest&, const DescribeSummaryInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSummaryInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDataSourceResult> DescribeDataSourceOutcome;
 			typedef std::future<DescribeDataSourceOutcome> DescribeDataSourceOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeDataSourceRequest&, const DescribeDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceAsyncHandler;
@@ -713,12 +713,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTraceInfoNodeListResult> DescribeTraceInfoNodeListOutcome;
 			typedef std::future<DescribeTraceInfoNodeListOutcome> DescribeTraceInfoNodeListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeTraceInfoNodeListRequest&, const DescribeTraceInfoNodeListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceInfoNodeListAsyncHandler;
-			typedef Outcome<Error, Model::ModifyWebLockCreateConfigResult> ModifyWebLockCreateConfigOutcome;
-			typedef std::future<ModifyWebLockCreateConfigOutcome> ModifyWebLockCreateConfigOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::ModifyWebLockCreateConfigRequest&, const ModifyWebLockCreateConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebLockCreateConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAnalysisSlsIndexResult> DescribeAnalysisSlsIndexOutcome;
 			typedef std::future<DescribeAnalysisSlsIndexOutcome> DescribeAnalysisSlsIndexOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeAnalysisSlsIndexRequest&, const DescribeAnalysisSlsIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnalysisSlsIndexAsyncHandler;
+			typedef Outcome<Error, Model::ModifyWebLockCreateConfigResult> ModifyWebLockCreateConfigOutcome;
+			typedef std::future<ModifyWebLockCreateConfigOutcome> ModifyWebLockCreateConfigOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::ModifyWebLockCreateConfigRequest&, const ModifyWebLockCreateConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebLockCreateConfigAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRuleGroupResult> DeleteRuleGroupOutcome;
 			typedef std::future<DeleteRuleGroupOutcome> DeleteRuleGroupOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DeleteRuleGroupRequest&, const DeleteRuleGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleGroupAsyncHandler;
@@ -734,24 +734,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSuspiciousExportResult> CreateSuspiciousExportOutcome;
 			typedef std::future<CreateSuspiciousExportOutcome> CreateSuspiciousExportOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::CreateSuspiciousExportRequest&, const CreateSuspiciousExportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSuspiciousExportAsyncHandler;
-			typedef Outcome<Error, Model::DescribeWebshellListResult> DescribeWebshellListOutcome;
-			typedef std::future<DescribeWebshellListOutcome> DescribeWebshellListOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeWebshellListRequest&, const DescribeWebshellListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebshellListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBizStatSimpleQueryResultResult> DescribeBizStatSimpleQueryResultOutcome;
 			typedef std::future<DescribeBizStatSimpleQueryResultOutcome> DescribeBizStatSimpleQueryResultOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeBizStatSimpleQueryResultRequest&, const DescribeBizStatSimpleQueryResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizStatSimpleQueryResultAsyncHandler;
-			typedef Outcome<Error, Model::OperateVulResult> OperateVulOutcome;
-			typedef std::future<OperateVulOutcome> OperateVulOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::OperateVulRequest&, const OperateVulOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateVulAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWebshellListResult> DescribeWebshellListOutcome;
+			typedef std::future<DescribeWebshellListOutcome> DescribeWebshellListOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeWebshellListRequest&, const DescribeWebshellListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebshellListAsyncHandler;
 			typedef Outcome<Error, Model::GetCrackStatisticsResult> GetCrackStatisticsOutcome;
 			typedef std::future<GetCrackStatisticsOutcome> GetCrackStatisticsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::GetCrackStatisticsRequest&, const GetCrackStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCrackStatisticsAsyncHandler;
-			typedef Outcome<Error, Model::OperateAgentClientInstallResult> OperateAgentClientInstallOutcome;
-			typedef std::future<OperateAgentClientInstallOutcome> OperateAgentClientInstallOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::OperateAgentClientInstallRequest&, const OperateAgentClientInstallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateAgentClientInstallAsyncHandler;
+			typedef Outcome<Error, Model::OperateVulResult> OperateVulOutcome;
+			typedef std::future<OperateVulOutcome> OperateVulOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::OperateVulRequest&, const OperateVulOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateVulAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConcernNecessityResult> DescribeConcernNecessityOutcome;
 			typedef std::future<DescribeConcernNecessityOutcome> DescribeConcernNecessityOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeConcernNecessityRequest&, const DescribeConcernNecessityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcernNecessityAsyncHandler;
+			typedef Outcome<Error, Model::OperateAgentClientInstallResult> OperateAgentClientInstallOutcome;
+			typedef std::future<OperateAgentClientInstallOutcome> OperateAgentClientInstallOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::OperateAgentClientInstallRequest&, const OperateAgentClientInstallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateAgentClientInstallAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScreenScoreThreadResult> DescribeScreenScoreThreadOutcome;
 			typedef std::future<DescribeScreenScoreThreadOutcome> DescribeScreenScoreThreadOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeScreenScoreThreadRequest&, const DescribeScreenScoreThreadOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenScoreThreadAsyncHandler;
@@ -767,15 +767,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTopicListResult> DescribeTopicListOutcome;
 			typedef std::future<DescribeTopicListOutcome> DescribeTopicListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeTopicListRequest&, const DescribeTopicListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeScreenVersionConfigResult> DescribeScreenVersionConfigOutcome;
-			typedef std::future<DescribeScreenVersionConfigOutcome> DescribeScreenVersionConfigOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeScreenVersionConfigRequest&, const DescribeScreenVersionConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenVersionConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAssetDetailByUuidResult> DescribeAssetDetailByUuidOutcome;
-			typedef std::future<DescribeAssetDetailByUuidOutcome> DescribeAssetDetailByUuidOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeAssetDetailByUuidRequest&, const DescribeAssetDetailByUuidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDetailByUuidAsyncHandler;
 			typedef Outcome<Error, Model::CreateScreenSettingResult> CreateScreenSettingOutcome;
 			typedef std::future<CreateScreenSettingOutcome> CreateScreenSettingOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::CreateScreenSettingRequest&, const CreateScreenSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateScreenSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAssetDetailByUuidResult> DescribeAssetDetailByUuidOutcome;
+			typedef std::future<DescribeAssetDetailByUuidOutcome> DescribeAssetDetailByUuidOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeAssetDetailByUuidRequest&, const DescribeAssetDetailByUuidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDetailByUuidAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScreenVersionConfigResult> DescribeScreenVersionConfigOutcome;
+			typedef std::future<DescribeScreenVersionConfigOutcome> DescribeScreenVersionConfigOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeScreenVersionConfigRequest&, const DescribeScreenVersionConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenVersionConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVulExportInfoResult> DescribeVulExportInfoOutcome;
 			typedef std::future<DescribeVulExportInfoOutcome> DescribeVulExportInfoOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeVulExportInfoRequest&, const DescribeVulExportInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulExportInfoAsyncHandler;
@@ -851,24 +851,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyVulConfigResult> ModifyVulConfigOutcome;
 			typedef std::future<ModifyVulConfigOutcome> ModifyVulConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyVulConfigRequest&, const ModifyVulConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVulConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribesummaryResult> DescribesummaryOutcome;
+			typedef std::future<DescribesummaryOutcome> DescribesummaryOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribesummaryRequest&, const DescribesummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribesummaryAsyncHandler;
 			typedef Outcome<Error, Model::GetStatisticsResult> GetStatisticsOutcome;
 			typedef std::future<GetStatisticsOutcome> GetStatisticsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::GetStatisticsRequest&, const GetStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSuspEventsResult> DescribeSuspEventsOutcome;
 			typedef std::future<DescribeSuspEventsOutcome> DescribeSuspEventsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeSuspEventsRequest&, const DescribeSuspEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuspEventsAsyncHandler;
-			typedef Outcome<Error, Model::DescribesummaryResult> DescribesummaryOutcome;
-			typedef std::future<DescribesummaryOutcome> DescribesummaryOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribesummaryRequest&, const DescribesummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribesummaryAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccessKeyLeakDealResult> ModifyAccessKeyLeakDealOutcome;
 			typedef std::future<ModifyAccessKeyLeakDealOutcome> ModifyAccessKeyLeakDealOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyAccessKeyLeakDealRequest&, const ModifyAccessKeyLeakDealOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessKeyLeakDealAsyncHandler;
-			typedef Outcome<Error, Model::DescribeCheckWarningCountResult> DescribeCheckWarningCountOutcome;
-			typedef std::future<DescribeCheckWarningCountOutcome> DescribeCheckWarningCountOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeCheckWarningCountRequest&, const DescribeCheckWarningCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckWarningCountAsyncHandler;
 			typedef Outcome<Error, Model::CopyCustomizeReportConfigResult> CopyCustomizeReportConfigOutcome;
 			typedef std::future<CopyCustomizeReportConfigOutcome> CopyCustomizeReportConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::CopyCustomizeReportConfigRequest&, const CopyCustomizeReportConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyCustomizeReportConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCheckWarningCountResult> DescribeCheckWarningCountOutcome;
+			typedef std::future<DescribeCheckWarningCountOutcome> DescribeCheckWarningCountOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeCheckWarningCountRequest&, const DescribeCheckWarningCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckWarningCountAsyncHandler;
 			typedef Outcome<Error, Model::CreateOrUpdateDataSourceResult> CreateOrUpdateDataSourceOutcome;
 			typedef std::future<CreateOrUpdateDataSourceOutcome> CreateOrUpdateDataSourceOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::CreateOrUpdateDataSourceRequest&, const CreateOrUpdateDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateDataSourceAsyncHandler;
@@ -887,12 +887,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTraceInfoDetailResult> DescribeTraceInfoDetailOutcome;
 			typedef std::future<DescribeTraceInfoDetailOutcome> DescribeTraceInfoDetailOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeTraceInfoDetailRequest&, const DescribeTraceInfoDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceInfoDetailAsyncHandler;
-			typedef Outcome<Error, Model::DescribeCanTrySasResult> DescribeCanTrySasOutcome;
-			typedef std::future<DescribeCanTrySasOutcome> DescribeCanTrySasOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeCanTrySasRequest&, const DescribeCanTrySasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCanTrySasAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGroupListResult> DescribeGroupListOutcome;
 			typedef std::future<DescribeGroupListOutcome> DescribeGroupListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeGroupListRequest&, const DescribeGroupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCanTrySasResult> DescribeCanTrySasOutcome;
+			typedef std::future<DescribeCanTrySasOutcome> DescribeCanTrySasOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeCanTrySasRequest&, const DescribeCanTrySasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCanTrySasAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTargetResult> DescribeTargetOutcome;
 			typedef std::future<DescribeTargetOutcome> DescribeTargetOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeTargetRequest&, const DescribeTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetAsyncHandler;
@@ -911,12 +911,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeWarningMachinesResult> DescribeWarningMachinesOutcome;
 			typedef std::future<DescribeWarningMachinesOutcome> DescribeWarningMachinesOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeWarningMachinesRequest&, const DescribeWarningMachinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWarningMachinesAsyncHandler;
-			typedef Outcome<Error, Model::ModifySearchConditionResult> ModifySearchConditionOutcome;
-			typedef std::future<ModifySearchConditionOutcome> ModifySearchConditionOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::ModifySearchConditionRequest&, const ModifySearchConditionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySearchConditionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScreenTitlesResult> DescribeScreenTitlesOutcome;
 			typedef std::future<DescribeScreenTitlesOutcome> DescribeScreenTitlesOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeScreenTitlesRequest&, const DescribeScreenTitlesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenTitlesAsyncHandler;
+			typedef Outcome<Error, Model::ModifySearchConditionResult> ModifySearchConditionOutcome;
+			typedef std::future<ModifySearchConditionOutcome> ModifySearchConditionOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::ModifySearchConditionRequest&, const ModifySearchConditionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySearchConditionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWhiteListStrategyUuidCountResult> DescribeWhiteListStrategyUuidCountOutcome;
 			typedef std::future<DescribeWhiteListStrategyUuidCountOutcome> DescribeWhiteListStrategyUuidCountOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeWhiteListStrategyUuidCountRequest&, const DescribeWhiteListStrategyUuidCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteListStrategyUuidCountAsyncHandler;
@@ -953,24 +953,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAccesskeyLeakListResult> DescribeAccesskeyLeakListOutcome;
 			typedef std::future<DescribeAccesskeyLeakListOutcome> DescribeAccesskeyLeakListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeAccesskeyLeakListRequest&, const DescribeAccesskeyLeakListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccesskeyLeakListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeScreenAlarmEventListResult> DescribeScreenAlarmEventListOutcome;
-			typedef std::future<DescribeScreenAlarmEventListOutcome> DescribeScreenAlarmEventListOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeScreenAlarmEventListRequest&, const DescribeScreenAlarmEventListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenAlarmEventListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAnalysisCurveResult> DescribeAnalysisCurveOutcome;
 			typedef std::future<DescribeAnalysisCurveOutcome> DescribeAnalysisCurveOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeAnalysisCurveRequest&, const DescribeAnalysisCurveOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnalysisCurveAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScreenAlarmEventListResult> DescribeScreenAlarmEventListOutcome;
+			typedef std::future<DescribeScreenAlarmEventListOutcome> DescribeScreenAlarmEventListOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeScreenAlarmEventListRequest&, const DescribeScreenAlarmEventListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenAlarmEventListAsyncHandler;
 			typedef Outcome<Error, Model::CreatScreenSettingResult> CreatScreenSettingOutcome;
 			typedef std::future<CreatScreenSettingOutcome> CreatScreenSettingOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::CreatScreenSettingRequest&, const CreatScreenSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatScreenSettingAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAlarmEventListResult> DescribeAlarmEventListOutcome;
 			typedef std::future<DescribeAlarmEventListOutcome> DescribeAlarmEventListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeAlarmEventListRequest&, const DescribeAlarmEventListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmEventListAsyncHandler;
-			typedef Outcome<Error, Model::CanTrySasResult> CanTrySasOutcome;
-			typedef std::future<CanTrySasOutcome> CanTrySasOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::CanTrySasRequest&, const CanTrySasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CanTrySasAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScreenSummaryInfoResult> DescribeScreenSummaryInfoOutcome;
 			typedef std::future<DescribeScreenSummaryInfoOutcome> DescribeScreenSummaryInfoOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeScreenSummaryInfoRequest&, const DescribeScreenSummaryInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenSummaryInfoAsyncHandler;
+			typedef Outcome<Error, Model::CanTrySasResult> CanTrySasOutcome;
+			typedef std::future<CanTrySasOutcome> CanTrySasOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::CanTrySasRequest&, const CanTrySasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CanTrySasAsyncHandler;
 			typedef Outcome<Error, Model::OperateWarningResult> OperateWarningOutcome;
 			typedef std::future<OperateWarningOutcome> OperateWarningOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::OperateWarningRequest&, const OperateWarningOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateWarningAsyncHandler;
@@ -995,42 +995,42 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScreenCityMonitorDataResult> DescribeScreenCityMonitorDataOutcome;
 			typedef std::future<DescribeScreenCityMonitorDataOutcome> DescribeScreenCityMonitorDataOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeScreenCityMonitorDataRequest&, const DescribeScreenCityMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenCityMonitorDataAsyncHandler;
-			typedef Outcome<Error, Model::DescribeWhiteListStrategyStatisticsResult> DescribeWhiteListStrategyStatisticsOutcome;
-			typedef std::future<DescribeWhiteListStrategyStatisticsOutcome> DescribeWhiteListStrategyStatisticsOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeWhiteListStrategyStatisticsRequest&, const DescribeWhiteListStrategyStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteListStrategyStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTotalStatisticsResult> DescribeTotalStatisticsOutcome;
 			typedef std::future<DescribeTotalStatisticsOutcome> DescribeTotalStatisticsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeTotalStatisticsRequest&, const DescribeTotalStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTotalStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWhiteListStrategyStatisticsResult> DescribeWhiteListStrategyStatisticsOutcome;
+			typedef std::future<DescribeWhiteListStrategyStatisticsOutcome> DescribeWhiteListStrategyStatisticsOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeWhiteListStrategyStatisticsRequest&, const DescribeWhiteListStrategyStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteListStrategyStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::AutoUpgradeToSasAdvancedVersionResult> AutoUpgradeToSasAdvancedVersionOutcome;
 			typedef std::future<AutoUpgradeToSasAdvancedVersionOutcome> AutoUpgradeToSasAdvancedVersionOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::AutoUpgradeToSasAdvancedVersionRequest&, const AutoUpgradeToSasAdvancedVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AutoUpgradeToSasAdvancedVersionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStratetyResult> DescribeStratetyOutcome;
 			typedef std::future<DescribeStratetyOutcome> DescribeStratetyOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeStratetyRequest&, const DescribeStratetyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStratetyAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAnalysisStatisticsResult> DescribeAnalysisStatisticsOutcome;
-			typedef std::future<DescribeAnalysisStatisticsOutcome> DescribeAnalysisStatisticsOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeAnalysisStatisticsRequest&, const DescribeAnalysisStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnalysisStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWebLockConfigListResult> DescribeWebLockConfigListOutcome;
 			typedef std::future<DescribeWebLockConfigListOutcome> DescribeWebLockConfigListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeWebLockConfigListRequest&, const DescribeWebLockConfigListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebLockConfigListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAnalysisStatisticsResult> DescribeAnalysisStatisticsOutcome;
+			typedef std::future<DescribeAnalysisStatisticsOutcome> DescribeAnalysisStatisticsOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeAnalysisStatisticsRequest&, const DescribeAnalysisStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnalysisStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVulStatisticsResult> DescribeVulStatisticsOutcome;
 			typedef std::future<DescribeVulStatisticsOutcome> DescribeVulStatisticsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeVulStatisticsRequest&, const DescribeVulStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAutoDelConfigResult> ModifyAutoDelConfigOutcome;
 			typedef std::future<ModifyAutoDelConfigOutcome> ModifyAutoDelConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyAutoDelConfigRequest&, const ModifyAutoDelConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoDelConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeVulBatchResult> DescribeVulBatchOutcome;
-			typedef std::future<DescribeVulBatchOutcome> DescribeVulBatchOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeVulBatchRequest&, const DescribeVulBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulBatchAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserSettingResult> DescribeUserSettingOutcome;
 			typedef std::future<DescribeUserSettingOutcome> DescribeUserSettingOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeUserSettingRequest&, const DescribeUserSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSettingAsyncHandler;
-			typedef Outcome<Error, Model::DescribeEntityListResult> DescribeEntityListOutcome;
-			typedef std::future<DescribeEntityListOutcome> DescribeEntityListOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeEntityListRequest&, const DescribeEntityListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEntityListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVulBatchResult> DescribeVulBatchOutcome;
+			typedef std::future<DescribeVulBatchOutcome> DescribeVulBatchOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeVulBatchRequest&, const DescribeVulBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulBatchAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseInstanceResult> ReleaseInstanceOutcome;
 			typedef std::future<ReleaseInstanceOutcome> ReleaseInstanceOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ReleaseInstanceRequest&, const ReleaseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEntityListResult> DescribeEntityListOutcome;
+			typedef std::future<DescribeEntityListOutcome> DescribeEntityListOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeEntityListRequest&, const DescribeEntityListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEntityListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVulLevelResult> DescribeVulLevelOutcome;
 			typedef std::future<DescribeVulLevelOutcome> DescribeVulLevelOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeVulLevelRequest&, const DescribeVulLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulLevelAsyncHandler;
@@ -1112,12 +1112,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateOrUpdateRuleResult> CreateOrUpdateRuleOutcome;
 			typedef std::future<CreateOrUpdateRuleOutcome> CreateOrUpdateRuleOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::CreateOrUpdateRuleRequest&, const CreateOrUpdateRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateRuleAsyncHandler;
-			typedef Outcome<Error, Model::DescribeYesterdayStatisticsResult> DescribeYesterdayStatisticsOutcome;
-			typedef std::future<DescribeYesterdayStatisticsOutcome> DescribeYesterdayStatisticsOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeYesterdayStatisticsRequest&, const DescribeYesterdayStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYesterdayStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyLogMetaStatusResult> ModifyLogMetaStatusOutcome;
 			typedef std::future<ModifyLogMetaStatusOutcome> ModifyLogMetaStatusOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyLogMetaStatusRequest&, const ModifyLogMetaStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogMetaStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeYesterdayStatisticsResult> DescribeYesterdayStatisticsOutcome;
+			typedef std::future<DescribeYesterdayStatisticsOutcome> DescribeYesterdayStatisticsOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeYesterdayStatisticsRequest&, const DescribeYesterdayStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYesterdayStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSuspiciousExportInfoResult> DescribeSuspiciousExportInfoOutcome;
 			typedef std::future<DescribeSuspiciousExportInfoOutcome> DescribeSuspiciousExportInfoOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeSuspiciousExportInfoRequest&, const DescribeSuspiciousExportInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuspiciousExportInfoAsyncHandler;
@@ -1136,12 +1136,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExportVulResult> ExportVulOutcome;
 			typedef std::future<ExportVulOutcome> ExportVulOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ExportVulRequest&, const ExportVulOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportVulAsyncHandler;
-			typedef Outcome<Error, Model::DescribeVulTargetStatisticsResult> DescribeVulTargetStatisticsOutcome;
-			typedef std::future<DescribeVulTargetStatisticsOutcome> DescribeVulTargetStatisticsOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeVulTargetStatisticsRequest&, const DescribeVulTargetStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulTargetStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSuspiciousEventsResult> DescribeSuspiciousEventsOutcome;
 			typedef std::future<DescribeSuspiciousEventsOutcome> DescribeSuspiciousEventsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeSuspiciousEventsRequest&, const DescribeSuspiciousEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuspiciousEventsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVulTargetStatisticsResult> DescribeVulTargetStatisticsOutcome;
+			typedef std::future<DescribeVulTargetStatisticsOutcome> DescribeVulTargetStatisticsOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeVulTargetStatisticsRequest&, const DescribeVulTargetStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulTargetStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -1151,12 +1151,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryLoginEventResult> QueryLoginEventOutcome;
 			typedef std::future<QueryLoginEventOutcome> QueryLoginEventOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::QueryLoginEventRequest&, const QueryLoginEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLoginEventAsyncHandler;
-			typedef Outcome<Error, Model::TransformLeakageResult> TransformLeakageOutcome;
-			typedef std::future<TransformLeakageOutcome> TransformLeakageOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::TransformLeakageRequest&, const TransformLeakageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransformLeakageAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAssetListResult> DescribeAssetListOutcome;
 			typedef std::future<DescribeAssetListOutcome> DescribeAssetListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeAssetListRequest&, const DescribeAssetListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetListAsyncHandler;
+			typedef Outcome<Error, Model::TransformLeakageResult> TransformLeakageOutcome;
+			typedef std::future<TransformLeakageOutcome> TransformLeakageOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::TransformLeakageRequest&, const TransformLeakageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransformLeakageAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVersionConfigResult> DescribeVersionConfigOutcome;
 			typedef std::future<DescribeVersionConfigOutcome> DescribeVersionConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeVersionConfigRequest&, const DescribeVersionConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVersionConfigAsyncHandler;
@@ -1169,21 +1169,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeChartDataResult> DescribeChartDataOutcome;
 			typedef std::future<DescribeChartDataOutcome> DescribeChartDataOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeChartDataRequest&, const DescribeChartDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChartDataAsyncHandler;
-			typedef Outcome<Error, Model::RollbackQuaraFileResult> RollbackQuaraFileOutcome;
-			typedef std::future<RollbackQuaraFileOutcome> RollbackQuaraFileOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::RollbackQuaraFileRequest&, const RollbackQuaraFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackQuaraFileAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMacConfigResult> DescribeMacConfigOutcome;
 			typedef std::future<DescribeMacConfigOutcome> DescribeMacConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeMacConfigRequest&, const DescribeMacConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMacConfigAsyncHandler;
+			typedef Outcome<Error, Model::RollbackQuaraFileResult> RollbackQuaraFileOutcome;
+			typedef std::future<RollbackQuaraFileOutcome> RollbackQuaraFileOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::RollbackQuaraFileRequest&, const RollbackQuaraFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackQuaraFileAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApiBuySummaryResult> DescribeApiBuySummaryOutcome;
 			typedef std::future<DescribeApiBuySummaryOutcome> DescribeApiBuySummaryOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeApiBuySummaryRequest&, const DescribeApiBuySummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiBuySummaryAsyncHandler;
-			typedef Outcome<Error, Model::DeleteVulBatchResult> DeleteVulBatchOutcome;
-			typedef std::future<DeleteVulBatchOutcome> DeleteVulBatchOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DeleteVulBatchRequest&, const DeleteVulBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVulBatchAsyncHandler;
 			typedef Outcome<Error, Model::DescribeWebLockMachineListResult> DescribeWebLockMachineListOutcome;
 			typedef std::future<DescribeWebLockMachineListOutcome> DescribeWebLockMachineListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeWebLockMachineListRequest&, const DescribeWebLockMachineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebLockMachineListAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVulBatchResult> DeleteVulBatchOutcome;
+			typedef std::future<DeleteVulBatchOutcome> DeleteVulBatchOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DeleteVulBatchRequest&, const DeleteVulBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVulBatchAsyncHandler;
 			typedef Outcome<Error, Model::ModifyWebLockStatusResult> ModifyWebLockStatusOutcome;
 			typedef std::future<ModifyWebLockStatusOutcome> ModifyWebLockStatusOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyWebLockStatusRequest&, const ModifyWebLockStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebLockStatusAsyncHandler;
@@ -1223,27 +1223,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateWhiteListStrategyStatusResult> UpdateWhiteListStrategyStatusOutcome;
 			typedef std::future<UpdateWhiteListStrategyStatusOutcome> UpdateWhiteListStrategyStatusOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::UpdateWhiteListStrategyStatusRequest&, const UpdateWhiteListStrategyStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWhiteListStrategyStatusAsyncHandler;
-			typedef Outcome<Error, Model::DeleteVulWhitelistResult> DeleteVulWhitelistOutcome;
-			typedef std::future<DeleteVulWhitelistOutcome> DeleteVulWhitelistOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DeleteVulWhitelistRequest&, const DeleteVulWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVulWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVulMachineListResult> DescribeVulMachineListOutcome;
 			typedef std::future<DescribeVulMachineListOutcome> DescribeVulMachineListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeVulMachineListRequest&, const DescribeVulMachineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulMachineListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAnalysisLogsResult> DescribeAnalysisLogsOutcome;
 			typedef std::future<DescribeAnalysisLogsOutcome> DescribeAnalysisLogsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeAnalysisLogsRequest&, const DescribeAnalysisLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnalysisLogsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVulWhitelistResult> DeleteVulWhitelistOutcome;
+			typedef std::future<DeleteVulWhitelistOutcome> DeleteVulWhitelistOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DeleteVulWhitelistRequest&, const DeleteVulWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVulWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStratetyDetailResult> DescribeStratetyDetailOutcome;
 			typedef std::future<DescribeStratetyDetailOutcome> DescribeStratetyDetailOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeStratetyDetailRequest&, const DescribeStratetyDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStratetyDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHistogramResult> DescribeHistogramOutcome;
 			typedef std::future<DescribeHistogramOutcome> DescribeHistogramOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeHistogramRequest&, const DescribeHistogramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistogramAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLoginLogsResult> DescribeLoginLogsOutcome;
-			typedef std::future<DescribeLoginLogsOutcome> DescribeLoginLogsOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeLoginLogsRequest&, const DescribeLoginLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginLogsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDingTalkResult> DescribeDingTalkOutcome;
 			typedef std::future<DescribeDingTalkOutcome> DescribeDingTalkOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeDingTalkRequest&, const DescribeDingTalkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDingTalkAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLoginLogsResult> DescribeLoginLogsOutcome;
+			typedef std::future<DescribeLoginLogsOutcome> DescribeLoginLogsOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeLoginLogsRequest&, const DescribeLoginLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginLogsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMetaDataResult> DescribeMetaDataOutcome;
 			typedef std::future<DescribeMetaDataOutcome> DescribeMetaDataOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeMetaDataRequest&, const DescribeMetaDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetaDataAsyncHandler;
@@ -1280,24 +1280,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ValidateHcWarningsResult> ValidateHcWarningsOutcome;
 			typedef std::future<ValidateHcWarningsOutcome> ValidateHcWarningsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ValidateHcWarningsRequest&, const ValidateHcWarningsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateHcWarningsAsyncHandler;
-			typedef Outcome<Error, Model::AutoUpgradeSasResult> AutoUpgradeSasOutcome;
-			typedef std::future<AutoUpgradeSasOutcome> AutoUpgradeSasOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::AutoUpgradeSasRequest&, const AutoUpgradeSasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AutoUpgradeSasAsyncHandler;
 			typedef Outcome<Error, Model::ModifyRefreshProcessInfoResult> ModifyRefreshProcessInfoOutcome;
 			typedef std::future<ModifyRefreshProcessInfoOutcome> ModifyRefreshProcessInfoOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyRefreshProcessInfoRequest&, const ModifyRefreshProcessInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRefreshProcessInfoAsyncHandler;
+			typedef Outcome<Error, Model::AutoUpgradeSasResult> AutoUpgradeSasOutcome;
+			typedef std::future<AutoUpgradeSasOutcome> AutoUpgradeSasOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::AutoUpgradeSasRequest&, const AutoUpgradeSasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AutoUpgradeSasAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEmgUserAgreementResult> DescribeEmgUserAgreementOutcome;
 			typedef std::future<DescribeEmgUserAgreementOutcome> DescribeEmgUserAgreementOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeEmgUserAgreementRequest&, const DescribeEmgUserAgreementOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmgUserAgreementAsyncHandler;
 			typedef Outcome<Error, Model::ModifyEmgVulSubmitResult> ModifyEmgVulSubmitOutcome;
 			typedef std::future<ModifyEmgVulSubmitOutcome> ModifyEmgVulSubmitOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyEmgVulSubmitRequest&, const ModifyEmgVulSubmitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEmgVulSubmitAsyncHandler;
-			typedef Outcome<Error, Model::DeleteLogQueryResult> DeleteLogQueryOutcome;
-			typedef std::future<DeleteLogQueryOutcome> DeleteLogQueryOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DeleteLogQueryRequest&, const DeleteLogQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogQueryAsyncHandler;
 			typedef Outcome<Error, Model::ModifyWebLockMachineListResult> ModifyWebLockMachineListOutcome;
 			typedef std::future<ModifyWebLockMachineListOutcome> ModifyWebLockMachineListOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyWebLockMachineListRequest&, const ModifyWebLockMachineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebLockMachineListAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLogQueryResult> DeleteLogQueryOutcome;
+			typedef std::future<DeleteLogQueryOutcome> DeleteLogQueryOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DeleteLogQueryRequest&, const DeleteLogQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogQueryAsyncHandler;
 			typedef Outcome<Error, Model::ModifyTargetConfigResult> ModifyTargetConfigOutcome;
 			typedef std::future<ModifyTargetConfigOutcome> ModifyTargetConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyTargetConfigRequest&, const ModifyTargetConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetConfigAsyncHandler;
@@ -1325,12 +1325,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeWhiteListAssetResult> DescribeWhiteListAssetOutcome;
 			typedef std::future<DescribeWhiteListAssetOutcome> DescribeWhiteListAssetOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeWhiteListAssetRequest&, const DescribeWhiteListAssetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteListAssetAsyncHandler;
-			typedef Outcome<Error, Model::UpdateCustomizeReportStatusResult> UpdateCustomizeReportStatusOutcome;
-			typedef std::future<UpdateCustomizeReportStatusOutcome> UpdateCustomizeReportStatusOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::UpdateCustomizeReportStatusRequest&, const UpdateCustomizeReportStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomizeReportStatusAsyncHandler;
 			typedef Outcome<Error, Model::ModifyClearLogstoreStorageResult> ModifyClearLogstoreStorageOutcome;
 			typedef std::future<ModifyClearLogstoreStorageOutcome> ModifyClearLogstoreStorageOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyClearLogstoreStorageRequest&, const ModifyClearLogstoreStorageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClearLogstoreStorageAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCustomizeReportStatusResult> UpdateCustomizeReportStatusOutcome;
+			typedef std::future<UpdateCustomizeReportStatusOutcome> UpdateCustomizeReportStatusOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::UpdateCustomizeReportStatusRequest&, const UpdateCustomizeReportStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomizeReportStatusAsyncHandler;
 			typedef Outcome<Error, Model::ModifyStrategyTargetResult> ModifyStrategyTargetOutcome;
 			typedef std::future<ModifyStrategyTargetOutcome> ModifyStrategyTargetOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::ModifyStrategyTargetRequest&, const ModifyStrategyTargetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStrategyTargetAsyncHandler;
@@ -1343,24 +1343,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeHostStatisticsResult> DescribeHostStatisticsOutcome;
 			typedef std::future<DescribeHostStatisticsOutcome> DescribeHostStatisticsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeHostStatisticsRequest&, const DescribeHostStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostStatisticsAsyncHandler;
-			typedef Outcome<Error, Model::SaveWhiteListStrategyResult> SaveWhiteListStrategyOutcome;
-			typedef std::future<SaveWhiteListStrategyOutcome> SaveWhiteListStrategyOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::SaveWhiteListStrategyRequest&, const SaveWhiteListStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveWhiteListStrategyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSecurityStatInfoResult> DescribeSecurityStatInfoOutcome;
 			typedef std::future<DescribeSecurityStatInfoOutcome> DescribeSecurityStatInfoOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeSecurityStatInfoRequest&, const DescribeSecurityStatInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityStatInfoAsyncHandler;
+			typedef Outcome<Error, Model::SaveWhiteListStrategyResult> SaveWhiteListStrategyOutcome;
+			typedef std::future<SaveWhiteListStrategyOutcome> SaveWhiteListStrategyOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::SaveWhiteListStrategyRequest&, const SaveWhiteListStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveWhiteListStrategyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeFilterFieldsResult> DescribeFilterFieldsOutcome;
 			typedef std::future<DescribeFilterFieldsOutcome> DescribeFilterFieldsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeFilterFieldsRequest&, const DescribeFilterFieldsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterFieldsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceStatisticsResult> DescribeInstanceStatisticsOutcome;
 			typedef std::future<DescribeInstanceStatisticsOutcome> DescribeInstanceStatisticsOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::DescribeInstanceStatisticsRequest&, const DescribeInstanceStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceStatisticsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeScreenSecurityStatInfoResult> DescribeScreenSecurityStatInfoOutcome;
-			typedef std::future<DescribeScreenSecurityStatInfoOutcome> DescribeScreenSecurityStatInfoOutcomeCallable;
-			typedef std::function<void(const AegisClient*, const Model::DescribeScreenSecurityStatInfoRequest&, const DescribeScreenSecurityStatInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenSecurityStatInfoAsyncHandler;
 			typedef Outcome<Error, Model::OperateSuspiciousOverallConfigResult> OperateSuspiciousOverallConfigOutcome;
 			typedef std::future<OperateSuspiciousOverallConfigOutcome> OperateSuspiciousOverallConfigOutcomeCallable;
 			typedef std::function<void(const AegisClient*, const Model::OperateSuspiciousOverallConfigRequest&, const OperateSuspiciousOverallConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateSuspiciousOverallConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScreenSecurityStatInfoResult> DescribeScreenSecurityStatInfoOutcome;
+			typedef std::future<DescribeScreenSecurityStatInfoOutcome> DescribeScreenSecurityStatInfoOutcomeCallable;
+			typedef std::function<void(const AegisClient*, const Model::DescribeScreenSecurityStatInfoRequest&, const DescribeScreenSecurityStatInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenSecurityStatInfoAsyncHandler;
 
 			AegisClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			AegisClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -1372,12 +1372,12 @@ namespace AlibabaCloud
 			DescribeCanUpgradeSasOutcome describeCanUpgradeSas(const Model::DescribeCanUpgradeSasRequest &request)const;
 			void describeCanUpgradeSasAsync(const Model::DescribeCanUpgradeSasRequest& request, const DescribeCanUpgradeSasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCanUpgradeSasOutcomeCallable describeCanUpgradeSasCallable(const Model::DescribeCanUpgradeSasRequest& request) const;
-			DescribeTraceInfoNodeOutcome describeTraceInfoNode(const Model::DescribeTraceInfoNodeRequest &request)const;
-			void describeTraceInfoNodeAsync(const Model::DescribeTraceInfoNodeRequest& request, const DescribeTraceInfoNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTraceInfoNodeOutcomeCallable describeTraceInfoNodeCallable(const Model::DescribeTraceInfoNodeRequest& request) const;
 			SaveCustomizeReportConfigOutcome saveCustomizeReportConfig(const Model::SaveCustomizeReportConfigRequest &request)const;
 			void saveCustomizeReportConfigAsync(const Model::SaveCustomizeReportConfigRequest& request, const SaveCustomizeReportConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveCustomizeReportConfigOutcomeCallable saveCustomizeReportConfigCallable(const Model::SaveCustomizeReportConfigRequest& request) const;
+			DescribeTraceInfoNodeOutcome describeTraceInfoNode(const Model::DescribeTraceInfoNodeRequest &request)const;
+			void describeTraceInfoNodeAsync(const Model::DescribeTraceInfoNodeRequest& request, const DescribeTraceInfoNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTraceInfoNodeOutcomeCallable describeTraceInfoNodeCallable(const Model::DescribeTraceInfoNodeRequest& request) const;
 			DescribeScreenCloudHcRiskOutcome describeScreenCloudHcRisk(const Model::DescribeScreenCloudHcRiskRequest &request)const;
 			void describeScreenCloudHcRiskAsync(const Model::DescribeScreenCloudHcRiskRequest& request, const DescribeScreenCloudHcRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScreenCloudHcRiskOutcomeCallable describeScreenCloudHcRiskCallable(const Model::DescribeScreenCloudHcRiskRequest& request) const;
@@ -1399,12 +1399,12 @@ namespace AlibabaCloud
 			SetDatasourceStatusOutcome setDatasourceStatus(const Model::SetDatasourceStatusRequest &request)const;
 			void setDatasourceStatusAsync(const Model::SetDatasourceStatusRequest& request, const SetDatasourceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDatasourceStatusOutcomeCallable setDatasourceStatusCallable(const Model::SetDatasourceStatusRequest& request) const;
-			OperateSuspiciousEventOutcome operateSuspiciousEvent(const Model::OperateSuspiciousEventRequest &request)const;
-			void operateSuspiciousEventAsync(const Model::OperateSuspiciousEventRequest& request, const OperateSuspiciousEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OperateSuspiciousEventOutcomeCallable operateSuspiciousEventCallable(const Model::OperateSuspiciousEventRequest& request) const;
 			OperateSuspiciousTargetConfigOutcome operateSuspiciousTargetConfig(const Model::OperateSuspiciousTargetConfigRequest &request)const;
 			void operateSuspiciousTargetConfigAsync(const Model::OperateSuspiciousTargetConfigRequest& request, const OperateSuspiciousTargetConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateSuspiciousTargetConfigOutcomeCallable operateSuspiciousTargetConfigCallable(const Model::OperateSuspiciousTargetConfigRequest& request) const;
+			OperateSuspiciousEventOutcome operateSuspiciousEvent(const Model::OperateSuspiciousEventRequest &request)const;
+			void operateSuspiciousEventAsync(const Model::OperateSuspiciousEventRequest& request, const OperateSuspiciousEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OperateSuspiciousEventOutcomeCallable operateSuspiciousEventCallable(const Model::OperateSuspiciousEventRequest& request) const;
 			DescribeAnalysisHistogramsOutcome describeAnalysisHistograms(const Model::DescribeAnalysisHistogramsRequest &request)const;
 			void describeAnalysisHistogramsAsync(const Model::DescribeAnalysisHistogramsRequest& request, const DescribeAnalysisHistogramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAnalysisHistogramsOutcomeCallable describeAnalysisHistogramsCallable(const Model::DescribeAnalysisHistogramsRequest& request) const;
@@ -1447,12 +1447,12 @@ namespace AlibabaCloud
 			DescribeStrategyProcessOutcome describeStrategyProcess(const Model::DescribeStrategyProcessRequest &request)const;
 			void describeStrategyProcessAsync(const Model::DescribeStrategyProcessRequest& request, const DescribeStrategyProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStrategyProcessOutcomeCallable describeStrategyProcessCallable(const Model::DescribeStrategyProcessRequest& request) const;
-			DescribeSummaryInfoOutcome describeSummaryInfo(const Model::DescribeSummaryInfoRequest &request)const;
-			void describeSummaryInfoAsync(const Model::DescribeSummaryInfoRequest& request, const DescribeSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSummaryInfoOutcomeCallable describeSummaryInfoCallable(const Model::DescribeSummaryInfoRequest& request) const;
 			DescribeSuspTrendStatisticsOutcome describeSuspTrendStatistics(const Model::DescribeSuspTrendStatisticsRequest &request)const;
 			void describeSuspTrendStatisticsAsync(const Model::DescribeSuspTrendStatisticsRequest& request, const DescribeSuspTrendStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSuspTrendStatisticsOutcomeCallable describeSuspTrendStatisticsCallable(const Model::DescribeSuspTrendStatisticsRequest& request) const;
+			DescribeSummaryInfoOutcome describeSummaryInfo(const Model::DescribeSummaryInfoRequest &request)const;
+			void describeSummaryInfoAsync(const Model::DescribeSummaryInfoRequest& request, const DescribeSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSummaryInfoOutcomeCallable describeSummaryInfoCallable(const Model::DescribeSummaryInfoRequest& request) const;
 			DescribeDataSourceOutcome describeDataSource(const Model::DescribeDataSourceRequest &request)const;
 			void describeDataSourceAsync(const Model::DescribeDataSourceRequest& request, const DescribeDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDataSourceOutcomeCallable describeDataSourceCallable(const Model::DescribeDataSourceRequest& request) const;
@@ -1516,12 +1516,12 @@ namespace AlibabaCloud
 			DescribeTraceInfoNodeListOutcome describeTraceInfoNodeList(const Model::DescribeTraceInfoNodeListRequest &request)const;
 			void describeTraceInfoNodeListAsync(const Model::DescribeTraceInfoNodeListRequest& request, const DescribeTraceInfoNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTraceInfoNodeListOutcomeCallable describeTraceInfoNodeListCallable(const Model::DescribeTraceInfoNodeListRequest& request) const;
-			ModifyWebLockCreateConfigOutcome modifyWebLockCreateConfig(const Model::ModifyWebLockCreateConfigRequest &request)const;
-			void modifyWebLockCreateConfigAsync(const Model::ModifyWebLockCreateConfigRequest& request, const ModifyWebLockCreateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyWebLockCreateConfigOutcomeCallable modifyWebLockCreateConfigCallable(const Model::ModifyWebLockCreateConfigRequest& request) const;
 			DescribeAnalysisSlsIndexOutcome describeAnalysisSlsIndex(const Model::DescribeAnalysisSlsIndexRequest &request)const;
 			void describeAnalysisSlsIndexAsync(const Model::DescribeAnalysisSlsIndexRequest& request, const DescribeAnalysisSlsIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAnalysisSlsIndexOutcomeCallable describeAnalysisSlsIndexCallable(const Model::DescribeAnalysisSlsIndexRequest& request) const;
+			ModifyWebLockCreateConfigOutcome modifyWebLockCreateConfig(const Model::ModifyWebLockCreateConfigRequest &request)const;
+			void modifyWebLockCreateConfigAsync(const Model::ModifyWebLockCreateConfigRequest& request, const ModifyWebLockCreateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyWebLockCreateConfigOutcomeCallable modifyWebLockCreateConfigCallable(const Model::ModifyWebLockCreateConfigRequest& request) const;
 			DeleteRuleGroupOutcome deleteRuleGroup(const Model::DeleteRuleGroupRequest &request)const;
 			void deleteRuleGroupAsync(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRuleGroupOutcomeCallable deleteRuleGroupCallable(const Model::DeleteRuleGroupRequest& request) const;
@@ -1537,24 +1537,24 @@ namespace AlibabaCloud
 			CreateSuspiciousExportOutcome createSuspiciousExport(const Model::CreateSuspiciousExportRequest &request)const;
 			void createSuspiciousExportAsync(const Model::CreateSuspiciousExportRequest& request, const CreateSuspiciousExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSuspiciousExportOutcomeCallable createSuspiciousExportCallable(const Model::CreateSuspiciousExportRequest& request) const;
-			DescribeWebshellListOutcome describeWebshellList(const Model::DescribeWebshellListRequest &request)const;
-			void describeWebshellListAsync(const Model::DescribeWebshellListRequest& request, const DescribeWebshellListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeWebshellListOutcomeCallable describeWebshellListCallable(const Model::DescribeWebshellListRequest& request) const;
 			DescribeBizStatSimpleQueryResultOutcome describeBizStatSimpleQueryResult(const Model::DescribeBizStatSimpleQueryResultRequest &request)const;
 			void describeBizStatSimpleQueryResultAsync(const Model::DescribeBizStatSimpleQueryResultRequest& request, const DescribeBizStatSimpleQueryResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizStatSimpleQueryResultOutcomeCallable describeBizStatSimpleQueryResultCallable(const Model::DescribeBizStatSimpleQueryResultRequest& request) const;
-			OperateVulOutcome operateVul(const Model::OperateVulRequest &request)const;
-			void operateVulAsync(const Model::OperateVulRequest& request, const OperateVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OperateVulOutcomeCallable operateVulCallable(const Model::OperateVulRequest& request) const;
+			DescribeWebshellListOutcome describeWebshellList(const Model::DescribeWebshellListRequest &request)const;
+			void describeWebshellListAsync(const Model::DescribeWebshellListRequest& request, const DescribeWebshellListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWebshellListOutcomeCallable describeWebshellListCallable(const Model::DescribeWebshellListRequest& request) const;
 			GetCrackStatisticsOutcome getCrackStatistics(const Model::GetCrackStatisticsRequest &request)const;
 			void getCrackStatisticsAsync(const Model::GetCrackStatisticsRequest& request, const GetCrackStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCrackStatisticsOutcomeCallable getCrackStatisticsCallable(const Model::GetCrackStatisticsRequest& request) const;
-			OperateAgentClientInstallOutcome operateAgentClientInstall(const Model::OperateAgentClientInstallRequest &request)const;
-			void operateAgentClientInstallAsync(const Model::OperateAgentClientInstallRequest& request, const OperateAgentClientInstallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OperateAgentClientInstallOutcomeCallable operateAgentClientInstallCallable(const Model::OperateAgentClientInstallRequest& request) const;
+			OperateVulOutcome operateVul(const Model::OperateVulRequest &request)const;
+			void operateVulAsync(const Model::OperateVulRequest& request, const OperateVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OperateVulOutcomeCallable operateVulCallable(const Model::OperateVulRequest& request) const;
 			DescribeConcernNecessityOutcome describeConcernNecessity(const Model::DescribeConcernNecessityRequest &request)const;
 			void describeConcernNecessityAsync(const Model::DescribeConcernNecessityRequest& request, const DescribeConcernNecessityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConcernNecessityOutcomeCallable describeConcernNecessityCallable(const Model::DescribeConcernNecessityRequest& request) const;
+			OperateAgentClientInstallOutcome operateAgentClientInstall(const Model::OperateAgentClientInstallRequest &request)const;
+			void operateAgentClientInstallAsync(const Model::OperateAgentClientInstallRequest& request, const OperateAgentClientInstallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OperateAgentClientInstallOutcomeCallable operateAgentClientInstallCallable(const Model::OperateAgentClientInstallRequest& request) const;
 			DescribeScreenScoreThreadOutcome describeScreenScoreThread(const Model::DescribeScreenScoreThreadRequest &request)const;
 			void describeScreenScoreThreadAsync(const Model::DescribeScreenScoreThreadRequest& request, const DescribeScreenScoreThreadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScreenScoreThreadOutcomeCallable describeScreenScoreThreadCallable(const Model::DescribeScreenScoreThreadRequest& request) const;
@@ -1570,15 +1570,15 @@ namespace AlibabaCloud
 			DescribeTopicListOutcome describeTopicList(const Model::DescribeTopicListRequest &request)const;
 			void describeTopicListAsync(const Model::DescribeTopicListRequest& request, const DescribeTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTopicListOutcomeCallable describeTopicListCallable(const Model::DescribeTopicListRequest& request) const;
-			DescribeScreenVersionConfigOutcome describeScreenVersionConfig(const Model::DescribeScreenVersionConfigRequest &request)const;
-			void describeScreenVersionConfigAsync(const Model::DescribeScreenVersionConfigRequest& request, const DescribeScreenVersionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeScreenVersionConfigOutcomeCallable describeScreenVersionConfigCallable(const Model::DescribeScreenVersionConfigRequest& request) const;
-			DescribeAssetDetailByUuidOutcome describeAssetDetailByUuid(const Model::DescribeAssetDetailByUuidRequest &request)const;
-			void describeAssetDetailByUuidAsync(const Model::DescribeAssetDetailByUuidRequest& request, const DescribeAssetDetailByUuidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAssetDetailByUuidOutcomeCallable describeAssetDetailByUuidCallable(const Model::DescribeAssetDetailByUuidRequest& request) const;
 			CreateScreenSettingOutcome createScreenSetting(const Model::CreateScreenSettingRequest &request)const;
 			void createScreenSettingAsync(const Model::CreateScreenSettingRequest& request, const CreateScreenSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateScreenSettingOutcomeCallable createScreenSettingCallable(const Model::CreateScreenSettingRequest& request) const;
+			DescribeAssetDetailByUuidOutcome describeAssetDetailByUuid(const Model::DescribeAssetDetailByUuidRequest &request)const;
+			void describeAssetDetailByUuidAsync(const Model::DescribeAssetDetailByUuidRequest& request, const DescribeAssetDetailByUuidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAssetDetailByUuidOutcomeCallable describeAssetDetailByUuidCallable(const Model::DescribeAssetDetailByUuidRequest& request) const;
+			DescribeScreenVersionConfigOutcome describeScreenVersionConfig(const Model::DescribeScreenVersionConfigRequest &request)const;
+			void describeScreenVersionConfigAsync(const Model::DescribeScreenVersionConfigRequest& request, const DescribeScreenVersionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScreenVersionConfigOutcomeCallable describeScreenVersionConfigCallable(const Model::DescribeScreenVersionConfigRequest& request) const;
 			DescribeVulExportInfoOutcome describeVulExportInfo(const Model::DescribeVulExportInfoRequest &request)const;
 			void describeVulExportInfoAsync(const Model::DescribeVulExportInfoRequest& request, const DescribeVulExportInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVulExportInfoOutcomeCallable describeVulExportInfoCallable(const Model::DescribeVulExportInfoRequest& request) const;
@@ -1654,24 +1654,24 @@ namespace AlibabaCloud
 			ModifyVulConfigOutcome modifyVulConfig(const Model::ModifyVulConfigRequest &request)const;
 			void modifyVulConfigAsync(const Model::ModifyVulConfigRequest& request, const ModifyVulConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyVulConfigOutcomeCallable modifyVulConfigCallable(const Model::ModifyVulConfigRequest& request) const;
+			DescribesummaryOutcome describesummary(const Model::DescribesummaryRequest &request)const;
+			void describesummaryAsync(const Model::DescribesummaryRequest& request, const DescribesummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribesummaryOutcomeCallable describesummaryCallable(const Model::DescribesummaryRequest& request) const;
 			GetStatisticsOutcome getStatistics(const Model::GetStatisticsRequest &request)const;
 			void getStatisticsAsync(const Model::GetStatisticsRequest& request, const GetStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetStatisticsOutcomeCallable getStatisticsCallable(const Model::GetStatisticsRequest& request) const;
 			DescribeSuspEventsOutcome describeSuspEvents(const Model::DescribeSuspEventsRequest &request)const;
 			void describeSuspEventsAsync(const Model::DescribeSuspEventsRequest& request, const DescribeSuspEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSuspEventsOutcomeCallable describeSuspEventsCallable(const Model::DescribeSuspEventsRequest& request) const;
-			DescribesummaryOutcome describesummary(const Model::DescribesummaryRequest &request)const;
-			void describesummaryAsync(const Model::DescribesummaryRequest& request, const DescribesummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribesummaryOutcomeCallable describesummaryCallable(const Model::DescribesummaryRequest& request) const;
 			ModifyAccessKeyLeakDealOutcome modifyAccessKeyLeakDeal(const Model::ModifyAccessKeyLeakDealRequest &request)const;
 			void modifyAccessKeyLeakDealAsync(const Model::ModifyAccessKeyLeakDealRequest& request, const ModifyAccessKeyLeakDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccessKeyLeakDealOutcomeCallable modifyAccessKeyLeakDealCallable(const Model::ModifyAccessKeyLeakDealRequest& request) const;
-			DescribeCheckWarningCountOutcome describeCheckWarningCount(const Model::DescribeCheckWarningCountRequest &request)const;
-			void describeCheckWarningCountAsync(const Model::DescribeCheckWarningCountRequest& request, const DescribeCheckWarningCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeCheckWarningCountOutcomeCallable describeCheckWarningCountCallable(const Model::DescribeCheckWarningCountRequest& request) const;
 			CopyCustomizeReportConfigOutcome copyCustomizeReportConfig(const Model::CopyCustomizeReportConfigRequest &request)const;
 			void copyCustomizeReportConfigAsync(const Model::CopyCustomizeReportConfigRequest& request, const CopyCustomizeReportConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyCustomizeReportConfigOutcomeCallable copyCustomizeReportConfigCallable(const Model::CopyCustomizeReportConfigRequest& request) const;
+			DescribeCheckWarningCountOutcome describeCheckWarningCount(const Model::DescribeCheckWarningCountRequest &request)const;
+			void describeCheckWarningCountAsync(const Model::DescribeCheckWarningCountRequest& request, const DescribeCheckWarningCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCheckWarningCountOutcomeCallable describeCheckWarningCountCallable(const Model::DescribeCheckWarningCountRequest& request) const;
 			CreateOrUpdateDataSourceOutcome createOrUpdateDataSource(const Model::CreateOrUpdateDataSourceRequest &request)const;
 			void createOrUpdateDataSourceAsync(const Model::CreateOrUpdateDataSourceRequest& request, const CreateOrUpdateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOrUpdateDataSourceOutcomeCallable createOrUpdateDataSourceCallable(const Model::CreateOrUpdateDataSourceRequest& request) const;
@@ -1690,12 +1690,12 @@ namespace AlibabaCloud
 			DescribeTraceInfoDetailOutcome describeTraceInfoDetail(const Model::DescribeTraceInfoDetailRequest &request)const;
 			void describeTraceInfoDetailAsync(const Model::DescribeTraceInfoDetailRequest& request, const DescribeTraceInfoDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTraceInfoDetailOutcomeCallable describeTraceInfoDetailCallable(const Model::DescribeTraceInfoDetailRequest& request) const;
-			DescribeCanTrySasOutcome describeCanTrySas(const Model::DescribeCanTrySasRequest &request)const;
-			void describeCanTrySasAsync(const Model::DescribeCanTrySasRequest& request, const DescribeCanTrySasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeCanTrySasOutcomeCallable describeCanTrySasCallable(const Model::DescribeCanTrySasRequest& request) const;
 			DescribeGroupListOutcome describeGroupList(const Model::DescribeGroupListRequest &request)const;
 			void describeGroupListAsync(const Model::DescribeGroupListRequest& request, const DescribeGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGroupListOutcomeCallable describeGroupListCallable(const Model::DescribeGroupListRequest& request) const;
+			DescribeCanTrySasOutcome describeCanTrySas(const Model::DescribeCanTrySasRequest &request)const;
+			void describeCanTrySasAsync(const Model::DescribeCanTrySasRequest& request, const DescribeCanTrySasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCanTrySasOutcomeCallable describeCanTrySasCallable(const Model::DescribeCanTrySasRequest& request) const;
 			DescribeTargetOutcome describeTarget(const Model::DescribeTargetRequest &request)const;
 			void describeTargetAsync(const Model::DescribeTargetRequest& request, const DescribeTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTargetOutcomeCallable describeTargetCallable(const Model::DescribeTargetRequest& request) const;
@@ -1714,12 +1714,12 @@ namespace AlibabaCloud
 			DescribeWarningMachinesOutcome describeWarningMachines(const Model::DescribeWarningMachinesRequest &request)const;
 			void describeWarningMachinesAsync(const Model::DescribeWarningMachinesRequest& request, const DescribeWarningMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWarningMachinesOutcomeCallable describeWarningMachinesCallable(const Model::DescribeWarningMachinesRequest& request) const;
-			ModifySearchConditionOutcome modifySearchCondition(const Model::ModifySearchConditionRequest &request)const;
-			void modifySearchConditionAsync(const Model::ModifySearchConditionRequest& request, const ModifySearchConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifySearchConditionOutcomeCallable modifySearchConditionCallable(const Model::ModifySearchConditionRequest& request) const;
 			DescribeScreenTitlesOutcome describeScreenTitles(const Model::DescribeScreenTitlesRequest &request)const;
 			void describeScreenTitlesAsync(const Model::DescribeScreenTitlesRequest& request, const DescribeScreenTitlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScreenTitlesOutcomeCallable describeScreenTitlesCallable(const Model::DescribeScreenTitlesRequest& request) const;
+			ModifySearchConditionOutcome modifySearchCondition(const Model::ModifySearchConditionRequest &request)const;
+			void modifySearchConditionAsync(const Model::ModifySearchConditionRequest& request, const ModifySearchConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifySearchConditionOutcomeCallable modifySearchConditionCallable(const Model::ModifySearchConditionRequest& request) const;
 			DescribeWhiteListStrategyUuidCountOutcome describeWhiteListStrategyUuidCount(const Model::DescribeWhiteListStrategyUuidCountRequest &request)const;
 			void describeWhiteListStrategyUuidCountAsync(const Model::DescribeWhiteListStrategyUuidCountRequest& request, const DescribeWhiteListStrategyUuidCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWhiteListStrategyUuidCountOutcomeCallable describeWhiteListStrategyUuidCountCallable(const Model::DescribeWhiteListStrategyUuidCountRequest& request) const;
@@ -1756,24 +1756,24 @@ namespace AlibabaCloud
 			DescribeAccesskeyLeakListOutcome describeAccesskeyLeakList(const Model::DescribeAccesskeyLeakListRequest &request)const;
 			void describeAccesskeyLeakListAsync(const Model::DescribeAccesskeyLeakListRequest& request, const DescribeAccesskeyLeakListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccesskeyLeakListOutcomeCallable describeAccesskeyLeakListCallable(const Model::DescribeAccesskeyLeakListRequest& request) const;
-			DescribeScreenAlarmEventListOutcome describeScreenAlarmEventList(const Model::DescribeScreenAlarmEventListRequest &request)const;
-			void describeScreenAlarmEventListAsync(const Model::DescribeScreenAlarmEventListRequest& request, const DescribeScreenAlarmEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeScreenAlarmEventListOutcomeCallable describeScreenAlarmEventListCallable(const Model::DescribeScreenAlarmEventListRequest& request) const;
 			DescribeAnalysisCurveOutcome describeAnalysisCurve(const Model::DescribeAnalysisCurveRequest &request)const;
 			void describeAnalysisCurveAsync(const Model::DescribeAnalysisCurveRequest& request, const DescribeAnalysisCurveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAnalysisCurveOutcomeCallable describeAnalysisCurveCallable(const Model::DescribeAnalysisCurveRequest& request) const;
+			DescribeScreenAlarmEventListOutcome describeScreenAlarmEventList(const Model::DescribeScreenAlarmEventListRequest &request)const;
+			void describeScreenAlarmEventListAsync(const Model::DescribeScreenAlarmEventListRequest& request, const DescribeScreenAlarmEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScreenAlarmEventListOutcomeCallable describeScreenAlarmEventListCallable(const Model::DescribeScreenAlarmEventListRequest& request) const;
 			CreatScreenSettingOutcome creatScreenSetting(const Model::CreatScreenSettingRequest &request)const;
 			void creatScreenSettingAsync(const Model::CreatScreenSettingRequest& request, const CreatScreenSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatScreenSettingOutcomeCallable creatScreenSettingCallable(const Model::CreatScreenSettingRequest& request) const;
 			DescribeAlarmEventListOutcome describeAlarmEventList(const Model::DescribeAlarmEventListRequest &request)const;
 			void describeAlarmEventListAsync(const Model::DescribeAlarmEventListRequest& request, const DescribeAlarmEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAlarmEventListOutcomeCallable describeAlarmEventListCallable(const Model::DescribeAlarmEventListRequest& request) const;
-			CanTrySasOutcome canTrySas(const Model::CanTrySasRequest &request)const;
-			void canTrySasAsync(const Model::CanTrySasRequest& request, const CanTrySasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CanTrySasOutcomeCallable canTrySasCallable(const Model::CanTrySasRequest& request) const;
 			DescribeScreenSummaryInfoOutcome describeScreenSummaryInfo(const Model::DescribeScreenSummaryInfoRequest &request)const;
 			void describeScreenSummaryInfoAsync(const Model::DescribeScreenSummaryInfoRequest& request, const DescribeScreenSummaryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScreenSummaryInfoOutcomeCallable describeScreenSummaryInfoCallable(const Model::DescribeScreenSummaryInfoRequest& request) const;
+			CanTrySasOutcome canTrySas(const Model::CanTrySasRequest &request)const;
+			void canTrySasAsync(const Model::CanTrySasRequest& request, const CanTrySasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CanTrySasOutcomeCallable canTrySasCallable(const Model::CanTrySasRequest& request) const;
 			OperateWarningOutcome operateWarning(const Model::OperateWarningRequest &request)const;
 			void operateWarningAsync(const Model::OperateWarningRequest& request, const OperateWarningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateWarningOutcomeCallable operateWarningCallable(const Model::OperateWarningRequest& request) const;
@@ -1798,42 +1798,42 @@ namespace AlibabaCloud
 			DescribeScreenCityMonitorDataOutcome describeScreenCityMonitorData(const Model::DescribeScreenCityMonitorDataRequest &request)const;
 			void describeScreenCityMonitorDataAsync(const Model::DescribeScreenCityMonitorDataRequest& request, const DescribeScreenCityMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScreenCityMonitorDataOutcomeCallable describeScreenCityMonitorDataCallable(const Model::DescribeScreenCityMonitorDataRequest& request) const;
-			DescribeWhiteListStrategyStatisticsOutcome describeWhiteListStrategyStatistics(const Model::DescribeWhiteListStrategyStatisticsRequest &request)const;
-			void describeWhiteListStrategyStatisticsAsync(const Model::DescribeWhiteListStrategyStatisticsRequest& request, const DescribeWhiteListStrategyStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeWhiteListStrategyStatisticsOutcomeCallable describeWhiteListStrategyStatisticsCallable(const Model::DescribeWhiteListStrategyStatisticsRequest& request) const;
 			DescribeTotalStatisticsOutcome describeTotalStatistics(const Model::DescribeTotalStatisticsRequest &request)const;
 			void describeTotalStatisticsAsync(const Model::DescribeTotalStatisticsRequest& request, const DescribeTotalStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTotalStatisticsOutcomeCallable describeTotalStatisticsCallable(const Model::DescribeTotalStatisticsRequest& request) const;
+			DescribeWhiteListStrategyStatisticsOutcome describeWhiteListStrategyStatistics(const Model::DescribeWhiteListStrategyStatisticsRequest &request)const;
+			void describeWhiteListStrategyStatisticsAsync(const Model::DescribeWhiteListStrategyStatisticsRequest& request, const DescribeWhiteListStrategyStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWhiteListStrategyStatisticsOutcomeCallable describeWhiteListStrategyStatisticsCallable(const Model::DescribeWhiteListStrategyStatisticsRequest& request) const;
 			AutoUpgradeToSasAdvancedVersionOutcome autoUpgradeToSasAdvancedVersion(const Model::AutoUpgradeToSasAdvancedVersionRequest &request)const;
 			void autoUpgradeToSasAdvancedVersionAsync(const Model::AutoUpgradeToSasAdvancedVersionRequest& request, const AutoUpgradeToSasAdvancedVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AutoUpgradeToSasAdvancedVersionOutcomeCallable autoUpgradeToSasAdvancedVersionCallable(const Model::AutoUpgradeToSasAdvancedVersionRequest& request) const;
 			DescribeStratetyOutcome describeStratety(const Model::DescribeStratetyRequest &request)const;
 			void describeStratetyAsync(const Model::DescribeStratetyRequest& request, const DescribeStratetyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStratetyOutcomeCallable describeStratetyCallable(const Model::DescribeStratetyRequest& request) const;
-			DescribeAnalysisStatisticsOutcome describeAnalysisStatistics(const Model::DescribeAnalysisStatisticsRequest &request)const;
-			void describeAnalysisStatisticsAsync(const Model::DescribeAnalysisStatisticsRequest& request, const DescribeAnalysisStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAnalysisStatisticsOutcomeCallable describeAnalysisStatisticsCallable(const Model::DescribeAnalysisStatisticsRequest& request) const;
 			DescribeWebLockConfigListOutcome describeWebLockConfigList(const Model::DescribeWebLockConfigListRequest &request)const;
 			void describeWebLockConfigListAsync(const Model::DescribeWebLockConfigListRequest& request, const DescribeWebLockConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWebLockConfigListOutcomeCallable describeWebLockConfigListCallable(const Model::DescribeWebLockConfigListRequest& request) const;
+			DescribeAnalysisStatisticsOutcome describeAnalysisStatistics(const Model::DescribeAnalysisStatisticsRequest &request)const;
+			void describeAnalysisStatisticsAsync(const Model::DescribeAnalysisStatisticsRequest& request, const DescribeAnalysisStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAnalysisStatisticsOutcomeCallable describeAnalysisStatisticsCallable(const Model::DescribeAnalysisStatisticsRequest& request) const;
 			DescribeVulStatisticsOutcome describeVulStatistics(const Model::DescribeVulStatisticsRequest &request)const;
 			void describeVulStatisticsAsync(const Model::DescribeVulStatisticsRequest& request, const DescribeVulStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVulStatisticsOutcomeCallable describeVulStatisticsCallable(const Model::DescribeVulStatisticsRequest& request) const;
 			ModifyAutoDelConfigOutcome modifyAutoDelConfig(const Model::ModifyAutoDelConfigRequest &request)const;
 			void modifyAutoDelConfigAsync(const Model::ModifyAutoDelConfigRequest& request, const ModifyAutoDelConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAutoDelConfigOutcomeCallable modifyAutoDelConfigCallable(const Model::ModifyAutoDelConfigRequest& request) const;
-			DescribeVulBatchOutcome describeVulBatch(const Model::DescribeVulBatchRequest &request)const;
-			void describeVulBatchAsync(const Model::DescribeVulBatchRequest& request, const DescribeVulBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeVulBatchOutcomeCallable describeVulBatchCallable(const Model::DescribeVulBatchRequest& request) const;
 			DescribeUserSettingOutcome describeUserSetting(const Model::DescribeUserSettingRequest &request)const;
 			void describeUserSettingAsync(const Model::DescribeUserSettingRequest& request, const DescribeUserSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserSettingOutcomeCallable describeUserSettingCallable(const Model::DescribeUserSettingRequest& request) const;
-			DescribeEntityListOutcome describeEntityList(const Model::DescribeEntityListRequest &request)const;
-			void describeEntityListAsync(const Model::DescribeEntityListRequest& request, const DescribeEntityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeEntityListOutcomeCallable describeEntityListCallable(const Model::DescribeEntityListRequest& request) const;
+			DescribeVulBatchOutcome describeVulBatch(const Model::DescribeVulBatchRequest &request)const;
+			void describeVulBatchAsync(const Model::DescribeVulBatchRequest& request, const DescribeVulBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVulBatchOutcomeCallable describeVulBatchCallable(const Model::DescribeVulBatchRequest& request) const;
 			ReleaseInstanceOutcome releaseInstance(const Model::ReleaseInstanceRequest &request)const;
 			void releaseInstanceAsync(const Model::ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstanceOutcomeCallable releaseInstanceCallable(const Model::ReleaseInstanceRequest& request) const;
+			DescribeEntityListOutcome describeEntityList(const Model::DescribeEntityListRequest &request)const;
+			void describeEntityListAsync(const Model::DescribeEntityListRequest& request, const DescribeEntityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEntityListOutcomeCallable describeEntityListCallable(const Model::DescribeEntityListRequest& request) const;
 			DescribeVulLevelOutcome describeVulLevel(const Model::DescribeVulLevelRequest &request)const;
 			void describeVulLevelAsync(const Model::DescribeVulLevelRequest& request, const DescribeVulLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVulLevelOutcomeCallable describeVulLevelCallable(const Model::DescribeVulLevelRequest& request) const;
@@ -1915,12 +1915,12 @@ namespace AlibabaCloud
 			CreateOrUpdateRuleOutcome createOrUpdateRule(const Model::CreateOrUpdateRuleRequest &request)const;
 			void createOrUpdateRuleAsync(const Model::CreateOrUpdateRuleRequest& request, const CreateOrUpdateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOrUpdateRuleOutcomeCallable createOrUpdateRuleCallable(const Model::CreateOrUpdateRuleRequest& request) const;
-			DescribeYesterdayStatisticsOutcome describeYesterdayStatistics(const Model::DescribeYesterdayStatisticsRequest &request)const;
-			void describeYesterdayStatisticsAsync(const Model::DescribeYesterdayStatisticsRequest& request, const DescribeYesterdayStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeYesterdayStatisticsOutcomeCallable describeYesterdayStatisticsCallable(const Model::DescribeYesterdayStatisticsRequest& request) const;
 			ModifyLogMetaStatusOutcome modifyLogMetaStatus(const Model::ModifyLogMetaStatusRequest &request)const;
 			void modifyLogMetaStatusAsync(const Model::ModifyLogMetaStatusRequest& request, const ModifyLogMetaStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLogMetaStatusOutcomeCallable modifyLogMetaStatusCallable(const Model::ModifyLogMetaStatusRequest& request) const;
+			DescribeYesterdayStatisticsOutcome describeYesterdayStatistics(const Model::DescribeYesterdayStatisticsRequest &request)const;
+			void describeYesterdayStatisticsAsync(const Model::DescribeYesterdayStatisticsRequest& request, const DescribeYesterdayStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeYesterdayStatisticsOutcomeCallable describeYesterdayStatisticsCallable(const Model::DescribeYesterdayStatisticsRequest& request) const;
 			DescribeSuspiciousExportInfoOutcome describeSuspiciousExportInfo(const Model::DescribeSuspiciousExportInfoRequest &request)const;
 			void describeSuspiciousExportInfoAsync(const Model::DescribeSuspiciousExportInfoRequest& request, const DescribeSuspiciousExportInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSuspiciousExportInfoOutcomeCallable describeSuspiciousExportInfoCallable(const Model::DescribeSuspiciousExportInfoRequest& request) const;
@@ -1939,12 +1939,12 @@ namespace AlibabaCloud
 			ExportVulOutcome exportVul(const Model::ExportVulRequest &request)const;
 			void exportVulAsync(const Model::ExportVulRequest& request, const ExportVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportVulOutcomeCallable exportVulCallable(const Model::ExportVulRequest& request) const;
-			DescribeVulTargetStatisticsOutcome describeVulTargetStatistics(const Model::DescribeVulTargetStatisticsRequest &request)const;
-			void describeVulTargetStatisticsAsync(const Model::DescribeVulTargetStatisticsRequest& request, const DescribeVulTargetStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeVulTargetStatisticsOutcomeCallable describeVulTargetStatisticsCallable(const Model::DescribeVulTargetStatisticsRequest& request) const;
 			DescribeSuspiciousEventsOutcome describeSuspiciousEvents(const Model::DescribeSuspiciousEventsRequest &request)const;
 			void describeSuspiciousEventsAsync(const Model::DescribeSuspiciousEventsRequest& request, const DescribeSuspiciousEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSuspiciousEventsOutcomeCallable describeSuspiciousEventsCallable(const Model::DescribeSuspiciousEventsRequest& request) const;
+			DescribeVulTargetStatisticsOutcome describeVulTargetStatistics(const Model::DescribeVulTargetStatisticsRequest &request)const;
+			void describeVulTargetStatisticsAsync(const Model::DescribeVulTargetStatisticsRequest& request, const DescribeVulTargetStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVulTargetStatisticsOutcomeCallable describeVulTargetStatisticsCallable(const Model::DescribeVulTargetStatisticsRequest& request) const;
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
@@ -1954,12 +1954,12 @@ namespace AlibabaCloud
 			QueryLoginEventOutcome queryLoginEvent(const Model::QueryLoginEventRequest &request)const;
 			void queryLoginEventAsync(const Model::QueryLoginEventRequest& request, const QueryLoginEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryLoginEventOutcomeCallable queryLoginEventCallable(const Model::QueryLoginEventRequest& request) const;
-			TransformLeakageOutcome transformLeakage(const Model::TransformLeakageRequest &request)const;
-			void transformLeakageAsync(const Model::TransformLeakageRequest& request, const TransformLeakageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TransformLeakageOutcomeCallable transformLeakageCallable(const Model::TransformLeakageRequest& request) const;
 			DescribeAssetListOutcome describeAssetList(const Model::DescribeAssetListRequest &request)const;
 			void describeAssetListAsync(const Model::DescribeAssetListRequest& request, const DescribeAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAssetListOutcomeCallable describeAssetListCallable(const Model::DescribeAssetListRequest& request) const;
+			TransformLeakageOutcome transformLeakage(const Model::TransformLeakageRequest &request)const;
+			void transformLeakageAsync(const Model::TransformLeakageRequest& request, const TransformLeakageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TransformLeakageOutcomeCallable transformLeakageCallable(const Model::TransformLeakageRequest& request) const;
 			DescribeVersionConfigOutcome describeVersionConfig(const Model::DescribeVersionConfigRequest &request)const;
 			void describeVersionConfigAsync(const Model::DescribeVersionConfigRequest& request, const DescribeVersionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVersionConfigOutcomeCallable describeVersionConfigCallable(const Model::DescribeVersionConfigRequest& request) const;
@@ -1972,21 +1972,21 @@ namespace AlibabaCloud
 			DescribeChartDataOutcome describeChartData(const Model::DescribeChartDataRequest &request)const;
 			void describeChartDataAsync(const Model::DescribeChartDataRequest& request, const DescribeChartDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeChartDataOutcomeCallable describeChartDataCallable(const Model::DescribeChartDataRequest& request) const;
-			RollbackQuaraFileOutcome rollbackQuaraFile(const Model::RollbackQuaraFileRequest &request)const;
-			void rollbackQuaraFileAsync(const Model::RollbackQuaraFileRequest& request, const RollbackQuaraFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RollbackQuaraFileOutcomeCallable rollbackQuaraFileCallable(const Model::RollbackQuaraFileRequest& request) const;
 			DescribeMacConfigOutcome describeMacConfig(const Model::DescribeMacConfigRequest &request)const;
 			void describeMacConfigAsync(const Model::DescribeMacConfigRequest& request, const DescribeMacConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMacConfigOutcomeCallable describeMacConfigCallable(const Model::DescribeMacConfigRequest& request) const;
+			RollbackQuaraFileOutcome rollbackQuaraFile(const Model::RollbackQuaraFileRequest &request)const;
+			void rollbackQuaraFileAsync(const Model::RollbackQuaraFileRequest& request, const RollbackQuaraFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RollbackQuaraFileOutcomeCallable rollbackQuaraFileCallable(const Model::RollbackQuaraFileRequest& request) const;
 			DescribeApiBuySummaryOutcome describeApiBuySummary(const Model::DescribeApiBuySummaryRequest &request)const;
 			void describeApiBuySummaryAsync(const Model::DescribeApiBuySummaryRequest& request, const DescribeApiBuySummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApiBuySummaryOutcomeCallable describeApiBuySummaryCallable(const Model::DescribeApiBuySummaryRequest& request) const;
-			DeleteVulBatchOutcome deleteVulBatch(const Model::DeleteVulBatchRequest &request)const;
-			void deleteVulBatchAsync(const Model::DeleteVulBatchRequest& request, const DeleteVulBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteVulBatchOutcomeCallable deleteVulBatchCallable(const Model::DeleteVulBatchRequest& request) const;
 			DescribeWebLockMachineListOutcome describeWebLockMachineList(const Model::DescribeWebLockMachineListRequest &request)const;
 			void describeWebLockMachineListAsync(const Model::DescribeWebLockMachineListRequest& request, const DescribeWebLockMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWebLockMachineListOutcomeCallable describeWebLockMachineListCallable(const Model::DescribeWebLockMachineListRequest& request) const;
+			DeleteVulBatchOutcome deleteVulBatch(const Model::DeleteVulBatchRequest &request)const;
+			void deleteVulBatchAsync(const Model::DeleteVulBatchRequest& request, const DeleteVulBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVulBatchOutcomeCallable deleteVulBatchCallable(const Model::DeleteVulBatchRequest& request) const;
 			ModifyWebLockStatusOutcome modifyWebLockStatus(const Model::ModifyWebLockStatusRequest &request)const;
 			void modifyWebLockStatusAsync(const Model::ModifyWebLockStatusRequest& request, const ModifyWebLockStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyWebLockStatusOutcomeCallable modifyWebLockStatusCallable(const Model::ModifyWebLockStatusRequest& request) const;
@@ -2026,27 +2026,27 @@ namespace AlibabaCloud
 			UpdateWhiteListStrategyStatusOutcome updateWhiteListStrategyStatus(const Model::UpdateWhiteListStrategyStatusRequest &request)const;
 			void updateWhiteListStrategyStatusAsync(const Model::UpdateWhiteListStrategyStatusRequest& request, const UpdateWhiteListStrategyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateWhiteListStrategyStatusOutcomeCallable updateWhiteListStrategyStatusCallable(const Model::UpdateWhiteListStrategyStatusRequest& request) const;
-			DeleteVulWhitelistOutcome deleteVulWhitelist(const Model::DeleteVulWhitelistRequest &request)const;
-			void deleteVulWhitelistAsync(const Model::DeleteVulWhitelistRequest& request, const DeleteVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteVulWhitelistOutcomeCallable deleteVulWhitelistCallable(const Model::DeleteVulWhitelistRequest& request) const;
 			DescribeVulMachineListOutcome describeVulMachineList(const Model::DescribeVulMachineListRequest &request)const;
 			void describeVulMachineListAsync(const Model::DescribeVulMachineListRequest& request, const DescribeVulMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVulMachineListOutcomeCallable describeVulMachineListCallable(const Model::DescribeVulMachineListRequest& request) const;
 			DescribeAnalysisLogsOutcome describeAnalysisLogs(const Model::DescribeAnalysisLogsRequest &request)const;
 			void describeAnalysisLogsAsync(const Model::DescribeAnalysisLogsRequest& request, const DescribeAnalysisLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAnalysisLogsOutcomeCallable describeAnalysisLogsCallable(const Model::DescribeAnalysisLogsRequest& request) const;
+			DeleteVulWhitelistOutcome deleteVulWhitelist(const Model::DeleteVulWhitelistRequest &request)const;
+			void deleteVulWhitelistAsync(const Model::DeleteVulWhitelistRequest& request, const DeleteVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVulWhitelistOutcomeCallable deleteVulWhitelistCallable(const Model::DeleteVulWhitelistRequest& request) const;
 			DescribeStratetyDetailOutcome describeStratetyDetail(const Model::DescribeStratetyDetailRequest &request)const;
 			void describeStratetyDetailAsync(const Model::DescribeStratetyDetailRequest& request, const DescribeStratetyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStratetyDetailOutcomeCallable describeStratetyDetailCallable(const Model::DescribeStratetyDetailRequest& request) const;
 			DescribeHistogramOutcome describeHistogram(const Model::DescribeHistogramRequest &request)const;
 			void describeHistogramAsync(const Model::DescribeHistogramRequest& request, const DescribeHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHistogramOutcomeCallable describeHistogramCallable(const Model::DescribeHistogramRequest& request) const;
-			DescribeLoginLogsOutcome describeLoginLogs(const Model::DescribeLoginLogsRequest &request)const;
-			void describeLoginLogsAsync(const Model::DescribeLoginLogsRequest& request, const DescribeLoginLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLoginLogsOutcomeCallable describeLoginLogsCallable(const Model::DescribeLoginLogsRequest& request) const;
 			DescribeDingTalkOutcome describeDingTalk(const Model::DescribeDingTalkRequest &request)const;
 			void describeDingTalkAsync(const Model::DescribeDingTalkRequest& request, const DescribeDingTalkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDingTalkOutcomeCallable describeDingTalkCallable(const Model::DescribeDingTalkRequest& request) const;
+			DescribeLoginLogsOutcome describeLoginLogs(const Model::DescribeLoginLogsRequest &request)const;
+			void describeLoginLogsAsync(const Model::DescribeLoginLogsRequest& request, const DescribeLoginLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLoginLogsOutcomeCallable describeLoginLogsCallable(const Model::DescribeLoginLogsRequest& request) const;
 			DescribeMetaDataOutcome describeMetaData(const Model::DescribeMetaDataRequest &request)const;
 			void describeMetaDataAsync(const Model::DescribeMetaDataRequest& request, const DescribeMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMetaDataOutcomeCallable describeMetaDataCallable(const Model::DescribeMetaDataRequest& request) const;
@@ -2083,24 +2083,24 @@ namespace AlibabaCloud
 			ValidateHcWarningsOutcome validateHcWarnings(const Model::ValidateHcWarningsRequest &request)const;
 			void validateHcWarningsAsync(const Model::ValidateHcWarningsRequest& request, const ValidateHcWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateHcWarningsOutcomeCallable validateHcWarningsCallable(const Model::ValidateHcWarningsRequest& request) const;
-			AutoUpgradeSasOutcome autoUpgradeSas(const Model::AutoUpgradeSasRequest &request)const;
-			void autoUpgradeSasAsync(const Model::AutoUpgradeSasRequest& request, const AutoUpgradeSasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AutoUpgradeSasOutcomeCallable autoUpgradeSasCallable(const Model::AutoUpgradeSasRequest& request) const;
 			ModifyRefreshProcessInfoOutcome modifyRefreshProcessInfo(const Model::ModifyRefreshProcessInfoRequest &request)const;
 			void modifyRefreshProcessInfoAsync(const Model::ModifyRefreshProcessInfoRequest& request, const ModifyRefreshProcessInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyRefreshProcessInfoOutcomeCallable modifyRefreshProcessInfoCallable(const Model::ModifyRefreshProcessInfoRequest& request) const;
+			AutoUpgradeSasOutcome autoUpgradeSas(const Model::AutoUpgradeSasRequest &request)const;
+			void autoUpgradeSasAsync(const Model::AutoUpgradeSasRequest& request, const AutoUpgradeSasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AutoUpgradeSasOutcomeCallable autoUpgradeSasCallable(const Model::AutoUpgradeSasRequest& request) const;
 			DescribeEmgUserAgreementOutcome describeEmgUserAgreement(const Model::DescribeEmgUserAgreementRequest &request)const;
 			void describeEmgUserAgreementAsync(const Model::DescribeEmgUserAgreementRequest& request, const DescribeEmgUserAgreementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEmgUserAgreementOutcomeCallable describeEmgUserAgreementCallable(const Model::DescribeEmgUserAgreementRequest& request) const;
 			ModifyEmgVulSubmitOutcome modifyEmgVulSubmit(const Model::ModifyEmgVulSubmitRequest &request)const;
 			void modifyEmgVulSubmitAsync(const Model::ModifyEmgVulSubmitRequest& request, const ModifyEmgVulSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyEmgVulSubmitOutcomeCallable modifyEmgVulSubmitCallable(const Model::ModifyEmgVulSubmitRequest& request) const;
-			DeleteLogQueryOutcome deleteLogQuery(const Model::DeleteLogQueryRequest &request)const;
-			void deleteLogQueryAsync(const Model::DeleteLogQueryRequest& request, const DeleteLogQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteLogQueryOutcomeCallable deleteLogQueryCallable(const Model::DeleteLogQueryRequest& request) const;
 			ModifyWebLockMachineListOutcome modifyWebLockMachineList(const Model::ModifyWebLockMachineListRequest &request)const;
 			void modifyWebLockMachineListAsync(const Model::ModifyWebLockMachineListRequest& request, const ModifyWebLockMachineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyWebLockMachineListOutcomeCallable modifyWebLockMachineListCallable(const Model::ModifyWebLockMachineListRequest& request) const;
+			DeleteLogQueryOutcome deleteLogQuery(const Model::DeleteLogQueryRequest &request)const;
+			void deleteLogQueryAsync(const Model::DeleteLogQueryRequest& request, const DeleteLogQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLogQueryOutcomeCallable deleteLogQueryCallable(const Model::DeleteLogQueryRequest& request) const;
 			ModifyTargetConfigOutcome modifyTargetConfig(const Model::ModifyTargetConfigRequest &request)const;
 			void modifyTargetConfigAsync(const Model::ModifyTargetConfigRequest& request, const ModifyTargetConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyTargetConfigOutcomeCallable modifyTargetConfigCallable(const Model::ModifyTargetConfigRequest& request) const;
@@ -2128,12 +2128,12 @@ namespace AlibabaCloud
 			DescribeWhiteListAssetOutcome describeWhiteListAsset(const Model::DescribeWhiteListAssetRequest &request)const;
 			void describeWhiteListAssetAsync(const Model::DescribeWhiteListAssetRequest& request, const DescribeWhiteListAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWhiteListAssetOutcomeCallable describeWhiteListAssetCallable(const Model::DescribeWhiteListAssetRequest& request) const;
-			UpdateCustomizeReportStatusOutcome updateCustomizeReportStatus(const Model::UpdateCustomizeReportStatusRequest &request)const;
-			void updateCustomizeReportStatusAsync(const Model::UpdateCustomizeReportStatusRequest& request, const UpdateCustomizeReportStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateCustomizeReportStatusOutcomeCallable updateCustomizeReportStatusCallable(const Model::UpdateCustomizeReportStatusRequest& request) const;
 			ModifyClearLogstoreStorageOutcome modifyClearLogstoreStorage(const Model::ModifyClearLogstoreStorageRequest &request)const;
 			void modifyClearLogstoreStorageAsync(const Model::ModifyClearLogstoreStorageRequest& request, const ModifyClearLogstoreStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyClearLogstoreStorageOutcomeCallable modifyClearLogstoreStorageCallable(const Model::ModifyClearLogstoreStorageRequest& request) const;
+			UpdateCustomizeReportStatusOutcome updateCustomizeReportStatus(const Model::UpdateCustomizeReportStatusRequest &request)const;
+			void updateCustomizeReportStatusAsync(const Model::UpdateCustomizeReportStatusRequest& request, const UpdateCustomizeReportStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCustomizeReportStatusOutcomeCallable updateCustomizeReportStatusCallable(const Model::UpdateCustomizeReportStatusRequest& request) const;
 			ModifyStrategyTargetOutcome modifyStrategyTarget(const Model::ModifyStrategyTargetRequest &request)const;
 			void modifyStrategyTargetAsync(const Model::ModifyStrategyTargetRequest& request, const ModifyStrategyTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyStrategyTargetOutcomeCallable modifyStrategyTargetCallable(const Model::ModifyStrategyTargetRequest& request) const;
@@ -2146,24 +2146,24 @@ namespace AlibabaCloud
 			DescribeHostStatisticsOutcome describeHostStatistics(const Model::DescribeHostStatisticsRequest &request)const;
 			void describeHostStatisticsAsync(const Model::DescribeHostStatisticsRequest& request, const DescribeHostStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHostStatisticsOutcomeCallable describeHostStatisticsCallable(const Model::DescribeHostStatisticsRequest& request) const;
-			SaveWhiteListStrategyOutcome saveWhiteListStrategy(const Model::SaveWhiteListStrategyRequest &request)const;
-			void saveWhiteListStrategyAsync(const Model::SaveWhiteListStrategyRequest& request, const SaveWhiteListStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SaveWhiteListStrategyOutcomeCallable saveWhiteListStrategyCallable(const Model::SaveWhiteListStrategyRequest& request) const;
 			DescribeSecurityStatInfoOutcome describeSecurityStatInfo(const Model::DescribeSecurityStatInfoRequest &request)const;
 			void describeSecurityStatInfoAsync(const Model::DescribeSecurityStatInfoRequest& request, const DescribeSecurityStatInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityStatInfoOutcomeCallable describeSecurityStatInfoCallable(const Model::DescribeSecurityStatInfoRequest& request) const;
+			SaveWhiteListStrategyOutcome saveWhiteListStrategy(const Model::SaveWhiteListStrategyRequest &request)const;
+			void saveWhiteListStrategyAsync(const Model::SaveWhiteListStrategyRequest& request, const SaveWhiteListStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveWhiteListStrategyOutcomeCallable saveWhiteListStrategyCallable(const Model::SaveWhiteListStrategyRequest& request) const;
 			DescribeFilterFieldsOutcome describeFilterFields(const Model::DescribeFilterFieldsRequest &request)const;
 			void describeFilterFieldsAsync(const Model::DescribeFilterFieldsRequest& request, const DescribeFilterFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFilterFieldsOutcomeCallable describeFilterFieldsCallable(const Model::DescribeFilterFieldsRequest& request) const;
 			DescribeInstanceStatisticsOutcome describeInstanceStatistics(const Model::DescribeInstanceStatisticsRequest &request)const;
 			void describeInstanceStatisticsAsync(const Model::DescribeInstanceStatisticsRequest& request, const DescribeInstanceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceStatisticsOutcomeCallable describeInstanceStatisticsCallable(const Model::DescribeInstanceStatisticsRequest& request) const;
-			DescribeScreenSecurityStatInfoOutcome describeScreenSecurityStatInfo(const Model::DescribeScreenSecurityStatInfoRequest &request)const;
-			void describeScreenSecurityStatInfoAsync(const Model::DescribeScreenSecurityStatInfoRequest& request, const DescribeScreenSecurityStatInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeScreenSecurityStatInfoOutcomeCallable describeScreenSecurityStatInfoCallable(const Model::DescribeScreenSecurityStatInfoRequest& request) const;
 			OperateSuspiciousOverallConfigOutcome operateSuspiciousOverallConfig(const Model::OperateSuspiciousOverallConfigRequest &request)const;
 			void operateSuspiciousOverallConfigAsync(const Model::OperateSuspiciousOverallConfigRequest& request, const OperateSuspiciousOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateSuspiciousOverallConfigOutcomeCallable operateSuspiciousOverallConfigCallable(const Model::OperateSuspiciousOverallConfigRequest& request) const;
+			DescribeScreenSecurityStatInfoOutcome describeScreenSecurityStatInfo(const Model::DescribeScreenSecurityStatInfoRequest &request)const;
+			void describeScreenSecurityStatInfoAsync(const Model::DescribeScreenSecurityStatInfoRequest& request, const DescribeScreenSecurityStatInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScreenSecurityStatInfoOutcomeCallable describeScreenSecurityStatInfoCallable(const Model::DescribeScreenSecurityStatInfoRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

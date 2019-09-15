@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeEventLevelCountRequest();
 				~DescribeEventLevelCountRequest();
 
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				std::string getType()const;
-				void setType(const std::string& type);
 
             private:
+				std::string type_;
 				std::string sourceIp_;
 				std::string from_;
-				std::string type_;
 
 			};
 		}

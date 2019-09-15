@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				DescribeVulLevelStatisticsRequest();
 				~DescribeVulLevelStatisticsRequest();
 
+				long getStartTs()const;
+				void setStartTs(long startTs);
+				std::string getIncludeApp()const;
+				void setIncludeApp(const std::string& includeApp);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				long getEndTs()const;
 				void setEndTs(long endTs);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				long getStartTs()const;
-				void setStartTs(long startTs);
-				std::string getIncludeApp()const;
-				void setIncludeApp(const std::string& includeApp);
 				std::string getUuids()const;
 				void setUuids(const std::string& uuids);
 
             private:
+				long startTs_;
+				std::string includeApp_;
 				std::string sourceIp_;
 				long endTs_;
 				std::string from_;
-				long startTs_;
-				std::string includeApp_;
 				std::string uuids_;
 
 			};

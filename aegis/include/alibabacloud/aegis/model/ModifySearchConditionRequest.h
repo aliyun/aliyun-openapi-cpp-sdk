@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ModifySearchConditionRequest();
 				~ModifySearchConditionRequest();
 
+				std::string getFilterConditions()const;
+				void setFilterConditions(const std::string& filterConditions);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getFilterConditions()const;
-				void setFilterConditions(const std::string& filterConditions);
 
             private:
+				std::string filterConditions_;
 				std::string sourceIp_;
 				std::string name_;
-				std::string filterConditions_;
 
 			};
 		}

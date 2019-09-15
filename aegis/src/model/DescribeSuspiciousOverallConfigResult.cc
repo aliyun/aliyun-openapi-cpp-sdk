@@ -35,13 +35,9 @@ DescribeSuspiciousOverallConfigResult::~DescribeSuspiciousOverallConfigResult()
 
 void DescribeSuspiciousOverallConfigResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto overallConfigNode = value["OverallConfig"];
 	if(!overallConfigNode["Type"].isNull())

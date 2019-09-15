@@ -25,17 +25,6 @@ DescribeScreenAttackAnalysisDataRequest::DescribeScreenAttackAnalysisDataRequest
 DescribeScreenAttackAnalysisDataRequest::~DescribeScreenAttackAnalysisDataRequest()
 {}
 
-std::string DescribeScreenAttackAnalysisDataRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeScreenAttackAnalysisDataRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeScreenAttackAnalysisDataRequest::getData()const
 {
 	return data_;
@@ -58,6 +47,39 @@ void DescribeScreenAttackAnalysisDataRequest::setBase64(const std::string& base6
 	setCoreParameter("Base64", base64);
 }
 
+long DescribeScreenAttackAnalysisDataRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeScreenAttackAnalysisDataRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", std::to_string(startTime));
+}
+
+std::string DescribeScreenAttackAnalysisDataRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeScreenAttackAnalysisDataRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string DescribeScreenAttackAnalysisDataRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeScreenAttackAnalysisDataRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
 int DescribeScreenAttackAnalysisDataRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,6 +89,17 @@ void DescribeScreenAttackAnalysisDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeScreenAttackAnalysisDataRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeScreenAttackAnalysisDataRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeScreenAttackAnalysisDataRequest::getEndTime()const
@@ -89,38 +122,5 @@ void DescribeScreenAttackAnalysisDataRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-long DescribeScreenAttackAnalysisDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeScreenAttackAnalysisDataRequest::setStartTime(long startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
-}
-
-std::string DescribeScreenAttackAnalysisDataRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeScreenAttackAnalysisDataRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeScreenAttackAnalysisDataRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeScreenAttackAnalysisDataRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

@@ -36,28 +36,6 @@ void DescribeCustomizeReportListRequest::setReportType(int reportType)
 	setCoreParameter("ReportType", std::to_string(reportType));
 }
 
-std::string DescribeCustomizeReportListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeCustomizeReportListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeCustomizeReportListRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeCustomizeReportListRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 int DescribeCustomizeReportListRequest::getReportStatus()const
 {
 	return reportStatus_;
@@ -78,5 +56,27 @@ void DescribeCustomizeReportListRequest::setTitle(const std::string& title)
 {
 	title_ = title;
 	setCoreParameter("Title", title);
+}
+
+std::string DescribeCustomizeReportListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeCustomizeReportListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeCustomizeReportListRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeCustomizeReportListRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

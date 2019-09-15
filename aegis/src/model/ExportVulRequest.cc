@@ -36,6 +36,50 @@ void ExportVulRequest::setStatusList(const std::string& statusList)
 	setCoreParameter("StatusList", statusList);
 }
 
+std::string ExportVulRequest::getRemark()const
+{
+	return remark_;
+}
+
+void ExportVulRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string ExportVulRequest::getType()const
+{
+	return type_;
+}
+
+void ExportVulRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string ExportVulRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ExportVulRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string ExportVulRequest::getLang()const
+{
+	return lang_;
+}
+
+void ExportVulRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
 std::string ExportVulRequest::getLevel()const
 {
 	return level_;
@@ -58,17 +102,6 @@ void ExportVulRequest::setResource(const std::string& resource)
 	setCoreParameter("Resource", resource);
 }
 
-std::string ExportVulRequest::getRemark()const
-{
-	return remark_;
-}
-
-void ExportVulRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
-}
-
 std::string ExportVulRequest::getDealed()const
 {
 	return dealed_;
@@ -78,17 +111,6 @@ void ExportVulRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
 	setCoreParameter("Dealed", dealed);
-}
-
-std::string ExportVulRequest::getType()const
-{
-	return type_;
-}
-
-void ExportVulRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 
 std::string ExportVulRequest::getBatchName()const
@@ -113,17 +135,6 @@ void ExportVulRequest::setAliasName(const std::string& aliasName)
 	setCoreParameter("AliasName", aliasName);
 }
 
-std::string ExportVulRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ExportVulRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ExportVulRequest::getName()const
 {
 	return name_;
@@ -133,17 +144,6 @@ void ExportVulRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string ExportVulRequest::getLang()const
-{
-	return lang_;
-}
-
-void ExportVulRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string ExportVulRequest::getNecessity()const

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeVulRelatedProcessRequest();
 				~DescribeVulRelatedProcessRequest();
 
+				std::string getPpid()const;
+				void setPpid(const std::string& ppid);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getId()const;
 				void setId(int id);
-				std::string getPpid()const;
-				void setPpid(const std::string& ppid);
 
             private:
+				std::string ppid_;
 				std::string sourceIp_;
 				int id_;
-				std::string ppid_;
 
 			};
 		}

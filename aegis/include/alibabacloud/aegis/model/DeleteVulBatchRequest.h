@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeleteVulBatchRequest();
 				~DeleteVulBatchRequest();
 
+				std::string getResource()const;
+				void setResource(const std::string& resource);
 				std::string getBatchName()const;
 				void setBatchName(const std::string& batchName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getResource()const;
-				void setResource(const std::string& resource);
 
             private:
+				std::string resource_;
 				std::string batchName_;
 				std::string sourceIp_;
-				std::string resource_;
 
 			};
 		}

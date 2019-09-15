@@ -47,17 +47,6 @@ void DescribeChartDataRequest::setRangeUnit(const std::string& rangeUnit)
 	setCoreParameter("RangeUnit", rangeUnit);
 }
 
-std::string DescribeChartDataRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeChartDataRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeChartDataRequest::getCharId()const
 {
 	return charId_;
@@ -67,6 +56,17 @@ void DescribeChartDataRequest::setCharId(const std::string& charId)
 {
 	charId_ = charId;
 	setCoreParameter("CharId", charId);
+}
+
+std::string DescribeChartDataRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeChartDataRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeChartDataRequest::getLang()const

@@ -25,17 +25,6 @@ DescribeHistogramRequest::DescribeHistogramRequest() :
 DescribeHistogramRequest::~DescribeHistogramRequest()
 {}
 
-std::string DescribeHistogramRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeHistogramRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeHistogramRequest::getQuery()const
 {
 	return query_;
@@ -67,5 +56,16 @@ void DescribeHistogramRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
+}
+
+std::string DescribeHistogramRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeHistogramRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

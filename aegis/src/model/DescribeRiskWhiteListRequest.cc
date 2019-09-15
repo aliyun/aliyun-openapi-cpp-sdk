@@ -25,6 +25,17 @@ DescribeRiskWhiteListRequest::DescribeRiskWhiteListRequest() :
 DescribeRiskWhiteListRequest::~DescribeRiskWhiteListRequest()
 {}
 
+int DescribeRiskWhiteListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeRiskWhiteListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
 std::string DescribeRiskWhiteListRequest::getRiskName()const
 {
 	return riskName_;
@@ -56,16 +67,5 @@ void DescribeRiskWhiteListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeRiskWhiteListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeRiskWhiteListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

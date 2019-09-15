@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				CreateOrUpdateGroupRequest();
 				~CreateOrUpdateGroupRequest();
 
-				std::string getRuleIds()const;
-				void setRuleIds(const std::string& ruleIds);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getMachineGroupIds()const;
-				void setMachineGroupIds(const std::string& machineGroupIds);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				long getId()const;
 				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
+				std::string getRuleIds()const;
+				void setRuleIds(const std::string& ruleIds);
+				std::string getMachineGroupIds()const;
+				void setMachineGroupIds(const std::string& machineGroupIds);
 
             private:
-				std::string ruleIds_;
-				std::string sourceIp_;
-				std::string machineGroupIds_;
 				std::string description_;
+				std::string sourceIp_;
 				long id_;
 				std::string lang_;
 				std::string groupName_;
+				std::string ruleIds_;
+				std::string machineGroupIds_;
 
 			};
 		}

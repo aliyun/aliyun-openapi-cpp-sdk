@@ -35,13 +35,9 @@ DescribeVersionConfigResult::~DescribeVersionConfigResult()
 
 void DescribeVersionConfigResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	if(!value["AssetLevel"].isNull())
 		assetLevel_ = std::stoi(value["AssetLevel"].asString());
@@ -53,6 +49,8 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		flag_ = std::stoi(value["Flag"].asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
+	if(!value["IsOverBalance"].isNull())
+		isOverBalance_ = value["IsOverBalance"].asString() == "true";
 	if(!value["IsSasOpening"].isNull())
 		isSasOpening_ = value["IsSasOpening"].asString() == "true";
 	if(!value["IsTrialVersion"].isNull())
@@ -83,7 +81,14 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		slsCapacity_ = std::stol(value["SlsCapacity"].asString());
 	if(!value["GmtCreate"].isNull())
 		gmtCreate_ = std::stol(value["GmtCreate"].asString());
+	if(!value["LastInstanceReleaseTime"].isNull())
+		lastInstanceReleaseTime_ = std::stol(value["LastInstanceReleaseTime"].asString());
 
+}
+
+bool DescribeVersionConfigResult::getIsOverBalance()const
+{
+	return isOverBalance_;
 }
 
 int DescribeVersionConfigResult::getAssetLevel()const
@@ -99,6 +104,11 @@ std::string DescribeVersionConfigResult::getInstanceId()const
 long DescribeVersionConfigResult::getAppWhiteListAuthCount()const
 {
 	return appWhiteListAuthCount_;
+}
+
+long DescribeVersionConfigResult::getLastInstanceReleaseTime()const
+{
+	return lastInstanceReleaseTime_;
 }
 
 long DescribeVersionConfigResult::getCreateTime()const

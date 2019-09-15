@@ -37,12 +37,12 @@ namespace AlibabaCloud
 
 				std::string getRangeUnit()const;
 				void setRangeUnit(const std::string& rangeUnit);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getCustomQuery()const;
 				void setCustomQuery(const std::string& customQuery);
 				int getRangeValue()const;
@@ -50,9 +50,9 @@ namespace AlibabaCloud
 
             private:
 				std::string rangeUnit_;
-				std::string sourceIp_;
 				long endTime_;
 				long startTime_;
+				std::string sourceIp_;
 				std::string customQuery_;
 				int rangeValue_;
 

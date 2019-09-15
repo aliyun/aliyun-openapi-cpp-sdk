@@ -25,17 +25,6 @@ DeleteCustomizeReportRequest::DeleteCustomizeReportRequest() :
 DeleteCustomizeReportRequest::~DeleteCustomizeReportRequest()
 {}
 
-std::string DeleteCustomizeReportRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DeleteCustomizeReportRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DeleteCustomizeReportRequest::getReportId()const
 {
 	return reportId_;
@@ -45,6 +34,17 @@ void DeleteCustomizeReportRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
 	setCoreParameter("ReportId", std::to_string(reportId));
+}
+
+std::string DeleteCustomizeReportRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DeleteCustomizeReportRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteCustomizeReportRequest::getLang()const

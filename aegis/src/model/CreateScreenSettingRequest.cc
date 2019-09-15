@@ -25,26 +25,26 @@ CreateScreenSettingRequest::CreateScreenSettingRequest() :
 CreateScreenSettingRequest::~CreateScreenSettingRequest()
 {}
 
-std::string CreateScreenSettingRequest::getScreenDataMap()const
+std::string CreateScreenSettingRequest::getTitle()const
 {
-	return screenDataMap_;
+	return title_;
 }
 
-void CreateScreenSettingRequest::setScreenDataMap(const std::string& screenDataMap)
+void CreateScreenSettingRequest::setTitle(const std::string& title)
 {
-	screenDataMap_ = screenDataMap;
-	setCoreParameter("ScreenDataMap", screenDataMap);
+	title_ = title;
+	setCoreParameter("Title", title);
 }
 
-int CreateScreenSettingRequest::getScreenDefault()const
+std::string CreateScreenSettingRequest::getLogoUrl()const
 {
-	return screenDefault_;
+	return logoUrl_;
 }
 
-void CreateScreenSettingRequest::setScreenDefault(int screenDefault)
+void CreateScreenSettingRequest::setLogoUrl(const std::string& logoUrl)
 {
-	screenDefault_ = screenDefault;
-	setCoreParameter("ScreenDefault", std::to_string(screenDefault));
+	logoUrl_ = logoUrl;
+	setCoreParameter("LogoUrl", logoUrl);
 }
 
 bool CreateScreenSettingRequest::getLogoPower()const
@@ -56,17 +56,6 @@ void CreateScreenSettingRequest::setLogoPower(bool logoPower)
 {
 	logoPower_ = logoPower;
 	setCoreParameter("LogoPower", logoPower ? "true" : "false");
-}
-
-std::string CreateScreenSettingRequest::getMonitorUrl()const
-{
-	return monitorUrl_;
-}
-
-void CreateScreenSettingRequest::setMonitorUrl(const std::string& monitorUrl)
-{
-	monitorUrl_ = monitorUrl;
-	setCoreParameter("MonitorUrl", monitorUrl);
 }
 
 std::string CreateScreenSettingRequest::getSourceIp()const
@@ -91,25 +80,36 @@ void CreateScreenSettingRequest::setId(int id)
 	setCoreParameter("Id", std::to_string(id));
 }
 
-std::string CreateScreenSettingRequest::getTitle()const
+std::string CreateScreenSettingRequest::getScreenDataMap()const
 {
-	return title_;
+	return screenDataMap_;
 }
 
-void CreateScreenSettingRequest::setTitle(const std::string& title)
+void CreateScreenSettingRequest::setScreenDataMap(const std::string& screenDataMap)
 {
-	title_ = title;
-	setCoreParameter("Title", title);
+	screenDataMap_ = screenDataMap;
+	setCoreParameter("ScreenDataMap", screenDataMap);
 }
 
-std::string CreateScreenSettingRequest::getLogoUrl()const
+int CreateScreenSettingRequest::getScreenDefault()const
 {
-	return logoUrl_;
+	return screenDefault_;
 }
 
-void CreateScreenSettingRequest::setLogoUrl(const std::string& logoUrl)
+void CreateScreenSettingRequest::setScreenDefault(int screenDefault)
 {
-	logoUrl_ = logoUrl;
-	setCoreParameter("LogoUrl", logoUrl);
+	screenDefault_ = screenDefault;
+	setCoreParameter("ScreenDefault", std::to_string(screenDefault));
+}
+
+std::string CreateScreenSettingRequest::getMonitorUrl()const
+{
+	return monitorUrl_;
+}
+
+void CreateScreenSettingRequest::setMonitorUrl(const std::string& monitorUrl)
+{
+	monitorUrl_ = monitorUrl;
+	setCoreParameter("MonitorUrl", monitorUrl);
 }
 

@@ -36,6 +36,17 @@ void CreateSuspiciousExportRequest::setStatusList(const std::string& statusList)
 	setCoreParameter("StatusList", statusList);
 }
 
+std::string CreateSuspiciousExportRequest::getRemark()const
+{
+	return remark_;
+}
+
+void CreateSuspiciousExportRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
 std::string CreateSuspiciousExportRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,6 +67,17 @@ void CreateSuspiciousExportRequest::setEventNameRemark(const std::string& eventN
 {
 	eventNameRemark_ = eventNameRemark;
 	setCoreParameter("EventNameRemark", eventNameRemark);
+}
+
+std::string CreateSuspiciousExportRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateSuspiciousExportRequest::setTag(const std::string& tag)
+{
+	tag_ = tag;
+	setCoreParameter("Tag", tag);
 }
 
 std::string CreateSuspiciousExportRequest::getLevel()const
@@ -100,27 +122,5 @@ void CreateSuspiciousExportRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
 	setCoreParameter("EventType", eventType);
-}
-
-std::string CreateSuspiciousExportRequest::getRemark()const
-{
-	return remark_;
-}
-
-void CreateSuspiciousExportRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
-}
-
-std::string CreateSuspiciousExportRequest::getTag()const
-{
-	return tag_;
-}
-
-void CreateSuspiciousExportRequest::setTag(const std::string& tag)
-{
-	tag_ = tag;
-	setCoreParameter("Tag", tag);
 }
 

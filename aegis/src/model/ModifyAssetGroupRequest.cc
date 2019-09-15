@@ -25,17 +25,6 @@ ModifyAssetGroupRequest::ModifyAssetGroupRequest() :
 ModifyAssetGroupRequest::~ModifyAssetGroupRequest()
 {}
 
-std::string ModifyAssetGroupRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyAssetGroupRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long ModifyAssetGroupRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,6 +34,17 @@ void ModifyAssetGroupRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", std::to_string(groupId));
+}
+
+std::string ModifyAssetGroupRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyAssetGroupRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyAssetGroupRequest::getUuids()const

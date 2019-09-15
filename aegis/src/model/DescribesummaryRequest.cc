@@ -25,15 +25,26 @@ DescribesummaryRequest::DescribesummaryRequest() :
 DescribesummaryRequest::~DescribesummaryRequest()
 {}
 
-std::string DescribesummaryRequest::getTypeNames()const
+std::string DescribesummaryRequest::getStatusList()const
 {
-	return typeNames_;
+	return statusList_;
 }
 
-void DescribesummaryRequest::setTypeNames(const std::string& typeNames)
+void DescribesummaryRequest::setStatusList(const std::string& statusList)
 {
-	typeNames_ = typeNames;
-	setCoreParameter("TypeNames", typeNames);
+	statusList_ = statusList;
+	setCoreParameter("StatusList", statusList);
+}
+
+std::string DescribesummaryRequest::getRiskLevels()const
+{
+	return riskLevels_;
+}
+
+void DescribesummaryRequest::setRiskLevels(const std::string& riskLevels)
+{
+	riskLevels_ = riskLevels;
+	setCoreParameter("RiskLevels", riskLevels);
 }
 
 std::string DescribesummaryRequest::getRiskName()const
@@ -47,17 +58,6 @@ void DescribesummaryRequest::setRiskName(const std::string& riskName)
 	setCoreParameter("RiskName", riskName);
 }
 
-std::string DescribesummaryRequest::getStatusList()const
-{
-	return statusList_;
-}
-
-void DescribesummaryRequest::setStatusList(const std::string& statusList)
-{
-	statusList_ = statusList;
-	setCoreParameter("StatusList", statusList);
-}
-
 std::string DescribesummaryRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -67,17 +67,6 @@ void DescribesummaryRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribesummaryRequest::getRiskLevels()const
-{
-	return riskLevels_;
-}
-
-void DescribesummaryRequest::setRiskLevels(const std::string& riskLevels)
-{
-	riskLevels_ = riskLevels;
-	setCoreParameter("RiskLevels", riskLevels);
 }
 
 int DescribesummaryRequest::getPageSize()const
@@ -102,17 +91,6 @@ void DescribesummaryRequest::setDealed(const std::string& dealed)
 	setCoreParameter("Dealed", dealed);
 }
 
-long DescribesummaryRequest::getStrategyId()const
-{
-	return strategyId_;
-}
-
-void DescribesummaryRequest::setStrategyId(long strategyId)
-{
-	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
-}
-
 int DescribesummaryRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -122,6 +100,28 @@ void DescribesummaryRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribesummaryRequest::getTypeNames()const
+{
+	return typeNames_;
+}
+
+void DescribesummaryRequest::setTypeNames(const std::string& typeNames)
+{
+	typeNames_ = typeNames;
+	setCoreParameter("TypeNames", typeNames);
+}
+
+long DescribesummaryRequest::getStrategyId()const
+{
+	return strategyId_;
+}
+
+void DescribesummaryRequest::setStrategyId(long strategyId)
+{
+	strategyId_ = strategyId;
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string DescribesummaryRequest::getSubTypeNames()const

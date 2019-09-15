@@ -25,28 +25,6 @@ ModifySaveVulBatchRequest::ModifySaveVulBatchRequest() :
 ModifySaveVulBatchRequest::~ModifySaveVulBatchRequest()
 {}
 
-std::string ModifySaveVulBatchRequest::getBatchName()const
-{
-	return batchName_;
-}
-
-void ModifySaveVulBatchRequest::setBatchName(const std::string& batchName)
-{
-	batchName_ = batchName;
-	setCoreParameter("BatchName", batchName);
-}
-
-std::string ModifySaveVulBatchRequest::getAliasName()const
-{
-	return aliasName_;
-}
-
-void ModifySaveVulBatchRequest::setAliasName(const std::string& aliasName)
-{
-	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
-}
-
 std::string ModifySaveVulBatchRequest::getStatusList()const
 {
 	return statusList_;
@@ -56,6 +34,28 @@ void ModifySaveVulBatchRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
 	setCoreParameter("StatusList", statusList);
+}
+
+std::string ModifySaveVulBatchRequest::getRemark()const
+{
+	return remark_;
+}
+
+void ModifySaveVulBatchRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string ModifySaveVulBatchRequest::getType()const
+{
+	return type_;
+}
+
+void ModifySaveVulBatchRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
 std::string ModifySaveVulBatchRequest::getSourceIp()const
@@ -91,17 +91,6 @@ void ModifySaveVulBatchRequest::setResource(const std::string& resource)
 	setCoreParameter("Resource", resource);
 }
 
-std::string ModifySaveVulBatchRequest::getName()const
-{
-	return name_;
-}
-
-void ModifySaveVulBatchRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string ModifySaveVulBatchRequest::getDealed()const
 {
 	return dealed_;
@@ -113,26 +102,37 @@ void ModifySaveVulBatchRequest::setDealed(const std::string& dealed)
 	setCoreParameter("Dealed", dealed);
 }
 
-std::string ModifySaveVulBatchRequest::getRemark()const
+std::string ModifySaveVulBatchRequest::getBatchName()const
 {
-	return remark_;
+	return batchName_;
 }
 
-void ModifySaveVulBatchRequest::setRemark(const std::string& remark)
+void ModifySaveVulBatchRequest::setBatchName(const std::string& batchName)
 {
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	batchName_ = batchName;
+	setCoreParameter("BatchName", batchName);
 }
 
-std::string ModifySaveVulBatchRequest::getType()const
+std::string ModifySaveVulBatchRequest::getAliasName()const
 {
-	return type_;
+	return aliasName_;
 }
 
-void ModifySaveVulBatchRequest::setType(const std::string& type)
+void ModifySaveVulBatchRequest::setAliasName(const std::string& aliasName)
 {
-	type_ = type;
-	setCoreParameter("Type", type);
+	aliasName_ = aliasName;
+	setCoreParameter("AliasName", aliasName);
+}
+
+std::string ModifySaveVulBatchRequest::getName()const
+{
+	return name_;
+}
+
+void ModifySaveVulBatchRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string ModifySaveVulBatchRequest::getNecessity()const

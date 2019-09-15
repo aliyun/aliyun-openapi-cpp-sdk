@@ -25,17 +25,6 @@ ModifyMachineConfigRequest::ModifyMachineConfigRequest() :
 ModifyMachineConfigRequest::~ModifyMachineConfigRequest()
 {}
 
-std::string ModifyMachineConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyMachineConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyMachineConfigRequest::getType()const
 {
 	return type_;
@@ -56,5 +45,16 @@ void ModifyMachineConfigRequest::setTarget(const std::string& target)
 {
 	target_ = target;
 	setCoreParameter("Target", target);
+}
+
+std::string ModifyMachineConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyMachineConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

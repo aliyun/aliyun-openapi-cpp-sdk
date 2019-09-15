@@ -25,28 +25,6 @@ DescribeLogItemsRequest::DescribeLogItemsRequest() :
 DescribeLogItemsRequest::~DescribeLogItemsRequest()
 {}
 
-int DescribeLogItemsRequest::getLoginOffset()const
-{
-	return loginOffset_;
-}
-
-void DescribeLogItemsRequest::setLoginOffset(int loginOffset)
-{
-	loginOffset_ = loginOffset;
-	setCoreParameter("LoginOffset", std::to_string(loginOffset));
-}
-
-int DescribeLogItemsRequest::getProcessSnapshotOffset()const
-{
-	return processSnapshotOffset_;
-}
-
-void DescribeLogItemsRequest::setProcessSnapshotOffset(int processSnapshotOffset)
-{
-	processSnapshotOffset_ = processSnapshotOffset;
-	setCoreParameter("ProcessSnapshotOffset", std::to_string(processSnapshotOffset));
-}
-
 int DescribeLogItemsRequest::getPortSnapshotOffset()const
 {
 	return portSnapshotOffset_;
@@ -56,39 +34,6 @@ void DescribeLogItemsRequest::setPortSnapshotOffset(int portSnapshotOffset)
 {
 	portSnapshotOffset_ = portSnapshotOffset;
 	setCoreParameter("PortSnapshotOffset", std::to_string(portSnapshotOffset));
-}
-
-std::string DescribeLogItemsRequest::getQuery()const
-{
-	return query_;
-}
-
-void DescribeLogItemsRequest::setQuery(const std::string& query)
-{
-	query_ = query;
-	setCoreParameter("Query", query);
-}
-
-std::string DescribeLogItemsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeLogItemsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeLogItemsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeLogItemsRequest::setCurrentPage(const std::string& currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
 }
 
 int DescribeLogItemsRequest::getNetworkOffset()const
@@ -111,17 +56,6 @@ void DescribeLogItemsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-int DescribeLogItemsRequest::getAccountSnapshotOffset()const
-{
-	return accountSnapshotOffset_;
-}
-
-void DescribeLogItemsRequest::setAccountSnapshotOffset(int accountSnapshotOffset)
-{
-	accountSnapshotOffset_ = accountSnapshotOffset;
-	setCoreParameter("AccountSnapshotOffset", std::to_string(accountSnapshotOffset));
 }
 
 int DescribeLogItemsRequest::getProcessOffset()const
@@ -166,5 +100,71 @@ void DescribeLogItemsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", pageSize);
+}
+
+int DescribeLogItemsRequest::getLoginOffset()const
+{
+	return loginOffset_;
+}
+
+void DescribeLogItemsRequest::setLoginOffset(int loginOffset)
+{
+	loginOffset_ = loginOffset;
+	setCoreParameter("LoginOffset", std::to_string(loginOffset));
+}
+
+int DescribeLogItemsRequest::getProcessSnapshotOffset()const
+{
+	return processSnapshotOffset_;
+}
+
+void DescribeLogItemsRequest::setProcessSnapshotOffset(int processSnapshotOffset)
+{
+	processSnapshotOffset_ = processSnapshotOffset;
+	setCoreParameter("ProcessSnapshotOffset", std::to_string(processSnapshotOffset));
+}
+
+std::string DescribeLogItemsRequest::getQuery()const
+{
+	return query_;
+}
+
+void DescribeLogItemsRequest::setQuery(const std::string& query)
+{
+	query_ = query;
+	setCoreParameter("Query", query);
+}
+
+std::string DescribeLogItemsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeLogItemsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+std::string DescribeLogItemsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeLogItemsRequest::setCurrentPage(const std::string& currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", currentPage);
+}
+
+int DescribeLogItemsRequest::getAccountSnapshotOffset()const
+{
+	return accountSnapshotOffset_;
+}
+
+void DescribeLogItemsRequest::setAccountSnapshotOffset(int accountSnapshotOffset)
+{
+	accountSnapshotOffset_ = accountSnapshotOffset;
+	setCoreParameter("AccountSnapshotOffset", std::to_string(accountSnapshotOffset));
 }
 

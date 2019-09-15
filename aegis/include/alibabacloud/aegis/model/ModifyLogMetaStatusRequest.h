@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				ModifyLogMetaStatusRequest();
 				~ModifyLogMetaStatusRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
 				std::string getLang()const;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				void setStatus(const std::string& status);
 
             private:
-				std::string sourceIp_;
 				std::string project_;
+				std::string sourceIp_;
 				std::string from_;
 				std::string lang_;
 				std::string logStore_;

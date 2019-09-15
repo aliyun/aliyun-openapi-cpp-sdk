@@ -25,6 +25,17 @@ OperateSuspiciousOverallConfigRequest::OperateSuspiciousOverallConfigRequest() :
 OperateSuspiciousOverallConfigRequest::~OperateSuspiciousOverallConfigRequest()
 {}
 
+std::string OperateSuspiciousOverallConfigRequest::getType()const
+{
+	return type_;
+}
+
+void OperateSuspiciousOverallConfigRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string OperateSuspiciousOverallConfigRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void OperateSuspiciousOverallConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string OperateSuspiciousOverallConfigRequest::getType()const
-{
-	return type_;
-}
-
-void OperateSuspiciousOverallConfigRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 
 std::string OperateSuspiciousOverallConfigRequest::getConfig()const

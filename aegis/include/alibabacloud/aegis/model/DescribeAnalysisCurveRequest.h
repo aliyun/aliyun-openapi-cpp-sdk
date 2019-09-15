@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeAnalysisCurveRequest();
 				~DescribeAnalysisCurveRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getStartTimeStamp()const;
 				void setStartTimeStamp(long startTimeStamp);
 				long getEndTimeStamp()const;
 				void setEndTimeStamp(long endTimeStamp);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				long startTimeStamp_;
 				long endTimeStamp_;
+				std::string sourceIp_;
 
 			};
 		}

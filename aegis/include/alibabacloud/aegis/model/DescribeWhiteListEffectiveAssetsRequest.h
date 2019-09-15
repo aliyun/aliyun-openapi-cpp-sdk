@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				DescribeWhiteListEffectiveAssetsRequest();
 				~DescribeWhiteListEffectiveAssetsRequest();
 
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
-				long getStrategyId()const;
-				void setStrategyId(long strategyId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				long getStrategyId()const;
+				void setStrategyId(long strategyId);
 				int getNeedStatistics()const;
 				void setNeedStatistics(int needStatistics);
 
             private:
+				std::string remark_;
 				std::string sourceIp_;
 				int pageSize_;
-				std::string remark_;
-				long strategyId_;
-				int currentPage_;
 				std::string lang_;
+				int currentPage_;
+				long strategyId_;
 				int needStatistics_;
 
 			};

@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeFilterFieldsRequest();
 				~DescribeFilterFieldsRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getQuery()const;
 				void setQuery(const std::string& query);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string query_;
+				std::string sourceIp_;
 
 			};
 		}

@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DeleteSuspEventNodeRequest();
 				~DeleteSuspEventNodeRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getNoteId()const;
 				void setNoteId(int noteId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				int noteId_;
+				std::string sourceIp_;
 
 			};
 		}

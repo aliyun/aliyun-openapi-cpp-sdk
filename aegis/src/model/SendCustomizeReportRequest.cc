@@ -25,17 +25,6 @@ SendCustomizeReportRequest::SendCustomizeReportRequest() :
 SendCustomizeReportRequest::~SendCustomizeReportRequest()
 {}
 
-std::string SendCustomizeReportRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void SendCustomizeReportRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long SendCustomizeReportRequest::getReportId()const
 {
 	return reportId_;
@@ -45,6 +34,17 @@ void SendCustomizeReportRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
 	setCoreParameter("ReportId", std::to_string(reportId));
+}
+
+std::string SendCustomizeReportRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void SendCustomizeReportRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string SendCustomizeReportRequest::getLang()const

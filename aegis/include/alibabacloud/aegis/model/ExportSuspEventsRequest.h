@@ -37,20 +37,20 @@ namespace AlibabaCloud
 
 				std::string getTimeEnd()const;
 				void setTimeEnd(const std::string& timeEnd);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getDealed()const;
-				void setDealed(const std::string& dealed);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				std::string getTimeStart()const;
-				void setTimeStart(const std::string& timeStart);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getDealed()const;
+				void setDealed(const std::string& dealed);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getTimeStart()const;
+				void setTimeStart(const std::string& timeStart);
 				std::string getLevels()const;
 				void setLevels(const std::string& levels);
 				std::string getParentEventTypes()const;
@@ -60,13 +60,13 @@ namespace AlibabaCloud
 
             private:
 				std::string timeEnd_;
-				std::string sourceIp_;
-				std::string name_;
-				std::string dealed_;
 				std::string remark_;
+				std::string sourceIp_;
 				std::string from_;
-				std::string timeStart_;
 				std::string lang_;
+				std::string dealed_;
+				std::string name_;
+				std::string timeStart_;
 				std::string levels_;
 				std::string parentEventTypes_;
 				std::string status_;

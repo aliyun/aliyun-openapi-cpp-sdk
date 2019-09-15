@@ -25,17 +25,6 @@ DescribeSuspiciousOverallConfigRequest::DescribeSuspiciousOverallConfigRequest()
 DescribeSuspiciousOverallConfigRequest::~DescribeSuspiciousOverallConfigRequest()
 {}
 
-std::string DescribeSuspiciousOverallConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeSuspiciousOverallConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeSuspiciousOverallConfigRequest::getType()const
 {
 	return type_;
@@ -45,5 +34,16 @@ void DescribeSuspiciousOverallConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string DescribeSuspiciousOverallConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeSuspiciousOverallConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

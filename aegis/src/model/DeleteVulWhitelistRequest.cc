@@ -25,17 +25,6 @@ DeleteVulWhitelistRequest::DeleteVulWhitelistRequest() :
 DeleteVulWhitelistRequest::~DeleteVulWhitelistRequest()
 {}
 
-std::string DeleteVulWhitelistRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DeleteVulWhitelistRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DeleteVulWhitelistRequest::getWhitelist()const
 {
 	return whitelist_;
@@ -45,5 +34,16 @@ void DeleteVulWhitelistRequest::setWhitelist(const std::string& whitelist)
 {
 	whitelist_ = whitelist;
 	setCoreParameter("Whitelist", whitelist);
+}
+
+std::string DeleteVulWhitelistRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DeleteVulWhitelistRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

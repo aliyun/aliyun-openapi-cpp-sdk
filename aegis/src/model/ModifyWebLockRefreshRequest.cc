@@ -25,6 +25,17 @@ ModifyWebLockRefreshRequest::ModifyWebLockRefreshRequest() :
 ModifyWebLockRefreshRequest::~ModifyWebLockRefreshRequest()
 {}
 
+std::string ModifyWebLockRefreshRequest::getUuid()const
+{
+	return uuid_;
+}
+
+void ModifyWebLockRefreshRequest::setUuid(const std::string& uuid)
+{
+	uuid_ = uuid;
+	setCoreParameter("Uuid", uuid);
+}
+
 std::string ModifyWebLockRefreshRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void ModifyWebLockRefreshRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string ModifyWebLockRefreshRequest::getUuid()const
-{
-	return uuid_;
-}
-
-void ModifyWebLockRefreshRequest::setUuid(const std::string& uuid)
-{
-	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
 }
 

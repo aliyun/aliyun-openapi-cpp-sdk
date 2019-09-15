@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getWarnLevel()const;
 				void setWarnLevel(const std::string& warnLevel);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getRemark()const;
 				void setRemark(long remark);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::string warnLevel_;
-				std::string sourceIp_;
-				int pageSize_;
 				long remark_;
 				int currentPage_;
+				std::string sourceIp_;
+				int pageSize_;
 
 			};
 		}

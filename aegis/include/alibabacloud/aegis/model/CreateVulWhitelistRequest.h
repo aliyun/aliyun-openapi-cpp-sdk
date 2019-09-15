@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getReason()const;
 				void setReason(const std::string& reason);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getWhitelist()const;
 				void setWhitelist(const std::string& whitelist);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
 				std::string reason_;
-				std::string sourceIp_;
 				std::string whitelist_;
+				std::string sourceIp_;
 
 			};
 		}

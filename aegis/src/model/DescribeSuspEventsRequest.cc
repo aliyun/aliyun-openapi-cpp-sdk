@@ -25,15 +25,15 @@ DescribeSuspEventsRequest::DescribeSuspEventsRequest() :
 DescribeSuspEventsRequest::~DescribeSuspEventsRequest()
 {}
 
-std::string DescribeSuspEventsRequest::getAlarmUniqueInfo()const
+std::string DescribeSuspEventsRequest::getRemark()const
 {
-	return alarmUniqueInfo_;
+	return remark_;
 }
 
-void DescribeSuspEventsRequest::setAlarmUniqueInfo(const std::string& alarmUniqueInfo)
+void DescribeSuspEventsRequest::setRemark(const std::string& remark)
 {
-	alarmUniqueInfo_ = alarmUniqueInfo;
-	setCoreParameter("AlarmUniqueInfo", alarmUniqueInfo);
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeSuspEventsRequest::getSourceIp()const
@@ -47,17 +47,6 @@ void DescribeSuspEventsRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeSuspEventsRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeSuspEventsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string DescribeSuspEventsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,39 +56,6 @@ void DescribeSuspEventsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", pageSize);
-}
-
-std::string DescribeSuspEventsRequest::getDealed()const
-{
-	return dealed_;
-}
-
-void DescribeSuspEventsRequest::setDealed(const std::string& dealed)
-{
-	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
-}
-
-std::string DescribeSuspEventsRequest::getRemark()const
-{
-	return remark_;
-}
-
-void DescribeSuspEventsRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
-}
-
-std::string DescribeSuspEventsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeSuspEventsRequest::setCurrentPage(const std::string& currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeSuspEventsRequest::getFrom()const
@@ -122,6 +78,50 @@ void DescribeSuspEventsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+std::string DescribeSuspEventsRequest::getAlarmUniqueInfo()const
+{
+	return alarmUniqueInfo_;
+}
+
+void DescribeSuspEventsRequest::setAlarmUniqueInfo(const std::string& alarmUniqueInfo)
+{
+	alarmUniqueInfo_ = alarmUniqueInfo;
+	setCoreParameter("AlarmUniqueInfo", alarmUniqueInfo);
+}
+
+std::string DescribeSuspEventsRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void DescribeSuspEventsRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setCoreParameter("Dealed", dealed);
+}
+
+std::string DescribeSuspEventsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeSuspEventsRequest::setCurrentPage(const std::string& currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", currentPage);
+}
+
+std::string DescribeSuspEventsRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeSuspEventsRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string DescribeSuspEventsRequest::getLevels()const

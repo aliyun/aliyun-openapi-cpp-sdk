@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				ModifyTargetConfigRequest();
 				~ModifyTargetConfigRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getConfig()const;
 				void setConfig(const std::string& config);
 
             private:
-				std::string sourceIp_;
 				std::string type_;
 				std::string uuid_;
+				std::string sourceIp_;
 				std::string config_;
 
 			};

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ExecuteRuleEngineActualTimeRequest();
 				~ExecuteRuleEngineActualTimeRequest();
 
+				std::string getMessage()const;
+				void setMessage(const std::string& message);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
-				std::string getMessage()const;
-				void setMessage(const std::string& message);
 
             private:
+				std::string message_;
 				std::string sourceIp_;
 				long ruleId_;
-				std::string message_;
 
 			};
 		}

@@ -37,20 +37,20 @@ namespace AlibabaCloud
 
 				std::string getReason()const;
 				void setReason(const std::string& reason);
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getOperateType()const;
 				void setOperateType(const std::string& operateType);
-				std::string getType()const;
-				void setType(const std::string& type);
 				std::string getInfo()const;
 				void setInfo(const std::string& info);
 
             private:
 				std::string reason_;
+				std::string type_;
 				std::string sourceIp_;
 				std::string operateType_;
-				std::string type_;
 				std::string info_;
 
 			};

@@ -36,28 +36,6 @@ void DescribeGroupedVulRequest::setStatusList(const std::string& statusList)
 	setCoreParameter("StatusList", statusList);
 }
 
-std::string DescribeGroupedVulRequest::getLevel()const
-{
-	return level_;
-}
-
-void DescribeGroupedVulRequest::setLevel(const std::string& level)
-{
-	level_ = level;
-	setCoreParameter("Level", level);
-}
-
-std::string DescribeGroupedVulRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeGroupedVulRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
 std::string DescribeGroupedVulRequest::getCveId()const
 {
 	return cveId_;
@@ -67,39 +45,6 @@ void DescribeGroupedVulRequest::setCveId(const std::string& cveId)
 {
 	cveId_ = cveId;
 	setCoreParameter("CveId", cveId);
-}
-
-std::string DescribeGroupedVulRequest::getOrderBy()const
-{
-	return orderBy_;
-}
-
-void DescribeGroupedVulRequest::setOrderBy(const std::string& orderBy)
-{
-	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
-}
-
-std::string DescribeGroupedVulRequest::getDealed()const
-{
-	return dealed_;
-}
-
-void DescribeGroupedVulRequest::setDealed(const std::string& dealed)
-{
-	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
-}
-
-int DescribeGroupedVulRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeGroupedVulRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeGroupedVulRequest::getType()const
@@ -135,28 +80,6 @@ void DescribeGroupedVulRequest::setCreateTsStart(long createTsStart)
 	setCoreParameter("CreateTsStart", std::to_string(createTsStart));
 }
 
-std::string DescribeGroupedVulRequest::getAliasName()const
-{
-	return aliasName_;
-}
-
-void DescribeGroupedVulRequest::setAliasName(const std::string& aliasName)
-{
-	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
-}
-
-long DescribeGroupedVulRequest::getPatchId()const
-{
-	return patchId_;
-}
-
-void DescribeGroupedVulRequest::setPatchId(long patchId)
-{
-	patchId_ = patchId;
-	setCoreParameter("PatchId", std::to_string(patchId));
-}
-
 std::string DescribeGroupedVulRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -166,17 +89,6 @@ void DescribeGroupedVulRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeGroupedVulRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeGroupedVulRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 int DescribeGroupedVulRequest::getPageSize()const
@@ -201,17 +113,6 @@ void DescribeGroupedVulRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-long DescribeGroupedVulRequest::getCreateTsEnd()const
-{
-	return createTsEnd_;
-}
-
-void DescribeGroupedVulRequest::setCreateTsEnd(long createTsEnd)
-{
-	createTsEnd_ = createTsEnd;
-	setCoreParameter("CreateTsEnd", std::to_string(createTsEnd));
-}
-
 long DescribeGroupedVulRequest::getLastTsStart()const
 {
 	return lastTsStart_;
@@ -221,6 +122,116 @@ void DescribeGroupedVulRequest::setLastTsStart(long lastTsStart)
 {
 	lastTsStart_ = lastTsStart;
 	setCoreParameter("LastTsStart", std::to_string(lastTsStart));
+}
+
+std::string DescribeGroupedVulRequest::getDirection()const
+{
+	return direction_;
+}
+
+void DescribeGroupedVulRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
+}
+
+std::string DescribeGroupedVulRequest::getLevel()const
+{
+	return level_;
+}
+
+void DescribeGroupedVulRequest::setLevel(const std::string& level)
+{
+	level_ = level;
+	setCoreParameter("Level", level);
+}
+
+std::string DescribeGroupedVulRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeGroupedVulRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeGroupedVulRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeGroupedVulRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setCoreParameter("OrderBy", orderBy);
+}
+
+std::string DescribeGroupedVulRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void DescribeGroupedVulRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setCoreParameter("Dealed", dealed);
+}
+
+int DescribeGroupedVulRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeGroupedVulRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeGroupedVulRequest::getAliasName()const
+{
+	return aliasName_;
+}
+
+void DescribeGroupedVulRequest::setAliasName(const std::string& aliasName)
+{
+	aliasName_ = aliasName;
+	setCoreParameter("AliasName", aliasName);
+}
+
+long DescribeGroupedVulRequest::getPatchId()const
+{
+	return patchId_;
+}
+
+void DescribeGroupedVulRequest::setPatchId(long patchId)
+{
+	patchId_ = patchId;
+	setCoreParameter("PatchId", std::to_string(patchId));
+}
+
+std::string DescribeGroupedVulRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeGroupedVulRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+long DescribeGroupedVulRequest::getCreateTsEnd()const
+{
+	return createTsEnd_;
+}
+
+void DescribeGroupedVulRequest::setCreateTsEnd(long createTsEnd)
+{
+	createTsEnd_ = createTsEnd;
+	setCoreParameter("CreateTsEnd", std::to_string(createTsEnd));
 }
 
 std::string DescribeGroupedVulRequest::getNecessity()const
@@ -243,16 +254,5 @@ void DescribeGroupedVulRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
 	setCoreParameter("Uuids", uuids);
-}
-
-std::string DescribeGroupedVulRequest::getDirection()const
-{
-	return direction_;
-}
-
-void DescribeGroupedVulRequest::setDirection(const std::string& direction)
-{
-	direction_ = direction;
-	setCoreParameter("Direction", direction);
 }
 

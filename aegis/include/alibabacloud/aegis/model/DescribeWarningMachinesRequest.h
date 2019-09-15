@@ -41,14 +41,14 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getMachineName()const;
 				void setMachineName(const std::string& machineName);
-				long getStrategyId()const;
-				void setStrategyId(long strategyId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				long getRiskId()const;
 				void setRiskId(long riskId);
+				long getStrategyId()const;
+				void setStrategyId(long strategyId);
 				std::string getUuids()const;
 				void setUuids(const std::string& uuids);
 
@@ -56,10 +56,10 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				int pageSize_;
 				std::string machineName_;
-				long strategyId_;
-				int currentPage_;
 				std::string lang_;
+				int currentPage_;
 				long riskId_;
+				long strategyId_;
 				std::string uuids_;
 
 			};

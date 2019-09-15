@@ -25,17 +25,6 @@ CreateLogQueryRequest::CreateLogQueryRequest() :
 CreateLogQueryRequest::~CreateLogQueryRequest()
 {}
 
-std::string CreateLogQueryRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateLogQueryRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string CreateLogQueryRequest::getQueryName()const
 {
 	return queryName_;
@@ -45,6 +34,17 @@ void CreateLogQueryRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
 	setCoreParameter("QueryName", queryName);
+}
+
+std::string CreateLogQueryRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateLogQueryRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateLogQueryRequest::getConditions()const

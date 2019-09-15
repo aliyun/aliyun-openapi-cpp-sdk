@@ -25,6 +25,17 @@ DescribeEventLevelCountRequest::DescribeEventLevelCountRequest() :
 DescribeEventLevelCountRequest::~DescribeEventLevelCountRequest()
 {}
 
+std::string DescribeEventLevelCountRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeEventLevelCountRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string DescribeEventLevelCountRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeEventLevelCountRequest::setFrom(const std::string& from)
 {
 	from_ = from;
 	setCoreParameter("From", from);
-}
-
-std::string DescribeEventLevelCountRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeEventLevelCountRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

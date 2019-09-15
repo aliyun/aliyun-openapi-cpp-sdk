@@ -36,17 +36,6 @@ void DescribeScreenBizStatSimpleQueryResultRequest::setRangeUnit(const std::stri
 	setCoreParameter("RangeUnit", rangeUnit);
 }
 
-std::string DescribeScreenBizStatSimpleQueryResultRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeScreenBizStatSimpleQueryResultRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeScreenBizStatSimpleQueryResultRequest::getEndTime()const
 {
 	return endTime_;
@@ -67,6 +56,17 @@ void DescribeScreenBizStatSimpleQueryResultRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", std::to_string(startTime));
+}
+
+std::string DescribeScreenBizStatSimpleQueryResultRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeScreenBizStatSimpleQueryResultRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeScreenBizStatSimpleQueryResultRequest::getCustomQuery()const

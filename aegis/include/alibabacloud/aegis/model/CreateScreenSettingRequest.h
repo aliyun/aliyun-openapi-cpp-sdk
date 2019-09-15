@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				CreateScreenSettingRequest();
 				~CreateScreenSettingRequest();
 
-				std::string getScreenDataMap()const;
-				void setScreenDataMap(const std::string& screenDataMap);
-				int getScreenDefault()const;
-				void setScreenDefault(int screenDefault);
-				bool getLogoPower()const;
-				void setLogoPower(bool logoPower);
-				std::string getMonitorUrl()const;
-				void setMonitorUrl(const std::string& monitorUrl);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getId()const;
-				void setId(int id);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
 				std::string getLogoUrl()const;
 				void setLogoUrl(const std::string& logoUrl);
+				bool getLogoPower()const;
+				void setLogoPower(bool logoPower);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getId()const;
+				void setId(int id);
+				std::string getScreenDataMap()const;
+				void setScreenDataMap(const std::string& screenDataMap);
+				int getScreenDefault()const;
+				void setScreenDefault(int screenDefault);
+				std::string getMonitorUrl()const;
+				void setMonitorUrl(const std::string& monitorUrl);
 
             private:
-				std::string screenDataMap_;
-				int screenDefault_;
-				bool logoPower_;
-				std::string monitorUrl_;
-				std::string sourceIp_;
-				int id_;
 				std::string title_;
 				std::string logoUrl_;
+				bool logoPower_;
+				std::string sourceIp_;
+				int id_;
+				std::string screenDataMap_;
+				int screenDefault_;
+				std::string monitorUrl_;
 
 			};
 		}

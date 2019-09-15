@@ -25,17 +25,6 @@ DescribeAttackAnalysisDataRequest::DescribeAttackAnalysisDataRequest() :
 DescribeAttackAnalysisDataRequest::~DescribeAttackAnalysisDataRequest()
 {}
 
-std::string DescribeAttackAnalysisDataRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeAttackAnalysisDataRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeAttackAnalysisDataRequest::getData()const
 {
 	return data_;
@@ -58,6 +47,39 @@ void DescribeAttackAnalysisDataRequest::setBase64(const std::string& base64)
 	setCoreParameter("Base64", base64);
 }
 
+long DescribeAttackAnalysisDataRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeAttackAnalysisDataRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", std::to_string(startTime));
+}
+
+std::string DescribeAttackAnalysisDataRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeAttackAnalysisDataRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string DescribeAttackAnalysisDataRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeAttackAnalysisDataRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
 int DescribeAttackAnalysisDataRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,6 +89,17 @@ void DescribeAttackAnalysisDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeAttackAnalysisDataRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeAttackAnalysisDataRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeAttackAnalysisDataRequest::getEndTime()const
@@ -89,38 +122,5 @@ void DescribeAttackAnalysisDataRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-long DescribeAttackAnalysisDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeAttackAnalysisDataRequest::setStartTime(long startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
-}
-
-std::string DescribeAttackAnalysisDataRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeAttackAnalysisDataRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeAttackAnalysisDataRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeAttackAnalysisDataRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

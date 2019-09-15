@@ -25,17 +25,6 @@ ModifyStrategyTargetRequest::ModifyStrategyTargetRequest() :
 ModifyStrategyTargetRequest::~ModifyStrategyTargetRequest()
 {}
 
-std::string ModifyStrategyTargetRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyStrategyTargetRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyStrategyTargetRequest::getType()const
 {
 	return type_;
@@ -47,17 +36,6 @@ void ModifyStrategyTargetRequest::setType(const std::string& type)
 	setCoreParameter("Type", type);
 }
 
-std::string ModifyStrategyTargetRequest::getConfig()const
-{
-	return config_;
-}
-
-void ModifyStrategyTargetRequest::setConfig(const std::string& config)
-{
-	config_ = config;
-	setCoreParameter("Config", config);
-}
-
 std::string ModifyStrategyTargetRequest::getTarget()const
 {
 	return target_;
@@ -67,5 +45,27 @@ void ModifyStrategyTargetRequest::setTarget(const std::string& target)
 {
 	target_ = target;
 	setCoreParameter("Target", target);
+}
+
+std::string ModifyStrategyTargetRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyStrategyTargetRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string ModifyStrategyTargetRequest::getConfig()const
+{
+	return config_;
+}
+
+void ModifyStrategyTargetRequest::setConfig(const std::string& config)
+{
+	config_ = config;
+	setCoreParameter("Config", config);
 }
 

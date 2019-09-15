@@ -25,6 +25,17 @@ DescribeCheckWarningCountRequest::DescribeCheckWarningCountRequest() :
 DescribeCheckWarningCountRequest::~DescribeCheckWarningCountRequest()
 {}
 
+long DescribeCheckWarningCountRequest::getRiskId()const
+{
+	return riskId_;
+}
+
+void DescribeCheckWarningCountRequest::setRiskId(long riskId)
+{
+	riskId_ = riskId;
+	setCoreParameter("RiskId", std::to_string(riskId));
+}
+
 std::string DescribeCheckWarningCountRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void DescribeCheckWarningCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-long DescribeCheckWarningCountRequest::getRiskId()const
-{
-	return riskId_;
-}
-
-void DescribeCheckWarningCountRequest::setRiskId(long riskId)
-{
-	riskId_ = riskId;
-	setCoreParameter("RiskId", std::to_string(riskId));
 }
 
 long DescribeCheckWarningCountRequest::getCheckId()const

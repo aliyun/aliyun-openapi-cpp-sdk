@@ -25,15 +25,15 @@ CreateOrUpdateGroupRequest::CreateOrUpdateGroupRequest() :
 CreateOrUpdateGroupRequest::~CreateOrUpdateGroupRequest()
 {}
 
-std::string CreateOrUpdateGroupRequest::getRuleIds()const
+std::string CreateOrUpdateGroupRequest::getDescription()const
 {
-	return ruleIds_;
+	return description_;
 }
 
-void CreateOrUpdateGroupRequest::setRuleIds(const std::string& ruleIds)
+void CreateOrUpdateGroupRequest::setDescription(const std::string& description)
 {
-	ruleIds_ = ruleIds;
-	setCoreParameter("RuleIds", ruleIds);
+	description_ = description;
+	setCoreParameter("Description", description);
 }
 
 std::string CreateOrUpdateGroupRequest::getSourceIp()const
@@ -45,28 +45,6 @@ void CreateOrUpdateGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string CreateOrUpdateGroupRequest::getMachineGroupIds()const
-{
-	return machineGroupIds_;
-}
-
-void CreateOrUpdateGroupRequest::setMachineGroupIds(const std::string& machineGroupIds)
-{
-	machineGroupIds_ = machineGroupIds;
-	setCoreParameter("MachineGroupIds", machineGroupIds);
-}
-
-std::string CreateOrUpdateGroupRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateOrUpdateGroupRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 long CreateOrUpdateGroupRequest::getId()const
@@ -100,5 +78,27 @@ void CreateOrUpdateGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
 	setCoreParameter("GroupName", groupName);
+}
+
+std::string CreateOrUpdateGroupRequest::getRuleIds()const
+{
+	return ruleIds_;
+}
+
+void CreateOrUpdateGroupRequest::setRuleIds(const std::string& ruleIds)
+{
+	ruleIds_ = ruleIds;
+	setCoreParameter("RuleIds", ruleIds);
+}
+
+std::string CreateOrUpdateGroupRequest::getMachineGroupIds()const
+{
+	return machineGroupIds_;
+}
+
+void CreateOrUpdateGroupRequest::setMachineGroupIds(const std::string& machineGroupIds)
+{
+	machineGroupIds_ = machineGroupIds;
+	setCoreParameter("MachineGroupIds", machineGroupIds);
 }
 

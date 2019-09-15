@@ -25,6 +25,17 @@ DescribeSasAssetStatisticsRequest::DescribeSasAssetStatisticsRequest() :
 DescribeSasAssetStatisticsRequest::~DescribeSasAssetStatisticsRequest()
 {}
 
+int DescribeSasAssetStatisticsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeSasAssetStatisticsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
 std::string DescribeSasAssetStatisticsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -67,17 +78,6 @@ void DescribeSasAssetStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
 	setCoreParameter("From", from);
-}
-
-int DescribeSasAssetStatisticsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeSasAssetStatisticsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeSasAssetStatisticsRequest::getUuids()const

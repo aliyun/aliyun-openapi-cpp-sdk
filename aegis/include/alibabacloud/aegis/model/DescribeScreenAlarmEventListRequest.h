@@ -35,37 +35,37 @@ namespace AlibabaCloud
 				DescribeScreenAlarmEventListRequest();
 				~DescribeScreenAlarmEventListRequest();
 
+				std::string getAlarmEventType()const;
+				void setAlarmEventType(const std::string& alarmEventType);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getAlarmEventName()const;
 				void setAlarmEventName(const std::string& alarmEventName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
-				std::string getAlarmEventType()const;
-				void setAlarmEventType(const std::string& alarmEventType);
-				std::string getDealed()const;
-				void setDealed(const std::string& dealed);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getDealed()const;
+				void setDealed(const std::string& dealed);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				std::string getLevels()const;
 				void setLevels(const std::string& levels);
 
             private:
+				std::string alarmEventType_;
+				std::string remark_;
 				std::string alarmEventName_;
 				std::string sourceIp_;
 				std::string pageSize_;
-				std::string alarmEventType_;
-				std::string dealed_;
 				std::string from_;
-				std::string remark_;
-				int currentPage_;
 				std::string lang_;
+				std::string dealed_;
+				int currentPage_;
 				std::string levels_;
 
 			};

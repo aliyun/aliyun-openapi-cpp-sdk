@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				std::string getLocalBackupDir()const;
 				void setLocalBackupDir(const std::string& localBackupDir);
-				std::string getMode()const;
-				void setMode(const std::string& mode);
-				std::string getInclusiveFileType()const;
-				void setInclusiveFileType(const std::string& inclusiveFileType);
 				std::string getExclusiveFile()const;
 				void setExclusiveFile(const std::string& exclusiveFile);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getExclusiveFileType()const;
 				void setExclusiveFileType(const std::string& exclusiveFileType);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getDir()const;
 				void setDir(const std::string& dir);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getMode()const;
+				void setMode(const std::string& mode);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				std::string getExclusiveDir()const;
 				void setExclusiveDir(const std::string& exclusiveDir);
+				std::string getInclusiveFileType()const;
+				void setInclusiveFileType(const std::string& inclusiveFileType);
 
             private:
 				std::string localBackupDir_;
-				std::string mode_;
-				std::string inclusiveFileType_;
 				std::string exclusiveFile_;
-				std::string sourceIp_;
 				std::string exclusiveFileType_;
-				std::string lang_;
 				std::string dir_;
 				std::string uuid_;
+				std::string mode_;
+				std::string sourceIp_;
+				std::string lang_;
 				std::string exclusiveDir_;
+				std::string inclusiveFileType_;
 
 			};
 		}

@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				DescribeCustomizeReportChartDataRequest();
 				~DescribeCustomizeReportChartDataRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getReportId()const;
 				void setReportId(long reportId);
 				std::string getChartIds()const;
 				void setChartIds(const std::string& chartIds);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				long reportId_;
 				std::string chartIds_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

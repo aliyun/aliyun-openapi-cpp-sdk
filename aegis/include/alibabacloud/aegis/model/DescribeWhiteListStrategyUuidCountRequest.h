@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeWhiteListStrategyUuidCountRequest();
 				~DescribeWhiteListStrategyUuidCountRequest();
 
+				int getType()const;
+				void setType(int type);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				long getStrategyId()const;
 				void setStrategyId(long strategyId);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getType()const;
-				void setType(int type);
 
             private:
+				int type_;
 				std::string sourceIp_;
 				long strategyId_;
 				std::string lang_;
-				int type_;
 
 			};
 		}

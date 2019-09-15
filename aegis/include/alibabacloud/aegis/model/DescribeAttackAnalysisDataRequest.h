@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeAttackAnalysisDataRequest();
 				~DescribeAttackAnalysisDataRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getData()const;
 				void setData(const std::string& data);
 				std::string getBase64()const;
 				void setBase64(const std::string& base64);
+				long getStartTime()const;
+				void setStartTime(long startTime);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				std::string getType()const;
-				void setType(const std::string& type);
 
             private:
-				std::string sourceIp_;
 				std::string data_;
 				std::string base64_;
+				long startTime_;
+				std::string type_;
+				std::string sourceIp_;
 				int pageSize_;
+				std::string lang_;
 				long endTime_;
 				int currentPage_;
-				long startTime_;
-				std::string lang_;
-				std::string type_;
 
 			};
 		}

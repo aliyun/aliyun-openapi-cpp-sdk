@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				DescribeNsasSuspEventTypeRequest();
 				~DescribeNsasSuspEventTypeRequest();
 
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string remark_;
 				std::string sourceIp_;
 				std::string name_;
-				std::string remark_;
 				std::string from_;
 				std::string lang_;
 

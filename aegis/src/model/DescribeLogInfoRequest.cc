@@ -25,17 +25,6 @@ DescribeLogInfoRequest::DescribeLogInfoRequest() :
 DescribeLogInfoRequest::~DescribeLogInfoRequest()
 {}
 
-std::string DescribeLogInfoRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeLogInfoRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeLogInfoRequest::getQuery()const
 {
 	return query_;
@@ -45,17 +34,6 @@ void DescribeLogInfoRequest::setQuery(const std::string& query)
 {
 	query_ = query;
 	setCoreParameter("Query", query);
-}
-
-std::string DescribeLogInfoRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeLogInfoRequest::setPageSize(const std::string& pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeLogInfoRequest::getEndTime()const
@@ -89,5 +67,27 @@ void DescribeLogInfoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
+}
+
+std::string DescribeLogInfoRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeLogInfoRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeLogInfoRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeLogInfoRequest::setPageSize(const std::string& pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", pageSize);
 }
 

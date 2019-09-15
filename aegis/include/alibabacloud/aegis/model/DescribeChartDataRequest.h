@@ -39,10 +39,10 @@ namespace AlibabaCloud
 				void setTimeEnd(long timeEnd);
 				std::string getRangeUnit()const;
 				void setRangeUnit(const std::string& rangeUnit);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getCharId()const;
 				void setCharId(const std::string& charId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				long getTimeStart()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
             private:
 				long timeEnd_;
 				std::string rangeUnit_;
-				std::string sourceIp_;
 				std::string charId_;
+				std::string sourceIp_;
 				std::string lang_;
 				long timeStart_;
 

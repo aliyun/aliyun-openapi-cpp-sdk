@@ -25,15 +25,15 @@ DescribeLoginLogsRequest::DescribeLoginLogsRequest() :
 DescribeLoginLogsRequest::~DescribeLoginLogsRequest()
 {}
 
-std::string DescribeLoginLogsRequest::getTypes()const
+std::string DescribeLoginLogsRequest::getRemark()const
 {
-	return types_;
+	return remark_;
 }
 
-void DescribeLoginLogsRequest::setTypes(const std::string& types)
+void DescribeLoginLogsRequest::setRemark(const std::string& remark)
 {
-	types_ = types;
-	setCoreParameter("Types", types);
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeLoginLogsRequest::getSourceIp()const
@@ -58,15 +58,26 @@ void DescribeLoginLogsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeLoginLogsRequest::getStatuses()const
+std::string DescribeLoginLogsRequest::getTag()const
 {
-	return statuses_;
+	return tag_;
 }
 
-void DescribeLoginLogsRequest::setStatuses(const std::string& statuses)
+void DescribeLoginLogsRequest::setTag(const std::string& tag)
 {
-	statuses_ = statuses;
-	setCoreParameter("Statuses", statuses);
+	tag_ = tag;
+	setCoreParameter("Tag", tag);
+}
+
+std::string DescribeLoginLogsRequest::getTypes()const
+{
+	return types_;
+}
+
+void DescribeLoginLogsRequest::setTypes(const std::string& types)
+{
+	types_ = types;
+	setCoreParameter("Types", types);
 }
 
 int DescribeLoginLogsRequest::getCurrentPage()const
@@ -80,25 +91,14 @@ void DescribeLoginLogsRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeLoginLogsRequest::getRemark()const
+std::string DescribeLoginLogsRequest::getStatuses()const
 {
-	return remark_;
+	return statuses_;
 }
 
-void DescribeLoginLogsRequest::setRemark(const std::string& remark)
+void DescribeLoginLogsRequest::setStatuses(const std::string& statuses)
 {
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
-}
-
-std::string DescribeLoginLogsRequest::getTag()const
-{
-	return tag_;
-}
-
-void DescribeLoginLogsRequest::setTag(const std::string& tag)
-{
-	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	statuses_ = statuses;
+	setCoreParameter("Statuses", statuses);
 }
 

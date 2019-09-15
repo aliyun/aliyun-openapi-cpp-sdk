@@ -25,6 +25,17 @@ DescribeSuspEventQuaraFilesRequest::DescribeSuspEventQuaraFilesRequest() :
 DescribeSuspEventQuaraFilesRequest::~DescribeSuspEventQuaraFilesRequest()
 {}
 
+std::string DescribeSuspEventQuaraFilesRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeSuspEventQuaraFilesRequest::setCurrentPage(const std::string& currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", currentPage);
+}
+
 std::string DescribeSuspEventQuaraFilesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void DescribeSuspEventQuaraFilesRequest::setPageSize(const std::string& pageSize
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", pageSize);
-}
-
-std::string DescribeSuspEventQuaraFilesRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeSuspEventQuaraFilesRequest::setCurrentPage(const std::string& currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeSuspEventQuaraFilesRequest::getFrom()const

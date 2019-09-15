@@ -25,6 +25,17 @@ DescribeRisksRequest::DescribeRisksRequest() :
 DescribeRisksRequest::~DescribeRisksRequest()
 {}
 
+long DescribeRisksRequest::getRiskId()const
+{
+	return riskId_;
+}
+
+void DescribeRisksRequest::setRiskId(long riskId)
+{
+	riskId_ = riskId;
+	setCoreParameter("RiskId", std::to_string(riskId));
+}
+
 std::string DescribeRisksRequest::getRiskName()const
 {
 	return riskName_;
@@ -67,16 +78,5 @@ void DescribeRisksRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-long DescribeRisksRequest::getRiskId()const
-{
-	return riskId_;
-}
-
-void DescribeRisksRequest::setRiskId(long riskId)
-{
-	riskId_ = riskId;
-	setCoreParameter("RiskId", std::to_string(riskId));
 }
 

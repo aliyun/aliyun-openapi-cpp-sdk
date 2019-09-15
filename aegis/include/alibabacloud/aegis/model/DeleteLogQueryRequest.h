@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DeleteLogQueryRequest();
 				~DeleteLogQueryRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getQueryName()const;
 				void setQueryName(const std::string& queryName);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string queryName_;
+				std::string sourceIp_;
 
 			};
 		}

@@ -36,50 +36,6 @@ void DescribeWebLockEventsRequest::setStatusList(const std::string& statusList)
 	setCoreParameter("StatusList", statusList);
 }
 
-std::string DescribeWebLockEventsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeWebLockEventsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeWebLockEventsRequest::getLevel()const
-{
-	return level_;
-}
-
-void DescribeWebLockEventsRequest::setLevel(const std::string& level)
-{
-	level_ = level;
-	setCoreParameter("Level", level);
-}
-
-std::string DescribeWebLockEventsRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeWebLockEventsRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-int DescribeWebLockEventsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeWebLockEventsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeWebLockEventsRequest::getRemark()const
 {
 	return remark_;
@@ -91,26 +47,37 @@ void DescribeWebLockEventsRequest::setRemark(const std::string& remark)
 	setCoreParameter("Remark", remark);
 }
 
-std::string DescribeWebLockEventsRequest::getDealed()const
+std::string DescribeWebLockEventsRequest::getEventName()const
 {
-	return dealed_;
+	return eventName_;
 }
 
-void DescribeWebLockEventsRequest::setDealed(const std::string& dealed)
+void DescribeWebLockEventsRequest::setEventName(const std::string& eventName)
 {
-	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	eventName_ = eventName;
+	setCoreParameter("EventName", eventName);
 }
 
-int DescribeWebLockEventsRequest::getCurrentPage()const
+std::string DescribeWebLockEventsRequest::getSourceIp()const
 {
-	return currentPage_;
+	return sourceIp_;
 }
 
-void DescribeWebLockEventsRequest::setCurrentPage(int currentPage)
+void DescribeWebLockEventsRequest::setSourceIp(const std::string& sourceIp)
 {
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int DescribeWebLockEventsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeWebLockEventsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeWebLockEventsRequest::getTag()const
@@ -135,14 +102,47 @@ void DescribeWebLockEventsRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string DescribeWebLockEventsRequest::getEventName()const
+std::string DescribeWebLockEventsRequest::getLevel()const
 {
-	return eventName_;
+	return level_;
 }
 
-void DescribeWebLockEventsRequest::setEventName(const std::string& eventName)
+void DescribeWebLockEventsRequest::setLevel(const std::string& level)
 {
-	eventName_ = eventName;
-	setCoreParameter("EventName", eventName);
+	level_ = level;
+	setCoreParameter("Level", level);
+}
+
+std::string DescribeWebLockEventsRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeWebLockEventsRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeWebLockEventsRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void DescribeWebLockEventsRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setCoreParameter("Dealed", dealed);
+}
+
+int DescribeWebLockEventsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeWebLockEventsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

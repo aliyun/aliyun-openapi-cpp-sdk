@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getQuery()const;
-				void setQuery(const std::string& query);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getFrom()const;
 				void setFrom(int from);
+				std::string getQuery()const;
+				void setQuery(const std::string& query);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
-				int getTo()const;
-				void setTo(int to);
 				bool getReverse()const;
 				void setReverse(bool reverse);
+				int getTo()const;
+				void setTo(int to);
 
             private:
 				std::string sourceIp_;
-				std::string query_;
 				int pageSize_;
 				int from_;
+				std::string query_;
 				int currentPage_;
-				int to_;
 				bool reverse_;
+				int to_;
 
 			};
 		}

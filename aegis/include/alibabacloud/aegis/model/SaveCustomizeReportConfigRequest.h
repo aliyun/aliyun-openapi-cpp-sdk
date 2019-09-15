@@ -39,40 +39,40 @@ namespace AlibabaCloud
 				void setReportSendType(int reportSendType);
 				int getReportType()const;
 				void setReportType(int reportType);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getReportId()const;
 				void setReportId(long reportId);
 				std::string getReportEndDate()const;
 				void setReportEndDate(const std::string& reportEndDate);
-				std::string getReportStartDate()const;
-				void setReportStartDate(const std::string& reportStartDate);
-				std::string getRecipients()const;
-				void setRecipients(const std::string& recipients);
 				std::string getReportLang()const;
 				void setReportLang(const std::string& reportLang);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
-				std::string getSendTime()const;
-				void setSendTime(const std::string& sendTime);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getReportStartDate()const;
+				void setReportStartDate(const std::string& reportStartDate);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				int getReportStatus()const;
 				void setReportStatus(int reportStatus);
+				std::string getRecipients()const;
+				void setRecipients(const std::string& recipients);
+				std::string getSendTime()const;
+				void setSendTime(const std::string& sendTime);
 
             private:
 				int reportSendType_;
 				int reportType_;
-				std::string sourceIp_;
 				long reportId_;
 				std::string reportEndDate_;
-				std::string reportStartDate_;
-				std::string recipients_;
 				std::string reportLang_;
-				std::string lang_;
 				std::string title_;
-				std::string sendTime_;
+				std::string sourceIp_;
+				std::string reportStartDate_;
+				std::string lang_;
 				int reportStatus_;
+				std::string recipients_;
+				std::string sendTime_;
 
 			};
 		}

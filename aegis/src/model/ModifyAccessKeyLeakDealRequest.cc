@@ -25,17 +25,6 @@ ModifyAccessKeyLeakDealRequest::ModifyAccessKeyLeakDealRequest() :
 ModifyAccessKeyLeakDealRequest::~ModifyAccessKeyLeakDealRequest()
 {}
 
-std::string ModifyAccessKeyLeakDealRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyAccessKeyLeakDealRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyAccessKeyLeakDealRequest::getRemark()const
 {
 	return remark_;
@@ -47,17 +36,6 @@ void ModifyAccessKeyLeakDealRequest::setRemark(const std::string& remark)
 	setCoreParameter("Remark", remark);
 }
 
-long ModifyAccessKeyLeakDealRequest::getId()const
-{
-	return id_;
-}
-
-void ModifyAccessKeyLeakDealRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string ModifyAccessKeyLeakDealRequest::getType()const
 {
 	return type_;
@@ -67,5 +45,27 @@ void ModifyAccessKeyLeakDealRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string ModifyAccessKeyLeakDealRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyAccessKeyLeakDealRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+long ModifyAccessKeyLeakDealRequest::getId()const
+{
+	return id_;
+}
+
+void ModifyAccessKeyLeakDealRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

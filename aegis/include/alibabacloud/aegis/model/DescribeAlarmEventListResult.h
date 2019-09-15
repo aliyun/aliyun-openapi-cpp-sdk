@@ -43,8 +43,10 @@ namespace AlibabaCloud
 				{
 					bool canCancelFault;
 					std::string description;
+					std::string alarmEventNameOriginal;
 					long endTime;
 					std::string operateErrorCode;
+					std::string instanceId;
 					std::string alarmEventName;
 					std::string securityEventIds;
 					long startTime;

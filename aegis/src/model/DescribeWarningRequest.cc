@@ -25,28 +25,6 @@ DescribeWarningRequest::DescribeWarningRequest() :
 DescribeWarningRequest::~DescribeWarningRequest()
 {}
 
-std::string DescribeWarningRequest::getTypeNames()const
-{
-	return typeNames_;
-}
-
-void DescribeWarningRequest::setTypeNames(const std::string& typeNames)
-{
-	typeNames_ = typeNames;
-	setCoreParameter("TypeNames", typeNames);
-}
-
-std::string DescribeWarningRequest::getRiskName()const
-{
-	return riskName_;
-}
-
-void DescribeWarningRequest::setRiskName(const std::string& riskName)
-{
-	riskName_ = riskName;
-	setCoreParameter("RiskName", riskName);
-}
-
 std::string DescribeWarningRequest::getStatusList()const
 {
 	return statusList_;
@@ -56,17 +34,6 @@ void DescribeWarningRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
 	setCoreParameter("StatusList", statusList);
-}
-
-std::string DescribeWarningRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeWarningRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeWarningRequest::getRiskLevels()const
@@ -80,6 +47,28 @@ void DescribeWarningRequest::setRiskLevels(const std::string& riskLevels)
 	setCoreParameter("RiskLevels", riskLevels);
 }
 
+std::string DescribeWarningRequest::getRiskName()const
+{
+	return riskName_;
+}
+
+void DescribeWarningRequest::setRiskName(const std::string& riskName)
+{
+	riskName_ = riskName;
+	setCoreParameter("RiskName", riskName);
+}
+
+std::string DescribeWarningRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeWarningRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
 int DescribeWarningRequest::getPageSize()const
 {
 	return pageSize_;
@@ -89,17 +78,6 @@ void DescribeWarningRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeWarningRequest::getStrategyId()const
-{
-	return strategyId_;
-}
-
-void DescribeWarningRequest::setStrategyId(long strategyId)
-{
-	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 int DescribeWarningRequest::getCurrentPage()const
@@ -122,6 +100,28 @@ void DescribeWarningRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
 	setCoreParameter("Dealed", dealed);
+}
+
+std::string DescribeWarningRequest::getTypeNames()const
+{
+	return typeNames_;
+}
+
+void DescribeWarningRequest::setTypeNames(const std::string& typeNames)
+{
+	typeNames_ = typeNames;
+	setCoreParameter("TypeNames", typeNames);
+}
+
+long DescribeWarningRequest::getStrategyId()const
+{
+	return strategyId_;
+}
+
+void DescribeWarningRequest::setStrategyId(long strategyId)
+{
+	strategyId_ = strategyId;
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string DescribeWarningRequest::getSubTypeNames()const

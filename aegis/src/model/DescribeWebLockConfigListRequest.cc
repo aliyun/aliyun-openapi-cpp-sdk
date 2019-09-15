@@ -25,6 +25,17 @@ DescribeWebLockConfigListRequest::DescribeWebLockConfigListRequest() :
 DescribeWebLockConfigListRequest::~DescribeWebLockConfigListRequest()
 {}
 
+std::string DescribeWebLockConfigListRequest::getUuid()const
+{
+	return uuid_;
+}
+
+void DescribeWebLockConfigListRequest::setUuid(const std::string& uuid)
+{
+	uuid_ = uuid;
+	setCoreParameter("Uuid", uuid);
+}
+
 std::string DescribeWebLockConfigListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeWebLockConfigListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeWebLockConfigListRequest::getUuid()const
-{
-	return uuid_;
-}
-
-void DescribeWebLockConfigListRequest::setUuid(const std::string& uuid)
-{
-	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
 }
 

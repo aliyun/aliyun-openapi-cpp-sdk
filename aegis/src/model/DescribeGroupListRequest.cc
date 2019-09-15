@@ -36,17 +36,6 @@ void DescribeGroupListRequest::setWarnLevel(const std::string& warnLevel)
 	setCoreParameter("WarnLevel", warnLevel);
 }
 
-std::string DescribeGroupListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeGroupListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeGroupListRequest::getRuleGroupId()const
 {
 	return ruleGroupId_;
@@ -56,6 +45,28 @@ void DescribeGroupListRequest::setRuleGroupId(long ruleGroupId)
 {
 	ruleGroupId_ = ruleGroupId;
 	setCoreParameter("RuleGroupId", std::to_string(ruleGroupId));
+}
+
+long DescribeGroupListRequest::getExGroupId()const
+{
+	return exGroupId_;
+}
+
+void DescribeGroupListRequest::setExGroupId(long exGroupId)
+{
+	exGroupId_ = exGroupId;
+	setCoreParameter("ExGroupId", std::to_string(exGroupId));
+}
+
+std::string DescribeGroupListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeGroupListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeGroupListRequest::getPageSize()const
@@ -69,17 +80,6 @@ void DescribeGroupListRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeGroupListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeGroupListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeGroupListRequest::getLang()const
 {
 	return lang_;
@@ -91,14 +91,14 @@ void DescribeGroupListRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-long DescribeGroupListRequest::getExGroupId()const
+int DescribeGroupListRequest::getCurrentPage()const
 {
-	return exGroupId_;
+	return currentPage_;
 }
 
-void DescribeGroupListRequest::setExGroupId(long exGroupId)
+void DescribeGroupListRequest::setCurrentPage(int currentPage)
 {
-	exGroupId_ = exGroupId;
-	setCoreParameter("ExGroupId", std::to_string(exGroupId));
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

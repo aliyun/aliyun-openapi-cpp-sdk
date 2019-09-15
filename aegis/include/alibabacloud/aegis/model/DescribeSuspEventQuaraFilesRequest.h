@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				DescribeSuspEventQuaraFilesRequest();
 				~DescribeSuspEventQuaraFilesRequest();
 
+				std::string getCurrentPage()const;
+				void setCurrentPage(const std::string& currentPage);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
-				std::string getCurrentPage()const;
-				void setCurrentPage(const std::string& currentPage);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				std::string currentPage_;
 				std::string sourceIp_;
 				std::string pageSize_;
-				std::string currentPage_;
 				std::string from_;
 				std::string status_;
 

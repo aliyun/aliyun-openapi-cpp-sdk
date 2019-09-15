@@ -39,25 +39,25 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getTypes()const;
 				void setTypes(const std::string& types);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getExtern()const;
-				void setExtern(const std::string& extern);
+				std::string get_Extern()const;
+				void set_Extern(const std::string& _extern);
 				std::string getType()const;
 				void setType(const std::string& type);
-				std::string getConfig()const;
-				void setConfig(const std::string& config);
 				std::string getTarget()const;
 				void setTarget(const std::string& target);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getConfig()const;
+				void setConfig(const std::string& config);
 
             private:
 				long resourceOwnerId_;
 				std::string types_;
-				std::string sourceIp_;
-				std::string extern_;
+				std::string _extern_;
 				std::string type_;
-				std::string config_;
 				std::string target_;
+				std::string sourceIp_;
+				std::string config_;
 
 			};
 		}

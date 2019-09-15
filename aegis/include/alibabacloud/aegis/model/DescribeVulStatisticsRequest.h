@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeVulStatisticsRequest();
 				~DescribeVulStatisticsRequest();
 
-				std::string getEndModifyTimePatch()const;
-				void setEndModifyTimePatch(const std::string& endModifyTimePatch);
-				std::string getRemarkPatch()const;
-				void setRemarkPatch(const std::string& remarkPatch);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getEndFindTimePatch()const;
-				void setEndFindTimePatch(const std::string& endFindTimePatch);
 				std::string getStartModifyTimePatch()const;
 				void setStartModifyTimePatch(const std::string& startModifyTimePatch);
-				std::string getStartFindTimePatch()const;
-				void setStartFindTimePatch(const std::string& startFindTimePatch);
-				std::string getFrom()const;
-				void setFrom(const std::string& from);
 				std::string getDistribution()const;
 				void setDistribution(const std::string& distribution);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getEndFindTimePatch()const;
+				void setEndFindTimePatch(const std::string& endFindTimePatch);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
+				std::string getEndModifyTimePatch()const;
+				void setEndModifyTimePatch(const std::string& endModifyTimePatch);
+				std::string getRemarkPatch()const;
+				void setRemarkPatch(const std::string& remarkPatch);
+				std::string getStartFindTimePatch()const;
+				void setStartFindTimePatch(const std::string& startFindTimePatch);
 
             private:
-				std::string endModifyTimePatch_;
-				std::string remarkPatch_;
-				std::string sourceIp_;
-				std::string endFindTimePatch_;
 				std::string startModifyTimePatch_;
-				std::string startFindTimePatch_;
-				std::string from_;
 				std::string distribution_;
 				std::string uuid_;
+				std::string sourceIp_;
+				std::string endFindTimePatch_;
+				std::string from_;
+				std::string endModifyTimePatch_;
+				std::string remarkPatch_;
+				std::string startFindTimePatch_;
 
 			};
 		}

@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DescribeAssetListRequest();
 				~DescribeAssetListRequest();
 
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getFilterConditions()const;
+				void setFilterConditions(const std::string& filterConditions);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getFilterConditions()const;
-				void setFilterConditions(const std::string& filterConditions);
 
             private:
+				int currentPage_;
+				std::string filterConditions_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string from_;
-				int currentPage_;
 				std::string lang_;
-				std::string filterConditions_;
 
 			};
 		}

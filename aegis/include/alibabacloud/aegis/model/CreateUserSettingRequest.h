@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				CreateUserSettingRequest();
 				~CreateUserSettingRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getAlertLevels()const;
 				void setAlertLevels(const std::string& alertLevels);
 				int getInvalidWarningKeepDays()const;
 				void setInvalidWarningKeepDays(int invalidWarningKeepDays);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string alertLevels_;
 				int invalidWarningKeepDays_;
+				std::string sourceIp_;
 
 			};
 		}

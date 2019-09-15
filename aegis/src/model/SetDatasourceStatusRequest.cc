@@ -36,17 +36,6 @@ void SetDatasourceStatusRequest::setProjectName(const std::string& projectName)
 	setCoreParameter("ProjectName", projectName);
 }
 
-std::string SetDatasourceStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void SetDatasourceStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string SetDatasourceStatusRequest::getLogStoreName()const
 {
 	return logStoreName_;
@@ -58,17 +47,6 @@ void SetDatasourceStatusRequest::setLogStoreName(const std::string& logStoreName
 	setCoreParameter("LogStoreName", logStoreName);
 }
 
-int SetDatasourceStatusRequest::getStatus()const
-{
-	return status_;
-}
-
-void SetDatasourceStatusRequest::setStatus(int status)
-{
-	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
-}
-
 std::string SetDatasourceStatusRequest::getRegionNo()const
 {
 	return regionNo_;
@@ -78,5 +56,27 @@ void SetDatasourceStatusRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
 	setCoreParameter("RegionNo", regionNo);
+}
+
+std::string SetDatasourceStatusRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void SetDatasourceStatusRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int SetDatasourceStatusRequest::getStatus()const
+{
+	return status_;
+}
+
+void SetDatasourceStatusRequest::setStatus(int status)
+{
+	status_ = status;
+	setCoreParameter("Status", std::to_string(status));
 }
 

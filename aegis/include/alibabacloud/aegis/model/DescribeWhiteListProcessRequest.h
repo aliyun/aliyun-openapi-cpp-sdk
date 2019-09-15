@@ -35,34 +35,34 @@ namespace AlibabaCloud
 				DescribeWhiteListProcessRequest();
 				~DescribeWhiteListProcessRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getProcessName()const;
-				void setProcessName(const std::string& processName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getProcessType()const;
 				void setProcessType(int processType);
-				int getOrderBy()const;
-				void setOrderBy(int orderBy);
-				long getStrategyId()const;
-				void setStrategyId(long strategyId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getProcessName()const;
+				void setProcessName(const std::string& processName);
+				int getOrderBy()const;
+				void setOrderBy(int orderBy);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				long getStrategyId()const;
+				void setStrategyId(long strategyId);
 				int getDesc()const;
 				void setDesc(int desc);
 
             private:
-				std::string sourceIp_;
-				std::string processName_;
-				int pageSize_;
 				int processType_;
-				int orderBy_;
-				long strategyId_;
-				int currentPage_;
+				std::string sourceIp_;
+				int pageSize_;
 				std::string lang_;
+				std::string processName_;
+				int orderBy_;
+				int currentPage_;
+				long strategyId_;
 				int desc_;
 
 			};

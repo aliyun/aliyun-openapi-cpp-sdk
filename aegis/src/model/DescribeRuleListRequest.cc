@@ -36,39 +36,6 @@ void DescribeRuleListRequest::setWarnLevel(const std::string& warnLevel)
 	setCoreParameter("WarnLevel", warnLevel);
 }
 
-std::string DescribeRuleListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeRuleListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-long DescribeRuleListRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeRuleListRequest::setGroupId(long groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
-}
-
-int DescribeRuleListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeRuleListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeRuleListRequest::getRemark()const
 {
 	return remark_;
@@ -80,15 +47,37 @@ void DescribeRuleListRequest::setRemark(const std::string& remark)
 	setCoreParameter("Remark", remark);
 }
 
-int DescribeRuleListRequest::getCurrentPage()const
+std::string DescribeRuleListRequest::getExGroupId()const
 {
-	return currentPage_;
+	return exGroupId_;
 }
 
-void DescribeRuleListRequest::setCurrentPage(int currentPage)
+void DescribeRuleListRequest::setExGroupId(const std::string& exGroupId)
 {
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	exGroupId_ = exGroupId;
+	setCoreParameter("ExGroupId", exGroupId);
+}
+
+std::string DescribeRuleListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeRuleListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int DescribeRuleListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeRuleListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeRuleListRequest::getId()const
@@ -113,14 +102,25 @@ void DescribeRuleListRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string DescribeRuleListRequest::getExGroupId()const
+long DescribeRuleListRequest::getGroupId()const
 {
-	return exGroupId_;
+	return groupId_;
 }
 
-void DescribeRuleListRequest::setExGroupId(const std::string& exGroupId)
+void DescribeRuleListRequest::setGroupId(long groupId)
 {
-	exGroupId_ = exGroupId;
-	setCoreParameter("ExGroupId", exGroupId);
+	groupId_ = groupId;
+	setCoreParameter("GroupId", std::to_string(groupId));
+}
+
+int DescribeRuleListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeRuleListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

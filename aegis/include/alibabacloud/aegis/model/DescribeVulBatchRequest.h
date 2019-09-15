@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeVulBatchRequest();
 				~DescribeVulBatchRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getResource()const;
 				void setResource(const std::string& resource);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string resource_;
+				std::string sourceIp_;
 
 			};
 		}

@@ -25,17 +25,6 @@ OperateSuspiciousEventRequest::OperateSuspiciousEventRequest() :
 OperateSuspiciousEventRequest::~OperateSuspiciousEventRequest()
 {}
 
-std::string OperateSuspiciousEventRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void OperateSuspiciousEventRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string OperateSuspiciousEventRequest::getData()const
 {
 	return data_;
@@ -45,6 +34,17 @@ void OperateSuspiciousEventRequest::setData(const std::string& data)
 {
 	data_ = data;
 	setCoreParameter("Data", data);
+}
+
+std::string OperateSuspiciousEventRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void OperateSuspiciousEventRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string OperateSuspiciousEventRequest::getOperateType()const

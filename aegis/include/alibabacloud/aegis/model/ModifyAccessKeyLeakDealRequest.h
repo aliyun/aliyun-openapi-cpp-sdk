@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ModifyAccessKeyLeakDealRequest();
 				~ModifyAccessKeyLeakDealRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
-				long getId()const;
-				void setId(long id);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				long getId()const;
+				void setId(long id);
 
             private:
-				std::string sourceIp_;
 				std::string remark_;
-				long id_;
 				std::string type_;
+				std::string sourceIp_;
+				long id_;
 
 			};
 		}

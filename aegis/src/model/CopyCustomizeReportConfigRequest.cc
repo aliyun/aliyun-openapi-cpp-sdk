@@ -25,17 +25,6 @@ CopyCustomizeReportConfigRequest::CopyCustomizeReportConfigRequest() :
 CopyCustomizeReportConfigRequest::~CopyCustomizeReportConfigRequest()
 {}
 
-std::string CopyCustomizeReportConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CopyCustomizeReportConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long CopyCustomizeReportConfigRequest::getReportId()const
 {
 	return reportId_;
@@ -45,6 +34,17 @@ void CopyCustomizeReportConfigRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
 	setCoreParameter("ReportId", std::to_string(reportId));
+}
+
+std::string CopyCustomizeReportConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CopyCustomizeReportConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CopyCustomizeReportConfigRequest::getLang()const

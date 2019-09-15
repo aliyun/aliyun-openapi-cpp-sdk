@@ -25,6 +25,17 @@ DescribeWhiteListAssetRequest::DescribeWhiteListAssetRequest() :
 DescribeWhiteListAssetRequest::~DescribeWhiteListAssetRequest()
 {}
 
+int DescribeWhiteListAssetRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeWhiteListAssetRequest::setType(int type)
+{
+	type_ = type;
+	setCoreParameter("Type", std::to_string(type));
+}
+
 std::string DescribeWhiteListAssetRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -78,16 +89,5 @@ void DescribeWhiteListAssetRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int DescribeWhiteListAssetRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeWhiteListAssetRequest::setType(int type)
-{
-	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
 }
 

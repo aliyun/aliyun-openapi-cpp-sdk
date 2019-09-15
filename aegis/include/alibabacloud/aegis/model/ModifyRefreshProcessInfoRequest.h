@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				ModifyRefreshProcessInfoRequest();
 				~ModifyRefreshProcessInfoRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string uuid_;
+				std::string sourceIp_;
 
 			};
 		}

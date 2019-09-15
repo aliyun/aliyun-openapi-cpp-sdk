@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeResultListRequest();
 				~DescribeResultListRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getEndTime()const;
-				void setEndTime(long endTime);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				long getStartTime()const;
+				void setStartTime(long startTime);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getUuidList()const;
 				void setUuidList(const std::string& uuidList);
+				long getEndTime()const;
+				void setEndTime(long endTime);
 				std::string getDealed()const;
 				void setDealed(const std::string& dealed);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
-				long getStartTime()const;
-				void setStartTime(long startTime);
 
             private:
-				std::string sourceIp_;
-				int pageSize_;
-				long endTime_;
 				std::string ruleName_;
 				std::string remark_;
+				long startTime_;
+				std::string sourceIp_;
+				int pageSize_;
 				std::string uuidList_;
+				long endTime_;
 				std::string dealed_;
 				int currentPage_;
-				long startTime_;
 
 			};
 		}

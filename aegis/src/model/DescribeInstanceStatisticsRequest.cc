@@ -25,6 +25,17 @@ DescribeInstanceStatisticsRequest::DescribeInstanceStatisticsRequest() :
 DescribeInstanceStatisticsRequest::~DescribeInstanceStatisticsRequest()
 {}
 
+std::string DescribeInstanceStatisticsRequest::getUuid()const
+{
+	return uuid_;
+}
+
+void DescribeInstanceStatisticsRequest::setUuid(const std::string& uuid)
+{
+	uuid_ = uuid;
+	setCoreParameter("Uuid", uuid);
+}
+
 std::string DescribeInstanceStatisticsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeInstanceStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeInstanceStatisticsRequest::getUuid()const
-{
-	return uuid_;
-}
-
-void DescribeInstanceStatisticsRequest::setUuid(const std::string& uuid)
-{
-	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
 }
 

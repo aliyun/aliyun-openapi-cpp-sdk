@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeSasAssetStatisticsRequest();
 				~DescribeSasAssetStatisticsRequest();
 
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getStatisticsColumn()const;
@@ -43,17 +45,15 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getUuids()const;
 				void setUuids(const std::string& uuids);
 
             private:
+				int currentPage_;
 				std::string sourceIp_;
 				std::string statisticsColumn_;
 				int pageSize_;
 				std::string from_;
-				int currentPage_;
 				std::string uuids_;
 
 			};

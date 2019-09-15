@@ -47,17 +47,6 @@ void SaveCustomizeReportConfigRequest::setReportType(int reportType)
 	setCoreParameter("ReportType", std::to_string(reportType));
 }
 
-std::string SaveCustomizeReportConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void SaveCustomizeReportConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long SaveCustomizeReportConfigRequest::getReportId()const
 {
 	return reportId_;
@@ -80,28 +69,6 @@ void SaveCustomizeReportConfigRequest::setReportEndDate(const std::string& repor
 	setCoreParameter("ReportEndDate", reportEndDate);
 }
 
-std::string SaveCustomizeReportConfigRequest::getReportStartDate()const
-{
-	return reportStartDate_;
-}
-
-void SaveCustomizeReportConfigRequest::setReportStartDate(const std::string& reportStartDate)
-{
-	reportStartDate_ = reportStartDate;
-	setCoreParameter("ReportStartDate", reportStartDate);
-}
-
-std::string SaveCustomizeReportConfigRequest::getRecipients()const
-{
-	return recipients_;
-}
-
-void SaveCustomizeReportConfigRequest::setRecipients(const std::string& recipients)
-{
-	recipients_ = recipients;
-	setCoreParameter("Recipients", recipients);
-}
-
 std::string SaveCustomizeReportConfigRequest::getReportLang()const
 {
 	return reportLang_;
@@ -111,17 +78,6 @@ void SaveCustomizeReportConfigRequest::setReportLang(const std::string& reportLa
 {
 	reportLang_ = reportLang;
 	setCoreParameter("ReportLang", reportLang);
-}
-
-std::string SaveCustomizeReportConfigRequest::getLang()const
-{
-	return lang_;
-}
-
-void SaveCustomizeReportConfigRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string SaveCustomizeReportConfigRequest::getTitle()const
@@ -135,15 +91,37 @@ void SaveCustomizeReportConfigRequest::setTitle(const std::string& title)
 	setCoreParameter("Title", title);
 }
 
-std::string SaveCustomizeReportConfigRequest::getSendTime()const
+std::string SaveCustomizeReportConfigRequest::getSourceIp()const
 {
-	return sendTime_;
+	return sourceIp_;
 }
 
-void SaveCustomizeReportConfigRequest::setSendTime(const std::string& sendTime)
+void SaveCustomizeReportConfigRequest::setSourceIp(const std::string& sourceIp)
 {
-	sendTime_ = sendTime;
-	setCoreParameter("SendTime", sendTime);
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string SaveCustomizeReportConfigRequest::getReportStartDate()const
+{
+	return reportStartDate_;
+}
+
+void SaveCustomizeReportConfigRequest::setReportStartDate(const std::string& reportStartDate)
+{
+	reportStartDate_ = reportStartDate;
+	setCoreParameter("ReportStartDate", reportStartDate);
+}
+
+std::string SaveCustomizeReportConfigRequest::getLang()const
+{
+	return lang_;
+}
+
+void SaveCustomizeReportConfigRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 int SaveCustomizeReportConfigRequest::getReportStatus()const
@@ -155,5 +133,27 @@ void SaveCustomizeReportConfigRequest::setReportStatus(int reportStatus)
 {
 	reportStatus_ = reportStatus;
 	setCoreParameter("ReportStatus", std::to_string(reportStatus));
+}
+
+std::string SaveCustomizeReportConfigRequest::getRecipients()const
+{
+	return recipients_;
+}
+
+void SaveCustomizeReportConfigRequest::setRecipients(const std::string& recipients)
+{
+	recipients_ = recipients;
+	setCoreParameter("Recipients", recipients);
+}
+
+std::string SaveCustomizeReportConfigRequest::getSendTime()const
+{
+	return sendTime_;
+}
+
+void SaveCustomizeReportConfigRequest::setSendTime(const std::string& sendTime)
+{
+	sendTime_ = sendTime;
+	setCoreParameter("SendTime", sendTime);
 }
 

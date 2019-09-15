@@ -25,17 +25,6 @@ DescribeCustomizeReportChartDataRequest::DescribeCustomizeReportChartDataRequest
 DescribeCustomizeReportChartDataRequest::~DescribeCustomizeReportChartDataRequest()
 {}
 
-std::string DescribeCustomizeReportChartDataRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeCustomizeReportChartDataRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeCustomizeReportChartDataRequest::getReportId()const
 {
 	return reportId_;
@@ -56,6 +45,17 @@ void DescribeCustomizeReportChartDataRequest::setChartIds(const std::string& cha
 {
 	chartIds_ = chartIds;
 	setCoreParameter("ChartIds", chartIds);
+}
+
+std::string DescribeCustomizeReportChartDataRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeCustomizeReportChartDataRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCustomizeReportChartDataRequest::getLang()const

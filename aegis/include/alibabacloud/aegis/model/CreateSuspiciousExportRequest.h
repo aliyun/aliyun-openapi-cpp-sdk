@@ -37,10 +37,14 @@ namespace AlibabaCloud
 
 				std::string getStatusList()const;
 				void setStatusList(const std::string& statusList);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getEventNameRemark()const;
 				void setEventNameRemark(const std::string& eventNameRemark);
+				std::string getTag()const;
+				void setTag(const std::string& tag);
 				std::string getLevel()const;
 				void setLevel(const std::string& level);
 				std::string getGroupId()const;
@@ -49,21 +53,17 @@ namespace AlibabaCloud
 				void setDealed(const std::string& dealed);
 				std::string getEventType()const;
 				void setEventType(const std::string& eventType);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
-				std::string getTag()const;
-				void setTag(const std::string& tag);
 
             private:
 				std::string statusList_;
+				std::string remark_;
 				std::string sourceIp_;
 				std::string eventNameRemark_;
+				std::string tag_;
 				std::string level_;
 				std::string groupId_;
 				std::string dealed_;
 				std::string eventType_;
-				std::string remark_;
-				std::string tag_;
 
 			};
 		}

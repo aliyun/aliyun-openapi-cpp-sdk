@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				ModifyAssetGroupRequest();
 				~ModifyAssetGroupRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getGroupId()const;
 				void setGroupId(long groupId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getUuids()const;
 				void setUuids(const std::string& uuids);
 
             private:
-				std::string sourceIp_;
 				long groupId_;
+				std::string sourceIp_;
 				std::string uuids_;
 
 			};

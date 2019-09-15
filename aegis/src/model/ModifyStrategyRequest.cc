@@ -25,6 +25,17 @@ ModifyStrategyRequest::ModifyStrategyRequest() :
 ModifyStrategyRequest::~ModifyStrategyRequest()
 {}
 
+std::string ModifyStrategyRequest::getCycleDays()const
+{
+	return cycleDays_;
+}
+
+void ModifyStrategyRequest::setCycleDays(const std::string& cycleDays)
+{
+	cycleDays_ = cycleDays;
+	setCoreParameter("CycleDays", cycleDays);
+}
+
 std::string ModifyStrategyRequest::getRiskSubTypeName()const
 {
 	return riskSubTypeName_;
@@ -67,17 +78,6 @@ void ModifyStrategyRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string ModifyStrategyRequest::getCycleDays()const
-{
-	return cycleDays_;
-}
-
-void ModifyStrategyRequest::setCycleDays(const std::string& cycleDays)
-{
-	cycleDays_ = cycleDays;
-	setCoreParameter("CycleDays", cycleDays);
 }
 
 std::string ModifyStrategyRequest::getId()const

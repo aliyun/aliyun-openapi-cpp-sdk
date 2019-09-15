@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DeleteCustomizeReportRequest();
 				~DeleteCustomizeReportRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getReportId()const;
 				void setReportId(long reportId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				long reportId_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

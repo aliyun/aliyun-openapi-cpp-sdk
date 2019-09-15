@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeScreenScoreThreadRequest();
 				~DescribeScreenScoreThreadRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				long endTime_;
 				long startTime_;
+				std::string sourceIp_;
 
 			};
 		}

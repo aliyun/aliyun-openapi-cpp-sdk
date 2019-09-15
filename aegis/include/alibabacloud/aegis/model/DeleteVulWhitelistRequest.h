@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DeleteVulWhitelistRequest();
 				~DeleteVulWhitelistRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getWhitelist()const;
 				void setWhitelist(const std::string& whitelist);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string whitelist_;
+				std::string sourceIp_;
 
 			};
 		}

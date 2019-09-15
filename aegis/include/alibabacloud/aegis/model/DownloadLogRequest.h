@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DownloadLogRequest();
 				~DownloadLogRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getQuery()const;
 				void setQuery(const std::string& query);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string query_;
 				std::string endTime_;
 				std::string startTime_;
+				std::string sourceIp_;
 
 			};
 		}

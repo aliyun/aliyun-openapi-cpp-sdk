@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeSlsProjectRequest();
 				~DescribeSlsProjectRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getRegionNo()const;
 				void setRegionNo(const std::string& regionNo);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string regionNo_;
+				std::string sourceIp_;
 
 			};
 		}

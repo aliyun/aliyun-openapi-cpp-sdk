@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getRuleActionName()const;
 				void setRuleActionName(const std::string& ruleActionName);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getSendUrl()const;
 				void setSendUrl(const std::string& sendUrl);
-				long getId()const;
-				void setId(long id);
 				long getIntervalTime()const;
 				void setIntervalTime(long intervalTime);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				long getId()const;
+				void setId(long id);
 
             private:
 				std::string ruleActionName_;
-				std::string sourceIp_;
 				std::string sendUrl_;
-				long id_;
 				long intervalTime_;
+				std::string sourceIp_;
+				long id_;
 
 			};
 		}

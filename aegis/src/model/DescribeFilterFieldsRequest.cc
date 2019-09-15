@@ -25,17 +25,6 @@ DescribeFilterFieldsRequest::DescribeFilterFieldsRequest() :
 DescribeFilterFieldsRequest::~DescribeFilterFieldsRequest()
 {}
 
-std::string DescribeFilterFieldsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeFilterFieldsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeFilterFieldsRequest::getQuery()const
 {
 	return query_;
@@ -45,5 +34,16 @@ void DescribeFilterFieldsRequest::setQuery(const std::string& query)
 {
 	query_ = query;
 	setCoreParameter("Query", query);
+}
+
+std::string DescribeFilterFieldsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeFilterFieldsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

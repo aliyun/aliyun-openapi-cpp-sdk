@@ -47,28 +47,6 @@ void DescribeMachineConfigRequest::setTypes(const std::string& types)
 	setCoreParameter("Types", types);
 }
 
-std::string DescribeMachineConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeMachineConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-int DescribeMachineConfigRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeMachineConfigRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int DescribeMachineConfigRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -91,6 +69,39 @@ void DescribeMachineConfigRequest::setType(const std::string& type)
 	setCoreParameter("Type", type);
 }
 
+std::string DescribeMachineConfigRequest::getTarget()const
+{
+	return target_;
+}
+
+void DescribeMachineConfigRequest::setTarget(const std::string& target)
+{
+	target_ = target;
+	setCoreParameter("Target", target);
+}
+
+std::string DescribeMachineConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeMachineConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int DescribeMachineConfigRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeMachineConfigRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string DescribeMachineConfigRequest::getLang()const
 {
 	return lang_;
@@ -111,16 +122,5 @@ void DescribeMachineConfigRequest::setConfig(const std::string& config)
 {
 	config_ = config;
 	setCoreParameter("Config", config);
-}
-
-std::string DescribeMachineConfigRequest::getTarget()const
-{
-	return target_;
-}
-
-void DescribeMachineConfigRequest::setTarget(const std::string& target)
-{
-	target_ = target;
-	setCoreParameter("Target", target);
 }
 

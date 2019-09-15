@@ -25,6 +25,17 @@ DescribeWhiteListStrategyUuidCountRequest::DescribeWhiteListStrategyUuidCountReq
 DescribeWhiteListStrategyUuidCountRequest::~DescribeWhiteListStrategyUuidCountRequest()
 {}
 
+int DescribeWhiteListStrategyUuidCountRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeWhiteListStrategyUuidCountRequest::setType(int type)
+{
+	type_ = type;
+	setCoreParameter("Type", std::to_string(type));
+}
+
 std::string DescribeWhiteListStrategyUuidCountRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,16 +67,5 @@ void DescribeWhiteListStrategyUuidCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int DescribeWhiteListStrategyUuidCountRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeWhiteListStrategyUuidCountRequest::setType(int type)
-{
-	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
 }
 

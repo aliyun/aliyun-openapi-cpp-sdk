@@ -25,6 +25,17 @@ DescribeWhiteListProcessRequest::DescribeWhiteListProcessRequest() :
 DescribeWhiteListProcessRequest::~DescribeWhiteListProcessRequest()
 {}
 
+int DescribeWhiteListProcessRequest::getProcessType()const
+{
+	return processType_;
+}
+
+void DescribeWhiteListProcessRequest::setProcessType(int processType)
+{
+	processType_ = processType;
+	setCoreParameter("ProcessType", std::to_string(processType));
+}
+
 std::string DescribeWhiteListProcessRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -34,17 +45,6 @@ void DescribeWhiteListProcessRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeWhiteListProcessRequest::getProcessName()const
-{
-	return processName_;
-}
-
-void DescribeWhiteListProcessRequest::setProcessName(const std::string& processName)
-{
-	processName_ = processName;
-	setCoreParameter("ProcessName", processName);
 }
 
 int DescribeWhiteListProcessRequest::getPageSize()const
@@ -58,15 +58,26 @@ void DescribeWhiteListProcessRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeWhiteListProcessRequest::getProcessType()const
+std::string DescribeWhiteListProcessRequest::getLang()const
 {
-	return processType_;
+	return lang_;
 }
 
-void DescribeWhiteListProcessRequest::setProcessType(int processType)
+void DescribeWhiteListProcessRequest::setLang(const std::string& lang)
 {
-	processType_ = processType;
-	setCoreParameter("ProcessType", std::to_string(processType));
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string DescribeWhiteListProcessRequest::getProcessName()const
+{
+	return processName_;
+}
+
+void DescribeWhiteListProcessRequest::setProcessName(const std::string& processName)
+{
+	processName_ = processName;
+	setCoreParameter("ProcessName", processName);
 }
 
 int DescribeWhiteListProcessRequest::getOrderBy()const
@@ -80,17 +91,6 @@ void DescribeWhiteListProcessRequest::setOrderBy(int orderBy)
 	setCoreParameter("OrderBy", std::to_string(orderBy));
 }
 
-long DescribeWhiteListProcessRequest::getStrategyId()const
-{
-	return strategyId_;
-}
-
-void DescribeWhiteListProcessRequest::setStrategyId(long strategyId)
-{
-	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
-}
-
 int DescribeWhiteListProcessRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -102,15 +102,15 @@ void DescribeWhiteListProcessRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeWhiteListProcessRequest::getLang()const
+long DescribeWhiteListProcessRequest::getStrategyId()const
 {
-	return lang_;
+	return strategyId_;
 }
 
-void DescribeWhiteListProcessRequest::setLang(const std::string& lang)
+void DescribeWhiteListProcessRequest::setStrategyId(long strategyId)
 {
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	strategyId_ = strategyId;
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 int DescribeWhiteListProcessRequest::getDesc()const

@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				DescribeTraceInfoNodeListRequest();
 				~DescribeTraceInfoNodeListRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getVertexId()const;
 				void setVertexId(const std::string& vertexId);
-				std::string getStartType()const;
-				void setStartType(const std::string& startType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getFrom()const;
-				void setFrom(const std::string& from);
-				int getPage()const;
-				void setPage(int page);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				long getIncidentTime()const;
 				void setIncidentTime(long incidentTime);
+				std::string getStartType()const;
+				void setStartType(const std::string& startType);
+				int getPage()const;
+				void setPage(int page);
 
             private:
-				std::string sourceIp_;
 				std::string vertexId_;
-				std::string startType_;
-				int pageSize_;
-				std::string from_;
-				int page_;
-				std::string lang_;
 				std::string type_;
 				std::string uuid_;
+				std::string sourceIp_;
+				int pageSize_;
+				std::string from_;
+				std::string lang_;
 				long incidentTime_;
+				std::string startType_;
+				int page_;
 
 			};
 		}

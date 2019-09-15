@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				UpdateWhiteListStrategyRelationRequest();
 				~UpdateWhiteListStrategyRelationRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getProcessMethod()const;
 				void setProcessMethod(int processMethod);
-				long getStrategyId()const;
-				void setStrategyId(long strategyId);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				int getType()const;
 				void setType(int type);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				long getStrategyId()const;
+				void setStrategyId(long strategyId);
 				int getStatus()const;
 				void setStatus(int status);
 
             private:
-				std::string sourceIp_;
 				int processMethod_;
-				long strategyId_;
-				std::string lang_;
 				int type_;
 				std::string uuid_;
+				std::string sourceIp_;
+				std::string lang_;
+				long strategyId_;
 				int status_;
 
 			};

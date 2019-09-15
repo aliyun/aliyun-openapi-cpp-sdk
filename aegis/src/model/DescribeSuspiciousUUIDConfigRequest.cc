@@ -25,6 +25,17 @@ DescribeSuspiciousUUIDConfigRequest::DescribeSuspiciousUUIDConfigRequest() :
 DescribeSuspiciousUUIDConfigRequest::~DescribeSuspiciousUUIDConfigRequest()
 {}
 
+std::string DescribeSuspiciousUUIDConfigRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeSuspiciousUUIDConfigRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string DescribeSuspiciousUUIDConfigRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeSuspiciousUUIDConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeSuspiciousUUIDConfigRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeSuspiciousUUIDConfigRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				ModifyWebLockStatusRequest();
 				~ModifyWebLockStatusRequest();
 
+				std::string getUuid()const;
+				void setUuid(const std::string& uuid);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getUuid()const;
-				void setUuid(const std::string& uuid);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				std::string uuid_;
 				std::string sourceIp_;
 				std::string lang_;
-				std::string uuid_;
 				std::string status_;
 
 			};

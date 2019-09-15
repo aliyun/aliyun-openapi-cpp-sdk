@@ -25,6 +25,28 @@ DescribeVulMachineListRequest::DescribeVulMachineListRequest() :
 DescribeVulMachineListRequest::~DescribeVulMachineListRequest()
 {}
 
+long DescribeVulMachineListRequest::getStartTs()const
+{
+	return startTs_;
+}
+
+void DescribeVulMachineListRequest::setStartTs(long startTs)
+{
+	startTs_ = startTs;
+	setCoreParameter("StartTs", std::to_string(startTs));
+}
+
+std::string DescribeVulMachineListRequest::getIncludeApp()const
+{
+	return includeApp_;
+}
+
+void DescribeVulMachineListRequest::setIncludeApp(const std::string& includeApp)
+{
+	includeApp_ = includeApp;
+	setCoreParameter("IncludeApp", includeApp);
+}
+
 std::string DescribeVulMachineListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,28 +78,6 @@ void DescribeVulMachineListRequest::setFrom(const std::string& from)
 {
 	from_ = from;
 	setCoreParameter("From", from);
-}
-
-long DescribeVulMachineListRequest::getStartTs()const
-{
-	return startTs_;
-}
-
-void DescribeVulMachineListRequest::setStartTs(long startTs)
-{
-	startTs_ = startTs;
-	setCoreParameter("StartTs", std::to_string(startTs));
-}
-
-std::string DescribeVulMachineListRequest::getIncludeApp()const
-{
-	return includeApp_;
-}
-
-void DescribeVulMachineListRequest::setIncludeApp(const std::string& includeApp)
-{
-	includeApp_ = includeApp;
-	setCoreParameter("IncludeApp", includeApp);
 }
 
 std::string DescribeVulMachineListRequest::getUuids()const

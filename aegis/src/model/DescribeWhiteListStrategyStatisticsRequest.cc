@@ -25,6 +25,17 @@ DescribeWhiteListStrategyStatisticsRequest::DescribeWhiteListStrategyStatisticsR
 DescribeWhiteListStrategyStatisticsRequest::~DescribeWhiteListStrategyStatisticsRequest()
 {}
 
+int DescribeWhiteListStrategyStatisticsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeWhiteListStrategyStatisticsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
 std::string DescribeWhiteListStrategyStatisticsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,17 +67,6 @@ void DescribeWhiteListStrategyStatisticsRequest::setStrategyIds(const std::strin
 {
 	strategyIds_ = strategyIds;
 	setCoreParameter("StrategyIds", strategyIds);
-}
-
-int DescribeWhiteListStrategyStatisticsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeWhiteListStrategyStatisticsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWhiteListStrategyStatisticsRequest::getLang()const

@@ -25,17 +25,6 @@ CreateUserSettingRequest::CreateUserSettingRequest() :
 CreateUserSettingRequest::~CreateUserSettingRequest()
 {}
 
-std::string CreateUserSettingRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateUserSettingRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string CreateUserSettingRequest::getAlertLevels()const
 {
 	return alertLevels_;
@@ -56,5 +45,16 @@ void CreateUserSettingRequest::setInvalidWarningKeepDays(int invalidWarningKeepD
 {
 	invalidWarningKeepDays_ = invalidWarningKeepDays;
 	setCoreParameter("InvalidWarningKeepDays", std::to_string(invalidWarningKeepDays));
+}
+
+std::string CreateUserSettingRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateUserSettingRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

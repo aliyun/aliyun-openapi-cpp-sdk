@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				DescribeLoginLogsRequest();
 				~DescribeLoginLogsRequest();
 
-				std::string getTypes()const;
-				void setTypes(const std::string& types);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getStatuses()const;
-				void setStatuses(const std::string& statuses);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
 				std::string getTag()const;
 				void setTag(const std::string& tag);
+				std::string getTypes()const;
+				void setTypes(const std::string& types);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getStatuses()const;
+				void setStatuses(const std::string& statuses);
 
             private:
-				std::string types_;
+				std::string remark_;
 				std::string sourceIp_;
 				int pageSize_;
-				std::string statuses_;
-				int currentPage_;
-				std::string remark_;
 				std::string tag_;
+				std::string types_;
+				int currentPage_;
+				std::string statuses_;
 
 			};
 		}

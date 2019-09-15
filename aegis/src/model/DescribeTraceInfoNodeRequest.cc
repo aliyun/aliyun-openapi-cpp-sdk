@@ -25,17 +25,6 @@ DescribeTraceInfoNodeRequest::DescribeTraceInfoNodeRequest() :
 DescribeTraceInfoNodeRequest::~DescribeTraceInfoNodeRequest()
 {}
 
-std::string DescribeTraceInfoNodeRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeTraceInfoNodeRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeTraceInfoNodeRequest::getVertexId()const
 {
 	return vertexId_;
@@ -45,6 +34,50 @@ void DescribeTraceInfoNodeRequest::setVertexId(const std::string& vertexId)
 {
 	vertexId_ = vertexId;
 	setCoreParameter("VertexId", vertexId);
+}
+
+std::string DescribeTraceInfoNodeRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeTraceInfoNodeRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string DescribeTraceInfoNodeRequest::getUuid()const
+{
+	return uuid_;
+}
+
+void DescribeTraceInfoNodeRequest::setUuid(const std::string& uuid)
+{
+	uuid_ = uuid;
+	setCoreParameter("Uuid", uuid);
+}
+
+std::string DescribeTraceInfoNodeRequest::getEventName()const
+{
+	return eventName_;
+}
+
+void DescribeTraceInfoNodeRequest::setEventName(const std::string& eventName)
+{
+	eventName_ = eventName;
+	setCoreParameter("EventName", eventName);
+}
+
+std::string DescribeTraceInfoNodeRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeTraceInfoNodeRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeTraceInfoNodeRequest::getFrom()const
@@ -69,17 +102,6 @@ void DescribeTraceInfoNodeRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string DescribeTraceInfoNodeRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeTraceInfoNodeRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
 long DescribeTraceInfoNodeRequest::getIncidentTime()const
 {
 	return incidentTime_;
@@ -89,27 +111,5 @@ void DescribeTraceInfoNodeRequest::setIncidentTime(long incidentTime)
 {
 	incidentTime_ = incidentTime;
 	setCoreParameter("IncidentTime", std::to_string(incidentTime));
-}
-
-std::string DescribeTraceInfoNodeRequest::getUuid()const
-{
-	return uuid_;
-}
-
-void DescribeTraceInfoNodeRequest::setUuid(const std::string& uuid)
-{
-	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
-}
-
-std::string DescribeTraceInfoNodeRequest::getEventName()const
-{
-	return eventName_;
-}
-
-void DescribeTraceInfoNodeRequest::setEventName(const std::string& eventName)
-{
-	eventName_ = eventName;
-	setCoreParameter("EventName", eventName);
 }
 

@@ -39,6 +39,12 @@ namespace AlibabaCloud
 				void setStatusList(const std::string& statusList);
 				std::string getRiskLevels()const;
 				void setRiskLevels(const std::string& riskLevels);
+				std::string getRiskName()const;
+				void setRiskName(const std::string& riskName);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				std::string getExportType()const;
 				void setExportType(const std::string& exportType);
 				std::string getDealed()const;
@@ -47,16 +53,10 @@ namespace AlibabaCloud
 				void setTypeNames(const std::string& typeNames);
 				int getIsSummaryExport()const;
 				void setIsSummaryExport(int isSummaryExport);
-				std::string getRiskName()const;
-				void setRiskName(const std::string& riskName);
 				std::string getRiskIds()const;
 				void setRiskIds(const std::string& riskIds);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getStrategyId()const;
 				void setStrategyId(long strategyId);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getTypeName()const;
 				void setTypeName(const std::string& typeName);
 				std::string getSubTypeNames()const;
@@ -67,15 +67,15 @@ namespace AlibabaCloud
             private:
 				std::string statusList_;
 				std::string riskLevels_;
+				std::string riskName_;
+				std::string sourceIp_;
+				std::string lang_;
 				std::string exportType_;
 				std::string dealed_;
 				std::string typeNames_;
 				int isSummaryExport_;
-				std::string riskName_;
 				std::string riskIds_;
-				std::string sourceIp_;
 				long strategyId_;
-				std::string lang_;
 				std::string typeName_;
 				std::string subTypeNames_;
 				std::string uuids_;

@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				std::string getWarnLevel()const;
 				void setWarnLevel(const std::string& warnLevel);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				long getGroupId()const;
-				void setGroupId(long groupId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
+				std::string getExGroupId()const;
+				void setExGroupId(const std::string& exGroupId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				long getId()const;
 				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getExGroupId()const;
-				void setExGroupId(const std::string& exGroupId);
+				long getGroupId()const;
+				void setGroupId(long groupId);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 
             private:
 				std::string warnLevel_;
-				std::string sourceIp_;
-				long groupId_;
-				int pageSize_;
 				std::string remark_;
-				int currentPage_;
+				std::string exGroupId_;
+				std::string sourceIp_;
+				int pageSize_;
 				long id_;
 				std::string lang_;
-				std::string exGroupId_;
+				long groupId_;
+				int currentPage_;
 
 			};
 		}

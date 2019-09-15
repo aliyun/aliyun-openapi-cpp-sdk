@@ -36,28 +36,6 @@ void ModifyWebLockUpdateConfigRequest::setLocalBackupDir(const std::string& loca
 	setCoreParameter("LocalBackupDir", localBackupDir);
 }
 
-std::string ModifyWebLockUpdateConfigRequest::getMode()const
-{
-	return mode_;
-}
-
-void ModifyWebLockUpdateConfigRequest::setMode(const std::string& mode)
-{
-	mode_ = mode;
-	setCoreParameter("Mode", mode);
-}
-
-std::string ModifyWebLockUpdateConfigRequest::getInclusiveFileType()const
-{
-	return inclusiveFileType_;
-}
-
-void ModifyWebLockUpdateConfigRequest::setInclusiveFileType(const std::string& inclusiveFileType)
-{
-	inclusiveFileType_ = inclusiveFileType;
-	setCoreParameter("InclusiveFileType", inclusiveFileType);
-}
-
 std::string ModifyWebLockUpdateConfigRequest::getExclusiveFile()const
 {
 	return exclusiveFile_;
@@ -69,17 +47,6 @@ void ModifyWebLockUpdateConfigRequest::setExclusiveFile(const std::string& exclu
 	setCoreParameter("ExclusiveFile", exclusiveFile);
 }
 
-std::string ModifyWebLockUpdateConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyWebLockUpdateConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyWebLockUpdateConfigRequest::getExclusiveFileType()const
 {
 	return exclusiveFileType_;
@@ -89,28 +56,6 @@ void ModifyWebLockUpdateConfigRequest::setExclusiveFileType(const std::string& e
 {
 	exclusiveFileType_ = exclusiveFileType;
 	setCoreParameter("ExclusiveFileType", exclusiveFileType);
-}
-
-int ModifyWebLockUpdateConfigRequest::getId()const
-{
-	return id_;
-}
-
-void ModifyWebLockUpdateConfigRequest::setId(int id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
-std::string ModifyWebLockUpdateConfigRequest::getLang()const
-{
-	return lang_;
-}
-
-void ModifyWebLockUpdateConfigRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyWebLockUpdateConfigRequest::getDir()const
@@ -135,6 +80,50 @@ void ModifyWebLockUpdateConfigRequest::setUuid(const std::string& uuid)
 	setCoreParameter("Uuid", uuid);
 }
 
+std::string ModifyWebLockUpdateConfigRequest::getMode()const
+{
+	return mode_;
+}
+
+void ModifyWebLockUpdateConfigRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setCoreParameter("Mode", mode);
+}
+
+std::string ModifyWebLockUpdateConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyWebLockUpdateConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int ModifyWebLockUpdateConfigRequest::getId()const
+{
+	return id_;
+}
+
+void ModifyWebLockUpdateConfigRequest::setId(int id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
+}
+
+std::string ModifyWebLockUpdateConfigRequest::getLang()const
+{
+	return lang_;
+}
+
+void ModifyWebLockUpdateConfigRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
 std::string ModifyWebLockUpdateConfigRequest::getExclusiveDir()const
 {
 	return exclusiveDir_;
@@ -144,5 +133,16 @@ void ModifyWebLockUpdateConfigRequest::setExclusiveDir(const std::string& exclus
 {
 	exclusiveDir_ = exclusiveDir;
 	setCoreParameter("ExclusiveDir", exclusiveDir);
+}
+
+std::string ModifyWebLockUpdateConfigRequest::getInclusiveFileType()const
+{
+	return inclusiveFileType_;
+}
+
+void ModifyWebLockUpdateConfigRequest::setInclusiveFileType(const std::string& inclusiveFileType)
+{
+	inclusiveFileType_ = inclusiveFileType;
+	setCoreParameter("InclusiveFileType", inclusiveFileType);
 }
 

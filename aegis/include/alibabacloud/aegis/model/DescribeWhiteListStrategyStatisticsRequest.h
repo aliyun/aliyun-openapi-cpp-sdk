@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				DescribeWhiteListStrategyStatisticsRequest();
 				~DescribeWhiteListStrategyStatisticsRequest();
 
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getStrategyIds()const;
 				void setStrategyIds(const std::string& strategyIds);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				int currentPage_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string strategyIds_;
-				int currentPage_;
 				std::string lang_;
 
 			};

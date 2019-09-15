@@ -25,6 +25,17 @@ ModifyVulTargetRequest::ModifyVulTargetRequest() :
 ModifyVulTargetRequest::~ModifyVulTargetRequest()
 {}
 
+std::string ModifyVulTargetRequest::getTarget()const
+{
+	return target_;
+}
+
+void ModifyVulTargetRequest::setTarget(const std::string& target)
+{
+	target_ = target;
+	setCoreParameter("Target", target);
+}
+
 std::string ModifyVulTargetRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void ModifyVulTargetRequest::setConfig(const std::string& config)
 {
 	config_ = config;
 	setCoreParameter("Config", config);
-}
-
-std::string ModifyVulTargetRequest::getTarget()const
-{
-	return target_;
-}
-
-void ModifyVulTargetRequest::setTarget(const std::string& target)
-{
-	target_ = target;
-	setCoreParameter("Target", target);
 }
 

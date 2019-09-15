@@ -35,24 +35,24 @@ namespace AlibabaCloud
 				DescribeWebLockBindListRequest();
 				~DescribeWebLockBindListRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
-				std::string sourceIp_;
-				int pageSize_;
 				std::string remark_;
 				int currentPage_;
+				std::string sourceIp_;
+				int pageSize_;
 				std::string lang_;
 				std::string status_;
 

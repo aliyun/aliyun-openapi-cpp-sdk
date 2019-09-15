@@ -25,17 +25,6 @@ DescribeScreenRequestTopTypeRequest::DescribeScreenRequestTopTypeRequest() :
 DescribeScreenRequestTopTypeRequest::~DescribeScreenRequestTopTypeRequest()
 {}
 
-std::string DescribeScreenRequestTopTypeRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeScreenRequestTopTypeRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeScreenRequestTopTypeRequest::getType()const
 {
 	return type_;
@@ -45,5 +34,16 @@ void DescribeScreenRequestTopTypeRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string DescribeScreenRequestTopTypeRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeScreenRequestTopTypeRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

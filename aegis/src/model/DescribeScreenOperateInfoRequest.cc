@@ -25,17 +25,6 @@ DescribeScreenOperateInfoRequest::DescribeScreenOperateInfoRequest() :
 DescribeScreenOperateInfoRequest::~DescribeScreenOperateInfoRequest()
 {}
 
-std::string DescribeScreenOperateInfoRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeScreenOperateInfoRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeScreenOperateInfoRequest::getStartTime()const
 {
 	return startTime_;
@@ -45,6 +34,17 @@ void DescribeScreenOperateInfoRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", std::to_string(startTime));
+}
+
+std::string DescribeScreenOperateInfoRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeScreenOperateInfoRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeScreenOperateInfoRequest::getLang()const

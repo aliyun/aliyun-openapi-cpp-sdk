@@ -36,50 +36,6 @@ void DescribeAllRegionsStatisticsRequest::setStatusList(const std::string& statu
 	setCoreParameter("StatusList", statusList);
 }
 
-std::string DescribeAllRegionsStatisticsRequest::getSaleId()const
-{
-	return saleId_;
-}
-
-void DescribeAllRegionsStatisticsRequest::setSaleId(const std::string& saleId)
-{
-	saleId_ = saleId;
-	setCoreParameter("SaleId", saleId);
-}
-
-int DescribeAllRegionsStatisticsRequest::getRuleType()const
-{
-	return ruleType_;
-}
-
-void DescribeAllRegionsStatisticsRequest::setRuleType(int ruleType)
-{
-	ruleType_ = ruleType;
-	setCoreParameter("RuleType", std::to_string(ruleType));
-}
-
-long DescribeAllRegionsStatisticsRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeAllRegionsStatisticsRequest::setGroupId(long groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
-}
-
-std::string DescribeAllRegionsStatisticsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeAllRegionsStatisticsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeAllRegionsStatisticsRequest::getRemark()const
 {
 	return remark_;
@@ -89,28 +45,6 @@ void DescribeAllRegionsStatisticsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
 	setCoreParameter("Remark", remark);
-}
-
-std::string DescribeAllRegionsStatisticsRequest::getDealed()const
-{
-	return dealed_;
-}
-
-void DescribeAllRegionsStatisticsRequest::setDealed(const std::string& dealed)
-{
-	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
-}
-
-int DescribeAllRegionsStatisticsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeAllRegionsStatisticsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getStartTime()const
@@ -144,17 +78,6 @@ void DescribeAllRegionsStatisticsRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
 	setCoreParameter("Uuid", uuid);
-}
-
-std::string DescribeAllRegionsStatisticsRequest::getSecureToken()const
-{
-	return secureToken_;
-}
-
-void DescribeAllRegionsStatisticsRequest::setSecureToken(const std::string& secureToken)
-{
-	secureToken_ = secureToken;
-	setCoreParameter("SecureToken", secureToken);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getSourceIp()const
@@ -201,17 +124,6 @@ void DescribeAllRegionsStatisticsRequest::setFrom(const std::string& from)
 	setCoreParameter("From", from);
 }
 
-int DescribeAllRegionsStatisticsRequest::getAction1()const
-{
-	return action1_;
-}
-
-void DescribeAllRegionsStatisticsRequest::setAction1(int action1)
-{
-	action1_ = action1;
-	setCoreParameter("Action1", std::to_string(action1));
-}
-
 std::string DescribeAllRegionsStatisticsRequest::getTag()const
 {
 	return tag_;
@@ -232,6 +144,94 @@ void DescribeAllRegionsStatisticsRequest::setFlow(int flow)
 {
 	flow_ = flow;
 	setCoreParameter("Flow", std::to_string(flow));
+}
+
+std::string DescribeAllRegionsStatisticsRequest::getSaleId()const
+{
+	return saleId_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setSaleId(const std::string& saleId)
+{
+	saleId_ = saleId;
+	setCoreParameter("SaleId", saleId);
+}
+
+int DescribeAllRegionsStatisticsRequest::getRuleType()const
+{
+	return ruleType_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setRuleType(int ruleType)
+{
+	ruleType_ = ruleType;
+	setCoreParameter("RuleType", std::to_string(ruleType));
+}
+
+long DescribeAllRegionsStatisticsRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setGroupId(long groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", std::to_string(groupId));
+}
+
+std::string DescribeAllRegionsStatisticsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+std::string DescribeAllRegionsStatisticsRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setCoreParameter("Dealed", dealed);
+}
+
+int DescribeAllRegionsStatisticsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeAllRegionsStatisticsRequest::getSecureToken()const
+{
+	return secureToken_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setSecureToken(const std::string& secureToken)
+{
+	secureToken_ = secureToken;
+	setCoreParameter("SecureToken", secureToken);
+}
+
+int DescribeAllRegionsStatisticsRequest::getAction1()const
+{
+	return action1_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setAction1(int action1)
+{
+	action1_ = action1;
+	setCoreParameter("Action1", std::to_string(action1));
 }
 
 int DescribeAllRegionsStatisticsRequest::getStatus()const

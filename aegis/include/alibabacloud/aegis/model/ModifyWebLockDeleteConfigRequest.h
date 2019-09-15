@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ModifyWebLockDeleteConfigRequest();
 				~ModifyWebLockDeleteConfigRequest();
 
+				std::string getUuid()const;
+				void setUuid(const std::string& uuid);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getId()const;
 				void setId(int id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getUuid()const;
-				void setUuid(const std::string& uuid);
 
             private:
+				std::string uuid_;
 				std::string sourceIp_;
 				int id_;
 				std::string lang_;
-				std::string uuid_;
 
 			};
 		}

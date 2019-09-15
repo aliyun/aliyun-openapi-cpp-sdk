@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DescribeLatestActionsRequest();
 				~DescribeLatestActionsRequest();
 
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getSecureToken()const;
+				void setSecureToken(const std::string& secureToken);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getSecureToken()const;
-				void setSecureToken(const std::string& secureToken);
 
             private:
+				int currentPage_;
+				std::string secureToken_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string from_;
-				int currentPage_;
-				std::string secureToken_;
 
 			};
 		}

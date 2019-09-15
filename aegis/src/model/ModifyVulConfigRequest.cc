@@ -25,17 +25,6 @@ ModifyVulConfigRequest::ModifyVulConfigRequest() :
 ModifyVulConfigRequest::~ModifyVulConfigRequest()
 {}
 
-std::string ModifyVulConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyVulConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyVulConfigRequest::getType()const
 {
 	return type_;
@@ -45,6 +34,17 @@ void ModifyVulConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string ModifyVulConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyVulConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyVulConfigRequest::getConfig()const

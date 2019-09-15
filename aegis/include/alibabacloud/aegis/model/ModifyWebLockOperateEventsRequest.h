@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ModifyWebLockOperateEventsRequest();
 				~ModifyWebLockOperateEventsRequest();
 
+				std::string getEventIds()const;
+				void setEventIds(const std::string& eventIds);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getOperation()const;
 				void setOperation(const std::string& operation);
-				std::string getEventIds()const;
-				void setEventIds(const std::string& eventIds);
 
             private:
+				std::string eventIds_;
 				std::string sourceIp_;
 				std::string operation_;
-				std::string eventIds_;
 
 			};
 		}

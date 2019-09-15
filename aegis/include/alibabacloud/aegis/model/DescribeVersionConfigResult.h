@@ -37,9 +37,11 @@ namespace AlibabaCloud
 				DescribeVersionConfigResult();
 				explicit DescribeVersionConfigResult(const std::string &payload);
 				~DescribeVersionConfigResult();
+				bool getIsOverBalance()const;
 				int getAssetLevel()const;
 				std::string getInstanceId()const;
 				long getAppWhiteListAuthCount()const;
+				long getLastInstanceReleaseTime()const;
 				long getCreateTime()const;
 				int getLogTime()const;
 				int getSasScreen()const;
@@ -61,9 +63,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool isOverBalance_;
 				int assetLevel_;
 				std::string instanceId_;
 				long appWhiteListAuthCount_;
+				long lastInstanceReleaseTime_;
 				long createTime_;
 				int logTime_;
 				int sasScreen_;

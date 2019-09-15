@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				OperationSuspEventsRequest();
 				~OperationSuspEventsRequest();
 
+				std::string getSuspiciousEventIds()const;
+				void setSuspiciousEventIds(const std::string& suspiciousEventIds);
+				std::string getSubOperation()const;
+				void setSubOperation(const std::string& subOperation);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getWarnType()const;
 				void setWarnType(const std::string& warnType);
-				std::string getSuspiciousEventIds()const;
-				void setSuspiciousEventIds(const std::string& suspiciousEventIds);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				std::string getSubOperation()const;
-				void setSubOperation(const std::string& subOperation);
 				std::string getOperation()const;
 				void setOperation(const std::string& operation);
 
             private:
+				std::string suspiciousEventIds_;
+				std::string subOperation_;
 				std::string sourceIp_;
 				std::string warnType_;
-				std::string suspiciousEventIds_;
 				std::string from_;
-				std::string subOperation_;
 				std::string operation_;
 
 			};

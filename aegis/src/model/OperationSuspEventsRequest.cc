@@ -25,6 +25,28 @@ OperationSuspEventsRequest::OperationSuspEventsRequest() :
 OperationSuspEventsRequest::~OperationSuspEventsRequest()
 {}
 
+std::string OperationSuspEventsRequest::getSuspiciousEventIds()const
+{
+	return suspiciousEventIds_;
+}
+
+void OperationSuspEventsRequest::setSuspiciousEventIds(const std::string& suspiciousEventIds)
+{
+	suspiciousEventIds_ = suspiciousEventIds;
+	setCoreParameter("SuspiciousEventIds", suspiciousEventIds);
+}
+
+std::string OperationSuspEventsRequest::getSubOperation()const
+{
+	return subOperation_;
+}
+
+void OperationSuspEventsRequest::setSubOperation(const std::string& subOperation)
+{
+	subOperation_ = subOperation;
+	setCoreParameter("SubOperation", subOperation);
+}
+
 std::string OperationSuspEventsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,17 +69,6 @@ void OperationSuspEventsRequest::setWarnType(const std::string& warnType)
 	setCoreParameter("WarnType", warnType);
 }
 
-std::string OperationSuspEventsRequest::getSuspiciousEventIds()const
-{
-	return suspiciousEventIds_;
-}
-
-void OperationSuspEventsRequest::setSuspiciousEventIds(const std::string& suspiciousEventIds)
-{
-	suspiciousEventIds_ = suspiciousEventIds;
-	setCoreParameter("SuspiciousEventIds", suspiciousEventIds);
-}
-
 std::string OperationSuspEventsRequest::getFrom()const
 {
 	return from_;
@@ -67,17 +78,6 @@ void OperationSuspEventsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
 	setCoreParameter("From", from);
-}
-
-std::string OperationSuspEventsRequest::getSubOperation()const
-{
-	return subOperation_;
-}
-
-void OperationSuspEventsRequest::setSubOperation(const std::string& subOperation)
-{
-	subOperation_ = subOperation;
-	setCoreParameter("SubOperation", subOperation);
 }
 
 std::string OperationSuspEventsRequest::getOperation()const

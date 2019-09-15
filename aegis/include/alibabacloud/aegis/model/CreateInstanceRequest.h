@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				CreateInstanceRequest();
 				~CreateInstanceRequest();
 
-				int getDuration()const;
-				void setDuration(int duration);
 				bool getIsAutoRenew()const;
 				void setIsAutoRenew(bool isAutoRenew);
 				std::string getClientToken()const;
@@ -45,22 +43,24 @@ namespace AlibabaCloud
 				void setVmNumber(int vmNumber);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getAutoRenewDuration()const;
+				void setAutoRenewDuration(int autoRenewDuration);
+				int getDuration()const;
+				void setDuration(int duration);
 				int getVersionCode()const;
 				void setVersionCode(int versionCode);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
-				int getAutoRenewDuration()const;
-				void setAutoRenewDuration(int autoRenewDuration);
 
             private:
-				int duration_;
 				bool isAutoRenew_;
 				std::string clientToken_;
 				int vmNumber_;
 				long ownerId_;
+				int autoRenewDuration_;
+				int duration_;
 				int versionCode_;
 				std::string pricingCycle_;
-				int autoRenewDuration_;
 
 			};
 		}

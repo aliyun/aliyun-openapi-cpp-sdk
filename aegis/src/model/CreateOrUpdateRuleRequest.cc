@@ -36,39 +36,6 @@ void CreateOrUpdateRuleRequest::setWarnLevel(const std::string& warnLevel)
 	setCoreParameter("WarnLevel", warnLevel);
 }
 
-std::string CreateOrUpdateRuleRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateOrUpdateRuleRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string CreateOrUpdateRuleRequest::getStatisticsRules()const
-{
-	return statisticsRules_;
-}
-
-void CreateOrUpdateRuleRequest::setStatisticsRules(const std::string& statisticsRules)
-{
-	statisticsRules_ = statisticsRules;
-	setCoreParameter("StatisticsRules", statisticsRules);
-}
-
-long CreateOrUpdateRuleRequest::getDataSourceId()const
-{
-	return dataSourceId_;
-}
-
-void CreateOrUpdateRuleRequest::setDataSourceId(long dataSourceId)
-{
-	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
-}
-
 std::string CreateOrUpdateRuleRequest::getDescription()const
 {
 	return description_;
@@ -89,6 +56,28 @@ void CreateOrUpdateRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
 	setCoreParameter("RuleName", ruleName);
+}
+
+std::string CreateOrUpdateRuleRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateOrUpdateRuleRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string CreateOrUpdateRuleRequest::getStatisticsRules()const
+{
+	return statisticsRules_;
+}
+
+void CreateOrUpdateRuleRequest::setStatisticsRules(const std::string& statisticsRules)
+{
+	statisticsRules_ = statisticsRules;
+	setCoreParameter("StatisticsRules", statisticsRules);
 }
 
 long CreateOrUpdateRuleRequest::getId()const
@@ -113,6 +102,17 @@ void CreateOrUpdateRuleRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
+std::string CreateOrUpdateRuleRequest::getRuleGroupIds()const
+{
+	return ruleGroupIds_;
+}
+
+void CreateOrUpdateRuleRequest::setRuleGroupIds(const std::string& ruleGroupIds)
+{
+	ruleGroupIds_ = ruleGroupIds;
+	setCoreParameter("RuleGroupIds", ruleGroupIds);
+}
+
 std::string CreateOrUpdateRuleRequest::getExpressions()const
 {
 	return expressions_;
@@ -124,6 +124,17 @@ void CreateOrUpdateRuleRequest::setExpressions(const std::string& expressions)
 	setCoreParameter("Expressions", expressions);
 }
 
+long CreateOrUpdateRuleRequest::getDataSourceId()const
+{
+	return dataSourceId_;
+}
+
+void CreateOrUpdateRuleRequest::setDataSourceId(long dataSourceId)
+{
+	dataSourceId_ = dataSourceId;
+	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
+}
+
 std::string CreateOrUpdateRuleRequest::getActions()const
 {
 	return actions_;
@@ -133,16 +144,5 @@ void CreateOrUpdateRuleRequest::setActions(const std::string& actions)
 {
 	actions_ = actions;
 	setCoreParameter("Actions", actions);
-}
-
-std::string CreateOrUpdateRuleRequest::getRuleGroupIds()const
-{
-	return ruleGroupIds_;
-}
-
-void CreateOrUpdateRuleRequest::setRuleGroupIds(const std::string& ruleGroupIds)
-{
-	ruleGroupIds_ = ruleGroupIds;
-	setCoreParameter("RuleGroupIds", ruleGroupIds);
 }
 

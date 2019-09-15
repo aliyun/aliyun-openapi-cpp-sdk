@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeRisksRequest();
 				~DescribeRisksRequest();
 
+				long getRiskId()const;
+				void setRiskId(long riskId);
 				std::string getRiskName()const;
 				void setRiskName(const std::string& riskName);
 				std::string getSourceIp()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setLimit(int limit);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getRiskId()const;
-				void setRiskId(long riskId);
 
             private:
+				long riskId_;
 				std::string riskName_;
 				std::string sourceIp_;
 				int limit_;
 				std::string lang_;
-				long riskId_;
 
 			};
 		}

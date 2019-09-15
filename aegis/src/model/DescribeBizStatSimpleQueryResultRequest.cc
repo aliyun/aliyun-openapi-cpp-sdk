@@ -25,17 +25,6 @@ DescribeBizStatSimpleQueryResultRequest::DescribeBizStatSimpleQueryResultRequest
 DescribeBizStatSimpleQueryResultRequest::~DescribeBizStatSimpleQueryResultRequest()
 {}
 
-std::string DescribeBizStatSimpleQueryResultRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeBizStatSimpleQueryResultRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeBizStatSimpleQueryResultRequest::getEndTime()const
 {
 	return endTime_;
@@ -67,6 +56,17 @@ void DescribeBizStatSimpleQueryResultRequest::setCustomTimeRange(int customTimeR
 {
 	customTimeRange_ = customTimeRange;
 	setCoreParameter("CustomTimeRange", std::to_string(customTimeRange));
+}
+
+std::string DescribeBizStatSimpleQueryResultRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeBizStatSimpleQueryResultRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeBizStatSimpleQueryResultRequest::getCustomQuery()const

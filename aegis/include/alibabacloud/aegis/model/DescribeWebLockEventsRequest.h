@@ -37,39 +37,39 @@ namespace AlibabaCloud
 
 				std::string getStatusList()const;
 				void setStatusList(const std::string& statusList);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getLevel()const;
-				void setLevel(const std::string& level);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
-				std::string getDealed()const;
-				void setDealed(const std::string& dealed);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
+				std::string getEventName()const;
+				void setEventName(const std::string& eventName);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getTag()const;
 				void setTag(const std::string& tag);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getEventName()const;
-				void setEventName(const std::string& eventName);
+				std::string getLevel()const;
+				void setLevel(const std::string& level);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getDealed()const;
+				void setDealed(const std::string& dealed);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 
             private:
 				std::string statusList_;
-				std::string sourceIp_;
-				std::string level_;
-				std::string groupId_;
-				int pageSize_;
 				std::string remark_;
-				std::string dealed_;
-				int currentPage_;
+				std::string eventName_;
+				std::string sourceIp_;
+				int pageSize_;
 				std::string tag_;
 				std::string lang_;
-				std::string eventName_;
+				std::string level_;
+				std::string groupId_;
+				std::string dealed_;
+				int currentPage_;
 
 			};
 		}

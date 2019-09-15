@@ -36,28 +36,6 @@ void DescribeEventCountCurveRequest::setTypes(const std::string& types)
 	setCoreParameter("Types", types);
 }
 
-std::string DescribeEventCountCurveRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeEventCountCurveRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeEventCountCurveRequest::getVulEventLevels()const
-{
-	return vulEventLevels_;
-}
-
-void DescribeEventCountCurveRequest::setVulEventLevels(const std::string& vulEventLevels)
-{
-	vulEventLevels_ = vulEventLevels;
-	setCoreParameter("VulEventLevels", vulEventLevels);
-}
-
 int DescribeEventCountCurveRequest::getLastDays()const
 {
 	return lastDays_;
@@ -78,6 +56,28 @@ void DescribeEventCountCurveRequest::setHealthEventLevels(const std::string& hea
 {
 	healthEventLevels_ = healthEventLevels;
 	setCoreParameter("HealthEventLevels", healthEventLevels);
+}
+
+std::string DescribeEventCountCurveRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeEventCountCurveRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeEventCountCurveRequest::getVulEventLevels()const
+{
+	return vulEventLevels_;
+}
+
+void DescribeEventCountCurveRequest::setVulEventLevels(const std::string& vulEventLevels)
+{
+	vulEventLevels_ = vulEventLevels;
+	setCoreParameter("VulEventLevels", vulEventLevels);
 }
 
 std::string DescribeEventCountCurveRequest::getSuspiciousEventLevels()const

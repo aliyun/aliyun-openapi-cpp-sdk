@@ -35,13 +35,9 @@ DescribeAlarmEventListResult::~DescribeAlarmEventListResult()
 
 void DescribeAlarmEventListResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allSuspEvents = value["SuspEvents"]["SuspEventsItem"];
 	for (auto value : allSuspEvents)
@@ -91,6 +87,10 @@ void DescribeAlarmEventListResult::parse(const std::string &payload)
 			suspEventsObject.securityEventIds = value["SecurityEventIds"].asString();
 		if(!value["OperateErrorCode"].isNull())
 			suspEventsObject.operateErrorCode = value["OperateErrorCode"].asString();
+		if(!value["AlarmEventNameOriginal"].isNull())
+			suspEventsObject.alarmEventNameOriginal = value["AlarmEventNameOriginal"].asString();
+		if(!value["InstanceId"].isNull())
+			suspEventsObject.instanceId = value["InstanceId"].asString();
 		suspEvents_.push_back(suspEventsObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

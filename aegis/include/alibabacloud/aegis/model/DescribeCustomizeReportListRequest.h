@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				int getReportType()const;
 				void setReportType(int reportType);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				int getReportStatus()const;
 				void setReportStatus(int reportStatus);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
 				int reportType_;
-				std::string sourceIp_;
-				std::string lang_;
 				int reportStatus_;
 				std::string title_;
+				std::string sourceIp_;
+				std::string lang_;
 
 			};
 		}

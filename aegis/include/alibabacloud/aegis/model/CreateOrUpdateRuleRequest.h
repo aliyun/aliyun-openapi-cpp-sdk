@@ -37,39 +37,39 @@ namespace AlibabaCloud
 
 				std::string getWarnLevel()const;
 				void setWarnLevel(const std::string& warnLevel);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getStatisticsRules()const;
-				void setStatisticsRules(const std::string& statisticsRules);
-				long getDataSourceId()const;
-				void setDataSourceId(long dataSourceId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getStatisticsRules()const;
+				void setStatisticsRules(const std::string& statisticsRules);
 				long getId()const;
 				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getExpressions()const;
-				void setExpressions(const std::string& expressions);
-				std::string getActions()const;
-				void setActions(const std::string& actions);
 				std::string getRuleGroupIds()const;
 				void setRuleGroupIds(const std::string& ruleGroupIds);
+				std::string getExpressions()const;
+				void setExpressions(const std::string& expressions);
+				long getDataSourceId()const;
+				void setDataSourceId(long dataSourceId);
+				std::string getActions()const;
+				void setActions(const std::string& actions);
 
             private:
 				std::string warnLevel_;
-				std::string sourceIp_;
-				std::string statisticsRules_;
-				long dataSourceId_;
 				std::string description_;
 				std::string ruleName_;
+				std::string sourceIp_;
+				std::string statisticsRules_;
 				long id_;
 				std::string lang_;
-				std::string expressions_;
-				std::string actions_;
 				std::string ruleGroupIds_;
+				std::string expressions_;
+				long dataSourceId_;
+				std::string actions_;
 
 			};
 		}
