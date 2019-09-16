@@ -61,8 +61,6 @@ namespace AlibabaCloud
 
 				std::vector<AdditionalVolumes> getAdditionalVolumes()const;
 				void setAdditionalVolumes(const std::vector<AdditionalVolumes>& additionalVolumes);
-				std::vector<Roles> getRoles()const;
-				void setRoles(const std::vector<Roles>& roles);
 				std::string getEcsOrderManagerInstanceType()const;
 				void setEcsOrderManagerInstanceType(const std::string& ecsOrderManagerInstanceType);
 				std::string getKeyPairName()const;

@@ -52,8 +52,6 @@ namespace AlibabaCloud
 
 				std::vector<AdditionalVolumes> getAdditionalVolumes()const;
 				void setAdditionalVolumes(const std::vector<AdditionalVolumes>& additionalVolumes);
-				std::vector<Roles> getRoles()const;
-				void setRoles(const std::vector<Roles>& roles);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;

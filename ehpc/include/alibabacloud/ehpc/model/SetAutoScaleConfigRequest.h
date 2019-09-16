@@ -78,8 +78,6 @@ namespace AlibabaCloud
 				void setShrinkIntervalInMinutes(int shrinkIntervalInMinutes);
 				std::vector<Queues> getQueues()const;
 				void setQueues(const std::vector<Queues>& queues);
-				std::vector<InstanceTypes> getInstanceTypes()const;
-				void setInstanceTypes(const std::vector<InstanceTypes>& instanceTypes);
 				int getGrowIntervalInMinutes()const;
 				void setGrowIntervalInMinutes(int growIntervalInMinutes);
 				int getGrowRatio()const;
