@@ -42,6 +42,7 @@ namespace AlibabaCloud
 						std::string zoneId;
 						float spotPriceLimit;
 					};
+					InstanceTypes instanceTypes;
 					std::string instanceType;
 					bool enableAutoGrow;
 					float spotPriceLimit;
