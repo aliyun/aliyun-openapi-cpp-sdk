@@ -36,6 +36,28 @@ void DeleteImageRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteImageRequest::getImageURLs()const
+{
+	return imageURLs_;
+}
+
+void DeleteImageRequest::setImageURLs(const std::string& imageURLs)
+{
+	imageURLs_ = imageURLs;
+	setCoreParameter("ImageURLs", imageURLs);
+}
+
+std::string DeleteImageRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteImageRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteImageRequest::getImageType()const
 {
 	return imageType_;
@@ -56,17 +78,6 @@ void DeleteImageRequest::setResourceOwnerAccount(const std::string& resourceOwne
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteImageRequest::getImageURLs()const
-{
-	return imageURLs_;
-}
-
-void DeleteImageRequest::setImageURLs(const std::string& imageURLs)
-{
-	imageURLs_ = imageURLs;
-	setCoreParameter("ImageURLs", imageURLs);
 }
 
 std::string DeleteImageRequest::getVideoId()const
@@ -111,16 +122,5 @@ void DeleteImageRequest::setImageIds(const std::string& imageIds)
 {
 	imageIds_ = imageIds;
 	setCoreParameter("ImageIds", imageIds);
-}
-
-std::string DeleteImageRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteImageRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

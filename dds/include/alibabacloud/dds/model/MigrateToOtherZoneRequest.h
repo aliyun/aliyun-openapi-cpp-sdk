@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				MigrateToOtherZoneRequest();
 				~MigrateToOtherZoneRequest();
 
-				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getEffectiveTime()const;
+				void setEffectiveTime(const std::string& effectiveTime);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 
             private:
-				std::string vSwitchId_;
 				long resourceOwnerId_;
-				std::string instanceId_;
-				std::string resourceOwnerAccount_;
-				std::string effectiveTime_;
-				std::string ownerAccount_;
-				std::string zoneId_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string effectiveTime_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string vSwitchId_;
+				std::string instanceId_;
+				std::string zoneId_;
 
 			};
 		}

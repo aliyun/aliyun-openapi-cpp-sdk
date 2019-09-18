@@ -36,6 +36,39 @@ void RegisterMediaDetailPersonRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RegisterMediaDetailPersonRequest::getPersonLib()const
+{
+	return personLib_;
+}
+
+void RegisterMediaDetailPersonRequest::setPersonLib(const std::string& personLib)
+{
+	personLib_ = personLib;
+	setCoreParameter("PersonLib", personLib);
+}
+
+std::string RegisterMediaDetailPersonRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RegisterMediaDetailPersonRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RegisterMediaDetailPersonRequest::getPersonName()const
+{
+	return personName_;
+}
+
+void RegisterMediaDetailPersonRequest::setPersonName(const std::string& personName)
+{
+	personName_ = personName;
+	setCoreParameter("PersonName", personName);
+}
+
 std::string RegisterMediaDetailPersonRequest::getImages()const
 {
 	return images_;
@@ -69,17 +102,6 @@ void RegisterMediaDetailPersonRequest::setOwnerAccount(const std::string& ownerA
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string RegisterMediaDetailPersonRequest::getPersonLib()const
-{
-	return personLib_;
-}
-
-void RegisterMediaDetailPersonRequest::setPersonLib(const std::string& personLib)
-{
-	personLib_ = personLib;
-	setCoreParameter("PersonLib", personLib);
-}
-
 long RegisterMediaDetailPersonRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,27 +122,5 @@ void RegisterMediaDetailPersonRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setCoreParameter("Category", category);
-}
-
-std::string RegisterMediaDetailPersonRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RegisterMediaDetailPersonRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string RegisterMediaDetailPersonRequest::getPersonName()const
-{
-	return personName_;
-}
-
-void RegisterMediaDetailPersonRequest::setPersonName(const std::string& personName)
-{
-	personName_ = personName;
-	setCoreParameter("PersonName", personName);
 }
 

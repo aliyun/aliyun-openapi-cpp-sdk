@@ -35,43 +35,43 @@ namespace AlibabaCloud
 				UpdateOssIncrementCheckSettingRequest();
 				~UpdateOssIncrementCheckSettingRequest();
 
-				std::string getImageAutoFreeze()const;
-				void setImageAutoFreeze(const std::string& imageAutoFreeze);
 				std::string getVideoSceneList()const;
 				void setVideoSceneList(const std::string& videoSceneList);
-				std::string getAutoFreezeType()const;
-				void setAutoFreezeType(const std::string& autoFreezeType);
 				std::string getImageSceneList()const;
 				void setImageSceneList(const std::string& imageSceneList);
-				std::string getBucketConfigList()const;
-				void setBucketConfigList(const std::string& bucketConfigList);
+				int getVideoFrameInterval()const;
+				void setVideoFrameInterval(int videoFrameInterval);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getImageScanLimit()const;
 				void setImageScanLimit(const std::string& imageScanLimit);
 				std::string getVideoAutoFreezeSceneList()const;
 				void setVideoAutoFreezeSceneList(const std::string& videoAutoFreezeSceneList);
-				int getVideoFrameInterval()const;
-				void setVideoFrameInterval(int videoFrameInterval);
-				int getVideoMaxSize()const;
-				void setVideoMaxSize(int videoMaxSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getImageAutoFreeze()const;
+				void setImageAutoFreeze(const std::string& imageAutoFreeze);
+				int getVideoMaxSize()const;
+				void setVideoMaxSize(int videoMaxSize);
+				std::string getAutoFreezeType()const;
+				void setAutoFreezeType(const std::string& autoFreezeType);
+				std::string getBucketConfigList()const;
+				void setBucketConfigList(const std::string& bucketConfigList);
 				int getVideoMaxFrames()const;
 				void setVideoMaxFrames(int videoMaxFrames);
 
             private:
-				std::string imageAutoFreeze_;
 				std::string videoSceneList_;
-				std::string autoFreezeType_;
 				std::string imageSceneList_;
-				std::string bucketConfigList_;
+				int videoFrameInterval_;
 				std::string sourceIp_;
 				std::string imageScanLimit_;
 				std::string videoAutoFreezeSceneList_;
-				int videoFrameInterval_;
-				int videoMaxSize_;
 				std::string lang_;
+				std::string imageAutoFreeze_;
+				int videoMaxSize_;
+				std::string autoFreezeType_;
+				std::string bucketConfigList_;
 				int videoMaxFrames_;
 
 			};

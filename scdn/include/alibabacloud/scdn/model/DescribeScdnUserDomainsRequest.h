@@ -35,41 +35,47 @@ namespace AlibabaCloud
 				DescribeScdnUserDomainsRequest();
 				~DescribeScdnUserDomainsRequest();
 
-				std::string getFuncFilter()const;
-				void setFuncFilter(const std::string& funcFilter);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				bool getCheckDomainShow()const;
 				void setCheckDomainShow(bool checkDomainShow);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getChangeEndTime()const;
+				void setChangeEndTime(const std::string& changeEndTime);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getFuncFilter()const;
+				void setFuncFilter(const std::string& funcFilter);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getFuncId()const;
 				void setFuncId(const std::string& funcId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getDomainStatus()const;
 				void setDomainStatus(const std::string& domainStatus);
 				std::string getDomainSearchType()const;
 				void setDomainSearchType(const std::string& domainSearchType);
+				std::string getChangeStartTime()const;
+				void setChangeStartTime(const std::string& changeStartTime);
 
             private:
-				std::string funcFilter_;
+				int pageNumber_;
 				bool checkDomainShow_;
 				std::string resourceGroupId_;
 				std::string securityToken_;
+				std::string changeEndTime_;
 				int pageSize_;
+				std::string funcFilter_;
 				std::string domainName_;
 				long ownerId_;
 				std::string funcId_;
-				int pageNumber_;
 				std::string domainStatus_;
 				std::string domainSearchType_;
+				std::string changeStartTime_;
 
 			};
 		}

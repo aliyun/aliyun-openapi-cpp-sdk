@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				ReportCoverJobResultRequest();
 				~ReportCoverJobResultRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResult()const;
 				void setResult(const std::string& result);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string result_;
 				std::string jobId_;
-				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				std::string getEncode()const;
 				void setEncode(const std::string& encode);
+				std::string getDrdsInstanceId()const;
+				void setDrdsInstanceId(const std::string& drdsInstanceId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				std::string getDbName()const;
 				void setDbName(const std::string& dbName);
 				std::string getRdsInstances()const;
 				void setRdsInstances(const std::string& rdsInstances);
-				std::string getDrdsInstanceId()const;
-				void setDrdsInstanceId(const std::string& drdsInstanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string encode_;
+				std::string drdsInstanceId_;
+				std::string accessKeyId_;
 				std::string password_;
 				std::string dbName_;
 				std::string rdsInstances_;
-				std::string drdsInstanceId_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -25,28 +25,6 @@ QueryDialogsRequest::QueryDialogsRequest() :
 QueryDialogsRequest::~QueryDialogsRequest()
 {}
 
-std::string QueryDialogsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void QueryDialogsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-int QueryDialogsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryDialogsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryDialogsRequest::getDialogName()const
 {
 	return dialogName_;
@@ -67,5 +45,27 @@ void QueryDialogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string QueryDialogsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void QueryDialogsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int QueryDialogsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryDialogsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

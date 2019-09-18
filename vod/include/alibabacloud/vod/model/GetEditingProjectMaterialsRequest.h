@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getMaterialType()const;
 				void setMaterialType(const std::string& materialType);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getType()const;
-				void setType(const std::string& type);
-				std::string getProjectId()const;
-				void setProjectId(const std::string& projectId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string resourceOwnerId_;
+				std::string type_;
+				std::string accessKeyId_;
 				std::string materialType_;
+				std::string projectId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string ownerId_;
-				std::string type_;
-				std::string projectId_;
-				std::string accessKeyId_;
 
 			};
 		}

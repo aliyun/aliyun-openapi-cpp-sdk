@@ -35,13 +35,9 @@ DescribeQosPoliciesResult::~DescribeQosPoliciesResult()
 
 void DescribeQosPoliciesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allQosPolicies = value["QosPolicies"]["QosPolicy"];
 	for (auto value : allQosPolicies)
@@ -68,7 +64,7 @@ void DescribeQosPoliciesResult::parse(const std::string &payload)
 		if(!value["StartTime"].isNull())
 			qosPoliciesObject.startTime = value["StartTime"].asString();
 		if(!value["EndTime"].isNull())
-			qosPoliciesObject.endTime = std::stol(value["EndTime"].asString());
+			qosPoliciesObject.endTime = value["EndTime"].asString();
 		qosPolicies_.push_back(qosPoliciesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				AddApgroupConfigRequest();
 				~AddApgroupConfigRequest();
 
-				long getParentApgroupId()const;
-				void setParentApgroupId(long parentApgroupId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getParentApgroupId()const;
+				void setParentApgroupId(long parentApgroupId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				long parentApgroupId_;
-				std::string name_;
 				std::string description_;
 				std::string accessKeyId_;
+				long parentApgroupId_;
+				std::string name_;
 
 			};
 		}

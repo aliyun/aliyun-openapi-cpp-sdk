@@ -19,187 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetIpBlackListConfigRequest;
 
 SetIpBlackListConfigRequest::SetIpBlackListConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetIpBlackListConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetIpBlackListConfig")
 {}
 
 SetIpBlackListConfigRequest::~SetIpBlackListConfigRequest()
 {}
-
-long SetIpBlackListConfigRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SetIpBlackListConfigRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-long SetIpBlackListConfigRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void SetIpBlackListConfigRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool SetIpBlackListConfigRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void SetIpBlackListConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string SetIpBlackListConfigRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void SetIpBlackListConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string SetIpBlackListConfigRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void SetIpBlackListConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string SetIpBlackListConfigRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void SetIpBlackListConfigRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string SetIpBlackListConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetIpBlackListConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string SetIpBlackListConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetIpBlackListConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string SetIpBlackListConfigRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void SetIpBlackListConfigRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string SetIpBlackListConfigRequest::getFunctionName()const
-{
-	return functionName_;
-}
-
-void SetIpBlackListConfigRequest::setFunctionName(const std::string& functionName)
-{
-	functionName_ = functionName;
-	setCoreParameter("FunctionName", functionName);
-}
-
-std::string SetIpBlackListConfigRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void SetIpBlackListConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string SetIpBlackListConfigRequest::getBlockIps()const
-{
-	return blockIps_;
-}
-
-void SetIpBlackListConfigRequest::setBlockIps(const std::string& blockIps)
-{
-	blockIps_ = blockIps;
-	setCoreParameter("BlockIps", blockIps);
-}
-
-std::string SetIpBlackListConfigRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void SetIpBlackListConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long SetIpBlackListConfigRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void SetIpBlackListConfigRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string SetIpBlackListConfigRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void SetIpBlackListConfigRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string SetIpBlackListConfigRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void SetIpBlackListConfigRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
 
 std::string SetIpBlackListConfigRequest::getDomainName()const
 {
@@ -210,17 +34,6 @@ void SetIpBlackListConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-std::string SetIpBlackListConfigRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void SetIpBlackListConfigRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
 }
 
 long SetIpBlackListConfigRequest::getOwnerId()const
@@ -234,69 +47,25 @@ void SetIpBlackListConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetIpBlackListConfigRequest::getVersion()const
+std::string SetIpBlackListConfigRequest::getSecurityToken()const
 {
-	return version_;
+	return securityToken_;
 }
 
-void SetIpBlackListConfigRequest::setVersion(const std::string& version)
+void SetIpBlackListConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	version_ = version;
-	setCoreParameter("Version", version);
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
-bool SetIpBlackListConfigRequest::getProxy_trust_transport_info()const
+std::string SetIpBlackListConfigRequest::getBlockIps()const
 {
-	return proxy_trust_transport_info_;
+	return blockIps_;
 }
 
-void SetIpBlackListConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+void SetIpBlackListConfigRequest::setBlockIps(const std::string& blockIps)
 {
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool SetIpBlackListConfigRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void SetIpBlackListConfigRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool SetIpBlackListConfigRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void SetIpBlackListConfigRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string SetIpBlackListConfigRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void SetIpBlackListConfigRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
-long SetIpBlackListConfigRequest::getConfigId()const
-{
-	return configId_;
-}
-
-void SetIpBlackListConfigRequest::setConfigId(long configId)
-{
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	blockIps_ = blockIps;
+	setCoreParameter("BlockIps", blockIps);
 }
 

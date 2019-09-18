@@ -32,18 +32,18 @@ namespace AlibabaCloud
 			{
 				struct AudioLayer
 				{
-					int fixedDelayDuration;
 					float volumeRate;
 					std::string validChannel;
+					int fixedDelayDuration;
 				};
 				struct VideoLayer
 				{
 					std::string fillMode;
-					float widthNormalized;
-					int fixedDelayDuration;
-					std::string positionRefer;
-					std::vector<float> positionNormalized;
 					float heightNormalized;
+					float widthNormalized;
+					std::string positionRefer;
+					PositionNormalized positionNormalized;
+					int fixedDelayDuration;
 				};
 
 			public:
@@ -52,30 +52,27 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getBlendList()const;
 				void setBlendList(const std::vector<std::string>& blendList);
-				std::vector<AudioLayer> getAudioLayer()const;
-				void setAudioLayer(const std::vector<AudioLayer>& audioLayer);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::vector<VideoLayer> getVideoLayer()const;
-				void setVideoLayer(const std::vector<VideoLayer>& videoLayer);
-				std::string getCasterId()const;
-				void setCasterId(const std::string& casterId);
-				std::vector<std::string> getMixList()const;
-				void setMixList(const std::vector<std::string>& mixList);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getLayoutId()const;
 				void setLayoutId(const std::string& layoutId);
+				std::string getCasterId()const;
+				void setCasterId(const std::string& casterId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<AudioLayer> getAudioLayer()const;
+				void setAudioLayer(const std::vector<AudioLayer>& audioLayer);
+				std::vector<VideoLayer> getVideoLayer()const;
+				void setVideoLayer(const std::vector<VideoLayer>& videoLayer);
+				std::vector<std::string> getMixList()const;
+				void setMixList(const std::vector<std::string>& mixList);
 
             private:
 				std::vector<std::string> blendList_;
-				std::vector<AudioLayer> audioLayer_;
-				std::string regionId_;
-				std::vector<VideoLayer> videoLayer_;
-				std::string casterId_;
-				std::vector<std::string> mixList_;
-				long ownerId_;
 				std::string layoutId_;
+				std::string casterId_;
+				long ownerId_;
+				std::vector<AudioLayer> audioLayer_;
+				std::vector<VideoLayer> videoLayer_;
+				std::vector<std::string> mixList_;
 
 			};
 		}

@@ -25,17 +25,6 @@ SaveSingleTaskForCreatingDnsHostRequest::SaveSingleTaskForCreatingDnsHostRequest
 SaveSingleTaskForCreatingDnsHostRequest::~SaveSingleTaskForCreatingDnsHostRequest()
 {}
 
-std::string SaveSingleTaskForCreatingDnsHostRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void SaveSingleTaskForCreatingDnsHostRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::vector<std::string> SaveSingleTaskForCreatingDnsHostRequest::getIp()const
 {
 	return ip_;
@@ -46,6 +35,17 @@ void SaveSingleTaskForCreatingDnsHostRequest::setIp(const std::vector<std::strin
 	ip_ = ip;
 	for(int i = 0; i!= ip.size(); i++)
 		setCoreParameter("Ip."+ std::to_string(i), ip.at(i));
+}
+
+std::string SaveSingleTaskForCreatingDnsHostRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void SaveSingleTaskForCreatingDnsHostRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getDnsName()const

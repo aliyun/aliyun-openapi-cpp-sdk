@@ -25,6 +25,39 @@ ChatRequest::ChatRequest() :
 ChatRequest::~ChatRequest()
 {}
 
+bool ChatRequest::getRecommend()const
+{
+	return recommend_;
+}
+
+void ChatRequest::setRecommend(bool recommend)
+{
+	recommend_ = recommend;
+	setCoreParameter("Recommend", recommend ? "true" : "false");
+}
+
+std::string ChatRequest::getSessionId()const
+{
+	return sessionId_;
+}
+
+void ChatRequest::setSessionId(const std::string& sessionId)
+{
+	sessionId_ = sessionId;
+	setCoreParameter("SessionId", sessionId);
+}
+
+std::string ChatRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ChatRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ChatRequest::getKnowledgeId()const
 {
 	return knowledgeId_;
@@ -81,28 +114,6 @@ void ChatRequest::setPerspective(const std::vector<std::string>& perspective)
 		setCoreParameter("Perspective."+ std::to_string(i), perspective.at(i));
 }
 
-bool ChatRequest::getRecommend()const
-{
-	return recommend_;
-}
-
-void ChatRequest::setRecommend(bool recommend)
-{
-	recommend_ = recommend;
-	setCoreParameter("Recommend", recommend ? "true" : "false");
-}
-
-std::string ChatRequest::getSessionId()const
-{
-	return sessionId_;
-}
-
-void ChatRequest::setSessionId(const std::string& sessionId)
-{
-	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
-}
-
 std::string ChatRequest::getTag()const
 {
 	return tag_;
@@ -123,16 +134,5 @@ void ChatRequest::setUtterance(const std::string& utterance)
 {
 	utterance_ = utterance;
 	setCoreParameter("Utterance", utterance);
-}
-
-std::string ChatRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ChatRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

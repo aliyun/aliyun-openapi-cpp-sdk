@@ -25,6 +25,17 @@ InvokeDataAPIServiceRequest::InvokeDataAPIServiceRequest() :
 InvokeDataAPIServiceRequest::~InvokeDataAPIServiceRequest()
 {}
 
+std::string InvokeDataAPIServiceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void InvokeDataAPIServiceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string InvokeDataAPIServiceRequest::getApiSrn()const
 {
 	return apiSrn_;
@@ -53,16 +64,5 @@ void InvokeDataAPIServiceRequest::setParam(const std::vector<Param>& param)
 		setCoreParameter(str + ".ParamValue", obj.paramValue);
 		setCoreParameter(str + ".ParamName", obj.paramName);
 	}
-}
-
-std::string InvokeDataAPIServiceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void InvokeDataAPIServiceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

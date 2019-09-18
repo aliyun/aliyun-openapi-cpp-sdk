@@ -25,17 +25,6 @@ ModifyRiskCheckStatusRequest::ModifyRiskCheckStatusRequest() :
 ModifyRiskCheckStatusRequest::~ModifyRiskCheckStatusRequest()
 {}
 
-long ModifyRiskCheckStatusRequest::getItemId()const
-{
-	return itemId_;
-}
-
-void ModifyRiskCheckStatusRequest::setItemId(long itemId)
-{
-	itemId_ = itemId;
-	setCoreParameter("ItemId", std::to_string(itemId));
-}
-
 long ModifyRiskCheckStatusRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,17 @@ void ModifyRiskCheckStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+long ModifyRiskCheckStatusRequest::getItemId()const
+{
+	return itemId_;
+}
+
+void ModifyRiskCheckStatusRequest::setItemId(long itemId)
+{
+	itemId_ = itemId;
+	setCoreParameter("ItemId", std::to_string(itemId));
 }
 
 std::string ModifyRiskCheckStatusRequest::getSourceIp()const

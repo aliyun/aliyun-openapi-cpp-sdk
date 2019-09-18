@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest();
 				~SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getRegistrantProfileId()const;
 				void setRegistrantProfileId(long registrantProfileId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string instanceId_;
-				std::string userClientIp_;
 				std::string domainName_;
 				long registrantProfileId_;
+				std::string instanceId_;
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

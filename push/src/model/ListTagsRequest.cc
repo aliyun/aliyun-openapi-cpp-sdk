@@ -25,17 +25,6 @@ ListTagsRequest::ListTagsRequest() :
 ListTagsRequest::~ListTagsRequest()
 {}
 
-long ListTagsRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void ListTagsRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string ListTagsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void ListTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ListTagsRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void ListTagsRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 

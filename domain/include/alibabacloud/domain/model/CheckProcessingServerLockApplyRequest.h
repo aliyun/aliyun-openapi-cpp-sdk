@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				CheckProcessingServerLockApplyRequest();
 				~CheckProcessingServerLockApplyRequest();
 
-				int getFeePeriod()const;
-				void setFeePeriod(int feePeriod);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				int getFeePeriod()const;
+				void setFeePeriod(int feePeriod);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				int feePeriod_;
 				std::string domainName_;
+				int feePeriod_;
 				std::string userClientIp_;
 				std::string lang_;
 

@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				std::string getRr()const;
 				void setRr(const std::string& rr);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getStartDate()const;
+				void setStartDate(const std::string& startDate);
 				std::string getEndDate()const;
 				void setEndDate(const std::string& endDate);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
 
             private:
 				std::string rr_;
+				std::string domainName_;
+				std::string startDate_;
 				std::string endDate_;
 				std::string userClientIp_;
-				std::string domainName_;
 				std::string lang_;
-				std::string startDate_;
 
 			};
 		}

@@ -36,6 +36,17 @@ void DeleteExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteExecutionPlanRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteExecutionPlanRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void DeleteExecutionPlanRequest::setId(const std::string& id)
 {
 	id_ = id;
 	setCoreParameter("Id", id);
-}
-
-std::string DeleteExecutionPlanRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

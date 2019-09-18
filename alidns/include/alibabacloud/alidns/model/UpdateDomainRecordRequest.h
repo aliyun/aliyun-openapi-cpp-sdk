@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				UpdateDomainRecordRequest();
 				~UpdateDomainRecordRequest();
 
-				std::string getRecordId()const;
-				void setRecordId(const std::string& recordId);
 				std::string getRR()const;
 				void setRR(const std::string& rR);
 				std::string getLine()const;
 				void setLine(const std::string& line);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getType()const;
 				void setType(const std::string& type);
-				long getPriority()const;
-				void setPriority(long priority);
-				std::string getValue()const;
-				void setValue(const std::string& value);
-				long getTTL()const;
-				void setTTL(long tTL);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::string getValue()const;
+				void setValue(const std::string& value);
+				long getPriority()const;
+				void setPriority(long priority);
+				long getTTL()const;
+				void setTTL(long tTL);
+				std::string getRecordId()const;
+				void setRecordId(const std::string& recordId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 
             private:
-				std::string recordId_;
 				std::string rR_;
 				std::string line_;
-				std::string userClientIp_;
-				std::string lang_;
 				std::string type_;
-				long priority_;
-				std::string value_;
-				long tTL_;
 				std::string accessKeyId_;
+				std::string lang_;
+				std::string value_;
+				long priority_;
+				long tTL_;
+				std::string recordId_;
+				std::string userClientIp_;
 
 			};
 		}

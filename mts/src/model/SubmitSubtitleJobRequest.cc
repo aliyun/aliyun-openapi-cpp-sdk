@@ -25,17 +25,6 @@ SubmitSubtitleJobRequest::SubmitSubtitleJobRequest() :
 SubmitSubtitleJobRequest::~SubmitSubtitleJobRequest()
 {}
 
-std::string SubmitSubtitleJobRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitSubtitleJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
 long SubmitSubtitleJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -69,6 +58,28 @@ void SubmitSubtitleJobRequest::setInputConfig(const std::string& inputConfig)
 	setCoreParameter("InputConfig", inputConfig);
 }
 
+std::string SubmitSubtitleJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitSubtitleJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitSubtitleJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitSubtitleJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
+}
+
 std::string SubmitSubtitleJobRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -100,17 +111,6 @@ void SubmitSubtitleJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SubmitSubtitleJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitSubtitleJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitSubtitleJobRequest::getPipelineId()const

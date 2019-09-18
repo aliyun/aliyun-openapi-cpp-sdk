@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				DeleteDataLimitRequest();
 				~DeleteDataLimitRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				long getId()const;
 				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				int featureType_;
+				std::string sourceIp_;
 				long id_;
 				std::string lang_;
 

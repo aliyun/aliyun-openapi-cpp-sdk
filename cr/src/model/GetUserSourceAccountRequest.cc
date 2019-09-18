@@ -25,17 +25,6 @@ GetUserSourceAccountRequest::GetUserSourceAccountRequest() :
 GetUserSourceAccountRequest::~GetUserSourceAccountRequest()
 {}
 
-std::string GetUserSourceAccountRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetUserSourceAccountRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetUserSourceAccountRequest::getSourceOriginType()const
 {
 	return sourceOriginType_;

@@ -37,32 +37,32 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getCenId()const;
 				void setCenId(const std::string& cenId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getCenRegionId()const;
-				void setCenRegionId(const std::string& cenRegionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getCenRegionId()const;
+				void setCenRegionId(const std::string& cenRegionId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string cenId_;
-				std::string ownerAccount_;
-				std::string cenRegionId_;
-				int pageSize_;
-				long ownerId_;
 				int pageNumber_;
+				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string cenRegionId_;
 				std::string status_;
 
 			};

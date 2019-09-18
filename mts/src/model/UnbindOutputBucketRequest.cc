@@ -25,17 +25,6 @@ UnbindOutputBucketRequest::UnbindOutputBucketRequest() :
 UnbindOutputBucketRequest::~UnbindOutputBucketRequest()
 {}
 
-std::string UnbindOutputBucketRequest::getBucket()const
-{
-	return bucket_;
-}
-
-void UnbindOutputBucketRequest::setBucket(const std::string& bucket)
-{
-	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
-}
-
 long UnbindOutputBucketRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -89,5 +78,16 @@ void UnbindOutputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UnbindOutputBucketRequest::getBucket()const
+{
+	return bucket_;
+}
+
+void UnbindOutputBucketRequest::setBucket(const std::string& bucket)
+{
+	bucket_ = bucket;
+	setCoreParameter("Bucket", bucket);
 }
 

@@ -47,17 +47,6 @@ void QueryPornPipelineListRequest::setResourceOwnerAccount(const std::string& re
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryPornPipelineListRequest::getPipelineIds()const
-{
-	return pipelineIds_;
-}
-
-void QueryPornPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
-{
-	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
-}
-
 std::string QueryPornPipelineListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryPornPipelineListRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryPornPipelineListRequest::getPipelineIds()const
+{
+	return pipelineIds_;
+}
+
+void QueryPornPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
+{
+	pipelineIds_ = pipelineIds;
+	setCoreParameter("PipelineIds", pipelineIds);
 }
 

@@ -35,17 +35,14 @@ namespace AlibabaCloud
 				OnsMqttGroupIdDeleteRequest();
 				~OnsMqttGroupIdDeleteRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
-				std::string regionId_;
 				std::string groupId_;
+				std::string instanceId_;
 
 			};
 		}

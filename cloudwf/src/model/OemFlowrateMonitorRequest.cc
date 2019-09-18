@@ -25,17 +25,6 @@ OemFlowrateMonitorRequest::OemFlowrateMonitorRequest() :
 OemFlowrateMonitorRequest::~OemFlowrateMonitorRequest()
 {}
 
-long OemFlowrateMonitorRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void OemFlowrateMonitorRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string OemFlowrateMonitorRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void OemFlowrateMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long OemFlowrateMonitorRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void OemFlowrateMonitorRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

@@ -40,20 +40,20 @@ namespace AlibabaCloud
 				CreateLoRaNodesTaskRequest();
 				~CreateLoRaNodesTaskRequest();
 
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
-				std::vector<DeviceInfo> getDeviceInfo()const;
-				void setDeviceInfo(const std::vector<DeviceInfo>& deviceInfo);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::vector<DeviceInfo> getDeviceInfo()const;
+				void setDeviceInfo(const std::vector<DeviceInfo>& deviceInfo);
 
             private:
-				std::string iotInstanceId_;
 				std::string productKey_;
-				std::vector<DeviceInfo> deviceInfo_;
 				std::string accessKeyId_;
+				std::string iotInstanceId_;
+				std::vector<DeviceInfo> deviceInfo_;
 
 			};
 		}

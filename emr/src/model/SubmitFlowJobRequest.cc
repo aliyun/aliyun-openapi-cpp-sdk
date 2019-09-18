@@ -25,6 +25,28 @@ SubmitFlowJobRequest::SubmitFlowJobRequest() :
 SubmitFlowJobRequest::~SubmitFlowJobRequest()
 {}
 
+std::string SubmitFlowJobRequest::getConf()const
+{
+	return conf_;
+}
+
+void SubmitFlowJobRequest::setConf(const std::string& conf)
+{
+	conf_ = conf;
+	setCoreParameter("Conf", conf);
+}
+
+std::string SubmitFlowJobRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void SubmitFlowJobRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
 std::string SubmitFlowJobRequest::getJobId()const
 {
 	return jobId_;
@@ -56,28 +78,6 @@ void SubmitFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string SubmitFlowJobRequest::getConf()const
-{
-	return conf_;
-}
-
-void SubmitFlowJobRequest::setConf(const std::string& conf)
-{
-	conf_ = conf;
-	setCoreParameter("Conf", conf);
-}
-
-std::string SubmitFlowJobRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void SubmitFlowJobRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string SubmitFlowJobRequest::getProjectId()const

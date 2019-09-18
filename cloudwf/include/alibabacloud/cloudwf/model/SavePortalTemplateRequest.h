@@ -39,25 +39,25 @@ namespace AlibabaCloud
 				void setTextContent(const std::string& textContent);
 				std::string getTempName()const;
 				void setTempName(const std::string& tempName);
-				std::string getTextAlign()const;
-				void setTextAlign(const std::string& textAlign);
 				std::string getTextColor()const;
 				void setTextColor(const std::string& textColor);
-				long getId()const;
-				void setId(long id);
 				long getOssFileId()const;
 				void setOssFileId(long ossFileId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTextAlign()const;
+				void setTextAlign(const std::string& textAlign);
+				long getId()const;
+				void setId(long id);
 
             private:
 				std::string textContent_;
 				std::string tempName_;
-				std::string textAlign_;
 				std::string textColor_;
-				long id_;
 				long ossFileId_;
 				std::string accessKeyId_;
+				std::string textAlign_;
+				long id_;
 
 			};
 		}

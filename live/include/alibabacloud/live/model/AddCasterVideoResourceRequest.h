@@ -35,22 +35,20 @@ namespace AlibabaCloud
 				AddCasterVideoResourceRequest();
 				~AddCasterVideoResourceRequest();
 
+				int getEndOffset()const;
+				void setEndOffset(int endOffset);
+				std::string getMaterialId()const;
+				void setMaterialId(const std::string& materialId);
 				std::string getVodUrl()const;
 				void setVodUrl(const std::string& vodUrl);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
-				int getEndOffset()const;
-				void setEndOffset(int endOffset);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getMaterialId()const;
-				void setMaterialId(const std::string& materialId);
 				int getBeginOffset()const;
 				void setBeginOffset(int beginOffset);
 				std::string getLiveStreamUrl()const;
 				void setLiveStreamUrl(const std::string& liveStreamUrl);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getLocationId()const;
 				void setLocationId(const std::string& locationId);
 				int getPtsCallbackInterval()const;
@@ -61,14 +59,13 @@ namespace AlibabaCloud
 				void setRepeatNum(int repeatNum);
 
             private:
+				int endOffset_;
+				std::string materialId_;
 				std::string vodUrl_;
 				std::string casterId_;
-				int endOffset_;
 				long ownerId_;
-				std::string materialId_;
 				int beginOffset_;
 				std::string liveStreamUrl_;
-				std::string regionId_;
 				std::string locationId_;
 				int ptsCallbackInterval_;
 				std::string resourceName_;

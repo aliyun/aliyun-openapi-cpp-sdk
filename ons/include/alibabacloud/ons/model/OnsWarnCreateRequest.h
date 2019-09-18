@@ -35,34 +35,34 @@ namespace AlibabaCloud
 				OnsWarnCreateRequest();
 				~OnsWarnCreateRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getBlockTime()const;
-				void setBlockTime(const std::string& blockTime);
 				std::string getLevel()const;
 				void setLevel(const std::string& level);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getDelayTime()const;
 				void setDelayTime(const std::string& delayTime);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
 				std::string getThreshold()const;
 				void setThreshold(const std::string& threshold);
 				std::string getAlertTime()const;
 				void setAlertTime(const std::string& alertTime);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getBlockTime()const;
+				void setBlockTime(const std::string& blockTime);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
 				std::string getContacts()const;
 				void setContacts(const std::string& contacts);
 
             private:
-				std::string instanceId_;
-				std::string blockTime_;
 				std::string level_;
 				std::string groupId_;
 				std::string delayTime_;
-				std::string topic_;
 				std::string threshold_;
 				std::string alertTime_;
+				std::string instanceId_;
+				std::string blockTime_;
+				std::string topic_;
 				std::string contacts_;
 
 			};

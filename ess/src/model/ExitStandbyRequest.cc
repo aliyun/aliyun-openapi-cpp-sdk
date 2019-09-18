@@ -25,18 +25,6 @@ ExitStandbyRequest::ExitStandbyRequest() :
 ExitStandbyRequest::~ExitStandbyRequest()
 {}
 
-std::vector<std::string> ExitStandbyRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ExitStandbyRequest::setInstanceId(const std::vector<std::string>& instanceId)
-{
-	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
-}
-
 std::string ExitStandbyRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -79,5 +67,17 @@ void ExitStandbyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::vector<std::string> ExitStandbyRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ExitStandbyRequest::setInstanceId(const std::vector<std::string>& instanceId)
+{
+	instanceId_ = instanceId;
+	for(int i = 0; i!= instanceId.size(); i++)
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 

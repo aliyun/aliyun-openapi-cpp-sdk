@@ -36,6 +36,61 @@ void SingleCallByTtsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string SingleCallByTtsRequest::getTtsParam()const
+{
+	return ttsParam_;
+}
+
+void SingleCallByTtsRequest::setTtsParam(const std::string& ttsParam)
+{
+	ttsParam_ = ttsParam;
+	setCoreParameter("TtsParam", ttsParam);
+}
+
+int SingleCallByTtsRequest::getSpeed()const
+{
+	return speed_;
+}
+
+void SingleCallByTtsRequest::setSpeed(int speed)
+{
+	speed_ = speed;
+	setCoreParameter("Speed", std::to_string(speed));
+}
+
+std::string SingleCallByTtsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SingleCallByTtsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SingleCallByTtsRequest::getCalledNumber()const
+{
+	return calledNumber_;
+}
+
+void SingleCallByTtsRequest::setCalledNumber(const std::string& calledNumber)
+{
+	calledNumber_ = calledNumber;
+	setCoreParameter("CalledNumber", calledNumber);
+}
+
+std::string SingleCallByTtsRequest::getCalledShowNumber()const
+{
+	return calledShowNumber_;
+}
+
+void SingleCallByTtsRequest::setCalledShowNumber(const std::string& calledShowNumber)
+{
+	calledShowNumber_ = calledShowNumber;
+	setCoreParameter("CalledShowNumber", calledShowNumber);
+}
+
 std::string SingleCallByTtsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,17 +124,6 @@ void SingleCallByTtsRequest::setPlayTimes(int playTimes)
 	setCoreParameter("PlayTimes", std::to_string(playTimes));
 }
 
-std::string SingleCallByTtsRequest::getTtsParam()const
-{
-	return ttsParam_;
-}
-
-void SingleCallByTtsRequest::setTtsParam(const std::string& ttsParam)
-{
-	ttsParam_ = ttsParam;
-	setCoreParameter("TtsParam", ttsParam);
-}
-
 long SingleCallByTtsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -91,28 +135,6 @@ void SingleCallByTtsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int SingleCallByTtsRequest::getSpeed()const
-{
-	return speed_;
-}
-
-void SingleCallByTtsRequest::setSpeed(int speed)
-{
-	speed_ = speed;
-	setCoreParameter("Speed", std::to_string(speed));
-}
-
-std::string SingleCallByTtsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SingleCallByTtsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 int SingleCallByTtsRequest::getVolume()const
 {
 	return volume_;
@@ -122,28 +144,6 @@ void SingleCallByTtsRequest::setVolume(int volume)
 {
 	volume_ = volume;
 	setCoreParameter("Volume", std::to_string(volume));
-}
-
-std::string SingleCallByTtsRequest::getCalledNumber()const
-{
-	return calledNumber_;
-}
-
-void SingleCallByTtsRequest::setCalledNumber(const std::string& calledNumber)
-{
-	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
-}
-
-std::string SingleCallByTtsRequest::getCalledShowNumber()const
-{
-	return calledShowNumber_;
-}
-
-void SingleCallByTtsRequest::setCalledShowNumber(const std::string& calledShowNumber)
-{
-	calledShowNumber_ = calledShowNumber;
-	setCoreParameter("CalledShowNumber", calledShowNumber);
 }
 
 std::string SingleCallByTtsRequest::getOutId()const

@@ -35,27 +35,24 @@ namespace AlibabaCloud
 				DescribeUpBpsPeakOfLineRequest();
 				~DescribeUpBpsPeakOfLineRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getLine()const;
 				void setLine(const std::string& line);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getDomainSwitch()const;
 				void setDomainSwitch(const std::string& domainSwitch);
 
             private:
-				std::string regionId_;
 				std::string line_;
+				std::string startTime_;
 				std::string domainName_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
 				std::string domainSwitch_;
 

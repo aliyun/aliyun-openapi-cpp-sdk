@@ -36,61 +36,6 @@ void BindVbrRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string BindVbrRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void BindVbrRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string BindVbrRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void BindVbrRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string BindVbrRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void BindVbrRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string BindVbrRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void BindVbrRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
-long BindVbrRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void BindVbrRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string BindVbrRequest::getVbrId()const
 {
 	return vbrId_;
@@ -111,5 +56,60 @@ void BindVbrRequest::setVbrRegionId(const std::string& vbrRegionId)
 {
 	vbrRegionId_ = vbrRegionId;
 	setCoreParameter("VbrRegionId", vbrRegionId);
+}
+
+std::string BindVbrRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void BindVbrRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string BindVbrRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void BindVbrRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string BindVbrRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void BindVbrRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long BindVbrRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void BindVbrRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string BindVbrRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void BindVbrRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

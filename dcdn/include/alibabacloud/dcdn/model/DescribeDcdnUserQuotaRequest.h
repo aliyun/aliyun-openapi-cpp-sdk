@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeDcdnUserQuotaRequest();
 				~DescribeDcdnUserQuotaRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				long ownerId_;
+				std::string securityToken_;
 
 			};
 		}

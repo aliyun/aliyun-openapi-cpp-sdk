@@ -35,32 +35,29 @@ namespace AlibabaCloud
 				ListFaceGroupsRequest();
 				~ListFaceGroupsRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getMarker()const;
-				void setMarker(const std::string& marker);
-				int getLimit()const;
-				void setLimit(int limit);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getSetId()const;
-				void setSetId(const std::string& setId);
-				std::string getOrderBy()const;
-				void setOrderBy(const std::string& orderBy);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getLimit()const;
+				void setLimit(int limit);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
+				std::string getMarker()const;
+				void setMarker(const std::string& marker);
+				std::string getSetId()const;
+				void setSetId(const std::string& setId);
 
             private:
-				std::string regionId_;
-				std::string marker_;
-				int limit_;
 				std::string project_;
-				std::string setId_;
-				std::string orderBy_;
 				std::string accessKeyId_;
+				int limit_;
 				std::string order_;
+				std::string orderBy_;
+				std::string marker_;
+				std::string setId_;
 
 			};
 		}

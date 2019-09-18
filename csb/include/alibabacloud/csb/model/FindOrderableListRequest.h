@@ -39,22 +39,19 @@ namespace AlibabaCloud
 				void setProjectName(const std::string& projectName);
 				long getCsbId()const;
 				void setCsbId(long csbId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				std::string getAlias()const;
 				void setAlias(const std::string& alias);
 				std::string getServiceName()const;
 				void setServiceName(const std::string& serviceName);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 
             private:
 				std::string projectName_;
 				long csbId_;
-				std::string regionId_;
+				int pageNum_;
 				std::string alias_;
 				std::string serviceName_;
-				int pageNum_;
 
 			};
 		}

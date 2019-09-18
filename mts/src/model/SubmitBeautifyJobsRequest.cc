@@ -25,6 +25,28 @@ SubmitBeautifyJobsRequest::SubmitBeautifyJobsRequest() :
 SubmitBeautifyJobsRequest::~SubmitBeautifyJobsRequest()
 {}
 
+long SubmitBeautifyJobsRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void SubmitBeautifyJobsRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitBeautifyJobsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitBeautifyJobsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string SubmitBeautifyJobsRequest::getBeautifyConfig()const
 {
 	return beautifyConfig_;
@@ -45,28 +67,6 @@ void SubmitBeautifyJobsRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setCoreParameter("UserData", userData);
-}
-
-bool SubmitBeautifyJobsRequest::getAsync()const
-{
-	return async_;
-}
-
-void SubmitBeautifyJobsRequest::setAsync(bool async)
-{
-	async_ = async;
-	setCoreParameter("Async", async ? "true" : "false");
-}
-
-long SubmitBeautifyJobsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitBeautifyJobsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitBeautifyJobsRequest::getResourceOwnerAccount()const
@@ -102,17 +102,6 @@ void SubmitBeautifyJobsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitBeautifyJobsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitBeautifyJobsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitBeautifyJobsRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +111,16 @@ void SubmitBeautifyJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+bool SubmitBeautifyJobsRequest::getAsync()const
+{
+	return async_;
+}
+
+void SubmitBeautifyJobsRequest::setAsync(bool async)
+{
+	async_ = async;
+	setCoreParameter("Async", async ? "true" : "false");
 }
 

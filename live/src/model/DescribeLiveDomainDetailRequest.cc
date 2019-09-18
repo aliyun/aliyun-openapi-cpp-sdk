@@ -25,17 +25,6 @@ DescribeLiveDomainDetailRequest::DescribeLiveDomainDetailRequest() :
 DescribeLiveDomainDetailRequest::~DescribeLiveDomainDetailRequest()
 {}
 
-std::string DescribeLiveDomainDetailRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveDomainDetailRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeLiveDomainDetailRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,5 +45,16 @@ void DescribeLiveDomainDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeLiveDomainDetailRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeLiveDomainDetailRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

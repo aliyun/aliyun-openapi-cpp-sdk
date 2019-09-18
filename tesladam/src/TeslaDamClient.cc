@@ -87,36 +87,36 @@ TeslaDamClient::ActionOutcomeCallable TeslaDamClient::actionCallable(const Actio
 	return task->get_future();
 }
 
-TeslaDamClient::ActionDiskRmaOutcome TeslaDamClient::actionDiskRma(const ActionDiskRmaRequest &request) const
+TeslaDamClient::ActionDiskCheckOutcome TeslaDamClient::actionDiskCheck(const ActionDiskCheckRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ActionDiskRmaOutcome(endpointOutcome.error());
+		return ActionDiskCheckOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ActionDiskRmaOutcome(ActionDiskRmaResult(outcome.result()));
+		return ActionDiskCheckOutcome(ActionDiskCheckResult(outcome.result()));
 	else
-		return ActionDiskRmaOutcome(outcome.error());
+		return ActionDiskCheckOutcome(outcome.error());
 }
 
-void TeslaDamClient::actionDiskRmaAsync(const ActionDiskRmaRequest& request, const ActionDiskRmaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TeslaDamClient::actionDiskCheckAsync(const ActionDiskCheckRequest& request, const ActionDiskCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, actionDiskRma(request), context);
+		handler(this, request, actionDiskCheck(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TeslaDamClient::ActionDiskRmaOutcomeCallable TeslaDamClient::actionDiskRmaCallable(const ActionDiskRmaRequest &request) const
+TeslaDamClient::ActionDiskCheckOutcomeCallable TeslaDamClient::actionDiskCheckCallable(const ActionDiskCheckRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ActionDiskRmaOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ActionDiskCheckOutcome()>>(
 			[this, request]()
 			{
-			return this->actionDiskRma(request);
+			return this->actionDiskCheck(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -159,36 +159,36 @@ TeslaDamClient::ActionDiskMaskOutcomeCallable TeslaDamClient::actionDiskMaskCall
 	return task->get_future();
 }
 
-TeslaDamClient::ActionDiskCheckOutcome TeslaDamClient::actionDiskCheck(const ActionDiskCheckRequest &request) const
+TeslaDamClient::ActionDiskRmaOutcome TeslaDamClient::actionDiskRma(const ActionDiskRmaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ActionDiskCheckOutcome(endpointOutcome.error());
+		return ActionDiskRmaOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ActionDiskCheckOutcome(ActionDiskCheckResult(outcome.result()));
+		return ActionDiskRmaOutcome(ActionDiskRmaResult(outcome.result()));
 	else
-		return ActionDiskCheckOutcome(outcome.error());
+		return ActionDiskRmaOutcome(outcome.error());
 }
 
-void TeslaDamClient::actionDiskCheckAsync(const ActionDiskCheckRequest& request, const ActionDiskCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TeslaDamClient::actionDiskRmaAsync(const ActionDiskRmaRequest& request, const ActionDiskRmaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, actionDiskCheck(request), context);
+		handler(this, request, actionDiskRma(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TeslaDamClient::ActionDiskCheckOutcomeCallable TeslaDamClient::actionDiskCheckCallable(const ActionDiskCheckRequest &request) const
+TeslaDamClient::ActionDiskRmaOutcomeCallable TeslaDamClient::actionDiskRmaCallable(const ActionDiskRmaRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ActionDiskCheckOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ActionDiskRmaOutcome()>>(
 			[this, request]()
 			{
-			return this->actionDiskCheck(request);
+			return this->actionDiskRma(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

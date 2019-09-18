@@ -36,6 +36,28 @@ void UntagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+long UntagResourcesRequest::getTagOwnerUid()const
+{
+	return tagOwnerUid_;
+}
+
+void UntagResourcesRequest::setTagOwnerUid(long tagOwnerUid)
+{
+	tagOwnerUid_ = tagOwnerUid;
+	setCoreParameter("TagOwnerUid", std::to_string(tagOwnerUid));
+}
+
+std::string UntagResourcesRequest::getTagOwnerBid()const
+{
+	return tagOwnerBid_;
+}
+
+void UntagResourcesRequest::setTagOwnerBid(const std::string& tagOwnerBid)
+{
+	tagOwnerBid_ = tagOwnerBid;
+	setCoreParameter("TagOwnerBid", tagOwnerBid);
+}
+
 std::vector<std::string> UntagResourcesRequest::getResourceId()const
 {
 	return resourceId_;
@@ -70,28 +92,6 @@ void UntagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-long UntagResourcesRequest::getTagOwnerUid()const
-{
-	return tagOwnerUid_;
-}
-
-void UntagResourcesRequest::setTagOwnerUid(long tagOwnerUid)
-{
-	tagOwnerUid_ = tagOwnerUid;
-	setCoreParameter("TagOwnerUid", std::to_string(tagOwnerUid));
-}
-
-std::string UntagResourcesRequest::getTagOwnerBid()const
-{
-	return tagOwnerBid_;
-}
-
-void UntagResourcesRequest::setTagOwnerBid(const std::string& tagOwnerBid)
-{
-	tagOwnerBid_ = tagOwnerBid;
-	setCoreParameter("TagOwnerBid", tagOwnerBid);
-}
-
 long UntagResourcesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -101,6 +101,17 @@ void UntagResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UntagResourcesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void UntagResourcesRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
 }
 
 std::vector<std::string> UntagResourcesRequest::getTagKey()const
@@ -113,16 +124,5 @@ void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 	tagKey_ = tagKey;
 	for(int i = 0; i!= tagKey.size(); i++)
 		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
-}
-
-std::string UntagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void UntagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
 }
 

@@ -37,18 +37,15 @@ namespace AlibabaCloud
 
 				int getMaxKeys()const;
 				void setMaxKeys(int maxKeys);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getMarker()const;
-				void setMarker(const std::string& marker);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getMarker()const;
+				void setMarker(const std::string& marker);
 
             private:
 				int maxKeys_;
-				std::string regionId_;
-				std::string marker_;
 				std::string accessKeyId_;
+				std::string marker_;
 
 			};
 		}

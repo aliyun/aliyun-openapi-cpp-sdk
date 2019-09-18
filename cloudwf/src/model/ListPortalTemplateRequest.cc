@@ -47,17 +47,6 @@ void ListPortalTemplateRequest::setLength(int length)
 	setCoreParameter("Length", std::to_string(length));
 }
 
-int ListPortalTemplateRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListPortalTemplateRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
 std::string ListPortalTemplateRequest::getOrderDir()const
 {
 	return orderDir_;
@@ -89,5 +78,16 @@ void ListPortalTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListPortalTemplateRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListPortalTemplateRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

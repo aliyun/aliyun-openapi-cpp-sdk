@@ -36,15 +36,26 @@ void DescribeBindableSmartAccessGatewaysRequest::setResourceOwnerId(long resourc
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeBindableSmartAccessGatewaysRequest::getResourceOwnerAccount()const
+std::string DescribeBindableSmartAccessGatewaysRequest::getCcnId()const
 {
-	return resourceOwnerAccount_;
+	return ccnId_;
 }
 
-void DescribeBindableSmartAccessGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeBindableSmartAccessGatewaysRequest::setCcnId(const std::string& ccnId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	ccnId_ = ccnId;
+	setCoreParameter("CcnId", ccnId);
+}
+
+std::string DescribeBindableSmartAccessGatewaysRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeBindableSmartAccessGatewaysRequest::setPageNumber(const std::string& pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getRegionId()const
@@ -58,15 +69,26 @@ void DescribeBindableSmartAccessGatewaysRequest::setRegionId(const std::string& 
 	setCoreParameter("RegionId", regionId);
 }
 
-bool DescribeBindableSmartAccessGatewaysRequest::getCrossAccount()const
+std::string DescribeBindableSmartAccessGatewaysRequest::getPageSize()const
 {
-	return crossAccount_;
+	return pageSize_;
 }
 
-void DescribeBindableSmartAccessGatewaysRequest::setCrossAccount(bool crossAccount)
+void DescribeBindableSmartAccessGatewaysRequest::setPageSize(const std::string& pageSize)
 {
-	crossAccount_ = crossAccount;
-	setCoreParameter("CrossAccount", crossAccount ? "true" : "false");
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", pageSize);
+}
+
+std::string DescribeBindableSmartAccessGatewaysRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeBindableSmartAccessGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getOwnerAccount()const
@@ -80,28 +102,6 @@ void DescribeBindableSmartAccessGatewaysRequest::setOwnerAccount(const std::stri
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeBindableSmartAccessGatewaysRequest::getCcnId()const
-{
-	return ccnId_;
-}
-
-void DescribeBindableSmartAccessGatewaysRequest::setCcnId(const std::string& ccnId)
-{
-	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
-}
-
-std::string DescribeBindableSmartAccessGatewaysRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeBindableSmartAccessGatewaysRequest::setPageSize(const std::string& pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
-}
-
 long DescribeBindableSmartAccessGatewaysRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +113,14 @@ void DescribeBindableSmartAccessGatewaysRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeBindableSmartAccessGatewaysRequest::getPageNumber()const
+bool DescribeBindableSmartAccessGatewaysRequest::getCrossAccount()const
 {
-	return pageNumber_;
+	return crossAccount_;
 }
 
-void DescribeBindableSmartAccessGatewaysRequest::setPageNumber(const std::string& pageNumber)
+void DescribeBindableSmartAccessGatewaysRequest::setCrossAccount(bool crossAccount)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	crossAccount_ = crossAccount;
+	setCoreParameter("CrossAccount", crossAccount ? "true" : "false");
 }
 

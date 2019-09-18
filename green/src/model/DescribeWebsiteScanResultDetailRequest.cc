@@ -25,6 +25,17 @@ DescribeWebsiteScanResultDetailRequest::DescribeWebsiteScanResultDetailRequest()
 DescribeWebsiteScanResultDetailRequest::~DescribeWebsiteScanResultDetailRequest()
 {}
 
+std::string DescribeWebsiteScanResultDetailRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeWebsiteScanResultDetailRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
 std::string DescribeWebsiteScanResultDetailRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,16 +67,5 @@ void DescribeWebsiteScanResultDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeWebsiteScanResultDetailRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeWebsiteScanResultDetailRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
 }
 

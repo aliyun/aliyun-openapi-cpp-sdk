@@ -47,17 +47,6 @@ void BandStatusQueryRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-long BandStatusQueryRequest::getBandId()const
-{
-	return bandId_;
-}
-
-void BandStatusQueryRequest::setBandId(long bandId)
-{
-	bandId_ = bandId;
-	setCoreParameter("BandId", std::to_string(bandId));
-}
-
 long BandStatusQueryRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,5 +67,16 @@ void BandStatusQueryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long BandStatusQueryRequest::getBandId()const
+{
+	return bandId_;
+}
+
+void BandStatusQueryRequest::setBandId(long bandId)
+{
+	bandId_ = bandId;
+	setCoreParameter("BandId", std::to_string(bandId));
 }
 

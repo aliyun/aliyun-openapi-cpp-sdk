@@ -21,69 +21,69 @@ set(afs_public_header
 	include/alibabacloud/afs/AfsExport.h )
 
 set(afs_public_header_model 
-	include/alibabacloud/afs/model/DescribeEarlyWarningRequest.h
-	include/alibabacloud/afs/model/DescribeEarlyWarningResult.h
-	include/alibabacloud/afs/model/DescribeCaptchaIpCityRequest.h
-	include/alibabacloud/afs/model/DescribeCaptchaIpCityResult.h
-	include/alibabacloud/afs/model/DescribeOrderInfoRequest.h
-	include/alibabacloud/afs/model/DescribeOrderInfoResult.h
-	include/alibabacloud/afs/model/DescribeCaptchaRiskRequest.h
-	include/alibabacloud/afs/model/DescribeCaptchaRiskResult.h
-	include/alibabacloud/afs/model/DescribeCaptchaOrderRequest.h
-	include/alibabacloud/afs/model/DescribeCaptchaOrderResult.h
-	include/alibabacloud/afs/model/CreateConfigurationRequest.h
-	include/alibabacloud/afs/model/CreateConfigurationResult.h
 	include/alibabacloud/afs/model/AnalyzeNvcRequest.h
 	include/alibabacloud/afs/model/AnalyzeNvcResult.h
-	include/alibabacloud/afs/model/SetEarlyWarningRequest.h
-	include/alibabacloud/afs/model/SetEarlyWarningResult.h
-	include/alibabacloud/afs/model/ConfigurationStyleRequest.h
-	include/alibabacloud/afs/model/ConfigurationStyleResult.h
-	include/alibabacloud/afs/model/DescribeCaptchaMinRequest.h
-	include/alibabacloud/afs/model/DescribeCaptchaMinResult.h
 	include/alibabacloud/afs/model/AuthenticateSigRequest.h
 	include/alibabacloud/afs/model/AuthenticateSigResult.h
-	include/alibabacloud/afs/model/DescribeConfigNameRequest.h
-	include/alibabacloud/afs/model/DescribeConfigNameResult.h
-	include/alibabacloud/afs/model/UpdateConfigNameRequest.h
-	include/alibabacloud/afs/model/UpdateConfigNameResult.h
+	include/alibabacloud/afs/model/ConfigurationStyleRequest.h
+	include/alibabacloud/afs/model/ConfigurationStyleResult.h
+	include/alibabacloud/afs/model/CreateConfigurationRequest.h
+	include/alibabacloud/afs/model/CreateConfigurationResult.h
 	include/alibabacloud/afs/model/DescribeCaptchaDayRequest.h
 	include/alibabacloud/afs/model/DescribeCaptchaDayResult.h
+	include/alibabacloud/afs/model/DescribeCaptchaIpCityRequest.h
+	include/alibabacloud/afs/model/DescribeCaptchaIpCityResult.h
+	include/alibabacloud/afs/model/DescribeCaptchaMinRequest.h
+	include/alibabacloud/afs/model/DescribeCaptchaMinResult.h
+	include/alibabacloud/afs/model/DescribeCaptchaOrderRequest.h
+	include/alibabacloud/afs/model/DescribeCaptchaOrderResult.h
+	include/alibabacloud/afs/model/DescribeCaptchaRiskRequest.h
+	include/alibabacloud/afs/model/DescribeCaptchaRiskResult.h
+	include/alibabacloud/afs/model/DescribeConfigNameRequest.h
+	include/alibabacloud/afs/model/DescribeConfigNameResult.h
+	include/alibabacloud/afs/model/DescribeEarlyWarningRequest.h
+	include/alibabacloud/afs/model/DescribeEarlyWarningResult.h
+	include/alibabacloud/afs/model/DescribeOrderInfoRequest.h
+	include/alibabacloud/afs/model/DescribeOrderInfoResult.h
 	include/alibabacloud/afs/model/DescribePersonMachineListRequest.h
-	include/alibabacloud/afs/model/DescribePersonMachineListResult.h )
+	include/alibabacloud/afs/model/DescribePersonMachineListResult.h
+	include/alibabacloud/afs/model/SetEarlyWarningRequest.h
+	include/alibabacloud/afs/model/SetEarlyWarningResult.h
+	include/alibabacloud/afs/model/UpdateConfigNameRequest.h
+	include/alibabacloud/afs/model/UpdateConfigNameResult.h )
 
 set(afs_src 
 	src/AfsClient.cc
-	src/model/DescribeEarlyWarningRequest.cc
-	src/model/DescribeEarlyWarningResult.cc
-	src/model/DescribeCaptchaIpCityRequest.cc
-	src/model/DescribeCaptchaIpCityResult.cc
-	src/model/DescribeOrderInfoRequest.cc
-	src/model/DescribeOrderInfoResult.cc
-	src/model/DescribeCaptchaRiskRequest.cc
-	src/model/DescribeCaptchaRiskResult.cc
-	src/model/DescribeCaptchaOrderRequest.cc
-	src/model/DescribeCaptchaOrderResult.cc
-	src/model/CreateConfigurationRequest.cc
-	src/model/CreateConfigurationResult.cc
 	src/model/AnalyzeNvcRequest.cc
 	src/model/AnalyzeNvcResult.cc
-	src/model/SetEarlyWarningRequest.cc
-	src/model/SetEarlyWarningResult.cc
-	src/model/ConfigurationStyleRequest.cc
-	src/model/ConfigurationStyleResult.cc
-	src/model/DescribeCaptchaMinRequest.cc
-	src/model/DescribeCaptchaMinResult.cc
 	src/model/AuthenticateSigRequest.cc
 	src/model/AuthenticateSigResult.cc
-	src/model/DescribeConfigNameRequest.cc
-	src/model/DescribeConfigNameResult.cc
-	src/model/UpdateConfigNameRequest.cc
-	src/model/UpdateConfigNameResult.cc
+	src/model/ConfigurationStyleRequest.cc
+	src/model/ConfigurationStyleResult.cc
+	src/model/CreateConfigurationRequest.cc
+	src/model/CreateConfigurationResult.cc
 	src/model/DescribeCaptchaDayRequest.cc
 	src/model/DescribeCaptchaDayResult.cc
+	src/model/DescribeCaptchaIpCityRequest.cc
+	src/model/DescribeCaptchaIpCityResult.cc
+	src/model/DescribeCaptchaMinRequest.cc
+	src/model/DescribeCaptchaMinResult.cc
+	src/model/DescribeCaptchaOrderRequest.cc
+	src/model/DescribeCaptchaOrderResult.cc
+	src/model/DescribeCaptchaRiskRequest.cc
+	src/model/DescribeCaptchaRiskResult.cc
+	src/model/DescribeConfigNameRequest.cc
+	src/model/DescribeConfigNameResult.cc
+	src/model/DescribeEarlyWarningRequest.cc
+	src/model/DescribeEarlyWarningResult.cc
+	src/model/DescribeOrderInfoRequest.cc
+	src/model/DescribeOrderInfoResult.cc
 	src/model/DescribePersonMachineListRequest.cc
-	src/model/DescribePersonMachineListResult.cc )
+	src/model/DescribePersonMachineListResult.cc
+	src/model/SetEarlyWarningRequest.cc
+	src/model/SetEarlyWarningResult.cc
+	src/model/UpdateConfigNameRequest.cc
+	src/model/UpdateConfigNameResult.cc )
 
 add_library(afs ${LIB_TYPE}
 	${afs_public_header}

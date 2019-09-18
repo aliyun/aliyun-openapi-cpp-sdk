@@ -47,6 +47,28 @@ void DescribeRiskCheckResultRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
+int DescribeRiskCheckResultRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeRiskCheckResultRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeRiskCheckResultRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeRiskCheckResultRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
 long DescribeRiskCheckResultRequest::getGroupId()const
 {
 	return groupId_;
@@ -70,28 +92,6 @@ void DescribeRiskCheckResultRequest::setItemIds(const std::vector<std::string>& 
 		setCoreParameter("ItemIds."+ std::to_string(i), itemIds.at(i));
 }
 
-std::string DescribeRiskCheckResultRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeRiskCheckResultRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-int DescribeRiskCheckResultRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeRiskCheckResultRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int DescribeRiskCheckResultRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -103,17 +103,6 @@ void DescribeRiskCheckResultRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeRiskCheckResultRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeRiskCheckResultRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string DescribeRiskCheckResultRequest::getRiskLevel()const
 {
 	return riskLevel_;
@@ -123,6 +112,17 @@ void DescribeRiskCheckResultRequest::setRiskLevel(const std::string& riskLevel)
 {
 	riskLevel_ = riskLevel;
 	setCoreParameter("RiskLevel", riskLevel);
+}
+
+std::string DescribeRiskCheckResultRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeRiskCheckResultRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string DescribeRiskCheckResultRequest::getStatus()const

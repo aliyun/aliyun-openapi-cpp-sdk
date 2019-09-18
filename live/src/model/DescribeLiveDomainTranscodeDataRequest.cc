@@ -25,15 +25,15 @@ DescribeLiveDomainTranscodeDataRequest::DescribeLiveDomainTranscodeDataRequest()
 DescribeLiveDomainTranscodeDataRequest::~DescribeLiveDomainTranscodeDataRequest()
 {}
 
-std::string DescribeLiveDomainTranscodeDataRequest::getRegionId()const
+std::string DescribeLiveDomainTranscodeDataRequest::getStartTime()const
 {
-	return regionId_;
+	return startTime_;
 }
 
-void DescribeLiveDomainTranscodeDataRequest::setRegionId(const std::string& regionId)
+void DescribeLiveDomainTranscodeDataRequest::setStartTime(const std::string& startTime)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainTranscodeDataRequest::getDomainName()const
@@ -56,17 +56,6 @@ void DescribeLiveDomainTranscodeDataRequest::setEndTime(const std::string& endTi
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeLiveDomainTranscodeDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeLiveDomainTranscodeDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveDomainTranscodeDataRequest::getOwnerId()const

@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				ListEmailVerificationRequest();
 				~ListEmailVerificationRequest();
 
-				long getBeginCreateTime()const;
-				void setBeginCreateTime(long beginCreateTime);
 				long getEndCreateTime()const;
 				void setEndCreateTime(long endCreateTime);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				int getVerificationStatus()const;
+				void setVerificationStatus(int verificationStatus);
+				long getBeginCreateTime()const;
+				void setBeginCreateTime(long beginCreateTime);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				std::string getEmail()const;
 				void setEmail(const std::string& email);
-				int getVerificationStatus()const;
-				void setVerificationStatus(int verificationStatus);
 
             private:
-				long beginCreateTime_;
 				long endCreateTime_;
+				int pageNum_;
+				int verificationStatus_;
+				long beginCreateTime_;
 				int pageSize_;
 				std::string userClientIp_;
 				std::string lang_;
-				int pageNum_;
 				std::string email_;
-				int verificationStatus_;
 
 			};
 		}

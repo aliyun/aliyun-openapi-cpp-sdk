@@ -47,17 +47,6 @@ void DeleteVodTemplateRequest::setResourceOwnerAccount(const std::string& resour
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DeleteVodTemplateRequest::getVodTemplateId()const
-{
-	return vodTemplateId_;
-}
-
-void DeleteVodTemplateRequest::setVodTemplateId(const std::string& vodTemplateId)
-{
-	vodTemplateId_ = vodTemplateId;
-	setCoreParameter("VodTemplateId", vodTemplateId);
-}
-
 long DeleteVodTemplateRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +56,16 @@ void DeleteVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteVodTemplateRequest::getVodTemplateId()const
+{
+	return vodTemplateId_;
+}
+
+void DeleteVodTemplateRequest::setVodTemplateId(const std::string& vodTemplateId)
+{
+	vodTemplateId_ = vodTemplateId;
+	setCoreParameter("VodTemplateId", vodTemplateId);
 }
 

@@ -69,17 +69,6 @@ void GetEditingProjectRequest::setOwnerId(const std::string& ownerId)
 	setCoreParameter("OwnerId", ownerId);
 }
 
-std::string GetEditingProjectRequest::getProjectId()const
-{
-	return projectId_;
-}
-
-void GetEditingProjectRequest::setProjectId(const std::string& projectId)
-{
-	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
-}
-
 std::string GetEditingProjectRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +78,16 @@ void GetEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetEditingProjectRequest::getProjectId()const
+{
+	return projectId_;
+}
+
+void GetEditingProjectRequest::setProjectId(const std::string& projectId)
+{
+	projectId_ = projectId;
+	setCoreParameter("ProjectId", projectId);
 }
 

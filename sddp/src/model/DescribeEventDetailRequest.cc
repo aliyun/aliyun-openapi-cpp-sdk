@@ -25,17 +25,6 @@ DescribeEventDetailRequest::DescribeEventDetailRequest() :
 DescribeEventDetailRequest::~DescribeEventDetailRequest()
 {}
 
-std::string DescribeEventDetailRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeEventDetailRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeEventDetailRequest::getFeatureType()const
 {
 	return featureType_;
@@ -45,6 +34,17 @@ void DescribeEventDetailRequest::setFeatureType(long featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeEventDetailRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeEventDetailRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeEventDetailRequest::getId()const

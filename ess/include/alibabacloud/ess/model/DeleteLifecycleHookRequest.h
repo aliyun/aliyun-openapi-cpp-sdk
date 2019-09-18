@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				DeleteLifecycleHookRequest();
 				~DeleteLifecycleHookRequest();
 
+				std::string getScalingGroupId()const;
+				void setScalingGroupId(const std::string& scalingGroupId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getLifecycleHookName()const;
 				void setLifecycleHookName(const std::string& lifecycleHookName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getLifecycleHookId()const;
 				void setLifecycleHookId(const std::string& lifecycleHookId);
-				std::string getScalingGroupId()const;
-				void setScalingGroupId(const std::string& scalingGroupId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string scalingGroupId_;
+				std::string accessKeyId_;
 				std::string lifecycleHookName_;
 				std::string resourceOwnerAccount_;
 				std::string lifecycleHookId_;
-				std::string scalingGroupId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

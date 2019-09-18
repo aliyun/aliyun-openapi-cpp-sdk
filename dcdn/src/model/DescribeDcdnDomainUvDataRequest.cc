@@ -25,17 +25,6 @@ DescribeDcdnDomainUvDataRequest::DescribeDcdnDomainUvDataRequest() :
 DescribeDcdnDomainUvDataRequest::~DescribeDcdnDomainUvDataRequest()
 {}
 
-std::string DescribeDcdnDomainUvDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDcdnDomainUvDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeDcdnDomainUvDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -78,5 +67,16 @@ void DescribeDcdnDomainUvDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeDcdnDomainUvDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeDcdnDomainUvDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

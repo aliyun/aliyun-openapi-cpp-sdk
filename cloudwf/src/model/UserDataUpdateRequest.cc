@@ -36,6 +36,28 @@ void UserDataUpdateRequest::setIid(long iid)
 	setCoreParameter("Iid", std::to_string(iid));
 }
 
+std::string UserDataUpdateRequest::getType()const
+{
+	return type_;
+}
+
+void UserDataUpdateRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string UserDataUpdateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UserDataUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UserDataUpdateRequest::getUploadFile()const
 {
 	return uploadFile_;
@@ -67,27 +89,5 @@ void UserDataUpdateRequest::setBid(long bid)
 {
 	bid_ = bid;
 	setCoreParameter("Bid", std::to_string(bid));
-}
-
-std::string UserDataUpdateRequest::getType()const
-{
-	return type_;
-}
-
-void UserDataUpdateRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
-std::string UserDataUpdateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UserDataUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

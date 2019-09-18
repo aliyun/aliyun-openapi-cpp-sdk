@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				ModifyDBInstanceNetworkTypeRequest();
 				~ModifyDBInstanceNetworkTypeRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
 				std::string getVPCId()const;
 				void setVPCId(const std::string& vPCId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
+				std::string dBInstanceId_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
 				std::string vPCId_;
-				std::string dBInstanceId_;
 				std::string instanceNetworkType_;
-				std::string accessKeyId_;
 
 			};
 		}

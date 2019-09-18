@@ -37,42 +37,42 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getStreamName()const;
+				void setStreamName(const std::string& streamName);
+				std::string getQueryType()const;
+				void setQueryType(const std::string& queryType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
 				int getPageNo()const;
 				void setPageNo(int pageNo);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getSortBy()const;
 				void setSortBy(const std::string& sortBy);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
-				std::string getQueryType()const;
-				void setQueryType(const std::string& queryType);
 
             private:
 				long resourceOwnerId_;
+				std::string startTime_;
+				std::string appName_;
+				int pageSize_;
+				std::string streamName_;
+				std::string queryType_;
 				std::string resourceOwnerAccount_;
 				std::string domainName_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
-				std::string appName_;
 				int pageNo_;
-				int pageSize_;
 				std::string sortBy_;
-				std::string streamName_;
-				std::string queryType_;
 
 			};
 		}

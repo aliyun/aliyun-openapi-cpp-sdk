@@ -36,26 +36,15 @@ void DescribeMonthlyServiceStatusDetailRequest::setResourceOwnerId(long resource
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeMonthlyServiceStatusDetailRequest::getInstanceId()const
+std::string DescribeMonthlyServiceStatusDetailRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void DescribeMonthlyServiceStatusDetailRequest::setInstanceId(const std::string& instanceId)
+void DescribeMonthlyServiceStatusDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DescribeMonthlyServiceStatusDetailRequest::getMonth()const
-{
-	return month_;
-}
-
-void DescribeMonthlyServiceStatusDetailRequest::setMonth(const std::string& month)
-{
-	month_ = month;
-	setCoreParameter("Month", month);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeMonthlyServiceStatusDetailRequest::getSecurityToken()const
@@ -80,17 +69,6 @@ void DescribeMonthlyServiceStatusDetailRequest::setResourceOwnerAccount(const st
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeMonthlyServiceStatusDetailRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeMonthlyServiceStatusDetailRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeMonthlyServiceStatusDetailRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -113,14 +91,25 @@ void DescribeMonthlyServiceStatusDetailRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeMonthlyServiceStatusDetailRequest::getAccessKeyId()const
+std::string DescribeMonthlyServiceStatusDetailRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void DescribeMonthlyServiceStatusDetailRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeMonthlyServiceStatusDetailRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string DescribeMonthlyServiceStatusDetailRequest::getMonth()const
+{
+	return month_;
+}
+
+void DescribeMonthlyServiceStatusDetailRequest::setMonth(const std::string& month)
+{
+	month_ = month;
+	setCoreParameter("Month", month);
 }
 

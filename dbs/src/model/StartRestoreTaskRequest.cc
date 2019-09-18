@@ -25,17 +25,6 @@ StartRestoreTaskRequest::StartRestoreTaskRequest() :
 StartRestoreTaskRequest::~StartRestoreTaskRequest()
 {}
 
-std::string StartRestoreTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void StartRestoreTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string StartRestoreTaskRequest::getClientToken()const
 {
 	return clientToken_;
@@ -47,17 +36,6 @@ void StartRestoreTaskRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string StartRestoreTaskRequest::getRestoreTaskId()const
-{
-	return restoreTaskId_;
-}
-
-void StartRestoreTaskRequest::setRestoreTaskId(const std::string& restoreTaskId)
-{
-	restoreTaskId_ = restoreTaskId;
-	setCoreParameter("RestoreTaskId", restoreTaskId);
-}
-
 std::string StartRestoreTaskRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +45,16 @@ void StartRestoreTaskRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
+}
+
+std::string StartRestoreTaskRequest::getRestoreTaskId()const
+{
+	return restoreTaskId_;
+}
+
+void StartRestoreTaskRequest::setRestoreTaskId(const std::string& restoreTaskId)
+{
+	restoreTaskId_ = restoreTaskId;
+	setCoreParameter("RestoreTaskId", restoreTaskId);
 }
 

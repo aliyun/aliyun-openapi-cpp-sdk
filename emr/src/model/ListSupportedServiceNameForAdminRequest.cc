@@ -36,17 +36,6 @@ void ListSupportedServiceNameForAdminRequest::setResourceOwnerId(long resourceOw
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListSupportedServiceNameForAdminRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListSupportedServiceNameForAdminRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ListSupportedServiceNameForAdminRequest::getUserId()const
 {
 	return userId_;
@@ -67,5 +56,16 @@ void ListSupportedServiceNameForAdminRequest::setAccessKeyId(const std::string& 
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListSupportedServiceNameForAdminRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListSupportedServiceNameForAdminRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

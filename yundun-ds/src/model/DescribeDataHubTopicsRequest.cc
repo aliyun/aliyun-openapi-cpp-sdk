@@ -36,17 +36,6 @@ void DescribeDataHubTopicsRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-int DescribeDataHubTopicsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeDataHubTopicsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
 int DescribeDataHubTopicsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -56,28 +45,6 @@ void DescribeDataHubTopicsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeDataHubTopicsRequest::getDepartId()const
-{
-	return departId_;
-}
-
-void DescribeDataHubTopicsRequest::setDepartId(long departId)
-{
-	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
-}
-
-int DescribeDataHubTopicsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeDataHubTopicsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDataHubTopicsRequest::getLang()const
@@ -111,5 +78,38 @@ void DescribeDataHubTopicsRequest::setKey(const std::string& key)
 {
 	key_ = key;
 	setCoreParameter("Key", key);
+}
+
+int DescribeDataHubTopicsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeDataHubTopicsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int DescribeDataHubTopicsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeDataHubTopicsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+long DescribeDataHubTopicsRequest::getDepartId()const
+{
+	return departId_;
+}
+
+void DescribeDataHubTopicsRequest::setDepartId(long departId)
+{
+	departId_ = departId;
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 

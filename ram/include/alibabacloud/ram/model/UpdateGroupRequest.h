@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				UpdateGroupRequest();
 				~UpdateGroupRequest();
 
+				std::string getGroupName()const;
+				void setGroupName(const std::string& groupName);
 				std::string getNewGroupName()const;
 				void setNewGroupName(const std::string& newGroupName);
 				std::string getNewComments()const;
 				void setNewComments(const std::string& newComments);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
 
             private:
+				std::string groupName_;
 				std::string newGroupName_;
 				std::string newComments_;
-				std::string groupName_;
 
 			};
 		}

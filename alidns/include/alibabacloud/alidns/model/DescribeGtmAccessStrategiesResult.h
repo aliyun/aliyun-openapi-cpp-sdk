@@ -44,15 +44,19 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string createTime;
 					std::string strategyId;
+					std::string defaultAddrPoolStatus;
 					std::string failoverAddrPoolId;
 					std::string defaultAddrPoolId;
 					std::string accessStatus;
+					std::string defaultAddrPoolMonitorStatus;
 					std::string defaultAddrPoolName;
 					std::string strategyName;
+					std::string failoverAddrPoolStatus;
 					std::string accessMode;
 					std::string strategyMode;
 					long createTimestamp;
 					std::string failoverAddrPoolName;
+					std::string failoverAddrPoolMonitorStatus;
 					std::vector<Strategy::Line> lines;
 				};
 

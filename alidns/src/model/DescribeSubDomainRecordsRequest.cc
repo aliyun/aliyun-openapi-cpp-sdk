@@ -36,28 +36,6 @@ void DescribeSubDomainRecordsRequest::setLine(const std::string& line)
 	setCoreParameter("Line", line);
 }
 
-std::string DescribeSubDomainRecordsRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DescribeSubDomainRecordsRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
-long DescribeSubDomainRecordsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeSubDomainRecordsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeSubDomainRecordsRequest::getDomainName()const
 {
 	return domainName_;
@@ -67,28 +45,6 @@ void DescribeSubDomainRecordsRequest::setDomainName(const std::string& domainNam
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-std::string DescribeSubDomainRecordsRequest::getSubDomain()const
-{
-	return subDomain_;
-}
-
-void DescribeSubDomainRecordsRequest::setSubDomain(const std::string& subDomain)
-{
-	subDomain_ = subDomain;
-	setCoreParameter("SubDomain", subDomain);
-}
-
-std::string DescribeSubDomainRecordsRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeSubDomainRecordsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeSubDomainRecordsRequest::getType()const
@@ -122,5 +78,49 @@ void DescribeSubDomainRecordsRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeSubDomainRecordsRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DescribeSubDomainRecordsRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+long DescribeSubDomainRecordsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeSubDomainRecordsRequest::setPageSize(long pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeSubDomainRecordsRequest::getSubDomain()const
+{
+	return subDomain_;
+}
+
+void DescribeSubDomainRecordsRequest::setSubDomain(const std::string& subDomain)
+{
+	subDomain_ = subDomain;
+	setCoreParameter("SubDomain", subDomain);
+}
+
+std::string DescribeSubDomainRecordsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeSubDomainRecordsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

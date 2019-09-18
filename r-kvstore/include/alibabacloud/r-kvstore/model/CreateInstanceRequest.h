@@ -57,8 +57,6 @@ namespace AlibabaCloud
 				void setPassword(const std::string& password);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
 				std::string getBusinessInfo()const;
@@ -108,7 +106,6 @@ namespace AlibabaCloud
 				long capacity_;
 				std::string password_;
 				std::string securityToken_;
-				std::string regionId_;
 				std::string instanceType_;
 				std::string businessInfo_;
 				std::string autoRenewPeriod_;

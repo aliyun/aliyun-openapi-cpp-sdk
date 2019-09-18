@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				VerifyEmailRequest();
 				~VerifyEmailRequest();
 
+				std::string getToken()const;
+				void setToken(const std::string& token);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getToken()const;
-				void setToken(const std::string& token);
 
             private:
+				std::string token_;
 				std::string userClientIp_;
 				std::string lang_;
-				std::string token_;
 
 			};
 		}

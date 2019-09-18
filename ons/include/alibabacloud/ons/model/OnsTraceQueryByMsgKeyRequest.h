@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				OnsTraceQueryByMsgKeyRequest();
 				~OnsTraceQueryByMsgKeyRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getBeginTime()const;
 				void setBeginTime(long beginTime);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
 				std::string getMsgKey()const;
 				void setMsgKey(const std::string& msgKey);
 
             private:
-				std::string instanceId_;
-				std::string topic_;
 				long endTime_;
 				long beginTime_;
+				std::string instanceId_;
+				std::string topic_;
 				std::string msgKey_;
 
 			};

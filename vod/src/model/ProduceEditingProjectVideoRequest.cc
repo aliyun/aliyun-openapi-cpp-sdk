@@ -36,28 +36,6 @@ void ProduceEditingProjectVideoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ProduceEditingProjectVideoRequest::getMediaMetadata()const
-{
-	return mediaMetadata_;
-}
-
-void ProduceEditingProjectVideoRequest::setMediaMetadata(const std::string& mediaMetadata)
-{
-	mediaMetadata_ = mediaMetadata;
-	setCoreParameter("MediaMetadata", mediaMetadata);
-}
-
-std::string ProduceEditingProjectVideoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ProduceEditingProjectVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ProduceEditingProjectVideoRequest::getDescription()const
 {
 	return description_;
@@ -67,17 +45,6 @@ void ProduceEditingProjectVideoRequest::setDescription(const std::string& descri
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long ProduceEditingProjectVideoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ProduceEditingProjectVideoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ProduceEditingProjectVideoRequest::getTitle()const
@@ -124,17 +91,6 @@ void ProduceEditingProjectVideoRequest::setUserData(const std::string& userData)
 	setCoreParameter("UserData", userData);
 }
 
-std::string ProduceEditingProjectVideoRequest::getTimeline()const
-{
-	return timeline_;
-}
-
-void ProduceEditingProjectVideoRequest::setTimeline(const std::string& timeline)
-{
-	timeline_ = timeline;
-	setCoreParameter("Timeline", timeline);
-}
-
 std::string ProduceEditingProjectVideoRequest::getProduceConfig()const
 {
 	return produceConfig_;
@@ -155,5 +111,49 @@ void ProduceEditingProjectVideoRequest::setProjectId(const std::string& projectI
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
+}
+
+std::string ProduceEditingProjectVideoRequest::getMediaMetadata()const
+{
+	return mediaMetadata_;
+}
+
+void ProduceEditingProjectVideoRequest::setMediaMetadata(const std::string& mediaMetadata)
+{
+	mediaMetadata_ = mediaMetadata;
+	setCoreParameter("MediaMetadata", mediaMetadata);
+}
+
+std::string ProduceEditingProjectVideoRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ProduceEditingProjectVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long ProduceEditingProjectVideoRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ProduceEditingProjectVideoRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ProduceEditingProjectVideoRequest::getTimeline()const
+{
+	return timeline_;
+}
+
+void ProduceEditingProjectVideoRequest::setTimeline(const std::string& timeline)
+{
+	timeline_ = timeline;
+	setCoreParameter("Timeline", timeline);
 }
 

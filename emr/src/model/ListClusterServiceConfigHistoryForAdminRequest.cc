@@ -36,39 +36,6 @@ void ListClusterServiceConfigHistoryForAdminRequest::setResourceOwnerId(long res
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListClusterServiceConfigHistoryForAdminRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListClusterServiceConfigHistoryForAdminRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListClusterServiceConfigHistoryForAdminRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListClusterServiceConfigHistoryForAdminRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListClusterServiceConfigHistoryForAdminRequest::getServiceName()const
-{
-	return serviceName_;
-}
-
-void ListClusterServiceConfigHistoryForAdminRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
-}
-
 std::string ListClusterServiceConfigHistoryForAdminRequest::getClusterId()const
 {
 	return clusterId_;
@@ -122,5 +89,38 @@ void ListClusterServiceConfigHistoryForAdminRequest::setConfigVersion(const std:
 {
 	configVersion_ = configVersion;
 	setCoreParameter("ConfigVersion", configVersion);
+}
+
+std::string ListClusterServiceConfigHistoryForAdminRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListClusterServiceConfigHistoryForAdminRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListClusterServiceConfigHistoryForAdminRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListClusterServiceConfigHistoryForAdminRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListClusterServiceConfigHistoryForAdminRequest::getServiceName()const
+{
+	return serviceName_;
+}
+
+void ListClusterServiceConfigHistoryForAdminRequest::setServiceName(const std::string& serviceName)
+{
+	serviceName_ = serviceName;
+	setCoreParameter("ServiceName", serviceName);
 }
 

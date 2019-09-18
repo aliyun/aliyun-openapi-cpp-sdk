@@ -36,15 +36,15 @@ void ModifyDBInstanceConnectionStringRequest::setConnectionStringPrefix(const st
 	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getPort()const
+std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId()const
 {
-	return port_;
+	return accessKeyId_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setPort(const std::string& port)
+void ModifyDBInstanceConnectionStringRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	port_ = port;
-	setCoreParameter("Port", port);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getDBInstanceId()const
@@ -69,14 +69,14 @@ void ModifyDBInstanceConnectionStringRequest::setCurrentConnectionString(const s
 	setCoreParameter("CurrentConnectionString", currentConnectionString);
 }
 
-std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId()const
+std::string ModifyDBInstanceConnectionStringRequest::getPort()const
 {
-	return accessKeyId_;
+	return port_;
 }
 
-void ModifyDBInstanceConnectionStringRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifyDBInstanceConnectionStringRequest::setPort(const std::string& port)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	port_ = port;
+	setCoreParameter("Port", port);
 }
 

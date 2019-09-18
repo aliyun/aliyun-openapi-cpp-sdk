@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				std::string getEventRuleTemplatesJson()const;
 				void setEventRuleTemplatesJson(const std::string& eventRuleTemplatesJson);
-				std::string getName()const;
-				void setName(const std::string& name);
 				long getRestVersion()const;
 				void setRestVersion(long restVersion);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getId()const;
-				void setId(long id);
 				std::string getAlertTemplatesJson()const;
 				void setAlertTemplatesJson(const std::string& alertTemplatesJson);
+				std::string getName()const;
+				void setName(const std::string& name);
+				long getId()const;
+				void setId(long id);
 
             private:
 				std::string eventRuleTemplatesJson_;
-				std::string name_;
 				long restVersion_;
 				std::string description_;
-				long id_;
 				std::string alertTemplatesJson_;
+				std::string name_;
+				long id_;
 
 			};
 		}

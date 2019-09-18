@@ -80,6 +80,17 @@ void CreateOrderMaterialRequest::setCompanyAddress(const std::string& companyAdd
 	setCoreParameter("CompanyAddress", companyAddress);
 }
 
+std::string CreateOrderMaterialRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateOrderMaterialRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateOrderMaterialRequest::getCompanyCode()const
 {
 	return companyCode_;

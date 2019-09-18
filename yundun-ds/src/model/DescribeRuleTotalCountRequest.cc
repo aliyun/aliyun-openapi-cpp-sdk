@@ -25,17 +25,6 @@ DescribeRuleTotalCountRequest::DescribeRuleTotalCountRequest() :
 DescribeRuleTotalCountRequest::~DescribeRuleTotalCountRequest()
 {}
 
-std::string DescribeRuleTotalCountRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeRuleTotalCountRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeRuleTotalCountRequest::getFeatureType()const
 {
 	return featureType_;
@@ -45,6 +34,17 @@ void DescribeRuleTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeRuleTotalCountRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeRuleTotalCountRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeRuleTotalCountRequest::getLang()const

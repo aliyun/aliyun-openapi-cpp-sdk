@@ -25,17 +25,6 @@ CreateCdnIpRequest::CreateCdnIpRequest() :
 CreateCdnIpRequest::~CreateCdnIpRequest()
 {}
 
-std::string CreateCdnIpRequest::getCdnIpList()const
-{
-	return cdnIpList_;
-}
-
-void CreateCdnIpRequest::setCdnIpList(const std::string& cdnIpList)
-{
-	cdnIpList_ = cdnIpList;
-	setCoreParameter("CdnIpList", cdnIpList);
-}
-
 long CreateCdnIpRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void CreateCdnIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string CreateCdnIpRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void CreateCdnIpRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
+std::string CreateCdnIpRequest::getCdnIpList()const
+{
+	return cdnIpList_;
+}
+
+void CreateCdnIpRequest::setCdnIpList(const std::string& cdnIpList)
+{
+	cdnIpList_ = cdnIpList;
+	setCoreParameter("CdnIpList", cdnIpList);
 }
 
 std::string CreateCdnIpRequest::getSourceIp()const
@@ -67,16 +78,5 @@ void CreateCdnIpRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string CreateCdnIpRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void CreateCdnIpRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

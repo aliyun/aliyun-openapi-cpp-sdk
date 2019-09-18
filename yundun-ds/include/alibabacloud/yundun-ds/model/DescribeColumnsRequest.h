@@ -35,37 +35,37 @@ namespace AlibabaCloud
 				DescribeColumnsRequest();
 				~DescribeColumnsRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
 				std::string getRiskLevels()const;
 				void setRiskLevels(const std::string& riskLevels);
-				std::string getName()const;
-				void setName(const std::string& name);
+				std::string getQueryName()const;
+				void setQueryName(const std::string& queryName);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				long getTableId()const;
 				void setTableId(long tableId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getQueryName()const;
-				void setQueryName(const std::string& queryName);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getName()const;
+				void setName(const std::string& name);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
 
             private:
-				std::string sourceIp_;
-				int featureType_;
 				std::string riskLevels_;
-				std::string name_;
+				std::string queryName_;
+				std::string sourceIp_;
 				int pageSize_;
 				long tableId_;
-				int currentPage_;
-				std::string queryName_;
 				std::string lang_;
+				int featureType_;
+				int currentPage_;
+				std::string name_;
 				long ruleId_;
 
 			};

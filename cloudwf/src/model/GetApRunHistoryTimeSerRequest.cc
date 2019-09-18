@@ -36,6 +36,17 @@ void GetApRunHistoryTimeSerRequest::setStart(long start)
 	setCoreParameter("Start", std::to_string(start));
 }
 
+std::string GetApRunHistoryTimeSerRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetApRunHistoryTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 long GetApRunHistoryTimeSerRequest::getEnd()const
 {
 	return end_;
@@ -56,16 +67,5 @@ void GetApRunHistoryTimeSerRequest::setId(long id)
 {
 	id_ = id;
 	setCoreParameter("Id", std::to_string(id));
-}
-
-std::string GetApRunHistoryTimeSerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetApRunHistoryTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

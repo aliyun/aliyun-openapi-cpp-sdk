@@ -25,17 +25,6 @@ OnsTopicUpdateRequest::OnsTopicUpdateRequest() :
 OnsTopicUpdateRequest::~OnsTopicUpdateRequest()
 {}
 
-std::string OnsTopicUpdateRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsTopicUpdateRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 int OnsTopicUpdateRequest::getPerm()const
 {
 	return perm_;
@@ -45,6 +34,17 @@ void OnsTopicUpdateRequest::setPerm(int perm)
 {
 	perm_ = perm;
 	setCoreParameter("Perm", std::to_string(perm));
+}
+
+std::string OnsTopicUpdateRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsTopicUpdateRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsTopicUpdateRequest::getTopic()const

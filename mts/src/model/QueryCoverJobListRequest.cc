@@ -36,17 +36,6 @@ void QueryCoverJobListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QueryCoverJobListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void QueryCoverJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string QueryCoverJobListRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -67,6 +56,61 @@ void QueryCoverJobListRequest::setStartOfJobCreatedTimeRange(const std::string& 
 {
 	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
 	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+}
+
+std::string QueryCoverJobListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryCoverJobListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryCoverJobListRequest::getCoverJobIds()const
+{
+	return coverJobIds_;
+}
+
+void QueryCoverJobListRequest::setCoverJobIds(const std::string& coverJobIds)
+{
+	coverJobIds_ = coverJobIds;
+	setCoreParameter("CoverJobIds", coverJobIds);
+}
+
+std::string QueryCoverJobListRequest::getState()const
+{
+	return state_;
+}
+
+void QueryCoverJobListRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
+std::string QueryCoverJobListRequest::getEndOfJobCreatedTimeRange()const
+{
+	return endOfJobCreatedTimeRange_;
+}
+
+void QueryCoverJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
+{
+	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
+	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+}
+
+std::string QueryCoverJobListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void QueryCoverJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryCoverJobListRequest::getOwnerAccount()const
@@ -102,28 +146,6 @@ void QueryCoverJobListRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string QueryCoverJobListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryCoverJobListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string QueryCoverJobListRequest::getCoverJobIds()const
-{
-	return coverJobIds_;
-}
-
-void QueryCoverJobListRequest::setCoverJobIds(const std::string& coverJobIds)
-{
-	coverJobIds_ = coverJobIds;
-	setCoreParameter("CoverJobIds", coverJobIds);
-}
-
 std::string QueryCoverJobListRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,27 +155,5 @@ void QueryCoverJobListRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
-}
-
-std::string QueryCoverJobListRequest::getState()const
-{
-	return state_;
-}
-
-void QueryCoverJobListRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
-}
-
-std::string QueryCoverJobListRequest::getEndOfJobCreatedTimeRange()const
-{
-	return endOfJobCreatedTimeRange_;
-}
-
-void QueryCoverJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
-{
-	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 }
 

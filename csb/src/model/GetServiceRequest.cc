@@ -25,17 +25,6 @@ GetServiceRequest::GetServiceRequest() :
 GetServiceRequest::~GetServiceRequest()
 {}
 
-std::string GetServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long GetServiceRequest::getCsbId()const
 {
 	return csbId_;

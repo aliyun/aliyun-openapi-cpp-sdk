@@ -25,6 +25,17 @@ ListBriefConfigByActionRequest::ListBriefConfigByActionRequest() :
 ListBriefConfigByActionRequest::~ListBriefConfigByActionRequest()
 {}
 
+std::string ListBriefConfigByActionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListBriefConfigByActionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 long ListBriefConfigByActionRequest::getAncestorApgroupId()const
 {
 	return ancestorApgroupId_;
@@ -56,16 +67,5 @@ void ListBriefConfigByActionRequest::setFuzzySearch(const std::string& fuzzySear
 {
 	fuzzySearch_ = fuzzySearch;
 	setCoreParameter("FuzzySearch", fuzzySearch);
-}
-
-std::string ListBriefConfigByActionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListBriefConfigByActionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -41,14 +41,10 @@ namespace AlibabaCloud
 				void setHostInstanceId(const std::string& hostInstanceId);
 				std::vector<std::string> getStatusList()const;
 				void setStatusList(const std::vector<std::string>& statusList);
-				std::string getPrivateIp()const;
-				void setPrivateIp(const std::string& privateIp);
 				std::string getComponentName()const;
 				void setComponentName(const std::string& componentName);
 				std::string getPublicIp()const;
 				void setPublicIp(const std::string& publicIp);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
@@ -59,26 +55,30 @@ namespace AlibabaCloud
 				void setGroupType(const std::string& groupType);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getHostGroupId()const;
-				void setHostGroupId(const std::string& hostGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getPrivateIp()const;
+				void setPrivateIp(const std::string& privateIp);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getHostGroupId()const;
+				void setHostGroupId(const std::string& hostGroupId);
 
             private:
 				long resourceOwnerId_;
 				std::string hostInstanceId_;
 				std::vector<std::string> statusList_;
-				std::string privateIp_;
 				std::string componentName_;
 				std::string publicIp_;
-				std::string clusterId_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string hostName_;
 				std::string groupType_;
 				std::string regionId_;
-				std::string hostGroupId_;
 				int pageSize_;
+				std::string privateIp_;
+				std::string clusterId_;
+				std::string hostGroupId_;
 
 			};
 		}

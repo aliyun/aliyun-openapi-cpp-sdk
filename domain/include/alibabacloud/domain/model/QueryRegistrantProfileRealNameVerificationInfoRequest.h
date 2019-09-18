@@ -37,17 +37,17 @@ namespace AlibabaCloud
 
 				bool getFetchImage()const;
 				void setFetchImage(bool fetchImage);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				long getRegistrantProfileId()const;
 				void setRegistrantProfileId(long registrantProfileId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
 				bool fetchImage_;
-				std::string userClientIp_;
 				long registrantProfileId_;
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

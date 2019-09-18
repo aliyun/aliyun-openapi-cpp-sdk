@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				NodeListRequest();
 				~NodeListRequest();
 
+				long getUserId()const;
+				void setUserId(long userId);
+				std::string getSerialNumbers()const;
+				void setSerialNumbers(const std::string& serialNumbers);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				std::string getInstanceIds()const;
@@ -45,24 +51,18 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getKeyWord()const;
 				void setKeyWord(const std::string& keyWord);
-				long getUserId()const;
-				void setUserId(long userId);
-				std::string getSerialNumbers()const;
-				void setSerialNumbers(const std::string& serialNumbers);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				long userId_;
+				std::string serialNumbers_;
+				int pageNumber_;
 				std::string hostName_;
 				std::string instanceIds_;
 				std::string instanceRegionId_;
 				int pageSize_;
 				std::string keyWord_;
-				long userId_;
-				std::string serialNumbers_;
-				int pageNumber_;
 				std::string status_;
 
 			};

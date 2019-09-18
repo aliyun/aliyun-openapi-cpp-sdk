@@ -25,17 +25,6 @@ UpdateDomainRecordRequest::UpdateDomainRecordRequest() :
 UpdateDomainRecordRequest::~UpdateDomainRecordRequest()
 {}
 
-std::string UpdateDomainRecordRequest::getRecordId()const
-{
-	return recordId_;
-}
-
-void UpdateDomainRecordRequest::setRecordId(const std::string& recordId)
-{
-	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
-}
-
 std::string UpdateDomainRecordRequest::getRR()const
 {
 	return rR_;
@@ -58,15 +47,26 @@ void UpdateDomainRecordRequest::setLine(const std::string& line)
 	setCoreParameter("Line", line);
 }
 
-std::string UpdateDomainRecordRequest::getUserClientIp()const
+std::string UpdateDomainRecordRequest::getType()const
 {
-	return userClientIp_;
+	return type_;
 }
 
-void UpdateDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
+void UpdateDomainRecordRequest::setType(const std::string& type)
 {
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string UpdateDomainRecordRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateDomainRecordRequest::getLang()const
@@ -80,15 +80,15 @@ void UpdateDomainRecordRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string UpdateDomainRecordRequest::getType()const
+std::string UpdateDomainRecordRequest::getValue()const
 {
-	return type_;
+	return value_;
 }
 
-void UpdateDomainRecordRequest::setType(const std::string& type)
+void UpdateDomainRecordRequest::setValue(const std::string& value)
 {
-	type_ = type;
-	setCoreParameter("Type", type);
+	value_ = value;
+	setCoreParameter("Value", value);
 }
 
 long UpdateDomainRecordRequest::getPriority()const
@@ -102,17 +102,6 @@ void UpdateDomainRecordRequest::setPriority(long priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string UpdateDomainRecordRequest::getValue()const
-{
-	return value_;
-}
-
-void UpdateDomainRecordRequest::setValue(const std::string& value)
-{
-	value_ = value;
-	setCoreParameter("Value", value);
-}
-
 long UpdateDomainRecordRequest::getTTL()const
 {
 	return tTL_;
@@ -124,14 +113,25 @@ void UpdateDomainRecordRequest::setTTL(long tTL)
 	setCoreParameter("TTL", std::to_string(tTL));
 }
 
-std::string UpdateDomainRecordRequest::getAccessKeyId()const
+std::string UpdateDomainRecordRequest::getRecordId()const
 {
-	return accessKeyId_;
+	return recordId_;
 }
 
-void UpdateDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
+void UpdateDomainRecordRequest::setRecordId(const std::string& recordId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	recordId_ = recordId;
+	setCoreParameter("RecordId", recordId);
+}
+
+std::string UpdateDomainRecordRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void UpdateDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 

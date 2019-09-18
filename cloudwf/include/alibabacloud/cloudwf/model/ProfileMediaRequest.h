@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getBeginDate()const;
 				void setBeginDate(const std::string& beginDate);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getEndDate()const;
 				void setEndDate(const std::string& endDate);
 				int getDataType()const;
 				void setDataType(int dataType);
 				long getGsid()const;
 				void setGsid(long gsid);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string beginDate_;
+				std::string accessKeyId_;
 				std::string endDate_;
 				int dataType_;
 				long gsid_;
-				std::string accessKeyId_;
 
 			};
 		}

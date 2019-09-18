@@ -25,17 +25,6 @@ DescribeLiveStreamTranscodeInfoRequest::DescribeLiveStreamTranscodeInfoRequest()
 DescribeLiveStreamTranscodeInfoRequest::~DescribeLiveStreamTranscodeInfoRequest()
 {}
 
-std::string DescribeLiveStreamTranscodeInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLiveStreamTranscodeInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long DescribeLiveStreamTranscodeInfoRequest::getOwnerId()const
 {
 	return ownerId_;

@@ -25,6 +25,28 @@ DescribeUidWhiteBaselineRequest::DescribeUidWhiteBaselineRequest() :
 DescribeUidWhiteBaselineRequest::~DescribeUidWhiteBaselineRequest()
 {}
 
+std::string DescribeUidWhiteBaselineRequest::getRemark()const
+{
+	return remark_;
+}
+
+void DescribeUidWhiteBaselineRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string DescribeUidWhiteBaselineRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeUidWhiteBaselineRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,28 +67,6 @@ void DescribeUidWhiteBaselineRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeUidWhiteBaselineRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeUidWhiteBaselineRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string DescribeUidWhiteBaselineRequest::getRemark()const
-{
-	return remark_;
-}
-
-void DescribeUidWhiteBaselineRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeUidWhiteBaselineRequest::getLang()const
@@ -91,15 +91,15 @@ void DescribeUidWhiteBaselineRequest::setSrcUid(long srcUid)
 	setCoreParameter("SrcUid", std::to_string(srcUid));
 }
 
-std::string DescribeUidWhiteBaselineRequest::getSourceCode()const
+int DescribeUidWhiteBaselineRequest::getCurrentPage()const
 {
-	return sourceCode_;
+	return currentPage_;
 }
 
-void DescribeUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
+void DescribeUidWhiteBaselineRequest::setCurrentPage(int currentPage)
 {
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeUidWhiteBaselineRequest::getStatus()const

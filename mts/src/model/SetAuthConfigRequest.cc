@@ -58,6 +58,17 @@ void SetAuthConfigRequest::setResourceOwnerId(const std::string& resourceOwnerId
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
+std::string SetAuthConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetAuthConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string SetAuthConfigRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -89,16 +100,5 @@ void SetAuthConfigRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
-}
-
-std::string SetAuthConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetAuthConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

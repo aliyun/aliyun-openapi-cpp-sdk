@@ -25,17 +25,6 @@ DescribeReplicationGroupRequest::DescribeReplicationGroupRequest() :
 DescribeReplicationGroupRequest::~DescribeReplicationGroupRequest()
 {}
 
-std::string DescribeReplicationGroupRequest::getDestinationInstanceIds()const
-{
-	return destinationInstanceIds_;
-}
-
-void DescribeReplicationGroupRequest::setDestinationInstanceIds(const std::string& destinationInstanceIds)
-{
-	destinationInstanceIds_ = destinationInstanceIds;
-	setCoreParameter("DestinationInstanceIds", destinationInstanceIds);
-}
-
 long DescribeReplicationGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,17 @@ void DescribeReplicationGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeReplicationGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeReplicationGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeReplicationGroupRequest::getSecurityToken()const
@@ -58,6 +58,28 @@ void DescribeReplicationGroupRequest::setSecurityToken(const std::string& securi
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeReplicationGroupRequest::getSourceInstanceId()const
+{
+	return sourceInstanceId_;
+}
+
+void DescribeReplicationGroupRequest::setSourceInstanceId(const std::string& sourceInstanceId)
+{
+	sourceInstanceId_ = sourceInstanceId;
+	setCoreParameter("SourceInstanceId", sourceInstanceId);
+}
+
+std::string DescribeReplicationGroupRequest::getDestinationInstanceIds()const
+{
+	return destinationInstanceIds_;
+}
+
+void DescribeReplicationGroupRequest::setDestinationInstanceIds(const std::string& destinationInstanceIds)
+{
+	destinationInstanceIds_ = destinationInstanceIds;
+	setCoreParameter("DestinationInstanceIds", destinationInstanceIds);
+}
+
 std::string DescribeReplicationGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,28 +89,6 @@ void DescribeReplicationGroupRequest::setResourceOwnerAccount(const std::string&
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeReplicationGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeReplicationGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeReplicationGroupRequest::getReplicationGroupId()const
-{
-	return replicationGroupId_;
-}
-
-void DescribeReplicationGroupRequest::setReplicationGroupId(const std::string& replicationGroupId)
-{
-	replicationGroupId_ = replicationGroupId;
-	setCoreParameter("ReplicationGroupId", replicationGroupId);
 }
 
 std::string DescribeReplicationGroupRequest::getOwnerAccount()const
@@ -102,17 +102,6 @@ void DescribeReplicationGroupRequest::setOwnerAccount(const std::string& ownerAc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeReplicationGroupRequest::getSourceInstanceId()const
-{
-	return sourceInstanceId_;
-}
-
-void DescribeReplicationGroupRequest::setSourceInstanceId(const std::string& sourceInstanceId)
-{
-	sourceInstanceId_ = sourceInstanceId;
-	setCoreParameter("SourceInstanceId", sourceInstanceId);
-}
-
 long DescribeReplicationGroupRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,14 +113,14 @@ void DescribeReplicationGroupRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeReplicationGroupRequest::getAccessKeyId()const
+std::string DescribeReplicationGroupRequest::getReplicationGroupId()const
 {
-	return accessKeyId_;
+	return replicationGroupId_;
 }
 
-void DescribeReplicationGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeReplicationGroupRequest::setReplicationGroupId(const std::string& replicationGroupId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	replicationGroupId_ = replicationGroupId;
+	setCoreParameter("ReplicationGroupId", replicationGroupId);
 }
 

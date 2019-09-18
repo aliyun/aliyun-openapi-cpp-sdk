@@ -36,39 +36,6 @@ void ModifyNodeSpecRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-bool ModifyNodeSpecRequest::getAutoPay()const
-{
-	return autoPay_;
-}
-
-void ModifyNodeSpecRequest::setAutoPay(bool autoPay)
-{
-	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
-}
-
-std::string ModifyNodeSpecRequest::getFromApp()const
-{
-	return fromApp_;
-}
-
-void ModifyNodeSpecRequest::setFromApp(const std::string& fromApp)
-{
-	fromApp_ = fromApp;
-	setCoreParameter("FromApp", fromApp);
-}
-
-std::string ModifyNodeSpecRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyNodeSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyNodeSpecRequest::getClientToken()const
 {
 	return clientToken_;
@@ -78,39 +45,6 @@ void ModifyNodeSpecRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-int ModifyNodeSpecRequest::getNodeStorage()const
-{
-	return nodeStorage_;
-}
-
-void ModifyNodeSpecRequest::setNodeStorage(int nodeStorage)
-{
-	nodeStorage_ = nodeStorage;
-	setCoreParameter("NodeStorage", std::to_string(nodeStorage));
-}
-
-std::string ModifyNodeSpecRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyNodeSpecRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long ModifyNodeSpecRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyNodeSpecRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyNodeSpecRequest::getNodeClass()const
@@ -146,17 +80,6 @@ void ModifyNodeSpecRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string ModifyNodeSpecRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyNodeSpecRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyNodeSpecRequest::getEffectiveTime()const
 {
 	return effectiveTime_;
@@ -188,5 +111,71 @@ void ModifyNodeSpecRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
 	setCoreParameter("NodeId", nodeId);
+}
+
+bool ModifyNodeSpecRequest::getAutoPay()const
+{
+	return autoPay_;
+}
+
+void ModifyNodeSpecRequest::setAutoPay(bool autoPay)
+{
+	autoPay_ = autoPay;
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+}
+
+std::string ModifyNodeSpecRequest::getFromApp()const
+{
+	return fromApp_;
+}
+
+void ModifyNodeSpecRequest::setFromApp(const std::string& fromApp)
+{
+	fromApp_ = fromApp;
+	setCoreParameter("FromApp", fromApp);
+}
+
+std::string ModifyNodeSpecRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyNodeSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+int ModifyNodeSpecRequest::getNodeStorage()const
+{
+	return nodeStorage_;
+}
+
+void ModifyNodeSpecRequest::setNodeStorage(int nodeStorage)
+{
+	nodeStorage_ = nodeStorage;
+	setCoreParameter("NodeStorage", std::to_string(nodeStorage));
+}
+
+std::string ModifyNodeSpecRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyNodeSpecRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long ModifyNodeSpecRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyNodeSpecRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

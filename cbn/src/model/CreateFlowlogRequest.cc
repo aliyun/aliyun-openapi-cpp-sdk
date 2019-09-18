@@ -36,6 +36,50 @@ void CreateFlowlogRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateFlowlogRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateFlowlogRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string CreateFlowlogRequest::getCenId()const
+{
+	return cenId_;
+}
+
+void CreateFlowlogRequest::setCenId(const std::string& cenId)
+{
+	cenId_ = cenId;
+	setCoreParameter("CenId", cenId);
+}
+
+std::string CreateFlowlogRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateFlowlogRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string CreateFlowlogRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateFlowlogRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string CreateFlowlogRequest::getProjectName()const
 {
 	return projectName_;
@@ -69,39 +113,6 @@ void CreateFlowlogRequest::setResourceOwnerAccount(const std::string& resourceOw
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateFlowlogRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void CreateFlowlogRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string CreateFlowlogRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateFlowlogRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateFlowlogRequest::getCenId()const
-{
-	return cenId_;
-}
-
-void CreateFlowlogRequest::setCenId(const std::string& cenId)
-{
-	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
-}
-
 std::string CreateFlowlogRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -111,17 +122,6 @@ void CreateFlowlogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string CreateFlowlogRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateFlowlogRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 long CreateFlowlogRequest::getOwnerId()const

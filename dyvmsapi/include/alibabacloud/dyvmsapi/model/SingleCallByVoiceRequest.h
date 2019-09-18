@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				SingleCallByVoiceRequest();
 				~SingleCallByVoiceRequest();
 
-				int getVolume()const;
-				void setVolume(int volume);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getSpeed()const;
+				void setSpeed(int speed);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getCalledNumber()const;
 				void setCalledNumber(const std::string& calledNumber);
 				std::string getVoiceCode()const;
 				void setVoiceCode(const std::string& voiceCode);
 				std::string getCalledShowNumber()const;
 				void setCalledShowNumber(const std::string& calledShowNumber);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getPlayTimes()const;
 				void setPlayTimes(int playTimes);
-				std::string getOutId()const;
-				void setOutId(const std::string& outId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getSpeed()const;
-				void setSpeed(int speed);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				int getVolume()const;
+				void setVolume(int volume);
+				std::string getOutId()const;
+				void setOutId(const std::string& outId);
 
             private:
-				int volume_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
+				int speed_;
+				std::string accessKeyId_;
 				std::string calledNumber_;
 				std::string voiceCode_;
 				std::string calledShowNumber_;
+				std::string resourceOwnerAccount_;
 				int playTimes_;
-				std::string outId_;
 				long ownerId_;
-				int speed_;
-				std::string accessKeyId_;
+				int volume_;
+				std::string outId_;
 
 			};
 		}

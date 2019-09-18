@@ -69,28 +69,6 @@ void ModifyClusterTemplateRequest::setConfigurations(const std::string& configur
 	setCoreParameter("Configurations", configurations);
 }
 
-bool ModifyClusterTemplateRequest::getIoOptimized()const
-{
-	return ioOptimized_;
-}
-
-void ModifyClusterTemplateRequest::setIoOptimized(bool ioOptimized)
-{
-	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
-}
-
-std::string ModifyClusterTemplateRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void ModifyClusterTemplateRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
-}
-
 bool ModifyClusterTemplateRequest::getSshEnable()const
 {
 	return sshEnable_;
@@ -100,17 +78,6 @@ void ModifyClusterTemplateRequest::setSshEnable(bool sshEnable)
 {
 	sshEnable_ = sshEnable;
 	setCoreParameter("SshEnable", sshEnable ? "true" : "false");
-}
-
-bool ModifyClusterTemplateRequest::getEasEnable()const
-{
-	return easEnable_;
-}
-
-void ModifyClusterTemplateRequest::setEasEnable(bool easEnable)
-{
-	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 std::string ModifyClusterTemplateRequest::getKeyPairName()const
@@ -146,28 +113,6 @@ void ModifyClusterTemplateRequest::setSecurityGroupName(const std::string& secur
 	setCoreParameter("SecurityGroupName", securityGroupName);
 }
 
-std::string ModifyClusterTemplateRequest::getDepositType()const
-{
-	return depositType_;
-}
-
-void ModifyClusterTemplateRequest::setDepositType(const std::string& depositType)
-{
-	depositType_ = depositType;
-	setCoreParameter("DepositType", depositType);
-}
-
-std::string ModifyClusterTemplateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string ModifyClusterTemplateRequest::getMachineType()const
 {
 	return machineType_;
@@ -197,28 +142,6 @@ void ModifyClusterTemplateRequest::setBootstrapAction(const std::vector<Bootstra
 	}
 }
 
-std::string ModifyClusterTemplateRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyClusterTemplateRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-bool ModifyClusterTemplateRequest::getUseLocalMetaDb()const
-{
-	return useLocalMetaDb_;
-}
-
-void ModifyClusterTemplateRequest::setUseLocalMetaDb(bool useLocalMetaDb)
-{
-	useLocalMetaDb_ = useLocalMetaDb;
-	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
-}
-
 std::string ModifyClusterTemplateRequest::getMetaStoreConf()const
 {
 	return metaStoreConf_;
@@ -239,28 +162,6 @@ void ModifyClusterTemplateRequest::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
 	setCoreParameter("EmrVer", emrVer);
-}
-
-std::string ModifyClusterTemplateRequest::getTemplateName()const
-{
-	return templateName_;
-}
-
-void ModifyClusterTemplateRequest::setTemplateName(const std::string& templateName)
-{
-	templateName_ = templateName;
-	setCoreParameter("TemplateName", templateName);
-}
-
-std::string ModifyClusterTemplateRequest::getUserDefinedEmrEcsRole()const
-{
-	return userDefinedEmrEcsRole_;
-}
-
-void ModifyClusterTemplateRequest::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
-{
-	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
-	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
 }
 
 bool ModifyClusterTemplateRequest::getIsOpenPublicIp()const
@@ -341,17 +242,6 @@ void ModifyClusterTemplateRequest::setOptionSoftWareList(const std::vector<std::
 		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
 }
 
-std::string ModifyClusterTemplateRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void ModifyClusterTemplateRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
 std::string ModifyClusterTemplateRequest::getNetType()const
 {
 	return netType_;
@@ -361,6 +251,149 @@ void ModifyClusterTemplateRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
 	setCoreParameter("NetType", netType);
+}
+
+std::string ModifyClusterTemplateRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void ModifyClusterTemplateRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
+}
+
+bool ModifyClusterTemplateRequest::getUseCustomHiveMetaDb()const
+{
+	return useCustomHiveMetaDb_;
+}
+
+void ModifyClusterTemplateRequest::setUseCustomHiveMetaDb(bool useCustomHiveMetaDb)
+{
+	useCustomHiveMetaDb_ = useCustomHiveMetaDb;
+	setCoreParameter("UseCustomHiveMetaDb", useCustomHiveMetaDb ? "true" : "false");
+}
+
+bool ModifyClusterTemplateRequest::getInitCustomHiveMetaDb()const
+{
+	return initCustomHiveMetaDb_;
+}
+
+void ModifyClusterTemplateRequest::setInitCustomHiveMetaDb(bool initCustomHiveMetaDb)
+{
+	initCustomHiveMetaDb_ = initCustomHiveMetaDb;
+	setCoreParameter("InitCustomHiveMetaDb", initCustomHiveMetaDb ? "true" : "false");
+}
+
+bool ModifyClusterTemplateRequest::getIoOptimized()const
+{
+	return ioOptimized_;
+}
+
+void ModifyClusterTemplateRequest::setIoOptimized(bool ioOptimized)
+{
+	ioOptimized_ = ioOptimized;
+	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
+}
+
+std::string ModifyClusterTemplateRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void ModifyClusterTemplateRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setCoreParameter("SecurityGroupId", securityGroupId);
+}
+
+bool ModifyClusterTemplateRequest::getEasEnable()const
+{
+	return easEnable_;
+}
+
+void ModifyClusterTemplateRequest::setEasEnable(bool easEnable)
+{
+	easEnable_ = easEnable;
+	setCoreParameter("EasEnable", easEnable ? "true" : "false");
+}
+
+std::string ModifyClusterTemplateRequest::getDepositType()const
+{
+	return depositType_;
+}
+
+void ModifyClusterTemplateRequest::setDepositType(const std::string& depositType)
+{
+	depositType_ = depositType;
+	setCoreParameter("DepositType", depositType);
+}
+
+std::string ModifyClusterTemplateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyClusterTemplateRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyClusterTemplateRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+bool ModifyClusterTemplateRequest::getUseLocalMetaDb()const
+{
+	return useLocalMetaDb_;
+}
+
+void ModifyClusterTemplateRequest::setUseLocalMetaDb(bool useLocalMetaDb)
+{
+	useLocalMetaDb_ = useLocalMetaDb;
+	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
+}
+
+std::string ModifyClusterTemplateRequest::getTemplateName()const
+{
+	return templateName_;
+}
+
+void ModifyClusterTemplateRequest::setTemplateName(const std::string& templateName)
+{
+	templateName_ = templateName;
+	setCoreParameter("TemplateName", templateName);
+}
+
+std::string ModifyClusterTemplateRequest::getUserDefinedEmrEcsRole()const
+{
+	return userDefinedEmrEcsRole_;
+}
+
+void ModifyClusterTemplateRequest::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
+{
+	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
+	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+}
+
+std::string ModifyClusterTemplateRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void ModifyClusterTemplateRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string ModifyClusterTemplateRequest::getBizId()const
@@ -407,17 +440,6 @@ void ModifyClusterTemplateRequest::setHostGroup(const std::vector<HostGroup>& ho
 	}
 }
 
-std::string ModifyClusterTemplateRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void ModifyClusterTemplateRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
-}
-
 std::string ModifyClusterTemplateRequest::getChargeType()const
 {
 	return chargeType_;
@@ -427,17 +449,6 @@ void ModifyClusterTemplateRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
 	setCoreParameter("ChargeType", chargeType);
-}
-
-bool ModifyClusterTemplateRequest::getUseCustomHiveMetaDb()const
-{
-	return useCustomHiveMetaDb_;
-}
-
-void ModifyClusterTemplateRequest::setUseCustomHiveMetaDb(bool useCustomHiveMetaDb)
-{
-	useCustomHiveMetaDb_ = useCustomHiveMetaDb;
-	setCoreParameter("UseCustomHiveMetaDb", useCustomHiveMetaDb ? "true" : "false");
 }
 
 std::vector<ModifyClusterTemplateRequest::Config> ModifyClusterTemplateRequest::getConfig()const
@@ -470,16 +481,5 @@ void ModifyClusterTemplateRequest::setHighAvailabilityEnable(bool highAvailabili
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
 	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
-}
-
-bool ModifyClusterTemplateRequest::getInitCustomHiveMetaDb()const
-{
-	return initCustomHiveMetaDb_;
-}
-
-void ModifyClusterTemplateRequest::setInitCustomHiveMetaDb(bool initCustomHiveMetaDb)
-{
-	initCustomHiveMetaDb_ = initCustomHiveMetaDb;
-	setCoreParameter("InitCustomHiveMetaDb", initCustomHiveMetaDb ? "true" : "false");
 }
 

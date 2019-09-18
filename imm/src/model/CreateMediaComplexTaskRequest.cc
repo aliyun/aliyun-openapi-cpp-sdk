@@ -25,26 +25,26 @@ CreateMediaComplexTaskRequest::CreateMediaComplexTaskRequest() :
 CreateMediaComplexTaskRequest::~CreateMediaComplexTaskRequest()
 {}
 
-std::string CreateMediaComplexTaskRequest::getNotifyTopicName()const
+std::string CreateMediaComplexTaskRequest::getProject()const
 {
-	return notifyTopicName_;
+	return project_;
 }
 
-void CreateMediaComplexTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
+void CreateMediaComplexTaskRequest::setProject(const std::string& project)
 {
-	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	project_ = project;
+	setCoreParameter("Project", project);
 }
 
-std::string CreateMediaComplexTaskRequest::getRegionId()const
+std::string CreateMediaComplexTaskRequest::getAccessKeyId()const
 {
-	return regionId_;
+	return accessKeyId_;
 }
 
-void CreateMediaComplexTaskRequest::setRegionId(const std::string& regionId)
+void CreateMediaComplexTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateMediaComplexTaskRequest::getNotifyEndpoint()const
@@ -58,15 +58,15 @@ void CreateMediaComplexTaskRequest::setNotifyEndpoint(const std::string& notifyE
 	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
-std::string CreateMediaComplexTaskRequest::getProject()const
+std::string CreateMediaComplexTaskRequest::getNotifyTopicName()const
 {
-	return project_;
+	return notifyTopicName_;
 }
 
-void CreateMediaComplexTaskRequest::setProject(const std::string& project)
+void CreateMediaComplexTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
-	project_ = project;
-	setCoreParameter("Project", project);
+	notifyTopicName_ = notifyTopicName;
+	setCoreParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateMediaComplexTaskRequest::getParameters()const
@@ -78,16 +78,5 @@ void CreateMediaComplexTaskRequest::setParameters(const std::string& parameters)
 {
 	parameters_ = parameters;
 	setCoreParameter("Parameters", parameters);
-}
-
-std::string CreateMediaComplexTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateMediaComplexTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -36,28 +36,6 @@ void AddLiveAppRecordConfigRequest::setOssBucket(const std::string& ossBucket)
 	setCoreParameter("OssBucket", ossBucket);
 }
 
-std::string AddLiveAppRecordConfigRequest::getAppName()const
-{
-	return appName_;
-}
-
-void AddLiveAppRecordConfigRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
-}
-
-std::string AddLiveAppRecordConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void AddLiveAppRecordConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string AddLiveAppRecordConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -80,17 +58,6 @@ void AddLiveAppRecordConfigRequest::setOssEndpoint(const std::string& ossEndpoin
 	setCoreParameter("OssEndpoint", ossEndpoint);
 }
 
-std::string AddLiveAppRecordConfigRequest::getOssObjectPrefix()const
-{
-	return ossObjectPrefix_;
-}
-
-void AddLiveAppRecordConfigRequest::setOssObjectPrefix(const std::string& ossObjectPrefix)
-{
-	ossObjectPrefix_ = ossObjectPrefix;
-	setCoreParameter("OssObjectPrefix", ossObjectPrefix);
-}
-
 long AddLiveAppRecordConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +67,38 @@ void AddLiveAppRecordConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AddLiveAppRecordConfigRequest::getAppName()const
+{
+	return appName_;
+}
+
+void AddLiveAppRecordConfigRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+std::string AddLiveAppRecordConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void AddLiveAppRecordConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string AddLiveAppRecordConfigRequest::getOssObjectPrefix()const
+{
+	return ossObjectPrefix_;
+}
+
+void AddLiveAppRecordConfigRequest::setOssObjectPrefix(const std::string& ossObjectPrefix)
+{
+	ossObjectPrefix_ = ossObjectPrefix;
+	setCoreParameter("OssObjectPrefix", ossObjectPrefix);
 }
 

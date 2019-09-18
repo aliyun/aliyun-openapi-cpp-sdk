@@ -36,6 +36,17 @@ void DescribeReplicaSetRoleRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeReplicaSetRoleRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeReplicaSetRoleRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeReplicaSetRoleRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeReplicaSetRoleRequest::setSecurityToken(const std::string& security
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeReplicaSetRoleRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeReplicaSetRoleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeReplicaSetRoleRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeReplicaSetRoleRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeReplicaSetRoleRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeReplicaSetRoleRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeReplicaSetRoleRequest::getDBInstanceId()const
@@ -91,6 +69,28 @@ void DescribeReplicaSetRoleRequest::setDBInstanceId(const std::string& dBInstanc
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeReplicaSetRoleRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeReplicaSetRoleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeReplicaSetRoleRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeReplicaSetRoleRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeReplicaSetRoleRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void DescribeReplicaSetRoleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeReplicaSetRoleRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeReplicaSetRoleRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

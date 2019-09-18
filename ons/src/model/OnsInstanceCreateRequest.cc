@@ -25,17 +25,6 @@ OnsInstanceCreateRequest::OnsInstanceCreateRequest() :
 OnsInstanceCreateRequest::~OnsInstanceCreateRequest()
 {}
 
-std::string OnsInstanceCreateRequest::getInstanceName()const
-{
-	return instanceName_;
-}
-
-void OnsInstanceCreateRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
-}
-
 std::string OnsInstanceCreateRequest::getRemark()const
 {
 	return remark_;
@@ -45,5 +34,16 @@ void OnsInstanceCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
 	setCoreParameter("Remark", remark);
+}
+
+std::string OnsInstanceCreateRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void OnsInstanceCreateRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setCoreParameter("InstanceName", instanceName);
 }
 

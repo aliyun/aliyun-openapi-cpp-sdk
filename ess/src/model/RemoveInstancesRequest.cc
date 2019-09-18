@@ -36,16 +36,26 @@ void RemoveInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::vector<std::string> RemoveInstancesRequest::getInstanceId()const
+std::string RemoveInstancesRequest::getScalingGroupId()const
 {
-	return instanceId_;
+	return scalingGroupId_;
 }
 
-void RemoveInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
+void RemoveInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
-	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	scalingGroupId_ = scalingGroupId;
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string RemoveInstancesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RemoveInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveInstancesRequest::getRemovePolicy()const
@@ -70,17 +80,6 @@ void RemoveInstancesRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string RemoveInstancesRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void RemoveInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
 std::string RemoveInstancesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -103,14 +102,15 @@ void RemoveInstancesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string RemoveInstancesRequest::getAccessKeyId()const
+std::vector<std::string> RemoveInstancesRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void RemoveInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+void RemoveInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	for(int i = 0; i!= instanceId.size(); i++)
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 

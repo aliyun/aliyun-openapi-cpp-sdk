@@ -19,33 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetReqHeaderConfigRequest;
 
 SetReqHeaderConfigRequest::SetReqHeaderConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetReqHeaderConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetReqHeaderConfig")
 {}
 
 SetReqHeaderConfigRequest::~SetReqHeaderConfigRequest()
 {}
-
-std::string SetReqHeaderConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetReqHeaderConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-long SetReqHeaderConfigRequest::getConfigId()const
-{
-	return configId_;
-}
-
-void SetReqHeaderConfigRequest::setConfigId(long configId)
-{
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
-}
 
 std::string SetReqHeaderConfigRequest::getDomainName()const
 {
@@ -67,6 +45,28 @@ void SetReqHeaderConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetReqHeaderConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetReqHeaderConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+long SetReqHeaderConfigRequest::getConfigId()const
+{
+	return configId_;
+}
+
+void SetReqHeaderConfigRequest::setConfigId(long configId)
+{
+	configId_ = configId;
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 
 std::string SetReqHeaderConfigRequest::getValue()const

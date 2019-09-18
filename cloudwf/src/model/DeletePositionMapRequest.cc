@@ -25,17 +25,6 @@ DeletePositionMapRequest::DeletePositionMapRequest() :
 DeletePositionMapRequest::~DeletePositionMapRequest()
 {}
 
-long DeletePositionMapRequest::getMapId()const
-{
-	return mapId_;
-}
-
-void DeletePositionMapRequest::setMapId(long mapId)
-{
-	mapId_ = mapId;
-	setCoreParameter("MapId", std::to_string(mapId));
-}
-
 std::string DeletePositionMapRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DeletePositionMapRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long DeletePositionMapRequest::getMapId()const
+{
+	return mapId_;
+}
+
+void DeletePositionMapRequest::setMapId(long mapId)
+{
+	mapId_ = mapId;
+	setCoreParameter("MapId", std::to_string(mapId));
 }
 

@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				TransferInReenterTransferAuthorizationCodeRequest();
 				~TransferInReenterTransferAuthorizationCodeRequest();
 
-				std::string getTransferAuthorizationCode()const;
-				void setTransferAuthorizationCode(const std::string& transferAuthorizationCode);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				std::string getTransferAuthorizationCode()const;
+				void setTransferAuthorizationCode(const std::string& transferAuthorizationCode);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string transferAuthorizationCode_;
 				std::string domainName_;
+				std::string transferAuthorizationCode_;
 				std::string userClientIp_;
 				std::string lang_;
 

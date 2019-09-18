@@ -47,17 +47,6 @@ void ModifyDataLimitRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string ModifyDataLimitRequest::getConnector()const
-{
-	return connector_;
-}
-
-void ModifyDataLimitRequest::setConnector(const std::string& connector)
-{
-	connector_ = connector;
-	setCoreParameter("Connector", connector);
-}
-
 long ModifyDataLimitRequest::getId()const
 {
 	return id_;
@@ -80,6 +69,17 @@ void ModifyDataLimitRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
+std::string ModifyDataLimitRequest::getServiceRegionId()const
+{
+	return serviceRegionId_;
+}
+
+void ModifyDataLimitRequest::setServiceRegionId(const std::string& serviceRegionId)
+{
+	serviceRegionId_ = serviceRegionId;
+	setCoreParameter("ServiceRegionId", serviceRegionId);
+}
+
 int ModifyDataLimitRequest::getResourceType()const
 {
 	return resourceType_;
@@ -91,15 +91,15 @@ void ModifyDataLimitRequest::setResourceType(int resourceType)
 	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
-std::string ModifyDataLimitRequest::getServiceRegionId()const
+std::string ModifyDataLimitRequest::getConnector()const
 {
-	return serviceRegionId_;
+	return connector_;
 }
 
-void ModifyDataLimitRequest::setServiceRegionId(const std::string& serviceRegionId)
+void ModifyDataLimitRequest::setConnector(const std::string& connector)
 {
-	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", serviceRegionId);
+	connector_ = connector;
+	setCoreParameter("Connector", connector);
 }
 
 std::string ModifyDataLimitRequest::getUserName()const

@@ -36,6 +36,17 @@ void AddAsrPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddAsrPipelineRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddAsrPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddAsrPipelineRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +67,6 @@ void AddAsrPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string AddAsrPipelineRequest::getName()const
-{
-	return name_;
-}
-
-void AddAsrPipelineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string AddAsrPipelineRequest::getNotifyConfig()const
@@ -102,14 +102,14 @@ void AddAsrPipelineRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string AddAsrPipelineRequest::getAccessKeyId()const
+std::string AddAsrPipelineRequest::getName()const
 {
-	return accessKeyId_;
+	return name_;
 }
 
-void AddAsrPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+void AddAsrPipelineRequest::setName(const std::string& name)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

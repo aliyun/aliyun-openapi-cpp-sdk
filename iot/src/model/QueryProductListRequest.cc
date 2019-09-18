@@ -25,6 +25,28 @@ QueryProductListRequest::QueryProductListRequest() :
 QueryProductListRequest::~QueryProductListRequest()
 {}
 
+int QueryProductListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryProductListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryProductListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryProductListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string QueryProductListRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -47,17 +69,6 @@ void QueryProductListRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int QueryProductListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryProductListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string QueryProductListRequest::getAliyunCommodityCode()const
 {
 	return aliyunCommodityCode_;
@@ -67,16 +78,5 @@ void QueryProductListRequest::setAliyunCommodityCode(const std::string& aliyunCo
 {
 	aliyunCommodityCode_ = aliyunCommodityCode;
 	setCoreParameter("AliyunCommodityCode", aliyunCommodityCode);
-}
-
-std::string QueryProductListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryProductListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

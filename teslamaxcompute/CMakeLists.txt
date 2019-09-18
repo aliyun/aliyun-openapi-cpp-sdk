@@ -21,49 +21,49 @@ set(teslamaxcompute_public_header
 	include/alibabacloud/teslamaxcompute/TeslaMaxComputeExport.h )
 
 set(teslamaxcompute_public_header_model 
-	include/alibabacloud/teslamaxcompute/model/GetUserInstanceRequest.h
-	include/alibabacloud/teslamaxcompute/model/GetUserInstanceResult.h
-	include/alibabacloud/teslamaxcompute/model/GetProjectInstanceRequest.h
-	include/alibabacloud/teslamaxcompute/model/GetProjectInstanceResult.h
-	include/alibabacloud/teslamaxcompute/model/QueryTopologyRequest.h
-	include/alibabacloud/teslamaxcompute/model/QueryTopologyResult.h
-	include/alibabacloud/teslamaxcompute/model/QueryResourceInventoryRequest.h
-	include/alibabacloud/teslamaxcompute/model/QueryResourceInventoryResult.h
+	include/alibabacloud/teslamaxcompute/model/GetClusterInstanceRequest.h
+	include/alibabacloud/teslamaxcompute/model/GetClusterInstanceResult.h
 	include/alibabacloud/teslamaxcompute/model/GetInstancesStatusCountRequest.h
 	include/alibabacloud/teslamaxcompute/model/GetInstancesStatusCountResult.h
+	include/alibabacloud/teslamaxcompute/model/GetProjectInstanceRequest.h
+	include/alibabacloud/teslamaxcompute/model/GetProjectInstanceResult.h
+	include/alibabacloud/teslamaxcompute/model/GetQuotaHistoryInfoRequest.h
+	include/alibabacloud/teslamaxcompute/model/GetQuotaHistoryInfoResult.h
+	include/alibabacloud/teslamaxcompute/model/GetQuotaInstanceRequest.h
+	include/alibabacloud/teslamaxcompute/model/GetQuotaInstanceResult.h
+	include/alibabacloud/teslamaxcompute/model/GetUserInstanceRequest.h
+	include/alibabacloud/teslamaxcompute/model/GetUserInstanceResult.h
 	include/alibabacloud/teslamaxcompute/model/ListUserQuotasRequest.h
 	include/alibabacloud/teslamaxcompute/model/ListUserQuotasResult.h
 	include/alibabacloud/teslamaxcompute/model/QueryCustomerSaleInfoRequest.h
 	include/alibabacloud/teslamaxcompute/model/QueryCustomerSaleInfoResult.h
-	include/alibabacloud/teslamaxcompute/model/GetQuotaInstanceRequest.h
-	include/alibabacloud/teslamaxcompute/model/GetQuotaInstanceResult.h
-	include/alibabacloud/teslamaxcompute/model/GetClusterInstanceRequest.h
-	include/alibabacloud/teslamaxcompute/model/GetClusterInstanceResult.h
-	include/alibabacloud/teslamaxcompute/model/GetQuotaHistoryInfoRequest.h
-	include/alibabacloud/teslamaxcompute/model/GetQuotaHistoryInfoResult.h )
+	include/alibabacloud/teslamaxcompute/model/QueryResourceInventoryRequest.h
+	include/alibabacloud/teslamaxcompute/model/QueryResourceInventoryResult.h
+	include/alibabacloud/teslamaxcompute/model/QueryTopologyRequest.h
+	include/alibabacloud/teslamaxcompute/model/QueryTopologyResult.h )
 
 set(teslamaxcompute_src 
 	src/TeslaMaxComputeClient.cc
-	src/model/GetUserInstanceRequest.cc
-	src/model/GetUserInstanceResult.cc
-	src/model/GetProjectInstanceRequest.cc
-	src/model/GetProjectInstanceResult.cc
-	src/model/QueryTopologyRequest.cc
-	src/model/QueryTopologyResult.cc
-	src/model/QueryResourceInventoryRequest.cc
-	src/model/QueryResourceInventoryResult.cc
+	src/model/GetClusterInstanceRequest.cc
+	src/model/GetClusterInstanceResult.cc
 	src/model/GetInstancesStatusCountRequest.cc
 	src/model/GetInstancesStatusCountResult.cc
+	src/model/GetProjectInstanceRequest.cc
+	src/model/GetProjectInstanceResult.cc
+	src/model/GetQuotaHistoryInfoRequest.cc
+	src/model/GetQuotaHistoryInfoResult.cc
+	src/model/GetQuotaInstanceRequest.cc
+	src/model/GetQuotaInstanceResult.cc
+	src/model/GetUserInstanceRequest.cc
+	src/model/GetUserInstanceResult.cc
 	src/model/ListUserQuotasRequest.cc
 	src/model/ListUserQuotasResult.cc
 	src/model/QueryCustomerSaleInfoRequest.cc
 	src/model/QueryCustomerSaleInfoResult.cc
-	src/model/GetQuotaInstanceRequest.cc
-	src/model/GetQuotaInstanceResult.cc
-	src/model/GetClusterInstanceRequest.cc
-	src/model/GetClusterInstanceResult.cc
-	src/model/GetQuotaHistoryInfoRequest.cc
-	src/model/GetQuotaHistoryInfoResult.cc )
+	src/model/QueryResourceInventoryRequest.cc
+	src/model/QueryResourceInventoryResult.cc
+	src/model/QueryTopologyRequest.cc
+	src/model/QueryTopologyResult.cc )
 
 add_library(teslamaxcompute ${LIB_TYPE}
 	${teslamaxcompute_public_header}

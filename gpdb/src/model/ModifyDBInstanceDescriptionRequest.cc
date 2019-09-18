@@ -25,6 +25,17 @@ ModifyDBInstanceDescriptionRequest::ModifyDBInstanceDescriptionRequest() :
 ModifyDBInstanceDescriptionRequest::~ModifyDBInstanceDescriptionRequest()
 {}
 
+std::string ModifyDBInstanceDescriptionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBInstanceDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyDBInstanceDescriptionRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;
@@ -45,16 +56,5 @@ void ModifyDBInstanceDescriptionRequest::setDBInstanceDescription(const std::str
 {
 	dBInstanceDescription_ = dBInstanceDescription;
 	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
-}
-
-std::string ModifyDBInstanceDescriptionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBInstanceDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

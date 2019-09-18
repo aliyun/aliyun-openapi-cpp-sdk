@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeCenGeographicSpanRemainingBandwidthRequest();
 				~DescribeCenGeographicSpanRemainingBandwidthRequest();
 
-				std::string getGeographicRegionBId()const;
-				void setGeographicRegionBId(const std::string& geographicRegionBId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getCenId()const;
+				void setCenId(const std::string& cenId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getGeographicRegionBId()const;
+				void setGeographicRegionBId(const std::string& geographicRegionBId);
 				std::string getGeographicRegionAId()const;
 				void setGeographicRegionAId(const std::string& geographicRegionAId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getCenId()const;
-				void setCenId(const std::string& cenId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
-				std::string geographicRegionBId_;
 				long resourceOwnerId_;
+				std::string cenId_;
+				int pageNumber_;
+				int pageSize_;
+				std::string geographicRegionBId_;
 				std::string geographicRegionAId_;
 				std::string resourceOwnerAccount_;
-				std::string cenId_;
 				std::string ownerAccount_;
-				int pageSize_;
 				long ownerId_;
-				int pageNumber_;
 
 			};
 		}

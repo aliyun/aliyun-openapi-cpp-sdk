@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				int getPageNo()const;
-				void setPageNo(int pageNo);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageNo()const;
+				void setPageNo(int pageNo);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				int pageNo_;
+				std::string startTime_;
+				std::string accessKeyId_;
 				int pageSize_;
+				std::string resourceOwnerAccount_;
 				std::string endTime_;
 				std::string videoId_;
-				std::string startTime_;
 				long ownerId_;
-				std::string accessKeyId_;
+				int pageNo_;
 
 			};
 		}

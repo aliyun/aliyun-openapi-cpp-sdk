@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				UpgradeBackupPlanRequest();
 				~UpgradeBackupPlanRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getBackupPlanId()const;
@@ -47,7 +45,6 @@ namespace AlibabaCloud
 				void setInstanceClass(const std::string& instanceClass);
 
             private:
-				std::string regionId_;
 				std::string clientToken_;
 				std::string backupPlanId_;
 				std::string ownerId_;

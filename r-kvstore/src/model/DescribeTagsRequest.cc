@@ -36,15 +36,15 @@ void DescribeTagsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeTagsRequest::getResourceOwnerAccount()const
+std::string DescribeTagsRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeTagsRequest::getRegionId()const
@@ -67,6 +67,17 @@ void DescribeTagsRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
 	setCoreParameter("NextToken", nextToken);
+}
+
+std::string DescribeTagsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeTagsRequest::getOwnerAccount()const
@@ -100,16 +111,5 @@ void DescribeTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
-}
-
-std::string DescribeTagsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeTagsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -36,6 +36,72 @@ void RenewInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RenewInstanceRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void RenewInstanceRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setCoreParameter("CouponNo", couponNo);
+}
+
+std::string RenewInstanceRequest::getInstanceClass()const
+{
+	return instanceClass_;
+}
+
+void RenewInstanceRequest::setInstanceClass(const std::string& instanceClass)
+{
+	instanceClass_ = instanceClass;
+	setCoreParameter("InstanceClass", instanceClass);
+}
+
+std::string RenewInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RenewInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RenewInstanceRequest::getCapacity()const
+{
+	return capacity_;
+}
+
+void RenewInstanceRequest::setCapacity(const std::string& capacity)
+{
+	capacity_ = capacity;
+	setCoreParameter("Capacity", capacity);
+}
+
+std::string RenewInstanceRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void RenewInstanceRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string RenewInstanceRequest::getBusinessInfo()const
+{
+	return businessInfo_;
+}
+
+void RenewInstanceRequest::setBusinessInfo(const std::string& businessInfo)
+{
+	businessInfo_ = businessInfo;
+	setCoreParameter("BusinessInfo", businessInfo);
+}
+
 long RenewInstanceRequest::getPeriod()const
 {
 	return period_;
@@ -91,17 +157,6 @@ void RenewInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string RenewInstanceRequest::getCouponNo()const
-{
-	return couponNo_;
-}
-
-void RenewInstanceRequest::setCouponNo(const std::string& couponNo)
-{
-	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
-}
-
 long RenewInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,39 +166,6 @@ void RenewInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RenewInstanceRequest::getInstanceClass()const
-{
-	return instanceClass_;
-}
-
-void RenewInstanceRequest::setInstanceClass(const std::string& instanceClass)
-{
-	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
-}
-
-std::string RenewInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RenewInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string RenewInstanceRequest::getCapacity()const
-{
-	return capacity_;
-}
-
-void RenewInstanceRequest::setCapacity(const std::string& capacity)
-{
-	capacity_ = capacity;
-	setCoreParameter("Capacity", capacity);
 }
 
 std::string RenewInstanceRequest::getInstanceId()const
@@ -157,28 +179,6 @@ void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
-std::string RenewInstanceRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void RenewInstanceRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string RenewInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RenewInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 bool RenewInstanceRequest::getForceUpgrade()const
 {
 	return forceUpgrade_;
@@ -188,16 +188,5 @@ void RenewInstanceRequest::setForceUpgrade(bool forceUpgrade)
 {
 	forceUpgrade_ = forceUpgrade;
 	setCoreParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
-}
-
-std::string RenewInstanceRequest::getBusinessInfo()const
-{
-	return businessInfo_;
-}
-
-void RenewInstanceRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
 }
 

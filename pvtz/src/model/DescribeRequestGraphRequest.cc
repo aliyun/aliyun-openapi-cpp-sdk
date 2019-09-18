@@ -25,6 +25,28 @@ DescribeRequestGraphRequest::DescribeRequestGraphRequest() :
 DescribeRequestGraphRequest::~DescribeRequestGraphRequest()
 {}
 
+long DescribeRequestGraphRequest::getStartTimestamp()const
+{
+	return startTimestamp_;
+}
+
+void DescribeRequestGraphRequest::setStartTimestamp(long startTimestamp)
+{
+	startTimestamp_ = startTimestamp;
+	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
+}
+
+long DescribeRequestGraphRequest::getEndTimestamp()const
+{
+	return endTimestamp_;
+}
+
+void DescribeRequestGraphRequest::setEndTimestamp(long endTimestamp)
+{
+	endTimestamp_ = endTimestamp;
+	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
+}
+
 std::string DescribeRequestGraphRequest::getVpcId()const
 {
 	return vpcId_;
@@ -67,27 +89,5 @@ void DescribeRequestGraphRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-long DescribeRequestGraphRequest::getStartTimestamp()const
-{
-	return startTimestamp_;
-}
-
-void DescribeRequestGraphRequest::setStartTimestamp(long startTimestamp)
-{
-	startTimestamp_ = startTimestamp;
-	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
-}
-
-long DescribeRequestGraphRequest::getEndTimestamp()const
-{
-	return endTimestamp_;
-}
-
-void DescribeRequestGraphRequest::setEndTimestamp(long endTimestamp)
-{
-	endTimestamp_ = endTimestamp;
-	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
 }
 

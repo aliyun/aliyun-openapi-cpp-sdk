@@ -47,17 +47,6 @@ void QueryMediaFpDeleteJobListRequest::setResourceOwnerAccount(const std::string
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryMediaFpDeleteJobListRequest::getJobIds()const
-{
-	return jobIds_;
-}
-
-void QueryMediaFpDeleteJobListRequest::setJobIds(const std::string& jobIds)
-{
-	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
-}
-
 std::string QueryMediaFpDeleteJobListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryMediaFpDeleteJobListRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryMediaFpDeleteJobListRequest::getJobIds()const
+{
+	return jobIds_;
+}
+
+void QueryMediaFpDeleteJobListRequest::setJobIds(const std::string& jobIds)
+{
+	jobIds_ = jobIds;
+	setCoreParameter("JobIds", jobIds);
 }
 

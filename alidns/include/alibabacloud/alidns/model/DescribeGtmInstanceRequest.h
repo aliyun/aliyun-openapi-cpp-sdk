@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				bool getNeedDetailAttributes()const;
+				void setNeedDetailAttributes(bool needDetailAttributes);
 
             private:
 				std::string instanceId_;
 				std::string userClientIp_;
 				std::string lang_;
+				bool needDetailAttributes_;
 
 			};
 		}

@@ -35,34 +35,31 @@ namespace AlibabaCloud
 				DescribeCastersRequest();
 				~DescribeCastersRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getCasterName()const;
-				void setCasterName(const std::string& casterName);
-				std::string getCasterId()const;
-				void setCasterId(const std::string& casterId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
+				std::string getCasterName()const;
+				void setCasterName(const std::string& casterName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getCasterId()const;
+				void setCasterId(const std::string& casterId);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				int getStatus()const;
 				void setStatus(int status);
 
             private:
-				std::string regionId_;
-				std::string casterName_;
-				std::string casterId_;
-				int pageSize_;
-				std::string endTime_;
 				std::string startTime_;
-				long ownerId_;
 				int pageNum_;
+				std::string casterName_;
+				int pageSize_;
+				std::string casterId_;
+				std::string endTime_;
+				long ownerId_;
 				int status_;
 
 			};

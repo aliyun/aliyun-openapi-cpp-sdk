@@ -25,6 +25,28 @@ DecryptKeyRequest::DecryptKeyRequest() :
 DecryptKeyRequest::~DecryptKeyRequest()
 {}
 
+std::string DecryptKeyRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DecryptKeyRequest::setResourceOwnerId(const std::string& resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+}
+
+std::string DecryptKeyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DecryptKeyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DecryptKeyRequest::getRand()const
 {
 	return rand_;
@@ -36,15 +58,15 @@ void DecryptKeyRequest::setRand(const std::string& rand)
 	setCoreParameter("Rand", rand);
 }
 
-std::string DecryptKeyRequest::getResourceOwnerId()const
+std::string DecryptKeyRequest::getCiphertextBlob()const
 {
-	return resourceOwnerId_;
+	return ciphertextBlob_;
 }
 
-void DecryptKeyRequest::setResourceOwnerId(const std::string& resourceOwnerId)
+void DecryptKeyRequest::setCiphertextBlob(const std::string& ciphertextBlob)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	ciphertextBlob_ = ciphertextBlob;
+	setCoreParameter("CiphertextBlob", ciphertextBlob);
 }
 
 std::string DecryptKeyRequest::getResourceOwnerAccount()const
@@ -78,27 +100,5 @@ void DecryptKeyRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
-}
-
-std::string DecryptKeyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DecryptKeyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DecryptKeyRequest::getCiphertextBlob()const
-{
-	return ciphertextBlob_;
-}
-
-void DecryptKeyRequest::setCiphertextBlob(const std::string& ciphertextBlob)
-{
-	ciphertextBlob_ = ciphertextBlob;
-	setCoreParameter("CiphertextBlob", ciphertextBlob);
 }
 

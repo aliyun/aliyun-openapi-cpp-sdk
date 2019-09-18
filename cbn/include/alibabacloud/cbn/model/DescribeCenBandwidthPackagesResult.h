@@ -34,22 +34,35 @@ namespace AlibabaCloud
 			public:
 				struct CenBandwidthPackage
 				{
+					struct OrginInterRegionBandwidthLimit
+					{
+						std::string geographicSpanId;
+						std::string oppositeRegionId;
+						std::string bandwidthLimit;
+						std::string localRegionId;
+					};
 					std::string status;
 					std::string description;
 					std::string geographicSpanId;
 					std::string geographicRegionBId;
 					std::string geographicRegionAId;
 					bool isCrossBorder;
+					std::string hasReservationData;
 					std::string businessStatus;
 					std::string name;
 					std::string typeFor95;
+					std::string reservationInternetChargeType;
+					std::string reservationOrderType;
 					std::string bandwidthPackageChargeType;
 					long bandwidth;
 					std::string expiredTime;
 					std::string creationTime;
 					std::string ratio;
 					std::vector<std::string> cenIds;
+					std::vector<CenBandwidthPackage::OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits;
+					std::string reservationActiveTime;
 					std::string cenBandwidthPackageId;
+					std::string reservationBandwidth;
 				};
 
 

@@ -25,17 +25,6 @@ DeleteDataLimitRequest::DeleteDataLimitRequest() :
 DeleteDataLimitRequest::~DeleteDataLimitRequest()
 {}
 
-std::string DeleteDataLimitRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DeleteDataLimitRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DeleteDataLimitRequest::getFeatureType()const
 {
 	return featureType_;
@@ -45,6 +34,17 @@ void DeleteDataLimitRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DeleteDataLimitRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DeleteDataLimitRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DeleteDataLimitRequest::getId()const

@@ -36,28 +36,6 @@ void CreateUploadAttachedMediaRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateUploadAttachedMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateUploadAttachedMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateUploadAttachedMediaRequest::getCateIds()const
-{
-	return cateIds_;
-}
-
-void CreateUploadAttachedMediaRequest::setCateIds(const std::string& cateIds)
-{
-	cateIds_ = cateIds;
-	setCoreParameter("CateIds", cateIds);
-}
-
 std::string CreateUploadAttachedMediaRequest::getIcon()const
 {
 	return icon_;
@@ -89,17 +67,6 @@ void CreateUploadAttachedMediaRequest::setFileSize(const std::string& fileSize)
 {
 	fileSize_ = fileSize;
 	setCoreParameter("FileSize", fileSize);
-}
-
-long CreateUploadAttachedMediaRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateUploadAttachedMediaRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateUploadAttachedMediaRequest::getTitle()const
@@ -135,17 +102,6 @@ void CreateUploadAttachedMediaRequest::setBusinessType(const std::string& busine
 	setCoreParameter("BusinessType", businessType);
 }
 
-std::string CreateUploadAttachedMediaRequest::getTags()const
-{
-	return tags_;
-}
-
-void CreateUploadAttachedMediaRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setCoreParameter("Tags", tags);
-}
-
 std::string CreateUploadAttachedMediaRequest::getStorageLocation()const
 {
 	return storageLocation_;
@@ -168,6 +124,61 @@ void CreateUploadAttachedMediaRequest::setUserData(const std::string& userData)
 	setCoreParameter("UserData", userData);
 }
 
+long CreateUploadAttachedMediaRequest::getCateId()const
+{
+	return cateId_;
+}
+
+void CreateUploadAttachedMediaRequest::setCateId(long cateId)
+{
+	cateId_ = cateId;
+	setCoreParameter("CateId", std::to_string(cateId));
+}
+
+std::string CreateUploadAttachedMediaRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateUploadAttachedMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateUploadAttachedMediaRequest::getCateIds()const
+{
+	return cateIds_;
+}
+
+void CreateUploadAttachedMediaRequest::setCateIds(const std::string& cateIds)
+{
+	cateIds_ = cateIds;
+	setCoreParameter("CateIds", cateIds);
+}
+
+long CreateUploadAttachedMediaRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateUploadAttachedMediaRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateUploadAttachedMediaRequest::getTags()const
+{
+	return tags_;
+}
+
+void CreateUploadAttachedMediaRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setCoreParameter("Tags", tags);
+}
+
 std::string CreateUploadAttachedMediaRequest::getMediaExt()const
 {
 	return mediaExt_;
@@ -188,17 +199,6 @@ void CreateUploadAttachedMediaRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
 	setCoreParameter("FileName", fileName);
-}
-
-long CreateUploadAttachedMediaRequest::getCateId()const
-{
-	return cateId_;
-}
-
-void CreateUploadAttachedMediaRequest::setCateId(long cateId)
-{
-	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
 }
 
 std::string CreateUploadAttachedMediaRequest::getAppId()const

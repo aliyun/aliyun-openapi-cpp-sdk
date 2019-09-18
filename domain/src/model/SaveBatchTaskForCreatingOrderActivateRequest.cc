@@ -66,28 +66,6 @@ void SaveBatchTaskForCreatingOrderActivateRequest::setOrderActivateParam(const s
 	}
 }
 
-std::string SaveBatchTaskForCreatingOrderActivateRequest::getPromotionNo()const
-{
-	return promotionNo_;
-}
-
-void SaveBatchTaskForCreatingOrderActivateRequest::setPromotionNo(const std::string& promotionNo)
-{
-	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
-}
-
-std::string SaveBatchTaskForCreatingOrderActivateRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveBatchTaskForCreatingOrderActivateRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SaveBatchTaskForCreatingOrderActivateRequest::getCouponNo()const
 {
 	return couponNo_;
@@ -108,6 +86,28 @@ void SaveBatchTaskForCreatingOrderActivateRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
 	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+}
+
+std::string SaveBatchTaskForCreatingOrderActivateRequest::getPromotionNo()const
+{
+	return promotionNo_;
+}
+
+void SaveBatchTaskForCreatingOrderActivateRequest::setPromotionNo(const std::string& promotionNo)
+{
+	promotionNo_ = promotionNo;
+	setCoreParameter("PromotionNo", promotionNo);
+}
+
+std::string SaveBatchTaskForCreatingOrderActivateRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveBatchTaskForCreatingOrderActivateRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForCreatingOrderActivateRequest::getLang()const

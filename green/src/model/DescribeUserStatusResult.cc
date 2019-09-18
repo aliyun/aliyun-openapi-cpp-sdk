@@ -35,13 +35,9 @@ DescribeUserStatusResult::~DescribeUserStatusResult()
 
 void DescribeUserStatusResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	if(!value["Buyed"].isNull())
 		buyed_ = value["Buyed"].asString() == "true";
@@ -55,12 +51,19 @@ void DescribeUserStatusResult::parse(const std::string &payload)
 		ossCheckStatus_ = value["OssCheckStatus"].asString();
 	if(!value["OssVideoSizeLimit"].isNull())
 		ossVideoSizeLimit_ = std::stoi(value["OssVideoSizeLimit"].asString());
+	if(!value["Uid"].isNull())
+		uid_ = value["Uid"].asString();
 
 }
 
 std::string DescribeUserStatusResult::getOpenApiBeginTime()const
 {
 	return openApiBeginTime_;
+}
+
+std::string DescribeUserStatusResult::getUid()const
+{
+	return uid_;
 }
 
 bool DescribeUserStatusResult::getOpenApiUsed()const

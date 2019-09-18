@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ModifyReadOnlyAccountPasswordRequest();
 				~ModifyReadOnlyAccountPasswordRequest();
 
+				std::string getDrdsInstanceId()const;
+				void setDrdsInstanceId(const std::string& drdsInstanceId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getNewPasswd()const;
 				void setNewPasswd(const std::string& newPasswd);
 				std::string getDbName()const;
@@ -43,18 +47,14 @@ namespace AlibabaCloud
 				void setAccountName(const std::string& accountName);
 				std::string getOriginPassword()const;
 				void setOriginPassword(const std::string& originPassword);
-				std::string getDrdsInstanceId()const;
-				void setDrdsInstanceId(const std::string& drdsInstanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string drdsInstanceId_;
+				std::string accessKeyId_;
 				std::string newPasswd_;
 				std::string dbName_;
 				std::string accountName_;
 				std::string originPassword_;
-				std::string drdsInstanceId_;
-				std::string accessKeyId_;
 
 			};
 		}

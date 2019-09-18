@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				DescribeLiveStreamTranscodeInfoRequest();
 				~DescribeLiveStreamTranscodeInfoRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getDomainTranscodeName()const;
 				void setDomainTranscodeName(const std::string& domainTranscodeName);
 
             private:
-				std::string regionId_;
 				long ownerId_;
 				std::string domainTranscodeName_;
 

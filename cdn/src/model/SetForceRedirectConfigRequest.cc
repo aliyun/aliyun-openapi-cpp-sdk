@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetForceRedirectConfigRequest;
 
 SetForceRedirectConfigRequest::SetForceRedirectConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetForceRedirectConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetForceRedirectConfig")
 {}
 
 SetForceRedirectConfigRequest::~SetForceRedirectConfigRequest()
 {}
-
-std::string SetForceRedirectConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetForceRedirectConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string SetForceRedirectConfigRequest::getDomainName()const
 {
@@ -67,5 +56,16 @@ void SetForceRedirectConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetForceRedirectConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetForceRedirectConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

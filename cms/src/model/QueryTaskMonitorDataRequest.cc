@@ -36,39 +36,6 @@ void QueryTaskMonitorDataRequest::setCursor(const std::string& cursor)
 	setCoreParameter("Cursor", cursor);
 }
 
-std::string QueryTaskMonitorDataRequest::getPeriod()const
-{
-	return period_;
-}
-
-void QueryTaskMonitorDataRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setCoreParameter("Period", period);
-}
-
-int QueryTaskMonitorDataRequest::getLength()const
-{
-	return length_;
-}
-
-void QueryTaskMonitorDataRequest::setLength(int length)
-{
-	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
-}
-
-std::string QueryTaskMonitorDataRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void QueryTaskMonitorDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string QueryTaskMonitorDataRequest::getStartTime()const
 {
 	return startTime_;
@@ -111,5 +78,38 @@ void QueryTaskMonitorDataRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setCoreParameter("TaskId", taskId);
+}
+
+std::string QueryTaskMonitorDataRequest::getPeriod()const
+{
+	return period_;
+}
+
+void QueryTaskMonitorDataRequest::setPeriod(const std::string& period)
+{
+	period_ = period;
+	setCoreParameter("Period", period);
+}
+
+int QueryTaskMonitorDataRequest::getLength()const
+{
+	return length_;
+}
+
+void QueryTaskMonitorDataRequest::setLength(int length)
+{
+	length_ = length;
+	setCoreParameter("Length", std::to_string(length));
+}
+
+std::string QueryTaskMonitorDataRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void QueryTaskMonitorDataRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
 }
 

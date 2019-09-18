@@ -25,17 +25,6 @@ HeadquartersToolsContrastRequest::HeadquartersToolsContrastRequest() :
 HeadquartersToolsContrastRequest::~HeadquartersToolsContrastRequest()
 {}
 
-long HeadquartersToolsContrastRequest::getBid()const
-{
-	return bid_;
-}
-
-void HeadquartersToolsContrastRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string HeadquartersToolsContrastRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void HeadquartersToolsContrastRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long HeadquartersToolsContrastRequest::getBid()const
+{
+	return bid_;
+}
+
+void HeadquartersToolsContrastRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

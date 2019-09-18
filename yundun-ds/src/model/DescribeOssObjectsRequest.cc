@@ -25,72 +25,6 @@ DescribeOssObjectsRequest::DescribeOssObjectsRequest() :
 DescribeOssObjectsRequest::~DescribeOssObjectsRequest()
 {}
 
-std::string DescribeOssObjectsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeOssObjectsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DescribeOssObjectsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOssObjectsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-int DescribeOssObjectsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeOssObjectsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
-std::string DescribeOssObjectsRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeOssObjectsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-int DescribeOssObjectsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeOssObjectsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeOssObjectsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeOssObjectsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeOssObjectsRequest::getQueryName()const
 {
 	return queryName_;
@@ -113,6 +47,28 @@ void DescribeOssObjectsRequest::setRiskLevelId(int riskLevelId)
 	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
+std::string DescribeOssObjectsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOssObjectsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int DescribeOssObjectsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeOssObjectsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string DescribeOssObjectsRequest::getLang()const
 {
 	return lang_;
@@ -122,6 +78,50 @@ void DescribeOssObjectsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+int DescribeOssObjectsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeOssObjectsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int DescribeOssObjectsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeOssObjectsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeOssObjectsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeOssObjectsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string DescribeOssObjectsRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeOssObjectsRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 long DescribeOssObjectsRequest::getRuleId()const

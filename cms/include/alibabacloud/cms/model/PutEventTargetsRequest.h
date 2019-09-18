@@ -50,18 +50,18 @@ namespace AlibabaCloud
 					std::string region;
 					std::string logStore;
 				};
+				struct MnsParameters
+				{
+					std::string id;
+					std::string region;
+					std::string queue;
+				};
 				struct FcParameters
 				{
 					std::string functionName;
 					std::string serviceName;
 					std::string id;
 					std::string region;
-				};
-				struct MnsParameters
-				{
-					std::string id;
-					std::string region;
-					std::string queue;
 				};
 
 			public:
@@ -74,20 +74,20 @@ namespace AlibabaCloud
 				void setContactParameters(const std::vector<ContactParameters>& contactParameters);
 				std::vector<SlsParameters> getSlsParameters()const;
 				void setSlsParameters(const std::vector<SlsParameters>& slsParameters);
-				std::vector<FcParameters> getFcParameters()const;
-				void setFcParameters(const std::vector<FcParameters>& fcParameters);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
 				std::vector<MnsParameters> getMnsParameters()const;
 				void setMnsParameters(const std::vector<MnsParameters>& mnsParameters);
+				std::vector<FcParameters> getFcParameters()const;
+				void setFcParameters(const std::vector<FcParameters>& fcParameters);
 
             private:
 				std::vector<WebhookParameters> webhookParameters_;
 				std::vector<ContactParameters> contactParameters_;
 				std::vector<SlsParameters> slsParameters_;
-				std::vector<FcParameters> fcParameters_;
 				std::string ruleName_;
 				std::vector<MnsParameters> mnsParameters_;
+				std::vector<FcParameters> fcParameters_;
 
 			};
 		}

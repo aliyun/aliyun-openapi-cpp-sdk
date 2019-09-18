@@ -47,17 +47,6 @@ void ListApPositionMapRequest::setSearchName(const std::string& searchName)
 	setCoreParameter("SearchName", searchName);
 }
 
-int ListApPositionMapRequest::getTotalItem()const
-{
-	return totalItem_;
-}
-
-void ListApPositionMapRequest::setTotalItem(int totalItem)
-{
-	totalItem_ = totalItem;
-	setCoreParameter("TotalItem", std::to_string(totalItem));
-}
-
 int ListApPositionMapRequest::getLength()const
 {
 	return length_;
@@ -67,6 +56,39 @@ void ListApPositionMapRequest::setLength(int length)
 {
 	length_ = length;
 	setCoreParameter("Length", std::to_string(length));
+}
+
+std::string ListApPositionMapRequest::getOrderDir()const
+{
+	return orderDir_;
+}
+
+void ListApPositionMapRequest::setOrderDir(const std::string& orderDir)
+{
+	orderDir_ = orderDir;
+	setCoreParameter("OrderDir", orderDir);
+}
+
+std::string ListApPositionMapRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListApPositionMapRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListApPositionMapRequest::getTotalItem()const
+{
+	return totalItem_;
+}
+
+void ListApPositionMapRequest::setTotalItem(int totalItem)
+{
+	totalItem_ = totalItem;
+	setCoreParameter("TotalItem", std::to_string(totalItem));
 }
 
 int ListApPositionMapRequest::getMapType()const
@@ -100,27 +122,5 @@ void ListApPositionMapRequest::setSearchApgroupName(const std::string& searchApg
 {
 	searchApgroupName_ = searchApgroupName;
 	setCoreParameter("SearchApgroupName", searchApgroupName);
-}
-
-std::string ListApPositionMapRequest::getOrderDir()const
-{
-	return orderDir_;
-}
-
-void ListApPositionMapRequest::setOrderDir(const std::string& orderDir)
-{
-	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
-}
-
-std::string ListApPositionMapRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListApPositionMapRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

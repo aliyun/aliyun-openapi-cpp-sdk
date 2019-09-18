@@ -25,6 +25,17 @@ VerifyWebsiteInstanceRequest::VerifyWebsiteInstanceRequest() :
 VerifyWebsiteInstanceRequest::~VerifyWebsiteInstanceRequest()
 {}
 
+std::string VerifyWebsiteInstanceRequest::getVerifyMethod()const
+{
+	return verifyMethod_;
+}
+
+void VerifyWebsiteInstanceRequest::setVerifyMethod(const std::string& verifyMethod)
+{
+	verifyMethod_ = verifyMethod;
+	setCoreParameter("VerifyMethod", verifyMethod);
+}
+
 std::string VerifyWebsiteInstanceRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -45,17 +56,6 @@ void VerifyWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string VerifyWebsiteInstanceRequest::getVerifyMethod()const
-{
-	return verifyMethod_;
-}
-
-void VerifyWebsiteInstanceRequest::setVerifyMethod(const std::string& verifyMethod)
-{
-	verifyMethod_ = verifyMethod;
-	setCoreParameter("VerifyMethod", verifyMethod);
 }
 
 std::string VerifyWebsiteInstanceRequest::getLang()const

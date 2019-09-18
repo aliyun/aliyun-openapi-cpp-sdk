@@ -47,26 +47,26 @@ void AddDomainRecordRequest::setLine(const std::string& line)
 	setCoreParameter("Line", line);
 }
 
-std::string AddDomainRecordRequest::getUserClientIp()const
+std::string AddDomainRecordRequest::getType()const
 {
-	return userClientIp_;
+	return type_;
 }
 
-void AddDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
+void AddDomainRecordRequest::setType(const std::string& type)
 {
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
-std::string AddDomainRecordRequest::getDomainName()const
+std::string AddDomainRecordRequest::getAccessKeyId()const
 {
-	return domainName_;
+	return accessKeyId_;
 }
 
-void AddDomainRecordRequest::setDomainName(const std::string& domainName)
+void AddDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddDomainRecordRequest::getLang()const
@@ -80,15 +80,26 @@ void AddDomainRecordRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string AddDomainRecordRequest::getType()const
+std::string AddDomainRecordRequest::getValue()const
 {
-	return type_;
+	return value_;
 }
 
-void AddDomainRecordRequest::setType(const std::string& type)
+void AddDomainRecordRequest::setValue(const std::string& value)
 {
-	type_ = type;
-	setCoreParameter("Type", type);
+	value_ = value;
+	setCoreParameter("Value", value);
+}
+
+std::string AddDomainRecordRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void AddDomainRecordRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
 }
 
 long AddDomainRecordRequest::getPriority()const
@@ -102,17 +113,6 @@ void AddDomainRecordRequest::setPriority(long priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string AddDomainRecordRequest::getValue()const
-{
-	return value_;
-}
-
-void AddDomainRecordRequest::setValue(const std::string& value)
-{
-	value_ = value;
-	setCoreParameter("Value", value);
-}
-
 long AddDomainRecordRequest::getTTL()const
 {
 	return tTL_;
@@ -124,14 +124,14 @@ void AddDomainRecordRequest::setTTL(long tTL)
 	setCoreParameter("TTL", std::to_string(tTL));
 }
 
-std::string AddDomainRecordRequest::getAccessKeyId()const
+std::string AddDomainRecordRequest::getUserClientIp()const
 {
-	return accessKeyId_;
+	return userClientIp_;
 }
 
-void AddDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
+void AddDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 

@@ -36,39 +36,6 @@ void UpdateZoneRecordRequest::setRr(const std::string& rr)
 	setCoreParameter("Rr", rr);
 }
 
-long UpdateZoneRecordRequest::getRecordId()const
-{
-	return recordId_;
-}
-
-void UpdateZoneRecordRequest::setRecordId(long recordId)
-{
-	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
-}
-
-std::string UpdateZoneRecordRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void UpdateZoneRecordRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
-std::string UpdateZoneRecordRequest::getLang()const
-{
-	return lang_;
-}
-
-void UpdateZoneRecordRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string UpdateZoneRecordRequest::getType()const
 {
 	return type_;
@@ -100,6 +67,39 @@ void UpdateZoneRecordRequest::setTtl(int ttl)
 {
 	ttl_ = ttl;
 	setCoreParameter("Ttl", std::to_string(ttl));
+}
+
+long UpdateZoneRecordRequest::getRecordId()const
+{
+	return recordId_;
+}
+
+void UpdateZoneRecordRequest::setRecordId(long recordId)
+{
+	recordId_ = recordId;
+	setCoreParameter("RecordId", std::to_string(recordId));
+}
+
+std::string UpdateZoneRecordRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void UpdateZoneRecordRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string UpdateZoneRecordRequest::getLang()const
+{
+	return lang_;
+}
+
+void UpdateZoneRecordRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 std::string UpdateZoneRecordRequest::getValue()const

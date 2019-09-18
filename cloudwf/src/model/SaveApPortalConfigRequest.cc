@@ -36,17 +36,6 @@ void SaveApPortalConfigRequest::setAuthKey(const std::string& authKey)
 	setCoreParameter("AuthKey", authKey);
 }
 
-std::string SaveApPortalConfigRequest::getPortalUrl()const
-{
-	return portalUrl_;
-}
-
-void SaveApPortalConfigRequest::setPortalUrl(const std::string& portalUrl)
-{
-	portalUrl_ = portalUrl;
-	setCoreParameter("PortalUrl", portalUrl);
-}
-
 bool SaveApPortalConfigRequest::getPortalStatus()const
 {
 	return portalStatus_;
@@ -67,6 +56,39 @@ void SaveApPortalConfigRequest::setWhitelist(const std::string& whitelist)
 {
 	whitelist_ = whitelist;
 	setCoreParameter("Whitelist", whitelist);
+}
+
+std::string SaveApPortalConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SaveApPortalConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int SaveApPortalConfigRequest::getNetwork()const
+{
+	return network_;
+}
+
+void SaveApPortalConfigRequest::setNetwork(int network)
+{
+	network_ = network;
+	setCoreParameter("Network", std::to_string(network));
+}
+
+std::string SaveApPortalConfigRequest::getPortalUrl()const
+{
+	return portalUrl_;
+}
+
+void SaveApPortalConfigRequest::setPortalUrl(const std::string& portalUrl)
+{
+	portalUrl_ = portalUrl;
+	setCoreParameter("PortalUrl", portalUrl);
 }
 
 std::string SaveApPortalConfigRequest::getCheckUrl()const
@@ -111,27 +133,5 @@ void SaveApPortalConfigRequest::setWebAuthUrl(const std::string& webAuthUrl)
 {
 	webAuthUrl_ = webAuthUrl;
 	setCoreParameter("WebAuthUrl", webAuthUrl);
-}
-
-std::string SaveApPortalConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SaveApPortalConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-int SaveApPortalConfigRequest::getNetwork()const
-{
-	return network_;
-}
-
-void SaveApPortalConfigRequest::setNetwork(int network)
-{
-	network_ = network;
-	setCoreParameter("Network", std::to_string(network));
 }
 

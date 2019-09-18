@@ -36,17 +36,6 @@ void QueryTrademarkPriceRequest::setTmName(const std::string& tmName)
 	setCoreParameter("TmName", tmName);
 }
 
-std::string QueryTrademarkPriceRequest::getTmIcon()const
-{
-	return tmIcon_;
-}
-
-void QueryTrademarkPriceRequest::setTmIcon(const std::string& tmIcon)
-{
-	tmIcon_ = tmIcon;
-	setCoreParameter("TmIcon", tmIcon);
-}
-
 std::string QueryTrademarkPriceRequest::getOrderData()const
 {
 	return orderData_;
@@ -78,5 +67,16 @@ void QueryTrademarkPriceRequest::setUserId(long userId)
 {
 	userId_ = userId;
 	setCoreParameter("UserId", std::to_string(userId));
+}
+
+std::string QueryTrademarkPriceRequest::getTmIcon()const
+{
+	return tmIcon_;
+}
+
+void QueryTrademarkPriceRequest::setTmIcon(const std::string& tmIcon)
+{
+	tmIcon_ = tmIcon;
+	setCoreParameter("TmIcon", tmIcon);
 }
 

@@ -39,18 +39,18 @@ namespace AlibabaCloud
 				void setResourceOwnerId(const std::string& resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getCateId()const;
-				void setCateId(long cateId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
+				long getCateId()const;
+				void setCateId(long cateId);
 				std::string getCateName()const;
 				void setCateName(const std::string& cateName);
 
             private:
 				std::string resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				long cateId_;
 				std::string ownerId_;
+				long cateId_;
 				std::string cateName_;
 
 			};

@@ -47,6 +47,17 @@ void SetSagRouteableAddressRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string SetSagRouteableAddressRequest::getRouteableAddress()const
+{
+	return routeableAddress_;
+}
+
+void SetSagRouteableAddressRequest::setRouteableAddress(const std::string& routeableAddress)
+{
+	routeableAddress_ = routeableAddress;
+	setCoreParameter("RouteableAddress", routeableAddress);
+}
+
 std::string SetSagRouteableAddressRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,17 +78,6 @@ void SetSagRouteableAddressRequest::setResourceOwnerAccount(const std::string& r
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string SetSagRouteableAddressRequest::getSagId()const
-{
-	return sagId_;
-}
-
-void SetSagRouteableAddressRequest::setSagId(const std::string& sagId)
-{
-	sagId_ = sagId;
-	setCoreParameter("SagId", sagId);
 }
 
 std::string SetSagRouteableAddressRequest::getOwnerAccount()const
@@ -102,14 +102,14 @@ void SetSagRouteableAddressRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetSagRouteableAddressRequest::getRouteableAddress()const
+std::string SetSagRouteableAddressRequest::getSagId()const
 {
-	return routeableAddress_;
+	return sagId_;
 }
 
-void SetSagRouteableAddressRequest::setRouteableAddress(const std::string& routeableAddress)
+void SetSagRouteableAddressRequest::setSagId(const std::string& sagId)
 {
-	routeableAddress_ = routeableAddress;
-	setCoreParameter("RouteableAddress", routeableAddress);
+	sagId_ = sagId;
+	setCoreParameter("SagId", sagId);
 }
 

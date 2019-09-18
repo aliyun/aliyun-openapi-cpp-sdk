@@ -44,15 +44,15 @@ namespace AlibabaCloud
 
 				std::vector<DeviceNicknameInfo> getDeviceNicknameInfo()const;
 				void setDeviceNicknameInfo(const std::vector<DeviceNicknameInfo>& deviceNicknameInfo);
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 
             private:
 				std::vector<DeviceNicknameInfo> deviceNicknameInfo_;
-				std::string iotInstanceId_;
 				std::string accessKeyId_;
+				std::string iotInstanceId_;
 
 			};
 		}

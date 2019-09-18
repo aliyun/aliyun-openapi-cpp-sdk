@@ -25,17 +25,6 @@ SearchPhotosRequest::SearchPhotosRequest() :
 SearchPhotosRequest::~SearchPhotosRequest()
 {}
 
-int SearchPhotosRequest::getSize()const
-{
-	return size_;
-}
-
-void SearchPhotosRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string SearchPhotosRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -56,6 +45,17 @@ void SearchPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
+}
+
+int SearchPhotosRequest::getSize()const
+{
+	return size_;
+}
+
+void SearchPhotosRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
 }
 
 int SearchPhotosRequest::getPage()const

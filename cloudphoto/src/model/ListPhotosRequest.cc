@@ -36,17 +36,6 @@ void ListPhotosRequest::setCursor(const std::string& cursor)
 	setCoreParameter("Cursor", cursor);
 }
 
-int ListPhotosRequest::getSize()const
-{
-	return size_;
-}
-
-void ListPhotosRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string ListPhotosRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -67,6 +56,17 @@ void ListPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
+}
+
+int ListPhotosRequest::getSize()const
+{
+	return size_;
+}
+
+void ListPhotosRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListPhotosRequest::getState()const

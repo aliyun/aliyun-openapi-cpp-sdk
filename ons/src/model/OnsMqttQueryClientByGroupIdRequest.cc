@@ -25,17 +25,6 @@ OnsMqttQueryClientByGroupIdRequest::OnsMqttQueryClientByGroupIdRequest() :
 OnsMqttQueryClientByGroupIdRequest::~OnsMqttQueryClientByGroupIdRequest()
 {}
 
-std::string OnsMqttQueryClientByGroupIdRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsMqttQueryClientByGroupIdRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsMqttQueryClientByGroupIdRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,5 +34,16 @@ void OnsMqttQueryClientByGroupIdRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string OnsMqttQueryClientByGroupIdRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsMqttQueryClientByGroupIdRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

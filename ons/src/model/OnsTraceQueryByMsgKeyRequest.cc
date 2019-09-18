@@ -25,28 +25,6 @@ OnsTraceQueryByMsgKeyRequest::OnsTraceQueryByMsgKeyRequest() :
 OnsTraceQueryByMsgKeyRequest::~OnsTraceQueryByMsgKeyRequest()
 {}
 
-std::string OnsTraceQueryByMsgKeyRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsTraceQueryByMsgKeyRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string OnsTraceQueryByMsgKeyRequest::getTopic()const
-{
-	return topic_;
-}
-
-void OnsTraceQueryByMsgKeyRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setCoreParameter("Topic", topic);
-}
-
 long OnsTraceQueryByMsgKeyRequest::getEndTime()const
 {
 	return endTime_;
@@ -67,6 +45,28 @@ void OnsTraceQueryByMsgKeyRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
 	setCoreParameter("BeginTime", std::to_string(beginTime));
+}
+
+std::string OnsTraceQueryByMsgKeyRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsTraceQueryByMsgKeyRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string OnsTraceQueryByMsgKeyRequest::getTopic()const
+{
+	return topic_;
+}
+
+void OnsTraceQueryByMsgKeyRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsTraceQueryByMsgKeyRequest::getMsgKey()const

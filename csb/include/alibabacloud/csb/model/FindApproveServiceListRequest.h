@@ -43,8 +43,6 @@ namespace AlibabaCloud
 				void setShowDelService(bool showDelService);
 				long getCsbId()const;
 				void setCsbId(long csbId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getAlias()const;
 				void setAlias(const std::string& alias);
 				std::string getServiceName()const;
@@ -55,7 +53,6 @@ namespace AlibabaCloud
 				std::string approveLevel_;
 				bool showDelService_;
 				long csbId_;
-				std::string regionId_;
 				std::string alias_;
 				std::string serviceName_;
 

@@ -25,17 +25,6 @@ AddCasterProgramRequest::AddCasterProgramRequest() :
 AddCasterProgramRequest::~AddCasterProgramRequest()
 {}
 
-std::string AddCasterProgramRequest::getCasterId()const
-{
-	return casterId_;
-}
-
-void AddCasterProgramRequest::setCasterId(const std::string& casterId)
-{
-	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
-}
-
 std::vector<AddCasterProgramRequest::Episode> AddCasterProgramRequest::getEpisode()const
 {
 	return episode_;
@@ -48,14 +37,25 @@ void AddCasterProgramRequest::setEpisode(const std::vector<Episode>& episode)
 	for(int i = 0; i!= episode.size(); i++)	{
 		auto obj = episode.at(i);
 		std::string str ="Episode."+ std::to_string(i);
-		setCoreParameter(str + ".ResourceId", obj.resourceId);
-		for(int i = 0; i!= obj.componentId.size(); i++)				setCoreParameter(str + ".ComponentId."+ std::to_string(i), obj.componentId.at(i));
-		setCoreParameter(str + ".SwitchType", obj.switchType);
 		setCoreParameter(str + ".EpisodeType", obj.episodeType);
 		setCoreParameter(str + ".EpisodeName", obj.episodeName);
-		setCoreParameter(str + ".EndTime", obj.endTime);
+		setCoreParameter(str + ".ResourceId", obj.resourceId);
+		for(int i = 0; i!= obj.componentId.size(); i++)				setCoreParameter(str + ".ComponentId."+ std::to_string(i), obj.componentId.at(i));
 		setCoreParameter(str + ".StartTime", obj.startTime);
+		setCoreParameter(str + ".EndTime", obj.endTime);
+		setCoreParameter(str + ".SwitchType", obj.switchType);
 	}
+}
+
+std::string AddCasterProgramRequest::getCasterId()const
+{
+	return casterId_;
+}
+
+void AddCasterProgramRequest::setCasterId(const std::string& casterId)
+{
+	casterId_ = casterId;
+	setCoreParameter("CasterId", casterId);
 }
 
 long AddCasterProgramRequest::getOwnerId()const

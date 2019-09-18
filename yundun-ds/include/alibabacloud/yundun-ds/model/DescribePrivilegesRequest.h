@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getAccountId()const;
 				void setAccountId(long accountId);
-				long getUseAccountId()const;
-				void setUseAccountId(long useAccountId);
-				std::string getDataTypeIds()const;
-				void setDataTypeIds(const std::string& dataTypeIds);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKey()const;
 				void setKey(const std::string& key);
+				long getUseAccountId()const;
+				void setUseAccountId(long useAccountId);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getDataTypeIds()const;
+				void setDataTypeIds(const std::string& dataTypeIds);
 
             private:
 				long accountId_;
-				long useAccountId_;
-				std::string dataTypeIds_;
 				std::string sourceIp_;
-				int featureType_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
 				std::string key_;
+				long useAccountId_;
+				int featureType_;
+				int currentPage_;
+				std::string dataTypeIds_;
 
 			};
 		}

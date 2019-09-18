@@ -25,28 +25,6 @@ DescribeEventTotalCountRequest::DescribeEventTotalCountRequest() :
 DescribeEventTotalCountRequest::~DescribeEventTotalCountRequest()
 {}
 
-std::string DescribeEventTotalCountRequest::getTypeCode()const
-{
-	return typeCode_;
-}
-
-void DescribeEventTotalCountRequest::setTypeCode(const std::string& typeCode)
-{
-	typeCode_ = typeCode;
-	setCoreParameter("TypeCode", typeCode);
-}
-
-std::string DescribeEventTotalCountRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeEventTotalCountRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeEventTotalCountRequest::getFeatureType()const
 {
 	return featureType_;
@@ -67,6 +45,28 @@ void DescribeEventTotalCountRequest::setCountType(int countType)
 {
 	countType_ = countType;
 	setCoreParameter("CountType", std::to_string(countType));
+}
+
+std::string DescribeEventTotalCountRequest::getTypeCode()const
+{
+	return typeCode_;
+}
+
+void DescribeEventTotalCountRequest::setTypeCode(const std::string& typeCode)
+{
+	typeCode_ = typeCode;
+	setCoreParameter("TypeCode", typeCode);
+}
+
+std::string DescribeEventTotalCountRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeEventTotalCountRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeEventTotalCountRequest::getLang()const

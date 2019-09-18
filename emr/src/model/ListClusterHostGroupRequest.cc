@@ -48,6 +48,50 @@ void ListClusterHostGroupRequest::setStatusList(const std::vector<std::string>& 
 		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
 }
 
+std::string ListClusterHostGroupRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ListClusterHostGroupRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ListClusterHostGroupRequest::getHostGroupName()const
+{
+	return hostGroupName_;
+}
+
+void ListClusterHostGroupRequest::setHostGroupName(const std::string& hostGroupName)
+{
+	hostGroupName_ = hostGroupName;
+	setCoreParameter("HostGroupName", hostGroupName);
+}
+
+int ListClusterHostGroupRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListClusterHostGroupRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListClusterHostGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListClusterHostGroupRequest::getRegionId()const
 {
 	return regionId_;
@@ -81,28 +125,6 @@ void ListClusterHostGroupRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string ListClusterHostGroupRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ListClusterHostGroupRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string ListClusterHostGroupRequest::getHostGroupName()const
-{
-	return hostGroupName_;
-}
-
-void ListClusterHostGroupRequest::setHostGroupName(const std::string& hostGroupName)
-{
-	hostGroupName_ = hostGroupName;
-	setCoreParameter("HostGroupName", hostGroupName);
-}
-
 std::string ListClusterHostGroupRequest::getHostGroupType()const
 {
 	return hostGroupType_;
@@ -112,27 +134,5 @@ void ListClusterHostGroupRequest::setHostGroupType(const std::string& hostGroupT
 {
 	hostGroupType_ = hostGroupType;
 	setCoreParameter("HostGroupType", hostGroupType);
-}
-
-int ListClusterHostGroupRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListClusterHostGroupRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListClusterHostGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

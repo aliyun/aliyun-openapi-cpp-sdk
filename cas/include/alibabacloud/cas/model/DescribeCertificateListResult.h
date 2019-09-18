@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string name;
 					std::string brandName;
 					std::string newBuyBrand;
+					bool isFree;
 					std::string orderType;
 					int year;
 					int accessDownload;

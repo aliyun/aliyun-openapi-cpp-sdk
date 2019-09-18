@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getSearchName()const;
 				void setSearchName(const std::string& searchName);
-				int getLimit()const;
-				void setLimit(int limit);
 				std::string getActionName()const;
 				void setActionName(const std::string& actionName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getLimit()const;
+				void setLimit(int limit);
 
             private:
 				std::string searchName_;
-				int limit_;
 				std::string actionName_;
 				std::string accessKeyId_;
+				int limit_;
 
 			};
 		}

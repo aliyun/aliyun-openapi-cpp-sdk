@@ -69,17 +69,6 @@ void QueryWaterMarkTemplateListRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string QueryWaterMarkTemplateListRequest::getWaterMarkTemplateIds()const
-{
-	return waterMarkTemplateIds_;
-}
-
-void QueryWaterMarkTemplateListRequest::setWaterMarkTemplateIds(const std::string& waterMarkTemplateIds)
-{
-	waterMarkTemplateIds_ = waterMarkTemplateIds;
-	setCoreParameter("WaterMarkTemplateIds", waterMarkTemplateIds);
-}
-
 std::string QueryWaterMarkTemplateListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +78,16 @@ void QueryWaterMarkTemplateListRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryWaterMarkTemplateListRequest::getWaterMarkTemplateIds()const
+{
+	return waterMarkTemplateIds_;
+}
+
+void QueryWaterMarkTemplateListRequest::setWaterMarkTemplateIds(const std::string& waterMarkTemplateIds)
+{
+	waterMarkTemplateIds_ = waterMarkTemplateIds;
+	setCoreParameter("WaterMarkTemplateIds", waterMarkTemplateIds);
 }
 

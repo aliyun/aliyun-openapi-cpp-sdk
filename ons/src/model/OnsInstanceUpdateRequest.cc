@@ -25,6 +25,17 @@ OnsInstanceUpdateRequest::OnsInstanceUpdateRequest() :
 OnsInstanceUpdateRequest::~OnsInstanceUpdateRequest()
 {}
 
+std::string OnsInstanceUpdateRequest::getRemark()const
+{
+	return remark_;
+}
+
+void OnsInstanceUpdateRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
 std::string OnsInstanceUpdateRequest::getInstanceName()const
 {
 	return instanceName_;
@@ -45,16 +56,5 @@ void OnsInstanceUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string OnsInstanceUpdateRequest::getRemark()const
-{
-	return remark_;
-}
-
-void OnsInstanceUpdateRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
 }
 

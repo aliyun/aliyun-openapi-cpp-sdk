@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				ExportKeywordsRequest();
 				~ExportKeywordsRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getKeywordLibId()const;
 				void setKeywordLibId(long keywordLibId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				long keywordLibId_;
+				std::string sourceIp_;
 
 			};
 		}

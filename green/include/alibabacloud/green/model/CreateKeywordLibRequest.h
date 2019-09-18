@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				CreateKeywordLibRequest();
 				~CreateKeywordLibRequest();
 
+				std::string getLanguage()const;
+				void setLanguage(const std::string& language);
+				std::string getServiceModule()const;
+				void setServiceModule(const std::string& serviceModule);
+				std::string getMatchMode()const;
+				void setMatchMode(const std::string& matchMode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLibType()const;
 				void setLibType(const std::string& libType);
 				bool getEnable()const;
 				void setEnable(bool enable);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getBizTypes()const;
-				void setBizTypes(const std::string& bizTypes);
-				std::string getLanguage()const;
-				void setLanguage(const std::string& language);
-				std::string getServiceModule()const;
-				void setServiceModule(const std::string& serviceModule);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
-				std::string getMatchMode()const;
-				void setMatchMode(const std::string& matchMode);
+				std::string getBizTypes()const;
+				void setBizTypes(const std::string& bizTypes);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
+				std::string language_;
+				std::string serviceModule_;
+				std::string matchMode_;
 				std::string sourceIp_;
 				std::string libType_;
 				bool enable_;
-				std::string name_;
-				std::string bizTypes_;
-				std::string language_;
-				std::string serviceModule_;
 				std::string lang_;
-				std::string category_;
-				std::string matchMode_;
+				std::string bizTypes_;
 				std::string resourceType_;
+				std::string name_;
+				std::string category_;
 
 			};
 		}

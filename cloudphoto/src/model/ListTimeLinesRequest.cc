@@ -36,28 +36,6 @@ void ListTimeLinesRequest::setCursor(long cursor)
 	setCoreParameter("Cursor", std::to_string(cursor));
 }
 
-int ListTimeLinesRequest::getPhotoSize()const
-{
-	return photoSize_;
-}
-
-void ListTimeLinesRequest::setPhotoSize(int photoSize)
-{
-	photoSize_ = photoSize;
-	setCoreParameter("PhotoSize", std::to_string(photoSize));
-}
-
-int ListTimeLinesRequest::getTimeLineCount()const
-{
-	return timeLineCount_;
-}
-
-void ListTimeLinesRequest::setTimeLineCount(int timeLineCount)
-{
-	timeLineCount_ = timeLineCount;
-	setCoreParameter("TimeLineCount", std::to_string(timeLineCount));
-}
-
 std::string ListTimeLinesRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -80,17 +58,6 @@ void ListTimeLinesRequest::setStoreName(const std::string& storeName)
 	setCoreParameter("StoreName", storeName);
 }
 
-std::string ListTimeLinesRequest::getTimeLineUnit()const
-{
-	return timeLineUnit_;
-}
-
-void ListTimeLinesRequest::setTimeLineUnit(const std::string& timeLineUnit)
-{
-	timeLineUnit_ = timeLineUnit;
-	setCoreParameter("TimeLineUnit", timeLineUnit);
-}
-
 std::string ListTimeLinesRequest::getFilterBy()const
 {
 	return filterBy_;
@@ -100,6 +67,39 @@ void ListTimeLinesRequest::setFilterBy(const std::string& filterBy)
 {
 	filterBy_ = filterBy;
 	setCoreParameter("FilterBy", filterBy);
+}
+
+int ListTimeLinesRequest::getPhotoSize()const
+{
+	return photoSize_;
+}
+
+void ListTimeLinesRequest::setPhotoSize(int photoSize)
+{
+	photoSize_ = photoSize;
+	setCoreParameter("PhotoSize", std::to_string(photoSize));
+}
+
+int ListTimeLinesRequest::getTimeLineCount()const
+{
+	return timeLineCount_;
+}
+
+void ListTimeLinesRequest::setTimeLineCount(int timeLineCount)
+{
+	timeLineCount_ = timeLineCount;
+	setCoreParameter("TimeLineCount", std::to_string(timeLineCount));
+}
+
+std::string ListTimeLinesRequest::getTimeLineUnit()const
+{
+	return timeLineUnit_;
+}
+
+void ListTimeLinesRequest::setTimeLineUnit(const std::string& timeLineUnit)
+{
+	timeLineUnit_ = timeLineUnit;
+	setCoreParameter("TimeLineUnit", timeLineUnit);
 }
 
 std::string ListTimeLinesRequest::getDirection()const

@@ -36,28 +36,6 @@ void DeleteScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteScalingRuleRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteScalingRuleRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DeleteScalingRuleRequest::getHostGroupId()const
-{
-	return hostGroupId_;
-}
-
-void DeleteScalingRuleRequest::setHostGroupId(const std::string& hostGroupId)
-{
-	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
-}
-
 std::string DeleteScalingRuleRequest::getClusterId()const
 {
 	return clusterId_;
@@ -89,5 +67,27 @@ void DeleteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteScalingRuleRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteScalingRuleRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteScalingRuleRequest::getHostGroupId()const
+{
+	return hostGroupId_;
+}
+
+void DeleteScalingRuleRequest::setHostGroupId(const std::string& hostGroupId)
+{
+	hostGroupId_ = hostGroupId;
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 

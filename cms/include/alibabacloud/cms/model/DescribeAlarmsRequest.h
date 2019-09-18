@@ -37,39 +37,39 @@ namespace AlibabaCloud
 
 				bool getEnableState()const;
 				void setEnableState(bool enableState);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
+				std::string getMetricName()const;
+				void setMetricName(const std::string& metricName);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getGroupBy()const;
+				void setGroupBy(const std::string& groupBy);
 				std::string getNames()const;
 				void setNames(const std::string& names);
 				std::string getDisplayName()const;
 				void setDisplayName(const std::string& displayName);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
 				std::string get_Namespace()const;
 				void set_Namespace(const std::string& _namespace);
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
 				std::string getAlertState()const;
 				void setAlertState(const std::string& alertState);
 				std::string getNameKeyword()const;
 				void setNameKeyword(const std::string& nameKeyword);
-				std::string getGroupBy()const;
-				void setGroupBy(const std::string& groupBy);
 				std::string getPage()const;
 				void setPage(const std::string& page);
-				std::string getMetricName()const;
-				void setMetricName(const std::string& metricName);
 
             private:
 				bool enableState_;
+				std::string pageSize_;
+				std::string metricName_;
+				std::string groupId_;
+				std::string groupBy_;
 				std::string names_;
 				std::string displayName_;
-				std::string groupId_;
 				std::string _namespace_;
-				std::string pageSize_;
 				std::string alertState_;
 				std::string nameKeyword_;
-				std::string groupBy_;
 				std::string page_;
-				std::string metricName_;
 
 			};
 		}

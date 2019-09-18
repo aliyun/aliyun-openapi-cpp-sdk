@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getUserList()const;
 				void setUserList(const std::vector<std::string>& userList);
-				std::vector<std::string> getQueueList()const;
-				void setQueueList(const std::vector<std::string>& queueList);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::vector<std::string> getHostList()const;
 				void setHostList(const std::vector<std::string>& hostList);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getDefaultQueue()const;
 				void setDefaultQueue(const std::string& defaultQueue);
-				std::string getProjectId()const;
-				void setProjectId(const std::string& projectId);
 				std::string getDefaultUser()const;
 				void setDefaultUser(const std::string& defaultUser);
+				std::vector<std::string> getQueueList()const;
+				void setQueueList(const std::vector<std::string>& queueList);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
 
             private:
 				std::vector<std::string> userList_;
-				std::vector<std::string> queueList_;
-				std::string regionId_;
 				std::vector<std::string> hostList_;
 				std::string clusterId_;
 				std::string defaultQueue_;
-				std::string projectId_;
 				std::string defaultUser_;
+				std::vector<std::string> queueList_;
+				std::string regionId_;
+				std::string projectId_;
 
 			};
 		}

@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				UnbindAliasRequest();
 				~UnbindAliasRequest();
 
-				std::string getAliasName()const;
-				void setAliasName(const std::string& aliasName);
-				long getAppKey()const;
-				void setAppKey(long appKey);
 				std::string getDeviceId()const;
 				void setDeviceId(const std::string& deviceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAliasName()const;
+				void setAliasName(const std::string& aliasName);
+				long getAppKey()const;
+				void setAppKey(long appKey);
 				bool getUnbindAll()const;
 				void setUnbindAll(bool unbindAll);
 
             private:
-				std::string aliasName_;
-				long appKey_;
 				std::string deviceId_;
 				std::string accessKeyId_;
+				std::string aliasName_;
+				long appKey_;
 				bool unbindAll_;
 
 			};

@@ -35,13 +35,9 @@ DescribeFlowLogsResult::~DescribeFlowLogsResult()
 
 void DescribeFlowLogsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allFlowLogs = value["FlowLogs"]["FlowLogSetType"];
 	for (auto value : allFlowLogs)
@@ -73,6 +69,8 @@ void DescribeFlowLogsResult::parse(const std::string &payload)
 			flowLogsObject.status = value["Status"].asString();
 		if(!value["Name"].isNull())
 			flowLogsObject.name = value["Name"].asString();
+		if(!value["TotalSagNum"].isNull())
+			flowLogsObject.totalSagNum = std::stoi(value["TotalSagNum"].asString());
 		flowLogs_.push_back(flowLogsObject);
 	}
 	if(!value["TotalCount"].isNull())

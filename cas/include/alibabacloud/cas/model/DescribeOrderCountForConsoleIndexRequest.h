@@ -39,13 +39,10 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
             private:
 				std::string resourceGroupId_;
 				std::string sourceIp_;
-				std::string regionId_;
 
 			};
 		}

@@ -25,17 +25,6 @@ OnsGroupSubDetailRequest::OnsGroupSubDetailRequest() :
 OnsGroupSubDetailRequest::~OnsGroupSubDetailRequest()
 {}
 
-std::string OnsGroupSubDetailRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsGroupSubDetailRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsGroupSubDetailRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,5 +34,16 @@ void OnsGroupSubDetailRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string OnsGroupSubDetailRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsGroupSubDetailRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

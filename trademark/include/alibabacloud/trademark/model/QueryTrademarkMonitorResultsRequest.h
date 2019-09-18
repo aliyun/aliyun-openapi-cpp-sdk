@@ -39,6 +39,12 @@ namespace AlibabaCloud
 				void setActionType(int actionType);
 				std::string getTmName()const;
 				void setTmName(const std::string& tmName);
+				std::string getClassification()const;
+				void setClassification(const std::string& classification);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				std::string getRegistrationNumber()const;
+				void setRegistrationNumber(const std::string& registrationNumber);
 				std::string getApplyYear()const;
 				void setApplyYear(const std::string& applyYear);
 				int getPageSize()const;
@@ -47,23 +53,17 @@ namespace AlibabaCloud
 				void setProcedureStatus(int procedureStatus);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
-				std::string getClassification()const;
-				void setClassification(const std::string& classification);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
-				std::string getRegistrationNumber()const;
-				void setRegistrationNumber(const std::string& registrationNumber);
 
             private:
 				int actionType_;
 				std::string tmName_;
+				std::string classification_;
+				int pageNum_;
+				std::string registrationNumber_;
 				std::string applyYear_;
 				int pageSize_;
 				int procedureStatus_;
 				long ruleId_;
-				std::string classification_;
-				int pageNum_;
-				std::string registrationNumber_;
 
 			};
 		}

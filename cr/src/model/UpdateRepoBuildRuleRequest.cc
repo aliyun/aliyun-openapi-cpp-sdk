@@ -25,6 +25,17 @@ UpdateRepoBuildRuleRequest::UpdateRepoBuildRuleRequest() :
 UpdateRepoBuildRuleRequest::~UpdateRepoBuildRuleRequest()
 {}
 
+long UpdateRepoBuildRuleRequest::getBuildRuleId()const
+{
+	return buildRuleId_;
+}
+
+void UpdateRepoBuildRuleRequest::setBuildRuleId(long buildRuleId)
+{
+	buildRuleId_ = buildRuleId;
+	setCoreParameter("BuildRuleId", std::to_string(buildRuleId));
+}
+
 std::string UpdateRepoBuildRuleRequest::getRepoNamespace()const
 {
 	return repoNamespace_;
@@ -45,27 +56,5 @@ void UpdateRepoBuildRuleRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
 	setCoreParameter("RepoName", repoName);
-}
-
-std::string UpdateRepoBuildRuleRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateRepoBuildRuleRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-long UpdateRepoBuildRuleRequest::getBuildRuleId()const
-{
-	return buildRuleId_;
-}
-
-void UpdateRepoBuildRuleRequest::setBuildRuleId(long buildRuleId)
-{
-	buildRuleId_ = buildRuleId;
-	setCoreParameter("BuildRuleId", std::to_string(buildRuleId));
 }
 

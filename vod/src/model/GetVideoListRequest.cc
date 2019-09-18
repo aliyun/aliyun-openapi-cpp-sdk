@@ -36,15 +36,26 @@ void GetVideoListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GetVideoListRequest::getResourceOwnerAccount()const
+std::string GetVideoListRequest::getStartTime()const
 {
-	return resourceOwnerAccount_;
+	return startTime_;
 }
 
-void GetVideoListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void GetVideoListRequest::setStartTime(const std::string& startTime)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+std::string GetVideoListRequest::getStorageLocation()const
+{
+	return storageLocation_;
+}
+
+void GetVideoListRequest::setStorageLocation(const std::string& storageLocation)
+{
+	storageLocation_ = storageLocation;
+	setCoreParameter("StorageLocation", storageLocation);
 }
 
 long GetVideoListRequest::getCateId()const
@@ -58,17 +69,6 @@ void GetVideoListRequest::setCateId(long cateId)
 	setCoreParameter("CateId", std::to_string(cateId));
 }
 
-int GetVideoListRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void GetVideoListRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
-}
-
 int GetVideoListRequest::getPageSize()const
 {
 	return pageSize_;
@@ -78,6 +78,17 @@ void GetVideoListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string GetVideoListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void GetVideoListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetVideoListRequest::getEndTime()const
@@ -91,28 +102,6 @@ void GetVideoListRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string GetVideoListRequest::getSortBy()const
-{
-	return sortBy_;
-}
-
-void GetVideoListRequest::setSortBy(const std::string& sortBy)
-{
-	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
-}
-
-std::string GetVideoListRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void GetVideoListRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long GetVideoListRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,6 +113,28 @@ void GetVideoListRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+int GetVideoListRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void GetVideoListRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
+}
+
+std::string GetVideoListRequest::getSortBy()const
+{
+	return sortBy_;
+}
+
+void GetVideoListRequest::setSortBy(const std::string& sortBy)
+{
+	sortBy_ = sortBy;
+	setCoreParameter("SortBy", sortBy);
+}
+
 std::string GetVideoListRequest::getStatus()const
 {
 	return status_;
@@ -133,16 +144,5 @@ void GetVideoListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
 	setCoreParameter("Status", status);
-}
-
-std::string GetVideoListRequest::getStorageLocation()const
-{
-	return storageLocation_;
-}
-
-void GetVideoListRequest::setStorageLocation(const std::string& storageLocation)
-{
-	storageLocation_ = storageLocation;
-	setCoreParameter("StorageLocation", storageLocation);
 }
 

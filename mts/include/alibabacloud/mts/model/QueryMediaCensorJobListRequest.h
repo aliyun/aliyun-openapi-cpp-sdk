@@ -37,42 +37,42 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getNextPageToken()const;
 				void setNextPageToken(const std::string& nextPageToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getStartOfJobCreatedTimeRange()const;
 				void setStartOfJobCreatedTimeRange(const std::string& startOfJobCreatedTimeRange);
-				long getMaximumPageSize()const;
-				void setMaximumPageSize(long maximumPageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getPipelineId()const;
-				void setPipelineId(const std::string& pipelineId);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
 				std::string getState()const;
 				void setState(const std::string& state);
 				std::string getEndOfJobCreatedTimeRange()const;
 				void setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getMaximumPageSize()const;
+				void setMaximumPageSize(long maximumPageSize);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getPipelineId()const;
+				void setPipelineId(const std::string& pipelineId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string nextPageToken_;
-				std::string ownerAccount_;
 				std::string startOfJobCreatedTimeRange_;
-				long maximumPageSize_;
-				long ownerId_;
 				std::string accessKeyId_;
-				std::string pipelineId_;
 				std::string jobId_;
 				std::string state_;
 				std::string endOfJobCreatedTimeRange_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long maximumPageSize_;
+				long ownerId_;
+				std::string pipelineId_;
 
 			};
 		}

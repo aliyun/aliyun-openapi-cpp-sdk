@@ -36,17 +36,6 @@ void ListMomentPhotosRequest::setCursor(const std::string& cursor)
 	setCoreParameter("Cursor", cursor);
 }
 
-int ListMomentPhotosRequest::getSize()const
-{
-	return size_;
-}
-
-void ListMomentPhotosRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string ListMomentPhotosRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -69,17 +58,6 @@ void ListMomentPhotosRequest::setStoreName(const std::string& storeName)
 	setCoreParameter("StoreName", storeName);
 }
 
-std::string ListMomentPhotosRequest::getState()const
-{
-	return state_;
-}
-
-void ListMomentPhotosRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
-}
-
 long ListMomentPhotosRequest::getMomentId()const
 {
 	return momentId_;
@@ -89,6 +67,28 @@ void ListMomentPhotosRequest::setMomentId(long momentId)
 {
 	momentId_ = momentId;
 	setCoreParameter("MomentId", std::to_string(momentId));
+}
+
+int ListMomentPhotosRequest::getSize()const
+{
+	return size_;
+}
+
+void ListMomentPhotosRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
+}
+
+std::string ListMomentPhotosRequest::getState()const
+{
+	return state_;
+}
+
+void ListMomentPhotosRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
 }
 
 std::string ListMomentPhotosRequest::getDirection()const

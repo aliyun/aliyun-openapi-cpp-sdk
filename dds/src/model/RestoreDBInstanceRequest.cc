@@ -36,6 +36,17 @@ void RestoreDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RestoreDBInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RestoreDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RestoreDBInstanceRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -47,6 +58,17 @@ void RestoreDBInstanceRequest::setSecurityToken(const std::string& securityToken
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string RestoreDBInstanceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void RestoreDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string RestoreDBInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +78,6 @@ void RestoreDBInstanceRequest::setResourceOwnerAccount(const std::string& resour
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string RestoreDBInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RestoreDBInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string RestoreDBInstanceRequest::getOwnerAccount()const
@@ -91,17 +102,6 @@ void RestoreDBInstanceRequest::setBackupId(int backupId)
 	setCoreParameter("BackupId", std::to_string(backupId));
 }
 
-std::string RestoreDBInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void RestoreDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long RestoreDBInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,16 +111,5 @@ void RestoreDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RestoreDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RestoreDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

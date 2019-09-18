@@ -25,17 +25,6 @@ ListClusterServiceCustomActionSupportConfigForAdminRequest::ListClusterServiceCu
 ListClusterServiceCustomActionSupportConfigForAdminRequest::~ListClusterServiceCustomActionSupportConfigForAdminRequest()
 {}
 
-std::string ListClusterServiceCustomActionSupportConfigForAdminRequest::getServiceCustomActionName()const
-{
-	return serviceCustomActionName_;
-}
-
-void ListClusterServiceCustomActionSupportConfigForAdminRequest::setServiceCustomActionName(const std::string& serviceCustomActionName)
-{
-	serviceCustomActionName_ = serviceCustomActionName;
-	setCoreParameter("ServiceCustomActionName", serviceCustomActionName);
-}
-
 long ListClusterServiceCustomActionSupportConfigForAdminRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,28 +34,6 @@ void ListClusterServiceCustomActionSupportConfigForAdminRequest::setResourceOwne
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ListClusterServiceCustomActionSupportConfigForAdminRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListClusterServiceCustomActionSupportConfigForAdminRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListClusterServiceCustomActionSupportConfigForAdminRequest::getServiceName()const
-{
-	return serviceName_;
-}
-
-void ListClusterServiceCustomActionSupportConfigForAdminRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string ListClusterServiceCustomActionSupportConfigForAdminRequest::getClusterId()const
@@ -100,5 +67,38 @@ void ListClusterServiceCustomActionSupportConfigForAdminRequest::setAccessKeyId(
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListClusterServiceCustomActionSupportConfigForAdminRequest::getServiceCustomActionName()const
+{
+	return serviceCustomActionName_;
+}
+
+void ListClusterServiceCustomActionSupportConfigForAdminRequest::setServiceCustomActionName(const std::string& serviceCustomActionName)
+{
+	serviceCustomActionName_ = serviceCustomActionName;
+	setCoreParameter("ServiceCustomActionName", serviceCustomActionName);
+}
+
+std::string ListClusterServiceCustomActionSupportConfigForAdminRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListClusterServiceCustomActionSupportConfigForAdminRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ListClusterServiceCustomActionSupportConfigForAdminRequest::getServiceName()const
+{
+	return serviceName_;
+}
+
+void ListClusterServiceCustomActionSupportConfigForAdminRequest::setServiceName(const std::string& serviceName)
+{
+	serviceName_ = serviceName;
+	setCoreParameter("ServiceName", serviceName);
 }
 

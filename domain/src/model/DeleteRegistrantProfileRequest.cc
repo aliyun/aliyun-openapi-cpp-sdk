@@ -25,17 +25,6 @@ DeleteRegistrantProfileRequest::DeleteRegistrantProfileRequest() :
 DeleteRegistrantProfileRequest::~DeleteRegistrantProfileRequest()
 {}
 
-std::string DeleteRegistrantProfileRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DeleteRegistrantProfileRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 long DeleteRegistrantProfileRequest::getRegistrantProfileId()const
 {
 	return registrantProfileId_;
@@ -45,6 +34,17 @@ void DeleteRegistrantProfileRequest::setRegistrantProfileId(long registrantProfi
 {
 	registrantProfileId_ = registrantProfileId;
 	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+}
+
+std::string DeleteRegistrantProfileRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DeleteRegistrantProfileRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteRegistrantProfileRequest::getLang()const

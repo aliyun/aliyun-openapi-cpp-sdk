@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeGtmAccessStrategiesRequest();
 				~DescribeGtmAccessStrategiesRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getUserClientIp()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				int pageNumber_;
 				std::string instanceId_;
 				std::string userClientIp_;
 				int pageSize_;
 				std::string lang_;
-				int pageNumber_;
 
 			};
 		}

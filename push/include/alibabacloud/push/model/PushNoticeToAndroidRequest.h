@@ -37,10 +37,6 @@ namespace AlibabaCloud
 
 				std::string getExtParameters()const;
 				void setExtParameters(const std::string& extParameters);
-				long getAppKey()const;
-				void setAppKey(long appKey);
-				std::string getTargetValue()const;
-				void setTargetValue(const std::string& targetValue);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
 				std::string getBody()const;
@@ -51,16 +47,20 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTarget()const;
 				void setTarget(const std::string& target);
+				long getAppKey()const;
+				void setAppKey(long appKey);
+				std::string getTargetValue()const;
+				void setTargetValue(const std::string& targetValue);
 
             private:
 				std::string extParameters_;
-				long appKey_;
-				std::string targetValue_;
 				std::string title_;
 				std::string body_;
 				std::string jobKey_;
 				std::string accessKeyId_;
 				std::string target_;
+				long appKey_;
+				std::string targetValue_;
 
 			};
 		}

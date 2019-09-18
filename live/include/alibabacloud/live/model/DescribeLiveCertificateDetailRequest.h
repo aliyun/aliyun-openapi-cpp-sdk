@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeLiveCertificateDetailRequest();
 				~DescribeLiveCertificateDetailRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getCertName()const;
 				void setCertName(const std::string& certName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				std::string certName_;
 				long ownerId_;
+				std::string securityToken_;
 
 			};
 		}

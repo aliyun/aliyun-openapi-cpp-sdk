@@ -25,17 +25,6 @@ ModifyRuleStatusRequest::ModifyRuleStatusRequest() :
 ModifyRuleStatusRequest::~ModifyRuleStatusRequest()
 {}
 
-std::string ModifyRuleStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyRuleStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int ModifyRuleStatusRequest::getFeatureType()const
 {
 	return featureType_;
@@ -45,6 +34,17 @@ void ModifyRuleStatusRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string ModifyRuleStatusRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyRuleStatusRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long ModifyRuleStatusRequest::getId()const

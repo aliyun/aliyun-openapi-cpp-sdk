@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				CreateCpmcPunishFeedBackRequest();
 				~CreateCpmcPunishFeedBackRequest();
 
-				int getFeedBack()const;
-				void setFeedBack(int feedBack);
 				std::string getSrcIP()const;
 				void setSrcIP(const std::string& srcIP);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getDstPort()const;
 				void setDstPort(int dstPort);
 				std::string getProtocolName()const;
 				void setProtocolName(const std::string& protocolName);
-				int getSrcPort()const;
-				void setSrcPort(int srcPort);
 				std::string getPunishType()const;
 				void setPunishType(const std::string& punishType);
-				std::string getGmtCreate()const;
-				void setGmtCreate(const std::string& gmtCreate);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
+				int getFeedBack()const;
+				void setFeedBack(int feedBack);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getDstIP()const;
 				void setDstIP(const std::string& dstIP);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
+				std::string getGmtCreate()const;
+				void setGmtCreate(const std::string& gmtCreate);
+				int getSrcPort()const;
+				void setSrcPort(int srcPort);
 
             private:
-				int feedBack_;
 				std::string srcIP_;
-				std::string sourceIp_;
 				int dstPort_;
 				std::string protocolName_;
-				int srcPort_;
 				std::string punishType_;
-				std::string gmtCreate_;
+				std::string sourceCode_;
+				int feedBack_;
+				std::string sourceIp_;
 				std::string dstIP_;
 				std::string lang_;
-				std::string sourceCode_;
+				std::string gmtCreate_;
+				int srcPort_;
 
 			};
 		}

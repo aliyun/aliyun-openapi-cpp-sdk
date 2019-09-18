@@ -25,17 +25,6 @@ SaveSingleTaskForDomainNameProxyServiceRequest::SaveSingleTaskForDomainNameProxy
 SaveSingleTaskForDomainNameProxyServiceRequest::~SaveSingleTaskForDomainNameProxyServiceRequest()
 {}
 
-std::string SaveSingleTaskForDomainNameProxyServiceRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveSingleTaskForDomainNameProxyServiceRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SaveSingleTaskForDomainNameProxyServiceRequest::getDomainName()const
 {
 	return domainName_;
@@ -45,6 +34,17 @@ void SaveSingleTaskForDomainNameProxyServiceRequest::setDomainName(const std::st
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+std::string SaveSingleTaskForDomainNameProxyServiceRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveSingleTaskForDomainNameProxyServiceRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForDomainNameProxyServiceRequest::getLang()const

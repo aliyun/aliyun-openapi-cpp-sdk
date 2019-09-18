@@ -35,34 +35,34 @@ namespace AlibabaCloud
 				DescribeCasterProgramRequest();
 				~DescribeCasterProgramRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				std::string getEpisodeType()const;
 				void setEpisodeType(const std::string& episodeType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getEpisodeId()const;
 				void setEpisodeId(const std::string& episodeId);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				int getStatus()const;
 				void setStatus(int status);
 
             private:
+				std::string startTime_;
+				int pageNum_;
+				int pageSize_;
 				std::string casterId_;
 				std::string episodeType_;
-				int pageSize_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
 				std::string episodeId_;
-				int pageNum_;
 				int status_;
 
 			};

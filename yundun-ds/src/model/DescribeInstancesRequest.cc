@@ -36,17 +36,6 @@ void DescribeInstancesRequest::setProductCode(const std::string& productCode)
 	setCoreParameter("ProductCode", productCode);
 }
 
-std::string DescribeInstancesRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeInstancesRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeInstancesRequest::getProductId()const
 {
 	return productId_;
@@ -56,50 +45,6 @@ void DescribeInstancesRequest::setProductId(long productId)
 {
 	productId_ = productId;
 	setCoreParameter("ProductId", std::to_string(productId));
-}
-
-int DescribeInstancesRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeInstancesRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
-std::string DescribeInstancesRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeInstancesRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-int DescribeInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeInstancesRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeInstancesRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeInstancesRequest::getQueryName()const
@@ -124,6 +69,28 @@ void DescribeInstancesRequest::setRiskLevelId(long riskLevelId)
 	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
+std::string DescribeInstancesRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeInstancesRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+int DescribeInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string DescribeInstancesRequest::getLang()const
 {
 	return lang_;
@@ -135,17 +102,6 @@ void DescribeInstancesRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-long DescribeInstancesRequest::getRuleId()const
-{
-	return ruleId_;
-}
-
-void DescribeInstancesRequest::setRuleId(long ruleId)
-{
-	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
-}
-
 int DescribeInstancesRequest::getQueryType()const
 {
 	return queryType_;
@@ -155,5 +111,49 @@ void DescribeInstancesRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
 	setCoreParameter("QueryType", std::to_string(queryType));
+}
+
+int DescribeInstancesRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeInstancesRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int DescribeInstancesRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeInstancesRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeInstancesRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeInstancesRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+long DescribeInstancesRequest::getRuleId()const
+{
+	return ruleId_;
+}
+
+void DescribeInstancesRequest::setRuleId(long ruleId)
+{
+	ruleId_ = ruleId;
+	setCoreParameter("RuleId", std::to_string(ruleId));
 }
 

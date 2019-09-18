@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::BatchSetCdnDomainConfigRequest;
 
 BatchSetCdnDomainConfigRequest::BatchSetCdnDomainConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "BatchSetCdnDomainConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "BatchSetCdnDomainConfig")
 {}
 
 BatchSetCdnDomainConfigRequest::~BatchSetCdnDomainConfigRequest()
@@ -34,17 +34,6 @@ void BatchSetCdnDomainConfigRequest::setFunctions(const std::string& functions)
 {
 	functions_ = functions;
 	setCoreParameter("Functions", functions);
-}
-
-std::string BatchSetCdnDomainConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void BatchSetCdnDomainConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string BatchSetCdnDomainConfigRequest::getDomainNames()const
@@ -78,5 +67,16 @@ void BatchSetCdnDomainConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string BatchSetCdnDomainConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void BatchSetCdnDomainConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -36,39 +36,6 @@ void SaveApgroupConfigRequest::setCountry(const std::string& country)
 	setCoreParameter("Country", country);
 }
 
-int SaveApgroupConfigRequest::getLogLevel()const
-{
-	return logLevel_;
-}
-
-void SaveApgroupConfigRequest::setLogLevel(int logLevel)
-{
-	logLevel_ = logLevel;
-	setCoreParameter("LogLevel", std::to_string(logLevel));
-}
-
-std::string SaveApgroupConfigRequest::getName()const
-{
-	return name_;
-}
-
-void SaveApgroupConfigRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-int SaveApgroupConfigRequest::getEchoInt()const
-{
-	return echoInt_;
-}
-
-void SaveApgroupConfigRequest::setEchoInt(int echoInt)
-{
-	echoInt_ = echoInt;
-	setCoreParameter("EchoInt", std::to_string(echoInt));
-}
-
 int SaveApgroupConfigRequest::getScan()const
 {
 	return scan_;
@@ -89,17 +56,6 @@ void SaveApgroupConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long SaveApgroupConfigRequest::getId()const
-{
-	return id_;
-}
-
-void SaveApgroupConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string SaveApgroupConfigRequest::getDai()const
@@ -133,5 +89,49 @@ void SaveApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int SaveApgroupConfigRequest::getLogLevel()const
+{
+	return logLevel_;
+}
+
+void SaveApgroupConfigRequest::setLogLevel(int logLevel)
+{
+	logLevel_ = logLevel;
+	setCoreParameter("LogLevel", std::to_string(logLevel));
+}
+
+std::string SaveApgroupConfigRequest::getName()const
+{
+	return name_;
+}
+
+void SaveApgroupConfigRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+int SaveApgroupConfigRequest::getEchoInt()const
+{
+	return echoInt_;
+}
+
+void SaveApgroupConfigRequest::setEchoInt(int echoInt)
+{
+	echoInt_ = echoInt;
+	setCoreParameter("EchoInt", std::to_string(echoInt));
+}
+
+long SaveApgroupConfigRequest::getId()const
+{
+	return id_;
+}
+
+void SaveApgroupConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

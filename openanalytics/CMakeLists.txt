@@ -21,45 +21,45 @@ set(openanalytics_public_header
 	include/alibabacloud/openanalytics/OpenanalyticsExport.h )
 
 set(openanalytics_public_header_model 
-	include/alibabacloud/openanalytics/model/SetAllowIPRequest.h
-	include/alibabacloud/openanalytics/model/SetAllowIPResult.h
-	include/alibabacloud/openanalytics/model/GetRegionStatusRequest.h
-	include/alibabacloud/openanalytics/model/GetRegionStatusResult.h
-	include/alibabacloud/openanalytics/model/DescribeRegionListRequest.h
-	include/alibabacloud/openanalytics/model/DescribeRegionListResult.h
-	include/alibabacloud/openanalytics/model/OpenProductAccountRequest.h
-	include/alibabacloud/openanalytics/model/OpenProductAccountResult.h
-	include/alibabacloud/openanalytics/model/GetEndPointByDomainRequest.h
-	include/alibabacloud/openanalytics/model/GetEndPointByDomainResult.h
 	include/alibabacloud/openanalytics/model/CloseProductAccountRequest.h
 	include/alibabacloud/openanalytics/model/CloseProductAccountResult.h
+	include/alibabacloud/openanalytics/model/DescribeRegionListRequest.h
+	include/alibabacloud/openanalytics/model/DescribeRegionListResult.h
 	include/alibabacloud/openanalytics/model/GetAllowIPRequest.h
 	include/alibabacloud/openanalytics/model/GetAllowIPResult.h
+	include/alibabacloud/openanalytics/model/GetEndPointByDomainRequest.h
+	include/alibabacloud/openanalytics/model/GetEndPointByDomainResult.h
 	include/alibabacloud/openanalytics/model/GetProductStatusRequest.h
 	include/alibabacloud/openanalytics/model/GetProductStatusResult.h
+	include/alibabacloud/openanalytics/model/GetRegionStatusRequest.h
+	include/alibabacloud/openanalytics/model/GetRegionStatusResult.h
+	include/alibabacloud/openanalytics/model/OpenProductAccountRequest.h
+	include/alibabacloud/openanalytics/model/OpenProductAccountResult.h
 	include/alibabacloud/openanalytics/model/QueryEndPointListRequest.h
-	include/alibabacloud/openanalytics/model/QueryEndPointListResult.h )
+	include/alibabacloud/openanalytics/model/QueryEndPointListResult.h
+	include/alibabacloud/openanalytics/model/SetAllowIPRequest.h
+	include/alibabacloud/openanalytics/model/SetAllowIPResult.h )
 
 set(openanalytics_src 
 	src/OpenanalyticsClient.cc
-	src/model/SetAllowIPRequest.cc
-	src/model/SetAllowIPResult.cc
-	src/model/GetRegionStatusRequest.cc
-	src/model/GetRegionStatusResult.cc
-	src/model/DescribeRegionListRequest.cc
-	src/model/DescribeRegionListResult.cc
-	src/model/OpenProductAccountRequest.cc
-	src/model/OpenProductAccountResult.cc
-	src/model/GetEndPointByDomainRequest.cc
-	src/model/GetEndPointByDomainResult.cc
 	src/model/CloseProductAccountRequest.cc
 	src/model/CloseProductAccountResult.cc
+	src/model/DescribeRegionListRequest.cc
+	src/model/DescribeRegionListResult.cc
 	src/model/GetAllowIPRequest.cc
 	src/model/GetAllowIPResult.cc
+	src/model/GetEndPointByDomainRequest.cc
+	src/model/GetEndPointByDomainResult.cc
 	src/model/GetProductStatusRequest.cc
 	src/model/GetProductStatusResult.cc
+	src/model/GetRegionStatusRequest.cc
+	src/model/GetRegionStatusResult.cc
+	src/model/OpenProductAccountRequest.cc
+	src/model/OpenProductAccountResult.cc
 	src/model/QueryEndPointListRequest.cc
-	src/model/QueryEndPointListResult.cc )
+	src/model/QueryEndPointListResult.cc
+	src/model/SetAllowIPRequest.cc
+	src/model/SetAllowIPResult.cc )
 
 add_library(openanalytics ${LIB_TYPE}
 	${openanalytics_public_header}

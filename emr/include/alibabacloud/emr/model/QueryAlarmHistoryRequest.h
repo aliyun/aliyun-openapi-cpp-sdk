@@ -39,10 +39,6 @@ namespace AlibabaCloud
 				void setCursor(const std::string& cursor);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getSize()const;
-				void setSize(int size);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				long getStartTimeStamp()const;
@@ -51,16 +47,20 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getEndTimeStamp()const;
 				void setEndTimeStamp(long endTimeStamp);
+				int getSize()const;
+				void setSize(int size);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
 				std::string cursor_;
 				long resourceOwnerId_;
-				int size_;
-				std::string regionId_;
 				std::string clusterId_;
 				long startTimeStamp_;
 				std::string accessKeyId_;
 				long endTimeStamp_;
+				int size_;
+				std::string regionId_;
 
 			};
 		}

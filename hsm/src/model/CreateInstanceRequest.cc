@@ -36,17 +36,6 @@ void CreateInstanceRequest::setPeriod(int period)
 	setCoreParameter("Period", std::to_string(period));
 }
 
-std::string CreateInstanceRequest::getPeriodUnit()const
-{
-	return periodUnit_;
-}
-
-void CreateInstanceRequest::setPeriodUnit(const std::string& periodUnit)
-{
-	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
-}
-
 std::string CreateInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -69,17 +58,6 @@ void CreateInstanceRequest::setQuantity(int quantity)
 	setCoreParameter("Quantity", std::to_string(quantity));
 }
 
-std::string CreateInstanceRequest::getHsmDeviceType()const
-{
-	return hsmDeviceType_;
-}
-
-void CreateInstanceRequest::setHsmDeviceType(const std::string& hsmDeviceType)
-{
-	hsmDeviceType_ = hsmDeviceType;
-	setCoreParameter("HsmDeviceType", hsmDeviceType);
-}
-
 std::string CreateInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -91,17 +69,6 @@ void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string CreateInstanceRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void CreateInstanceRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
-}
-
 std::string CreateInstanceRequest::getHsmOem()const
 {
 	return hsmOem_;
@@ -111,5 +78,38 @@ void CreateInstanceRequest::setHsmOem(const std::string& hsmOem)
 {
 	hsmOem_ = hsmOem;
 	setCoreParameter("HsmOem", hsmOem);
+}
+
+std::string CreateInstanceRequest::getPeriodUnit()const
+{
+	return periodUnit_;
+}
+
+void CreateInstanceRequest::setPeriodUnit(const std::string& periodUnit)
+{
+	periodUnit_ = periodUnit;
+	setCoreParameter("PeriodUnit", periodUnit);
+}
+
+std::string CreateInstanceRequest::getHsmDeviceType()const
+{
+	return hsmDeviceType_;
+}
+
+void CreateInstanceRequest::setHsmDeviceType(const std::string& hsmDeviceType)
+{
+	hsmDeviceType_ = hsmDeviceType;
+	setCoreParameter("HsmDeviceType", hsmDeviceType);
+}
+
+std::string CreateInstanceRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void CreateInstanceRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
 }
 

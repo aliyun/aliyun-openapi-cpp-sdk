@@ -25,17 +25,6 @@ InvokeThingsServiceRequest::InvokeThingsServiceRequest() :
 InvokeThingsServiceRequest::~InvokeThingsServiceRequest()
 {}
 
-std::string InvokeThingsServiceRequest::getArgs()const
-{
-	return args_;
-}
-
-void InvokeThingsServiceRequest::setArgs(const std::string& args)
-{
-	args_ = args;
-	setCoreParameter("Args", args);
-}
-
 std::string InvokeThingsServiceRequest::getIdentifier()const
 {
 	return identifier_;
@@ -45,6 +34,39 @@ void InvokeThingsServiceRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
 	setCoreParameter("Identifier", identifier);
+}
+
+std::string InvokeThingsServiceRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void InvokeThingsServiceRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string InvokeThingsServiceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void InvokeThingsServiceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string InvokeThingsServiceRequest::getArgs()const
+{
+	return args_;
+}
+
+void InvokeThingsServiceRequest::setArgs(const std::string& args)
+{
+	args_ = args;
+	setCoreParameter("Args", args);
 }
 
 std::string InvokeThingsServiceRequest::getIotInstanceId()const
@@ -68,27 +90,5 @@ void InvokeThingsServiceRequest::setDeviceName(const std::vector<std::string>& d
 	deviceName_ = deviceName;
 	for(int i = 0; i!= deviceName.size(); i++)
 		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
-}
-
-std::string InvokeThingsServiceRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void InvokeThingsServiceRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
-std::string InvokeThingsServiceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void InvokeThingsServiceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

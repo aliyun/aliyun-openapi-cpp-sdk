@@ -37,17 +37,17 @@ namespace AlibabaCloud
 
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				std::string getMetricName()const;
-				void setMetricName(const std::string& metricName);
 				std::string getUUID()const;
 				void setUUID(const std::string& uUID);
+				std::string getMetricName()const;
+				void setMetricName(const std::string& metricName);
 				std::string getMd5()const;
 				void setMd5(const std::string& md5);
 
             private:
 				std::string groupId_;
-				std::string metricName_;
 				std::string uUID_;
+				std::string metricName_;
 				std::string md5_;
 
 			};

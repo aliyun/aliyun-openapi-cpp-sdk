@@ -80,17 +80,6 @@ void ListProbeinfoRequest::setSearchSensorName(const std::string& searchSensorNa
 	setCoreParameter("SearchSensorName", searchSensorName);
 }
 
-int ListProbeinfoRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListProbeinfoRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
 std::string ListProbeinfoRequest::getOrderDir()const
 {
 	return orderDir_;
@@ -111,5 +100,16 @@ void ListProbeinfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListProbeinfoRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListProbeinfoRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

@@ -36,17 +36,6 @@ void UpdateVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UpdateVodTemplateRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string UpdateVodTemplateRequest::getTemplateConfig()const
 {
 	return templateConfig_;
@@ -56,17 +45,6 @@ void UpdateVodTemplateRequest::setTemplateConfig(const std::string& templateConf
 {
 	templateConfig_ = templateConfig;
 	setCoreParameter("TemplateConfig", templateConfig);
-}
-
-std::string UpdateVodTemplateRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateVodTemplateRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string UpdateVodTemplateRequest::getVodTemplateId()const
@@ -80,6 +58,17 @@ void UpdateVodTemplateRequest::setVodTemplateId(const std::string& vodTemplateId
 	setCoreParameter("VodTemplateId", vodTemplateId);
 }
 
+std::string UpdateVodTemplateRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UpdateVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long UpdateVodTemplateRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void UpdateVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UpdateVodTemplateRequest::getName()const
+{
+	return name_;
+}
+
+void UpdateVodTemplateRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

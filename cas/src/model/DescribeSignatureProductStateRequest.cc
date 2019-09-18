@@ -25,6 +25,17 @@ DescribeSignatureProductStateRequest::DescribeSignatureProductStateRequest() :
 DescribeSignatureProductStateRequest::~DescribeSignatureProductStateRequest()
 {}
 
+std::string DescribeSignatureProductStateRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSignatureProductStateRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSignatureProductStateRequest::getSourceIp()const
 {
 	return sourceIp_;

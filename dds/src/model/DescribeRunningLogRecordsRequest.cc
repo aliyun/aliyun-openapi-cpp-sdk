@@ -25,17 +25,6 @@ DescribeRunningLogRecordsRequest::DescribeRunningLogRecordsRequest() :
 DescribeRunningLogRecordsRequest::~DescribeRunningLogRecordsRequest()
 {}
 
-long DescribeRunningLogRecordsRequest::getSQLId()const
-{
-	return sQLId_;
-}
-
-void DescribeRunningLogRecordsRequest::setSQLId(long sQLId)
-{
-	sQLId_ = sQLId;
-	setCoreParameter("SQLId", std::to_string(sQLId));
-}
-
 long DescribeRunningLogRecordsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,39 +36,6 @@ void DescribeRunningLogRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRunningLogRecordsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeRunningLogRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeRunningLogRecordsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeRunningLogRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeRunningLogRecordsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeRunningLogRecordsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeRunningLogRecordsRequest::getStartTime()const
 {
 	return startTime_;
@@ -89,17 +45,6 @@ void DescribeRunningLogRecordsRequest::setStartTime(const std::string& startTime
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeRunningLogRecordsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeRunningLogRecordsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeRunningLogRecordsRequest::getPageNumber()const
@@ -124,17 +69,6 @@ void DescribeRunningLogRecordsRequest::setAccessKeyId(const std::string& accessK
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeRunningLogRecordsRequest::getDBName()const
-{
-	return dBName_;
-}
-
-void DescribeRunningLogRecordsRequest::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
-}
-
 std::string DescribeRunningLogRecordsRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -144,17 +78,6 @@ void DescribeRunningLogRecordsRequest::setSecurityToken(const std::string& secur
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeRunningLogRecordsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRunningLogRecordsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeRunningLogRecordsRequest::getPageSize()const
@@ -199,5 +122,71 @@ void DescribeRunningLogRecordsRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
 	setCoreParameter("NodeId", nodeId);
+}
+
+long DescribeRunningLogRecordsRequest::getSQLId()const
+{
+	return sQLId_;
+}
+
+void DescribeRunningLogRecordsRequest::setSQLId(long sQLId)
+{
+	sQLId_ = sQLId;
+	setCoreParameter("SQLId", std::to_string(sQLId));
+}
+
+std::string DescribeRunningLogRecordsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeRunningLogRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeRunningLogRecordsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeRunningLogRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeRunningLogRecordsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeRunningLogRecordsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeRunningLogRecordsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeRunningLogRecordsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeRunningLogRecordsRequest::getDBName()const
+{
+	return dBName_;
+}
+
+void DescribeRunningLogRecordsRequest::setDBName(const std::string& dBName)
+{
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
 }
 

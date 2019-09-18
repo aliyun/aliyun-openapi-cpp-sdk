@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				ModifyFlowProjectRequest();
 				~ModifyFlowProjectRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 
             private:
+				std::string description_;
 				std::string regionId_;
 				std::string name_;
-				std::string description_;
 				std::string projectId_;
 
 			};

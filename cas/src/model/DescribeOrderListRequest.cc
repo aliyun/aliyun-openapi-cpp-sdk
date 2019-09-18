@@ -25,6 +25,17 @@ DescribeOrderListRequest::DescribeOrderListRequest() :
 DescribeOrderListRequest::~DescribeOrderListRequest()
 {}
 
+std::string DescribeOrderListRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeOrderListRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeOrderListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -36,17 +47,6 @@ void DescribeOrderListRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-int DescribeOrderListRequest::getShowSize()const
-{
-	return showSize_;
-}
-
-void DescribeOrderListRequest::setShowSize(int showSize)
-{
-	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
-}
-
 long DescribeOrderListRequest::getBrandId()const
 {
 	return brandId_;
@@ -56,17 +56,6 @@ void DescribeOrderListRequest::setBrandId(long brandId)
 {
 	brandId_ = brandId;
 	setCoreParameter("BrandId", std::to_string(brandId));
-}
-
-int DescribeOrderListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeOrderListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::vector<DescribeOrderListRequest::Tag> DescribeOrderListRequest::getTag()const
@@ -106,6 +95,28 @@ void DescribeOrderListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+int DescribeOrderListRequest::getShowSize()const
+{
+	return showSize_;
+}
+
+void DescribeOrderListRequest::setShowSize(int showSize)
+{
+	showSize_ = showSize;
+	setCoreParameter("ShowSize", std::to_string(showSize));
+}
+
+int DescribeOrderListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeOrderListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeOrderListRequest::getStatus()const

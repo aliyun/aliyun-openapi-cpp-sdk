@@ -36,6 +36,50 @@ void ListApStaStatusRequest::setOrderCol(const std::string& orderCol)
 	setCoreParameter("OrderCol", orderCol);
 }
 
+int ListApStaStatusRequest::getLength()const
+{
+	return length_;
+}
+
+void ListApStaStatusRequest::setLength(int length)
+{
+	length_ = length;
+	setCoreParameter("Length", std::to_string(length));
+}
+
+std::string ListApStaStatusRequest::getSearchUsername()const
+{
+	return searchUsername_;
+}
+
+void ListApStaStatusRequest::setSearchUsername(const std::string& searchUsername)
+{
+	searchUsername_ = searchUsername;
+	setCoreParameter("SearchUsername", searchUsername);
+}
+
+std::string ListApStaStatusRequest::getOrderDir()const
+{
+	return orderDir_;
+}
+
+void ListApStaStatusRequest::setOrderDir(const std::string& orderDir)
+{
+	orderDir_ = orderDir;
+	setCoreParameter("OrderDir", orderDir);
+}
+
+std::string ListApStaStatusRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListApStaStatusRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListApStaStatusRequest::getSearchProtocal()const
 {
 	return searchProtocal_;
@@ -69,28 +113,6 @@ void ListApStaStatusRequest::setSearchIp(const std::string& searchIp)
 	setCoreParameter("SearchIp", searchIp);
 }
 
-int ListApStaStatusRequest::getLength()const
-{
-	return length_;
-}
-
-void ListApStaStatusRequest::setLength(int length)
-{
-	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
-}
-
-std::string ListApStaStatusRequest::getSearchUsername()const
-{
-	return searchUsername_;
-}
-
-void ListApStaStatusRequest::setSearchUsername(const std::string& searchUsername)
-{
-	searchUsername_ = searchUsername;
-	setCoreParameter("SearchUsername", searchUsername);
-}
-
 std::string ListApStaStatusRequest::getSearchMac()const
 {
 	return searchMac_;
@@ -122,27 +144,5 @@ void ListApStaStatusRequest::setId(long id)
 {
 	id_ = id;
 	setCoreParameter("Id", std::to_string(id));
-}
-
-std::string ListApStaStatusRequest::getOrderDir()const
-{
-	return orderDir_;
-}
-
-void ListApStaStatusRequest::setOrderDir(const std::string& orderDir)
-{
-	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
-}
-
-std::string ListApStaStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListApStaStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

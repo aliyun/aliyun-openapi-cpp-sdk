@@ -36,17 +36,6 @@ void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest:
 	setCoreParameter("IdentityCredentialType", identityCredentialType);
 }
 
-std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getIdentityCredential()const
 {
 	return identityCredential_;
@@ -68,6 +57,17 @@ void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest:
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
 		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+}
+
+std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getLang()const

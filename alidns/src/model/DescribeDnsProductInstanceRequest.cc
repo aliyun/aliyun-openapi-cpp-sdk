@@ -25,6 +25,17 @@ DescribeDnsProductInstanceRequest::DescribeDnsProductInstanceRequest() :
 DescribeDnsProductInstanceRequest::~DescribeDnsProductInstanceRequest()
 {}
 
+std::string DescribeDnsProductInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDnsProductInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeDnsProductInstanceRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,16 +67,5 @@ void DescribeDnsProductInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeDnsProductInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDnsProductInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

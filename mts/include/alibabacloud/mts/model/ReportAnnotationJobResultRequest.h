@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				ReportAnnotationJobResultRequest();
 				~ReportAnnotationJobResultRequest();
 
-				std::string getAnnotation()const;
-				void setAnnotation(const std::string& annotation);
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
+				std::string getDetails()const;
+				void setDetails(const std::string& details);
+				std::string getAnnotation()const;
+				void setAnnotation(const std::string& annotation);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDetails()const;
-				void setDetails(const std::string& details);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string annotation_;
-				std::string jobId_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string jobId_;
+				std::string details_;
+				std::string annotation_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string details_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

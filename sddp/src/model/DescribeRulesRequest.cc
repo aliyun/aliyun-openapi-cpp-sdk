@@ -25,6 +25,17 @@ DescribeRulesRequest::DescribeRulesRequest() :
 DescribeRulesRequest::~DescribeRulesRequest()
 {}
 
+long DescribeRulesRequest::getRiskLevelId()const
+{
+	return riskLevelId_;
+}
+
+void DescribeRulesRequest::setRiskLevelId(long riskLevelId)
+{
+	riskLevelId_ = riskLevelId;
+	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+}
+
 std::string DescribeRulesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,15 +58,15 @@ void DescribeRulesRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeRulesRequest::getName()const
+std::string DescribeRulesRequest::getLang()const
 {
-	return name_;
+	return lang_;
 }
 
-void DescribeRulesRequest::setName(const std::string& name)
+void DescribeRulesRequest::setLang(const std::string& lang)
 {
-	name_ = name;
-	setCoreParameter("Name", name);
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeRulesRequest::getCurrentPage()const
@@ -69,28 +80,6 @@ void DescribeRulesRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-long DescribeRulesRequest::getRiskLevelId()const
-{
-	return riskLevelId_;
-}
-
-void DescribeRulesRequest::setRiskLevelId(long riskLevelId)
-{
-	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
-}
-
-std::string DescribeRulesRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeRulesRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 int DescribeRulesRequest::getCustomType()const
 {
 	return customType_;
@@ -100,6 +89,17 @@ void DescribeRulesRequest::setCustomType(int customType)
 {
 	customType_ = customType;
 	setCoreParameter("CustomType", std::to_string(customType));
+}
+
+std::string DescribeRulesRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeRulesRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 int DescribeRulesRequest::getCategory()const

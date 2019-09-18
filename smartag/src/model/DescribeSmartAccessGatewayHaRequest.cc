@@ -36,17 +36,6 @@ void DescribeSmartAccessGatewayHaRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSmartAccessGatewayHaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeSmartAccessGatewayHaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeSmartAccessGatewayHaRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void DescribeSmartAccessGatewayHaRequest::setRegionId(const std::string& regionI
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeSmartAccessGatewayHaRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSmartAccessGatewayHaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSmartAccessGatewayHaRequest::getOwnerAccount()const
@@ -69,17 +69,6 @@ void DescribeSmartAccessGatewayHaRequest::setOwnerAccount(const std::string& own
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeSmartAccessGatewayHaRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void DescribeSmartAccessGatewayHaRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long DescribeSmartAccessGatewayHaRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void DescribeSmartAccessGatewayHaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeSmartAccessGatewayHaRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void DescribeSmartAccessGatewayHaRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

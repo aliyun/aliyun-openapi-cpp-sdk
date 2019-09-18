@@ -25,17 +25,6 @@ GetPublicAccessUrlsRequest::GetPublicAccessUrlsRequest() :
 GetPublicAccessUrlsRequest::~GetPublicAccessUrlsRequest()
 {}
 
-std::string GetPublicAccessUrlsRequest::getDomainType()const
-{
-	return domainType_;
-}
-
-void GetPublicAccessUrlsRequest::setDomainType(const std::string& domainType)
-{
-	domainType_ = domainType;
-	setCoreParameter("DomainType", domainType);
-}
-
 std::string GetPublicAccessUrlsRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -79,5 +68,16 @@ void GetPublicAccessUrlsRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
 	setCoreParameter("ZoomType", zoomType);
+}
+
+std::string GetPublicAccessUrlsRequest::getDomainType()const
+{
+	return domainType_;
+}
+
+void GetPublicAccessUrlsRequest::setDomainType(const std::string& domainType)
+{
+	domainType_ = domainType;
+	setCoreParameter("DomainType", domainType);
 }
 

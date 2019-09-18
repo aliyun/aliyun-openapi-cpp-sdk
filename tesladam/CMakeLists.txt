@@ -23,12 +23,12 @@ set(tesladam_public_header
 set(tesladam_public_header_model 
 	include/alibabacloud/tesladam/model/ActionRequest.h
 	include/alibabacloud/tesladam/model/ActionResult.h
-	include/alibabacloud/tesladam/model/ActionDiskRmaRequest.h
-	include/alibabacloud/tesladam/model/ActionDiskRmaResult.h
-	include/alibabacloud/tesladam/model/ActionDiskMaskRequest.h
-	include/alibabacloud/tesladam/model/ActionDiskMaskResult.h
 	include/alibabacloud/tesladam/model/ActionDiskCheckRequest.h
 	include/alibabacloud/tesladam/model/ActionDiskCheckResult.h
+	include/alibabacloud/tesladam/model/ActionDiskMaskRequest.h
+	include/alibabacloud/tesladam/model/ActionDiskMaskResult.h
+	include/alibabacloud/tesladam/model/ActionDiskRmaRequest.h
+	include/alibabacloud/tesladam/model/ActionDiskRmaResult.h
 	include/alibabacloud/tesladam/model/HostGetsRequest.h
 	include/alibabacloud/tesladam/model/HostGetsResult.h )
 
@@ -36,12 +36,12 @@ set(tesladam_src
 	src/TeslaDamClient.cc
 	src/model/ActionRequest.cc
 	src/model/ActionResult.cc
-	src/model/ActionDiskRmaRequest.cc
-	src/model/ActionDiskRmaResult.cc
-	src/model/ActionDiskMaskRequest.cc
-	src/model/ActionDiskMaskResult.cc
 	src/model/ActionDiskCheckRequest.cc
 	src/model/ActionDiskCheckResult.cc
+	src/model/ActionDiskMaskRequest.cc
+	src/model/ActionDiskMaskResult.cc
+	src/model/ActionDiskRmaRequest.cc
+	src/model/ActionDiskRmaResult.cc
 	src/model/HostGetsRequest.cc
 	src/model/HostGetsResult.cc )
 

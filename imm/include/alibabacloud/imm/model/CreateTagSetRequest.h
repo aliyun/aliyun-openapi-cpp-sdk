@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				CreateTagSetRequest();
 				~CreateTagSetRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string regionId_;
 				std::string project_;
 				std::string accessKeyId_;
 

@@ -25,6 +25,17 @@ DescribeSpecialEcsRequest::DescribeSpecialEcsRequest() :
 DescribeSpecialEcsRequest::~DescribeSpecialEcsRequest()
 {}
 
+std::string DescribeSpecialEcsRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeSpecialEcsRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeSpecialEcsRequest::getTargetIp()const
 {
 	return targetIp_;
@@ -56,16 +67,5 @@ void DescribeSpecialEcsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeSpecialEcsRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeSpecialEcsRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

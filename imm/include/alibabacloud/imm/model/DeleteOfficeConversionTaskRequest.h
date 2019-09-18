@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				DeleteOfficeConversionTaskRequest();
 				~DeleteOfficeConversionTaskRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
 
             private:
-				std::string regionId_;
 				std::string project_;
-				std::string taskId_;
 				std::string accessKeyId_;
+				std::string taskId_;
 
 			};
 		}

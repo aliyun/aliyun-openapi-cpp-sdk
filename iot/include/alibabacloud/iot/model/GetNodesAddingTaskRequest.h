@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				GetNodesAddingTaskRequest();
 				~GetNodesAddingTaskRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string iotInstanceId_;
 				std::string taskId_;
-				std::string accessKeyId_;
 
 			};
 		}

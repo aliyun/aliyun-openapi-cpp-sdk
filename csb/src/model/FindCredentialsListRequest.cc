@@ -25,17 +25,6 @@ FindCredentialsListRequest::FindCredentialsListRequest() :
 FindCredentialsListRequest::~FindCredentialsListRequest()
 {}
 
-std::string FindCredentialsListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void FindCredentialsListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long FindCredentialsListRequest::getCsbId()const
 {
 	return csbId_;

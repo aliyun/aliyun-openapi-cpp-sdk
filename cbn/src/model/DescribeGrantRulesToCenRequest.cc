@@ -36,15 +36,26 @@ void DescribeGrantRulesToCenRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeGrantRulesToCenRequest::getResourceOwnerAccount()const
+std::string DescribeGrantRulesToCenRequest::getCenId()const
 {
-	return resourceOwnerAccount_;
+	return cenId_;
 }
 
-void DescribeGrantRulesToCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeGrantRulesToCenRequest::setCenId(const std::string& cenId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	cenId_ = cenId;
+	setCoreParameter("CenId", cenId);
+}
+
+std::string DescribeGrantRulesToCenRequest::getProductType()const
+{
+	return productType_;
+}
+
+void DescribeGrantRulesToCenRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setCoreParameter("ProductType", productType);
 }
 
 std::string DescribeGrantRulesToCenRequest::getRegionId()const
@@ -58,15 +69,15 @@ void DescribeGrantRulesToCenRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeGrantRulesToCenRequest::getCenId()const
+std::string DescribeGrantRulesToCenRequest::getResourceOwnerAccount()const
 {
-	return cenId_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeGrantRulesToCenRequest::setCenId(const std::string& cenId)
+void DescribeGrantRulesToCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGrantRulesToCenRequest::getOwnerAccount()const
@@ -89,16 +100,5 @@ void DescribeGrantRulesToCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeGrantRulesToCenRequest::getProductType()const
-{
-	return productType_;
-}
-
-void DescribeGrantRulesToCenRequest::setProductType(const std::string& productType)
-{
-	productType_ = productType;
-	setCoreParameter("ProductType", productType);
 }
 

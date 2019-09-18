@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				SetScanModeRequest();
 				~SetScanModeRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getOperation()const;
 				void setOperation(int operation);
 				std::vector<std::string> getMacList()const;
 				void setMacList(const std::vector<std::string>& macList);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				int operation_;
 				std::vector<std::string> macList_;
-				std::string accessKeyId_;
 
 			};
 		}

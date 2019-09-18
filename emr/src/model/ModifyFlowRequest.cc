@@ -36,28 +36,6 @@ void ModifyFlowRequest::setCronExpr(const std::string& cronExpr)
 	setCoreParameter("CronExpr", cronExpr);
 }
 
-std::string ModifyFlowRequest::getParentFlowList()const
-{
-	return parentFlowList_;
-}
-
-void ModifyFlowRequest::setParentFlowList(const std::string& parentFlowList)
-{
-	parentFlowList_ = parentFlowList;
-	setCoreParameter("ParentFlowList", parentFlowList);
-}
-
-std::string ModifyFlowRequest::getAlertDingDingGroupBizId()const
-{
-	return alertDingDingGroupBizId_;
-}
-
-void ModifyFlowRequest::setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId)
-{
-	alertDingDingGroupBizId_ = alertDingDingGroupBizId;
-	setCoreParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
-}
-
 bool ModifyFlowRequest::getPeriodic()const
 {
 	return periodic_;
@@ -69,17 +47,6 @@ void ModifyFlowRequest::setPeriodic(bool periodic)
 	setCoreParameter("Periodic", periodic ? "true" : "false");
 }
 
-long ModifyFlowRequest::getStartSchedule()const
-{
-	return startSchedule_;
-}
-
-void ModifyFlowRequest::setStartSchedule(long startSchedule)
-{
-	startSchedule_ = startSchedule;
-	setCoreParameter("StartSchedule", std::to_string(startSchedule));
-}
-
 std::string ModifyFlowRequest::getDescription()const
 {
 	return description_;
@@ -89,17 +56,6 @@ void ModifyFlowRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-std::string ModifyFlowRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ModifyFlowRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyFlowRequest::getAlertUserGroupBizId()const
@@ -124,17 +80,6 @@ void ModifyFlowRequest::setHostName(const std::string& hostName)
 	setCoreParameter("HostName", hostName);
 }
 
-std::string ModifyFlowRequest::getApplication()const
-{
-	return application_;
-}
-
-void ModifyFlowRequest::setApplication(const std::string& application)
-{
-	application_ = application;
-	setCoreParameter("Application", application);
-}
-
 std::string ModifyFlowRequest::getRegionId()const
 {
 	return regionId_;
@@ -155,17 +100,6 @@ void ModifyFlowRequest::setCreateCluster(bool createCluster)
 {
 	createCluster_ = createCluster;
 	setCoreParameter("CreateCluster", createCluster ? "true" : "false");
-}
-
-std::string ModifyFlowRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyFlowRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 long ModifyFlowRequest::getEndSchedule()const
@@ -210,6 +144,72 @@ void ModifyFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
+}
+
+std::string ModifyFlowRequest::getParentFlowList()const
+{
+	return parentFlowList_;
+}
+
+void ModifyFlowRequest::setParentFlowList(const std::string& parentFlowList)
+{
+	parentFlowList_ = parentFlowList;
+	setCoreParameter("ParentFlowList", parentFlowList);
+}
+
+std::string ModifyFlowRequest::getAlertDingDingGroupBizId()const
+{
+	return alertDingDingGroupBizId_;
+}
+
+void ModifyFlowRequest::setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId)
+{
+	alertDingDingGroupBizId_ = alertDingDingGroupBizId;
+	setCoreParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
+}
+
+long ModifyFlowRequest::getStartSchedule()const
+{
+	return startSchedule_;
+}
+
+void ModifyFlowRequest::setStartSchedule(long startSchedule)
+{
+	startSchedule_ = startSchedule;
+	setCoreParameter("StartSchedule", std::to_string(startSchedule));
+}
+
+std::string ModifyFlowRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ModifyFlowRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ModifyFlowRequest::getApplication()const
+{
+	return application_;
+}
+
+void ModifyFlowRequest::setApplication(const std::string& application)
+{
+	application_ = application;
+	setCoreParameter("Application", application);
+}
+
+std::string ModifyFlowRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyFlowRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyFlowRequest::getStatus()const

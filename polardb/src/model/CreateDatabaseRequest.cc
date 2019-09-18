@@ -124,6 +124,17 @@ void CreateDatabaseRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CreateDatabaseRequest::getCollate()const
+{
+	return collate_;
+}
+
+void CreateDatabaseRequest::setCollate(const std::string& collate)
+{
+	collate_ = collate;
+	setCoreParameter("Collate", collate);
+}
+
 std::string CreateDatabaseRequest::getDBName()const
 {
 	return dBName_;
@@ -133,6 +144,17 @@ void CreateDatabaseRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
 	setCoreParameter("DBName", dBName);
+}
+
+std::string CreateDatabaseRequest::getCtype()const
+{
+	return ctype_;
+}
+
+void CreateDatabaseRequest::setCtype(const std::string& ctype)
+{
+	ctype_ = ctype;
+	setCoreParameter("Ctype", ctype);
 }
 
 std::string CreateDatabaseRequest::getCharacterSetName()const

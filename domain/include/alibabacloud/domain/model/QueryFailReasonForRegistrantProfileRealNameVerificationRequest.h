@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				QueryFailReasonForRegistrantProfileRealNameVerificationRequest();
 				~QueryFailReasonForRegistrantProfileRealNameVerificationRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				long getRegistrantProfileID()const;
 				void setRegistrantProfileID(long registrantProfileID);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string userClientIp_;
 				long registrantProfileID_;
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

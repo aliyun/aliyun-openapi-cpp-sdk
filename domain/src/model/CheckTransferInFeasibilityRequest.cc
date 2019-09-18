@@ -25,6 +25,17 @@ CheckTransferInFeasibilityRequest::CheckTransferInFeasibilityRequest() :
 CheckTransferInFeasibilityRequest::~CheckTransferInFeasibilityRequest()
 {}
 
+std::string CheckTransferInFeasibilityRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void CheckTransferInFeasibilityRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
 std::string CheckTransferInFeasibilityRequest::getTransferAuthorizationCode()const
 {
 	return transferAuthorizationCode_;
@@ -45,17 +56,6 @@ void CheckTransferInFeasibilityRequest::setUserClientIp(const std::string& userC
 {
 	userClientIp_ = userClientIp;
 	setCoreParameter("UserClientIp", userClientIp);
-}
-
-std::string CheckTransferInFeasibilityRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void CheckTransferInFeasibilityRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
 }
 
 std::string CheckTransferInFeasibilityRequest::getLang()const

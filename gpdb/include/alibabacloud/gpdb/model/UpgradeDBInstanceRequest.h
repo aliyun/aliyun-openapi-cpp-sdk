@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				UpgradeDBInstanceRequest();
 				~UpgradeDBInstanceRequest();
 
-				std::string getDBInstanceGroupCount()const;
-				void setDBInstanceGroupCount(const std::string& dBInstanceGroupCount);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getDBInstanceGroupCount()const;
+				void setDBInstanceGroupCount(const std::string& dBInstanceGroupCount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPayType()const;
-				void setPayType(const std::string& payType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceClass()const;
 				void setDBInstanceClass(const std::string& dBInstanceClass);
+				std::string getPayType()const;
+				void setPayType(const std::string& payType);
 
             private:
-				std::string dBInstanceGroupCount_;
+				std::string accessKeyId_;
 				std::string regionId_;
 				std::string dBInstanceId_;
+				std::string dBInstanceGroupCount_;
 				long ownerId_;
-				std::string payType_;
-				std::string accessKeyId_;
 				std::string dBInstanceClass_;
+				std::string payType_;
 
 			};
 		}

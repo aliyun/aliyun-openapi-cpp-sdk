@@ -37,26 +37,24 @@ namespace AlibabaCloud
 
 				std::string getGrabType()const;
 				void setGrabType(const std::string& grabType);
-				std::string getRemarksB()const;
-				void setRemarksB(const std::string& remarksB);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getRemarksA()const;
-				void setRemarksA(const std::string& remarksA);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getExternalId()const;
 				void setExternalId(const std::string& externalId);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRemarksB()const;
+				void setRemarksB(const std::string& remarksB);
+				std::string getRemarksA()const;
+				void setRemarksA(const std::string& remarksA);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				std::string getVideoUri()const;
 				void setVideoUri(const std::string& videoUri);
 				bool getSaveType()const;
 				void setSaveType(bool saveType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getRemarksD()const;
 				void setRemarksD(const std::string& remarksD);
 				std::string getRemarksC()const;
@@ -70,16 +68,15 @@ namespace AlibabaCloud
 
             private:
 				std::string grabType_;
-				std::string remarksB_;
 				std::string project_;
-				std::string remarksA_;
-				std::string endTime_;
 				std::string externalId_;
 				std::string startTime_;
 				std::string accessKeyId_;
+				std::string remarksB_;
+				std::string remarksA_;
+				std::string endTime_;
 				std::string videoUri_;
 				bool saveType_;
-				std::string regionId_;
 				std::string remarksD_;
 				std::string remarksC_;
 				std::string setId_;

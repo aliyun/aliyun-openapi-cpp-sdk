@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				DecryptKeyRequest();
 				~DecryptKeyRequest();
 
-				std::string getRand()const;
-				void setRand(const std::string& rand);
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRand()const;
+				void setRand(const std::string& rand);
+				std::string getCiphertextBlob()const;
+				void setCiphertextBlob(const std::string& ciphertextBlob);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getCiphertextBlob()const;
-				void setCiphertextBlob(const std::string& ciphertextBlob);
 
             private:
-				std::string rand_;
 				std::string resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string rand_;
+				std::string ciphertextBlob_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string ownerId_;
-				std::string accessKeyId_;
-				std::string ciphertextBlob_;
 
 			};
 		}

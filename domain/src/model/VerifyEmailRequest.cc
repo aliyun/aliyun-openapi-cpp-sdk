@@ -25,6 +25,17 @@ VerifyEmailRequest::VerifyEmailRequest() :
 VerifyEmailRequest::~VerifyEmailRequest()
 {}
 
+std::string VerifyEmailRequest::getToken()const
+{
+	return token_;
+}
+
+void VerifyEmailRequest::setToken(const std::string& token)
+{
+	token_ = token;
+	setCoreParameter("Token", token);
+}
+
 std::string VerifyEmailRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -45,16 +56,5 @@ void VerifyEmailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string VerifyEmailRequest::getToken()const
-{
-	return token_;
-}
-
-void VerifyEmailRequest::setToken(const std::string& token)
-{
-	token_ = token;
-	setCoreParameter("Token", token);
 }
 

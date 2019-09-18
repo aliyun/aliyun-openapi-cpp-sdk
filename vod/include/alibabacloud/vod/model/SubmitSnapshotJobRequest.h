@@ -37,6 +37,18 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
+				long getSpecifiedOffsetTime()const;
+				void setSpecifiedOffsetTime(long specifiedOffsetTime);
+				std::string getSpriteSnapshotConfig()const;
+				void setSpriteSnapshotConfig(const std::string& spriteSnapshotConfig);
+				std::string getSnapshotTemplateId()const;
+				void setSnapshotTemplateId(const std::string& snapshotTemplateId);
+				std::string getHeight()const;
+				void setHeight(const std::string& height);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getCount()const;
@@ -45,37 +57,25 @@ namespace AlibabaCloud
 				void setVideoId(const std::string& videoId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
-				long getSpecifiedOffsetTime()const;
-				void setSpecifiedOffsetTime(long specifiedOffsetTime);
 				std::string getWidth()const;
 				void setWidth(const std::string& width);
 				long getInterval()const;
 				void setInterval(long interval);
-				std::string getSpriteSnapshotConfig()const;
-				void setSpriteSnapshotConfig(const std::string& spriteSnapshotConfig);
-				std::string getSnapshotTemplateId()const;
-				void setSnapshotTemplateId(const std::string& snapshotTemplateId);
-				std::string getHeight()const;
-				void setHeight(const std::string& height);
 
             private:
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string userData_;
+				long specifiedOffsetTime_;
+				std::string spriteSnapshotConfig_;
+				std::string snapshotTemplateId_;
+				std::string height_;
 				std::string resourceOwnerAccount_;
 				long count_;
 				std::string videoId_;
 				long ownerId_;
-				std::string accessKeyId_;
-				std::string userData_;
-				long specifiedOffsetTime_;
 				std::string width_;
 				long interval_;
-				std::string spriteSnapshotConfig_;
-				std::string snapshotTemplateId_;
-				std::string height_;
 
 			};
 		}

@@ -37,29 +37,29 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOperationId()const;
-				void setOperationId(const std::string& operationId);
 				std::string getHostId()const;
 				void setHostId(const std::string& hostId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getOperationId()const;
+				void setOperationId(const std::string& operationId);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
-				std::string regionId_;
-				std::string operationId_;
 				std::string hostId_;
 				std::string clusterId_;
-				std::string taskId_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				std::string operationId_;
+				std::string taskId_;
 				std::string status_;
 
 			};

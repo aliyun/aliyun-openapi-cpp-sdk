@@ -37,9 +37,12 @@ namespace AlibabaCloud
 
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegion()const;
+				void setRegion(const std::string& region);
 
             private:
 				std::string accessKeyId_;
+				std::string region_;
 
 			};
 		}

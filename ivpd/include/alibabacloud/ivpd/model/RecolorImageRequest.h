@@ -39,23 +39,23 @@ namespace AlibabaCloud
 				RecolorImageRequest();
 				~RecolorImageRequest();
 
-				std::string getMode()const;
-				void setMode(const std::string& mode);
 				std::vector<ColorTemplate> getColorTemplate()const;
 				void setColorTemplate(const std::vector<ColorTemplate>& colorTemplate);
+				std::string getUrl()const;
+				void setUrl(const std::string& url);
+				std::string getMode()const;
+				void setMode(const std::string& mode);
 				int getColorCount()const;
 				void setColorCount(int colorCount);
 				std::string getRefUrl()const;
 				void setRefUrl(const std::string& refUrl);
-				std::string getUrl()const;
-				void setUrl(const std::string& url);
 
             private:
-				std::string mode_;
 				std::vector<ColorTemplate> colorTemplate_;
+				std::string url_;
+				std::string mode_;
 				int colorCount_;
 				std::string refUrl_;
-				std::string url_;
 
 			};
 		}

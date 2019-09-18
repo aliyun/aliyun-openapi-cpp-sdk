@@ -36,14 +36,3 @@ void GetUserSourceRepoListRequest::setSourceAccountId(long sourceAccountId)
 	setCoreParameter("SourceAccountId", std::to_string(sourceAccountId));
 }
 
-std::string GetUserSourceRepoListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetUserSourceRepoListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

@@ -25,6 +25,28 @@ DescribeRiskTrendRequest::DescribeRiskTrendRequest() :
 DescribeRiskTrendRequest::~DescribeRiskTrendRequest()
 {}
 
+std::string DescribeRiskTrendRequest::getPeroid()const
+{
+	return peroid_;
+}
+
+void DescribeRiskTrendRequest::setPeroid(const std::string& peroid)
+{
+	peroid_ = peroid;
+	setCoreParameter("Peroid", peroid);
+}
+
+std::string DescribeRiskTrendRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeRiskTrendRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeRiskTrendRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,28 +78,6 @@ void DescribeRiskTrendRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeRiskTrendRequest::getPeroid()const
-{
-	return peroid_;
-}
-
-void DescribeRiskTrendRequest::setPeroid(const std::string& peroid)
-{
-	peroid_ = peroid;
-	setCoreParameter("Peroid", peroid);
-}
-
-std::string DescribeRiskTrendRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeRiskTrendRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeRiskTrendRequest::getQueryRegionId()const

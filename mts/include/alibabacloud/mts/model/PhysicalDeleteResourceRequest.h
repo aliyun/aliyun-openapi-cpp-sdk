@@ -39,6 +39,10 @@ namespace AlibabaCloud
 				void setCountry(const std::string& country);
 				long getHid()const;
 				void setHid(long hid);
+				std::string getInvoker()const;
+				void setInvoker(const std::string& invoker);
+				std::string getMessage()const;
+				void setMessage(const std::string& message);
 				bool getSuccess()const;
 				void setSuccess(bool success);
 				bool getInterrupt()const;
@@ -47,12 +51,8 @@ namespace AlibabaCloud
 				void setGmtWakeup(const std::string& gmtWakeup);
 				std::string getPk()const;
 				void setPk(const std::string& pk);
-				std::string getInvoker()const;
-				void setInvoker(const std::string& invoker);
 				std::string getBid()const;
 				void setBid(const std::string& bid);
-				std::string getMessage()const;
-				void setMessage(const std::string& message);
 				std::string getTaskExtraData()const;
 				void setTaskExtraData(const std::string& taskExtraData);
 				std::string getTaskIdentifier()const;
@@ -61,13 +61,13 @@ namespace AlibabaCloud
             private:
 				std::string country_;
 				long hid_;
+				std::string invoker_;
+				std::string message_;
 				bool success_;
 				bool interrupt_;
 				std::string gmtWakeup_;
 				std::string pk_;
-				std::string invoker_;
 				std::string bid_;
-				std::string message_;
 				std::string taskExtraData_;
 				std::string taskIdentifier_;
 

@@ -25,6 +25,17 @@ MarkOssResultRequest::MarkOssResultRequest() :
 MarkOssResultRequest::~MarkOssResultRequest()
 {}
 
+std::string MarkOssResultRequest::getScene()const
+{
+	return scene_;
+}
+
+void MarkOssResultRequest::setScene(const std::string& scene)
+{
+	scene_ = scene;
+	setCoreParameter("Scene", scene);
+}
+
 std::string MarkOssResultRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -34,17 +45,6 @@ void MarkOssResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string MarkOssResultRequest::getIds()const
-{
-	return ids_;
-}
-
-void MarkOssResultRequest::setIds(const std::string& ids)
-{
-	ids_ = ids;
-	setCoreParameter("Ids", ids);
 }
 
 std::string MarkOssResultRequest::getLang()const
@@ -69,17 +69,6 @@ void MarkOssResultRequest::setStock(bool stock)
 	setCoreParameter("Stock", stock ? "true" : "false");
 }
 
-std::string MarkOssResultRequest::getOperation()const
-{
-	return operation_;
-}
-
-void MarkOssResultRequest::setOperation(const std::string& operation)
-{
-	operation_ = operation;
-	setCoreParameter("Operation", operation);
-}
-
 std::string MarkOssResultRequest::getResourceType()const
 {
 	return resourceType_;
@@ -91,14 +80,25 @@ void MarkOssResultRequest::setResourceType(const std::string& resourceType)
 	setCoreParameter("ResourceType", resourceType);
 }
 
-std::string MarkOssResultRequest::getScene()const
+std::string MarkOssResultRequest::getIds()const
 {
-	return scene_;
+	return ids_;
 }
 
-void MarkOssResultRequest::setScene(const std::string& scene)
+void MarkOssResultRequest::setIds(const std::string& ids)
 {
-	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	ids_ = ids;
+	setCoreParameter("Ids", ids);
+}
+
+std::string MarkOssResultRequest::getOperation()const
+{
+	return operation_;
+}
+
+void MarkOssResultRequest::setOperation(const std::string& operation)
+{
+	operation_ = operation;
+	setCoreParameter("Operation", operation);
 }
 

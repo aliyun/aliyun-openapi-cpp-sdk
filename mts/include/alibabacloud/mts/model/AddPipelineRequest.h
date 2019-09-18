@@ -39,34 +39,34 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRole()const;
 				void setRole(const std::string& role);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getNotifyConfig()const;
-				void setNotifyConfig(const std::string& notifyConfig);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				long getSpeedLevel()const;
-				void setSpeedLevel(long speedLevel);
 				std::string getSpeed()const;
 				void setSpeed(const std::string& speed);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getNotifyConfig()const;
+				void setNotifyConfig(const std::string& notifyConfig);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				long getSpeedLevel()const;
+				void setSpeedLevel(long speedLevel);
 
             private:
 				long resourceOwnerId_;
 				std::string role_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string name_;
-				std::string notifyConfig_;
-				long ownerId_;
-				long speedLevel_;
 				std::string speed_;
 				std::string accessKeyId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string notifyConfig_;
+				long ownerId_;
+				std::string name_;
+				long speedLevel_;
 
 			};
 		}

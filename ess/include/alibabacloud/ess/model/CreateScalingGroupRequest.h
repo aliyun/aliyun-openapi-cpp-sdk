@@ -42,7 +42,13 @@ namespace AlibabaCloud
 				struct VServerGroup
 				{
 					std::string loadBalancerId;
-					RepeatList vServerGroupAttribute;
+					struct VServerGroupAttribute
+					{
+						std::string vServerGroupId;
+						int port;
+						int weight;
+					};
+					VServerGroupAttribute vServerGroupAttribute;
 				};
 
 			public:

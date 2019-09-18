@@ -25,6 +25,17 @@ OnsMessageSendRequest::OnsMessageSendRequest() :
 OnsMessageSendRequest::~OnsMessageSendRequest()
 {}
 
+std::string OnsMessageSendRequest::getMessage()const
+{
+	return message_;
+}
+
+void OnsMessageSendRequest::setMessage(const std::string& message)
+{
+	message_ = message;
+	setCoreParameter("Message", message);
+}
+
 std::string OnsMessageSendRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,17 +67,6 @@ void OnsMessageSendRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
 	setCoreParameter("Tag", tag);
-}
-
-std::string OnsMessageSendRequest::getMessage()const
-{
-	return message_;
-}
-
-void OnsMessageSendRequest::setMessage(const std::string& message)
-{
-	message_ = message;
-	setCoreParameter("Message", message);
 }
 
 std::string OnsMessageSendRequest::getKey()const

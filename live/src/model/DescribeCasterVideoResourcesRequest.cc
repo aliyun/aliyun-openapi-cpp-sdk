@@ -25,17 +25,6 @@ DescribeCasterVideoResourcesRequest::DescribeCasterVideoResourcesRequest() :
 DescribeCasterVideoResourcesRequest::~DescribeCasterVideoResourcesRequest()
 {}
 
-std::string DescribeCasterVideoResourcesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCasterVideoResourcesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeCasterVideoResourcesRequest::getCasterId()const
 {
 	return casterId_;

@@ -25,17 +25,6 @@ ModifyAlertConfigRequest::ModifyAlertConfigRequest() :
 ModifyAlertConfigRequest::~ModifyAlertConfigRequest()
 {}
 
-int ModifyAlertConfigRequest::getSuccessConfig()const
-{
-	return successConfig_;
-}
-
-void ModifyAlertConfigRequest::setSuccessConfig(int successConfig)
-{
-	successConfig_ = successConfig;
-	setCoreParameter("SuccessConfig", std::to_string(successConfig));
-}
-
 int ModifyAlertConfigRequest::getRejectConfig()const
 {
 	return rejectConfig_;
@@ -47,17 +36,6 @@ void ModifyAlertConfigRequest::setRejectConfig(int rejectConfig)
 	setCoreParameter("RejectConfig", std::to_string(rejectConfig));
 }
 
-std::string ModifyAlertConfigRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyAlertConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyAlertConfigRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;
@@ -67,17 +45,6 @@ void ModifyAlertConfigRequest::setScalingGroupId(const std::string& scalingGroup
 {
 	scalingGroupId_ = scalingGroupId;
 	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
-long ModifyAlertConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyAlertConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ModifyAlertConfigRequest::getFailConfig()const
@@ -100,5 +67,38 @@ void ModifyAlertConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyAlertConfigRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyAlertConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long ModifyAlertConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyAlertConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+int ModifyAlertConfigRequest::getSuccessConfig()const
+{
+	return successConfig_;
+}
+
+void ModifyAlertConfigRequest::setSuccessConfig(int successConfig)
+{
+	successConfig_ = successConfig;
+	setCoreParameter("SuccessConfig", std::to_string(successConfig));
 }
 

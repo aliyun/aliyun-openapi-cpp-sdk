@@ -47,28 +47,6 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setIdentityCr
 	setCoreParameter("IdentityCredentialType", identityCredentialType);
 }
 
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getAddress()const
-{
-	return address_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setAddress(const std::string& address)
-{
-	address_ = address;
-	setCoreParameter("Address", address);
-}
-
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getTelArea()const
-{
-	return telArea_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setTelArea(const std::string& telArea)
-{
-	telArea_ = telArea;
-	setCoreParameter("TelArea", telArea);
-}
-
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getCity()const
 {
 	return city_;
@@ -80,40 +58,6 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setCity(const
 	setCoreParameter("City", city);
 }
 
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getZhAddress()const
-{
-	return zhAddress_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setZhAddress(const std::string& zhAddress)
-{
-	zhAddress_ = zhAddress;
-	setCoreParameter("ZhAddress", zhAddress);
-}
-
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getRegistrantType()const
-{
-	return registrantType_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setRegistrantType(const std::string& registrantType)
-{
-	registrantType_ = registrantType;
-	setCoreParameter("RegistrantType", registrantType);
-}
-
-std::vector<std::string> SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setDomainName(const std::vector<std::string>& domainName)
-{
-	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
-}
-
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getIdentityCredential()const
 {
 	return identityCredential_;
@@ -123,17 +67,6 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setIdentityCr
 {
 	identityCredential_ = identityCredential;
 	setCoreParameter("IdentityCredential", identityCredential);
-}
-
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getTelephone()const
-{
-	return telephone_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setTelephone(const std::string& telephone)
-{
-	telephone_ = telephone;
-	setCoreParameter("Telephone", telephone);
 }
 
 bool SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getTransferOutProhibited()const
@@ -156,28 +89,6 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setZhCity(con
 {
 	zhCity_ = zhCity;
 	setCoreParameter("ZhCity", zhCity);
-}
-
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getZhProvince()const
-{
-	return zhProvince_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setZhProvince(const std::string& zhProvince)
-{
-	zhProvince_ = zhProvince;
-	setCoreParameter("ZhProvince", zhProvince);
-}
-
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getRegistrantOrganization()const
-{
-	return registrantOrganization_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setRegistrantOrganization(const std::string& registrantOrganization)
-{
-	registrantOrganization_ = registrantOrganization;
-	setCoreParameter("RegistrantOrganization", registrantOrganization);
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getTelExt()const
@@ -224,17 +135,6 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setPostalCode
 	setCoreParameter("PostalCode", postalCode);
 }
 
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getLang()const
 {
 	return lang_;
@@ -244,17 +144,6 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setLang(const
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getIdentityCredentialNo()const
-{
-	return identityCredentialNo_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setIdentityCredentialNo(const std::string& identityCredentialNo)
-{
-	identityCredentialNo_ = identityCredentialNo;
-	setCoreParameter("IdentityCredentialNo", identityCredentialNo);
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getEmail()const
@@ -268,17 +157,6 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setEmail(cons
 	setCoreParameter("Email", email);
 }
 
-std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getRegistrantName()const
-{
-	return registrantName_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setRegistrantName(const std::string& registrantName)
-{
-	registrantName_ = registrantName;
-	setCoreParameter("RegistrantName", registrantName);
-}
-
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getZhRegistrantOrganization()const
 {
 	return zhRegistrantOrganization_;
@@ -288,5 +166,127 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setZhRegistra
 {
 	zhRegistrantOrganization_ = zhRegistrantOrganization;
 	setCoreParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getAddress()const
+{
+	return address_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setAddress(const std::string& address)
+{
+	address_ = address;
+	setCoreParameter("Address", address);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getTelArea()const
+{
+	return telArea_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setTelArea(const std::string& telArea)
+{
+	telArea_ = telArea;
+	setCoreParameter("TelArea", telArea);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getZhAddress()const
+{
+	return zhAddress_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setZhAddress(const std::string& zhAddress)
+{
+	zhAddress_ = zhAddress;
+	setCoreParameter("ZhAddress", zhAddress);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getRegistrantType()const
+{
+	return registrantType_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setRegistrantType(const std::string& registrantType)
+{
+	registrantType_ = registrantType;
+	setCoreParameter("RegistrantType", registrantType);
+}
+
+std::vector<std::string> SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setDomainName(const std::vector<std::string>& domainName)
+{
+	domainName_ = domainName;
+	for(int i = 0; i!= domainName.size(); i++)
+		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getTelephone()const
+{
+	return telephone_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setTelephone(const std::string& telephone)
+{
+	telephone_ = telephone;
+	setCoreParameter("Telephone", telephone);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getZhProvince()const
+{
+	return zhProvince_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setZhProvince(const std::string& zhProvince)
+{
+	zhProvince_ = zhProvince;
+	setCoreParameter("ZhProvince", zhProvince);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getRegistrantOrganization()const
+{
+	return registrantOrganization_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setRegistrantOrganization(const std::string& registrantOrganization)
+{
+	registrantOrganization_ = registrantOrganization;
+	setCoreParameter("RegistrantOrganization", registrantOrganization);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getIdentityCredentialNo()const
+{
+	return identityCredentialNo_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setIdentityCredentialNo(const std::string& identityCredentialNo)
+{
+	identityCredentialNo_ = identityCredentialNo;
+	setCoreParameter("IdentityCredentialNo", identityCredentialNo);
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getRegistrantName()const
+{
+	return registrantName_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setRegistrantName(const std::string& registrantName)
+{
+	registrantName_ = registrantName;
+	setCoreParameter("RegistrantName", registrantName);
 }
 

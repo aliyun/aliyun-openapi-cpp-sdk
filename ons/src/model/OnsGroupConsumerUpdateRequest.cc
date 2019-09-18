@@ -25,6 +25,17 @@ OnsGroupConsumerUpdateRequest::OnsGroupConsumerUpdateRequest() :
 OnsGroupConsumerUpdateRequest::~OnsGroupConsumerUpdateRequest()
 {}
 
+std::string OnsGroupConsumerUpdateRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void OnsGroupConsumerUpdateRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
 bool OnsGroupConsumerUpdateRequest::getReadEnable()const
 {
 	return readEnable_;
@@ -45,16 +56,5 @@ void OnsGroupConsumerUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string OnsGroupConsumerUpdateRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void OnsGroupConsumerUpdateRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
 }
 

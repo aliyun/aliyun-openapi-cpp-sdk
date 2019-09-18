@@ -35,42 +35,39 @@ namespace AlibabaCloud
 				CreateVideoAnalyseTaskRequest();
 				~CreateVideoAnalyseTaskRequest();
 
-				std::string getNotifyTopicName()const;
-				void setNotifyTopicName(const std::string& notifyTopicName);
 				std::string getGrabType()const;
 				void setGrabType(const std::string& grabType);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNotifyEndpoint()const;
+				void setNotifyEndpoint(const std::string& notifyEndpoint);
+				std::string getNotifyTopicName()const;
+				void setNotifyTopicName(const std::string& notifyTopicName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				std::string getVideoUri()const;
 				void setVideoUri(const std::string& videoUri);
 				bool getSaveType()const;
 				void setSaveType(bool saveType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNotifyEndpoint()const;
-				void setNotifyEndpoint(const std::string& notifyEndpoint);
 				std::string getInterval()const;
 				void setInterval(const std::string& interval);
 				std::string getTgtUri()const;
 				void setTgtUri(const std::string& tgtUri);
 
             private:
-				std::string notifyTopicName_;
 				std::string grabType_;
 				std::string project_;
-				std::string endTime_;
 				std::string startTime_;
 				std::string accessKeyId_;
+				std::string notifyEndpoint_;
+				std::string notifyTopicName_;
+				std::string endTime_;
 				std::string videoUri_;
 				bool saveType_;
-				std::string regionId_;
-				std::string notifyEndpoint_;
 				std::string interval_;
 				std::string tgtUri_;
 

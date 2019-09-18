@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				SubmitImageSearchJobRequest();
 				~SubmitImageSearchJobRequest();
 
-				std::string getInputImage()const;
-				void setInputImage(const std::string& inputImage);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getFpDBId()const;
 				void setFpDBId(const std::string& fpDBId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				std::string getInputVideo()const;
 				void setInputVideo(const std::string& inputVideo);
+				std::string getInputImage()const;
+				void setInputImage(const std::string& inputImage);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getConfig()const;
-				void setConfig(const std::string& config);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				std::string getConfig()const;
+				void setConfig(const std::string& config);
 
             private:
-				std::string inputImage_;
-				std::string userData_;
 				long resourceOwnerId_;
 				std::string fpDBId_;
-				std::string resourceOwnerAccount_;
+				std::string accessKeyId_;
+				std::string userData_;
 				std::string inputVideo_;
+				std::string inputImage_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string config_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				std::string config_;
 
 			};
 		}

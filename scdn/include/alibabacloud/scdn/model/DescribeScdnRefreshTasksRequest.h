@@ -37,14 +37,8 @@ namespace AlibabaCloud
 
 				std::string getObjectPath()const;
 				void setObjectPath(const std::string& objectPath);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getResourceGroupId()const;
@@ -57,21 +51,27 @@ namespace AlibabaCloud
 				void setObjectType(const std::string& objectType);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
 				std::string objectPath_;
-				std::string domainName_;
-				std::string endTime_;
 				std::string startTime_;
-				long ownerId_;
 				int pageNumber_;
 				std::string resourceGroupId_;
 				std::string securityToken_;
 				int pageSize_;
 				std::string objectType_;
 				std::string taskId_;
+				std::string domainName_;
+				std::string endTime_;
+				long ownerId_;
 				std::string status_;
 
 			};

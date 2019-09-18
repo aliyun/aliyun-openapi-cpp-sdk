@@ -25,17 +25,6 @@ DeleteWatermarkRequest::DeleteWatermarkRequest() :
 DeleteWatermarkRequest::~DeleteWatermarkRequest()
 {}
 
-std::string DeleteWatermarkRequest::getWatermarkId()const
-{
-	return watermarkId_;
-}
-
-void DeleteWatermarkRequest::setWatermarkId(const std::string& watermarkId)
-{
-	watermarkId_ = watermarkId;
-	setCoreParameter("WatermarkId", watermarkId);
-}
-
 long DeleteWatermarkRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -78,5 +67,16 @@ void DeleteWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteWatermarkRequest::getWatermarkId()const
+{
+	return watermarkId_;
+}
+
+void DeleteWatermarkRequest::setWatermarkId(const std::string& watermarkId)
+{
+	watermarkId_ = watermarkId;
+	setCoreParameter("WatermarkId", watermarkId);
 }
 

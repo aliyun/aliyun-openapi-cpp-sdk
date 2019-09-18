@@ -37,6 +37,10 @@ namespace AlibabaCloud
 
 				int getBuyerStatus()const;
 				void setBuyerStatus(int buyerStatus);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				std::string getSortFiled()const;
+				void setSortFiled(const std::string& sortFiled);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getPreOrderId()const;
@@ -45,21 +49,17 @@ namespace AlibabaCloud
 				void setBizId(const std::string& bizId);
 				std::string getSortOrder()const;
 				void setSortOrder(const std::string& sortOrder);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
-				std::string getSortFiled()const;
-				void setSortFiled(const std::string& sortFiled);
 				std::string getRegisterNumber()const;
 				void setRegisterNumber(const std::string& registerNumber);
 
             private:
 				int buyerStatus_;
+				int pageNum_;
+				std::string sortFiled_;
 				int pageSize_;
 				std::string preOrderId_;
 				std::string bizId_;
 				std::string sortOrder_;
-				int pageNum_;
-				std::string sortFiled_;
 				std::string registerNumber_;
 
 			};

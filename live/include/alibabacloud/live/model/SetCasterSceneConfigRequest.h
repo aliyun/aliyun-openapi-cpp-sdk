@@ -35,26 +35,23 @@ namespace AlibabaCloud
 				SetCasterSceneConfigRequest();
 				~SetCasterSceneConfigRequest();
 
-				std::vector<std::string> getComponentId()const;
-				void setComponentId(const std::vector<std::string>& componentId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getCasterId()const;
-				void setCasterId(const std::string& casterId);
-				std::string getSceneId()const;
-				void setSceneId(const std::string& sceneId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getLayoutId()const;
 				void setLayoutId(const std::string& layoutId);
+				std::vector<std::string> getComponentId()const;
+				void setComponentId(const std::vector<std::string>& componentId);
+				std::string getCasterId()const;
+				void setCasterId(const std::string& casterId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getSceneId()const;
+				void setSceneId(const std::string& sceneId);
 
             private:
-				std::vector<std::string> componentId_;
-				std::string regionId_;
-				std::string casterId_;
-				std::string sceneId_;
-				long ownerId_;
 				std::string layoutId_;
+				std::vector<std::string> componentId_;
+				std::string casterId_;
+				long ownerId_;
+				std::string sceneId_;
 
 			};
 		}

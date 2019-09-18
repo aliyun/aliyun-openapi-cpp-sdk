@@ -47,6 +47,39 @@ void QueryMediaListRequest::setIncludeSummaryList(bool includeSummaryList)
 	setCoreParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
 }
 
+std::string QueryMediaListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryMediaListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryMediaListRequest::getMediaIds()const
+{
+	return mediaIds_;
+}
+
+void QueryMediaListRequest::setMediaIds(const std::string& mediaIds)
+{
+	mediaIds_ = mediaIds;
+	setCoreParameter("MediaIds", mediaIds);
+}
+
+bool QueryMediaListRequest::getIncludePlayList()const
+{
+	return includePlayList_;
+}
+
+void QueryMediaListRequest::setIncludePlayList(bool includePlayList)
+{
+	includePlayList_ = includePlayList;
+	setCoreParameter("IncludePlayList", includePlayList ? "true" : "false");
+}
+
 std::string QueryMediaListRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,17 +113,6 @@ void QueryMediaListRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string QueryMediaListRequest::getMediaIds()const
-{
-	return mediaIds_;
-}
-
-void QueryMediaListRequest::setMediaIds(const std::string& mediaIds)
-{
-	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", mediaIds);
-}
-
 long QueryMediaListRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,28 +122,6 @@ void QueryMediaListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-bool QueryMediaListRequest::getIncludePlayList()const
-{
-	return includePlayList_;
-}
-
-void QueryMediaListRequest::setIncludePlayList(bool includePlayList)
-{
-	includePlayList_ = includePlayList;
-	setCoreParameter("IncludePlayList", includePlayList ? "true" : "false");
-}
-
-std::string QueryMediaListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryMediaListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool QueryMediaListRequest::getIncludeMediaInfo()const

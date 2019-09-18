@@ -36,17 +36,6 @@ void UserDataDeleteRequest::setIid(long iid)
 	setCoreParameter("Iid", std::to_string(iid));
 }
 
-long UserDataDeleteRequest::getBid()const
-{
-	return bid_;
-}
-
-void UserDataDeleteRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string UserDataDeleteRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void UserDataDeleteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long UserDataDeleteRequest::getBid()const
+{
+	return bid_;
+}
+
+void UserDataDeleteRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

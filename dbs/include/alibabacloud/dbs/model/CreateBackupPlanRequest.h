@@ -37,28 +37,26 @@ namespace AlibabaCloud
 
 				std::string getDatabaseType()const;
 				void setDatabaseType(const std::string& databaseType);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
-				int getUsedTime()const;
-				void setUsedTime(int usedTime);
 				std::string getInstanceClass()const;
 				void setInstanceClass(const std::string& instanceClass);
 				std::string getStorageType()const;
 				void setStorageType(const std::string& storageType);
-				std::string getBackupMethod()const;
-				void setBackupMethod(const std::string& backupMethod);
 				std::string getDatabaseRegion()const;
 				void setDatabaseRegion(const std::string& databaseRegion);
-				std::string getStorageRegion()const;
-				void setStorageRegion(const std::string& storageRegion);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getPeriod()const;
+				void setPeriod(const std::string& period);
+				std::string getOwnerId()const;
+				void setOwnerId(const std::string& ownerId);
+				int getUsedTime()const;
+				void setUsedTime(int usedTime);
+				std::string getBackupMethod()const;
+				void setBackupMethod(const std::string& backupMethod);
+				std::string getStorageRegion()const;
+				void setStorageRegion(const std::string& storageRegion);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
 				std::string getPayType()const;
@@ -66,17 +64,16 @@ namespace AlibabaCloud
 
             private:
 				std::string databaseType_;
-				std::string period_;
 				std::string clientToken_;
-				std::string ownerId_;
-				int usedTime_;
 				std::string instanceClass_;
 				std::string storageType_;
-				std::string backupMethod_;
 				std::string databaseRegion_;
-				std::string storageRegion_;
-				std::string regionId_;
 				std::string instanceType_;
+				std::string period_;
+				std::string ownerId_;
+				int usedTime_;
+				std::string backupMethod_;
+				std::string storageRegion_;
 				std::string region_;
 				std::string payType_;
 

@@ -35,23 +35,20 @@ namespace AlibabaCloud
 				DeleteDocIndexRequest();
 				~DeleteDocIndexRequest();
 
-				std::string getSet()const;
-				void setSet(const std::string& set);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getUniqueId()const;
-				void setUniqueId(const std::string& uniqueId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUniqueId()const;
+				void setUniqueId(const std::string& uniqueId);
+				std::string getSet()const;
+				void setSet(const std::string& set);
 
             private:
-				std::string set_;
-				std::string regionId_;
 				std::string project_;
-				std::string uniqueId_;
 				std::string accessKeyId_;
+				std::string uniqueId_;
+				std::string set_;
 
 			};
 		}

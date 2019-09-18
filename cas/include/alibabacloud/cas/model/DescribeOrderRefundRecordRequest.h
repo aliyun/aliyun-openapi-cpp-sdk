@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				DescribeOrderRefundRecordRequest();
 				~DescribeOrderRefundRecordRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 
             private:
+				std::string resourceGroupId_;
 				std::string sourceIp_;
 
 			};

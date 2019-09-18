@@ -25,6 +25,28 @@ DescribeSignatureTradeDetailRequest::DescribeSignatureTradeDetailRequest() :
 DescribeSignatureTradeDetailRequest::~DescribeSignatureTradeDetailRequest()
 {}
 
+std::string DescribeSignatureTradeDetailRequest::getTransactionId()const
+{
+	return transactionId_;
+}
+
+void DescribeSignatureTradeDetailRequest::setTransactionId(const std::string& transactionId)
+{
+	transactionId_ = transactionId;
+	setCoreParameter("TransactionId", transactionId);
+}
+
+std::string DescribeSignatureTradeDetailRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSignatureTradeDetailRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSignatureTradeDetailRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +67,5 @@ void DescribeSignatureTradeDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeSignatureTradeDetailRequest::getTransactionId()const
-{
-	return transactionId_;
-}
-
-void DescribeSignatureTradeDetailRequest::setTransactionId(const std::string& transactionId)
-{
-	transactionId_ = transactionId;
-	setCoreParameter("TransactionId", transactionId);
 }
 

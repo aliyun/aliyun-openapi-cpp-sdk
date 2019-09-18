@@ -25,14 +25,3 @@ CreateCollectionRequest::CreateCollectionRequest() :
 CreateCollectionRequest::~CreateCollectionRequest()
 {}
 
-std::string CreateCollectionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateCollectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

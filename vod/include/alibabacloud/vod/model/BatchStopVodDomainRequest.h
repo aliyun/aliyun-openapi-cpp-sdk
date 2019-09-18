@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				BatchStopVodDomainRequest();
 				~BatchStopVodDomainRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainNames()const;
 				void setDomainNames(const std::string& domainNames);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				std::string domainNames_;
 				long ownerId_;
+				std::string securityToken_;
 
 			};
 		}

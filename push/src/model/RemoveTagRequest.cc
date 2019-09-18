@@ -25,6 +25,17 @@ RemoveTagRequest::RemoveTagRequest() :
 RemoveTagRequest::~RemoveTagRequest()
 {}
 
+std::string RemoveTagRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RemoveTagRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RemoveTagRequest::getTagName()const
 {
 	return tagName_;
@@ -45,16 +56,5 @@ void RemoveTagRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
 	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
-std::string RemoveTagRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RemoveTagRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

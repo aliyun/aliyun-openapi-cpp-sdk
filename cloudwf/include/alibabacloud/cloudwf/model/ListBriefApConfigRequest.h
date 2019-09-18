@@ -35,34 +35,34 @@ namespace AlibabaCloud
 				ListBriefApConfigRequest();
 				~ListBriefApConfigRequest();
 
-				int getSearchScan()const;
-				void setSearchScan(int searchScan);
 				std::string getOrderCol()const;
 				void setOrderCol(const std::string& orderCol);
 				std::string getSearchName()const;
 				void setSearchName(const std::string& searchName);
 				int getLength()const;
 				void setLength(int length);
-				std::string getSearchMac()const;
-				void setSearchMac(const std::string& searchMac);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
 				std::string getOrderDir()const;
 				void setOrderDir(const std::string& orderDir);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getSearchScan()const;
+				void setSearchScan(int searchScan);
+				std::string getSearchMac()const;
+				void setSearchMac(const std::string& searchMac);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
 				std::string getSearchModel()const;
 				void setSearchModel(const std::string& searchModel);
 
             private:
-				int searchScan_;
 				std::string orderCol_;
 				std::string searchName_;
 				int length_;
-				std::string searchMac_;
-				int pageIndex_;
 				std::string orderDir_;
 				std::string accessKeyId_;
+				int searchScan_;
+				std::string searchMac_;
+				int pageIndex_;
 				std::string searchModel_;
 
 			};

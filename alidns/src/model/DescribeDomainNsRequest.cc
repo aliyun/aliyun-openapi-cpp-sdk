@@ -25,17 +25,6 @@ DescribeDomainNsRequest::DescribeDomainNsRequest() :
 DescribeDomainNsRequest::~DescribeDomainNsRequest()
 {}
 
-std::string DescribeDomainNsRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DescribeDomainNsRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string DescribeDomainNsRequest::getDomainName()const
 {
 	return domainName_;
@@ -47,17 +36,6 @@ void DescribeDomainNsRequest::setDomainName(const std::string& domainName)
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string DescribeDomainNsRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeDomainNsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string DescribeDomainNsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,27 @@ void DescribeDomainNsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDomainNsRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DescribeDomainNsRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string DescribeDomainNsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeDomainNsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

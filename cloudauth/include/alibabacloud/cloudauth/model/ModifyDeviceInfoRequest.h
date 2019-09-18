@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getUserDeviceId()const;
 				void setUserDeviceId(const std::string& userDeviceId);
-				std::string getBizType()const;
-				void setBizType(const std::string& bizType);
 				std::string getDuration()const;
 				void setDuration(const std::string& duration);
 				std::string getExpiredDay()const;
@@ -49,15 +47,17 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getDeviceId()const;
 				void setDeviceId(const std::string& deviceId);
+				std::string getBizType()const;
+				void setBizType(const std::string& bizType);
 
             private:
 				std::string userDeviceId_;
-				std::string bizType_;
 				std::string duration_;
 				std::string expiredDay_;
 				std::string sourceIp_;
 				std::string lang_;
 				std::string deviceId_;
+				std::string bizType_;
 
 			};
 		}

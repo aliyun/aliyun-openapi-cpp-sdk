@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				GetCrowdListRequest();
 				~GetCrowdListRequest();
 
-				long getGsid()const;
-				void setGsid(long gsid);
 				int getClassType()const;
 				void setClassType(int classType);
 				std::string getGsType()const;
 				void setGsType(const std::string& gsType);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				int getPage()const;
-				void setPage(int page);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				long getGsid()const;
+				void setGsid(long gsid);
+				int getPage()const;
+				void setPage(int page);
 				int getPer()const;
 				void setPer(int per);
 				long getBid()const;
 				void setBid(long bid);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				long gsid_;
 				int classType_;
 				std::string gsType_;
 				std::string endTime_;
-				int page_;
 				std::string startTime_;
+				std::string accessKeyId_;
+				long gsid_;
+				int page_;
 				int per_;
 				long bid_;
-				std::string accessKeyId_;
 
 			};
 		}

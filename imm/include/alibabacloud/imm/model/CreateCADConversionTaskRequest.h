@@ -37,6 +37,16 @@ namespace AlibabaCloud
 
 				std::string getSrcType()const;
 				void setSrcType(const std::string& srcType);
+				int getBaseRow()const;
+				void setBaseRow(int baseRow);
+				std::string getProject()const;
+				void setProject(const std::string& project);
+				int getZoomFactor()const;
+				void setZoomFactor(int zoomFactor);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNotifyEndpoint()const;
+				void setNotifyEndpoint(const std::string& notifyEndpoint);
 				int getBaseCol()const;
 				void setBaseCol(int baseCol);
 				std::string getNotifyTopicName()const;
@@ -45,24 +55,12 @@ namespace AlibabaCloud
 				void setUnitWidth(long unitWidth);
 				int getZoomLevel()const;
 				void setZoomLevel(int zoomLevel);
-				int getBaseRow()const;
-				void setBaseRow(int baseRow);
 				std::string getModelId()const;
 				void setModelId(const std::string& modelId);
-				std::string getProject()const;
-				void setProject(const std::string& project);
-				int getZoomFactor()const;
-				void setZoomFactor(int zoomFactor);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTgtType()const;
 				void setTgtType(const std::string& tgtType);
 				long getUnitHeight()const;
 				void setUnitHeight(long unitHeight);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNotifyEndpoint()const;
-				void setNotifyEndpoint(const std::string& notifyEndpoint);
 				std::string getSrcUri()const;
 				void setSrcUri(const std::string& srcUri);
 				bool getThumbnails()const;
@@ -72,19 +70,18 @@ namespace AlibabaCloud
 
             private:
 				std::string srcType_;
+				int baseRow_;
+				std::string project_;
+				int zoomFactor_;
+				std::string accessKeyId_;
+				std::string notifyEndpoint_;
 				int baseCol_;
 				std::string notifyTopicName_;
 				long unitWidth_;
 				int zoomLevel_;
-				int baseRow_;
 				std::string modelId_;
-				std::string project_;
-				int zoomFactor_;
-				std::string accessKeyId_;
 				std::string tgtType_;
 				long unitHeight_;
-				std::string regionId_;
-				std::string notifyEndpoint_;
 				std::string srcUri_;
 				bool thumbnails_;
 				std::string tgtUri_;

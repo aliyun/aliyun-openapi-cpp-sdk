@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				QueryTrademarkMonitorRulesRequest();
 				~QueryTrademarkMonitorRulesRequest();
 
+				std::string getRuleName()const;
+				void setRuleName(const std::string& ruleName);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				int getNotifyUpdate()const;
 				void setNotifyUpdate(int notifyUpdate);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getRuleName()const;
-				void setRuleName(const std::string& ruleName);
 				std::string getId()const;
 				void setId(const std::string& id);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 
             private:
+				std::string ruleName_;
+				int pageNum_;
 				int notifyUpdate_;
 				int pageSize_;
-				std::string ruleName_;
 				std::string id_;
-				int pageNum_;
 
 			};
 		}

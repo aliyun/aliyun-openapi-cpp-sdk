@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				UpdateCustomOcrTemplateRequest();
 				~UpdateCustomOcrTemplateRequest();
 
+				std::string getRecognizeArea()const;
+				void setRecognizeArea(const std::string& recognizeArea);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getReferArea()const;
 				void setReferArea(const std::string& referArea);
-				std::string getRecognizeArea()const;
-				void setRecognizeArea(const std::string& recognizeArea);
 				std::string getName()const;
 				void setName(const std::string& name);
 				long getId()const;
 				void setId(long id);
 
             private:
+				std::string recognizeArea_;
 				std::string sourceIp_;
 				std::string referArea_;
-				std::string recognizeArea_;
 				std::string name_;
 				long id_;
 

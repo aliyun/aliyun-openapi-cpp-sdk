@@ -36,6 +36,83 @@ void CreateFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateFlowLogRequest::getNetflowVersion()const
+{
+	return netflowVersion_;
+}
+
+void CreateFlowLogRequest::setNetflowVersion(const std::string& netflowVersion)
+{
+	netflowVersion_ = netflowVersion;
+	setCoreParameter("NetflowVersion", netflowVersion);
+}
+
+std::string CreateFlowLogRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateFlowLogRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+int CreateFlowLogRequest::getInactiveAging()const
+{
+	return inactiveAging_;
+}
+
+void CreateFlowLogRequest::setInactiveAging(int inactiveAging)
+{
+	inactiveAging_ = inactiveAging;
+	setCoreParameter("InactiveAging", std::to_string(inactiveAging));
+}
+
+std::string CreateFlowLogRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateFlowLogRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateFlowLogRequest::getSlsRegionId()const
+{
+	return slsRegionId_;
+}
+
+void CreateFlowLogRequest::setSlsRegionId(const std::string& slsRegionId)
+{
+	slsRegionId_ = slsRegionId;
+	setCoreParameter("SlsRegionId", slsRegionId);
+}
+
+int CreateFlowLogRequest::getActiveAging()const
+{
+	return activeAging_;
+}
+
+void CreateFlowLogRequest::setActiveAging(int activeAging)
+{
+	activeAging_ = activeAging;
+	setCoreParameter("ActiveAging", std::to_string(activeAging));
+}
+
+std::string CreateFlowLogRequest::getOutputType()const
+{
+	return outputType_;
+}
+
+void CreateFlowLogRequest::setOutputType(const std::string& outputType)
+{
+	outputType_ = outputType;
+	setCoreParameter("OutputType", outputType);
+}
+
 std::string CreateFlowLogRequest::getProjectName()const
 {
 	return projectName_;
@@ -91,28 +168,6 @@ void CreateFlowLogRequest::setNetflowServerPort(int netflowServerPort)
 	setCoreParameter("NetflowServerPort", std::to_string(netflowServerPort));
 }
 
-std::string CreateFlowLogRequest::getNetflowVersion()const
-{
-	return netflowVersion_;
-}
-
-void CreateFlowLogRequest::setNetflowVersion(const std::string& netflowVersion)
-{
-	netflowVersion_ = netflowVersion;
-	setCoreParameter("NetflowVersion", netflowVersion);
-}
-
-std::string CreateFlowLogRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateFlowLogRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 long CreateFlowLogRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,17 +177,6 @@ void CreateFlowLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int CreateFlowLogRequest::getInactiveAging()const
-{
-	return inactiveAging_;
-}
-
-void CreateFlowLogRequest::setInactiveAging(int inactiveAging)
-{
-	inactiveAging_ = inactiveAging;
-	setCoreParameter("InactiveAging", std::to_string(inactiveAging));
 }
 
 std::string CreateFlowLogRequest::getNetflowServerIp()const
@@ -146,17 +190,6 @@ void CreateFlowLogRequest::setNetflowServerIp(const std::string& netflowServerIp
 	setCoreParameter("NetflowServerIp", netflowServerIp);
 }
 
-std::string CreateFlowLogRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateFlowLogRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateFlowLogRequest::getName()const
 {
 	return name_;
@@ -166,38 +199,5 @@ void CreateFlowLogRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string CreateFlowLogRequest::getSlsRegionId()const
-{
-	return slsRegionId_;
-}
-
-void CreateFlowLogRequest::setSlsRegionId(const std::string& slsRegionId)
-{
-	slsRegionId_ = slsRegionId;
-	setCoreParameter("SlsRegionId", slsRegionId);
-}
-
-int CreateFlowLogRequest::getActiveAging()const
-{
-	return activeAging_;
-}
-
-void CreateFlowLogRequest::setActiveAging(int activeAging)
-{
-	activeAging_ = activeAging;
-	setCoreParameter("ActiveAging", std::to_string(activeAging));
-}
-
-std::string CreateFlowLogRequest::getOutputType()const
-{
-	return outputType_;
-}
-
-void CreateFlowLogRequest::setOutputType(const std::string& outputType)
-{
-	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
 }
 

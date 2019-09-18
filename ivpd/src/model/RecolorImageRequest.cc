@@ -25,17 +25,6 @@ RecolorImageRequest::RecolorImageRequest() :
 RecolorImageRequest::~RecolorImageRequest()
 {}
 
-std::string RecolorImageRequest::getMode()const
-{
-	return mode_;
-}
-
-void RecolorImageRequest::setMode(const std::string& mode)
-{
-	mode_ = mode;
-	setCoreParameter("Mode", mode);
-}
-
 std::vector<RecolorImageRequest::ColorTemplate> RecolorImageRequest::getColorTemplate()const
 {
 	return colorTemplate_;
@@ -50,6 +39,28 @@ void RecolorImageRequest::setColorTemplate(const std::vector<ColorTemplate>& col
 		std::string str ="ColorTemplate."+ std::to_string(i);
 		setCoreParameter(str + ".Color", obj.color);
 	}
+}
+
+std::string RecolorImageRequest::getUrl()const
+{
+	return url_;
+}
+
+void RecolorImageRequest::setUrl(const std::string& url)
+{
+	url_ = url;
+	setCoreParameter("Url", url);
+}
+
+std::string RecolorImageRequest::getMode()const
+{
+	return mode_;
+}
+
+void RecolorImageRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setCoreParameter("Mode", mode);
 }
 
 int RecolorImageRequest::getColorCount()const
@@ -72,16 +83,5 @@ void RecolorImageRequest::setRefUrl(const std::string& refUrl)
 {
 	refUrl_ = refUrl;
 	setCoreParameter("RefUrl", refUrl);
-}
-
-std::string RecolorImageRequest::getUrl()const
-{
-	return url_;
-}
-
-void RecolorImageRequest::setUrl(const std::string& url)
-{
-	url_ = url;
-	setCoreParameter("Url", url);
 }
 

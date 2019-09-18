@@ -37,29 +37,6 @@ void CreateFlowProjectClusterSettingRequest::setUserList(const std::vector<std::
 		setCoreParameter("UserList."+ std::to_string(i), userList.at(i));
 }
 
-std::vector<std::string> CreateFlowProjectClusterSettingRequest::getQueueList()const
-{
-	return queueList_;
-}
-
-void CreateFlowProjectClusterSettingRequest::setQueueList(const std::vector<std::string>& queueList)
-{
-	queueList_ = queueList;
-	for(int i = 0; i!= queueList.size(); i++)
-		setCoreParameter("QueueList."+ std::to_string(i), queueList.at(i));
-}
-
-std::string CreateFlowProjectClusterSettingRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::vector<std::string> CreateFlowProjectClusterSettingRequest::getHostList()const
 {
 	return hostList_;
@@ -94,17 +71,6 @@ void CreateFlowProjectClusterSettingRequest::setDefaultQueue(const std::string& 
 	setCoreParameter("DefaultQueue", defaultQueue);
 }
 
-std::string CreateFlowProjectClusterSettingRequest::getProjectId()const
-{
-	return projectId_;
-}
-
-void CreateFlowProjectClusterSettingRequest::setProjectId(const std::string& projectId)
-{
-	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
-}
-
 std::string CreateFlowProjectClusterSettingRequest::getDefaultUser()const
 {
 	return defaultUser_;
@@ -114,5 +80,39 @@ void CreateFlowProjectClusterSettingRequest::setDefaultUser(const std::string& d
 {
 	defaultUser_ = defaultUser;
 	setCoreParameter("DefaultUser", defaultUser);
+}
+
+std::vector<std::string> CreateFlowProjectClusterSettingRequest::getQueueList()const
+{
+	return queueList_;
+}
+
+void CreateFlowProjectClusterSettingRequest::setQueueList(const std::vector<std::string>& queueList)
+{
+	queueList_ = queueList;
+	for(int i = 0; i!= queueList.size(); i++)
+		setCoreParameter("QueueList."+ std::to_string(i), queueList.at(i));
+}
+
+std::string CreateFlowProjectClusterSettingRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateFlowProjectClusterSettingRequest::getProjectId()const
+{
+	return projectId_;
+}
+
+void CreateFlowProjectClusterSettingRequest::setProjectId(const std::string& projectId)
+{
+	projectId_ = projectId;
+	setCoreParameter("ProjectId", projectId);
 }
 

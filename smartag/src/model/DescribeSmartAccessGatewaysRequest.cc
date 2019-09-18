@@ -36,28 +36,6 @@ void DescribeSmartAccessGatewaysRequest::setResourceOwnerId(long resourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSmartAccessGatewaysRequest::getSerialNumber()const
-{
-	return serialNumber_;
-}
-
-void DescribeSmartAccessGatewaysRequest::setSerialNumber(const std::string& serialNumber)
-{
-	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
-}
-
-std::string DescribeSmartAccessGatewaysRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeSmartAccessGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeSmartAccessGatewaysRequest::getAclIds()const
 {
 	return aclIds_;
@@ -67,39 +45,6 @@ void DescribeSmartAccessGatewaysRequest::setAclIds(const std::string& aclIds)
 {
 	aclIds_ = aclIds;
 	setCoreParameter("AclIds", aclIds);
-}
-
-std::string DescribeSmartAccessGatewaysRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeSmartAccessGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeSmartAccessGatewaysRequest::getAssociatedCcnId()const
-{
-	return associatedCcnId_;
-}
-
-void DescribeSmartAccessGatewaysRequest::setAssociatedCcnId(const std::string& associatedCcnId)
-{
-	associatedCcnId_ = associatedCcnId;
-	setCoreParameter("AssociatedCcnId", associatedCcnId);
-}
-
-long DescribeSmartAccessGatewaysRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeSmartAccessGatewaysRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getUnboundAclIds()const
@@ -135,17 +80,6 @@ void DescribeSmartAccessGatewaysRequest::setRegionId(const std::string& regionId
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeSmartAccessGatewaysRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeSmartAccessGatewaysRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string DescribeSmartAccessGatewaysRequest::getPageSize()const
 {
 	return pageSize_;
@@ -157,17 +91,6 @@ void DescribeSmartAccessGatewaysRequest::setPageSize(const std::string& pageSize
 	setCoreParameter("PageSize", pageSize);
 }
 
-std::string DescribeSmartAccessGatewaysRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void DescribeSmartAccessGatewaysRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 std::string DescribeSmartAccessGatewaysRequest::getInstanceType()const
 {
 	return instanceType_;
@@ -177,6 +100,83 @@ void DescribeSmartAccessGatewaysRequest::setInstanceType(const std::string& inst
 {
 	instanceType_ = instanceType;
 	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getSerialNumber()const
+{
+	return serialNumber_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setSerialNumber(const std::string& serialNumber)
+{
+	serialNumber_ = serialNumber;
+	setCoreParameter("SerialNumber", serialNumber);
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getAssociatedCcnId()const
+{
+	return associatedCcnId_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setAssociatedCcnId(const std::string& associatedCcnId)
+{
+	associatedCcnId_ = associatedCcnId;
+	setCoreParameter("AssociatedCcnId", associatedCcnId);
+}
+
+long DescribeSmartAccessGatewaysRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string DescribeSmartAccessGatewaysRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getStatus()const

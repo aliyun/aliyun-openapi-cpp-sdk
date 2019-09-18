@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				AreaShowListRequest();
 				~AreaShowListRequest();
 
-				int getPage()const;
-				void setPage(int page);
-				int getPer()const;
-				void setPer(int per);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getSid()const;
 				void setSid(long sid);
+				int getPage()const;
+				void setPage(int page);
+				int getPer()const;
+				void setPer(int per);
 
             private:
-				int page_;
-				int per_;
 				std::string accessKeyId_;
 				long sid_;
+				int page_;
+				int per_;
 
 			};
 		}

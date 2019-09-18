@@ -47,6 +47,17 @@ void AddCoverPipelineRequest::setRole(const std::string& role)
 	setCoreParameter("Role", role);
 }
 
+std::string AddCoverPipelineRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddCoverPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddCoverPipelineRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +78,6 @@ void AddCoverPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string AddCoverPipelineRequest::getName()const
-{
-	return name_;
-}
-
-void AddCoverPipelineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string AddCoverPipelineRequest::getNotifyConfig()const
@@ -113,14 +113,14 @@ void AddCoverPipelineRequest::setPriority(const std::string& priority)
 	setCoreParameter("Priority", priority);
 }
 
-std::string AddCoverPipelineRequest::getAccessKeyId()const
+std::string AddCoverPipelineRequest::getName()const
 {
-	return accessKeyId_;
+	return name_;
 }
 
-void AddCoverPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+void AddCoverPipelineRequest::setName(const std::string& name)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

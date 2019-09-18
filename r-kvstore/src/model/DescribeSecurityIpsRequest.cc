@@ -36,15 +36,15 @@ void DescribeSecurityIpsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSecurityIpsRequest::getInstanceId()const
+std::string DescribeSecurityIpsRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void DescribeSecurityIpsRequest::setInstanceId(const std::string& instanceId)
+void DescribeSecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSecurityIpsRequest::getSecurityToken()const
@@ -69,17 +69,6 @@ void DescribeSecurityIpsRequest::setResourceOwnerAccount(const std::string& reso
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeSecurityIpsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeSecurityIpsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeSecurityIpsRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,14 +91,14 @@ void DescribeSecurityIpsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeSecurityIpsRequest::getAccessKeyId()const
+std::string DescribeSecurityIpsRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void DescribeSecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeSecurityIpsRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

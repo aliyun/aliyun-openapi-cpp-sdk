@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				DescribeSignatureCapacityRequest();
 				~DescribeSignatureCapacityRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string resourceGroupId_;
 				std::string sourceIp_;
 				std::string lang_;
 

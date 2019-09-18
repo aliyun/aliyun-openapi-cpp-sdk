@@ -25,17 +25,6 @@ SetUpgradeImgByModelRequest::SetUpgradeImgByModelRequest() :
 SetUpgradeImgByModelRequest::~SetUpgradeImgByModelRequest()
 {}
 
-std::string SetUpgradeImgByModelRequest::getImgAddr()const
-{
-	return imgAddr_;
-}
-
-void SetUpgradeImgByModelRequest::setImgAddr(const std::string& imgAddr)
-{
-	imgAddr_ = imgAddr;
-	setCoreParameter("ImgAddr", imgAddr);
-}
-
 std::string SetUpgradeImgByModelRequest::getImgVersion()const
 {
 	return imgVersion_;
@@ -58,17 +47,6 @@ void SetUpgradeImgByModelRequest::setApModelId(long apModelId)
 	setCoreParameter("ApModelId", std::to_string(apModelId));
 }
 
-std::string SetUpgradeImgByModelRequest::getComment()const
-{
-	return comment_;
-}
-
-void SetUpgradeImgByModelRequest::setComment(const std::string& comment)
-{
-	comment_ = comment;
-	setCoreParameter("Comment", comment);
-}
-
 std::string SetUpgradeImgByModelRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +56,27 @@ void SetUpgradeImgByModelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetUpgradeImgByModelRequest::getImgAddr()const
+{
+	return imgAddr_;
+}
+
+void SetUpgradeImgByModelRequest::setImgAddr(const std::string& imgAddr)
+{
+	imgAddr_ = imgAddr;
+	setCoreParameter("ImgAddr", imgAddr);
+}
+
+std::string SetUpgradeImgByModelRequest::getComment()const
+{
+	return comment_;
+}
+
+void SetUpgradeImgByModelRequest::setComment(const std::string& comment)
+{
+	comment_ = comment;
+	setCoreParameter("Comment", comment);
 }
 

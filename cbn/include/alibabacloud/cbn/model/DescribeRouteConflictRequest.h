@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				DescribeRouteConflictRequest();
 				~DescribeRouteConflictRequest();
 
-				std::string getChildInstanceId()const;
-				void setChildInstanceId(const std::string& childInstanceId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getChildInstanceRegionId()const;
+				void setChildInstanceRegionId(const std::string& childInstanceRegionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDestinationCidrBlock()const;
 				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getChildInstanceType()const;
 				void setChildInstanceType(const std::string& childInstanceType);
+				std::string getChildInstanceId()const;
+				void setChildInstanceId(const std::string& childInstanceId);
 				std::string getChildInstanceRouteTableId()const;
 				void setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getChildInstanceRegionId()const;
-				void setChildInstanceRegionId(const std::string& childInstanceRegionId);
 
             private:
-				std::string childInstanceId_;
 				long resourceOwnerId_;
+				int pageNumber_;
+				int pageSize_;
+				std::string childInstanceRegionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string destinationCidrBlock_;
-				int pageSize_;
 				long ownerId_;
 				std::string childInstanceType_;
+				std::string childInstanceId_;
 				std::string childInstanceRouteTableId_;
-				int pageNumber_;
-				std::string childInstanceRegionId_;
 
 			};
 		}

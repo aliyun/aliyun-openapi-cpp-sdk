@@ -36,6 +36,72 @@ void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string SubmitSnapshotJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitSnapshotJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitSnapshotJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
+}
+
+long SubmitSnapshotJobRequest::getSpecifiedOffsetTime()const
+{
+	return specifiedOffsetTime_;
+}
+
+void SubmitSnapshotJobRequest::setSpecifiedOffsetTime(long specifiedOffsetTime)
+{
+	specifiedOffsetTime_ = specifiedOffsetTime;
+	setCoreParameter("SpecifiedOffsetTime", std::to_string(specifiedOffsetTime));
+}
+
+std::string SubmitSnapshotJobRequest::getSpriteSnapshotConfig()const
+{
+	return spriteSnapshotConfig_;
+}
+
+void SubmitSnapshotJobRequest::setSpriteSnapshotConfig(const std::string& spriteSnapshotConfig)
+{
+	spriteSnapshotConfig_ = spriteSnapshotConfig;
+	setCoreParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
+}
+
+std::string SubmitSnapshotJobRequest::getSnapshotTemplateId()const
+{
+	return snapshotTemplateId_;
+}
+
+void SubmitSnapshotJobRequest::setSnapshotTemplateId(const std::string& snapshotTemplateId)
+{
+	snapshotTemplateId_ = snapshotTemplateId;
+	setCoreParameter("SnapshotTemplateId", snapshotTemplateId);
+}
+
+std::string SubmitSnapshotJobRequest::getHeight()const
+{
+	return height_;
+}
+
+void SubmitSnapshotJobRequest::setHeight(const std::string& height)
+{
+	height_ = height;
+	setCoreParameter("Height", height);
+}
+
 std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,39 +146,6 @@ void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitSnapshotJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string SubmitSnapshotJobRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitSnapshotJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
-long SubmitSnapshotJobRequest::getSpecifiedOffsetTime()const
-{
-	return specifiedOffsetTime_;
-}
-
-void SubmitSnapshotJobRequest::setSpecifiedOffsetTime(long specifiedOffsetTime)
-{
-	specifiedOffsetTime_ = specifiedOffsetTime;
-	setCoreParameter("SpecifiedOffsetTime", std::to_string(specifiedOffsetTime));
-}
-
 std::string SubmitSnapshotJobRequest::getWidth()const
 {
 	return width_;
@@ -133,38 +166,5 @@ void SubmitSnapshotJobRequest::setInterval(long interval)
 {
 	interval_ = interval;
 	setCoreParameter("Interval", std::to_string(interval));
-}
-
-std::string SubmitSnapshotJobRequest::getSpriteSnapshotConfig()const
-{
-	return spriteSnapshotConfig_;
-}
-
-void SubmitSnapshotJobRequest::setSpriteSnapshotConfig(const std::string& spriteSnapshotConfig)
-{
-	spriteSnapshotConfig_ = spriteSnapshotConfig;
-	setCoreParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
-}
-
-std::string SubmitSnapshotJobRequest::getSnapshotTemplateId()const
-{
-	return snapshotTemplateId_;
-}
-
-void SubmitSnapshotJobRequest::setSnapshotTemplateId(const std::string& snapshotTemplateId)
-{
-	snapshotTemplateId_ = snapshotTemplateId;
-	setCoreParameter("SnapshotTemplateId", snapshotTemplateId);
-}
-
-std::string SubmitSnapshotJobRequest::getHeight()const
-{
-	return height_;
-}
-
-void SubmitSnapshotJobRequest::setHeight(const std::string& height)
-{
-	height_ = height;
-	setCoreParameter("Height", height);
 }
 

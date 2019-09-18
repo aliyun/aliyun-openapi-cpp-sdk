@@ -35,13 +35,9 @@ DescribeOrderListResult::~DescribeOrderListResult()
 
 void DescribeOrderListResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allOrderList = value["OrderList"]["Order"];
 	for (auto value : allOrderList)
@@ -87,6 +83,10 @@ void DescribeOrderListResult::parse(const std::string &payload)
 			orderListObject.showCancel = value["ShowCancel"].asString() == "true";
 		if(!value["ShowRefund"].isNull())
 			orderListObject.showRefund = value["ShowRefund"].asString() == "true";
+		if(!value["PartnerOrderId"].isNull())
+			orderListObject.partnerOrderId = value["PartnerOrderId"].asString();
+		if(!value["IsFree"].isNull())
+			orderListObject.isFree = value["IsFree"].asString() == "true";
 		orderList_.push_back(orderListObject);
 	}
 	if(!value["TotalCount"].isNull())

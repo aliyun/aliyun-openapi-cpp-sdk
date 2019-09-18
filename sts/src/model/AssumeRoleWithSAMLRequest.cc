@@ -25,6 +25,17 @@ AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() :
 AssumeRoleWithSAMLRequest::~AssumeRoleWithSAMLRequest()
 {}
 
+std::string AssumeRoleWithSAMLRequest::getSAMLAssertion()const
+{
+	return sAMLAssertion_;
+}
+
+void AssumeRoleWithSAMLRequest::setSAMLAssertion(const std::string& sAMLAssertion)
+{
+	sAMLAssertion_ = sAMLAssertion;
+	setCoreParameter("SAMLAssertion", sAMLAssertion);
+}
+
 std::string AssumeRoleWithSAMLRequest::getRoleArn()const
 {
 	return roleArn_;
@@ -45,17 +56,6 @@ void AssumeRoleWithSAMLRequest::setSAMLProviderArn(const std::string& sAMLProvid
 {
 	sAMLProviderArn_ = sAMLProviderArn;
 	setCoreParameter("SAMLProviderArn", sAMLProviderArn);
-}
-
-std::string AssumeRoleWithSAMLRequest::getSAMLAssertion()const
-{
-	return sAMLAssertion_;
-}
-
-void AssumeRoleWithSAMLRequest::setSAMLAssertion(const std::string& sAMLAssertion)
-{
-	sAMLAssertion_ = sAMLAssertion;
-	setCoreParameter("SAMLAssertion", sAMLAssertion);
 }
 
 long AssumeRoleWithSAMLRequest::getDurationSeconds()const

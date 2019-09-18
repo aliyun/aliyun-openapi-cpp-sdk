@@ -58,17 +58,6 @@ void DescribeClusterServiceConfigForAdminRequest::setTagValue(const std::string&
 	setCoreParameter("TagValue", tagValue);
 }
 
-std::string DescribeClusterServiceConfigForAdminRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeClusterServiceConfigForAdminRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeClusterServiceConfigForAdminRequest::getGroupId()const
 {
 	return groupId_;
@@ -78,17 +67,6 @@ void DescribeClusterServiceConfigForAdminRequest::setGroupId(const std::string& 
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-std::string DescribeClusterServiceConfigForAdminRequest::getServiceName()const
-{
-	return serviceName_;
-}
-
-void DescribeClusterServiceConfigForAdminRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string DescribeClusterServiceConfigForAdminRequest::getClusterId()const
@@ -133,5 +111,27 @@ void DescribeClusterServiceConfigForAdminRequest::setConfigVersion(const std::st
 {
 	configVersion_ = configVersion;
 	setCoreParameter("ConfigVersion", configVersion);
+}
+
+std::string DescribeClusterServiceConfigForAdminRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeClusterServiceConfigForAdminRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeClusterServiceConfigForAdminRequest::getServiceName()const
+{
+	return serviceName_;
+}
+
+void DescribeClusterServiceConfigForAdminRequest::setServiceName(const std::string& serviceName)
+{
+	serviceName_ = serviceName;
+	setCoreParameter("ServiceName", serviceName);
 }
 

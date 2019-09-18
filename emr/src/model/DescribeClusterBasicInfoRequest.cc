@@ -36,17 +36,6 @@ void DescribeClusterBasicInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeClusterBasicInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeClusterBasicInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeClusterBasicInfoRequest::getClusterId()const
 {
 	return clusterId_;
@@ -67,5 +56,16 @@ void DescribeClusterBasicInfoRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeClusterBasicInfoRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeClusterBasicInfoRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

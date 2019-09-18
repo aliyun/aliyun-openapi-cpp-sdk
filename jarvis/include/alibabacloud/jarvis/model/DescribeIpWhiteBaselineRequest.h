@@ -37,29 +37,29 @@ namespace AlibabaCloud
 
 				std::string getSrcIp()const;
 				void setSrcIp(const std::string& srcIp);
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
 				std::string srcIp_;
+				std::string remark_;
+				std::string sourceCode_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
-				std::string remark_;
 				std::string lang_;
-				std::string sourceCode_;
+				int currentPage_;
 				std::string status_;
 
 			};

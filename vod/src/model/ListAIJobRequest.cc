@@ -58,17 +58,6 @@ void ListAIJobRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ListAIJobRequest::getJobIds()const
-{
-	return jobIds_;
-}
-
-void ListAIJobRequest::setJobIds(const std::string& jobIds)
-{
-	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
-}
-
 std::string ListAIJobRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void ListAIJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListAIJobRequest::getJobIds()const
+{
+	return jobIds_;
+}
+
+void ListAIJobRequest::setJobIds(const std::string& jobIds)
+{
+	jobIds_ = jobIds;
+	setCoreParameter("JobIds", jobIds);
 }
 

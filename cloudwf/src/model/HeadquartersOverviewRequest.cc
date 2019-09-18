@@ -25,17 +25,6 @@ HeadquartersOverviewRequest::HeadquartersOverviewRequest() :
 HeadquartersOverviewRequest::~HeadquartersOverviewRequest()
 {}
 
-long HeadquartersOverviewRequest::getBid()const
-{
-	return bid_;
-}
-
-void HeadquartersOverviewRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string HeadquartersOverviewRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void HeadquartersOverviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long HeadquartersOverviewRequest::getBid()const
+{
+	return bid_;
+}
+
+void HeadquartersOverviewRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

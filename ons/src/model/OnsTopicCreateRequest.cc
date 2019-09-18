@@ -25,17 +25,6 @@ OnsTopicCreateRequest::OnsTopicCreateRequest() :
 OnsTopicCreateRequest::~OnsTopicCreateRequest()
 {}
 
-std::string OnsTopicCreateRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsTopicCreateRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 int OnsTopicCreateRequest::getMessageType()const
 {
 	return messageType_;
@@ -47,17 +36,6 @@ void OnsTopicCreateRequest::setMessageType(int messageType)
 	setCoreParameter("MessageType", std::to_string(messageType));
 }
 
-std::string OnsTopicCreateRequest::getTopic()const
-{
-	return topic_;
-}
-
-void OnsTopicCreateRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setCoreParameter("Topic", topic);
-}
-
 std::string OnsTopicCreateRequest::getRemark()const
 {
 	return remark_;
@@ -67,5 +45,27 @@ void OnsTopicCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
 	setCoreParameter("Remark", remark);
+}
+
+std::string OnsTopicCreateRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsTopicCreateRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string OnsTopicCreateRequest::getTopic()const
+{
+	return topic_;
+}
+
+void OnsTopicCreateRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
 }
 

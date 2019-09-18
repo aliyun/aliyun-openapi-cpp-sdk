@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				UpdateEditingProjectRequest();
 				~UpdateEditingProjectRequest();
 
-				std::string getCoverURL()const;
-				void setCoverURL(const std::string& coverURL);
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getTitle()const;
+				void setTitle(const std::string& title);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCoverURL()const;
+				void setCoverURL(const std::string& coverURL);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getTimeline()const;
-				void setTimeline(const std::string& timeline);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
-				std::string getProjectId()const;
-				void setProjectId(const std::string& projectId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTimeline()const;
+				void setTimeline(const std::string& timeline);
 
             private:
-				std::string coverURL_;
 				std::string resourceOwnerId_;
+				std::string description_;
+				std::string title_;
+				std::string accessKeyId_;
+				std::string coverURL_;
+				std::string projectId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string timeline_;
-				std::string description_;
 				std::string ownerId_;
-				std::string title_;
-				std::string projectId_;
-				std::string accessKeyId_;
+				std::string timeline_;
 
 			};
 		}

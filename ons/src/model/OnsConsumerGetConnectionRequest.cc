@@ -25,17 +25,6 @@ OnsConsumerGetConnectionRequest::OnsConsumerGetConnectionRequest() :
 OnsConsumerGetConnectionRequest::~OnsConsumerGetConnectionRequest()
 {}
 
-std::string OnsConsumerGetConnectionRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsConsumerGetConnectionRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsConsumerGetConnectionRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,5 +34,16 @@ void OnsConsumerGetConnectionRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string OnsConsumerGetConnectionRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsConsumerGetConnectionRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

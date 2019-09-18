@@ -36,17 +36,6 @@ void ChangeDomainGroupRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
-std::string ChangeDomainGroupRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void ChangeDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string ChangeDomainGroupRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,6 +45,17 @@ void ChangeDomainGroupRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+std::string ChangeDomainGroupRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void ChangeDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string ChangeDomainGroupRequest::getLang()const

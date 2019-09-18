@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getMediaInfoJobIds()const;
-				void setMediaInfoJobIds(const std::string& mediaInfoJobIds);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -47,14 +45,16 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getMediaInfoJobIds()const;
+				void setMediaInfoJobIds(const std::string& mediaInfoJobIds);
 
             private:
 				long resourceOwnerId_;
-				std::string mediaInfoJobIds_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string mediaInfoJobIds_;
 
 			};
 		}

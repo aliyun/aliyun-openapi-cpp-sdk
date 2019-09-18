@@ -36,28 +36,6 @@ void SetEarlyWarningRequest::setTimeEnd(const std::string& timeEnd)
 	setCoreParameter("TimeEnd", timeEnd);
 }
 
-bool SetEarlyWarningRequest::getWarnOpen()const
-{
-	return warnOpen_;
-}
-
-void SetEarlyWarningRequest::setWarnOpen(bool warnOpen)
-{
-	warnOpen_ = warnOpen;
-	setCoreParameter("WarnOpen", warnOpen ? "true" : "false");
-}
-
-std::string SetEarlyWarningRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void SetEarlyWarningRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string SetEarlyWarningRequest::getChannel()const
 {
 	return channel_;
@@ -80,6 +58,39 @@ void SetEarlyWarningRequest::setTitle(const std::string& title)
 	setCoreParameter("Title", title);
 }
 
+std::string SetEarlyWarningRequest::getFrequency()const
+{
+	return frequency_;
+}
+
+void SetEarlyWarningRequest::setFrequency(const std::string& frequency)
+{
+	frequency_ = frequency;
+	setCoreParameter("Frequency", frequency);
+}
+
+std::string SetEarlyWarningRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void SetEarlyWarningRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+bool SetEarlyWarningRequest::getWarnOpen()const
+{
+	return warnOpen_;
+}
+
+void SetEarlyWarningRequest::setWarnOpen(bool warnOpen)
+{
+	warnOpen_ = warnOpen;
+	setCoreParameter("WarnOpen", warnOpen ? "true" : "false");
+}
+
 bool SetEarlyWarningRequest::getTimeOpen()const
 {
 	return timeOpen_;
@@ -100,16 +111,5 @@ void SetEarlyWarningRequest::setTimeBegin(const std::string& timeBegin)
 {
 	timeBegin_ = timeBegin;
 	setCoreParameter("TimeBegin", timeBegin);
-}
-
-std::string SetEarlyWarningRequest::getFrequency()const
-{
-	return frequency_;
-}
-
-void SetEarlyWarningRequest::setFrequency(const std::string& frequency)
-{
-	frequency_ = frequency;
-	setCoreParameter("Frequency", frequency);
 }
 

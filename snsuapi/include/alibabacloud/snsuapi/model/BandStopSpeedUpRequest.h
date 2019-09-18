@@ -39,28 +39,28 @@ namespace AlibabaCloud
 				void setIpAddress(const std::string& ipAddress);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				int getPort()const;
-				void setPort(int port);
-				long getBandId()const;
-				void setBandId(long bandId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getBandId()const;
+				void setBandId(long bandId);
 				std::string getDirection()const;
 				void setDirection(const std::string& direction);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getPort()const;
+				void setPort(int port);
 
             private:
 				std::string ipAddress_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				int port_;
-				long bandId_;
-				long ownerId_;
 				std::string accessKeyId_;
+				long bandId_;
 				std::string direction_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				int port_;
 
 			};
 		}

@@ -51,186 +51,6 @@ SnsuapiClient::SnsuapiClient(const std::string & accessKeyId, const std::string 
 SnsuapiClient::~SnsuapiClient()
 {}
 
-SnsuapiClient::MobileStartSpeedUpOutcome SnsuapiClient::mobileStartSpeedUp(const MobileStartSpeedUpRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MobileStartSpeedUpOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MobileStartSpeedUpOutcome(MobileStartSpeedUpResult(outcome.result()));
-	else
-		return MobileStartSpeedUpOutcome(outcome.error());
-}
-
-void SnsuapiClient::mobileStartSpeedUpAsync(const MobileStartSpeedUpRequest& request, const MobileStartSpeedUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, mobileStartSpeedUp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SnsuapiClient::MobileStartSpeedUpOutcomeCallable SnsuapiClient::mobileStartSpeedUpCallable(const MobileStartSpeedUpRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MobileStartSpeedUpOutcome()>>(
-			[this, request]()
-			{
-			return this->mobileStartSpeedUp(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SnsuapiClient::BandStopSpeedUpOutcome SnsuapiClient::bandStopSpeedUp(const BandStopSpeedUpRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BandStopSpeedUpOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BandStopSpeedUpOutcome(BandStopSpeedUpResult(outcome.result()));
-	else
-		return BandStopSpeedUpOutcome(outcome.error());
-}
-
-void SnsuapiClient::bandStopSpeedUpAsync(const BandStopSpeedUpRequest& request, const BandStopSpeedUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bandStopSpeedUp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SnsuapiClient::BandStopSpeedUpOutcomeCallable SnsuapiClient::bandStopSpeedUpCallable(const BandStopSpeedUpRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BandStopSpeedUpOutcome()>>(
-			[this, request]()
-			{
-			return this->bandStopSpeedUp(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SnsuapiClient::BandStatusQueryOutcome SnsuapiClient::bandStatusQuery(const BandStatusQueryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BandStatusQueryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BandStatusQueryOutcome(BandStatusQueryResult(outcome.result()));
-	else
-		return BandStatusQueryOutcome(outcome.error());
-}
-
-void SnsuapiClient::bandStatusQueryAsync(const BandStatusQueryRequest& request, const BandStatusQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bandStatusQuery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SnsuapiClient::BandStatusQueryOutcomeCallable SnsuapiClient::bandStatusQueryCallable(const BandStatusQueryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BandStatusQueryOutcome()>>(
-			[this, request]()
-			{
-			return this->bandStatusQuery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SnsuapiClient::MobileStatusQueryOutcome SnsuapiClient::mobileStatusQuery(const MobileStatusQueryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MobileStatusQueryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MobileStatusQueryOutcome(MobileStatusQueryResult(outcome.result()));
-	else
-		return MobileStatusQueryOutcome(outcome.error());
-}
-
-void SnsuapiClient::mobileStatusQueryAsync(const MobileStatusQueryRequest& request, const MobileStatusQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, mobileStatusQuery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SnsuapiClient::MobileStatusQueryOutcomeCallable SnsuapiClient::mobileStatusQueryCallable(const MobileStatusQueryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MobileStatusQueryOutcome()>>(
-			[this, request]()
-			{
-			return this->mobileStatusQuery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SnsuapiClient::MobileStopSpeedUpOutcome SnsuapiClient::mobileStopSpeedUp(const MobileStopSpeedUpRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MobileStopSpeedUpOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MobileStopSpeedUpOutcome(MobileStopSpeedUpResult(outcome.result()));
-	else
-		return MobileStopSpeedUpOutcome(outcome.error());
-}
-
-void SnsuapiClient::mobileStopSpeedUpAsync(const MobileStopSpeedUpRequest& request, const MobileStopSpeedUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, mobileStopSpeedUp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SnsuapiClient::MobileStopSpeedUpOutcomeCallable SnsuapiClient::mobileStopSpeedUpCallable(const MobileStopSpeedUpRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MobileStopSpeedUpOutcome()>>(
-			[this, request]()
-			{
-			return this->mobileStopSpeedUp(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SnsuapiClient::BandOfferOrderOutcome SnsuapiClient::bandOfferOrder(const BandOfferOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +153,186 @@ SnsuapiClient::BandStartSpeedUpOutcomeCallable SnsuapiClient::bandStartSpeedUpCa
 			[this, request]()
 			{
 			return this->bandStartSpeedUp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SnsuapiClient::BandStatusQueryOutcome SnsuapiClient::bandStatusQuery(const BandStatusQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BandStatusQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BandStatusQueryOutcome(BandStatusQueryResult(outcome.result()));
+	else
+		return BandStatusQueryOutcome(outcome.error());
+}
+
+void SnsuapiClient::bandStatusQueryAsync(const BandStatusQueryRequest& request, const BandStatusQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bandStatusQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SnsuapiClient::BandStatusQueryOutcomeCallable SnsuapiClient::bandStatusQueryCallable(const BandStatusQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BandStatusQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->bandStatusQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SnsuapiClient::BandStopSpeedUpOutcome SnsuapiClient::bandStopSpeedUp(const BandStopSpeedUpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BandStopSpeedUpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BandStopSpeedUpOutcome(BandStopSpeedUpResult(outcome.result()));
+	else
+		return BandStopSpeedUpOutcome(outcome.error());
+}
+
+void SnsuapiClient::bandStopSpeedUpAsync(const BandStopSpeedUpRequest& request, const BandStopSpeedUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bandStopSpeedUp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SnsuapiClient::BandStopSpeedUpOutcomeCallable SnsuapiClient::bandStopSpeedUpCallable(const BandStopSpeedUpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BandStopSpeedUpOutcome()>>(
+			[this, request]()
+			{
+			return this->bandStopSpeedUp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SnsuapiClient::MobileStartSpeedUpOutcome SnsuapiClient::mobileStartSpeedUp(const MobileStartSpeedUpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MobileStartSpeedUpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MobileStartSpeedUpOutcome(MobileStartSpeedUpResult(outcome.result()));
+	else
+		return MobileStartSpeedUpOutcome(outcome.error());
+}
+
+void SnsuapiClient::mobileStartSpeedUpAsync(const MobileStartSpeedUpRequest& request, const MobileStartSpeedUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mobileStartSpeedUp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SnsuapiClient::MobileStartSpeedUpOutcomeCallable SnsuapiClient::mobileStartSpeedUpCallable(const MobileStartSpeedUpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MobileStartSpeedUpOutcome()>>(
+			[this, request]()
+			{
+			return this->mobileStartSpeedUp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SnsuapiClient::MobileStatusQueryOutcome SnsuapiClient::mobileStatusQuery(const MobileStatusQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MobileStatusQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MobileStatusQueryOutcome(MobileStatusQueryResult(outcome.result()));
+	else
+		return MobileStatusQueryOutcome(outcome.error());
+}
+
+void SnsuapiClient::mobileStatusQueryAsync(const MobileStatusQueryRequest& request, const MobileStatusQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mobileStatusQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SnsuapiClient::MobileStatusQueryOutcomeCallable SnsuapiClient::mobileStatusQueryCallable(const MobileStatusQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MobileStatusQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->mobileStatusQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SnsuapiClient::MobileStopSpeedUpOutcome SnsuapiClient::mobileStopSpeedUp(const MobileStopSpeedUpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MobileStopSpeedUpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MobileStopSpeedUpOutcome(MobileStopSpeedUpResult(outcome.result()));
+	else
+		return MobileStopSpeedUpOutcome(outcome.error());
+}
+
+void SnsuapiClient::mobileStopSpeedUpAsync(const MobileStopSpeedUpRequest& request, const MobileStopSpeedUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mobileStopSpeedUp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SnsuapiClient::MobileStopSpeedUpOutcomeCallable SnsuapiClient::mobileStopSpeedUpCallable(const MobileStopSpeedUpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MobileStopSpeedUpOutcome()>>(
+			[this, request]()
+			{
+			return this->mobileStopSpeedUp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

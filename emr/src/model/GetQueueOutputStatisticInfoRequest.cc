@@ -47,17 +47,6 @@ void GetQueueOutputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GetQueueOutputStatisticInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetQueueOutputStatisticInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetQueueOutputStatisticInfoRequest::getClusterId()const
 {
 	return clusterId_;
@@ -89,5 +78,16 @@ void GetQueueOutputStatisticInfoRequest::setAccessKeyId(const std::string& acces
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetQueueOutputStatisticInfoRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetQueueOutputStatisticInfoRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

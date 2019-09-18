@@ -25,28 +25,6 @@ SubmitAIJobRequest::SubmitAIJobRequest() :
 SubmitAIJobRequest::~SubmitAIJobRequest()
 {}
 
-std::string SubmitAIJobRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitAIJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
-std::string SubmitAIJobRequest::getInput()const
-{
-	return input_;
-}
-
-void SubmitAIJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setCoreParameter("Input", input);
-}
-
 std::string SubmitAIJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,6 +34,28 @@ void SubmitAIJobRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+}
+
+std::string SubmitAIJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitAIJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitAIJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitAIJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
 }
 
 std::string SubmitAIJobRequest::getTypes()const
@@ -113,6 +113,17 @@ void SubmitAIJobRequest::setMediaId(const std::string& mediaId)
 	setCoreParameter("MediaId", mediaId);
 }
 
+std::string SubmitAIJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitAIJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
+}
+
 std::string SubmitAIJobRequest::getConfig()const
 {
 	return config_;
@@ -122,16 +133,5 @@ void SubmitAIJobRequest::setConfig(const std::string& config)
 {
 	config_ = config;
 	setCoreParameter("Config", config);
-}
-
-std::string SubmitAIJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitAIJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

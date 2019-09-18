@@ -25,17 +25,6 @@ DeleteACLRuleRequest::DeleteACLRuleRequest() :
 DeleteACLRuleRequest::~DeleteACLRuleRequest()
 {}
 
-std::string DeleteACLRuleRequest::getAclId()const
-{
-	return aclId_;
-}
-
-void DeleteACLRuleRequest::setAclId(const std::string& aclId)
-{
-	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
-}
-
 long DeleteACLRuleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void DeleteACLRuleRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteACLRuleRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteACLRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteACLRuleRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,6 +45,28 @@ void DeleteACLRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteACLRuleRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void DeleteACLRuleRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setCoreParameter("AclId", aclId);
+}
+
+std::string DeleteACLRuleRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteACLRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteACLRuleRequest::getOwnerAccount()const

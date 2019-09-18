@@ -76,6 +76,7 @@ namespace AlibabaCloud
 					std::string chargeType;
 					std::string vpcAuthMode;
 					std::string nodeType;
+					std::string vpcCloudInstanceId;
 					std::string regionId;
 				};
 

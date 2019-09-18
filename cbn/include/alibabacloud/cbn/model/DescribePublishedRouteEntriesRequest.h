@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				DescribePublishedRouteEntriesRequest();
 				~DescribePublishedRouteEntriesRequest();
 
-				std::string getChildInstanceId()const;
-				void setChildInstanceId(const std::string& childInstanceId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getCenId()const;
 				void setCenId(const std::string& cenId);
-				std::string getDestinationCidrBlock()const;
-				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getChildInstanceType()const;
-				void setChildInstanceType(const std::string& childInstanceType);
-				std::string getChildInstanceRouteTableId()const;
-				void setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getChildInstanceRegionId()const;
 				void setChildInstanceRegionId(const std::string& childInstanceRegionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDestinationCidrBlock()const;
+				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
+				std::string getChildInstanceType()const;
+				void setChildInstanceType(const std::string& childInstanceType);
+				std::string getChildInstanceId()const;
+				void setChildInstanceId(const std::string& childInstanceId);
+				std::string getChildInstanceRouteTableId()const;
+				void setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId);
 
             private:
-				std::string childInstanceId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string cenId_;
-				std::string destinationCidrBlock_;
-				int pageSize_;
-				std::string childInstanceType_;
-				std::string childInstanceRouteTableId_;
 				int pageNumber_;
+				int pageSize_;
 				std::string childInstanceRegionId_;
+				std::string resourceOwnerAccount_;
+				std::string destinationCidrBlock_;
+				std::string childInstanceType_;
+				std::string childInstanceId_;
+				std::string childInstanceRouteTableId_;
 
 			};
 		}

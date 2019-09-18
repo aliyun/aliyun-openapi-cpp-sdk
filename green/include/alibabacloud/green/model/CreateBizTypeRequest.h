@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CreateBizTypeRequest();
 				~CreateBizTypeRequest();
 
+				std::string getBizTypeImport()const;
+				void setBizTypeImport(const std::string& bizTypeImport);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getIndustryInfo()const;
 				void setIndustryInfo(const std::string& industryInfo);
 				std::string getBizTypeName()const;
 				void setBizTypeName(const std::string& bizTypeName);
-				std::string getBizTypeImport()const;
-				void setBizTypeImport(const std::string& bizTypeImport);
 
             private:
+				std::string bizTypeImport_;
 				std::string sourceIp_;
 				std::string industryInfo_;
 				std::string bizTypeName_;
-				std::string bizTypeImport_;
 
 			};
 		}

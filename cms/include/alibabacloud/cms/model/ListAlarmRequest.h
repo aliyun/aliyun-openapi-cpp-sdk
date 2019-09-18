@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ListAlarmRequest();
 				~ListAlarmRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				bool getIsEnable()const;
 				void setIsEnable(bool isEnable);
 				std::string getName()const;
@@ -49,10 +51,9 @@ namespace AlibabaCloud
 				void setState(const std::string& state);
 				std::string getDimension()const;
 				void setDimension(const std::string& dimension);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				int pageNumber_;
 				bool isEnable_;
 				std::string name_;
 				std::string _namespace_;
@@ -60,7 +61,6 @@ namespace AlibabaCloud
 				std::string id_;
 				std::string state_;
 				std::string dimension_;
-				int pageNumber_;
 
 			};
 		}

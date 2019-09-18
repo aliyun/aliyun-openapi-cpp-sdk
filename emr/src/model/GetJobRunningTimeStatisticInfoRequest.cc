@@ -47,28 +47,6 @@ void GetJobRunningTimeStatisticInfoRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GetJobRunningTimeStatisticInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetJobRunningTimeStatisticInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int GetJobRunningTimeStatisticInfoRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void GetJobRunningTimeStatisticInfoRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string GetJobRunningTimeStatisticInfoRequest::getClusterId()const
 {
 	return clusterId_;
@@ -111,5 +89,27 @@ void GetJobRunningTimeStatisticInfoRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetJobRunningTimeStatisticInfoRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetJobRunningTimeStatisticInfoRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int GetJobRunningTimeStatisticInfoRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetJobRunningTimeStatisticInfoRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -36,28 +36,6 @@ void SearchMediaRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SearchMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string SearchMediaRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void SearchMediaRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string SearchMediaRequest::getDescription()const
 {
 	return description_;
@@ -67,17 +45,6 @@ void SearchMediaRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long SearchMediaRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SearchMediaRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SearchMediaRequest::getTitle()const
@@ -146,28 +113,6 @@ void SearchMediaRequest::setFrom(const std::string& from)
 	setCoreParameter("From", from);
 }
 
-std::string SearchMediaRequest::getSortBy()const
-{
-	return sortBy_;
-}
-
-void SearchMediaRequest::setSortBy(const std::string& sortBy)
-{
-	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
-}
-
-std::string SearchMediaRequest::getTo()const
-{
-	return to_;
-}
-
-void SearchMediaRequest::setTo(const std::string& to)
-{
-	to_ = to;
-	setCoreParameter("To", to);
-}
-
 std::string SearchMediaRequest::getTag()const
 {
 	return tag_;
@@ -188,5 +133,60 @@ void SearchMediaRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
 	setCoreParameter("KeyWord", keyWord);
+}
+
+std::string SearchMediaRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string SearchMediaRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void SearchMediaRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long SearchMediaRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SearchMediaRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SearchMediaRequest::getSortBy()const
+{
+	return sortBy_;
+}
+
+void SearchMediaRequest::setSortBy(const std::string& sortBy)
+{
+	sortBy_ = sortBy;
+	setCoreParameter("SortBy", sortBy);
+}
+
+std::string SearchMediaRequest::getTo()const
+{
+	return to_;
+}
+
+void SearchMediaRequest::setTo(const std::string& to)
+{
+	to_ = to;
+	setCoreParameter("To", to);
 }
 

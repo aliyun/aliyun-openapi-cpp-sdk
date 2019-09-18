@@ -25,17 +25,6 @@ SetGtmMonitorStatusRequest::SetGtmMonitorStatusRequest() :
 SetGtmMonitorStatusRequest::~SetGtmMonitorStatusRequest()
 {}
 
-std::string SetGtmMonitorStatusRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SetGtmMonitorStatusRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SetGtmMonitorStatusRequest::getMonitorConfigId()const
 {
 	return monitorConfigId_;
@@ -45,6 +34,17 @@ void SetGtmMonitorStatusRequest::setMonitorConfigId(const std::string& monitorCo
 {
 	monitorConfigId_ = monitorConfigId;
 	setCoreParameter("MonitorConfigId", monitorConfigId);
+}
+
+std::string SetGtmMonitorStatusRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SetGtmMonitorStatusRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SetGtmMonitorStatusRequest::getLang()const

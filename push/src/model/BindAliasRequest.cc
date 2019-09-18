@@ -25,28 +25,6 @@ BindAliasRequest::BindAliasRequest() :
 BindAliasRequest::~BindAliasRequest()
 {}
 
-std::string BindAliasRequest::getAliasName()const
-{
-	return aliasName_;
-}
-
-void BindAliasRequest::setAliasName(const std::string& aliasName)
-{
-	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
-}
-
-long BindAliasRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void BindAliasRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string BindAliasRequest::getDeviceId()const
 {
 	return deviceId_;
@@ -67,5 +45,27 @@ void BindAliasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BindAliasRequest::getAliasName()const
+{
+	return aliasName_;
+}
+
+void BindAliasRequest::setAliasName(const std::string& aliasName)
+{
+	aliasName_ = aliasName;
+	setCoreParameter("AliasName", aliasName);
+}
+
+long BindAliasRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void BindAliasRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 

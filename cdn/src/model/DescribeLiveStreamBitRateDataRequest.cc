@@ -25,28 +25,6 @@ DescribeLiveStreamBitRateDataRequest::DescribeLiveStreamBitRateDataRequest() :
 DescribeLiveStreamBitRateDataRequest::~DescribeLiveStreamBitRateDataRequest()
 {}
 
-std::string DescribeLiveStreamBitRateDataRequest::getAppName()const
-{
-	return appName_;
-}
-
-void DescribeLiveStreamBitRateDataRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
-}
-
-std::string DescribeLiveStreamBitRateDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveStreamBitRateDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeLiveStreamBitRateDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -89,6 +67,28 @@ void DescribeLiveStreamBitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeLiveStreamBitRateDataRequest::getAppName()const
+{
+	return appName_;
+}
+
+void DescribeLiveStreamBitRateDataRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+std::string DescribeLiveStreamBitRateDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeLiveStreamBitRateDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamBitRateDataRequest::getStreamName()const

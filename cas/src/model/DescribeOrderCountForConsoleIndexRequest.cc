@@ -47,14 +47,3 @@ void DescribeOrderCountForConsoleIndexRequest::setSourceIp(const std::string& so
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeOrderCountForConsoleIndexRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeOrderCountForConsoleIndexRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

@@ -47,17 +47,6 @@ void GetSmartAccessGatewayUseLimitRequest::setResourceOwnerAccount(const std::st
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string GetSmartAccessGatewayUseLimitRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetSmartAccessGatewayUseLimitRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetSmartAccessGatewayUseLimitRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,5 +67,16 @@ void GetSmartAccessGatewayUseLimitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string GetSmartAccessGatewayUseLimitRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetSmartAccessGatewayUseLimitRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

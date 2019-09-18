@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				RemoveEntityMemberRequest();
 				~RemoveEntityMemberRequest();
 
+				long getEntityId()const;
+				void setEntityId(long entityId);
 				std::string getRemoveType()const;
 				void setRemoveType(const std::string& removeType);
 				std::string getMember()const;
 				void setMember(const std::string& member);
-				long getEntityId()const;
-				void setEntityId(long entityId);
 
             private:
+				long entityId_;
 				std::string removeType_;
 				std::string member_;
-				long entityId_;
 
 			};
 		}

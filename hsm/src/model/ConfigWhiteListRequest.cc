@@ -36,6 +36,17 @@ void ConfigWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ConfigWhiteListRequest::getWhiteList()const
+{
+	return whiteList_;
+}
+
+void ConfigWhiteListRequest::setWhiteList(const std::string& whiteList)
+{
+	whiteList_ = whiteList;
+	setCoreParameter("WhiteList", whiteList);
+}
+
 std::string ConfigWhiteListRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,16 +67,5 @@ void ConfigWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string ConfigWhiteListRequest::getWhiteList()const
-{
-	return whiteList_;
-}
-
-void ConfigWhiteListRequest::setWhiteList(const std::string& whiteList)
-{
-	whiteList_ = whiteList;
-	setCoreParameter("WhiteList", whiteList);
 }
 

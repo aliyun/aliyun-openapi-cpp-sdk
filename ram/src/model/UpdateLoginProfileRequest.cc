@@ -25,17 +25,6 @@ UpdateLoginProfileRequest::UpdateLoginProfileRequest() :
 UpdateLoginProfileRequest::~UpdateLoginProfileRequest()
 {}
 
-std::string UpdateLoginProfileRequest::getPassword()const
-{
-	return password_;
-}
-
-void UpdateLoginProfileRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setCoreParameter("Password", password);
-}
-
 bool UpdateLoginProfileRequest::getPasswordResetRequired()const
 {
 	return passwordResetRequired_;
@@ -45,6 +34,17 @@ void UpdateLoginProfileRequest::setPasswordResetRequired(bool passwordResetRequi
 {
 	passwordResetRequired_ = passwordResetRequired;
 	setCoreParameter("PasswordResetRequired", passwordResetRequired ? "true" : "false");
+}
+
+std::string UpdateLoginProfileRequest::getPassword()const
+{
+	return password_;
+}
+
+void UpdateLoginProfileRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setCoreParameter("Password", password);
 }
 
 bool UpdateLoginProfileRequest::getMFABindRequired()const

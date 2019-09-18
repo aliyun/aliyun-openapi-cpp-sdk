@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				CreateLiveStreamRecordIndexFilesRequest();
 				~CreateLiveStreamRecordIndexFilesRequest();
 
-				std::string getOssBucket()const;
-				void setOssBucket(const std::string& ossBucket);
+				std::string getOssEndpoint()const;
+				void setOssEndpoint(const std::string& ossEndpoint);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getOssObject()const;
+				void setOssObject(const std::string& ossObject);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getOssEndpoint()const;
-				void setOssEndpoint(const std::string& ossEndpoint);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
-				std::string getOssObject()const;
-				void setOssObject(const std::string& ossObject);
+				std::string getOssBucket()const;
+				void setOssBucket(const std::string& ossBucket);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string ossBucket_;
+				std::string ossEndpoint_;
+				std::string startTime_;
+				std::string ossObject_;
 				std::string appName_;
 				std::string securityToken_;
-				std::string domainName_;
-				std::string ossEndpoint_;
-				std::string endTime_;
-				std::string startTime_;
-				long ownerId_;
 				std::string streamName_;
-				std::string ossObject_;
+				std::string ossBucket_;
+				std::string domainName_;
+				std::string endTime_;
+				long ownerId_;
 
 			};
 		}

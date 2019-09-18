@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				StopMixStreamsServiceRequest();
 				~StopMixStreamsServiceRequest();
 
+				std::string getMixStreamName()const;
+				void setMixStreamName(const std::string& mixStreamName);
+				std::string getMixAppName()const;
+				void setMixAppName(const std::string& mixAppName);
+				std::string getMainStreamName()const;
+				void setMainStreamName(const std::string& mainStreamName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getMainDomainName()const;
 				void setMainDomainName(const std::string& mainDomainName);
-				std::string getMixStreamName()const;
-				void setMixStreamName(const std::string& mixStreamName);
 				std::string getMixDomainName()const;
 				void setMixDomainName(const std::string& mixDomainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getMainAppName()const;
 				void setMainAppName(const std::string& mainAppName);
-				std::string getMixAppName()const;
-				void setMixAppName(const std::string& mixAppName);
-				std::string getMainStreamName()const;
-				void setMainStreamName(const std::string& mainStreamName);
 
             private:
+				std::string mixStreamName_;
+				std::string mixAppName_;
+				std::string mainStreamName_;
 				std::string securityToken_;
 				std::string mainDomainName_;
-				std::string mixStreamName_;
 				std::string mixDomainName_;
 				long ownerId_;
 				std::string mainAppName_;
-				std::string mixAppName_;
-				std::string mainStreamName_;
 
 			};
 		}

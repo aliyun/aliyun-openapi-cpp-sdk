@@ -36,17 +36,6 @@ void DeleteTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateIds()const
 {
 	return transcodeTemplateIds_;
@@ -56,17 +45,6 @@ void DeleteTranscodeTemplateGroupRequest::setTranscodeTemplateIds(const std::str
 {
 	transcodeTemplateIds_ = transcodeTemplateIds;
 	setCoreParameter("TranscodeTemplateIds", transcodeTemplateIds);
-}
-
-long DeleteTranscodeTemplateGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getAccessKeyId()const
@@ -80,17 +58,6 @@ void DeleteTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& acce
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
-{
-	return transcodeTemplateGroupId_;
-}
-
-void DeleteTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId)
-{
-	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
-	setCoreParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
-}
-
 std::string DeleteTranscodeTemplateGroupRequest::getForceDelGroup()const
 {
 	return forceDelGroup_;
@@ -100,5 +67,38 @@ void DeleteTranscodeTemplateGroupRequest::setForceDelGroup(const std::string& fo
 {
 	forceDelGroup_ = forceDelGroup;
 	setCoreParameter("ForceDelGroup", forceDelGroup);
+}
+
+std::string DeleteTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long DeleteTranscodeTemplateGroupRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DeleteTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
+{
+	return transcodeTemplateGroupId_;
+}
+
+void DeleteTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId)
+{
+	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
+	setCoreParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
 }
 

@@ -25,17 +25,6 @@ QueryUniqueDeviceStatRequest::QueryUniqueDeviceStatRequest() :
 QueryUniqueDeviceStatRequest::~QueryUniqueDeviceStatRequest()
 {}
 
-std::string QueryUniqueDeviceStatRequest::getGranularity()const
-{
-	return granularity_;
-}
-
-void QueryUniqueDeviceStatRequest::setGranularity(const std::string& granularity)
-{
-	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
-}
-
 std::string QueryUniqueDeviceStatRequest::getEndTime()const
 {
 	return endTime_;
@@ -45,17 +34,6 @@ void QueryUniqueDeviceStatRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-long QueryUniqueDeviceStatRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void QueryUniqueDeviceStatRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string QueryUniqueDeviceStatRequest::getStartTime()const
@@ -78,5 +56,27 @@ void QueryUniqueDeviceStatRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryUniqueDeviceStatRequest::getGranularity()const
+{
+	return granularity_;
+}
+
+void QueryUniqueDeviceStatRequest::setGranularity(const std::string& granularity)
+{
+	granularity_ = granularity;
+	setCoreParameter("Granularity", granularity);
+}
+
+long QueryUniqueDeviceStatRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void QueryUniqueDeviceStatRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 

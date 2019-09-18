@@ -37,12 +37,6 @@ namespace AlibabaCloud
 
 				std::string getCursor()const;
 				void setCursor(const std::string& cursor);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
-				int getLength()const;
-				void setLength(int length);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getType()const;
@@ -51,16 +45,22 @@ namespace AlibabaCloud
 				void setMetricName(const std::string& metricName);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				std::string getPeriod()const;
+				void setPeriod(const std::string& period);
+				int getLength()const;
+				void setLength(int length);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 
             private:
 				std::string cursor_;
-				std::string period_;
-				int length_;
-				std::string endTime_;
 				std::string startTime_;
 				std::string type_;
 				std::string metricName_;
 				std::string taskId_;
+				std::string period_;
+				int length_;
+				std::string endTime_;
 
 			};
 		}

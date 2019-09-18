@@ -36,6 +36,17 @@ void UpdateNotificationSettingRequest::setRealtimeMessageList(const std::string&
 	setCoreParameter("RealtimeMessageList", realtimeMessageList);
 }
 
+int UpdateNotificationSettingRequest::getScheduleMessageTime()const
+{
+	return scheduleMessageTime_;
+}
+
+void UpdateNotificationSettingRequest::setScheduleMessageTime(int scheduleMessageTime)
+{
+	scheduleMessageTime_ = scheduleMessageTime;
+	setCoreParameter("ScheduleMessageTime", std::to_string(scheduleMessageTime));
+}
+
 std::string UpdateNotificationSettingRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,17 +67,6 @@ void UpdateNotificationSettingRequest::setReminderModeList(const std::string& re
 {
 	reminderModeList_ = reminderModeList;
 	setCoreParameter("ReminderModeList", reminderModeList);
-}
-
-int UpdateNotificationSettingRequest::getScheduleMessageTime()const
-{
-	return scheduleMessageTime_;
-}
-
-void UpdateNotificationSettingRequest::setScheduleMessageTime(int scheduleMessageTime)
-{
-	scheduleMessageTime_ = scheduleMessageTime;
-	setCoreParameter("ScheduleMessageTime", std::to_string(scheduleMessageTime));
 }
 
 std::string UpdateNotificationSettingRequest::getLang()const

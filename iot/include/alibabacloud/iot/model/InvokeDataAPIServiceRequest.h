@@ -33,7 +33,7 @@ namespace AlibabaCloud
 				struct Param
 				{
 					std::string listParamType;
-					std::vector<std::string> listParamValue;
+					ListParamValue listParamValue;
 					std::string paramValue;
 					std::string paramName;
 				};
@@ -42,17 +42,17 @@ namespace AlibabaCloud
 				InvokeDataAPIServiceRequest();
 				~InvokeDataAPIServiceRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getApiSrn()const;
 				void setApiSrn(const std::string& apiSrn);
 				std::vector<Param> getParam()const;
 				void setParam(const std::vector<Param>& param);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string apiSrn_;
 				std::vector<Param> param_;
-				std::string accessKeyId_;
 
 			};
 		}

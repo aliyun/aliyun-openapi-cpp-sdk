@@ -25,6 +25,17 @@ DeleteLiveDomainMappingRequest::DeleteLiveDomainMappingRequest() :
 DeleteLiveDomainMappingRequest::~DeleteLiveDomainMappingRequest()
 {}
 
+long DeleteLiveDomainMappingRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DeleteLiveDomainMappingRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::string DeleteLiveDomainMappingRequest::getPullDomain()const
 {
 	return pullDomain_;
@@ -56,16 +67,5 @@ void DeleteLiveDomainMappingRequest::setPushDomain(const std::string& pushDomain
 {
 	pushDomain_ = pushDomain;
 	setCoreParameter("PushDomain", pushDomain);
-}
-
-long DeleteLiveDomainMappingRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteLiveDomainMappingRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

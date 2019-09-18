@@ -51,36 +51,36 @@ HttpdnsClient::HttpdnsClient(const std::string & accessKeyId, const std::string 
 HttpdnsClient::~HttpdnsClient()
 {}
 
-HttpdnsClient::GetResolveStatisticsOutcome HttpdnsClient::getResolveStatistics(const GetResolveStatisticsRequest &request) const
+HttpdnsClient::AddDomainOutcome HttpdnsClient::addDomain(const AddDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetResolveStatisticsOutcome(endpointOutcome.error());
+		return AddDomainOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetResolveStatisticsOutcome(GetResolveStatisticsResult(outcome.result()));
+		return AddDomainOutcome(AddDomainResult(outcome.result()));
 	else
-		return GetResolveStatisticsOutcome(outcome.error());
+		return AddDomainOutcome(outcome.error());
 }
 
-void HttpdnsClient::getResolveStatisticsAsync(const GetResolveStatisticsRequest& request, const GetResolveStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HttpdnsClient::addDomainAsync(const AddDomainRequest& request, const AddDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getResolveStatistics(request), context);
+		handler(this, request, addDomain(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HttpdnsClient::GetResolveStatisticsOutcomeCallable HttpdnsClient::getResolveStatisticsCallable(const GetResolveStatisticsRequest &request) const
+HttpdnsClient::AddDomainOutcomeCallable HttpdnsClient::addDomainCallable(const AddDomainRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetResolveStatisticsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddDomainOutcome()>>(
 			[this, request]()
 			{
-			return this->getResolveStatistics(request);
+			return this->addDomain(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -159,6 +159,42 @@ HttpdnsClient::DescribeDomainsOutcomeCallable HttpdnsClient::describeDomainsCall
 	return task->get_future();
 }
 
+HttpdnsClient::GetAccountInfoOutcome HttpdnsClient::getAccountInfo(const GetAccountInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAccountInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAccountInfoOutcome(GetAccountInfoResult(outcome.result()));
+	else
+		return GetAccountInfoOutcome(outcome.error());
+}
+
+void HttpdnsClient::getAccountInfoAsync(const GetAccountInfoRequest& request, const GetAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAccountInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HttpdnsClient::GetAccountInfoOutcomeCallable HttpdnsClient::getAccountInfoCallable(const GetAccountInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAccountInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getAccountInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HttpdnsClient::GetResolveCountSummaryOutcome HttpdnsClient::getResolveCountSummary(const GetResolveCountSummaryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,36 +231,36 @@ HttpdnsClient::GetResolveCountSummaryOutcomeCallable HttpdnsClient::getResolveCo
 	return task->get_future();
 }
 
-HttpdnsClient::AddDomainOutcome HttpdnsClient::addDomain(const AddDomainRequest &request) const
+HttpdnsClient::GetResolveStatisticsOutcome HttpdnsClient::getResolveStatistics(const GetResolveStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddDomainOutcome(endpointOutcome.error());
+		return GetResolveStatisticsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddDomainOutcome(AddDomainResult(outcome.result()));
+		return GetResolveStatisticsOutcome(GetResolveStatisticsResult(outcome.result()));
 	else
-		return AddDomainOutcome(outcome.error());
+		return GetResolveStatisticsOutcome(outcome.error());
 }
 
-void HttpdnsClient::addDomainAsync(const AddDomainRequest& request, const AddDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HttpdnsClient::getResolveStatisticsAsync(const GetResolveStatisticsRequest& request, const GetResolveStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addDomain(request), context);
+		handler(this, request, getResolveStatistics(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HttpdnsClient::AddDomainOutcomeCallable HttpdnsClient::addDomainCallable(const AddDomainRequest &request) const
+HttpdnsClient::GetResolveStatisticsOutcomeCallable HttpdnsClient::getResolveStatisticsCallable(const GetResolveStatisticsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddDomainOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetResolveStatisticsOutcome()>>(
 			[this, request]()
 			{
-			return this->addDomain(request);
+			return this->getResolveStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -261,42 +297,6 @@ HttpdnsClient::ListDomainsOutcomeCallable HttpdnsClient::listDomainsCallable(con
 			[this, request]()
 			{
 			return this->listDomains(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-HttpdnsClient::GetAccountInfoOutcome HttpdnsClient::getAccountInfo(const GetAccountInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetAccountInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetAccountInfoOutcome(GetAccountInfoResult(outcome.result()));
-	else
-		return GetAccountInfoOutcome(outcome.error());
-}
-
-void HttpdnsClient::getAccountInfoAsync(const GetAccountInfoRequest& request, const GetAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getAccountInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-HttpdnsClient::GetAccountInfoOutcomeCallable HttpdnsClient::getAccountInfoCallable(const GetAccountInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetAccountInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->getAccountInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

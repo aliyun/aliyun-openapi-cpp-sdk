@@ -25,17 +25,6 @@ UpdateServiceQPSRequest::UpdateServiceQPSRequest() :
 UpdateServiceQPSRequest::~UpdateServiceQPSRequest()
 {}
 
-std::string UpdateServiceQPSRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateServiceQPSRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string UpdateServiceQPSRequest::getQps()const
 {
 	return qps_;

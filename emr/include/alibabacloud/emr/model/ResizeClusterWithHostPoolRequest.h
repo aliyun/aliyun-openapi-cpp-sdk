@@ -30,12 +30,6 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT ResizeClusterWithHostPoolRequest : public RpcServiceRequest
 			{
-				struct HostGroup
-				{
-					std::string groupType;
-					std::string groupId;
-					std::string groupName;
-				};
 				struct HostInfo
 				{
 					std::string hpHostBizId;
@@ -43,9 +37,21 @@ namespace AlibabaCloud
 					std::string role;
 					std::string groupId;
 					std::string privateIp;
-					RepeatList serviceComponentInfo;
+					struct ServiceComponentInfo
+					{
+						std::string serviceEcmVersion;
+						std::string componentName;
+						std::string serviceName;
+					};
+					ServiceComponentInfo serviceComponentInfo;
 					std::string hostGroupName;
 					std::string hostGroupType;
+				};
+				struct HostGroup
+				{
+					std::string groupType;
+					std::string groupId;
+					std::string groupName;
 				};
 
 			public:
@@ -54,24 +60,24 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::vector<HostGroup> getHostGroup()const;
-				void setHostGroup(const std::vector<HostGroup>& hostGroup);
 				std::vector<HostInfo> getHostInfo()const;
 				void setHostInfo(const std::vector<HostInfo>& hostInfo);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::vector<HostGroup> getHostGroup()const;
+				void setHostGroup(const std::vector<HostGroup>& hostGroup);
 
             private:
 				long resourceOwnerId_;
-				std::string regionId_;
-				std::vector<HostGroup> hostGroup_;
 				std::vector<HostInfo> hostInfo_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				std::vector<HostGroup> hostGroup_;
 
 			};
 		}

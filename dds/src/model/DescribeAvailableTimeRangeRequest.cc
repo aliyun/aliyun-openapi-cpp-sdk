@@ -36,15 +36,15 @@ void DescribeAvailableTimeRangeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAvailableTimeRangeRequest::getInstanceId()const
+std::string DescribeAvailableTimeRangeRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void DescribeAvailableTimeRangeRequest::setInstanceId(const std::string& instanceId)
+void DescribeAvailableTimeRangeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAvailableTimeRangeRequest::getSecurityToken()const
@@ -58,6 +58,17 @@ void DescribeAvailableTimeRangeRequest::setSecurityToken(const std::string& secu
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeAvailableTimeRangeRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void DescribeAvailableTimeRangeRequest::setNodeId(const std::string& nodeId)
+{
+	nodeId_ = nodeId;
+	setCoreParameter("NodeId", nodeId);
+}
+
 std::string DescribeAvailableTimeRangeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +78,6 @@ void DescribeAvailableTimeRangeRequest::setResourceOwnerAccount(const std::strin
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAvailableTimeRangeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeAvailableTimeRangeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAvailableTimeRangeRequest::getOwnerAccount()const
@@ -102,25 +102,14 @@ void DescribeAvailableTimeRangeRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeAvailableTimeRangeRequest::getNodeId()const
+std::string DescribeAvailableTimeRangeRequest::getInstanceId()const
 {
-	return nodeId_;
+	return instanceId_;
 }
 
-void DescribeAvailableTimeRangeRequest::setNodeId(const std::string& nodeId)
+void DescribeAvailableTimeRangeRequest::setInstanceId(const std::string& instanceId)
 {
-	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
-}
-
-std::string DescribeAvailableTimeRangeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeAvailableTimeRangeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

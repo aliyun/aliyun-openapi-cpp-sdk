@@ -36,17 +36,6 @@ void UnroutePrivateZoneInCenToVpcRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UnroutePrivateZoneInCenToVpcRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UnroutePrivateZoneInCenToVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string UnroutePrivateZoneInCenToVpcRequest::getCenId()const
 {
 	return cenId_;
@@ -58,17 +47,6 @@ void UnroutePrivateZoneInCenToVpcRequest::setCenId(const std::string& cenId)
 	setCoreParameter("CenId", cenId);
 }
 
-std::string UnroutePrivateZoneInCenToVpcRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void UnroutePrivateZoneInCenToVpcRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string UnroutePrivateZoneInCenToVpcRequest::getAccessRegionId()const
 {
 	return accessRegionId_;
@@ -78,6 +56,28 @@ void UnroutePrivateZoneInCenToVpcRequest::setAccessRegionId(const std::string& a
 {
 	accessRegionId_ = accessRegionId;
 	setCoreParameter("AccessRegionId", accessRegionId);
+}
+
+std::string UnroutePrivateZoneInCenToVpcRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UnroutePrivateZoneInCenToVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string UnroutePrivateZoneInCenToVpcRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void UnroutePrivateZoneInCenToVpcRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UnroutePrivateZoneInCenToVpcRequest::getOwnerId()const

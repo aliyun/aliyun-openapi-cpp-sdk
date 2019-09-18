@@ -53,28 +53,6 @@ void CreateTemplateRequest::setLiveConfig(const std::vector<LiveConfig>& liveCon
 	}
 }
 
-long CreateTemplateRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void CreateTemplateRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool CreateTemplateRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void CreateTemplateRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
 int CreateTemplateRequest::getMediaConfig()const
 {
 	return mediaConfig_;
@@ -97,39 +75,6 @@ void CreateTemplateRequest::setMaxMixStreamCount(int maxMixStreamCount)
 	setCoreParameter("MaxMixStreamCount", std::to_string(maxMixStreamCount));
 }
 
-std::string CreateTemplateRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void CreateTemplateRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string CreateTemplateRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void CreateTemplateRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string CreateTemplateRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void CreateTemplateRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
 std::vector<CreateTemplateRequest::RecordConfig> CreateTemplateRequest::getRecordConfig()const
 {
 	return recordConfig_;
@@ -150,105 +95,6 @@ void CreateTemplateRequest::setRecordConfig(const std::vector<RecordConfig>& rec
 	}
 }
 
-std::string CreateTemplateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateTemplateRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void CreateTemplateRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string CreateTemplateRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void CreateTemplateRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string CreateTemplateRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void CreateTemplateRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string CreateTemplateRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void CreateTemplateRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long CreateTemplateRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void CreateTemplateRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string CreateTemplateRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void CreateTemplateRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string CreateTemplateRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void CreateTemplateRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
-
-std::string CreateTemplateRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void CreateTemplateRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long CreateTemplateRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -258,50 +104,6 @@ void CreateTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateTemplateRequest::getVersion()const
-{
-	return version_;
-}
-
-void CreateTemplateRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool CreateTemplateRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void CreateTemplateRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool CreateTemplateRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void CreateTemplateRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool CreateTemplateRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void CreateTemplateRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::vector<CreateTemplateRequest::LayOut> CreateTemplateRequest::getLayOut()const
@@ -320,17 +122,6 @@ void CreateTemplateRequest::setLayOut(const std::vector<LayOut>& layOut)
 		setCoreParameter(str + ".CutMode", std::to_string(obj.cutMode));
 		setCoreParameter(str + ".LayOutId", std::to_string(obj.layOutId));
 	}
-}
-
-std::string CreateTemplateRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void CreateTemplateRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateTemplateRequest::getAppId()const

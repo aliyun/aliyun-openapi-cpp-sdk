@@ -25,6 +25,39 @@ ARMSQueryDataSetRequest::ARMSQueryDataSetRequest() :
 ARMSQueryDataSetRequest::~ARMSQueryDataSetRequest()
 {}
 
+std::string ARMSQueryDataSetRequest::getDateStr()const
+{
+	return dateStr_;
+}
+
+void ARMSQueryDataSetRequest::setDateStr(const std::string& dateStr)
+{
+	dateStr_ = dateStr;
+	setCoreParameter("DateStr", dateStr);
+}
+
+long ARMSQueryDataSetRequest::getMinTime()const
+{
+	return minTime_;
+}
+
+void ARMSQueryDataSetRequest::setMinTime(long minTime)
+{
+	minTime_ = minTime;
+	setCoreParameter("MinTime", std::to_string(minTime));
+}
+
+long ARMSQueryDataSetRequest::getMaxTime()const
+{
+	return maxTime_;
+}
+
+void ARMSQueryDataSetRequest::setMaxTime(long maxTime)
+{
+	maxTime_ = maxTime;
+	setCoreParameter("MaxTime", std::to_string(maxTime));
+}
+
 std::vector<std::string> ARMSQueryDataSetRequest::getMeasures()const
 {
 	return measures_;
@@ -48,17 +81,6 @@ void ARMSQueryDataSetRequest::setIntervalInSec(int intervalInSec)
 	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
 }
 
-std::string ARMSQueryDataSetRequest::getDateStr()const
-{
-	return dateStr_;
-}
-
-void ARMSQueryDataSetRequest::setDateStr(const std::string& dateStr)
-{
-	dateStr_ = dateStr;
-	setCoreParameter("DateStr", dateStr);
-}
-
 bool ARMSQueryDataSetRequest::getIsDrillDown()const
 {
 	return isDrillDown_;
@@ -70,17 +92,6 @@ void ARMSQueryDataSetRequest::setIsDrillDown(bool isDrillDown)
 	setCoreParameter("IsDrillDown", isDrillDown ? "true" : "false");
 }
 
-long ARMSQueryDataSetRequest::getMinTime()const
-{
-	return minTime_;
-}
-
-void ARMSQueryDataSetRequest::setMinTime(long minTime)
-{
-	minTime_ = minTime;
-	setCoreParameter("MinTime", std::to_string(minTime));
-}
-
 long ARMSQueryDataSetRequest::getDatasetId()const
 {
 	return datasetId_;
@@ -90,17 +101,6 @@ void ARMSQueryDataSetRequest::setDatasetId(long datasetId)
 {
 	datasetId_ = datasetId;
 	setCoreParameter("DatasetId", std::to_string(datasetId));
-}
-
-long ARMSQueryDataSetRequest::getMaxTime()const
-{
-	return maxTime_;
-}
-
-void ARMSQueryDataSetRequest::setMaxTime(long maxTime)
-{
-	maxTime_ = maxTime;
-	setCoreParameter("MaxTime", std::to_string(maxTime));
 }
 
 std::vector<ARMSQueryDataSetRequest::Dimensions> ARMSQueryDataSetRequest::getDimensions()const

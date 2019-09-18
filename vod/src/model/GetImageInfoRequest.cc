@@ -47,15 +47,15 @@ void GetImageInfoRequest::setImageId(const std::string& imageId)
 	setCoreParameter("ImageId", imageId);
 }
 
-std::string GetImageInfoRequest::getResourceOwnerAccount()const
+std::string GetImageInfoRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void GetImageInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void GetImageInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetImageInfoRequest::getOutputType()const
@@ -69,17 +69,6 @@ void GetImageInfoRequest::setOutputType(const std::string& outputType)
 	setCoreParameter("OutputType", outputType);
 }
 
-long GetImageInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void GetImageInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 long GetImageInfoRequest::getAuthTimeout()const
 {
 	return authTimeout_;
@@ -91,14 +80,25 @@ void GetImageInfoRequest::setAuthTimeout(long authTimeout)
 	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
-std::string GetImageInfoRequest::getAccessKeyId()const
+std::string GetImageInfoRequest::getResourceOwnerAccount()const
 {
-	return accessKeyId_;
+	return resourceOwnerAccount_;
 }
 
-void GetImageInfoRequest::setAccessKeyId(const std::string& accessKeyId)
+void GetImageInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long GetImageInfoRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void GetImageInfoRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

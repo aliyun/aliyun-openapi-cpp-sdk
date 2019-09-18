@@ -25,17 +25,6 @@ DescribeOrderDocumentRequest::DescribeOrderDocumentRequest() :
 DescribeOrderDocumentRequest::~DescribeOrderDocumentRequest()
 {}
 
-std::string DescribeOrderDocumentRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOrderDocumentRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeOrderDocumentRequest::getOrderId()const
 {
 	return orderId_;
@@ -56,6 +45,28 @@ void DescribeOrderDocumentRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string DescribeOrderDocumentRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeOrderDocumentRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeOrderDocumentRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOrderDocumentRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOrderDocumentRequest::getLang()const

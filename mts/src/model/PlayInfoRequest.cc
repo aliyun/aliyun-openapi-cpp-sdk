@@ -25,17 +25,6 @@ PlayInfoRequest::PlayInfoRequest() :
 PlayInfoRequest::~PlayInfoRequest()
 {}
 
-std::string PlayInfoRequest::getPlayDomain()const
-{
-	return playDomain_;
-}
-
-void PlayInfoRequest::setPlayDomain(const std::string& playDomain)
-{
-	playDomain_ = playDomain;
-	setCoreParameter("PlayDomain", playDomain);
-}
-
 std::string PlayInfoRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,6 +45,50 @@ void PlayInfoRequest::setFormats(const std::string& formats)
 {
 	formats_ = formats;
 	setCoreParameter("Formats", formats);
+}
+
+std::string PlayInfoRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void PlayInfoRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string PlayInfoRequest::getRand()const
+{
+	return rand_;
+}
+
+void PlayInfoRequest::setRand(const std::string& rand)
+{
+	rand_ = rand;
+	setCoreParameter("Rand", rand);
+}
+
+long PlayInfoRequest::getAuthTimeout()const
+{
+	return authTimeout_;
+}
+
+void PlayInfoRequest::setAuthTimeout(long authTimeout)
+{
+	authTimeout_ = authTimeout;
+	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+}
+
+std::string PlayInfoRequest::getPlayDomain()const
+{
+	return playDomain_;
+}
+
+void PlayInfoRequest::setPlayDomain(const std::string& playDomain)
+{
+	playDomain_ = playDomain;
+	setCoreParameter("PlayDomain", playDomain);
 }
 
 std::string PlayInfoRequest::getResourceOwnerAccount()const
@@ -122,39 +155,6 @@ void PlayInfoRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
 	setCoreParameter("MediaId", mediaId);
-}
-
-std::string PlayInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void PlayInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string PlayInfoRequest::getRand()const
-{
-	return rand_;
-}
-
-void PlayInfoRequest::setRand(const std::string& rand)
-{
-	rand_ = rand;
-	setCoreParameter("Rand", rand);
-}
-
-long PlayInfoRequest::getAuthTimeout()const
-{
-	return authTimeout_;
-}
-
-void PlayInfoRequest::setAuthTimeout(long authTimeout)
-{
-	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
 std::string PlayInfoRequest::getAuthInfo()const

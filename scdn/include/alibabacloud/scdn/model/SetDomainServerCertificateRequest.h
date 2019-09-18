@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				SetDomainServerCertificateRequest();
 				~SetDomainServerCertificateRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getSSLPub()const;
-				void setSSLPub(const std::string& sSLPub);
-				std::string getCertName()const;
-				void setCertName(const std::string& certName);
 				std::string getSSLProtocol()const;
 				void setSSLProtocol(const std::string& sSLProtocol);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getSSLPri()const;
+				void setSSLPri(const std::string& sSLPri);
+				std::string getCertName()const;
+				void setCertName(const std::string& certName);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSSLPub()const;
+				void setSSLPub(const std::string& sSLPub);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSSLPri()const;
-				void setSSLPri(const std::string& sSLPri);
 
             private:
-				std::string securityToken_;
-				std::string sSLPub_;
-				std::string certName_;
 				std::string sSLProtocol_;
+				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string sSLPri_;
+				std::string certName_;
 				std::string domainName_;
 				long ownerId_;
+				std::string sSLPub_;
 				std::string region_;
-				std::string accessKeyId_;
-				std::string sSLPri_;
 
 			};
 		}

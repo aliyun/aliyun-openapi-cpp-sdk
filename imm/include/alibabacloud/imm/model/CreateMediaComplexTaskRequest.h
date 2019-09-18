@@ -35,26 +35,23 @@ namespace AlibabaCloud
 				CreateMediaComplexTaskRequest();
 				~CreateMediaComplexTaskRequest();
 
-				std::string getNotifyTopicName()const;
-				void setNotifyTopicName(const std::string& notifyTopicName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNotifyEndpoint()const;
-				void setNotifyEndpoint(const std::string& notifyEndpoint);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getParameters()const;
-				void setParameters(const std::string& parameters);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNotifyEndpoint()const;
+				void setNotifyEndpoint(const std::string& notifyEndpoint);
+				std::string getNotifyTopicName()const;
+				void setNotifyTopicName(const std::string& notifyTopicName);
+				std::string getParameters()const;
+				void setParameters(const std::string& parameters);
 
             private:
-				std::string notifyTopicName_;
-				std::string regionId_;
-				std::string notifyEndpoint_;
 				std::string project_;
-				std::string parameters_;
 				std::string accessKeyId_;
+				std::string notifyEndpoint_;
+				std::string notifyTopicName_;
+				std::string parameters_;
 
 			};
 		}

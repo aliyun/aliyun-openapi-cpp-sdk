@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				DescribeDnsProductInstancesRequest();
 				~DescribeDnsProductInstancesRequest();
 
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				long getPageSize()const;
@@ -43,18 +47,14 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getVersionCode()const;
 				void setVersionCode(const std::string& versionCode);
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				long pageNumber_;
+				std::string accessKeyId_;
 				std::string userClientIp_;
 				long pageSize_;
 				std::string lang_;
 				std::string versionCode_;
-				long pageNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

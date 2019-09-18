@@ -25,17 +25,6 @@ ListApDetailInfoRequest::ListApDetailInfoRequest() :
 ListApDetailInfoRequest::~ListApDetailInfoRequest()
 {}
 
-long ListApDetailInfoRequest::getApAssetId()const
-{
-	return apAssetId_;
-}
-
-void ListApDetailInfoRequest::setApAssetId(long apAssetId)
-{
-	apAssetId_ = apAssetId;
-	setCoreParameter("ApAssetId", std::to_string(apAssetId));
-}
-
 std::string ListApDetailInfoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void ListApDetailInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ListApDetailInfoRequest::getApAssetId()const
+{
+	return apAssetId_;
+}
+
+void ListApDetailInfoRequest::setApAssetId(long apAssetId)
+{
+	apAssetId_ = apAssetId;
+	setCoreParameter("ApAssetId", std::to_string(apAssetId));
 }
 

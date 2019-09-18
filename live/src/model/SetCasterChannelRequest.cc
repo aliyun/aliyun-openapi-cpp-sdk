@@ -25,15 +25,15 @@ SetCasterChannelRequest::SetCasterChannelRequest() :
 SetCasterChannelRequest::~SetCasterChannelRequest()
 {}
 
-std::string SetCasterChannelRequest::getResourceId()const
+int SetCasterChannelRequest::getSeekOffset()const
 {
-	return resourceId_;
+	return seekOffset_;
 }
 
-void SetCasterChannelRequest::setResourceId(const std::string& resourceId)
+void SetCasterChannelRequest::setSeekOffset(int seekOffset)
 {
-	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	seekOffset_ = seekOffset;
+	setCoreParameter("SeekOffset", std::to_string(seekOffset));
 }
 
 int SetCasterChannelRequest::getPlayStatus()const
@@ -47,15 +47,15 @@ void SetCasterChannelRequest::setPlayStatus(int playStatus)
 	setCoreParameter("PlayStatus", std::to_string(playStatus));
 }
 
-std::string SetCasterChannelRequest::getRegionId()const
+std::string SetCasterChannelRequest::getResourceId()const
 {
-	return regionId_;
+	return resourceId_;
 }
 
-void SetCasterChannelRequest::setRegionId(const std::string& regionId)
+void SetCasterChannelRequest::setResourceId(const std::string& resourceId)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	resourceId_ = resourceId;
+	setCoreParameter("ResourceId", resourceId);
 }
 
 std::string SetCasterChannelRequest::getCasterId()const
@@ -78,17 +78,6 @@ void SetCasterChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int SetCasterChannelRequest::getSeekOffset()const
-{
-	return seekOffset_;
-}
-
-void SetCasterChannelRequest::setSeekOffset(int seekOffset)
-{
-	seekOffset_ = seekOffset;
-	setCoreParameter("SeekOffset", std::to_string(seekOffset));
 }
 
 std::string SetCasterChannelRequest::getChannelId()const

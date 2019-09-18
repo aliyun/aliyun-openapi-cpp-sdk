@@ -47,17 +47,6 @@ void DescribeDataHubSubscriptionsRequest::setSourceIp(const std::string& sourceI
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-int DescribeDataHubSubscriptionsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeDataHubSubscriptionsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
 int DescribeDataHubSubscriptionsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,28 +56,6 @@ void DescribeDataHubSubscriptionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeDataHubSubscriptionsRequest::getDepartId()const
-{
-	return departId_;
-}
-
-void DescribeDataHubSubscriptionsRequest::setDepartId(long departId)
-{
-	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
-}
-
-int DescribeDataHubSubscriptionsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeDataHubSubscriptionsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getLang()const
@@ -122,5 +89,38 @@ void DescribeDataHubSubscriptionsRequest::setKey(const std::string& key)
 {
 	key_ = key;
 	setCoreParameter("Key", key);
+}
+
+int DescribeDataHubSubscriptionsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeDataHubSubscriptionsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int DescribeDataHubSubscriptionsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeDataHubSubscriptionsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+long DescribeDataHubSubscriptionsRequest::getDepartId()const
+{
+	return departId_;
+}
+
+void DescribeDataHubSubscriptionsRequest::setDepartId(long departId)
+{
+	departId_ = departId;
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 

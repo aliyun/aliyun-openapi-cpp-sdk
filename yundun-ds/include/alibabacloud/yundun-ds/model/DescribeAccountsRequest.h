@@ -37,26 +37,12 @@ namespace AlibabaCloud
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				std::string getLoginName()const;
-				void setLoginName(const std::string& loginName);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
-				std::string getColumnId()const;
-				void setColumnId(const std::string& columnId);
 				std::string getPackageId()const;
 				void setPackageId(const std::string& packageId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				long getDepartId()const;
-				void setDepartId(long departId);
-				int getOperationId()const;
-				void setOperationId(int operationId);
 				std::string getTableId()const;
 				void setTableId(const std::string& tableId);
 				std::string getLang()const;
@@ -65,23 +51,37 @@ namespace AlibabaCloud
 				void setKey(const std::string& key);
 				int getQueryType()const;
 				void setQueryType(int queryType);
+				std::string getLoginName()const;
+				void setLoginName(const std::string& loginName);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				std::string getColumnId()const;
+				void setColumnId(const std::string& columnId);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				long getDepartId()const;
+				void setDepartId(long departId);
+				int getOperationId()const;
+				void setOperationId(int operationId);
 
             private:
 				std::string productCode_;
-				std::string loginName_;
-				int featureType_;
-				std::string columnId_;
 				std::string packageId_;
-				int currentPage_;
-				std::string instanceId_;
 				std::string sourceIp_;
 				int pageSize_;
-				long departId_;
-				int operationId_;
 				std::string tableId_;
 				std::string lang_;
 				std::string key_;
 				int queryType_;
+				std::string loginName_;
+				int featureType_;
+				std::string columnId_;
+				int currentPage_;
+				std::string instanceId_;
+				long departId_;
+				int operationId_;
 
 			};
 		}

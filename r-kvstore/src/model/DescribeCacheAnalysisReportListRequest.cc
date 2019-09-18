@@ -25,6 +25,17 @@ DescribeCacheAnalysisReportListRequest::DescribeCacheAnalysisReportListRequest()
 DescribeCacheAnalysisReportListRequest::~DescribeCacheAnalysisReportListRequest()
 {}
 
+std::string DescribeCacheAnalysisReportListRequest::getDate()const
+{
+	return date_;
+}
+
+void DescribeCacheAnalysisReportListRequest::setDate(const std::string& date)
+{
+	date_ = date;
+	setCoreParameter("Date", date);
+}
+
 long DescribeCacheAnalysisReportListRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -34,6 +45,61 @@ void DescribeCacheAnalysisReportListRequest::setResourceOwnerId(long resourceOwn
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeCacheAnalysisReportListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeCacheAnalysisReportListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeCacheAnalysisReportListRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeCacheAnalysisReportListRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeCacheAnalysisReportListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeCacheAnalysisReportListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+int DescribeCacheAnalysisReportListRequest::getPageNumbers()const
+{
+	return pageNumbers_;
+}
+
+void DescribeCacheAnalysisReportListRequest::setPageNumbers(int pageNumbers)
+{
+	pageNumbers_ = pageNumbers;
+	setCoreParameter("PageNumbers", std::to_string(pageNumbers));
+}
+
+std::string DescribeCacheAnalysisReportListRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void DescribeCacheAnalysisReportListRequest::setNodeId(const std::string& nodeId)
+{
+	nodeId_ = nodeId;
+	setCoreParameter("NodeId", nodeId);
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getResourceOwnerAccount()const
@@ -69,17 +135,6 @@ void DescribeCacheAnalysisReportListRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeCacheAnalysisReportListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeCacheAnalysisReportListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeCacheAnalysisReportListRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -91,50 +146,6 @@ void DescribeCacheAnalysisReportListRequest::setInstanceId(const std::string& in
 	setCoreParameter("InstanceId", instanceId);
 }
 
-std::string DescribeCacheAnalysisReportListRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeCacheAnalysisReportListRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeCacheAnalysisReportListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCacheAnalysisReportListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int DescribeCacheAnalysisReportListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeCacheAnalysisReportListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeCacheAnalysisReportListRequest::getPageNumbers()const
-{
-	return pageNumbers_;
-}
-
-void DescribeCacheAnalysisReportListRequest::setPageNumbers(int pageNumbers)
-{
-	pageNumbers_ = pageNumbers;
-	setCoreParameter("PageNumbers", std::to_string(pageNumbers));
-}
-
 int DescribeCacheAnalysisReportListRequest::getDays()const
 {
 	return days_;
@@ -144,16 +155,5 @@ void DescribeCacheAnalysisReportListRequest::setDays(int days)
 {
 	days_ = days;
 	setCoreParameter("Days", std::to_string(days));
-}
-
-std::string DescribeCacheAnalysisReportListRequest::getNodeId()const
-{
-	return nodeId_;
-}
-
-void DescribeCacheAnalysisReportListRequest::setNodeId(const std::string& nodeId)
-{
-	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
 }
 

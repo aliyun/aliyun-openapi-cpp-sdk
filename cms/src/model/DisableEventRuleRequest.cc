@@ -25,6 +25,17 @@ DisableEventRuleRequest::DisableEventRuleRequest() :
 DisableEventRuleRequest::~DisableEventRuleRequest()
 {}
 
+std::string DisableEventRuleRequest::getRuleName()const
+{
+	return ruleName_;
+}
+
+void DisableEventRuleRequest::setRuleName(const std::string& ruleName)
+{
+	ruleName_ = ruleName;
+	setCoreParameter("RuleName", ruleName);
+}
+
 std::vector<std::string> DisableEventRuleRequest::getRuleNames()const
 {
 	return ruleNames_;
@@ -35,16 +46,5 @@ void DisableEventRuleRequest::setRuleNames(const std::vector<std::string>& ruleN
 	ruleNames_ = ruleNames;
 	for(int i = 0; i!= ruleNames.size(); i++)
 		setCoreParameter("RuleNames."+ std::to_string(i), ruleNames.at(i));
-}
-
-std::string DisableEventRuleRequest::getRuleName()const
-{
-	return ruleName_;
-}
-
-void DisableEventRuleRequest::setRuleName(const std::string& ruleName)
-{
-	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
 }
 

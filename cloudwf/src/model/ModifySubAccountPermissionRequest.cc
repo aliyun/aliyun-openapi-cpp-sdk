@@ -37,6 +37,17 @@ void ModifySubAccountPermissionRequest::setShopGroupIds(const std::vector<long>&
 		setCoreParameter("ShopGroupIds."+ std::to_string(i), std::to_string(shopGroupIds.at(i)));
 }
 
+std::string ModifySubAccountPermissionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifySubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<long> ModifySubAccountPermissionRequest::getShopIds()const
 {
 	return shopIds_;
@@ -69,17 +80,6 @@ void ModifySubAccountPermissionRequest::setId(long id)
 {
 	id_ = id;
 	setCoreParameter("Id", std::to_string(id));
-}
-
-std::string ModifySubAccountPermissionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifySubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<long> ModifySubAccountPermissionRequest::getBusinessIds()const

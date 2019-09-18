@@ -36,26 +36,26 @@ void ListTerrorismPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListTerrorismPipelineRequest::getResourceOwnerAccount()const
+long ListTerrorismPipelineRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void ListTerrorismPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ListTerrorismPipelineRequest::setPageNumber(long pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string ListTerrorismPipelineRequest::getOwnerAccount()const
+std::string ListTerrorismPipelineRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void ListTerrorismPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
+void ListTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ListTerrorismPipelineRequest::getPageSize()const
@@ -80,6 +80,28 @@ void ListTerrorismPipelineRequest::setState(const std::string& state)
 	setCoreParameter("State", state);
 }
 
+std::string ListTerrorismPipelineRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ListTerrorismPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ListTerrorismPipelineRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ListTerrorismPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ListTerrorismPipelineRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,27 +111,5 @@ void ListTerrorismPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-long ListTerrorismPipelineRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListTerrorismPipelineRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListTerrorismPipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

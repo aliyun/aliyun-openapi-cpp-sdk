@@ -36,28 +36,6 @@ void ExecuteScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ExecuteScalingRuleRequest::getScalingRuleAri()const
-{
-	return scalingRuleAri_;
-}
-
-void ExecuteScalingRuleRequest::setScalingRuleAri(const std::string& scalingRuleAri)
-{
-	scalingRuleAri_ = scalingRuleAri;
-	setCoreParameter("ScalingRuleAri", scalingRuleAri);
-}
-
-std::string ExecuteScalingRuleRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ExecuteScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ExecuteScalingRuleRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,6 +47,17 @@ void ExecuteScalingRuleRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
+std::string ExecuteScalingRuleRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ExecuteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 float ExecuteScalingRuleRequest::getBreachThreshold()const
 {
 	return breachThreshold_;
@@ -78,6 +67,17 @@ void ExecuteScalingRuleRequest::setBreachThreshold(float breachThreshold)
 {
 	breachThreshold_ = breachThreshold;
 	setCoreParameter("BreachThreshold", std::to_string(breachThreshold));
+}
+
+std::string ExecuteScalingRuleRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ExecuteScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ExecuteScalingRuleRequest::getOwnerAccount()const
@@ -113,14 +113,14 @@ void ExecuteScalingRuleRequest::setMetricValue(float metricValue)
 	setCoreParameter("MetricValue", std::to_string(metricValue));
 }
 
-std::string ExecuteScalingRuleRequest::getAccessKeyId()const
+std::string ExecuteScalingRuleRequest::getScalingRuleAri()const
 {
-	return accessKeyId_;
+	return scalingRuleAri_;
 }
 
-void ExecuteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
+void ExecuteScalingRuleRequest::setScalingRuleAri(const std::string& scalingRuleAri)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	scalingRuleAri_ = scalingRuleAri;
+	setCoreParameter("ScalingRuleAri", scalingRuleAri);
 }
 

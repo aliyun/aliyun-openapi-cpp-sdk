@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				QueryFailReasonForDomainRealNameVerificationRequest();
 				~QueryFailReasonForDomainRealNameVerificationRequest();
 
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				std::string getRealNameVerificationAction()const;
 				void setRealNameVerificationAction(const std::string& realNameVerificationAction);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string domainName_;
 				std::string realNameVerificationAction_;
 				std::string userClientIp_;
-				std::string domainName_;
 				std::string lang_;
 
 			};

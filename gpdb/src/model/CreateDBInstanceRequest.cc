@@ -25,28 +25,6 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
 CreateDBInstanceRequest::~CreateDBInstanceRequest()
 {}
 
-std::string CreateDBInstanceRequest::getDBInstanceGroupCount()const
-{
-	return dBInstanceGroupCount_;
-}
-
-void CreateDBInstanceRequest::setDBInstanceGroupCount(const std::string& dBInstanceGroupCount)
-{
-	dBInstanceGroupCount_ = dBInstanceGroupCount;
-	setCoreParameter("DBInstanceGroupCount", dBInstanceGroupCount);
-}
-
-std::string CreateDBInstanceRequest::getPeriod()const
-{
-	return period_;
-}
-
-void CreateDBInstanceRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setCoreParameter("Period", period);
-}
-
 std::string CreateDBInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,6 +47,72 @@ void CreateDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
 	setCoreParameter("EngineVersion", engineVersion);
 }
 
+std::string CreateDBInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateDBInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateDBInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateDBInstanceRequest::getEngine()const
+{
+	return engine_;
+}
+
+void CreateDBInstanceRequest::setEngine(const std::string& engine)
+{
+	engine_ = engine;
+	setCoreParameter("Engine", engine);
+}
+
+std::string CreateDBInstanceRequest::getDBInstanceDescription()const
+{
+	return dBInstanceDescription_;
+}
+
+void CreateDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
+{
+	dBInstanceDescription_ = dBInstanceDescription;
+	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+}
+
+std::string CreateDBInstanceRequest::getDBInstanceGroupCount()const
+{
+	return dBInstanceGroupCount_;
+}
+
+void CreateDBInstanceRequest::setDBInstanceGroupCount(const std::string& dBInstanceGroupCount)
+{
+	dBInstanceGroupCount_ = dBInstanceGroupCount;
+	setCoreParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+}
+
+std::string CreateDBInstanceRequest::getPeriod()const
+{
+	return period_;
+}
+
+void CreateDBInstanceRequest::setPeriod(const std::string& period)
+{
+	period_ = period;
+	setCoreParameter("Period", period);
+}
+
 long CreateDBInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,17 +133,6 @@ void CreateDBInstanceRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
 	setCoreParameter("UsedTime", usedTime);
-}
-
-std::string CreateDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDBInstanceRequest::getDBInstanceClass()const
@@ -146,28 +179,6 @@ void CreateDBInstanceRequest::setPrivateIpAddress(const std::string& privateIpAd
 	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
-std::string CreateDBInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateDBInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateDBInstanceRequest::getEngine()const
-{
-	return engine_;
-}
-
-void CreateDBInstanceRequest::setEngine(const std::string& engine)
-{
-	engine_ = engine;
-	setCoreParameter("Engine", engine);
-}
-
 std::string CreateDBInstanceRequest::getVPCId()const
 {
 	return vPCId_;
@@ -188,17 +199,6 @@ void CreateDBInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
-}
-
-std::string CreateDBInstanceRequest::getDBInstanceDescription()const
-{
-	return dBInstanceDescription_;
-}
-
-void CreateDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
-{
-	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
 std::string CreateDBInstanceRequest::getPayType()const

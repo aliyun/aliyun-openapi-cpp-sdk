@@ -25,28 +25,6 @@ GetScanProbeTimeSerRequest::GetScanProbeTimeSerRequest() :
 GetScanProbeTimeSerRequest::~GetScanProbeTimeSerRequest()
 {}
 
-long GetScanProbeTimeSerRequest::getZoomStart()const
-{
-	return zoomStart_;
-}
-
-void GetScanProbeTimeSerRequest::setZoomStart(long zoomStart)
-{
-	zoomStart_ = zoomStart;
-	setCoreParameter("ZoomStart", std::to_string(zoomStart));
-}
-
-long GetScanProbeTimeSerRequest::getCompanyId()const
-{
-	return companyId_;
-}
-
-void GetScanProbeTimeSerRequest::setCompanyId(long companyId)
-{
-	companyId_ = companyId;
-	setCoreParameter("CompanyId", std::to_string(companyId));
-}
-
 long GetScanProbeTimeSerRequest::getApgroupId()const
 {
 	return apgroupId_;
@@ -69,6 +47,39 @@ void GetScanProbeTimeSerRequest::setStart(long start)
 	setCoreParameter("Start", std::to_string(start));
 }
 
+std::string GetScanProbeTimeSerRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetScanProbeTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetScanProbeTimeSerRequest::getZoomStart()const
+{
+	return zoomStart_;
+}
+
+void GetScanProbeTimeSerRequest::setZoomStart(long zoomStart)
+{
+	zoomStart_ = zoomStart;
+	setCoreParameter("ZoomStart", std::to_string(zoomStart));
+}
+
+long GetScanProbeTimeSerRequest::getCompanyId()const
+{
+	return companyId_;
+}
+
+void GetScanProbeTimeSerRequest::setCompanyId(long companyId)
+{
+	companyId_ = companyId;
+	setCoreParameter("CompanyId", std::to_string(companyId));
+}
+
 long GetScanProbeTimeSerRequest::getZoomEnd()const
 {
 	return zoomEnd_;
@@ -89,16 +100,5 @@ void GetScanProbeTimeSerRequest::setEnd(long end)
 {
 	end_ = end;
 	setCoreParameter("End", std::to_string(end));
-}
-
-std::string GetScanProbeTimeSerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetScanProbeTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

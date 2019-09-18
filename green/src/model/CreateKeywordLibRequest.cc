@@ -25,6 +25,39 @@ CreateKeywordLibRequest::CreateKeywordLibRequest() :
 CreateKeywordLibRequest::~CreateKeywordLibRequest()
 {}
 
+std::string CreateKeywordLibRequest::getLanguage()const
+{
+	return language_;
+}
+
+void CreateKeywordLibRequest::setLanguage(const std::string& language)
+{
+	language_ = language;
+	setCoreParameter("Language", language);
+}
+
+std::string CreateKeywordLibRequest::getServiceModule()const
+{
+	return serviceModule_;
+}
+
+void CreateKeywordLibRequest::setServiceModule(const std::string& serviceModule)
+{
+	serviceModule_ = serviceModule;
+	setCoreParameter("ServiceModule", serviceModule);
+}
+
+std::string CreateKeywordLibRequest::getMatchMode()const
+{
+	return matchMode_;
+}
+
+void CreateKeywordLibRequest::setMatchMode(const std::string& matchMode)
+{
+	matchMode_ = matchMode;
+	setCoreParameter("MatchMode", matchMode);
+}
+
 std::string CreateKeywordLibRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -58,15 +91,15 @@ void CreateKeywordLibRequest::setEnable(bool enable)
 	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
-std::string CreateKeywordLibRequest::getName()const
+std::string CreateKeywordLibRequest::getLang()const
 {
-	return name_;
+	return lang_;
 }
 
-void CreateKeywordLibRequest::setName(const std::string& name)
+void CreateKeywordLibRequest::setLang(const std::string& lang)
 {
-	name_ = name;
-	setCoreParameter("Name", name);
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateKeywordLibRequest::getBizTypes()const
@@ -80,37 +113,26 @@ void CreateKeywordLibRequest::setBizTypes(const std::string& bizTypes)
 	setCoreParameter("BizTypes", bizTypes);
 }
 
-std::string CreateKeywordLibRequest::getLanguage()const
+std::string CreateKeywordLibRequest::getResourceType()const
 {
-	return language_;
+	return resourceType_;
 }
 
-void CreateKeywordLibRequest::setLanguage(const std::string& language)
+void CreateKeywordLibRequest::setResourceType(const std::string& resourceType)
 {
-	language_ = language;
-	setCoreParameter("Language", language);
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
 }
 
-std::string CreateKeywordLibRequest::getServiceModule()const
+std::string CreateKeywordLibRequest::getName()const
 {
-	return serviceModule_;
+	return name_;
 }
 
-void CreateKeywordLibRequest::setServiceModule(const std::string& serviceModule)
+void CreateKeywordLibRequest::setName(const std::string& name)
 {
-	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", serviceModule);
-}
-
-std::string CreateKeywordLibRequest::getLang()const
-{
-	return lang_;
-}
-
-void CreateKeywordLibRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string CreateKeywordLibRequest::getCategory()const
@@ -122,27 +144,5 @@ void CreateKeywordLibRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setCoreParameter("Category", category);
-}
-
-std::string CreateKeywordLibRequest::getMatchMode()const
-{
-	return matchMode_;
-}
-
-void CreateKeywordLibRequest::setMatchMode(const std::string& matchMode)
-{
-	matchMode_ = matchMode;
-	setCoreParameter("MatchMode", matchMode);
-}
-
-std::string CreateKeywordLibRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void CreateKeywordLibRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
 }
 

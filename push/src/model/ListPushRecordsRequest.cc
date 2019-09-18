@@ -25,17 +25,6 @@ ListPushRecordsRequest::ListPushRecordsRequest() :
 ListPushRecordsRequest::~ListPushRecordsRequest()
 {}
 
-int ListPushRecordsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListPushRecordsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListPushRecordsRequest::getEndTime()const
 {
 	return endTime_;
@@ -47,17 +36,6 @@ void ListPushRecordsRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-long ListPushRecordsRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void ListPushRecordsRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string ListPushRecordsRequest::getStartTime()const
 {
 	return startTime_;
@@ -67,6 +45,39 @@ void ListPushRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
+}
+
+std::string ListPushRecordsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListPushRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListPushRecordsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListPushRecordsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+long ListPushRecordsRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void ListPushRecordsRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 int ListPushRecordsRequest::getPage()const
@@ -89,16 +100,5 @@ void ListPushRecordsRequest::setPushType(const std::string& pushType)
 {
 	pushType_ = pushType;
 	setCoreParameter("PushType", pushType);
-}
-
-std::string ListPushRecordsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListPushRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,6 +25,17 @@ ListAlarmRequest::ListAlarmRequest() :
 ListAlarmRequest::~ListAlarmRequest()
 {}
 
+int ListAlarmRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListAlarmRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 bool ListAlarmRequest::getIsEnable()const
 {
 	return isEnable_;
@@ -100,16 +111,5 @@ void ListAlarmRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
 	setCoreParameter("Dimension", dimension);
-}
-
-int ListAlarmRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListAlarmRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

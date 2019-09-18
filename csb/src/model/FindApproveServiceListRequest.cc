@@ -69,17 +69,6 @@ void FindApproveServiceListRequest::setCsbId(long csbId)
 	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
-std::string FindApproveServiceListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void FindApproveServiceListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string FindApproveServiceListRequest::getAlias()const
 {
 	return alias_;

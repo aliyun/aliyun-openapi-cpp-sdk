@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				int getOffset()const;
 				void setOffset(int offset);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				int getLength()const;
 				void setLength(int length);
 				int getSqlIndex()const;
 				void setSqlIndex(int sqlIndex);
 				std::string getNodeInstanceId()const;
 				void setNodeInstanceId(const std::string& nodeInstanceId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 
             private:
 				int offset_;
-				std::string regionId_;
 				int length_;
 				int sqlIndex_;
 				std::string nodeInstanceId_;
+				std::string regionId_;
 				std::string projectId_;
 
 			};

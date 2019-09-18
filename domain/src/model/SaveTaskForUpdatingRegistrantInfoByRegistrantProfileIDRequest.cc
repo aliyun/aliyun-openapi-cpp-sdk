@@ -25,17 +25,6 @@ SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::SaveTaskForUpdati
 SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::~SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest()
 {}
 
-std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 long SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getRegistrantProfileId()const
 {
 	return registrantProfileId_;
@@ -68,6 +57,17 @@ void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setTransferO
 {
 	transferOutProhibited_ = transferOutProhibited;
 	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
+}
+
+std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getLang()const

@@ -25,6 +25,28 @@ CreateDocIndexTaskRequest::CreateDocIndexTaskRequest() :
 CreateDocIndexTaskRequest::~CreateDocIndexTaskRequest()
 {}
 
+std::string CreateDocIndexTaskRequest::getProject()const
+{
+	return project_;
+}
+
+void CreateDocIndexTaskRequest::setProject(const std::string& project)
+{
+	project_ = project;
+	setCoreParameter("Project", project);
+}
+
+std::string CreateDocIndexTaskRequest::getUniqueId()const
+{
+	return uniqueId_;
+}
+
+void CreateDocIndexTaskRequest::setUniqueId(const std::string& uniqueId)
+{
+	uniqueId_ = uniqueId;
+	setCoreParameter("UniqueId", uniqueId);
+}
+
 std::string CreateDocIndexTaskRequest::getCustomKey1()const
 {
 	return customKey1_;
@@ -91,17 +113,6 @@ void CreateDocIndexTaskRequest::setCustomKey2(const std::string& customKey2)
 	setCoreParameter("CustomKey2", customKey2);
 }
 
-std::string CreateDocIndexTaskRequest::getProject()const
-{
-	return project_;
-}
-
-void CreateDocIndexTaskRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setCoreParameter("Project", project);
-}
-
 std::string CreateDocIndexTaskRequest::getCustomKey6()const
 {
 	return customKey6_;
@@ -124,17 +135,6 @@ void CreateDocIndexTaskRequest::setContentType(const std::string& contentType)
 	setCoreParameter("ContentType", contentType);
 }
 
-std::string CreateDocIndexTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateDocIndexTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateDocIndexTaskRequest::getName()const
 {
 	return name_;
@@ -155,16 +155,5 @@ void CreateDocIndexTaskRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
 	setCoreParameter("SrcUri", srcUri);
-}
-
-std::string CreateDocIndexTaskRequest::getUniqueId()const
-{
-	return uniqueId_;
-}
-
-void CreateDocIndexTaskRequest::setUniqueId(const std::string& uniqueId)
-{
-	uniqueId_ = uniqueId;
-	setCoreParameter("UniqueId", uniqueId);
 }
 

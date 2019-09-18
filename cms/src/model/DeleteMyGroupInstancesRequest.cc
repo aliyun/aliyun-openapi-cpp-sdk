@@ -25,6 +25,17 @@ DeleteMyGroupInstancesRequest::DeleteMyGroupInstancesRequest() :
 DeleteMyGroupInstancesRequest::~DeleteMyGroupInstancesRequest()
 {}
 
+long DeleteMyGroupInstancesRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DeleteMyGroupInstancesRequest::setGroupId(long groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", std::to_string(groupId));
+}
+
 std::string DeleteMyGroupInstancesRequest::getInstanceIds()const
 {
 	return instanceIds_;
@@ -45,17 +56,6 @@ void DeleteMyGroupInstancesRequest::setInstanceIdList(const std::string& instanc
 {
 	instanceIdList_ = instanceIdList;
 	setCoreParameter("InstanceIdList", instanceIdList);
-}
-
-long DeleteMyGroupInstancesRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DeleteMyGroupInstancesRequest::setGroupId(long groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteMyGroupInstancesRequest::getCategory()const

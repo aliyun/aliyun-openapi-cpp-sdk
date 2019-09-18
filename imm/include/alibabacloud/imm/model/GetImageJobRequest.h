@@ -35,23 +35,20 @@ namespace AlibabaCloud
 				GetImageJobRequest();
 				~GetImageJobRequest();
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getJobType()const;
-				void setJobType(const std::string& jobType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
+				std::string getJobType()const;
+				void setJobType(const std::string& jobType);
 
             private:
-				std::string jobId_;
-				std::string regionId_;
 				std::string project_;
-				std::string jobType_;
 				std::string accessKeyId_;
+				std::string jobId_;
+				std::string jobType_;
 
 			};
 		}

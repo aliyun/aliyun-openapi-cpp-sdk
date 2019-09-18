@@ -19,187 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetHttpErrorPageConfigRequest;
 
 SetHttpErrorPageConfigRequest::SetHttpErrorPageConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetHttpErrorPageConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetHttpErrorPageConfig")
 {}
 
 SetHttpErrorPageConfigRequest::~SetHttpErrorPageConfigRequest()
 {}
-
-long SetHttpErrorPageConfigRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void SetHttpErrorPageConfigRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool SetHttpErrorPageConfigRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void SetHttpErrorPageConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string SetHttpErrorPageConfigRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void SetHttpErrorPageConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string SetHttpErrorPageConfigRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void SetHttpErrorPageConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string SetHttpErrorPageConfigRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void SetHttpErrorPageConfigRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string SetHttpErrorPageConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetHttpErrorPageConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string SetHttpErrorPageConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetHttpErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string SetHttpErrorPageConfigRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void SetHttpErrorPageConfigRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string SetHttpErrorPageConfigRequest::getFunctionName()const
-{
-	return functionName_;
-}
-
-void SetHttpErrorPageConfigRequest::setFunctionName(const std::string& functionName)
-{
-	functionName_ = functionName;
-	setCoreParameter("FunctionName", functionName);
-}
-
-std::string SetHttpErrorPageConfigRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void SetHttpErrorPageConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string SetHttpErrorPageConfigRequest::getPageUrl()const
-{
-	return pageUrl_;
-}
-
-void SetHttpErrorPageConfigRequest::setPageUrl(const std::string& pageUrl)
-{
-	pageUrl_ = pageUrl;
-	setCoreParameter("PageUrl", pageUrl);
-}
-
-std::string SetHttpErrorPageConfigRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void SetHttpErrorPageConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-std::string SetHttpErrorPageConfigRequest::getErrorCode()const
-{
-	return errorCode_;
-}
-
-void SetHttpErrorPageConfigRequest::setErrorCode(const std::string& errorCode)
-{
-	errorCode_ = errorCode;
-	setCoreParameter("ErrorCode", errorCode);
-}
-
-long SetHttpErrorPageConfigRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void SetHttpErrorPageConfigRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string SetHttpErrorPageConfigRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void SetHttpErrorPageConfigRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string SetHttpErrorPageConfigRequest::getProduct()const
-{
-	return product_;
-}
-
-void SetHttpErrorPageConfigRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setCoreParameter("Product", product);
-}
 
 std::string SetHttpErrorPageConfigRequest::getDomainName()const
 {
@@ -210,17 +34,6 @@ void SetHttpErrorPageConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-std::string SetHttpErrorPageConfigRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void SetHttpErrorPageConfigRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
 }
 
 long SetHttpErrorPageConfigRequest::getOwnerId()const
@@ -234,69 +47,36 @@ void SetHttpErrorPageConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetHttpErrorPageConfigRequest::getVersion()const
+std::string SetHttpErrorPageConfigRequest::getSecurityToken()const
 {
-	return version_;
+	return securityToken_;
 }
 
-void SetHttpErrorPageConfigRequest::setVersion(const std::string& version)
+void SetHttpErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	version_ = version;
-	setCoreParameter("Version", version);
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
-bool SetHttpErrorPageConfigRequest::getProxy_trust_transport_info()const
+std::string SetHttpErrorPageConfigRequest::getPageUrl()const
 {
-	return proxy_trust_transport_info_;
+	return pageUrl_;
 }
 
-void SetHttpErrorPageConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
+void SetHttpErrorPageConfigRequest::setPageUrl(const std::string& pageUrl)
 {
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	pageUrl_ = pageUrl;
+	setCoreParameter("PageUrl", pageUrl);
 }
 
-bool SetHttpErrorPageConfigRequest::getAk_mfa_present()const
+std::string SetHttpErrorPageConfigRequest::getErrorCode()const
 {
-	return ak_mfa_present_;
+	return errorCode_;
 }
 
-void SetHttpErrorPageConfigRequest::setAk_mfa_present(bool ak_mfa_present)
+void SetHttpErrorPageConfigRequest::setErrorCode(const std::string& errorCode)
 {
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool SetHttpErrorPageConfigRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void SetHttpErrorPageConfigRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string SetHttpErrorPageConfigRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void SetHttpErrorPageConfigRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
-long SetHttpErrorPageConfigRequest::getConfigId()const
-{
-	return configId_;
-}
-
-void SetHttpErrorPageConfigRequest::setConfigId(long configId)
-{
-	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	errorCode_ = errorCode;
+	setCoreParameter("ErrorCode", errorCode);
 }
 

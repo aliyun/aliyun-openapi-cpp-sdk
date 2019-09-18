@@ -25,6 +25,17 @@ CancelRepoBuildRequest::CancelRepoBuildRequest() :
 CancelRepoBuildRequest::~CancelRepoBuildRequest()
 {}
 
+std::string CancelRepoBuildRequest::getBuildId()const
+{
+	return buildId_;
+}
+
+void CancelRepoBuildRequest::setBuildId(const std::string& buildId)
+{
+	buildId_ = buildId;
+	setCoreParameter("BuildId", buildId);
+}
+
 std::string CancelRepoBuildRequest::getRepoNamespace()const
 {
 	return repoNamespace_;
@@ -45,27 +56,5 @@ void CancelRepoBuildRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
 	setCoreParameter("RepoName", repoName);
-}
-
-std::string CancelRepoBuildRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CancelRepoBuildRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CancelRepoBuildRequest::getBuildId()const
-{
-	return buildId_;
-}
-
-void CancelRepoBuildRequest::setBuildId(const std::string& buildId)
-{
-	buildId_ = buildId;
-	setCoreParameter("BuildId", buildId);
 }
 

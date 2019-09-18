@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeLiveStreamTranscodeInfoRequest();
 				~DescribeLiveStreamTranscodeInfoRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getDomainTranscodeName()const;
 				void setDomainTranscodeName(const std::string& domainTranscodeName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				long ownerId_;
 				std::string domainTranscodeName_;
+				std::string securityToken_;
 
 			};
 		}

@@ -25,26 +25,15 @@ DescribeImageFromLibRequest::DescribeImageFromLibRequest() :
 DescribeImageFromLibRequest::~DescribeImageFromLibRequest()
 {}
 
-int DescribeImageFromLibRequest::getTotalCount()const
+std::string DescribeImageFromLibRequest::getStartDate()const
 {
-	return totalCount_;
+	return startDate_;
 }
 
-void DescribeImageFromLibRequest::setTotalCount(int totalCount)
+void DescribeImageFromLibRequest::setStartDate(const std::string& startDate)
 {
-	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
-}
-
-std::string DescribeImageFromLibRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void DescribeImageFromLibRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
 }
 
 std::string DescribeImageFromLibRequest::getSourceIp()const
@@ -80,17 +69,6 @@ void DescribeImageFromLibRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeImageFromLibRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeImageFromLibRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 long DescribeImageFromLibRequest::getId()const
 {
 	return id_;
@@ -102,14 +80,36 @@ void DescribeImageFromLibRequest::setId(long id)
 	setCoreParameter("Id", std::to_string(id));
 }
 
-std::string DescribeImageFromLibRequest::getStartDate()const
+int DescribeImageFromLibRequest::getTotalCount()const
 {
-	return startDate_;
+	return totalCount_;
 }
 
-void DescribeImageFromLibRequest::setStartDate(const std::string& startDate)
+void DescribeImageFromLibRequest::setTotalCount(int totalCount)
 {
-	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	totalCount_ = totalCount;
+	setCoreParameter("TotalCount", std::to_string(totalCount));
+}
+
+int DescribeImageFromLibRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeImageFromLibRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeImageFromLibRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void DescribeImageFromLibRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
 }
 

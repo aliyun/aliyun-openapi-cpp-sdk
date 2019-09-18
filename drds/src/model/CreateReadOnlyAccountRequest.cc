@@ -25,28 +25,6 @@ CreateReadOnlyAccountRequest::CreateReadOnlyAccountRequest() :
 CreateReadOnlyAccountRequest::~CreateReadOnlyAccountRequest()
 {}
 
-std::string CreateReadOnlyAccountRequest::getPassword()const
-{
-	return password_;
-}
-
-void CreateReadOnlyAccountRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setCoreParameter("Password", password);
-}
-
-std::string CreateReadOnlyAccountRequest::getDbName()const
-{
-	return dbName_;
-}
-
-void CreateReadOnlyAccountRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
-}
-
 std::string CreateReadOnlyAccountRequest::getDrdsInstanceId()const
 {
 	return drdsInstanceId_;
@@ -67,5 +45,27 @@ void CreateReadOnlyAccountRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateReadOnlyAccountRequest::getPassword()const
+{
+	return password_;
+}
+
+void CreateReadOnlyAccountRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setCoreParameter("Password", password);
+}
+
+std::string CreateReadOnlyAccountRequest::getDbName()const
+{
+	return dbName_;
+}
+
+void CreateReadOnlyAccountRequest::setDbName(const std::string& dbName)
+{
+	dbName_ = dbName;
+	setCoreParameter("DbName", dbName);
 }
 

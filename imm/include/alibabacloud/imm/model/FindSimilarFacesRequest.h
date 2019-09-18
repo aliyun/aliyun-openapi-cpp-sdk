@@ -35,35 +35,32 @@ namespace AlibabaCloud
 				FindSimilarFacesRequest();
 				~FindSimilarFacesRequest();
 
-				std::string getImageUri()const;
-				void setImageUri(const std::string& imageUri);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				std::string getProject()const;
+				void setProject(const std::string& project);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				float getMinSimilarity()const;
 				void setMinSimilarity(float minSimilarity);
 				std::string getResponseFormat()const;
 				void setResponseFormat(const std::string& responseFormat);
 				int getLimit()const;
 				void setLimit(int limit);
-				std::string getProject()const;
-				void setProject(const std::string& project);
-				std::string getSetId()const;
-				void setSetId(const std::string& setId);
 				std::string getFaceId()const;
 				void setFaceId(const std::string& faceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getImageUri()const;
+				void setImageUri(const std::string& imageUri);
+				std::string getSetId()const;
+				void setSetId(const std::string& setId);
 
             private:
-				std::string imageUri_;
-				std::string regionId_;
+				std::string project_;
+				std::string accessKeyId_;
 				float minSimilarity_;
 				std::string responseFormat_;
 				int limit_;
-				std::string project_;
-				std::string setId_;
 				std::string faceId_;
-				std::string accessKeyId_;
+				std::string imageUri_;
+				std::string setId_;
 
 			};
 		}

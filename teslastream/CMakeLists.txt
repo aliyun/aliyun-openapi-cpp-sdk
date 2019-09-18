@@ -21,21 +21,21 @@ set(teslastream_public_header
 	include/alibabacloud/teslastream/TeslaStreamExport.h )
 
 set(teslastream_public_header_model 
-	include/alibabacloud/teslastream/model/GetJobTopologyRequest.h
-	include/alibabacloud/teslastream/model/GetJobTopologyResult.h
 	include/alibabacloud/teslastream/model/BatchGetJobMetricInfoRequest.h
 	include/alibabacloud/teslastream/model/BatchGetJobMetricInfoResult.h
 	include/alibabacloud/teslastream/model/BatchGetPluginConfigInfoRequest.h
-	include/alibabacloud/teslastream/model/BatchGetPluginConfigInfoResult.h )
+	include/alibabacloud/teslastream/model/BatchGetPluginConfigInfoResult.h
+	include/alibabacloud/teslastream/model/GetJobTopologyRequest.h
+	include/alibabacloud/teslastream/model/GetJobTopologyResult.h )
 
 set(teslastream_src 
 	src/TeslaStreamClient.cc
-	src/model/GetJobTopologyRequest.cc
-	src/model/GetJobTopologyResult.cc
 	src/model/BatchGetJobMetricInfoRequest.cc
 	src/model/BatchGetJobMetricInfoResult.cc
 	src/model/BatchGetPluginConfigInfoRequest.cc
-	src/model/BatchGetPluginConfigInfoResult.cc )
+	src/model/BatchGetPluginConfigInfoResult.cc
+	src/model/GetJobTopologyRequest.cc
+	src/model/GetJobTopologyResult.cc )
 
 add_library(teslastream ${LIB_TYPE}
 	${teslastream_public_header}

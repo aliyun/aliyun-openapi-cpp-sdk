@@ -36,17 +36,6 @@ void BindPhoneRequest::setPhoneNumber(const std::string& phoneNumber)
 	setCoreParameter("PhoneNumber", phoneNumber);
 }
 
-long BindPhoneRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void BindPhoneRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string BindPhoneRequest::getDeviceId()const
 {
 	return deviceId_;
@@ -67,5 +56,16 @@ void BindPhoneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long BindPhoneRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void BindPhoneRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 

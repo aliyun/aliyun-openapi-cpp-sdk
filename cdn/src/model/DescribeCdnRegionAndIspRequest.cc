@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::DescribeCdnRegionAndIspRequest;
 
 DescribeCdnRegionAndIspRequest::DescribeCdnRegionAndIspRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeCdnRegionAndIsp")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnRegionAndIsp")
 {}
 
 DescribeCdnRegionAndIspRequest::~DescribeCdnRegionAndIspRequest()
 {}
-
-std::string DescribeCdnRegionAndIspRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeCdnRegionAndIspRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 long DescribeCdnRegionAndIspRequest::getOwnerId()const
 {
@@ -45,5 +34,16 @@ void DescribeCdnRegionAndIspRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeCdnRegionAndIspRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeCdnRegionAndIspRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

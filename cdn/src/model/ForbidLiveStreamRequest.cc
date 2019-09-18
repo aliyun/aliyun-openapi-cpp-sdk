@@ -36,28 +36,6 @@ void ForbidLiveStreamRequest::setResumeTime(const std::string& resumeTime)
 	setCoreParameter("ResumeTime", resumeTime);
 }
 
-std::string ForbidLiveStreamRequest::getAppName()const
-{
-	return appName_;
-}
-
-void ForbidLiveStreamRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
-}
-
-std::string ForbidLiveStreamRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ForbidLiveStreamRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string ForbidLiveStreamRequest::getLiveStreamType()const
 {
 	return liveStreamType_;
@@ -89,6 +67,28 @@ void ForbidLiveStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ForbidLiveStreamRequest::getAppName()const
+{
+	return appName_;
+}
+
+void ForbidLiveStreamRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+std::string ForbidLiveStreamRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ForbidLiveStreamRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ForbidLiveStreamRequest::getStreamName()const

@@ -36,17 +36,6 @@ void DescribeUserOnlineClientsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeUserOnlineClientsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeUserOnlineClientsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeUserOnlineClientsRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void DescribeUserOnlineClientsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeUserOnlineClientsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeUserOnlineClientsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUserOnlineClientsRequest::getOwnerAccount()const
@@ -69,17 +69,6 @@ void DescribeUserOnlineClientsRequest::setOwnerAccount(const std::string& ownerA
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeUserOnlineClientsRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void DescribeUserOnlineClientsRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long DescribeUserOnlineClientsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,6 +78,17 @@ void DescribeUserOnlineClientsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeUserOnlineClientsRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void DescribeUserOnlineClientsRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 std::string DescribeUserOnlineClientsRequest::getUserName()const

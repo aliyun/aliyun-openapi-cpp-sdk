@@ -25,6 +25,17 @@ GetImageManifestRequest::GetImageManifestRequest() :
 GetImageManifestRequest::~GetImageManifestRequest()
 {}
 
+int GetImageManifestRequest::getSchemaVersion()const
+{
+	return schemaVersion_;
+}
+
+void GetImageManifestRequest::setSchemaVersion(int schemaVersion)
+{
+	schemaVersion_ = schemaVersion;
+	setCoreParameter("SchemaVersion", std::to_string(schemaVersion));
+}
+
 std::string GetImageManifestRequest::getRepoNamespace()const
 {
 	return repoNamespace_;
@@ -47,17 +58,6 @@ void GetImageManifestRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string GetImageManifestRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetImageManifestRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetImageManifestRequest::getTag()const
 {
 	return tag_;
@@ -67,16 +67,5 @@ void GetImageManifestRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
 	setCoreParameter("Tag", tag);
-}
-
-int GetImageManifestRequest::getSchemaVersion()const
-{
-	return schemaVersion_;
-}
-
-void GetImageManifestRequest::setSchemaVersion(int schemaVersion)
-{
-	schemaVersion_ = schemaVersion;
-	setCoreParameter("SchemaVersion", std::to_string(schemaVersion));
 }
 

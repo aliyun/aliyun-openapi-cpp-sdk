@@ -36,6 +36,17 @@ void CreateCooperationOrderRequest::setProductCode(const std::string& productCod
 	setCoreParameter("ProductCode", productCode);
 }
 
+std::string CreateCooperationOrderRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateCooperationOrderRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateCooperationOrderRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void CreateCooperationOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string CreateCooperationOrderRequest::getDomain()const
-{
-	return domain_;
-}
-
-void CreateCooperationOrderRequest::setDomain(const std::string& domain)
-{
-	domain_ = domain;
-	setCoreParameter("Domain", domain);
 }
 
 std::string CreateCooperationOrderRequest::getFrom()const
@@ -78,5 +78,16 @@ void CreateCooperationOrderRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+std::string CreateCooperationOrderRequest::getDomain()const
+{
+	return domain_;
+}
+
+void CreateCooperationOrderRequest::setDomain(const std::string& domain)
+{
+	domain_ = domain;
+	setCoreParameter("Domain", domain);
 }
 

@@ -36,17 +36,6 @@ void IndexVideoRequest::setGrabType(const std::string& grabType)
 	setCoreParameter("GrabType", grabType);
 }
 
-std::string IndexVideoRequest::getRemarksB()const
-{
-	return remarksB_;
-}
-
-void IndexVideoRequest::setRemarksB(const std::string& remarksB)
-{
-	remarksB_ = remarksB;
-	setCoreParameter("RemarksB", remarksB);
-}
-
 std::string IndexVideoRequest::getProject()const
 {
 	return project_;
@@ -56,28 +45,6 @@ void IndexVideoRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
-}
-
-std::string IndexVideoRequest::getRemarksA()const
-{
-	return remarksA_;
-}
-
-void IndexVideoRequest::setRemarksA(const std::string& remarksA)
-{
-	remarksA_ = remarksA;
-	setCoreParameter("RemarksA", remarksA);
-}
-
-std::string IndexVideoRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void IndexVideoRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
 }
 
 std::string IndexVideoRequest::getExternalId()const
@@ -113,6 +80,39 @@ void IndexVideoRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string IndexVideoRequest::getRemarksB()const
+{
+	return remarksB_;
+}
+
+void IndexVideoRequest::setRemarksB(const std::string& remarksB)
+{
+	remarksB_ = remarksB;
+	setCoreParameter("RemarksB", remarksB);
+}
+
+std::string IndexVideoRequest::getRemarksA()const
+{
+	return remarksA_;
+}
+
+void IndexVideoRequest::setRemarksA(const std::string& remarksA)
+{
+	remarksA_ = remarksA;
+	setCoreParameter("RemarksA", remarksA);
+}
+
+std::string IndexVideoRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void IndexVideoRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
 std::string IndexVideoRequest::getVideoUri()const
 {
 	return videoUri_;
@@ -133,17 +133,6 @@ void IndexVideoRequest::setSaveType(bool saveType)
 {
 	saveType_ = saveType;
 	setCoreParameter("SaveType", saveType ? "true" : "false");
-}
-
-std::string IndexVideoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void IndexVideoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string IndexVideoRequest::getRemarksD()const

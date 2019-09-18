@@ -37,45 +37,42 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				int getTargetInstanceId()const;
-				void setTargetInstanceId(int targetInstanceId);
 				std::string getRoleIds()const;
 				void setRoleIds(const std::string& roleIds);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getSwitchType()const;
-				void setSwitchType(int switchType);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				int getSourceInstanceId()const;
 				void setSourceInstanceId(int sourceInstanceId);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getTargetInstanceId()const;
+				void setTargetInstanceId(int targetInstanceId);
+				int getSwitchType()const;
+				void setSwitchType(int switchType);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
 				std::string accessKeyId_;
-				int targetInstanceId_;
 				std::string roleIds_;
 				std::string securityToken_;
-				std::string regionId_;
-				int switchType_;
 				std::string dBInstanceId_;
 				int sourceInstanceId_;
 				std::string nodeId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				int targetInstanceId_;
+				int switchType_;
 
 			};
 		}

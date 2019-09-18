@@ -25,6 +25,17 @@ DescribeCdnSubscriptionRequest::DescribeCdnSubscriptionRequest() :
 DescribeCdnSubscriptionRequest::~DescribeCdnSubscriptionRequest()
 {}
 
+std::string DescribeCdnSubscriptionRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeCdnSubscriptionRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -58,17 +69,6 @@ void DescribeCdnSubscriptionRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeCdnSubscriptionRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeCdnSubscriptionRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeCdnSubscriptionRequest::getLang()const
 {
 	return lang_;
@@ -80,6 +80,17 @@ void DescribeCdnSubscriptionRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
+int DescribeCdnSubscriptionRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeCdnSubscriptionRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
 std::string DescribeCdnSubscriptionRequest::getVendorName()const
 {
 	return vendorName_;
@@ -89,16 +100,5 @@ void DescribeCdnSubscriptionRequest::setVendorName(const std::string& vendorName
 {
 	vendorName_ = vendorName;
 	setCoreParameter("VendorName", vendorName);
-}
-
-std::string DescribeCdnSubscriptionRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

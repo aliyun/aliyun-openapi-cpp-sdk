@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DescribeKeywordLibRequest();
 				~DescribeKeywordLibRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getServiceModule()const;
 				void setServiceModule(const std::string& serviceModule);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				std::string serviceModule_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

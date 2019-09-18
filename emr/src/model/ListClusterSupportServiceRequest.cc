@@ -36,17 +36,6 @@ void ListClusterSupportServiceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListClusterSupportServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListClusterSupportServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ListClusterSupportServiceRequest::getClusterId()const
 {
 	return clusterId_;
@@ -67,5 +56,16 @@ void ListClusterSupportServiceRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListClusterSupportServiceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListClusterSupportServiceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -25,6 +25,28 @@ UpdateBizTypeSettingRequest::UpdateBizTypeSettingRequest() :
 UpdateBizTypeSettingRequest::~UpdateBizTypeSettingRequest()
 {}
 
+std::string UpdateBizTypeSettingRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void UpdateBizTypeSettingRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
+std::string UpdateBizTypeSettingRequest::getPorn()const
+{
+	return porn_;
+}
+
+void UpdateBizTypeSettingRequest::setPorn(const std::string& porn)
+{
+	porn_ = porn;
+	setCoreParameter("Porn", porn);
+}
+
 std::string UpdateBizTypeSettingRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,27 +78,5 @@ void UpdateBizTypeSettingRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
 	setCoreParameter("BizTypeName", bizTypeName);
-}
-
-std::string UpdateBizTypeSettingRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void UpdateBizTypeSettingRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
-}
-
-std::string UpdateBizTypeSettingRequest::getPorn()const
-{
-	return porn_;
-}
-
-void UpdateBizTypeSettingRequest::setPorn(const std::string& porn)
-{
-	porn_ = porn;
-	setCoreParameter("Porn", porn);
 }
 

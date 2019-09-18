@@ -36,6 +36,28 @@ void ReleaseNodePrivateNetworkAddressRequest::setResourceOwnerId(long resourceOw
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ReleaseNodePrivateNetworkAddressRequest::getNetworkType()const
+{
+	return networkType_;
+}
+
+void ReleaseNodePrivateNetworkAddressRequest::setNetworkType(const std::string& networkType)
+{
+	networkType_ = networkType;
+	setCoreParameter("NetworkType", networkType);
+}
+
+std::string ReleaseNodePrivateNetworkAddressRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReleaseNodePrivateNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ReleaseNodePrivateNetworkAddressRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +67,6 @@ void ReleaseNodePrivateNetworkAddressRequest::setSecurityToken(const std::string
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ReleaseNodePrivateNetworkAddressRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ReleaseNodePrivateNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ReleaseNodePrivateNetworkAddressRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ReleaseNodePrivateNetworkAddressRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ReleaseNodePrivateNetworkAddressRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ReleaseNodePrivateNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReleaseNodePrivateNetworkAddressRequest::getDBInstanceId()const
@@ -91,28 +80,6 @@ void ReleaseNodePrivateNetworkAddressRequest::setDBInstanceId(const std::string&
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string ReleaseNodePrivateNetworkAddressRequest::getNetworkType()const
-{
-	return networkType_;
-}
-
-void ReleaseNodePrivateNetworkAddressRequest::setNetworkType(const std::string& networkType)
-{
-	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
-}
-
-long ReleaseNodePrivateNetworkAddressRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ReleaseNodePrivateNetworkAddressRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string ReleaseNodePrivateNetworkAddressRequest::getNodeId()const
 {
 	return nodeId_;
@@ -124,14 +91,36 @@ void ReleaseNodePrivateNetworkAddressRequest::setNodeId(const std::string& nodeI
 	setCoreParameter("NodeId", nodeId);
 }
 
-std::string ReleaseNodePrivateNetworkAddressRequest::getAccessKeyId()const
+std::string ReleaseNodePrivateNetworkAddressRequest::getResourceOwnerAccount()const
 {
-	return accessKeyId_;
+	return resourceOwnerAccount_;
 }
 
-void ReleaseNodePrivateNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
+void ReleaseNodePrivateNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ReleaseNodePrivateNetworkAddressRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ReleaseNodePrivateNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long ReleaseNodePrivateNetworkAddressRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ReleaseNodePrivateNetworkAddressRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

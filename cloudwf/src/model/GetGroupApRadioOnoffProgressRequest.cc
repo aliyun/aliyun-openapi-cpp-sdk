@@ -25,17 +25,6 @@ GetGroupApRadioOnoffProgressRequest::GetGroupApRadioOnoffProgressRequest() :
 GetGroupApRadioOnoffProgressRequest::~GetGroupApRadioOnoffProgressRequest()
 {}
 
-long GetGroupApRadioOnoffProgressRequest::getId()const
-{
-	return id_;
-}
-
-void GetGroupApRadioOnoffProgressRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetGroupApRadioOnoffProgressRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetGroupApRadioOnoffProgressRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetGroupApRadioOnoffProgressRequest::getId()const
+{
+	return id_;
+}
+
+void GetGroupApRadioOnoffProgressRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

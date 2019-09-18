@@ -53,8 +53,6 @@ namespace AlibabaCloud
 				void setLocationBoundary(const std::string& locationBoundary);
 				std::string getImageTimeRange()const;
 				void setImageTimeRange(const std::string& imageTimeRange);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOCRContentsMatch()const;
 				void setOCRContentsMatch(const std::string& oCRContentsMatch);
 				int getLimit()const;
@@ -102,7 +100,6 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string locationBoundary_;
 				std::string imageTimeRange_;
-				std::string regionId_;
 				std::string oCRContentsMatch_;
 				int limit_;
 				std::string remarksDPrefix_;

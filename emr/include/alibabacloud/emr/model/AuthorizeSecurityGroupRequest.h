@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				AuthorizeSecurityGroupRequest();
 				~AuthorizeSecurityGroupRequest();
 
-				std::string getBizType()const;
-				void setBizType(const std::string& bizType);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getBizContent()const;
-				void setBizContent(const std::string& bizContent);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getBizType()const;
+				void setBizType(const std::string& bizType);
+				std::string getBizContent()const;
+				void setBizContent(const std::string& bizContent);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
-				std::string bizType_;
 				long resourceOwnerId_;
-				std::string bizContent_;
-				std::string regionId_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string bizType_;
+				std::string bizContent_;
+				std::string regionId_;
 
 			};
 		}

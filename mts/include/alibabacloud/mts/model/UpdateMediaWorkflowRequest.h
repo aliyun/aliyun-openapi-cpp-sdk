@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getMediaWorkflowId()const;
+				void setMediaWorkflowId(const std::string& mediaWorkflowId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getTopology()const;
 				void setTopology(const std::string& topology);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getMediaWorkflowId()const;
-				void setMediaWorkflowId(const std::string& mediaWorkflowId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string mediaWorkflowId_;
 				std::string resourceOwnerAccount_;
 				std::string topology_;
 				std::string ownerAccount_;
-				std::string mediaWorkflowId_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

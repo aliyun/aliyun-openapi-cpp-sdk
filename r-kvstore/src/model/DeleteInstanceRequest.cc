@@ -36,28 +36,6 @@ void DeleteInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DeleteInstanceRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteInstanceRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DeleteInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -100,5 +78,27 @@ void DeleteInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string DeleteInstanceRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteInstanceRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -25,28 +25,6 @@ OnsWarnCreateRequest::OnsWarnCreateRequest() :
 OnsWarnCreateRequest::~OnsWarnCreateRequest()
 {}
 
-std::string OnsWarnCreateRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsWarnCreateRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string OnsWarnCreateRequest::getBlockTime()const
-{
-	return blockTime_;
-}
-
-void OnsWarnCreateRequest::setBlockTime(const std::string& blockTime)
-{
-	blockTime_ = blockTime;
-	setCoreParameter("BlockTime", blockTime);
-}
-
 std::string OnsWarnCreateRequest::getLevel()const
 {
 	return level_;
@@ -80,17 +58,6 @@ void OnsWarnCreateRequest::setDelayTime(const std::string& delayTime)
 	setCoreParameter("DelayTime", delayTime);
 }
 
-std::string OnsWarnCreateRequest::getTopic()const
-{
-	return topic_;
-}
-
-void OnsWarnCreateRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setCoreParameter("Topic", topic);
-}
-
 std::string OnsWarnCreateRequest::getThreshold()const
 {
 	return threshold_;
@@ -111,6 +78,39 @@ void OnsWarnCreateRequest::setAlertTime(const std::string& alertTime)
 {
 	alertTime_ = alertTime;
 	setCoreParameter("AlertTime", alertTime);
+}
+
+std::string OnsWarnCreateRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsWarnCreateRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string OnsWarnCreateRequest::getBlockTime()const
+{
+	return blockTime_;
+}
+
+void OnsWarnCreateRequest::setBlockTime(const std::string& blockTime)
+{
+	blockTime_ = blockTime;
+	setCoreParameter("BlockTime", blockTime);
+}
+
+std::string OnsWarnCreateRequest::getTopic()const
+{
+	return topic_;
+}
+
+void OnsWarnCreateRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsWarnCreateRequest::getContacts()const

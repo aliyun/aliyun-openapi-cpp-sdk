@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::DescribeIpInfoRequest;
 
 DescribeIpInfoRequest::DescribeIpInfoRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeIpInfo")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeIpInfo")
 {}
 
 DescribeIpInfoRequest::~DescribeIpInfoRequest()
 {}
-
-std::string DescribeIpInfoRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeIpInfoRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string DescribeIpInfoRequest::getIP()const
 {
@@ -56,5 +45,16 @@ void DescribeIpInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeIpInfoRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeIpInfoRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

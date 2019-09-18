@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				ModifyDrdsIpWhiteListRequest();
 				~ModifyDrdsIpWhiteListRequest();
 
+				std::string getDrdsInstanceId()const;
+				void setDrdsInstanceId(const std::string& drdsInstanceId);
+				std::string getGroupName()const;
+				void setGroupName(const std::string& groupName);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				bool getMode()const;
 				void setMode(bool mode);
 				std::string getDbName()const;
@@ -43,21 +49,15 @@ namespace AlibabaCloud
 				void setGroupAttribute(const std::string& groupAttribute);
 				std::string getIpWhiteList()const;
 				void setIpWhiteList(const std::string& ipWhiteList);
-				std::string getDrdsInstanceId()const;
-				void setDrdsInstanceId(const std::string& drdsInstanceId);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string drdsInstanceId_;
+				std::string groupName_;
+				std::string accessKeyId_;
 				bool mode_;
 				std::string dbName_;
 				std::string groupAttribute_;
 				std::string ipWhiteList_;
-				std::string drdsInstanceId_;
-				std::string groupName_;
-				std::string accessKeyId_;
 
 			};
 		}

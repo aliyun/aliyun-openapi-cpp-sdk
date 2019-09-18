@@ -25,17 +25,6 @@ RecognizeImageColorRequest::RecognizeImageColorRequest() :
 RecognizeImageColorRequest::~RecognizeImageColorRequest()
 {}
 
-std::string RecognizeImageColorRequest::getColorCount()const
-{
-	return colorCount_;
-}
-
-void RecognizeImageColorRequest::setColorCount(const std::string& colorCount)
-{
-	colorCount_ = colorCount;
-	setCoreParameter("ColorCount", colorCount);
-}
-
 std::string RecognizeImageColorRequest::getUrl()const
 {
 	return url_;
@@ -45,5 +34,16 @@ void RecognizeImageColorRequest::setUrl(const std::string& url)
 {
 	url_ = url;
 	setCoreParameter("Url", url);
+}
+
+std::string RecognizeImageColorRequest::getColorCount()const
+{
+	return colorCount_;
+}
+
+void RecognizeImageColorRequest::setColorCount(const std::string& colorCount)
+{
+	colorCount_ = colorCount;
+	setCoreParameter("ColorCount", colorCount);
 }
 

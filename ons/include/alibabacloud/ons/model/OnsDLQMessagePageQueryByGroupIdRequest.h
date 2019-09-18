@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				OnsDLQMessagePageQueryByGroupIdRequest();
 				~OnsDLQMessagePageQueryByGroupIdRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getBeginTime()const;
 				void setBeginTime(long beginTime);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
 
             private:
-				std::string instanceId_;
 				std::string groupId_;
-				int pageSize_;
 				long endTime_;
 				long beginTime_;
 				int currentPage_;
+				std::string instanceId_;
+				int pageSize_;
 				std::string taskId_;
 
 			};

@@ -25,17 +25,6 @@ OemHeatMapRequest::OemHeatMapRequest() :
 OemHeatMapRequest::~OemHeatMapRequest()
 {}
 
-long OemHeatMapRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void OemHeatMapRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string OemHeatMapRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void OemHeatMapRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long OemHeatMapRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void OemHeatMapRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

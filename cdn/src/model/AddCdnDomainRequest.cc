@@ -19,21 +19,21 @@
 using AlibabaCloud::Cdn::Model::AddCdnDomainRequest;
 
 AddCdnDomainRequest::AddCdnDomainRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "AddCdnDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "AddCdnDomain")
 {}
 
 AddCdnDomainRequest::~AddCdnDomainRequest()
 {}
 
-std::string AddCdnDomainRequest::getTopLevelDomain()const
+std::string AddCdnDomainRequest::getSources()const
 {
-	return topLevelDomain_;
+	return sources_;
 }
 
-void AddCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+void AddCdnDomainRequest::setSources(const std::string& sources)
 {
-	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	sources_ = sources;
+	setCoreParameter("Sources", sources);
 }
 
 std::string AddCdnDomainRequest::getResourceGroupId()const
@@ -47,15 +47,26 @@ void AddCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string AddCdnDomainRequest::getSources()const
+int AddCdnDomainRequest::getSourcePort()const
 {
-	return sources_;
+	return sourcePort_;
 }
 
-void AddCdnDomainRequest::setSources(const std::string& sources)
+void AddCdnDomainRequest::setSourcePort(int sourcePort)
 {
-	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	sourcePort_ = sourcePort;
+	setCoreParameter("SourcePort", std::to_string(sourcePort));
+}
+
+std::string AddCdnDomainRequest::getPriorities()const
+{
+	return priorities_;
+}
+
+void AddCdnDomainRequest::setPriorities(const std::string& priorities)
+{
+	priorities_ = priorities;
+	setCoreParameter("Priorities", priorities);
 }
 
 std::string AddCdnDomainRequest::getSecurityToken()const
@@ -80,17 +91,6 @@ void AddCdnDomainRequest::setCdnType(const std::string& cdnType)
 	setCoreParameter("CdnType", cdnType);
 }
 
-std::string AddCdnDomainRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void AddCdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string AddCdnDomainRequest::getScope()const
 {
 	return scope_;
@@ -100,6 +100,39 @@ void AddCdnDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
 	setCoreParameter("Scope", scope);
+}
+
+std::string AddCdnDomainRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void AddCdnDomainRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setCoreParameter("SourceType", sourceType);
+}
+
+std::string AddCdnDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void AddCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setCoreParameter("TopLevelDomain", topLevelDomain);
+}
+
+std::string AddCdnDomainRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void AddCdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddCdnDomainRequest::getDomainName()const
@@ -133,5 +166,16 @@ void AddCdnDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
 	setCoreParameter("CheckUrl", checkUrl);
+}
+
+std::string AddCdnDomainRequest::getRegion()const
+{
+	return region_;
+}
+
+void AddCdnDomainRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setCoreParameter("Region", region);
 }
 

@@ -36,35 +36,6 @@ void ResizeClusterWithHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ResizeClusterWithHostPoolRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ResizeClusterWithHostPoolRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::vector<ResizeClusterWithHostPoolRequest::HostGroup> ResizeClusterWithHostPoolRequest::getHostGroup()const
-{
-	return hostGroup_;
-}
-
-void ResizeClusterWithHostPoolRequest::setHostGroup(const std::vector<HostGroup>& hostGroup)
-{
-	hostGroup_ = hostGroup;
-	int i = 0;
-	for(int i = 0; i!= hostGroup.size(); i++)	{
-		auto obj = hostGroup.at(i);
-		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".GroupType", obj.groupType);
-		setCoreParameter(str + ".GroupId", obj.groupId);
-		setCoreParameter(str + ".GroupName", obj.groupName);
-	}
-}
-
 std::vector<ResizeClusterWithHostPoolRequest::HostInfo> ResizeClusterWithHostPoolRequest::getHostInfo()const
 {
 	return hostInfo_;
@@ -108,5 +79,34 @@ void ResizeClusterWithHostPoolRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ResizeClusterWithHostPoolRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ResizeClusterWithHostPoolRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::vector<ResizeClusterWithHostPoolRequest::HostGroup> ResizeClusterWithHostPoolRequest::getHostGroup()const
+{
+	return hostGroup_;
+}
+
+void ResizeClusterWithHostPoolRequest::setHostGroup(const std::vector<HostGroup>& hostGroup)
+{
+	hostGroup_ = hostGroup;
+	int i = 0;
+	for(int i = 0; i!= hostGroup.size(); i++)	{
+		auto obj = hostGroup.at(i);
+		std::string str ="HostGroup."+ std::to_string(i);
+		setCoreParameter(str + ".GroupType", obj.groupType);
+		setCoreParameter(str + ".GroupId", obj.groupId);
+		setCoreParameter(str + ".GroupName", obj.groupName);
+	}
 }
 

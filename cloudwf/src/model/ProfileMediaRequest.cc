@@ -36,6 +36,17 @@ void ProfileMediaRequest::setBeginDate(const std::string& beginDate)
 	setCoreParameter("BeginDate", beginDate);
 }
 
+std::string ProfileMediaRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ProfileMediaRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ProfileMediaRequest::getEndDate()const
 {
 	return endDate_;
@@ -67,16 +78,5 @@ void ProfileMediaRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
 	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
-std::string ProfileMediaRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ProfileMediaRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

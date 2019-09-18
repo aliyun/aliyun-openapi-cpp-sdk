@@ -25,17 +25,6 @@ DeleteProjectRequest::DeleteProjectRequest() :
 DeleteProjectRequest::~DeleteProjectRequest()
 {}
 
-std::string DeleteProjectRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteProjectRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long DeleteProjectRequest::getCsbId()const
 {
 	return csbId_;

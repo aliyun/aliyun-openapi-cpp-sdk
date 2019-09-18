@@ -37,26 +37,26 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getLine()const;
+				void setLine(int line);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getHostName()const;
+				void setHostName(const std::string& hostName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getLogstoreName()const;
 				void setLogstoreName(const std::string& logstoreName);
 				int getFromTimestamp()const;
 				void setFromTimestamp(int fromTimestamp);
 				int getOffset()const;
 				void setOffset(int offset);
-				int getLine()const;
-				void setLine(int line);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				bool getReverse()const;
 				void setReverse(bool reverse);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getHostInnerIp()const;
 				void setHostInnerIp(const std::string& hostInnerIp);
-				std::string getHostName()const;
-				void setHostName(const std::string& hostName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				int getToTimestamp()const;
 				void setToTimestamp(int toTimestamp);
 				std::string getSlsQueryString()const;
@@ -64,16 +64,16 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				int line_;
+				std::string accessKeyId_;
+				std::string hostName_;
+				std::string regionId_;
 				std::string logstoreName_;
 				int fromTimestamp_;
 				int offset_;
-				int line_;
 				std::string clusterId_;
 				bool reverse_;
-				std::string accessKeyId_;
 				std::string hostInnerIp_;
-				std::string hostName_;
-				std::string regionId_;
 				int toTimestamp_;
 				std::string slsQueryString_;
 

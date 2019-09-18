@@ -69,28 +69,6 @@ void ListApUpgradeRequest::setLength(int length)
 	setCoreParameter("Length", std::to_string(length));
 }
 
-std::string ListApUpgradeRequest::getSearchMac()const
-{
-	return searchMac_;
-}
-
-void ListApUpgradeRequest::setSearchMac(const std::string& searchMac)
-{
-	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
-}
-
-int ListApUpgradeRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListApUpgradeRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
 std::string ListApUpgradeRequest::getOrderDir()const
 {
 	return orderDir_;
@@ -111,5 +89,27 @@ void ListApUpgradeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListApUpgradeRequest::getSearchMac()const
+{
+	return searchMac_;
+}
+
+void ListApUpgradeRequest::setSearchMac(const std::string& searchMac)
+{
+	searchMac_ = searchMac;
+	setCoreParameter("SearchMac", searchMac);
+}
+
+int ListApUpgradeRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListApUpgradeRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

@@ -25,17 +25,6 @@ ShopUpdateRequest::ShopUpdateRequest() :
 ShopUpdateRequest::~ShopUpdateRequest()
 {}
 
-std::string ShopUpdateRequest::getShopCoordinate()const
-{
-	return shopCoordinate_;
-}
-
-void ShopUpdateRequest::setShopCoordinate(const std::string& shopCoordinate)
-{
-	shopCoordinate_ = shopCoordinate;
-	setCoreParameter("ShopCoordinate", shopCoordinate);
-}
-
 std::string ShopUpdateRequest::getShopProvince()const
 {
 	return shopProvince_;
@@ -56,17 +45,6 @@ void ShopUpdateRequest::setShopTopType(int shopTopType)
 {
 	shopTopType_ = shopTopType;
 	setCoreParameter("ShopTopType", std::to_string(shopTopType));
-}
-
-std::string ShopUpdateRequest::getShopAddress()const
-{
-	return shopAddress_;
-}
-
-void ShopUpdateRequest::setShopAddress(const std::string& shopAddress)
-{
-	shopAddress_ = shopAddress;
-	setCoreParameter("ShopAddress", shopAddress);
 }
 
 int ShopUpdateRequest::getShopType()const
@@ -135,6 +113,72 @@ void ShopUpdateRequest::setWarnpHone(const std::string& warnpHone)
 	setCoreParameter("WarnpHone", warnpHone);
 }
 
+std::string ShopUpdateRequest::getShopCity()const
+{
+	return shopCity_;
+}
+
+void ShopUpdateRequest::setShopCity(const std::string& shopCity)
+{
+	shopCity_ = shopCity;
+	setCoreParameter("ShopCity", shopCity);
+}
+
+std::string ShopUpdateRequest::getShopBrand()const
+{
+	return shopBrand_;
+}
+
+void ShopUpdateRequest::setShopBrand(const std::string& shopBrand)
+{
+	shopBrand_ = shopBrand;
+	setCoreParameter("ShopBrand", shopBrand);
+}
+
+int ShopUpdateRequest::getShopCloseWarn()const
+{
+	return shopCloseWarn_;
+}
+
+void ShopUpdateRequest::setShopCloseWarn(int shopCloseWarn)
+{
+	shopCloseWarn_ = shopCloseWarn;
+	setCoreParameter("ShopCloseWarn", std::to_string(shopCloseWarn));
+}
+
+std::string ShopUpdateRequest::getShopBusinessHours()const
+{
+	return shopBusinessHours_;
+}
+
+void ShopUpdateRequest::setShopBusinessHours(const std::string& shopBusinessHours)
+{
+	shopBusinessHours_ = shopBusinessHours;
+	setCoreParameter("ShopBusinessHours", shopBusinessHours);
+}
+
+std::string ShopUpdateRequest::getShopCoordinate()const
+{
+	return shopCoordinate_;
+}
+
+void ShopUpdateRequest::setShopCoordinate(const std::string& shopCoordinate)
+{
+	shopCoordinate_ = shopCoordinate;
+	setCoreParameter("ShopCoordinate", shopCoordinate);
+}
+
+std::string ShopUpdateRequest::getShopAddress()const
+{
+	return shopAddress_;
+}
+
+void ShopUpdateRequest::setShopAddress(const std::string& shopAddress)
+{
+	shopAddress_ = shopAddress;
+	setCoreParameter("ShopAddress", shopAddress);
+}
+
 int ShopUpdateRequest::getWarn()const
 {
 	return warn_;
@@ -168,17 +212,6 @@ void ShopUpdateRequest::setShopRemarks(const std::string& shopRemarks)
 	setCoreParameter("ShopRemarks", shopRemarks);
 }
 
-std::string ShopUpdateRequest::getShopCity()const
-{
-	return shopCity_;
-}
-
-void ShopUpdateRequest::setShopCity(const std::string& shopCity)
-{
-	shopCity_ = shopCity;
-	setCoreParameter("ShopCity", shopCity);
-}
-
 int ShopUpdateRequest::getShopSubtype()const
 {
 	return shopSubtype_;
@@ -188,17 +221,6 @@ void ShopUpdateRequest::setShopSubtype(int shopSubtype)
 {
 	shopSubtype_ = shopSubtype;
 	setCoreParameter("ShopSubtype", std::to_string(shopSubtype));
-}
-
-std::string ShopUpdateRequest::getShopBrand()const
-{
-	return shopBrand_;
-}
-
-void ShopUpdateRequest::setShopBrand(const std::string& shopBrand)
-{
-	shopBrand_ = shopBrand;
-	setCoreParameter("ShopBrand", shopBrand);
 }
 
 std::string ShopUpdateRequest::getShopName()const
@@ -212,17 +234,6 @@ void ShopUpdateRequest::setShopName(const std::string& shopName)
 	setCoreParameter("ShopName", shopName);
 }
 
-int ShopUpdateRequest::getShopCloseWarn()const
-{
-	return shopCloseWarn_;
-}
-
-void ShopUpdateRequest::setShopCloseWarn(int shopCloseWarn)
-{
-	shopCloseWarn_ = shopCloseWarn;
-	setCoreParameter("ShopCloseWarn", std::to_string(shopCloseWarn));
-}
-
 std::string ShopUpdateRequest::getShopManager()const
 {
 	return shopManager_;
@@ -232,16 +243,5 @@ void ShopUpdateRequest::setShopManager(const std::string& shopManager)
 {
 	shopManager_ = shopManager;
 	setCoreParameter("ShopManager", shopManager);
-}
-
-std::string ShopUpdateRequest::getShopBusinessHours()const
-{
-	return shopBusinessHours_;
-}
-
-void ShopUpdateRequest::setShopBusinessHours(const std::string& shopBusinessHours)
-{
-	shopBusinessHours_ = shopBusinessHours;
-	setCoreParameter("ShopBusinessHours", shopBusinessHours);
 }
 

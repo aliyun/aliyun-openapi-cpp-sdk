@@ -35,23 +35,26 @@ namespace AlibabaCloud
 				CreateCertificateRequest();
 				~CreateCertificateRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getCert()const;
 				void setCert(const std::string& cert);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKey()const;
 				void setKey(const std::string& key);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string sourceIp_;
-				std::string name_;
 				std::string cert_;
+				std::string resourceGroupId_;
+				std::string sourceIp_;
 				std::string lang_;
 				std::string key_;
+				std::string name_;
 
 			};
 		}

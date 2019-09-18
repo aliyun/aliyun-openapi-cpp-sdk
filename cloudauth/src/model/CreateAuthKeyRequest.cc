@@ -25,17 +25,6 @@ CreateAuthKeyRequest::CreateAuthKeyRequest() :
 CreateAuthKeyRequest::~CreateAuthKeyRequest()
 {}
 
-std::string CreateAuthKeyRequest::getBizType()const
-{
-	return bizType_;
-}
-
-void CreateAuthKeyRequest::setBizType(const std::string& bizType)
-{
-	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
-}
-
 std::string CreateAuthKeyRequest::getUserDeviceId()const
 {
 	return userDeviceId_;
@@ -47,17 +36,6 @@ void CreateAuthKeyRequest::setUserDeviceId(const std::string& userDeviceId)
 	setCoreParameter("UserDeviceId", userDeviceId);
 }
 
-std::string CreateAuthKeyRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateAuthKeyRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 bool CreateAuthKeyRequest::getTest()const
 {
 	return test_;
@@ -67,6 +45,28 @@ void CreateAuthKeyRequest::setTest(bool test)
 {
 	test_ = test;
 	setCoreParameter("Test", test ? "true" : "false");
+}
+
+std::string CreateAuthKeyRequest::getBizType()const
+{
+	return bizType_;
+}
+
+void CreateAuthKeyRequest::setBizType(const std::string& bizType)
+{
+	bizType_ = bizType;
+	setCoreParameter("BizType", bizType);
+}
+
+std::string CreateAuthKeyRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateAuthKeyRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int CreateAuthKeyRequest::getAuthYears()const

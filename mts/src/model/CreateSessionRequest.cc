@@ -36,6 +36,17 @@ void CreateSessionRequest::setResourceOwnerId(const std::string& resourceOwnerId
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
+std::string CreateSessionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateSessionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int CreateSessionRequest::getSessionTime()const
 {
 	return sessionTime_;
@@ -45,6 +56,17 @@ void CreateSessionRequest::setSessionTime(int sessionTime)
 {
 	sessionTime_ = sessionTime;
 	setCoreParameter("SessionTime", std::to_string(sessionTime));
+}
+
+std::string CreateSessionRequest::getEndUserId()const
+{
+	return endUserId_;
+}
+
+void CreateSessionRequest::setEndUserId(const std::string& endUserId)
+{
+	endUserId_ = endUserId;
+	setCoreParameter("EndUserId", endUserId);
 }
 
 std::string CreateSessionRequest::getResourceOwnerAccount()const
@@ -69,17 +91,6 @@ void CreateSessionRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateSessionRequest::getEndUserId()const
-{
-	return endUserId_;
-}
-
-void CreateSessionRequest::setEndUserId(const std::string& endUserId)
-{
-	endUserId_ = endUserId;
-	setCoreParameter("EndUserId", endUserId);
-}
-
 std::string CreateSessionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void CreateSessionRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
 	setCoreParameter("MediaId", mediaId);
-}
-
-std::string CreateSessionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateSessionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

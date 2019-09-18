@@ -25,28 +25,6 @@ DescribeDomainSlowRatioRequest::DescribeDomainSlowRatioRequest() :
 DescribeDomainSlowRatioRequest::~DescribeDomainSlowRatioRequest()
 {}
 
-long DescribeDomainSlowRatioRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeDomainSlowRatioRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeDomainSlowRatioRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeDomainSlowRatioRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
 std::string DescribeDomainSlowRatioRequest::getStartTime()const
 {
 	return startTime_;
@@ -56,39 +34,6 @@ void DescribeDomainSlowRatioRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-std::string DescribeDomainSlowRatioRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeDomainSlowRatioRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeDomainSlowRatioRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeDomainSlowRatioRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeDomainSlowRatioRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeDomainSlowRatioRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
 }
 
 int DescribeDomainSlowRatioRequest::getPageNumber()const
@@ -102,39 +47,6 @@ void DescribeDomainSlowRatioRequest::setPageNumber(int pageNumber)
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeDomainSlowRatioRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainSlowRatioRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeDomainSlowRatioRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainSlowRatioRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeDomainSlowRatioRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeDomainSlowRatioRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
 int DescribeDomainSlowRatioRequest::getPageSize()const
 {
 	return pageSize_;
@@ -144,61 +56,6 @@ void DescribeDomainSlowRatioRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeDomainSlowRatioRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeDomainSlowRatioRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string DescribeDomainSlowRatioRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeDomainSlowRatioRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeDomainSlowRatioRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeDomainSlowRatioRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string DescribeDomainSlowRatioRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeDomainSlowRatioRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string DescribeDomainSlowRatioRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DescribeDomainSlowRatioRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainSlowRatioRequest::getDomainName()const
@@ -223,17 +80,6 @@ void DescribeDomainSlowRatioRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeDomainSlowRatioRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeDomainSlowRatioRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long DescribeDomainSlowRatioRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -243,60 +89,5 @@ void DescribeDomainSlowRatioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDomainSlowRatioRequest::getVersion()const
-{
-	return version_;
-}
-
-void DescribeDomainSlowRatioRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool DescribeDomainSlowRatioRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeDomainSlowRatioRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool DescribeDomainSlowRatioRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeDomainSlowRatioRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool DescribeDomainSlowRatioRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeDomainSlowRatioRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string DescribeDomainSlowRatioRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeDomainSlowRatioRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 

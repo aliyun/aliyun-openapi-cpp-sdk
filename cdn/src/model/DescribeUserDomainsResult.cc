@@ -35,13 +35,9 @@ DescribeUserDomainsResult::~DescribeUserDomainsResult()
 
 void DescribeUserDomainsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allDomains = value["Domains"]["PageData"];
 	for (auto value : allDomains)
@@ -61,6 +57,8 @@ void DescribeUserDomainsResult::parse(const std::string &payload)
 			domainsObject.gmtModified = value["GmtModified"].asString();
 		if(!value["Description"].isNull())
 			domainsObject.description = value["Description"].asString();
+		if(!value["SourceType"].isNull())
+			domainsObject.sourceType = value["SourceType"].asString();
 		if(!value["SslProtocol"].isNull())
 			domainsObject.sslProtocol = value["SslProtocol"].asString();
 		if(!value["ResourceGroupId"].isNull())
@@ -69,20 +67,7 @@ void DescribeUserDomainsResult::parse(const std::string &payload)
 			domainsObject.sandbox = value["Sandbox"].asString();
 		auto allSources = value["Sources"]["Source"];
 		for (auto value : allSources)
-		{
-			PageData::Source sourcesObject;
-			if(!value["Type"].isNull())
-				sourcesObject.type = value["Type"].asString();
-			if(!value["Content"].isNull())
-				sourcesObject.content = value["Content"].asString();
-			if(!value["Port"].isNull())
-				sourcesObject.port = std::stoi(value["Port"].asString());
-			if(!value["Priority"].isNull())
-				sourcesObject.priority = value["Priority"].asString();
-			if(!value["Weight"].isNull())
-				sourcesObject.weight = value["Weight"].asString();
-			domainsObject.sources.push_back(sourcesObject);
-		}
+			domainsObject.sources.push_back(value.asString());
 		domains_.push_back(domainsObject);
 	}
 	if(!value["PageNumber"].isNull())

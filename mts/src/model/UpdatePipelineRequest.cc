@@ -47,6 +47,28 @@ void UpdatePipelineRequest::setRole(const std::string& role)
 	setCoreParameter("Role", role);
 }
 
+std::string UpdatePipelineRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdatePipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdatePipelineRequest::getState()const
+{
+	return state_;
+}
+
+void UpdatePipelineRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
 std::string UpdatePipelineRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,28 +89,6 @@ void UpdatePipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string UpdatePipelineRequest::getName()const
-{
-	return name_;
-}
-
-void UpdatePipelineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string UpdatePipelineRequest::getState()const
-{
-	return state_;
-}
-
-void UpdatePipelineRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
 }
 
 std::string UpdatePipelineRequest::getNotifyConfig()const
@@ -113,17 +113,6 @@ void UpdatePipelineRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UpdatePipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdatePipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string UpdatePipelineRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,5 +122,16 @@ void UpdatePipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string UpdatePipelineRequest::getName()const
+{
+	return name_;
+}
+
+void UpdatePipelineRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

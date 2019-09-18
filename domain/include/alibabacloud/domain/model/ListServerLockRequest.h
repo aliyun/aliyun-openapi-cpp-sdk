@@ -37,39 +37,39 @@ namespace AlibabaCloud
 
 				std::string getLockProductId()const;
 				void setLockProductId(const std::string& lockProductId);
-				long getEndStartDate()const;
-				void setEndStartDate(long endStartDate);
-				int getServerLockStatus()const;
-				void setServerLockStatus(int serverLockStatus);
-				long getStartExpireDate()const;
-				void setStartExpireDate(long startExpireDate);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				long getEndExpireDate()const;
 				void setEndExpireDate(long endExpireDate);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				long getBeginStartDate()const;
 				void setBeginStartDate(long beginStartDate);
+				int getServerLockStatus()const;
+				void setServerLockStatus(int serverLockStatus);
+				long getStartExpireDate()const;
+				void setStartExpireDate(long startExpireDate);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getEndStartDate()const;
+				void setEndStartDate(long endStartDate);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 
             private:
 				std::string lockProductId_;
-				long endStartDate_;
-				int serverLockStatus_;
-				long startExpireDate_;
-				std::string domainName_;
-				int pageSize_;
-				std::string userClientIp_;
 				long endExpireDate_;
 				int pageNum_;
-				std::string lang_;
 				long beginStartDate_;
+				int serverLockStatus_;
+				long startExpireDate_;
+				int pageSize_;
+				std::string lang_;
+				std::string domainName_;
+				long endStartDate_;
+				std::string userClientIp_;
 
 			};
 		}

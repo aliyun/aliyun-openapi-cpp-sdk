@@ -36,17 +36,6 @@ void ModifyFlowLogAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyFlowLogAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyFlowLogAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyFlowLogAttributeRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,17 +45,6 @@ void ModifyFlowLogAttributeRequest::setClientToken(const std::string& clientToke
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string ModifyFlowLogAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyFlowLogAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyFlowLogAttributeRequest::getCenId()const
@@ -80,17 +58,6 @@ void ModifyFlowLogAttributeRequest::setCenId(const std::string& cenId)
 	setCoreParameter("CenId", cenId);
 }
 
-std::string ModifyFlowLogAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyFlowLogAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string ModifyFlowLogAttributeRequest::getDescription()const
 {
 	return description_;
@@ -100,6 +67,39 @@ void ModifyFlowLogAttributeRequest::setDescription(const std::string& descriptio
 {
 	description_ = description;
 	setCoreParameter("Description", description);
+}
+
+std::string ModifyFlowLogAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyFlowLogAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyFlowLogAttributeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyFlowLogAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyFlowLogAttributeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyFlowLogAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyFlowLogAttributeRequest::getOwnerId()const

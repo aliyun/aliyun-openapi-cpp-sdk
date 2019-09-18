@@ -37,6 +37,14 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getInternalIp()const;
+				void setInternalIp(const std::string& internalIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getExternalIp()const;
+				void setExternalIp(const std::string& externalIp);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getIpProtocol()const;
@@ -45,33 +53,25 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getType()const;
-				void setType(const std::string& type);
-				std::string getInternalIp()const;
-				void setInternalIp(const std::string& internalIp);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getSagId()const;
 				void setSagId(const std::string& sagId);
 				std::string getInternalPort()const;
 				void setInternalPort(const std::string& internalPort);
-				std::string getExternalIp()const;
-				void setExternalIp(const std::string& externalIp);
 				std::string getExternalPort()const;
 				void setExternalPort(const std::string& externalPort);
 
             private:
 				long resourceOwnerId_;
+				std::string type_;
+				std::string internalIp_;
+				std::string regionId_;
+				std::string externalIp_;
 				std::string resourceOwnerAccount_;
 				std::string ipProtocol_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string type_;
-				std::string internalIp_;
-				std::string regionId_;
 				std::string sagId_;
 				std::string internalPort_;
-				std::string externalIp_;
 				std::string externalPort_;
 
 			};

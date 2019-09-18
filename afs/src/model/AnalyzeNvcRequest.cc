@@ -25,17 +25,6 @@ AnalyzeNvcRequest::AnalyzeNvcRequest() :
 AnalyzeNvcRequest::~AnalyzeNvcRequest()
 {}
 
-std::string AnalyzeNvcRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void AnalyzeNvcRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string AnalyzeNvcRequest::getData()const
 {
 	return data_;
@@ -45,6 +34,17 @@ void AnalyzeNvcRequest::setData(const std::string& data)
 {
 	data_ = data;
 	setCoreParameter("Data", data);
+}
+
+std::string AnalyzeNvcRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void AnalyzeNvcRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string AnalyzeNvcRequest::getScoreJsonStr()const

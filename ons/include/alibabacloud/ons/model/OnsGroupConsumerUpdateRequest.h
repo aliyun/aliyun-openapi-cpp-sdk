@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				OnsGroupConsumerUpdateRequest();
 				~OnsGroupConsumerUpdateRequest();
 
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				bool getReadEnable()const;
 				void setReadEnable(bool readEnable);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
 
             private:
+				std::string groupId_;
 				bool readEnable_;
 				std::string instanceId_;
-				std::string groupId_;
 
 			};
 		}

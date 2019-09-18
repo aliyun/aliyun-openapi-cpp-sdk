@@ -25,17 +25,6 @@ DescribeImageLibRequest::DescribeImageLibRequest() :
 DescribeImageLibRequest::~DescribeImageLibRequest()
 {}
 
-std::string DescribeImageLibRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeImageLibRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeImageLibRequest::getServiceModule()const
 {
 	return serviceModule_;
@@ -45,5 +34,16 @@ void DescribeImageLibRequest::setServiceModule(const std::string& serviceModule)
 {
 	serviceModule_ = serviceModule;
 	setCoreParameter("ServiceModule", serviceModule);
+}
+
+std::string DescribeImageLibRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeImageLibRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

@@ -41,17 +41,17 @@ namespace AlibabaCloud
 				void setUniqueTag(const std::string& uniqueTag);
 				std::string getClusterName()const;
 				void setClusterName(const std::string& clusterName);
-				std::string getTemplateBizId()const;
-				void setTemplateBizId(const std::string& templateBizId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTemplateBizId()const;
+				void setTemplateBizId(const std::string& templateBizId);
 
             private:
 				long resourceOwnerId_;
 				std::string uniqueTag_;
 				std::string clusterName_;
-				std::string templateBizId_;
 				std::string accessKeyId_;
+				std::string templateBizId_;
 
 			};
 		}

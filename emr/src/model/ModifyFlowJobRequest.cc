@@ -36,17 +36,6 @@ void ModifyFlowJobRequest::setRunConf(const std::string& runConf)
 	setCoreParameter("RunConf", runConf);
 }
 
-std::string ModifyFlowJobRequest::getEnvConf()const
-{
-	return envConf_;
-}
-
-void ModifyFlowJobRequest::setEnvConf(const std::string& envConf)
-{
-	envConf_ = envConf;
-	setCoreParameter("EnvConf", envConf);
-}
-
 std::string ModifyFlowJobRequest::getDescription()const
 {
 	return description_;
@@ -56,28 +45,6 @@ void ModifyFlowJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-std::string ModifyFlowJobRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ModifyFlowJobRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string ModifyFlowJobRequest::getParams()const
-{
-	return params_;
-}
-
-void ModifyFlowJobRequest::setParams(const std::string& params)
-{
-	params_ = params;
-	setCoreParameter("Params", params);
 }
 
 std::string ModifyFlowJobRequest::getParamConf()const
@@ -119,17 +86,6 @@ void ModifyFlowJobRequest::setFailAct(const std::string& failAct)
 	setCoreParameter("FailAct", failAct);
 }
 
-std::string ModifyFlowJobRequest::getCustomVariables()const
-{
-	return customVariables_;
-}
-
-void ModifyFlowJobRequest::setCustomVariables(const std::string& customVariables)
-{
-	customVariables_ = customVariables;
-	setCoreParameter("CustomVariables", customVariables);
-}
-
 std::string ModifyFlowJobRequest::getMode()const
 {
 	return mode_;
@@ -139,17 +95,6 @@ void ModifyFlowJobRequest::setMode(const std::string& mode)
 {
 	mode_ = mode;
 	setCoreParameter("Mode", mode);
-}
-
-long ModifyFlowJobRequest::getRetryInterval()const
-{
-	return retryInterval_;
-}
-
-void ModifyFlowJobRequest::setRetryInterval(long retryInterval)
-{
-	retryInterval_ = retryInterval;
-	setCoreParameter("RetryInterval", std::to_string(retryInterval));
 }
 
 std::string ModifyFlowJobRequest::getMonitorConf()const
@@ -172,17 +117,6 @@ void ModifyFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyFlowJobRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyFlowJobRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string ModifyFlowJobRequest::getId()const
@@ -227,5 +161,71 @@ void ModifyFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
+}
+
+std::string ModifyFlowJobRequest::getEnvConf()const
+{
+	return envConf_;
+}
+
+void ModifyFlowJobRequest::setEnvConf(const std::string& envConf)
+{
+	envConf_ = envConf;
+	setCoreParameter("EnvConf", envConf);
+}
+
+std::string ModifyFlowJobRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ModifyFlowJobRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ModifyFlowJobRequest::getParams()const
+{
+	return params_;
+}
+
+void ModifyFlowJobRequest::setParams(const std::string& params)
+{
+	params_ = params;
+	setCoreParameter("Params", params);
+}
+
+std::string ModifyFlowJobRequest::getCustomVariables()const
+{
+	return customVariables_;
+}
+
+void ModifyFlowJobRequest::setCustomVariables(const std::string& customVariables)
+{
+	customVariables_ = customVariables;
+	setCoreParameter("CustomVariables", customVariables);
+}
+
+long ModifyFlowJobRequest::getRetryInterval()const
+{
+	return retryInterval_;
+}
+
+void ModifyFlowJobRequest::setRetryInterval(long retryInterval)
+{
+	retryInterval_ = retryInterval;
+	setCoreParameter("RetryInterval", std::to_string(retryInterval));
+}
+
+std::string ModifyFlowJobRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyFlowJobRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

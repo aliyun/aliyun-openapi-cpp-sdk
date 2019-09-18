@@ -36,28 +36,6 @@ void SwitchTempInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SwitchTempInstanceRequest::getTempInstanceId()const
-{
-	return tempInstanceId_;
-}
-
-void SwitchTempInstanceRequest::setTempInstanceId(const std::string& tempInstanceId)
-{
-	tempInstanceId_ = tempInstanceId;
-	setCoreParameter("TempInstanceId", tempInstanceId);
-}
-
-std::string SwitchTempInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void SwitchTempInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string SwitchTempInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +45,6 @@ void SwitchTempInstanceRequest::setResourceOwnerAccount(const std::string& resou
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string SwitchTempInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SwitchTempInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string SwitchTempInstanceRequest::getOwnerAccount()const

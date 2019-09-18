@@ -25,28 +25,6 @@ CreateCertificateRequest::CreateCertificateRequest() :
 CreateCertificateRequest::~CreateCertificateRequest()
 {}
 
-std::string CreateCertificateRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateCertificateRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string CreateCertificateRequest::getName()const
-{
-	return name_;
-}
-
-void CreateCertificateRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateCertificateRequest::getCert()const
 {
 	return cert_;
@@ -56,6 +34,28 @@ void CreateCertificateRequest::setCert(const std::string& cert)
 {
 	cert_ = cert;
 	setCoreParameter("Cert", cert);
+}
+
+std::string CreateCertificateRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateCertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateCertificateRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateCertificateRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateCertificateRequest::getLang()const
@@ -78,5 +78,16 @@ void CreateCertificateRequest::setKey(const std::string& key)
 {
 	key_ = key;
 	setCoreParameter("Key", key);
+}
+
+std::string CreateCertificateRequest::getName()const
+{
+	return name_;
+}
+
+void CreateCertificateRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

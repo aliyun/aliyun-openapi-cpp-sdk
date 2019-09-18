@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::DescribeCdnDomainConfigsRequest;
 
 DescribeCdnDomainConfigsRequest::DescribeCdnDomainConfigsRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeCdnDomainConfigs")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnDomainConfigs")
 {}
 
 DescribeCdnDomainConfigsRequest::~DescribeCdnDomainConfigsRequest()
@@ -34,17 +34,6 @@ void DescribeCdnDomainConfigsRequest::setFunctionNames(const std::string& functi
 {
 	functionNames_ = functionNames;
 	setCoreParameter("FunctionNames", functionNames);
-}
-
-std::string DescribeCdnDomainConfigsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeCdnDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeCdnDomainConfigsRequest::getDomainName()const
@@ -67,5 +56,16 @@ void DescribeCdnDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeCdnDomainConfigsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeCdnDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

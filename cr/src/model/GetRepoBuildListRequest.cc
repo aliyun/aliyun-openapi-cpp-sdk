@@ -47,17 +47,6 @@ void GetRepoBuildListRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string GetRepoBuildListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoBuildListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int GetRepoBuildListRequest::getPageSize()const
 {
 	return pageSize_;

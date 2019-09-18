@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				UpdateProductTopicRequest();
 				~UpdateProductTopicRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTopicId()const;
 				void setTopicId(const std::string& topicId);
 				std::string getIotInstanceId()const;
@@ -43,17 +45,15 @@ namespace AlibabaCloud
 				void setOperation(const std::string& operation);
 				std::string getTopicShortName()const;
 				void setTopicShortName(const std::string& topicShortName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDesc()const;
 				void setDesc(const std::string& desc);
 
             private:
+				std::string accessKeyId_;
 				std::string topicId_;
 				std::string iotInstanceId_;
 				std::string operation_;
 				std::string topicShortName_;
-				std::string accessKeyId_;
 				std::string desc_;
 
 			};

@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				int getOffset()const;
 				void setOffset(int offset);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				int getStart()const;
 				void setStart(int start);
 				int getLength()const;
@@ -47,25 +45,27 @@ namespace AlibabaCloud
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
-				int getLines()const;
-				void setLines(int lines);
 				bool getReverse()const;
 				void setReverse(bool reverse);
 				std::string getNodeInstanceId()const;
 				void setNodeInstanceId(const std::string& nodeInstanceId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getLines()const;
+				void setLines(int lines);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 
             private:
 				int offset_;
-				std::string regionId_;
 				int start_;
 				int length_;
 				long endTime_;
 				long startTime_;
-				int lines_;
 				bool reverse_;
 				std::string nodeInstanceId_;
+				std::string regionId_;
+				int lines_;
 				std::string projectId_;
 
 			};

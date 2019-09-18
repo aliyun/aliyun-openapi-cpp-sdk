@@ -36,17 +36,6 @@ void UpdateMaterialRequest::setContactEmail(const std::string& contactEmail)
 	setCoreParameter("ContactEmail", contactEmail);
 }
 
-std::string UpdateMaterialRequest::getContactAddress()const
-{
-	return contactAddress_;
-}
-
-void UpdateMaterialRequest::setContactAddress(const std::string& contactAddress)
-{
-	contactAddress_ = contactAddress;
-	setCoreParameter("ContactAddress", contactAddress);
-}
-
 std::string UpdateMaterialRequest::getEAddress()const
 {
 	return eAddress_;
@@ -67,28 +56,6 @@ void UpdateMaterialRequest::setLegalNoticeOssKey(const std::string& legalNoticeO
 {
 	legalNoticeOssKey_ = legalNoticeOssKey;
 	setCoreParameter("LegalNoticeOssKey", legalNoticeOssKey);
-}
-
-std::string UpdateMaterialRequest::getAddress()const
-{
-	return address_;
-}
-
-void UpdateMaterialRequest::setAddress(const std::string& address)
-{
-	address_ = address;
-	setCoreParameter("Address", address);
-}
-
-std::string UpdateMaterialRequest::getTown()const
-{
-	return town_;
-}
-
-void UpdateMaterialRequest::setTown(const std::string& town)
-{
-	town_ = town;
-	setCoreParameter("Town", town);
 }
 
 std::string UpdateMaterialRequest::getContactNumber()const
@@ -113,17 +80,6 @@ void UpdateMaterialRequest::setCity(const std::string& city)
 	setCoreParameter("City", city);
 }
 
-std::string UpdateMaterialRequest::getIdCardOssKey()const
-{
-	return idCardOssKey_;
-}
-
-void UpdateMaterialRequest::setIdCardOssKey(const std::string& idCardOssKey)
-{
-	idCardOssKey_ = idCardOssKey;
-	setCoreParameter("IdCardOssKey", idCardOssKey);
-}
-
 std::string UpdateMaterialRequest::getContactName()const
 {
 	return contactName_;
@@ -144,6 +100,83 @@ void UpdateMaterialRequest::setPassportOssKey(const std::string& passportOssKey)
 {
 	passportOssKey_ = passportOssKey;
 	setCoreParameter("PassportOssKey", passportOssKey);
+}
+
+std::string UpdateMaterialRequest::getProvince()const
+{
+	return province_;
+}
+
+void UpdateMaterialRequest::setProvince(const std::string& province)
+{
+	province_ = province;
+	setCoreParameter("Province", province);
+}
+
+long UpdateMaterialRequest::getId()const
+{
+	return id_;
+}
+
+void UpdateMaterialRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
+}
+
+std::string UpdateMaterialRequest::getLoaOssKey()const
+{
+	return loaOssKey_;
+}
+
+void UpdateMaterialRequest::setLoaOssKey(const std::string& loaOssKey)
+{
+	loaOssKey_ = loaOssKey;
+	setCoreParameter("LoaOssKey", loaOssKey);
+}
+
+std::string UpdateMaterialRequest::getContactAddress()const
+{
+	return contactAddress_;
+}
+
+void UpdateMaterialRequest::setContactAddress(const std::string& contactAddress)
+{
+	contactAddress_ = contactAddress;
+	setCoreParameter("ContactAddress", contactAddress);
+}
+
+std::string UpdateMaterialRequest::getAddress()const
+{
+	return address_;
+}
+
+void UpdateMaterialRequest::setAddress(const std::string& address)
+{
+	address_ = address;
+	setCoreParameter("Address", address);
+}
+
+std::string UpdateMaterialRequest::getTown()const
+{
+	return town_;
+}
+
+void UpdateMaterialRequest::setTown(const std::string& town)
+{
+	town_ = town;
+	setCoreParameter("Town", town);
+}
+
+std::string UpdateMaterialRequest::getIdCardOssKey()const
+{
+	return idCardOssKey_;
+}
+
+void UpdateMaterialRequest::setIdCardOssKey(const std::string& idCardOssKey)
+{
+	idCardOssKey_ = idCardOssKey;
+	setCoreParameter("IdCardOssKey", idCardOssKey);
 }
 
 std::string UpdateMaterialRequest::getContactZipcode()const
@@ -168,17 +201,6 @@ void UpdateMaterialRequest::setEName(const std::string& eName)
 	setCoreParameter("EName", eName);
 }
 
-std::string UpdateMaterialRequest::getProvince()const
-{
-	return province_;
-}
-
-void UpdateMaterialRequest::setProvince(const std::string& province)
-{
-	province_ = province;
-	setCoreParameter("Province", province);
-}
-
 std::string UpdateMaterialRequest::getBusinessLicenceOssKey()const
 {
 	return businessLicenceOssKey_;
@@ -201,17 +223,6 @@ void UpdateMaterialRequest::setName(const std::string& name)
 	setCoreParameter("Name", name);
 }
 
-long UpdateMaterialRequest::getId()const
-{
-	return id_;
-}
-
-void UpdateMaterialRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string UpdateMaterialRequest::getCardNumber()const
 {
 	return cardNumber_;
@@ -232,16 +243,5 @@ void UpdateMaterialRequest::setLoaId(long loaId)
 {
 	loaId_ = loaId;
 	setCoreParameter("LoaId", std::to_string(loaId));
-}
-
-std::string UpdateMaterialRequest::getLoaOssKey()const
-{
-	return loaOssKey_;
-}
-
-void UpdateMaterialRequest::setLoaOssKey(const std::string& loaOssKey)
-{
-	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", loaOssKey);
 }
 

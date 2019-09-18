@@ -25,6 +25,17 @@ DeleteConsoleAccessWhiteListRequest::DeleteConsoleAccessWhiteListRequest() :
 DeleteConsoleAccessWhiteListRequest::~DeleteConsoleAccessWhiteListRequest()
 {}
 
+std::string DeleteConsoleAccessWhiteListRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DeleteConsoleAccessWhiteListRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DeleteConsoleAccessWhiteListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,16 +67,5 @@ void DeleteConsoleAccessWhiteListRequest::setDisableWhitelist(const std::string&
 {
 	disableWhitelist_ = disableWhitelist;
 	setCoreParameter("DisableWhitelist", disableWhitelist);
-}
-
-std::string DeleteConsoleAccessWhiteListRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DeleteConsoleAccessWhiteListRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

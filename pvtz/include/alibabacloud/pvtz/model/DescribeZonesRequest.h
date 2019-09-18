@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getQueryVpcId()const;
 				void setQueryVpcId(const std::string& queryVpcId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				int getPageSize()const;
@@ -49,20 +51,18 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getQueryRegionId()const;
 				void setQueryRegionId(const std::string& queryRegionId);
 
             private:
 				std::string queryVpcId_;
+				int pageNumber_;
 				std::string resourceGroupId_;
 				int pageSize_;
 				std::string userClientIp_;
 				std::string searchMode_;
 				std::string lang_;
 				std::string keyword_;
-				int pageNumber_;
 				std::string queryRegionId_;
 
 			};

@@ -36,6 +36,17 @@ void UserDataShowListRequest::setIid(long iid)
 	setCoreParameter("Iid", std::to_string(iid));
 }
 
+std::string UserDataShowListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UserDataShowListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UserDataShowListRequest::getName()const
 {
 	return name_;
@@ -78,16 +89,5 @@ void UserDataShowListRequest::setPer(int per)
 {
 	per_ = per;
 	setCoreParameter("Per", std::to_string(per));
-}
-
-std::string UserDataShowListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UserDataShowListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

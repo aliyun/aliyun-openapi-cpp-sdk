@@ -25,17 +25,6 @@ UpdateNamespaceAuthorizationRequest::UpdateNamespaceAuthorizationRequest() :
 UpdateNamespaceAuthorizationRequest::~UpdateNamespaceAuthorizationRequest()
 {}
 
-std::string UpdateNamespaceAuthorizationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateNamespaceAuthorizationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long UpdateNamespaceAuthorizationRequest::getAuthorizeId()const
 {
 	return authorizeId_;

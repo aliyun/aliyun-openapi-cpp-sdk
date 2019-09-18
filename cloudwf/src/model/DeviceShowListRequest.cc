@@ -25,39 +25,6 @@ DeviceShowListRequest::DeviceShowListRequest() :
 DeviceShowListRequest::~DeviceShowListRequest()
 {}
 
-std::string DeviceShowListRequest::getDirc()const
-{
-	return dirc_;
-}
-
-void DeviceShowListRequest::setDirc(const std::string& dirc)
-{
-	dirc_ = dirc;
-	setCoreParameter("Dirc", dirc);
-}
-
-int DeviceShowListRequest::getPage()const
-{
-	return page_;
-}
-
-void DeviceShowListRequest::setPage(int page)
-{
-	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
-}
-
-int DeviceShowListRequest::getPer()const
-{
-	return per_;
-}
-
-void DeviceShowListRequest::setPer(int per)
-{
-	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
-}
-
 int DeviceShowListRequest::getDeviceType()const
 {
 	return deviceType_;
@@ -89,5 +56,38 @@ void DeviceShowListRequest::setSid(long sid)
 {
 	sid_ = sid;
 	setCoreParameter("Sid", std::to_string(sid));
+}
+
+std::string DeviceShowListRequest::getDirc()const
+{
+	return dirc_;
+}
+
+void DeviceShowListRequest::setDirc(const std::string& dirc)
+{
+	dirc_ = dirc;
+	setCoreParameter("Dirc", dirc);
+}
+
+int DeviceShowListRequest::getPage()const
+{
+	return page_;
+}
+
+void DeviceShowListRequest::setPage(int page)
+{
+	page_ = page;
+	setCoreParameter("Page", std::to_string(page));
+}
+
+int DeviceShowListRequest::getPer()const
+{
+	return per_;
+}
+
+void DeviceShowListRequest::setPer(int per)
+{
+	per_ = per;
+	setCoreParameter("Per", std::to_string(per));
 }
 

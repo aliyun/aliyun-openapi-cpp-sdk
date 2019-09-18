@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				UpdateKeywordLibRequest();
 				~UpdateKeywordLibRequest();
 
+				std::string getMatchMode()const;
+				void setMatchMode(const std::string& matchMode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				bool getEnable()const;
 				void setEnable(bool enable);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getBizTypes()const;
-				void setBizTypes(const std::string& bizTypes);
 				int getId()const;
 				void setId(int id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getMatchMode()const;
-				void setMatchMode(const std::string& matchMode);
+				std::string getBizTypes()const;
+				void setBizTypes(const std::string& bizTypes);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
+				std::string matchMode_;
 				std::string sourceIp_;
 				bool enable_;
-				std::string name_;
-				std::string bizTypes_;
 				int id_;
 				std::string lang_;
-				std::string matchMode_;
+				std::string bizTypes_;
+				std::string name_;
 
 			};
 		}

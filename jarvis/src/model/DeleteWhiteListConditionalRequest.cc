@@ -36,6 +36,17 @@ void DeleteWhiteListConditionalRequest::setSrcIP(const std::string& srcIP)
 	setCoreParameter("SrcIP", srcIP);
 }
 
+std::string DeleteWhiteListConditionalRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DeleteWhiteListConditionalRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DeleteWhiteListConditionalRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -78,16 +89,5 @@ void DeleteWhiteListConditionalRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DeleteWhiteListConditionalRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DeleteWhiteListConditionalRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

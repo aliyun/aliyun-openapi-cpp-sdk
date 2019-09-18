@@ -25,17 +25,6 @@ ReportCensorJobResultRequest::ReportCensorJobResultRequest() :
 ReportCensorJobResultRequest::~ReportCensorJobResultRequest()
 {}
 
-std::string ReportCensorJobResultRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void ReportCensorJobResultRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
-}
-
 long ReportCensorJobResultRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void ReportCensorJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ReportCensorJobResultRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReportCensorJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ReportCensorJobResultRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void ReportCensorJobResultRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setCoreParameter("JobId", jobId);
 }
 
 std::string ReportCensorJobResultRequest::getResourceOwnerAccount()const
@@ -80,17 +91,6 @@ void ReportCensorJobResultRequest::setLabel(const std::string& label)
 	setCoreParameter("Label", label);
 }
 
-std::string ReportCensorJobResultRequest::getDetail()const
-{
-	return detail_;
-}
-
-void ReportCensorJobResultRequest::setDetail(const std::string& detail)
-{
-	detail_ = detail;
-	setCoreParameter("Detail", detail);
-}
-
 long ReportCensorJobResultRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +102,14 @@ void ReportCensorJobResultRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ReportCensorJobResultRequest::getAccessKeyId()const
+std::string ReportCensorJobResultRequest::getDetail()const
 {
-	return accessKeyId_;
+	return detail_;
 }
 
-void ReportCensorJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+void ReportCensorJobResultRequest::setDetail(const std::string& detail)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	detail_ = detail;
+	setCoreParameter("Detail", detail);
 }
 

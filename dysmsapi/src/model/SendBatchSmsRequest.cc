@@ -25,17 +25,6 @@ SendBatchSmsRequest::SendBatchSmsRequest() :
 SendBatchSmsRequest::~SendBatchSmsRequest()
 {}
 
-std::string SendBatchSmsRequest::getTemplateParamJson()const
-{
-	return templateParamJson_;
-}
-
-void SendBatchSmsRequest::setTemplateParamJson(const std::string& templateParamJson)
-{
-	templateParamJson_ = templateParamJson;
-	setCoreParameter("TemplateParamJson", templateParamJson);
-}
-
 long SendBatchSmsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void SendBatchSmsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SendBatchSmsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SendBatchSmsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SendBatchSmsRequest::getTemplateParamJson()const
+{
+	return templateParamJson_;
+}
+
+void SendBatchSmsRequest::setTemplateParamJson(const std::string& templateParamJson)
+{
+	templateParamJson_ = templateParamJson;
+	setCoreParameter("TemplateParamJson", templateParamJson);
 }
 
 std::string SendBatchSmsRequest::getResourceOwnerAccount()const
@@ -58,17 +69,6 @@ void SendBatchSmsRequest::setResourceOwnerAccount(const std::string& resourceOwn
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string SendBatchSmsRequest::getSmsUpExtendCodeJson()const
-{
-	return smsUpExtendCodeJson_;
-}
-
-void SendBatchSmsRequest::setSmsUpExtendCodeJson(const std::string& smsUpExtendCodeJson)
-{
-	smsUpExtendCodeJson_ = smsUpExtendCodeJson;
-	setCoreParameter("SmsUpExtendCodeJson", smsUpExtendCodeJson);
-}
-
 long SendBatchSmsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,6 +78,17 @@ void SendBatchSmsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SendBatchSmsRequest::getSmsUpExtendCodeJson()const
+{
+	return smsUpExtendCodeJson_;
+}
+
+void SendBatchSmsRequest::setSmsUpExtendCodeJson(const std::string& smsUpExtendCodeJson)
+{
+	smsUpExtendCodeJson_ = smsUpExtendCodeJson;
+	setCoreParameter("SmsUpExtendCodeJson", smsUpExtendCodeJson);
 }
 
 std::string SendBatchSmsRequest::getSignNameJson()const
@@ -111,16 +122,5 @@ void SendBatchSmsRequest::setPhoneNumberJson(const std::string& phoneNumberJson)
 {
 	phoneNumberJson_ = phoneNumberJson;
 	setCoreParameter("PhoneNumberJson", phoneNumberJson);
-}
-
-std::string SendBatchSmsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SendBatchSmsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

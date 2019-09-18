@@ -113,17 +113,6 @@ void DescribeDBInstancesRequest::setSecurityToken(const std::string& securityTok
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeDBInstancesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeDBInstancesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeDBInstancesRequest::getEngine()const
 {
 	return engine_;

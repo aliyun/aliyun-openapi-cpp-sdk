@@ -36,26 +36,15 @@ void ModifyInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceAttributeRequest::getInstanceId()const
+std::string ModifyInstanceAttributeRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void ModifyInstanceAttributeRequest::setInstanceId(const std::string& instanceId)
+void ModifyInstanceAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string ModifyInstanceAttributeRequest::getInstanceName()const
-{
-	return instanceName_;
-}
-
-void ModifyInstanceAttributeRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceAttributeRequest::getSecurityToken()const
@@ -78,17 +67,6 @@ void ModifyInstanceAttributeRequest::setResourceOwnerAccount(const std::string& 
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyInstanceAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyInstanceAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceAttributeRequest::getOwnerAccount()const
@@ -124,14 +102,25 @@ void ModifyInstanceAttributeRequest::setNewPassword(const std::string& newPasswo
 	setCoreParameter("NewPassword", newPassword);
 }
 
-std::string ModifyInstanceAttributeRequest::getAccessKeyId()const
+std::string ModifyInstanceAttributeRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void ModifyInstanceAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifyInstanceAttributeRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string ModifyInstanceAttributeRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void ModifyInstanceAttributeRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setCoreParameter("InstanceName", instanceName);
 }
 

@@ -37,14 +37,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTaskType()const;
-				void setTaskType(const std::string& taskType);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
@@ -53,25 +45,30 @@ namespace AlibabaCloud
 				void setIsHistory(int isHistory);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getTaskType()const;
+				void setTaskType(const std::string& taskType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
 
             private:
 				long resourceOwnerId_;
-				std::string taskType_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				int isHistory_;
 				std::string securityToken_;
-				std::string regionId_;
 				int pageSize_;
+				std::string taskType_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 				std::string region_;
 
 			};

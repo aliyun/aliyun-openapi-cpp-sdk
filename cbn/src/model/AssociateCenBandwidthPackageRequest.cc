@@ -36,17 +36,6 @@ void AssociateCenBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string AssociateCenBandwidthPackageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AssociateCenBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string AssociateCenBandwidthPackageRequest::getCenId()const
 {
 	return cenId_;
@@ -58,15 +47,15 @@ void AssociateCenBandwidthPackageRequest::setCenId(const std::string& cenId)
 	setCoreParameter("CenId", cenId);
 }
 
-std::string AssociateCenBandwidthPackageRequest::getCenBandwidthPackageId()const
+std::string AssociateCenBandwidthPackageRequest::getResourceOwnerAccount()const
 {
-	return cenBandwidthPackageId_;
+	return resourceOwnerAccount_;
 }
 
-void AssociateCenBandwidthPackageRequest::setCenBandwidthPackageId(const std::string& cenBandwidthPackageId)
+void AssociateCenBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	cenBandwidthPackageId_ = cenBandwidthPackageId;
-	setCoreParameter("CenBandwidthPackageId", cenBandwidthPackageId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AssociateCenBandwidthPackageRequest::getOwnerAccount()const
@@ -89,5 +78,16 @@ void AssociateCenBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AssociateCenBandwidthPackageRequest::getCenBandwidthPackageId()const
+{
+	return cenBandwidthPackageId_;
+}
+
+void AssociateCenBandwidthPackageRequest::setCenBandwidthPackageId(const std::string& cenBandwidthPackageId)
+{
+	cenBandwidthPackageId_ = cenBandwidthPackageId;
+	setCoreParameter("CenBandwidthPackageId", cenBandwidthPackageId);
 }
 

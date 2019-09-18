@@ -25,6 +25,28 @@ DescribeCountAttackEventRequest::DescribeCountAttackEventRequest() :
 DescribeCountAttackEventRequest::~DescribeCountAttackEventRequest()
 {}
 
+int DescribeCountAttackEventRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeCountAttackEventRequest::setStartTime(int startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", std::to_string(startTime));
+}
+
+std::string DescribeCountAttackEventRequest::getProductType()const
+{
+	return productType_;
+}
+
+void DescribeCountAttackEventRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setCoreParameter("ProductType", productType);
+}
+
 std::string DescribeCountAttackEventRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -36,17 +58,6 @@ void DescribeCountAttackEventRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeCountAttackEventRequest::getServerIpList()const
-{
-	return serverIpList_;
-}
-
-void DescribeCountAttackEventRequest::setServerIpList(const std::string& serverIpList)
-{
-	serverIpList_ = serverIpList;
-	setCoreParameter("ServerIpList", serverIpList);
-}
-
 int DescribeCountAttackEventRequest::getPageSize()const
 {
 	return pageSize_;
@@ -56,6 +67,28 @@ void DescribeCountAttackEventRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeCountAttackEventRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeCountAttackEventRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string DescribeCountAttackEventRequest::getServerIpList()const
+{
+	return serverIpList_;
+}
+
+void DescribeCountAttackEventRequest::setServerIpList(const std::string& serverIpList)
+{
+	serverIpList_ = serverIpList;
+	setCoreParameter("ServerIpList", serverIpList);
 }
 
 int DescribeCountAttackEventRequest::getEndTime()const
@@ -80,28 +113,6 @@ void DescribeCountAttackEventRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-int DescribeCountAttackEventRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeCountAttackEventRequest::setStartTime(int startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
-}
-
-std::string DescribeCountAttackEventRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeCountAttackEventRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string DescribeCountAttackEventRequest::getRegion()const
 {
 	return region_;
@@ -111,16 +122,5 @@ void DescribeCountAttackEventRequest::setRegion(const std::string& region)
 {
 	region_ = region;
 	setCoreParameter("Region", region);
-}
-
-std::string DescribeCountAttackEventRequest::getProductType()const
-{
-	return productType_;
-}
-
-void DescribeCountAttackEventRequest::setProductType(const std::string& productType)
-{
-	productType_ = productType;
-	setCoreParameter("ProductType", productType);
 }
 

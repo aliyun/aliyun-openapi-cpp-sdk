@@ -25,17 +25,6 @@ OemSitingSelctionRequest::OemSitingSelctionRequest() :
 OemSitingSelctionRequest::~OemSitingSelctionRequest()
 {}
 
-long OemSitingSelctionRequest::getBid()const
-{
-	return bid_;
-}
-
-void OemSitingSelctionRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string OemSitingSelctionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void OemSitingSelctionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long OemSitingSelctionRequest::getBid()const
+{
+	return bid_;
+}
+
+void OemSitingSelctionRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

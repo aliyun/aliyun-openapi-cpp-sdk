@@ -36,28 +36,6 @@ void DescribeLiveStreamsOnlineListRequest::setStreamType(const std::string& stre
 	setCoreParameter("StreamType", streamType);
 }
 
-std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
-{
-	return appName_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
-}
-
-std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
 {
 	return domainName_;
@@ -67,17 +45,6 @@ void DescribeLiveStreamsOnlineListRequest::setDomainName(const std::string& doma
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-int DescribeLiveStreamsOnlineListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeLiveStreamsOnlineListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeLiveStreamsOnlineListRequest::getOwnerId()const
@@ -100,5 +67,38 @@ void DescribeLiveStreamsOnlineListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
 	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
+{
+	return appName_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeLiveStreamsOnlineListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeLiveStreamsOnlineListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

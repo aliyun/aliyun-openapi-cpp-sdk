@@ -47,6 +47,50 @@ void SetMessageCallbackRequest::setResourceOwnerId(const std::string& resourceOw
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
+long SetMessageCallbackRequest::getResourceRealOwnerId()const
+{
+	return resourceRealOwnerId_;
+}
+
+void SetMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
+{
+	resourceRealOwnerId_ = resourceRealOwnerId;
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+}
+
+std::string SetMessageCallbackRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetMessageCallbackRequest::getCallbackType()const
+{
+	return callbackType_;
+}
+
+void SetMessageCallbackRequest::setCallbackType(const std::string& callbackType)
+{
+	callbackType_ = callbackType;
+	setCoreParameter("CallbackType", callbackType);
+}
+
+std::string SetMessageCallbackRequest::getCallbackSwitch()const
+{
+	return callbackSwitch_;
+}
+
+void SetMessageCallbackRequest::setCallbackSwitch(const std::string& callbackSwitch)
+{
+	callbackSwitch_ = callbackSwitch;
+	setCoreParameter("CallbackSwitch", callbackSwitch);
+}
+
 std::string SetMessageCallbackRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -91,17 +135,6 @@ void SetMessageCallbackRequest::setMnsQueueName(const std::string& mnsQueueName)
 	setCoreParameter("MnsQueueName", mnsQueueName);
 }
 
-long SetMessageCallbackRequest::getResourceRealOwnerId()const
-{
-	return resourceRealOwnerId_;
-}
-
-void SetMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
-{
-	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
-}
-
 std::string SetMessageCallbackRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,39 +144,6 @@ void SetMessageCallbackRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
-}
-
-std::string SetMessageCallbackRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string SetMessageCallbackRequest::getCallbackType()const
-{
-	return callbackType_;
-}
-
-void SetMessageCallbackRequest::setCallbackType(const std::string& callbackType)
-{
-	callbackType_ = callbackType;
-	setCoreParameter("CallbackType", callbackType);
-}
-
-std::string SetMessageCallbackRequest::getCallbackSwitch()const
-{
-	return callbackSwitch_;
-}
-
-void SetMessageCallbackRequest::setCallbackSwitch(const std::string& callbackSwitch)
-{
-	callbackSwitch_ = callbackSwitch;
-	setCoreParameter("CallbackSwitch", callbackSwitch);
 }
 
 std::string SetMessageCallbackRequest::getMnsEndpoint()const

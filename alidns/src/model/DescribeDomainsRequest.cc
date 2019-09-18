@@ -25,6 +25,17 @@ DescribeDomainsRequest::DescribeDomainsRequest() :
 DescribeDomainsRequest::~DescribeDomainsRequest()
 {}
 
+long DescribeDomainsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDomainsRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeDomainsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -36,28 +47,6 @@ void DescribeDomainsRequest::setResourceGroupId(const std::string& resourceGroup
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string DescribeDomainsRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeDomainsRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-std::string DescribeDomainsRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DescribeDomainsRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 long DescribeDomainsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,17 +56,6 @@ void DescribeDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeDomainsRequest::getSearchMode()const
-{
-	return searchMode_;
-}
-
-void DescribeDomainsRequest::setSearchMode(const std::string& searchMode)
-{
-	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", searchMode);
 }
 
 std::string DescribeDomainsRequest::getLang()const
@@ -102,14 +80,36 @@ void DescribeDomainsRequest::setKeyWord(const std::string& keyWord)
 	setCoreParameter("KeyWord", keyWord);
 }
 
-long DescribeDomainsRequest::getPageNumber()const
+std::string DescribeDomainsRequest::getGroupId()const
 {
-	return pageNumber_;
+	return groupId_;
 }
 
-void DescribeDomainsRequest::setPageNumber(long pageNumber)
+void DescribeDomainsRequest::setGroupId(const std::string& groupId)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeDomainsRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DescribeDomainsRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string DescribeDomainsRequest::getSearchMode()const
+{
+	return searchMode_;
+}
+
+void DescribeDomainsRequest::setSearchMode(const std::string& searchMode)
+{
+	searchMode_ = searchMode;
+	setCoreParameter("SearchMode", searchMode);
 }
 

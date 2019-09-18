@@ -35,38 +35,35 @@ namespace AlibabaCloud
 				ModifyBackupPolicyRequest();
 				~ModifyBackupPolicyRequest();
 
-				std::string getPreferredBackupTime()const;
-				void setPreferredBackupTime(const std::string& preferredBackupTime);
-				std::string getPreferredBackupPeriod()const;
-				void setPreferredBackupPeriod(const std::string& preferredBackupPeriod);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getPreferredBackupPeriod()const;
+				void setPreferredBackupPeriod(const std::string& preferredBackupPeriod);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPreferredBackupTime()const;
+				void setPreferredBackupTime(const std::string& preferredBackupTime);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string preferredBackupTime_;
-				std::string preferredBackupPeriod_;
 				long resourceOwnerId_;
-				std::string instanceId_;
+				std::string accessKeyId_;
 				std::string securityToken_;
+				std::string preferredBackupPeriod_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string preferredBackupTime_;
+				std::string instanceId_;
 
 			};
 		}

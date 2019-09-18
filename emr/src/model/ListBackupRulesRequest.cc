@@ -58,28 +58,6 @@ void ListBackupRulesRequest::setOrderMode(const std::string& orderMode)
 	setCoreParameter("OrderMode", orderMode);
 }
 
-long ListBackupRulesRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void ListBackupRulesRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool ListBackupRulesRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void ListBackupRulesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
 std::string ListBackupRulesRequest::getBackupPlanId()const
 {
 	return backupPlanId_;
@@ -89,28 +67,6 @@ void ListBackupRulesRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
 	setCoreParameter("BackupPlanId", backupPlanId);
-}
-
-std::string ListBackupRulesRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void ListBackupRulesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string ListBackupRulesRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void ListBackupRulesRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
 }
 
 int ListBackupRulesRequest::getPageNumber()const
@@ -133,17 +89,6 @@ void ListBackupRulesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string ListBackupRulesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ListBackupRulesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ListBackupRulesRequest::getRegionId()const
@@ -201,17 +146,6 @@ void ListBackupRulesRequest::setCurrentSize(int currentSize)
 	setCoreParameter("CurrentSize", std::to_string(currentSize));
 }
 
-long ListBackupRulesRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void ListBackupRulesRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
 std::string ListBackupRulesRequest::getOrderField()const
 {
 	return orderField_;
@@ -221,72 +155,6 @@ void ListBackupRulesRequest::setOrderField(const std::string& orderField)
 {
 	orderField_ = orderField;
 	setCoreParameter("OrderField", orderField);
-}
-
-std::string ListBackupRulesRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void ListBackupRulesRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string ListBackupRulesRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void ListBackupRulesRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
-bool ListBackupRulesRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void ListBackupRulesRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool ListBackupRulesRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void ListBackupRulesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool ListBackupRulesRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void ListBackupRulesRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string ListBackupRulesRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void ListBackupRulesRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 
 std::string ListBackupRulesRequest::getBizId()const

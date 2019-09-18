@@ -25,6 +25,39 @@ DescribeCasterProgramRequest::DescribeCasterProgramRequest() :
 DescribeCasterProgramRequest::~DescribeCasterProgramRequest()
 {}
 
+std::string DescribeCasterProgramRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeCasterProgramRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+int DescribeCasterProgramRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void DescribeCasterProgramRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+int DescribeCasterProgramRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeCasterProgramRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string DescribeCasterProgramRequest::getCasterId()const
 {
 	return casterId_;
@@ -47,17 +80,6 @@ void DescribeCasterProgramRequest::setEpisodeType(const std::string& episodeType
 	setCoreParameter("EpisodeType", episodeType);
 }
 
-int DescribeCasterProgramRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeCasterProgramRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeCasterProgramRequest::getEndTime()const
 {
 	return endTime_;
@@ -67,17 +89,6 @@ void DescribeCasterProgramRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeCasterProgramRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeCasterProgramRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeCasterProgramRequest::getOwnerId()const
@@ -100,17 +111,6 @@ void DescribeCasterProgramRequest::setEpisodeId(const std::string& episodeId)
 {
 	episodeId_ = episodeId;
 	setCoreParameter("EpisodeId", episodeId);
-}
-
-int DescribeCasterProgramRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void DescribeCasterProgramRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeCasterProgramRequest::getStatus()const

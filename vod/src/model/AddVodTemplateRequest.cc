@@ -36,15 +36,15 @@ void AddVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string AddVodTemplateRequest::getResourceOwnerAccount()const
+std::string AddVodTemplateRequest::getSubTemplateType()const
 {
-	return resourceOwnerAccount_;
+	return subTemplateType_;
 }
 
-void AddVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void AddVodTemplateRequest::setSubTemplateType(const std::string& subTemplateType)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	subTemplateType_ = subTemplateType;
+	setCoreParameter("SubTemplateType", subTemplateType);
 }
 
 std::string AddVodTemplateRequest::getTemplateConfig()const
@@ -69,6 +69,28 @@ void AddVodTemplateRequest::setTemplateType(const std::string& templateType)
 	setCoreParameter("TemplateType", templateType);
 }
 
+std::string AddVodTemplateRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void AddVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long AddVodTemplateRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void AddVodTemplateRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::string AddVodTemplateRequest::getAppId()const
 {
 	return appId_;
@@ -89,27 +111,5 @@ void AddVodTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-long AddVodTemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddVodTemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AddVodTemplateRequest::getSubTemplateType()const
-{
-	return subTemplateType_;
-}
-
-void AddVodTemplateRequest::setSubTemplateType(const std::string& subTemplateType)
-{
-	subTemplateType_ = subTemplateType;
-	setCoreParameter("SubTemplateType", subTemplateType);
 }
 

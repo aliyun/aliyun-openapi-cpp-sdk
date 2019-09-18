@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				OnsInstanceCreateRequest();
 				~OnsInstanceCreateRequest();
 
-				std::string getInstanceName()const;
-				void setInstanceName(const std::string& instanceName);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				std::string getInstanceName()const;
+				void setInstanceName(const std::string& instanceName);
 
             private:
-				std::string instanceName_;
 				std::string remark_;
+				std::string instanceName_;
 
 			};
 		}

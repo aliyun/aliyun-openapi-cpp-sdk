@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				std::string getOssBucket()const;
 				void setOssBucket(const std::string& ossBucket);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getOssEndpoint()const;
 				void setOssEndpoint(const std::string& ossEndpoint);
-				std::string getOssObjectPrefix()const;
-				void setOssObjectPrefix(const std::string& ossObjectPrefix);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getOssObjectPrefix()const;
+				void setOssObjectPrefix(const std::string& ossObjectPrefix);
 
             private:
 				std::string ossBucket_;
-				std::string appName_;
-				std::string securityToken_;
 				std::string domainName_;
 				std::string ossEndpoint_;
-				std::string ossObjectPrefix_;
 				long ownerId_;
+				std::string appName_;
+				std::string securityToken_;
+				std::string ossObjectPrefix_;
 
 			};
 		}

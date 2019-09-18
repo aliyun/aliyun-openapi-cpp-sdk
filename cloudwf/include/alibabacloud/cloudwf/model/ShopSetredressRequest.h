@@ -37,20 +37,14 @@ namespace AlibabaCloud
 
 				std::string getWorkday()const;
 				void setWorkday(const std::string& workday);
-				int getFilterclose()const;
-				void setFilterclose(int filterclose);
 				int getMinstoptime()const;
 				void setMinstoptime(int minstoptime);
 				std::string getHoliday()const;
 				void setHoliday(const std::string& holiday);
-				std::string getHnum()const;
-				void setHnum(const std::string& hnum);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getSid()const;
 				void setSid(long sid);
-				int getClerk()const;
-				void setClerk(int clerk);
 				int getFilterstate()const;
 				void setFilterstate(int filterstate);
 				std::string getWnum()const;
@@ -59,22 +53,28 @@ namespace AlibabaCloud
 				void setState(int state);
 				int getCrowdfixed()const;
 				void setCrowdfixed(int crowdfixed);
+				int getFilterclose()const;
+				void setFilterclose(int filterclose);
+				std::string getHnum()const;
+				void setHnum(const std::string& hnum);
+				int getClerk()const;
+				void setClerk(int clerk);
 				int getMaxstoptime()const;
 				void setMaxstoptime(int maxstoptime);
 
             private:
 				std::string workday_;
-				int filterclose_;
 				int minstoptime_;
 				std::string holiday_;
-				std::string hnum_;
 				std::string accessKeyId_;
 				long sid_;
-				int clerk_;
 				int filterstate_;
 				std::string wnum_;
 				int state_;
 				int crowdfixed_;
+				int filterclose_;
+				std::string hnum_;
+				int clerk_;
 				int maxstoptime_;
 
 			};

@@ -35,24 +35,24 @@ namespace AlibabaCloud
 				DescribeEventCountsRequest();
 				~DescribeEventCountsRequest();
 
-				std::string getTypeCode()const;
-				void setTypeCode(const std::string& typeCode);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
 				int getCountType()const;
 				void setCountType(int countType);
+				std::string getTypeCode()const;
+				void setTypeCode(const std::string& typeCode);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				int getDays()const;
 				void setDays(int days);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string typeCode_;
-				std::string sourceIp_;
 				int featureType_;
 				int countType_;
+				std::string typeCode_;
+				std::string sourceIp_;
 				int days_;
 				std::string lang_;
 

@@ -25,6 +25,28 @@ SaveBatchTaskForCreatingOrderRenewRequest::SaveBatchTaskForCreatingOrderRenewReq
 SaveBatchTaskForCreatingOrderRenewRequest::~SaveBatchTaskForCreatingOrderRenewRequest()
 {}
 
+std::string SaveBatchTaskForCreatingOrderRenewRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void SaveBatchTaskForCreatingOrderRenewRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setCoreParameter("CouponNo", couponNo);
+}
+
+bool SaveBatchTaskForCreatingOrderRenewRequest::getUseCoupon()const
+{
+	return useCoupon_;
+}
+
+void SaveBatchTaskForCreatingOrderRenewRequest::setUseCoupon(bool useCoupon)
+{
+	useCoupon_ = useCoupon;
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+}
+
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getPromotionNo()const
 {
 	return promotionNo_;
@@ -63,28 +85,6 @@ void SaveBatchTaskForCreatingOrderRenewRequest::setOrderRenewParam(const std::ve
 		setCoreParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
 		setCoreParameter(str + ".DomainName", obj.domainName);
 	}
-}
-
-std::string SaveBatchTaskForCreatingOrderRenewRequest::getCouponNo()const
-{
-	return couponNo_;
-}
-
-void SaveBatchTaskForCreatingOrderRenewRequest::setCouponNo(const std::string& couponNo)
-{
-	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
-}
-
-bool SaveBatchTaskForCreatingOrderRenewRequest::getUseCoupon()const
-{
-	return useCoupon_;
-}
-
-void SaveBatchTaskForCreatingOrderRenewRequest::setUseCoupon(bool useCoupon)
-{
-	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getLang()const

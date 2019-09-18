@@ -25,17 +25,6 @@ GetCollectionRequest::GetCollectionRequest() :
 GetCollectionRequest::~GetCollectionRequest()
 {}
 
-std::string GetCollectionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetCollectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int GetCollectionRequest::getPageSize()const
 {
 	return pageSize_;

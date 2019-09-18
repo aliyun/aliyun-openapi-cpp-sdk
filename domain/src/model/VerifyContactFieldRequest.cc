@@ -36,28 +36,6 @@ void VerifyContactFieldRequest::setCountry(const std::string& country)
 	setCoreParameter("Country", country);
 }
 
-std::string VerifyContactFieldRequest::getAddress()const
-{
-	return address_;
-}
-
-void VerifyContactFieldRequest::setAddress(const std::string& address)
-{
-	address_ = address;
-	setCoreParameter("Address", address);
-}
-
-std::string VerifyContactFieldRequest::getTelArea()const
-{
-	return telArea_;
-}
-
-void VerifyContactFieldRequest::setTelArea(const std::string& telArea)
-{
-	telArea_ = telArea;
-	setCoreParameter("TelArea", telArea);
-}
-
 std::string VerifyContactFieldRequest::getCity()const
 {
 	return city_;
@@ -69,50 +47,6 @@ void VerifyContactFieldRequest::setCity(const std::string& city)
 	setCoreParameter("City", city);
 }
 
-std::string VerifyContactFieldRequest::getZhAddress()const
-{
-	return zhAddress_;
-}
-
-void VerifyContactFieldRequest::setZhAddress(const std::string& zhAddress)
-{
-	zhAddress_ = zhAddress;
-	setCoreParameter("ZhAddress", zhAddress);
-}
-
-std::string VerifyContactFieldRequest::getRegistrantType()const
-{
-	return registrantType_;
-}
-
-void VerifyContactFieldRequest::setRegistrantType(const std::string& registrantType)
-{
-	registrantType_ = registrantType;
-	setCoreParameter("RegistrantType", registrantType);
-}
-
-std::string VerifyContactFieldRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void VerifyContactFieldRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string VerifyContactFieldRequest::getTelephone()const
-{
-	return telephone_;
-}
-
-void VerifyContactFieldRequest::setTelephone(const std::string& telephone)
-{
-	telephone_ = telephone;
-	setCoreParameter("Telephone", telephone);
-}
-
 std::string VerifyContactFieldRequest::getZhCity()const
 {
 	return zhCity_;
@@ -122,28 +56,6 @@ void VerifyContactFieldRequest::setZhCity(const std::string& zhCity)
 {
 	zhCity_ = zhCity;
 	setCoreParameter("ZhCity", zhCity);
-}
-
-std::string VerifyContactFieldRequest::getZhProvince()const
-{
-	return zhProvince_;
-}
-
-void VerifyContactFieldRequest::setZhProvince(const std::string& zhProvince)
-{
-	zhProvince_ = zhProvince;
-	setCoreParameter("ZhProvince", zhProvince);
-}
-
-std::string VerifyContactFieldRequest::getRegistrantOrganization()const
-{
-	return registrantOrganization_;
-}
-
-void VerifyContactFieldRequest::setRegistrantOrganization(const std::string& registrantOrganization)
-{
-	registrantOrganization_ = registrantOrganization;
-	setCoreParameter("RegistrantOrganization", registrantOrganization);
 }
 
 std::string VerifyContactFieldRequest::getTelExt()const
@@ -190,17 +102,6 @@ void VerifyContactFieldRequest::setPostalCode(const std::string& postalCode)
 	setCoreParameter("PostalCode", postalCode);
 }
 
-std::string VerifyContactFieldRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void VerifyContactFieldRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string VerifyContactFieldRequest::getLang()const
 {
 	return lang_;
@@ -223,17 +124,6 @@ void VerifyContactFieldRequest::setEmail(const std::string& email)
 	setCoreParameter("Email", email);
 }
 
-std::string VerifyContactFieldRequest::getRegistrantName()const
-{
-	return registrantName_;
-}
-
-void VerifyContactFieldRequest::setRegistrantName(const std::string& registrantName)
-{
-	registrantName_ = registrantName;
-	setCoreParameter("RegistrantName", registrantName);
-}
-
 std::string VerifyContactFieldRequest::getZhRegistrantOrganization()const
 {
 	return zhRegistrantOrganization_;
@@ -243,5 +133,115 @@ void VerifyContactFieldRequest::setZhRegistrantOrganization(const std::string& z
 {
 	zhRegistrantOrganization_ = zhRegistrantOrganization;
 	setCoreParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
+}
+
+std::string VerifyContactFieldRequest::getAddress()const
+{
+	return address_;
+}
+
+void VerifyContactFieldRequest::setAddress(const std::string& address)
+{
+	address_ = address;
+	setCoreParameter("Address", address);
+}
+
+std::string VerifyContactFieldRequest::getTelArea()const
+{
+	return telArea_;
+}
+
+void VerifyContactFieldRequest::setTelArea(const std::string& telArea)
+{
+	telArea_ = telArea;
+	setCoreParameter("TelArea", telArea);
+}
+
+std::string VerifyContactFieldRequest::getZhAddress()const
+{
+	return zhAddress_;
+}
+
+void VerifyContactFieldRequest::setZhAddress(const std::string& zhAddress)
+{
+	zhAddress_ = zhAddress;
+	setCoreParameter("ZhAddress", zhAddress);
+}
+
+std::string VerifyContactFieldRequest::getRegistrantType()const
+{
+	return registrantType_;
+}
+
+void VerifyContactFieldRequest::setRegistrantType(const std::string& registrantType)
+{
+	registrantType_ = registrantType;
+	setCoreParameter("RegistrantType", registrantType);
+}
+
+std::string VerifyContactFieldRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void VerifyContactFieldRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string VerifyContactFieldRequest::getTelephone()const
+{
+	return telephone_;
+}
+
+void VerifyContactFieldRequest::setTelephone(const std::string& telephone)
+{
+	telephone_ = telephone;
+	setCoreParameter("Telephone", telephone);
+}
+
+std::string VerifyContactFieldRequest::getZhProvince()const
+{
+	return zhProvince_;
+}
+
+void VerifyContactFieldRequest::setZhProvince(const std::string& zhProvince)
+{
+	zhProvince_ = zhProvince;
+	setCoreParameter("ZhProvince", zhProvince);
+}
+
+std::string VerifyContactFieldRequest::getRegistrantOrganization()const
+{
+	return registrantOrganization_;
+}
+
+void VerifyContactFieldRequest::setRegistrantOrganization(const std::string& registrantOrganization)
+{
+	registrantOrganization_ = registrantOrganization;
+	setCoreParameter("RegistrantOrganization", registrantOrganization);
+}
+
+std::string VerifyContactFieldRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void VerifyContactFieldRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string VerifyContactFieldRequest::getRegistrantName()const
+{
+	return registrantName_;
+}
+
+void VerifyContactFieldRequest::setRegistrantName(const std::string& registrantName)
+{
+	registrantName_ = registrantName;
+	setCoreParameter("RegistrantName", registrantName);
 }
 

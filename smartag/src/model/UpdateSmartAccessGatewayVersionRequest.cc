@@ -36,6 +36,28 @@ void UpdateSmartAccessGatewayVersionRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpdateSmartAccessGatewayVersionRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void UpdateSmartAccessGatewayVersionRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string UpdateSmartAccessGatewayVersionRequest::getVersionCode()const
+{
+	return versionCode_;
+}
+
+void UpdateSmartAccessGatewayVersionRequest::setVersionCode(const std::string& versionCode)
+{
+	versionCode_ = versionCode;
+	setCoreParameter("VersionCode", versionCode);
+}
+
 std::string UpdateSmartAccessGatewayVersionRequest::getSerialNumber()const
 {
 	return serialNumber_;
@@ -58,17 +80,6 @@ void UpdateSmartAccessGatewayVersionRequest::setResourceOwnerAccount(const std::
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string UpdateSmartAccessGatewayVersionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateSmartAccessGatewayVersionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string UpdateSmartAccessGatewayVersionRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,17 +89,6 @@ void UpdateSmartAccessGatewayVersionRequest::setOwnerAccount(const std::string& 
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string UpdateSmartAccessGatewayVersionRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void UpdateSmartAccessGatewayVersionRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long UpdateSmartAccessGatewayVersionRequest::getOwnerId()const
@@ -102,14 +102,14 @@ void UpdateSmartAccessGatewayVersionRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UpdateSmartAccessGatewayVersionRequest::getVersionCode()const
+std::string UpdateSmartAccessGatewayVersionRequest::getSmartAGId()const
 {
-	return versionCode_;
+	return smartAGId_;
 }
 
-void UpdateSmartAccessGatewayVersionRequest::setVersionCode(const std::string& versionCode)
+void UpdateSmartAccessGatewayVersionRequest::setSmartAGId(const std::string& smartAGId)
 {
-	versionCode_ = versionCode;
-	setCoreParameter("VersionCode", versionCode);
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

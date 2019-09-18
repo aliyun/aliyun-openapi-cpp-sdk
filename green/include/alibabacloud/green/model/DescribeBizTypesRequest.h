@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeBizTypesRequest();
 				~DescribeBizTypesRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				bool getImportFlag()const;
 				void setImportFlag(bool importFlag);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				bool importFlag_;
+				std::string sourceIp_;
 
 			};
 		}

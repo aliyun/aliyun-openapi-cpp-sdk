@@ -36,17 +36,6 @@ void ModifyDBInstanceConnectionModeRequest::setConnectionMode(const std::string&
 	setCoreParameter("ConnectionMode", connectionMode);
 }
 
-std::string ModifyDBInstanceConnectionModeRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyDBInstanceConnectionModeRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string ModifyDBInstanceConnectionModeRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void ModifyDBInstanceConnectionModeRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstanceConnectionModeRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstanceConnectionModeRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

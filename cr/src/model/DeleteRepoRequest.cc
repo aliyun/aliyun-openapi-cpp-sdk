@@ -47,14 +47,3 @@ void DeleteRepoRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string DeleteRepoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteRepoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

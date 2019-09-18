@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				AddEditingProjectRequest();
 				~AddEditingProjectRequest();
 
-				std::string getCoverURL()const;
-				void setCoverURL(const std::string& coverURL);
-				std::string getDivision()const;
-				void setDivision(const std::string& division);
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getTimeline()const;
-				void setTimeline(const std::string& timeline);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCoverURL()const;
+				void setCoverURL(const std::string& coverURL);
+				std::string getDivision()const;
+				void setDivision(const std::string& division);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getOwnerId()const;
+				void setOwnerId(const std::string& ownerId);
+				std::string getTimeline()const;
+				void setTimeline(const std::string& timeline);
 
             private:
-				std::string coverURL_;
-				std::string division_;
 				std::string resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				std::string description_;
-				std::string timeline_;
-				std::string ownerId_;
 				std::string title_;
 				std::string accessKeyId_;
+				std::string coverURL_;
+				std::string division_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string ownerId_;
+				std::string timeline_;
 
 			};
 		}

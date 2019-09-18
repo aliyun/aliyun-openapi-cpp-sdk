@@ -36,17 +36,6 @@ void DeleteQosRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteQosRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteQosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteQosRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,28 @@ void DeleteQosRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteQosRequest::getQosId()const
+{
+	return qosId_;
+}
+
+void DeleteQosRequest::setQosId(const std::string& qosId)
+{
+	qosId_ = qosId;
+	setCoreParameter("QosId", qosId);
+}
+
+std::string DeleteQosRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteQosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteQosRequest::getOwnerAccount()const
@@ -78,16 +89,5 @@ void DeleteQosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteQosRequest::getQosId()const
-{
-	return qosId_;
-}
-
-void DeleteQosRequest::setQosId(const std::string& qosId)
-{
-	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
 }
 

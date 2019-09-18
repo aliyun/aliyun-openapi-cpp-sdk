@@ -35,10 +35,6 @@ namespace AlibabaCloud
 				RenewWebSiteInstanceRequest();
 				~RenewWebSiteInstanceRequest();
 
-				int getDuration()const;
-				void setDuration(int duration);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				int getOrderNum()const;
@@ -47,18 +43,22 @@ namespace AlibabaCloud
 				void setCommodityCode(const std::string& commodityCode);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getDuration()const;
+				void setDuration(int duration);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
 
             private:
-				int duration_;
-				std::string instanceId_;
 				std::string clientToken_;
 				int orderNum_;
 				std::string commodityCode_;
 				long ownerId_;
+				int duration_;
+				std::string instanceId_;
 				std::string pricingCycle_;
 				std::string orderType_;
 

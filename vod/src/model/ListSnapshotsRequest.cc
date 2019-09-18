@@ -36,37 +36,15 @@ void ListSnapshotsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListSnapshotsRequest::getResourceOwnerAccount()const
+std::string ListSnapshotsRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void ListSnapshotsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ListSnapshotsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ListSnapshotsRequest::getSnapshotType()const
-{
-	return snapshotType_;
-}
-
-void ListSnapshotsRequest::setSnapshotType(const std::string& snapshotType)
-{
-	snapshotType_ = snapshotType;
-	setCoreParameter("SnapshotType", snapshotType);
-}
-
-std::string ListSnapshotsRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void ListSnapshotsRequest::setPageNo(const std::string& pageNo)
-{
-	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListSnapshotsRequest::getPageSize()const
@@ -78,6 +56,28 @@ void ListSnapshotsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", pageSize);
+}
+
+std::string ListSnapshotsRequest::getAuthTimeout()const
+{
+	return authTimeout_;
+}
+
+void ListSnapshotsRequest::setAuthTimeout(const std::string& authTimeout)
+{
+	authTimeout_ = authTimeout;
+	setCoreParameter("AuthTimeout", authTimeout);
+}
+
+std::string ListSnapshotsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ListSnapshotsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListSnapshotsRequest::getVideoId()const
@@ -102,25 +102,25 @@ void ListSnapshotsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ListSnapshotsRequest::getAuthTimeout()const
+std::string ListSnapshotsRequest::getSnapshotType()const
 {
-	return authTimeout_;
+	return snapshotType_;
 }
 
-void ListSnapshotsRequest::setAuthTimeout(const std::string& authTimeout)
+void ListSnapshotsRequest::setSnapshotType(const std::string& snapshotType)
 {
-	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", authTimeout);
+	snapshotType_ = snapshotType;
+	setCoreParameter("SnapshotType", snapshotType);
 }
 
-std::string ListSnapshotsRequest::getAccessKeyId()const
+std::string ListSnapshotsRequest::getPageNo()const
 {
-	return accessKeyId_;
+	return pageNo_;
 }
 
-void ListSnapshotsRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListSnapshotsRequest::setPageNo(const std::string& pageNo)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", pageNo);
 }
 

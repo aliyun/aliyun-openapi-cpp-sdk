@@ -47,28 +47,6 @@ void ListAlertDingDingGroupRequest::setFromApp(const std::string& fromApp)
 	setCoreParameter("FromApp", fromApp);
 }
 
-std::string ListAlertDingDingGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListAlertDingDingGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListAlertDingDingGroupRequest::getIds()const
-{
-	return ids_;
-}
-
-void ListAlertDingDingGroupRequest::setIds(const std::string& ids)
-{
-	ids_ = ids;
-	setCoreParameter("Ids", ids);
-}
-
 std::string ListAlertDingDingGroupRequest::getUserId()const
 {
 	return userId_;
@@ -89,5 +67,27 @@ void ListAlertDingDingGroupRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListAlertDingDingGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListAlertDingDingGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ListAlertDingDingGroupRequest::getIds()const
+{
+	return ids_;
+}
+
+void ListAlertDingDingGroupRequest::setIds(const std::string& ids)
+{
+	ids_ = ids;
+	setCoreParameter("Ids", ids);
 }
 

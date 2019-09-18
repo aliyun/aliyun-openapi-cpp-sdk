@@ -25,17 +25,6 @@ CreateScheduledTaskRequest::CreateScheduledTaskRequest() :
 CreateScheduledTaskRequest::~CreateScheduledTaskRequest()
 {}
 
-std::string CreateScheduledTaskRequest::getLaunchTime()const
-{
-	return launchTime_;
-}
-
-void CreateScheduledTaskRequest::setLaunchTime(const std::string& launchTime)
-{
-	launchTime_ = launchTime;
-	setCoreParameter("LaunchTime", launchTime);
-}
-
 std::string CreateScheduledTaskRequest::getScheduledAction()const
 {
 	return scheduledAction_;
@@ -47,28 +36,6 @@ void CreateScheduledTaskRequest::setScheduledAction(const std::string& scheduled
 	setCoreParameter("ScheduledAction", scheduledAction);
 }
 
-std::string CreateScheduledTaskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateScheduledTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateScheduledTaskRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateScheduledTaskRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string CreateScheduledTaskRequest::getDescription()const
 {
 	return description_;
@@ -78,39 +45,6 @@ void CreateScheduledTaskRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long CreateScheduledTaskRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateScheduledTaskRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateScheduledTaskRequest::getRecurrenceValue()const
-{
-	return recurrenceValue_;
-}
-
-void CreateScheduledTaskRequest::setRecurrenceValue(const std::string& recurrenceValue)
-{
-	recurrenceValue_ = recurrenceValue;
-	setCoreParameter("RecurrenceValue", recurrenceValue);
-}
-
-int CreateScheduledTaskRequest::getLaunchExpirationTime()const
-{
-	return launchExpirationTime_;
-}
-
-void CreateScheduledTaskRequest::setLaunchExpirationTime(int launchExpirationTime)
-{
-	launchExpirationTime_ = launchExpirationTime;
-	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
 }
 
 std::string CreateScheduledTaskRequest::getRecurrenceEndTime()const
@@ -144,6 +78,72 @@ void CreateScheduledTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateScheduledTaskRequest::getLaunchTime()const
+{
+	return launchTime_;
+}
+
+void CreateScheduledTaskRequest::setLaunchTime(const std::string& launchTime)
+{
+	launchTime_ = launchTime;
+	setCoreParameter("LaunchTime", launchTime);
+}
+
+std::string CreateScheduledTaskRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateScheduledTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateScheduledTaskRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateScheduledTaskRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long CreateScheduledTaskRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateScheduledTaskRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateScheduledTaskRequest::getRecurrenceValue()const
+{
+	return recurrenceValue_;
+}
+
+void CreateScheduledTaskRequest::setRecurrenceValue(const std::string& recurrenceValue)
+{
+	recurrenceValue_ = recurrenceValue;
+	setCoreParameter("RecurrenceValue", recurrenceValue);
+}
+
+int CreateScheduledTaskRequest::getLaunchExpirationTime()const
+{
+	return launchExpirationTime_;
+}
+
+void CreateScheduledTaskRequest::setLaunchExpirationTime(int launchExpirationTime)
+{
+	launchExpirationTime_ = launchExpirationTime;
+	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
 }
 
 std::string CreateScheduledTaskRequest::getScheduledTaskName()const

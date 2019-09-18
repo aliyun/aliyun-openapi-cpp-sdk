@@ -25,17 +25,6 @@ CreateNamespaceAuthorizationRequest::CreateNamespaceAuthorizationRequest() :
 CreateNamespaceAuthorizationRequest::~CreateNamespaceAuthorizationRequest()
 {}
 
-std::string CreateNamespaceAuthorizationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateNamespaceAuthorizationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateNamespaceAuthorizationRequest::get_Namespace()const
 {
 	return _namespace_;

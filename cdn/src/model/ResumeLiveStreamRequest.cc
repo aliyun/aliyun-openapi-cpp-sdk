@@ -25,28 +25,6 @@ ResumeLiveStreamRequest::ResumeLiveStreamRequest() :
 ResumeLiveStreamRequest::~ResumeLiveStreamRequest()
 {}
 
-std::string ResumeLiveStreamRequest::getAppName()const
-{
-	return appName_;
-}
-
-void ResumeLiveStreamRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
-}
-
-std::string ResumeLiveStreamRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ResumeLiveStreamRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string ResumeLiveStreamRequest::getLiveStreamType()const
 {
 	return liveStreamType_;
@@ -78,6 +56,28 @@ void ResumeLiveStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ResumeLiveStreamRequest::getAppName()const
+{
+	return appName_;
+}
+
+void ResumeLiveStreamRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+std::string ResumeLiveStreamRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ResumeLiveStreamRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ResumeLiveStreamRequest::getStreamName()const

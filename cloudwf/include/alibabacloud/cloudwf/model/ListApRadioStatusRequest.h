@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ListApRadioStatusRequest();
 				~ListApRadioStatusRequest();
 
-				int getSearchDisabled()const;
-				void setSearchDisabled(int searchDisabled);
 				std::string getOrderCol()const;
 				void setOrderCol(const std::string& orderCol);
 				std::string getSearchName()const;
@@ -45,31 +43,33 @@ namespace AlibabaCloud
 				void setSearchChannelEquals(int searchChannelEquals);
 				int getLength()const;
 				void setLength(int length);
-				std::string getSearchMac()const;
-				void setSearchMac(const std::string& searchMac);
-				std::string getSearchApgroupName()const;
-				void setSearchApgroupName(const std::string& searchApgroupName);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
 				std::string getOrderDir()const;
 				void setOrderDir(const std::string& orderDir);
 				int getSearchApStatus()const;
 				void setSearchApStatus(int searchApStatus);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getSearchDisabled()const;
+				void setSearchDisabled(int searchDisabled);
+				std::string getSearchMac()const;
+				void setSearchMac(const std::string& searchMac);
+				std::string getSearchApgroupName()const;
+				void setSearchApgroupName(const std::string& searchApgroupName);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
 
             private:
-				int searchDisabled_;
 				std::string orderCol_;
 				std::string searchName_;
 				int searchChannelEquals_;
 				int length_;
-				std::string searchMac_;
-				std::string searchApgroupName_;
-				int pageIndex_;
 				std::string orderDir_;
 				int searchApStatus_;
 				std::string accessKeyId_;
+				int searchDisabled_;
+				std::string searchMac_;
+				std::string searchApgroupName_;
+				int pageIndex_;
 
 			};
 		}

@@ -25,15 +25,26 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
 DescribeDBInstancesRequest::~DescribeDBInstancesRequest()
 {}
 
-std::string DescribeDBInstancesRequest::getDBInstanceIds()const
+int DescribeDBInstancesRequest::getPageNumber()const
 {
-	return dBInstanceIds_;
+	return pageNumber_;
 }
 
-void DescribeDBInstancesRequest::setDBInstanceIds(const std::string& dBInstanceIds)
+void DescribeDBInstancesRequest::setPageNumber(int pageNumber)
 {
-	dBInstanceIds_ = dBInstanceIds;
-	setCoreParameter("DBInstanceIds", dBInstanceIds);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeDBInstancesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancesRequest::getRegionId()const
@@ -86,6 +97,17 @@ void DescribeDBInstancesRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string DescribeDBInstancesRequest::getDBInstanceIds()const
+{
+	return dBInstanceIds_;
+}
+
+void DescribeDBInstancesRequest::setDBInstanceIds(const std::string& dBInstanceIds)
+{
+	dBInstanceIds_ = dBInstanceIds;
+	setCoreParameter("DBInstanceIds", dBInstanceIds);
+}
+
 long DescribeDBInstancesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -106,27 +128,5 @@ void DescribeDBInstancesRequest::setInstanceNetworkType(const std::string& insta
 {
 	instanceNetworkType_ = instanceNetworkType;
 	setCoreParameter("InstanceNetworkType", instanceNetworkType);
-}
-
-int DescribeDBInstancesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeDBInstancesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeDBInstancesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

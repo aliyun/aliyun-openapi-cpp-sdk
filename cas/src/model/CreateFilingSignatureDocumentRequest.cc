@@ -25,17 +25,6 @@ CreateFilingSignatureDocumentRequest::CreateFilingSignatureDocumentRequest() :
 CreateFilingSignatureDocumentRequest::~CreateFilingSignatureDocumentRequest()
 {}
 
-std::string CreateFilingSignatureDocumentRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateFilingSignatureDocumentRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string CreateFilingSignatureDocumentRequest::getDocId()const
 {
 	return docId_;
@@ -45,6 +34,28 @@ void CreateFilingSignatureDocumentRequest::setDocId(const std::string& docId)
 {
 	docId_ = docId;
 	setCoreParameter("DocId", docId);
+}
+
+std::string CreateFilingSignatureDocumentRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateFilingSignatureDocumentRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateFilingSignatureDocumentRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateFilingSignatureDocumentRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateFilingSignatureDocumentRequest::getLang()const

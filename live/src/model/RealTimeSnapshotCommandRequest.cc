@@ -47,15 +47,15 @@ void RealTimeSnapshotCommandRequest::setAppName(const std::string& appName)
 	setCoreParameter("AppName", appName);
 }
 
-std::string RealTimeSnapshotCommandRequest::getRegionId()const
+std::string RealTimeSnapshotCommandRequest::getStreamName()const
 {
-	return regionId_;
+	return streamName_;
 }
 
-void RealTimeSnapshotCommandRequest::setRegionId(const std::string& regionId)
+void RealTimeSnapshotCommandRequest::setStreamName(const std::string& streamName)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string RealTimeSnapshotCommandRequest::getDomainName()const
@@ -67,17 +67,6 @@ void RealTimeSnapshotCommandRequest::setDomainName(const std::string& domainName
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-int RealTimeSnapshotCommandRequest::getInterval()const
-{
-	return interval_;
-}
-
-void RealTimeSnapshotCommandRequest::setInterval(int interval)
-{
-	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
 }
 
 long RealTimeSnapshotCommandRequest::getOwnerId()const
@@ -102,14 +91,14 @@ void RealTimeSnapshotCommandRequest::setCommand(const std::string& command)
 	setCoreParameter("Command", command);
 }
 
-std::string RealTimeSnapshotCommandRequest::getStreamName()const
+int RealTimeSnapshotCommandRequest::getInterval()const
 {
-	return streamName_;
+	return interval_;
 }
 
-void RealTimeSnapshotCommandRequest::setStreamName(const std::string& streamName)
+void RealTimeSnapshotCommandRequest::setInterval(int interval)
 {
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	interval_ = interval;
+	setCoreParameter("Interval", std::to_string(interval));
 }
 

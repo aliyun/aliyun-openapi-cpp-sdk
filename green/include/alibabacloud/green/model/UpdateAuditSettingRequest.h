@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				UpdateAuditSettingRequest();
 				~UpdateAuditSettingRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getSeed()const;
 				void setSeed(const std::string& seed);
 				std::string getAuditRange()const;
 				void setAuditRange(const std::string& auditRange);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getCallback()const;
 				void setCallback(const std::string& callback);
 
             private:
-				std::string sourceIp_;
 				std::string seed_;
 				std::string auditRange_;
+				std::string sourceIp_;
 				std::string callback_;
 
 			};

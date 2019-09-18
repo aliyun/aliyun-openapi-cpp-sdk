@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				QueryMaterialListRequest();
 				~QueryMaterialListRequest();
 
+				int getType()const;
+				void setType(int type);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				std::string getName()const;
 				void setName(const std::string& name);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getCardNumber()const;
 				void setCardNumber(const std::string& cardNumber);
-				int getType()const;
-				void setType(int type);
 				int getRegion()const;
 				void setRegion(int region);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				int getStatus()const;
 				void setStatus(int status);
 
             private:
+				int type_;
+				int pageNum_;
 				std::string name_;
 				int pageSize_;
 				std::string cardNumber_;
-				int type_;
 				int region_;
-				int pageNum_;
 				int status_;
 
 			};

@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DescribeOssIncrementStatsRequest();
 				~DescribeOssIncrementStatsRequest();
 
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getStartDate()const;
 				void setStartDate(const std::string& startDate);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 				std::string getScene()const;
 				void setScene(const std::string& scene);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				std::string endDate_;
-				std::string sourceIp_;
-				std::string lang_;
 				std::string startDate_;
 				std::string resourceType_;
 				std::string scene_;
+				std::string endDate_;
+				std::string sourceIp_;
+				std::string lang_;
 
 			};
 		}

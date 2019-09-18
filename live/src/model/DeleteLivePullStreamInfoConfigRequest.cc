@@ -47,6 +47,17 @@ void DeleteLivePullStreamInfoConfigRequest::setSecurityToken(const std::string& 
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string DeleteLivePullStreamInfoConfigRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void DeleteLivePullStreamInfoConfigRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
+}
+
 std::string DeleteLivePullStreamInfoConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -67,16 +78,5 @@ void DeleteLivePullStreamInfoConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteLivePullStreamInfoConfigRequest::getStreamName()const
-{
-	return streamName_;
-}
-
-void DeleteLivePullStreamInfoConfigRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
 }
 

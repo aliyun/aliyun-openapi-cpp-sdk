@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				UpdateDocIndexMetaRequest();
 				~UpdateDocIndexMetaRequest();
 
+				std::string getProject()const;
+				void setProject(const std::string& project);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUniqueId()const;
+				void setUniqueId(const std::string& uniqueId);
 				std::string getCustomKey1()const;
 				void setCustomKey1(const std::string& customKey1);
 				std::string getSet()const;
@@ -47,32 +53,23 @@ namespace AlibabaCloud
 				void setCustomKey3(const std::string& customKey3);
 				std::string getCustomKey2()const;
 				void setCustomKey2(const std::string& customKey2);
-				std::string getProject()const;
-				void setProject(const std::string& project);
 				std::string getCustomKey6()const;
 				void setCustomKey6(const std::string& customKey6);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getUniqueId()const;
-				void setUniqueId(const std::string& uniqueId);
 
             private:
+				std::string project_;
+				std::string accessKeyId_;
+				std::string uniqueId_;
 				std::string customKey1_;
 				std::string set_;
 				std::string customKey5_;
 				std::string customKey4_;
 				std::string customKey3_;
 				std::string customKey2_;
-				std::string project_;
 				std::string customKey6_;
-				std::string accessKeyId_;
-				std::string regionId_;
 				std::string name_;
-				std::string uniqueId_;
 
 			};
 		}

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				RenameAlbumRequest();
 				~RenameAlbumRequest();
 
-				std::string getAlbumName()const;
-				void setAlbumName(const std::string& albumName);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				long getAlbumId()const;
 				void setAlbumId(long albumId);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
+				std::string getAlbumName()const;
+				void setAlbumName(const std::string& albumName);
 
             private:
-				std::string albumName_;
 				std::string libraryId_;
 				long albumId_;
 				std::string storeName_;
+				std::string albumName_;
 
 			};
 		}

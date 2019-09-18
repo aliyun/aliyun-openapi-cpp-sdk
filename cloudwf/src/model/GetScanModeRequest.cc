@@ -25,6 +25,17 @@ GetScanModeRequest::GetScanModeRequest() :
 GetScanModeRequest::~GetScanModeRequest()
 {}
 
+std::string GetScanModeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetScanModeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<std::string> GetScanModeRequest::getMacList()const
 {
 	return macList_;
@@ -35,16 +46,5 @@ void GetScanModeRequest::setMacList(const std::vector<std::string>& macList)
 	macList_ = macList;
 	for(int i = 0; i!= macList.size(); i++)
 		setCoreParameter("MacList."+ std::to_string(i), macList.at(i));
-}
-
-std::string GetScanModeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetScanModeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

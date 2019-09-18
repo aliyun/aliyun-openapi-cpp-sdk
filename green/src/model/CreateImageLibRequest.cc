@@ -25,6 +25,28 @@ CreateImageLibRequest::CreateImageLibRequest() :
 CreateImageLibRequest::~CreateImageLibRequest()
 {}
 
+std::string CreateImageLibRequest::getServiceModule()const
+{
+	return serviceModule_;
+}
+
+void CreateImageLibRequest::setServiceModule(const std::string& serviceModule)
+{
+	serviceModule_ = serviceModule;
+	setCoreParameter("ServiceModule", serviceModule);
+}
+
+std::string CreateImageLibRequest::getScene()const
+{
+	return scene_;
+}
+
+void CreateImageLibRequest::setScene(const std::string& scene)
+{
+	scene_ = scene;
+	setCoreParameter("Scene", scene);
+}
+
 std::string CreateImageLibRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,17 +69,6 @@ void CreateImageLibRequest::setEnable(bool enable)
 	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
-std::string CreateImageLibRequest::getName()const
-{
-	return name_;
-}
-
-void CreateImageLibRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateImageLibRequest::getBizTypes()const
 {
 	return bizTypes_;
@@ -69,15 +80,15 @@ void CreateImageLibRequest::setBizTypes(const std::string& bizTypes)
 	setCoreParameter("BizTypes", bizTypes);
 }
 
-std::string CreateImageLibRequest::getServiceModule()const
+std::string CreateImageLibRequest::getName()const
 {
-	return serviceModule_;
+	return name_;
 }
 
-void CreateImageLibRequest::setServiceModule(const std::string& serviceModule)
+void CreateImageLibRequest::setName(const std::string& name)
 {
-	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", serviceModule);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string CreateImageLibRequest::getCategory()const
@@ -89,16 +100,5 @@ void CreateImageLibRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setCoreParameter("Category", category);
-}
-
-std::string CreateImageLibRequest::getScene()const
-{
-	return scene_;
-}
-
-void CreateImageLibRequest::setScene(const std::string& scene)
-{
-	scene_ = scene;
-	setCoreParameter("Scene", scene);
 }
 

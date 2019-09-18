@@ -25,39 +25,6 @@ SetSecurityPreferenceRequest::SetSecurityPreferenceRequest() :
 SetSecurityPreferenceRequest::~SetSecurityPreferenceRequest()
 {}
 
-bool SetSecurityPreferenceRequest::getAllowUserToManageAccessKeys()const
-{
-	return allowUserToManageAccessKeys_;
-}
-
-void SetSecurityPreferenceRequest::setAllowUserToManageAccessKeys(bool allowUserToManageAccessKeys)
-{
-	allowUserToManageAccessKeys_ = allowUserToManageAccessKeys;
-	setCoreParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys ? "true" : "false");
-}
-
-bool SetSecurityPreferenceRequest::getAllowUserToManageMFADevices()const
-{
-	return allowUserToManageMFADevices_;
-}
-
-void SetSecurityPreferenceRequest::setAllowUserToManageMFADevices(bool allowUserToManageMFADevices)
-{
-	allowUserToManageMFADevices_ = allowUserToManageMFADevices;
-	setCoreParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices ? "true" : "false");
-}
-
-bool SetSecurityPreferenceRequest::getAllowUserToManagePublicKeys()const
-{
-	return allowUserToManagePublicKeys_;
-}
-
-void SetSecurityPreferenceRequest::setAllowUserToManagePublicKeys(bool allowUserToManagePublicKeys)
-{
-	allowUserToManagePublicKeys_ = allowUserToManagePublicKeys;
-	setCoreParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys ? "true" : "false");
-}
-
 bool SetSecurityPreferenceRequest::getEnableSaveMFATicket()const
 {
 	return enableSaveMFATicket_;
@@ -91,6 +58,17 @@ void SetSecurityPreferenceRequest::setAllowUserToChangePassword(bool allowUserTo
 	setCoreParameter("AllowUserToChangePassword", allowUserToChangePassword ? "true" : "false");
 }
 
+bool SetSecurityPreferenceRequest::getAllowUserToManagePublicKeys()const
+{
+	return allowUserToManagePublicKeys_;
+}
+
+void SetSecurityPreferenceRequest::setAllowUserToManagePublicKeys(bool allowUserToManagePublicKeys)
+{
+	allowUserToManagePublicKeys_ = allowUserToManagePublicKeys;
+	setCoreParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys ? "true" : "false");
+}
+
 int SetSecurityPreferenceRequest::getLoginSessionDuration()const
 {
 	return loginSessionDuration_;
@@ -100,5 +78,27 @@ void SetSecurityPreferenceRequest::setLoginSessionDuration(int loginSessionDurat
 {
 	loginSessionDuration_ = loginSessionDuration;
 	setCoreParameter("LoginSessionDuration", std::to_string(loginSessionDuration));
+}
+
+bool SetSecurityPreferenceRequest::getAllowUserToManageAccessKeys()const
+{
+	return allowUserToManageAccessKeys_;
+}
+
+void SetSecurityPreferenceRequest::setAllowUserToManageAccessKeys(bool allowUserToManageAccessKeys)
+{
+	allowUserToManageAccessKeys_ = allowUserToManageAccessKeys;
+	setCoreParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys ? "true" : "false");
+}
+
+bool SetSecurityPreferenceRequest::getAllowUserToManageMFADevices()const
+{
+	return allowUserToManageMFADevices_;
+}
+
+void SetSecurityPreferenceRequest::setAllowUserToManageMFADevices(bool allowUserToManageMFADevices)
+{
+	allowUserToManageMFADevices_ = allowUserToManageMFADevices;
+	setCoreParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices ? "true" : "false");
 }
 

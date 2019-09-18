@@ -51,42 +51,6 @@ ImageSearchClient::ImageSearchClient(const std::string & accessKeyId, const std:
 ImageSearchClient::~ImageSearchClient()
 {}
 
-ImageSearchClient::DeleteItemOutcome ImageSearchClient::deleteItem(const DeleteItemRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteItemOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteItemOutcome(DeleteItemResult(outcome.result()));
-	else
-		return DeleteItemOutcome(outcome.error());
-}
-
-void ImageSearchClient::deleteItemAsync(const DeleteItemRequest& request, const DeleteItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteItem(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImageSearchClient::DeleteItemOutcomeCallable ImageSearchClient::deleteItemCallable(const DeleteItemRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteItemOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteItem(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImageSearchClient::AddItemOutcome ImageSearchClient::addItem(const AddItemRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +81,42 @@ ImageSearchClient::AddItemOutcomeCallable ImageSearchClient::addItemCallable(con
 			[this, request]()
 			{
 			return this->addItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageSearchClient::DeleteItemOutcome ImageSearchClient::deleteItem(const DeleteItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteItemOutcome(DeleteItemResult(outcome.result()));
+	else
+		return DeleteItemOutcome(outcome.error());
+}
+
+void ImageSearchClient::deleteItemAsync(const DeleteItemRequest& request, const DeleteItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageSearchClient::DeleteItemOutcomeCallable ImageSearchClient::deleteItemCallable(const DeleteItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteItemOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteItem(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

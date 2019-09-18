@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DescribeSQLLogFilesRequest();
 				~DescribeSQLLogFilesRequest();
 
-				std::string getFileName()const;
-				void setFileName(const std::string& fileName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getFileName()const;
+				void setFileName(const std::string& fileName);
 
             private:
-				std::string fileName_;
-				int pageSize_;
-				std::string dBInstanceId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				int pageSize_;
+				std::string dBInstanceId_;
+				std::string fileName_;
 
 			};
 		}

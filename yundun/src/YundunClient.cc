@@ -51,78 +51,6 @@ YundunClient::YundunClient(const std::string & accessKeyId, const std::string & 
 YundunClient::~YundunClient()
 {}
 
-YundunClient::TodayqpsByRegionOutcome YundunClient::todayqpsByRegion(const TodayqpsByRegionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TodayqpsByRegionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TodayqpsByRegionOutcome(TodayqpsByRegionResult(outcome.result()));
-	else
-		return TodayqpsByRegionOutcome(outcome.error());
-}
-
-void YundunClient::todayqpsByRegionAsync(const TodayqpsByRegionRequest& request, const TodayqpsByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, todayqpsByRegion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-YundunClient::TodayqpsByRegionOutcomeCallable YundunClient::todayqpsByRegionCallable(const TodayqpsByRegionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TodayqpsByRegionOutcome()>>(
-			[this, request]()
-			{
-			return this->todayqpsByRegion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-YundunClient::TodayAllppsOutcome YundunClient::todayAllpps(const TodayAllppsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TodayAllppsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TodayAllppsOutcome(TodayAllppsResult(outcome.result()));
-	else
-		return TodayAllppsOutcome(outcome.error());
-}
-
-void YundunClient::todayAllppsAsync(const TodayAllppsRequest& request, const TodayAllppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, todayAllpps(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-YundunClient::TodayAllppsOutcomeCallable YundunClient::todayAllppsCallable(const TodayAllppsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TodayAllppsOutcome()>>(
-			[this, request]()
-			{
-			return this->todayAllpps(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 YundunClient::AllMalwareNumOutcome YundunClient::allMalwareNum(const AllMalwareNumRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,186 +81,6 @@ YundunClient::AllMalwareNumOutcomeCallable YundunClient::allMalwareNumCallable(c
 			[this, request]()
 			{
 			return this->allMalwareNum(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-YundunClient::TodayCrackInterceptOutcome YundunClient::todayCrackIntercept(const TodayCrackInterceptRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TodayCrackInterceptOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TodayCrackInterceptOutcome(TodayCrackInterceptResult(outcome.result()));
-	else
-		return TodayCrackInterceptOutcome(outcome.error());
-}
-
-void YundunClient::todayCrackInterceptAsync(const TodayCrackInterceptRequest& request, const TodayCrackInterceptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, todayCrackIntercept(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-YundunClient::TodayCrackInterceptOutcomeCallable YundunClient::todayCrackInterceptCallable(const TodayCrackInterceptRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TodayCrackInterceptOutcome()>>(
-			[this, request]()
-			{
-			return this->todayCrackIntercept(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-YundunClient::TodayBackdoorOutcome YundunClient::todayBackdoor(const TodayBackdoorRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TodayBackdoorOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TodayBackdoorOutcome(TodayBackdoorResult(outcome.result()));
-	else
-		return TodayBackdoorOutcome(outcome.error());
-}
-
-void YundunClient::todayBackdoorAsync(const TodayBackdoorRequest& request, const TodayBackdoorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, todayBackdoor(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-YundunClient::TodayBackdoorOutcomeCallable YundunClient::todayBackdoorCallable(const TodayBackdoorRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TodayBackdoorOutcome()>>(
-			[this, request]()
-			{
-			return this->todayBackdoor(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-YundunClient::TodayMalwareNumOutcome YundunClient::todayMalwareNum(const TodayMalwareNumRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TodayMalwareNumOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TodayMalwareNumOutcome(TodayMalwareNumResult(outcome.result()));
-	else
-		return TodayMalwareNumOutcome(outcome.error());
-}
-
-void YundunClient::todayMalwareNumAsync(const TodayMalwareNumRequest& request, const TodayMalwareNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, todayMalwareNum(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-YundunClient::TodayMalwareNumOutcomeCallable YundunClient::todayMalwareNumCallable(const TodayMalwareNumRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TodayMalwareNumOutcome()>>(
-			[this, request]()
-			{
-			return this->todayMalwareNum(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-YundunClient::WebAttackNumOutcome YundunClient::webAttackNum(const WebAttackNumRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return WebAttackNumOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return WebAttackNumOutcome(WebAttackNumResult(outcome.result()));
-	else
-		return WebAttackNumOutcome(outcome.error());
-}
-
-void YundunClient::webAttackNumAsync(const WebAttackNumRequest& request, const WebAttackNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, webAttackNum(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-YundunClient::WebAttackNumOutcomeCallable YundunClient::webAttackNumCallable(const WebAttackNumRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<WebAttackNumOutcome()>>(
-			[this, request]()
-			{
-			return this->webAttackNum(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-YundunClient::TodayAegisOnlineRateOutcome YundunClient::todayAegisOnlineRate(const TodayAegisOnlineRateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TodayAegisOnlineRateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TodayAegisOnlineRateOutcome(TodayAegisOnlineRateResult(outcome.result()));
-	else
-		return TodayAegisOnlineRateOutcome(outcome.error());
-}
-
-void YundunClient::todayAegisOnlineRateAsync(const TodayAegisOnlineRateRequest& request, const TodayAegisOnlineRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, todayAegisOnlineRate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-YundunClient::TodayAegisOnlineRateOutcomeCallable YundunClient::todayAegisOnlineRateCallable(const TodayAegisOnlineRateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TodayAegisOnlineRateOutcome()>>(
-			[this, request]()
-			{
-			return this->todayAegisOnlineRate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +123,42 @@ YundunClient::CurrentDdosAttackNumOutcomeCallable YundunClient::currentDdosAttac
 	return task->get_future();
 }
 
+YundunClient::TodayAegisOnlineRateOutcome YundunClient::todayAegisOnlineRate(const TodayAegisOnlineRateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TodayAegisOnlineRateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TodayAegisOnlineRateOutcome(TodayAegisOnlineRateResult(outcome.result()));
+	else
+		return TodayAegisOnlineRateOutcome(outcome.error());
+}
+
+void YundunClient::todayAegisOnlineRateAsync(const TodayAegisOnlineRateRequest& request, const TodayAegisOnlineRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, todayAegisOnlineRate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+YundunClient::TodayAegisOnlineRateOutcomeCallable YundunClient::todayAegisOnlineRateCallable(const TodayAegisOnlineRateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TodayAegisOnlineRateOutcome()>>(
+			[this, request]()
+			{
+			return this->todayAegisOnlineRate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 YundunClient::TodayAllkbpsOutcome YundunClient::todayAllkbps(const TodayAllkbpsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +189,222 @@ YundunClient::TodayAllkbpsOutcomeCallable YundunClient::todayAllkbpsCallable(con
 			[this, request]()
 			{
 			return this->todayAllkbps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+YundunClient::TodayAllppsOutcome YundunClient::todayAllpps(const TodayAllppsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TodayAllppsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TodayAllppsOutcome(TodayAllppsResult(outcome.result()));
+	else
+		return TodayAllppsOutcome(outcome.error());
+}
+
+void YundunClient::todayAllppsAsync(const TodayAllppsRequest& request, const TodayAllppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, todayAllpps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+YundunClient::TodayAllppsOutcomeCallable YundunClient::todayAllppsCallable(const TodayAllppsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TodayAllppsOutcome()>>(
+			[this, request]()
+			{
+			return this->todayAllpps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+YundunClient::TodayBackdoorOutcome YundunClient::todayBackdoor(const TodayBackdoorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TodayBackdoorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TodayBackdoorOutcome(TodayBackdoorResult(outcome.result()));
+	else
+		return TodayBackdoorOutcome(outcome.error());
+}
+
+void YundunClient::todayBackdoorAsync(const TodayBackdoorRequest& request, const TodayBackdoorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, todayBackdoor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+YundunClient::TodayBackdoorOutcomeCallable YundunClient::todayBackdoorCallable(const TodayBackdoorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TodayBackdoorOutcome()>>(
+			[this, request]()
+			{
+			return this->todayBackdoor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+YundunClient::TodayCrackInterceptOutcome YundunClient::todayCrackIntercept(const TodayCrackInterceptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TodayCrackInterceptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TodayCrackInterceptOutcome(TodayCrackInterceptResult(outcome.result()));
+	else
+		return TodayCrackInterceptOutcome(outcome.error());
+}
+
+void YundunClient::todayCrackInterceptAsync(const TodayCrackInterceptRequest& request, const TodayCrackInterceptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, todayCrackIntercept(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+YundunClient::TodayCrackInterceptOutcomeCallable YundunClient::todayCrackInterceptCallable(const TodayCrackInterceptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TodayCrackInterceptOutcome()>>(
+			[this, request]()
+			{
+			return this->todayCrackIntercept(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+YundunClient::TodayMalwareNumOutcome YundunClient::todayMalwareNum(const TodayMalwareNumRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TodayMalwareNumOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TodayMalwareNumOutcome(TodayMalwareNumResult(outcome.result()));
+	else
+		return TodayMalwareNumOutcome(outcome.error());
+}
+
+void YundunClient::todayMalwareNumAsync(const TodayMalwareNumRequest& request, const TodayMalwareNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, todayMalwareNum(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+YundunClient::TodayMalwareNumOutcomeCallable YundunClient::todayMalwareNumCallable(const TodayMalwareNumRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TodayMalwareNumOutcome()>>(
+			[this, request]()
+			{
+			return this->todayMalwareNum(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+YundunClient::TodayqpsByRegionOutcome YundunClient::todayqpsByRegion(const TodayqpsByRegionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TodayqpsByRegionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TodayqpsByRegionOutcome(TodayqpsByRegionResult(outcome.result()));
+	else
+		return TodayqpsByRegionOutcome(outcome.error());
+}
+
+void YundunClient::todayqpsByRegionAsync(const TodayqpsByRegionRequest& request, const TodayqpsByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, todayqpsByRegion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+YundunClient::TodayqpsByRegionOutcomeCallable YundunClient::todayqpsByRegionCallable(const TodayqpsByRegionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TodayqpsByRegionOutcome()>>(
+			[this, request]()
+			{
+			return this->todayqpsByRegion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+YundunClient::WebAttackNumOutcome YundunClient::webAttackNum(const WebAttackNumRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WebAttackNumOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WebAttackNumOutcome(WebAttackNumResult(outcome.result()));
+	else
+		return WebAttackNumOutcome(outcome.error());
+}
+
+void YundunClient::webAttackNumAsync(const WebAttackNumRequest& request, const WebAttackNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, webAttackNum(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+YundunClient::WebAttackNumOutcomeCallable YundunClient::webAttackNumCallable(const WebAttackNumRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WebAttackNumOutcome()>>(
+			[this, request]()
+			{
+			return this->webAttackNum(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -25,17 +25,6 @@ ListContactGroupRequest::ListContactGroupRequest() :
 ListContactGroupRequest::~ListContactGroupRequest()
 {}
 
-int ListContactGroupRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListContactGroupRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int ListContactGroupRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -45,5 +34,16 @@ void ListContactGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int ListContactGroupRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListContactGroupRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

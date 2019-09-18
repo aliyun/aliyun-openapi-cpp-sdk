@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				ModifyRuleRequest();
 				~ModifyRuleRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
-				std::string getName()const;
-				void setName(const std::string& name);
-				long getId()const;
-				void setId(long id);
 				long getRiskLevelId()const;
 				void setRiskLevelId(long riskLevelId);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				int getCustomType()const;
-				void setCustomType(int customType);
-				int getCategory()const;
-				void setCategory(int category);
 				std::string getContent()const;
 				void setContent(const std::string& content);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				long getId()const;
+				void setId(long id);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				int getCustomType()const;
+				void setCustomType(int customType);
+				std::string getName()const;
+				void setName(const std::string& name);
+				int getCategory()const;
+				void setCategory(int category);
 
             private:
-				std::string sourceIp_;
-				int featureType_;
-				std::string name_;
-				long id_;
 				long riskLevelId_;
-				std::string lang_;
-				int customType_;
-				int category_;
 				std::string content_;
+				std::string sourceIp_;
+				long id_;
+				std::string lang_;
+				int featureType_;
+				int customType_;
+				std::string name_;
+				int category_;
 
 			};
 		}

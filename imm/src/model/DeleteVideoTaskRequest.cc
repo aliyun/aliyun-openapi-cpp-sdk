@@ -25,28 +25,6 @@ DeleteVideoTaskRequest::DeleteVideoTaskRequest() :
 DeleteVideoTaskRequest::~DeleteVideoTaskRequest()
 {}
 
-std::string DeleteVideoTaskRequest::getTaskType()const
-{
-	return taskType_;
-}
-
-void DeleteVideoTaskRequest::setTaskType(const std::string& taskType)
-{
-	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
-}
-
-std::string DeleteVideoTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteVideoTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteVideoTaskRequest::getProject()const
 {
 	return project_;
@@ -56,6 +34,17 @@ void DeleteVideoTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
+}
+
+std::string DeleteVideoTaskRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteVideoTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteVideoTaskRequest::getTaskId()const
@@ -69,14 +58,14 @@ void DeleteVideoTaskRequest::setTaskId(const std::string& taskId)
 	setCoreParameter("TaskId", taskId);
 }
 
-std::string DeleteVideoTaskRequest::getAccessKeyId()const
+std::string DeleteVideoTaskRequest::getTaskType()const
 {
-	return accessKeyId_;
+	return taskType_;
 }
 
-void DeleteVideoTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+void DeleteVideoTaskRequest::setTaskType(const std::string& taskType)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	taskType_ = taskType;
+	setCoreParameter("TaskType", taskType);
 }
 

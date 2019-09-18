@@ -25,17 +25,6 @@ DeleteCdnIpRequest::DeleteCdnIpRequest() :
 DeleteCdnIpRequest::~DeleteCdnIpRequest()
 {}
 
-int DeleteCdnIpRequest::getItemId()const
-{
-	return itemId_;
-}
-
-void DeleteCdnIpRequest::setItemId(int itemId)
-{
-	itemId_ = itemId;
-	setCoreParameter("ItemId", std::to_string(itemId));
-}
-
 long DeleteCdnIpRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void DeleteCdnIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DeleteCdnIpRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DeleteCdnIpRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
+int DeleteCdnIpRequest::getItemId()const
+{
+	return itemId_;
+}
+
+void DeleteCdnIpRequest::setItemId(int itemId)
+{
+	itemId_ = itemId;
+	setCoreParameter("ItemId", std::to_string(itemId));
 }
 
 std::string DeleteCdnIpRequest::getSourceIp()const
@@ -78,16 +89,5 @@ void DeleteCdnIpRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DeleteCdnIpRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DeleteCdnIpRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

@@ -25,6 +25,17 @@ ResetQualificationVerificationRequest::ResetQualificationVerificationRequest() :
 ResetQualificationVerificationRequest::~ResetQualificationVerificationRequest()
 {}
 
+std::string ResetQualificationVerificationRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ResetQualificationVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ResetQualificationVerificationRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,16 +67,5 @@ void ResetQualificationVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string ResetQualificationVerificationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ResetQualificationVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

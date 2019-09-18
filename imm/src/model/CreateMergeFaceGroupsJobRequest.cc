@@ -25,48 +25,26 @@ CreateMergeFaceGroupsJobRequest::CreateMergeFaceGroupsJobRequest() :
 CreateMergeFaceGroupsJobRequest::~CreateMergeFaceGroupsJobRequest()
 {}
 
-std::string CreateMergeFaceGroupsJobRequest::getGroupIdFrom()const
+std::string CreateMergeFaceGroupsJobRequest::getProject()const
 {
-	return groupIdFrom_;
+	return project_;
 }
 
-void CreateMergeFaceGroupsJobRequest::setGroupIdFrom(const std::string& groupIdFrom)
+void CreateMergeFaceGroupsJobRequest::setProject(const std::string& project)
 {
-	groupIdFrom_ = groupIdFrom;
-	setCoreParameter("GroupIdFrom", groupIdFrom);
+	project_ = project;
+	setCoreParameter("Project", project);
 }
 
-std::string CreateMergeFaceGroupsJobRequest::getGroupIdTo()const
+std::string CreateMergeFaceGroupsJobRequest::getAccessKeyId()const
 {
-	return groupIdTo_;
+	return accessKeyId_;
 }
 
-void CreateMergeFaceGroupsJobRequest::setGroupIdTo(const std::string& groupIdTo)
+void CreateMergeFaceGroupsJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	groupIdTo_ = groupIdTo;
-	setCoreParameter("GroupIdTo", groupIdTo);
-}
-
-std::string CreateMergeFaceGroupsJobRequest::getNotifyTopicName()const
-{
-	return notifyTopicName_;
-}
-
-void CreateMergeFaceGroupsJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
-{
-	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
-}
-
-std::string CreateMergeFaceGroupsJobRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateMergeFaceGroupsJobRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateMergeFaceGroupsJobRequest::getNotifyEndpoint()const
@@ -80,15 +58,37 @@ void CreateMergeFaceGroupsJobRequest::setNotifyEndpoint(const std::string& notif
 	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
-std::string CreateMergeFaceGroupsJobRequest::getProject()const
+std::string CreateMergeFaceGroupsJobRequest::getGroupIdFrom()const
 {
-	return project_;
+	return groupIdFrom_;
 }
 
-void CreateMergeFaceGroupsJobRequest::setProject(const std::string& project)
+void CreateMergeFaceGroupsJobRequest::setGroupIdFrom(const std::string& groupIdFrom)
 {
-	project_ = project;
-	setCoreParameter("Project", project);
+	groupIdFrom_ = groupIdFrom;
+	setCoreParameter("GroupIdFrom", groupIdFrom);
+}
+
+std::string CreateMergeFaceGroupsJobRequest::getNotifyTopicName()const
+{
+	return notifyTopicName_;
+}
+
+void CreateMergeFaceGroupsJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
+{
+	notifyTopicName_ = notifyTopicName;
+	setCoreParameter("NotifyTopicName", notifyTopicName);
+}
+
+std::string CreateMergeFaceGroupsJobRequest::getGroupIdTo()const
+{
+	return groupIdTo_;
+}
+
+void CreateMergeFaceGroupsJobRequest::setGroupIdTo(const std::string& groupIdTo)
+{
+	groupIdTo_ = groupIdTo;
+	setCoreParameter("GroupIdTo", groupIdTo);
 }
 
 std::string CreateMergeFaceGroupsJobRequest::getSetId()const
@@ -100,16 +100,5 @@ void CreateMergeFaceGroupsJobRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
 	setCoreParameter("SetId", setId);
-}
-
-std::string CreateMergeFaceGroupsJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateMergeFaceGroupsJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

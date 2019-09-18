@@ -25,17 +25,6 @@ CreateOrderAuditRequest::CreateOrderAuditRequest() :
 CreateOrderAuditRequest::~CreateOrderAuditRequest()
 {}
 
-std::string CreateOrderAuditRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateOrderAuditRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long CreateOrderAuditRequest::getOrderId()const
 {
 	return orderId_;
@@ -47,17 +36,6 @@ void CreateOrderAuditRequest::setOrderId(long orderId)
 	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
-std::string CreateOrderAuditRequest::getLang()const
-{
-	return lang_;
-}
-
-void CreateOrderAuditRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string CreateOrderAuditRequest::getType()const
 {
 	return type_;
@@ -67,5 +45,38 @@ void CreateOrderAuditRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string CreateOrderAuditRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateOrderAuditRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateOrderAuditRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateOrderAuditRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string CreateOrderAuditRequest::getLang()const
+{
+	return lang_;
+}
+
+void CreateOrderAuditRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

@@ -25,17 +25,6 @@ RunClusterServiceActionRequest::RunClusterServiceActionRequest() :
 RunClusterServiceActionRequest::~RunClusterServiceActionRequest()
 {}
 
-std::string RunClusterServiceActionRequest::getExecuteStrategy()const
-{
-	return executeStrategy_;
-}
-
-void RunClusterServiceActionRequest::setExecuteStrategy(const std::string& executeStrategy)
-{
-	executeStrategy_ = executeStrategy;
-	setCoreParameter("ExecuteStrategy", executeStrategy);
-}
-
 std::vector<std::string> RunClusterServiceActionRequest::getHostGroupIdList()const
 {
 	return hostGroupIdList_;
@@ -59,50 +48,6 @@ void RunClusterServiceActionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-bool RunClusterServiceActionRequest::getOnlyRestartStaleConfigNodes()const
-{
-	return onlyRestartStaleConfigNodes_;
-}
-
-void RunClusterServiceActionRequest::setOnlyRestartStaleConfigNodes(bool onlyRestartStaleConfigNodes)
-{
-	onlyRestartStaleConfigNodes_ = onlyRestartStaleConfigNodes;
-	setCoreParameter("OnlyRestartStaleConfigNodes", onlyRestartStaleConfigNodes ? "true" : "false");
-}
-
-int RunClusterServiceActionRequest::getNodeCountPerBatch()const
-{
-	return nodeCountPerBatch_;
-}
-
-void RunClusterServiceActionRequest::setNodeCountPerBatch(int nodeCountPerBatch)
-{
-	nodeCountPerBatch_ = nodeCountPerBatch;
-	setCoreParameter("NodeCountPerBatch", std::to_string(nodeCountPerBatch));
-}
-
-std::string RunClusterServiceActionRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void RunClusterServiceActionRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string RunClusterServiceActionRequest::getCustomCommand()const
-{
-	return customCommand_;
-}
-
-void RunClusterServiceActionRequest::setCustomCommand(const std::string& customCommand)
-{
-	customCommand_ = customCommand;
-	setCoreParameter("CustomCommand", customCommand);
-}
-
 std::string RunClusterServiceActionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -112,17 +57,6 @@ void RunClusterServiceActionRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string RunClusterServiceActionRequest::getComponentNameList()const
-{
-	return componentNameList_;
-}
-
-void RunClusterServiceActionRequest::setComponentNameList(const std::string& componentNameList)
-{
-	componentNameList_ = componentNameList;
-	setCoreParameter("ComponentNameList", componentNameList);
 }
 
 std::string RunClusterServiceActionRequest::getRegionId()const
@@ -178,6 +112,72 @@ void RunClusterServiceActionRequest::setServiceName(const std::string& serviceNa
 {
 	serviceName_ = serviceName;
 	setCoreParameter("ServiceName", serviceName);
+}
+
+std::string RunClusterServiceActionRequest::getExecuteStrategy()const
+{
+	return executeStrategy_;
+}
+
+void RunClusterServiceActionRequest::setExecuteStrategy(const std::string& executeStrategy)
+{
+	executeStrategy_ = executeStrategy;
+	setCoreParameter("ExecuteStrategy", executeStrategy);
+}
+
+bool RunClusterServiceActionRequest::getOnlyRestartStaleConfigNodes()const
+{
+	return onlyRestartStaleConfigNodes_;
+}
+
+void RunClusterServiceActionRequest::setOnlyRestartStaleConfigNodes(bool onlyRestartStaleConfigNodes)
+{
+	onlyRestartStaleConfigNodes_ = onlyRestartStaleConfigNodes;
+	setCoreParameter("OnlyRestartStaleConfigNodes", onlyRestartStaleConfigNodes ? "true" : "false");
+}
+
+int RunClusterServiceActionRequest::getNodeCountPerBatch()const
+{
+	return nodeCountPerBatch_;
+}
+
+void RunClusterServiceActionRequest::setNodeCountPerBatch(int nodeCountPerBatch)
+{
+	nodeCountPerBatch_ = nodeCountPerBatch;
+	setCoreParameter("NodeCountPerBatch", std::to_string(nodeCountPerBatch));
+}
+
+std::string RunClusterServiceActionRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void RunClusterServiceActionRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string RunClusterServiceActionRequest::getCustomCommand()const
+{
+	return customCommand_;
+}
+
+void RunClusterServiceActionRequest::setCustomCommand(const std::string& customCommand)
+{
+	customCommand_ = customCommand;
+	setCoreParameter("CustomCommand", customCommand);
+}
+
+std::string RunClusterServiceActionRequest::getComponentNameList()const
+{
+	return componentNameList_;
+}
+
+void RunClusterServiceActionRequest::setComponentNameList(const std::string& componentNameList)
+{
+	componentNameList_ = componentNameList;
+	setCoreParameter("ComponentNameList", componentNameList);
 }
 
 std::string RunClusterServiceActionRequest::getComment()const

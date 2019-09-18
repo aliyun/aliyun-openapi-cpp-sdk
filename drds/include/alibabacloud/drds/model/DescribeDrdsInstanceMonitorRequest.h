@@ -41,10 +41,10 @@ namespace AlibabaCloud
 				void setStartTime(long startTime);
 				std::string getDrdsInstanceId()const;
 				void setDrdsInstanceId(const std::string& drdsInstanceId);
-				std::string getKey()const;
-				void setKey(const std::string& key);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getKey()const;
+				void setKey(const std::string& key);
 				int getPeriodMultiple()const;
 				void setPeriodMultiple(int periodMultiple);
 
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				long endTime_;
 				long startTime_;
 				std::string drdsInstanceId_;
-				std::string key_;
 				std::string accessKeyId_;
+				std::string key_;
 				int periodMultiple_;
 
 			};

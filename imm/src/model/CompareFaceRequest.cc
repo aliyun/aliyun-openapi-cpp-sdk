@@ -25,17 +25,6 @@ CompareFaceRequest::CompareFaceRequest() :
 CompareFaceRequest::~CompareFaceRequest()
 {}
 
-std::string CompareFaceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CompareFaceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CompareFaceRequest::getSrcUriB()const
 {
 	return srcUriB_;

@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				std::string getBatchType()const;
 				void setBatchType(const std::string& batchType);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				long getTaskId()const;
 				void setTaskId(long taskId);
 
             private:
 				std::string batchType_;
+				int pageNumber_;
 				std::string userClientIp_;
 				int pageSize_;
 				std::string lang_;
-				int pageNumber_;
 				long taskId_;
 
 			};

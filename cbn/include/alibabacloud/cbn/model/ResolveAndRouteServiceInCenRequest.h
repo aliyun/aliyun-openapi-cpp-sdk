@@ -37,36 +37,39 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::vector<std::string> getAccessRegionIds()const;
-				void setAccessRegionIds(const std::vector<std::string>& accessRegionIds);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getCenId()const;
 				void setCenId(const std::string& cenId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				long getUpdateInterval()const;
+				void setUpdateInterval(long updateInterval);
 				std::string getHost()const;
 				void setHost(const std::string& host);
 				std::string getHostRegionId()const;
 				void setHostRegionId(const std::string& hostRegionId);
+				std::string getHostVpcId()const;
+				void setHostVpcId(const std::string& hostVpcId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				long getUpdateInterval()const;
-				void setUpdateInterval(long updateInterval);
+				std::vector<std::string> getAccessRegionIds()const;
+				void setAccessRegionIds(const std::vector<std::string>& accessRegionIds);
 
             private:
 				long resourceOwnerId_;
-				std::vector<std::string> accessRegionIds_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string cenId_;
-				std::string ownerAccount_;
+				long updateInterval_;
 				std::string host_;
 				std::string hostRegionId_;
+				std::string hostVpcId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
-				long updateInterval_;
+				std::vector<std::string> accessRegionIds_;
 
 			};
 		}

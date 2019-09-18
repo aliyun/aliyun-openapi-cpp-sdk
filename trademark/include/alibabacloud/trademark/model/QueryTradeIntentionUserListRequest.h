@@ -35,24 +35,24 @@ namespace AlibabaCloud
 				QueryTradeIntentionUserListRequest();
 				~QueryTradeIntentionUserListRequest();
 
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getBizId()const;
 				void setBizId(const std::string& bizId);
 				long getEnd()const;
 				void setEnd(long end);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				long getBegin()const;
 				void setBegin(long begin);
 				int getStatus()const;
 				void setStatus(int status);
 
             private:
+				int pageNum_;
 				int pageSize_;
 				std::string bizId_;
 				long end_;
-				int pageNum_;
 				long begin_;
 				int status_;
 

@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getFlowInstanceId()const;
 				void setFlowInstanceId(const std::string& flowInstanceId);
+				bool getReRunFail()const;
+				void setReRunFail(bool reRunFail);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
-				bool getReRunFail()const;
-				void setReRunFail(bool reRunFail);
 
             private:
 				std::string flowInstanceId_;
+				bool reRunFail_;
 				std::string regionId_;
 				std::string projectId_;
-				bool reRunFail_;
 
 			};
 		}

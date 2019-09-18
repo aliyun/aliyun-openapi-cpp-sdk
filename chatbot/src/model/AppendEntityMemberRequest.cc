@@ -25,17 +25,6 @@ AppendEntityMemberRequest::AppendEntityMemberRequest() :
 AppendEntityMemberRequest::~AppendEntityMemberRequest()
 {}
 
-std::string AppendEntityMemberRequest::getMember()const
-{
-	return member_;
-}
-
-void AppendEntityMemberRequest::setMember(const std::string& member)
-{
-	member_ = member;
-	setCoreParameter("Member", member);
-}
-
 long AppendEntityMemberRequest::getEntityId()const
 {
 	return entityId_;
@@ -45,6 +34,17 @@ void AppendEntityMemberRequest::setEntityId(long entityId)
 {
 	entityId_ = entityId;
 	setCoreParameter("EntityId", std::to_string(entityId));
+}
+
+std::string AppendEntityMemberRequest::getMember()const
+{
+	return member_;
+}
+
+void AppendEntityMemberRequest::setMember(const std::string& member)
+{
+	member_ = member;
+	setCoreParameter("Member", member);
 }
 
 std::string AppendEntityMemberRequest::getApplyType()const

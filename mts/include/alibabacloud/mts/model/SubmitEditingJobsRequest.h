@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				SubmitEditingJobsRequest();
 				~SubmitEditingJobsRequest();
 
-				std::string getOutputBucket()const;
-				void setOutputBucket(const std::string& outputBucket);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getOutputLocation()const;
+				void setOutputLocation(const std::string& outputLocation);
+				std::string getEditingInputs()const;
+				void setEditingInputs(const std::string& editingInputs);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getEditingJobOutputs()const;
 				void setEditingJobOutputs(const std::string& editingJobOutputs);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getOutputLocation()const;
-				void setOutputLocation(const std::string& outputLocation);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getEditingInputs()const;
-				void setEditingInputs(const std::string& editingInputs);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				std::string getOutputBucket()const;
+				void setOutputBucket(const std::string& outputBucket);
 
             private:
-				std::string outputBucket_;
 				long resourceOwnerId_;
+				std::string outputLocation_;
+				std::string editingInputs_;
+				std::string accessKeyId_;
 				std::string editingJobOutputs_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string outputLocation_;
 				long ownerId_;
-				std::string editingInputs_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				std::string outputBucket_;
 
 			};
 		}

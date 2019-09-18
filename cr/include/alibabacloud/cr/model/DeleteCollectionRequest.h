@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				DeleteCollectionRequest();
 				~DeleteCollectionRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				long getCollectionId()const;
 				void setCollectionId(long collectionId);
 
             private:
-				std::string regionId_;
 				long collectionId_;
 
 			};

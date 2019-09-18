@@ -43,27 +43,27 @@ namespace AlibabaCloud
 				void setExecutionPlanIdList(const std::vector<std::string>& executionPlanIdList);
 				std::vector<std::string> getStatusList()const;
 				void setStatusList(const std::vector<std::string>& statusList);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				bool getIsDesc()const;
 				void setIsDesc(bool isDesc);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				bool onlyLastInstance_;
 				long resourceOwnerId_;
 				std::vector<std::string> executionPlanIdList_;
 				std::vector<std::string> statusList_;
-				std::string regionId_;
-				int pageSize_;
 				bool isDesc_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				int pageSize_;
 
 			};
 		}

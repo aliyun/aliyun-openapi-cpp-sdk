@@ -25,6 +25,28 @@ UpdateCasterSceneAudioRequest::UpdateCasterSceneAudioRequest() :
 UpdateCasterSceneAudioRequest::~UpdateCasterSceneAudioRequest()
 {}
 
+std::string UpdateCasterSceneAudioRequest::getCasterId()const
+{
+	return casterId_;
+}
+
+void UpdateCasterSceneAudioRequest::setCasterId(const std::string& casterId)
+{
+	casterId_ = casterId;
+	setCoreParameter("CasterId", casterId);
+}
+
+long UpdateCasterSceneAudioRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void UpdateCasterSceneAudioRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::vector<UpdateCasterSceneAudioRequest::AudioLayer> UpdateCasterSceneAudioRequest::getAudioLayer()const
 {
 	return audioLayer_;
@@ -37,32 +59,10 @@ void UpdateCasterSceneAudioRequest::setAudioLayer(const std::vector<AudioLayer>&
 	for(int i = 0; i!= audioLayer.size(); i++)	{
 		auto obj = audioLayer.at(i);
 		std::string str ="AudioLayer."+ std::to_string(i);
-		setCoreParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 		setCoreParameter(str + ".VolumeRate", std::to_string(obj.volumeRate));
 		setCoreParameter(str + ".ValidChannel", obj.validChannel);
+		setCoreParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 	}
-}
-
-std::string UpdateCasterSceneAudioRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateCasterSceneAudioRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string UpdateCasterSceneAudioRequest::getCasterId()const
-{
-	return casterId_;
-}
-
-void UpdateCasterSceneAudioRequest::setCasterId(const std::string& casterId)
-{
-	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
 }
 
 std::string UpdateCasterSceneAudioRequest::getSceneId()const
@@ -86,17 +86,6 @@ void UpdateCasterSceneAudioRequest::setMixList(const std::vector<std::string>& m
 	mixList_ = mixList;
 	for(int i = 0; i!= mixList.size(); i++)
 		setCoreParameter("MixList."+ std::to_string(i), mixList.at(i));
-}
-
-long UpdateCasterSceneAudioRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateCasterSceneAudioRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpdateCasterSceneAudioRequest::getFollowEnable()const

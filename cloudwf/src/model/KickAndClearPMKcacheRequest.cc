@@ -25,17 +25,6 @@ KickAndClearPMKcacheRequest::KickAndClearPMKcacheRequest() :
 KickAndClearPMKcacheRequest::~KickAndClearPMKcacheRequest()
 {}
 
-long KickAndClearPMKcacheRequest::getId()const
-{
-	return id_;
-}
-
-void KickAndClearPMKcacheRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string KickAndClearPMKcacheRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void KickAndClearPMKcacheRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long KickAndClearPMKcacheRequest::getId()const
+{
+	return id_;
+}
+
+void KickAndClearPMKcacheRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

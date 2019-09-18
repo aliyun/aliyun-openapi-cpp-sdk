@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DeleteCasterSceneConfigRequest();
 				~DeleteCasterSceneConfigRequest();
 
-				std::string getCasterId()const;
-				void setCasterId(const std::string& casterId);
-				std::string getSceneId()const;
-				void setSceneId(const std::string& sceneId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getCasterId()const;
+				void setCasterId(const std::string& casterId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getSceneId()const;
+				void setSceneId(const std::string& sceneId);
 
             private:
-				std::string casterId_;
-				std::string sceneId_;
-				long ownerId_;
 				std::string type_;
+				std::string casterId_;
+				long ownerId_;
+				std::string sceneId_;
 
 			};
 		}

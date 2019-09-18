@@ -36,17 +36,6 @@ void FindProjectsNameListRequest::setOperationFlag(const std::string& operationF
 	setCoreParameter("OperationFlag", operationFlag);
 }
 
-std::string FindProjectsNameListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void FindProjectsNameListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long FindProjectsNameListRequest::getCsbId()const
 {
 	return csbId_;

@@ -35,28 +35,25 @@ namespace AlibabaCloud
 				SetCasterChannelRequest();
 				~SetCasterChannelRequest();
 
-				std::string getResourceId()const;
-				void setResourceId(const std::string& resourceId);
+				int getSeekOffset()const;
+				void setSeekOffset(int seekOffset);
 				int getPlayStatus()const;
 				void setPlayStatus(int playStatus);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				std::string getResourceId()const;
+				void setResourceId(const std::string& resourceId);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getSeekOffset()const;
-				void setSeekOffset(int seekOffset);
 				std::string getChannelId()const;
 				void setChannelId(const std::string& channelId);
 
             private:
-				std::string resourceId_;
+				int seekOffset_;
 				int playStatus_;
-				std::string regionId_;
+				std::string resourceId_;
 				std::string casterId_;
 				long ownerId_;
-				int seekOffset_;
 				std::string channelId_;
 
 			};

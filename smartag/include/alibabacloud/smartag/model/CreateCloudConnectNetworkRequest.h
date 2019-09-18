@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getCidrBlock()const;
-				void setCidrBlock(const std::string& cidrBlock);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getSnatCidrBlock()const;
 				void setSnatCidrBlock(const std::string& snatCidrBlock);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				bool getIsDefault()const;
 				void setIsDefault(bool isDefault);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getCidrBlock()const;
+				void setCidrBlock(const std::string& cidrBlock);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				std::string name_;
-				std::string cidrBlock_;
 				std::string description_;
 				std::string snatCidrBlock_;
+				std::string regionId_;
 				bool isDefault_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
+				std::string name_;
+				std::string cidrBlock_;
 
 			};
 		}

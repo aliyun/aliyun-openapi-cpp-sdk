@@ -25,6 +25,28 @@ QueryTrademarkMonitorRulesRequest::QueryTrademarkMonitorRulesRequest() :
 QueryTrademarkMonitorRulesRequest::~QueryTrademarkMonitorRulesRequest()
 {}
 
+std::string QueryTrademarkMonitorRulesRequest::getRuleName()const
+{
+	return ruleName_;
+}
+
+void QueryTrademarkMonitorRulesRequest::setRuleName(const std::string& ruleName)
+{
+	ruleName_ = ruleName;
+	setCoreParameter("RuleName", ruleName);
+}
+
+int QueryTrademarkMonitorRulesRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryTrademarkMonitorRulesRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 int QueryTrademarkMonitorRulesRequest::getNotifyUpdate()const
 {
 	return notifyUpdate_;
@@ -47,17 +69,6 @@ void QueryTrademarkMonitorRulesRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string QueryTrademarkMonitorRulesRequest::getRuleName()const
-{
-	return ruleName_;
-}
-
-void QueryTrademarkMonitorRulesRequest::setRuleName(const std::string& ruleName)
-{
-	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
-}
-
 std::string QueryTrademarkMonitorRulesRequest::getId()const
 {
 	return id_;
@@ -67,16 +78,5 @@ void QueryTrademarkMonitorRulesRequest::setId(const std::string& id)
 {
 	id_ = id;
 	setCoreParameter("Id", id);
-}
-
-int QueryTrademarkMonitorRulesRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void QueryTrademarkMonitorRulesRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

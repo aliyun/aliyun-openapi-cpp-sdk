@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				AddLiveDomainRequest();
 				~AddLiveDomainRequest();
 
-				std::string getTopLevelDomain()const;
-				void setTopLevelDomain(const std::string& topLevelDomain);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getScope()const;
 				void setScope(const std::string& scope);
+				std::string getTopLevelDomain()const;
+				void setTopLevelDomain(const std::string& topLevelDomain);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -55,10 +55,10 @@ namespace AlibabaCloud
 				void setLiveDomainType(const std::string& liveDomainType);
 
             private:
-				std::string topLevelDomain_;
 				std::string securityToken_;
-				std::string ownerAccount_;
 				std::string scope_;
+				std::string topLevelDomain_;
+				std::string ownerAccount_;
 				std::string domainName_;
 				long ownerId_;
 				std::string region_;

@@ -51,42 +51,6 @@ LubancloudClient::LubancloudClient(const std::string & accessKeyId, const std::s
 LubancloudClient::~LubancloudClient()
 {}
 
-LubancloudClient::QueryCutoutTaskResultOutcome LubancloudClient::queryCutoutTaskResult(const QueryCutoutTaskResultRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryCutoutTaskResultOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryCutoutTaskResultOutcome(QueryCutoutTaskResultResult(outcome.result()));
-	else
-		return QueryCutoutTaskResultOutcome(outcome.error());
-}
-
-void LubancloudClient::queryCutoutTaskResultAsync(const QueryCutoutTaskResultRequest& request, const QueryCutoutTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryCutoutTaskResult(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LubancloudClient::QueryCutoutTaskResultOutcomeCallable LubancloudClient::queryCutoutTaskResultCallable(const QueryCutoutTaskResultRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryCutoutTaskResultOutcome()>>(
-			[this, request]()
-			{
-			return this->queryCutoutTaskResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LubancloudClient::BuyOriginPicturesOutcome LubancloudClient::buyOriginPictures(const BuyOriginPicturesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -123,72 +87,72 @@ LubancloudClient::BuyOriginPicturesOutcomeCallable LubancloudClient::buyOriginPi
 	return task->get_future();
 }
 
-LubancloudClient::SubmitGenerateTaskOutcome LubancloudClient::submitGenerateTask(const SubmitGenerateTaskRequest &request) const
+LubancloudClient::GetStylesOutcome LubancloudClient::getStyles(const GetStylesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitGenerateTaskOutcome(endpointOutcome.error());
+		return GetStylesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitGenerateTaskOutcome(SubmitGenerateTaskResult(outcome.result()));
+		return GetStylesOutcome(GetStylesResult(outcome.result()));
 	else
-		return SubmitGenerateTaskOutcome(outcome.error());
+		return GetStylesOutcome(outcome.error());
 }
 
-void LubancloudClient::submitGenerateTaskAsync(const SubmitGenerateTaskRequest& request, const SubmitGenerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LubancloudClient::getStylesAsync(const GetStylesRequest& request, const GetStylesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitGenerateTask(request), context);
+		handler(this, request, getStyles(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LubancloudClient::SubmitGenerateTaskOutcomeCallable LubancloudClient::submitGenerateTaskCallable(const SubmitGenerateTaskRequest &request) const
+LubancloudClient::GetStylesOutcomeCallable LubancloudClient::getStylesCallable(const GetStylesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitGenerateTaskOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetStylesOutcome()>>(
 			[this, request]()
 			{
-			return this->submitGenerateTask(request);
+			return this->getStyles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-LubancloudClient::SubmitCutoutTaskOutcome LubancloudClient::submitCutoutTask(const SubmitCutoutTaskRequest &request) const
+LubancloudClient::QueryCutoutTaskResultOutcome LubancloudClient::queryCutoutTaskResult(const QueryCutoutTaskResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SubmitCutoutTaskOutcome(endpointOutcome.error());
+		return QueryCutoutTaskResultOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SubmitCutoutTaskOutcome(SubmitCutoutTaskResult(outcome.result()));
+		return QueryCutoutTaskResultOutcome(QueryCutoutTaskResultResult(outcome.result()));
 	else
-		return SubmitCutoutTaskOutcome(outcome.error());
+		return QueryCutoutTaskResultOutcome(outcome.error());
 }
 
-void LubancloudClient::submitCutoutTaskAsync(const SubmitCutoutTaskRequest& request, const SubmitCutoutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LubancloudClient::queryCutoutTaskResultAsync(const QueryCutoutTaskResultRequest& request, const QueryCutoutTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, submitCutoutTask(request), context);
+		handler(this, request, queryCutoutTaskResult(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LubancloudClient::SubmitCutoutTaskOutcomeCallable LubancloudClient::submitCutoutTaskCallable(const SubmitCutoutTaskRequest &request) const
+LubancloudClient::QueryCutoutTaskResultOutcomeCallable LubancloudClient::queryCutoutTaskResultCallable(const QueryCutoutTaskResultRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SubmitCutoutTaskOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<QueryCutoutTaskResultOutcome()>>(
 			[this, request]()
 			{
-			return this->submitCutoutTask(request);
+			return this->queryCutoutTaskResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,36 +195,72 @@ LubancloudClient::QueryGenerateTaskResultOutcomeCallable LubancloudClient::query
 	return task->get_future();
 }
 
-LubancloudClient::GetStylesOutcome LubancloudClient::getStyles(const GetStylesRequest &request) const
+LubancloudClient::SubmitCutoutTaskOutcome LubancloudClient::submitCutoutTask(const SubmitCutoutTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetStylesOutcome(endpointOutcome.error());
+		return SubmitCutoutTaskOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetStylesOutcome(GetStylesResult(outcome.result()));
+		return SubmitCutoutTaskOutcome(SubmitCutoutTaskResult(outcome.result()));
 	else
-		return GetStylesOutcome(outcome.error());
+		return SubmitCutoutTaskOutcome(outcome.error());
 }
 
-void LubancloudClient::getStylesAsync(const GetStylesRequest& request, const GetStylesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void LubancloudClient::submitCutoutTaskAsync(const SubmitCutoutTaskRequest& request, const SubmitCutoutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getStyles(request), context);
+		handler(this, request, submitCutoutTask(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-LubancloudClient::GetStylesOutcomeCallable LubancloudClient::getStylesCallable(const GetStylesRequest &request) const
+LubancloudClient::SubmitCutoutTaskOutcomeCallable LubancloudClient::submitCutoutTaskCallable(const SubmitCutoutTaskRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetStylesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SubmitCutoutTaskOutcome()>>(
 			[this, request]()
 			{
-			return this->getStyles(request);
+			return this->submitCutoutTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LubancloudClient::SubmitGenerateTaskOutcome LubancloudClient::submitGenerateTask(const SubmitGenerateTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitGenerateTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitGenerateTaskOutcome(SubmitGenerateTaskResult(outcome.result()));
+	else
+		return SubmitGenerateTaskOutcome(outcome.error());
+}
+
+void LubancloudClient::submitGenerateTaskAsync(const SubmitGenerateTaskRequest& request, const SubmitGenerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitGenerateTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LubancloudClient::SubmitGenerateTaskOutcomeCallable LubancloudClient::submitGenerateTaskCallable(const SubmitGenerateTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitGenerateTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->submitGenerateTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

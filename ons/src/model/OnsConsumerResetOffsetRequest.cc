@@ -25,17 +25,6 @@ OnsConsumerResetOffsetRequest::OnsConsumerResetOffsetRequest() :
 OnsConsumerResetOffsetRequest::~OnsConsumerResetOffsetRequest()
 {}
 
-std::string OnsConsumerResetOffsetRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsConsumerResetOffsetRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsConsumerResetOffsetRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,17 +34,6 @@ void OnsConsumerResetOffsetRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-std::string OnsConsumerResetOffsetRequest::getTopic()const
-{
-	return topic_;
-}
-
-void OnsConsumerResetOffsetRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setCoreParameter("Topic", topic);
 }
 
 long OnsConsumerResetOffsetRequest::getResetTimestamp()const
@@ -78,5 +56,27 @@ void OnsConsumerResetOffsetRequest::setType(int type)
 {
 	type_ = type;
 	setCoreParameter("Type", std::to_string(type));
+}
+
+std::string OnsConsumerResetOffsetRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsConsumerResetOffsetRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string OnsConsumerResetOffsetRequest::getTopic()const
+{
+	return topic_;
+}
+
+void OnsConsumerResetOffsetRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
 }
 

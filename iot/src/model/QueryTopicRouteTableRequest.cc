@@ -25,6 +25,17 @@ QueryTopicRouteTableRequest::QueryTopicRouteTableRequest() :
 QueryTopicRouteTableRequest::~QueryTopicRouteTableRequest()
 {}
 
+std::string QueryTopicRouteTableRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string QueryTopicRouteTableRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void QueryTopicRouteTableRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
 	setCoreParameter("Topic", topic);
-}
-
-std::string QueryTopicRouteTableRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

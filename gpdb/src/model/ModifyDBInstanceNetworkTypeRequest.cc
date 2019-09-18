@@ -25,6 +25,28 @@ ModifyDBInstanceNetworkTypeRequest::ModifyDBInstanceNetworkTypeRequest() :
 ModifyDBInstanceNetworkTypeRequest::~ModifyDBInstanceNetworkTypeRequest()
 {}
 
+std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string ModifyDBInstanceNetworkTypeRequest::getVSwitchId()const
 {
 	return vSwitchId_;
@@ -58,17 +80,6 @@ void ModifyDBInstanceNetworkTypeRequest::setVPCId(const std::string& vPCId)
 	setCoreParameter("VPCId", vPCId);
 }
 
-std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string ModifyDBInstanceNetworkTypeRequest::getInstanceNetworkType()const
 {
 	return instanceNetworkType_;
@@ -78,16 +89,5 @@ void ModifyDBInstanceNetworkTypeRequest::setInstanceNetworkType(const std::strin
 {
 	instanceNetworkType_ = instanceNetworkType;
 	setCoreParameter("InstanceNetworkType", instanceNetworkType);
-}
-
-std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

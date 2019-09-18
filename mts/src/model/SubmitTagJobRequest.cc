@@ -25,15 +25,26 @@ SubmitTagJobRequest::SubmitTagJobRequest() :
 SubmitTagJobRequest::~SubmitTagJobRequest()
 {}
 
-std::string SubmitTagJobRequest::getInput()const
+long SubmitTagJobRequest::getResourceOwnerId()const
 {
-	return input_;
+	return resourceOwnerId_;
 }
 
-void SubmitTagJobRequest::setInput(const std::string& input)
+void SubmitTagJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	input_ = input;
-	setCoreParameter("Input", input);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitTagJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitTagJobRequest::getUserData()const
@@ -45,17 +56,6 @@ void SubmitTagJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setCoreParameter("UserData", userData);
-}
-
-long SubmitTagJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitTagJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitTagJobRequest::getResourceOwnerAccount()const
@@ -102,17 +102,6 @@ void SubmitTagJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitTagJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitTagJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +111,16 @@ void SubmitTagJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitTagJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitTagJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

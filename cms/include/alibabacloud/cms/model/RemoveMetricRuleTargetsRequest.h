@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				RemoveMetricRuleTargetsRequest();
 				~RemoveMetricRuleTargetsRequest();
 
-				std::vector<std::string> getContactGroupTargetIds()const;
-				void setContactGroupTargetIds(const std::vector<std::string>& contactGroupTargetIds);
 				std::vector<std::string> getTargetIds()const;
 				void setTargetIds(const std::vector<std::string>& targetIds);
-				std::vector<std::string> getWebhookTargetIds()const;
-				void setWebhookTargetIds(const std::vector<std::string>& webhookTargetIds);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
+				std::vector<std::string> getContactGroupTargetIds()const;
+				void setContactGroupTargetIds(const std::vector<std::string>& contactGroupTargetIds);
+				std::vector<std::string> getWebhookTargetIds()const;
+				void setWebhookTargetIds(const std::vector<std::string>& webhookTargetIds);
 
             private:
-				std::vector<std::string> contactGroupTargetIds_;
 				std::vector<std::string> targetIds_;
-				std::vector<std::string> webhookTargetIds_;
 				std::string ruleName_;
+				std::vector<std::string> contactGroupTargetIds_;
+				std::vector<std::string> webhookTargetIds_;
 
 			};
 		}

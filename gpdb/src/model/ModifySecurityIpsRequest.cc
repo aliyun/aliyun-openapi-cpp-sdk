@@ -25,17 +25,6 @@ ModifySecurityIpsRequest::ModifySecurityIpsRequest() :
 ModifySecurityIpsRequest::~ModifySecurityIpsRequest()
 {}
 
-std::string ModifySecurityIpsRequest::getSecurityIPList()const
-{
-	return securityIPList_;
-}
-
-void ModifySecurityIpsRequest::setSecurityIPList(const std::string& securityIPList)
-{
-	securityIPList_ = securityIPList;
-	setCoreParameter("SecurityIPList", securityIPList);
-}
-
 std::string ModifySecurityIpsRequest::getDBInstanceIPArrayName()const
 {
 	return dBInstanceIPArrayName_;
@@ -47,15 +36,15 @@ void ModifySecurityIpsRequest::setDBInstanceIPArrayName(const std::string& dBIns
 	setCoreParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
 }
 
-std::string ModifySecurityIpsRequest::getDBInstanceIPArrayAttribute()const
+std::string ModifySecurityIpsRequest::getAccessKeyId()const
 {
-	return dBInstanceIPArrayAttribute_;
+	return accessKeyId_;
 }
 
-void ModifySecurityIpsRequest::setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute)
+void ModifySecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	dBInstanceIPArrayAttribute_ = dBInstanceIPArrayAttribute;
-	setCoreParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifySecurityIpsRequest::getDBInstanceId()const
@@ -69,14 +58,25 @@ void ModifySecurityIpsRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string ModifySecurityIpsRequest::getAccessKeyId()const
+std::string ModifySecurityIpsRequest::getSecurityIPList()const
 {
-	return accessKeyId_;
+	return securityIPList_;
 }
 
-void ModifySecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifySecurityIpsRequest::setSecurityIPList(const std::string& securityIPList)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	securityIPList_ = securityIPList;
+	setCoreParameter("SecurityIPList", securityIPList);
+}
+
+std::string ModifySecurityIpsRequest::getDBInstanceIPArrayAttribute()const
+{
+	return dBInstanceIPArrayAttribute_;
+}
+
+void ModifySecurityIpsRequest::setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute)
+{
+	dBInstanceIPArrayAttribute_ = dBInstanceIPArrayAttribute;
+	setCoreParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
 }
 

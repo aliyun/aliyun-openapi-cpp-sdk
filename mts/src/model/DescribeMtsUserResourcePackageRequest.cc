@@ -25,17 +25,6 @@ DescribeMtsUserResourcePackageRequest::DescribeMtsUserResourcePackageRequest() :
 DescribeMtsUserResourcePackageRequest::~DescribeMtsUserResourcePackageRequest()
 {}
 
-std::string DescribeMtsUserResourcePackageRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeMtsUserResourcePackageRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 long DescribeMtsUserResourcePackageRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -45,5 +34,16 @@ void DescribeMtsUserResourcePackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeMtsUserResourcePackageRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeMtsUserResourcePackageRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

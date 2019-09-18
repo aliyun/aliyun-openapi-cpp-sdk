@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				CompareFaceRequest();
 				~CompareFaceRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getSrcUriB()const;
 				void setSrcUriB(const std::string& srcUriB);
 				std::string getSrcUriA()const;
@@ -47,7 +45,6 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string regionId_;
 				std::string srcUriB_;
 				std::string srcUriA_;
 				std::string project_;

@@ -25,17 +25,6 @@ DescribeOSSDownloadInfoRequest::DescribeOSSDownloadInfoRequest() :
 DescribeOSSDownloadInfoRequest::~DescribeOSSDownloadInfoRequest()
 {}
 
-std::string DescribeOSSDownloadInfoRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOSSDownloadInfoRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeOSSDownloadInfoRequest::getOssKey()const
 {
 	return ossKey_;
@@ -45,6 +34,28 @@ void DescribeOSSDownloadInfoRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
 	setCoreParameter("OssKey", ossKey);
+}
+
+std::string DescribeOSSDownloadInfoRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeOSSDownloadInfoRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeOSSDownloadInfoRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOSSDownloadInfoRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOSSDownloadInfoRequest::getLang()const

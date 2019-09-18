@@ -36,6 +36,61 @@ void DescribeHistoryMonitorValuesRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeHistoryMonitorValuesRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+std::string DescribeHistoryMonitorValuesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeHistoryMonitorValuesRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeHistoryMonitorValuesRequest::getIntervalForHistory()const
+{
+	return intervalForHistory_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setIntervalForHistory(const std::string& intervalForHistory)
+{
+	intervalForHistory_ = intervalForHistory;
+	setCoreParameter("IntervalForHistory", intervalForHistory);
+}
+
+std::string DescribeHistoryMonitorValuesRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setNodeId(const std::string& nodeId)
+{
+	nodeId_ = nodeId;
+	setCoreParameter("NodeId", nodeId);
+}
+
 std::string DescribeHistoryMonitorValuesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,17 +124,6 @@ void DescribeHistoryMonitorValuesRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeHistoryMonitorValuesRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeHistoryMonitorValuesRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long DescribeHistoryMonitorValuesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -91,17 +135,6 @@ void DescribeHistoryMonitorValuesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeHistoryMonitorValuesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeHistoryMonitorValuesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeHistoryMonitorValuesRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -111,50 +144,6 @@ void DescribeHistoryMonitorValuesRequest::setInstanceId(const std::string& insta
 {
 	instanceId_ = instanceId;
 	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string DescribeHistoryMonitorValuesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeHistoryMonitorValuesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeHistoryMonitorValuesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeHistoryMonitorValuesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeHistoryMonitorValuesRequest::getIntervalForHistory()const
-{
-	return intervalForHistory_;
-}
-
-void DescribeHistoryMonitorValuesRequest::setIntervalForHistory(const std::string& intervalForHistory)
-{
-	intervalForHistory_ = intervalForHistory;
-	setCoreParameter("IntervalForHistory", intervalForHistory);
-}
-
-std::string DescribeHistoryMonitorValuesRequest::getNodeId()const
-{
-	return nodeId_;
-}
-
-void DescribeHistoryMonitorValuesRequest::setNodeId(const std::string& nodeId)
-{
-	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getMonitorKeys()const

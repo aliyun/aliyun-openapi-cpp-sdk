@@ -25,17 +25,6 @@ ListApPositionRequest::ListApPositionRequest() :
 ListApPositionRequest::~ListApPositionRequest()
 {}
 
-long ListApPositionRequest::getMapId()const
-{
-	return mapId_;
-}
-
-void ListApPositionRequest::setMapId(long mapId)
-{
-	mapId_ = mapId;
-	setCoreParameter("MapId", std::to_string(mapId));
-}
-
 std::string ListApPositionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void ListApPositionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ListApPositionRequest::getMapId()const
+{
+	return mapId_;
+}
+
+void ListApPositionRequest::setMapId(long mapId)
+{
+	mapId_ = mapId;
+	setCoreParameter("MapId", std::to_string(mapId));
 }
 

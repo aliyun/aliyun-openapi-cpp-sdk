@@ -45,33 +45,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				bool getActive()const;
 				void setActive(bool active);
-				std::string getId()const;
-				void setId(const std::string& id);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getYarnsiteconfig()const;
 				void setYarnsiteconfig(const std::string& yarnsiteconfig);
-				std::vector<Config> getConfig()const;
-				void setConfig(const std::vector<Config>& config);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getId()const;
+				void setId(const std::string& id);
+				std::vector<Config> getConfig()const;
+				void setConfig(const std::vector<Config>& config);
 
             private:
 				long resourceOwnerId_;
-				std::string regionId_;
-				std::string name_;
 				bool active_;
-				std::string id_;
 				std::string clusterId_;
 				std::string yarnsiteconfig_;
-				std::vector<Config> config_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				std::string name_;
+				std::string id_;
+				std::vector<Config> config_;
 
 			};
 		}

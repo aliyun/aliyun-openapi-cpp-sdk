@@ -36,28 +36,6 @@ void SubmitJobsRequest::setOutputs(const std::string& outputs)
 	setCoreParameter("Outputs", outputs);
 }
 
-std::string SubmitJobsRequest::getInput()const
-{
-	return input_;
-}
-
-void SubmitJobsRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setCoreParameter("Input", input);
-}
-
-std::string SubmitJobsRequest::getOutputBucket()const
-{
-	return outputBucket_;
-}
-
-void SubmitJobsRequest::setOutputBucket(const std::string& outputBucket)
-{
-	outputBucket_ = outputBucket;
-	setCoreParameter("OutputBucket", outputBucket);
-}
-
 long SubmitJobsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -67,6 +45,28 @@ void SubmitJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitJobsRequest::getOutputLocation()const
+{
+	return outputLocation_;
+}
+
+void SubmitJobsRequest::setOutputLocation(const std::string& outputLocation)
+{
+	outputLocation_ = outputLocation;
+	setCoreParameter("OutputLocation", outputLocation);
+}
+
+std::string SubmitJobsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitJobsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitJobsRequest::getResourceOwnerAccount()const
@@ -91,17 +91,6 @@ void SubmitJobsRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string SubmitJobsRequest::getOutputLocation()const
-{
-	return outputLocation_;
-}
-
-void SubmitJobsRequest::setOutputLocation(const std::string& outputLocation)
-{
-	outputLocation_ = outputLocation;
-	setCoreParameter("OutputLocation", outputLocation);
-}
-
 long SubmitJobsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,17 +102,6 @@ void SubmitJobsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitJobsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitJobsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitJobsRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,5 +111,27 @@ void SubmitJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitJobsRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitJobsRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
+}
+
+std::string SubmitJobsRequest::getOutputBucket()const
+{
+	return outputBucket_;
+}
+
+void SubmitJobsRequest::setOutputBucket(const std::string& outputBucket)
+{
+	outputBucket_ = outputBucket;
+	setCoreParameter("OutputBucket", outputBucket);
 }
 

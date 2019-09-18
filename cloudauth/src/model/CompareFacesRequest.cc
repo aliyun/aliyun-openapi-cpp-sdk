@@ -47,17 +47,6 @@ void CompareFacesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CompareFacesRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CompareFacesRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string CompareFacesRequest::getTargetImageType()const
 {
 	return targetImageType_;
@@ -69,17 +58,6 @@ void CompareFacesRequest::setTargetImageType(const std::string& targetImageType)
 	setCoreParameter("TargetImageType", targetImageType);
 }
 
-std::string CompareFacesRequest::getSourceImageValue()const
-{
-	return sourceImageValue_;
-}
-
-void CompareFacesRequest::setSourceImageValue(const std::string& sourceImageValue)
-{
-	sourceImageValue_ = sourceImageValue;
-	setCoreParameter("SourceImageValue", sourceImageValue);
-}
-
 std::string CompareFacesRequest::getTargetImageValue()const
 {
 	return targetImageValue_;
@@ -89,5 +67,27 @@ void CompareFacesRequest::setTargetImageValue(const std::string& targetImageValu
 {
 	targetImageValue_ = targetImageValue;
 	setCoreParameter("TargetImageValue", targetImageValue);
+}
+
+std::string CompareFacesRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CompareFacesRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string CompareFacesRequest::getSourceImageValue()const
+{
+	return sourceImageValue_;
+}
+
+void CompareFacesRequest::setSourceImageValue(const std::string& sourceImageValue)
+{
+	sourceImageValue_ = sourceImageValue;
+	setCoreParameter("SourceImageValue", sourceImageValue);
 }
 

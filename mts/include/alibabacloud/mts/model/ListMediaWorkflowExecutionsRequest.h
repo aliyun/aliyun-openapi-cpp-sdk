@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getInputFileURL()const;
-				void setInputFileURL(const std::string& inputFileURL);
 				std::string getNextPageToken()const;
 				void setNextPageToken(const std::string& nextPageToken);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getMediaWorkflowId()const;
+				void setMediaWorkflowId(const std::string& mediaWorkflowId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getMaximumPageSize()const;
 				void setMaximumPageSize(long maximumPageSize);
-				std::string getMediaWorkflowId()const;
-				void setMediaWorkflowId(const std::string& mediaWorkflowId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getMediaWorkflowName()const;
 				void setMediaWorkflowName(const std::string& mediaWorkflowName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInputFileURL()const;
+				void setInputFileURL(const std::string& inputFileURL);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string inputFileURL_;
 				std::string nextPageToken_;
+				std::string accessKeyId_;
+				std::string mediaWorkflowId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long maximumPageSize_;
-				std::string mediaWorkflowId_;
 				long ownerId_;
 				std::string mediaWorkflowName_;
-				std::string accessKeyId_;
+				std::string inputFileURL_;
 
 			};
 		}

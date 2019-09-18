@@ -36,17 +36,6 @@ void CreateServiceRequest::setData(const std::string& data)
 	setCoreParameter("Data", data);
 }
 
-std::string CreateServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long CreateServiceRequest::getCsbId()const
 {
 	return csbId_;

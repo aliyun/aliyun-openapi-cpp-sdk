@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setPassword(const std::string& password);
 				long getStartPage()const;
 				void setStartPage(long startPage);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getNotifyEndpoint()const;
 				void setNotifyEndpoint(const std::string& notifyEndpoint);
 				bool getFitToPagesWide()const;
@@ -96,7 +94,6 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string password_;
 				long startPage_;
-				std::string regionId_;
 				std::string notifyEndpoint_;
 				bool fitToPagesWide_;
 				std::string tgtFilePrefix_;

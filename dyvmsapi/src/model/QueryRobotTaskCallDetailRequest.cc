@@ -36,6 +36,39 @@ void QueryRobotTaskCallDetailRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string QueryRobotTaskCallDetailRequest::getCallee()const
+{
+	return callee_;
+}
+
+void QueryRobotTaskCallDetailRequest::setCallee(const std::string& callee)
+{
+	callee_ = callee;
+	setCoreParameter("Callee", callee);
+}
+
+std::string QueryRobotTaskCallDetailRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryRobotTaskCallDetailRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long QueryRobotTaskCallDetailRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void QueryRobotTaskCallDetailRequest::setTaskId(long taskId)
+{
+	taskId_ = taskId;
+	setCoreParameter("TaskId", std::to_string(taskId));
+}
+
 long QueryRobotTaskCallDetailRequest::getQueryDate()const
 {
 	return queryDate_;
@@ -58,17 +91,6 @@ void QueryRobotTaskCallDetailRequest::setResourceOwnerAccount(const std::string&
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryRobotTaskCallDetailRequest::getCallee()const
-{
-	return callee_;
-}
-
-void QueryRobotTaskCallDetailRequest::setCallee(const std::string& callee)
-{
-	callee_ = callee;
-	setCoreParameter("Callee", callee);
-}
-
 long QueryRobotTaskCallDetailRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,27 +100,5 @@ void QueryRobotTaskCallDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-long QueryRobotTaskCallDetailRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void QueryRobotTaskCallDetailRequest::setTaskId(long taskId)
-{
-	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
-}
-
-std::string QueryRobotTaskCallDetailRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryRobotTaskCallDetailRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

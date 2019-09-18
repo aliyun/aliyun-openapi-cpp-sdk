@@ -25,17 +25,6 @@ DescribeLiveDomainBpsDataByTimeStampRequest::DescribeLiveDomainBpsDataByTimeStam
 DescribeLiveDomainBpsDataByTimeStampRequest::~DescribeLiveDomainBpsDataByTimeStampRequest()
 {}
 
-long DescribeLiveDomainBpsDataByTimeStampRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
 std::string DescribeLiveDomainBpsDataByTimeStampRequest::getLocationNames()const
 {
 	return locationNames_;
@@ -45,149 +34,6 @@ void DescribeLiveDomainBpsDataByTimeStampRequest::setLocationNames(const std::st
 {
 	locationNames_ = locationNames;
 	setCoreParameter("LocationNames", locationNames);
-}
-
-bool DescribeLiveDomainBpsDataByTimeStampRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getEagleEyeRpcId()const
-{
-	return eagleEyeRpcId_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setEagleEyeRpcId(const std::string& eagleEyeRpcId)
-{
-	eagleEyeRpcId_ = eagleEyeRpcId;
-	setCoreParameter("EagleEyeRpcId", eagleEyeRpcId);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getEagleEyeTraceId()const
-{
-	return eagleEyeTraceId_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setEagleEyeTraceId(const std::string& eagleEyeTraceId)
-{
-	eagleEyeTraceId_ = eagleEyeTraceId;
-	setCoreParameter("EagleEyeTraceId", eagleEyeTraceId);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeLiveDomainBpsDataByTimeStampRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeLiveDomainBpsDataByTimeStampRequest::getIspNames()const
@@ -201,39 +47,6 @@ void DescribeLiveDomainBpsDataByTimeStampRequest::setIspNames(const std::string&
 	setCoreParameter("IspNames", ispNames);
 }
 
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setCoreParameter("Product", product);
-}
-
 std::string DescribeLiveDomainBpsDataByTimeStampRequest::getDomainName()const
 {
 	return domainName_;
@@ -245,17 +58,6 @@ void DescribeLiveDomainBpsDataByTimeStampRequest::setDomainName(const std::strin
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long DescribeLiveDomainBpsDataByTimeStampRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -265,83 +67,6 @@ void DescribeLiveDomainBpsDataByTimeStampRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getVersion()const
-{
-	return version_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool DescribeLiveDomainBpsDataByTimeStampRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool DescribeLiveDomainBpsDataByTimeStampRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool DescribeLiveDomainBpsDataByTimeStampRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getServiceCode()const
-{
-	return serviceCode_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setServiceCode(const std::string& serviceCode)
-{
-	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
-std::string DescribeLiveDomainBpsDataByTimeStampRequest::getEagleEyeUserData()const
-{
-	return eagleEyeUserData_;
-}
-
-void DescribeLiveDomainBpsDataByTimeStampRequest::setEagleEyeUserData(const std::string& eagleEyeUserData)
-{
-	eagleEyeUserData_ = eagleEyeUserData;
-	setCoreParameter("EagleEyeUserData", eagleEyeUserData);
 }
 
 std::string DescribeLiveDomainBpsDataByTimeStampRequest::getTimePoint()const

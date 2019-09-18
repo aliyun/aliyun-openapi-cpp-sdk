@@ -25,6 +25,17 @@ DescribeDdosDefenseInfoRequest::DescribeDdosDefenseInfoRequest() :
 DescribeDdosDefenseInfoRequest::~DescribeDdosDefenseInfoRequest()
 {}
 
+std::string DescribeDdosDefenseInfoRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeDdosDefenseInfoRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeDdosDefenseInfoRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,16 +67,5 @@ void DescribeDdosDefenseInfoRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
 	setCoreParameter("SrcUid", std::to_string(srcUid));
-}
-
-std::string DescribeDdosDefenseInfoRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeDdosDefenseInfoRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

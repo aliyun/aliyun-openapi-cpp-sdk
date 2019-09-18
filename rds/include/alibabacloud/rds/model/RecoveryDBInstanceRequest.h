@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setDBInstanceDescription(const std::string& dBInstanceDescription);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getDBInstanceStorageType()const;
+				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
 				std::string getRestoreTime()const;
 				void setRestoreTime(const std::string& restoreTime);
 				std::string getPeriod()const;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string dBInstanceDescription_;
 				std::string dBInstanceId_;
+				std::string dBInstanceStorageType_;
 				std::string restoreTime_;
 				std::string period_;
 				std::string resourceOwnerAccount_;

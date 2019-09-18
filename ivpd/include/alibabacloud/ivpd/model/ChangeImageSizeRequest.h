@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				ChangeImageSizeRequest();
 				~ChangeImageSizeRequest();
 
-				int getWidth()const;
-				void setWidth(int width);
 				std::string getUrl()const;
 				void setUrl(const std::string& url);
+				int getWidth()const;
+				void setWidth(int width);
 				int getHeight()const;
 				void setHeight(int height);
 
             private:
-				int width_;
 				std::string url_;
+				int width_;
 				int height_;
 
 			};

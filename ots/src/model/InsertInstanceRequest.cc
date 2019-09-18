@@ -36,17 +36,6 @@ void InsertInstanceRequest::setAccess_key_id(const std::string& access_key_id)
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string InsertInstanceRequest::getClusterType()const
-{
-	return clusterType_;
-}
-
-void InsertInstanceRequest::setClusterType(const std::string& clusterType)
-{
-	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
-}
-
 long InsertInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,17 +47,6 @@ void InsertInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string InsertInstanceRequest::getInstanceName()const
-{
-	return instanceName_;
-}
-
-void InsertInstanceRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
-}
-
 std::string InsertInstanceRequest::getDescription()const
 {
 	return description_;
@@ -78,6 +56,39 @@ void InsertInstanceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
+}
+
+std::string InsertInstanceRequest::getNetwork()const
+{
+	return network_;
+}
+
+void InsertInstanceRequest::setNetwork(const std::string& network)
+{
+	network_ = network;
+	setCoreParameter("Network", network);
+}
+
+std::string InsertInstanceRequest::getClusterType()const
+{
+	return clusterType_;
+}
+
+void InsertInstanceRequest::setClusterType(const std::string& clusterType)
+{
+	clusterType_ = clusterType;
+	setCoreParameter("ClusterType", clusterType);
+}
+
+std::string InsertInstanceRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void InsertInstanceRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::vector<InsertInstanceRequest::TagInfo> InsertInstanceRequest::getTagInfo()const
@@ -95,16 +106,5 @@ void InsertInstanceRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 		setCoreParameter(str + ".TagValue", obj.tagValue);
 		setCoreParameter(str + ".TagKey", obj.tagKey);
 	}
-}
-
-std::string InsertInstanceRequest::getNetwork()const
-{
-	return network_;
-}
-
-void InsertInstanceRequest::setNetwork(const std::string& network)
-{
-	network_ = network;
-	setCoreParameter("Network", network);
 }
 

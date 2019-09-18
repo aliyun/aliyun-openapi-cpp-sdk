@@ -36,6 +36,17 @@ void DeleteNoteRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteNoteRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteNoteRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteNoteRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void DeleteNoteRequest::setId(const std::string& id)
 {
 	id_ = id;
 	setCoreParameter("Id", id);
-}
-
-std::string DeleteNoteRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteNoteRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

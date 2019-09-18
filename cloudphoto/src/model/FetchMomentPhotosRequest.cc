@@ -25,17 +25,6 @@ FetchMomentPhotosRequest::FetchMomentPhotosRequest() :
 FetchMomentPhotosRequest::~FetchMomentPhotosRequest()
 {}
 
-int FetchMomentPhotosRequest::getSize()const
-{
-	return size_;
-}
-
-void FetchMomentPhotosRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string FetchMomentPhotosRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -69,17 +58,6 @@ void FetchMomentPhotosRequest::setStoreName(const std::string& storeName)
 	setCoreParameter("StoreName", storeName);
 }
 
-int FetchMomentPhotosRequest::getPage()const
-{
-	return page_;
-}
-
-void FetchMomentPhotosRequest::setPage(int page)
-{
-	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
-}
-
 long FetchMomentPhotosRequest::getMomentId()const
 {
 	return momentId_;
@@ -89,6 +67,28 @@ void FetchMomentPhotosRequest::setMomentId(long momentId)
 {
 	momentId_ = momentId;
 	setCoreParameter("MomentId", std::to_string(momentId));
+}
+
+int FetchMomentPhotosRequest::getSize()const
+{
+	return size_;
+}
+
+void FetchMomentPhotosRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
+}
+
+int FetchMomentPhotosRequest::getPage()const
+{
+	return page_;
+}
+
+void FetchMomentPhotosRequest::setPage(int page)
+{
+	page_ = page;
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string FetchMomentPhotosRequest::getOrder()const

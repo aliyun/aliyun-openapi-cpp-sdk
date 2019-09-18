@@ -36,6 +36,28 @@ void DescribeAuditFilesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int DescribeAuditFilesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeAuditFilesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeAuditFilesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeAuditFilesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeAuditFilesRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +67,6 @@ void DescribeAuditFilesRequest::setSecurityToken(const std::string& securityToke
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeAuditFilesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeAuditFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAuditFilesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeAuditFilesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeAuditFilesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeAuditFilesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeAuditFilesRequest::getPageSize()const
@@ -102,17 +91,6 @@ void DescribeAuditFilesRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-long DescribeAuditFilesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeAuditFilesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeAuditFilesRequest::getNodeId()const
 {
 	return nodeId_;
@@ -124,25 +102,36 @@ void DescribeAuditFilesRequest::setNodeId(const std::string& nodeId)
 	setCoreParameter("NodeId", nodeId);
 }
 
-int DescribeAuditFilesRequest::getPageNumber()const
+std::string DescribeAuditFilesRequest::getResourceOwnerAccount()const
 {
-	return pageNumber_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeAuditFilesRequest::setPageNumber(int pageNumber)
+void DescribeAuditFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeAuditFilesRequest::getAccessKeyId()const
+std::string DescribeAuditFilesRequest::getOwnerAccount()const
 {
-	return accessKeyId_;
+	return ownerAccount_;
 }
 
-void DescribeAuditFilesRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeAuditFilesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeAuditFilesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeAuditFilesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

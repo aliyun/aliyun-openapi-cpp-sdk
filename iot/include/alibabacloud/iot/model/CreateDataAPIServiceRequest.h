@@ -30,7 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT CreateDataAPIServiceRequest : public RpcServiceRequest
 			{
-				struct ResponseParam
+				struct RequestParam
 				{
 					std::string name;
 					std::string type;
@@ -38,7 +38,7 @@ namespace AlibabaCloud
 					std::string desc;
 					std::string example;
 				};
-				struct RequestParam
+				struct ResponseParam
 				{
 					std::string name;
 					std::string type;
@@ -51,12 +51,6 @@ namespace AlibabaCloud
 				CreateDataAPIServiceRequest();
 				~CreateDataAPIServiceRequest();
 
-				std::vector<ResponseParam> getResponseParam()const;
-				void setResponseParam(const std::vector<ResponseParam>& responseParam);
-				std::string getOriginSql()const;
-				void setOriginSql(const std::string& originSql);
-				std::string getDisplayName()const;
-				void setDisplayName(const std::string& displayName);
 				std::string getApiPath()const;
 				void setApiPath(const std::string& apiPath);
 				std::vector<RequestParam> getRequestParam()const;
@@ -67,18 +61,24 @@ namespace AlibabaCloud
 				void setTemplateSql(const std::string& templateSql);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::vector<ResponseParam> getResponseParam()const;
+				void setResponseParam(const std::vector<ResponseParam>& responseParam);
+				std::string getOriginSql()const;
+				void setOriginSql(const std::string& originSql);
+				std::string getDisplayName()const;
+				void setDisplayName(const std::string& displayName);
 				std::string getDesc()const;
 				void setDesc(const std::string& desc);
 
             private:
-				std::vector<ResponseParam> responseParam_;
-				std::string originSql_;
-				std::string displayName_;
 				std::string apiPath_;
 				std::vector<RequestParam> requestParam_;
 				std::string folderId_;
 				std::string templateSql_;
 				std::string accessKeyId_;
+				std::vector<ResponseParam> responseParam_;
+				std::string originSql_;
+				std::string displayName_;
 				std::string desc_;
 
 			};

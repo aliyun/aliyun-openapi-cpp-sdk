@@ -25,17 +25,6 @@ CreateWebSignatureRequest::CreateWebSignatureRequest() :
 CreateWebSignatureRequest::~CreateWebSignatureRequest()
 {}
 
-int CreateWebSignatureRequest::getQuantity()const
-{
-	return quantity_;
-}
-
-void CreateWebSignatureRequest::setQuantity(int quantity)
-{
-	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
-}
-
 std::string CreateWebSignatureRequest::getHandSignImg()const
 {
 	return handSignImg_;
@@ -47,17 +36,6 @@ void CreateWebSignatureRequest::setHandSignImg(const std::string& handSignImg)
 	setCoreParameter("HandSignImg", handSignImg);
 }
 
-std::string CreateWebSignatureRequest::getDocId()const
-{
-	return docId_;
-}
-
-void CreateWebSignatureRequest::setDocId(const std::string& docId)
-{
-	docId_ = docId;
-	setCoreParameter("DocId", docId);
-}
-
 std::string CreateWebSignatureRequest::getCustomApi()const
 {
 	return customApi_;
@@ -67,6 +45,83 @@ void CreateWebSignatureRequest::setCustomApi(const std::string& customApi)
 {
 	customApi_ = customApi;
 	setCoreParameter("CustomApi", customApi);
+}
+
+std::string CreateWebSignatureRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateWebSignatureRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateWebSignatureRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateWebSignatureRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string CreateWebSignatureRequest::getSignKeyword()const
+{
+	return signKeyword_;
+}
+
+void CreateWebSignatureRequest::setSignKeyword(const std::string& signKeyword)
+{
+	signKeyword_ = signKeyword;
+	setCoreParameter("SignKeyword", signKeyword);
+}
+
+std::string CreateWebSignatureRequest::getNotifyUrl()const
+{
+	return notifyUrl_;
+}
+
+void CreateWebSignatureRequest::setNotifyUrl(const std::string& notifyUrl)
+{
+	notifyUrl_ = notifyUrl;
+	setCoreParameter("NotifyUrl", notifyUrl);
+}
+
+std::string CreateWebSignatureRequest::getLang()const
+{
+	return lang_;
+}
+
+void CreateWebSignatureRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+int CreateWebSignatureRequest::getQuantity()const
+{
+	return quantity_;
+}
+
+void CreateWebSignatureRequest::setQuantity(int quantity)
+{
+	quantity_ = quantity;
+	setCoreParameter("Quantity", std::to_string(quantity));
+}
+
+std::string CreateWebSignatureRequest::getDocId()const
+{
+	return docId_;
+}
+
+void CreateWebSignatureRequest::setDocId(const std::string& docId)
+{
+	docId_ = docId;
+	setCoreParameter("DocId", docId);
 }
 
 int CreateWebSignatureRequest::getPositionPage()const
@@ -113,17 +168,6 @@ void CreateWebSignatureRequest::setPositionY(int positionY)
 	setCoreParameter("PositionY", std::to_string(positionY));
 }
 
-std::string CreateWebSignatureRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateWebSignatureRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string CreateWebSignatureRequest::getPeopleId()const
 {
 	return peopleId_;
@@ -146,28 +190,6 @@ void CreateWebSignatureRequest::setPositionType(int positionType)
 	setCoreParameter("PositionType", std::to_string(positionType));
 }
 
-std::string CreateWebSignatureRequest::getSignKeyword()const
-{
-	return signKeyword_;
-}
-
-void CreateWebSignatureRequest::setSignKeyword(const std::string& signKeyword)
-{
-	signKeyword_ = signKeyword;
-	setCoreParameter("SignKeyword", signKeyword);
-}
-
-std::string CreateWebSignatureRequest::getNotifyUrl()const
-{
-	return notifyUrl_;
-}
-
-void CreateWebSignatureRequest::setNotifyUrl(const std::string& notifyUrl)
-{
-	notifyUrl_ = notifyUrl;
-	setCoreParameter("NotifyUrl", notifyUrl);
-}
-
 int CreateWebSignatureRequest::getValidity()const
 {
 	return validity_;
@@ -188,17 +210,6 @@ void CreateWebSignatureRequest::setReturnUrl(const std::string& returnUrl)
 {
 	returnUrl_ = returnUrl;
 	setCoreParameter("ReturnUrl", returnUrl);
-}
-
-std::string CreateWebSignatureRequest::getLang()const
-{
-	return lang_;
-}
-
-void CreateWebSignatureRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 int CreateWebSignatureRequest::getKeywordStrategy()const

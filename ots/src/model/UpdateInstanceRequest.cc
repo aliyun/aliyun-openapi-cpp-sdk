@@ -47,17 +47,6 @@ void UpdateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UpdateInstanceRequest::getInstanceName()const
-{
-	return instanceName_;
-}
-
-void UpdateInstanceRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
-}
-
 std::string UpdateInstanceRequest::getNetwork()const
 {
 	return network_;
@@ -67,5 +56,16 @@ void UpdateInstanceRequest::setNetwork(const std::string& network)
 {
 	network_ = network;
 	setCoreParameter("Network", network);
+}
+
+std::string UpdateInstanceRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void UpdateInstanceRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setCoreParameter("InstanceName", instanceName);
 }
 

@@ -25,17 +25,6 @@ QueryMediaCensorJobDetailRequest::QueryMediaCensorJobDetailRequest() :
 QueryMediaCensorJobDetailRequest::~QueryMediaCensorJobDetailRequest()
 {}
 
-std::string QueryMediaCensorJobDetailRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void QueryMediaCensorJobDetailRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
-}
-
 long QueryMediaCensorJobDetailRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void QueryMediaCensorJobDetailRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QueryMediaCensorJobDetailRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void QueryMediaCensorJobDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string QueryMediaCensorJobDetailRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -67,6 +45,39 @@ void QueryMediaCensorJobDetailRequest::setNextPageToken(const std::string& nextP
 {
 	nextPageToken_ = nextPageToken;
 	setCoreParameter("NextPageToken", nextPageToken);
+}
+
+std::string QueryMediaCensorJobDetailRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryMediaCensorJobDetailRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryMediaCensorJobDetailRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void QueryMediaCensorJobDetailRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setCoreParameter("JobId", jobId);
+}
+
+std::string QueryMediaCensorJobDetailRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void QueryMediaCensorJobDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMediaCensorJobDetailRequest::getOwnerAccount()const
@@ -100,16 +111,5 @@ void QueryMediaCensorJobDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string QueryMediaCensorJobDetailRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryMediaCensorJobDetailRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

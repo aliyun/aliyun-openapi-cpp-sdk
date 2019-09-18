@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				OnsMqttQueryHistoryOnlineRequest();
 				~OnsMqttQueryHistoryOnlineRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getBeginTime()const;
 				void setBeginTime(long beginTime);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				std::string groupId_;
 				long endTime_;
 				long beginTime_;
+				std::string instanceId_;
 
 			};
 		}

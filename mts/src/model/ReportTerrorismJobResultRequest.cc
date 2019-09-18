@@ -25,17 +25,6 @@ ReportTerrorismJobResultRequest::ReportTerrorismJobResultRequest() :
 ReportTerrorismJobResultRequest::~ReportTerrorismJobResultRequest()
 {}
 
-std::string ReportTerrorismJobResultRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void ReportTerrorismJobResultRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
-}
-
 long ReportTerrorismJobResultRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void ReportTerrorismJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ReportTerrorismJobResultRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReportTerrorismJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ReportTerrorismJobResultRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void ReportTerrorismJobResultRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setCoreParameter("JobId", jobId);
 }
 
 std::string ReportTerrorismJobResultRequest::getResourceOwnerAccount()const
@@ -80,17 +91,6 @@ void ReportTerrorismJobResultRequest::setLabel(const std::string& label)
 	setCoreParameter("Label", label);
 }
 
-std::string ReportTerrorismJobResultRequest::getDetail()const
-{
-	return detail_;
-}
-
-void ReportTerrorismJobResultRequest::setDetail(const std::string& detail)
-{
-	detail_ = detail;
-	setCoreParameter("Detail", detail);
-}
-
 long ReportTerrorismJobResultRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +102,14 @@ void ReportTerrorismJobResultRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ReportTerrorismJobResultRequest::getAccessKeyId()const
+std::string ReportTerrorismJobResultRequest::getDetail()const
 {
-	return accessKeyId_;
+	return detail_;
 }
 
-void ReportTerrorismJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+void ReportTerrorismJobResultRequest::setDetail(const std::string& detail)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	detail_ = detail;
+	setCoreParameter("Detail", detail);
 }
 

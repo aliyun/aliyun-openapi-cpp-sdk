@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				QueryCoreWordsRequest();
 				~QueryCoreWordsRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getSynonym()const;
 				void setSynonym(const std::string& synonym);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getCoreWordName()const;
 				void setCoreWordName(const std::string& coreWordName);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				int pageNumber_;
 				std::string synonym_;
 				int pageSize_;
 				std::string coreWordName_;
-				int pageNumber_;
 
 			};
 		}

@@ -25,28 +25,6 @@ DetectLogoRequest::DetectLogoRequest() :
 DetectLogoRequest::~DetectLogoRequest()
 {}
 
-std::string DetectLogoRequest::getSrcUris()const
-{
-	return srcUris_;
-}
-
-void DetectLogoRequest::setSrcUris(const std::string& srcUris)
-{
-	srcUris_ = srcUris;
-	setCoreParameter("SrcUris", srcUris);
-}
-
-std::string DetectLogoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DetectLogoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DetectLogoRequest::getProject()const
 {
 	return project_;
@@ -67,5 +45,16 @@ void DetectLogoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DetectLogoRequest::getSrcUris()const
+{
+	return srcUris_;
+}
+
+void DetectLogoRequest::setSrcUris(const std::string& srcUris)
+{
+	srcUris_ = srcUris;
+	setCoreParameter("SrcUris", srcUris);
 }
 

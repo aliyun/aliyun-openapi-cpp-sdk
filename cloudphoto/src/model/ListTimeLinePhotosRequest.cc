@@ -25,17 +25,6 @@ ListTimeLinePhotosRequest::ListTimeLinePhotosRequest() :
 ListTimeLinePhotosRequest::~ListTimeLinePhotosRequest()
 {}
 
-int ListTimeLinePhotosRequest::getSize()const
-{
-	return size_;
-}
-
-void ListTimeLinePhotosRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string ListTimeLinePhotosRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -69,17 +58,6 @@ void ListTimeLinePhotosRequest::setStoreName(const std::string& storeName)
 	setCoreParameter("StoreName", storeName);
 }
 
-int ListTimeLinePhotosRequest::getPage()const
-{
-	return page_;
-}
-
-void ListTimeLinePhotosRequest::setPage(int page)
-{
-	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
-}
-
 long ListTimeLinePhotosRequest::getStartTime()const
 {
 	return startTime_;
@@ -100,6 +78,28 @@ void ListTimeLinePhotosRequest::setFilterBy(const std::string& filterBy)
 {
 	filterBy_ = filterBy;
 	setCoreParameter("FilterBy", filterBy);
+}
+
+int ListTimeLinePhotosRequest::getSize()const
+{
+	return size_;
+}
+
+void ListTimeLinePhotosRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
+}
+
+int ListTimeLinePhotosRequest::getPage()const
+{
+	return page_;
+}
+
+void ListTimeLinePhotosRequest::setPage(int page)
+{
+	page_ = page;
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string ListTimeLinePhotosRequest::getDirection()const

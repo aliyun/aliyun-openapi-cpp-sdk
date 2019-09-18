@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				std::string getTimeEnd()const;
 				void setTimeEnd(const std::string& timeEnd);
-				bool getWarnOpen()const;
-				void setWarnOpen(bool warnOpen);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getChannel()const;
 				void setChannel(const std::string& channel);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
+				std::string getFrequency()const;
+				void setFrequency(const std::string& frequency);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				bool getWarnOpen()const;
+				void setWarnOpen(bool warnOpen);
 				bool getTimeOpen()const;
 				void setTimeOpen(bool timeOpen);
 				std::string getTimeBegin()const;
 				void setTimeBegin(const std::string& timeBegin);
-				std::string getFrequency()const;
-				void setFrequency(const std::string& frequency);
 
             private:
 				std::string timeEnd_;
-				bool warnOpen_;
-				std::string sourceIp_;
 				std::string channel_;
 				std::string title_;
+				std::string frequency_;
+				std::string sourceIp_;
+				bool warnOpen_;
 				bool timeOpen_;
 				std::string timeBegin_;
-				std::string frequency_;
 
 			};
 		}

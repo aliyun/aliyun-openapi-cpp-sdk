@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DeletePositionMapRequest();
 				~DeletePositionMapRequest();
 
-				long getMapId()const;
-				void setMapId(long mapId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getMapId()const;
+				void setMapId(long mapId);
 
             private:
-				long mapId_;
 				std::string accessKeyId_;
+				long mapId_;
 
 			};
 		}

@@ -25,15 +25,26 @@ OpenScdnServiceRequest::OpenScdnServiceRequest() :
 OpenScdnServiceRequest::~OpenScdnServiceRequest()
 {}
 
-std::string OpenScdnServiceRequest::getEndDate()const
+std::string OpenScdnServiceRequest::getStartDate()const
 {
-	return endDate_;
+	return startDate_;
 }
 
-void OpenScdnServiceRequest::setEndDate(const std::string& endDate)
+void OpenScdnServiceRequest::setStartDate(const std::string& startDate)
 {
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
+}
+
+int OpenScdnServiceRequest::getCcProtection()const
+{
+	return ccProtection_;
+}
+
+void OpenScdnServiceRequest::setCcProtection(int ccProtection)
+{
+	ccProtection_ = ccProtection;
+	setCoreParameter("CcProtection", std::to_string(ccProtection));
 }
 
 std::string OpenScdnServiceRequest::getSecurityToken()const
@@ -45,6 +56,28 @@ void OpenScdnServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string OpenScdnServiceRequest::getProtectType()const
+{
+	return protectType_;
+}
+
+void OpenScdnServiceRequest::setProtectType(const std::string& protectType)
+{
+	protectType_ = protectType;
+	setCoreParameter("ProtectType", protectType);
+}
+
+int OpenScdnServiceRequest::getDDoSBasic()const
+{
+	return dDoSBasic_;
+}
+
+void OpenScdnServiceRequest::setDDoSBasic(int dDoSBasic)
+{
+	dDoSBasic_ = dDoSBasic;
+	setCoreParameter("DDoSBasic", std::to_string(dDoSBasic));
 }
 
 int OpenScdnServiceRequest::getBandwidth()const
@@ -80,26 +113,15 @@ void OpenScdnServiceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string OpenScdnServiceRequest::getProtectType()const
+std::string OpenScdnServiceRequest::getEndDate()const
 {
-	return protectType_;
+	return endDate_;
 }
 
-void OpenScdnServiceRequest::setProtectType(const std::string& protectType)
+void OpenScdnServiceRequest::setEndDate(const std::string& endDate)
 {
-	protectType_ = protectType;
-	setCoreParameter("ProtectType", protectType);
-}
-
-std::string OpenScdnServiceRequest::getStartDate()const
-{
-	return startDate_;
-}
-
-void OpenScdnServiceRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
 }
 
 int OpenScdnServiceRequest::getElasticProtection()const
@@ -111,27 +133,5 @@ void OpenScdnServiceRequest::setElasticProtection(int elasticProtection)
 {
 	elasticProtection_ = elasticProtection;
 	setCoreParameter("ElasticProtection", std::to_string(elasticProtection));
-}
-
-int OpenScdnServiceRequest::getDDoSBasic()const
-{
-	return dDoSBasic_;
-}
-
-void OpenScdnServiceRequest::setDDoSBasic(int dDoSBasic)
-{
-	dDoSBasic_ = dDoSBasic;
-	setCoreParameter("DDoSBasic", std::to_string(dDoSBasic));
-}
-
-int OpenScdnServiceRequest::getCcProtection()const
-{
-	return ccProtection_;
-}
-
-void OpenScdnServiceRequest::setCcProtection(int ccProtection)
-{
-	ccProtection_ = ccProtection;
-	setCoreParameter("CcProtection", std::to_string(ccProtection));
 }
 

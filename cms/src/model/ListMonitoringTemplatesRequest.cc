@@ -25,6 +25,28 @@ ListMonitoringTemplatesRequest::ListMonitoringTemplatesRequest() :
 ListMonitoringTemplatesRequest::~ListMonitoringTemplatesRequest()
 {}
 
+bool ListMonitoringTemplatesRequest::getHistory()const
+{
+	return history_;
+}
+
+void ListMonitoringTemplatesRequest::setHistory(bool history)
+{
+	history_ = history;
+	setCoreParameter("History", history ? "true" : "false");
+}
+
+long ListMonitoringTemplatesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListMonitoringTemplatesRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 bool ListMonitoringTemplatesRequest::getTotal()const
 {
 	return total_;
@@ -69,17 +91,6 @@ void ListMonitoringTemplatesRequest::setId(long id)
 	setCoreParameter("Id", std::to_string(id));
 }
 
-bool ListMonitoringTemplatesRequest::getHistory()const
-{
-	return history_;
-}
-
-void ListMonitoringTemplatesRequest::setHistory(bool history)
-{
-	history_ = history;
-	setCoreParameter("History", history ? "true" : "false");
-}
-
 std::string ListMonitoringTemplatesRequest::getKeyword()const
 {
 	return keyword_;
@@ -89,16 +100,5 @@ void ListMonitoringTemplatesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setCoreParameter("Keyword", keyword);
-}
-
-long ListMonitoringTemplatesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListMonitoringTemplatesRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

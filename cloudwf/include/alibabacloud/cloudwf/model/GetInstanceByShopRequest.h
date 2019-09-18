@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				GetInstanceByShopRequest();
 				~GetInstanceByShopRequest();
 
-				long getShopId()const;
-				void setShopId(long shopId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getShopId()const;
+				void setShopId(long shopId);
 
             private:
-				long shopId_;
 				std::string accessKeyId_;
+				long shopId_;
 
 			};
 		}

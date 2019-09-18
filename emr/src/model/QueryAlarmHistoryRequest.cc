@@ -47,28 +47,6 @@ void QueryAlarmHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int QueryAlarmHistoryRequest::getSize()const
-{
-	return size_;
-}
-
-void QueryAlarmHistoryRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
-std::string QueryAlarmHistoryRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void QueryAlarmHistoryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string QueryAlarmHistoryRequest::getClusterId()const
 {
 	return clusterId_;
@@ -111,5 +89,27 @@ void QueryAlarmHistoryRequest::setEndTimeStamp(long endTimeStamp)
 {
 	endTimeStamp_ = endTimeStamp;
 	setCoreParameter("EndTimeStamp", std::to_string(endTimeStamp));
+}
+
+int QueryAlarmHistoryRequest::getSize()const
+{
+	return size_;
+}
+
+void QueryAlarmHistoryRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
+}
+
+std::string QueryAlarmHistoryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void QueryAlarmHistoryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -36,17 +36,6 @@ void PubRequest::setTopicFullName(const std::string& topicFullName)
 	setCoreParameter("TopicFullName", topicFullName);
 }
 
-int PubRequest::getQos()const
-{
-	return qos_;
-}
-
-void PubRequest::setQos(int qos)
-{
-	qos_ = qos;
-	setCoreParameter("Qos", std::to_string(qos));
-}
-
 std::string PubRequest::getMessageContent()const
 {
 	return messageContent_;
@@ -56,17 +45,6 @@ void PubRequest::setMessageContent(const std::string& messageContent)
 {
 	messageContent_ = messageContent;
 	setCoreParameter("MessageContent", messageContent);
-}
-
-std::string PubRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void PubRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string PubRequest::getProductKey()const
@@ -89,5 +67,27 @@ void PubRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int PubRequest::getQos()const
+{
+	return qos_;
+}
+
+void PubRequest::setQos(int qos)
+{
+	qos_ = qos;
+	setCoreParameter("Qos", std::to_string(qos));
+}
+
+std::string PubRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void PubRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 

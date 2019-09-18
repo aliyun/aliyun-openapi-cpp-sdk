@@ -25,14 +25,3 @@ GetSubUserListRequest::GetSubUserListRequest() :
 GetSubUserListRequest::~GetSubUserListRequest()
 {}
 
-std::string GetSubUserListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetSubUserListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setJsonData(const std::string& jsonData);
 				std::string getTaskType()const;
 				void setTaskType(const std::string& taskType);
-				std::string getTaskScope()const;
-				void setTaskScope(const std::string& taskScope);
 				std::string getAlertConfig()const;
 				void setAlertConfig(const std::string& alertConfig);
 				long getGroupId()const;
@@ -51,16 +49,18 @@ namespace AlibabaCloud
 				void setTaskName(const std::string& taskName);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
+				std::string getTaskScope()const;
+				void setTaskScope(const std::string& taskScope);
 
             private:
 				std::vector<std::string> instanceList_;
 				std::string jsonData_;
 				std::string taskType_;
-				std::string taskScope_;
 				std::string alertConfig_;
 				long groupId_;
 				std::string taskName_;
 				std::string groupName_;
+				std::string taskScope_;
 
 			};
 		}

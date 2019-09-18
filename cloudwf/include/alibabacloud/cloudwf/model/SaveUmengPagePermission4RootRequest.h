@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getGsPermission()const;
 				void setGsPermission(const std::string& gsPermission);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				long getAliyunPk()const;
 				void setAliyunPk(long aliyunPk);
 				long getPagePermission()const;
@@ -45,16 +47,14 @@ namespace AlibabaCloud
 				void setId(long id);
 				long getBid()const;
 				void setBid(long bid);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string gsPermission_;
+				std::string accessKeyId_;
 				long aliyunPk_;
 				long pagePermission_;
 				long id_;
 				long bid_;
-				std::string accessKeyId_;
 
 			};
 		}

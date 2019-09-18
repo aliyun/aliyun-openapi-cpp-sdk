@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeUserCustomerLabelsRequest();
 				~DescribeUserCustomerLabelsRequest();
 
-				long getUid()const;
-				void setUid(long uid);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getUid()const;
+				void setUid(long uid);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				long uid_;
-				std::string securityToken_;
 				long ownerId_;
 				std::string accessKeyId_;
+				long uid_;
+				std::string securityToken_;
 
 			};
 		}

@@ -25,17 +25,6 @@ QueryFailReasonForRegistrantProfileRealNameVerificationRequest::QueryFailReasonF
 QueryFailReasonForRegistrantProfileRealNameVerificationRequest::~QueryFailReasonForRegistrantProfileRealNameVerificationRequest()
 {}
 
-std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 long QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getRegistrantProfileID()const
 {
 	return registrantProfileID_;
@@ -45,6 +34,17 @@ void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setRegistra
 {
 	registrantProfileID_ = registrantProfileID;
 	setCoreParameter("RegistrantProfileID", std::to_string(registrantProfileID));
+}
+
+std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getLang()const

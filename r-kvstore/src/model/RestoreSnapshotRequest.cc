@@ -36,28 +36,6 @@ void RestoreSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RestoreSnapshotRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void RestoreSnapshotRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string RestoreSnapshotRequest::getSnapshotId()const
-{
-	return snapshotId_;
-}
-
-void RestoreSnapshotRequest::setSnapshotId(const std::string& snapshotId)
-{
-	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", snapshotId);
-}
-
 std::string RestoreSnapshotRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +45,6 @@ void RestoreSnapshotRequest::setResourceOwnerAccount(const std::string& resource
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string RestoreSnapshotRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RestoreSnapshotRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string RestoreSnapshotRequest::getOwnerAccount()const

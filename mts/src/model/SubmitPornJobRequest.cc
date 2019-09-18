@@ -25,15 +25,26 @@ SubmitPornJobRequest::SubmitPornJobRequest() :
 SubmitPornJobRequest::~SubmitPornJobRequest()
 {}
 
-std::string SubmitPornJobRequest::getInput()const
+long SubmitPornJobRequest::getResourceOwnerId()const
 {
-	return input_;
+	return resourceOwnerId_;
 }
 
-void SubmitPornJobRequest::setInput(const std::string& input)
+void SubmitPornJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	input_ = input;
-	setCoreParameter("Input", input);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitPornJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitPornJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitPornJobRequest::getUserData()const
@@ -45,17 +56,6 @@ void SubmitPornJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setCoreParameter("UserData", userData);
-}
-
-long SubmitPornJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitPornJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitPornJobRequest::getResourceOwnerAccount()const
@@ -91,28 +91,6 @@ void SubmitPornJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitPornJobRequest::getPornConfig()const
-{
-	return pornConfig_;
-}
-
-void SubmitPornJobRequest::setPornConfig(const std::string& pornConfig)
-{
-	pornConfig_ = pornConfig;
-	setCoreParameter("PornConfig", pornConfig);
-}
-
-std::string SubmitPornJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitPornJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitPornJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +100,27 @@ void SubmitPornJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitPornJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitPornJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
+}
+
+std::string SubmitPornJobRequest::getPornConfig()const
+{
+	return pornConfig_;
+}
+
+void SubmitPornJobRequest::setPornConfig(const std::string& pornConfig)
+{
+	pornConfig_ = pornConfig;
+	setCoreParameter("PornConfig", pornConfig);
 }
 

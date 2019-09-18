@@ -25,6 +25,17 @@ DescribeLiveStreamsBlockListRequest::DescribeLiveStreamsBlockListRequest() :
 DescribeLiveStreamsBlockListRequest::~DescribeLiveStreamsBlockListRequest()
 {}
 
+int DescribeLiveStreamsBlockListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void DescribeLiveStreamsBlockListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 std::string DescribeLiveStreamsBlockListRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -34,17 +45,6 @@ void DescribeLiveStreamsBlockListRequest::setSecurityToken(const std::string& se
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeLiveStreamsBlockListRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveStreamsBlockListRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
 }
 
 int DescribeLiveStreamsBlockListRequest::getPageSize()const
@@ -58,6 +58,17 @@ void DescribeLiveStreamsBlockListRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeLiveStreamsBlockListRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveStreamsBlockListRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
 long DescribeLiveStreamsBlockListRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,16 +78,5 @@ void DescribeLiveStreamsBlockListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeLiveStreamsBlockListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void DescribeLiveStreamsBlockListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

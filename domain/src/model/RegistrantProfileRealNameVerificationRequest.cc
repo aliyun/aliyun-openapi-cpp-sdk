@@ -36,17 +36,6 @@ void RegistrantProfileRealNameVerificationRequest::setIdentityCredentialType(con
 	setCoreParameter("IdentityCredentialType", identityCredentialType);
 }
 
-std::string RegistrantProfileRealNameVerificationRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void RegistrantProfileRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 long RegistrantProfileRealNameVerificationRequest::getRegistrantProfileID()const
 {
 	return registrantProfileID_;
@@ -67,6 +56,17 @@ void RegistrantProfileRealNameVerificationRequest::setIdentityCredential(const s
 {
 	identityCredential_ = identityCredential;
 	setCoreParameter("IdentityCredential", identityCredential);
+}
+
+std::string RegistrantProfileRealNameVerificationRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void RegistrantProfileRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getLang()const

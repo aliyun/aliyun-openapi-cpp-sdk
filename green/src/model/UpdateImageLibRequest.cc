@@ -25,6 +25,17 @@ UpdateImageLibRequest::UpdateImageLibRequest() :
 UpdateImageLibRequest::~UpdateImageLibRequest()
 {}
 
+std::string UpdateImageLibRequest::getScene()const
+{
+	return scene_;
+}
+
+void UpdateImageLibRequest::setScene(const std::string& scene)
+{
+	scene_ = scene;
+	setCoreParameter("Scene", scene);
+}
+
 std::string UpdateImageLibRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,15 +58,15 @@ void UpdateImageLibRequest::setEnable(bool enable)
 	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
-std::string UpdateImageLibRequest::getName()const
+int UpdateImageLibRequest::getId()const
 {
-	return name_;
+	return id_;
 }
 
-void UpdateImageLibRequest::setName(const std::string& name)
+void UpdateImageLibRequest::setId(int id)
 {
-	name_ = name;
-	setCoreParameter("Name", name);
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string UpdateImageLibRequest::getBizTypes()const
@@ -69,15 +80,15 @@ void UpdateImageLibRequest::setBizTypes(const std::string& bizTypes)
 	setCoreParameter("BizTypes", bizTypes);
 }
 
-int UpdateImageLibRequest::getId()const
+std::string UpdateImageLibRequest::getName()const
 {
-	return id_;
+	return name_;
 }
 
-void UpdateImageLibRequest::setId(int id)
+void UpdateImageLibRequest::setName(const std::string& name)
 {
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateImageLibRequest::getCategory()const
@@ -89,16 +100,5 @@ void UpdateImageLibRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setCoreParameter("Category", category);
-}
-
-std::string UpdateImageLibRequest::getScene()const
-{
-	return scene_;
-}
-
-void UpdateImageLibRequest::setScene(const std::string& scene)
-{
-	scene_ = scene;
-	setCoreParameter("Scene", scene);
 }
 

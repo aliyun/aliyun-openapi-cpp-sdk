@@ -36,28 +36,6 @@ void DescribeDcdnRefreshTasksRequest::setObjectPath(const std::string& objectPat
 	setCoreParameter("ObjectPath", objectPath);
 }
 
-std::string DescribeDcdnRefreshTasksRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeDcdnRefreshTasksRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string DescribeDcdnRefreshTasksRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeDcdnRefreshTasksRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeDcdnRefreshTasksRequest::getStartTime()const
 {
 	return startTime_;
@@ -67,17 +45,6 @@ void DescribeDcdnRefreshTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeDcdnRefreshTasksRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeDcdnRefreshTasksRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeDcdnRefreshTasksRequest::getPageNumber()const
@@ -144,6 +111,39 @@ void DescribeDcdnRefreshTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setCoreParameter("TaskId", taskId);
+}
+
+std::string DescribeDcdnRefreshTasksRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeDcdnRefreshTasksRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeDcdnRefreshTasksRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeDcdnRefreshTasksRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeDcdnRefreshTasksRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeDcdnRefreshTasksRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getStatus()const

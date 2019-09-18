@@ -25,15 +25,26 @@ SubmitFpShotJobRequest::SubmitFpShotJobRequest() :
 SubmitFpShotJobRequest::~SubmitFpShotJobRequest()
 {}
 
-std::string SubmitFpShotJobRequest::getInput()const
+long SubmitFpShotJobRequest::getResourceOwnerId()const
 {
-	return input_;
+	return resourceOwnerId_;
 }
 
-void SubmitFpShotJobRequest::setInput(const std::string& input)
+void SubmitFpShotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	input_ = input;
-	setCoreParameter("Input", input);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitFpShotJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitFpShotJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitFpShotJobRequest::getUserData()const
@@ -45,17 +56,6 @@ void SubmitFpShotJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setCoreParameter("UserData", userData);
-}
-
-long SubmitFpShotJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitFpShotJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitFpShotJobRequest::getFpShotConfig()const
@@ -102,17 +102,6 @@ void SubmitFpShotJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitFpShotJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitFpShotJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitFpShotJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +111,16 @@ void SubmitFpShotJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitFpShotJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitFpShotJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

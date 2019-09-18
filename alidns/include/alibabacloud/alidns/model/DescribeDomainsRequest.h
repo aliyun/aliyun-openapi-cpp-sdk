@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				DescribeDomainsRequest();
 				~DescribeDomainsRequest();
 
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
-				std::string getSearchMode()const;
-				void setSearchMode(const std::string& searchMode);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKeyWord()const;
 				void setKeyWord(const std::string& keyWord);
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				std::string getSearchMode()const;
+				void setSearchMode(const std::string& searchMode);
 
             private:
+				long pageNumber_;
 				std::string resourceGroupId_;
-				std::string groupId_;
-				std::string userClientIp_;
 				long pageSize_;
-				std::string searchMode_;
 				std::string lang_;
 				std::string keyWord_;
-				long pageNumber_;
+				std::string groupId_;
+				std::string userClientIp_;
+				std::string searchMode_;
 
 			};
 		}

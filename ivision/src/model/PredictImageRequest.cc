@@ -25,127 +25,6 @@ PredictImageRequest::PredictImageRequest() :
 PredictImageRequest::~PredictImageRequest()
 {}
 
-long PredictImageRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void PredictImageRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-long PredictImageRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void PredictImageRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool PredictImageRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void PredictImageRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string PredictImageRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void PredictImageRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string PredictImageRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void PredictImageRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string PredictImageRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void PredictImageRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string PredictImageRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void PredictImageRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string PredictImageRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void PredictImageRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string PredictImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void PredictImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string PredictImageRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void PredictImageRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string PredictImageRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void PredictImageRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
 std::string PredictImageRequest::getProjectId()const
 {
 	return projectId_;
@@ -155,28 +34,6 @@ void PredictImageRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-std::string PredictImageRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void PredictImageRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long PredictImageRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void PredictImageRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string PredictImageRequest::getShowLog()const
@@ -190,37 +47,15 @@ void PredictImageRequest::setShowLog(const std::string& showLog)
 	setCoreParameter("ShowLog", showLog);
 }
 
-std::string PredictImageRequest::getApp_ip()const
+std::string PredictImageRequest::getModelId()const
 {
-	return app_ip_;
+	return modelId_;
 }
 
-void PredictImageRequest::setApp_ip(const std::string& app_ip)
+void PredictImageRequest::setModelId(const std::string& modelId)
 {
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string PredictImageRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void PredictImageRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
-
-std::string PredictImageRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void PredictImageRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	modelId_ = modelId;
+	setCoreParameter("ModelId", modelId);
 }
 
 long PredictImageRequest::getOwnerId()const
@@ -232,61 +67,6 @@ void PredictImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string PredictImageRequest::getVersion()const
-{
-	return version_;
-}
-
-void PredictImageRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool PredictImageRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void PredictImageRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool PredictImageRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void PredictImageRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool PredictImageRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void PredictImageRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string PredictImageRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void PredictImageRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 
 std::string PredictImageRequest::getIterationId()const

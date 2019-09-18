@@ -51,6 +51,8 @@ void DescribeAccountsResult::parse(const std::string &payload)
 			accountsObject.accountDescription = value["AccountDescription"].asString();
 		if(!value["AccountType"].isNull())
 			accountsObject.accountType = value["AccountType"].asString();
+		if(!value["AccountLockState"].isNull())
+			accountsObject.accountLockState = value["AccountLockState"].asString();
 		if(!value["PrivilegeExceeded"].isNull())
 			accountsObject.privilegeExceeded = value["PrivilegeExceeded"].asString();
 		auto allDatabasePrivileges = value["DatabasePrivileges"]["DatabasePrivilege"];

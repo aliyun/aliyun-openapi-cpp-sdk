@@ -25,28 +25,6 @@ QueryTicketRequest::QueryTicketRequest() :
 QueryTicketRequest::~QueryTicketRequest()
 {}
 
-std::string QueryTicketRequest::getStage()const
-{
-	return stage_;
-}
-
-void QueryTicketRequest::setStage(const std::string& stage)
-{
-	stage_ = stage;
-	setCoreParameter("Stage", stage);
-}
-
-int QueryTicketRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryTicketRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryTicketRequest::getCreatorId()const
 {
 	return creatorId_;
@@ -100,6 +78,28 @@ void QueryTicketRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string QueryTicketRequest::getStage()const
+{
+	return stage_;
+}
+
+void QueryTicketRequest::setStage(const std::string& stage)
+{
+	stage_ = stage;
+	setCoreParameter("Stage", stage);
+}
+
+int QueryTicketRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryTicketRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTicketRequest::getCcsInstanceId()const

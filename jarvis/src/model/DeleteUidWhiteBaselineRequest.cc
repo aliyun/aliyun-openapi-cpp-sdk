@@ -47,6 +47,17 @@ void DeleteUidWhiteBaselineRequest::setWblUidList(const std::string& wblUidList)
 	setCoreParameter("WblUidList", wblUidList);
 }
 
+std::string DeleteUidWhiteBaselineRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DeleteUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DeleteUidWhiteBaselineRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -67,16 +78,5 @@ void DeleteUidWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DeleteUidWhiteBaselineRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DeleteUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

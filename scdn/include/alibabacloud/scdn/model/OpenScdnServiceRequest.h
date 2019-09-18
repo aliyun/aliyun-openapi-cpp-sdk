@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				OpenScdnServiceRequest();
 				~OpenScdnServiceRequest();
 
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
+				std::string getStartDate()const;
+				void setStartDate(const std::string& startDate);
+				int getCcProtection()const;
+				void setCcProtection(int ccProtection);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getProtectType()const;
+				void setProtectType(const std::string& protectType);
+				int getDDoSBasic()const;
+				void setDDoSBasic(int dDoSBasic);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
 				int getDomainCount()const;
 				void setDomainCount(int domainCount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getProtectType()const;
-				void setProtectType(const std::string& protectType);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
 				int getElasticProtection()const;
 				void setElasticProtection(int elasticProtection);
-				int getDDoSBasic()const;
-				void setDDoSBasic(int dDoSBasic);
-				int getCcProtection()const;
-				void setCcProtection(int ccProtection);
 
             private:
-				std::string endDate_;
+				std::string startDate_;
+				int ccProtection_;
 				std::string securityToken_;
+				std::string protectType_;
+				int dDoSBasic_;
 				int bandwidth_;
 				int domainCount_;
 				long ownerId_;
-				std::string protectType_;
-				std::string startDate_;
+				std::string endDate_;
 				int elasticProtection_;
-				int dDoSBasic_;
-				int ccProtection_;
 
 			};
 		}

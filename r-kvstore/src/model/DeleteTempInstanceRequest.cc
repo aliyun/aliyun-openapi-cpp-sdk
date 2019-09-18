@@ -36,28 +36,6 @@ void DeleteTempInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteTempInstanceRequest::getTempInstanceId()const
-{
-	return tempInstanceId_;
-}
-
-void DeleteTempInstanceRequest::setTempInstanceId(const std::string& tempInstanceId)
-{
-	tempInstanceId_ = tempInstanceId;
-	setCoreParameter("TempInstanceId", tempInstanceId);
-}
-
-std::string DeleteTempInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DeleteTempInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string DeleteTempInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +45,6 @@ void DeleteTempInstanceRequest::setResourceOwnerAccount(const std::string& resou
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteTempInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteTempInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteTempInstanceRequest::getOwnerAccount()const

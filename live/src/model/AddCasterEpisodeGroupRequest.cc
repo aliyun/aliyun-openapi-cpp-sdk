@@ -25,6 +25,28 @@ AddCasterEpisodeGroupRequest::AddCasterEpisodeGroupRequest() :
 AddCasterEpisodeGroupRequest::~AddCasterEpisodeGroupRequest()
 {}
 
+std::string AddCasterEpisodeGroupRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddCasterEpisodeGroupRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string AddCasterEpisodeGroupRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void AddCasterEpisodeGroupRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
 std::string AddCasterEpisodeGroupRequest::getSideOutputUrl()const
 {
 	return sideOutputUrl_;
@@ -48,20 +70,9 @@ void AddCasterEpisodeGroupRequest::setItem(const std::vector<Item>& item)
 	for(int i = 0; i!= item.size(); i++)	{
 		auto obj = item.at(i);
 		std::string str ="Item."+ std::to_string(i);
-		setCoreParameter(str + ".VodUrl", obj.vodUrl);
 		setCoreParameter(str + ".ItemName", obj.itemName);
+		setCoreParameter(str + ".VodUrl", obj.vodUrl);
 	}
-}
-
-std::string AddCasterEpisodeGroupRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void AddCasterEpisodeGroupRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string AddCasterEpisodeGroupRequest::getDomainName()const
@@ -75,15 +86,15 @@ void AddCasterEpisodeGroupRequest::setDomainName(const std::string& domainName)
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string AddCasterEpisodeGroupRequest::getStartTime()const
+long AddCasterEpisodeGroupRequest::getOwnerId()const
 {
-	return startTime_;
+	return ownerId_;
 }
 
-void AddCasterEpisodeGroupRequest::setStartTime(const std::string& startTime)
+void AddCasterEpisodeGroupRequest::setOwnerId(long ownerId)
 {
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int AddCasterEpisodeGroupRequest::getRepeatNum()const
@@ -106,16 +117,5 @@ void AddCasterEpisodeGroupRequest::setCallbackUrl(const std::string& callbackUrl
 {
 	callbackUrl_ = callbackUrl;
 	setCoreParameter("CallbackUrl", callbackUrl);
-}
-
-long AddCasterEpisodeGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddCasterEpisodeGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

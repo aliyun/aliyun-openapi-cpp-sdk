@@ -47,14 +47,3 @@ void PublishUnionCasServiceRequest::setData(const std::string& data)
 	setCoreParameter("Data", data);
 }
 
-std::string PublishUnionCasServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void PublishUnionCasServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

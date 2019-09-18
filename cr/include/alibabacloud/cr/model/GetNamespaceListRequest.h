@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				GetNamespaceListRequest();
 				~GetNamespaceListRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getAuthorize()const;
 				void setAuthorize(const std::string& authorize);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
-				std::string regionId_;
 				std::string authorize_;
 				std::string status_;
 

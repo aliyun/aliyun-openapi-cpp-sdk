@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				DescribeCloudDatabasesRequest();
 				~DescribeCloudDatabasesRequest();
 
+				long getResourceType()const;
+				void setResourceType(long resourceType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getResourceType()const;
-				void setResourceType(long resourceType);
 				std::string getServiceRegionId()const;
 				void setServiceRegionId(const std::string& serviceRegionId);
 
             private:
+				long resourceType_;
 				std::string instanceId_;
 				std::string sourceIp_;
 				std::string lang_;
-				long resourceType_;
 				std::string serviceRegionId_;
 
 			};

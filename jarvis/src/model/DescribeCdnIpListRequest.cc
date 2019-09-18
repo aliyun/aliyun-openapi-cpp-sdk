@@ -36,17 +36,6 @@ void DescribeCdnIpListRequest::setSrcIP(const std::string& srcIP)
 	setCoreParameter("SrcIP", srcIP);
 }
 
-std::string DescribeCdnIpListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeCdnIpListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeCdnIpListRequest::getWlState()const
 {
 	return wlState_;
@@ -56,6 +45,28 @@ void DescribeCdnIpListRequest::setWlState(int wlState)
 {
 	wlState_ = wlState;
 	setCoreParameter("WlState", std::to_string(wlState));
+}
+
+std::string DescribeCdnIpListRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeCdnIpListRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
+std::string DescribeCdnIpListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeCdnIpListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeCdnIpListRequest::getPageSize()const
@@ -69,17 +80,6 @@ void DescribeCdnIpListRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeCdnIpListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeCdnIpListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeCdnIpListRequest::getLang()const
 {
 	return lang_;
@@ -91,14 +91,14 @@ void DescribeCdnIpListRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string DescribeCdnIpListRequest::getSourceCode()const
+int DescribeCdnIpListRequest::getCurrentPage()const
 {
-	return sourceCode_;
+	return currentPage_;
 }
 
-void DescribeCdnIpListRequest::setSourceCode(const std::string& sourceCode)
+void DescribeCdnIpListRequest::setCurrentPage(int currentPage)
 {
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

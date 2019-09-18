@@ -36,17 +36,6 @@ void ResetSmartAccessGatewayClientUserPasswordRequest::setResourceOwnerId(long r
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ResetSmartAccessGatewayClientUserPasswordRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ResetSmartAccessGatewayClientUserPasswordRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ResetSmartAccessGatewayClientUserPasswordRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void ResetSmartAccessGatewayClientUserPasswordRequest::setRegionId(const std::st
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string ResetSmartAccessGatewayClientUserPasswordRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ResetSmartAccessGatewayClientUserPasswordRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ResetSmartAccessGatewayClientUserPasswordRequest::getOwnerAccount()const
@@ -69,17 +69,6 @@ void ResetSmartAccessGatewayClientUserPasswordRequest::setOwnerAccount(const std
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ResetSmartAccessGatewayClientUserPasswordRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void ResetSmartAccessGatewayClientUserPasswordRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long ResetSmartAccessGatewayClientUserPasswordRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,6 +78,17 @@ void ResetSmartAccessGatewayClientUserPasswordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ResetSmartAccessGatewayClientUserPasswordRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void ResetSmartAccessGatewayClientUserPasswordRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 std::string ResetSmartAccessGatewayClientUserPasswordRequest::getUserName()const

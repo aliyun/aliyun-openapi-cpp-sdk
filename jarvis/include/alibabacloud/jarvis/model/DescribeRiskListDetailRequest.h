@@ -37,22 +37,22 @@ namespace AlibabaCloud
 
 				std::string getRiskType()const;
 				void setRiskType(const std::string& riskType);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getQueryProduct()const;
-				void setQueryProduct(const std::string& queryProduct);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getRiskDescribe()const;
-				void setRiskDescribe(const std::string& riskDescribe);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				long getSrcUid()const;
 				void setSrcUid(long srcUid);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getRiskDescribe()const;
+				void setRiskDescribe(const std::string& riskDescribe);
+				std::string getQueryProduct()const;
+				void setQueryProduct(const std::string& queryProduct);
 				std::string getQueryRegionId()const;
 				void setQueryRegionId(const std::string& queryRegionId);
 				std::string getStatus()const;
@@ -60,14 +60,14 @@ namespace AlibabaCloud
 
             private:
 				std::string riskType_;
+				std::string sourceCode_;
 				std::string sourceIp_;
 				int pageSize_;
-				std::string queryProduct_;
-				int currentPage_;
-				std::string riskDescribe_;
 				std::string lang_;
 				long srcUid_;
-				std::string sourceCode_;
+				int currentPage_;
+				std::string riskDescribe_;
+				std::string queryProduct_;
 				std::string queryRegionId_;
 				std::string status_;
 

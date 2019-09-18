@@ -25,17 +25,6 @@ QueryDomainByDomainNameRequest::QueryDomainByDomainNameRequest() :
 QueryDomainByDomainNameRequest::~QueryDomainByDomainNameRequest()
 {}
 
-std::string QueryDomainByDomainNameRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void QueryDomainByDomainNameRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string QueryDomainByDomainNameRequest::getDomainName()const
 {
 	return domainName_;
@@ -45,6 +34,17 @@ void QueryDomainByDomainNameRequest::setDomainName(const std::string& domainName
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+std::string QueryDomainByDomainNameRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryDomainByDomainNameRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainByDomainNameRequest::getLang()const

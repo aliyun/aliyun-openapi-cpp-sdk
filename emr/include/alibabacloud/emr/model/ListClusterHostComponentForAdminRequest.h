@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setHostInstanceId(const std::string& hostInstanceId);
 				std::string getComponentName()const;
 				void setComponentName(const std::string& componentName);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				int getPageNumber()const;
@@ -59,6 +57,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getServiceName()const;
 				void setServiceName(const std::string& serviceName);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getHostRole()const;
 				void setHostRole(const std::string& hostRole);
 
@@ -66,7 +66,6 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string hostInstanceId_;
 				std::string componentName_;
-				std::string clusterId_;
 				std::string userId_;
 				int pageNumber_;
 				std::string accessKeyId_;
@@ -75,6 +74,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				int pageSize_;
 				std::string serviceName_;
+				std::string clusterId_;
 				std::string hostRole_;
 
 			};

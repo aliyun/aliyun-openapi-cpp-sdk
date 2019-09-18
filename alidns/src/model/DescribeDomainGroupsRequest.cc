@@ -25,6 +25,17 @@ DescribeDomainGroupsRequest::DescribeDomainGroupsRequest() :
 DescribeDomainGroupsRequest::~DescribeDomainGroupsRequest()
 {}
 
+long DescribeDomainGroupsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDomainGroupsRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeDomainGroupsRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -67,16 +78,5 @@ void DescribeDomainGroupsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
 	setCoreParameter("KeyWord", keyWord);
-}
-
-long DescribeDomainGroupsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeDomainGroupsRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

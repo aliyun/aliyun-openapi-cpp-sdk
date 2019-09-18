@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getBackupPlanId()const;
@@ -50,7 +48,6 @@ namespace AlibabaCloud
 
             private:
 				std::string period_;
-				std::string regionId_;
 				std::string clientToken_;
 				std::string backupPlanId_;
 				std::string ownerId_;

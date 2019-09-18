@@ -25,17 +25,6 @@ DeleteKeywordRequest::DeleteKeywordRequest() :
 DeleteKeywordRequest::~DeleteKeywordRequest()
 {}
 
-std::string DeleteKeywordRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DeleteKeywordRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DeleteKeywordRequest::getKeywords()const
 {
 	return keywords_;
@@ -56,6 +45,17 @@ void DeleteKeywordRequest::setKeywordLibId(const std::string& keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
 	setCoreParameter("KeywordLibId", keywordLibId);
+}
+
+std::string DeleteKeywordRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DeleteKeywordRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteKeywordRequest::getIds()const

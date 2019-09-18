@@ -36,17 +36,6 @@ void ConvertOfficeFormatRequest::setSrcType(const std::string& srcType)
 	setCoreParameter("SrcType", srcType);
 }
 
-std::string ConvertOfficeFormatRequest::getModelId()const
-{
-	return modelId_;
-}
-
-void ConvertOfficeFormatRequest::setModelId(const std::string& modelId)
-{
-	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
-}
-
 std::string ConvertOfficeFormatRequest::getProject()const
 {
 	return project_;
@@ -56,6 +45,83 @@ void ConvertOfficeFormatRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
+}
+
+bool ConvertOfficeFormatRequest::getPdfVector()const
+{
+	return pdfVector_;
+}
+
+void ConvertOfficeFormatRequest::setPdfVector(bool pdfVector)
+{
+	pdfVector_ = pdfVector;
+	setCoreParameter("PdfVector", pdfVector ? "true" : "false");
+}
+
+std::string ConvertOfficeFormatRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ConvertOfficeFormatRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ConvertOfficeFormatRequest::getPassword()const
+{
+	return password_;
+}
+
+void ConvertOfficeFormatRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setCoreParameter("Password", password);
+}
+
+long ConvertOfficeFormatRequest::getStartPage()const
+{
+	return startPage_;
+}
+
+void ConvertOfficeFormatRequest::setStartPage(long startPage)
+{
+	startPage_ = startPage;
+	setCoreParameter("StartPage", std::to_string(startPage));
+}
+
+bool ConvertOfficeFormatRequest::getFitToPagesWide()const
+{
+	return fitToPagesWide_;
+}
+
+void ConvertOfficeFormatRequest::setFitToPagesWide(bool fitToPagesWide)
+{
+	fitToPagesWide_ = fitToPagesWide;
+	setCoreParameter("FitToPagesWide", fitToPagesWide ? "true" : "false");
+}
+
+std::string ConvertOfficeFormatRequest::getTgtFilePrefix()const
+{
+	return tgtFilePrefix_;
+}
+
+void ConvertOfficeFormatRequest::setTgtFilePrefix(const std::string& tgtFilePrefix)
+{
+	tgtFilePrefix_ = tgtFilePrefix;
+	setCoreParameter("TgtFilePrefix", tgtFilePrefix);
+}
+
+std::string ConvertOfficeFormatRequest::getModelId()const
+{
+	return modelId_;
+}
+
+void ConvertOfficeFormatRequest::setModelId(const std::string& modelId)
+{
+	modelId_ = modelId;
+	setCoreParameter("ModelId", modelId);
 }
 
 long ConvertOfficeFormatRequest::getMaxSheetRow()const
@@ -102,28 +168,6 @@ void ConvertOfficeFormatRequest::setTgtFileSuffix(const std::string& tgtFileSuff
 	setCoreParameter("TgtFileSuffix", tgtFileSuffix);
 }
 
-bool ConvertOfficeFormatRequest::getPdfVector()const
-{
-	return pdfVector_;
-}
-
-void ConvertOfficeFormatRequest::setPdfVector(bool pdfVector)
-{
-	pdfVector_ = pdfVector;
-	setCoreParameter("PdfVector", pdfVector ? "true" : "false");
-}
-
-std::string ConvertOfficeFormatRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ConvertOfficeFormatRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 bool ConvertOfficeFormatRequest::getSheetOnePage()const
 {
 	return sheetOnePage_;
@@ -133,28 +177,6 @@ void ConvertOfficeFormatRequest::setSheetOnePage(bool sheetOnePage)
 {
 	sheetOnePage_ = sheetOnePage;
 	setCoreParameter("SheetOnePage", sheetOnePage ? "true" : "false");
-}
-
-std::string ConvertOfficeFormatRequest::getPassword()const
-{
-	return password_;
-}
-
-void ConvertOfficeFormatRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setCoreParameter("Password", password);
-}
-
-long ConvertOfficeFormatRequest::getStartPage()const
-{
-	return startPage_;
-}
-
-void ConvertOfficeFormatRequest::setStartPage(long startPage)
-{
-	startPage_ = startPage;
-	setCoreParameter("StartPage", std::to_string(startPage));
 }
 
 long ConvertOfficeFormatRequest::getMaxSheetCol()const
@@ -179,28 +201,6 @@ void ConvertOfficeFormatRequest::setTgtType(const std::string& tgtType)
 	setCoreParameter("TgtType", tgtType);
 }
 
-std::string ConvertOfficeFormatRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ConvertOfficeFormatRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-bool ConvertOfficeFormatRequest::getFitToPagesWide()const
-{
-	return fitToPagesWide_;
-}
-
-void ConvertOfficeFormatRequest::setFitToPagesWide(bool fitToPagesWide)
-{
-	fitToPagesWide_ = fitToPagesWide;
-	setCoreParameter("FitToPagesWide", fitToPagesWide ? "true" : "false");
-}
-
 bool ConvertOfficeFormatRequest::getHidecomments()const
 {
 	return hidecomments_;
@@ -210,17 +210,6 @@ void ConvertOfficeFormatRequest::setHidecomments(bool hidecomments)
 {
 	hidecomments_ = hidecomments;
 	setCoreParameter("Hidecomments", hidecomments ? "true" : "false");
-}
-
-std::string ConvertOfficeFormatRequest::getTgtFilePrefix()const
-{
-	return tgtFilePrefix_;
-}
-
-void ConvertOfficeFormatRequest::setTgtFilePrefix(const std::string& tgtFilePrefix)
-{
-	tgtFilePrefix_ = tgtFilePrefix;
-	setCoreParameter("TgtFilePrefix", tgtFilePrefix);
 }
 
 bool ConvertOfficeFormatRequest::getFitToPagesTall()const

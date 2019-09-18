@@ -36,17 +36,6 @@ void DescribeVodDomainConfigsRequest::setFunctionNames(const std::string& functi
 	setCoreParameter("FunctionNames", functionNames);
 }
 
-std::string DescribeVodDomainConfigsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeVodDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeVodDomainConfigsRequest::getDomainName()const
 {
 	return domainName_;
@@ -67,5 +56,16 @@ void DescribeVodDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeVodDomainConfigsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeVodDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -47,17 +47,6 @@ void QueryComplexJobListRequest::setResourceOwnerAccount(const std::string& reso
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryComplexJobListRequest::getJobIds()const
-{
-	return jobIds_;
-}
-
-void QueryComplexJobListRequest::setJobIds(const std::string& jobIds)
-{
-	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
-}
-
 std::string QueryComplexJobListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryComplexJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryComplexJobListRequest::getJobIds()const
+{
+	return jobIds_;
+}
+
+void QueryComplexJobListRequest::setJobIds(const std::string& jobIds)
+{
+	jobIds_ = jobIds;
+	setCoreParameter("JobIds", jobIds);
 }
 

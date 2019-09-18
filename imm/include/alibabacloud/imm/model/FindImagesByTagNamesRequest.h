@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				FindImagesByTagNamesRequest();
 				~FindImagesByTagNamesRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getMarker()const;
-				void setMarker(const std::string& marker);
-				int getLimit()const;
-				void setLimit(int limit);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getSetId()const;
-				void setSetId(const std::string& setId);
-				std::string getTagNames()const;
-				void setTagNames(const std::string& tagNames);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getLimit()const;
+				void setLimit(int limit);
+				std::string getTagNames()const;
+				void setTagNames(const std::string& tagNames);
+				std::string getMarker()const;
+				void setMarker(const std::string& marker);
+				std::string getSetId()const;
+				void setSetId(const std::string& setId);
 
             private:
-				std::string regionId_;
-				std::string marker_;
-				int limit_;
 				std::string project_;
-				std::string setId_;
-				std::string tagNames_;
 				std::string accessKeyId_;
+				int limit_;
+				std::string tagNames_;
+				std::string marker_;
+				std::string setId_;
 
 			};
 		}

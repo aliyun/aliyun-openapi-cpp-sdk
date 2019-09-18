@@ -25,17 +25,6 @@ DeleteRuleRequest::DeleteRuleRequest() :
 DeleteRuleRequest::~DeleteRuleRequest()
 {}
 
-std::string DeleteRuleRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DeleteRuleRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DeleteRuleRequest::getFeatureType()const
 {
 	return featureType_;
@@ -45,6 +34,17 @@ void DeleteRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DeleteRuleRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DeleteRuleRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DeleteRuleRequest::getId()const

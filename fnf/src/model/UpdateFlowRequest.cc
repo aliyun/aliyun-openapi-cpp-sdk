@@ -25,6 +25,28 @@ UpdateFlowRequest::UpdateFlowRequest() :
 UpdateFlowRequest::~UpdateFlowRequest()
 {}
 
+std::string UpdateFlowRequest::getDescription()const
+{
+	return description_;
+}
+
+void UpdateFlowRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string UpdateFlowRequest::getType()const
+{
+	return type_;
+}
+
+void UpdateFlowRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string UpdateFlowRequest::getRequestId()const
 {
 	return requestId_;
@@ -58,17 +80,6 @@ void UpdateFlowRequest::setName(const std::string& name)
 	setCoreParameter("Name", name);
 }
 
-std::string UpdateFlowRequest::getDescription()const
-{
-	return description_;
-}
-
-void UpdateFlowRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 std::string UpdateFlowRequest::getDefinition()const
 {
 	return definition_;
@@ -78,16 +89,5 @@ void UpdateFlowRequest::setDefinition(const std::string& definition)
 {
 	definition_ = definition;
 	setCoreParameter("Definition", definition);
-}
-
-std::string UpdateFlowRequest::getType()const
-{
-	return type_;
-}
-
-void UpdateFlowRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

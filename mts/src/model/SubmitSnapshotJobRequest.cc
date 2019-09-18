@@ -25,15 +25,37 @@ SubmitSnapshotJobRequest::SubmitSnapshotJobRequest() :
 SubmitSnapshotJobRequest::~SubmitSnapshotJobRequest()
 {}
 
-std::string SubmitSnapshotJobRequest::getInput()const
+long SubmitSnapshotJobRequest::getResourceOwnerId()const
 {
-	return input_;
+	return resourceOwnerId_;
 }
 
-void SubmitSnapshotJobRequest::setInput(const std::string& input)
+void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	input_ = input;
-	setCoreParameter("Input", input);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitSnapshotJobRequest::getSnapshotConfig()const
+{
+	return snapshotConfig_;
+}
+
+void SubmitSnapshotJobRequest::setSnapshotConfig(const std::string& snapshotConfig)
+{
+	snapshotConfig_ = snapshotConfig;
+	setCoreParameter("SnapshotConfig", snapshotConfig);
+}
+
+std::string SubmitSnapshotJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitSnapshotJobRequest::getUserData()const
@@ -45,17 +67,6 @@ void SubmitSnapshotJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setCoreParameter("UserData", userData);
-}
-
-long SubmitSnapshotJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
@@ -91,28 +102,6 @@ void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitSnapshotJobRequest::getSnapshotConfig()const
-{
-	return snapshotConfig_;
-}
-
-void SubmitSnapshotJobRequest::setSnapshotConfig(const std::string& snapshotConfig)
-{
-	snapshotConfig_ = snapshotConfig;
-	setCoreParameter("SnapshotConfig", snapshotConfig);
-}
-
-std::string SubmitSnapshotJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitSnapshotJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +111,16 @@ void SubmitSnapshotJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitSnapshotJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitSnapshotJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

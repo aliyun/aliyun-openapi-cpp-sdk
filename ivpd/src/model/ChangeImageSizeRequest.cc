@@ -25,17 +25,6 @@ ChangeImageSizeRequest::ChangeImageSizeRequest() :
 ChangeImageSizeRequest::~ChangeImageSizeRequest()
 {}
 
-int ChangeImageSizeRequest::getWidth()const
-{
-	return width_;
-}
-
-void ChangeImageSizeRequest::setWidth(int width)
-{
-	width_ = width;
-	setCoreParameter("Width", std::to_string(width));
-}
-
 std::string ChangeImageSizeRequest::getUrl()const
 {
 	return url_;
@@ -45,6 +34,17 @@ void ChangeImageSizeRequest::setUrl(const std::string& url)
 {
 	url_ = url;
 	setCoreParameter("Url", url);
+}
+
+int ChangeImageSizeRequest::getWidth()const
+{
+	return width_;
+}
+
+void ChangeImageSizeRequest::setWidth(int width)
+{
+	width_ = width;
+	setCoreParameter("Width", std::to_string(width));
 }
 
 int ChangeImageSizeRequest::getHeight()const

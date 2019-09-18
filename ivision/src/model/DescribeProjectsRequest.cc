@@ -25,17 +25,6 @@ DescribeProjectsRequest::DescribeProjectsRequest() :
 DescribeProjectsRequest::~DescribeProjectsRequest()
 {}
 
-long DescribeProjectsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeProjectsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string DescribeProjectsRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -45,105 +34,6 @@ void DescribeProjectsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
 	setCoreParameter("NextPageToken", nextPageToken);
-}
-
-long DescribeProjectsRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeProjectsRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeProjectsRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeProjectsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string DescribeProjectsRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeProjectsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeProjectsRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeProjectsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeProjectsRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeProjectsRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string DescribeProjectsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeProjectsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeProjectsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeProjectsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeProjectsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeProjectsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeProjectsRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeProjectsRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
 }
 
 long DescribeProjectsRequest::getPageSize()const
@@ -157,39 +47,6 @@ void DescribeProjectsRequest::setPageSize(long pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeProjectsRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeProjectsRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string DescribeProjectsRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeProjectsRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeProjectsRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeProjectsRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
 std::string DescribeProjectsRequest::getShowLog()const
 {
 	return showLog_;
@@ -201,28 +58,6 @@ void DescribeProjectsRequest::setShowLog(const std::string& showLog)
 	setCoreParameter("ShowLog", showLog);
 }
 
-std::string DescribeProjectsRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeProjectsRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string DescribeProjectsRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DescribeProjectsRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
-
 long DescribeProjectsRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -232,17 +67,6 @@ void DescribeProjectsRequest::setCurrentPage(long currentPage)
 {
 	currentPage_ = currentPage;
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string DescribeProjectsRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeProjectsRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DescribeProjectsRequest::getProjectIds()const
@@ -265,60 +89,5 @@ void DescribeProjectsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeProjectsRequest::getVersion()const
-{
-	return version_;
-}
-
-void DescribeProjectsRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool DescribeProjectsRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeProjectsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool DescribeProjectsRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeProjectsRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool DescribeProjectsRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeProjectsRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string DescribeProjectsRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeProjectsRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeAccountDetailRequest();
 				~DescribeAccountDetailRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				long getUserId()const;
 				void setUserId(long userId);
 				long getAccountTypeId()const;
 				void setAccountTypeId(long accountTypeId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
-				std::string lang_;
 				long userId_;
 				long accountTypeId_;
+				std::string sourceIp_;
+				std::string lang_;
 
 			};
 		}

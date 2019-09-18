@@ -51,72 +51,36 @@ OpenanalyticsClient::OpenanalyticsClient(const std::string & accessKeyId, const 
 OpenanalyticsClient::~OpenanalyticsClient()
 {}
 
-OpenanalyticsClient::SetAllowIPOutcome OpenanalyticsClient::setAllowIP(const SetAllowIPRequest &request) const
+OpenanalyticsClient::CloseProductAccountOutcome OpenanalyticsClient::closeProductAccount(const CloseProductAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SetAllowIPOutcome(endpointOutcome.error());
+		return CloseProductAccountOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SetAllowIPOutcome(SetAllowIPResult(outcome.result()));
+		return CloseProductAccountOutcome(CloseProductAccountResult(outcome.result()));
 	else
-		return SetAllowIPOutcome(outcome.error());
+		return CloseProductAccountOutcome(outcome.error());
 }
 
-void OpenanalyticsClient::setAllowIPAsync(const SetAllowIPRequest& request, const SetAllowIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OpenanalyticsClient::closeProductAccountAsync(const CloseProductAccountRequest& request, const CloseProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, setAllowIP(request), context);
+		handler(this, request, closeProductAccount(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OpenanalyticsClient::SetAllowIPOutcomeCallable OpenanalyticsClient::setAllowIPCallable(const SetAllowIPRequest &request) const
+OpenanalyticsClient::CloseProductAccountOutcomeCallable OpenanalyticsClient::closeProductAccountCallable(const CloseProductAccountRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SetAllowIPOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CloseProductAccountOutcome()>>(
 			[this, request]()
 			{
-			return this->setAllowIP(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenanalyticsClient::GetRegionStatusOutcome OpenanalyticsClient::getRegionStatus(const GetRegionStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetRegionStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetRegionStatusOutcome(GetRegionStatusResult(outcome.result()));
-	else
-		return GetRegionStatusOutcome(outcome.error());
-}
-
-void OpenanalyticsClient::getRegionStatusAsync(const GetRegionStatusRequest& request, const GetRegionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getRegionStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenanalyticsClient::GetRegionStatusOutcomeCallable OpenanalyticsClient::getRegionStatusCallable(const GetRegionStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetRegionStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->getRegionStatus(request);
+			return this->closeProductAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -159,36 +123,36 @@ OpenanalyticsClient::DescribeRegionListOutcomeCallable OpenanalyticsClient::desc
 	return task->get_future();
 }
 
-OpenanalyticsClient::OpenProductAccountOutcome OpenanalyticsClient::openProductAccount(const OpenProductAccountRequest &request) const
+OpenanalyticsClient::GetAllowIPOutcome OpenanalyticsClient::getAllowIP(const GetAllowIPRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return OpenProductAccountOutcome(endpointOutcome.error());
+		return GetAllowIPOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return OpenProductAccountOutcome(OpenProductAccountResult(outcome.result()));
+		return GetAllowIPOutcome(GetAllowIPResult(outcome.result()));
 	else
-		return OpenProductAccountOutcome(outcome.error());
+		return GetAllowIPOutcome(outcome.error());
 }
 
-void OpenanalyticsClient::openProductAccountAsync(const OpenProductAccountRequest& request, const OpenProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OpenanalyticsClient::getAllowIPAsync(const GetAllowIPRequest& request, const GetAllowIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, openProductAccount(request), context);
+		handler(this, request, getAllowIP(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OpenanalyticsClient::OpenProductAccountOutcomeCallable OpenanalyticsClient::openProductAccountCallable(const OpenProductAccountRequest &request) const
+OpenanalyticsClient::GetAllowIPOutcomeCallable OpenanalyticsClient::getAllowIPCallable(const GetAllowIPRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<OpenProductAccountOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetAllowIPOutcome()>>(
 			[this, request]()
 			{
-			return this->openProductAccount(request);
+			return this->getAllowIP(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,78 +195,6 @@ OpenanalyticsClient::GetEndPointByDomainOutcomeCallable OpenanalyticsClient::get
 	return task->get_future();
 }
 
-OpenanalyticsClient::CloseProductAccountOutcome OpenanalyticsClient::closeProductAccount(const CloseProductAccountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CloseProductAccountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CloseProductAccountOutcome(CloseProductAccountResult(outcome.result()));
-	else
-		return CloseProductAccountOutcome(outcome.error());
-}
-
-void OpenanalyticsClient::closeProductAccountAsync(const CloseProductAccountRequest& request, const CloseProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, closeProductAccount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenanalyticsClient::CloseProductAccountOutcomeCallable OpenanalyticsClient::closeProductAccountCallable(const CloseProductAccountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CloseProductAccountOutcome()>>(
-			[this, request]()
-			{
-			return this->closeProductAccount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenanalyticsClient::GetAllowIPOutcome OpenanalyticsClient::getAllowIP(const GetAllowIPRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetAllowIPOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetAllowIPOutcome(GetAllowIPResult(outcome.result()));
-	else
-		return GetAllowIPOutcome(outcome.error());
-}
-
-void OpenanalyticsClient::getAllowIPAsync(const GetAllowIPRequest& request, const GetAllowIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getAllowIP(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenanalyticsClient::GetAllowIPOutcomeCallable OpenanalyticsClient::getAllowIPCallable(const GetAllowIPRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetAllowIPOutcome()>>(
-			[this, request]()
-			{
-			return this->getAllowIP(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OpenanalyticsClient::GetProductStatusOutcome OpenanalyticsClient::getProductStatus(const GetProductStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,6 +231,78 @@ OpenanalyticsClient::GetProductStatusOutcomeCallable OpenanalyticsClient::getPro
 	return task->get_future();
 }
 
+OpenanalyticsClient::GetRegionStatusOutcome OpenanalyticsClient::getRegionStatus(const GetRegionStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRegionStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRegionStatusOutcome(GetRegionStatusResult(outcome.result()));
+	else
+		return GetRegionStatusOutcome(outcome.error());
+}
+
+void OpenanalyticsClient::getRegionStatusAsync(const GetRegionStatusRequest& request, const GetRegionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRegionStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenanalyticsClient::GetRegionStatusOutcomeCallable OpenanalyticsClient::getRegionStatusCallable(const GetRegionStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRegionStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getRegionStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OpenanalyticsClient::OpenProductAccountOutcome OpenanalyticsClient::openProductAccount(const OpenProductAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenProductAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenProductAccountOutcome(OpenProductAccountResult(outcome.result()));
+	else
+		return OpenProductAccountOutcome(outcome.error());
+}
+
+void OpenanalyticsClient::openProductAccountAsync(const OpenProductAccountRequest& request, const OpenProductAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openProductAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenanalyticsClient::OpenProductAccountOutcomeCallable OpenanalyticsClient::openProductAccountCallable(const OpenProductAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenProductAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->openProductAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OpenanalyticsClient::QueryEndPointListOutcome OpenanalyticsClient::queryEndPointList(const QueryEndPointListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +333,42 @@ OpenanalyticsClient::QueryEndPointListOutcomeCallable OpenanalyticsClient::query
 			[this, request]()
 			{
 			return this->queryEndPointList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OpenanalyticsClient::SetAllowIPOutcome OpenanalyticsClient::setAllowIP(const SetAllowIPRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAllowIPOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAllowIPOutcome(SetAllowIPResult(outcome.result()));
+	else
+		return SetAllowIPOutcome(outcome.error());
+}
+
+void OpenanalyticsClient::setAllowIPAsync(const SetAllowIPRequest& request, const SetAllowIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAllowIP(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenanalyticsClient::SetAllowIPOutcomeCallable OpenanalyticsClient::setAllowIPCallable(const SetAllowIPRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAllowIPOutcome()>>(
+			[this, request]()
+			{
+			return this->setAllowIP(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

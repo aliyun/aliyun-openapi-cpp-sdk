@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct ComponentLayer
 					{
 						std::vector<std::string> positionNormalizeds;
+						int transparency;
 						float heightNormalized;
 						std::string positionRefer;
 						float widthNormalized;
@@ -63,7 +64,10 @@ namespace AlibabaCloud
 						std::string locationId;
 						std::string fontName;
 						std::string borderColor;
+						int wordCountPerLine;
+						float wordSpaceNormalized;
 						int wordsCount;
+						float lineSpaceNormalized;
 					};
 					CaptionLayerContent captionLayerContent;
 					TextLayerContent textLayerContent;

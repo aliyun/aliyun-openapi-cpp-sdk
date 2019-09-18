@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				DescribeDeviceInfoRequest();
 				~DescribeDeviceInfoRequest();
 
-				std::string getBizType()const;
-				void setBizType(const std::string& bizType);
 				std::string getUserDeviceId()const;
 				void setUserDeviceId(const std::string& userDeviceId);
-				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getExpiredEndDay()const;
-				void setExpiredEndDay(const std::string& expiredEndDay);
-				std::string getDeviceId()const;
-				void setDeviceId(const std::string& deviceId);
 				std::string getExpiredStartDay()const;
 				void setExpiredStartDay(const std::string& expiredStartDay);
+				int getTotalCount()const;
+				void setTotalCount(int totalCount);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getDeviceId()const;
+				void setDeviceId(const std::string& deviceId);
+				std::string getBizType()const;
+				void setBizType(const std::string& bizType);
+				std::string getExpiredEndDay()const;
+				void setExpiredEndDay(const std::string& expiredEndDay);
 
             private:
-				std::string bizType_;
 				std::string userDeviceId_;
-				int totalCount_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
-				std::string expiredEndDay_;
-				std::string deviceId_;
 				std::string expiredStartDay_;
+				int totalCount_;
+				int currentPage_;
+				std::string deviceId_;
+				std::string bizType_;
+				std::string expiredEndDay_;
 
 			};
 		}

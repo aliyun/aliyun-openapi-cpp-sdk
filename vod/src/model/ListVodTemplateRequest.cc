@@ -47,6 +47,17 @@ void ListVodTemplateRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+long ListVodTemplateRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ListVodTemplateRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::string ListVodTemplateRequest::getTemplateType()const
 {
 	return templateType_;
@@ -67,16 +78,5 @@ void ListVodTemplateRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setCoreParameter("AppId", appId);
-}
-
-long ListVodTemplateRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListVodTemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

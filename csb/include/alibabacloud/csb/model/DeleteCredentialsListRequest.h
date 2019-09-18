@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getData()const;
 				void setData(const std::string& data);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				bool getIgnoreDauth()const;
 				void setIgnoreDauth(bool ignoreDauth);
 				bool getForce()const;
@@ -46,7 +44,6 @@ namespace AlibabaCloud
 
             private:
 				std::string data_;
-				std::string regionId_;
 				bool ignoreDauth_;
 				bool force_;
 

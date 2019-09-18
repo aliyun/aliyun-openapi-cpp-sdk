@@ -36,6 +36,28 @@ void UpdateMediaWorkflowTriggerModeRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpdateMediaWorkflowTriggerModeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateMediaWorkflowTriggerModeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateMediaWorkflowTriggerModeRequest::getMediaWorkflowId()const
+{
+	return mediaWorkflowId_;
+}
+
+void UpdateMediaWorkflowTriggerModeRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
+{
+	mediaWorkflowId_ = mediaWorkflowId;
+	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+}
+
 std::string UpdateMediaWorkflowTriggerModeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,17 +80,6 @@ void UpdateMediaWorkflowTriggerModeRequest::setOwnerAccount(const std::string& o
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string UpdateMediaWorkflowTriggerModeRequest::getMediaWorkflowId()const
-{
-	return mediaWorkflowId_;
-}
-
-void UpdateMediaWorkflowTriggerModeRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
-{
-	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
-}
-
 long UpdateMediaWorkflowTriggerModeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,17 +89,6 @@ void UpdateMediaWorkflowTriggerModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string UpdateMediaWorkflowTriggerModeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateMediaWorkflowTriggerModeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getTriggerMode()const

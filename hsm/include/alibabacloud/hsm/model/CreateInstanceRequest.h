@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				int getPeriod()const;
 				void setPeriod(int period);
-				std::string getPeriodUnit()const;
-				void setPeriodUnit(const std::string& periodUnit);
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
 				int getQuantity()const;
 				void setQuantity(int quantity);
-				std::string getHsmDeviceType()const;
-				void setHsmDeviceType(const std::string& hsmDeviceType);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
 				std::string getHsmOem()const;
 				void setHsmOem(const std::string& hsmOem);
+				std::string getPeriodUnit()const;
+				void setPeriodUnit(const std::string& periodUnit);
+				std::string getHsmDeviceType()const;
+				void setHsmDeviceType(const std::string& hsmDeviceType);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 
             private:
 				int period_;
-				std::string periodUnit_;
 				std::string resourceOwnerId_;
 				int quantity_;
-				std::string hsmDeviceType_;
 				std::string clientToken_;
-				std::string zoneId_;
 				std::string hsmOem_;
+				std::string periodUnit_;
+				std::string hsmDeviceType_;
+				std::string zoneId_;
 
 			};
 		}

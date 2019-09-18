@@ -25,17 +25,6 @@ DescribeUserDcdnStatusRequest::DescribeUserDcdnStatusRequest() :
 DescribeUserDcdnStatusRequest::~DescribeUserDcdnStatusRequest()
 {}
 
-std::string DescribeUserDcdnStatusRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeUserDcdnStatusRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 long DescribeUserDcdnStatusRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -45,5 +34,16 @@ void DescribeUserDcdnStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeUserDcdnStatusRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeUserDcdnStatusRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

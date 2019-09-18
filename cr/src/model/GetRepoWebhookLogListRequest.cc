@@ -25,17 +25,6 @@ GetRepoWebhookLogListRequest::GetRepoWebhookLogListRequest() :
 GetRepoWebhookLogListRequest::~GetRepoWebhookLogListRequest()
 {}
 
-std::string GetRepoWebhookLogListRequest::getRepoNamespace()const
-{
-	return repoNamespace_;
-}
-
-void GetRepoWebhookLogListRequest::setRepoNamespace(const std::string& repoNamespace)
-{
-	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
-}
-
 long GetRepoWebhookLogListRequest::getWebhookId()const
 {
 	return webhookId_;
@@ -47,6 +36,17 @@ void GetRepoWebhookLogListRequest::setWebhookId(long webhookId)
 	setCoreParameter("WebhookId", std::to_string(webhookId));
 }
 
+std::string GetRepoWebhookLogListRequest::getRepoNamespace()const
+{
+	return repoNamespace_;
+}
+
+void GetRepoWebhookLogListRequest::setRepoNamespace(const std::string& repoNamespace)
+{
+	repoNamespace_ = repoNamespace;
+	setCoreParameter("RepoNamespace", repoNamespace);
+}
+
 std::string GetRepoWebhookLogListRequest::getRepoName()const
 {
 	return repoName_;
@@ -56,16 +56,5 @@ void GetRepoWebhookLogListRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
 	setCoreParameter("RepoName", repoName);
-}
-
-std::string GetRepoWebhookLogListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoWebhookLogListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 

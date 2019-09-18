@@ -25,17 +25,6 @@ DescribeTotalAndRateLineRequest::DescribeTotalAndRateLineRequest() :
 DescribeTotalAndRateLineRequest::~DescribeTotalAndRateLineRequest()
 {}
 
-std::string DescribeTotalAndRateLineRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeTotalAndRateLineRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeTotalAndRateLineRequest::getApiType()const
 {
 	return apiType_;
@@ -45,5 +34,16 @@ void DescribeTotalAndRateLineRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
 	setCoreParameter("ApiType", std::to_string(apiType));
+}
+
+std::string DescribeTotalAndRateLineRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeTotalAndRateLineRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

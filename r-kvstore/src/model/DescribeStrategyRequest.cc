@@ -36,6 +36,17 @@ void DescribeStrategyRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeStrategyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeStrategyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeStrategyRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeStrategyRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeStrategyRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeStrategyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeStrategyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeStrategyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeStrategyRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeStrategyRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeStrategyRequest::getReplicaId()const
@@ -91,6 +69,28 @@ void DescribeStrategyRequest::setReplicaId(const std::string& replicaId)
 	setCoreParameter("ReplicaId", replicaId);
 }
 
+std::string DescribeStrategyRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeStrategyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeStrategyRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeStrategyRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeStrategyRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void DescribeStrategyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeStrategyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeStrategyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

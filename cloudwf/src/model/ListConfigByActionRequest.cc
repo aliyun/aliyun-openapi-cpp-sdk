@@ -36,17 +36,6 @@ void ListConfigByActionRequest::setSearchName(const std::string& searchName)
 	setCoreParameter("SearchName", searchName);
 }
 
-int ListConfigByActionRequest::getLimit()const
-{
-	return limit_;
-}
-
-void ListConfigByActionRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
-}
-
 std::string ListConfigByActionRequest::getActionName()const
 {
 	return actionName_;
@@ -67,5 +56,16 @@ void ListConfigByActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListConfigByActionRequest::getLimit()const
+{
+	return limit_;
+}
+
+void ListConfigByActionRequest::setLimit(int limit)
+{
+	limit_ = limit;
+	setCoreParameter("Limit", std::to_string(limit));
 }
 

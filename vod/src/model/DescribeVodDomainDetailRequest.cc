@@ -25,17 +25,6 @@ DescribeVodDomainDetailRequest::DescribeVodDomainDetailRequest() :
 DescribeVodDomainDetailRequest::~DescribeVodDomainDetailRequest()
 {}
 
-std::string DescribeVodDomainDetailRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeVodDomainDetailRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeVodDomainDetailRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,5 +45,16 @@ void DescribeVodDomainDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeVodDomainDetailRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeVodDomainDetailRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

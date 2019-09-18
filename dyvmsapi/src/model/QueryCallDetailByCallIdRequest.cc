@@ -47,6 +47,17 @@ void QueryCallDetailByCallIdRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string QueryCallDetailByCallIdRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryCallDetailByCallIdRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 long QueryCallDetailByCallIdRequest::getQueryDate()const
 {
 	return queryDate_;
@@ -89,16 +100,5 @@ void QueryCallDetailByCallIdRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string QueryCallDetailByCallIdRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryCallDetailByCallIdRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

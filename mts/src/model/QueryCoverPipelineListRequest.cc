@@ -47,17 +47,6 @@ void QueryCoverPipelineListRequest::setResourceOwnerAccount(const std::string& r
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryCoverPipelineListRequest::getPipelineIds()const
-{
-	return pipelineIds_;
-}
-
-void QueryCoverPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
-{
-	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
-}
-
 std::string QueryCoverPipelineListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryCoverPipelineListRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryCoverPipelineListRequest::getPipelineIds()const
+{
+	return pipelineIds_;
+}
+
+void QueryCoverPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
+{
+	pipelineIds_ = pipelineIds;
+	setCoreParameter("PipelineIds", pipelineIds);
 }
 

@@ -124,17 +124,6 @@ void FindImagesRequest::setImageTimeRange(const std::string& imageTimeRange)
 	setCoreParameter("ImageTimeRange", imageTimeRange);
 }
 
-std::string FindImagesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void FindImagesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string FindImagesRequest::getOCRContentsMatch()const
 {
 	return oCRContentsMatch_;

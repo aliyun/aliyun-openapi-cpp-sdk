@@ -25,48 +25,15 @@ CreateTaskRequest::CreateTaskRequest() :
 CreateTaskRequest::~CreateTaskRequest()
 {}
 
-std::string CreateTaskRequest::getCaller()const
+std::string CreateTaskRequest::getTaskName()const
 {
-	return caller_;
+	return taskName_;
 }
 
-void CreateTaskRequest::setCaller(const std::string& caller)
+void CreateTaskRequest::setTaskName(const std::string& taskName)
 {
-	caller_ = caller;
-	setCoreParameter("Caller", caller);
-}
-
-std::string CreateTaskRequest::getAddress()const
-{
-	return address_;
-}
-
-void CreateTaskRequest::setAddress(const std::string& address)
-{
-	address_ = address;
-	setCoreParameter("Address", address);
-}
-
-std::string CreateTaskRequest::getTaskType()const
-{
-	return taskType_;
-}
-
-void CreateTaskRequest::setTaskType(const std::string& taskType)
-{
-	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
-}
-
-std::string CreateTaskRequest::getIspCity()const
-{
-	return ispCity_;
-}
-
-void CreateTaskRequest::setIspCity(const std::string& ispCity)
-{
-	ispCity_ = ispCity;
-	setCoreParameter("IspCity", ispCity);
+	taskName_ = taskName;
+	setCoreParameter("TaskName", taskName);
 }
 
 std::string CreateTaskRequest::getAlertIds()const
@@ -91,15 +58,48 @@ void CreateTaskRequest::setOptions(const std::string& options)
 	setCoreParameter("Options", options);
 }
 
-std::string CreateTaskRequest::getTaskName()const
+std::string CreateTaskRequest::getAddress()const
 {
-	return taskName_;
+	return address_;
 }
 
-void CreateTaskRequest::setTaskName(const std::string& taskName)
+void CreateTaskRequest::setAddress(const std::string& address)
 {
-	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	address_ = address;
+	setCoreParameter("Address", address);
+}
+
+std::string CreateTaskRequest::getTaskType()const
+{
+	return taskType_;
+}
+
+void CreateTaskRequest::setTaskType(const std::string& taskType)
+{
+	taskType_ = taskType;
+	setCoreParameter("TaskType", taskType);
+}
+
+std::string CreateTaskRequest::getCaller()const
+{
+	return caller_;
+}
+
+void CreateTaskRequest::setCaller(const std::string& caller)
+{
+	caller_ = caller;
+	setCoreParameter("Caller", caller);
+}
+
+std::string CreateTaskRequest::getIspCity()const
+{
+	return ispCity_;
+}
+
+void CreateTaskRequest::setIspCity(const std::string& ispCity)
+{
+	ispCity_ = ispCity;
+	setCoreParameter("IspCity", ispCity);
 }
 
 std::string CreateTaskRequest::getInterval()const

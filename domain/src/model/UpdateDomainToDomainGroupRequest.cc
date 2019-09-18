@@ -25,28 +25,6 @@ UpdateDomainToDomainGroupRequest::UpdateDomainToDomainGroupRequest() :
 UpdateDomainToDomainGroupRequest::~UpdateDomainToDomainGroupRequest()
 {}
 
-int UpdateDomainToDomainGroupRequest::getDataSource()const
-{
-	return dataSource_;
-}
-
-void UpdateDomainToDomainGroupRequest::setDataSource(int dataSource)
-{
-	dataSource_ = dataSource;
-	setCoreParameter("DataSource", std::to_string(dataSource));
-}
-
-std::string UpdateDomainToDomainGroupRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void UpdateDomainToDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string UpdateDomainToDomainGroupRequest::getFileToUpload()const
 {
 	return fileToUpload_;
@@ -81,17 +59,6 @@ void UpdateDomainToDomainGroupRequest::setReplace(bool replace)
 	setCoreParameter("Replace", replace ? "true" : "false");
 }
 
-std::string UpdateDomainToDomainGroupRequest::getLang()const
-{
-	return lang_;
-}
-
-void UpdateDomainToDomainGroupRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 long UpdateDomainToDomainGroupRequest::getDomainGroupId()const
 {
 	return domainGroupId_;
@@ -101,5 +68,38 @@ void UpdateDomainToDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
 	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
+}
+
+int UpdateDomainToDomainGroupRequest::getDataSource()const
+{
+	return dataSource_;
+}
+
+void UpdateDomainToDomainGroupRequest::setDataSource(int dataSource)
+{
+	dataSource_ = dataSource;
+	setCoreParameter("DataSource", std::to_string(dataSource));
+}
+
+std::string UpdateDomainToDomainGroupRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void UpdateDomainToDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string UpdateDomainToDomainGroupRequest::getLang()const
+{
+	return lang_;
+}
+
+void UpdateDomainToDomainGroupRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

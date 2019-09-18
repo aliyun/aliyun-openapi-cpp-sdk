@@ -25,17 +25,6 @@ DelPageConfigTemplateRequest::DelPageConfigTemplateRequest() :
 DelPageConfigTemplateRequest::~DelPageConfigTemplateRequest()
 {}
 
-long DelPageConfigTemplateRequest::getId()const
-{
-	return id_;
-}
-
-void DelPageConfigTemplateRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string DelPageConfigTemplateRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DelPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long DelPageConfigTemplateRequest::getId()const
+{
+	return id_;
+}
+
+void DelPageConfigTemplateRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

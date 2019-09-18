@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				GetOssServerSignRequest();
 				~GetOssServerSignRequest();
 
-				int getDirType()const;
-				void setDirType(int dirType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getDirType()const;
+				void setDirType(int dirType);
 
             private:
-				int dirType_;
 				std::string accessKeyId_;
+				int dirType_;
 
 			};
 		}

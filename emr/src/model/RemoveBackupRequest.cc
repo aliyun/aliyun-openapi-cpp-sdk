@@ -25,17 +25,6 @@ RemoveBackupRequest::RemoveBackupRequest() :
 RemoveBackupRequest::~RemoveBackupRequest()
 {}
 
-std::string RemoveBackupRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void RemoveBackupRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
 long RemoveBackupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void RemoveBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-long RemoveBackupRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void RemoveBackupRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::vector<std::string> RemoveBackupRequest::getBackupId()const
@@ -70,17 +48,6 @@ void RemoveBackupRequest::setBackupId(const std::vector<std::string>& backupId)
 		setCoreParameter("BackupId."+ std::to_string(i), backupId.at(i));
 }
 
-bool RemoveBackupRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void RemoveBackupRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
 std::string RemoveBackupRequest::getBackupPlanId()const
 {
 	return backupPlanId_;
@@ -90,61 +57,6 @@ void RemoveBackupRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
 	setCoreParameter("BackupPlanId", backupPlanId);
-}
-
-std::string RemoveBackupRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void RemoveBackupRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
-std::string RemoveBackupRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void RemoveBackupRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-bool RemoveBackupRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void RemoveBackupRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool RemoveBackupRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void RemoveBackupRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-std::string RemoveBackupRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void RemoveBackupRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
 }
 
 std::string RemoveBackupRequest::getAccessKeyId()const
@@ -158,28 +70,6 @@ void RemoveBackupRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-bool RemoveBackupRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void RemoveBackupRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string RemoveBackupRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void RemoveBackupRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string RemoveBackupRequest::getRegionId()const
 {
 	return regionId_;
@@ -189,27 +79,5 @@ void RemoveBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string RemoveBackupRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void RemoveBackupRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
-long RemoveBackupRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void RemoveBackupRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainUvDataRequest;
 
 DescribeDomainUvDataRequest::DescribeDomainUvDataRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainUvData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainUvData")
 {}
 
 DescribeDomainUvDataRequest::~DescribeDomainUvDataRequest()
 {}
-
-std::string DescribeDomainUvDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainUvDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string DescribeDomainUvDataRequest::getDomainName()const
 {
@@ -78,5 +67,16 @@ void DescribeDomainUvDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeDomainUvDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeDomainUvDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

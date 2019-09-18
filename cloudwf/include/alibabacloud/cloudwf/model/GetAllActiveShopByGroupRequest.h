@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::vector<long> getGids()const;
 				void setGids(const std::vector<long>& gids);
-				long getBid()const;
-				void setBid(long bid);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getBid()const;
+				void setBid(long bid);
 
             private:
 				std::vector<long> gids_;
-				long bid_;
 				std::string accessKeyId_;
+				long bid_;
 
 			};
 		}

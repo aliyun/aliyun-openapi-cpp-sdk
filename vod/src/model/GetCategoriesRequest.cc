@@ -36,15 +36,15 @@ void GetCategoriesRequest::setResourceOwnerId(const std::string& resourceOwnerId
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-std::string GetCategoriesRequest::getResourceOwnerAccount()const
+std::string GetCategoriesRequest::getType()const
 {
-	return resourceOwnerAccount_;
+	return type_;
 }
 
-void GetCategoriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void GetCategoriesRequest::setType(const std::string& type)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
 long GetCategoriesRequest::getCateId()const
@@ -58,17 +58,6 @@ void GetCategoriesRequest::setCateId(long cateId)
 	setCoreParameter("CateId", std::to_string(cateId));
 }
 
-long GetCategoriesRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void GetCategoriesRequest::setPageNo(long pageNo)
-{
-	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
-}
-
 long GetCategoriesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -80,15 +69,15 @@ void GetCategoriesRequest::setPageSize(long pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string GetCategoriesRequest::getSortBy()const
+std::string GetCategoriesRequest::getResourceOwnerAccount()const
 {
-	return sortBy_;
+	return resourceOwnerAccount_;
 }
 
-void GetCategoriesRequest::setSortBy(const std::string& sortBy)
+void GetCategoriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetCategoriesRequest::getOwnerId()const
@@ -102,14 +91,25 @@ void GetCategoriesRequest::setOwnerId(const std::string& ownerId)
 	setCoreParameter("OwnerId", ownerId);
 }
 
-std::string GetCategoriesRequest::getType()const
+long GetCategoriesRequest::getPageNo()const
 {
-	return type_;
+	return pageNo_;
 }
 
-void GetCategoriesRequest::setType(const std::string& type)
+void GetCategoriesRequest::setPageNo(long pageNo)
 {
-	type_ = type;
-	setCoreParameter("Type", type);
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
+}
+
+std::string GetCategoriesRequest::getSortBy()const
+{
+	return sortBy_;
+}
+
+void GetCategoriesRequest::setSortBy(const std::string& sortBy)
+{
+	sortBy_ = sortBy;
+	setCoreParameter("SortBy", sortBy);
 }
 

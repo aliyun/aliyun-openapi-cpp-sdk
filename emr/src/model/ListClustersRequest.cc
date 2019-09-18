@@ -48,40 +48,6 @@ void ListClustersRequest::setStatusList(const std::vector<std::string>& statusLi
 		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
 }
 
-std::string ListClustersRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListClustersRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListClustersRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListClustersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::vector<std::string> ListClustersRequest::getClusterTypeList()const
-{
-	return clusterTypeList_;
-}
-
-void ListClustersRequest::setClusterTypeList(const std::vector<std::string>& clusterTypeList)
-{
-	clusterTypeList_ = clusterTypeList;
-	for(int i = 0; i!= clusterTypeList.size(); i++)
-		setCoreParameter("ClusterTypeList."+ std::to_string(i), clusterTypeList.at(i));
-}
-
 bool ListClustersRequest::getIsDesc()const
 {
 	return isDesc_;
@@ -93,17 +59,6 @@ void ListClustersRequest::setIsDesc(bool isDesc)
 	setCoreParameter("IsDesc", isDesc ? "true" : "false");
 }
 
-std::string ListClustersRequest::getCreateType()const
-{
-	return createType_;
-}
-
-void ListClustersRequest::setCreateType(const std::string& createType)
-{
-	createType_ = createType;
-	setCoreParameter("CreateType", createType);
-}
-
 std::string ListClustersRequest::getDepositType()const
 {
 	return depositType_;
@@ -113,17 +68,6 @@ void ListClustersRequest::setDepositType(const std::string& depositType)
 {
 	depositType_ = depositType;
 	setCoreParameter("DepositType", depositType);
-}
-
-bool ListClustersRequest::getDefaultStatus()const
-{
-	return defaultStatus_;
-}
-
-void ListClustersRequest::setDefaultStatus(bool defaultStatus)
-{
-	defaultStatus_ = defaultStatus;
-	setCoreParameter("DefaultStatus", defaultStatus ? "true" : "false");
 }
 
 int ListClustersRequest::getPageNumber()const
@@ -157,5 +101,61 @@ void ListClustersRequest::setMachineType(const std::string& machineType)
 {
 	machineType_ = machineType;
 	setCoreParameter("MachineType", machineType);
+}
+
+std::string ListClustersRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListClustersRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListClustersRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListClustersRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListClustersRequest::getCreateType()const
+{
+	return createType_;
+}
+
+void ListClustersRequest::setCreateType(const std::string& createType)
+{
+	createType_ = createType;
+	setCoreParameter("CreateType", createType);
+}
+
+bool ListClustersRequest::getDefaultStatus()const
+{
+	return defaultStatus_;
+}
+
+void ListClustersRequest::setDefaultStatus(bool defaultStatus)
+{
+	defaultStatus_ = defaultStatus;
+	setCoreParameter("DefaultStatus", defaultStatus ? "true" : "false");
+}
+
+std::vector<std::string> ListClustersRequest::getClusterTypeList()const
+{
+	return clusterTypeList_;
+}
+
+void ListClustersRequest::setClusterTypeList(const std::vector<std::string>& clusterTypeList)
+{
+	clusterTypeList_ = clusterTypeList;
+	for(int i = 0; i!= clusterTypeList.size(); i++)
+		setCoreParameter("ClusterTypeList."+ std::to_string(i), clusterTypeList.at(i));
 }
 

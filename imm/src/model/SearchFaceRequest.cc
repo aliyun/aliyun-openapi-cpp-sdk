@@ -25,17 +25,6 @@ SearchFaceRequest::SearchFaceRequest() :
 SearchFaceRequest::~SearchFaceRequest()
 {}
 
-std::string SearchFaceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SearchFaceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int SearchFaceRequest::getResultNum()const
 {
 	return resultNum_;
@@ -58,6 +47,17 @@ void SearchFaceRequest::setProject(const std::string& project)
 	setCoreParameter("Project", project);
 }
 
+std::string SearchFaceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SearchFaceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string SearchFaceRequest::getSearchThresholdLevel()const
 {
 	return searchThresholdLevel_;
@@ -67,17 +67,6 @@ void SearchFaceRequest::setSearchThresholdLevel(const std::string& searchThresho
 {
 	searchThresholdLevel_ = searchThresholdLevel;
 	setCoreParameter("SearchThresholdLevel", searchThresholdLevel);
-}
-
-std::string SearchFaceRequest::getSrcUri()const
-{
-	return srcUri_;
-}
-
-void SearchFaceRequest::setSrcUri(const std::string& srcUri)
-{
-	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
 }
 
 bool SearchFaceRequest::getIsThreshold()const
@@ -102,14 +91,14 @@ void SearchFaceRequest::setGroupName(const std::string& groupName)
 	setCoreParameter("GroupName", groupName);
 }
 
-std::string SearchFaceRequest::getAccessKeyId()const
+std::string SearchFaceRequest::getSrcUri()const
 {
-	return accessKeyId_;
+	return srcUri_;
 }
 
-void SearchFaceRequest::setAccessKeyId(const std::string& accessKeyId)
+void SearchFaceRequest::setSrcUri(const std::string& srcUri)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	srcUri_ = srcUri;
+	setCoreParameter("SrcUri", srcUri);
 }
 

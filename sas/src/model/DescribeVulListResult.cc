@@ -35,13 +35,9 @@ DescribeVulListResult::~DescribeVulListResult()
 
 void DescribeVulListResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allVulRecords = value["VulRecords"]["VulRecord"];
 	for (auto value : allVulRecords)
@@ -93,6 +89,10 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.osVersion = value["OsVersion"].asString();
 		if(!value["NeedReboot"].isNull())
 			vulRecordsObject.needReboot = value["NeedReboot"].asString();
+		if(!value["Progress"].isNull())
+			vulRecordsObject.progress = std::stoi(value["Progress"].asString());
+		if(!value["CanFix"].isNull())
+			vulRecordsObject.canFix = value["CanFix"].asString();
 		auto extendContentJsonNode = value["ExtendContentJson"];
 		if(!extendContentJsonNode["Os"].isNull())
 			vulRecordsObject.extendContentJson.os = extendContentJsonNode["Os"].asString();
@@ -110,6 +110,34 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.extendContentJson.primaryId = std::stol(extendContentJsonNode["PrimaryId"].asString());
 		if(!extendContentJsonNode["AbsolutePath"].isNull())
 			vulRecordsObject.extendContentJson.absolutePath = extendContentJsonNode["AbsolutePath"].asString();
+		if(!extendContentJsonNode["Target"].isNull())
+			vulRecordsObject.extendContentJson.target = extendContentJsonNode["Target"].asString();
+		if(!extendContentJsonNode["EmgProof"].isNull())
+			vulRecordsObject.extendContentJson.emgProof = extendContentJsonNode["EmgProof"].asString();
+		if(!extendContentJsonNode["Reason"].isNull())
+			vulRecordsObject.extendContentJson.reason = extendContentJsonNode["Reason"].asString();
+		if(!extendContentJsonNode["Title"].isNull())
+			vulRecordsObject.extendContentJson.title = extendContentJsonNode["Title"].asString();
+		if(!extendContentJsonNode["Description"].isNull())
+			vulRecordsObject.extendContentJson.description = extendContentJsonNode["Description"].asString();
+		if(!extendContentJsonNode["Ip"].isNull())
+			vulRecordsObject.extendContentJson.ip = extendContentJsonNode["Ip"].asString();
+		if(!extendContentJsonNode["Owasp"].isNull())
+			vulRecordsObject.extendContentJson.owasp = extendContentJsonNode["Owasp"].asString();
+		if(!extendContentJsonNode["Cwe"].isNull())
+			vulRecordsObject.extendContentJson.cwe = extendContentJsonNode["Cwe"].asString();
+		if(!extendContentJsonNode["Wasc"].isNull())
+			vulRecordsObject.extendContentJson.wasc = extendContentJsonNode["Wasc"].asString();
+		if(!extendContentJsonNode["VulType"].isNull())
+			vulRecordsObject.extendContentJson.vulType = extendContentJsonNode["VulType"].asString();
+		if(!extendContentJsonNode["Effect"].isNull())
+			vulRecordsObject.extendContentJson.effect = extendContentJsonNode["Effect"].asString();
+		if(!extendContentJsonNode["Solution"].isNull())
+			vulRecordsObject.extendContentJson.solution = extendContentJsonNode["Solution"].asString();
+		if(!extendContentJsonNode["Reference"].isNull())
+			vulRecordsObject.extendContentJson.reference = extendContentJsonNode["Reference"].asString();
+		if(!extendContentJsonNode["Proof"].isNull())
+			vulRecordsObject.extendContentJson.proof = extendContentJsonNode["Proof"].asString();
 		auto allRpmEntityList = value["RpmEntityList"]["RpmEntity"];
 		for (auto value : allRpmEntityList)
 		{
@@ -148,6 +176,35 @@ void DescribeVulListResult::parse(const std::string &payload)
 			auto allCveList = extendContentJsonNode["cveList"]["Cve"];
 			for (auto value : allCveList)
 				vulRecordsObject.extendContentJson.cveList.push_back(value.asString());
+		auto processInfoNode = value["ProcessInfo"];
+		if(!processInfoNode["GmtLastTs"].isNull())
+			vulRecordsObject.processInfo.gmtLastTs = std::stol(processInfoNode["GmtLastTs"].asString());
+		if(!processInfoNode["TotalCount"].isNull())
+			vulRecordsObject.processInfo.totalCount = std::stoi(processInfoNode["TotalCount"].asString());
+		auto allProcessList = value["ProcessList"]["Process"];
+		for (auto value : allProcessList)
+		{
+			VulRecord::ProcessInfo::Process processObject;
+			if(!value["Rpm"].isNull())
+				processObject.rpm = value["Rpm"].asString();
+			if(!value["Pname"].isNull())
+				processObject.pname = value["Pname"].asString();
+			if(!value["Pid"].isNull())
+				processObject.pid = value["Pid"].asString();
+			auto allSubProcessList = value["SubProcessList"]["SubProcess"];
+			for (auto value : allSubProcessList)
+			{
+				VulRecord::ProcessInfo::Process::SubProcess subProcessListObject;
+				if(!value["Rpm"].isNull())
+					subProcessListObject.rpm = value["Rpm"].asString();
+				if(!value["Pname"].isNull())
+					subProcessListObject.pname = value["Pname"].asString();
+				if(!value["Pid"].isNull())
+					subProcessListObject.pid = value["Pid"].asString();
+				processObject.subProcessList.push_back(subProcessListObject);
+			}
+			vulRecordsObject.processInfo.processList.push_back(processObject);
+		}
 		vulRecords_.push_back(vulRecordsObject);
 	}
 	if(!value["PageSize"].isNull())

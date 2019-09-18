@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				std::string getContactType()const;
 				void setContactType(const std::string& contactType);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				long getRegistrantProfileId()const;
 				void setRegistrantProfileId(long registrantProfileId);
 				std::vector<std::string> getDomainName()const;
 				void setDomainName(const std::vector<std::string>& domainName);
 				bool getTransferOutProhibited()const;
 				void setTransferOutProhibited(bool transferOutProhibited);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
 				std::string contactType_;
-				std::string userClientIp_;
 				long registrantProfileId_;
 				std::vector<std::string> domainName_;
 				bool transferOutProhibited_;
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

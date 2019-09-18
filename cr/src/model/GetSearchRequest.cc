@@ -25,17 +25,6 @@ GetSearchRequest::GetSearchRequest() :
 GetSearchRequest::~GetSearchRequest()
 {}
 
-std::string GetSearchRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetSearchRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetSearchRequest::getOrigin()const
 {
 	return origin_;

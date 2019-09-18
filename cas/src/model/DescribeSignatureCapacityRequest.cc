@@ -25,6 +25,17 @@ DescribeSignatureCapacityRequest::DescribeSignatureCapacityRequest() :
 DescribeSignatureCapacityRequest::~DescribeSignatureCapacityRequest()
 {}
 
+std::string DescribeSignatureCapacityRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSignatureCapacityRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSignatureCapacityRequest::getSourceIp()const
 {
 	return sourceIp_;

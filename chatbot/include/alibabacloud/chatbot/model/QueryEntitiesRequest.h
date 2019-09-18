@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getEntityName()const;
 				void setEntityName(const std::string& entityName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getDialogId()const;
 				void setDialogId(long dialogId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::string entityName_;
-				int pageSize_;
 				long dialogId_;
 				int pageNumber_;
+				int pageSize_;
 
 			};
 		}

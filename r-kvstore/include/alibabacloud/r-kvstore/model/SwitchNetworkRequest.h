@@ -37,44 +37,41 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getClassicExpiredDays()const;
+				void setClassicExpiredDays(const std::string& classicExpiredDays);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getTargetNetworkType()const;
 				void setTargetNetworkType(const std::string& targetNetworkType);
 				std::string getRetainClassic()const;
 				void setRetainClassic(const std::string& retainClassic);
-				std::string getClassicExpiredDays()const;
-				void setClassicExpiredDays(const std::string& classicExpiredDays);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 
             private:
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string classicExpiredDays_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string vSwitchId_;
 				std::string instanceId_;
-				std::string securityToken_;
-				std::string regionId_;
 				std::string targetNetworkType_;
 				std::string retainClassic_;
-				std::string classicExpiredDays_;
 				std::string vpcId_;
 
 			};

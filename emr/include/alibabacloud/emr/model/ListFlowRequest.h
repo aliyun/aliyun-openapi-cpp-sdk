@@ -35,37 +35,37 @@ namespace AlibabaCloud
 				ListFlowRequest();
 				~ListFlowRequest();
 
+				bool getPeriodic()const;
+				void setPeriodic(bool periodic);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				bool getPeriodic()const;
-				void setPeriodic(bool periodic);
 				std::string getName()const;
 				void setName(const std::string& name);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getId()const;
 				void setId(const std::string& id);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				bool periodic_;
+				std::string clusterId_;
+				int pageNumber_;
 				std::string jobId_;
 				std::string regionId_;
-				bool periodic_;
 				std::string name_;
 				int pageSize_;
 				std::string id_;
-				std::string clusterId_;
 				std::string projectId_;
-				int pageNumber_;
 				std::string status_;
 
 			};

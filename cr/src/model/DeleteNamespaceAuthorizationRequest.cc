@@ -25,17 +25,6 @@ DeleteNamespaceAuthorizationRequest::DeleteNamespaceAuthorizationRequest() :
 DeleteNamespaceAuthorizationRequest::~DeleteNamespaceAuthorizationRequest()
 {}
 
-std::string DeleteNamespaceAuthorizationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteNamespaceAuthorizationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long DeleteNamespaceAuthorizationRequest::getAuthorizeId()const
 {
 	return authorizeId_;

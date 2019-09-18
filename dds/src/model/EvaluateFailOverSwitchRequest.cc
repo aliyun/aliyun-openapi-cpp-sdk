@@ -36,6 +36,17 @@ void EvaluateFailOverSwitchRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string EvaluateFailOverSwitchRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void EvaluateFailOverSwitchRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string EvaluateFailOverSwitchRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void EvaluateFailOverSwitchRequest::setSecurityToken(const std::string& security
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string EvaluateFailOverSwitchRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void EvaluateFailOverSwitchRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string EvaluateFailOverSwitchRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void EvaluateFailOverSwitchRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string EvaluateFailOverSwitchRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void EvaluateFailOverSwitchRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string EvaluateFailOverSwitchRequest::getReplicaId()const
@@ -91,6 +69,28 @@ void EvaluateFailOverSwitchRequest::setReplicaId(const std::string& replicaId)
 	setCoreParameter("ReplicaId", replicaId);
 }
 
+std::string EvaluateFailOverSwitchRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void EvaluateFailOverSwitchRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string EvaluateFailOverSwitchRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void EvaluateFailOverSwitchRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long EvaluateFailOverSwitchRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void EvaluateFailOverSwitchRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string EvaluateFailOverSwitchRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void EvaluateFailOverSwitchRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

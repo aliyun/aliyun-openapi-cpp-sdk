@@ -40,8 +40,10 @@ namespace AlibabaCloud
 				DescribeDBInstancesRequest();
 				~DescribeDBInstancesRequest();
 
-				std::string getDBInstanceIds()const;
-				void setDBInstanceIds(const std::string& dBInstanceIds);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
@@ -50,25 +52,23 @@ namespace AlibabaCloud
 				void setDBInstanceDescription(const std::string& dBInstanceDescription);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getDBInstanceIds()const;
+				void setDBInstanceIds(const std::string& dBInstanceIds);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string dBInstanceIds_;
+				int pageNumber_;
+				std::string accessKeyId_;
 				std::string regionId_;
 				int pageSize_;
 				std::string dBInstanceDescription_;
 				std::vector<Tag> tag_;
+				std::string dBInstanceIds_;
 				long ownerId_;
 				std::string instanceNetworkType_;
-				int pageNumber_;
-				std::string accessKeyId_;
 
 			};
 		}

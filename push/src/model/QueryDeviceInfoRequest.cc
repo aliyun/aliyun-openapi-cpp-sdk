@@ -25,17 +25,6 @@ QueryDeviceInfoRequest::QueryDeviceInfoRequest() :
 QueryDeviceInfoRequest::~QueryDeviceInfoRequest()
 {}
 
-long QueryDeviceInfoRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void QueryDeviceInfoRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string QueryDeviceInfoRequest::getDeviceId()const
 {
 	return deviceId_;
@@ -56,5 +45,16 @@ void QueryDeviceInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long QueryDeviceInfoRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void QueryDeviceInfoRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 

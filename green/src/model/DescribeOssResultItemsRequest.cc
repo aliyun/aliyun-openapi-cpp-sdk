@@ -25,17 +25,6 @@ DescribeOssResultItemsRequest::DescribeOssResultItemsRequest() :
 DescribeOssResultItemsRequest::~DescribeOssResultItemsRequest()
 {}
 
-int DescribeOssResultItemsRequest::getTotalCount()const
-{
-	return totalCount_;
-}
-
-void DescribeOssResultItemsRequest::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
-}
-
 float DescribeOssResultItemsRequest::getMinScore()const
 {
 	return minScore_;
@@ -45,28 +34,6 @@ void DescribeOssResultItemsRequest::setMinScore(float minScore)
 {
 	minScore_ = minScore;
 	setCoreParameter("MinScore", std::to_string(minScore));
-}
-
-std::string DescribeOssResultItemsRequest::getSuggestion()const
-{
-	return suggestion_;
-}
-
-void DescribeOssResultItemsRequest::setSuggestion(const std::string& suggestion)
-{
-	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", suggestion);
-}
-
-int DescribeOssResultItemsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeOssResultItemsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 float DescribeOssResultItemsRequest::getMaxScore()const
@@ -91,17 +58,6 @@ void DescribeOssResultItemsRequest::setStartDate(const std::string& startDate)
 	setCoreParameter("StartDate", startDate);
 }
 
-std::string DescribeOssResultItemsRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeOssResultItemsRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
-}
-
 std::string DescribeOssResultItemsRequest::getScene()const
 {
 	return scene_;
@@ -111,39 +67,6 @@ void DescribeOssResultItemsRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
 	setCoreParameter("Scene", scene);
-}
-
-std::string DescribeOssResultItemsRequest::getQueryId()const
-{
-	return queryId_;
-}
-
-void DescribeOssResultItemsRequest::setQueryId(const std::string& queryId)
-{
-	queryId_ = queryId;
-	setCoreParameter("QueryId", queryId);
-}
-
-std::string DescribeOssResultItemsRequest::getBucket()const
-{
-	return bucket_;
-}
-
-void DescribeOssResultItemsRequest::setBucket(const std::string& bucket)
-{
-	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
-}
-
-std::string DescribeOssResultItemsRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void DescribeOssResultItemsRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeOssResultItemsRequest::getSourceIp()const
@@ -188,6 +111,83 @@ void DescribeOssResultItemsRequest::setStock(bool stock)
 {
 	stock_ = stock;
 	setCoreParameter("Stock", stock ? "true" : "false");
+}
+
+int DescribeOssResultItemsRequest::getTotalCount()const
+{
+	return totalCount_;
+}
+
+void DescribeOssResultItemsRequest::setTotalCount(int totalCount)
+{
+	totalCount_ = totalCount;
+	setCoreParameter("TotalCount", std::to_string(totalCount));
+}
+
+std::string DescribeOssResultItemsRequest::getSuggestion()const
+{
+	return suggestion_;
+}
+
+void DescribeOssResultItemsRequest::setSuggestion(const std::string& suggestion)
+{
+	suggestion_ = suggestion;
+	setCoreParameter("Suggestion", suggestion);
+}
+
+int DescribeOssResultItemsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeOssResultItemsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeOssResultItemsRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeOssResultItemsRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
+std::string DescribeOssResultItemsRequest::getQueryId()const
+{
+	return queryId_;
+}
+
+void DescribeOssResultItemsRequest::setQueryId(const std::string& queryId)
+{
+	queryId_ = queryId;
+	setCoreParameter("QueryId", queryId);
+}
+
+std::string DescribeOssResultItemsRequest::getBucket()const
+{
+	return bucket_;
+}
+
+void DescribeOssResultItemsRequest::setBucket(const std::string& bucket)
+{
+	bucket_ = bucket;
+	setCoreParameter("Bucket", bucket);
+}
+
+std::string DescribeOssResultItemsRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void DescribeOssResultItemsRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeOssResultItemsRequest::getObject()const

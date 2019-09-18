@@ -47,17 +47,6 @@ void DescribeDataHubConnectorsRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-int DescribeDataHubConnectorsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeDataHubConnectorsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
 int DescribeDataHubConnectorsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,28 +56,6 @@ void DescribeDataHubConnectorsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeDataHubConnectorsRequest::getDepartId()const
-{
-	return departId_;
-}
-
-void DescribeDataHubConnectorsRequest::setDepartId(long departId)
-{
-	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
-}
-
-int DescribeDataHubConnectorsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeDataHubConnectorsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDataHubConnectorsRequest::getLang()const
@@ -122,5 +89,38 @@ void DescribeDataHubConnectorsRequest::setKey(const std::string& key)
 {
 	key_ = key;
 	setCoreParameter("Key", key);
+}
+
+int DescribeDataHubConnectorsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeDataHubConnectorsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int DescribeDataHubConnectorsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeDataHubConnectorsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+long DescribeDataHubConnectorsRequest::getDepartId()const
+{
+	return departId_;
+}
+
+void DescribeDataHubConnectorsRequest::setDepartId(long departId)
+{
+	departId_ = departId;
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 

@@ -35,27 +35,27 @@ namespace AlibabaCloud
 				CreateSubAccountPermissionRequest();
 				~CreateSubAccountPermissionRequest();
 
-				long getUid()const;
-				void setUid(long uid);
 				std::vector<long> getShopGroupIds()const;
 				void setShopGroupIds(const std::vector<long>& shopGroupIds);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				long getUid()const;
+				void setUid(long uid);
 				std::vector<long> getShopIds()const;
 				void setShopIds(const std::vector<long>& shopIds);
 				std::string getPagePermission()const;
 				void setPagePermission(const std::string& pagePermission);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				int getPermissionType()const;
 				void setPermissionType(int permissionType);
 				std::vector<long> getBusinessIds()const;
 				void setBusinessIds(const std::vector<long>& businessIds);
 
             private:
-				long uid_;
 				std::vector<long> shopGroupIds_;
+				std::string accessKeyId_;
+				long uid_;
 				std::vector<long> shopIds_;
 				std::string pagePermission_;
-				std::string accessKeyId_;
 				int permissionType_;
 				std::vector<long> businessIds_;
 

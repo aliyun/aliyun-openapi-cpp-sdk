@@ -25,6 +25,17 @@ DescribeVulWhitelistRequest::DescribeVulWhitelistRequest() :
 DescribeVulWhitelistRequest::~DescribeVulWhitelistRequest()
 {}
 
+int DescribeVulWhitelistRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeVulWhitelistRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
 std::string DescribeVulWhitelistRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeVulWhitelistRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeVulWhitelistRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeVulWhitelistRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

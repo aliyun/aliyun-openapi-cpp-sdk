@@ -25,17 +25,6 @@ BusinessInfoRequest::BusinessInfoRequest() :
 BusinessInfoRequest::~BusinessInfoRequest()
 {}
 
-long BusinessInfoRequest::getBid()const
-{
-	return bid_;
-}
-
-void BusinessInfoRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string BusinessInfoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void BusinessInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long BusinessInfoRequest::getBid()const
+{
+	return bid_;
+}
+
+void BusinessInfoRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

@@ -37,41 +37,41 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getTtsParam()const;
+				void setTtsParam(const std::string& ttsParam);
+				int getSpeed()const;
+				void setSpeed(int speed);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCalledNumber()const;
+				void setCalledNumber(const std::string& calledNumber);
+				std::string getCalledShowNumber()const;
+				void setCalledShowNumber(const std::string& calledShowNumber);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getTtsCode()const;
 				void setTtsCode(const std::string& ttsCode);
 				int getPlayTimes()const;
 				void setPlayTimes(int playTimes);
-				std::string getTtsParam()const;
-				void setTtsParam(const std::string& ttsParam);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getSpeed()const;
-				void setSpeed(int speed);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				int getVolume()const;
 				void setVolume(int volume);
-				std::string getCalledNumber()const;
-				void setCalledNumber(const std::string& calledNumber);
-				std::string getCalledShowNumber()const;
-				void setCalledShowNumber(const std::string& calledShowNumber);
 				std::string getOutId()const;
 				void setOutId(const std::string& outId);
 
             private:
 				long resourceOwnerId_;
+				std::string ttsParam_;
+				int speed_;
+				std::string accessKeyId_;
+				std::string calledNumber_;
+				std::string calledShowNumber_;
 				std::string resourceOwnerAccount_;
 				std::string ttsCode_;
 				int playTimes_;
-				std::string ttsParam_;
 				long ownerId_;
-				int speed_;
-				std::string accessKeyId_;
 				int volume_;
-				std::string calledNumber_;
-				std::string calledShowNumber_;
 				std::string outId_;
 
 			};

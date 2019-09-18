@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				DescribeLiveSnapshotConfigRequest();
 				~DescribeLiveSnapshotConfigRequest();
 
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
+				int pageNum_;
 				std::string appName_;
 				std::string securityToken_;
-				std::string domainName_;
 				int pageSize_;
-				long ownerId_;
-				int pageNum_;
 				std::string streamName_;
 				std::string order_;
+				std::string domainName_;
+				long ownerId_;
 
 			};
 		}

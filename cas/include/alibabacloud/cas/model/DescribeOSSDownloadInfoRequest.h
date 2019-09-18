@@ -35,16 +35,19 @@ namespace AlibabaCloud
 				DescribeOSSDownloadInfoRequest();
 				~DescribeOSSDownloadInfoRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getOssKey()const;
 				void setOssKey(const std::string& ossKey);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				std::string ossKey_;
+				std::string resourceGroupId_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

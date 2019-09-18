@@ -35,13 +35,9 @@ DescribeGtmMonitorConfigResult::~DescribeGtmMonitorConfigResult()
 
 void DescribeGtmMonitorConfigResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allIspCityNodes = value["IspCityNodes"]["IspCityNode"];
 	for (auto value : allIspCityNodes)
@@ -67,8 +63,6 @@ void DescribeGtmMonitorConfigResult::parse(const std::string &payload)
 		updateTime_ = value["UpdateTime"].asString();
 	if(!value["UpdateTimestamp"].isNull())
 		updateTimestamp_ = std::stol(value["UpdateTimestamp"].asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["ProtocolType"].isNull())
 		protocolType_ = value["ProtocolType"].asString();
 	if(!value["Interval"].isNull())
@@ -130,11 +124,6 @@ std::string DescribeGtmMonitorConfigResult::getMonitorConfigId()const
 long DescribeGtmMonitorConfigResult::getCreateTimestamp()const
 {
 	return createTimestamp_;
-}
-
-std::string DescribeGtmMonitorConfigResult::getName()const
-{
-	return name_;
 }
 
 int DescribeGtmMonitorConfigResult::getInterval()const

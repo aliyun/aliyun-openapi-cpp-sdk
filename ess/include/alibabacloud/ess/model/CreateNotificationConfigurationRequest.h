@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				CreateNotificationConfigurationRequest();
 				~CreateNotificationConfigurationRequest();
 
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				std::string getNotificationArn()const;
-				void setNotificationArn(const std::string& notificationArn);
-				std::vector<std::string> getNotificationType()const;
-				void setNotificationType(const std::vector<std::string>& notificationType);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNotificationArn()const;
+				void setNotificationArn(const std::string& notificationArn);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<std::string> getNotificationType()const;
+				void setNotificationType(const std::vector<std::string>& notificationType);
 
             private:
-				std::string resourceOwnerAccount_;
 				std::string scalingGroupId_;
-				std::string notificationArn_;
-				std::vector<std::string> notificationType_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string notificationArn_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::vector<std::string> notificationType_;
 
 			};
 		}

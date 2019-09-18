@@ -25,28 +25,6 @@ DetectImageBodiesRequest::DetectImageBodiesRequest() :
 DetectImageBodiesRequest::~DetectImageBodiesRequest()
 {}
 
-std::string DetectImageBodiesRequest::getImageUri()const
-{
-	return imageUri_;
-}
-
-void DetectImageBodiesRequest::setImageUri(const std::string& imageUri)
-{
-	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
-}
-
-std::string DetectImageBodiesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DetectImageBodiesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DetectImageBodiesRequest::getProject()const
 {
 	return project_;
@@ -67,5 +45,16 @@ void DetectImageBodiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DetectImageBodiesRequest::getImageUri()const
+{
+	return imageUri_;
+}
+
+void DetectImageBodiesRequest::setImageUri(const std::string& imageUri)
+{
+	imageUri_ = imageUri;
+	setCoreParameter("ImageUri", imageUri);
 }
 

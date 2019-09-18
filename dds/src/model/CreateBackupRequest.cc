@@ -25,17 +25,6 @@ CreateBackupRequest::CreateBackupRequest() :
 CreateBackupRequest::~CreateBackupRequest()
 {}
 
-std::string CreateBackupRequest::getBackupMethod()const
-{
-	return backupMethod_;
-}
-
-void CreateBackupRequest::setBackupMethod(const std::string& backupMethod)
-{
-	backupMethod_ = backupMethod;
-	setCoreParameter("BackupMethod", backupMethod);
-}
-
 long CreateBackupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,17 @@ void CreateBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string CreateBackupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateBackupRequest::getSecurityToken()const
@@ -58,6 +58,17 @@ void CreateBackupRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string CreateBackupRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void CreateBackupRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string CreateBackupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +78,6 @@ void CreateBackupRequest::setResourceOwnerAccount(const std::string& resourceOwn
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateBackupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateBackupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateBackupRequest::getOwnerAccount()const
@@ -91,17 +91,6 @@ void CreateBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateBackupRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void CreateBackupRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long CreateBackupRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +102,14 @@ void CreateBackupRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateBackupRequest::getAccessKeyId()const
+std::string CreateBackupRequest::getBackupMethod()const
 {
-	return accessKeyId_;
+	return backupMethod_;
 }
 
-void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
+void CreateBackupRequest::setBackupMethod(const std::string& backupMethod)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	backupMethod_ = backupMethod;
+	setCoreParameter("BackupMethod", backupMethod);
 }
 

@@ -36,17 +36,6 @@ void ListFlowNodeSqlResultRequest::setOffset(int offset)
 	setCoreParameter("Offset", std::to_string(offset));
 }
 
-std::string ListFlowNodeSqlResultRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListFlowNodeSqlResultRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int ListFlowNodeSqlResultRequest::getLength()const
 {
 	return length_;
@@ -78,6 +67,17 @@ void ListFlowNodeSqlResultRequest::setNodeInstanceId(const std::string& nodeInst
 {
 	nodeInstanceId_ = nodeInstanceId;
 	setCoreParameter("NodeInstanceId", nodeInstanceId);
+}
+
+std::string ListFlowNodeSqlResultRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListFlowNodeSqlResultRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListFlowNodeSqlResultRequest::getProjectId()const

@@ -37,12 +37,12 @@ namespace AlibabaCloud
 
 				std::string getRealtimeMessageList()const;
 				void setRealtimeMessageList(const std::string& realtimeMessageList);
+				int getScheduleMessageTime()const;
+				void setScheduleMessageTime(int scheduleMessageTime);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getReminderModeList()const;
 				void setReminderModeList(const std::string& reminderModeList);
-				int getScheduleMessageTime()const;
-				void setScheduleMessageTime(int scheduleMessageTime);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				int getScheduleMessageTimeZone()const;
@@ -50,9 +50,9 @@ namespace AlibabaCloud
 
             private:
 				std::string realtimeMessageList_;
+				int scheduleMessageTime_;
 				std::string sourceIp_;
 				std::string reminderModeList_;
-				int scheduleMessageTime_;
 				std::string lang_;
 				int scheduleMessageTimeZone_;
 

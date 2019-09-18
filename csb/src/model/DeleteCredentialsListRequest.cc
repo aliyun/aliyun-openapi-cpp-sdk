@@ -36,17 +36,6 @@ void DeleteCredentialsListRequest::setData(const std::string& data)
 	setCoreParameter("Data", data);
 }
 
-std::string DeleteCredentialsListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteCredentialsListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 bool DeleteCredentialsListRequest::getIgnoreDauth()const
 {
 	return ignoreDauth_;

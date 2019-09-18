@@ -102,6 +102,17 @@ void RecoveryDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string RecoveryDBInstanceRequest::getDBInstanceStorageType()const
+{
+	return dBInstanceStorageType_;
+}
+
+void RecoveryDBInstanceRequest::setDBInstanceStorageType(const std::string& dBInstanceStorageType)
+{
+	dBInstanceStorageType_ = dBInstanceStorageType;
+	setCoreParameter("DBInstanceStorageType", dBInstanceStorageType);
+}
+
 std::string RecoveryDBInstanceRequest::getRestoreTime()const
 {
 	return restoreTime_;

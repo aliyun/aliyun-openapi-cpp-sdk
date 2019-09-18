@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeWebsiteScanResultDetailRequest();
 				~DescribeWebsiteScanResultDetailRequest();
 
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getId()const;
 				void setId(int id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
 
             private:
+				std::string resourceType_;
 				std::string sourceIp_;
 				int id_;
 				std::string lang_;
-				std::string resourceType_;
 
 			};
 		}

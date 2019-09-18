@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				ListFlowClusterAllHostsRequest();
 				~ListFlowClusterAllHostsRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 
             private:
-				std::string regionId_;
 				std::string clusterId_;
+				std::string regionId_;
 				std::string projectId_;
 
 			};

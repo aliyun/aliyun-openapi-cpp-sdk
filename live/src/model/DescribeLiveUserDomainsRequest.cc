@@ -25,6 +25,17 @@ DescribeLiveUserDomainsRequest::DescribeLiveUserDomainsRequest() :
 DescribeLiveUserDomainsRequest::~DescribeLiveUserDomainsRequest()
 {}
 
+int DescribeLiveUserDomainsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeLiveUserDomainsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeLiveUserDomainsRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -47,17 +58,6 @@ void DescribeLiveUserDomainsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeLiveUserDomainsRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveUserDomainsRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 std::string DescribeLiveUserDomainsRequest::getRegionName()const
 {
 	return regionName_;
@@ -67,6 +67,17 @@ void DescribeLiveUserDomainsRequest::setRegionName(const std::string& regionName
 {
 	regionName_ = regionName;
 	setCoreParameter("RegionName", regionName);
+}
+
+std::string DescribeLiveUserDomainsRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveUserDomainsRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeLiveUserDomainsRequest::getOwnerId()const
@@ -80,17 +91,6 @@ void DescribeLiveUserDomainsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeLiveUserDomainsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeLiveUserDomainsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
 std::string DescribeLiveUserDomainsRequest::getDomainStatus()const
 {
 	return domainStatus_;
@@ -102,17 +102,6 @@ void DescribeLiveUserDomainsRequest::setDomainStatus(const std::string& domainSt
 	setCoreParameter("DomainStatus", domainStatus);
 }
 
-std::string DescribeLiveUserDomainsRequest::getLiveDomainType()const
-{
-	return liveDomainType_;
-}
-
-void DescribeLiveUserDomainsRequest::setLiveDomainType(const std::string& liveDomainType)
-{
-	liveDomainType_ = liveDomainType;
-	setCoreParameter("LiveDomainType", liveDomainType);
-}
-
 std::string DescribeLiveUserDomainsRequest::getDomainSearchType()const
 {
 	return domainSearchType_;
@@ -122,5 +111,16 @@ void DescribeLiveUserDomainsRequest::setDomainSearchType(const std::string& doma
 {
 	domainSearchType_ = domainSearchType;
 	setCoreParameter("DomainSearchType", domainSearchType);
+}
+
+std::string DescribeLiveUserDomainsRequest::getLiveDomainType()const
+{
+	return liveDomainType_;
+}
+
+void DescribeLiveUserDomainsRequest::setLiveDomainType(const std::string& liveDomainType)
+{
+	liveDomainType_ = liveDomainType;
+	setCoreParameter("LiveDomainType", liveDomainType);
 }
 

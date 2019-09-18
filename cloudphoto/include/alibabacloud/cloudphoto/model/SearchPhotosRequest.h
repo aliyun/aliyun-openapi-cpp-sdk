@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				SearchPhotosRequest();
 				~SearchPhotosRequest();
 
-				int getSize()const;
-				void setSize(int size);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
+				int getSize()const;
+				void setSize(int size);
 				int getPage()const;
 				void setPage(int page);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
 
             private:
-				int size_;
 				std::string libraryId_;
 				std::string storeName_;
+				int size_;
 				int page_;
 				std::string keyword_;
 

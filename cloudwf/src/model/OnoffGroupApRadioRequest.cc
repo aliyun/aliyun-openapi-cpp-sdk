@@ -36,17 +36,6 @@ void OnoffGroupApRadioRequest::setApgroupId(long apgroupId)
 	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
-int OnoffGroupApRadioRequest::getDisabled()const
-{
-	return disabled_;
-}
-
-void OnoffGroupApRadioRequest::setDisabled(int disabled)
-{
-	disabled_ = disabled;
-	setCoreParameter("Disabled", std::to_string(disabled));
-}
-
 std::string OnoffGroupApRadioRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void OnoffGroupApRadioRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int OnoffGroupApRadioRequest::getDisabled()const
+{
+	return disabled_;
+}
+
+void OnoffGroupApRadioRequest::setDisabled(int disabled)
+{
+	disabled_ = disabled;
+	setCoreParameter("Disabled", std::to_string(disabled));
 }
 

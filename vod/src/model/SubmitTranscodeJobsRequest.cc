@@ -25,17 +25,6 @@ SubmitTranscodeJobsRequest::SubmitTranscodeJobsRequest() :
 SubmitTranscodeJobsRequest::~SubmitTranscodeJobsRequest()
 {}
 
-std::string SubmitTranscodeJobsRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitTranscodeJobsRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
 long SubmitTranscodeJobsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,26 @@ void SubmitTranscodeJobsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SubmitTranscodeJobsRequest::getTemplateGroupId()const
+std::string SubmitTranscodeJobsRequest::getAccessKeyId()const
 {
-	return templateGroupId_;
+	return accessKeyId_;
 }
 
-void SubmitTranscodeJobsRequest::setTemplateGroupId(const std::string& templateGroupId)
+void SubmitTranscodeJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	templateGroupId_ = templateGroupId;
-	setCoreParameter("TemplateGroupId", templateGroupId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitTranscodeJobsRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitTranscodeJobsRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
 }
 
 std::string SubmitTranscodeJobsRequest::getResourceOwnerAccount()const
@@ -113,28 +113,6 @@ void SubmitTranscodeJobsRequest::setPriority(const std::string& priority)
 	setCoreParameter("Priority", priority);
 }
 
-std::string SubmitTranscodeJobsRequest::getEncryptConfig()const
-{
-	return encryptConfig_;
-}
-
-void SubmitTranscodeJobsRequest::setEncryptConfig(const std::string& encryptConfig)
-{
-	encryptConfig_ = encryptConfig;
-	setCoreParameter("EncryptConfig", encryptConfig);
-}
-
-std::string SubmitTranscodeJobsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitTranscodeJobsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitTranscodeJobsRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -144,5 +122,27 @@ void SubmitTranscodeJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitTranscodeJobsRequest::getTemplateGroupId()const
+{
+	return templateGroupId_;
+}
+
+void SubmitTranscodeJobsRequest::setTemplateGroupId(const std::string& templateGroupId)
+{
+	templateGroupId_ = templateGroupId;
+	setCoreParameter("TemplateGroupId", templateGroupId);
+}
+
+std::string SubmitTranscodeJobsRequest::getEncryptConfig()const
+{
+	return encryptConfig_;
+}
+
+void SubmitTranscodeJobsRequest::setEncryptConfig(const std::string& encryptConfig)
+{
+	encryptConfig_ = encryptConfig;
+	setCoreParameter("EncryptConfig", encryptConfig);
 }
 

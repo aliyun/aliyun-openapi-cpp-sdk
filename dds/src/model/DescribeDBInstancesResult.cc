@@ -35,13 +35,9 @@ DescribeDBInstancesResult::~DescribeDBInstancesResult()
 
 void DescribeDBInstancesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allDBInstances = value["DBInstances"]["DBInstance"];
 	for (auto value : allDBInstances)
@@ -85,6 +81,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.replicationFactor = value["ReplicationFactor"].asString();
 		if(!value["DestroyTime"].isNull())
 			dBInstancesObject.destroyTime = value["DestroyTime"].asString();
+		if(!value["VpcAuthMode"].isNull())
+			dBInstancesObject.vpcAuthMode = value["VpcAuthMode"].asString();
 		auto allMongosList = value["MongosList"]["MongosAttribute"];
 		for (auto value : allMongosList)
 		{

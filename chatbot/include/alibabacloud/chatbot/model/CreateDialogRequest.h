@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				CreateDialogRequest();
 				~CreateDialogRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getDialogName()const;
 				void setDialogName(const std::string& dialogName);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				std::string description_;
 				std::string dialogName_;
+				std::string instanceId_;
 
 			};
 		}

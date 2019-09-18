@@ -39,33 +39,33 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				bool getIncludeSummaryList()const;
 				void setIncludeSummaryList(bool includeSummaryList);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getMediaIds()const;
+				void setMediaIds(const std::string& mediaIds);
+				bool getIncludePlayList()const;
+				void setIncludePlayList(bool includePlayList);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				bool getIncludeSnapshotList()const;
 				void setIncludeSnapshotList(bool includeSnapshotList);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getMediaIds()const;
-				void setMediaIds(const std::string& mediaIds);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				bool getIncludePlayList()const;
-				void setIncludePlayList(bool includePlayList);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				bool getIncludeMediaInfo()const;
 				void setIncludeMediaInfo(bool includeMediaInfo);
 
             private:
 				long resourceOwnerId_;
 				bool includeSummaryList_;
+				std::string accessKeyId_;
+				std::string mediaIds_;
+				bool includePlayList_;
 				std::string resourceOwnerAccount_;
 				bool includeSnapshotList_;
 				std::string ownerAccount_;
-				std::string mediaIds_;
 				long ownerId_;
-				bool includePlayList_;
-				std::string accessKeyId_;
 				bool includeMediaInfo_;
 
 			};

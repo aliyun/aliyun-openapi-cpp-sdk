@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeleteApRadioSsidConfigRequest();
 				~DeleteApRadioSsidConfigRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getInstantlyEffective()const;
 				void setInstantlyEffective(int instantlyEffective);
 				long getId()const;
 				void setId(long id);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				int instantlyEffective_;
 				long id_;
-				std::string accessKeyId_;
 
 			};
 		}

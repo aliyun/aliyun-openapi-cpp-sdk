@@ -47,6 +47,83 @@ void DescribeDomainRecordsRequest::setLine(const std::string& line)
 	setCoreParameter("Line", line);
 }
 
+std::string DescribeDomainRecordsRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeDomainRecordsRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+long DescribeDomainRecordsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDomainRecordsRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+long DescribeDomainRecordsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeDomainRecordsRequest::setPageSize(long pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeDomainRecordsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeDomainRecordsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string DescribeDomainRecordsRequest::getKeyWord()const
+{
+	return keyWord_;
+}
+
+void DescribeDomainRecordsRequest::setKeyWord(const std::string& keyWord)
+{
+	keyWord_ = keyWord;
+	setCoreParameter("KeyWord", keyWord);
+}
+
+std::string DescribeDomainRecordsRequest::getRRKeyWord()const
+{
+	return rRKeyWord_;
+}
+
+void DescribeDomainRecordsRequest::setRRKeyWord(const std::string& rRKeyWord)
+{
+	rRKeyWord_ = rRKeyWord;
+	setCoreParameter("RRKeyWord", rRKeyWord);
+}
+
+std::string DescribeDomainRecordsRequest::getDirection()const
+{
+	return direction_;
+}
+
+void DescribeDomainRecordsRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
+}
+
 long DescribeDomainRecordsRequest::getGroupId()const
 {
 	return groupId_;
@@ -80,28 +157,6 @@ void DescribeDomainRecordsRequest::setOrderBy(const std::string& orderBy)
 	setCoreParameter("OrderBy", orderBy);
 }
 
-std::string DescribeDomainRecordsRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeDomainRecordsRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
-long DescribeDomainRecordsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeDomainRecordsRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
 std::string DescribeDomainRecordsRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -111,17 +166,6 @@ void DescribeDomainRecordsRequest::setUserClientIp(const std::string& userClient
 {
 	userClientIp_ = userClientIp;
 	setCoreParameter("UserClientIp", userClientIp);
-}
-
-long DescribeDomainRecordsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeDomainRecordsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainRecordsRequest::getSearchMode()const
@@ -135,28 +179,6 @@ void DescribeDomainRecordsRequest::setSearchMode(const std::string& searchMode)
 	setCoreParameter("SearchMode", searchMode);
 }
 
-std::string DescribeDomainRecordsRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeDomainRecordsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeDomainRecordsRequest::getKeyWord()const
-{
-	return keyWord_;
-}
-
-void DescribeDomainRecordsRequest::setKeyWord(const std::string& keyWord)
-{
-	keyWord_ = keyWord;
-	setCoreParameter("KeyWord", keyWord);
-}
-
 std::string DescribeDomainRecordsRequest::getTypeKeyWord()const
 {
 	return typeKeyWord_;
@@ -166,28 +188,6 @@ void DescribeDomainRecordsRequest::setTypeKeyWord(const std::string& typeKeyWord
 {
 	typeKeyWord_ = typeKeyWord;
 	setCoreParameter("TypeKeyWord", typeKeyWord);
-}
-
-std::string DescribeDomainRecordsRequest::getRRKeyWord()const
-{
-	return rRKeyWord_;
-}
-
-void DescribeDomainRecordsRequest::setRRKeyWord(const std::string& rRKeyWord)
-{
-	rRKeyWord_ = rRKeyWord;
-	setCoreParameter("RRKeyWord", rRKeyWord);
-}
-
-std::string DescribeDomainRecordsRequest::getDirection()const
-{
-	return direction_;
-}
-
-void DescribeDomainRecordsRequest::setDirection(const std::string& direction)
-{
-	direction_ = direction;
-	setCoreParameter("Direction", direction);
 }
 
 std::string DescribeDomainRecordsRequest::getStatus()const

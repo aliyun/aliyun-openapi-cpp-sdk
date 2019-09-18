@@ -25,17 +25,6 @@ GetRepoListRequest::GetRepoListRequest() :
 GetRepoListRequest::~GetRepoListRequest()
 {}
 
-std::string GetRepoListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int GetRepoListRequest::getPageSize()const
 {
 	return pageSize_;

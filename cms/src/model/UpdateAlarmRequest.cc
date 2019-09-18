@@ -25,17 +25,6 @@ UpdateAlarmRequest::UpdateAlarmRequest() :
 UpdateAlarmRequest::~UpdateAlarmRequest()
 {}
 
-int UpdateAlarmRequest::getPeriod()const
-{
-	return period_;
-}
-
-void UpdateAlarmRequest::setPeriod(int period)
-{
-	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
-}
-
 std::string UpdateAlarmRequest::getWebhook()const
 {
 	return webhook_;
@@ -45,39 +34,6 @@ void UpdateAlarmRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
 	setCoreParameter("Webhook", webhook);
-}
-
-bool UpdateAlarmRequest::getDryRun()const
-{
-	return dryRun_;
-}
-
-void UpdateAlarmRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
-}
-
-std::string UpdateAlarmRequest::getContactGroups()const
-{
-	return contactGroups_;
-}
-
-void UpdateAlarmRequest::setContactGroups(const std::string& contactGroups)
-{
-	contactGroups_ = contactGroups;
-	setCoreParameter("ContactGroups", contactGroups);
-}
-
-int UpdateAlarmRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void UpdateAlarmRequest::setEndTime(int endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string UpdateAlarmRequest::getThreshold()const
@@ -100,17 +56,6 @@ void UpdateAlarmRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", std::to_string(startTime));
-}
-
-std::string UpdateAlarmRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateAlarmRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 int UpdateAlarmRequest::getEvaluationCount()const
@@ -155,6 +100,61 @@ void UpdateAlarmRequest::setNotifyType(int notifyType)
 {
 	notifyType_ = notifyType;
 	setCoreParameter("NotifyType", std::to_string(notifyType));
+}
+
+int UpdateAlarmRequest::getPeriod()const
+{
+	return period_;
+}
+
+void UpdateAlarmRequest::setPeriod(int period)
+{
+	period_ = period;
+	setCoreParameter("Period", std::to_string(period));
+}
+
+bool UpdateAlarmRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void UpdateAlarmRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
+}
+
+std::string UpdateAlarmRequest::getContactGroups()const
+{
+	return contactGroups_;
+}
+
+void UpdateAlarmRequest::setContactGroups(const std::string& contactGroups)
+{
+	contactGroups_ = contactGroups;
+	setCoreParameter("ContactGroups", contactGroups);
+}
+
+int UpdateAlarmRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void UpdateAlarmRequest::setEndTime(int endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", std::to_string(endTime));
+}
+
+std::string UpdateAlarmRequest::getName()const
+{
+	return name_;
+}
+
+void UpdateAlarmRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateAlarmRequest::getComparisonOperator()const

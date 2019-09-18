@@ -25,17 +25,6 @@ GetWatermarkRequest::GetWatermarkRequest() :
 GetWatermarkRequest::~GetWatermarkRequest()
 {}
 
-std::string GetWatermarkRequest::getWatermarkId()const
-{
-	return watermarkId_;
-}
-
-void GetWatermarkRequest::setWatermarkId(const std::string& watermarkId)
-{
-	watermarkId_ = watermarkId;
-	setCoreParameter("WatermarkId", watermarkId);
-}
-
 long GetWatermarkRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -78,5 +67,16 @@ void GetWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetWatermarkRequest::getWatermarkId()const
+{
+	return watermarkId_;
+}
+
+void GetWatermarkRequest::setWatermarkId(const std::string& watermarkId)
+{
+	watermarkId_ = watermarkId;
+	setCoreParameter("WatermarkId", watermarkId);
 }
 

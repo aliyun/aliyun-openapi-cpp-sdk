@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				bool getCrossAccount()const;
-				void setCrossAccount(bool crossAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getCcnId()const;
 				void setCcnId(const std::string& ccnId);
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getPageNumber()const;
 				void setPageNumber(const std::string& pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				bool getCrossAccount()const;
+				void setCrossAccount(bool crossAccount);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				bool crossAccount_;
-				std::string ownerAccount_;
 				std::string ccnId_;
-				std::string pageSize_;
-				long ownerId_;
 				std::string pageNumber_;
+				std::string regionId_;
+				std::string pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				bool crossAccount_;
 
 			};
 		}

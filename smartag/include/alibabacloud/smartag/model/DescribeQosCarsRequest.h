@@ -37,39 +37,39 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getQosId()const;
-				void setQosId(const std::string& qosId);
-				std::string getQosCarId()const;
-				void setQosCarId(const std::string& qosCarId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getQosId()const;
+				void setQosId(const std::string& qosId);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getQosCarId()const;
+				void setQosCarId(const std::string& qosCarId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				int pageSize_;
 				std::string description_;
-				long ownerId_;
-				std::string qosId_;
-				std::string qosCarId_;
 				int pageNumber_;
+				std::string regionId_;
+				int pageSize_;
+				std::string qosId_;
 				std::string order_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string qosCarId_;
 
 			};
 		}

@@ -36,17 +36,6 @@ void InsertTmMonitorRuleRequest::setStartApplyDate(const std::string& startApply
 	setCoreParameter("StartApplyDate", startApplyDate);
 }
 
-std::string InsertTmMonitorRuleRequest::getNotifyStatus()const
-{
-	return notifyStatus_;
-}
-
-void InsertTmMonitorRuleRequest::setNotifyStatus(const std::string& notifyStatus)
-{
-	notifyStatus_ = notifyStatus;
-	setCoreParameter("NotifyStatus", notifyStatus);
-}
-
 int InsertTmMonitorRuleRequest::getRuleType()const
 {
 	return ruleType_;
@@ -80,17 +69,6 @@ void InsertTmMonitorRuleRequest::setRuleName(const std::string& ruleName)
 	setCoreParameter("RuleName", ruleName);
 }
 
-std::string InsertTmMonitorRuleRequest::getEndApplyDate()const
-{
-	return endApplyDate_;
-}
-
-void InsertTmMonitorRuleRequest::setEndApplyDate(const std::string& endApplyDate)
-{
-	endApplyDate_ = endApplyDate;
-	setCoreParameter("EndApplyDate", endApplyDate);
-}
-
 std::string InsertTmMonitorRuleRequest::getClassification()const
 {
 	return classification_;
@@ -100,6 +78,28 @@ void InsertTmMonitorRuleRequest::setClassification(const std::string& classifica
 {
 	classification_ = classification;
 	setCoreParameter("Classification", classification);
+}
+
+std::string InsertTmMonitorRuleRequest::getNotifyStatus()const
+{
+	return notifyStatus_;
+}
+
+void InsertTmMonitorRuleRequest::setNotifyStatus(const std::string& notifyStatus)
+{
+	notifyStatus_ = notifyStatus;
+	setCoreParameter("NotifyStatus", notifyStatus);
+}
+
+std::string InsertTmMonitorRuleRequest::getEndApplyDate()const
+{
+	return endApplyDate_;
+}
+
+void InsertTmMonitorRuleRequest::setEndApplyDate(const std::string& endApplyDate)
+{
+	endApplyDate_ = endApplyDate;
+	setCoreParameter("EndApplyDate", endApplyDate);
 }
 
 std::string InsertTmMonitorRuleRequest::getRuleKeyword()const

@@ -21,21 +21,53 @@ set(dysmsapi_public_header
 	include/alibabacloud/dysmsapi/DysmsapiExport.h )
 
 set(dysmsapi_public_header_model 
-	include/alibabacloud/dysmsapi/model/SendSmsRequest.h
-	include/alibabacloud/dysmsapi/model/SendSmsResult.h
+	include/alibabacloud/dysmsapi/model/AddSmsSignRequest.h
+	include/alibabacloud/dysmsapi/model/AddSmsSignResult.h
+	include/alibabacloud/dysmsapi/model/AddSmsTemplateRequest.h
+	include/alibabacloud/dysmsapi/model/AddSmsTemplateResult.h
+	include/alibabacloud/dysmsapi/model/DeleteSmsSignRequest.h
+	include/alibabacloud/dysmsapi/model/DeleteSmsSignResult.h
+	include/alibabacloud/dysmsapi/model/DeleteSmsTemplateRequest.h
+	include/alibabacloud/dysmsapi/model/DeleteSmsTemplateResult.h
+	include/alibabacloud/dysmsapi/model/ModifySmsSignRequest.h
+	include/alibabacloud/dysmsapi/model/ModifySmsSignResult.h
+	include/alibabacloud/dysmsapi/model/ModifySmsTemplateRequest.h
+	include/alibabacloud/dysmsapi/model/ModifySmsTemplateResult.h
+	include/alibabacloud/dysmsapi/model/QuerySendDetailsRequest.h
+	include/alibabacloud/dysmsapi/model/QuerySendDetailsResult.h
+	include/alibabacloud/dysmsapi/model/QuerySmsSignRequest.h
+	include/alibabacloud/dysmsapi/model/QuerySmsSignResult.h
+	include/alibabacloud/dysmsapi/model/QuerySmsTemplateRequest.h
+	include/alibabacloud/dysmsapi/model/QuerySmsTemplateResult.h
 	include/alibabacloud/dysmsapi/model/SendBatchSmsRequest.h
 	include/alibabacloud/dysmsapi/model/SendBatchSmsResult.h
-	include/alibabacloud/dysmsapi/model/QuerySendDetailsRequest.h
-	include/alibabacloud/dysmsapi/model/QuerySendDetailsResult.h )
+	include/alibabacloud/dysmsapi/model/SendSmsRequest.h
+	include/alibabacloud/dysmsapi/model/SendSmsResult.h )
 
 set(dysmsapi_src 
 	src/DysmsapiClient.cc
-	src/model/SendSmsRequest.cc
-	src/model/SendSmsResult.cc
+	src/model/AddSmsSignRequest.cc
+	src/model/AddSmsSignResult.cc
+	src/model/AddSmsTemplateRequest.cc
+	src/model/AddSmsTemplateResult.cc
+	src/model/DeleteSmsSignRequest.cc
+	src/model/DeleteSmsSignResult.cc
+	src/model/DeleteSmsTemplateRequest.cc
+	src/model/DeleteSmsTemplateResult.cc
+	src/model/ModifySmsSignRequest.cc
+	src/model/ModifySmsSignResult.cc
+	src/model/ModifySmsTemplateRequest.cc
+	src/model/ModifySmsTemplateResult.cc
+	src/model/QuerySendDetailsRequest.cc
+	src/model/QuerySendDetailsResult.cc
+	src/model/QuerySmsSignRequest.cc
+	src/model/QuerySmsSignResult.cc
+	src/model/QuerySmsTemplateRequest.cc
+	src/model/QuerySmsTemplateResult.cc
 	src/model/SendBatchSmsRequest.cc
 	src/model/SendBatchSmsResult.cc
-	src/model/QuerySendDetailsRequest.cc
-	src/model/QuerySendDetailsResult.cc )
+	src/model/SendSmsRequest.cc
+	src/model/SendSmsResult.cc )
 
 add_library(dysmsapi ${LIB_TYPE}
 	${dysmsapi_public_header}

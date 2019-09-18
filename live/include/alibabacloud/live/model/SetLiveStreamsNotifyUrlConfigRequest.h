@@ -37,24 +37,21 @@ namespace AlibabaCloud
 
 				std::string getAuthKey()const;
 				void setAuthKey(const std::string& authKey);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getNotifyUrl()const;
-				void setNotifyUrl(const std::string& notifyUrl);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAuthType()const;
 				void setAuthType(const std::string& authType);
+				std::string getNotifyUrl()const;
+				void setNotifyUrl(const std::string& notifyUrl);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string authKey_;
-				std::string regionId_;
-				std::string domainName_;
-				std::string notifyUrl_;
-				long ownerId_;
 				std::string authType_;
+				std::string notifyUrl_;
+				std::string domainName_;
+				long ownerId_;
 
 			};
 		}

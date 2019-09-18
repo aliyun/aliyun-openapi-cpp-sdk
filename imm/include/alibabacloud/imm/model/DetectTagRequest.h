@@ -35,23 +35,20 @@ namespace AlibabaCloud
 				DetectTagRequest();
 				~DetectTagRequest();
 
-				std::string getSrcUris()const;
-				void setSrcUris(const std::string& srcUris);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getModelId()const;
-				void setModelId(const std::string& modelId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getModelId()const;
+				void setModelId(const std::string& modelId);
+				std::string getSrcUris()const;
+				void setSrcUris(const std::string& srcUris);
 
             private:
-				std::string srcUris_;
-				std::string regionId_;
-				std::string modelId_;
 				std::string project_;
 				std::string accessKeyId_;
+				std::string modelId_;
+				std::string srcUris_;
 
 			};
 		}

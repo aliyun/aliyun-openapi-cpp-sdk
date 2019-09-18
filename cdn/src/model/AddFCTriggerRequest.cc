@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::AddFCTriggerRequest;
 
 AddFCTriggerRequest::AddFCTriggerRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "AddFCTrigger")
+	RpcServiceRequest("cdn", "2014-11-11", "AddFCTrigger")
 {}
 
 AddFCTriggerRequest::~AddFCTriggerRequest()
 {}
-
-long AddFCTriggerRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void AddFCTriggerRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
 
 std::string AddFCTriggerRequest::getNotes()const
 {
@@ -45,17 +34,6 @@ void AddFCTriggerRequest::setNotes(const std::string& notes)
 {
 	notes_ = notes;
 	setCoreParameter("Notes", notes);
-}
-
-long AddFCTriggerRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void AddFCTriggerRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string AddFCTriggerRequest::getEventMetaVersion()const
@@ -69,116 +47,6 @@ void AddFCTriggerRequest::setEventMetaVersion(const std::string& eventMetaVersio
 	setCoreParameter("EventMetaVersion", eventMetaVersion);
 }
 
-bool AddFCTriggerRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void AddFCTriggerRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string AddFCTriggerRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void AddFCTriggerRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string AddFCTriggerRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void AddFCTriggerRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string AddFCTriggerRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void AddFCTriggerRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string AddFCTriggerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddFCTriggerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string AddFCTriggerRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void AddFCTriggerRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string AddFCTriggerRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void AddFCTriggerRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string AddFCTriggerRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void AddFCTriggerRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string AddFCTriggerRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void AddFCTriggerRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long AddFCTriggerRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void AddFCTriggerRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
 std::string AddFCTriggerRequest::getTriggerARN()const
 {
 	return triggerARN_;
@@ -188,28 +56,6 @@ void AddFCTriggerRequest::setTriggerARN(const std::string& triggerARN)
 {
 	triggerARN_ = triggerARN;
 	setCoreParameter("TriggerARN", triggerARN);
-}
-
-std::string AddFCTriggerRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void AddFCTriggerRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string AddFCTriggerRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void AddFCTriggerRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string AddFCTriggerRequest::getSourceARN()const
@@ -223,17 +69,6 @@ void AddFCTriggerRequest::setSourceARN(const std::string& sourceARN)
 	setCoreParameter("SourceARN", sourceARN);
 }
 
-std::string AddFCTriggerRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void AddFCTriggerRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long AddFCTriggerRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -243,72 +78,6 @@ void AddFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AddFCTriggerRequest::getVersion()const
-{
-	return version_;
-}
-
-void AddFCTriggerRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool AddFCTriggerRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void AddFCTriggerRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool AddFCTriggerRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void AddFCTriggerRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool AddFCTriggerRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void AddFCTriggerRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string AddFCTriggerRequest::getServiceCode()const
-{
-	return serviceCode_;
-}
-
-void AddFCTriggerRequest::setServiceCode(const std::string& serviceCode)
-{
-	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
-}
-
-std::string AddFCTriggerRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void AddFCTriggerRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 
 std::string AddFCTriggerRequest::getRoleARN()const

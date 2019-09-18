@@ -36,17 +36,6 @@ void PreloadScdnObjectCachesRequest::setArea(const std::string& area)
 	setCoreParameter("Area", area);
 }
 
-std::string PreloadScdnObjectCachesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void PreloadScdnObjectCachesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string PreloadScdnObjectCachesRequest::getObjectPath()const
 {
 	return objectPath_;
@@ -67,5 +56,16 @@ void PreloadScdnObjectCachesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string PreloadScdnObjectCachesRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void PreloadScdnObjectCachesRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

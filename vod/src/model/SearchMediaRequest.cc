@@ -36,28 +36,6 @@ void SearchMediaRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SearchMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string SearchMediaRequest::getMatch()const
-{
-	return match_;
-}
-
-void SearchMediaRequest::setMatch(const std::string& match)
-{
-	match_ = match;
-	setCoreParameter("Match", match);
-}
-
 std::string SearchMediaRequest::getSessionId()const
 {
 	return sessionId_;
@@ -69,17 +47,6 @@ void SearchMediaRequest::setSessionId(const std::string& sessionId)
 	setCoreParameter("SessionId", sessionId);
 }
 
-long SearchMediaRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SearchMediaRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string SearchMediaRequest::getScrollToken()const
 {
 	return scrollToken_;
@@ -89,17 +56,6 @@ void SearchMediaRequest::setScrollToken(const std::string& scrollToken)
 {
 	scrollToken_ = scrollToken;
 	setCoreParameter("ScrollToken", scrollToken);
-}
-
-int SearchMediaRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void SearchMediaRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string SearchMediaRequest::getSearchType()const
@@ -124,17 +80,6 @@ void SearchMediaRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string SearchMediaRequest::getSortBy()const
-{
-	return sortBy_;
-}
-
-void SearchMediaRequest::setSortBy(const std::string& sortBy)
-{
-	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
-}
-
 std::string SearchMediaRequest::getResultTypes()const
 {
 	return resultTypes_;
@@ -144,6 +89,61 @@ void SearchMediaRequest::setResultTypes(const std::string& resultTypes)
 {
 	resultTypes_ = resultTypes;
 	setCoreParameter("ResultTypes", resultTypes);
+}
+
+std::string SearchMediaRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string SearchMediaRequest::getMatch()const
+{
+	return match_;
+}
+
+void SearchMediaRequest::setMatch(const std::string& match)
+{
+	match_ = match;
+	setCoreParameter("Match", match);
+}
+
+long SearchMediaRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SearchMediaRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+int SearchMediaRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void SearchMediaRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
+}
+
+std::string SearchMediaRequest::getSortBy()const
+{
+	return sortBy_;
+}
+
+void SearchMediaRequest::setSortBy(const std::string& sortBy)
+{
+	sortBy_ = sortBy;
+	setCoreParameter("SortBy", sortBy);
 }
 
 std::string SearchMediaRequest::getFields()const

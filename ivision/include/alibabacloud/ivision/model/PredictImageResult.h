@@ -60,6 +60,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string errorCode;
 					std::string errorMessage;
+					std::string modelId;
 					std::string dataName;
 				};
 

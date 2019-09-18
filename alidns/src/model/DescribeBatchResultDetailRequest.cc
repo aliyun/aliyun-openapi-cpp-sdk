@@ -36,6 +36,17 @@ void DescribeBatchResultDetailRequest::setBatchType(const std::string& batchType
 	setCoreParameter("BatchType", batchType);
 }
 
+int DescribeBatchResultDetailRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeBatchResultDetailRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeBatchResultDetailRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -67,17 +78,6 @@ void DescribeBatchResultDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int DescribeBatchResultDetailRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeBatchResultDetailRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeBatchResultDetailRequest::getTaskId()const

@@ -47,17 +47,6 @@ void QueryAsrJobListRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryAsrJobListRequest::getJobIds()const
-{
-	return jobIds_;
-}
-
-void QueryAsrJobListRequest::setJobIds(const std::string& jobIds)
-{
-	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
-}
-
 std::string QueryAsrJobListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryAsrJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryAsrJobListRequest::getJobIds()const
+{
+	return jobIds_;
+}
+
+void QueryAsrJobListRequest::setJobIds(const std::string& jobIds)
+{
+	jobIds_ = jobIds;
+	setCoreParameter("JobIds", jobIds);
 }
 

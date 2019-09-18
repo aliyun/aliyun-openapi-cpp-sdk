@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				long getGroupId()const;
 				void setGroupId(long groupId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getTaskName()const;
 				void setTaskName(const std::string& taskName);
-				long getId()const;
-				void setId(long id);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				long getId()const;
+				void setId(long id);
 
             private:
 				long groupId_;
-				int pageSize_;
 				std::string taskName_;
-				long id_;
 				int pageNumber_;
+				int pageSize_;
+				long id_;
 
 			};
 		}

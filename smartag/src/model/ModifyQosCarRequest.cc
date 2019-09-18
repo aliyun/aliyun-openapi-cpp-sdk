@@ -25,17 +25,6 @@ ModifyQosCarRequest::ModifyQosCarRequest() :
 ModifyQosCarRequest::~ModifyQosCarRequest()
 {}
 
-int ModifyQosCarRequest::getMaxBandwidthAbs()const
-{
-	return maxBandwidthAbs_;
-}
-
-void ModifyQosCarRequest::setMaxBandwidthAbs(int maxBandwidthAbs)
-{
-	maxBandwidthAbs_ = maxBandwidthAbs;
-	setCoreParameter("MaxBandwidthAbs", std::to_string(maxBandwidthAbs));
-}
-
 long ModifyQosCarRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void ModifyQosCarRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyQosCarRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyQosCarRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 int ModifyQosCarRequest::getMinBandwidthAbs()const
 {
 	return minBandwidthAbs_;
@@ -67,6 +45,72 @@ void ModifyQosCarRequest::setMinBandwidthAbs(int minBandwidthAbs)
 {
 	minBandwidthAbs_ = minBandwidthAbs;
 	setCoreParameter("MinBandwidthAbs", std::to_string(minBandwidthAbs));
+}
+
+std::string ModifyQosCarRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyQosCarRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string ModifyQosCarRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyQosCarRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyQosCarRequest::getPercentSourceType()const
+{
+	return percentSourceType_;
+}
+
+void ModifyQosCarRequest::setPercentSourceType(const std::string& percentSourceType)
+{
+	percentSourceType_ = percentSourceType;
+	setCoreParameter("PercentSourceType", percentSourceType);
+}
+
+std::string ModifyQosCarRequest::getQosId()const
+{
+	return qosId_;
+}
+
+void ModifyQosCarRequest::setQosId(const std::string& qosId)
+{
+	qosId_ = qosId;
+	setCoreParameter("QosId", qosId);
+}
+
+int ModifyQosCarRequest::getMaxBandwidthAbs()const
+{
+	return maxBandwidthAbs_;
+}
+
+void ModifyQosCarRequest::setMaxBandwidthAbs(int maxBandwidthAbs)
+{
+	maxBandwidthAbs_ = maxBandwidthAbs;
+	setCoreParameter("MaxBandwidthAbs", std::to_string(maxBandwidthAbs));
+}
+
+std::string ModifyQosCarRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyQosCarRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int ModifyQosCarRequest::getMaxBandwidthPercent()const
@@ -89,17 +133,6 @@ void ModifyQosCarRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyQosCarRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyQosCarRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 long ModifyQosCarRequest::getOwnerId()const
@@ -155,38 +188,5 @@ void ModifyQosCarRequest::setLimitType(const std::string& limitType)
 {
 	limitType_ = limitType;
 	setCoreParameter("LimitType", limitType);
-}
-
-std::string ModifyQosCarRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyQosCarRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyQosCarRequest::getPercentSourceType()const
-{
-	return percentSourceType_;
-}
-
-void ModifyQosCarRequest::setPercentSourceType(const std::string& percentSourceType)
-{
-	percentSourceType_ = percentSourceType;
-	setCoreParameter("PercentSourceType", percentSourceType);
-}
-
-std::string ModifyQosCarRequest::getQosId()const
-{
-	return qosId_;
-}
-
-void ModifyQosCarRequest::setQosId(const std::string& qosId)
-{
-	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
 }
 

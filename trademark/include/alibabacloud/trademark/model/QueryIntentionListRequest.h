@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				QueryIntentionListRequest();
 				~QueryIntentionListRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getSortOrder()const;
-				void setSortOrder(const std::string& sortOrder);
 				int getType()const;
 				void setType(int type);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getSortFiled()const;
 				void setSortFiled(const std::string& sortFiled);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getSortOrder()const;
+				void setSortOrder(const std::string& sortOrder);
 				int getStatus()const;
 				void setStatus(int status);
 
             private:
-				int pageSize_;
-				std::string sortOrder_;
 				int type_;
 				int pageNum_;
 				std::string sortFiled_;
+				int pageSize_;
+				std::string sortOrder_;
 				int status_;
 
 			};

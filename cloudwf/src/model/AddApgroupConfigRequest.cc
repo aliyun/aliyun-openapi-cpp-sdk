@@ -25,28 +25,6 @@ AddApgroupConfigRequest::AddApgroupConfigRequest() :
 AddApgroupConfigRequest::~AddApgroupConfigRequest()
 {}
 
-long AddApgroupConfigRequest::getParentApgroupId()const
-{
-	return parentApgroupId_;
-}
-
-void AddApgroupConfigRequest::setParentApgroupId(long parentApgroupId)
-{
-	parentApgroupId_ = parentApgroupId;
-	setCoreParameter("ParentApgroupId", std::to_string(parentApgroupId));
-}
-
-std::string AddApgroupConfigRequest::getName()const
-{
-	return name_;
-}
-
-void AddApgroupConfigRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string AddApgroupConfigRequest::getDescription()const
 {
 	return description_;
@@ -67,5 +45,27 @@ void AddApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long AddApgroupConfigRequest::getParentApgroupId()const
+{
+	return parentApgroupId_;
+}
+
+void AddApgroupConfigRequest::setParentApgroupId(long parentApgroupId)
+{
+	parentApgroupId_ = parentApgroupId;
+	setCoreParameter("ParentApgroupId", std::to_string(parentApgroupId));
+}
+
+std::string AddApgroupConfigRequest::getName()const
+{
+	return name_;
+}
+
+void AddApgroupConfigRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

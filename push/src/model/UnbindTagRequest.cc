@@ -25,6 +25,28 @@ UnbindTagRequest::UnbindTagRequest() :
 UnbindTagRequest::~UnbindTagRequest()
 {}
 
+std::string UnbindTagRequest::getKeyType()const
+{
+	return keyType_;
+}
+
+void UnbindTagRequest::setKeyType(const std::string& keyType)
+{
+	keyType_ = keyType;
+	setCoreParameter("KeyType", keyType);
+}
+
+std::string UnbindTagRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UnbindTagRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UnbindTagRequest::getTagName()const
 {
 	return tagName_;
@@ -56,27 +78,5 @@ void UnbindTagRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
 	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
-std::string UnbindTagRequest::getKeyType()const
-{
-	return keyType_;
-}
-
-void UnbindTagRequest::setKeyType(const std::string& keyType)
-{
-	keyType_ = keyType;
-	setCoreParameter("KeyType", keyType);
-}
-
-std::string UnbindTagRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UnbindTagRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

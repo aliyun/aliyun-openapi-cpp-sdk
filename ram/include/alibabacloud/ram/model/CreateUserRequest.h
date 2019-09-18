@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				CreateUserRequest();
 				~CreateUserRequest();
 
-				std::string getComments()const;
-				void setComments(const std::string& comments);
-				std::string getDisplayName()const;
-				void setDisplayName(const std::string& displayName);
 				std::string getMobilePhone()const;
 				void setMobilePhone(const std::string& mobilePhone);
 				std::string getEmail()const;
 				void setEmail(const std::string& email);
+				std::string getComments()const;
+				void setComments(const std::string& comments);
+				std::string getDisplayName()const;
+				void setDisplayName(const std::string& displayName);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
-				std::string comments_;
-				std::string displayName_;
 				std::string mobilePhone_;
 				std::string email_;
+				std::string comments_;
+				std::string displayName_;
 				std::string userName_;
 
 			};

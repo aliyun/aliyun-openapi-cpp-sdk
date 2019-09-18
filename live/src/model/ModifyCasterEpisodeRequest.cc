@@ -25,6 +25,28 @@ ModifyCasterEpisodeRequest::ModifyCasterEpisodeRequest() :
 ModifyCasterEpisodeRequest::~ModifyCasterEpisodeRequest()
 {}
 
+std::string ModifyCasterEpisodeRequest::getEpisodeName()const
+{
+	return episodeName_;
+}
+
+void ModifyCasterEpisodeRequest::setEpisodeName(const std::string& episodeName)
+{
+	episodeName_ = episodeName;
+	setCoreParameter("EpisodeName", episodeName);
+}
+
+std::string ModifyCasterEpisodeRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void ModifyCasterEpisodeRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
 std::string ModifyCasterEpisodeRequest::getResourceId()const
 {
 	return resourceId_;
@@ -48,17 +70,6 @@ void ModifyCasterEpisodeRequest::setComponentId(const std::vector<std::string>& 
 		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
 }
 
-std::string ModifyCasterEpisodeRequest::getSwitchType()const
-{
-	return switchType_;
-}
-
-void ModifyCasterEpisodeRequest::setSwitchType(const std::string& switchType)
-{
-	switchType_ = switchType;
-	setCoreParameter("SwitchType", switchType);
-}
-
 std::string ModifyCasterEpisodeRequest::getCasterId()const
 {
 	return casterId_;
@@ -70,17 +81,6 @@ void ModifyCasterEpisodeRequest::setCasterId(const std::string& casterId)
 	setCoreParameter("CasterId", casterId);
 }
 
-std::string ModifyCasterEpisodeRequest::getEpisodeName()const
-{
-	return episodeName_;
-}
-
-void ModifyCasterEpisodeRequest::setEpisodeName(const std::string& episodeName)
-{
-	episodeName_ = episodeName;
-	setCoreParameter("EpisodeName", episodeName);
-}
-
 std::string ModifyCasterEpisodeRequest::getEndTime()const
 {
 	return endTime_;
@@ -90,17 +90,6 @@ void ModifyCasterEpisodeRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string ModifyCasterEpisodeRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void ModifyCasterEpisodeRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
 }
 
 long ModifyCasterEpisodeRequest::getOwnerId()const
@@ -123,5 +112,16 @@ void ModifyCasterEpisodeRequest::setEpisodeId(const std::string& episodeId)
 {
 	episodeId_ = episodeId;
 	setCoreParameter("EpisodeId", episodeId);
+}
+
+std::string ModifyCasterEpisodeRequest::getSwitchType()const
+{
+	return switchType_;
+}
+
+void ModifyCasterEpisodeRequest::setSwitchType(const std::string& switchType)
+{
+	switchType_ = switchType;
+	setCoreParameter("SwitchType", switchType);
 }
 

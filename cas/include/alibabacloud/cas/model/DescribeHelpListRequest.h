@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeHelpListRequest();
 				~DescribeHelpListRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getCategory()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 
             private:
+				std::string resourceGroupId_;
 				std::string sourceIp_;
 				std::string category_;
 				std::string lang_;

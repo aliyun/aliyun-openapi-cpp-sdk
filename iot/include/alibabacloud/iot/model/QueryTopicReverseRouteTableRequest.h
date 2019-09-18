@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				QueryTopicReverseRouteTableRequest();
 				~QueryTopicReverseRouteTableRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getTopic()const;
 				void setTopic(const std::string& topic);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string regionId_;
 				std::string iotInstanceId_;
 				std::string topic_;
-				std::string accessKeyId_;
 
 			};
 		}

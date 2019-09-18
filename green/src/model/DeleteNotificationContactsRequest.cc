@@ -25,6 +25,17 @@ DeleteNotificationContactsRequest::DeleteNotificationContactsRequest() :
 DeleteNotificationContactsRequest::~DeleteNotificationContactsRequest()
 {}
 
+std::string DeleteNotificationContactsRequest::getContactTypes()const
+{
+	return contactTypes_;
+}
+
+void DeleteNotificationContactsRequest::setContactTypes(const std::string& contactTypes)
+{
+	contactTypes_ = contactTypes;
+	setCoreParameter("ContactTypes", contactTypes);
+}
+
 std::string DeleteNotificationContactsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DeleteNotificationContactsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DeleteNotificationContactsRequest::getContactTypes()const
-{
-	return contactTypes_;
-}
-
-void DeleteNotificationContactsRequest::setContactTypes(const std::string& contactTypes)
-{
-	contactTypes_ = contactTypes;
-	setCoreParameter("ContactTypes", contactTypes);
 }
 

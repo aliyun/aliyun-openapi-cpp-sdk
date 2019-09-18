@@ -36,17 +36,6 @@ void CreateMyGroupsRequest::setContactGroups(const std::string& contactGroups)
 	setCoreParameter("ContactGroups", contactGroups);
 }
 
-std::string CreateMyGroupsRequest::getOptions()const
-{
-	return options_;
-}
-
-void CreateMyGroupsRequest::setOptions(const std::string& options)
-{
-	options_ = options;
-	setCoreParameter("Options", options);
-}
-
 std::string CreateMyGroupsRequest::getType()const
 {
 	return type_;
@@ -58,17 +47,6 @@ void CreateMyGroupsRequest::setType(const std::string& type)
 	setCoreParameter("Type", type);
 }
 
-long CreateMyGroupsRequest::getServiceId()const
-{
-	return serviceId_;
-}
-
-void CreateMyGroupsRequest::setServiceId(long serviceId)
-{
-	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
-}
-
 std::string CreateMyGroupsRequest::getGroupName()const
 {
 	return groupName_;
@@ -78,6 +56,28 @@ void CreateMyGroupsRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
 	setCoreParameter("GroupName", groupName);
+}
+
+std::string CreateMyGroupsRequest::getOptions()const
+{
+	return options_;
+}
+
+void CreateMyGroupsRequest::setOptions(const std::string& options)
+{
+	options_ = options;
+	setCoreParameter("Options", options);
+}
+
+long CreateMyGroupsRequest::getServiceId()const
+{
+	return serviceId_;
+}
+
+void CreateMyGroupsRequest::setServiceId(long serviceId)
+{
+	serviceId_ = serviceId;
+	setCoreParameter("ServiceId", std::to_string(serviceId));
 }
 
 std::string CreateMyGroupsRequest::getBindUrl()const

@@ -36,15 +36,15 @@ void DescribeCertificationRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeCertificationRequest::getInstanceId()const
+std::string DescribeCertificationRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void DescribeCertificationRequest::setInstanceId(const std::string& instanceId)
+void DescribeCertificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeCertificationRequest::getSecurityToken()const
@@ -69,17 +69,6 @@ void DescribeCertificationRequest::setResourceOwnerAccount(const std::string& re
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeCertificationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCertificationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeCertificationRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,6 +91,17 @@ void DescribeCertificationRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeCertificationRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeCertificationRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
 std::string DescribeCertificationRequest::getParameters()const
 {
 	return parameters_;
@@ -111,16 +111,5 @@ void DescribeCertificationRequest::setParameters(const std::string& parameters)
 {
 	parameters_ = parameters;
 	setCoreParameter("Parameters", parameters);
-}
-
-std::string DescribeCertificationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeCertificationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -54,7 +54,6 @@ namespace AlibabaCloud
 				std::string getMonitorExtendInfo()const;
 				std::string getMonitorConfigId()const;
 				long getCreateTimestamp()const;
-				std::string getName()const;
 				int getInterval()const;
 
 			protected:
@@ -70,7 +69,6 @@ namespace AlibabaCloud
 				std::string monitorExtendInfo_;
 				std::string monitorConfigId_;
 				long createTimestamp_;
-				std::string name_;
 				int interval_;
 
 			};

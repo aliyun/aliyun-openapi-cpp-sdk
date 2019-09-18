@@ -25,28 +25,6 @@ DescribeDepartsRequest::DescribeDepartsRequest() :
 DescribeDepartsRequest::~DescribeDepartsRequest()
 {}
 
-std::string DescribeDepartsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeDepartsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-int DescribeDepartsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeDepartsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
 int DescribeDepartsRequest::getAccountType()const
 {
 	return accountType_;
@@ -58,6 +36,17 @@ void DescribeDepartsRequest::setAccountType(int accountType)
 	setCoreParameter("AccountType", std::to_string(accountType));
 }
 
+std::string DescribeDepartsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeDepartsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
 int DescribeDepartsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,17 +56,6 @@ void DescribeDepartsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeDepartsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeDepartsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDepartsRequest::getLang()const
@@ -100,5 +78,27 @@ void DescribeDepartsRequest::setKey(const std::string& key)
 {
 	key_ = key;
 	setCoreParameter("Key", key);
+}
+
+int DescribeDepartsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeDepartsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int DescribeDepartsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeDepartsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

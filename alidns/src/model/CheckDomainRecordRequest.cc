@@ -36,17 +36,6 @@ void CheckDomainRecordRequest::setRR(const std::string& rR)
 	setCoreParameter("RR", rR);
 }
 
-std::string CheckDomainRecordRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void CheckDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string CheckDomainRecordRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,17 +45,6 @@ void CheckDomainRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-std::string CheckDomainRecordRequest::getLang()const
-{
-	return lang_;
-}
-
-void CheckDomainRecordRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string CheckDomainRecordRequest::getType()const
@@ -80,17 +58,6 @@ void CheckDomainRecordRequest::setType(const std::string& type)
 	setCoreParameter("Type", type);
 }
 
-std::string CheckDomainRecordRequest::getValue()const
-{
-	return value_;
-}
-
-void CheckDomainRecordRequest::setValue(const std::string& value)
-{
-	value_ = value;
-	setCoreParameter("Value", value);
-}
-
 std::string CheckDomainRecordRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -100,5 +67,38 @@ void CheckDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CheckDomainRecordRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void CheckDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string CheckDomainRecordRequest::getLang()const
+{
+	return lang_;
+}
+
+void CheckDomainRecordRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string CheckDomainRecordRequest::getValue()const
+{
+	return value_;
+}
+
+void CheckDomainRecordRequest::setValue(const std::string& value)
+{
+	value_ = value;
+	setCoreParameter("Value", value);
 }
 

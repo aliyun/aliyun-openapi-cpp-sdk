@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				OnsMessagePageQueryByTopicRequest();
 				~OnsMessagePageQueryByTopicRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getBeginTime()const;
 				void setBeginTime(long beginTime);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
 
             private:
-				std::string instanceId_;
-				int pageSize_;
-				std::string topic_;
 				long endTime_;
 				long beginTime_;
 				int currentPage_;
+				std::string instanceId_;
+				int pageSize_;
+				std::string topic_;
 				std::string taskId_;
 
 			};

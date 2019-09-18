@@ -36,15 +36,15 @@ void UpdateCategoryNameRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UpdateCategoryNameRequest::getResourceOwnerAccount()const
+std::string UpdateCategoryNameRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void UpdateCategoryNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void UpdateCategoryNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateCategoryNameRequest::getCateId()const
@@ -56,6 +56,28 @@ void UpdateCategoryNameRequest::setCateId(const std::string& cateId)
 {
 	cateId_ = cateId;
 	setCoreParameter("CateId", cateId);
+}
+
+std::string UpdateCategoryNameRequest::getCateName()const
+{
+	return cateName_;
+}
+
+void UpdateCategoryNameRequest::setCateName(const std::string& cateName)
+{
+	cateName_ = cateName;
+	setCoreParameter("CateName", cateName);
+}
+
+std::string UpdateCategoryNameRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UpdateCategoryNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateCategoryNameRequest::getOwnerAccount()const
@@ -78,27 +100,5 @@ void UpdateCategoryNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string UpdateCategoryNameRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateCategoryNameRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string UpdateCategoryNameRequest::getCateName()const
-{
-	return cateName_;
-}
-
-void UpdateCategoryNameRequest::setCateName(const std::string& cateName)
-{
-	cateName_ = cateName;
-	setCoreParameter("CateName", cateName);
 }
 

@@ -36,6 +36,17 @@ void VoipGetTokenRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string VoipGetTokenRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void VoipGetTokenRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string VoipGetTokenRequest::getVoipId()const
 {
 	return voipId_;
@@ -89,16 +100,5 @@ void VoipGetTokenRequest::setIsCustomAccount(bool isCustomAccount)
 {
 	isCustomAccount_ = isCustomAccount;
 	setCoreParameter("IsCustomAccount", isCustomAccount ? "true" : "false");
-}
-
-std::string VoipGetTokenRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void VoipGetTokenRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

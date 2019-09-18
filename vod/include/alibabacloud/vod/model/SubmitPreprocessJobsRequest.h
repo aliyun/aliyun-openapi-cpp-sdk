@@ -43,18 +43,18 @@ namespace AlibabaCloud
 				void setVideoId(const std::string& videoId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPreprocessType()const;
-				void setPreprocessType(const std::string& preprocessType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPreprocessType()const;
+				void setPreprocessType(const std::string& preprocessType);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string videoId_;
 				long ownerId_;
-				std::string preprocessType_;
 				std::string accessKeyId_;
+				std::string preprocessType_;
 
 			};
 		}

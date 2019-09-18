@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				bool getDebug()const;
 				void setDebug(bool debug);
+				std::string getPlatform()const;
+				void setPlatform(const std::string& platform);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getPackageUrl()const;
@@ -45,16 +47,14 @@ namespace AlibabaCloud
 				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getPlatform()const;
-				void setPlatform(const std::string& platform);
 
             private:
 				bool debug_;
+				std::string platform_;
 				std::string sourceIp_;
 				std::string packageUrl_;
 				long id_;
 				std::string lang_;
-				std::string platform_;
 
 			};
 		}

@@ -25,18 +25,6 @@ SendCommandByMacRequest::SendCommandByMacRequest() :
 SendCommandByMacRequest::~SendCommandByMacRequest()
 {}
 
-std::vector<std::string> SendCommandByMacRequest::getMacList()const
-{
-	return macList_;
-}
-
-void SendCommandByMacRequest::setMacList(const std::vector<std::string>& macList)
-{
-	macList_ = macList;
-	for(int i = 0; i!= macList.size(); i++)
-		setCoreParameter("MacList."+ std::to_string(i), macList.at(i));
-}
-
 std::string SendCommandByMacRequest::getCommand()const
 {
 	return command_;
@@ -57,5 +45,17 @@ void SendCommandByMacRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::vector<std::string> SendCommandByMacRequest::getMacList()const
+{
+	return macList_;
+}
+
+void SendCommandByMacRequest::setMacList(const std::vector<std::string>& macList)
+{
+	macList_ = macList;
+	for(int i = 0; i!= macList.size(); i++)
+		setCoreParameter("MacList."+ std::to_string(i), macList.at(i));
 }
 

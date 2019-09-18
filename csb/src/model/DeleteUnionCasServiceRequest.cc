@@ -47,17 +47,6 @@ void DeleteUnionCasServiceRequest::setCasCsbName(const std::string& casCsbName)
 	setCoreParameter("CasCsbName", casCsbName);
 }
 
-std::string DeleteUnionCasServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteUnionCasServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteUnionCasServiceRequest::getSrcUserId()const
 {
 	return srcUserId_;

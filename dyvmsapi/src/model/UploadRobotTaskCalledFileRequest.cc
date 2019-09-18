@@ -36,28 +36,6 @@ void UploadRobotTaskCalledFileRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UploadRobotTaskCalledFileRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UploadRobotTaskCalledFileRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string UploadRobotTaskCalledFileRequest::getCalledNumber()const
-{
-	return calledNumber_;
-}
-
-void UploadRobotTaskCalledFileRequest::setCalledNumber(const std::string& calledNumber)
-{
-	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
-}
-
 std::string UploadRobotTaskCalledFileRequest::getTtsParamHead()const
 {
 	return ttsParamHead_;
@@ -80,6 +58,28 @@ void UploadRobotTaskCalledFileRequest::setTtsParam(const std::string& ttsParam)
 	setCoreParameter("TtsParam", ttsParam);
 }
 
+std::string UploadRobotTaskCalledFileRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UploadRobotTaskCalledFileRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UploadRobotTaskCalledFileRequest::getCalledNumber()const
+{
+	return calledNumber_;
+}
+
+void UploadRobotTaskCalledFileRequest::setCalledNumber(const std::string& calledNumber)
+{
+	calledNumber_ = calledNumber;
+	setCoreParameter("CalledNumber", calledNumber);
+}
+
 long UploadRobotTaskCalledFileRequest::getId()const
 {
 	return id_;
@@ -91,6 +91,17 @@ void UploadRobotTaskCalledFileRequest::setId(long id)
 	setCoreParameter("Id", std::to_string(id));
 }
 
+std::string UploadRobotTaskCalledFileRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UploadRobotTaskCalledFileRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long UploadRobotTaskCalledFileRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void UploadRobotTaskCalledFileRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string UploadRobotTaskCalledFileRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UploadRobotTaskCalledFileRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

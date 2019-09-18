@@ -30,14 +30,14 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CBN_EXPORT DescribeCensRequest : public RpcServiceRequest
 			{
-				struct Filter
-				{
-					std::vector<std::string> value;
-					std::string key;
-				};
 				struct Tag
 				{
 					std::string value;
+					std::string key;
+				};
+				struct Filter
+				{
+					Value value;
 					std::string key;
 				};
 
@@ -45,32 +45,32 @@ namespace AlibabaCloud
 				DescribeCensRequest();
 				~DescribeCensRequest();
 
-				std::vector<Filter> getFilter()const;
-				void setFilter(const std::vector<Filter>& filter);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::vector<Filter> getFilter()const;
+				void setFilter(const std::vector<Filter>& filter);
 
             private:
-				std::vector<Filter> filter_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
+				int pageNumber_;
 				int pageSize_;
 				std::vector<Tag> tag_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
-				int pageNumber_;
+				std::vector<Filter> filter_;
 
 			};
 		}

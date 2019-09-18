@@ -35,37 +35,37 @@ namespace AlibabaCloud
 				DescribeOssObjectsRequest();
 				~DescribeOssObjectsRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getQueryName()const;
 				void setQueryName(const std::string& queryName);
 				int getRiskLevelId()const;
 				void setRiskLevelId(int riskLevelId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getName()const;
+				void setName(const std::string& name);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
 
             private:
-				std::string instanceId_;
-				std::string sourceIp_;
-				int featureType_;
-				std::string name_;
-				int pageSize_;
-				int currentPage_;
 				std::string queryName_;
 				int riskLevelId_;
+				std::string sourceIp_;
+				int pageSize_;
 				std::string lang_;
+				int featureType_;
+				int currentPage_;
+				std::string instanceId_;
+				std::string name_;
 				long ruleId_;
 
 			};

@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				AttachCenChildInstanceRequest();
 				~AttachCenChildInstanceRequest();
 
-				std::string getChildInstanceId()const;
-				void setChildInstanceId(const std::string& childInstanceId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getCenId()const;
 				void setCenId(const std::string& cenId);
+				std::string getChildInstanceRegionId()const;
+				void setChildInstanceRegionId(const std::string& childInstanceRegionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -51,19 +51,19 @@ namespace AlibabaCloud
 				void setChildInstanceType(const std::string& childInstanceType);
 				long getChildInstanceOwnerId()const;
 				void setChildInstanceOwnerId(long childInstanceOwnerId);
-				std::string getChildInstanceRegionId()const;
-				void setChildInstanceRegionId(const std::string& childInstanceRegionId);
+				std::string getChildInstanceId()const;
+				void setChildInstanceId(const std::string& childInstanceId);
 
             private:
-				std::string childInstanceId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string cenId_;
+				std::string childInstanceRegionId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string childInstanceType_;
 				long childInstanceOwnerId_;
-				std::string childInstanceRegionId_;
+				std::string childInstanceId_;
 
 			};
 		}

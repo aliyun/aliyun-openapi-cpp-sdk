@@ -25,17 +25,6 @@ ResetApConfigRequest::ResetApConfigRequest() :
 ResetApConfigRequest::~ResetApConfigRequest()
 {}
 
-long ResetApConfigRequest::getId()const
-{
-	return id_;
-}
-
-void ResetApConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string ResetApConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void ResetApConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ResetApConfigRequest::getId()const
+{
+	return id_;
+}
+
+void ResetApConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

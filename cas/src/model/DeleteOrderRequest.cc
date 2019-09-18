@@ -25,17 +25,6 @@ DeleteOrderRequest::DeleteOrderRequest() :
 DeleteOrderRequest::~DeleteOrderRequest()
 {}
 
-std::string DeleteOrderRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DeleteOrderRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DeleteOrderRequest::getOrderId()const
 {
 	return orderId_;
@@ -45,6 +34,28 @@ void DeleteOrderRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
 	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+std::string DeleteOrderRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DeleteOrderRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DeleteOrderRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DeleteOrderRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteOrderRequest::getLang()const

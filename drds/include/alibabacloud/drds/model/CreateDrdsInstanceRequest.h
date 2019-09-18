@@ -37,20 +37,14 @@ namespace AlibabaCloud
 
 				bool getIsAutoRenew()const;
 				void setIsAutoRenew(bool isAutoRenew);
-				int getQuantity()const;
-				void setQuantity(int quantity);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getSpecification()const;
-				void setSpecification(const std::string& specification);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getVswitchId()const;
-				void setVswitchId(const std::string& vswitchId);
 				int getDuration()const;
 				void setDuration(int duration);
 				bool getIsHa()const;
@@ -59,6 +53,12 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getInstanceSeries()const;
 				void setInstanceSeries(const std::string& instanceSeries);
+				int getQuantity()const;
+				void setQuantity(int quantity);
+				std::string getSpecification()const;
+				void setSpecification(const std::string& specification);
+				std::string getVswitchId()const;
+				void setVswitchId(const std::string& vswitchId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getZoneId()const;
@@ -70,17 +70,17 @@ namespace AlibabaCloud
 
             private:
 				bool isAutoRenew_;
-				int quantity_;
 				std::string clientToken_;
 				std::string description_;
-				std::string specification_;
 				std::string type_;
 				std::string accessKeyId_;
-				std::string vswitchId_;
 				int duration_;
 				bool isHa_;
 				std::string regionId_;
 				std::string instanceSeries_;
+				int quantity_;
+				std::string specification_;
+				std::string vswitchId_;
 				std::string vpcId_;
 				std::string zoneId_;
 				std::string payType_;

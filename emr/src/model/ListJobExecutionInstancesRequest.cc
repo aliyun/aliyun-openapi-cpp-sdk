@@ -36,39 +36,6 @@ void ListJobExecutionInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
-{
-	return executionPlanInstanceId_;
-}
-
-void ListJobExecutionInstancesRequest::setExecutionPlanInstanceId(const std::string& executionPlanInstanceId)
-{
-	executionPlanInstanceId_ = executionPlanInstanceId;
-	setCoreParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
-}
-
-std::string ListJobExecutionInstancesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListJobExecutionInstancesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListJobExecutionInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListJobExecutionInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 bool ListJobExecutionInstancesRequest::getIsDesc()const
 {
 	return isDesc_;
@@ -100,5 +67,38 @@ void ListJobExecutionInstancesRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
+{
+	return executionPlanInstanceId_;
+}
+
+void ListJobExecutionInstancesRequest::setExecutionPlanInstanceId(const std::string& executionPlanInstanceId)
+{
+	executionPlanInstanceId_ = executionPlanInstanceId;
+	setCoreParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
+}
+
+std::string ListJobExecutionInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListJobExecutionInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListJobExecutionInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListJobExecutionInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

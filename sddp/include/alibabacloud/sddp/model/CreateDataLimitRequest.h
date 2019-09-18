@@ -35,34 +35,34 @@ namespace AlibabaCloud
 				CreateDataLimitRequest();
 				~CreateDataLimitRequest();
 
+				std::string getParentId()const;
+				void setParentId(const std::string& parentId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getConnector()const;
-				void setConnector(const std::string& connector);
 				std::string getDataLimitList()const;
 				void setDataLimitList(const std::string& dataLimitList);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getResourceType()const;
-				void setResourceType(int resourceType);
 				std::string getServiceRegionId()const;
 				void setServiceRegionId(const std::string& serviceRegionId);
-				std::string getParentId()const;
-				void setParentId(const std::string& parentId);
+				int getResourceType()const;
+				void setResourceType(int resourceType);
+				std::string getConnector()const;
+				void setConnector(const std::string& connector);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
+				std::string parentId_;
 				std::string password_;
 				std::string sourceIp_;
-				std::string connector_;
 				std::string dataLimitList_;
 				std::string lang_;
-				int resourceType_;
 				std::string serviceRegionId_;
-				std::string parentId_;
+				int resourceType_;
+				std::string connector_;
 				std::string userName_;
 
 			};

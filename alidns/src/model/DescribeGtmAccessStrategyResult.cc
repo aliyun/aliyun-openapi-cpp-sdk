@@ -35,13 +35,9 @@ DescribeGtmAccessStrategyResult::~DescribeGtmAccessStrategyResult()
 
 void DescribeGtmAccessStrategyResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allLines = value["Lines"]["Line"];
 	for (auto value : allLines)
@@ -77,7 +73,45 @@ void DescribeGtmAccessStrategyResult::parse(const std::string &payload)
 		accessStatus_ = value["AccessStatus"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
+	if(!value["DefaultAddrPoolStatus"].isNull())
+		defaultAddrPoolStatus_ = value["DefaultAddrPoolStatus"].asString();
+	if(!value["FailoverAddrPoolStatus"].isNull())
+		failoverAddrPoolStatus_ = value["FailoverAddrPoolStatus"].asString();
+	if(!value["DefaultAddrPoolMonitorStatus"].isNull())
+		defaultAddrPoolMonitorStatus_ = value["DefaultAddrPoolMonitorStatus"].asString();
+	if(!value["FailoverAddrPoolMonitorStatus"].isNull())
+		failoverAddrPoolMonitorStatus_ = value["FailoverAddrPoolMonitorStatus"].asString();
 
+}
+
+std::string DescribeGtmAccessStrategyResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+std::string DescribeGtmAccessStrategyResult::getStrategyId()const
+{
+	return strategyId_;
+}
+
+std::string DescribeGtmAccessStrategyResult::getDefaultAddrPoolStatus()const
+{
+	return defaultAddrPoolStatus_;
+}
+
+std::string DescribeGtmAccessStrategyResult::getFailoverAddrPoolId()const
+{
+	return failoverAddrPoolId_;
+}
+
+std::string DescribeGtmAccessStrategyResult::getAccessStatus()const
+{
+	return accessStatus_;
+}
+
+std::string DescribeGtmAccessStrategyResult::getDefaultAddrPoolMonitorStatus()const
+{
+	return defaultAddrPoolMonitorStatus_;
 }
 
 std::string DescribeGtmAccessStrategyResult::getDefaultAddrPoolName()const
@@ -95,14 +129,9 @@ std::string DescribeGtmAccessStrategyResult::getStrategyName()const
 	return strategyName_;
 }
 
-std::string DescribeGtmAccessStrategyResult::getInstanceId()const
+std::string DescribeGtmAccessStrategyResult::getFailoverAddrPoolStatus()const
 {
-	return instanceId_;
-}
-
-std::string DescribeGtmAccessStrategyResult::getStrategyId()const
-{
-	return strategyId_;
+	return failoverAddrPoolStatus_;
 }
 
 std::string DescribeGtmAccessStrategyResult::getAccessMode()const
@@ -120,18 +149,13 @@ std::string DescribeGtmAccessStrategyResult::getFailoverAddrPoolName()const
 	return failoverAddrPoolName_;
 }
 
-std::string DescribeGtmAccessStrategyResult::getFailoverAddrPoolId()const
+std::string DescribeGtmAccessStrategyResult::getFailoverAddrPoolMonitorStatus()const
 {
-	return failoverAddrPoolId_;
+	return failoverAddrPoolMonitorStatus_;
 }
 
 std::vector<DescribeGtmAccessStrategyResult::Line> DescribeGtmAccessStrategyResult::getLines()const
 {
 	return lines_;
-}
-
-std::string DescribeGtmAccessStrategyResult::getAccessStatus()const
-{
-	return accessStatus_;
 }
 

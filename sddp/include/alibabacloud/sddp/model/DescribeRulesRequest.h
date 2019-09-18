@@ -35,31 +35,31 @@ namespace AlibabaCloud
 				DescribeRulesRequest();
 				~DescribeRulesRequest();
 
+				long getRiskLevelId()const;
+				void setRiskLevelId(long riskLevelId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				long getRiskLevelId()const;
-				void setRiskLevelId(long riskLevelId);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				int getCustomType()const;
 				void setCustomType(int customType);
+				std::string getName()const;
+				void setName(const std::string& name);
 				int getCategory()const;
 				void setCategory(int category);
 
             private:
+				long riskLevelId_;
 				std::string sourceIp_;
 				int pageSize_;
-				std::string name_;
-				int currentPage_;
-				long riskLevelId_;
 				std::string lang_;
+				int currentPage_;
 				int customType_;
+				std::string name_;
 				int category_;
 
 			};

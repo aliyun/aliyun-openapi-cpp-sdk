@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ShopGroupCreateRequest();
 				~ShopGroupCreateRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getShopIds()const;
 				void setShopIds(const std::string& shopIds);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				long getBid()const;
 				void setBid(long bid);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string description_;
+				std::string accessKeyId_;
 				std::string shopIds_;
 				std::string name_;
-				std::string description_;
 				long bid_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -25,14 +25,3 @@ GetStylesRequest::GetStylesRequest() :
 GetStylesRequest::~GetStylesRequest()
 {}
 
-std::string GetStylesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetStylesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

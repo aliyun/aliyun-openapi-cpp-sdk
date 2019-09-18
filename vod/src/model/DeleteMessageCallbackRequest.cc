@@ -36,6 +36,28 @@ void DeleteMessageCallbackRequest::setResourceOwnerId(const std::string& resourc
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
+long DeleteMessageCallbackRequest::getResourceRealOwnerId()const
+{
+	return resourceRealOwnerId_;
+}
+
+void DeleteMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
+{
+	resourceRealOwnerId_ = resourceRealOwnerId;
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+}
+
+std::string DeleteMessageCallbackRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteMessageCallbackRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,28 +80,6 @@ void DeleteMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccou
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeleteMessageCallbackRequest::getAppId()const
-{
-	return appId_;
-}
-
-void DeleteMessageCallbackRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setCoreParameter("AppId", appId);
-}
-
-long DeleteMessageCallbackRequest::getResourceRealOwnerId()const
-{
-	return resourceRealOwnerId_;
-}
-
-void DeleteMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
-{
-	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
-}
-
 std::string DeleteMessageCallbackRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -91,14 +91,14 @@ void DeleteMessageCallbackRequest::setOwnerId(const std::string& ownerId)
 	setCoreParameter("OwnerId", ownerId);
 }
 
-std::string DeleteMessageCallbackRequest::getAccessKeyId()const
+std::string DeleteMessageCallbackRequest::getAppId()const
 {
-	return accessKeyId_;
+	return appId_;
 }
 
-void DeleteMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
+void DeleteMessageCallbackRequest::setAppId(const std::string& appId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
 }
 

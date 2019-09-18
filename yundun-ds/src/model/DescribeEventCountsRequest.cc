@@ -25,28 +25,6 @@ DescribeEventCountsRequest::DescribeEventCountsRequest() :
 DescribeEventCountsRequest::~DescribeEventCountsRequest()
 {}
 
-std::string DescribeEventCountsRequest::getTypeCode()const
-{
-	return typeCode_;
-}
-
-void DescribeEventCountsRequest::setTypeCode(const std::string& typeCode)
-{
-	typeCode_ = typeCode;
-	setCoreParameter("TypeCode", typeCode);
-}
-
-std::string DescribeEventCountsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeEventCountsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeEventCountsRequest::getFeatureType()const
 {
 	return featureType_;
@@ -67,6 +45,28 @@ void DescribeEventCountsRequest::setCountType(int countType)
 {
 	countType_ = countType;
 	setCoreParameter("CountType", std::to_string(countType));
+}
+
+std::string DescribeEventCountsRequest::getTypeCode()const
+{
+	return typeCode_;
+}
+
+void DescribeEventCountsRequest::setTypeCode(const std::string& typeCode)
+{
+	typeCode_ = typeCode;
+	setCoreParameter("TypeCode", typeCode);
+}
+
+std::string DescribeEventCountsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeEventCountsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeEventCountsRequest::getDays()const

@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				CreateCenRequest();
 				~CreateCenRequest();
 
-				std::string getProtectionLevel()const;
-				void setProtectionLevel(const std::string& protectionLevel);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getProtectionLevel()const;
+				void setProtectionLevel(const std::string& protectionLevel);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string protectionLevel_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
-				std::string ownerAccount_;
-				std::string name_;
 				std::string description_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
+				std::string protectionLevel_;
+				std::string name_;
 
 			};
 		}

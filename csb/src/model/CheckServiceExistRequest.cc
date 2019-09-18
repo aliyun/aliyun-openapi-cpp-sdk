@@ -25,17 +25,6 @@ CheckServiceExistRequest::CheckServiceExistRequest() :
 CheckServiceExistRequest::~CheckServiceExistRequest()
 {}
 
-std::string CheckServiceExistRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CheckServiceExistRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long CheckServiceExistRequest::getCsbId()const
 {
 	return csbId_;

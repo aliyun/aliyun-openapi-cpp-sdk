@@ -47,17 +47,6 @@ void GetCloudConnectNetworkUseLimitRequest::setResourceOwnerAccount(const std::s
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string GetCloudConnectNetworkUseLimitRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetCloudConnectNetworkUseLimitRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetCloudConnectNetworkUseLimitRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,5 +67,16 @@ void GetCloudConnectNetworkUseLimitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string GetCloudConnectNetworkUseLimitRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetCloudConnectNetworkUseLimitRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

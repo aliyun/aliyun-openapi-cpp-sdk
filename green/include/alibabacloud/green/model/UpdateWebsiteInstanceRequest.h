@@ -35,31 +35,31 @@ namespace AlibabaCloud
 				UpdateWebsiteInstanceRequest();
 				~UpdateWebsiteInstanceRequest();
 
+				std::string getIndexPage()const;
+				void setIndexPage(const std::string& indexPage);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				int getWebsiteScanInterval()const;
+				void setWebsiteScanInterval(int websiteScanInterval);
 				std::string getSiteProtocol()const;
 				void setSiteProtocol(const std::string& siteProtocol);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getWebsiteScanInterval()const;
-				void setWebsiteScanInterval(int websiteScanInterval);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
-				std::string getIndexPage()const;
-				void setIndexPage(const std::string& indexPage);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				int getIndexPageScanInterval()const;
 				void setIndexPageScanInterval(int indexPageScanInterval);
 
             private:
+				std::string indexPage_;
+				std::string sourceIp_;
+				std::string lang_;
+				int websiteScanInterval_;
 				std::string siteProtocol_;
 				std::string instanceId_;
-				std::string sourceIp_;
-				int websiteScanInterval_;
 				std::string domain_;
-				std::string indexPage_;
-				std::string lang_;
 				int indexPageScanInterval_;
 
 			};

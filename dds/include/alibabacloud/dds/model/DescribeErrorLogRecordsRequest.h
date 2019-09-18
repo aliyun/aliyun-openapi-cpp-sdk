@@ -35,30 +35,16 @@ namespace AlibabaCloud
 				DescribeErrorLogRecordsRequest();
 				~DescribeErrorLogRecordsRequest();
 
-				long getSQLId()const;
-				void setSQLId(long sQLId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getDBInstanceId()const;
@@ -67,24 +53,35 @@ namespace AlibabaCloud
 				void setRoleType(const std::string& roleType);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
+				long getSQLId()const;
+				void setSQLId(long sQLId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
 
             private:
-				long sQLId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string endTime_;
 				std::string startTime_;
-				long ownerId_;
 				int pageNumber_;
 				std::string accessKeyId_;
-				std::string dBName_;
 				std::string securityToken_;
-				std::string regionId_;
 				int pageSize_;
 				std::string dBInstanceId_;
 				std::string roleType_;
 				std::string nodeId_;
+				long sQLId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string endTime_;
+				long ownerId_;
+				std::string dBName_;
 
 			};
 		}

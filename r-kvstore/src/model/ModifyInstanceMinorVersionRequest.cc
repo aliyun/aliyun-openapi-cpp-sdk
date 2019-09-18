@@ -36,15 +36,26 @@ void ModifyInstanceMinorVersionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceMinorVersionRequest::getInstanceId()const
+std::string ModifyInstanceMinorVersionRequest::getEffectTime()const
 {
-	return instanceId_;
+	return effectTime_;
 }
 
-void ModifyInstanceMinorVersionRequest::setInstanceId(const std::string& instanceId)
+void ModifyInstanceMinorVersionRequest::setEffectTime(const std::string& effectTime)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	effectTime_ = effectTime;
+	setCoreParameter("EffectTime", effectTime);
+}
+
+std::string ModifyInstanceMinorVersionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyInstanceMinorVersionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceMinorVersionRequest::getSecurityToken()const
@@ -67,17 +78,6 @@ void ModifyInstanceMinorVersionRequest::setResourceOwnerAccount(const std::strin
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyInstanceMinorVersionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyInstanceMinorVersionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceMinorVersionRequest::getMinorversion()const
@@ -113,25 +113,14 @@ void ModifyInstanceMinorVersionRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyInstanceMinorVersionRequest::getEffectTime()const
+std::string ModifyInstanceMinorVersionRequest::getInstanceId()const
 {
-	return effectTime_;
+	return instanceId_;
 }
 
-void ModifyInstanceMinorVersionRequest::setEffectTime(const std::string& effectTime)
+void ModifyInstanceMinorVersionRequest::setInstanceId(const std::string& instanceId)
 {
-	effectTime_ = effectTime;
-	setCoreParameter("EffectTime", effectTime);
-}
-
-std::string ModifyInstanceMinorVersionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyInstanceMinorVersionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

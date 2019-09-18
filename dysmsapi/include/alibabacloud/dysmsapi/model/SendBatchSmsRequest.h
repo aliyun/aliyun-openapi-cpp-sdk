@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				SendBatchSmsRequest();
 				~SendBatchSmsRequest();
 
-				std::string getTemplateParamJson()const;
-				void setTemplateParamJson(const std::string& templateParamJson);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTemplateParamJson()const;
+				void setTemplateParamJson(const std::string& templateParamJson);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getSmsUpExtendCodeJson()const;
-				void setSmsUpExtendCodeJson(const std::string& smsUpExtendCodeJson);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSmsUpExtendCodeJson()const;
+				void setSmsUpExtendCodeJson(const std::string& smsUpExtendCodeJson);
 				std::string getSignNameJson()const;
 				void setSignNameJson(const std::string& signNameJson);
 				std::string getTemplateCode()const;
 				void setTemplateCode(const std::string& templateCode);
 				std::string getPhoneNumberJson()const;
 				void setPhoneNumberJson(const std::string& phoneNumberJson);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string templateParamJson_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string templateParamJson_;
 				std::string resourceOwnerAccount_;
-				std::string smsUpExtendCodeJson_;
 				long ownerId_;
+				std::string smsUpExtendCodeJson_;
 				std::string signNameJson_;
 				std::string templateCode_;
 				std::string phoneNumberJson_;
-				std::string accessKeyId_;
 
 			};
 		}

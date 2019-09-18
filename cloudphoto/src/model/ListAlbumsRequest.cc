@@ -36,17 +36,6 @@ void ListAlbumsRequest::setCursor(const std::string& cursor)
 	setCoreParameter("Cursor", cursor);
 }
 
-int ListAlbumsRequest::getSize()const
-{
-	return size_;
-}
-
-void ListAlbumsRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string ListAlbumsRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -67,6 +56,17 @@ void ListAlbumsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
+}
+
+int ListAlbumsRequest::getSize()const
+{
+	return size_;
+}
+
+void ListAlbumsRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListAlbumsRequest::getState()const

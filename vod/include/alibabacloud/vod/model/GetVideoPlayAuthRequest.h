@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getReAuthInfo()const;
 				void setReAuthInfo(const std::string& reAuthInfo);
 				std::string getPlayConfig()const;
 				void setPlayConfig(const std::string& playConfig);
-				long getAuthInfoTimeout()const;
-				void setAuthInfoTimeout(long authInfoTimeout);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				long getAuthInfoTimeout()const;
+				void setAuthInfoTimeout(long authInfoTimeout);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string reAuthInfo_;
 				std::string playConfig_;
-				long authInfoTimeout_;
+				std::string resourceOwnerAccount_;
 				std::string videoId_;
 				long ownerId_;
+				long authInfoTimeout_;
 
 			};
 		}

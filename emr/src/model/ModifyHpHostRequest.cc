@@ -80,17 +80,6 @@ void ModifyHpHostRequest::setRole(const std::string& role)
 	setCoreParameter("Role", role);
 }
 
-std::string ModifyHpHostRequest::getSerialNumber()const
-{
-	return serialNumber_;
-}
-
-void ModifyHpHostRequest::setSerialNumber(const std::string& serialNumber)
-{
-	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
-}
-
 std::string ModifyHpHostRequest::getHostType()const
 {
 	return hostType_;
@@ -113,24 +102,6 @@ void ModifyHpHostRequest::setSecurityGroupId(const std::string& securityGroupId)
 	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
-std::vector<ModifyHpHostRequest::HpHostDisk> ModifyHpHostRequest::getHpHostDisk()const
-{
-	return hpHostDisk_;
-}
-
-void ModifyHpHostRequest::setHpHostDisk(const std::vector<HpHostDisk>& hpHostDisk)
-{
-	hpHostDisk_ = hpHostDisk;
-	int i = 0;
-	for(int i = 0; i!= hpHostDisk.size(); i++)	{
-		auto obj = hpHostDisk.at(i);
-		std::string str ="HpHostDisk."+ std::to_string(i);
-		setCoreParameter(str + ".DiskSize", obj.diskSize);
-		setCoreParameter(str + ".MountPath", obj.mountPath);
-		setCoreParameter(str + ".DiskDevice", obj.diskDevice);
-	}
-}
-
 std::string ModifyHpHostRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -142,17 +113,6 @@ void ModifyHpHostRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string ModifyHpHostRequest::getVswitchId()const
-{
-	return vswitchId_;
-}
-
-void ModifyHpHostRequest::setVswitchId(const std::string& vswitchId)
-{
-	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", vswitchId);
-}
-
 std::string ModifyHpHostRequest::getHpHostBizId()const
 {
 	return hpHostBizId_;
@@ -162,17 +122,6 @@ void ModifyHpHostRequest::setHpHostBizId(const std::string& hpHostBizId)
 {
 	hpHostBizId_ = hpHostBizId;
 	setCoreParameter("HpHostBizId", hpHostBizId);
-}
-
-std::string ModifyHpHostRequest::getExternalKey()const
-{
-	return externalKey_;
-}
-
-void ModifyHpHostRequest::setExternalKey(const std::string& externalKey)
-{
-	externalKey_ = externalKey;
-	setCoreParameter("ExternalKey", externalKey);
 }
 
 std::string ModifyHpHostRequest::getHostName()const
@@ -197,17 +146,6 @@ void ModifyHpHostRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string ModifyHpHostRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void ModifyHpHostRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
 std::string ModifyHpHostRequest::getInnerIp()const
 {
 	return innerIp_;
@@ -228,5 +166,67 @@ void ModifyHpHostRequest::setExternalIp(const std::string& externalIp)
 {
 	externalIp_ = externalIp;
 	setCoreParameter("ExternalIp", externalIp);
+}
+
+std::string ModifyHpHostRequest::getSerialNumber()const
+{
+	return serialNumber_;
+}
+
+void ModifyHpHostRequest::setSerialNumber(const std::string& serialNumber)
+{
+	serialNumber_ = serialNumber;
+	setCoreParameter("SerialNumber", serialNumber);
+}
+
+std::vector<ModifyHpHostRequest::HpHostDisk> ModifyHpHostRequest::getHpHostDisk()const
+{
+	return hpHostDisk_;
+}
+
+void ModifyHpHostRequest::setHpHostDisk(const std::vector<HpHostDisk>& hpHostDisk)
+{
+	hpHostDisk_ = hpHostDisk;
+	int i = 0;
+	for(int i = 0; i!= hpHostDisk.size(); i++)	{
+		auto obj = hpHostDisk.at(i);
+		std::string str ="HpHostDisk."+ std::to_string(i);
+		setCoreParameter(str + ".DiskSize", obj.diskSize);
+		setCoreParameter(str + ".MountPath", obj.mountPath);
+		setCoreParameter(str + ".DiskDevice", obj.diskDevice);
+	}
+}
+
+std::string ModifyHpHostRequest::getVswitchId()const
+{
+	return vswitchId_;
+}
+
+void ModifyHpHostRequest::setVswitchId(const std::string& vswitchId)
+{
+	vswitchId_ = vswitchId;
+	setCoreParameter("VswitchId", vswitchId);
+}
+
+std::string ModifyHpHostRequest::getExternalKey()const
+{
+	return externalKey_;
+}
+
+void ModifyHpHostRequest::setExternalKey(const std::string& externalKey)
+{
+	externalKey_ = externalKey;
+	setCoreParameter("ExternalKey", externalKey);
+}
+
+std::string ModifyHpHostRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void ModifyHpHostRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
 }
 

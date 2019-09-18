@@ -36,17 +36,6 @@ void QueryTaskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QueryTaskRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void QueryTaskRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string QueryTaskRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +45,6 @@ void QueryTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerA
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string QueryTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void QueryTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string QueryTaskRequest::getOwnerAccount()const

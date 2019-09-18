@@ -25,17 +25,6 @@ DescribeKeywordRequest::DescribeKeywordRequest() :
 DescribeKeywordRequest::~DescribeKeywordRequest()
 {}
 
-int DescribeKeywordRequest::getTotalCount()const
-{
-	return totalCount_;
-}
-
-void DescribeKeywordRequest::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
-}
-
 std::string DescribeKeywordRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,17 +36,6 @@ void DescribeKeywordRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-int DescribeKeywordRequest::getKeywordLibId()const
-{
-	return keywordLibId_;
-}
-
-void DescribeKeywordRequest::setKeywordLibId(int keywordLibId)
-{
-	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
-}
-
 int DescribeKeywordRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,17 +45,6 @@ void DescribeKeywordRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribeKeywordRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeKeywordRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeKeywordRequest::getLang()const
@@ -100,5 +67,38 @@ void DescribeKeywordRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setCoreParameter("Keyword", keyword);
+}
+
+int DescribeKeywordRequest::getTotalCount()const
+{
+	return totalCount_;
+}
+
+void DescribeKeywordRequest::setTotalCount(int totalCount)
+{
+	totalCount_ = totalCount;
+	setCoreParameter("TotalCount", std::to_string(totalCount));
+}
+
+int DescribeKeywordRequest::getKeywordLibId()const
+{
+	return keywordLibId_;
+}
+
+void DescribeKeywordRequest::setKeywordLibId(int keywordLibId)
+{
+	keywordLibId_ = keywordLibId;
+	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+}
+
+int DescribeKeywordRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeKeywordRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

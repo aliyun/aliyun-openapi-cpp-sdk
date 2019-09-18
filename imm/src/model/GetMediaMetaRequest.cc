@@ -25,17 +25,6 @@ GetMediaMetaRequest::GetMediaMetaRequest() :
 GetMediaMetaRequest::~GetMediaMetaRequest()
 {}
 
-std::string GetMediaMetaRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetMediaMetaRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetMediaMetaRequest::getMediaUri()const
 {
 	return mediaUri_;

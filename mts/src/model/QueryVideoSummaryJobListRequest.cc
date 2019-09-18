@@ -47,17 +47,6 @@ void QueryVideoSummaryJobListRequest::setResourceOwnerAccount(const std::string&
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryVideoSummaryJobListRequest::getJobIds()const
-{
-	return jobIds_;
-}
-
-void QueryVideoSummaryJobListRequest::setJobIds(const std::string& jobIds)
-{
-	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
-}
-
 std::string QueryVideoSummaryJobListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryVideoSummaryJobListRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryVideoSummaryJobListRequest::getJobIds()const
+{
+	return jobIds_;
+}
+
+void QueryVideoSummaryJobListRequest::setJobIds(const std::string& jobIds)
+{
+	jobIds_ = jobIds;
+	setCoreParameter("JobIds", jobIds);
 }
 

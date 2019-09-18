@@ -36,17 +36,6 @@ void DescribeDepartCountsRequest::setTypeCode(const std::string& typeCode)
 	setCoreParameter("TypeCode", typeCode);
 }
 
-std::string DescribeDepartCountsRequest::getDepartName()const
-{
-	return departName_;
-}
-
-void DescribeDepartCountsRequest::setDepartName(const std::string& departName)
-{
-	departName_ = departName;
-	setCoreParameter("DepartName", departName);
-}
-
 std::string DescribeDepartCountsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,17 +45,6 @@ void DescribeDepartCountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-int DescribeDepartCountsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeDepartCountsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDepartCountsRequest::getPageSize()const
@@ -80,6 +58,28 @@ void DescribeDepartCountsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeDepartCountsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeDepartCountsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+int DescribeDepartCountsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeDepartCountsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
 int DescribeDepartCountsRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -91,14 +91,14 @@ void DescribeDepartCountsRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeDepartCountsRequest::getLang()const
+std::string DescribeDepartCountsRequest::getDepartName()const
 {
-	return lang_;
+	return departName_;
 }
 
-void DescribeDepartCountsRequest::setLang(const std::string& lang)
+void DescribeDepartCountsRequest::setDepartName(const std::string& departName)
 {
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	departName_ = departName;
+	setCoreParameter("DepartName", departName);
 }
 

@@ -36,28 +36,6 @@ void ListOfficeConversionTaskRequest::setMaxKeys(int maxKeys)
 	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
-std::string ListOfficeConversionTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListOfficeConversionTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListOfficeConversionTaskRequest::getMarker()const
-{
-	return marker_;
-}
-
-void ListOfficeConversionTaskRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setCoreParameter("Marker", marker);
-}
-
 std::string ListOfficeConversionTaskRequest::getProject()const
 {
 	return project_;
@@ -78,5 +56,16 @@ void ListOfficeConversionTaskRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListOfficeConversionTaskRequest::getMarker()const
+{
+	return marker_;
+}
+
+void ListOfficeConversionTaskRequest::setMarker(const std::string& marker)
+{
+	marker_ = marker;
+	setCoreParameter("Marker", marker);
 }
 

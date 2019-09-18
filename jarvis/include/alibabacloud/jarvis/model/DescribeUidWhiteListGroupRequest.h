@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeUidWhiteListGroupRequest();
 				~DescribeUidWhiteListGroupRequest();
 
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				int getWhiteListType()const;
-				void setWhiteListType(int whiteListType);
 				std::string getDstIP()const;
 				void setDstIP(const std::string& dstIP);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getSrcUid()const;
 				void setSrcUid(const std::string& srcUid);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				int getWhiteListType()const;
+				void setWhiteListType(int whiteListType);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
 
             private:
+				std::string sourceCode_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
-				int whiteListType_;
 				std::string dstIP_;
 				std::string lang_;
 				std::string srcUid_;
+				int currentPage_;
+				int whiteListType_;
 				std::string status_;
-				std::string sourceCode_;
 
 			};
 		}

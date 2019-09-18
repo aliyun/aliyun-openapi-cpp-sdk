@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				FetchMomentPhotosRequest();
 				~FetchMomentPhotosRequest();
 
-				int getSize()const;
-				void setSize(int size);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
-				int getPage()const;
-				void setPage(int page);
 				long getMomentId()const;
 				void setMomentId(long momentId);
+				int getSize()const;
+				void setSize(int size);
+				int getPage()const;
+				void setPage(int page);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
 
             private:
-				int size_;
 				std::string libraryId_;
 				std::string orderBy_;
 				std::string storeName_;
-				int page_;
 				long momentId_;
+				int size_;
+				int page_;
 				std::string order_;
 
 			};

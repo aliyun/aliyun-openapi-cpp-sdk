@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				SubmitFpCompareJobRequest();
 				~SubmitFpCompareJobRequest();
 
-				std::string getMatchedFrameStorage()const;
-				void setMatchedFrameStorage(const std::string& matchedFrameStorage);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getQueryMedia()const;
-				void setQueryMedia(const std::string& queryMedia);
 				std::string getFpDBId()const;
 				void setFpDBId(const std::string& fpDBId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getMasterMedia()const;
 				void setMasterMedia(const std::string& masterMedia);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
+				std::string getQueryMedia()const;
+				void setQueryMedia(const std::string& queryMedia);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				std::string getMatchedFrameStorage()const;
+				void setMatchedFrameStorage(const std::string& matchedFrameStorage);
 
             private:
-				std::string matchedFrameStorage_;
-				std::string userData_;
 				long resourceOwnerId_;
-				std::string queryMedia_;
 				std::string fpDBId_;
-				std::string resourceOwnerAccount_;
 				std::string masterMedia_;
+				std::string accessKeyId_;
+				std::string userData_;
+				std::string queryMedia_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				std::string matchedFrameStorage_;
 
 			};
 		}

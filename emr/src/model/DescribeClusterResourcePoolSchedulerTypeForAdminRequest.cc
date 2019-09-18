@@ -36,17 +36,6 @@ void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setResourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getClusterId()const
 {
 	return clusterId_;
@@ -78,5 +67,16 @@ void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setAccessKeyId(con
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

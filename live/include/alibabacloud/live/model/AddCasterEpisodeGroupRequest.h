@@ -32,40 +32,40 @@ namespace AlibabaCloud
 			{
 				struct Item
 				{
-					std::string vodUrl;
 					std::string itemName;
+					std::string vodUrl;
 				};
 
 			public:
 				AddCasterEpisodeGroupRequest();
 				~AddCasterEpisodeGroupRequest();
 
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getSideOutputUrl()const;
 				void setSideOutputUrl(const std::string& sideOutputUrl);
 				std::vector<Item> getItem()const;
 				void setItem(const std::vector<Item>& item);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				int getRepeatNum()const;
 				void setRepeatNum(int repeatNum);
 				std::string getCallbackUrl()const;
 				void setCallbackUrl(const std::string& callbackUrl);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
             private:
+				std::string clientToken_;
+				std::string startTime_;
 				std::string sideOutputUrl_;
 				std::vector<Item> item_;
-				std::string clientToken_;
 				std::string domainName_;
-				std::string startTime_;
+				long ownerId_;
 				int repeatNum_;
 				std::string callbackUrl_;
-				long ownerId_;
 
 			};
 		}

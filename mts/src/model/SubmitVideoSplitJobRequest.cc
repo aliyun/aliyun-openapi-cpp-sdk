@@ -25,17 +25,6 @@ SubmitVideoSplitJobRequest::SubmitVideoSplitJobRequest() :
 SubmitVideoSplitJobRequest::~SubmitVideoSplitJobRequest()
 {}
 
-std::string SubmitVideoSplitJobRequest::getInput()const
-{
-	return input_;
-}
-
-void SubmitVideoSplitJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setCoreParameter("Input", input);
-}
-
 std::string SubmitVideoSplitJobRequest::getVideoSplitConfig()const
 {
 	return videoSplitConfig_;
@@ -47,17 +36,6 @@ void SubmitVideoSplitJobRequest::setVideoSplitConfig(const std::string& videoSpl
 	setCoreParameter("VideoSplitConfig", videoSplitConfig);
 }
 
-std::string SubmitVideoSplitJobRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitVideoSplitJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
 long SubmitVideoSplitJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -67,6 +45,28 @@ void SubmitVideoSplitJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitVideoSplitJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitVideoSplitJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitVideoSplitJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitVideoSplitJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
 }
 
 std::string SubmitVideoSplitJobRequest::getResourceOwnerAccount()const
@@ -102,17 +102,6 @@ void SubmitVideoSplitJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitVideoSplitJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitVideoSplitJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitVideoSplitJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +111,16 @@ void SubmitVideoSplitJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitVideoSplitJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitVideoSplitJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

@@ -35,26 +35,23 @@ namespace AlibabaCloud
 				DeleteTagSetRequest();
 				~DeleteTagSetRequest();
 
-				std::string getLazyMode()const;
-				void setLazyMode(const std::string& lazyMode);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getSetId()const;
-				void setSetId(const std::string& setId);
-				std::string getCheckEmpty()const;
-				void setCheckEmpty(const std::string& checkEmpty);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getLazyMode()const;
+				void setLazyMode(const std::string& lazyMode);
+				std::string getCheckEmpty()const;
+				void setCheckEmpty(const std::string& checkEmpty);
+				std::string getSetId()const;
+				void setSetId(const std::string& setId);
 
             private:
-				std::string lazyMode_;
-				std::string regionId_;
 				std::string project_;
-				std::string setId_;
-				std::string checkEmpty_;
 				std::string accessKeyId_;
+				std::string lazyMode_;
+				std::string checkEmpty_;
+				std::string setId_;
 
 			};
 		}

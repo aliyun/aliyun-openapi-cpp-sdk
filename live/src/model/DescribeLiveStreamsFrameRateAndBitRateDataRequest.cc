@@ -25,6 +25,17 @@ DescribeLiveStreamsFrameRateAndBitRateDataRequest::DescribeLiveStreamsFrameRateA
 DescribeLiveStreamsFrameRateAndBitRateDataRequest::~DescribeLiveStreamsFrameRateAndBitRateDataRequest()
 {}
 
+std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getAppName()const
 {
 	return appName_;
@@ -45,6 +56,17 @@ void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setSecurityToken(const s
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getDomainName()const
@@ -69,17 +91,6 @@ void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setEndTime(const std::st
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long DescribeLiveStreamsFrameRateAndBitRateDataRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,16 +100,5 @@ void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStreamName()const
-{
-	return streamName_;
-}
-
-void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
 }
 

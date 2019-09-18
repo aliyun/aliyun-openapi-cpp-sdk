@@ -25,17 +25,6 @@ DescribeCasterSceneAudioRequest::DescribeCasterSceneAudioRequest() :
 DescribeCasterSceneAudioRequest::~DescribeCasterSceneAudioRequest()
 {}
 
-std::string DescribeCasterSceneAudioRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCasterSceneAudioRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeCasterSceneAudioRequest::getCasterId()const
 {
 	return casterId_;
@@ -47,17 +36,6 @@ void DescribeCasterSceneAudioRequest::setCasterId(const std::string& casterId)
 	setCoreParameter("CasterId", casterId);
 }
 
-std::string DescribeCasterSceneAudioRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void DescribeCasterSceneAudioRequest::setSceneId(const std::string& sceneId)
-{
-	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
-}
-
 long DescribeCasterSceneAudioRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +45,16 @@ void DescribeCasterSceneAudioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeCasterSceneAudioRequest::getSceneId()const
+{
+	return sceneId_;
+}
+
+void DescribeCasterSceneAudioRequest::setSceneId(const std::string& sceneId)
+{
+	sceneId_ = sceneId;
+	setCoreParameter("SceneId", sceneId);
 }
 

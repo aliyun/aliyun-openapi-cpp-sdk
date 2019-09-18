@@ -41,27 +41,27 @@ namespace AlibabaCloud
 				SaveBatchTaskForCreatingOrderRenewRequest();
 				~SaveBatchTaskForCreatingOrderRenewRequest();
 
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
+				bool getUseCoupon()const;
+				void setUseCoupon(bool useCoupon);
 				std::string getPromotionNo()const;
 				void setPromotionNo(const std::string& promotionNo);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::vector<OrderRenewParam> getOrderRenewParam()const;
 				void setOrderRenewParam(const std::vector<OrderRenewParam>& orderRenewParam);
-				std::string getCouponNo()const;
-				void setCouponNo(const std::string& couponNo);
-				bool getUseCoupon()const;
-				void setUseCoupon(bool useCoupon);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				bool getUsePromotion()const;
 				void setUsePromotion(bool usePromotion);
 
             private:
+				std::string couponNo_;
+				bool useCoupon_;
 				std::string promotionNo_;
 				std::string userClientIp_;
 				std::vector<OrderRenewParam> orderRenewParam_;
-				std::string couponNo_;
-				bool useCoupon_;
 				std::string lang_;
 				bool usePromotion_;
 

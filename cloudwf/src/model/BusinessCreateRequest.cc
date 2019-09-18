@@ -36,17 +36,6 @@ void BusinessCreateRequest::setBusinessCity(const std::string& businessCity)
 	setCoreParameter("BusinessCity", businessCity);
 }
 
-std::string BusinessCreateRequest::getCombo()const
-{
-	return combo_;
-}
-
-void BusinessCreateRequest::setCombo(const std::string& combo)
-{
-	combo_ = combo;
-	setCoreParameter("Combo", combo);
-}
-
 std::string BusinessCreateRequest::getWarnEmail()const
 {
 	return warnEmail_;
@@ -56,17 +45,6 @@ void BusinessCreateRequest::setWarnEmail(const std::string& warnEmail)
 {
 	warnEmail_ = warnEmail;
 	setCoreParameter("WarnEmail", warnEmail);
-}
-
-std::string BusinessCreateRequest::getBusinessManager()const
-{
-	return businessManager_;
-}
-
-void BusinessCreateRequest::setBusinessManager(const std::string& businessManager)
-{
-	businessManager_ = businessManager;
-	setCoreParameter("BusinessManager", businessManager);
 }
 
 std::string BusinessCreateRequest::getAccessKeyId()const
@@ -91,28 +69,6 @@ void BusinessCreateRequest::setBusinessType(int businessType)
 	setCoreParameter("BusinessType", std::to_string(businessType));
 }
 
-int BusinessCreateRequest::getWarn()const
-{
-	return warn_;
-}
-
-void BusinessCreateRequest::setWarn(int warn)
-{
-	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
-}
-
-std::string BusinessCreateRequest::getBusinessName()const
-{
-	return businessName_;
-}
-
-void BusinessCreateRequest::setBusinessName(const std::string& businessName)
-{
-	businessName_ = businessName;
-	setCoreParameter("BusinessName", businessName);
-}
-
 int BusinessCreateRequest::getBusinessTopType()const
 {
 	return businessTopType_;
@@ -122,17 +78,6 @@ void BusinessCreateRequest::setBusinessTopType(int businessTopType)
 {
 	businessTopType_ = businessTopType;
 	setCoreParameter("BusinessTopType", std::to_string(businessTopType));
-}
-
-std::string BusinessCreateRequest::getBusinessAddress()const
-{
-	return businessAddress_;
-}
-
-void BusinessCreateRequest::setBusinessAddress(const std::string& businessAddress)
-{
-	businessAddress_ = businessAddress;
-	setCoreParameter("BusinessAddress", businessAddress);
 }
 
 std::string BusinessCreateRequest::getBusinessTel()const
@@ -166,5 +111,60 @@ void BusinessCreateRequest::setBusinessSubtype(int businessSubtype)
 {
 	businessSubtype_ = businessSubtype;
 	setCoreParameter("BusinessSubtype", std::to_string(businessSubtype));
+}
+
+std::string BusinessCreateRequest::getCombo()const
+{
+	return combo_;
+}
+
+void BusinessCreateRequest::setCombo(const std::string& combo)
+{
+	combo_ = combo;
+	setCoreParameter("Combo", combo);
+}
+
+std::string BusinessCreateRequest::getBusinessManager()const
+{
+	return businessManager_;
+}
+
+void BusinessCreateRequest::setBusinessManager(const std::string& businessManager)
+{
+	businessManager_ = businessManager;
+	setCoreParameter("BusinessManager", businessManager);
+}
+
+int BusinessCreateRequest::getWarn()const
+{
+	return warn_;
+}
+
+void BusinessCreateRequest::setWarn(int warn)
+{
+	warn_ = warn;
+	setCoreParameter("Warn", std::to_string(warn));
+}
+
+std::string BusinessCreateRequest::getBusinessName()const
+{
+	return businessName_;
+}
+
+void BusinessCreateRequest::setBusinessName(const std::string& businessName)
+{
+	businessName_ = businessName;
+	setCoreParameter("BusinessName", businessName);
+}
+
+std::string BusinessCreateRequest::getBusinessAddress()const
+{
+	return businessAddress_;
+}
+
+void BusinessCreateRequest::setBusinessAddress(const std::string& businessAddress)
+{
+	businessAddress_ = businessAddress;
+	setCoreParameter("BusinessAddress", businessAddress);
 }
 

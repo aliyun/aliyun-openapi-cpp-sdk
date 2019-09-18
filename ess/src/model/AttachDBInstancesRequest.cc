@@ -25,17 +25,6 @@ AttachDBInstancesRequest::AttachDBInstancesRequest() :
 AttachDBInstancesRequest::~AttachDBInstancesRequest()
 {}
 
-std::string AttachDBInstancesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AttachDBInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string AttachDBInstancesRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;
@@ -56,6 +45,28 @@ void AttachDBInstancesRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
 	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
+}
+
+std::string AttachDBInstancesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AttachDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AttachDBInstancesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void AttachDBInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::vector<std::string> AttachDBInstancesRequest::getDBInstance()const
@@ -79,16 +90,5 @@ void AttachDBInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AttachDBInstancesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AttachDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

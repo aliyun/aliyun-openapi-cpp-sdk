@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				SetUserGreenManagerConfigRequest();
 				~SetUserGreenManagerConfigRequest();
 
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getQuota()const;
 				void setQuota(const std::string& quota);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getRatio()const;
 				void setRatio(const std::string& ratio);
 
             private:
+				long ownerId_;
 				std::string securityToken_;
 				std::string quota_;
-				long ownerId_;
 				std::string ratio_;
 
 			};

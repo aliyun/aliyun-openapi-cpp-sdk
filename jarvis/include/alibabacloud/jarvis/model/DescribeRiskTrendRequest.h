@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				DescribeRiskTrendRequest();
 				~DescribeRiskTrendRequest();
 
+				std::string getPeroid()const;
+				void setPeroid(const std::string& peroid);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getQueryProduct()const;
 				void setQueryProduct(const std::string& queryProduct);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getPeroid()const;
-				void setPeroid(const std::string& peroid);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
 				std::string getQueryRegionId()const;
 				void setQueryRegionId(const std::string& queryRegionId);
 
             private:
+				std::string peroid_;
+				std::string sourceCode_;
 				std::string sourceIp_;
 				std::string queryProduct_;
 				std::string lang_;
-				std::string peroid_;
-				std::string sourceCode_;
 				std::string queryRegionId_;
 
 			};

@@ -47,61 +47,6 @@ void PushRequest::setSmsSendPolicy(int smsSendPolicy)
 	setCoreParameter("SmsSendPolicy", std::to_string(smsSendPolicy));
 }
 
-std::string PushRequest::getAndroidExtParameters()const
-{
-	return androidExtParameters_;
-}
-
-void PushRequest::setAndroidExtParameters(const std::string& androidExtParameters)
-{
-	androidExtParameters_ = androidExtParameters;
-	setCoreParameter("AndroidExtParameters", androidExtParameters);
-}
-
-int PushRequest::getIOSBadge()const
-{
-	return iOSBadge_;
-}
-
-void PushRequest::setIOSBadge(int iOSBadge)
-{
-	iOSBadge_ = iOSBadge;
-	setCoreParameter("IOSBadge", std::to_string(iOSBadge));
-}
-
-bool PushRequest::getIOSBadgeAutoIncrement()const
-{
-	return iOSBadgeAutoIncrement_;
-}
-
-void PushRequest::setIOSBadgeAutoIncrement(bool iOSBadgeAutoIncrement)
-{
-	iOSBadgeAutoIncrement_ = iOSBadgeAutoIncrement;
-	setCoreParameter("IOSBadgeAutoIncrement", iOSBadgeAutoIncrement ? "true" : "false");
-}
-
-std::string PushRequest::getAndroidOpenType()const
-{
-	return androidOpenType_;
-}
-
-void PushRequest::setAndroidOpenType(const std::string& androidOpenType)
-{
-	androidOpenType_ = androidOpenType;
-	setCoreParameter("AndroidOpenType", androidOpenType);
-}
-
-std::string PushRequest::getTitle()const
-{
-	return title_;
-}
-
-void PushRequest::setTitle(const std::string& title)
-{
-	title_ = title;
-	setCoreParameter("Title", title);
-}
-
 std::string PushRequest::getBody()const
 {
 	return body_;
@@ -135,28 +80,6 @@ void PushRequest::setPushTime(const std::string& pushTime)
 	setCoreParameter("PushTime", pushTime);
 }
 
-std::string PushRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void PushRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-int PushRequest::getSmsDelaySecs()const
-{
-	return smsDelaySecs_;
-}
-
-void PushRequest::setSmsDelaySecs(int smsDelaySecs)
-{
-	smsDelaySecs_ = smsDelaySecs;
-	setCoreParameter("SmsDelaySecs", std::to_string(smsDelaySecs));
-}
-
 int PushRequest::getSendSpeed()const
 {
 	return sendSpeed_;
@@ -188,17 +111,6 @@ void PushRequest::setIOSRemindBody(const std::string& iOSRemindBody)
 {
 	iOSRemindBody_ = iOSRemindBody;
 	setCoreParameter("IOSRemindBody", iOSRemindBody);
-}
-
-std::string PushRequest::getIOSExtParameters()const
-{
-	return iOSExtParameters_;
-}
-
-void PushRequest::setIOSExtParameters(const std::string& iOSExtParameters)
-{
-	iOSExtParameters_ = iOSExtParameters;
-	setCoreParameter("IOSExtParameters", iOSExtParameters);
 }
 
 std::string PushRequest::getAndroidNotifyType()const
@@ -278,28 +190,6 @@ void PushRequest::setExpireTime(const std::string& expireTime)
 	setCoreParameter("ExpireTime", expireTime);
 }
 
-std::string PushRequest::getSmsTemplateName()const
-{
-	return smsTemplateName_;
-}
-
-void PushRequest::setSmsTemplateName(const std::string& smsTemplateName)
-{
-	smsTemplateName_ = smsTemplateName;
-	setCoreParameter("SmsTemplateName", smsTemplateName);
-}
-
-std::string PushRequest::getAndroidPopupBody()const
-{
-	return androidPopupBody_;
-}
-
-void PushRequest::setAndroidPopupBody(const std::string& androidPopupBody)
-{
-	androidPopupBody_ = androidPopupBody;
-	setCoreParameter("AndroidPopupBody", androidPopupBody);
-}
-
 std::string PushRequest::getIOSNotificationCategory()const
 {
 	return iOSNotificationCategory_;
@@ -320,17 +210,6 @@ void PushRequest::setStoreOffline(bool storeOffline)
 {
 	storeOffline_ = storeOffline;
 	setCoreParameter("StoreOffline", storeOffline ? "true" : "false");
-}
-
-bool PushRequest::getIOSSilentNotification()const
-{
-	return iOSSilentNotification_;
-}
-
-void PushRequest::setIOSSilentNotification(bool iOSSilentNotification)
-{
-	iOSSilentNotification_ = iOSSilentNotification;
-	setCoreParameter("IOSSilentNotification", iOSSilentNotification ? "true" : "false");
 }
 
 std::string PushRequest::getSmsParams()const
@@ -355,17 +234,6 @@ void PushRequest::setJobKey(const std::string& jobKey)
 	setCoreParameter("JobKey", jobKey);
 }
 
-std::string PushRequest::getTarget()const
-{
-	return target_;
-}
-
-void PushRequest::setTarget(const std::string& target)
-{
-	target_ = target;
-	setCoreParameter("Target", target);
-}
-
 std::string PushRequest::getAndroidOpenUrl()const
 {
 	return androidOpenUrl_;
@@ -375,6 +243,193 @@ void PushRequest::setAndroidOpenUrl(const std::string& androidOpenUrl)
 {
 	androidOpenUrl_ = androidOpenUrl;
 	setCoreParameter("AndroidOpenUrl", androidOpenUrl);
+}
+
+std::string PushRequest::getAndroidXiaoMiNotifyBody()const
+{
+	return androidXiaoMiNotifyBody_;
+}
+
+void PushRequest::setAndroidXiaoMiNotifyBody(const std::string& androidXiaoMiNotifyBody)
+{
+	androidXiaoMiNotifyBody_ = androidXiaoMiNotifyBody;
+	setCoreParameter("AndroidXiaoMiNotifyBody", androidXiaoMiNotifyBody);
+}
+
+std::string PushRequest::getIOSSubtitle()const
+{
+	return iOSSubtitle_;
+}
+
+void PushRequest::setIOSSubtitle(const std::string& iOSSubtitle)
+{
+	iOSSubtitle_ = iOSSubtitle;
+	setCoreParameter("IOSSubtitle", iOSSubtitle);
+}
+
+bool PushRequest::getIOSRemind()const
+{
+	return iOSRemind_;
+}
+
+void PushRequest::setIOSRemind(bool iOSRemind)
+{
+	iOSRemind_ = iOSRemind;
+	setCoreParameter("IOSRemind", iOSRemind ? "true" : "false");
+}
+
+std::string PushRequest::getAndroidMusic()const
+{
+	return androidMusic_;
+}
+
+void PushRequest::setAndroidMusic(const std::string& androidMusic)
+{
+	androidMusic_ = androidMusic;
+	setCoreParameter("AndroidMusic", androidMusic);
+}
+
+std::string PushRequest::getPushType()const
+{
+	return pushType_;
+}
+
+void PushRequest::setPushType(const std::string& pushType)
+{
+	pushType_ = pushType;
+	setCoreParameter("PushType", pushType);
+}
+
+std::string PushRequest::getAndroidExtParameters()const
+{
+	return androidExtParameters_;
+}
+
+void PushRequest::setAndroidExtParameters(const std::string& androidExtParameters)
+{
+	androidExtParameters_ = androidExtParameters;
+	setCoreParameter("AndroidExtParameters", androidExtParameters);
+}
+
+int PushRequest::getIOSBadge()const
+{
+	return iOSBadge_;
+}
+
+void PushRequest::setIOSBadge(int iOSBadge)
+{
+	iOSBadge_ = iOSBadge;
+	setCoreParameter("IOSBadge", std::to_string(iOSBadge));
+}
+
+bool PushRequest::getIOSBadgeAutoIncrement()const
+{
+	return iOSBadgeAutoIncrement_;
+}
+
+void PushRequest::setIOSBadgeAutoIncrement(bool iOSBadgeAutoIncrement)
+{
+	iOSBadgeAutoIncrement_ = iOSBadgeAutoIncrement;
+	setCoreParameter("IOSBadgeAutoIncrement", iOSBadgeAutoIncrement ? "true" : "false");
+}
+
+std::string PushRequest::getAndroidOpenType()const
+{
+	return androidOpenType_;
+}
+
+void PushRequest::setAndroidOpenType(const std::string& androidOpenType)
+{
+	androidOpenType_ = androidOpenType;
+	setCoreParameter("AndroidOpenType", androidOpenType);
+}
+
+std::string PushRequest::getTitle()const
+{
+	return title_;
+}
+
+void PushRequest::setTitle(const std::string& title)
+{
+	title_ = title;
+	setCoreParameter("Title", title);
+}
+
+std::string PushRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void PushRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int PushRequest::getSmsDelaySecs()const
+{
+	return smsDelaySecs_;
+}
+
+void PushRequest::setSmsDelaySecs(int smsDelaySecs)
+{
+	smsDelaySecs_ = smsDelaySecs;
+	setCoreParameter("SmsDelaySecs", std::to_string(smsDelaySecs));
+}
+
+std::string PushRequest::getIOSExtParameters()const
+{
+	return iOSExtParameters_;
+}
+
+void PushRequest::setIOSExtParameters(const std::string& iOSExtParameters)
+{
+	iOSExtParameters_ = iOSExtParameters;
+	setCoreParameter("IOSExtParameters", iOSExtParameters);
+}
+
+std::string PushRequest::getSmsTemplateName()const
+{
+	return smsTemplateName_;
+}
+
+void PushRequest::setSmsTemplateName(const std::string& smsTemplateName)
+{
+	smsTemplateName_ = smsTemplateName;
+	setCoreParameter("SmsTemplateName", smsTemplateName);
+}
+
+std::string PushRequest::getAndroidPopupBody()const
+{
+	return androidPopupBody_;
+}
+
+void PushRequest::setAndroidPopupBody(const std::string& androidPopupBody)
+{
+	androidPopupBody_ = androidPopupBody;
+	setCoreParameter("AndroidPopupBody", androidPopupBody);
+}
+
+bool PushRequest::getIOSSilentNotification()const
+{
+	return iOSSilentNotification_;
+}
+
+void PushRequest::setIOSSilentNotification(bool iOSSilentNotification)
+{
+	iOSSilentNotification_ = iOSSilentNotification;
+	setCoreParameter("IOSSilentNotification", iOSSilentNotification ? "true" : "false");
+}
+
+std::string PushRequest::getTarget()const
+{
+	return target_;
+}
+
+void PushRequest::setTarget(const std::string& target)
+{
+	target_ = target;
+	setCoreParameter("Target", target);
 }
 
 std::string PushRequest::getAndroidNotificationChannel()const
@@ -410,28 +465,6 @@ void PushRequest::setAndroidActivity(const std::string& androidActivity)
 	setCoreParameter("AndroidActivity", androidActivity);
 }
 
-std::string PushRequest::getAndroidXiaoMiNotifyBody()const
-{
-	return androidXiaoMiNotifyBody_;
-}
-
-void PushRequest::setAndroidXiaoMiNotifyBody(const std::string& androidXiaoMiNotifyBody)
-{
-	androidXiaoMiNotifyBody_ = androidXiaoMiNotifyBody;
-	setCoreParameter("AndroidXiaoMiNotifyBody", androidXiaoMiNotifyBody);
-}
-
-std::string PushRequest::getIOSSubtitle()const
-{
-	return iOSSubtitle_;
-}
-
-void PushRequest::setIOSSubtitle(const std::string& iOSSubtitle)
-{
-	iOSSubtitle_ = iOSSubtitle;
-	setCoreParameter("IOSSubtitle", iOSSubtitle);
-}
-
 std::string PushRequest::getSmsSignName()const
 {
 	return smsSignName_;
@@ -441,17 +474,6 @@ void PushRequest::setSmsSignName(const std::string& smsSignName)
 {
 	smsSignName_ = smsSignName;
 	setCoreParameter("SmsSignName", smsSignName);
-}
-
-bool PushRequest::getIOSRemind()const
-{
-	return iOSRemind_;
-}
-
-void PushRequest::setIOSRemind(bool iOSRemind)
-{
-	iOSRemind_ = iOSRemind;
-	setCoreParameter("IOSRemind", iOSRemind ? "true" : "false");
 }
 
 long PushRequest::getAppKey()const
@@ -476,17 +498,6 @@ void PushRequest::setTargetValue(const std::string& targetValue)
 	setCoreParameter("TargetValue", targetValue);
 }
 
-std::string PushRequest::getAndroidMusic()const
-{
-	return androidMusic_;
-}
-
-void PushRequest::setAndroidMusic(const std::string& androidMusic)
-{
-	androidMusic_ = androidMusic;
-	setCoreParameter("AndroidMusic", androidMusic);
-}
-
 std::string PushRequest::getAndroidXiaoMiActivity()const
 {
 	return androidXiaoMiActivity_;
@@ -507,16 +518,5 @@ void PushRequest::setAndroidXiaoMiNotifyTitle(const std::string& androidXiaoMiNo
 {
 	androidXiaoMiNotifyTitle_ = androidXiaoMiNotifyTitle;
 	setCoreParameter("AndroidXiaoMiNotifyTitle", androidXiaoMiNotifyTitle);
-}
-
-std::string PushRequest::getPushType()const
-{
-	return pushType_;
-}
-
-void PushRequest::setPushType(const std::string& pushType)
-{
-	pushType_ = pushType;
-	setCoreParameter("PushType", pushType);
 }
 

@@ -25,17 +25,6 @@ GetPhotoProcessTaskRequest::GetPhotoProcessTaskRequest() :
 GetPhotoProcessTaskRequest::~GetPhotoProcessTaskRequest()
 {}
 
-std::string GetPhotoProcessTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetPhotoProcessTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetPhotoProcessTaskRequest::getProject()const
 {
 	return project_;
@@ -47,17 +36,6 @@ void GetPhotoProcessTaskRequest::setProject(const std::string& project)
 	setCoreParameter("Project", project);
 }
 
-std::string GetPhotoProcessTaskRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void GetPhotoProcessTaskRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
-}
-
 std::string GetPhotoProcessTaskRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,16 @@ void GetPhotoProcessTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetPhotoProcessTaskRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void GetPhotoProcessTaskRequest::setTaskId(const std::string& taskId)
+{
+	taskId_ = taskId;
+	setCoreParameter("TaskId", taskId);
 }
 

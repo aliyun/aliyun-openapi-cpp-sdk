@@ -36,50 +36,6 @@ void DescribeActiveOperationTaskRequest::setResourceOwnerId(long resourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeActiveOperationTaskRequest::getTaskType()const
-{
-	return taskType_;
-}
-
-void DescribeActiveOperationTaskRequest::setTaskType(const std::string& taskType)
-{
-	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
-}
-
-std::string DescribeActiveOperationTaskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeActiveOperationTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeActiveOperationTaskRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeActiveOperationTaskRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long DescribeActiveOperationTaskRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeActiveOperationTaskRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 int DescribeActiveOperationTaskRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -124,17 +80,6 @@ void DescribeActiveOperationTaskRequest::setSecurityToken(const std::string& sec
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeActiveOperationTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeActiveOperationTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int DescribeActiveOperationTaskRequest::getPageSize()const
 {
 	return pageSize_;
@@ -144,6 +89,50 @@ void DescribeActiveOperationTaskRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeActiveOperationTaskRequest::getTaskType()const
+{
+	return taskType_;
+}
+
+void DescribeActiveOperationTaskRequest::setTaskType(const std::string& taskType)
+{
+	taskType_ = taskType;
+	setCoreParameter("TaskType", taskType);
+}
+
+std::string DescribeActiveOperationTaskRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeActiveOperationTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeActiveOperationTaskRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeActiveOperationTaskRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeActiveOperationTaskRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeActiveOperationTaskRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeActiveOperationTaskRequest::getRegion()const

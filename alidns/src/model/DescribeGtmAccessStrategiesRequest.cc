@@ -25,6 +25,17 @@ DescribeGtmAccessStrategiesRequest::DescribeGtmAccessStrategiesRequest() :
 DescribeGtmAccessStrategiesRequest::~DescribeGtmAccessStrategiesRequest()
 {}
 
+int DescribeGtmAccessStrategiesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeGtmAccessStrategiesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeGtmAccessStrategiesRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -67,16 +78,5 @@ void DescribeGtmAccessStrategiesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int DescribeGtmAccessStrategiesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeGtmAccessStrategiesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

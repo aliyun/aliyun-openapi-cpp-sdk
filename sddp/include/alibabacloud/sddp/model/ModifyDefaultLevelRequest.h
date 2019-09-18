@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				ModifyDefaultLevelRequest();
 				~ModifyDefaultLevelRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
 				long getDefaultId()const;
 				void setDefaultId(long defaultId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getSensitiveIds()const;
 				void setSensitiveIds(const std::string& sensitiveIds);
 
             private:
-				std::string sourceIp_;
 				int featureType_;
 				long defaultId_;
+				std::string sourceIp_;
 				std::string lang_;
 				std::string sensitiveIds_;
 

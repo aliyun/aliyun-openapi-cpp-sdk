@@ -36,6 +36,17 @@ void ProfileDistrictRequest::setBeginDate(const std::string& beginDate)
 	setCoreParameter("BeginDate", beginDate);
 }
 
+std::string ProfileDistrictRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ProfileDistrictRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ProfileDistrictRequest::getEndDate()const
 {
 	return endDate_;
@@ -67,16 +78,5 @@ void ProfileDistrictRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
 	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
-std::string ProfileDistrictRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ProfileDistrictRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

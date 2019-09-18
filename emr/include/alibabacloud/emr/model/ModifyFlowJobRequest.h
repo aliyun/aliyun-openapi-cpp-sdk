@@ -42,32 +42,20 @@ namespace AlibabaCloud
 
 				std::string getRunConf()const;
 				void setRunConf(const std::string& runConf);
-				std::string getEnvConf()const;
-				void setEnvConf(const std::string& envConf);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getParams()const;
-				void setParams(const std::string& params);
 				std::string getParamConf()const;
 				void setParamConf(const std::string& paramConf);
 				std::vector<ResourceList> getResourceList()const;
 				void setResourceList(const std::vector<ResourceList>& resourceList);
 				std::string getFailAct()const;
 				void setFailAct(const std::string& failAct);
-				std::string getCustomVariables()const;
-				void setCustomVariables(const std::string& customVariables);
 				std::string getMode()const;
 				void setMode(const std::string& mode);
-				long getRetryInterval()const;
-				void setRetryInterval(long retryInterval);
 				std::string getMonitorConf()const;
 				void setMonitorConf(const std::string& monitorConf);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getId()const;
 				void setId(const std::string& id);
 				int getMaxRetry()const;
@@ -76,26 +64,38 @@ namespace AlibabaCloud
 				void setAlertConf(const std::string& alertConf);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
+				std::string getEnvConf()const;
+				void setEnvConf(const std::string& envConf);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getParams()const;
+				void setParams(const std::string& params);
+				std::string getCustomVariables()const;
+				void setCustomVariables(const std::string& customVariables);
+				long getRetryInterval()const;
+				void setRetryInterval(long retryInterval);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string runConf_;
-				std::string envConf_;
 				std::string description_;
-				std::string clusterId_;
-				std::string params_;
 				std::string paramConf_;
 				std::vector<ResourceList> resourceList_;
 				std::string failAct_;
-				std::string customVariables_;
 				std::string mode_;
-				long retryInterval_;
 				std::string monitorConf_;
 				std::string regionId_;
-				std::string name_;
 				std::string id_;
 				int maxRetry_;
 				std::string alertConf_;
 				std::string projectId_;
+				std::string envConf_;
+				std::string clusterId_;
+				std::string params_;
+				std::string customVariables_;
+				long retryInterval_;
+				std::string name_;
 
 			};
 		}

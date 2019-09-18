@@ -102,17 +102,6 @@ void CreateOfficeConversionTaskRequest::setStartPage(long startPage)
 	setCoreParameter("StartPage", std::to_string(startPage));
 }
 
-std::string CreateOfficeConversionTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateOfficeConversionTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateOfficeConversionTaskRequest::getNotifyEndpoint()const
 {
 	return notifyEndpoint_;

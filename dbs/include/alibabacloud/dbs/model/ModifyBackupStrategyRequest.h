@@ -35,26 +35,23 @@ namespace AlibabaCloud
 				ModifyBackupStrategyRequest();
 				~ModifyBackupStrategyRequest();
 
-				std::string getBackupPeriod()const;
-				void setBackupPeriod(const std::string& backupPeriod);
-				std::string getBackupStartTime()const;
-				void setBackupStartTime(const std::string& backupStartTime);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
+				std::string getBackupPeriod()const;
+				void setBackupPeriod(const std::string& backupPeriod);
+				std::string getBackupStartTime()const;
+				void setBackupStartTime(const std::string& backupStartTime);
 
             private:
-				std::string backupPeriod_;
-				std::string backupStartTime_;
-				std::string regionId_;
 				std::string clientToken_;
 				std::string backupPlanId_;
 				std::string ownerId_;
+				std::string backupPeriod_;
+				std::string backupStartTime_;
 
 			};
 		}

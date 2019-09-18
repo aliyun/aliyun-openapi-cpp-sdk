@@ -36,28 +36,6 @@ void ListResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListResourcePoolRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListResourcePoolRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListResourcePoolRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListResourcePoolRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListResourcePoolRequest::getClusterId()const
 {
 	return clusterId_;
@@ -89,6 +67,28 @@ void ListResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListResourcePoolRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListResourcePoolRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListResourcePoolRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListResourcePoolRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListResourcePoolRequest::getPoolType()const

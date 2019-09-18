@@ -25,15 +25,15 @@ DescribeGroupedVulRequest::DescribeGroupedVulRequest() :
 DescribeGroupedVulRequest::~DescribeGroupedVulRequest()
 {}
 
-std::string DescribeGroupedVulRequest::getAliasName()const
+std::string DescribeGroupedVulRequest::getType()const
 {
-	return aliasName_;
+	return type_;
 }
 
-void DescribeGroupedVulRequest::setAliasName(const std::string& aliasName)
+void DescribeGroupedVulRequest::setType(const std::string& type)
 {
-	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeGroupedVulRequest::getSourceIp()const
@@ -58,6 +58,17 @@ void DescribeGroupedVulRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeGroupedVulRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeGroupedVulRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
 std::string DescribeGroupedVulRequest::getDealed()const
 {
 	return dealed_;
@@ -80,26 +91,15 @@ void DescribeGroupedVulRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeGroupedVulRequest::getLang()const
+std::string DescribeGroupedVulRequest::getAliasName()const
 {
-	return lang_;
+	return aliasName_;
 }
 
-void DescribeGroupedVulRequest::setLang(const std::string& lang)
+void DescribeGroupedVulRequest::setAliasName(const std::string& aliasName)
 {
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeGroupedVulRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeGroupedVulRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
+	aliasName_ = aliasName;
+	setCoreParameter("AliasName", aliasName);
 }
 
 std::string DescribeGroupedVulRequest::getNecessity()const

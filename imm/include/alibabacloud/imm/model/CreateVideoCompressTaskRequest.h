@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				CreateVideoCompressTaskRequest();
 				~CreateVideoCompressTaskRequest();
 
-				std::string getVideoUri()const;
-				void setVideoUri(const std::string& videoUri);
-				std::string getNotifyTopicName()const;
-				void setNotifyTopicName(const std::string& notifyTopicName);
-				std::string getTargetList()const;
-				void setTargetList(const std::string& targetList);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNotifyEndpoint()const;
-				void setNotifyEndpoint(const std::string& notifyEndpoint);
 				std::string getProject()const;
 				void setProject(const std::string& project);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNotifyEndpoint()const;
+				void setNotifyEndpoint(const std::string& notifyEndpoint);
+				std::string getNotifyTopicName()const;
+				void setNotifyTopicName(const std::string& notifyTopicName);
+				std::string getTargetList()const;
+				void setTargetList(const std::string& targetList);
+				std::string getVideoUri()const;
+				void setVideoUri(const std::string& videoUri);
 
             private:
-				std::string videoUri_;
-				std::string notifyTopicName_;
-				std::string targetList_;
-				std::string regionId_;
-				std::string notifyEndpoint_;
 				std::string project_;
 				std::string accessKeyId_;
+				std::string notifyEndpoint_;
+				std::string notifyTopicName_;
+				std::string targetList_;
+				std::string videoUri_;
 
 			};
 		}

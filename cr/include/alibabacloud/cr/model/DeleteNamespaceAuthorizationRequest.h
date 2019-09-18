@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				DeleteNamespaceAuthorizationRequest();
 				~DeleteNamespaceAuthorizationRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				long getAuthorizeId()const;
 				void setAuthorizeId(long authorizeId);
 				std::string get_Namespace()const;
 				void set_Namespace(const std::string& _namespace);
 
             private:
-				std::string regionId_;
 				long authorizeId_;
 				std::string _namespace_;
 

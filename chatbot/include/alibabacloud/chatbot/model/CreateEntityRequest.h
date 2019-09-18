@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				CreateEntityRequest();
 				~CreateEntityRequest();
 
+				std::string getEntityName()const;
+				void setEntityName(const std::string& entityName);
+				long getDialogId()const;
+				void setDialogId(long dialogId);
 				std::string getRegex()const;
 				void setRegex(const std::string& regex);
 				std::string getEntityType()const;
 				void setEntityType(const std::string& entityType);
 				std::string getMembers()const;
 				void setMembers(const std::string& members);
-				std::string getEntityName()const;
-				void setEntityName(const std::string& entityName);
-				long getDialogId()const;
-				void setDialogId(long dialogId);
 
             private:
+				std::string entityName_;
+				long dialogId_;
 				std::string regex_;
 				std::string entityType_;
 				std::string members_;
-				std::string entityName_;
-				long dialogId_;
 
 			};
 		}

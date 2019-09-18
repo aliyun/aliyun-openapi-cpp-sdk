@@ -25,28 +25,6 @@ SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::Sav
 SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::~SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest()
 {}
 
-std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getDomainName()const
 {
 	return domainName_;
@@ -67,6 +45,28 @@ void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest
 {
 	registrantProfileId_ = registrantProfileId;
 	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+}
+
+std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getLang()const

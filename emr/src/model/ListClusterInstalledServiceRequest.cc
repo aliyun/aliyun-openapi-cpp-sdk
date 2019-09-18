@@ -36,28 +36,6 @@ void ListClusterInstalledServiceRequest::setResourceOwnerId(long resourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListClusterInstalledServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListClusterInstalledServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListClusterInstalledServiceRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListClusterInstalledServiceRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListClusterInstalledServiceRequest::getClusterId()const
 {
 	return clusterId_;
@@ -89,5 +67,27 @@ void ListClusterInstalledServiceRequest::setAccessKeyId(const std::string& acces
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListClusterInstalledServiceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListClusterInstalledServiceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListClusterInstalledServiceRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListClusterInstalledServiceRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

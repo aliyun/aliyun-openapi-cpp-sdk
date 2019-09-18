@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				long getCursor()const;
 				void setCursor(long cursor);
-				int getPhotoSize()const;
-				void setPhotoSize(int photoSize);
-				int getTimeLineCount()const;
-				void setTimeLineCount(int timeLineCount);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
-				std::string getTimeLineUnit()const;
-				void setTimeLineUnit(const std::string& timeLineUnit);
 				std::string getFilterBy()const;
 				void setFilterBy(const std::string& filterBy);
+				int getPhotoSize()const;
+				void setPhotoSize(int photoSize);
+				int getTimeLineCount()const;
+				void setTimeLineCount(int timeLineCount);
+				std::string getTimeLineUnit()const;
+				void setTimeLineUnit(const std::string& timeLineUnit);
 				std::string getDirection()const;
 				void setDirection(const std::string& direction);
 				std::string getOrder()const;
@@ -56,12 +56,12 @@ namespace AlibabaCloud
 
             private:
 				long cursor_;
-				int photoSize_;
-				int timeLineCount_;
 				std::string libraryId_;
 				std::string storeName_;
-				std::string timeLineUnit_;
 				std::string filterBy_;
+				int photoSize_;
+				int timeLineCount_;
+				std::string timeLineUnit_;
 				std::string direction_;
 				std::string order_;
 

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CreatePhotoStoreRequest();
 				~CreatePhotoStoreRequest();
 
-				std::string getBucketName()const;
-				void setBucketName(const std::string& bucketName);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
 				long getDefaultQuota()const;
 				void setDefaultQuota(long defaultQuota);
+				std::string getBucketName()const;
+				void setBucketName(const std::string& bucketName);
 
             private:
-				std::string bucketName_;
 				std::string storeName_;
 				std::string remark_;
 				long defaultQuota_;
+				std::string bucketName_;
 
 			};
 		}

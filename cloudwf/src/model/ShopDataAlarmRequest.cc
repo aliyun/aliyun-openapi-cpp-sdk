@@ -25,39 +25,6 @@ ShopDataAlarmRequest::ShopDataAlarmRequest() :
 ShopDataAlarmRequest::~ShopDataAlarmRequest()
 {}
 
-std::string ShopDataAlarmRequest::getWarnPhone()const
-{
-	return warnPhone_;
-}
-
-void ShopDataAlarmRequest::setWarnPhone(const std::string& warnPhone)
-{
-	warnPhone_ = warnPhone;
-	setCoreParameter("WarnPhone", warnPhone);
-}
-
-int ShopDataAlarmRequest::getWarn()const
-{
-	return warn_;
-}
-
-void ShopDataAlarmRequest::setWarn(int warn)
-{
-	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
-}
-
-int ShopDataAlarmRequest::getCloseWarn()const
-{
-	return closeWarn_;
-}
-
-void ShopDataAlarmRequest::setCloseWarn(int closeWarn)
-{
-	closeWarn_ = closeWarn;
-	setCoreParameter("CloseWarn", std::to_string(closeWarn));
-}
-
 std::string ShopDataAlarmRequest::getWarnEmail()const
 {
 	return warnEmail_;
@@ -89,5 +56,38 @@ void ShopDataAlarmRequest::setSid(long sid)
 {
 	sid_ = sid;
 	setCoreParameter("Sid", std::to_string(sid));
+}
+
+std::string ShopDataAlarmRequest::getWarnPhone()const
+{
+	return warnPhone_;
+}
+
+void ShopDataAlarmRequest::setWarnPhone(const std::string& warnPhone)
+{
+	warnPhone_ = warnPhone;
+	setCoreParameter("WarnPhone", warnPhone);
+}
+
+int ShopDataAlarmRequest::getWarn()const
+{
+	return warn_;
+}
+
+void ShopDataAlarmRequest::setWarn(int warn)
+{
+	warn_ = warn;
+	setCoreParameter("Warn", std::to_string(warn));
+}
+
+int ShopDataAlarmRequest::getCloseWarn()const
+{
+	return closeWarn_;
+}
+
+void ShopDataAlarmRequest::setCloseWarn(int closeWarn)
+{
+	closeWarn_ = closeWarn;
+	setCoreParameter("CloseWarn", std::to_string(closeWarn));
 }
 

@@ -39,36 +39,36 @@ namespace AlibabaCloud
 				void setCursor(const std::string& cursor);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
-				std::string getMetric()const;
-				void setMetric(const std::string& metric);
-				std::string getLength()const;
-				void setLength(const std::string& length);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getExpress()const;
 				void setExpress(const std::string& express);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPeriod()const;
+				void setPeriod(const std::string& period);
+				std::string getLength()const;
+				void setLength(const std::string& length);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getMetric()const;
+				void setMetric(const std::string& metric);
 				std::string getDimensions()const;
 				void setDimensions(const std::string& dimensions);
 
             private:
 				std::string cursor_;
 				long resourceOwnerId_;
-				std::string period_;
-				std::string metric_;
-				std::string length_;
 				std::string project_;
-				std::string endTime_;
 				std::string express_;
 				std::string startTime_;
 				std::string accessKeyId_;
+				std::string period_;
+				std::string length_;
+				std::string endTime_;
+				std::string metric_;
 				std::string dimensions_;
 
 			};

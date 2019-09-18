@@ -35,26 +35,29 @@ namespace AlibabaCloud
 				DescribeSignatureTradeListRequest();
 				~DescribeSignatureTradeListRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getShowSize()const;
-				void setShowSize(int showSize);
 				std::string getSearchType()const;
 				void setSearchType(const std::string& searchType);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getSearchValue()const;
 				void setSearchValue(const std::string& searchValue);
+				int getShowSize()const;
+				void setShowSize(int showSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 
             private:
+				std::string resourceGroupId_;
 				std::string sourceIp_;
-				int showSize_;
 				std::string searchType_;
-				int currentPage_;
 				std::string lang_;
 				std::string searchValue_;
+				int showSize_;
+				int currentPage_;
 
 			};
 		}

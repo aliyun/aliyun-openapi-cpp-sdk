@@ -68,6 +68,7 @@ namespace AlibabaCloud
 					std::string dBInstanceId;
 					std::string chargeType;
 					std::string networkType;
+					std::string vpcAuthMode;
 					int dBInstanceStorage;
 					std::string lastDowngradeTime;
 					std::string creationTime;

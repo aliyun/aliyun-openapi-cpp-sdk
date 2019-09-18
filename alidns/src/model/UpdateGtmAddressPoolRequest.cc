@@ -25,6 +25,28 @@ UpdateGtmAddressPoolRequest::UpdateGtmAddressPoolRequest() :
 UpdateGtmAddressPoolRequest::~UpdateGtmAddressPoolRequest()
 {}
 
+std::string UpdateGtmAddressPoolRequest::getType()const
+{
+	return type_;
+}
+
+void UpdateGtmAddressPoolRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+int UpdateGtmAddressPoolRequest::getMinAvailableAddrNum()const
+{
+	return minAvailableAddrNum_;
+}
+
+void UpdateGtmAddressPoolRequest::setMinAvailableAddrNum(int minAvailableAddrNum)
+{
+	minAvailableAddrNum_ = minAvailableAddrNum;
+	setCoreParameter("MinAvailableAddrNum", std::to_string(minAvailableAddrNum));
+}
+
 std::string UpdateGtmAddressPoolRequest::getAddrPoolId()const
 {
 	return addrPoolId_;
@@ -69,17 +91,6 @@ void UpdateGtmAddressPoolRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string UpdateGtmAddressPoolRequest::getType()const
-{
-	return type_;
-}
-
-void UpdateGtmAddressPoolRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
 std::vector<UpdateGtmAddressPoolRequest::Addr> UpdateGtmAddressPoolRequest::getAddr()const
 {
 	return addr_;
@@ -96,16 +107,5 @@ void UpdateGtmAddressPoolRequest::setAddr(const std::vector<Addr>& addr)
 		setCoreParameter(str + ".LbaWeight", std::to_string(obj.lbaWeight));
 		setCoreParameter(str + ".Value", obj.value);
 	}
-}
-
-int UpdateGtmAddressPoolRequest::getMinAvailableAddrNum()const
-{
-	return minAvailableAddrNum_;
-}
-
-void UpdateGtmAddressPoolRequest::setMinAvailableAddrNum(int minAvailableAddrNum)
-{
-	minAvailableAddrNum_ = minAvailableAddrNum;
-	setCoreParameter("MinAvailableAddrNum", std::to_string(minAvailableAddrNum));
 }
 

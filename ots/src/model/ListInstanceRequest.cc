@@ -47,17 +47,6 @@ void ListInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-long ListInstanceRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListInstanceRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 long ListInstanceRequest::getPageNum()const
 {
 	return pageNum_;
@@ -67,6 +56,17 @@ void ListInstanceRequest::setPageNum(long pageNum)
 {
 	pageNum_ = pageNum;
 	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+long ListInstanceRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListInstanceRequest::setPageSize(long pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<ListInstanceRequest::TagInfo> ListInstanceRequest::getTagInfo()const

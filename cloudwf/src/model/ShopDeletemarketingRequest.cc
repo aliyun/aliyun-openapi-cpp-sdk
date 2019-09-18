@@ -25,17 +25,6 @@ ShopDeletemarketingRequest::ShopDeletemarketingRequest() :
 ShopDeletemarketingRequest::~ShopDeletemarketingRequest()
 {}
 
-long ShopDeletemarketingRequest::getId()const
-{
-	return id_;
-}
-
-void ShopDeletemarketingRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string ShopDeletemarketingRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void ShopDeletemarketingRequest::setSid(long sid)
 {
 	sid_ = sid;
 	setCoreParameter("Sid", std::to_string(sid));
+}
+
+long ShopDeletemarketingRequest::getId()const
+{
+	return id_;
+}
+
+void ShopDeletemarketingRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

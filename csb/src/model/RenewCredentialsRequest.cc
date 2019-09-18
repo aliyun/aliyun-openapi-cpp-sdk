@@ -25,17 +25,6 @@ RenewCredentialsRequest::RenewCredentialsRequest() :
 RenewCredentialsRequest::~RenewCredentialsRequest()
 {}
 
-std::string RenewCredentialsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RenewCredentialsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long RenewCredentialsRequest::getCredentialId()const
 {
 	return credentialId_;

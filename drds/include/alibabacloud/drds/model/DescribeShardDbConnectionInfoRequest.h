@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeShardDbConnectionInfoRequest();
 				~DescribeShardDbConnectionInfoRequest();
 
-				std::string getDbName()const;
-				void setDbName(const std::string& dbName);
 				std::string getDrdsInstanceId()const;
 				void setDrdsInstanceId(const std::string& drdsInstanceId);
 				std::string getSubDbName()const;
 				void setSubDbName(const std::string& subDbName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDbName()const;
+				void setDbName(const std::string& dbName);
 
             private:
-				std::string dbName_;
 				std::string drdsInstanceId_;
 				std::string subDbName_;
 				std::string accessKeyId_;
+				std::string dbName_;
 
 			};
 		}

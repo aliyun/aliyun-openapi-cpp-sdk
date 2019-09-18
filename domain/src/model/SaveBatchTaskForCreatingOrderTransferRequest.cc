@@ -25,17 +25,6 @@ SaveBatchTaskForCreatingOrderTransferRequest::SaveBatchTaskForCreatingOrderTrans
 SaveBatchTaskForCreatingOrderTransferRequest::~SaveBatchTaskForCreatingOrderTransferRequest()
 {}
 
-std::string SaveBatchTaskForCreatingOrderTransferRequest::getPromotionNo()const
-{
-	return promotionNo_;
-}
-
-void SaveBatchTaskForCreatingOrderTransferRequest::setPromotionNo(const std::string& promotionNo)
-{
-	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
-}
-
 std::vector<SaveBatchTaskForCreatingOrderTransferRequest::OrderTransferParam> SaveBatchTaskForCreatingOrderTransferRequest::getOrderTransferParam()const
 {
 	return orderTransferParam_;
@@ -53,17 +42,6 @@ void SaveBatchTaskForCreatingOrderTransferRequest::setOrderTransferParam(const s
 		setCoreParameter(str + ".DomainName", obj.domainName);
 		setCoreParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
 	}
-}
-
-std::string SaveBatchTaskForCreatingOrderTransferRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveBatchTaskForCreatingOrderTransferRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForCreatingOrderTransferRequest::getCouponNo()const
@@ -86,6 +64,28 @@ void SaveBatchTaskForCreatingOrderTransferRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
 	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+}
+
+std::string SaveBatchTaskForCreatingOrderTransferRequest::getPromotionNo()const
+{
+	return promotionNo_;
+}
+
+void SaveBatchTaskForCreatingOrderTransferRequest::setPromotionNo(const std::string& promotionNo)
+{
+	promotionNo_ = promotionNo;
+	setCoreParameter("PromotionNo", promotionNo);
+}
+
+std::string SaveBatchTaskForCreatingOrderTransferRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveBatchTaskForCreatingOrderTransferRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForCreatingOrderTransferRequest::getLang()const

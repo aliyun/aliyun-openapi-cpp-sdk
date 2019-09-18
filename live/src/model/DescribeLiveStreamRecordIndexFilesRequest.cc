@@ -25,6 +25,28 @@ DescribeLiveStreamRecordIndexFilesRequest::DescribeLiveStreamRecordIndexFilesReq
 DescribeLiveStreamRecordIndexFilesRequest::~DescribeLiveStreamRecordIndexFilesRequest()
 {}
 
+std::string DescribeLiveStreamRecordIndexFilesRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeLiveStreamRecordIndexFilesRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+int DescribeLiveStreamRecordIndexFilesRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void DescribeLiveStreamRecordIndexFilesRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 std::string DescribeLiveStreamRecordIndexFilesRequest::getAppName()const
 {
 	return appName_;
@@ -47,17 +69,6 @@ void DescribeLiveStreamRecordIndexFilesRequest::setSecurityToken(const std::stri
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeLiveStreamRecordIndexFilesRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveStreamRecordIndexFilesRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 int DescribeLiveStreamRecordIndexFilesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,50 +78,6 @@ void DescribeLiveStreamRecordIndexFilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeLiveStreamRecordIndexFilesRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeLiveStreamRecordIndexFilesRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeLiveStreamRecordIndexFilesRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeLiveStreamRecordIndexFilesRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeLiveStreamRecordIndexFilesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeLiveStreamRecordIndexFilesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeLiveStreamRecordIndexFilesRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void DescribeLiveStreamRecordIndexFilesRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveStreamRecordIndexFilesRequest::getStreamName()const
@@ -133,5 +100,38 @@ void DescribeLiveStreamRecordIndexFilesRequest::setOrder(const std::string& orde
 {
 	order_ = order;
 	setCoreParameter("Order", order);
+}
+
+std::string DescribeLiveStreamRecordIndexFilesRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveStreamRecordIndexFilesRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeLiveStreamRecordIndexFilesRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeLiveStreamRecordIndexFilesRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeLiveStreamRecordIndexFilesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeLiveStreamRecordIndexFilesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

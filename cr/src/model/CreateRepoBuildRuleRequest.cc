@@ -47,14 +47,3 @@ void CreateRepoBuildRuleRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string CreateRepoBuildRuleRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateRepoBuildRuleRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

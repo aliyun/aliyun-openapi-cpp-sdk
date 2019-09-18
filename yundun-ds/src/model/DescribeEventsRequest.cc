@@ -25,39 +25,6 @@ DescribeEventsRequest::DescribeEventsRequest() :
 DescribeEventsRequest::~DescribeEventsRequest()
 {}
 
-int DescribeEventsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeEventsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
-std::string DescribeEventsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeEventsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-int DescribeEventsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeEventsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeEventsRequest::getStartTime()const
 {
 	return startTime_;
@@ -124,17 +91,6 @@ void DescribeEventsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeEventsRequest::getDepartId()const
-{
-	return departId_;
-}
-
-void DescribeEventsRequest::setDepartId(long departId)
-{
-	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
-}
-
 std::string DescribeEventsRequest::getLang()const
 {
 	return lang_;
@@ -155,6 +111,50 @@ void DescribeEventsRequest::setDealUserId(const std::string& dealUserId)
 {
 	dealUserId_ = dealUserId;
 	setCoreParameter("DealUserId", dealUserId);
+}
+
+int DescribeEventsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeEventsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeEventsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeEventsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+int DescribeEventsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeEventsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+long DescribeEventsRequest::getDepartId()const
+{
+	return departId_;
+}
+
+void DescribeEventsRequest::setDepartId(long departId)
+{
+	departId_ = departId;
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 
 std::string DescribeEventsRequest::getStatus()const

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeOpenApiUsageRequest();
 				~DescribeOpenApiUsageRequest();
 
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getStartDate()const;
 				void setStartDate(const std::string& startDate);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string endDate_;
-				std::string sourceIp_;
 				std::string startDate_;
 				std::string resourceType_;
+				std::string endDate_;
+				std::string sourceIp_;
 
 			};
 		}

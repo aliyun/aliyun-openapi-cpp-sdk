@@ -35,22 +35,19 @@ namespace AlibabaCloud
 				UpdateProjectRequest();
 				~UpdateProjectRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNewServiceRole()const;
-				void setNewServiceRole(const std::string& newServiceRole);
 				std::string getProject()const;
 				void setProject(const std::string& project);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNewServiceRole()const;
+				void setNewServiceRole(const std::string& newServiceRole);
 				int getNewCU()const;
 				void setNewCU(int newCU);
 
             private:
-				std::string regionId_;
-				std::string newServiceRole_;
 				std::string project_;
 				std::string accessKeyId_;
+				std::string newServiceRole_;
 				int newCU_;
 
 			};

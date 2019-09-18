@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				UpdateDNSSLBWeightRequest();
 				~UpdateDNSSLBWeightRequest();
 
+				int getWeight()const;
+				void setWeight(int weight);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRecordId()const;
 				void setRecordId(const std::string& recordId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				int getWeight()const;
-				void setWeight(int weight);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				int weight_;
+				std::string accessKeyId_;
 				std::string recordId_;
 				std::string userClientIp_;
-				int weight_;
 				std::string lang_;
-				std::string accessKeyId_;
 
 			};
 		}

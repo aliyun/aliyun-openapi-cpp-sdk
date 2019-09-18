@@ -58,17 +58,6 @@ void DeleteScheduledTaskRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteScheduledTaskRequest::getScheduledTaskId()const
-{
-	return scheduledTaskId_;
-}
-
-void DeleteScheduledTaskRequest::setScheduledTaskId(const std::string& scheduledTaskId)
-{
-	scheduledTaskId_ = scheduledTaskId;
-	setCoreParameter("ScheduledTaskId", scheduledTaskId);
-}
-
 std::string DeleteScheduledTaskRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +67,16 @@ void DeleteScheduledTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteScheduledTaskRequest::getScheduledTaskId()const
+{
+	return scheduledTaskId_;
+}
+
+void DeleteScheduledTaskRequest::setScheduledTaskId(const std::string& scheduledTaskId)
+{
+	scheduledTaskId_ = scheduledTaskId;
+	setCoreParameter("ScheduledTaskId", scheduledTaskId);
 }
 

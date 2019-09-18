@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				HeadquartersToolsO2ORequest();
 				~HeadquartersToolsO2ORequest();
 
-				long getBid()const;
-				void setBid(long bid);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getBid()const;
+				void setBid(long bid);
 
             private:
-				long bid_;
 				std::string accessKeyId_;
+				long bid_;
 
 			};
 		}

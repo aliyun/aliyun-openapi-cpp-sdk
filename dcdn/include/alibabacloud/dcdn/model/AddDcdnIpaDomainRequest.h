@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				AddDcdnIpaDomainRequest();
 				~AddDcdnIpaDomainRequest();
 
-				std::string getTopLevelDomain()const;
-				void setTopLevelDomain(const std::string& topLevelDomain);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSources()const;
 				void setSources(const std::string& sources);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getScope()const;
 				void setScope(const std::string& scope);
+				std::string getTopLevelDomain()const;
+				void setTopLevelDomain(const std::string& topLevelDomain);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -55,12 +55,12 @@ namespace AlibabaCloud
 				void setCheckUrl(const std::string& checkUrl);
 
             private:
-				std::string topLevelDomain_;
-				std::string resourceGroupId_;
 				std::string sources_;
+				std::string resourceGroupId_;
 				std::string securityToken_;
-				std::string ownerAccount_;
 				std::string scope_;
+				std::string topLevelDomain_;
+				std::string ownerAccount_;
 				std::string domainName_;
 				long ownerId_;
 				std::string checkUrl_;

@@ -35,19 +35,22 @@ namespace AlibabaCloud
 				CreateAliDnsRecordIdRequest();
 				~CreateAliDnsRecordIdRequest();
 
-				std::string getRecordId()const;
-				void setRecordId(const std::string& recordId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getOrderId()const;
 				void setOrderId(long orderId);
+				std::string getRecordId()const;
+				void setRecordId(const std::string& recordId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string recordId_;
-				std::string sourceIp_;
 				long orderId_;
+				std::string recordId_;
+				std::string resourceGroupId_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

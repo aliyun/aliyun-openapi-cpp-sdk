@@ -36,17 +36,6 @@ void DetachNetworkOptimizationSagsRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DetachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DetachNetworkOptimizationSagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DetachNetworkOptimizationSagsRequest::getRegionId()const
 {
 	return regionId_;
@@ -69,17 +58,6 @@ void DetachNetworkOptimizationSagsRequest::setNetworkOptId(const std::string& ne
 	setCoreParameter("NetworkOptId", networkOptId);
 }
 
-std::string DetachNetworkOptimizationSagsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DetachNetworkOptimizationSagsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::vector<std::string> DetachNetworkOptimizationSagsRequest::getSmartAGIds()const
 {
 	return smartAGIds_;
@@ -90,6 +68,28 @@ void DetachNetworkOptimizationSagsRequest::setSmartAGIds(const std::vector<std::
 	smartAGIds_ = smartAGIds;
 	for(int i = 0; i!= smartAGIds.size(); i++)
 		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
+}
+
+std::string DetachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DetachNetworkOptimizationSagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DetachNetworkOptimizationSagsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DetachNetworkOptimizationSagsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DetachNetworkOptimizationSagsRequest::getOwnerId()const

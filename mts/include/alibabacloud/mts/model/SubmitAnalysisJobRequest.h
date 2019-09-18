@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				SubmitAnalysisJobRequest();
 				~SubmitAnalysisJobRequest();
 
-				std::string getInput()const;
-				void setInput(const std::string& input);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAnalysisConfig()const;
 				void setAnalysisConfig(const std::string& analysisConfig);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -51,22 +51,22 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPriority()const;
 				void setPriority(const std::string& priority);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				std::string getInput()const;
+				void setInput(const std::string& input);
 
             private:
-				std::string input_;
-				std::string userData_;
 				long resourceOwnerId_;
 				std::string analysisConfig_;
+				std::string accessKeyId_;
+				std::string userData_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string priority_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				std::string input_;
 
 			};
 		}

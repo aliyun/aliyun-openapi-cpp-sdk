@@ -25,17 +25,6 @@ SaveSingleTaskForUpdatingContactInfoRequest::SaveSingleTaskForUpdatingContactInf
 SaveSingleTaskForUpdatingContactInfoRequest::~SaveSingleTaskForUpdatingContactInfoRequest()
 {}
 
-std::string SaveSingleTaskForUpdatingContactInfoRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void SaveSingleTaskForUpdatingContactInfoRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getContactType()const
 {
 	return contactType_;
@@ -45,17 +34,6 @@ void SaveSingleTaskForUpdatingContactInfoRequest::setContactType(const std::stri
 {
 	contactType_ = contactType;
 	setCoreParameter("ContactType", contactType);
-}
-
-std::string SaveSingleTaskForUpdatingContactInfoRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveSingleTaskForUpdatingContactInfoRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getDomainName()const
@@ -89,6 +67,28 @@ void SaveSingleTaskForUpdatingContactInfoRequest::setAddTransferLock(bool addTra
 {
 	addTransferLock_ = addTransferLock;
 	setCoreParameter("AddTransferLock", addTransferLock ? "true" : "false");
+}
+
+std::string SaveSingleTaskForUpdatingContactInfoRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void SaveSingleTaskForUpdatingContactInfoRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string SaveSingleTaskForUpdatingContactInfoRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveSingleTaskForUpdatingContactInfoRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getLang()const

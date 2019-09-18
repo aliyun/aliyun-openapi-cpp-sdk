@@ -25,17 +25,6 @@ DescribeVodRefreshQuotaRequest::DescribeVodRefreshQuotaRequest() :
 DescribeVodRefreshQuotaRequest::~DescribeVodRefreshQuotaRequest()
 {}
 
-std::string DescribeVodRefreshQuotaRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeVodRefreshQuotaRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 long DescribeVodRefreshQuotaRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -45,5 +34,16 @@ void DescribeVodRefreshQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeVodRefreshQuotaRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeVodRefreshQuotaRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -21,61 +21,61 @@ set(ots_public_header
 	include/alibabacloud/ots/OtsExport.h )
 
 set(ots_public_header_model 
-	include/alibabacloud/ots/model/ListClusterTypeRequest.h
-	include/alibabacloud/ots/model/ListClusterTypeResult.h
-	include/alibabacloud/ots/model/UnbindInstance2VpcRequest.h
-	include/alibabacloud/ots/model/UnbindInstance2VpcResult.h
-	include/alibabacloud/ots/model/UpdateInstanceRequest.h
-	include/alibabacloud/ots/model/UpdateInstanceResult.h
-	include/alibabacloud/ots/model/ListInstanceRequest.h
-	include/alibabacloud/ots/model/ListInstanceResult.h
-	include/alibabacloud/ots/model/ListVpcInfoByVpcRequest.h
-	include/alibabacloud/ots/model/ListVpcInfoByVpcResult.h
-	include/alibabacloud/ots/model/GetInstanceRequest.h
-	include/alibabacloud/ots/model/GetInstanceResult.h
 	include/alibabacloud/ots/model/BindInstance2VpcRequest.h
 	include/alibabacloud/ots/model/BindInstance2VpcResult.h
+	include/alibabacloud/ots/model/DeleteInstanceRequest.h
+	include/alibabacloud/ots/model/DeleteInstanceResult.h
+	include/alibabacloud/ots/model/DeleteTagsRequest.h
+	include/alibabacloud/ots/model/DeleteTagsResult.h
+	include/alibabacloud/ots/model/GetInstanceRequest.h
+	include/alibabacloud/ots/model/GetInstanceResult.h
 	include/alibabacloud/ots/model/InsertInstanceRequest.h
 	include/alibabacloud/ots/model/InsertInstanceResult.h
+	include/alibabacloud/ots/model/InsertTagsRequest.h
+	include/alibabacloud/ots/model/InsertTagsResult.h
+	include/alibabacloud/ots/model/ListClusterTypeRequest.h
+	include/alibabacloud/ots/model/ListClusterTypeResult.h
+	include/alibabacloud/ots/model/ListInstanceRequest.h
+	include/alibabacloud/ots/model/ListInstanceResult.h
 	include/alibabacloud/ots/model/ListTagsRequest.h
 	include/alibabacloud/ots/model/ListTagsResult.h
 	include/alibabacloud/ots/model/ListVpcInfoByInstanceRequest.h
 	include/alibabacloud/ots/model/ListVpcInfoByInstanceResult.h
-	include/alibabacloud/ots/model/InsertTagsRequest.h
-	include/alibabacloud/ots/model/InsertTagsResult.h
-	include/alibabacloud/ots/model/DeleteTagsRequest.h
-	include/alibabacloud/ots/model/DeleteTagsResult.h
-	include/alibabacloud/ots/model/DeleteInstanceRequest.h
-	include/alibabacloud/ots/model/DeleteInstanceResult.h )
+	include/alibabacloud/ots/model/ListVpcInfoByVpcRequest.h
+	include/alibabacloud/ots/model/ListVpcInfoByVpcResult.h
+	include/alibabacloud/ots/model/UnbindInstance2VpcRequest.h
+	include/alibabacloud/ots/model/UnbindInstance2VpcResult.h
+	include/alibabacloud/ots/model/UpdateInstanceRequest.h
+	include/alibabacloud/ots/model/UpdateInstanceResult.h )
 
 set(ots_src 
 	src/OtsClient.cc
-	src/model/ListClusterTypeRequest.cc
-	src/model/ListClusterTypeResult.cc
-	src/model/UnbindInstance2VpcRequest.cc
-	src/model/UnbindInstance2VpcResult.cc
-	src/model/UpdateInstanceRequest.cc
-	src/model/UpdateInstanceResult.cc
-	src/model/ListInstanceRequest.cc
-	src/model/ListInstanceResult.cc
-	src/model/ListVpcInfoByVpcRequest.cc
-	src/model/ListVpcInfoByVpcResult.cc
-	src/model/GetInstanceRequest.cc
-	src/model/GetInstanceResult.cc
 	src/model/BindInstance2VpcRequest.cc
 	src/model/BindInstance2VpcResult.cc
+	src/model/DeleteInstanceRequest.cc
+	src/model/DeleteInstanceResult.cc
+	src/model/DeleteTagsRequest.cc
+	src/model/DeleteTagsResult.cc
+	src/model/GetInstanceRequest.cc
+	src/model/GetInstanceResult.cc
 	src/model/InsertInstanceRequest.cc
 	src/model/InsertInstanceResult.cc
+	src/model/InsertTagsRequest.cc
+	src/model/InsertTagsResult.cc
+	src/model/ListClusterTypeRequest.cc
+	src/model/ListClusterTypeResult.cc
+	src/model/ListInstanceRequest.cc
+	src/model/ListInstanceResult.cc
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
 	src/model/ListVpcInfoByInstanceRequest.cc
 	src/model/ListVpcInfoByInstanceResult.cc
-	src/model/InsertTagsRequest.cc
-	src/model/InsertTagsResult.cc
-	src/model/DeleteTagsRequest.cc
-	src/model/DeleteTagsResult.cc
-	src/model/DeleteInstanceRequest.cc
-	src/model/DeleteInstanceResult.cc )
+	src/model/ListVpcInfoByVpcRequest.cc
+	src/model/ListVpcInfoByVpcResult.cc
+	src/model/UnbindInstance2VpcRequest.cc
+	src/model/UnbindInstance2VpcResult.cc
+	src/model/UpdateInstanceRequest.cc
+	src/model/UpdateInstanceResult.cc )
 
 add_library(ots ${LIB_TYPE}
 	${ots_public_header}

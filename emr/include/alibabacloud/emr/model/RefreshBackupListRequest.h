@@ -35,55 +35,19 @@ namespace AlibabaCloud
 				RefreshBackupListRequest();
 				~RefreshBackupListRequest();
 
-				std::string getApp_ip()const;
-				void setApp_ip(const std::string& app_ip);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				long getCallerParentId()const;
-				void setCallerParentId(long callerParentId);
-				bool getProxy_original_security_transport()const;
-				void setProxy_original_security_transport(bool proxy_original_security_transport);
-				std::string getCallerBid()const;
-				void setCallerBid(const std::string& callerBid);
-				std::string getProxy_original_source_ip()const;
-				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
-				bool getAk_mfa_present()const;
-				void setAk_mfa_present(bool ak_mfa_present);
-				bool getProxy_trust_transport_info()const;
-				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
-				std::string getCallerType()const;
-				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getSecurity_transport()const;
-				void setSecurity_transport(bool security_transport);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
-				long getCallerUid()const;
-				void setCallerUid(long callerUid);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
 
             private:
-				std::string app_ip_;
 				long resourceOwnerId_;
-				long callerParentId_;
-				bool proxy_original_security_transport_;
-				std::string callerBid_;
-				std::string proxy_original_source_ip_;
-				bool ak_mfa_present_;
-				bool proxy_trust_transport_info_;
-				std::string callerType_;
 				std::string accessKeyId_;
-				bool security_transport_;
-				std::string securityToken_;
 				std::string regionId_;
-				std::string requestId_;
-				long callerUid_;
 				std::string backupPlanId_;
 
 			};

@@ -25,28 +25,6 @@ DescribeAuditContentRequest::DescribeAuditContentRequest() :
 DescribeAuditContentRequest::~DescribeAuditContentRequest()
 {}
 
-int DescribeAuditContentRequest::getTotalCount()const
-{
-	return totalCount_;
-}
-
-void DescribeAuditContentRequest::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
-}
-
-std::string DescribeAuditContentRequest::getKeywordId()const
-{
-	return keywordId_;
-}
-
-void DescribeAuditContentRequest::setKeywordId(const std::string& keywordId)
-{
-	keywordId_ = keywordId;
-	setCoreParameter("KeywordId", keywordId);
-}
-
 std::string DescribeAuditContentRequest::getImageId()const
 {
 	return imageId_;
@@ -56,39 +34,6 @@ void DescribeAuditContentRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
 	setCoreParameter("ImageId", imageId);
-}
-
-std::string DescribeAuditContentRequest::getSuggestion()const
-{
-	return suggestion_;
-}
-
-void DescribeAuditContentRequest::setSuggestion(const std::string& suggestion)
-{
-	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", suggestion);
-}
-
-int DescribeAuditContentRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeAuditContentRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string DescribeAuditContentRequest::getLabel()const
-{
-	return label_;
-}
-
-void DescribeAuditContentRequest::setLabel(const std::string& label)
-{
-	label_ = label;
-	setCoreParameter("Label", label);
 }
 
 std::string DescribeAuditContentRequest::getStartDate()const
@@ -102,17 +47,6 @@ void DescribeAuditContentRequest::setStartDate(const std::string& startDate)
 	setCoreParameter("StartDate", startDate);
 }
 
-std::string DescribeAuditContentRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeAuditContentRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
-}
-
 std::string DescribeAuditContentRequest::getScene()const
 {
 	return scene_;
@@ -124,28 +58,6 @@ void DescribeAuditContentRequest::setScene(const std::string& scene)
 	setCoreParameter("Scene", scene);
 }
 
-std::string DescribeAuditContentRequest::getBizType()const
-{
-	return bizType_;
-}
-
-void DescribeAuditContentRequest::setBizType(const std::string& bizType)
-{
-	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
-}
-
-std::string DescribeAuditContentRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void DescribeAuditContentRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
-}
-
 std::string DescribeAuditContentRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -155,17 +67,6 @@ void DescribeAuditContentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeAuditContentRequest::getDataId()const
-{
-	return dataId_;
-}
-
-void DescribeAuditContentRequest::setDataId(const std::string& dataId)
-{
-	dataId_ = dataId;
-	setCoreParameter("DataId", dataId);
 }
 
 std::string DescribeAuditContentRequest::getLibType()const
@@ -221,5 +122,104 @@ void DescribeAuditContentRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setCoreParameter("TaskId", taskId);
+}
+
+int DescribeAuditContentRequest::getTotalCount()const
+{
+	return totalCount_;
+}
+
+void DescribeAuditContentRequest::setTotalCount(int totalCount)
+{
+	totalCount_ = totalCount;
+	setCoreParameter("TotalCount", std::to_string(totalCount));
+}
+
+std::string DescribeAuditContentRequest::getKeywordId()const
+{
+	return keywordId_;
+}
+
+void DescribeAuditContentRequest::setKeywordId(const std::string& keywordId)
+{
+	keywordId_ = keywordId;
+	setCoreParameter("KeywordId", keywordId);
+}
+
+std::string DescribeAuditContentRequest::getSuggestion()const
+{
+	return suggestion_;
+}
+
+void DescribeAuditContentRequest::setSuggestion(const std::string& suggestion)
+{
+	suggestion_ = suggestion;
+	setCoreParameter("Suggestion", suggestion);
+}
+
+int DescribeAuditContentRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeAuditContentRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeAuditContentRequest::getLabel()const
+{
+	return label_;
+}
+
+void DescribeAuditContentRequest::setLabel(const std::string& label)
+{
+	label_ = label;
+	setCoreParameter("Label", label);
+}
+
+std::string DescribeAuditContentRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeAuditContentRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
+std::string DescribeAuditContentRequest::getBizType()const
+{
+	return bizType_;
+}
+
+void DescribeAuditContentRequest::setBizType(const std::string& bizType)
+{
+	bizType_ = bizType;
+	setCoreParameter("BizType", bizType);
+}
+
+std::string DescribeAuditContentRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void DescribeAuditContentRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
+}
+
+std::string DescribeAuditContentRequest::getDataId()const
+{
+	return dataId_;
+}
+
+void DescribeAuditContentRequest::setDataId(const std::string& dataId)
+{
+	dataId_ = dataId;
+	setCoreParameter("DataId", dataId);
 }
 

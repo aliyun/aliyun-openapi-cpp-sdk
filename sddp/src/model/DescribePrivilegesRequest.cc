@@ -36,28 +36,6 @@ void DescribePrivilegesRequest::setAccountId(long accountId)
 	setCoreParameter("AccountId", std::to_string(accountId));
 }
 
-long DescribePrivilegesRequest::getUseAccountId()const
-{
-	return useAccountId_;
-}
-
-void DescribePrivilegesRequest::setUseAccountId(long useAccountId)
-{
-	useAccountId_ = useAccountId;
-	setCoreParameter("UseAccountId", std::to_string(useAccountId));
-}
-
-std::string DescribePrivilegesRequest::getDataTypeIds()const
-{
-	return dataTypeIds_;
-}
-
-void DescribePrivilegesRequest::setDataTypeIds(const std::string& dataTypeIds)
-{
-	dataTypeIds_ = dataTypeIds;
-	setCoreParameter("DataTypeIds", dataTypeIds);
-}
-
 std::string DescribePrivilegesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -69,17 +47,6 @@ void DescribePrivilegesRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-int DescribePrivilegesRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribePrivilegesRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
 int DescribePrivilegesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -89,17 +56,6 @@ void DescribePrivilegesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribePrivilegesRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribePrivilegesRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePrivilegesRequest::getLang()const
@@ -122,5 +78,49 @@ void DescribePrivilegesRequest::setKey(const std::string& key)
 {
 	key_ = key;
 	setCoreParameter("Key", key);
+}
+
+long DescribePrivilegesRequest::getUseAccountId()const
+{
+	return useAccountId_;
+}
+
+void DescribePrivilegesRequest::setUseAccountId(long useAccountId)
+{
+	useAccountId_ = useAccountId;
+	setCoreParameter("UseAccountId", std::to_string(useAccountId));
+}
+
+int DescribePrivilegesRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribePrivilegesRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+int DescribePrivilegesRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribePrivilegesRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribePrivilegesRequest::getDataTypeIds()const
+{
+	return dataTypeIds_;
+}
+
+void DescribePrivilegesRequest::setDataTypeIds(const std::string& dataTypeIds)
+{
+	dataTypeIds_ = dataTypeIds;
+	setCoreParameter("DataTypeIds", dataTypeIds);
 }
 

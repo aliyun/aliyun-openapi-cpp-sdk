@@ -21,95 +21,95 @@ set(market_public_header
 	include/alibabacloud/market/MarketExport.h )
 
 set(market_public_header_model 
+	include/alibabacloud/market/model/ActivateLicenseRequest.h
+	include/alibabacloud/market/model/ActivateLicenseResult.h
+	include/alibabacloud/market/model/BindImagePackageRequest.h
+	include/alibabacloud/market/model/BindImagePackageResult.h
+	include/alibabacloud/market/model/CreateCommodityRequest.h
+	include/alibabacloud/market/model/CreateCommodityResult.h
+	include/alibabacloud/market/model/CreateOrderRequest.h
+	include/alibabacloud/market/model/CreateOrderResult.h
+	include/alibabacloud/market/model/CreateRateRequest.h
+	include/alibabacloud/market/model/CreateRateResult.h
+	include/alibabacloud/market/model/DeleteCommodityRequest.h
+	include/alibabacloud/market/model/DeleteCommodityResult.h
+	include/alibabacloud/market/model/DescribeCommoditiesRequest.h
+	include/alibabacloud/market/model/DescribeCommoditiesResult.h
+	include/alibabacloud/market/model/DescribeCommodityRequest.h
+	include/alibabacloud/market/model/DescribeCommodityResult.h
+	include/alibabacloud/market/model/DescribeInstanceRequest.h
+	include/alibabacloud/market/model/DescribeInstanceResult.h
+	include/alibabacloud/market/model/DescribeInstancesRequest.h
+	include/alibabacloud/market/model/DescribeInstancesResult.h
+	include/alibabacloud/market/model/DescribeLicenseRequest.h
+	include/alibabacloud/market/model/DescribeLicenseResult.h
+	include/alibabacloud/market/model/DescribeOrderRequest.h
+	include/alibabacloud/market/model/DescribeOrderResult.h
+	include/alibabacloud/market/model/DescribePriceRequest.h
+	include/alibabacloud/market/model/DescribePriceResult.h
+	include/alibabacloud/market/model/DescribeProductRequest.h
+	include/alibabacloud/market/model/DescribeProductResult.h
+	include/alibabacloud/market/model/DescribeProductsRequest.h
+	include/alibabacloud/market/model/DescribeProductsResult.h
+	include/alibabacloud/market/model/DescribeRateRequest.h
+	include/alibabacloud/market/model/DescribeRateResult.h
 	include/alibabacloud/market/model/NotifyContractEventRequest.h
 	include/alibabacloud/market/model/NotifyContractEventResult.h
 	include/alibabacloud/market/model/PushMeteringDataRequest.h
 	include/alibabacloud/market/model/PushMeteringDataResult.h
-	include/alibabacloud/market/model/DescribeOrderRequest.h
-	include/alibabacloud/market/model/DescribeOrderResult.h
-	include/alibabacloud/market/model/BindImagePackageRequest.h
-	include/alibabacloud/market/model/BindImagePackageResult.h
-	include/alibabacloud/market/model/QueryMarketImagesRequest.h
-	include/alibabacloud/market/model/QueryMarketImagesResult.h
-	include/alibabacloud/market/model/DescribeProductsRequest.h
-	include/alibabacloud/market/model/DescribeProductsResult.h
-	include/alibabacloud/market/model/CreateOrderRequest.h
-	include/alibabacloud/market/model/CreateOrderResult.h
-	include/alibabacloud/market/model/DescribePriceRequest.h
-	include/alibabacloud/market/model/DescribePriceResult.h
-	include/alibabacloud/market/model/DescribeRateRequest.h
-	include/alibabacloud/market/model/DescribeRateResult.h
 	include/alibabacloud/market/model/QueryMarketCategoriesRequest.h
 	include/alibabacloud/market/model/QueryMarketCategoriesResult.h
-	include/alibabacloud/market/model/CreateRateRequest.h
-	include/alibabacloud/market/model/CreateRateResult.h
-	include/alibabacloud/market/model/DescribeInstanceRequest.h
-	include/alibabacloud/market/model/DescribeInstanceResult.h
-	include/alibabacloud/market/model/DescribeLicenseRequest.h
-	include/alibabacloud/market/model/DescribeLicenseResult.h
-	include/alibabacloud/market/model/DescribeInstancesRequest.h
-	include/alibabacloud/market/model/DescribeInstancesResult.h
-	include/alibabacloud/market/model/ActivateLicenseRequest.h
-	include/alibabacloud/market/model/ActivateLicenseResult.h
-	include/alibabacloud/market/model/DescribeCommodityRequest.h
-	include/alibabacloud/market/model/DescribeCommodityResult.h
-	include/alibabacloud/market/model/DescribeProductRequest.h
-	include/alibabacloud/market/model/DescribeProductResult.h
-	include/alibabacloud/market/model/CreateCommodityRequest.h
-	include/alibabacloud/market/model/CreateCommodityResult.h
-	include/alibabacloud/market/model/DeleteCommodityRequest.h
-	include/alibabacloud/market/model/DeleteCommodityResult.h
+	include/alibabacloud/market/model/QueryMarketImagesRequest.h
+	include/alibabacloud/market/model/QueryMarketImagesResult.h
 	include/alibabacloud/market/model/UpdateCommodityRequest.h
 	include/alibabacloud/market/model/UpdateCommodityResult.h
-	include/alibabacloud/market/model/DescribeCommoditiesRequest.h
-	include/alibabacloud/market/model/DescribeCommoditiesResult.h
 	include/alibabacloud/market/model/UploadCommodityFileRequest.h
 	include/alibabacloud/market/model/UploadCommodityFileResult.h )
 
 set(market_src 
 	src/MarketClient.cc
+	src/model/ActivateLicenseRequest.cc
+	src/model/ActivateLicenseResult.cc
+	src/model/BindImagePackageRequest.cc
+	src/model/BindImagePackageResult.cc
+	src/model/CreateCommodityRequest.cc
+	src/model/CreateCommodityResult.cc
+	src/model/CreateOrderRequest.cc
+	src/model/CreateOrderResult.cc
+	src/model/CreateRateRequest.cc
+	src/model/CreateRateResult.cc
+	src/model/DeleteCommodityRequest.cc
+	src/model/DeleteCommodityResult.cc
+	src/model/DescribeCommoditiesRequest.cc
+	src/model/DescribeCommoditiesResult.cc
+	src/model/DescribeCommodityRequest.cc
+	src/model/DescribeCommodityResult.cc
+	src/model/DescribeInstanceRequest.cc
+	src/model/DescribeInstanceResult.cc
+	src/model/DescribeInstancesRequest.cc
+	src/model/DescribeInstancesResult.cc
+	src/model/DescribeLicenseRequest.cc
+	src/model/DescribeLicenseResult.cc
+	src/model/DescribeOrderRequest.cc
+	src/model/DescribeOrderResult.cc
+	src/model/DescribePriceRequest.cc
+	src/model/DescribePriceResult.cc
+	src/model/DescribeProductRequest.cc
+	src/model/DescribeProductResult.cc
+	src/model/DescribeProductsRequest.cc
+	src/model/DescribeProductsResult.cc
+	src/model/DescribeRateRequest.cc
+	src/model/DescribeRateResult.cc
 	src/model/NotifyContractEventRequest.cc
 	src/model/NotifyContractEventResult.cc
 	src/model/PushMeteringDataRequest.cc
 	src/model/PushMeteringDataResult.cc
-	src/model/DescribeOrderRequest.cc
-	src/model/DescribeOrderResult.cc
-	src/model/BindImagePackageRequest.cc
-	src/model/BindImagePackageResult.cc
-	src/model/QueryMarketImagesRequest.cc
-	src/model/QueryMarketImagesResult.cc
-	src/model/DescribeProductsRequest.cc
-	src/model/DescribeProductsResult.cc
-	src/model/CreateOrderRequest.cc
-	src/model/CreateOrderResult.cc
-	src/model/DescribePriceRequest.cc
-	src/model/DescribePriceResult.cc
-	src/model/DescribeRateRequest.cc
-	src/model/DescribeRateResult.cc
 	src/model/QueryMarketCategoriesRequest.cc
 	src/model/QueryMarketCategoriesResult.cc
-	src/model/CreateRateRequest.cc
-	src/model/CreateRateResult.cc
-	src/model/DescribeInstanceRequest.cc
-	src/model/DescribeInstanceResult.cc
-	src/model/DescribeLicenseRequest.cc
-	src/model/DescribeLicenseResult.cc
-	src/model/DescribeInstancesRequest.cc
-	src/model/DescribeInstancesResult.cc
-	src/model/ActivateLicenseRequest.cc
-	src/model/ActivateLicenseResult.cc
-	src/model/DescribeCommodityRequest.cc
-	src/model/DescribeCommodityResult.cc
-	src/model/DescribeProductRequest.cc
-	src/model/DescribeProductResult.cc
-	src/model/CreateCommodityRequest.cc
-	src/model/CreateCommodityResult.cc
-	src/model/DeleteCommodityRequest.cc
-	src/model/DeleteCommodityResult.cc
+	src/model/QueryMarketImagesRequest.cc
+	src/model/QueryMarketImagesResult.cc
 	src/model/UpdateCommodityRequest.cc
 	src/model/UpdateCommodityResult.cc
-	src/model/DescribeCommoditiesRequest.cc
-	src/model/DescribeCommoditiesResult.cc
 	src/model/UploadCommodityFileRequest.cc
 	src/model/UploadCommodityFileResult.cc )
 

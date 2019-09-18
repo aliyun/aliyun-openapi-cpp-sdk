@@ -25,17 +25,6 @@ DeleteFaceSearchGroupRequest::DeleteFaceSearchGroupRequest() :
 DeleteFaceSearchGroupRequest::~DeleteFaceSearchGroupRequest()
 {}
 
-std::string DeleteFaceSearchGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteFaceSearchGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteFaceSearchGroupRequest::getProject()const
 {
 	return project_;

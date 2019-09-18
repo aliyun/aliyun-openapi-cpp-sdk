@@ -36,27 +36,15 @@ void ListTagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::vector<std::string> ListTagResourcesRequest::getResourceId()const
+std::string ListTagResourcesRequest::getAccessKeyId()const
 {
-	return resourceId_;
+	return accessKeyId_;
 }
 
-void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+void ListTagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
-}
-
-std::string ListTagResourcesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListTagResourcesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListTagResourcesRequest::getRegionId()const
@@ -81,17 +69,6 @@ void ListTagResourcesRequest::setNextToken(const std::string& nextToken)
 	setCoreParameter("NextToken", nextToken);
 }
 
-std::string ListTagResourcesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ListTagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag()const
 {
 	return tag_;
@@ -107,6 +84,40 @@ void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
+}
+
+std::vector<std::string> ListTagResourcesRequest::getResourceId()const
+{
+	return resourceId_;
+}
+
+void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
+{
+	resourceId_ = resourceId;
+	for(int i = 0; i!= resourceId.size(); i++)
+		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+}
+
+std::string ListTagResourcesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ListTagResourcesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ListTagResourcesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ListTagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ListTagResourcesRequest::getOwnerId()const
@@ -129,16 +140,5 @@ void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
-}
-
-std::string ListTagResourcesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListTagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

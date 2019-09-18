@@ -37,45 +37,45 @@ namespace AlibabaCloud
 
 				std::string getBusinessCity()const;
 				void setBusinessCity(const std::string& businessCity);
-				std::string getCombo()const;
-				void setCombo(const std::string& combo);
 				std::string getWarnEmail()const;
 				void setWarnEmail(const std::string& warnEmail);
-				std::string getBusinessManager()const;
-				void setBusinessManager(const std::string& businessManager);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getBusinessType()const;
 				void setBusinessType(int businessType);
-				int getWarn()const;
-				void setWarn(int warn);
-				std::string getBusinessName()const;
-				void setBusinessName(const std::string& businessName);
 				int getBusinessTopType()const;
 				void setBusinessTopType(int businessTopType);
-				std::string getBusinessAddress()const;
-				void setBusinessAddress(const std::string& businessAddress);
 				std::string getBusinessTel()const;
 				void setBusinessTel(const std::string& businessTel);
 				std::string getBusinessProvince()const;
 				void setBusinessProvince(const std::string& businessProvince);
 				int getBusinessSubtype()const;
 				void setBusinessSubtype(int businessSubtype);
+				std::string getCombo()const;
+				void setCombo(const std::string& combo);
+				std::string getBusinessManager()const;
+				void setBusinessManager(const std::string& businessManager);
+				int getWarn()const;
+				void setWarn(int warn);
+				std::string getBusinessName()const;
+				void setBusinessName(const std::string& businessName);
+				std::string getBusinessAddress()const;
+				void setBusinessAddress(const std::string& businessAddress);
 
             private:
 				std::string businessCity_;
-				std::string combo_;
 				std::string warnEmail_;
-				std::string businessManager_;
 				std::string accessKeyId_;
 				int businessType_;
-				int warn_;
-				std::string businessName_;
 				int businessTopType_;
-				std::string businessAddress_;
 				std::string businessTel_;
 				std::string businessProvince_;
 				int businessSubtype_;
+				std::string combo_;
+				std::string businessManager_;
+				int warn_;
+				std::string businessName_;
+				std::string businessAddress_;
 
 			};
 		}

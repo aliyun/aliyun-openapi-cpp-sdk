@@ -35,23 +35,20 @@ namespace AlibabaCloud
 				DeleteFaceSearchUserRequest();
 				~DeleteFaceSearchUserRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
 				std::string getUser()const;
 				void setUser(const std::string& user);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string regionId_;
 				std::string project_;
+				std::string accessKeyId_;
 				std::string groupName_;
 				std::string user_;
-				std::string accessKeyId_;
 
 			};
 		}

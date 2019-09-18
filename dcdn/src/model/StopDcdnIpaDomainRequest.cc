@@ -25,17 +25,6 @@ StopDcdnIpaDomainRequest::StopDcdnIpaDomainRequest() :
 StopDcdnIpaDomainRequest::~StopDcdnIpaDomainRequest()
 {}
 
-std::string StopDcdnIpaDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void StopDcdnIpaDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string StopDcdnIpaDomainRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,5 +45,16 @@ void StopDcdnIpaDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string StopDcdnIpaDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void StopDcdnIpaDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -19,11 +19,44 @@
 using AlibabaCloud::Cdn::Model::DescribeRefreshTasksRequest;
 
 DescribeRefreshTasksRequest::DescribeRefreshTasksRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeRefreshTasks")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeRefreshTasks")
 {}
 
 DescribeRefreshTasksRequest::~DescribeRefreshTasksRequest()
 {}
+
+std::string DescribeRefreshTasksRequest::getObjectPath()const
+{
+	return objectPath_;
+}
+
+void DescribeRefreshTasksRequest::setObjectPath(const std::string& objectPath)
+{
+	objectPath_ = objectPath;
+	setCoreParameter("ObjectPath", objectPath);
+}
+
+std::string DescribeRefreshTasksRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeRefreshTasksRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+int DescribeRefreshTasksRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeRefreshTasksRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
 
 std::string DescribeRefreshTasksRequest::getResourceGroupId()const
 {
@@ -47,28 +80,6 @@ void DescribeRefreshTasksRequest::setSecurityToken(const std::string& securityTo
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeRefreshTasksRequest::getObjectPath()const
-{
-	return objectPath_;
-}
-
-void DescribeRefreshTasksRequest::setObjectPath(const std::string& objectPath)
-{
-	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
-}
-
-std::string DescribeRefreshTasksRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeRefreshTasksRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 int DescribeRefreshTasksRequest::getPageSize()const
 {
 	return pageSize_;
@@ -78,39 +89,6 @@ void DescribeRefreshTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeRefreshTasksRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeRefreshTasksRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeRefreshTasksRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeRefreshTasksRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeRefreshTasksRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeRefreshTasksRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRefreshTasksRequest::getObjectType()const
@@ -135,15 +113,37 @@ void DescribeRefreshTasksRequest::setTaskId(const std::string& taskId)
 	setCoreParameter("TaskId", taskId);
 }
 
-int DescribeRefreshTasksRequest::getPageNumber()const
+std::string DescribeRefreshTasksRequest::getDomainName()const
 {
-	return pageNumber_;
+	return domainName_;
 }
 
-void DescribeRefreshTasksRequest::setPageNumber(int pageNumber)
+void DescribeRefreshTasksRequest::setDomainName(const std::string& domainName)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeRefreshTasksRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeRefreshTasksRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeRefreshTasksRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeRefreshTasksRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRefreshTasksRequest::getStatus()const

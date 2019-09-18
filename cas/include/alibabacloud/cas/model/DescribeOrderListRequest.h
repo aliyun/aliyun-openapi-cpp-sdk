@@ -40,31 +40,34 @@ namespace AlibabaCloud
 				DescribeOrderListRequest();
 				~DescribeOrderListRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getShowSize()const;
-				void setShowSize(int showSize);
 				long getBrandId()const;
 				void setBrandId(long brandId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getShowSize()const;
+				void setShowSize(int showSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				std::string resourceGroupId_;
 				std::string sourceIp_;
-				int showSize_;
 				long brandId_;
-				int currentPage_;
 				std::vector<Tag> tag_;
 				std::string keyword_;
 				std::string lang_;
+				int showSize_;
+				int currentPage_;
 				std::string status_;
 
 			};

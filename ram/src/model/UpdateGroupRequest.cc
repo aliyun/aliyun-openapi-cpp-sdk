@@ -25,6 +25,17 @@ UpdateGroupRequest::UpdateGroupRequest() :
 UpdateGroupRequest::~UpdateGroupRequest()
 {}
 
+std::string UpdateGroupRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void UpdateGroupRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setCoreParameter("GroupName", groupName);
+}
+
 std::string UpdateGroupRequest::getNewGroupName()const
 {
 	return newGroupName_;
@@ -45,16 +56,5 @@ void UpdateGroupRequest::setNewComments(const std::string& newComments)
 {
 	newComments_ = newComments;
 	setCoreParameter("NewComments", newComments);
-}
-
-std::string UpdateGroupRequest::getGroupName()const
-{
-	return groupName_;
-}
-
-void UpdateGroupRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
 }
 

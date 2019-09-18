@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				ModifyAlertConfigRequest();
 				~ModifyAlertConfigRequest();
 
-				int getSuccessConfig()const;
-				void setSuccessConfig(int successConfig);
 				int getRejectConfig()const;
 				void setRejectConfig(int rejectConfig);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getFailConfig()const;
 				void setFailConfig(int failConfig);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getSuccessConfig()const;
+				void setSuccessConfig(int successConfig);
 
             private:
-				int successConfig_;
 				int rejectConfig_;
-				std::string resourceOwnerAccount_;
 				std::string scalingGroupId_;
-				long ownerId_;
 				int failConfig_;
 				std::string accessKeyId_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				int successConfig_;
 
 			};
 		}

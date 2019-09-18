@@ -25,17 +25,6 @@ DescribeLiveStreamRecordIndexFileRequest::DescribeLiveStreamRecordIndexFileReque
 DescribeLiveStreamRecordIndexFileRequest::~DescribeLiveStreamRecordIndexFileRequest()
 {}
 
-std::string DescribeLiveStreamRecordIndexFileRequest::getRecordId()const
-{
-	return recordId_;
-}
-
-void DescribeLiveStreamRecordIndexFileRequest::setRecordId(const std::string& recordId)
-{
-	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
-}
-
 std::string DescribeLiveStreamRecordIndexFileRequest::getAppName()const
 {
 	return appName_;
@@ -56,6 +45,17 @@ void DescribeLiveStreamRecordIndexFileRequest::setSecurityToken(const std::strin
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeLiveStreamRecordIndexFileRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void DescribeLiveStreamRecordIndexFileRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getDomainName()const
@@ -80,14 +80,14 @@ void DescribeLiveStreamRecordIndexFileRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeLiveStreamRecordIndexFileRequest::getStreamName()const
+std::string DescribeLiveStreamRecordIndexFileRequest::getRecordId()const
 {
-	return streamName_;
+	return recordId_;
 }
 
-void DescribeLiveStreamRecordIndexFileRequest::setStreamName(const std::string& streamName)
+void DescribeLiveStreamRecordIndexFileRequest::setRecordId(const std::string& recordId)
 {
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	recordId_ = recordId;
+	setCoreParameter("RecordId", recordId);
 }
 

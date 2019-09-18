@@ -25,6 +25,39 @@ AttachLoadBalancersRequest::AttachLoadBalancersRequest() :
 AttachLoadBalancersRequest::~AttachLoadBalancersRequest()
 {}
 
+std::string AttachLoadBalancersRequest::getScalingGroupId()const
+{
+	return scalingGroupId_;
+}
+
+void AttachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
+{
+	scalingGroupId_ = scalingGroupId;
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+bool AttachLoadBalancersRequest::getForceAttach()const
+{
+	return forceAttach_;
+}
+
+void AttachLoadBalancersRequest::setForceAttach(bool forceAttach)
+{
+	forceAttach_ = forceAttach;
+	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
+}
+
+std::string AttachLoadBalancersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AttachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<std::string> AttachLoadBalancersRequest::getLoadBalancer()const
 {
 	return loadBalancer_;
@@ -48,28 +81,6 @@ void AttachLoadBalancersRequest::setResourceOwnerAccount(const std::string& reso
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string AttachLoadBalancersRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void AttachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
-bool AttachLoadBalancersRequest::getForceAttach()const
-{
-	return forceAttach_;
-}
-
-void AttachLoadBalancersRequest::setForceAttach(bool forceAttach)
-{
-	forceAttach_ = forceAttach;
-	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
-}
-
 long AttachLoadBalancersRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -79,16 +90,5 @@ void AttachLoadBalancersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AttachLoadBalancersRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AttachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

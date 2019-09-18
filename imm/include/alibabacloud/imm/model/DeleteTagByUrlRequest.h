@@ -35,23 +35,20 @@ namespace AlibabaCloud
 				DeleteTagByUrlRequest();
 				~DeleteTagByUrlRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSetId()const;
 				void setSetId(const std::string& setId);
 				std::string getSrcUri()const;
 				void setSrcUri(const std::string& srcUri);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string regionId_;
 				std::string project_;
+				std::string accessKeyId_;
 				std::string setId_;
 				std::string srcUri_;
-				std::string accessKeyId_;
 
 			};
 		}

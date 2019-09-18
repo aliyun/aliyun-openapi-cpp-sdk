@@ -36,17 +36,6 @@ void BindInstance2VpcRequest::setAccess_key_id(const std::string& access_key_id)
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string BindInstance2VpcRequest::getInstanceVpcName()const
-{
-	return instanceVpcName_;
-}
-
-void BindInstance2VpcRequest::setInstanceVpcName(const std::string& instanceVpcName)
-{
-	instanceVpcName_ = instanceVpcName;
-	setCoreParameter("InstanceVpcName", instanceVpcName);
-}
-
 long BindInstance2VpcRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,28 +45,6 @@ void BindInstance2VpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string BindInstance2VpcRequest::getInstanceName()const
-{
-	return instanceName_;
-}
-
-void BindInstance2VpcRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
-}
-
-std::string BindInstance2VpcRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void BindInstance2VpcRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
 }
 
 std::string BindInstance2VpcRequest::getVirtualSwitchId()const
@@ -111,5 +78,38 @@ void BindInstance2VpcRequest::setNetwork(const std::string& network)
 {
 	network_ = network;
 	setCoreParameter("Network", network);
+}
+
+std::string BindInstance2VpcRequest::getInstanceVpcName()const
+{
+	return instanceVpcName_;
+}
+
+void BindInstance2VpcRequest::setInstanceVpcName(const std::string& instanceVpcName)
+{
+	instanceVpcName_ = instanceVpcName;
+	setCoreParameter("InstanceVpcName", instanceVpcName);
+}
+
+std::string BindInstance2VpcRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void BindInstance2VpcRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setCoreParameter("InstanceName", instanceName);
+}
+
+std::string BindInstance2VpcRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void BindInstance2VpcRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
 }
 

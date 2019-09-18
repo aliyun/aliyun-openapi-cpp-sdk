@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				AddDomainRequest();
 				~AddDomainRequest();
 
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string resourceGroupId_;
 				std::string groupId_;
 				std::string domainName_;
+				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string userClientIp_;
 				std::string lang_;
-				std::string accessKeyId_;
 
 			};
 		}

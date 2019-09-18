@@ -47,72 +47,6 @@ void UpdateRuleRequest::setRuleDesc(const std::string& ruleDesc)
 	setCoreParameter("RuleDesc", ruleDesc);
 }
 
-std::string UpdateRuleRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void UpdateRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
-std::string UpdateRuleRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateRuleRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string UpdateRuleRequest::getWhere()const
-{
-	return where_;
-}
-
-void UpdateRuleRequest::setWhere(const std::string& where)
-{
-	where_ = where;
-	setCoreParameter("Where", where);
-}
-
-long UpdateRuleRequest::getRuleId()const
-{
-	return ruleId_;
-}
-
-void UpdateRuleRequest::setRuleId(long ruleId)
-{
-	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
-}
-
-std::string UpdateRuleRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void UpdateRuleRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
-int UpdateRuleRequest::getTopicType()const
-{
-	return topicType_;
-}
-
-void UpdateRuleRequest::setTopicType(int topicType)
-{
-	topicType_ = topicType;
-	setCoreParameter("TopicType", std::to_string(topicType));
-}
-
 std::string UpdateRuleRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -133,5 +67,71 @@ void UpdateRuleRequest::setShortTopic(const std::string& shortTopic)
 {
 	shortTopic_ = shortTopic;
 	setCoreParameter("ShortTopic", shortTopic);
+}
+
+std::string UpdateRuleRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UpdateRuleRequest::getWhere()const
+{
+	return where_;
+}
+
+void UpdateRuleRequest::setWhere(const std::string& where)
+{
+	where_ = where;
+	setCoreParameter("Where", where);
+}
+
+int UpdateRuleRequest::getTopicType()const
+{
+	return topicType_;
+}
+
+void UpdateRuleRequest::setTopicType(int topicType)
+{
+	topicType_ = topicType;
+	setCoreParameter("TopicType", std::to_string(topicType));
+}
+
+std::string UpdateRuleRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void UpdateRuleRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string UpdateRuleRequest::getName()const
+{
+	return name_;
+}
+
+void UpdateRuleRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+long UpdateRuleRequest::getRuleId()const
+{
+	return ruleId_;
+}
+
+void UpdateRuleRequest::setRuleId(long ruleId)
+{
+	ruleId_ = ruleId;
+	setCoreParameter("RuleId", std::to_string(ruleId));
 }
 

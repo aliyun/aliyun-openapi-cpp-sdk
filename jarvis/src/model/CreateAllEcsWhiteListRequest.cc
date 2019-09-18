@@ -47,17 +47,6 @@ void CreateAllEcsWhiteListRequest::setSrcIP(const std::string& srcIP)
 	setCoreParameter("SrcIP", srcIP);
 }
 
-std::string CreateAllEcsWhiteListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateAllEcsWhiteListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string CreateAllEcsWhiteListRequest::getSourceCode()const
 {
 	return sourceCode_;
@@ -67,5 +56,16 @@ void CreateAllEcsWhiteListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
 	setCoreParameter("SourceCode", sourceCode);
+}
+
+std::string CreateAllEcsWhiteListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateAllEcsWhiteListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

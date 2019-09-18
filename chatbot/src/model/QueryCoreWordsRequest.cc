@@ -25,6 +25,17 @@ QueryCoreWordsRequest::QueryCoreWordsRequest() :
 QueryCoreWordsRequest::~QueryCoreWordsRequest()
 {}
 
+int QueryCoreWordsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void QueryCoreWordsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string QueryCoreWordsRequest::getSynonym()const
 {
 	return synonym_;
@@ -56,16 +67,5 @@ void QueryCoreWordsRequest::setCoreWordName(const std::string& coreWordName)
 {
 	coreWordName_ = coreWordName;
 	setCoreParameter("CoreWordName", coreWordName);
-}
-
-int QueryCoreWordsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void QueryCoreWordsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

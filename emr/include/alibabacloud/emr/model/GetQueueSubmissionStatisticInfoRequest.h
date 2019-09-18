@@ -39,28 +39,28 @@ namespace AlibabaCloud
 				void setFromDatetime(const std::string& fromDatetime);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getToDatetime()const;
 				void setToDatetime(const std::string& toDatetime);
-				std::string getApplicationType()const;
-				void setApplicationType(const std::string& applicationType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getFinalStatus()const;
 				void setFinalStatus(const std::string& finalStatus);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getApplicationType()const;
+				void setApplicationType(const std::string& applicationType);
 
             private:
 				std::string fromDatetime_;
 				long resourceOwnerId_;
-				std::string regionId_;
 				std::string clusterId_;
 				std::string toDatetime_;
-				std::string applicationType_;
 				std::string accessKeyId_;
 				std::string finalStatus_;
+				std::string regionId_;
+				std::string applicationType_;
 
 			};
 		}

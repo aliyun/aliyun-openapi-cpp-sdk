@@ -35,32 +35,29 @@ namespace AlibabaCloud
 				SearchFaceRequest();
 				~SearchFaceRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				int getResultNum()const;
 				void setResultNum(int resultNum);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSearchThresholdLevel()const;
 				void setSearchThresholdLevel(const std::string& searchThresholdLevel);
-				std::string getSrcUri()const;
-				void setSrcUri(const std::string& srcUri);
 				bool getIsThreshold()const;
 				void setIsThreshold(bool isThreshold);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSrcUri()const;
+				void setSrcUri(const std::string& srcUri);
 
             private:
-				std::string regionId_;
 				int resultNum_;
 				std::string project_;
+				std::string accessKeyId_;
 				std::string searchThresholdLevel_;
-				std::string srcUri_;
 				bool isThreshold_;
 				std::string groupName_;
-				std::string accessKeyId_;
+				std::string srcUri_;
 
 			};
 		}

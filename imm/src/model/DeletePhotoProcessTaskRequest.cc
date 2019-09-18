@@ -25,17 +25,6 @@ DeletePhotoProcessTaskRequest::DeletePhotoProcessTaskRequest() :
 DeletePhotoProcessTaskRequest::~DeletePhotoProcessTaskRequest()
 {}
 
-std::string DeletePhotoProcessTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeletePhotoProcessTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeletePhotoProcessTaskRequest::getProject()const
 {
 	return project_;
@@ -47,17 +36,6 @@ void DeletePhotoProcessTaskRequest::setProject(const std::string& project)
 	setCoreParameter("Project", project);
 }
 
-std::string DeletePhotoProcessTaskRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void DeletePhotoProcessTaskRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
-}
-
 std::string DeletePhotoProcessTaskRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,16 @@ void DeletePhotoProcessTaskRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeletePhotoProcessTaskRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void DeletePhotoProcessTaskRequest::setTaskId(const std::string& taskId)
+{
+	taskId_ = taskId;
+	setCoreParameter("TaskId", taskId);
 }
 

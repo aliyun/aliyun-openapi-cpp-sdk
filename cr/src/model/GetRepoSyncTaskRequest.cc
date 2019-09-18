@@ -25,6 +25,17 @@ GetRepoSyncTaskRequest::GetRepoSyncTaskRequest() :
 GetRepoSyncTaskRequest::~GetRepoSyncTaskRequest()
 {}
 
+std::string GetRepoSyncTaskRequest::getSyncTaskId()const
+{
+	return syncTaskId_;
+}
+
+void GetRepoSyncTaskRequest::setSyncTaskId(const std::string& syncTaskId)
+{
+	syncTaskId_ = syncTaskId;
+	setCoreParameter("SyncTaskId", syncTaskId);
+}
+
 std::string GetRepoSyncTaskRequest::getRepoNamespace()const
 {
 	return repoNamespace_;
@@ -45,27 +56,5 @@ void GetRepoSyncTaskRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
 	setCoreParameter("RepoName", repoName);
-}
-
-std::string GetRepoSyncTaskRequest::getSyncTaskId()const
-{
-	return syncTaskId_;
-}
-
-void GetRepoSyncTaskRequest::setSyncTaskId(const std::string& syncTaskId)
-{
-	syncTaskId_ = syncTaskId;
-	setCoreParameter("SyncTaskId", syncTaskId);
-}
-
-std::string GetRepoSyncTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoSyncTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 

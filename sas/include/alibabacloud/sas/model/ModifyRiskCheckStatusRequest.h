@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				ModifyRiskCheckStatusRequest();
 				~ModifyRiskCheckStatusRequest();
 
-				long getItemId()const;
-				void setItemId(long itemId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				long getItemId()const;
+				void setItemId(long itemId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				void setStatus(const std::string& status);
 
             private:
-				long itemId_;
 				long resourceOwnerId_;
+				long itemId_;
 				std::string sourceIp_;
 				std::string lang_;
 				long taskId_;

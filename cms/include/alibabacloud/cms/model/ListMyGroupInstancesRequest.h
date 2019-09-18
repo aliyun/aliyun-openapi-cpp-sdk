@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				ListMyGroupInstancesRequest();
 				~ListMyGroupInstancesRequest();
 
+				long getGroupId()const;
+				void setGroupId(long groupId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				bool getTotal()const;
 				void setTotal(bool total);
 				std::string getInstanceIds()const;
 				void setInstanceIds(const std::string& instanceIds);
-				long getGroupId()const;
-				void setGroupId(long groupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getCategory()const;
 				void setCategory(const std::string& category);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				long groupId_;
+				int pageNumber_;
 				bool total_;
 				std::string instanceIds_;
-				long groupId_;
 				int pageSize_;
 				std::string category_;
 				std::string keyword_;
-				int pageNumber_;
 
 			};
 		}

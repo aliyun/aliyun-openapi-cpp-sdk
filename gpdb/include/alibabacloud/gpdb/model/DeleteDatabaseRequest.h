@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeleteDatabaseRequest();
 				~DeleteDatabaseRequest();
 
-				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getDBName()const;
+				void setDBName(const std::string& dBName);
 
             private:
-				std::string dBName_;
-				std::string dBInstanceId_;
 				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string dBName_;
 
 			};
 		}

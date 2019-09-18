@@ -47,17 +47,6 @@ void UpdateVodDomainRequest::setSources(const std::string& sources)
 	setCoreParameter("Sources", sources);
 }
 
-std::string UpdateVodDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void UpdateVodDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string UpdateVodDomainRequest::getDomainName()const
 {
 	return domainName_;
@@ -78,5 +67,16 @@ void UpdateVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UpdateVodDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void UpdateVodDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -37,48 +37,45 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRoleId()const;
 				void setRoleId(const std::string& roleId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getReplicaSetRole()const;
 				void setReplicaSetRole(const std::string& replicaSetRole);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
 				std::string getKey()const;
 				void setKey(const std::string& key);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string roleId_;
-				std::string ownerAccount_;
-				std::string endTime_;
 				std::string startTime_;
-				long ownerId_;
 				std::string accessKeyId_;
 				std::string replicaSetRole_;
 				std::string securityToken_;
-				std::string regionId_;
 				std::string dBInstanceId_;
 				std::string nodeId_;
 				std::string key_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string endTime_;
+				long ownerId_;
 
 			};
 		}

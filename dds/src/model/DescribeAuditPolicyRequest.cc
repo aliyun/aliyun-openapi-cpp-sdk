@@ -36,6 +36,17 @@ void DescribeAuditPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAuditPolicyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeAuditPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeAuditPolicyRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeAuditPolicyRequest::setSecurityToken(const std::string& securityTok
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeAuditPolicyRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeAuditPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAuditPolicyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeAuditPolicyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeAuditPolicyRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeAuditPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAuditPolicyRequest::getDBInstanceId()const
@@ -91,6 +69,28 @@ void DescribeAuditPolicyRequest::setDBInstanceId(const std::string& dBInstanceId
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeAuditPolicyRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAuditPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAuditPolicyRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeAuditPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeAuditPolicyRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void DescribeAuditPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeAuditPolicyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeAuditPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

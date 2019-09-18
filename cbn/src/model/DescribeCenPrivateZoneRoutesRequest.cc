@@ -36,17 +36,6 @@ void DescribeCenPrivateZoneRoutesRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeCenPrivateZoneRoutesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeCenPrivateZoneRoutesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeCenPrivateZoneRoutesRequest::getCenId()const
 {
 	return cenId_;
@@ -56,6 +45,28 @@ void DescribeCenPrivateZoneRoutesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
 	setCoreParameter("CenId", cenId);
+}
+
+std::string DescribeCenPrivateZoneRoutesRequest::getAccessRegionId()const
+{
+	return accessRegionId_;
+}
+
+void DescribeCenPrivateZoneRoutesRequest::setAccessRegionId(const std::string& accessRegionId)
+{
+	accessRegionId_ = accessRegionId;
+	setCoreParameter("AccessRegionId", accessRegionId);
+}
+
+int DescribeCenPrivateZoneRoutesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeCenPrivateZoneRoutesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeCenPrivateZoneRoutesRequest::getPageSize()const
@@ -80,25 +91,14 @@ void DescribeCenPrivateZoneRoutesRequest::setHostRegionId(const std::string& hos
 	setCoreParameter("HostRegionId", hostRegionId);
 }
 
-std::string DescribeCenPrivateZoneRoutesRequest::getAccessRegionId()const
+std::string DescribeCenPrivateZoneRoutesRequest::getResourceOwnerAccount()const
 {
-	return accessRegionId_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeCenPrivateZoneRoutesRequest::setAccessRegionId(const std::string& accessRegionId)
+void DescribeCenPrivateZoneRoutesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
-}
-
-int DescribeCenPrivateZoneRoutesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeCenPrivateZoneRoutesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 

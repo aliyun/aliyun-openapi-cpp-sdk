@@ -25,17 +25,6 @@ MigrateToOtherZoneRequest::MigrateToOtherZoneRequest() :
 MigrateToOtherZoneRequest::~MigrateToOtherZoneRequest()
 {}
 
-std::string MigrateToOtherZoneRequest::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void MigrateToOtherZoneRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
-}
-
 long MigrateToOtherZoneRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,17 @@ void MigrateToOtherZoneRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string MigrateToOtherZoneRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void MigrateToOtherZoneRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MigrateToOtherZoneRequest::getSecurityToken()const
@@ -58,28 +58,6 @@ void MigrateToOtherZoneRequest::setSecurityToken(const std::string& securityToke
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string MigrateToOtherZoneRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void MigrateToOtherZoneRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string MigrateToOtherZoneRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void MigrateToOtherZoneRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string MigrateToOtherZoneRequest::getEffectiveTime()const
 {
 	return effectiveTime_;
@@ -89,28 +67,6 @@ void MigrateToOtherZoneRequest::setEffectiveTime(const std::string& effectiveTim
 {
 	effectiveTime_ = effectiveTime;
 	setCoreParameter("EffectiveTime", effectiveTime);
-}
-
-std::string MigrateToOtherZoneRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void MigrateToOtherZoneRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string MigrateToOtherZoneRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void MigrateToOtherZoneRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string MigrateToOtherZoneRequest::getDBInstanceId()const
@@ -124,6 +80,28 @@ void MigrateToOtherZoneRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string MigrateToOtherZoneRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void MigrateToOtherZoneRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string MigrateToOtherZoneRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void MigrateToOtherZoneRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long MigrateToOtherZoneRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -135,14 +113,25 @@ void MigrateToOtherZoneRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string MigrateToOtherZoneRequest::getAccessKeyId()const
+std::string MigrateToOtherZoneRequest::getVSwitchId()const
 {
-	return accessKeyId_;
+	return vSwitchId_;
 }
 
-void MigrateToOtherZoneRequest::setAccessKeyId(const std::string& accessKeyId)
+void MigrateToOtherZoneRequest::setVSwitchId(const std::string& vSwitchId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	vSwitchId_ = vSwitchId;
+	setCoreParameter("VSwitchId", vSwitchId);
+}
+
+std::string MigrateToOtherZoneRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void MigrateToOtherZoneRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
 }
 

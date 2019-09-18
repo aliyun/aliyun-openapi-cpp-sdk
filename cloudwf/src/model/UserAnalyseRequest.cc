@@ -25,17 +25,6 @@ UserAnalyseRequest::UserAnalyseRequest() :
 UserAnalyseRequest::~UserAnalyseRequest()
 {}
 
-long UserAnalyseRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void UserAnalyseRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string UserAnalyseRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void UserAnalyseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long UserAnalyseRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void UserAnalyseRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

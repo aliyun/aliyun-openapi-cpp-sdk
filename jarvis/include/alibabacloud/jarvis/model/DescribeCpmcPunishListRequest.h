@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				std::string getSrcIP()const;
 				void setSrcIP(const std::string& srcIP);
+				std::string getPunishType()const;
+				void setPunishType(const std::string& punishType);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getPunishType()const;
-				void setPunishType(const std::string& punishType);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getPunishStatus()const;
 				void setPunishStatus(const std::string& punishStatus);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 
             private:
 				std::string srcIP_;
+				std::string punishType_;
+				std::string sourceCode_;
 				std::string sourceIp_;
 				int pageSize_;
-				std::string punishType_;
-				int currentPage_;
 				std::string punishStatus_;
 				std::string lang_;
-				std::string sourceCode_;
+				int currentPage_;
 
 			};
 		}

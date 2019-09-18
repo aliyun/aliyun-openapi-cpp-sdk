@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				BindTagRequest();
 				~BindTagRequest();
 
+				std::string getKeyType()const;
+				void setKeyType(const std::string& keyType);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTagName()const;
 				void setTagName(const std::string& tagName);
 				std::string getClientKey()const;
 				void setClientKey(const std::string& clientKey);
 				long getAppKey()const;
 				void setAppKey(long appKey);
-				std::string getKeyType()const;
-				void setKeyType(const std::string& keyType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string keyType_;
+				std::string accessKeyId_;
 				std::string tagName_;
 				std::string clientKey_;
 				long appKey_;
-				std::string keyType_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -25,6 +25,28 @@ DescribeEcsListPageRequest::DescribeEcsListPageRequest() :
 DescribeEcsListPageRequest::~DescribeEcsListPageRequest()
 {}
 
+int DescribeEcsListPageRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeEcsListPageRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeEcsListPageRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeEcsListPageRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeEcsListPageRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,17 +69,6 @@ void DescribeEcsListPageRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeEcsListPageRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeEcsListPageRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeEcsListPageRequest::getLang()const
 {
 	return lang_;
@@ -67,16 +78,5 @@ void DescribeEcsListPageRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeEcsListPageRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeEcsListPageRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

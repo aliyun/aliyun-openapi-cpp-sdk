@@ -35,44 +35,44 @@ namespace AlibabaCloud
 				DescribeRecordStatisticsSummaryRequest();
 				~DescribeRecordStatisticsSummaryRequest();
 
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
+				long getThreshold()const;
+				void setThreshold(long threshold);
+				std::string getStartDate()const;
+				void setStartDate(const std::string& startDate);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::string getKeyword()const;
+				void setKeyword(const std::string& keyword);
+				std::string getDirection()const;
+				void setDirection(const std::string& direction);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getSearchMode()const;
 				void setSearchMode(const std::string& searchMode);
-				long getThreshold()const;
-				void setThreshold(long threshold);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
-				std::string getKeyword()const;
-				void setKeyword(const std::string& keyword);
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
-				std::string getDirection()const;
-				void setDirection(const std::string& direction);
 
             private:
-				std::string endDate_;
-				std::string userClientIp_;
+				long threshold_;
+				std::string startDate_;
+				long pageNumber_;
 				long pageSize_;
+				std::string lang_;
+				std::string keyword_;
+				std::string direction_;
 				std::string domainName_;
 				std::string orderBy_;
+				std::string endDate_;
+				std::string userClientIp_;
 				std::string searchMode_;
-				long threshold_;
-				std::string lang_;
-				std::string startDate_;
-				std::string keyword_;
-				long pageNumber_;
-				std::string direction_;
 
 			};
 		}

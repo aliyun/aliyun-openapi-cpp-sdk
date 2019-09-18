@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				SubmitTranscodeJobsRequest();
 				~SubmitTranscodeJobsRequest();
 
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getTemplateGroupId()const;
-				void setTemplateGroupId(const std::string& templateGroupId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getVideoId()const;
@@ -51,25 +51,25 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPriority()const;
 				void setPriority(const std::string& priority);
-				std::string getEncryptConfig()const;
-				void setEncryptConfig(const std::string& encryptConfig);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				std::string getTemplateGroupId()const;
+				void setTemplateGroupId(const std::string& templateGroupId);
+				std::string getEncryptConfig()const;
+				void setEncryptConfig(const std::string& encryptConfig);
 
             private:
-				std::string userData_;
 				long resourceOwnerId_;
-				std::string templateGroupId_;
+				std::string accessKeyId_;
+				std::string userData_;
 				std::string resourceOwnerAccount_;
 				std::string videoId_;
 				std::string overrideParams_;
 				long ownerId_;
 				std::string priority_;
-				std::string encryptConfig_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				std::string templateGroupId_;
+				std::string encryptConfig_;
 
 			};
 		}

@@ -36,28 +36,6 @@ void DescribeDataTotalCountRequest::setProductCode(const std::string& productCod
 	setCoreParameter("ProductCode", productCode);
 }
 
-long DescribeDataTotalCountRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeDataTotalCountRequest::setInstanceId(long instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
-}
-
-std::string DescribeDataTotalCountRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeDataTotalCountRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeDataTotalCountRequest::getFeatureType()const
 {
 	return featureType_;
@@ -78,6 +56,28 @@ void DescribeDataTotalCountRequest::setCountType(int countType)
 {
 	countType_ = countType;
 	setCoreParameter("CountType", std::to_string(countType));
+}
+
+long DescribeDataTotalCountRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeDataTotalCountRequest::setInstanceId(long instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", std::to_string(instanceId));
+}
+
+std::string DescribeDataTotalCountRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeDataTotalCountRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDataTotalCountRequest::getLang()const

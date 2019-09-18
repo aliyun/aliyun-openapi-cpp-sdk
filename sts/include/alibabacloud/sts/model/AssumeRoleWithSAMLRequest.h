@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				AssumeRoleWithSAMLRequest();
 				~AssumeRoleWithSAMLRequest();
 
+				std::string getSAMLAssertion()const;
+				void setSAMLAssertion(const std::string& sAMLAssertion);
 				std::string getRoleArn()const;
 				void setRoleArn(const std::string& roleArn);
 				std::string getSAMLProviderArn()const;
 				void setSAMLProviderArn(const std::string& sAMLProviderArn);
-				std::string getSAMLAssertion()const;
-				void setSAMLAssertion(const std::string& sAMLAssertion);
 				long getDurationSeconds()const;
 				void setDurationSeconds(long durationSeconds);
 				std::string getPolicy()const;
 				void setPolicy(const std::string& policy);
 
             private:
+				std::string sAMLAssertion_;
 				std::string roleArn_;
 				std::string sAMLProviderArn_;
-				std::string sAMLAssertion_;
 				long durationSeconds_;
 				std::string policy_;
 

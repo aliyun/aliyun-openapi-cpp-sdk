@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getConnectionStringPrefix()const;
 				void setConnectionStringPrefix(const std::string& connectionStringPrefix);
-				std::string getPort()const;
-				void setPort(const std::string& port);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getPort()const;
+				void setPort(const std::string& port);
 
             private:
 				std::string connectionStringPrefix_;
-				std::string port_;
-				std::string dBInstanceId_;
 				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string port_;
 
 			};
 		}

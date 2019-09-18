@@ -36,6 +36,28 @@ void GetMezzanineInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string GetMezzanineInfoRequest::getOutputType()const
+{
+	return outputType_;
+}
+
+void GetMezzanineInfoRequest::setOutputType(const std::string& outputType)
+{
+	outputType_ = outputType;
+	setCoreParameter("OutputType", outputType);
+}
+
+long GetMezzanineInfoRequest::getAuthTimeout()const
+{
+	return authTimeout_;
+}
+
+void GetMezzanineInfoRequest::setAuthTimeout(long authTimeout)
+{
+	authTimeout_ = authTimeout;
+	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+}
+
 std::string GetMezzanineInfoRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,39 +80,6 @@ void GetMezzanineInfoRequest::setVideoId(const std::string& videoId)
 	setCoreParameter("VideoId", videoId);
 }
 
-bool GetMezzanineInfoRequest::getPreviewSegment()const
-{
-	return previewSegment_;
-}
-
-void GetMezzanineInfoRequest::setPreviewSegment(bool previewSegment)
-{
-	previewSegment_ = previewSegment;
-	setCoreParameter("PreviewSegment", previewSegment ? "true" : "false");
-}
-
-std::string GetMezzanineInfoRequest::getOutputType()const
-{
-	return outputType_;
-}
-
-void GetMezzanineInfoRequest::setOutputType(const std::string& outputType)
-{
-	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
-}
-
-std::string GetMezzanineInfoRequest::getAdditionType()const
-{
-	return additionType_;
-}
-
-void GetMezzanineInfoRequest::setAdditionType(const std::string& additionType)
-{
-	additionType_ = additionType;
-	setCoreParameter("AdditionType", additionType);
-}
-
 long GetMezzanineInfoRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +91,25 @@ void GetMezzanineInfoRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-long GetMezzanineInfoRequest::getAuthTimeout()const
+bool GetMezzanineInfoRequest::getPreviewSegment()const
 {
-	return authTimeout_;
+	return previewSegment_;
 }
 
-void GetMezzanineInfoRequest::setAuthTimeout(long authTimeout)
+void GetMezzanineInfoRequest::setPreviewSegment(bool previewSegment)
 {
-	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+	previewSegment_ = previewSegment;
+	setCoreParameter("PreviewSegment", previewSegment ? "true" : "false");
+}
+
+std::string GetMezzanineInfoRequest::getAdditionType()const
+{
+	return additionType_;
+}
+
+void GetMezzanineInfoRequest::setAdditionType(const std::string& additionType)
+{
+	additionType_ = additionType;
+	setCoreParameter("AdditionType", additionType);
 }
 

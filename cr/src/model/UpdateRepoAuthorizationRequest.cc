@@ -47,17 +47,6 @@ void UpdateRepoAuthorizationRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string UpdateRepoAuthorizationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateRepoAuthorizationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long UpdateRepoAuthorizationRequest::getAuthorizeId()const
 {
 	return authorizeId_;

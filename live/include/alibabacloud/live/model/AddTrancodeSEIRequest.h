@@ -35,35 +35,32 @@ namespace AlibabaCloud
 				AddTrancodeSEIRequest();
 				~AddTrancodeSEIRequest();
 
-				int getDelay()const;
-				void setDelay(int delay);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getRepeat()const;
-				void setRepeat(int repeat);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getPattern()const;
 				void setPattern(const std::string& pattern);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				int getRepeat()const;
+				void setRepeat(int repeat);
 				std::string getText()const;
 				void setText(const std::string& text);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getDelay()const;
+				void setDelay(int delay);
 
             private:
-				int delay_;
-				std::string appName_;
-				std::string regionId_;
-				int repeat_;
-				std::string domainName_;
 				std::string pattern_;
+				std::string appName_;
+				int repeat_;
 				std::string text_;
-				long ownerId_;
 				std::string streamName_;
+				std::string domainName_;
+				long ownerId_;
+				int delay_;
 
 			};
 		}

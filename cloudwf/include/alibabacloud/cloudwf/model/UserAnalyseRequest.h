@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				UserAnalyseRequest();
 				~UserAnalyseRequest();
 
-				long getGsid()const;
-				void setGsid(long gsid);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getGsid()const;
+				void setGsid(long gsid);
 
             private:
-				long gsid_;
 				std::string accessKeyId_;
+				long gsid_;
 
 			};
 		}

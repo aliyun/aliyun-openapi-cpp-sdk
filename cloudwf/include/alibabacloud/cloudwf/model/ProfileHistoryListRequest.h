@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ProfileHistoryListRequest();
 				~ProfileHistoryListRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				long getAgsid()const;
+				void setAgsid(long agsid);
 				long getIdtype()const;
 				void setIdtype(long idtype);
 				int getPage()const;
 				void setPage(int page);
 				int getPer()const;
 				void setPer(int per);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				long getAgsid()const;
-				void setAgsid(long agsid);
 
             private:
+				std::string accessKeyId_;
+				long agsid_;
 				long idtype_;
 				int page_;
 				int per_;
-				std::string accessKeyId_;
-				long agsid_;
 
 			};
 		}

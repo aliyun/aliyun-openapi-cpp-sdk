@@ -47,17 +47,6 @@ void EffectCasterVideoResourceRequest::setCasterId(const std::string& casterId)
 	setCoreParameter("CasterId", casterId);
 }
 
-std::string EffectCasterVideoResourceRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void EffectCasterVideoResourceRequest::setSceneId(const std::string& sceneId)
-{
-	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
-}
-
 long EffectCasterVideoResourceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +56,16 @@ void EffectCasterVideoResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string EffectCasterVideoResourceRequest::getSceneId()const
+{
+	return sceneId_;
+}
+
+void EffectCasterVideoResourceRequest::setSceneId(const std::string& sceneId)
+{
+	sceneId_ = sceneId;
+	setCoreParameter("SceneId", sceneId);
 }
 

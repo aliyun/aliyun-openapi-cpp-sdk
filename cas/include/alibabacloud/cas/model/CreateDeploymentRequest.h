@@ -35,25 +35,28 @@ namespace AlibabaCloud
 				CreateDeploymentRequest();
 				~CreateDeploymentRequest();
 
+				std::string getCloudProduct()const;
+				void setCloudProduct(const std::string& cloudProduct);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				long getCertificateId()const;
 				void setCertificateId(long certificateId);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
-				std::string getCloudProduct()const;
-				void setCloudProduct(const std::string& cloudProduct);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
 
             private:
+				std::string cloudProduct_;
+				std::string resourceGroupId_;
 				std::string sourceIp_;
+				std::string lang_;
 				long certificateId_;
 				std::string domain_;
-				std::string cloudProduct_;
-				std::string lang_;
 				std::string region_;
 
 			};

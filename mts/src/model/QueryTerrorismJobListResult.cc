@@ -35,13 +35,9 @@ QueryTerrorismJobListResult::~QueryTerrorismJobListResult()
 
 void QueryTerrorismJobListResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allTerrorismJobList = value["TerrorismJobList"]["TerrorismJob"];
 	for (auto value : allTerrorismJobList)

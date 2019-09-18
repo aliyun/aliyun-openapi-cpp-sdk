@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeCasterLayoutsRequest();
 				~DescribeCasterLayoutsRequest();
 
+				std::string getLayoutId()const;
+				void setLayoutId(const std::string& layoutId);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getLayoutId()const;
-				void setLayoutId(const std::string& layoutId);
 
             private:
+				std::string layoutId_;
 				std::string casterId_;
 				long ownerId_;
-				std::string layoutId_;
 
 			};
 		}

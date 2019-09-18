@@ -36,6 +36,17 @@ void DescribeStaticVerificationListRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeStaticVerificationListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeStaticVerificationListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeStaticVerificationListRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeStaticVerificationListRequest::setSecurityToken(const std::string& 
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeStaticVerificationListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeStaticVerificationListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeStaticVerificationListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeStaticVerificationListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeStaticVerificationListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeStaticVerificationListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeStaticVerificationListRequest::getReplicaId()const
@@ -91,17 +69,6 @@ void DescribeStaticVerificationListRequest::setReplicaId(const std::string& repl
 	setCoreParameter("ReplicaId", replicaId);
 }
 
-std::string DescribeStaticVerificationListRequest::getDestinationInstanceId()const
-{
-	return destinationInstanceId_;
-}
-
-void DescribeStaticVerificationListRequest::setDestinationInstanceId(const std::string& destinationInstanceId)
-{
-	destinationInstanceId_ = destinationInstanceId;
-	setCoreParameter("DestinationInstanceId", destinationInstanceId);
-}
-
 std::string DescribeStaticVerificationListRequest::getSourceInstanceId()const
 {
 	return sourceInstanceId_;
@@ -111,6 +78,28 @@ void DescribeStaticVerificationListRequest::setSourceInstanceId(const std::strin
 {
 	sourceInstanceId_ = sourceInstanceId;
 	setCoreParameter("SourceInstanceId", sourceInstanceId);
+}
+
+std::string DescribeStaticVerificationListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeStaticVerificationListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeStaticVerificationListRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeStaticVerificationListRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeStaticVerificationListRequest::getOwnerId()const
@@ -124,14 +113,14 @@ void DescribeStaticVerificationListRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeStaticVerificationListRequest::getAccessKeyId()const
+std::string DescribeStaticVerificationListRequest::getDestinationInstanceId()const
 {
-	return accessKeyId_;
+	return destinationInstanceId_;
 }
 
-void DescribeStaticVerificationListRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeStaticVerificationListRequest::setDestinationInstanceId(const std::string& destinationInstanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	destinationInstanceId_ = destinationInstanceId;
+	setCoreParameter("DestinationInstanceId", destinationInstanceId);
 }
 

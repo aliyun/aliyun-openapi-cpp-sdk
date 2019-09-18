@@ -46,18 +46,10 @@ namespace AlibabaCloud
 
 				std::string getDefaultResult()const;
 				void setDefaultResult(const std::string& defaultResult);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getHeartbeatTimeout()const;
 				void setHeartbeatTimeout(int heartbeatTimeout);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getNotificationMetadata()const;
-				void setNotificationMetadata(const std::string& notificationMetadata);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getLifecycleTransition()const;
 				void setLifecycleTransition(const std::string& lifecycleTransition);
 				std::string getAccessKeyId()const;
@@ -66,21 +58,29 @@ namespace AlibabaCloud
 				void setLifecycleHookName(const std::string& lifecycleHookName);
 				std::string getNotificationArn()const;
 				void setNotificationArn(const std::string& notificationArn);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getNotificationMetadata()const;
+				void setNotificationMetadata(const std::string& notificationMetadata);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::vector<LifecycleHook> getLifecycleHook()const;
 				void setLifecycleHook(const std::vector<LifecycleHook>& lifecycleHook);
 
             private:
 				std::string defaultResult_;
-				std::string resourceOwnerAccount_;
 				int heartbeatTimeout_;
 				std::string scalingGroupId_;
-				std::string ownerAccount_;
-				std::string notificationMetadata_;
-				long ownerId_;
 				std::string lifecycleTransition_;
 				std::string accessKeyId_;
 				std::string lifecycleHookName_;
 				std::string notificationArn_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string notificationMetadata_;
+				long ownerId_;
 				std::vector<LifecycleHook> lifecycleHook_;
 
 			};

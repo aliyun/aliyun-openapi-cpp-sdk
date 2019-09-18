@@ -25,17 +25,6 @@ ListTagPhotosRequest::ListTagPhotosRequest() :
 ListTagPhotosRequest::~ListTagPhotosRequest()
 {}
 
-std::string ListTagPhotosRequest::getTagName()const
-{
-	return tagName_;
-}
-
-void ListTagPhotosRequest::setTagName(const std::string& tagName)
-{
-	tagName_ = tagName;
-	setCoreParameter("TagName", tagName);
-}
-
 std::string ListTagPhotosRequest::getMaxKeys()const
 {
 	return maxKeys_;
@@ -45,28 +34,6 @@ void ListTagPhotosRequest::setMaxKeys(const std::string& maxKeys)
 {
 	maxKeys_ = maxKeys;
 	setCoreParameter("MaxKeys", maxKeys);
-}
-
-std::string ListTagPhotosRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListTagPhotosRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListTagPhotosRequest::getMarker()const
-{
-	return marker_;
-}
-
-void ListTagPhotosRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setCoreParameter("Marker", marker);
 }
 
 std::string ListTagPhotosRequest::getProject()const
@@ -80,17 +47,6 @@ void ListTagPhotosRequest::setProject(const std::string& project)
 	setCoreParameter("Project", project);
 }
 
-std::string ListTagPhotosRequest::getSetId()const
-{
-	return setId_;
-}
-
-void ListTagPhotosRequest::setSetId(const std::string& setId)
-{
-	setId_ = setId;
-	setCoreParameter("SetId", setId);
-}
-
 std::string ListTagPhotosRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -100,5 +56,38 @@ void ListTagPhotosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListTagPhotosRequest::getTagName()const
+{
+	return tagName_;
+}
+
+void ListTagPhotosRequest::setTagName(const std::string& tagName)
+{
+	tagName_ = tagName;
+	setCoreParameter("TagName", tagName);
+}
+
+std::string ListTagPhotosRequest::getMarker()const
+{
+	return marker_;
+}
+
+void ListTagPhotosRequest::setMarker(const std::string& marker)
+{
+	marker_ = marker;
+	setCoreParameter("Marker", marker);
+}
+
+std::string ListTagPhotosRequest::getSetId()const
+{
+	return setId_;
+}
+
+void ListTagPhotosRequest::setSetId(const std::string& setId)
+{
+	setId_ = setId;
+	setCoreParameter("SetId", setId);
 }
 

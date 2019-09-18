@@ -35,23 +35,20 @@ namespace AlibabaCloud
 				DetectImageFacesRequest();
 				~DetectImageFacesRequest();
 
-				std::string getImageUri()const;
-				void setImageUri(const std::string& imageUri);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getRealUid()const;
-				void setRealUid(const std::string& realUid);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealUid()const;
+				void setRealUid(const std::string& realUid);
+				std::string getImageUri()const;
+				void setImageUri(const std::string& imageUri);
 
             private:
-				std::string imageUri_;
-				std::string regionId_;
 				std::string project_;
-				std::string realUid_;
 				std::string accessKeyId_;
+				std::string realUid_;
+				std::string imageUri_;
 
 			};
 		}

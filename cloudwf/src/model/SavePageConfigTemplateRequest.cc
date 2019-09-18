@@ -25,28 +25,6 @@ SavePageConfigTemplateRequest::SavePageConfigTemplateRequest() :
 SavePageConfigTemplateRequest::~SavePageConfigTemplateRequest()
 {}
 
-int SavePageConfigTemplateRequest::getTempType()const
-{
-	return tempType_;
-}
-
-void SavePageConfigTemplateRequest::setTempType(int tempType)
-{
-	tempType_ = tempType;
-	setCoreParameter("TempType", std::to_string(tempType));
-}
-
-std::string SavePageConfigTemplateRequest::getTempDesc()const
-{
-	return tempDesc_;
-}
-
-void SavePageConfigTemplateRequest::setTempDesc(const std::string& tempDesc)
-{
-	tempDesc_ = tempDesc;
-	setCoreParameter("TempDesc", tempDesc);
-}
-
 std::string SavePageConfigTemplateRequest::getTempName()const
 {
 	return tempName_;
@@ -56,17 +34,6 @@ void SavePageConfigTemplateRequest::setTempName(const std::string& tempName)
 {
 	tempName_ = tempName;
 	setCoreParameter("TempName", tempName);
-}
-
-long SavePageConfigTemplateRequest::getId()const
-{
-	return id_;
-}
-
-void SavePageConfigTemplateRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string SavePageConfigTemplateRequest::getTempPermission()const
@@ -89,5 +56,38 @@ void SavePageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int SavePageConfigTemplateRequest::getTempType()const
+{
+	return tempType_;
+}
+
+void SavePageConfigTemplateRequest::setTempType(int tempType)
+{
+	tempType_ = tempType;
+	setCoreParameter("TempType", std::to_string(tempType));
+}
+
+std::string SavePageConfigTemplateRequest::getTempDesc()const
+{
+	return tempDesc_;
+}
+
+void SavePageConfigTemplateRequest::setTempDesc(const std::string& tempDesc)
+{
+	tempDesc_ = tempDesc;
+	setCoreParameter("TempDesc", tempDesc);
+}
+
+long SavePageConfigTemplateRequest::getId()const
+{
+	return id_;
+}
+
+void SavePageConfigTemplateRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

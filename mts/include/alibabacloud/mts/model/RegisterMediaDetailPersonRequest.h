@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getPersonLib()const;
+				void setPersonLib(const std::string& personLib);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPersonName()const;
+				void setPersonName(const std::string& personName);
 				std::string getImages()const;
 				void setImages(const std::string& images);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getPersonLib()const;
-				void setPersonLib(const std::string& personLib);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getCategory()const;
 				void setCategory(const std::string& category);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getPersonName()const;
-				void setPersonName(const std::string& personName);
 
             private:
 				long resourceOwnerId_;
+				std::string personLib_;
+				std::string accessKeyId_;
+				std::string personName_;
 				std::string images_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string personLib_;
 				long ownerId_;
 				std::string category_;
-				std::string accessKeyId_;
-				std::string personName_;
 
 			};
 		}

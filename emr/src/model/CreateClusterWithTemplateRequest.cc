@@ -58,17 +58,6 @@ void CreateClusterWithTemplateRequest::setClusterName(const std::string& cluster
 	setCoreParameter("ClusterName", clusterName);
 }
 
-std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
-{
-	return templateBizId_;
-}
-
-void CreateClusterWithTemplateRequest::setTemplateBizId(const std::string& templateBizId)
-{
-	templateBizId_ = templateBizId;
-	setCoreParameter("TemplateBizId", templateBizId);
-}
-
 std::string CreateClusterWithTemplateRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +67,16 @@ void CreateClusterWithTemplateRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
+{
+	return templateBizId_;
+}
+
+void CreateClusterWithTemplateRequest::setTemplateBizId(const std::string& templateBizId)
+{
+	templateBizId_ = templateBizId;
+	setCoreParameter("TemplateBizId", templateBizId);
 }
 

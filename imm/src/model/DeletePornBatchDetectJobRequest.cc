@@ -25,28 +25,6 @@ DeletePornBatchDetectJobRequest::DeletePornBatchDetectJobRequest() :
 DeletePornBatchDetectJobRequest::~DeletePornBatchDetectJobRequest()
 {}
 
-std::string DeletePornBatchDetectJobRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void DeletePornBatchDetectJobRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
-}
-
-std::string DeletePornBatchDetectJobRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeletePornBatchDetectJobRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeletePornBatchDetectJobRequest::getProject()const
 {
 	return project_;
@@ -67,5 +45,16 @@ void DeletePornBatchDetectJobRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeletePornBatchDetectJobRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void DeletePornBatchDetectJobRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setCoreParameter("JobId", jobId);
 }
 

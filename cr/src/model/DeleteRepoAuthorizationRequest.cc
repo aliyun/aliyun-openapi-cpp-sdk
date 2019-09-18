@@ -47,17 +47,6 @@ void DeleteRepoAuthorizationRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string DeleteRepoAuthorizationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteRepoAuthorizationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long DeleteRepoAuthorizationRequest::getAuthorizeId()const
 {
 	return authorizeId_;

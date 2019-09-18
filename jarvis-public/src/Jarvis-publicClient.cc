@@ -51,42 +51,6 @@ Jarvis_publicClient::Jarvis_publicClient(const std::string & accessKeyId, const 
 Jarvis_publicClient::~Jarvis_publicClient()
 {}
 
-Jarvis_publicClient::DescribeCountAttackEventOutcome Jarvis_publicClient::describeCountAttackEvent(const DescribeCountAttackEventRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCountAttackEventOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCountAttackEventOutcome(DescribeCountAttackEventResult(outcome.result()));
-	else
-		return DescribeCountAttackEventOutcome(outcome.error());
-}
-
-void Jarvis_publicClient::describeCountAttackEventAsync(const DescribeCountAttackEventRequest& request, const DescribeCountAttackEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCountAttackEvent(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Jarvis_publicClient::DescribeCountAttackEventOutcomeCallable Jarvis_publicClient::describeCountAttackEventCallable(const DescribeCountAttackEventRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCountAttackEventOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCountAttackEvent(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Jarvis_publicClient::DescribeAttackEventOutcome Jarvis_publicClient::describeAttackEvent(const DescribeAttackEventRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -123,42 +87,6 @@ Jarvis_publicClient::DescribeAttackEventOutcomeCallable Jarvis_publicClient::des
 	return task->get_future();
 }
 
-Jarvis_publicClient::DescribePhoneInfoOutcome Jarvis_publicClient::describePhoneInfo(const DescribePhoneInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePhoneInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePhoneInfoOutcome(DescribePhoneInfoResult(outcome.result()));
-	else
-		return DescribePhoneInfoOutcome(outcome.error());
-}
-
-void Jarvis_publicClient::describePhoneInfoAsync(const DescribePhoneInfoRequest& request, const DescribePhoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePhoneInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Jarvis_publicClient::DescribePhoneInfoOutcomeCallable Jarvis_publicClient::describePhoneInfoCallable(const DescribePhoneInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePhoneInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describePhoneInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Jarvis_publicClient::DescribeAttackedIpOutcome Jarvis_publicClient::describeAttackedIp(const DescribeAttackedIpRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +117,78 @@ Jarvis_publicClient::DescribeAttackedIpOutcomeCallable Jarvis_publicClient::desc
 			[this, request]()
 			{
 			return this->describeAttackedIp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Jarvis_publicClient::DescribeCountAttackEventOutcome Jarvis_publicClient::describeCountAttackEvent(const DescribeCountAttackEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCountAttackEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCountAttackEventOutcome(DescribeCountAttackEventResult(outcome.result()));
+	else
+		return DescribeCountAttackEventOutcome(outcome.error());
+}
+
+void Jarvis_publicClient::describeCountAttackEventAsync(const DescribeCountAttackEventRequest& request, const DescribeCountAttackEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCountAttackEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Jarvis_publicClient::DescribeCountAttackEventOutcomeCallable Jarvis_publicClient::describeCountAttackEventCallable(const DescribeCountAttackEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCountAttackEventOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCountAttackEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Jarvis_publicClient::DescribePhoneInfoOutcome Jarvis_publicClient::describePhoneInfo(const DescribePhoneInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePhoneInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePhoneInfoOutcome(DescribePhoneInfoResult(outcome.result()));
+	else
+		return DescribePhoneInfoOutcome(outcome.error());
+}
+
+void Jarvis_publicClient::describePhoneInfoAsync(const DescribePhoneInfoRequest& request, const DescribePhoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePhoneInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Jarvis_publicClient::DescribePhoneInfoOutcomeCallable Jarvis_publicClient::describePhoneInfoCallable(const DescribePhoneInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePhoneInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describePhoneInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

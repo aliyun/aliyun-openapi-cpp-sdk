@@ -25,17 +25,6 @@ DeleteLiveDetectNotifyConfigRequest::DeleteLiveDetectNotifyConfigRequest() :
 DeleteLiveDetectNotifyConfigRequest::~DeleteLiveDetectNotifyConfigRequest()
 {}
 
-std::string DeleteLiveDetectNotifyConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteLiveDetectNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DeleteLiveDetectNotifyConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,5 +45,16 @@ void DeleteLiveDetectNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteLiveDetectNotifyConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteLiveDetectNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

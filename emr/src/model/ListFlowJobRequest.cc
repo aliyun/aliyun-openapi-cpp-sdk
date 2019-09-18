@@ -25,6 +25,28 @@ ListFlowJobRequest::ListFlowJobRequest() :
 ListFlowJobRequest::~ListFlowJobRequest()
 {}
 
+std::string ListFlowJobRequest::getType()const
+{
+	return type_;
+}
+
+void ListFlowJobRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+int ListFlowJobRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListFlowJobRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListFlowJobRequest::getRegionId()const
 {
 	return regionId_;
@@ -69,17 +91,6 @@ void ListFlowJobRequest::setId(const std::string& id)
 	setCoreParameter("Id", id);
 }
 
-std::string ListFlowJobRequest::getType()const
-{
-	return type_;
-}
-
-void ListFlowJobRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
 bool ListFlowJobRequest::getAdhoc()const
 {
 	return adhoc_;
@@ -100,16 +111,5 @@ void ListFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-int ListFlowJobRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListFlowJobRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

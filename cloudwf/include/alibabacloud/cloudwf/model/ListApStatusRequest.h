@@ -35,50 +35,50 @@ namespace AlibabaCloud
 				ListApStatusRequest();
 				~ListApStatusRequest();
 
-				std::string getOrderCol()const;
-				void setOrderCol(const std::string& orderCol);
 				std::string getSearchName()const;
 				void setSearchName(const std::string& searchName);
+				std::string getSearchWanIp()const;
+				void setSearchWanIp(const std::string& searchWanIp);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSearchMac()const;
+				void setSearchMac(const std::string& searchMac);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
+				std::string getOrderCol()const;
+				void setOrderCol(const std::string& orderCol);
 				std::string getSearchGroupName()const;
 				void setSearchGroupName(const std::string& searchGroupName);
 				int getSearchStatus()const;
 				void setSearchStatus(int searchStatus);
-				std::string getSearchWanIp()const;
-				void setSearchWanIp(const std::string& searchWanIp);
 				std::string getSearchApModelName()const;
 				void setSearchApModelName(const std::string& searchApModelName);
 				int getLength()const;
 				void setLength(int length);
 				std::string getOrderDir()const;
 				void setOrderDir(const std::string& orderDir);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				int getSearchBssEquals()const;
 				void setSearchBssEquals(int searchBssEquals);
 				long getSearchSwVersion()const;
 				void setSearchSwVersion(long searchSwVersion);
 				std::string getSearchCompanyName()const;
 				void setSearchCompanyName(const std::string& searchCompanyName);
-				std::string getSearchMac()const;
-				void setSearchMac(const std::string& searchMac);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
 
             private:
-				std::string orderCol_;
 				std::string searchName_;
+				std::string searchWanIp_;
+				std::string accessKeyId_;
+				std::string searchMac_;
+				int pageIndex_;
+				std::string orderCol_;
 				std::string searchGroupName_;
 				int searchStatus_;
-				std::string searchWanIp_;
 				std::string searchApModelName_;
 				int length_;
 				std::string orderDir_;
-				std::string accessKeyId_;
 				int searchBssEquals_;
 				long searchSwVersion_;
 				std::string searchCompanyName_;
-				std::string searchMac_;
-				int pageIndex_;
 
 			};
 		}

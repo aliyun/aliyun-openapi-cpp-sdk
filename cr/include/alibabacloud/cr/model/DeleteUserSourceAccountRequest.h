@@ -37,12 +37,9 @@ namespace AlibabaCloud
 
 				long getSourceAccountId()const;
 				void setSourceAccountId(long sourceAccountId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
             private:
 				long sourceAccountId_;
-				std::string regionId_;
 
 			};
 		}

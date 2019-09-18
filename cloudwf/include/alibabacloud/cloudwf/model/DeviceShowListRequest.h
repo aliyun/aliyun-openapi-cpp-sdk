@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DeviceShowListRequest();
 				~DeviceShowListRequest();
 
-				std::string getDirc()const;
-				void setDirc(const std::string& dirc);
-				int getPage()const;
-				void setPage(int page);
-				int getPer()const;
-				void setPer(int per);
 				int getDeviceType()const;
 				void setDeviceType(int deviceType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getSid()const;
 				void setSid(long sid);
+				std::string getDirc()const;
+				void setDirc(const std::string& dirc);
+				int getPage()const;
+				void setPage(int page);
+				int getPer()const;
+				void setPer(int per);
 
             private:
-				std::string dirc_;
-				int page_;
-				int per_;
 				int deviceType_;
 				std::string accessKeyId_;
 				long sid_;
+				std::string dirc_;
+				int page_;
+				int per_;
 
 			};
 		}

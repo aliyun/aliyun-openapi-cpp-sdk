@@ -25,28 +25,6 @@ ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest() :
 ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest()
 {}
 
-std::string ModifyAccountDescriptionRequest::getAccountName()const
-{
-	return accountName_;
-}
-
-void ModifyAccountDescriptionRequest::setAccountName(const std::string& accountName)
-{
-	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
-}
-
-std::string ModifyAccountDescriptionRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyAccountDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string ModifyAccountDescriptionRequest::getAccountDescription()const
 {
 	return accountDescription_;
@@ -67,5 +45,27 @@ void ModifyAccountDescriptionRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyAccountDescriptionRequest::getAccountName()const
+{
+	return accountName_;
+}
+
+void ModifyAccountDescriptionRequest::setAccountName(const std::string& accountName)
+{
+	accountName_ = accountName;
+	setCoreParameter("AccountName", accountName);
+}
+
+std::string ModifyAccountDescriptionRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyAccountDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

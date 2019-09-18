@@ -37,12 +37,12 @@ namespace AlibabaCloud
 
 				std::string getExt()const;
 				void setExt(const std::string& ext);
-				long getSize()const;
-				void setSize(long size);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
+				long getSize()const;
+				void setSize(long size);
 				std::string getForce()const;
 				void setForce(const std::string& force);
 				std::string getMd5()const;
@@ -50,9 +50,9 @@ namespace AlibabaCloud
 
             private:
 				std::string ext_;
-				long size_;
 				std::string libraryId_;
 				std::string storeName_;
+				long size_;
 				std::string force_;
 				std::string md5_;
 

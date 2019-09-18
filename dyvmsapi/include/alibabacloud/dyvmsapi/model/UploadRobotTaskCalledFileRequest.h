@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getCalledNumber()const;
-				void setCalledNumber(const std::string& calledNumber);
 				std::string getTtsParamHead()const;
 				void setTtsParamHead(const std::string& ttsParamHead);
 				std::string getTtsParam()const;
 				void setTtsParam(const std::string& ttsParam);
-				long getId()const;
-				void setId(long id);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCalledNumber()const;
+				void setCalledNumber(const std::string& calledNumber);
+				long getId()const;
+				void setId(long id);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string calledNumber_;
 				std::string ttsParamHead_;
 				std::string ttsParam_;
-				long id_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string calledNumber_;
+				long id_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
 
 			};
 		}

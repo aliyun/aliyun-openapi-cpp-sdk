@@ -25,17 +25,6 @@ DescribeCertificateDetailRequest::DescribeCertificateDetailRequest() :
 DescribeCertificateDetailRequest::~DescribeCertificateDetailRequest()
 {}
 
-std::string DescribeCertificateDetailRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeCertificateDetailRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeCertificateDetailRequest::getCertificateId()const
 {
 	return certificateId_;
@@ -45,6 +34,28 @@ void DescribeCertificateDetailRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
 	setCoreParameter("CertificateId", std::to_string(certificateId));
+}
+
+std::string DescribeCertificateDetailRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeCertificateDetailRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeCertificateDetailRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeCertificateDetailRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCertificateDetailRequest::getLang()const

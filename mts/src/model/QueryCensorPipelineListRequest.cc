@@ -47,17 +47,6 @@ void QueryCensorPipelineListRequest::setResourceOwnerAccount(const std::string& 
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryCensorPipelineListRequest::getPipelineIds()const
-{
-	return pipelineIds_;
-}
-
-void QueryCensorPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
-{
-	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
-}
-
 std::string QueryCensorPipelineListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryCensorPipelineListRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryCensorPipelineListRequest::getPipelineIds()const
+{
+	return pipelineIds_;
+}
+
+void QueryCensorPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
+{
+	pipelineIds_ = pipelineIds;
+	setCoreParameter("PipelineIds", pipelineIds);
 }
 

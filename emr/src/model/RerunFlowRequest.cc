@@ -36,6 +36,17 @@ void RerunFlowRequest::setFlowInstanceId(const std::string& flowInstanceId)
 	setCoreParameter("FlowInstanceId", flowInstanceId);
 }
 
+bool RerunFlowRequest::getReRunFail()const
+{
+	return reRunFail_;
+}
+
+void RerunFlowRequest::setReRunFail(bool reRunFail)
+{
+	reRunFail_ = reRunFail;
+	setCoreParameter("ReRunFail", reRunFail ? "true" : "false");
+}
+
 std::string RerunFlowRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void RerunFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-bool RerunFlowRequest::getReRunFail()const
-{
-	return reRunFail_;
-}
-
-void RerunFlowRequest::setReRunFail(bool reRunFail)
-{
-	reRunFail_ = reRunFail;
-	setCoreParameter("ReRunFail", reRunFail ? "true" : "false");
 }
 

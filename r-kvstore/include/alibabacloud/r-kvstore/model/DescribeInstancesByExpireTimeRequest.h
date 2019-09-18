@@ -37,42 +37,39 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				bool getHasExpiredRes()const;
-				void setHasExpiredRes(bool hasExpiredRes);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
 				int getExpirePeriod()const;
 				void setExpirePeriod(int expirePeriod);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				bool getHasExpiredRes()const;
+				void setHasExpiredRes(bool hasExpiredRes);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string regionId_;
-				bool hasExpiredRes_;
 				int pageSize_;
 				std::string instanceType_;
 				int expirePeriod_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				bool hasExpiredRes_;
 
 			};
 		}

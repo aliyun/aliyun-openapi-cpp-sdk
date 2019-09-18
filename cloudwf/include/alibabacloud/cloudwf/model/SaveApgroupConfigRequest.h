@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				std::string getCountry()const;
 				void setCountry(const std::string& country);
-				int getLogLevel()const;
-				void setLogLevel(int logLevel);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getEchoInt()const;
-				void setEchoInt(int echoInt);
 				int getScan()const;
 				void setScan(int scan);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getId()const;
-				void setId(long id);
 				std::string getDai()const;
 				void setDai(const std::string& dai);
 				std::string getLogIp()const;
 				void setLogIp(const std::string& logIp);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getLogLevel()const;
+				void setLogLevel(int logLevel);
+				std::string getName()const;
+				void setName(const std::string& name);
+				int getEchoInt()const;
+				void setEchoInt(int echoInt);
+				long getId()const;
+				void setId(long id);
 
             private:
 				std::string country_;
-				int logLevel_;
-				std::string name_;
-				int echoInt_;
 				int scan_;
 				std::string description_;
-				long id_;
 				std::string dai_;
 				std::string logIp_;
 				std::string accessKeyId_;
+				int logLevel_;
+				std::string name_;
+				int echoInt_;
+				long id_;
 
 			};
 		}

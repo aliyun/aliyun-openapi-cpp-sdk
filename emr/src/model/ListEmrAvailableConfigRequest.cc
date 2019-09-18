@@ -36,17 +36,6 @@ void ListEmrAvailableConfigRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListEmrAvailableConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListEmrAvailableConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ListEmrAvailableConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void ListEmrAvailableConfigRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListEmrAvailableConfigRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListEmrAvailableConfigRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

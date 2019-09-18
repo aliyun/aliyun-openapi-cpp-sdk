@@ -25,17 +25,6 @@ AddLiveDomainRequest::AddLiveDomainRequest() :
 AddLiveDomainRequest::~AddLiveDomainRequest()
 {}
 
-std::string AddLiveDomainRequest::getTopLevelDomain()const
-{
-	return topLevelDomain_;
-}
-
-void AddLiveDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
-{
-	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
-}
-
 std::string AddLiveDomainRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -47,17 +36,6 @@ void AddLiveDomainRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string AddLiveDomainRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void AddLiveDomainRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string AddLiveDomainRequest::getScope()const
 {
 	return scope_;
@@ -67,6 +45,28 @@ void AddLiveDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
 	setCoreParameter("Scope", scope);
+}
+
+std::string AddLiveDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void AddLiveDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setCoreParameter("TopLevelDomain", topLevelDomain);
+}
+
+std::string AddLiveDomainRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void AddLiveDomainRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddLiveDomainRequest::getDomainName()const

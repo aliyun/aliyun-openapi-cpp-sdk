@@ -25,6 +25,17 @@ QueryQualificationDetailRequest::QueryQualificationDetailRequest() :
 QueryQualificationDetailRequest::~QueryQualificationDetailRequest()
 {}
 
+std::string QueryQualificationDetailRequest::getQualificationType()const
+{
+	return qualificationType_;
+}
+
+void QueryQualificationDetailRequest::setQualificationType(const std::string& qualificationType)
+{
+	qualificationType_ = qualificationType;
+	setCoreParameter("QualificationType", qualificationType);
+}
+
 std::string QueryQualificationDetailRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,16 +67,5 @@ void QueryQualificationDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string QueryQualificationDetailRequest::getQualificationType()const
-{
-	return qualificationType_;
-}
-
-void QueryQualificationDetailRequest::setQualificationType(const std::string& qualificationType)
-{
-	qualificationType_ = qualificationType;
-	setCoreParameter("QualificationType", qualificationType);
 }
 

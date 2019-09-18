@@ -25,28 +25,6 @@ DescribeDcdnDomainOriginBpsDataRequest::DescribeDcdnDomainOriginBpsDataRequest()
 DescribeDcdnDomainOriginBpsDataRequest::~DescribeDcdnDomainOriginBpsDataRequest()
 {}
 
-long DescribeDcdnDomainOriginBpsDataRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeDcdnDomainOriginBpsDataRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
 std::string DescribeDcdnDomainOriginBpsDataRequest::getStartTime()const
 {
 	return startTime_;
@@ -56,160 +34,6 @@ void DescribeDcdnDomainOriginBpsDataRequest::setStartTime(const std::string& sta
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeDcdnDomainOriginBpsDataRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setCoreParameter("Product", product);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getFixTimeGap()const
-{
-	return fixTimeGap_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setFixTimeGap(const std::string& fixTimeGap)
-{
-	fixTimeGap_ = fixTimeGap;
-	setCoreParameter("FixTimeGap", fixTimeGap);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getTimeMerge()const
-{
-	return timeMerge_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setTimeMerge(const std::string& timeMerge)
-{
-	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDcdnDomainOriginBpsDataRequest::getDomainName()const
@@ -234,17 +58,6 @@ void DescribeDcdnDomainOriginBpsDataRequest::setEndTime(const std::string& endTi
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeDcdnDomainOriginBpsDataRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long DescribeDcdnDomainOriginBpsDataRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -256,61 +69,6 @@ void DescribeDcdnDomainOriginBpsDataRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDcdnDomainOriginBpsDataRequest::getVersion()const
-{
-	return version_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool DescribeDcdnDomainOriginBpsDataRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool DescribeDcdnDomainOriginBpsDataRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool DescribeDcdnDomainOriginBpsDataRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
 std::string DescribeDcdnDomainOriginBpsDataRequest::getInterval()const
 {
 	return interval_;
@@ -320,16 +78,5 @@ void DescribeDcdnDomainOriginBpsDataRequest::setInterval(const std::string& inte
 {
 	interval_ = interval;
 	setCoreParameter("Interval", interval);
-}
-
-std::string DescribeDcdnDomainOriginBpsDataRequest::getFields()const
-{
-	return fields_;
-}
-
-void DescribeDcdnDomainOriginBpsDataRequest::setFields(const std::string& fields)
-{
-	fields_ = fields;
-	setCoreParameter("Fields", fields);
 }
 

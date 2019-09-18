@@ -25,17 +25,6 @@ BusinessUpdateRequest::BusinessUpdateRequest() :
 BusinessUpdateRequest::~BusinessUpdateRequest()
 {}
 
-int BusinessUpdateRequest::getWarn()const
-{
-	return warn_;
-}
-
-void BusinessUpdateRequest::setWarn(int warn)
-{
-	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
-}
-
 std::string BusinessUpdateRequest::getBusinessCity()const
 {
 	return businessCity_;
@@ -56,6 +45,39 @@ void BusinessUpdateRequest::setWarnEmail(const std::string& warnEmail)
 {
 	warnEmail_ = warnEmail;
 	setCoreParameter("WarnEmail", warnEmail);
+}
+
+std::string BusinessUpdateRequest::getBusinessManager()const
+{
+	return businessManager_;
+}
+
+void BusinessUpdateRequest::setBusinessManager(const std::string& businessManager)
+{
+	businessManager_ = businessManager;
+	setCoreParameter("BusinessManager", businessManager);
+}
+
+std::string BusinessUpdateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void BusinessUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int BusinessUpdateRequest::getWarn()const
+{
+	return warn_;
+}
+
+void BusinessUpdateRequest::setWarn(int warn)
+{
+	warn_ = warn;
+	setCoreParameter("Warn", std::to_string(warn));
 }
 
 std::string BusinessUpdateRequest::getBusinessAddress()const
@@ -80,17 +102,6 @@ void BusinessUpdateRequest::setBid(long bid)
 	setCoreParameter("Bid", std::to_string(bid));
 }
 
-std::string BusinessUpdateRequest::getBusinessManager()const
-{
-	return businessManager_;
-}
-
-void BusinessUpdateRequest::setBusinessManager(const std::string& businessManager)
-{
-	businessManager_ = businessManager;
-	setCoreParameter("BusinessManager", businessManager);
-}
-
 std::string BusinessUpdateRequest::getBusinessProvince()const
 {
 	return businessProvince_;
@@ -100,16 +111,5 @@ void BusinessUpdateRequest::setBusinessProvince(const std::string& businessProvi
 {
 	businessProvince_ = businessProvince;
 	setCoreParameter("BusinessProvince", businessProvince);
-}
-
-std::string BusinessUpdateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BusinessUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

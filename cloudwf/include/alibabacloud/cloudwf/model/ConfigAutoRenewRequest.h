@@ -39,19 +39,19 @@ namespace AlibabaCloud
 				void setOffsetDays(int offsetDays);
 				int getMonths()const;
 				void setMonths(int months);
-				bool getAutoRenew()const;
-				void setAutoRenew(bool autoRenew);
 				std::vector<std::string> getApList()const;
 				void setApList(const std::vector<std::string>& apList);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				bool getAutoRenew()const;
+				void setAutoRenew(bool autoRenew);
 
             private:
 				int offsetDays_;
 				int months_;
-				bool autoRenew_;
 				std::vector<std::string> apList_;
 				std::string accessKeyId_;
+				bool autoRenew_;
 
 			};
 		}

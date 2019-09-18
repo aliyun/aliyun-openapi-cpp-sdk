@@ -25,6 +25,17 @@ GetLoraNodesTaskRequest::GetLoraNodesTaskRequest() :
 GetLoraNodesTaskRequest::~GetLoraNodesTaskRequest()
 {}
 
+std::string GetLoraNodesTaskRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetLoraNodesTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetLoraNodesTaskRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -45,16 +56,5 @@ void GetLoraNodesTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setCoreParameter("TaskId", taskId);
-}
-
-std::string GetLoraNodesTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetLoraNodesTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

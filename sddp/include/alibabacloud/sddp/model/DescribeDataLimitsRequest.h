@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeDataLimitsRequest();
 				~DescribeDataLimitsRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				int getResourceType()const;
 				void setResourceType(int resourceType);
 				std::string getParentId()const;
 				void setParentId(const std::string& parentId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
-				std::string lang_;
 				int resourceType_;
 				std::string parentId_;
+				std::string sourceIp_;
+				std::string lang_;
 
 			};
 		}

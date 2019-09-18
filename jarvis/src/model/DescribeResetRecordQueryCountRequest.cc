@@ -25,6 +25,17 @@ DescribeResetRecordQueryCountRequest::DescribeResetRecordQueryCountRequest() :
 DescribeResetRecordQueryCountRequest::~DescribeResetRecordQueryCountRequest()
 {}
 
+std::string DescribeResetRecordQueryCountRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeResetRecordQueryCountRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeResetRecordQueryCountRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeResetRecordQueryCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeResetRecordQueryCountRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeResetRecordQueryCountRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

@@ -35,24 +35,24 @@ namespace AlibabaCloud
 				UpdateDcdnIpaDomainRequest();
 				~UpdateDcdnIpaDomainRequest();
 
-				std::string getTopLevelDomain()const;
-				void setTopLevelDomain(const std::string& topLevelDomain);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSources()const;
 				void setSources(const std::string& sources);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getTopLevelDomain()const;
+				void setTopLevelDomain(const std::string& topLevelDomain);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string topLevelDomain_;
-				std::string resourceGroupId_;
 				std::string sources_;
+				std::string resourceGroupId_;
 				std::string securityToken_;
+				std::string topLevelDomain_;
 				std::string domainName_;
 				long ownerId_;
 

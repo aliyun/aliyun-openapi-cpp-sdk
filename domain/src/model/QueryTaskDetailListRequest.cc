@@ -25,6 +25,28 @@ QueryTaskDetailListRequest::QueryTaskDetailListRequest() :
 QueryTaskDetailListRequest::~QueryTaskDetailListRequest()
 {}
 
+std::string QueryTaskDetailListRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void QueryTaskDetailListRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+int QueryTaskDetailListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryTaskDetailListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 int QueryTaskDetailListRequest::getTaskStatus()const
 {
 	return taskStatus_;
@@ -58,17 +80,6 @@ void QueryTaskDetailListRequest::setTaskNo(const std::string& taskNo)
 	setCoreParameter("TaskNo", taskNo);
 }
 
-std::string QueryTaskDetailListRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void QueryTaskDetailListRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 std::string QueryTaskDetailListRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -100,16 +111,5 @@ void QueryTaskDetailListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int QueryTaskDetailListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void QueryTaskDetailListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

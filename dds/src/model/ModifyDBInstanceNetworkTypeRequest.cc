@@ -36,6 +36,61 @@ void ModifyDBInstanceNetworkTypeRequest::setResourceOwnerId(long resourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBInstanceNetworkTypeRequest::getNetworkType()const
+{
+	return networkType_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setNetworkType(const std::string& networkType)
+{
+	networkType_ = networkType;
+	setCoreParameter("NetworkType", networkType);
+}
+
+std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstanceNetworkTypeRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int ModifyDBInstanceNetworkTypeRequest::getClassicExpiredDays()const
+{
+	return classicExpiredDays_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setClassicExpiredDays(int classicExpiredDays)
+{
+	classicExpiredDays_ = classicExpiredDays;
+	setCoreParameter("ClassicExpiredDays", std::to_string(classicExpiredDays));
+}
+
+std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string ModifyDBInstanceNetworkTypeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,17 +113,6 @@ void ModifyDBInstanceNetworkTypeRequest::setOwnerAccount(const std::string& owne
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyDBInstanceNetworkTypeRequest::getNetworkType()const
-{
-	return networkType_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setNetworkType(const std::string& networkType)
-{
-	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
-}
-
 long ModifyDBInstanceNetworkTypeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,17 +122,6 @@ void ModifyDBInstanceNetworkTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getVSwitchId()const
@@ -102,28 +135,6 @@ void ModifyDBInstanceNetworkTypeRequest::setVSwitchId(const std::string& vSwitch
 	setCoreParameter("VSwitchId", vSwitchId);
 }
 
-std::string ModifyDBInstanceNetworkTypeRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ModifyDBInstanceNetworkTypeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyDBInstanceNetworkTypeRequest::getRetainClassic()const
 {
 	return retainClassic_;
@@ -135,17 +146,6 @@ void ModifyDBInstanceNetworkTypeRequest::setRetainClassic(const std::string& ret
 	setCoreParameter("RetainClassic", retainClassic);
 }
 
-int ModifyDBInstanceNetworkTypeRequest::getClassicExpiredDays()const
-{
-	return classicExpiredDays_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setClassicExpiredDays(int classicExpiredDays)
-{
-	classicExpiredDays_ = classicExpiredDays;
-	setCoreParameter("ClassicExpiredDays", std::to_string(classicExpiredDays));
-}
-
 std::string ModifyDBInstanceNetworkTypeRequest::getVpcId()const
 {
 	return vpcId_;
@@ -155,16 +155,5 @@ void ModifyDBInstanceNetworkTypeRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
 	setCoreParameter("VpcId", vpcId);
-}
-
-std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyDBInstanceNetworkTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

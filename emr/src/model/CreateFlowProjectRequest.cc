@@ -25,6 +25,17 @@ CreateFlowProjectRequest::CreateFlowProjectRequest() :
 CreateFlowProjectRequest::~CreateFlowProjectRequest()
 {}
 
+std::string CreateFlowProjectRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateFlowProjectRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
 std::string CreateFlowProjectRequest::getRegionId()const
 {
 	return regionId_;
@@ -45,16 +56,5 @@ void CreateFlowProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string CreateFlowProjectRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateFlowProjectRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 

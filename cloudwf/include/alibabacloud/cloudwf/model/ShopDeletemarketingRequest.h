@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ShopDeletemarketingRequest();
 				~ShopDeletemarketingRequest();
 
-				long getId()const;
-				void setId(long id);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getSid()const;
 				void setSid(long sid);
+				long getId()const;
+				void setId(long id);
 
             private:
-				long id_;
 				std::string accessKeyId_;
 				long sid_;
+				long id_;
 
 			};
 		}

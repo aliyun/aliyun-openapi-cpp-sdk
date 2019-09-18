@@ -36,6 +36,17 @@ void DescribeParametersRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeParametersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeParametersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeParametersRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeParametersRequest::setSecurityToken(const std::string& securityToke
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeParametersRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeParametersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeParametersRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeParametersRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeParametersRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeParametersRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeParametersRequest::getDBInstanceId()const
@@ -91,17 +69,6 @@ void DescribeParametersRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-long DescribeParametersRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeParametersRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeParametersRequest::getNodeId()const
 {
 	return nodeId_;
@@ -113,14 +80,36 @@ void DescribeParametersRequest::setNodeId(const std::string& nodeId)
 	setCoreParameter("NodeId", nodeId);
 }
 
-std::string DescribeParametersRequest::getAccessKeyId()const
+std::string DescribeParametersRequest::getResourceOwnerAccount()const
 {
-	return accessKeyId_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeParametersRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeParametersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeParametersRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeParametersRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeParametersRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeParametersRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

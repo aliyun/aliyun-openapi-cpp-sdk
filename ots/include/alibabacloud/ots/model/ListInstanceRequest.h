@@ -44,18 +44,18 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
 				long getPageNum()const;
 				void setPageNum(long pageNum);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
 				std::vector<TagInfo> getTagInfo()const;
 				void setTagInfo(const std::vector<TagInfo>& tagInfo);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
-				long pageSize_;
 				long pageNum_;
+				long pageSize_;
 				std::vector<TagInfo> tagInfo_;
 
 			};

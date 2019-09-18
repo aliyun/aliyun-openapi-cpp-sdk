@@ -36,17 +36,6 @@ void ListEventsRequest::setCursor(const std::string& cursor)
 	setCoreParameter("Cursor", cursor);
 }
 
-int ListEventsRequest::getSize()const
-{
-	return size_;
-}
-
-void ListEventsRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string ListEventsRequest::getStoreName()const
 {
 	return storeName_;
@@ -56,6 +45,17 @@ void ListEventsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
+}
+
+int ListEventsRequest::getSize()const
+{
+	return size_;
+}
+
+void ListEventsRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListEventsRequest::getState()const

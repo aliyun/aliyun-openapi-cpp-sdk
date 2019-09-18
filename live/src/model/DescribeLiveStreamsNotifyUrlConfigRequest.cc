@@ -25,17 +25,6 @@ DescribeLiveStreamsNotifyUrlConfigRequest::DescribeLiveStreamsNotifyUrlConfigReq
 DescribeLiveStreamsNotifyUrlConfigRequest::~DescribeLiveStreamsNotifyUrlConfigRequest()
 {}
 
-std::string DescribeLiveStreamsNotifyUrlConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 {
 	return domainName_;

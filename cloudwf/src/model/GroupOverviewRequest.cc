@@ -25,17 +25,6 @@ GroupOverviewRequest::GroupOverviewRequest() :
 GroupOverviewRequest::~GroupOverviewRequest()
 {}
 
-long GroupOverviewRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void GroupOverviewRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string GroupOverviewRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GroupOverviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GroupOverviewRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void GroupOverviewRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

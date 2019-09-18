@@ -35,12 +35,14 @@ namespace AlibabaCloud
 				ForbidLiveStreamRequest();
 				~ForbidLiveStreamRequest();
 
-				std::string getResumeTime()const;
-				void setResumeTime(const std::string& resumeTime);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				std::string getStreamName()const;
+				void setStreamName(const std::string& streamName);
+				std::string getControlStreamAction()const;
+				void setControlStreamAction(const std::string& controlStreamAction);
+				std::string getResumeTime()const;
+				void setResumeTime(const std::string& resumeTime);
 				std::string getLiveStreamType()const;
 				void setLiveStreamType(const std::string& liveStreamType);
 				std::string getDomainName()const;
@@ -49,21 +51,16 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getOneshot()const;
 				void setOneshot(const std::string& oneshot);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
-				std::string getControlStreamAction()const;
-				void setControlStreamAction(const std::string& controlStreamAction);
 
             private:
-				std::string resumeTime_;
 				std::string appName_;
-				std::string regionId_;
+				std::string streamName_;
+				std::string controlStreamAction_;
+				std::string resumeTime_;
 				std::string liveStreamType_;
 				std::string domainName_;
 				long ownerId_;
 				std::string oneshot_;
-				std::string streamName_;
-				std::string controlStreamAction_;
 
 			};
 		}

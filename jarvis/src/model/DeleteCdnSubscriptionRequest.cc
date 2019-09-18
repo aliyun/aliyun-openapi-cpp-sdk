@@ -25,6 +25,17 @@ DeleteCdnSubscriptionRequest::DeleteCdnSubscriptionRequest() :
 DeleteCdnSubscriptionRequest::~DeleteCdnSubscriptionRequest()
 {}
 
+std::string DeleteCdnSubscriptionRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DeleteCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DeleteCdnSubscriptionRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,16 +67,5 @@ void DeleteCdnSubscriptionRequest::setCdnUidList(const std::string& cdnUidList)
 {
 	cdnUidList_ = cdnUidList;
 	setCoreParameter("CdnUidList", cdnUidList);
-}
-
-std::string DeleteCdnSubscriptionRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DeleteCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

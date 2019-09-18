@@ -25,17 +25,6 @@ SetPathCacheExpiredConfigRequest::SetPathCacheExpiredConfigRequest() :
 SetPathCacheExpiredConfigRequest::~SetPathCacheExpiredConfigRequest()
 {}
 
-std::string SetPathCacheExpiredConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetPathCacheExpiredConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -89,5 +78,16 @@ void SetPathCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
 	setCoreParameter("TTL", tTL);
+}
+
+std::string SetPathCacheExpiredConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

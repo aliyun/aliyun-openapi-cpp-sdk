@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				long getDepartId()const;
-				void setDepartId(long departId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKey()const;
 				void setKey(const std::string& key);
 				int getQueryType()const;
 				void setQueryType(int queryType);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				long getDepartId()const;
+				void setDepartId(long departId);
 
             private:
 				std::string sourceIp_;
-				int featureType_;
 				int pageSize_;
-				long departId_;
-				int currentPage_;
 				std::string lang_;
 				std::string key_;
 				int queryType_;
+				int featureType_;
+				int currentPage_;
+				long departId_;
 
 			};
 		}

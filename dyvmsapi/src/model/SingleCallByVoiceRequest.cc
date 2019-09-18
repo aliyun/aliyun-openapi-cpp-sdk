@@ -25,17 +25,6 @@ SingleCallByVoiceRequest::SingleCallByVoiceRequest() :
 SingleCallByVoiceRequest::~SingleCallByVoiceRequest()
 {}
 
-int SingleCallByVoiceRequest::getVolume()const
-{
-	return volume_;
-}
-
-void SingleCallByVoiceRequest::setVolume(int volume)
-{
-	volume_ = volume;
-	setCoreParameter("Volume", std::to_string(volume));
-}
-
 long SingleCallByVoiceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,26 @@ void SingleCallByVoiceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SingleCallByVoiceRequest::getResourceOwnerAccount()const
+int SingleCallByVoiceRequest::getSpeed()const
 {
-	return resourceOwnerAccount_;
+	return speed_;
 }
 
-void SingleCallByVoiceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void SingleCallByVoiceRequest::setSpeed(int speed)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	speed_ = speed;
+	setCoreParameter("Speed", std::to_string(speed));
+}
+
+std::string SingleCallByVoiceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SingleCallByVoiceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SingleCallByVoiceRequest::getCalledNumber()const
@@ -91,6 +91,17 @@ void SingleCallByVoiceRequest::setCalledShowNumber(const std::string& calledShow
 	setCoreParameter("CalledShowNumber", calledShowNumber);
 }
 
+std::string SingleCallByVoiceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void SingleCallByVoiceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 int SingleCallByVoiceRequest::getPlayTimes()const
 {
 	return playTimes_;
@@ -100,17 +111,6 @@ void SingleCallByVoiceRequest::setPlayTimes(int playTimes)
 {
 	playTimes_ = playTimes;
 	setCoreParameter("PlayTimes", std::to_string(playTimes));
-}
-
-std::string SingleCallByVoiceRequest::getOutId()const
-{
-	return outId_;
-}
-
-void SingleCallByVoiceRequest::setOutId(const std::string& outId)
-{
-	outId_ = outId;
-	setCoreParameter("OutId", outId);
 }
 
 long SingleCallByVoiceRequest::getOwnerId()const
@@ -124,25 +124,25 @@ void SingleCallByVoiceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int SingleCallByVoiceRequest::getSpeed()const
+int SingleCallByVoiceRequest::getVolume()const
 {
-	return speed_;
+	return volume_;
 }
 
-void SingleCallByVoiceRequest::setSpeed(int speed)
+void SingleCallByVoiceRequest::setVolume(int volume)
 {
-	speed_ = speed;
-	setCoreParameter("Speed", std::to_string(speed));
+	volume_ = volume;
+	setCoreParameter("Volume", std::to_string(volume));
 }
 
-std::string SingleCallByVoiceRequest::getAccessKeyId()const
+std::string SingleCallByVoiceRequest::getOutId()const
 {
-	return accessKeyId_;
+	return outId_;
 }
 
-void SingleCallByVoiceRequest::setAccessKeyId(const std::string& accessKeyId)
+void SingleCallByVoiceRequest::setOutId(const std::string& outId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	outId_ = outId;
+	setCoreParameter("OutId", outId);
 }
 

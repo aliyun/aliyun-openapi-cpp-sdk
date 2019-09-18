@@ -25,6 +25,17 @@ ListFlowClusterRequest::ListFlowClusterRequest() :
 ListFlowClusterRequest::~ListFlowClusterRequest()
 {}
 
+int ListFlowClusterRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListFlowClusterRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListFlowClusterRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void ListFlowClusterRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-int ListFlowClusterRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListFlowClusterRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

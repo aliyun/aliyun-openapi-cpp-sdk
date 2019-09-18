@@ -36,17 +36,6 @@ void QuerySnapshotJobListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QuerySnapshotJobListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void QuerySnapshotJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string QuerySnapshotJobListRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -58,17 +47,6 @@ void QuerySnapshotJobListRequest::setNextPageToken(const std::string& nextPageTo
 	setCoreParameter("NextPageToken", nextPageToken);
 }
 
-std::string QuerySnapshotJobListRequest::getSnapshotJobIds()const
-{
-	return snapshotJobIds_;
-}
-
-void QuerySnapshotJobListRequest::setSnapshotJobIds(const std::string& snapshotJobIds)
-{
-	snapshotJobIds_ = snapshotJobIds;
-	setCoreParameter("SnapshotJobIds", snapshotJobIds);
-}
-
 std::string QuerySnapshotJobListRequest::getStartOfJobCreatedTimeRange()const
 {
 	return startOfJobCreatedTimeRange_;
@@ -78,6 +56,61 @@ void QuerySnapshotJobListRequest::setStartOfJobCreatedTimeRange(const std::strin
 {
 	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
 	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+}
+
+std::string QuerySnapshotJobListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QuerySnapshotJobListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QuerySnapshotJobListRequest::getState()const
+{
+	return state_;
+}
+
+void QuerySnapshotJobListRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
+std::string QuerySnapshotJobListRequest::getEndOfJobCreatedTimeRange()const
+{
+	return endOfJobCreatedTimeRange_;
+}
+
+void QuerySnapshotJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
+{
+	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
+	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+}
+
+std::string QuerySnapshotJobListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void QuerySnapshotJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string QuerySnapshotJobListRequest::getSnapshotJobIds()const
+{
+	return snapshotJobIds_;
+}
+
+void QuerySnapshotJobListRequest::setSnapshotJobIds(const std::string& snapshotJobIds)
+{
+	snapshotJobIds_ = snapshotJobIds;
+	setCoreParameter("SnapshotJobIds", snapshotJobIds);
 }
 
 std::string QuerySnapshotJobListRequest::getOwnerAccount()const
@@ -113,17 +146,6 @@ void QuerySnapshotJobListRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string QuerySnapshotJobListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QuerySnapshotJobListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string QuerySnapshotJobListRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,27 +155,5 @@ void QuerySnapshotJobListRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
-}
-
-std::string QuerySnapshotJobListRequest::getState()const
-{
-	return state_;
-}
-
-void QuerySnapshotJobListRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
-}
-
-std::string QuerySnapshotJobListRequest::getEndOfJobCreatedTimeRange()const
-{
-	return endOfJobCreatedTimeRange_;
-}
-
-void QuerySnapshotJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
-{
-	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 }
 

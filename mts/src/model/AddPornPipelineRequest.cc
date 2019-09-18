@@ -36,6 +36,17 @@ void AddPornPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddPornPipelineRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddPornPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddPornPipelineRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +67,6 @@ void AddPornPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string AddPornPipelineRequest::getName()const
-{
-	return name_;
-}
-
-void AddPornPipelineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string AddPornPipelineRequest::getNotifyConfig()const
@@ -102,14 +102,14 @@ void AddPornPipelineRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string AddPornPipelineRequest::getAccessKeyId()const
+std::string AddPornPipelineRequest::getName()const
 {
-	return accessKeyId_;
+	return name_;
 }
 
-void AddPornPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+void AddPornPipelineRequest::setName(const std::string& name)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

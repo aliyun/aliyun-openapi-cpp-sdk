@@ -43,18 +43,10 @@ namespace AlibabaCloud
 
 				std::string getByeCode()const;
 				void setByeCode(const std::string& byeCode);
-				std::vector<MenuKeyMap> getMenuKeyMap()const;
-				void setMenuKeyMap(const std::vector<MenuKeyMap>& menuKeyMap);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getStartTtsParams()const;
 				void setStartTtsParams(const std::string& startTtsParams);
-				long getPlayTimes()const;
-				void setPlayTimes(long playTimes);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getTimeout()const;
 				void setTimeout(int timeout);
 				std::string getAccessKeyId()const;
@@ -65,6 +57,14 @@ namespace AlibabaCloud
 				void setCalledNumber(const std::string& calledNumber);
 				std::string getCalledShowNumber()const;
 				void setCalledShowNumber(const std::string& calledShowNumber);
+				std::vector<MenuKeyMap> getMenuKeyMap()const;
+				void setMenuKeyMap(const std::vector<MenuKeyMap>& menuKeyMap);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getPlayTimes()const;
+				void setPlayTimes(long playTimes);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getOutId()const;
 				void setOutId(const std::string& outId);
 				std::string getByeTtsParams()const;
@@ -72,17 +72,17 @@ namespace AlibabaCloud
 
             private:
 				std::string byeCode_;
-				std::vector<MenuKeyMap> menuKeyMap_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string startTtsParams_;
-				long playTimes_;
-				long ownerId_;
 				int timeout_;
 				std::string accessKeyId_;
 				std::string startCode_;
 				std::string calledNumber_;
 				std::string calledShowNumber_;
+				std::vector<MenuKeyMap> menuKeyMap_;
+				std::string resourceOwnerAccount_;
+				long playTimes_;
+				long ownerId_;
 				std::string outId_;
 				std::string byeTtsParams_;
 

@@ -25,17 +25,6 @@ SearchRepoRequest::SearchRepoRequest() :
 SearchRepoRequest::~SearchRepoRequest()
 {}
 
-std::string SearchRepoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SearchRepoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string SearchRepoRequest::getOrigin()const
 {
 	return origin_;

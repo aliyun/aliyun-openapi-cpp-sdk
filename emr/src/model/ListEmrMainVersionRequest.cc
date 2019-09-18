@@ -36,6 +36,28 @@ void ListEmrMainVersionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int ListEmrMainVersionRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListEmrMainVersionRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListEmrMainVersionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListEmrMainVersionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListEmrMainVersionRequest::getRegionId()const
 {
 	return regionId_;
@@ -89,27 +111,5 @@ void ListEmrMainVersionRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
 	setCoreParameter("StackVersion", stackVersion);
-}
-
-int ListEmrMainVersionRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListEmrMainVersionRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListEmrMainVersionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListEmrMainVersionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

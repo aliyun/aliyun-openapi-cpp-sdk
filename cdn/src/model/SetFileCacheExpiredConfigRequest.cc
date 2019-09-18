@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetFileCacheExpiredConfigRequest;
 
 SetFileCacheExpiredConfigRequest::SetFileCacheExpiredConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetFileCacheExpiredConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetFileCacheExpiredConfig")
 {}
 
 SetFileCacheExpiredConfigRequest::~SetFileCacheExpiredConfigRequest()
 {}
-
-std::string SetFileCacheExpiredConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetFileCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string SetFileCacheExpiredConfigRequest::getDomainName()const
 {
@@ -89,5 +78,16 @@ void SetFileCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
 	setCoreParameter("TTL", tTL);
+}
+
+std::string SetFileCacheExpiredConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetFileCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

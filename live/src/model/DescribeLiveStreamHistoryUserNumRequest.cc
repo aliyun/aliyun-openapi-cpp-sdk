@@ -25,6 +25,17 @@ DescribeLiveStreamHistoryUserNumRequest::DescribeLiveStreamHistoryUserNumRequest
 DescribeLiveStreamHistoryUserNumRequest::~DescribeLiveStreamHistoryUserNumRequest()
 {}
 
+std::string DescribeLiveStreamHistoryUserNumRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeLiveStreamHistoryUserNumRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
 std::string DescribeLiveStreamHistoryUserNumRequest::getAppName()const
 {
 	return appName_;
@@ -45,6 +56,17 @@ void DescribeLiveStreamHistoryUserNumRequest::setSecurityToken(const std::string
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeLiveStreamHistoryUserNumRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void DescribeLiveStreamHistoryUserNumRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamHistoryUserNumRequest::getDomainName()const
@@ -69,17 +91,6 @@ void DescribeLiveStreamHistoryUserNumRequest::setEndTime(const std::string& endT
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeLiveStreamHistoryUserNumRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeLiveStreamHistoryUserNumRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long DescribeLiveStreamHistoryUserNumRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,16 +100,5 @@ void DescribeLiveStreamHistoryUserNumRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeLiveStreamHistoryUserNumRequest::getStreamName()const
-{
-	return streamName_;
-}
-
-void DescribeLiveStreamHistoryUserNumRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
 }
 

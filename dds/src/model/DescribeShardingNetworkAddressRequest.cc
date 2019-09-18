@@ -36,6 +36,17 @@ void DescribeShardingNetworkAddressRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeShardingNetworkAddressRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeShardingNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeShardingNetworkAddressRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeShardingNetworkAddressRequest::setSecurityToken(const std::string& 
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeShardingNetworkAddressRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeShardingNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeShardingNetworkAddressRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeShardingNetworkAddressRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeShardingNetworkAddressRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeShardingNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeShardingNetworkAddressRequest::getDBInstanceId()const
@@ -91,17 +69,6 @@ void DescribeShardingNetworkAddressRequest::setDBInstanceId(const std::string& d
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-long DescribeShardingNetworkAddressRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeShardingNetworkAddressRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeShardingNetworkAddressRequest::getNodeId()const
 {
 	return nodeId_;
@@ -113,14 +80,36 @@ void DescribeShardingNetworkAddressRequest::setNodeId(const std::string& nodeId)
 	setCoreParameter("NodeId", nodeId);
 }
 
-std::string DescribeShardingNetworkAddressRequest::getAccessKeyId()const
+std::string DescribeShardingNetworkAddressRequest::getResourceOwnerAccount()const
 {
-	return accessKeyId_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeShardingNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeShardingNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeShardingNetworkAddressRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeShardingNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeShardingNetworkAddressRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeShardingNetworkAddressRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -37,14 +37,14 @@ namespace AlibabaCloud
 
 				std::string getCursor()const;
 				void setCursor(const std::string& cursor);
-				int getSize()const;
-				void setSize(int size);
 				long getTagId()const;
 				void setTagId(long tagId);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
+				int getSize()const;
+				void setSize(int size);
 				std::string getState()const;
 				void setState(const std::string& state);
 				std::string getDirection()const;
@@ -52,10 +52,10 @@ namespace AlibabaCloud
 
             private:
 				std::string cursor_;
-				int size_;
 				long tagId_;
 				std::string libraryId_;
 				std::string storeName_;
+				int size_;
 				std::string state_;
 				std::string direction_;
 

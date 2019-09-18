@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DelApPositionRequest();
 				~DelApPositionRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				long getApAssetId()const;
 				void setApAssetId(long apAssetId);
 				long getMapId()const;
 				void setMapId(long mapId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				long apAssetId_;
 				long mapId_;
-				std::string accessKeyId_;
 
 			};
 		}

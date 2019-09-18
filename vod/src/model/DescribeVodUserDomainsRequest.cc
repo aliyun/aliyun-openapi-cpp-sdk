@@ -25,15 +25,15 @@ DescribeVodUserDomainsRequest::DescribeVodUserDomainsRequest() :
 DescribeVodUserDomainsRequest::~DescribeVodUserDomainsRequest()
 {}
 
-std::string DescribeVodUserDomainsRequest::getFuncFilter()const
+int DescribeVodUserDomainsRequest::getPageNumber()const
 {
-	return funcFilter_;
+	return pageNumber_;
 }
 
-void DescribeVodUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
+void DescribeVodUserDomainsRequest::setPageNumber(int pageNumber)
 {
-	funcFilter_ = funcFilter;
-	setCoreParameter("FuncFilter", funcFilter);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 bool DescribeVodUserDomainsRequest::getCheckDomainShow()const
@@ -80,6 +80,17 @@ void DescribeVodUserDomainsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeVodUserDomainsRequest::getFuncFilter()const
+{
+	return funcFilter_;
+}
+
+void DescribeVodUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
+{
+	funcFilter_ = funcFilter;
+	setCoreParameter("FuncFilter", funcFilter);
+}
+
 std::string DescribeVodUserDomainsRequest::getDomainName()const
 {
 	return domainName_;
@@ -111,17 +122,6 @@ void DescribeVodUserDomainsRequest::setFuncId(const std::string& funcId)
 {
 	funcId_ = funcId;
 	setCoreParameter("FuncId", funcId);
-}
-
-int DescribeVodUserDomainsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeVodUserDomainsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVodUserDomainsRequest::getDomainStatus()const

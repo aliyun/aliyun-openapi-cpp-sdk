@@ -25,6 +25,17 @@ DescribeLiveSnapshotConfigRequest::DescribeLiveSnapshotConfigRequest() :
 DescribeLiveSnapshotConfigRequest::~DescribeLiveSnapshotConfigRequest()
 {}
 
+int DescribeLiveSnapshotConfigRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void DescribeLiveSnapshotConfigRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 std::string DescribeLiveSnapshotConfigRequest::getAppName()const
 {
 	return appName_;
@@ -47,17 +58,6 @@ void DescribeLiveSnapshotConfigRequest::setSecurityToken(const std::string& secu
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeLiveSnapshotConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveSnapshotConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 int DescribeLiveSnapshotConfigRequest::getPageSize()const
 {
 	return pageSize_;
@@ -69,28 +69,6 @@ void DescribeLiveSnapshotConfigRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeLiveSnapshotConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeLiveSnapshotConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeLiveSnapshotConfigRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void DescribeLiveSnapshotConfigRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
-}
-
 std::string DescribeLiveSnapshotConfigRequest::getOrder()const
 {
 	return order_;
@@ -100,5 +78,27 @@ void DescribeLiveSnapshotConfigRequest::setOrder(const std::string& order)
 {
 	order_ = order;
 	setCoreParameter("Order", order);
+}
+
+std::string DescribeLiveSnapshotConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveSnapshotConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+long DescribeLiveSnapshotConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeLiveSnapshotConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

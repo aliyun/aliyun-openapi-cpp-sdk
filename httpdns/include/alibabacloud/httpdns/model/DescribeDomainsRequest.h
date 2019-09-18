@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeDomainsRequest();
 				~DescribeDomainsRequest();
 
-				std::string getAccountId()const;
-				void setAccountId(const std::string& accountId);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAccountId()const;
+				void setAccountId(const std::string& accountId);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
 
             private:
-				std::string accountId_;
-				long pageSize_;
 				long pageNumber_;
 				std::string accessKeyId_;
+				std::string accountId_;
+				long pageSize_;
 
 			};
 		}

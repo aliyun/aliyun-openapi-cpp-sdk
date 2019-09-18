@@ -25,17 +25,6 @@ DelPortalTempRequest::DelPortalTempRequest() :
 DelPortalTempRequest::~DelPortalTempRequest()
 {}
 
-long DelPortalTempRequest::getId()const
-{
-	return id_;
-}
-
-void DelPortalTempRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string DelPortalTempRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DelPortalTempRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long DelPortalTempRequest::getId()const
+{
+	return id_;
+}
+
+void DelPortalTempRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

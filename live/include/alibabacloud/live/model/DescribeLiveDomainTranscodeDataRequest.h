@@ -35,22 +35,19 @@ namespace AlibabaCloud
 				DescribeLiveDomainTranscodeDataRequest();
 				~DescribeLiveDomainTranscodeDataRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string regionId_;
+				std::string startTime_;
 				std::string domainName_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
 
 			};

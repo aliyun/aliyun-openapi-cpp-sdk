@@ -36,17 +36,6 @@ void DeleteSmartAccessGatewayClientUserRequest::setResourceOwnerId(long resource
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteSmartAccessGatewayClientUserRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteSmartAccessGatewayClientUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteSmartAccessGatewayClientUserRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void DeleteSmartAccessGatewayClientUserRequest::setRegionId(const std::string& r
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteSmartAccessGatewayClientUserRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteSmartAccessGatewayClientUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteSmartAccessGatewayClientUserRequest::getOwnerAccount()const
@@ -69,17 +69,6 @@ void DeleteSmartAccessGatewayClientUserRequest::setOwnerAccount(const std::strin
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeleteSmartAccessGatewayClientUserRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void DeleteSmartAccessGatewayClientUserRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long DeleteSmartAccessGatewayClientUserRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,6 +78,17 @@ void DeleteSmartAccessGatewayClientUserRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteSmartAccessGatewayClientUserRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void DeleteSmartAccessGatewayClientUserRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 std::string DeleteSmartAccessGatewayClientUserRequest::getUserName()const

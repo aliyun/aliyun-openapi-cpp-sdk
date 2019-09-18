@@ -36,28 +36,6 @@ void UpdateGtmMonitorRequest::setMonitorExtendInfo(const std::string& monitorExt
 	setCoreParameter("MonitorExtendInfo", monitorExtendInfo);
 }
 
-std::string UpdateGtmMonitorRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void UpdateGtmMonitorRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
-std::string UpdateGtmMonitorRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateGtmMonitorRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string UpdateGtmMonitorRequest::getMonitorConfigId()const
 {
 	return monitorConfigId_;
@@ -67,6 +45,28 @@ void UpdateGtmMonitorRequest::setMonitorConfigId(const std::string& monitorConfi
 {
 	monitorConfigId_ = monitorConfigId;
 	setCoreParameter("MonitorConfigId", monitorConfigId);
+}
+
+int UpdateGtmMonitorRequest::getTimeout()const
+{
+	return timeout_;
+}
+
+void UpdateGtmMonitorRequest::setTimeout(int timeout)
+{
+	timeout_ = timeout;
+	setCoreParameter("Timeout", std::to_string(timeout));
+}
+
+std::string UpdateGtmMonitorRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void UpdateGtmMonitorRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int UpdateGtmMonitorRequest::getEvaluationCount()const
@@ -111,17 +111,6 @@ void UpdateGtmMonitorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int UpdateGtmMonitorRequest::getTimeout()const
-{
-	return timeout_;
-}
-
-void UpdateGtmMonitorRequest::setTimeout(int timeout)
-{
-	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
 }
 
 std::vector<UpdateGtmMonitorRequest::IspCityNode> UpdateGtmMonitorRequest::getIspCityNode()const

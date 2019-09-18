@@ -25,17 +25,6 @@ ConfirmTransferInEmailRequest::ConfirmTransferInEmailRequest() :
 ConfirmTransferInEmailRequest::~ConfirmTransferInEmailRequest()
 {}
 
-std::string ConfirmTransferInEmailRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void ConfirmTransferInEmailRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::vector<std::string> ConfirmTransferInEmailRequest::getDomainName()const
 {
 	return domainName_;
@@ -46,6 +35,17 @@ void ConfirmTransferInEmailRequest::setDomainName(const std::vector<std::string>
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
 		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+}
+
+std::string ConfirmTransferInEmailRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void ConfirmTransferInEmailRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string ConfirmTransferInEmailRequest::getLang()const

@@ -25,6 +25,17 @@ DeleteCasterSceneConfigRequest::DeleteCasterSceneConfigRequest() :
 DeleteCasterSceneConfigRequest::~DeleteCasterSceneConfigRequest()
 {}
 
+std::string DeleteCasterSceneConfigRequest::getType()const
+{
+	return type_;
+}
+
+void DeleteCasterSceneConfigRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string DeleteCasterSceneConfigRequest::getCasterId()const
 {
 	return casterId_;
@@ -34,17 +45,6 @@ void DeleteCasterSceneConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
 	setCoreParameter("CasterId", casterId);
-}
-
-std::string DeleteCasterSceneConfigRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void DeleteCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
-{
-	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
 }
 
 long DeleteCasterSceneConfigRequest::getOwnerId()const
@@ -58,14 +58,14 @@ void DeleteCasterSceneConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteCasterSceneConfigRequest::getType()const
+std::string DeleteCasterSceneConfigRequest::getSceneId()const
 {
-	return type_;
+	return sceneId_;
 }
 
-void DeleteCasterSceneConfigRequest::setType(const std::string& type)
+void DeleteCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
 {
-	type_ = type;
-	setCoreParameter("Type", type);
+	sceneId_ = sceneId;
+	setCoreParameter("SceneId", sceneId);
 }
 

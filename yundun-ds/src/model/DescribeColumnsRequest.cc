@@ -25,28 +25,6 @@ DescribeColumnsRequest::DescribeColumnsRequest() :
 DescribeColumnsRequest::~DescribeColumnsRequest()
 {}
 
-std::string DescribeColumnsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeColumnsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-int DescribeColumnsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeColumnsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
 std::string DescribeColumnsRequest::getRiskLevels()const
 {
 	return riskLevels_;
@@ -58,15 +36,26 @@ void DescribeColumnsRequest::setRiskLevels(const std::string& riskLevels)
 	setCoreParameter("RiskLevels", riskLevels);
 }
 
-std::string DescribeColumnsRequest::getName()const
+std::string DescribeColumnsRequest::getQueryName()const
 {
-	return name_;
+	return queryName_;
 }
 
-void DescribeColumnsRequest::setName(const std::string& name)
+void DescribeColumnsRequest::setQueryName(const std::string& queryName)
 {
-	name_ = name;
-	setCoreParameter("Name", name);
+	queryName_ = queryName;
+	setCoreParameter("QueryName", queryName);
+}
+
+std::string DescribeColumnsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeColumnsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeColumnsRequest::getPageSize()const
@@ -91,6 +80,28 @@ void DescribeColumnsRequest::setTableId(long tableId)
 	setCoreParameter("TableId", std::to_string(tableId));
 }
 
+std::string DescribeColumnsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeColumnsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+int DescribeColumnsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeColumnsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
 int DescribeColumnsRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -102,26 +113,15 @@ void DescribeColumnsRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeColumnsRequest::getQueryName()const
+std::string DescribeColumnsRequest::getName()const
 {
-	return queryName_;
+	return name_;
 }
 
-void DescribeColumnsRequest::setQueryName(const std::string& queryName)
+void DescribeColumnsRequest::setName(const std::string& name)
 {
-	queryName_ = queryName;
-	setCoreParameter("QueryName", queryName);
-}
-
-std::string DescribeColumnsRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeColumnsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 long DescribeColumnsRequest::getRuleId()const

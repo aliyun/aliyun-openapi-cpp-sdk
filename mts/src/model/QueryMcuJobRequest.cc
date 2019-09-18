@@ -58,17 +58,6 @@ void QueryMcuJobRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string QueryMcuJobRequest::getJobIds()const
-{
-	return jobIds_;
-}
-
-void QueryMcuJobRequest::setJobIds(const std::string& jobIds)
-{
-	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
-}
-
 long QueryMcuJobRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void QueryMcuJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryMcuJobRequest::getJobIds()const
+{
+	return jobIds_;
+}
+
+void QueryMcuJobRequest::setJobIds(const std::string& jobIds)
+{
+	jobIds_ = jobIds;
+	setCoreParameter("JobIds", jobIds);
 }
 

@@ -25,17 +25,6 @@ DescribeTotalCountRequest::DescribeTotalCountRequest() :
 DescribeTotalCountRequest::~DescribeTotalCountRequest()
 {}
 
-std::string DescribeTotalCountRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeTotalCountRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeTotalCountRequest::getFeatureType()const
 {
 	return featureType_;
@@ -45,6 +34,17 @@ void DescribeTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeTotalCountRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeTotalCountRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeTotalCountRequest::getLang()const

@@ -25,28 +25,6 @@ QueryIntentionListRequest::QueryIntentionListRequest() :
 QueryIntentionListRequest::~QueryIntentionListRequest()
 {}
 
-int QueryIntentionListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryIntentionListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string QueryIntentionListRequest::getSortOrder()const
-{
-	return sortOrder_;
-}
-
-void QueryIntentionListRequest::setSortOrder(const std::string& sortOrder)
-{
-	sortOrder_ = sortOrder;
-	setCoreParameter("SortOrder", sortOrder);
-}
-
 int QueryIntentionListRequest::getType()const
 {
 	return type_;
@@ -78,6 +56,28 @@ void QueryIntentionListRequest::setSortFiled(const std::string& sortFiled)
 {
 	sortFiled_ = sortFiled;
 	setCoreParameter("SortFiled", sortFiled);
+}
+
+int QueryIntentionListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryIntentionListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryIntentionListRequest::getSortOrder()const
+{
+	return sortOrder_;
+}
+
+void QueryIntentionListRequest::setSortOrder(const std::string& sortOrder)
+{
+	sortOrder_ = sortOrder;
+	setCoreParameter("SortOrder", sortOrder);
 }
 
 int QueryIntentionListRequest::getStatus()const

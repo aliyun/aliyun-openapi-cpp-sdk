@@ -21,39 +21,39 @@ set(hsm_public_header
 	include/alibabacloud/hsm/HsmExport.h )
 
 set(hsm_public_header_model 
-	include/alibabacloud/hsm/model/ConfigWhiteListRequest.h
-	include/alibabacloud/hsm/model/ConfigWhiteListResult.h
 	include/alibabacloud/hsm/model/ConfigNetworkRequest.h
 	include/alibabacloud/hsm/model/ConfigNetworkResult.h
-	include/alibabacloud/hsm/model/ReleaseInstanceRequest.h
-	include/alibabacloud/hsm/model/ReleaseInstanceResult.h
+	include/alibabacloud/hsm/model/ConfigWhiteListRequest.h
+	include/alibabacloud/hsm/model/ConfigWhiteListResult.h
+	include/alibabacloud/hsm/model/CreateInstanceRequest.h
+	include/alibabacloud/hsm/model/CreateInstanceResult.h
 	include/alibabacloud/hsm/model/DescribeInstancesRequest.h
 	include/alibabacloud/hsm/model/DescribeInstancesResult.h
 	include/alibabacloud/hsm/model/DescribeRegionsRequest.h
 	include/alibabacloud/hsm/model/DescribeRegionsResult.h
-	include/alibabacloud/hsm/model/CreateInstanceRequest.h
-	include/alibabacloud/hsm/model/CreateInstanceResult.h
 	include/alibabacloud/hsm/model/ModifyInstanceRequest.h
 	include/alibabacloud/hsm/model/ModifyInstanceResult.h
+	include/alibabacloud/hsm/model/ReleaseInstanceRequest.h
+	include/alibabacloud/hsm/model/ReleaseInstanceResult.h
 	include/alibabacloud/hsm/model/RenewInstanceRequest.h
 	include/alibabacloud/hsm/model/RenewInstanceResult.h )
 
 set(hsm_src 
 	src/HsmClient.cc
-	src/model/ConfigWhiteListRequest.cc
-	src/model/ConfigWhiteListResult.cc
 	src/model/ConfigNetworkRequest.cc
 	src/model/ConfigNetworkResult.cc
-	src/model/ReleaseInstanceRequest.cc
-	src/model/ReleaseInstanceResult.cc
+	src/model/ConfigWhiteListRequest.cc
+	src/model/ConfigWhiteListResult.cc
+	src/model/CreateInstanceRequest.cc
+	src/model/CreateInstanceResult.cc
 	src/model/DescribeInstancesRequest.cc
 	src/model/DescribeInstancesResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
-	src/model/CreateInstanceRequest.cc
-	src/model/CreateInstanceResult.cc
 	src/model/ModifyInstanceRequest.cc
 	src/model/ModifyInstanceResult.cc
+	src/model/ReleaseInstanceRequest.cc
+	src/model/ReleaseInstanceResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc )
 

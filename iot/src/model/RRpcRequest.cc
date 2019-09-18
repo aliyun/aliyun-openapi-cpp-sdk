@@ -25,17 +25,6 @@ RRpcRequest::RRpcRequest() :
 RRpcRequest::~RRpcRequest()
 {}
 
-std::string RRpcRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void RRpcRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
 std::string RRpcRequest::getRequestBase64Byte()const
 {
 	return requestBase64Byte_;
@@ -45,28 +34,6 @@ void RRpcRequest::setRequestBase64Byte(const std::string& requestBase64Byte)
 {
 	requestBase64Byte_ = requestBase64Byte;
 	setCoreParameter("RequestBase64Byte", requestBase64Byte);
-}
-
-std::string RRpcRequest::getTopic()const
-{
-	return topic_;
-}
-
-void RRpcRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setCoreParameter("Topic", topic);
-}
-
-std::string RRpcRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void RRpcRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string RRpcRequest::getProductKey()const
@@ -100,5 +67,38 @@ void RRpcRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RRpcRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void RRpcRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string RRpcRequest::getTopic()const
+{
+	return topic_;
+}
+
+void RRpcRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
+}
+
+std::string RRpcRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void RRpcRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
 }
 

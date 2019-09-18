@@ -25,17 +25,6 @@ DescribeUpBpsPeakOfLineRequest::DescribeUpBpsPeakOfLineRequest() :
 DescribeUpBpsPeakOfLineRequest::~DescribeUpBpsPeakOfLineRequest()
 {}
 
-std::string DescribeUpBpsPeakOfLineRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeUpBpsPeakOfLineRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeUpBpsPeakOfLineRequest::getLine()const
 {
 	return line_;
@@ -45,6 +34,17 @@ void DescribeUpBpsPeakOfLineRequest::setLine(const std::string& line)
 {
 	line_ = line;
 	setCoreParameter("Line", line);
+}
+
+std::string DescribeUpBpsPeakOfLineRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeUpBpsPeakOfLineRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getDomainName()const
@@ -67,17 +67,6 @@ void DescribeUpBpsPeakOfLineRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeUpBpsPeakOfLineRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeUpBpsPeakOfLineRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeUpBpsPeakOfLineRequest::getOwnerId()const

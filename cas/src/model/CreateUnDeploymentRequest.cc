@@ -25,6 +25,17 @@ CreateUnDeploymentRequest::CreateUnDeploymentRequest() :
 CreateUnDeploymentRequest::~CreateUnDeploymentRequest()
 {}
 
+std::string CreateUnDeploymentRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateUnDeploymentRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateUnDeploymentRequest::getSourceIp()const
 {
 	return sourceIp_;

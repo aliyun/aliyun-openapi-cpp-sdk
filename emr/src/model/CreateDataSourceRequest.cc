@@ -36,17 +36,6 @@ void CreateDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateDataSourceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateDataSourceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateDataSourceRequest::getNavParentId()const
 {
 	return navParentId_;
@@ -58,17 +47,6 @@ void CreateDataSourceRequest::setNavParentId(const std::string& navParentId)
 	setCoreParameter("NavParentId", navParentId);
 }
 
-std::string CreateDataSourceRequest::getName()const
-{
-	return name_;
-}
-
-void CreateDataSourceRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateDataSourceRequest::getDescription()const
 {
 	return description_;
@@ -78,17 +56,6 @@ void CreateDataSourceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-std::string CreateDataSourceRequest::getSourceType()const
-{
-	return sourceType_;
-}
-
-void CreateDataSourceRequest::setSourceType(const std::string& sourceType)
-{
-	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
 }
 
 std::string CreateDataSourceRequest::getConf()const
@@ -122,5 +89,38 @@ void CreateDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateDataSourceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateDataSourceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateDataSourceRequest::getName()const
+{
+	return name_;
+}
+
+void CreateDataSourceRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string CreateDataSourceRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void CreateDataSourceRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setCoreParameter("SourceType", sourceType);
 }
 

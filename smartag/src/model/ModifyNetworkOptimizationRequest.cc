@@ -36,17 +36,6 @@ void ModifyNetworkOptimizationRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyNetworkOptimizationRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyNetworkOptimizationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifyNetworkOptimizationRequest::getRegionId()const
 {
 	return regionId_;
@@ -69,6 +58,17 @@ void ModifyNetworkOptimizationRequest::setNetworkOptId(const std::string& networ
 	setCoreParameter("NetworkOptId", networkOptId);
 }
 
+std::string ModifyNetworkOptimizationRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyNetworkOptimizationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string ModifyNetworkOptimizationRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -80,17 +80,6 @@ void ModifyNetworkOptimizationRequest::setOwnerAccount(const std::string& ownerA
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyNetworkOptimizationRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyNetworkOptimizationRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 long ModifyNetworkOptimizationRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void ModifyNetworkOptimizationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyNetworkOptimizationRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyNetworkOptimizationRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

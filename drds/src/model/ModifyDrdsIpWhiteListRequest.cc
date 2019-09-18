@@ -25,6 +25,39 @@ ModifyDrdsIpWhiteListRequest::ModifyDrdsIpWhiteListRequest() :
 ModifyDrdsIpWhiteListRequest::~ModifyDrdsIpWhiteListRequest()
 {}
 
+std::string ModifyDrdsIpWhiteListRequest::getDrdsInstanceId()const
+{
+	return drdsInstanceId_;
+}
+
+void ModifyDrdsIpWhiteListRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
+{
+	drdsInstanceId_ = drdsInstanceId;
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+}
+
+std::string ModifyDrdsIpWhiteListRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void ModifyDrdsIpWhiteListRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setCoreParameter("GroupName", groupName);
+}
+
+std::string ModifyDrdsIpWhiteListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDrdsIpWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 bool ModifyDrdsIpWhiteListRequest::getMode()const
 {
 	return mode_;
@@ -67,38 +100,5 @@ void ModifyDrdsIpWhiteListRequest::setIpWhiteList(const std::string& ipWhiteList
 {
 	ipWhiteList_ = ipWhiteList;
 	setCoreParameter("IpWhiteList", ipWhiteList);
-}
-
-std::string ModifyDrdsIpWhiteListRequest::getDrdsInstanceId()const
-{
-	return drdsInstanceId_;
-}
-
-void ModifyDrdsIpWhiteListRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
-{
-	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
-}
-
-std::string ModifyDrdsIpWhiteListRequest::getGroupName()const
-{
-	return groupName_;
-}
-
-void ModifyDrdsIpWhiteListRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
-}
-
-std::string ModifyDrdsIpWhiteListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDrdsIpWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

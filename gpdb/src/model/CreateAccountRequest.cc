@@ -25,15 +25,26 @@ CreateAccountRequest::CreateAccountRequest() :
 CreateAccountRequest::~CreateAccountRequest()
 {}
 
-std::string CreateAccountRequest::getAccountPassword()const
+std::string CreateAccountRequest::getAccountDescription()const
 {
-	return accountPassword_;
+	return accountDescription_;
 }
 
-void CreateAccountRequest::setAccountPassword(const std::string& accountPassword)
+void CreateAccountRequest::setAccountDescription(const std::string& accountDescription)
 {
-	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	accountDescription_ = accountDescription;
+	setCoreParameter("AccountDescription", accountDescription);
+}
+
+std::string CreateAccountRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateAccountRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateAccountRequest::getAccountName()const
@@ -45,17 +56,6 @@ void CreateAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
 	setCoreParameter("AccountName", accountName);
-}
-
-std::string CreateAccountRequest::getDatabaseName()const
-{
-	return databaseName_;
-}
-
-void CreateAccountRequest::setDatabaseName(const std::string& databaseName)
-{
-	databaseName_ = databaseName;
-	setCoreParameter("DatabaseName", databaseName);
 }
 
 std::string CreateAccountRequest::getDBInstanceId()const
@@ -80,25 +80,25 @@ void CreateAccountRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateAccountRequest::getAccountDescription()const
+std::string CreateAccountRequest::getAccountPassword()const
 {
-	return accountDescription_;
+	return accountPassword_;
 }
 
-void CreateAccountRequest::setAccountDescription(const std::string& accountDescription)
+void CreateAccountRequest::setAccountPassword(const std::string& accountPassword)
 {
-	accountDescription_ = accountDescription;
-	setCoreParameter("AccountDescription", accountDescription);
+	accountPassword_ = accountPassword;
+	setCoreParameter("AccountPassword", accountPassword);
 }
 
-std::string CreateAccountRequest::getAccessKeyId()const
+std::string CreateAccountRequest::getDatabaseName()const
 {
-	return accessKeyId_;
+	return databaseName_;
 }
 
-void CreateAccountRequest::setAccessKeyId(const std::string& accessKeyId)
+void CreateAccountRequest::setDatabaseName(const std::string& databaseName)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	databaseName_ = databaseName;
+	setCoreParameter("DatabaseName", databaseName);
 }
 

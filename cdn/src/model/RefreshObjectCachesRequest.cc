@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::RefreshObjectCachesRequest;
 
 RefreshObjectCachesRequest::RefreshObjectCachesRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "RefreshObjectCaches")
+	RpcServiceRequest("cdn", "2014-11-11", "RefreshObjectCaches")
 {}
 
 RefreshObjectCachesRequest::~RefreshObjectCachesRequest()
 {}
-
-std::string RefreshObjectCachesRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void RefreshObjectCachesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string RefreshObjectCachesRequest::getObjectPath()const
 {
@@ -56,6 +45,17 @@ void RefreshObjectCachesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string RefreshObjectCachesRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void RefreshObjectCachesRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RefreshObjectCachesRequest::getObjectType()const

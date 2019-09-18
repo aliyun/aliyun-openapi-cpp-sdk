@@ -47,17 +47,6 @@ void GetImageLayerRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string GetImageLayerRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetImageLayerRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetImageLayerRequest::getTag()const
 {
 	return tag_;

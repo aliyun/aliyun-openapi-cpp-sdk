@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				QueryTaskListRequest();
 				~QueryTaskListRequest();
 
-				long getBeginCreateTime()const;
-				void setBeginCreateTime(long beginCreateTime);
 				long getEndCreateTime()const;
 				void setEndCreateTime(long endCreateTime);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				long getBeginCreateTime()const;
+				void setBeginCreateTime(long beginCreateTime);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 
             private:
-				long beginCreateTime_;
 				long endCreateTime_;
+				int pageNum_;
+				long beginCreateTime_;
 				std::string userClientIp_;
 				int pageSize_;
 				std::string lang_;
-				int pageNum_;
 
 			};
 		}

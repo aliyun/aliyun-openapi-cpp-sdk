@@ -25,17 +25,6 @@ IndexImageRequest::IndexImageRequest() :
 IndexImageRequest::~IndexImageRequest()
 {}
 
-std::string IndexImageRequest::getRemarksB()const
-{
-	return remarksB_;
-}
-
-void IndexImageRequest::setRemarksB(const std::string& remarksB)
-{
-	remarksB_ = remarksB;
-	setCoreParameter("RemarksB", remarksB);
-}
-
 std::string IndexImageRequest::getProject()const
 {
 	return project_;
@@ -45,17 +34,6 @@ void IndexImageRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
-}
-
-std::string IndexImageRequest::getRemarksA()const
-{
-	return remarksA_;
-}
-
-void IndexImageRequest::setRemarksA(const std::string& remarksA)
-{
-	remarksA_ = remarksA;
-	setCoreParameter("RemarksA", remarksA);
 }
 
 std::string IndexImageRequest::getExternalId()const
@@ -80,6 +58,72 @@ void IndexImageRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string IndexImageRequest::getNotifyEndpoint()const
+{
+	return notifyEndpoint_;
+}
+
+void IndexImageRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
+{
+	notifyEndpoint_ = notifyEndpoint;
+	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+}
+
+std::string IndexImageRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void IndexImageRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setCoreParameter("SourceType", sourceType);
+}
+
+std::string IndexImageRequest::getRealUid()const
+{
+	return realUid_;
+}
+
+void IndexImageRequest::setRealUid(const std::string& realUid)
+{
+	realUid_ = realUid;
+	setCoreParameter("RealUid", realUid);
+}
+
+std::string IndexImageRequest::getNotifyTopicName()const
+{
+	return notifyTopicName_;
+}
+
+void IndexImageRequest::setNotifyTopicName(const std::string& notifyTopicName)
+{
+	notifyTopicName_ = notifyTopicName;
+	setCoreParameter("NotifyTopicName", notifyTopicName);
+}
+
+std::string IndexImageRequest::getRemarksB()const
+{
+	return remarksB_;
+}
+
+void IndexImageRequest::setRemarksB(const std::string& remarksB)
+{
+	remarksB_ = remarksB;
+	setCoreParameter("RemarksB", remarksB);
+}
+
+std::string IndexImageRequest::getRemarksA()const
+{
+	return remarksA_;
+}
+
+void IndexImageRequest::setRemarksA(const std::string& remarksA)
+{
+	remarksA_ = remarksA;
+	setCoreParameter("RemarksA", remarksA);
+}
+
 std::string IndexImageRequest::getImageUri()const
 {
 	return imageUri_;
@@ -89,17 +133,6 @@ void IndexImageRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
 	setCoreParameter("ImageUri", imageUri);
-}
-
-std::string IndexImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void IndexImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string IndexImageRequest::getSourceUri()const
@@ -155,27 +188,5 @@ void IndexImageRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
 	setCoreParameter("SetId", setId);
-}
-
-std::string IndexImageRequest::getSourceType()const
-{
-	return sourceType_;
-}
-
-void IndexImageRequest::setSourceType(const std::string& sourceType)
-{
-	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
-}
-
-std::string IndexImageRequest::getRealUid()const
-{
-	return realUid_;
-}
-
-void IndexImageRequest::setRealUid(const std::string& realUid)
-{
-	realUid_ = realUid;
-	setCoreParameter("RealUid", realUid);
 }
 

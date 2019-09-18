@@ -47,6 +47,28 @@ void UpdateCoverPipelineRequest::setRole(const std::string& role)
 	setCoreParameter("Role", role);
 }
 
+std::string UpdateCoverPipelineRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateCoverPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateCoverPipelineRequest::getState()const
+{
+	return state_;
+}
+
+void UpdateCoverPipelineRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
 std::string UpdateCoverPipelineRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,28 +89,6 @@ void UpdateCoverPipelineRequest::setOwnerAccount(const std::string& ownerAccount
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string UpdateCoverPipelineRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateCoverPipelineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string UpdateCoverPipelineRequest::getState()const
-{
-	return state_;
-}
-
-void UpdateCoverPipelineRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
 }
 
 std::string UpdateCoverPipelineRequest::getNotifyConfig()const
@@ -124,17 +124,6 @@ void UpdateCoverPipelineRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string UpdateCoverPipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateCoverPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string UpdateCoverPipelineRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -144,5 +133,16 @@ void UpdateCoverPipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string UpdateCoverPipelineRequest::getName()const
+{
+	return name_;
+}
+
+void UpdateCoverPipelineRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

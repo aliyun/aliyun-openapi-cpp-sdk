@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ShopGroupShowListRequest();
 				~ShopGroupShowListRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getPage()const;
 				void setPage(int page);
 				long getBid()const;
 				void setBid(long bid);
 				int getPer()const;
 				void setPer(int per);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				int page_;
 				long bid_;
 				int per_;
-				std::string accessKeyId_;
 
 			};
 		}

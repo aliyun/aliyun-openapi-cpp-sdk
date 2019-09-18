@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				QueryIntentsRequest();
 				~QueryIntentsRequest();
 
-				std::string getIntentName()const;
-				void setIntentName(const std::string& intentName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getDialogId()const;
 				void setDialogId(long dialogId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getIntentName()const;
+				void setIntentName(const std::string& intentName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string intentName_;
-				int pageSize_;
 				long dialogId_;
 				int pageNumber_;
+				std::string intentName_;
+				int pageSize_;
 
 			};
 		}

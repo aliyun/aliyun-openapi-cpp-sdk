@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				RegisterMediaDetailScenarioRequest();
 				~RegisterMediaDetailScenarioRequest();
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getScenario()const;
-				void setScenario(const std::string& scenario);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
+				std::string getScenario()const;
+				void setScenario(const std::string& scenario);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string jobId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string scenario_;
-				std::string ownerAccount_;
 				std::string description_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string jobId_;
+				std::string scenario_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 
 			};
 		}

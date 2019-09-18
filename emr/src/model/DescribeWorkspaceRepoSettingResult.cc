@@ -35,13 +35,9 @@ DescribeWorkspaceRepoSettingResult::~DescribeWorkspaceRepoSettingResult()
 
 void DescribeWorkspaceRepoSettingResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto repoMavenNode = value["RepoMaven"];
 	if(!repoMavenNode["GroupId"].isNull())
@@ -50,21 +46,21 @@ void DescribeWorkspaceRepoSettingResult::parse(const std::string &payload)
 		repoMaven_.artifactId = repoMavenNode["ArtifactId"].asString();
 	if(!repoMavenNode["Version"].isNull())
 		repoMaven_.version = repoMavenNode["Version"].asString();
-	auto repoPip Node = value["RepoPip "];
-	if(!repoPip Node["PackageName"].isNull())
-		repoPip _.packageName = repoPip Node["PackageName"].asString();
-	if(!repoPip Node["Version"].isNull())
-		repoPip _.version = repoPip Node["Version"].asString();
+	auto repoPipNode = value["RepoPip"];
+	if(!repoPipNode["PackageName"].isNull())
+		repoPip_.packageName = repoPipNode["PackageName"].asString();
+	if(!repoPipNode["Version"].isNull())
+		repoPip_.version = repoPipNode["Version"].asString();
 
+}
+
+DescribeWorkspaceRepoSettingResult::RepoPip DescribeWorkspaceRepoSettingResult::getRepoPip()const
+{
+	return repoPip_;
 }
 
 DescribeWorkspaceRepoSettingResult::RepoMaven DescribeWorkspaceRepoSettingResult::getRepoMaven()const
 {
 	return repoMaven_;
-}
-
-DescribeWorkspaceRepoSettingResult::RepoPip  DescribeWorkspaceRepoSettingResult::getRepoPip ()const
-{
-	return repoPip _;
 }
 

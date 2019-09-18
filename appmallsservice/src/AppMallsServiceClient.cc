@@ -31,56 +31,56 @@ AppMallsServiceClient::AppMallsServiceClient(const Credentials &credentials, con
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "appmallsservice");
 }
 
 AppMallsServiceClient::AppMallsServiceClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "appmallsservice");
 }
 
 AppMallsServiceClient::AppMallsServiceClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "appmallsservice");
 }
 
 AppMallsServiceClient::~AppMallsServiceClient()
 {}
 
-AppMallsServiceClient::TaobaoFilmGetRegionListOutcome AppMallsServiceClient::taobaoFilmGetRegionList(const TaobaoFilmGetRegionListRequest &request) const
+AppMallsServiceClient::GetMessagesOutcome AppMallsServiceClient::getMessages(const GetMessagesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TaobaoFilmGetRegionListOutcome(endpointOutcome.error());
+		return GetMessagesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TaobaoFilmGetRegionListOutcome(TaobaoFilmGetRegionListResult(outcome.result()));
+		return GetMessagesOutcome(GetMessagesResult(outcome.result()));
 	else
-		return TaobaoFilmGetRegionListOutcome(outcome.error());
+		return GetMessagesOutcome(outcome.error());
 }
 
-void AppMallsServiceClient::taobaoFilmGetRegionListAsync(const TaobaoFilmGetRegionListRequest& request, const TaobaoFilmGetRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AppMallsServiceClient::getMessagesAsync(const GetMessagesRequest& request, const GetMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, taobaoFilmGetRegionList(request), context);
+		handler(this, request, getMessages(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AppMallsServiceClient::TaobaoFilmGetRegionListOutcomeCallable AppMallsServiceClient::taobaoFilmGetRegionListCallable(const TaobaoFilmGetRegionListRequest &request) const
+AppMallsServiceClient::GetMessagesOutcomeCallable AppMallsServiceClient::getMessagesCallable(const GetMessagesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TaobaoFilmGetRegionListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetMessagesOutcome()>>(
 			[this, request]()
 			{
-			return this->taobaoFilmGetRegionList(request);
+			return this->getMessages(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -123,72 +123,36 @@ AppMallsServiceClient::RemoveMessagesOutcomeCallable AppMallsServiceClient::remo
 	return task->get_future();
 }
 
-AppMallsServiceClient::TaobaoFilmIssueOrderOutcome AppMallsServiceClient::taobaoFilmIssueOrder(const TaobaoFilmIssueOrderRequest &request) const
+AppMallsServiceClient::TaobaoFilmGetCinemasOutcome AppMallsServiceClient::taobaoFilmGetCinemas(const TaobaoFilmGetCinemasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TaobaoFilmIssueOrderOutcome(endpointOutcome.error());
+		return TaobaoFilmGetCinemasOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TaobaoFilmIssueOrderOutcome(TaobaoFilmIssueOrderResult(outcome.result()));
+		return TaobaoFilmGetCinemasOutcome(TaobaoFilmGetCinemasResult(outcome.result()));
 	else
-		return TaobaoFilmIssueOrderOutcome(outcome.error());
+		return TaobaoFilmGetCinemasOutcome(outcome.error());
 }
 
-void AppMallsServiceClient::taobaoFilmIssueOrderAsync(const TaobaoFilmIssueOrderRequest& request, const TaobaoFilmIssueOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AppMallsServiceClient::taobaoFilmGetCinemasAsync(const TaobaoFilmGetCinemasRequest& request, const TaobaoFilmGetCinemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, taobaoFilmIssueOrder(request), context);
+		handler(this, request, taobaoFilmGetCinemas(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AppMallsServiceClient::TaobaoFilmIssueOrderOutcomeCallable AppMallsServiceClient::taobaoFilmIssueOrderCallable(const TaobaoFilmIssueOrderRequest &request) const
+AppMallsServiceClient::TaobaoFilmGetCinemasOutcomeCallable AppMallsServiceClient::taobaoFilmGetCinemasCallable(const TaobaoFilmGetCinemasRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TaobaoFilmIssueOrderOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<TaobaoFilmGetCinemasOutcome()>>(
 			[this, request]()
 			{
-			return this->taobaoFilmIssueOrder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AppMallsServiceClient::TaobaoFilmGetSchedulesOutcome AppMallsServiceClient::taobaoFilmGetSchedules(const TaobaoFilmGetSchedulesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TaobaoFilmGetSchedulesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TaobaoFilmGetSchedulesOutcome(TaobaoFilmGetSchedulesResult(outcome.result()));
-	else
-		return TaobaoFilmGetSchedulesOutcome(outcome.error());
-}
-
-void AppMallsServiceClient::taobaoFilmGetSchedulesAsync(const TaobaoFilmGetSchedulesRequest& request, const TaobaoFilmGetSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, taobaoFilmGetSchedules(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AppMallsServiceClient::TaobaoFilmGetSchedulesOutcomeCallable AppMallsServiceClient::taobaoFilmGetSchedulesCallable(const TaobaoFilmGetSchedulesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TaobaoFilmGetSchedulesOutcome()>>(
-			[this, request]()
-			{
-			return this->taobaoFilmGetSchedules(request);
+			return this->taobaoFilmGetCinemas(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,6 +195,78 @@ AppMallsServiceClient::TaobaoFilmGetHotShowsOutcomeCallable AppMallsServiceClien
 	return task->get_future();
 }
 
+AppMallsServiceClient::TaobaoFilmGetRegionListOutcome AppMallsServiceClient::taobaoFilmGetRegionList(const TaobaoFilmGetRegionListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TaobaoFilmGetRegionListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TaobaoFilmGetRegionListOutcome(TaobaoFilmGetRegionListResult(outcome.result()));
+	else
+		return TaobaoFilmGetRegionListOutcome(outcome.error());
+}
+
+void AppMallsServiceClient::taobaoFilmGetRegionListAsync(const TaobaoFilmGetRegionListRequest& request, const TaobaoFilmGetRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, taobaoFilmGetRegionList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AppMallsServiceClient::TaobaoFilmGetRegionListOutcomeCallable AppMallsServiceClient::taobaoFilmGetRegionListCallable(const TaobaoFilmGetRegionListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TaobaoFilmGetRegionListOutcome()>>(
+			[this, request]()
+			{
+			return this->taobaoFilmGetRegionList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AppMallsServiceClient::TaobaoFilmGetSchedulesOutcome AppMallsServiceClient::taobaoFilmGetSchedules(const TaobaoFilmGetSchedulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TaobaoFilmGetSchedulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TaobaoFilmGetSchedulesOutcome(TaobaoFilmGetSchedulesResult(outcome.result()));
+	else
+		return TaobaoFilmGetSchedulesOutcome(outcome.error());
+}
+
+void AppMallsServiceClient::taobaoFilmGetSchedulesAsync(const TaobaoFilmGetSchedulesRequest& request, const TaobaoFilmGetSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, taobaoFilmGetSchedules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AppMallsServiceClient::TaobaoFilmGetSchedulesOutcomeCallable AppMallsServiceClient::taobaoFilmGetSchedulesCallable(const TaobaoFilmGetSchedulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TaobaoFilmGetSchedulesOutcome()>>(
+			[this, request]()
+			{
+			return this->taobaoFilmGetSchedules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AppMallsServiceClient::TaobaoFilmGetSeatsOutcome AppMallsServiceClient::taobaoFilmGetSeats(const TaobaoFilmGetSeatsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -267,108 +303,36 @@ AppMallsServiceClient::TaobaoFilmGetSeatsOutcomeCallable AppMallsServiceClient::
 	return task->get_future();
 }
 
-AppMallsServiceClient::GetMessagesOutcome AppMallsServiceClient::getMessages(const GetMessagesRequest &request) const
+AppMallsServiceClient::TaobaoFilmGetShowCommentsOutcome AppMallsServiceClient::taobaoFilmGetShowComments(const TaobaoFilmGetShowCommentsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetMessagesOutcome(endpointOutcome.error());
+		return TaobaoFilmGetShowCommentsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetMessagesOutcome(GetMessagesResult(outcome.result()));
+		return TaobaoFilmGetShowCommentsOutcome(TaobaoFilmGetShowCommentsResult(outcome.result()));
 	else
-		return GetMessagesOutcome(outcome.error());
+		return TaobaoFilmGetShowCommentsOutcome(outcome.error());
 }
 
-void AppMallsServiceClient::getMessagesAsync(const GetMessagesRequest& request, const GetMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AppMallsServiceClient::taobaoFilmGetShowCommentsAsync(const TaobaoFilmGetShowCommentsRequest& request, const TaobaoFilmGetShowCommentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getMessages(request), context);
+		handler(this, request, taobaoFilmGetShowComments(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AppMallsServiceClient::GetMessagesOutcomeCallable AppMallsServiceClient::getMessagesCallable(const GetMessagesRequest &request) const
+AppMallsServiceClient::TaobaoFilmGetShowCommentsOutcomeCallable AppMallsServiceClient::taobaoFilmGetShowCommentsCallable(const TaobaoFilmGetShowCommentsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetMessagesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<TaobaoFilmGetShowCommentsOutcome()>>(
 			[this, request]()
 			{
-			return this->getMessages(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AppMallsServiceClient::TaobaoFilmUnLockSeatOutcome AppMallsServiceClient::taobaoFilmUnLockSeat(const TaobaoFilmUnLockSeatRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TaobaoFilmUnLockSeatOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TaobaoFilmUnLockSeatOutcome(TaobaoFilmUnLockSeatResult(outcome.result()));
-	else
-		return TaobaoFilmUnLockSeatOutcome(outcome.error());
-}
-
-void AppMallsServiceClient::taobaoFilmUnLockSeatAsync(const TaobaoFilmUnLockSeatRequest& request, const TaobaoFilmUnLockSeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, taobaoFilmUnLockSeat(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AppMallsServiceClient::TaobaoFilmUnLockSeatOutcomeCallable AppMallsServiceClient::taobaoFilmUnLockSeatCallable(const TaobaoFilmUnLockSeatRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TaobaoFilmUnLockSeatOutcome()>>(
-			[this, request]()
-			{
-			return this->taobaoFilmUnLockSeat(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AppMallsServiceClient::TaobaoFilmLockSeatOutcome AppMallsServiceClient::taobaoFilmLockSeat(const TaobaoFilmLockSeatRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TaobaoFilmLockSeatOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TaobaoFilmLockSeatOutcome(TaobaoFilmLockSeatResult(outcome.result()));
-	else
-		return TaobaoFilmLockSeatOutcome(outcome.error());
-}
-
-void AppMallsServiceClient::taobaoFilmLockSeatAsync(const TaobaoFilmLockSeatRequest& request, const TaobaoFilmLockSeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, taobaoFilmLockSeat(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AppMallsServiceClient::TaobaoFilmLockSeatOutcomeCallable AppMallsServiceClient::taobaoFilmLockSeatCallable(const TaobaoFilmLockSeatRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TaobaoFilmLockSeatOutcome()>>(
-			[this, request]()
-			{
-			return this->taobaoFilmLockSeat(request);
+			return this->taobaoFilmGetShowComments(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,72 +375,108 @@ AppMallsServiceClient::TaobaoFilmGetSoonShowsOutcomeCallable AppMallsServiceClie
 	return task->get_future();
 }
 
-AppMallsServiceClient::TaobaoFilmGetCinemasOutcome AppMallsServiceClient::taobaoFilmGetCinemas(const TaobaoFilmGetCinemasRequest &request) const
+AppMallsServiceClient::TaobaoFilmIssueOrderOutcome AppMallsServiceClient::taobaoFilmIssueOrder(const TaobaoFilmIssueOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TaobaoFilmGetCinemasOutcome(endpointOutcome.error());
+		return TaobaoFilmIssueOrderOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TaobaoFilmGetCinemasOutcome(TaobaoFilmGetCinemasResult(outcome.result()));
+		return TaobaoFilmIssueOrderOutcome(TaobaoFilmIssueOrderResult(outcome.result()));
 	else
-		return TaobaoFilmGetCinemasOutcome(outcome.error());
+		return TaobaoFilmIssueOrderOutcome(outcome.error());
 }
 
-void AppMallsServiceClient::taobaoFilmGetCinemasAsync(const TaobaoFilmGetCinemasRequest& request, const TaobaoFilmGetCinemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AppMallsServiceClient::taobaoFilmIssueOrderAsync(const TaobaoFilmIssueOrderRequest& request, const TaobaoFilmIssueOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, taobaoFilmGetCinemas(request), context);
+		handler(this, request, taobaoFilmIssueOrder(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AppMallsServiceClient::TaobaoFilmGetCinemasOutcomeCallable AppMallsServiceClient::taobaoFilmGetCinemasCallable(const TaobaoFilmGetCinemasRequest &request) const
+AppMallsServiceClient::TaobaoFilmIssueOrderOutcomeCallable AppMallsServiceClient::taobaoFilmIssueOrderCallable(const TaobaoFilmIssueOrderRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TaobaoFilmGetCinemasOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<TaobaoFilmIssueOrderOutcome()>>(
 			[this, request]()
 			{
-			return this->taobaoFilmGetCinemas(request);
+			return this->taobaoFilmIssueOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AppMallsServiceClient::TaobaoFilmGetShowCommentsOutcome AppMallsServiceClient::taobaoFilmGetShowComments(const TaobaoFilmGetShowCommentsRequest &request) const
+AppMallsServiceClient::TaobaoFilmLockSeatOutcome AppMallsServiceClient::taobaoFilmLockSeat(const TaobaoFilmLockSeatRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TaobaoFilmGetShowCommentsOutcome(endpointOutcome.error());
+		return TaobaoFilmLockSeatOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TaobaoFilmGetShowCommentsOutcome(TaobaoFilmGetShowCommentsResult(outcome.result()));
+		return TaobaoFilmLockSeatOutcome(TaobaoFilmLockSeatResult(outcome.result()));
 	else
-		return TaobaoFilmGetShowCommentsOutcome(outcome.error());
+		return TaobaoFilmLockSeatOutcome(outcome.error());
 }
 
-void AppMallsServiceClient::taobaoFilmGetShowCommentsAsync(const TaobaoFilmGetShowCommentsRequest& request, const TaobaoFilmGetShowCommentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AppMallsServiceClient::taobaoFilmLockSeatAsync(const TaobaoFilmLockSeatRequest& request, const TaobaoFilmLockSeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, taobaoFilmGetShowComments(request), context);
+		handler(this, request, taobaoFilmLockSeat(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AppMallsServiceClient::TaobaoFilmGetShowCommentsOutcomeCallable AppMallsServiceClient::taobaoFilmGetShowCommentsCallable(const TaobaoFilmGetShowCommentsRequest &request) const
+AppMallsServiceClient::TaobaoFilmLockSeatOutcomeCallable AppMallsServiceClient::taobaoFilmLockSeatCallable(const TaobaoFilmLockSeatRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TaobaoFilmGetShowCommentsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<TaobaoFilmLockSeatOutcome()>>(
 			[this, request]()
 			{
-			return this->taobaoFilmGetShowComments(request);
+			return this->taobaoFilmLockSeat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AppMallsServiceClient::TaobaoFilmUnLockSeatOutcome AppMallsServiceClient::taobaoFilmUnLockSeat(const TaobaoFilmUnLockSeatRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TaobaoFilmUnLockSeatOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TaobaoFilmUnLockSeatOutcome(TaobaoFilmUnLockSeatResult(outcome.result()));
+	else
+		return TaobaoFilmUnLockSeatOutcome(outcome.error());
+}
+
+void AppMallsServiceClient::taobaoFilmUnLockSeatAsync(const TaobaoFilmUnLockSeatRequest& request, const TaobaoFilmUnLockSeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, taobaoFilmUnLockSeat(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AppMallsServiceClient::TaobaoFilmUnLockSeatOutcomeCallable AppMallsServiceClient::taobaoFilmUnLockSeatCallable(const TaobaoFilmUnLockSeatRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TaobaoFilmUnLockSeatOutcome()>>(
+			[this, request]()
+			{
+			return this->taobaoFilmUnLockSeat(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

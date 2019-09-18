@@ -25,6 +25,17 @@ BusinessShowListRequest::BusinessShowListRequest() :
 BusinessShowListRequest::~BusinessShowListRequest()
 {}
 
+std::string BusinessShowListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void BusinessShowListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int BusinessShowListRequest::getPage()const
 {
 	return page_;
@@ -45,16 +56,5 @@ void BusinessShowListRequest::setPer(int per)
 {
 	per_ = per;
 	setCoreParameter("Per", std::to_string(per));
-}
-
-std::string BusinessShowListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BusinessShowListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -39,6 +39,16 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getCalled()const;
 				void setCalled(const std::string& called);
+				std::string getDialogCountTo()const;
+				void setDialogCountTo(const std::string& dialogCountTo);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDurationFrom()const;
+				void setDurationFrom(const std::string& durationFrom);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDialogCountFrom()const;
@@ -47,38 +57,28 @@ namespace AlibabaCloud
 				void setDurationTo(const std::string& durationTo);
 				std::string getHangupDirection()const;
 				void setHangupDirection(const std::string& hangupDirection);
-				std::string getDialogCountTo()const;
-				void setDialogCountTo(const std::string& dialogCountTo);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDurationFrom()const;
-				void setDurationFrom(const std::string& durationFrom);
 				int getPageNo()const;
 				void setPageNo(int pageNo);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getCallResult()const;
 				void setCallResult(const std::string& callResult);
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 
             private:
 				long resourceOwnerId_;
 				std::string called_;
+				std::string dialogCountTo_;
+				std::string accessKeyId_;
+				std::string durationFrom_;
+				int pageSize_;
+				std::string taskId_;
 				std::string resourceOwnerAccount_;
 				std::string dialogCountFrom_;
 				std::string durationTo_;
 				std::string hangupDirection_;
-				std::string dialogCountTo_;
 				long ownerId_;
-				std::string accessKeyId_;
-				std::string durationFrom_;
 				int pageNo_;
-				int pageSize_;
 				std::string callResult_;
-				std::string taskId_;
 
 			};
 		}

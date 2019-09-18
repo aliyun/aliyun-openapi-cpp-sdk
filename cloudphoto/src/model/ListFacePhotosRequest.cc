@@ -36,17 +36,6 @@ void ListFacePhotosRequest::setCursor(const std::string& cursor)
 	setCoreParameter("Cursor", cursor);
 }
 
-int ListFacePhotosRequest::getSize()const
-{
-	return size_;
-}
-
-void ListFacePhotosRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string ListFacePhotosRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -78,6 +67,17 @@ void ListFacePhotosRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
 	setCoreParameter("FaceId", std::to_string(faceId));
+}
+
+int ListFacePhotosRequest::getSize()const
+{
+	return size_;
+}
+
+void ListFacePhotosRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListFacePhotosRequest::getState()const

@@ -36,17 +36,6 @@ void BatchSetDcdnIpaDomainConfigsRequest::setFunctions(const std::string& functi
 	setCoreParameter("Functions", functions);
 }
 
-std::string BatchSetDcdnIpaDomainConfigsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void BatchSetDcdnIpaDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string BatchSetDcdnIpaDomainConfigsRequest::getDomainNames()const
 {
 	return domainNames_;
@@ -56,6 +45,17 @@ void BatchSetDcdnIpaDomainConfigsRequest::setDomainNames(const std::string& doma
 {
 	domainNames_ = domainNames;
 	setCoreParameter("DomainNames", domainNames);
+}
+
+std::string BatchSetDcdnIpaDomainConfigsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void BatchSetDcdnIpaDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string BatchSetDcdnIpaDomainConfigsRequest::getOwnerAccount()const

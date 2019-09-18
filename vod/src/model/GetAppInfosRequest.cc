@@ -36,17 +36,6 @@ void GetAppInfosRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GetAppInfosRequest::getAppIds()const
-{
-	return appIds_;
-}
-
-void GetAppInfosRequest::setAppIds(const std::string& appIds)
-{
-	appIds_ = appIds;
-	setCoreParameter("AppIds", appIds);
-}
-
 std::string GetAppInfosRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -89,5 +78,16 @@ void GetAppInfosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetAppInfosRequest::getAppIds()const
+{
+	return appIds_;
+}
+
+void GetAppInfosRequest::setAppIds(const std::string& appIds)
+{
+	appIds_ = appIds;
+	setCoreParameter("AppIds", appIds);
 }
 

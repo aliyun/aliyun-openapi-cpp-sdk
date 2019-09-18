@@ -36,15 +36,15 @@ void DescribeDBInstanceNetInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstanceNetInfoRequest::getInstanceId()const
+std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void DescribeDBInstanceNetInfoRequest::setInstanceId(const std::string& instanceId)
+void DescribeDBInstanceNetInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceNetInfoRequest::getSecurityToken()const
@@ -69,17 +69,6 @@ void DescribeDBInstanceNetInfoRequest::setResourceOwnerAccount(const std::string
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeDBInstanceNetInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeDBInstanceNetInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeDBInstanceNetInfoRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,14 +91,14 @@ void DescribeDBInstanceNetInfoRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId()const
+std::string DescribeDBInstanceNetInfoRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void DescribeDBInstanceNetInfoRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeDBInstanceNetInfoRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

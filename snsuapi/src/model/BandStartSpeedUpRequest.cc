@@ -47,26 +47,15 @@ void BandStartSpeedUpRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string BandStartSpeedUpRequest::getResourceOwnerAccount()const
+std::string BandStartSpeedUpRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void BandStartSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void BandStartSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-int BandStartSpeedUpRequest::getPort()const
-{
-	return port_;
-}
-
-void BandStartSpeedUpRequest::setPort(int port)
-{
-	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long BandStartSpeedUpRequest::getBandId()const
@@ -80,17 +69,6 @@ void BandStartSpeedUpRequest::setBandId(long bandId)
 	setCoreParameter("BandId", std::to_string(bandId));
 }
 
-long BandStartSpeedUpRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void BandStartSpeedUpRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 long BandStartSpeedUpRequest::getTargetBandwidth()const
 {
 	return targetBandwidth_;
@@ -100,6 +78,39 @@ void BandStartSpeedUpRequest::setTargetBandwidth(long targetBandwidth)
 {
 	targetBandwidth_ = targetBandwidth;
 	setCoreParameter("TargetBandwidth", std::to_string(targetBandwidth));
+}
+
+std::string BandStartSpeedUpRequest::getDirection()const
+{
+	return direction_;
+}
+
+void BandStartSpeedUpRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
+}
+
+std::string BandStartSpeedUpRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void BandStartSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long BandStartSpeedUpRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void BandStartSpeedUpRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BandStartSpeedUpRequest::getBandScene()const
@@ -113,25 +124,14 @@ void BandStartSpeedUpRequest::setBandScene(const std::string& bandScene)
 	setCoreParameter("BandScene", bandScene);
 }
 
-std::string BandStartSpeedUpRequest::getAccessKeyId()const
+int BandStartSpeedUpRequest::getPort()const
 {
-	return accessKeyId_;
+	return port_;
 }
 
-void BandStartSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
+void BandStartSpeedUpRequest::setPort(int port)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string BandStartSpeedUpRequest::getDirection()const
-{
-	return direction_;
-}
-
-void BandStartSpeedUpRequest::setDirection(const std::string& direction)
-{
-	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	port_ = port;
+	setCoreParameter("Port", std::to_string(port));
 }
 

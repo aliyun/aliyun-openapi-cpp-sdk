@@ -36,6 +36,83 @@ void ListApmApplicationRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int ListApmApplicationRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListApmApplicationRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListApmApplicationRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListApmApplicationRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListApmApplicationRequest::getFinalStatus()const
+{
+	return finalStatus_;
+}
+
+void ListApmApplicationRequest::setFinalStatus(const std::string& finalStatus)
+{
+	finalStatus_ = finalStatus;
+	setCoreParameter("FinalStatus", finalStatus);
+}
+
+std::string ListApmApplicationRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListApmApplicationRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListApmApplicationRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListApmApplicationRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListApmApplicationRequest::getState()const
+{
+	return state_;
+}
+
+void ListApmApplicationRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
+long ListApmApplicationRequest::getStartTimeTo()const
+{
+	return startTimeTo_;
+}
+
+void ListApmApplicationRequest::setStartTimeTo(long startTimeTo)
+{
+	startTimeTo_ = startTimeTo;
+	setCoreParameter("StartTimeTo", std::to_string(startTimeTo));
+}
+
 std::string ListApmApplicationRequest::getDiagnoseResult()const
 {
 	return diagnoseResult_;
@@ -91,50 +168,6 @@ void ListApmApplicationRequest::setJobType(const std::string& jobType)
 	setCoreParameter("JobType", jobType);
 }
 
-int ListApmApplicationRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListApmApplicationRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListApmApplicationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListApmApplicationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string ListApmApplicationRequest::getFinalStatus()const
-{
-	return finalStatus_;
-}
-
-void ListApmApplicationRequest::setFinalStatus(const std::string& finalStatus)
-{
-	finalStatus_ = finalStatus;
-	setCoreParameter("FinalStatus", finalStatus);
-}
-
-std::string ListApmApplicationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListApmApplicationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long ListApmApplicationRequest::getStartTimeFrom()const
 {
 	return startTimeFrom_;
@@ -166,39 +199,6 @@ void ListApmApplicationRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-int ListApmApplicationRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListApmApplicationRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListApmApplicationRequest::getState()const
-{
-	return state_;
-}
-
-void ListApmApplicationRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
-}
-
-long ListApmApplicationRequest::getStartTimeTo()const
-{
-	return startTimeTo_;
-}
-
-void ListApmApplicationRequest::setStartTimeTo(long startTimeTo)
-{
-	startTimeTo_ = startTimeTo;
-	setCoreParameter("StartTimeTo", std::to_string(startTimeTo));
 }
 
 std::string ListApmApplicationRequest::getUser()const

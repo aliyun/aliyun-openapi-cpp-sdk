@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				long getInstanceId()const;
-				void setInstanceId(long instanceId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
 				int getCountType()const;
 				void setCountType(int countType);
+				long getInstanceId()const;
+				void setInstanceId(long instanceId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
 				std::string productCode_;
-				long instanceId_;
-				std::string sourceIp_;
 				int featureType_;
 				int countType_;
+				long instanceId_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

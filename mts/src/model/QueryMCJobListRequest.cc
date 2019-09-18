@@ -36,17 +36,6 @@ void QueryMCJobListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QueryMCJobListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void QueryMCJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string QueryMCJobListRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -67,6 +56,50 @@ void QueryMCJobListRequest::setStartOfJobCreatedTimeRange(const std::string& sta
 {
 	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
 	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+}
+
+std::string QueryMCJobListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryMCJobListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryMCJobListRequest::getState()const
+{
+	return state_;
+}
+
+void QueryMCJobListRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
+std::string QueryMCJobListRequest::getEndOfJobCreatedTimeRange()const
+{
+	return endOfJobCreatedTimeRange_;
+}
+
+void QueryMCJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
+{
+	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
+	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+}
+
+std::string QueryMCJobListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void QueryMCJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMCJobListRequest::getOwnerAccount()const
@@ -102,17 +135,6 @@ void QueryMCJobListRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string QueryMCJobListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryMCJobListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string QueryMCJobListRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,27 +155,5 @@ void QueryMCJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
 	setCoreParameter("JobIds", jobIds);
-}
-
-std::string QueryMCJobListRequest::getState()const
-{
-	return state_;
-}
-
-void QueryMCJobListRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
-}
-
-std::string QueryMCJobListRequest::getEndOfJobCreatedTimeRange()const
-{
-	return endOfJobCreatedTimeRange_;
-}
-
-void QueryMCJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
-{
-	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 }
 

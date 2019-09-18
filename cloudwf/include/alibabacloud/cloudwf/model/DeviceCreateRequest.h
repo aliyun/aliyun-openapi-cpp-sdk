@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DeviceCreateRequest();
 				~DeviceCreateRequest();
 
-				std::string getDeviceNum()const;
-				void setDeviceNum(const std::string& deviceNum);
 				std::string getDevicePosition()const;
 				void setDevicePosition(const std::string& devicePosition);
-				std::string getDeviceName()const;
-				void setDeviceName(const std::string& deviceName);
 				int getDeviceType()const;
 				void setDeviceType(int deviceType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getSid()const;
 				void setSid(long sid);
+				std::string getDeviceNum()const;
+				void setDeviceNum(const std::string& deviceNum);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string deviceNum_;
 				std::string devicePosition_;
-				std::string deviceName_;
 				int deviceType_;
 				std::string accessKeyId_;
 				long sid_;
+				std::string deviceNum_;
+				std::string deviceName_;
 
 			};
 		}

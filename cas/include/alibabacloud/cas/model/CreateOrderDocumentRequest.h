@@ -37,24 +37,27 @@ namespace AlibabaCloud
 
 				std::string getOssKey()const;
 				void setOssKey(const std::string& ossKey);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				long getOrderId()const;
-				void setOrderId(long orderId);
-				int getDocumentType()const;
-				void setDocumentType(int documentType);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getExtName()const;
 				void setExtName(const std::string& extName);
+				long getOrderId()const;
+				void setOrderId(long orderId);
+				int getDocumentType()const;
+				void setDocumentType(int documentType);
 
             private:
 				std::string ossKey_;
+				std::string resourceGroupId_;
 				std::string sourceIp_;
-				long orderId_;
-				int documentType_;
 				std::string lang_;
 				std::string extName_;
+				long orderId_;
+				int documentType_;
 
 			};
 		}

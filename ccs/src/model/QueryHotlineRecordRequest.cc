@@ -25,17 +25,6 @@ QueryHotlineRecordRequest::QueryHotlineRecordRequest() :
 QueryHotlineRecordRequest::~QueryHotlineRecordRequest()
 {}
 
-std::string QueryHotlineRecordRequest::getAgentId()const
-{
-	return agentId_;
-}
-
-void QueryHotlineRecordRequest::setAgentId(const std::string& agentId)
-{
-	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
-}
-
 long QueryHotlineRecordRequest::getMaxTalkDuration()const
 {
 	return maxTalkDuration_;
@@ -45,28 +34,6 @@ void QueryHotlineRecordRequest::setMaxTalkDuration(long maxTalkDuration)
 {
 	maxTalkDuration_ = maxTalkDuration;
 	setCoreParameter("MaxTalkDuration", std::to_string(maxTalkDuration));
-}
-
-std::string QueryHotlineRecordRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void QueryHotlineRecordRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-std::string QueryHotlineRecordRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void QueryHotlineRecordRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
 }
 
 std::string QueryHotlineRecordRequest::getStartTime()const
@@ -91,28 +58,6 @@ void QueryHotlineRecordRequest::setPageNum(int pageNum)
 	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
-std::string QueryHotlineRecordRequest::getSatisfaction()const
-{
-	return satisfaction_;
-}
-
-void QueryHotlineRecordRequest::setSatisfaction(const std::string& satisfaction)
-{
-	satisfaction_ = satisfaction;
-	setCoreParameter("Satisfaction", satisfaction);
-}
-
-long QueryHotlineRecordRequest::getMinTalkDuratoin()const
-{
-	return minTalkDuratoin_;
-}
-
-void QueryHotlineRecordRequest::setMinTalkDuratoin(long minTalkDuratoin)
-{
-	minTalkDuratoin_ = minTalkDuratoin;
-	setCoreParameter("MinTalkDuratoin", std::to_string(minTalkDuratoin));
-}
-
 std::string QueryHotlineRecordRequest::getCategoryIds()const
 {
 	return categoryIds_;
@@ -122,17 +67,6 @@ void QueryHotlineRecordRequest::setCategoryIds(const std::string& categoryIds)
 {
 	categoryIds_ = categoryIds;
 	setCoreParameter("CategoryIds", categoryIds);
-}
-
-std::string QueryHotlineRecordRequest::getVisitorProvince()const
-{
-	return visitorProvince_;
-}
-
-void QueryHotlineRecordRequest::setVisitorProvince(const std::string& visitorProvince)
-{
-	visitorProvince_ = visitorProvince;
-	setCoreParameter("VisitorProvince", visitorProvince);
 }
 
 int QueryHotlineRecordRequest::getPageSize()const
@@ -168,17 +102,6 @@ void QueryHotlineRecordRequest::setCcsInstanceId(const std::string& ccsInstanceI
 	setCoreParameter("CcsInstanceId", ccsInstanceId);
 }
 
-std::string QueryHotlineRecordRequest::getVisitorPhone()const
-{
-	return visitorPhone_;
-}
-
-void QueryHotlineRecordRequest::setVisitorPhone(const std::string& visitorPhone)
-{
-	visitorPhone_ = visitorPhone;
-	setCoreParameter("VisitorPhone", visitorPhone);
-}
-
 std::string QueryHotlineRecordRequest::getVisitorId()const
 {
 	return visitorId_;
@@ -188,6 +111,83 @@ void QueryHotlineRecordRequest::setVisitorId(const std::string& visitorId)
 {
 	visitorId_ = visitorId;
 	setCoreParameter("VisitorId", visitorId);
+}
+
+std::string QueryHotlineRecordRequest::getAgentId()const
+{
+	return agentId_;
+}
+
+void QueryHotlineRecordRequest::setAgentId(const std::string& agentId)
+{
+	agentId_ = agentId;
+	setCoreParameter("AgentId", agentId);
+}
+
+std::string QueryHotlineRecordRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void QueryHotlineRecordRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string QueryHotlineRecordRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void QueryHotlineRecordRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+std::string QueryHotlineRecordRequest::getSatisfaction()const
+{
+	return satisfaction_;
+}
+
+void QueryHotlineRecordRequest::setSatisfaction(const std::string& satisfaction)
+{
+	satisfaction_ = satisfaction;
+	setCoreParameter("Satisfaction", satisfaction);
+}
+
+long QueryHotlineRecordRequest::getMinTalkDuratoin()const
+{
+	return minTalkDuratoin_;
+}
+
+void QueryHotlineRecordRequest::setMinTalkDuratoin(long minTalkDuratoin)
+{
+	minTalkDuratoin_ = minTalkDuratoin;
+	setCoreParameter("MinTalkDuratoin", std::to_string(minTalkDuratoin));
+}
+
+std::string QueryHotlineRecordRequest::getVisitorProvince()const
+{
+	return visitorProvince_;
+}
+
+void QueryHotlineRecordRequest::setVisitorProvince(const std::string& visitorProvince)
+{
+	visitorProvince_ = visitorProvince;
+	setCoreParameter("VisitorProvince", visitorProvince);
+}
+
+std::string QueryHotlineRecordRequest::getVisitorPhone()const
+{
+	return visitorPhone_;
+}
+
+void QueryHotlineRecordRequest::setVisitorPhone(const std::string& visitorPhone)
+{
+	visitorPhone_ = visitorPhone;
+	setCoreParameter("VisitorPhone", visitorPhone);
 }
 
 std::string QueryHotlineRecordRequest::getStatus()const

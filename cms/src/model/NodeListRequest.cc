@@ -25,6 +25,39 @@ NodeListRequest::NodeListRequest() :
 NodeListRequest::~NodeListRequest()
 {}
 
+long NodeListRequest::getUserId()const
+{
+	return userId_;
+}
+
+void NodeListRequest::setUserId(long userId)
+{
+	userId_ = userId;
+	setCoreParameter("UserId", std::to_string(userId));
+}
+
+std::string NodeListRequest::getSerialNumbers()const
+{
+	return serialNumbers_;
+}
+
+void NodeListRequest::setSerialNumbers(const std::string& serialNumbers)
+{
+	serialNumbers_ = serialNumbers;
+	setCoreParameter("SerialNumbers", serialNumbers);
+}
+
+int NodeListRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void NodeListRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string NodeListRequest::getHostName()const
 {
 	return hostName_;
@@ -78,39 +111,6 @@ void NodeListRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
 	setCoreParameter("KeyWord", keyWord);
-}
-
-long NodeListRequest::getUserId()const
-{
-	return userId_;
-}
-
-void NodeListRequest::setUserId(long userId)
-{
-	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
-}
-
-std::string NodeListRequest::getSerialNumbers()const
-{
-	return serialNumbers_;
-}
-
-void NodeListRequest::setSerialNumbers(const std::string& serialNumbers)
-{
-	serialNumbers_ = serialNumbers;
-	setCoreParameter("SerialNumbers", serialNumbers);
-}
-
-int NodeListRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void NodeListRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string NodeListRequest::getStatus()const

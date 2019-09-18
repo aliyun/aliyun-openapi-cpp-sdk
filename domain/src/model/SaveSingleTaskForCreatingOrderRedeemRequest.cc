@@ -25,39 +25,6 @@ SaveSingleTaskForCreatingOrderRedeemRequest::SaveSingleTaskForCreatingOrderRedee
 SaveSingleTaskForCreatingOrderRedeemRequest::~SaveSingleTaskForCreatingOrderRedeemRequest()
 {}
 
-std::string SaveSingleTaskForCreatingOrderRedeemRequest::getPromotionNo()const
-{
-	return promotionNo_;
-}
-
-void SaveSingleTaskForCreatingOrderRedeemRequest::setPromotionNo(const std::string& promotionNo)
-{
-	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
-}
-
-long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()const
-{
-	return currentExpirationDate_;
-}
-
-void SaveSingleTaskForCreatingOrderRedeemRequest::setCurrentExpirationDate(long currentExpirationDate)
-{
-	currentExpirationDate_ = currentExpirationDate;
-	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
-}
-
-std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveSingleTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getDomainName()const
 {
 	return domainName_;
@@ -89,6 +56,39 @@ void SaveSingleTaskForCreatingOrderRedeemRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
 	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+}
+
+std::string SaveSingleTaskForCreatingOrderRedeemRequest::getPromotionNo()const
+{
+	return promotionNo_;
+}
+
+void SaveSingleTaskForCreatingOrderRedeemRequest::setPromotionNo(const std::string& promotionNo)
+{
+	promotionNo_ = promotionNo;
+	setCoreParameter("PromotionNo", promotionNo);
+}
+
+long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()const
+{
+	return currentExpirationDate_;
+}
+
+void SaveSingleTaskForCreatingOrderRedeemRequest::setCurrentExpirationDate(long currentExpirationDate)
+{
+	currentExpirationDate_ = currentExpirationDate;
+	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
+}
+
+std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveSingleTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getLang()const

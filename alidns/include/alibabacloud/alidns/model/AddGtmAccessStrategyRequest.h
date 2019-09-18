@@ -35,27 +35,27 @@ namespace AlibabaCloud
 				AddGtmAccessStrategyRequest();
 				~AddGtmAccessStrategyRequest();
 
-				std::string getStrategyName()const;
-				void setStrategyName(const std::string& strategyName);
 				std::string getDefaultAddrPoolId()const;
 				void setDefaultAddrPoolId(const std::string& defaultAddrPoolId);
+				std::string getFailoverAddrPoolId()const;
+				void setFailoverAddrPoolId(const std::string& failoverAddrPoolId);
+				std::string getStrategyName()const;
+				void setStrategyName(const std::string& strategyName);
 				std::string getAccessLines()const;
 				void setAccessLines(const std::string& accessLines);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getFailoverAddrPoolId()const;
-				void setFailoverAddrPoolId(const std::string& failoverAddrPoolId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string strategyName_;
 				std::string defaultAddrPoolId_;
+				std::string failoverAddrPoolId_;
+				std::string strategyName_;
 				std::string accessLines_;
 				std::string instanceId_;
-				std::string failoverAddrPoolId_;
 				std::string userClientIp_;
 				std::string lang_;
 

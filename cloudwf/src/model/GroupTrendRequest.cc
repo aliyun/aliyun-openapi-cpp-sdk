@@ -25,17 +25,6 @@ GroupTrendRequest::GroupTrendRequest() :
 GroupTrendRequest::~GroupTrendRequest()
 {}
 
-long GroupTrendRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void GroupTrendRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string GroupTrendRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GroupTrendRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GroupTrendRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void GroupTrendRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

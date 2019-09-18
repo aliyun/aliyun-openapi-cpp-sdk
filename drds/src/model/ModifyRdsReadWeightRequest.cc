@@ -25,28 +25,6 @@ ModifyRdsReadWeightRequest::ModifyRdsReadWeightRequest() :
 ModifyRdsReadWeightRequest::~ModifyRdsReadWeightRequest()
 {}
 
-std::string ModifyRdsReadWeightRequest::getInstanceNames()const
-{
-	return instanceNames_;
-}
-
-void ModifyRdsReadWeightRequest::setInstanceNames(const std::string& instanceNames)
-{
-	instanceNames_ = instanceNames;
-	setCoreParameter("InstanceNames", instanceNames);
-}
-
-std::string ModifyRdsReadWeightRequest::getDbName()const
-{
-	return dbName_;
-}
-
-void ModifyRdsReadWeightRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
-}
-
 std::string ModifyRdsReadWeightRequest::getWeights()const
 {
 	return weights_;
@@ -78,5 +56,27 @@ void ModifyRdsReadWeightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyRdsReadWeightRequest::getInstanceNames()const
+{
+	return instanceNames_;
+}
+
+void ModifyRdsReadWeightRequest::setInstanceNames(const std::string& instanceNames)
+{
+	instanceNames_ = instanceNames;
+	setCoreParameter("InstanceNames", instanceNames);
+}
+
+std::string ModifyRdsReadWeightRequest::getDbName()const
+{
+	return dbName_;
+}
+
+void ModifyRdsReadWeightRequest::setDbName(const std::string& dbName)
+{
+	dbName_ = dbName;
+	setCoreParameter("DbName", dbName);
 }
 

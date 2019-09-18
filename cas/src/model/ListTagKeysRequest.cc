@@ -25,6 +25,28 @@ ListTagKeysRequest::ListTagKeysRequest() :
 ListTagKeysRequest::~ListTagKeysRequest()
 {}
 
+int ListTagKeysRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void ListTagKeysRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string ListTagKeysRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void ListTagKeysRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
 std::string ListTagKeysRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,27 +78,5 @@ void ListTagKeysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int ListTagKeysRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void ListTagKeysRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string ListTagKeysRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void ListTagKeysRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
 }
 

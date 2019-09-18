@@ -47,14 +47,3 @@ void CreateRepoSyncTaskRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string CreateRepoSyncTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateRepoSyncTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

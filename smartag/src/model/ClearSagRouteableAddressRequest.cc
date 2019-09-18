@@ -69,17 +69,6 @@ void ClearSagRouteableAddressRequest::setResourceOwnerAccount(const std::string&
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ClearSagRouteableAddressRequest::getSagId()const
-{
-	return sagId_;
-}
-
-void ClearSagRouteableAddressRequest::setSagId(const std::string& sagId)
-{
-	sagId_ = sagId;
-	setCoreParameter("SagId", sagId);
-}
-
 std::string ClearSagRouteableAddressRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -100,5 +89,16 @@ void ClearSagRouteableAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ClearSagRouteableAddressRequest::getSagId()const
+{
+	return sagId_;
+}
+
+void ClearSagRouteableAddressRequest::setSagId(const std::string& sagId)
+{
+	sagId_ = sagId;
+	setCoreParameter("SagId", sagId);
 }
 

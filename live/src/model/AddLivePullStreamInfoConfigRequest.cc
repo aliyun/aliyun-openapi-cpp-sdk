@@ -25,15 +25,15 @@ AddLivePullStreamInfoConfigRequest::AddLivePullStreamInfoConfigRequest() :
 AddLivePullStreamInfoConfigRequest::~AddLivePullStreamInfoConfigRequest()
 {}
 
-std::string AddLivePullStreamInfoConfigRequest::getSourceUrl()const
+std::string AddLivePullStreamInfoConfigRequest::getStartTime()const
 {
-	return sourceUrl_;
+	return startTime_;
 }
 
-void AddLivePullStreamInfoConfigRequest::setSourceUrl(const std::string& sourceUrl)
+void AddLivePullStreamInfoConfigRequest::setStartTime(const std::string& startTime)
 {
-	sourceUrl_ = sourceUrl;
-	setCoreParameter("SourceUrl", sourceUrl);
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string AddLivePullStreamInfoConfigRequest::getAppName()const
@@ -47,15 +47,15 @@ void AddLivePullStreamInfoConfigRequest::setAppName(const std::string& appName)
 	setCoreParameter("AppName", appName);
 }
 
-std::string AddLivePullStreamInfoConfigRequest::getRegionId()const
+std::string AddLivePullStreamInfoConfigRequest::getStreamName()const
 {
-	return regionId_;
+	return streamName_;
 }
 
-void AddLivePullStreamInfoConfigRequest::setRegionId(const std::string& regionId)
+void AddLivePullStreamInfoConfigRequest::setStreamName(const std::string& streamName)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string AddLivePullStreamInfoConfigRequest::getDomainName()const
@@ -80,17 +80,6 @@ void AddLivePullStreamInfoConfigRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string AddLivePullStreamInfoConfigRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void AddLivePullStreamInfoConfigRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long AddLivePullStreamInfoConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +91,14 @@ void AddLivePullStreamInfoConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AddLivePullStreamInfoConfigRequest::getStreamName()const
+std::string AddLivePullStreamInfoConfigRequest::getSourceUrl()const
 {
-	return streamName_;
+	return sourceUrl_;
 }
 
-void AddLivePullStreamInfoConfigRequest::setStreamName(const std::string& streamName)
+void AddLivePullStreamInfoConfigRequest::setSourceUrl(const std::string& sourceUrl)
 {
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	sourceUrl_ = sourceUrl;
+	setCoreParameter("SourceUrl", sourceUrl);
 }
 

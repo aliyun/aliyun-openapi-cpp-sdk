@@ -25,6 +25,17 @@ UpdateProductTopicRequest::UpdateProductTopicRequest() :
 UpdateProductTopicRequest::~UpdateProductTopicRequest()
 {}
 
+std::string UpdateProductTopicRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UpdateProductTopicRequest::getTopicId()const
 {
 	return topicId_;
@@ -67,17 +78,6 @@ void UpdateProductTopicRequest::setTopicShortName(const std::string& topicShortN
 {
 	topicShortName_ = topicShortName;
 	setCoreParameter("TopicShortName", topicShortName);
-}
-
-std::string UpdateProductTopicRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateProductTopicRequest::getDesc()const

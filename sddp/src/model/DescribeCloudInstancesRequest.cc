@@ -25,6 +25,17 @@ DescribeCloudInstancesRequest::DescribeCloudInstancesRequest() :
 DescribeCloudInstancesRequest::~DescribeCloudInstancesRequest()
 {}
 
+long DescribeCloudInstancesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeCloudInstancesRequest::setResourceType(long resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", std::to_string(resourceType));
+}
+
 std::string DescribeCloudInstancesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void DescribeCloudInstancesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-long DescribeCloudInstancesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeCloudInstancesRequest::setResourceType(long resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string DescribeCloudInstancesRequest::getServiceRegionId()const

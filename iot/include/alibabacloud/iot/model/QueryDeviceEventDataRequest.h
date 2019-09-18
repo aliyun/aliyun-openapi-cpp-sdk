@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				QueryDeviceEventDataRequest();
 				~QueryDeviceEventDataRequest();
 
-				int getAsc()const;
-				void setAsc(int asc);
-				std::string getIdentifier()const;
-				void setIdentifier(const std::string& identifier);
+				long getStartTime()const;
+				void setStartTime(long startTime);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getIdentifier()const;
+				void setIdentifier(const std::string& identifier);
 				long getEndTime()const;
 				void setEndTime(long endTime);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				int getAsc()const;
+				void setAsc(int asc);
 				std::string getEventType()const;
 				void setEventType(const std::string& eventType);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				int asc_;
-				std::string identifier_;
+				long startTime_;
+				std::string accessKeyId_;
 				std::string iotId_;
 				std::string iotInstanceId_;
 				int pageSize_;
+				std::string identifier_;
 				long endTime_;
+				std::string productKey_;
+				int asc_;
 				std::string eventType_;
 				std::string deviceName_;
-				long startTime_;
-				std::string productKey_;
-				std::string accessKeyId_;
 
 			};
 		}

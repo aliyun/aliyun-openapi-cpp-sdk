@@ -36,15 +36,15 @@ void DescribeGrantSagRulesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeGrantSagRulesRequest::getResourceOwnerAccount()const
+int DescribeGrantSagRulesRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void DescribeGrantSagRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeGrantSagRulesRequest::setPageNumber(int pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGrantSagRulesRequest::getRegionId()const
@@ -58,17 +58,6 @@ void DescribeGrantSagRulesRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DescribeGrantSagRulesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeGrantSagRulesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 int DescribeGrantSagRulesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -80,15 +69,26 @@ void DescribeGrantSagRulesRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeGrantSagRulesRequest::getSmartAGId()const
+std::string DescribeGrantSagRulesRequest::getResourceOwnerAccount()const
 {
-	return smartAGId_;
+	return resourceOwnerAccount_;
 }
 
-void DescribeGrantSagRulesRequest::setSmartAGId(const std::string& smartAGId)
+void DescribeGrantSagRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeGrantSagRulesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeGrantSagRulesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeGrantSagRulesRequest::getOwnerId()const
@@ -102,14 +102,14 @@ void DescribeGrantSagRulesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeGrantSagRulesRequest::getPageNumber()const
+std::string DescribeGrantSagRulesRequest::getSmartAGId()const
 {
-	return pageNumber_;
+	return smartAGId_;
 }
 
-void DescribeGrantSagRulesRequest::setPageNumber(int pageNumber)
+void DescribeGrantSagRulesRequest::setSmartAGId(const std::string& smartAGId)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

@@ -25,17 +25,6 @@ SetPasswordPolicyRequest::SetPasswordPolicyRequest() :
 SetPasswordPolicyRequest::~SetPasswordPolicyRequest()
 {}
 
-bool SetPasswordPolicyRequest::getRequireNumbers()const
-{
-	return requireNumbers_;
-}
-
-void SetPasswordPolicyRequest::setRequireNumbers(bool requireNumbers)
-{
-	requireNumbers_ = requireNumbers;
-	setCoreParameter("RequireNumbers", requireNumbers ? "true" : "false");
-}
-
 int SetPasswordPolicyRequest::getPasswordReusePrevention()const
 {
 	return passwordReusePrevention_;
@@ -56,6 +45,39 @@ void SetPasswordPolicyRequest::setRequireUppercaseCharacters(bool requireUpperca
 {
 	requireUppercaseCharacters_ = requireUppercaseCharacters;
 	setCoreParameter("RequireUppercaseCharacters", requireUppercaseCharacters ? "true" : "false");
+}
+
+int SetPasswordPolicyRequest::getMinimumPasswordLength()const
+{
+	return minimumPasswordLength_;
+}
+
+void SetPasswordPolicyRequest::setMinimumPasswordLength(int minimumPasswordLength)
+{
+	minimumPasswordLength_ = minimumPasswordLength;
+	setCoreParameter("MinimumPasswordLength", std::to_string(minimumPasswordLength));
+}
+
+bool SetPasswordPolicyRequest::getRequireNumbers()const
+{
+	return requireNumbers_;
+}
+
+void SetPasswordPolicyRequest::setRequireNumbers(bool requireNumbers)
+{
+	requireNumbers_ = requireNumbers;
+	setCoreParameter("RequireNumbers", requireNumbers ? "true" : "false");
+}
+
+bool SetPasswordPolicyRequest::getRequireLowercaseCharacters()const
+{
+	return requireLowercaseCharacters_;
+}
+
+void SetPasswordPolicyRequest::setRequireLowercaseCharacters(bool requireLowercaseCharacters)
+{
+	requireLowercaseCharacters_ = requireLowercaseCharacters;
+	setCoreParameter("RequireLowercaseCharacters", requireLowercaseCharacters ? "true" : "false");
 }
 
 int SetPasswordPolicyRequest::getMaxPasswordAge()const
@@ -89,28 +111,6 @@ void SetPasswordPolicyRequest::setHardExpiry(bool hardExpiry)
 {
 	hardExpiry_ = hardExpiry;
 	setCoreParameter("HardExpiry", hardExpiry ? "true" : "false");
-}
-
-int SetPasswordPolicyRequest::getMinimumPasswordLength()const
-{
-	return minimumPasswordLength_;
-}
-
-void SetPasswordPolicyRequest::setMinimumPasswordLength(int minimumPasswordLength)
-{
-	minimumPasswordLength_ = minimumPasswordLength;
-	setCoreParameter("MinimumPasswordLength", std::to_string(minimumPasswordLength));
-}
-
-bool SetPasswordPolicyRequest::getRequireLowercaseCharacters()const
-{
-	return requireLowercaseCharacters_;
-}
-
-void SetPasswordPolicyRequest::setRequireLowercaseCharacters(bool requireLowercaseCharacters)
-{
-	requireLowercaseCharacters_ = requireLowercaseCharacters;
-	setCoreParameter("RequireLowercaseCharacters", requireLowercaseCharacters ? "true" : "false");
 }
 
 bool SetPasswordPolicyRequest::getRequireSymbols()const

@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				SearchRepoRequest();
 				~SearchRepoRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOrigin()const;
 				void setOrigin(const std::string& origin);
 				int getPageSize()const;
@@ -47,7 +45,6 @@ namespace AlibabaCloud
 				void setKeyword(const std::string& keyword);
 
             private:
-				std::string regionId_;
 				std::string origin_;
 				int pageSize_;
 				int page_;

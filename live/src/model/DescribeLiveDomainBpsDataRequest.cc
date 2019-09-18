@@ -25,50 +25,6 @@ DescribeLiveDomainBpsDataRequest::DescribeLiveDomainBpsDataRequest() :
 DescribeLiveDomainBpsDataRequest::~DescribeLiveDomainBpsDataRequest()
 {}
 
-std::string DescribeLiveDomainBpsDataRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLiveDomainBpsDataRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeLiveDomainBpsDataRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveDomainBpsDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string DescribeLiveDomainBpsDataRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeLiveDomainBpsDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeLiveDomainBpsDataRequest::getInterval()const
-{
-	return interval_;
-}
-
-void DescribeLiveDomainBpsDataRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setCoreParameter("Interval", interval);
-}
-
 std::string DescribeLiveDomainBpsDataRequest::getLocationNameEn()const
 {
 	return locationNameEn_;
@@ -102,6 +58,28 @@ void DescribeLiveDomainBpsDataRequest::setIspNameEn(const std::string& ispNameEn
 	setCoreParameter("IspNameEn", ispNameEn);
 }
 
+std::string DescribeLiveDomainBpsDataRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveDomainBpsDataRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeLiveDomainBpsDataRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeLiveDomainBpsDataRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
 long DescribeLiveDomainBpsDataRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +89,16 @@ void DescribeLiveDomainBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeLiveDomainBpsDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeLiveDomainBpsDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setCoreParameter("Interval", interval);
 }
 

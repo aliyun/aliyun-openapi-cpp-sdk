@@ -19,11 +19,33 @@
 using AlibabaCloud::Cdn::Model::ModifyHttpHeaderConfigRequest;
 
 ModifyHttpHeaderConfigRequest::ModifyHttpHeaderConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "ModifyHttpHeaderConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "ModifyHttpHeaderConfig")
 {}
 
 ModifyHttpHeaderConfigRequest::~ModifyHttpHeaderConfigRequest()
 {}
+
+std::string ModifyHttpHeaderConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void ModifyHttpHeaderConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+long ModifyHttpHeaderConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyHttpHeaderConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
 
 std::string ModifyHttpHeaderConfigRequest::getHeaderValue()const
 {
@@ -58,17 +80,6 @@ void ModifyHttpHeaderConfigRequest::setConfigID(const std::string& configID)
 	setCoreParameter("ConfigID", configID);
 }
 
-std::string ModifyHttpHeaderConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void ModifyHttpHeaderConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 std::string ModifyHttpHeaderConfigRequest::getHeaderKey()const
 {
 	return headerKey_;
@@ -78,16 +89,5 @@ void ModifyHttpHeaderConfigRequest::setHeaderKey(const std::string& headerKey)
 {
 	headerKey_ = headerKey;
 	setCoreParameter("HeaderKey", headerKey);
-}
-
-long ModifyHttpHeaderConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyHttpHeaderConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

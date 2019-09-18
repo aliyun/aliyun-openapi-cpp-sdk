@@ -25,17 +25,6 @@ SubmitMediaFpDeleteJobRequest::SubmitMediaFpDeleteJobRequest() :
 SubmitMediaFpDeleteJobRequest::~SubmitMediaFpDeleteJobRequest()
 {}
 
-std::string SubmitMediaFpDeleteJobRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitMediaFpDeleteJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
 long SubmitMediaFpDeleteJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,6 +45,39 @@ void SubmitMediaFpDeleteJobRequest::setFpDBId(const std::string& fpDBId)
 {
 	fpDBId_ = fpDBId;
 	setCoreParameter("FpDBId", fpDBId);
+}
+
+std::string SubmitMediaFpDeleteJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitMediaFpDeleteJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitMediaFpDeleteJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitMediaFpDeleteJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
+}
+
+std::string SubmitMediaFpDeleteJobRequest::getPrimaryKey()const
+{
+	return primaryKey_;
+}
+
+void SubmitMediaFpDeleteJobRequest::setPrimaryKey(const std::string& primaryKey)
+{
+	primaryKey_ = primaryKey;
+	setCoreParameter("PrimaryKey", primaryKey);
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getResourceOwnerAccount()const
@@ -91,17 +113,6 @@ void SubmitMediaFpDeleteJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitMediaFpDeleteJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitMediaFpDeleteJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitMediaFpDeleteJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -111,16 +122,5 @@ void SubmitMediaFpDeleteJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
-}
-
-std::string SubmitMediaFpDeleteJobRequest::getPrimaryKey()const
-{
-	return primaryKey_;
-}
-
-void SubmitMediaFpDeleteJobRequest::setPrimaryKey(const std::string& primaryKey)
-{
-	primaryKey_ = primaryKey;
-	setCoreParameter("PrimaryKey", primaryKey);
 }
 

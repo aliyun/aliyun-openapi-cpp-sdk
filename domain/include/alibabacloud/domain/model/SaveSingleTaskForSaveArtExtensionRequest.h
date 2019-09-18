@@ -35,43 +35,43 @@ namespace AlibabaCloud
 				SaveSingleTaskForSaveArtExtensionRequest();
 				~SaveSingleTaskForSaveArtExtensionRequest();
 
+				std::string getSubject()const;
+				void setSubject(const std::string& subject);
+				std::string getTitle()const;
+				void setTitle(const std::string& title);
+				std::string getDateOrPeriod()const;
+				void setDateOrPeriod(const std::string& dateOrPeriod);
 				std::string getReference()const;
 				void setReference(const std::string& reference);
 				std::string getFeatures()const;
 				void setFeatures(const std::string& features);
 				std::string getInscriptionsAndMarkings()const;
 				void setInscriptionsAndMarkings(const std::string& inscriptionsAndMarkings);
-				std::string getSubject()const;
-				void setSubject(const std::string& subject);
+				std::string getObjectType()const;
+				void setObjectType(const std::string& objectType);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getMaker()const;
 				void setMaker(const std::string& maker);
-				std::string getObjectType()const;
-				void setObjectType(const std::string& objectType);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getMaterialsAndTechniques()const;
 				void setMaterialsAndTechniques(const std::string& materialsAndTechniques);
-				std::string getDateOrPeriod()const;
-				void setDateOrPeriod(const std::string& dateOrPeriod);
 				std::string getDimensions()const;
 				void setDimensions(const std::string& dimensions);
 
             private:
+				std::string subject_;
+				std::string title_;
+				std::string dateOrPeriod_;
 				std::string reference_;
 				std::string features_;
 				std::string inscriptionsAndMarkings_;
-				std::string subject_;
+				std::string objectType_;
+				std::string lang_;
 				std::string domainName_;
 				std::string maker_;
-				std::string objectType_;
-				std::string title_;
-				std::string lang_;
 				std::string materialsAndTechniques_;
-				std::string dateOrPeriod_;
 				std::string dimensions_;
 
 			};

@@ -25,17 +25,6 @@ DescribeBackupPlanListRequest::DescribeBackupPlanListRequest() :
 DescribeBackupPlanListRequest::~DescribeBackupPlanListRequest()
 {}
 
-std::string DescribeBackupPlanListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeBackupPlanListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeBackupPlanListRequest::getClientToken()const
 {
 	return clientToken_;
@@ -47,17 +36,6 @@ void DescribeBackupPlanListRequest::setClientToken(const std::string& clientToke
 	setCoreParameter("ClientToken", clientToken);
 }
 
-int DescribeBackupPlanListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeBackupPlanListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeBackupPlanListRequest::getBackupPlanId()const
 {
 	return backupPlanId_;
@@ -67,17 +45,6 @@ void DescribeBackupPlanListRequest::setBackupPlanId(const std::string& backupPla
 {
 	backupPlanId_ = backupPlanId;
 	setCoreParameter("BackupPlanId", backupPlanId);
-}
-
-std::string DescribeBackupPlanListRequest::getRegion()const
-{
-	return region_;
-}
-
-void DescribeBackupPlanListRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setCoreParameter("Region", region);
 }
 
 int DescribeBackupPlanListRequest::getPageNum()const
@@ -100,5 +67,27 @@ void DescribeBackupPlanListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
+}
+
+int DescribeBackupPlanListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeBackupPlanListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeBackupPlanListRequest::getRegion()const
+{
+	return region_;
+}
+
+void DescribeBackupPlanListRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setCoreParameter("Region", region);
 }
 

@@ -47,6 +47,28 @@ void PhysicalDeleteResourceRequest::setHid(long hid)
 	setCoreParameter("Hid", std::to_string(hid));
 }
 
+std::string PhysicalDeleteResourceRequest::getInvoker()const
+{
+	return invoker_;
+}
+
+void PhysicalDeleteResourceRequest::setInvoker(const std::string& invoker)
+{
+	invoker_ = invoker;
+	setCoreParameter("Invoker", invoker);
+}
+
+std::string PhysicalDeleteResourceRequest::getMessage()const
+{
+	return message_;
+}
+
+void PhysicalDeleteResourceRequest::setMessage(const std::string& message)
+{
+	message_ = message;
+	setCoreParameter("Message", message);
+}
+
 bool PhysicalDeleteResourceRequest::getSuccess()const
 {
 	return success_;
@@ -91,17 +113,6 @@ void PhysicalDeleteResourceRequest::setPk(const std::string& pk)
 	setCoreParameter("Pk", pk);
 }
 
-std::string PhysicalDeleteResourceRequest::getInvoker()const
-{
-	return invoker_;
-}
-
-void PhysicalDeleteResourceRequest::setInvoker(const std::string& invoker)
-{
-	invoker_ = invoker;
-	setCoreParameter("Invoker", invoker);
-}
-
 std::string PhysicalDeleteResourceRequest::getBid()const
 {
 	return bid_;
@@ -111,17 +122,6 @@ void PhysicalDeleteResourceRequest::setBid(const std::string& bid)
 {
 	bid_ = bid;
 	setCoreParameter("Bid", bid);
-}
-
-std::string PhysicalDeleteResourceRequest::getMessage()const
-{
-	return message_;
-}
-
-void PhysicalDeleteResourceRequest::setMessage(const std::string& message)
-{
-	message_ = message;
-	setCoreParameter("Message", message);
 }
 
 std::string PhysicalDeleteResourceRequest::getTaskExtraData()const

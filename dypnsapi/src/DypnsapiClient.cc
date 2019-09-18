@@ -51,36 +51,36 @@ DypnsapiClient::DypnsapiClient(const std::string & accessKeyId, const std::strin
 DypnsapiClient::~DypnsapiClient()
 {}
 
-DypnsapiClient::TwiceTelVerifyOutcome DypnsapiClient::twiceTelVerify(const TwiceTelVerifyRequest &request) const
+DypnsapiClient::CreateVerifySchemeOutcome DypnsapiClient::createVerifyScheme(const CreateVerifySchemeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TwiceTelVerifyOutcome(endpointOutcome.error());
+		return CreateVerifySchemeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TwiceTelVerifyOutcome(TwiceTelVerifyResult(outcome.result()));
+		return CreateVerifySchemeOutcome(CreateVerifySchemeResult(outcome.result()));
 	else
-		return TwiceTelVerifyOutcome(outcome.error());
+		return CreateVerifySchemeOutcome(outcome.error());
 }
 
-void DypnsapiClient::twiceTelVerifyAsync(const TwiceTelVerifyRequest& request, const TwiceTelVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DypnsapiClient::createVerifySchemeAsync(const CreateVerifySchemeRequest& request, const CreateVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, twiceTelVerify(request), context);
+		handler(this, request, createVerifyScheme(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DypnsapiClient::TwiceTelVerifyOutcomeCallable DypnsapiClient::twiceTelVerifyCallable(const TwiceTelVerifyRequest &request) const
+DypnsapiClient::CreateVerifySchemeOutcomeCallable DypnsapiClient::createVerifySchemeCallable(const CreateVerifySchemeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TwiceTelVerifyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateVerifySchemeOutcome()>>(
 			[this, request]()
 			{
-			return this->twiceTelVerify(request);
+			return this->createVerifyScheme(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -123,36 +123,36 @@ DypnsapiClient::GetMobileOutcomeCallable DypnsapiClient::getMobileCallable(const
 	return task->get_future();
 }
 
-DypnsapiClient::CreateVerifySchemeOutcome DypnsapiClient::createVerifyScheme(const CreateVerifySchemeRequest &request) const
+DypnsapiClient::TwiceTelVerifyOutcome DypnsapiClient::twiceTelVerify(const TwiceTelVerifyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateVerifySchemeOutcome(endpointOutcome.error());
+		return TwiceTelVerifyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateVerifySchemeOutcome(CreateVerifySchemeResult(outcome.result()));
+		return TwiceTelVerifyOutcome(TwiceTelVerifyResult(outcome.result()));
 	else
-		return CreateVerifySchemeOutcome(outcome.error());
+		return TwiceTelVerifyOutcome(outcome.error());
 }
 
-void DypnsapiClient::createVerifySchemeAsync(const CreateVerifySchemeRequest& request, const CreateVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DypnsapiClient::twiceTelVerifyAsync(const TwiceTelVerifyRequest& request, const TwiceTelVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createVerifyScheme(request), context);
+		handler(this, request, twiceTelVerify(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DypnsapiClient::CreateVerifySchemeOutcomeCallable DypnsapiClient::createVerifySchemeCallable(const CreateVerifySchemeRequest &request) const
+DypnsapiClient::TwiceTelVerifyOutcomeCallable DypnsapiClient::twiceTelVerifyCallable(const TwiceTelVerifyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateVerifySchemeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<TwiceTelVerifyOutcome()>>(
 			[this, request]()
 			{
-			return this->createVerifyScheme(request);
+			return this->twiceTelVerify(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -25,17 +25,6 @@ CreateScalingRuleRequest::CreateScalingRuleRequest() :
 CreateScalingRuleRequest::~CreateScalingRuleRequest()
 {}
 
-std::string CreateScalingRuleRequest::getLaunchTime()const
-{
-	return launchTime_;
-}
-
-void CreateScalingRuleRequest::setLaunchTime(const std::string& launchTime)
-{
-	launchTime_ = launchTime;
-	setCoreParameter("LaunchTime", launchTime);
-}
-
 long CreateScalingRuleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,39 +36,6 @@ void CreateScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateScalingRuleRequest::getRuleCategory()const
-{
-	return ruleCategory_;
-}
-
-void CreateScalingRuleRequest::setRuleCategory(const std::string& ruleCategory)
-{
-	ruleCategory_ = ruleCategory;
-	setCoreParameter("RuleCategory", ruleCategory);
-}
-
-int CreateScalingRuleRequest::getAdjustmentValue()const
-{
-	return adjustmentValue_;
-}
-
-void CreateScalingRuleRequest::setAdjustmentValue(int adjustmentValue)
-{
-	adjustmentValue_ = adjustmentValue;
-	setCoreParameter("AdjustmentValue", std::to_string(adjustmentValue));
-}
-
-std::string CreateScalingRuleRequest::getAdjustmentType()const
-{
-	return adjustmentType_;
-}
-
-void CreateScalingRuleRequest::setAdjustmentType(const std::string& adjustmentType)
-{
-	adjustmentType_ = adjustmentType;
-	setCoreParameter("AdjustmentType", adjustmentType);
-}
-
 std::string CreateScalingRuleRequest::getRuleName()const
 {
 	return ruleName_;
@@ -89,39 +45,6 @@ void CreateScalingRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
 	setCoreParameter("RuleName", ruleName);
-}
-
-std::string CreateScalingRuleRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void CreateScalingRuleRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-int CreateScalingRuleRequest::getLaunchExpirationTime()const
-{
-	return launchExpirationTime_;
-}
-
-void CreateScalingRuleRequest::setLaunchExpirationTime(int launchExpirationTime)
-{
-	launchExpirationTime_ = launchExpirationTime;
-	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
-}
-
-std::string CreateScalingRuleRequest::getRecurrenceValue()const
-{
-	return recurrenceValue_;
-}
-
-void CreateScalingRuleRequest::setRecurrenceValue(const std::string& recurrenceValue)
-{
-	recurrenceValue_ = recurrenceValue;
-	setCoreParameter("RecurrenceValue", recurrenceValue);
 }
 
 std::string CreateScalingRuleRequest::getRecurrenceEndTime()const
@@ -178,6 +101,94 @@ void CreateScalingRuleRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
+int CreateScalingRuleRequest::getCooldown()const
+{
+	return cooldown_;
+}
+
+void CreateScalingRuleRequest::setCooldown(int cooldown)
+{
+	cooldown_ = cooldown;
+	setCoreParameter("Cooldown", std::to_string(cooldown));
+}
+
+std::string CreateScalingRuleRequest::getLaunchTime()const
+{
+	return launchTime_;
+}
+
+void CreateScalingRuleRequest::setLaunchTime(const std::string& launchTime)
+{
+	launchTime_ = launchTime;
+	setCoreParameter("LaunchTime", launchTime);
+}
+
+std::string CreateScalingRuleRequest::getRuleCategory()const
+{
+	return ruleCategory_;
+}
+
+void CreateScalingRuleRequest::setRuleCategory(const std::string& ruleCategory)
+{
+	ruleCategory_ = ruleCategory;
+	setCoreParameter("RuleCategory", ruleCategory);
+}
+
+int CreateScalingRuleRequest::getAdjustmentValue()const
+{
+	return adjustmentValue_;
+}
+
+void CreateScalingRuleRequest::setAdjustmentValue(int adjustmentValue)
+{
+	adjustmentValue_ = adjustmentValue;
+	setCoreParameter("AdjustmentValue", std::to_string(adjustmentValue));
+}
+
+std::string CreateScalingRuleRequest::getAdjustmentType()const
+{
+	return adjustmentType_;
+}
+
+void CreateScalingRuleRequest::setAdjustmentType(const std::string& adjustmentType)
+{
+	adjustmentType_ = adjustmentType;
+	setCoreParameter("AdjustmentType", adjustmentType);
+}
+
+std::string CreateScalingRuleRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void CreateScalingRuleRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+int CreateScalingRuleRequest::getLaunchExpirationTime()const
+{
+	return launchExpirationTime_;
+}
+
+void CreateScalingRuleRequest::setLaunchExpirationTime(int launchExpirationTime)
+{
+	launchExpirationTime_ = launchExpirationTime;
+	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
+}
+
+std::string CreateScalingRuleRequest::getRecurrenceValue()const
+{
+	return recurrenceValue_;
+}
+
+void CreateScalingRuleRequest::setRecurrenceValue(const std::string& recurrenceValue)
+{
+	recurrenceValue_ = recurrenceValue;
+	setCoreParameter("RecurrenceValue", recurrenceValue);
+}
+
 std::string CreateScalingRuleRequest::getHostGroupId()const
 {
 	return hostGroupId_;
@@ -207,17 +218,6 @@ void CreateScalingRuleRequest::setSchedulerTrigger(const std::vector<SchedulerTr
 		setCoreParameter(str + ".RecurrenceEndTime", obj.recurrenceEndTime);
 		setCoreParameter(str + ".RecurrenceType", obj.recurrenceType);
 	}
-}
-
-int CreateScalingRuleRequest::getCooldown()const
-{
-	return cooldown_;
-}
-
-void CreateScalingRuleRequest::setCooldown(int cooldown)
-{
-	cooldown_ = cooldown;
-	setCoreParameter("Cooldown", std::to_string(cooldown));
 }
 
 std::string CreateScalingRuleRequest::getRecurrenceType()const

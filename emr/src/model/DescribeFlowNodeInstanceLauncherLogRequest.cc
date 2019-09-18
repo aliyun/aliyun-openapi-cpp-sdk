@@ -36,17 +36,6 @@ void DescribeFlowNodeInstanceLauncherLogRequest::setOffset(int offset)
 	setCoreParameter("Offset", std::to_string(offset));
 }
 
-std::string DescribeFlowNodeInstanceLauncherLogRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeFlowNodeInstanceLauncherLogRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int DescribeFlowNodeInstanceLauncherLogRequest::getStart()const
 {
 	return start_;
@@ -91,17 +80,6 @@ void DescribeFlowNodeInstanceLauncherLogRequest::setStartTime(long startTime)
 	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
-int DescribeFlowNodeInstanceLauncherLogRequest::getLines()const
-{
-	return lines_;
-}
-
-void DescribeFlowNodeInstanceLauncherLogRequest::setLines(int lines)
-{
-	lines_ = lines;
-	setCoreParameter("Lines", std::to_string(lines));
-}
-
 bool DescribeFlowNodeInstanceLauncherLogRequest::getReverse()const
 {
 	return reverse_;
@@ -122,6 +100,28 @@ void DescribeFlowNodeInstanceLauncherLogRequest::setNodeInstanceId(const std::st
 {
 	nodeInstanceId_ = nodeInstanceId;
 	setCoreParameter("NodeInstanceId", nodeInstanceId);
+}
+
+std::string DescribeFlowNodeInstanceLauncherLogRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeFlowNodeInstanceLauncherLogRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeFlowNodeInstanceLauncherLogRequest::getLines()const
+{
+	return lines_;
+}
+
+void DescribeFlowNodeInstanceLauncherLogRequest::setLines(int lines)
+{
+	lines_ = lines;
+	setCoreParameter("Lines", std::to_string(lines));
 }
 
 std::string DescribeFlowNodeInstanceLauncherLogRequest::getProjectId()const

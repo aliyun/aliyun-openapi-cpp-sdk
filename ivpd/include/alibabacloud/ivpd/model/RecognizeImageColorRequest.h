@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				RecognizeImageColorRequest();
 				~RecognizeImageColorRequest();
 
-				std::string getColorCount()const;
-				void setColorCount(const std::string& colorCount);
 				std::string getUrl()const;
 				void setUrl(const std::string& url);
+				std::string getColorCount()const;
+				void setColorCount(const std::string& colorCount);
 
             private:
-				std::string colorCount_;
 				std::string url_;
+				std::string colorCount_;
 
 			};
 		}

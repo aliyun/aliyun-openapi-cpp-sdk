@@ -35,41 +35,38 @@ namespace AlibabaCloud
 				MigrateToOtherZoneRequest();
 				~MigrateToOtherZoneRequest();
 
-				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getEffectiveTime()const;
+				void setEffectiveTime(const std::string& effectiveTime);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 
             private:
-				std::string vSwitchId_;
 				long resourceOwnerId_;
-				std::string securityToken_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string effectiveTime_;
-				std::string ownerAccount_;
-				std::string zoneId_;
-				std::string dBInstanceId_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string effectiveTime_;
+				std::string dBInstanceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string vSwitchId_;
+				std::string zoneId_;
 
 			};
 		}

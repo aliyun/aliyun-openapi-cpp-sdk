@@ -35,33 +35,33 @@ namespace AlibabaCloud
 				DescribeGroupedVulRequest();
 				~DescribeGroupedVulRequest();
 
-				std::string getAliasName()const;
-				void setAliasName(const std::string& aliasName);
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				std::string getDealed()const;
 				void setDealed(const std::string& dealed);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				std::string getType()const;
-				void setType(const std::string& type);
+				std::string getAliasName()const;
+				void setAliasName(const std::string& aliasName);
 				std::string getNecessity()const;
 				void setNecessity(const std::string& necessity);
 				std::string getUuids()const;
 				void setUuids(const std::string& uuids);
 
             private:
-				std::string aliasName_;
+				std::string type_;
 				std::string sourceIp_;
 				int pageSize_;
+				std::string lang_;
 				std::string dealed_;
 				int currentPage_;
-				std::string lang_;
-				std::string type_;
+				std::string aliasName_;
 				std::string necessity_;
 				std::string uuids_;
 

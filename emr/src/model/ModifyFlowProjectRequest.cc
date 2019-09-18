@@ -25,6 +25,17 @@ ModifyFlowProjectRequest::ModifyFlowProjectRequest() :
 ModifyFlowProjectRequest::~ModifyFlowProjectRequest()
 {}
 
+std::string ModifyFlowProjectRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyFlowProjectRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
 std::string ModifyFlowProjectRequest::getRegionId()const
 {
 	return regionId_;
@@ -45,17 +56,6 @@ void ModifyFlowProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string ModifyFlowProjectRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyFlowProjectRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 std::string ModifyFlowProjectRequest::getProjectId()const

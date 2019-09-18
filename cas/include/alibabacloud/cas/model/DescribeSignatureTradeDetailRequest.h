@@ -35,17 +35,20 @@ namespace AlibabaCloud
 				DescribeSignatureTradeDetailRequest();
 				~DescribeSignatureTradeDetailRequest();
 
+				std::string getTransactionId()const;
+				void setTransactionId(const std::string& transactionId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getTransactionId()const;
-				void setTransactionId(const std::string& transactionId);
 
             private:
+				std::string transactionId_;
+				std::string resourceGroupId_;
 				std::string sourceIp_;
 				std::string lang_;
-				std::string transactionId_;
 
 			};
 		}

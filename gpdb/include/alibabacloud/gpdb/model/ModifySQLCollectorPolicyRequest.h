@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ModifySQLCollectorPolicyRequest();
 				~ModifySQLCollectorPolicyRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSQLCollectorStatus()const;
 				void setSQLCollectorStatus(const std::string& sQLCollectorStatus);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string sQLCollectorStatus_;
 				std::string dBInstanceId_;
-				std::string accessKeyId_;
 
 			};
 		}

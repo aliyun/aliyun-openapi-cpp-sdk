@@ -25,6 +25,28 @@ DescribeLiveStreamsPublishListRequest::DescribeLiveStreamsPublishListRequest() :
 DescribeLiveStreamsPublishListRequest::~DescribeLiveStreamsPublishListRequest()
 {}
 
+std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeLiveStreamsPublishListRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+long DescribeLiveStreamsPublishListRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeLiveStreamsPublishListRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeLiveStreamsPublishListRequest::getAppName()const
 {
 	return appName_;
@@ -47,17 +69,6 @@ void DescribeLiveStreamsPublishListRequest::setSecurityToken(const std::string& 
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveStreamsPublishListRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 long DescribeLiveStreamsPublishListRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,39 +78,6 @@ void DescribeLiveStreamsPublishListRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeLiveStreamsPublishListRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeLiveStreamsPublishListRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeLiveStreamsPublishListRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeLiveStreamsPublishListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
@@ -113,14 +91,36 @@ void DescribeLiveStreamsPublishListRequest::setStreamName(const std::string& str
 	setCoreParameter("StreamName", streamName);
 }
 
-long DescribeLiveStreamsPublishListRequest::getPageNumber()const
+std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
 {
-	return pageNumber_;
+	return domainName_;
 }
 
-void DescribeLiveStreamsPublishListRequest::setPageNumber(long pageNumber)
+void DescribeLiveStreamsPublishListRequest::setDomainName(const std::string& domainName)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeLiveStreamsPublishListRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeLiveStreamsPublishListRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeLiveStreamsPublishListRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

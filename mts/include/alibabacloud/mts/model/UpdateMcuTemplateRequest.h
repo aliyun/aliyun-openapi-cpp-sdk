@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void set_Template(const std::string& _template);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -47,17 +49,15 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getTemplateId()const;
 				void setTemplateId(const std::string& templateId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string _template_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string templateId_;
-				std::string accessKeyId_;
 
 			};
 		}

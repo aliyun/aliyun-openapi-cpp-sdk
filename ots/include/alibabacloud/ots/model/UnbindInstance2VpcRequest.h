@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
-				std::string getInstanceVpcName()const;
-				void setInstanceVpcName(const std::string& instanceVpcName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceName()const;
-				void setInstanceName(const std::string& instanceName);
 				std::string getRegionNo()const;
 				void setRegionNo(const std::string& regionNo);
+				std::string getInstanceVpcName()const;
+				void setInstanceVpcName(const std::string& instanceVpcName);
+				std::string getInstanceName()const;
+				void setInstanceName(const std::string& instanceName);
 
             private:
 				std::string access_key_id_;
-				std::string instanceVpcName_;
 				long resourceOwnerId_;
-				std::string instanceName_;
 				std::string regionNo_;
+				std::string instanceVpcName_;
+				std::string instanceName_;
 
 			};
 		}

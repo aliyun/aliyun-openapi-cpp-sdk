@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				RemoveReadOnlyAccountRequest();
 				~RemoveReadOnlyAccountRequest();
 
-				std::string getDbName()const;
-				void setDbName(const std::string& dbName);
-				std::string getAccountName()const;
-				void setAccountName(const std::string& accountName);
 				std::string getDrdsInstanceId()const;
 				void setDrdsInstanceId(const std::string& drdsInstanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDbName()const;
+				void setDbName(const std::string& dbName);
+				std::string getAccountName()const;
+				void setAccountName(const std::string& accountName);
 
             private:
-				std::string dbName_;
-				std::string accountName_;
 				std::string drdsInstanceId_;
 				std::string accessKeyId_;
+				std::string dbName_;
+				std::string accountName_;
 
 			};
 		}

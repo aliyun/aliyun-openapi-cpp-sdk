@@ -25,39 +25,6 @@ ModifyTagAttributeRequest::ModifyTagAttributeRequest() :
 ModifyTagAttributeRequest::~ModifyTagAttributeRequest()
 {}
 
-long ModifyTagAttributeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ModifyTagAttributeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-long ModifyTagAttributeRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void ModifyTagAttributeRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool ModifyTagAttributeRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void ModifyTagAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
 std::string ModifyTagAttributeRequest::getDescription()const
 {
 	return description_;
@@ -67,94 +34,6 @@ void ModifyTagAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-std::string ModifyTagAttributeRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void ModifyTagAttributeRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string ModifyTagAttributeRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void ModifyTagAttributeRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string ModifyTagAttributeRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void ModifyTagAttributeRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string ModifyTagAttributeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyTagAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string ModifyTagAttributeRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ModifyTagAttributeRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ModifyTagAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyTagAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyTagAttributeRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void ModifyTagAttributeRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string ModifyTagAttributeRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void ModifyTagAttributeRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyTagAttributeRequest::getProjectId()const
@@ -168,28 +47,6 @@ void ModifyTagAttributeRequest::setProjectId(const std::string& projectId)
 	setCoreParameter("ProjectId", projectId);
 }
 
-std::string ModifyTagAttributeRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void ModifyTagAttributeRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long ModifyTagAttributeRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void ModifyTagAttributeRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
 std::string ModifyTagAttributeRequest::getShowLog()const
 {
 	return showLog_;
@@ -199,28 +56,6 @@ void ModifyTagAttributeRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
 	setCoreParameter("ShowLog", showLog);
-}
-
-std::string ModifyTagAttributeRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void ModifyTagAttributeRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string ModifyTagAttributeRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void ModifyTagAttributeRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string ModifyTagAttributeRequest::getTagId()const
@@ -234,17 +69,6 @@ void ModifyTagAttributeRequest::setTagId(const std::string& tagId)
 	setCoreParameter("TagId", tagId);
 }
 
-std::string ModifyTagAttributeRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void ModifyTagAttributeRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long ModifyTagAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -254,61 +78,6 @@ void ModifyTagAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyTagAttributeRequest::getVersion()const
-{
-	return version_;
-}
-
-void ModifyTagAttributeRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool ModifyTagAttributeRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void ModifyTagAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool ModifyTagAttributeRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void ModifyTagAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool ModifyTagAttributeRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void ModifyTagAttributeRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string ModifyTagAttributeRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void ModifyTagAttributeRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 
 std::string ModifyTagAttributeRequest::getName()const

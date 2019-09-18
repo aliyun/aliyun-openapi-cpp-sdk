@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				GetRepoBatchRequest();
 				~GetRepoBatchRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getRepoIds()const;
 				void setRepoIds(const std::string& repoIds);
 
             private:
-				std::string regionId_;
 				std::string repoIds_;
 
 			};

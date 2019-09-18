@@ -25,6 +25,28 @@ CreateCasterRequest::CreateCasterRequest() :
 CreateCasterRequest::~CreateCasterRequest()
 {}
 
+std::string CreateCasterRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateCasterRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string CreateCasterRequest::getCasterName()const
+{
+	return casterName_;
+}
+
+void CreateCasterRequest::setCasterName(const std::string& casterName)
+{
+	casterName_ = casterName;
+	setCoreParameter("CasterName", casterName);
+}
+
 std::string CreateCasterRequest::getCasterTemplate()const
 {
 	return casterTemplate_;
@@ -58,39 +80,6 @@ void CreateCasterRequest::setNormType(int normType)
 	setCoreParameter("NormType", std::to_string(normType));
 }
 
-std::string CreateCasterRequest::getCasterName()const
-{
-	return casterName_;
-}
-
-void CreateCasterRequest::setCasterName(const std::string& casterName)
-{
-	casterName_ = casterName;
-	setCoreParameter("CasterName", casterName);
-}
-
-std::string CreateCasterRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void CreateCasterRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string CreateCasterRequest::getChargeType()const
-{
-	return chargeType_;
-}
-
-void CreateCasterRequest::setChargeType(const std::string& chargeType)
-{
-	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
-}
-
 long CreateCasterRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +100,16 @@ void CreateCasterRequest::setPurchaseTime(const std::string& purchaseTime)
 {
 	purchaseTime_ = purchaseTime;
 	setCoreParameter("PurchaseTime", purchaseTime);
+}
+
+std::string CreateCasterRequest::getChargeType()const
+{
+	return chargeType_;
+}
+
+void CreateCasterRequest::setChargeType(const std::string& chargeType)
+{
+	chargeType_ = chargeType;
+	setCoreParameter("ChargeType", chargeType);
 }
 

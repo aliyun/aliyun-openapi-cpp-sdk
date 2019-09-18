@@ -25,6 +25,17 @@ DelApPositionRequest::DelApPositionRequest() :
 DelApPositionRequest::~DelApPositionRequest()
 {}
 
+std::string DelApPositionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DelApPositionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 long DelApPositionRequest::getApAssetId()const
 {
 	return apAssetId_;
@@ -45,16 +56,5 @@ void DelApPositionRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
 	setCoreParameter("MapId", std::to_string(mapId));
-}
-
-std::string DelApPositionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DelApPositionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

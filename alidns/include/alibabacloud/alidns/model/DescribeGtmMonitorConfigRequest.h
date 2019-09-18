@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DescribeGtmMonitorConfigRequest();
 				~DescribeGtmMonitorConfigRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getMonitorConfigId()const;
 				void setMonitorConfigId(const std::string& monitorConfigId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string userClientIp_;
 				std::string monitorConfigId_;
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

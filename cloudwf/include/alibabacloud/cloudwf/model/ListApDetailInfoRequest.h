@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				ListApDetailInfoRequest();
 				~ListApDetailInfoRequest();
 
-				long getApAssetId()const;
-				void setApAssetId(long apAssetId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getApAssetId()const;
+				void setApAssetId(long apAssetId);
 
             private:
-				long apAssetId_;
 				std::string accessKeyId_;
+				long apAssetId_;
 
 			};
 		}

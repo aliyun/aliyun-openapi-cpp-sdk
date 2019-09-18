@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::StopCdnDomainRequest;
 
 StopCdnDomainRequest::StopCdnDomainRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "StopCdnDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "StopCdnDomain")
 {}
 
 StopCdnDomainRequest::~StopCdnDomainRequest()
 {}
-
-std::string StopCdnDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void StopCdnDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string StopCdnDomainRequest::getDomainName()const
 {
@@ -56,5 +45,16 @@ void StopCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string StopCdnDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void StopCdnDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -35,32 +35,29 @@ namespace AlibabaCloud
 				CompareImageFacesRequest();
 				~CompareImageFacesRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getImageUriB()const;
-				void setImageUriB(const std::string& imageUriB);
-				std::string getImageUriA()const;
-				void setImageUriA(const std::string& imageUriA);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getSetId()const;
-				void setSetId(const std::string& setId);
 				std::string getFaceIdA()const;
 				void setFaceIdA(const std::string& faceIdA);
 				std::string getFaceIdB()const;
 				void setFaceIdB(const std::string& faceIdB);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getImageUriB()const;
+				void setImageUriB(const std::string& imageUriB);
+				std::string getImageUriA()const;
+				void setImageUriA(const std::string& imageUriA);
+				std::string getSetId()const;
+				void setSetId(const std::string& setId);
 
             private:
-				std::string regionId_;
-				std::string imageUriB_;
-				std::string imageUriA_;
 				std::string project_;
-				std::string setId_;
 				std::string faceIdA_;
 				std::string faceIdB_;
 				std::string accessKeyId_;
+				std::string imageUriB_;
+				std::string imageUriA_;
+				std::string setId_;
 
 			};
 		}

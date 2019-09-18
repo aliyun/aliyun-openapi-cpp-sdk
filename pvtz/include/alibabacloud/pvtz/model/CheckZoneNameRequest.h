@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				CheckZoneNameRequest();
 				~CheckZoneNameRequest();
 
+				std::string getZoneName()const;
+				void setZoneName(const std::string& zoneName);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getZoneName()const;
-				void setZoneName(const std::string& zoneName);
 
             private:
+				std::string zoneName_;
 				std::string userClientIp_;
 				std::string lang_;
-				std::string zoneName_;
 
 			};
 		}

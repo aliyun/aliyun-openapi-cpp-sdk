@@ -19,54 +19,21 @@
 using AlibabaCloud::Cdn::Model::DescribeUserDomainsRequest;
 
 DescribeUserDomainsRequest::DescribeUserDomainsRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeUserDomains")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeUserDomains")
 {}
 
 DescribeUserDomainsRequest::~DescribeUserDomainsRequest()
 {}
 
-std::string DescribeUserDomainsRequest::getFuncFilter()const
+std::string DescribeUserDomainsRequest::getSources()const
 {
-	return funcFilter_;
+	return sources_;
 }
 
-void DescribeUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
+void DescribeUserDomainsRequest::setSources(const std::string& sources)
 {
-	funcFilter_ = funcFilter;
-	setCoreParameter("FuncFilter", funcFilter);
-}
-
-std::string DescribeUserDomainsRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeUserDomainsRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long DescribeUserDomainsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeUserDomainsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeUserDomainsRequest::getFuncId()const
-{
-	return funcId_;
-}
-
-void DescribeUserDomainsRequest::setFuncId(const std::string& funcId)
-{
-	funcId_ = funcId;
-	setCoreParameter("FuncId", funcId);
+	sources_ = sources;
+	setCoreParameter("Sources", sources);
 }
 
 int DescribeUserDomainsRequest::getPageNumber()const
@@ -78,28 +45,6 @@ void DescribeUserDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeUserDomainsRequest::getDomainStatus()const
-{
-	return domainStatus_;
-}
-
-void DescribeUserDomainsRequest::setDomainStatus(const std::string& domainStatus)
-{
-	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", domainStatus);
-}
-
-std::string DescribeUserDomainsRequest::getDomainSearchType()const
-{
-	return domainSearchType_;
-}
-
-void DescribeUserDomainsRequest::setDomainSearchType(const std::string& domainSearchType)
-{
-	domainSearchType_ = domainSearchType;
-	setCoreParameter("DomainSearchType", domainSearchType);
 }
 
 bool DescribeUserDomainsRequest::getCheckDomainShow()const
@@ -157,20 +102,69 @@ void DescribeUserDomainsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::vector<DescribeUserDomainsRequest::Tag> DescribeUserDomainsRequest::getTag()const
+std::string DescribeUserDomainsRequest::getFuncFilter()const
 {
-	return tag_;
+	return funcFilter_;
 }
 
-void DescribeUserDomainsRequest::setTag(const std::vector<Tag>& tag)
+void DescribeUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
 {
-	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
-	}
+	funcFilter_ = funcFilter;
+	setCoreParameter("FuncFilter", funcFilter);
+}
+
+std::string DescribeUserDomainsRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeUserDomainsRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+long DescribeUserDomainsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeUserDomainsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeUserDomainsRequest::getFuncId()const
+{
+	return funcId_;
+}
+
+void DescribeUserDomainsRequest::setFuncId(const std::string& funcId)
+{
+	funcId_ = funcId;
+	setCoreParameter("FuncId", funcId);
+}
+
+std::string DescribeUserDomainsRequest::getDomainStatus()const
+{
+	return domainStatus_;
+}
+
+void DescribeUserDomainsRequest::setDomainStatus(const std::string& domainStatus)
+{
+	domainStatus_ = domainStatus;
+	setCoreParameter("DomainStatus", domainStatus);
+}
+
+std::string DescribeUserDomainsRequest::getDomainSearchType()const
+{
+	return domainSearchType_;
+}
+
+void DescribeUserDomainsRequest::setDomainSearchType(const std::string& domainSearchType)
+{
+	domainSearchType_ = domainSearchType;
+	setCoreParameter("DomainSearchType", domainSearchType);
 }
 

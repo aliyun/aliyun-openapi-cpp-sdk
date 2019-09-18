@@ -25,6 +25,17 @@ GetRuleActionRequest::GetRuleActionRequest() :
 GetRuleActionRequest::~GetRuleActionRequest()
 {}
 
+std::string GetRuleActionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetRuleActionRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -45,16 +56,5 @@ void GetRuleActionRequest::setActionId(long actionId)
 {
 	actionId_ = actionId;
 	setCoreParameter("ActionId", std::to_string(actionId));
-}
-
-std::string GetRuleActionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

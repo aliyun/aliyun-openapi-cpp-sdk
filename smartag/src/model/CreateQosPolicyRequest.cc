@@ -47,6 +47,72 @@ void CreateQosPolicyRequest::setSourcePortRange(const std::string& sourcePortRan
 	setCoreParameter("SourcePortRange", sourcePortRange);
 }
 
+std::string CreateQosPolicyRequest::getSourceCidr()const
+{
+	return sourceCidr_;
+}
+
+void CreateQosPolicyRequest::setSourceCidr(const std::string& sourceCidr)
+{
+	sourceCidr_ = sourceCidr;
+	setCoreParameter("SourceCidr", sourceCidr);
+}
+
+std::string CreateQosPolicyRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateQosPolicyRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string CreateQosPolicyRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void CreateQosPolicyRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+std::string CreateQosPolicyRequest::getDestCidr()const
+{
+	return destCidr_;
+}
+
+void CreateQosPolicyRequest::setDestCidr(const std::string& destCidr)
+{
+	destCidr_ = destCidr;
+	setCoreParameter("DestCidr", destCidr);
+}
+
+std::string CreateQosPolicyRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateQosPolicyRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateQosPolicyRequest::getQosId()const
+{
+	return qosId_;
+}
+
+void CreateQosPolicyRequest::setQosId(const std::string& qosId)
+{
+	qosId_ = qosId;
+	setCoreParameter("QosId", qosId);
+}
+
 std::string CreateQosPolicyRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,28 +146,6 @@ void CreateQosPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateQosPolicyRequest::getSourceCidr()const
-{
-	return sourceCidr_;
-}
-
-void CreateQosPolicyRequest::setSourceCidr(const std::string& sourceCidr)
-{
-	sourceCidr_ = sourceCidr;
-	setCoreParameter("SourceCidr", sourceCidr);
-}
-
-std::string CreateQosPolicyRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateQosPolicyRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 std::string CreateQosPolicyRequest::getEndTime()const
 {
 	return endTime_;
@@ -111,17 +155,6 @@ void CreateQosPolicyRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string CreateQosPolicyRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void CreateQosPolicyRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
 }
 
 long CreateQosPolicyRequest::getOwnerId()const
@@ -146,17 +179,6 @@ void CreateQosPolicyRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string CreateQosPolicyRequest::getDestCidr()const
-{
-	return destCidr_;
-}
-
-void CreateQosPolicyRequest::setDestCidr(const std::string& destCidr)
-{
-	destCidr_ = destCidr;
-	setCoreParameter("DestCidr", destCidr);
-}
-
 std::string CreateQosPolicyRequest::getDestPortRange()const
 {
 	return destPortRange_;
@@ -166,27 +188,5 @@ void CreateQosPolicyRequest::setDestPortRange(const std::string& destPortRange)
 {
 	destPortRange_ = destPortRange;
 	setCoreParameter("DestPortRange", destPortRange);
-}
-
-std::string CreateQosPolicyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateQosPolicyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateQosPolicyRequest::getQosId()const
-{
-	return qosId_;
-}
-
-void CreateQosPolicyRequest::setQosId(const std::string& qosId)
-{
-	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
 }
 

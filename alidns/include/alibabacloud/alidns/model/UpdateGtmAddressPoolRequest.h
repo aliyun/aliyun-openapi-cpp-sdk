@@ -41,6 +41,10 @@ namespace AlibabaCloud
 				UpdateGtmAddressPoolRequest();
 				~UpdateGtmAddressPoolRequest();
 
+				std::string getType()const;
+				void setType(const std::string& type);
+				int getMinAvailableAddrNum()const;
+				void setMinAvailableAddrNum(int minAvailableAddrNum);
 				std::string getAddrPoolId()const;
 				void setAddrPoolId(const std::string& addrPoolId);
 				std::string getUserClientIp()const;
@@ -49,21 +53,17 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getType()const;
-				void setType(const std::string& type);
 				std::vector<Addr> getAddr()const;
 				void setAddr(const std::vector<Addr>& addr);
-				int getMinAvailableAddrNum()const;
-				void setMinAvailableAddrNum(int minAvailableAddrNum);
 
             private:
+				std::string type_;
+				int minAvailableAddrNum_;
 				std::string addrPoolId_;
 				std::string userClientIp_;
 				std::string name_;
 				std::string lang_;
-				std::string type_;
 				std::vector<Addr> addr_;
-				int minAvailableAddrNum_;
 
 			};
 		}

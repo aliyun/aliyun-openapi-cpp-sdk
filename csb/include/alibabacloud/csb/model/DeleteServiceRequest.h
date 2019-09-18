@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				DeleteServiceRequest();
 				~DeleteServiceRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getServiceName()const;
 				void setServiceName(const std::string& serviceName);
 				long getServiceId()const;
 				void setServiceId(long serviceId);
 
             private:
-				std::string regionId_;
 				std::string serviceName_;
 				long serviceId_;
 

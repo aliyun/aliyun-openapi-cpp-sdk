@@ -25,6 +25,17 @@ DescribeZoneRecordsRequest::DescribeZoneRecordsRequest() :
 DescribeZoneRecordsRequest::~DescribeZoneRecordsRequest()
 {}
 
+int DescribeZoneRecordsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeZoneRecordsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 int DescribeZoneRecordsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -100,16 +111,5 @@ void DescribeZoneRecordsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setCoreParameter("Keyword", keyword);
-}
-
-int DescribeZoneRecordsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeZoneRecordsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

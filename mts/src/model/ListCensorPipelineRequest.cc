@@ -36,26 +36,26 @@ void ListCensorPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListCensorPipelineRequest::getResourceOwnerAccount()const
+long ListCensorPipelineRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void ListCensorPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ListCensorPipelineRequest::setPageNumber(long pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string ListCensorPipelineRequest::getOwnerAccount()const
+std::string ListCensorPipelineRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void ListCensorPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
+void ListCensorPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ListCensorPipelineRequest::getPageSize()const
@@ -80,6 +80,28 @@ void ListCensorPipelineRequest::setState(const std::string& state)
 	setCoreParameter("State", state);
 }
 
+std::string ListCensorPipelineRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ListCensorPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ListCensorPipelineRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ListCensorPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ListCensorPipelineRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,27 +111,5 @@ void ListCensorPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-long ListCensorPipelineRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListCensorPipelineRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListCensorPipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListCensorPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

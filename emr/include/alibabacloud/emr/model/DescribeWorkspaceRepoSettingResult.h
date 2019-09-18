@@ -38,7 +38,7 @@ namespace AlibabaCloud
 					std::string version;
 					std::string groupId;
 				};
-				struct RepoPip 
+				struct RepoPip
 				{
 					std::string packageName;
 					std::string version;
@@ -48,14 +48,14 @@ namespace AlibabaCloud
 				DescribeWorkspaceRepoSettingResult();
 				explicit DescribeWorkspaceRepoSettingResult(const std::string &payload);
 				~DescribeWorkspaceRepoSettingResult();
+				RepoPip getRepoPip()const;
 				RepoMaven getRepoMaven()const;
-				RepoPip  getRepoPip ()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				RepoPip repoPip_;
 				RepoMaven repoMaven_;
-				RepoPip  repoPip _;
 
 			};
 		}

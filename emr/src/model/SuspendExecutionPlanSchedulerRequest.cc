@@ -36,6 +36,17 @@ void SuspendExecutionPlanSchedulerRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string SuspendExecutionPlanSchedulerRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SuspendExecutionPlanSchedulerRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string SuspendExecutionPlanSchedulerRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void SuspendExecutionPlanSchedulerRequest::setId(const std::string& id)
 {
 	id_ = id;
 	setCoreParameter("Id", id);
-}
-
-std::string SuspendExecutionPlanSchedulerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SuspendExecutionPlanSchedulerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

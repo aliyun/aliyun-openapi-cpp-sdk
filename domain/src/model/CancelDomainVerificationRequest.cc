@@ -36,6 +36,17 @@ void CancelDomainVerificationRequest::setActionType(const std::string& actionTyp
 	setCoreParameter("ActionType", actionType);
 }
 
+std::string CancelDomainVerificationRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CancelDomainVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string CancelDomainVerificationRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -67,16 +78,5 @@ void CancelDomainVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string CancelDomainVerificationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CancelDomainVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

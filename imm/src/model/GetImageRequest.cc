@@ -25,28 +25,6 @@ GetImageRequest::GetImageRequest() :
 GetImageRequest::~GetImageRequest()
 {}
 
-std::string GetImageRequest::getImageUri()const
-{
-	return imageUri_;
-}
-
-void GetImageRequest::setImageUri(const std::string& imageUri)
-{
-	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
-}
-
-std::string GetImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetImageRequest::getProject()const
 {
 	return project_;
@@ -58,17 +36,6 @@ void GetImageRequest::setProject(const std::string& project)
 	setCoreParameter("Project", project);
 }
 
-std::string GetImageRequest::getSetId()const
-{
-	return setId_;
-}
-
-void GetImageRequest::setSetId(const std::string& setId)
-{
-	setId_ = setId;
-	setCoreParameter("SetId", setId);
-}
-
 std::string GetImageRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +45,27 @@ void GetImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetImageRequest::getImageUri()const
+{
+	return imageUri_;
+}
+
+void GetImageRequest::setImageUri(const std::string& imageUri)
+{
+	imageUri_ = imageUri;
+	setCoreParameter("ImageUri", imageUri);
+}
+
+std::string GetImageRequest::getSetId()const
+{
+	return setId_;
+}
+
+void GetImageRequest::setSetId(const std::string& setId)
+{
+	setId_ = setId;
+	setCoreParameter("SetId", setId);
 }
 

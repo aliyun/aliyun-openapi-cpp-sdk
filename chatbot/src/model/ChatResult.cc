@@ -35,13 +35,9 @@ ChatResult::~ChatResult()
 
 void ChatResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allMessages = value["Messages"]["Message"];
 	for (auto value : allMessages)
@@ -72,6 +68,8 @@ void ChatResult::parse(const std::string &payload)
 			messagesObject.text.answerSource = textNode["AnswerSource"].asString();
 		if(!textNode["MetaData"].isNull())
 			messagesObject.text.metaData = textNode["MetaData"].asString();
+		if(!textNode["IntentName"].isNull())
+			messagesObject.text.intentName = textNode["IntentName"].asString();
 		auto knowledgeNode = value["Knowledge"];
 		if(!knowledgeNode["Id"].isNull())
 			messagesObject.knowledge.id = knowledgeNode["Id"].asString();

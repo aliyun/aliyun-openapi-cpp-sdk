@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				DescribeDataLimitDetailRequest();
 				~DescribeDataLimitDetailRequest();
 
+				int getNetworkType()const;
+				void setNetworkType(int networkType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				long getId()const;
 				void setId(long id);
-				int getNetworkType()const;
-				void setNetworkType(int networkType);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				int networkType_;
 				std::string sourceIp_;
 				long id_;
-				int networkType_;
 				std::string lang_;
 
 			};

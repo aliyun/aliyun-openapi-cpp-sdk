@@ -47,17 +47,6 @@ void GetUserSubmissionStatisticInfoRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GetUserSubmissionStatisticInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetUserSubmissionStatisticInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetUserSubmissionStatisticInfoRequest::getClusterId()const
 {
 	return clusterId_;
@@ -80,17 +69,6 @@ void GetUserSubmissionStatisticInfoRequest::setToDatetime(const std::string& toD
 	setCoreParameter("ToDatetime", toDatetime);
 }
 
-std::string GetUserSubmissionStatisticInfoRequest::getApplicationType()const
-{
-	return applicationType_;
-}
-
-void GetUserSubmissionStatisticInfoRequest::setApplicationType(const std::string& applicationType)
-{
-	applicationType_ = applicationType;
-	setCoreParameter("ApplicationType", applicationType);
-}
-
 std::string GetUserSubmissionStatisticInfoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -111,5 +89,27 @@ void GetUserSubmissionStatisticInfoRequest::setFinalStatus(const std::string& fi
 {
 	finalStatus_ = finalStatus;
 	setCoreParameter("FinalStatus", finalStatus);
+}
+
+std::string GetUserSubmissionStatisticInfoRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetUserSubmissionStatisticInfoRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string GetUserSubmissionStatisticInfoRequest::getApplicationType()const
+{
+	return applicationType_;
+}
+
+void GetUserSubmissionStatisticInfoRequest::setApplicationType(const std::string& applicationType)
+{
+	applicationType_ = applicationType;
+	setCoreParameter("ApplicationType", applicationType);
 }
 

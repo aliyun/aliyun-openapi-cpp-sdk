@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ListSubAccountPermissionRequest();
 				~ListSubAccountPermissionRequest();
 
-				long getSearchUid()const;
-				void setSearchUid(long searchUid);
 				int getLength()const;
 				void setLength(int length);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getSearchUid()const;
+				void setSearchUid(long searchUid);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
 
             private:
-				long searchUid_;
 				int length_;
-				int pageIndex_;
 				std::string accessKeyId_;
+				long searchUid_;
+				int pageIndex_;
 
 			};
 		}

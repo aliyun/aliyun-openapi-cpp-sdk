@@ -47,17 +47,6 @@ void UpdateLiveRecordNotifyConfigRequest::setSecurityToken(const std::string& se
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string UpdateLiveRecordNotifyConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void UpdateLiveRecordNotifyConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 std::string UpdateLiveRecordNotifyConfigRequest::getNotifyUrl()const
 {
 	return notifyUrl_;
@@ -69,17 +58,6 @@ void UpdateLiveRecordNotifyConfigRequest::setNotifyUrl(const std::string& notify
 	setCoreParameter("NotifyUrl", notifyUrl);
 }
 
-long UpdateLiveRecordNotifyConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateLiveRecordNotifyConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 bool UpdateLiveRecordNotifyConfigRequest::getNeedStatusNotify()const
 {
 	return needStatusNotify_;
@@ -89,5 +67,27 @@ void UpdateLiveRecordNotifyConfigRequest::setNeedStatusNotify(bool needStatusNot
 {
 	needStatusNotify_ = needStatusNotify;
 	setCoreParameter("NeedStatusNotify", needStatusNotify ? "true" : "false");
+}
+
+std::string UpdateLiveRecordNotifyConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void UpdateLiveRecordNotifyConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+long UpdateLiveRecordNotifyConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void UpdateLiveRecordNotifyConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

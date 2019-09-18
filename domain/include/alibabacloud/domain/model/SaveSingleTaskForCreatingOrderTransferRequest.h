@@ -35,6 +35,16 @@ namespace AlibabaCloud
 				SaveSingleTaskForCreatingOrderTransferRequest();
 				~SaveSingleTaskForCreatingOrderTransferRequest();
 
+				long getRegistrantProfileId()const;
+				void setRegistrantProfileId(long registrantProfileId);
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				bool getUseCoupon()const;
+				void setUseCoupon(bool useCoupon);
 				bool getPermitPremiumTransfer()const;
 				void setPermitPremiumTransfer(bool permitPremiumTransfer);
 				std::string getPromotionNo()const;
@@ -43,29 +53,19 @@ namespace AlibabaCloud
 				void setAuthorizationCode(const std::string& authorizationCode);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getRegistrantProfileId()const;
-				void setRegistrantProfileId(long registrantProfileId);
-				std::string getCouponNo()const;
-				void setCouponNo(const std::string& couponNo);
-				bool getUseCoupon()const;
-				void setUseCoupon(bool useCoupon);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				bool getUsePromotion()const;
 				void setUsePromotion(bool usePromotion);
 
             private:
+				long registrantProfileId_;
+				std::string couponNo_;
+				std::string lang_;
+				std::string domainName_;
+				bool useCoupon_;
 				bool permitPremiumTransfer_;
 				std::string promotionNo_;
 				std::string authorizationCode_;
 				std::string userClientIp_;
-				std::string domainName_;
-				long registrantProfileId_;
-				std::string couponNo_;
-				bool useCoupon_;
-				std::string lang_;
 				bool usePromotion_;
 
 			};

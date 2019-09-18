@@ -25,17 +25,6 @@ HeadquartersRankingRequest::HeadquartersRankingRequest() :
 HeadquartersRankingRequest::~HeadquartersRankingRequest()
 {}
 
-long HeadquartersRankingRequest::getBid()const
-{
-	return bid_;
-}
-
-void HeadquartersRankingRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string HeadquartersRankingRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void HeadquartersRankingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long HeadquartersRankingRequest::getBid()const
+{
+	return bid_;
+}
+
+void HeadquartersRankingRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

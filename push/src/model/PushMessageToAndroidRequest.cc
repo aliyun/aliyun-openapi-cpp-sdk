@@ -25,28 +25,6 @@ PushMessageToAndroidRequest::PushMessageToAndroidRequest() :
 PushMessageToAndroidRequest::~PushMessageToAndroidRequest()
 {}
 
-long PushMessageToAndroidRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void PushMessageToAndroidRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
-std::string PushMessageToAndroidRequest::getTargetValue()const
-{
-	return targetValue_;
-}
-
-void PushMessageToAndroidRequest::setTargetValue(const std::string& targetValue)
-{
-	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
-}
-
 std::string PushMessageToAndroidRequest::getTitle()const
 {
 	return title_;
@@ -100,5 +78,27 @@ void PushMessageToAndroidRequest::setTarget(const std::string& target)
 {
 	target_ = target;
 	setCoreParameter("Target", target);
+}
+
+long PushMessageToAndroidRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void PushMessageToAndroidRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
+}
+
+std::string PushMessageToAndroidRequest::getTargetValue()const
+{
+	return targetValue_;
+}
+
+void PushMessageToAndroidRequest::setTargetValue(const std::string& targetValue)
+{
+	targetValue_ = targetValue;
+	setCoreParameter("TargetValue", targetValue);
 }
 

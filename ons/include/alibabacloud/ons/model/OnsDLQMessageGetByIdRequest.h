@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				OnsDLQMessageGetByIdRequest();
 				~OnsDLQMessageGetByIdRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getMsgId()const;
 				void setMsgId(const std::string& msgId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				std::string groupId_;
 				std::string msgId_;
+				std::string instanceId_;
 
 			};
 		}

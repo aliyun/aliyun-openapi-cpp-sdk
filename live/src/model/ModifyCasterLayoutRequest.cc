@@ -37,6 +37,39 @@ void ModifyCasterLayoutRequest::setBlendList(const std::vector<std::string>& ble
 		setCoreParameter("BlendList."+ std::to_string(i), blendList.at(i));
 }
 
+std::string ModifyCasterLayoutRequest::getLayoutId()const
+{
+	return layoutId_;
+}
+
+void ModifyCasterLayoutRequest::setLayoutId(const std::string& layoutId)
+{
+	layoutId_ = layoutId;
+	setCoreParameter("LayoutId", layoutId);
+}
+
+std::string ModifyCasterLayoutRequest::getCasterId()const
+{
+	return casterId_;
+}
+
+void ModifyCasterLayoutRequest::setCasterId(const std::string& casterId)
+{
+	casterId_ = casterId;
+	setCoreParameter("CasterId", casterId);
+}
+
+long ModifyCasterLayoutRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyCasterLayoutRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::vector<ModifyCasterLayoutRequest::AudioLayer> ModifyCasterLayoutRequest::getAudioLayer()const
 {
 	return audioLayer_;
@@ -49,21 +82,10 @@ void ModifyCasterLayoutRequest::setAudioLayer(const std::vector<AudioLayer>& aud
 	for(int i = 0; i!= audioLayer.size(); i++)	{
 		auto obj = audioLayer.at(i);
 		std::string str ="AudioLayer."+ std::to_string(i);
-		setCoreParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 		setCoreParameter(str + ".VolumeRate", std::to_string(obj.volumeRate));
 		setCoreParameter(str + ".ValidChannel", obj.validChannel);
+		setCoreParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 	}
-}
-
-std::string ModifyCasterLayoutRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyCasterLayoutRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<ModifyCasterLayoutRequest::VideoLayer> ModifyCasterLayoutRequest::getVideoLayer()const
@@ -79,23 +101,12 @@ void ModifyCasterLayoutRequest::setVideoLayer(const std::vector<VideoLayer>& vid
 		auto obj = videoLayer.at(i);
 		std::string str ="VideoLayer."+ std::to_string(i);
 		setCoreParameter(str + ".FillMode", obj.fillMode);
+		setCoreParameter(str + ".HeightNormalized", std::to_string(obj.heightNormalized));
 		setCoreParameter(str + ".WidthNormalized", std::to_string(obj.widthNormalized));
-		setCoreParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 		setCoreParameter(str + ".PositionRefer", obj.positionRefer);
 		for(int i = 0; i!= obj.positionNormalized.size(); i++)				setCoreParameter(str + ".PositionNormalized."+ std::to_string(i), std::to_string(obj.positionNormalized.at(i)));
-		setCoreParameter(str + ".HeightNormalized", std::to_string(obj.heightNormalized));
+		setCoreParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
 	}
-}
-
-std::string ModifyCasterLayoutRequest::getCasterId()const
-{
-	return casterId_;
-}
-
-void ModifyCasterLayoutRequest::setCasterId(const std::string& casterId)
-{
-	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
 }
 
 std::vector<std::string> ModifyCasterLayoutRequest::getMixList()const
@@ -108,27 +119,5 @@ void ModifyCasterLayoutRequest::setMixList(const std::vector<std::string>& mixLi
 	mixList_ = mixList;
 	for(int i = 0; i!= mixList.size(); i++)
 		setCoreParameter("MixList."+ std::to_string(i), mixList.at(i));
-}
-
-long ModifyCasterLayoutRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyCasterLayoutRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyCasterLayoutRequest::getLayoutId()const
-{
-	return layoutId_;
-}
-
-void ModifyCasterLayoutRequest::setLayoutId(const std::string& layoutId)
-{
-	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
 }
 

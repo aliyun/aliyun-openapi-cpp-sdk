@@ -40,40 +40,37 @@ namespace AlibabaCloud
 				DescribeCertificateListRequest();
 				~DescribeCertificateListRequest();
 
+				std::string getSortType()const;
+				void setSortType(const std::string& sortType);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getSortType()const;
-				void setSortType(const std::string& sortType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getShowSize()const;
-				void setShowSize(int showSize);
-				std::string getSortColumn()const;
-				void setSortColumn(const std::string& sortColumn);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
+				int getShowSize()const;
+				void setShowSize(int showSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getSortColumn()const;
+				void setSortColumn(const std::string& sortColumn);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				std::string sortType_;
 				std::string resourceGroupId_;
 				std::string sourceIp_;
-				std::string sortType_;
-				std::string regionId_;
-				int showSize_;
-				std::string sortColumn_;
-				int currentPage_;
 				std::vector<Tag> tag_;
 				std::string lang_;
 				std::string keyword_;
+				int showSize_;
+				int currentPage_;
+				std::string sortColumn_;
 				std::string status_;
 
 			};

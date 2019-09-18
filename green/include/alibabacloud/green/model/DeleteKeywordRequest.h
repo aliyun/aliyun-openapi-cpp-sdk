@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				DeleteKeywordRequest();
 				~DeleteKeywordRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getKeywords()const;
 				void setKeywords(const std::string& keywords);
 				std::string getKeywordLibId()const;
 				void setKeywordLibId(const std::string& keywordLibId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getIds()const;
 				void setIds(const std::string& ids);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				std::string keywords_;
 				std::string keywordLibId_;
+				std::string sourceIp_;
 				std::string ids_;
 				std::string lang_;
 

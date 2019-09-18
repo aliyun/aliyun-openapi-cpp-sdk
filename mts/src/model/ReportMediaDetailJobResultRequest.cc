@@ -25,6 +25,28 @@ ReportMediaDetailJobResultRequest::ReportMediaDetailJobResultRequest() :
 ReportMediaDetailJobResultRequest::~ReportMediaDetailJobResultRequest()
 {}
 
+long ReportMediaDetailJobResultRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void ReportMediaDetailJobResultRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ReportMediaDetailJobResultRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReportMediaDetailJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ReportMediaDetailJobResultRequest::getJobId()const
 {
 	return jobId_;
@@ -36,15 +58,26 @@ void ReportMediaDetailJobResultRequest::setJobId(const std::string& jobId)
 	setCoreParameter("JobId", jobId);
 }
 
-long ReportMediaDetailJobResultRequest::getResourceOwnerId()const
+std::string ReportMediaDetailJobResultRequest::getTag()const
 {
-	return resourceOwnerId_;
+	return tag_;
 }
 
-void ReportMediaDetailJobResultRequest::setResourceOwnerId(long resourceOwnerId)
+void ReportMediaDetailJobResultRequest::setTag(const std::string& tag)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	tag_ = tag;
+	setCoreParameter("Tag", tag);
+}
+
+std::string ReportMediaDetailJobResultRequest::getResults()const
+{
+	return results_;
+}
+
+void ReportMediaDetailJobResultRequest::setResults(const std::string& results)
+{
+	results_ = results;
+	setCoreParameter("Results", results);
 }
 
 std::string ReportMediaDetailJobResultRequest::getResourceOwnerAccount()const
@@ -69,17 +102,6 @@ void ReportMediaDetailJobResultRequest::setOwnerAccount(const std::string& owner
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ReportMediaDetailJobResultRequest::getTag()const
-{
-	return tag_;
-}
-
-void ReportMediaDetailJobResultRequest::setTag(const std::string& tag)
-{
-	tag_ = tag;
-	setCoreParameter("Tag", tag);
-}
-
 long ReportMediaDetailJobResultRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,27 +111,5 @@ void ReportMediaDetailJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ReportMediaDetailJobResultRequest::getResults()const
-{
-	return results_;
-}
-
-void ReportMediaDetailJobResultRequest::setResults(const std::string& results)
-{
-	results_ = results;
-	setCoreParameter("Results", results);
-}
-
-std::string ReportMediaDetailJobResultRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ReportMediaDetailJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

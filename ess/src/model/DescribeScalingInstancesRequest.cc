@@ -25,17 +25,6 @@ DescribeScalingInstancesRequest::DescribeScalingInstancesRequest() :
 DescribeScalingInstancesRequest::~DescribeScalingInstancesRequest()
 {}
 
-std::string DescribeScalingInstancesRequest::getInstanceId10()const
-{
-	return instanceId10_;
-}
-
-void DescribeScalingInstancesRequest::setInstanceId10(const std::string& instanceId10)
-{
-	instanceId10_ = instanceId10;
-	setCoreParameter("InstanceId10", instanceId10);
-}
-
 long DescribeScalingInstancesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,50 +36,6 @@ void DescribeScalingInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeScalingInstancesRequest::getInstanceId12()const
-{
-	return instanceId12_;
-}
-
-void DescribeScalingInstancesRequest::setInstanceId12(const std::string& instanceId12)
-{
-	instanceId12_ = instanceId12;
-	setCoreParameter("InstanceId12", instanceId12);
-}
-
-std::string DescribeScalingInstancesRequest::getInstanceId11()const
-{
-	return instanceId11_;
-}
-
-void DescribeScalingInstancesRequest::setInstanceId11(const std::string& instanceId11)
-{
-	instanceId11_ = instanceId11;
-	setCoreParameter("InstanceId11", instanceId11);
-}
-
-std::string DescribeScalingInstancesRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void DescribeScalingInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
-std::string DescribeScalingInstancesRequest::getLifecycleState()const
-{
-	return lifecycleState_;
-}
-
-void DescribeScalingInstancesRequest::setLifecycleState(const std::string& lifecycleState)
-{
-	lifecycleState_ = lifecycleState;
-	setCoreParameter("LifecycleState", lifecycleState);
-}
-
 std::string DescribeScalingInstancesRequest::getCreationType()const
 {
 	return creationType_;
@@ -100,61 +45,6 @@ void DescribeScalingInstancesRequest::setCreationType(const std::string& creatio
 {
 	creationType_ = creationType;
 	setCoreParameter("CreationType", creationType);
-}
-
-int DescribeScalingInstancesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeScalingInstancesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeScalingInstancesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeScalingInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeScalingInstancesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeScalingInstancesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int DescribeScalingInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeScalingInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeScalingInstancesRequest::getInstanceId20()const
-{
-	return instanceId20_;
-}
-
-void DescribeScalingInstancesRequest::setInstanceId20(const std::string& instanceId20)
-{
-	instanceId20_ = instanceId20;
-	setCoreParameter("InstanceId20", instanceId20);
 }
 
 std::string DescribeScalingInstancesRequest::getInstanceId1()const
@@ -177,17 +67,6 @@ void DescribeScalingInstancesRequest::setInstanceId3(const std::string& instance
 {
 	instanceId3_ = instanceId3;
 	setCoreParameter("InstanceId3", instanceId3);
-}
-
-std::string DescribeScalingInstancesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeScalingInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeScalingInstancesRequest::getInstanceId2()const
@@ -221,17 +100,6 @@ void DescribeScalingInstancesRequest::setInstanceId4(const std::string& instance
 {
 	instanceId4_ = instanceId4;
 	setCoreParameter("InstanceId4", instanceId4);
-}
-
-std::string DescribeScalingInstancesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeScalingInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeScalingInstancesRequest::getInstanceId7()const
@@ -309,6 +177,138 @@ void DescribeScalingInstancesRequest::setHealthStatus(const std::string& healthS
 {
 	healthStatus_ = healthStatus;
 	setCoreParameter("HealthStatus", healthStatus);
+}
+
+std::string DescribeScalingInstancesRequest::getInstanceId10()const
+{
+	return instanceId10_;
+}
+
+void DescribeScalingInstancesRequest::setInstanceId10(const std::string& instanceId10)
+{
+	instanceId10_ = instanceId10;
+	setCoreParameter("InstanceId10", instanceId10);
+}
+
+std::string DescribeScalingInstancesRequest::getInstanceId12()const
+{
+	return instanceId12_;
+}
+
+void DescribeScalingInstancesRequest::setInstanceId12(const std::string& instanceId12)
+{
+	instanceId12_ = instanceId12;
+	setCoreParameter("InstanceId12", instanceId12);
+}
+
+std::string DescribeScalingInstancesRequest::getInstanceId11()const
+{
+	return instanceId11_;
+}
+
+void DescribeScalingInstancesRequest::setInstanceId11(const std::string& instanceId11)
+{
+	instanceId11_ = instanceId11;
+	setCoreParameter("InstanceId11", instanceId11);
+}
+
+std::string DescribeScalingInstancesRequest::getScalingGroupId()const
+{
+	return scalingGroupId_;
+}
+
+void DescribeScalingInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
+{
+	scalingGroupId_ = scalingGroupId;
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string DescribeScalingInstancesRequest::getLifecycleState()const
+{
+	return lifecycleState_;
+}
+
+void DescribeScalingInstancesRequest::setLifecycleState(const std::string& lifecycleState)
+{
+	lifecycleState_ = lifecycleState;
+	setCoreParameter("LifecycleState", lifecycleState);
+}
+
+int DescribeScalingInstancesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeScalingInstancesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeScalingInstancesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeScalingInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeScalingInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeScalingInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeScalingInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeScalingInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeScalingInstancesRequest::getInstanceId20()const
+{
+	return instanceId20_;
+}
+
+void DescribeScalingInstancesRequest::setInstanceId20(const std::string& instanceId20)
+{
+	instanceId20_ = instanceId20;
+	setCoreParameter("InstanceId20", instanceId20);
+}
+
+std::string DescribeScalingInstancesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeScalingInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeScalingInstancesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeScalingInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeScalingInstancesRequest::getInstanceId18()const

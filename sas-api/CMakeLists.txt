@@ -21,57 +21,57 @@ set(sas-api_public_header
 	include/alibabacloud/sas-api/Sas_apiExport.h )
 
 set(sas-api_public_header_model 
+	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyRequest.h
+	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyResult.h
 	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyWordRequest.h
 	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyWordResult.h
+	include/alibabacloud/sas-api/model/DescribeHitRateColumnRequest.h
+	include/alibabacloud/sas-api/model/DescribeHitRateColumnResult.h
+	include/alibabacloud/sas-api/model/DescribeHitRatePieRequest.h
+	include/alibabacloud/sas-api/model/DescribeHitRatePieResult.h
+	include/alibabacloud/sas-api/model/DescribePerDateDataRequest.h
+	include/alibabacloud/sas-api/model/DescribePerDateDataResult.h
 	include/alibabacloud/sas-api/model/DescribeThreatDistributeRequest.h
 	include/alibabacloud/sas-api/model/DescribeThreatDistributeResult.h
 	include/alibabacloud/sas-api/model/DescribeThreatTypeLinesRequest.h
 	include/alibabacloud/sas-api/model/DescribeThreatTypeLinesResult.h
-	include/alibabacloud/sas-api/model/GetPhoneProfileRequest.h
-	include/alibabacloud/sas-api/model/GetPhoneProfileResult.h
-	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyRequest.h
-	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyResult.h
-	include/alibabacloud/sas-api/model/GetInstanceCountRequest.h
-	include/alibabacloud/sas-api/model/GetInstanceCountResult.h
-	include/alibabacloud/sas-api/model/DescribePerDateDataRequest.h
-	include/alibabacloud/sas-api/model/DescribePerDateDataResult.h
-	include/alibabacloud/sas-api/model/GetAccountProfileRequest.h
-	include/alibabacloud/sas-api/model/GetAccountProfileResult.h
 	include/alibabacloud/sas-api/model/DescribeTotalAndRateLineRequest.h
 	include/alibabacloud/sas-api/model/DescribeTotalAndRateLineResult.h
+	include/alibabacloud/sas-api/model/GetAccountProfileRequest.h
+	include/alibabacloud/sas-api/model/GetAccountProfileResult.h
+	include/alibabacloud/sas-api/model/GetInstanceCountRequest.h
+	include/alibabacloud/sas-api/model/GetInstanceCountResult.h
 	include/alibabacloud/sas-api/model/GetIpProfileRequest.h
 	include/alibabacloud/sas-api/model/GetIpProfileResult.h
-	include/alibabacloud/sas-api/model/DescribeHitRateColumnRequest.h
-	include/alibabacloud/sas-api/model/DescribeHitRateColumnResult.h
-	include/alibabacloud/sas-api/model/DescribeHitRatePieRequest.h
-	include/alibabacloud/sas-api/model/DescribeHitRatePieResult.h )
+	include/alibabacloud/sas-api/model/GetPhoneProfileRequest.h
+	include/alibabacloud/sas-api/model/GetPhoneProfileResult.h )
 
 set(sas-api_src 
 	src/Sas-apiClient.cc
+	src/model/DescribeAccountProfileByKeyRequest.cc
+	src/model/DescribeAccountProfileByKeyResult.cc
 	src/model/DescribeAccountProfileByKeyWordRequest.cc
 	src/model/DescribeAccountProfileByKeyWordResult.cc
+	src/model/DescribeHitRateColumnRequest.cc
+	src/model/DescribeHitRateColumnResult.cc
+	src/model/DescribeHitRatePieRequest.cc
+	src/model/DescribeHitRatePieResult.cc
+	src/model/DescribePerDateDataRequest.cc
+	src/model/DescribePerDateDataResult.cc
 	src/model/DescribeThreatDistributeRequest.cc
 	src/model/DescribeThreatDistributeResult.cc
 	src/model/DescribeThreatTypeLinesRequest.cc
 	src/model/DescribeThreatTypeLinesResult.cc
-	src/model/GetPhoneProfileRequest.cc
-	src/model/GetPhoneProfileResult.cc
-	src/model/DescribeAccountProfileByKeyRequest.cc
-	src/model/DescribeAccountProfileByKeyResult.cc
-	src/model/GetInstanceCountRequest.cc
-	src/model/GetInstanceCountResult.cc
-	src/model/DescribePerDateDataRequest.cc
-	src/model/DescribePerDateDataResult.cc
-	src/model/GetAccountProfileRequest.cc
-	src/model/GetAccountProfileResult.cc
 	src/model/DescribeTotalAndRateLineRequest.cc
 	src/model/DescribeTotalAndRateLineResult.cc
+	src/model/GetAccountProfileRequest.cc
+	src/model/GetAccountProfileResult.cc
+	src/model/GetInstanceCountRequest.cc
+	src/model/GetInstanceCountResult.cc
 	src/model/GetIpProfileRequest.cc
 	src/model/GetIpProfileResult.cc
-	src/model/DescribeHitRateColumnRequest.cc
-	src/model/DescribeHitRateColumnResult.cc
-	src/model/DescribeHitRatePieRequest.cc
-	src/model/DescribeHitRatePieResult.cc )
+	src/model/GetPhoneProfileRequest.cc
+	src/model/GetPhoneProfileResult.cc )
 
 add_library(sas-api ${LIB_TYPE}
 	${sas-api_public_header}

@@ -25,6 +25,17 @@ DescribeGtmInstanceAddressPoolsRequest::DescribeGtmInstanceAddressPoolsRequest()
 DescribeGtmInstanceAddressPoolsRequest::~DescribeGtmInstanceAddressPoolsRequest()
 {}
 
+int DescribeGtmInstanceAddressPoolsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeGtmInstanceAddressPoolsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeGtmInstanceAddressPoolsRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -67,16 +78,5 @@ void DescribeGtmInstanceAddressPoolsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int DescribeGtmInstanceAddressPoolsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeGtmInstanceAddressPoolsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

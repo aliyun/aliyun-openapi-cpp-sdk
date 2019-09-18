@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				OnsTopicCreateRequest();
 				~OnsTopicCreateRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				int getMessageType()const;
 				void setMessageType(int messageType);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
 
             private:
-				std::string instanceId_;
 				int messageType_;
-				std::string topic_;
 				std::string remark_;
+				std::string instanceId_;
+				std::string topic_;
 
 			};
 		}

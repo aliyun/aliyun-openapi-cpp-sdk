@@ -25,17 +25,6 @@ CreateAlbumRequest::CreateAlbumRequest() :
 CreateAlbumRequest::~CreateAlbumRequest()
 {}
 
-std::string CreateAlbumRequest::getAlbumName()const
-{
-	return albumName_;
-}
-
-void CreateAlbumRequest::setAlbumName(const std::string& albumName)
-{
-	albumName_ = albumName;
-	setCoreParameter("AlbumName", albumName);
-}
-
 std::string CreateAlbumRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -67,5 +56,16 @@ void CreateAlbumRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
 	setCoreParameter("Remark", remark);
+}
+
+std::string CreateAlbumRequest::getAlbumName()const
+{
+	return albumName_;
+}
+
+void CreateAlbumRequest::setAlbumName(const std::string& albumName)
+{
+	albumName_ = albumName;
+	setCoreParameter("AlbumName", albumName);
 }
 
