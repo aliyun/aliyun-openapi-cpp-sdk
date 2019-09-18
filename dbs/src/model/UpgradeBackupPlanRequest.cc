@@ -25,17 +25,6 @@ UpgradeBackupPlanRequest::UpgradeBackupPlanRequest() :
 UpgradeBackupPlanRequest::~UpgradeBackupPlanRequest()
 {}
 
-std::string UpgradeBackupPlanRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpgradeBackupPlanRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string UpgradeBackupPlanRequest::getClientToken()const
 {
 	return clientToken_;

@@ -25,17 +25,6 @@ DescribeConfigsRequest::DescribeConfigsRequest() :
 DescribeConfigsRequest::~DescribeConfigsRequest()
 {}
 
-std::string DescribeConfigsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeConfigsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeConfigsRequest::getFeatureType()const
 {
 	return featureType_;
@@ -45,6 +34,17 @@ void DescribeConfigsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeConfigsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeConfigsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeConfigsRequest::getLang()const

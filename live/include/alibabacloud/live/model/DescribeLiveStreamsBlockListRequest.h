@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DescribeLiveStreamsBlockListRequest();
 				~DescribeLiveStreamsBlockListRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string securityToken_;
-				std::string domainName_;
-				int pageSize_;
-				long ownerId_;
 				int pageNum_;
+				std::string securityToken_;
+				int pageSize_;
+				std::string domainName_;
+				long ownerId_;
 
 			};
 		}

@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				GetBids4Uid4RootRequest();
 				~GetBids4Uid4RootRequest();
 
-				long getUid()const;
-				void setUid(long uid);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getUid()const;
+				void setUid(long uid);
 
             private:
-				long uid_;
 				std::string accessKeyId_;
+				long uid_;
 
 			};
 		}

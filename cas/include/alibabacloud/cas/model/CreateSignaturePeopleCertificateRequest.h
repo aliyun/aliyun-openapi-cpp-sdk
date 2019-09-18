@@ -35,26 +35,29 @@ namespace AlibabaCloud
 				CreateSignaturePeopleCertificateRequest();
 				~CreateSignaturePeopleCertificateRequest();
 
-				std::string getPeopleName()const;
-				void setPeopleName(const std::string& peopleName);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getMobile()const;
-				void setMobile(const std::string& mobile);
 				std::string getIdentityNumber()const;
 				void setIdentityNumber(const std::string& identityNumber);
+				std::string getPeopleName()const;
+				void setPeopleName(const std::string& peopleName);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getEmail()const;
 				void setEmail(const std::string& email);
+				std::string getMobile()const;
+				void setMobile(const std::string& mobile);
 
             private:
-				std::string peopleName_;
-				std::string sourceIp_;
-				std::string mobile_;
 				std::string identityNumber_;
+				std::string peopleName_;
+				std::string resourceGroupId_;
+				std::string sourceIp_;
 				std::string lang_;
 				std::string email_;
+				std::string mobile_;
 
 			};
 		}

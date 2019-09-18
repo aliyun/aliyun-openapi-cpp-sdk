@@ -36,17 +36,6 @@ void QueryFpShotJobListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QueryFpShotJobListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void QueryFpShotJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string QueryFpShotJobListRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -67,6 +56,50 @@ void QueryFpShotJobListRequest::setStartOfJobCreatedTimeRange(const std::string&
 {
 	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
 	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+}
+
+std::string QueryFpShotJobListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryFpShotJobListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryFpShotJobListRequest::getState()const
+{
+	return state_;
+}
+
+void QueryFpShotJobListRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
+std::string QueryFpShotJobListRequest::getEndOfJobCreatedTimeRange()const
+{
+	return endOfJobCreatedTimeRange_;
+}
+
+void QueryFpShotJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
+{
+	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
+	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+}
+
+std::string QueryFpShotJobListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void QueryFpShotJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryFpShotJobListRequest::getOwnerAccount()const
@@ -102,17 +135,6 @@ void QueryFpShotJobListRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string QueryFpShotJobListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryFpShotJobListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string QueryFpShotJobListRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -144,27 +166,5 @@ void QueryFpShotJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
 	setCoreParameter("JobIds", jobIds);
-}
-
-std::string QueryFpShotJobListRequest::getState()const
-{
-	return state_;
-}
-
-void QueryFpShotJobListRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
-}
-
-std::string QueryFpShotJobListRequest::getEndOfJobCreatedTimeRange()const
-{
-	return endOfJobCreatedTimeRange_;
-}
-
-void QueryFpShotJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
-{
-	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 }
 

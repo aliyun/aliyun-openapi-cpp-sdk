@@ -25,6 +25,17 @@ DescribeSignatureTradeListRequest::DescribeSignatureTradeListRequest() :
 DescribeSignatureTradeListRequest::~DescribeSignatureTradeListRequest()
 {}
 
+std::string DescribeSignatureTradeListRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSignatureTradeListRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSignatureTradeListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -36,17 +47,6 @@ void DescribeSignatureTradeListRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-int DescribeSignatureTradeListRequest::getShowSize()const
-{
-	return showSize_;
-}
-
-void DescribeSignatureTradeListRequest::setShowSize(int showSize)
-{
-	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
-}
-
 std::string DescribeSignatureTradeListRequest::getSearchType()const
 {
 	return searchType_;
@@ -56,17 +56,6 @@ void DescribeSignatureTradeListRequest::setSearchType(const std::string& searchT
 {
 	searchType_ = searchType;
 	setCoreParameter("SearchType", searchType);
-}
-
-int DescribeSignatureTradeListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeSignatureTradeListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeSignatureTradeListRequest::getLang()const
@@ -89,5 +78,27 @@ void DescribeSignatureTradeListRequest::setSearchValue(const std::string& search
 {
 	searchValue_ = searchValue;
 	setCoreParameter("SearchValue", searchValue);
+}
+
+int DescribeSignatureTradeListRequest::getShowSize()const
+{
+	return showSize_;
+}
+
+void DescribeSignatureTradeListRequest::setShowSize(int showSize)
+{
+	showSize_ = showSize;
+	setCoreParameter("ShowSize", std::to_string(showSize));
+}
+
+int DescribeSignatureTradeListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeSignatureTradeListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

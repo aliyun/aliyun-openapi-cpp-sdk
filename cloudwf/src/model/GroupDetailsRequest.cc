@@ -25,17 +25,6 @@ GroupDetailsRequest::GroupDetailsRequest() :
 GroupDetailsRequest::~GroupDetailsRequest()
 {}
 
-long GroupDetailsRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void GroupDetailsRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string GroupDetailsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GroupDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GroupDetailsRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void GroupDetailsRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

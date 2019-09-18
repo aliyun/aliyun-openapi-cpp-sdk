@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				ModifyEventStatusRequest();
 				~ModifyEventStatusRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				bool getBacked()const;
 				void setBacked(bool backed);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getDealReason()const;
 				void setDealReason(const std::string& dealReason);
 				long getId()const;
 				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
 				int getStatus()const;
 				void setStatus(int status);
 
             private:
-				std::string sourceIp_;
 				bool backed_;
-				int featureType_;
+				std::string sourceIp_;
 				std::string dealReason_;
 				long id_;
 				std::string lang_;
+				int featureType_;
 				int status_;
 
 			};

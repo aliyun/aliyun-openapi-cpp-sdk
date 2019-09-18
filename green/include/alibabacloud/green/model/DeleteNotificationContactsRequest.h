@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeleteNotificationContactsRequest();
 				~DeleteNotificationContactsRequest();
 
+				std::string getContactTypes()const;
+				void setContactTypes(const std::string& contactTypes);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getContactTypes()const;
-				void setContactTypes(const std::string& contactTypes);
 
             private:
+				std::string contactTypes_;
 				std::string sourceIp_;
 				std::string lang_;
-				std::string contactTypes_;
 
 			};
 		}

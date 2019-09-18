@@ -25,28 +25,6 @@ AreaShowListRequest::AreaShowListRequest() :
 AreaShowListRequest::~AreaShowListRequest()
 {}
 
-int AreaShowListRequest::getPage()const
-{
-	return page_;
-}
-
-void AreaShowListRequest::setPage(int page)
-{
-	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
-}
-
-int AreaShowListRequest::getPer()const
-{
-	return per_;
-}
-
-void AreaShowListRequest::setPer(int per)
-{
-	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
-}
-
 std::string AreaShowListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,27 @@ void AreaShowListRequest::setSid(long sid)
 {
 	sid_ = sid;
 	setCoreParameter("Sid", std::to_string(sid));
+}
+
+int AreaShowListRequest::getPage()const
+{
+	return page_;
+}
+
+void AreaShowListRequest::setPage(int page)
+{
+	page_ = page;
+	setCoreParameter("Page", std::to_string(page));
+}
+
+int AreaShowListRequest::getPer()const
+{
+	return per_;
+}
+
+void AreaShowListRequest::setPer(int per)
+{
+	per_ = per;
+	setCoreParameter("Per", std::to_string(per));
 }
 

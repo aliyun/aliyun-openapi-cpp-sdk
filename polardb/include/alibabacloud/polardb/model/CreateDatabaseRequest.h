@@ -53,8 +53,12 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getCollate()const;
+				void setCollate(const std::string& collate);
 				std::string getDBName()const;
 				void setDBName(const std::string& dBName);
+				std::string getCtype()const;
+				void setCtype(const std::string& ctype);
 				std::string getCharacterSetName()const;
 				void setCharacterSetName(const std::string& characterSetName);
 
@@ -68,7 +72,9 @@ namespace AlibabaCloud
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string collate_;
 				std::string dBName_;
+				std::string ctype_;
 				std::string characterSetName_;
 
 			};

@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				DescribeImageFromLibRequest();
 				~DescribeImageFromLibRequest();
 
-				int getTotalCount()const;
-				void setTotalCount(int totalCount);
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
+				std::string getStartDate()const;
+				void setStartDate(const std::string& startDate);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getImageLibId()const;
 				void setImageLibId(int imageLibId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				long getId()const;
 				void setId(long id);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
+				int getTotalCount()const;
+				void setTotalCount(int totalCount);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
 
             private:
-				int totalCount_;
-				std::string endDate_;
+				std::string startDate_;
 				std::string sourceIp_;
 				int imageLibId_;
 				int pageSize_;
-				int currentPage_;
 				long id_;
-				std::string startDate_;
+				int totalCount_;
+				int currentPage_;
+				std::string endDate_;
 
 			};
 		}

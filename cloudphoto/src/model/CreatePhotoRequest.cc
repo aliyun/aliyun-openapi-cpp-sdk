@@ -25,17 +25,6 @@ CreatePhotoRequest::CreatePhotoRequest() :
 CreatePhotoRequest::~CreatePhotoRequest()
 {}
 
-long CreatePhotoRequest::getTakenAt()const
-{
-	return takenAt_;
-}
-
-void CreatePhotoRequest::setTakenAt(long takenAt)
-{
-	takenAt_ = takenAt;
-	setCoreParameter("TakenAt", std::to_string(takenAt));
-}
-
 std::string CreatePhotoRequest::getPhotoTitle()const
 {
 	return photoTitle_;
@@ -47,28 +36,6 @@ void CreatePhotoRequest::setPhotoTitle(const std::string& photoTitle)
 	setCoreParameter("PhotoTitle", photoTitle);
 }
 
-std::string CreatePhotoRequest::getLibraryId()const
-{
-	return libraryId_;
-}
-
-void CreatePhotoRequest::setLibraryId(const std::string& libraryId)
-{
-	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
-}
-
-long CreatePhotoRequest::getShareExpireTime()const
-{
-	return shareExpireTime_;
-}
-
-void CreatePhotoRequest::setShareExpireTime(long shareExpireTime)
-{
-	shareExpireTime_ = shareExpireTime;
-	setCoreParameter("ShareExpireTime", std::to_string(shareExpireTime));
-}
-
 std::string CreatePhotoRequest::getStoreName()const
 {
 	return storeName_;
@@ -78,17 +45,6 @@ void CreatePhotoRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
-}
-
-std::string CreatePhotoRequest::getUploadType()const
-{
-	return uploadType_;
-}
-
-void CreatePhotoRequest::setUploadType(const std::string& uploadType)
-{
-	uploadType_ = uploadType;
-	setCoreParameter("UploadType", uploadType);
 }
 
 std::string CreatePhotoRequest::getRemark()const
@@ -113,6 +69,17 @@ void CreatePhotoRequest::setSessionId(const std::string& sessionId)
 	setCoreParameter("SessionId", sessionId);
 }
 
+long CreatePhotoRequest::getTakenAt()const
+{
+	return takenAt_;
+}
+
+void CreatePhotoRequest::setTakenAt(long takenAt)
+{
+	takenAt_ = takenAt;
+	setCoreParameter("TakenAt", std::to_string(takenAt));
+}
+
 std::string CreatePhotoRequest::getStaging()const
 {
 	return staging_;
@@ -133,5 +100,38 @@ void CreatePhotoRequest::setFileId(const std::string& fileId)
 {
 	fileId_ = fileId;
 	setCoreParameter("FileId", fileId);
+}
+
+std::string CreatePhotoRequest::getLibraryId()const
+{
+	return libraryId_;
+}
+
+void CreatePhotoRequest::setLibraryId(const std::string& libraryId)
+{
+	libraryId_ = libraryId;
+	setCoreParameter("LibraryId", libraryId);
+}
+
+std::string CreatePhotoRequest::getUploadType()const
+{
+	return uploadType_;
+}
+
+void CreatePhotoRequest::setUploadType(const std::string& uploadType)
+{
+	uploadType_ = uploadType;
+	setCoreParameter("UploadType", uploadType);
+}
+
+long CreatePhotoRequest::getShareExpireTime()const
+{
+	return shareExpireTime_;
+}
+
+void CreatePhotoRequest::setShareExpireTime(long shareExpireTime)
+{
+	shareExpireTime_ = shareExpireTime;
+	setCoreParameter("ShareExpireTime", std::to_string(shareExpireTime));
 }
 

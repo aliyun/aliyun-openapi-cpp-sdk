@@ -47,17 +47,6 @@ void QueryVideoPoseJobListRequest::setResourceOwnerAccount(const std::string& re
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryVideoPoseJobListRequest::getJobIds()const
-{
-	return jobIds_;
-}
-
-void QueryVideoPoseJobListRequest::setJobIds(const std::string& jobIds)
-{
-	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
-}
-
 std::string QueryVideoPoseJobListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryVideoPoseJobListRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryVideoPoseJobListRequest::getJobIds()const
+{
+	return jobIds_;
+}
+
+void QueryVideoPoseJobListRequest::setJobIds(const std::string& jobIds)
+{
+	jobIds_ = jobIds;
+	setCoreParameter("JobIds", jobIds);
 }
 

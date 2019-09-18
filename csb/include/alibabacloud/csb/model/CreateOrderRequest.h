@@ -39,13 +39,10 @@ namespace AlibabaCloud
 				void setData(const std::string& data);
 				long getCsbId()const;
 				void setCsbId(long csbId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
             private:
 				std::string data_;
 				long csbId_;
-				std::string regionId_;
 
 			};
 		}

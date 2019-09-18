@@ -25,6 +25,28 @@ DescribeDnsProductInstancesRequest::DescribeDnsProductInstancesRequest() :
 DescribeDnsProductInstancesRequest::~DescribeDnsProductInstancesRequest()
 {}
 
+long DescribeDnsProductInstancesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDnsProductInstancesRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeDnsProductInstancesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDnsProductInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeDnsProductInstancesRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -67,27 +89,5 @@ void DescribeDnsProductInstancesRequest::setVersionCode(const std::string& versi
 {
 	versionCode_ = versionCode;
 	setCoreParameter("VersionCode", versionCode);
-}
-
-long DescribeDnsProductInstancesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeDnsProductInstancesRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeDnsProductInstancesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDnsProductInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

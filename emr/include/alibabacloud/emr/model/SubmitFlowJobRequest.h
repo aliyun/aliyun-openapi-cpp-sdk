@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				SubmitFlowJobRequest();
 				~SubmitFlowJobRequest();
 
+				std::string getConf()const;
+				void setConf(const std::string& conf);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getConf()const;
-				void setConf(const std::string& conf);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 
             private:
+				std::string conf_;
+				std::string clusterId_;
 				std::string jobId_;
 				std::string hostName_;
 				std::string regionId_;
-				std::string conf_;
-				std::string clusterId_;
 				std::string projectId_;
 
 			};

@@ -36,28 +36,6 @@ void DeleteResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteResourceQueueRequest::getResourceQueueId()const
-{
-	return resourceQueueId_;
-}
-
-void DeleteResourceQueueRequest::setResourceQueueId(const std::string& resourceQueueId)
-{
-	resourceQueueId_ = resourceQueueId;
-	setCoreParameter("ResourceQueueId", resourceQueueId);
-}
-
-std::string DeleteResourceQueueRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteResourceQueueRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteResourceQueueRequest::getClusterId()const
 {
 	return clusterId_;
@@ -78,5 +56,27 @@ void DeleteResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteResourceQueueRequest::getResourceQueueId()const
+{
+	return resourceQueueId_;
+}
+
+void DeleteResourceQueueRequest::setResourceQueueId(const std::string& resourceQueueId)
+{
+	resourceQueueId_ = resourceQueueId;
+	setCoreParameter("ResourceQueueId", resourceQueueId);
+}
+
+std::string DeleteResourceQueueRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteResourceQueueRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

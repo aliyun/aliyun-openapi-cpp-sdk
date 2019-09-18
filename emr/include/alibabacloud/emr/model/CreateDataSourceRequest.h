@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getNavParentId()const;
 				void setNavParentId(const std::string& navParentId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getSourceType()const;
-				void setSourceType(const std::string& sourceType);
 				std::string getConf()const;
 				void setConf(const std::string& conf);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getSourceType()const;
+				void setSourceType(const std::string& sourceType);
 
             private:
 				long resourceOwnerId_;
-				std::string regionId_;
 				std::string navParentId_;
-				std::string name_;
 				std::string description_;
-				std::string sourceType_;
 				std::string conf_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				std::string name_;
+				std::string sourceType_;
 
 			};
 		}

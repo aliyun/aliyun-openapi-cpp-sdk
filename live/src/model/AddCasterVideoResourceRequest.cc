@@ -25,6 +25,28 @@ AddCasterVideoResourceRequest::AddCasterVideoResourceRequest() :
 AddCasterVideoResourceRequest::~AddCasterVideoResourceRequest()
 {}
 
+int AddCasterVideoResourceRequest::getEndOffset()const
+{
+	return endOffset_;
+}
+
+void AddCasterVideoResourceRequest::setEndOffset(int endOffset)
+{
+	endOffset_ = endOffset;
+	setCoreParameter("EndOffset", std::to_string(endOffset));
+}
+
+std::string AddCasterVideoResourceRequest::getMaterialId()const
+{
+	return materialId_;
+}
+
+void AddCasterVideoResourceRequest::setMaterialId(const std::string& materialId)
+{
+	materialId_ = materialId;
+	setCoreParameter("MaterialId", materialId);
+}
+
 std::string AddCasterVideoResourceRequest::getVodUrl()const
 {
 	return vodUrl_;
@@ -47,17 +69,6 @@ void AddCasterVideoResourceRequest::setCasterId(const std::string& casterId)
 	setCoreParameter("CasterId", casterId);
 }
 
-int AddCasterVideoResourceRequest::getEndOffset()const
-{
-	return endOffset_;
-}
-
-void AddCasterVideoResourceRequest::setEndOffset(int endOffset)
-{
-	endOffset_ = endOffset;
-	setCoreParameter("EndOffset", std::to_string(endOffset));
-}
-
 long AddCasterVideoResourceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,17 +78,6 @@ void AddCasterVideoResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AddCasterVideoResourceRequest::getMaterialId()const
-{
-	return materialId_;
-}
-
-void AddCasterVideoResourceRequest::setMaterialId(const std::string& materialId)
-{
-	materialId_ = materialId;
-	setCoreParameter("MaterialId", materialId);
 }
 
 int AddCasterVideoResourceRequest::getBeginOffset()const
@@ -100,17 +100,6 @@ void AddCasterVideoResourceRequest::setLiveStreamUrl(const std::string& liveStre
 {
 	liveStreamUrl_ = liveStreamUrl;
 	setCoreParameter("LiveStreamUrl", liveStreamUrl);
-}
-
-std::string AddCasterVideoResourceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AddCasterVideoResourceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddCasterVideoResourceRequest::getLocationId()const

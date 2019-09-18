@@ -58,17 +58,6 @@ void ListGroupApBriefConfigRequest::setApgroupId(long apgroupId)
 	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
-int ListGroupApBriefConfigRequest::getColCnt()const
-{
-	return colCnt_;
-}
-
-void ListGroupApBriefConfigRequest::setColCnt(int colCnt)
-{
-	colCnt_ = colCnt;
-	setCoreParameter("ColCnt", std::to_string(colCnt));
-}
-
 int ListGroupApBriefConfigRequest::getLength()const
 {
 	return length_;
@@ -78,28 +67,6 @@ void ListGroupApBriefConfigRequest::setLength(int length)
 {
 	length_ = length;
 	setCoreParameter("Length", std::to_string(length));
-}
-
-int ListGroupApBriefConfigRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListGroupApBriefConfigRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
-std::string ListGroupApBriefConfigRequest::getSearchMac()const
-{
-	return searchMac_;
-}
-
-void ListGroupApBriefConfigRequest::setSearchMac(const std::string& searchMac)
-{
-	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
 }
 
 std::string ListGroupApBriefConfigRequest::getOrderDir()const
@@ -122,5 +89,38 @@ void ListGroupApBriefConfigRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListGroupApBriefConfigRequest::getColCnt()const
+{
+	return colCnt_;
+}
+
+void ListGroupApBriefConfigRequest::setColCnt(int colCnt)
+{
+	colCnt_ = colCnt;
+	setCoreParameter("ColCnt", std::to_string(colCnt));
+}
+
+int ListGroupApBriefConfigRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListGroupApBriefConfigRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
+}
+
+std::string ListGroupApBriefConfigRequest::getSearchMac()const
+{
+	return searchMac_;
+}
+
+void ListGroupApBriefConfigRequest::setSearchMac(const std::string& searchMac)
+{
+	searchMac_ = searchMac;
+	setCoreParameter("SearchMac", searchMac);
 }
 

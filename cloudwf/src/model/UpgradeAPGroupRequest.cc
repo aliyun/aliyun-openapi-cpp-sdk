@@ -25,6 +25,17 @@ UpgradeAPGroupRequest::UpgradeAPGroupRequest() :
 UpgradeAPGroupRequest::~UpgradeAPGroupRequest()
 {}
 
+std::string UpgradeAPGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpgradeAPGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<long> UpgradeAPGroupRequest::getIds()const
 {
 	return ids_;
@@ -35,16 +46,5 @@ void UpgradeAPGroupRequest::setIds(const std::vector<long>& ids)
 	ids_ = ids;
 	for(int i = 0; i!= ids.size(); i++)
 		setCoreParameter("Ids."+ std::to_string(i), std::to_string(ids.at(i)));
-}
-
-std::string UpgradeAPGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpgradeAPGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -36,17 +36,6 @@ void ListUsersRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListUsersRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListUsersRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ListUsersRequest::getClusterId()const
 {
 	return clusterId_;
@@ -78,5 +67,16 @@ void ListUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListUsersRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListUsersRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

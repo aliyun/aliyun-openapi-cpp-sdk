@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getWblIpList()const;
 				void setWblIpList(const std::string& wblIpList);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getSourceCode()const;
 				void setSourceCode(const std::string& sourceCode);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
 				long resourceOwnerId_;
-				std::string sourceIp_;
 				std::string wblIpList_;
-				std::string lang_;
 				std::string sourceCode_;
+				std::string sourceIp_;
+				std::string lang_;
 
 			};
 		}

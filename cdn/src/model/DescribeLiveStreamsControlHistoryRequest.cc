@@ -25,28 +25,6 @@ DescribeLiveStreamsControlHistoryRequest::DescribeLiveStreamsControlHistoryReque
 DescribeLiveStreamsControlHistoryRequest::~DescribeLiveStreamsControlHistoryRequest()
 {}
 
-std::string DescribeLiveStreamsControlHistoryRequest::getAppName()const
-{
-	return appName_;
-}
-
-void DescribeLiveStreamsControlHistoryRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
-}
-
-std::string DescribeLiveStreamsControlHistoryRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveStreamsControlHistoryRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeLiveStreamsControlHistoryRequest::getDomainName()const
 {
 	return domainName_;
@@ -89,5 +67,27 @@ void DescribeLiveStreamsControlHistoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeLiveStreamsControlHistoryRequest::getAppName()const
+{
+	return appName_;
+}
+
+void DescribeLiveStreamsControlHistoryRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+std::string DescribeLiveStreamsControlHistoryRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeLiveStreamsControlHistoryRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -35,10 +35,12 @@ namespace AlibabaCloud
 				UpdateMediaCoverRequest();
 				~UpdateMediaCoverRequest();
 
-				std::string getCoverURL()const;
-				void setCoverURL(const std::string& coverURL);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCoverURL()const;
+				void setCoverURL(const std::string& coverURL);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -47,17 +49,15 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string coverURL_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string coverURL_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string mediaId_;
-				std::string accessKeyId_;
 
 			};
 		}

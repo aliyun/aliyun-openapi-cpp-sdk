@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getRepoNamespace()const;
 				void setRepoNamespace(const std::string& repoNamespace);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getPage()const;
@@ -48,7 +46,6 @@ namespace AlibabaCloud
 
             private:
 				std::string repoNamespace_;
-				std::string regionId_;
 				int pageSize_;
 				int page_;
 				std::string status_;

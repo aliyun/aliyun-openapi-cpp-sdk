@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CreateVerifySDKRequest();
 				~CreateVerifySDKRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getAppUrl()const;
 				void setAppUrl(const std::string& appUrl);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				std::string appUrl_;
-				std::string lang_;
 				std::string platform_;
+				std::string sourceIp_;
+				std::string lang_;
 
 			};
 		}

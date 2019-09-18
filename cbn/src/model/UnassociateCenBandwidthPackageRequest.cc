@@ -36,17 +36,6 @@ void UnassociateCenBandwidthPackageRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UnassociateCenBandwidthPackageRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UnassociateCenBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string UnassociateCenBandwidthPackageRequest::getCenId()const
 {
 	return cenId_;
@@ -58,15 +47,15 @@ void UnassociateCenBandwidthPackageRequest::setCenId(const std::string& cenId)
 	setCoreParameter("CenId", cenId);
 }
 
-std::string UnassociateCenBandwidthPackageRequest::getCenBandwidthPackageId()const
+std::string UnassociateCenBandwidthPackageRequest::getResourceOwnerAccount()const
 {
-	return cenBandwidthPackageId_;
+	return resourceOwnerAccount_;
 }
 
-void UnassociateCenBandwidthPackageRequest::setCenBandwidthPackageId(const std::string& cenBandwidthPackageId)
+void UnassociateCenBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	cenBandwidthPackageId_ = cenBandwidthPackageId;
-	setCoreParameter("CenBandwidthPackageId", cenBandwidthPackageId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnassociateCenBandwidthPackageRequest::getOwnerAccount()const
@@ -89,5 +78,16 @@ void UnassociateCenBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UnassociateCenBandwidthPackageRequest::getCenBandwidthPackageId()const
+{
+	return cenBandwidthPackageId_;
+}
+
+void UnassociateCenBandwidthPackageRequest::setCenBandwidthPackageId(const std::string& cenBandwidthPackageId)
+{
+	cenBandwidthPackageId_ = cenBandwidthPackageId;
+	setCoreParameter("CenBandwidthPackageId", cenBandwidthPackageId);
 }
 

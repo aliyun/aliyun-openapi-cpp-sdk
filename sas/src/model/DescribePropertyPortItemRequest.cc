@@ -1,0 +1,82 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/sas/model/DescribePropertyPortItemRequest.h>
+
+using AlibabaCloud::Sas::Model::DescribePropertyPortItemRequest;
+
+DescribePropertyPortItemRequest::DescribePropertyPortItemRequest() :
+	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyPortItem")
+{}
+
+DescribePropertyPortItemRequest::~DescribePropertyPortItemRequest()
+{}
+
+int DescribePropertyPortItemRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribePropertyPortItemRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribePropertyPortItemRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribePropertyPortItemRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string DescribePropertyPortItemRequest::getPort()const
+{
+	return port_;
+}
+
+void DescribePropertyPortItemRequest::setPort(const std::string& port)
+{
+	port_ = port;
+	setCoreParameter("Port", port);
+}
+
+int DescribePropertyPortItemRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribePropertyPortItemRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+bool DescribePropertyPortItemRequest::getForceFlush()const
+{
+	return forceFlush_;
+}
+
+void DescribePropertyPortItemRequest::setForceFlush(bool forceFlush)
+{
+	forceFlush_ = forceFlush;
+	setCoreParameter("ForceFlush", forceFlush ? "true" : "false");
+}
+

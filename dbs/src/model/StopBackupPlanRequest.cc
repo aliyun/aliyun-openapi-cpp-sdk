@@ -36,17 +36,6 @@ void StopBackupPlanRequest::setStopMethod(const std::string& stopMethod)
 	setCoreParameter("StopMethod", stopMethod);
 }
 
-std::string StopBackupPlanRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void StopBackupPlanRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string StopBackupPlanRequest::getClientToken()const
 {
 	return clientToken_;

@@ -25,17 +25,6 @@ AddDomainRequest::AddDomainRequest() :
 AddDomainRequest::~AddDomainRequest()
 {}
 
-std::string AddDomainRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void AddDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string AddDomainRequest::getGroupId()const
 {
 	return groupId_;
@@ -58,6 +47,28 @@ void AddDomainRequest::setDomainName(const std::string& domainName)
 	setCoreParameter("DomainName", domainName);
 }
 
+std::string AddDomainRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddDomainRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AddDomainRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void AddDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string AddDomainRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -78,16 +89,5 @@ void AddDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string AddDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

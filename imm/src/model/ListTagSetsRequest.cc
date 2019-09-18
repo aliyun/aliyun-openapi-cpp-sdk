@@ -36,28 +36,6 @@ void ListTagSetsRequest::setMaxKeys(int maxKeys)
 	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
-std::string ListTagSetsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListTagSetsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListTagSetsRequest::getMarker()const
-{
-	return marker_;
-}
-
-void ListTagSetsRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setCoreParameter("Marker", marker);
-}
-
 std::string ListTagSetsRequest::getProject()const
 {
 	return project_;
@@ -78,5 +56,16 @@ void ListTagSetsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListTagSetsRequest::getMarker()const
+{
+	return marker_;
+}
+
+void ListTagSetsRequest::setMarker(const std::string& marker)
+{
+	marker_ = marker;
+	setCoreParameter("Marker", marker);
 }
 

@@ -36,15 +36,26 @@ void CreateRecommendationTaskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateRecommendationTaskRequest::getInstanceId()const
+std::string CreateRecommendationTaskRequest::getStartTime()const
 {
-	return instanceId_;
+	return startTime_;
 }
 
-void CreateRecommendationTaskRequest::setInstanceId(const std::string& instanceId)
+void CreateRecommendationTaskRequest::setStartTime(const std::string& startTime)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+std::string CreateRecommendationTaskRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateRecommendationTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateRecommendationTaskRequest::getSecurityToken()const
@@ -58,6 +69,17 @@ void CreateRecommendationTaskRequest::setSecurityToken(const std::string& securi
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string CreateRecommendationTaskRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void CreateRecommendationTaskRequest::setNodeId(const std::string& nodeId)
+{
+	nodeId_ = nodeId;
+	setCoreParameter("NodeId", nodeId);
+}
+
 std::string CreateRecommendationTaskRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +89,6 @@ void CreateRecommendationTaskRequest::setResourceOwnerAccount(const std::string&
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateRecommendationTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateRecommendationTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateRecommendationTaskRequest::getOwnerAccount()const
@@ -102,17 +113,6 @@ void CreateRecommendationTaskRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string CreateRecommendationTaskRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void CreateRecommendationTaskRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long CreateRecommendationTaskRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,25 +124,14 @@ void CreateRecommendationTaskRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateRecommendationTaskRequest::getNodeId()const
+std::string CreateRecommendationTaskRequest::getInstanceId()const
 {
-	return nodeId_;
+	return instanceId_;
 }
 
-void CreateRecommendationTaskRequest::setNodeId(const std::string& nodeId)
+void CreateRecommendationTaskRequest::setInstanceId(const std::string& instanceId)
 {
-	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
-}
-
-std::string CreateRecommendationTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateRecommendationTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

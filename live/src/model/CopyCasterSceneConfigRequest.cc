@@ -36,15 +36,15 @@ void CopyCasterSceneConfigRequest::setFromSceneId(const std::string& fromSceneId
 	setCoreParameter("FromSceneId", fromSceneId);
 }
 
-std::string CopyCasterSceneConfigRequest::getRegionId()const
+std::string CopyCasterSceneConfigRequest::getToSceneId()const
 {
-	return regionId_;
+	return toSceneId_;
 }
 
-void CopyCasterSceneConfigRequest::setRegionId(const std::string& regionId)
+void CopyCasterSceneConfigRequest::setToSceneId(const std::string& toSceneId)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	toSceneId_ = toSceneId;
+	setCoreParameter("ToSceneId", toSceneId);
 }
 
 std::string CopyCasterSceneConfigRequest::getCasterId()const
@@ -67,16 +67,5 @@ void CopyCasterSceneConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CopyCasterSceneConfigRequest::getToSceneId()const
-{
-	return toSceneId_;
-}
-
-void CopyCasterSceneConfigRequest::setToSceneId(const std::string& toSceneId)
-{
-	toSceneId_ = toSceneId;
-	setCoreParameter("ToSceneId", toSceneId);
 }
 

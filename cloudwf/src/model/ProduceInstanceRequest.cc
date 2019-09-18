@@ -36,17 +36,6 @@ void ProduceInstanceRequest::setTraceId(const std::string& traceId)
 	setCoreParameter("TraceId", traceId);
 }
 
-std::string ProduceInstanceRequest::getProduceParameter()const
-{
-	return produceParameter_;
-}
-
-void ProduceInstanceRequest::setProduceParameter(const std::string& produceParameter)
-{
-	produceParameter_ = produceParameter;
-	setCoreParameter("ProduceParameter", produceParameter);
-}
-
 std::string ProduceInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void ProduceInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ProduceInstanceRequest::getProduceParameter()const
+{
+	return produceParameter_;
+}
+
+void ProduceInstanceRequest::setProduceParameter(const std::string& produceParameter)
+{
+	produceParameter_ = produceParameter;
+	setCoreParameter("ProduceParameter", produceParameter);
 }
 

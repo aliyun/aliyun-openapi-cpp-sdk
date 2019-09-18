@@ -47,6 +47,39 @@ void QueryTrademarkMonitorResultsRequest::setTmName(const std::string& tmName)
 	setCoreParameter("TmName", tmName);
 }
 
+std::string QueryTrademarkMonitorResultsRequest::getClassification()const
+{
+	return classification_;
+}
+
+void QueryTrademarkMonitorResultsRequest::setClassification(const std::string& classification)
+{
+	classification_ = classification;
+	setCoreParameter("Classification", classification);
+}
+
+int QueryTrademarkMonitorResultsRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryTrademarkMonitorResultsRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+std::string QueryTrademarkMonitorResultsRequest::getRegistrationNumber()const
+{
+	return registrationNumber_;
+}
+
+void QueryTrademarkMonitorResultsRequest::setRegistrationNumber(const std::string& registrationNumber)
+{
+	registrationNumber_ = registrationNumber;
+	setCoreParameter("RegistrationNumber", registrationNumber);
+}
+
 std::string QueryTrademarkMonitorResultsRequest::getApplyYear()const
 {
 	return applyYear_;
@@ -89,38 +122,5 @@ void QueryTrademarkMonitorResultsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
 	setCoreParameter("RuleId", std::to_string(ruleId));
-}
-
-std::string QueryTrademarkMonitorResultsRequest::getClassification()const
-{
-	return classification_;
-}
-
-void QueryTrademarkMonitorResultsRequest::setClassification(const std::string& classification)
-{
-	classification_ = classification;
-	setCoreParameter("Classification", classification);
-}
-
-int QueryTrademarkMonitorResultsRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void QueryTrademarkMonitorResultsRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
-}
-
-std::string QueryTrademarkMonitorResultsRequest::getRegistrationNumber()const
-{
-	return registrationNumber_;
-}
-
-void QueryTrademarkMonitorResultsRequest::setRegistrationNumber(const std::string& registrationNumber)
-{
-	registrationNumber_ = registrationNumber;
-	setCoreParameter("RegistrationNumber", registrationNumber);
 }
 

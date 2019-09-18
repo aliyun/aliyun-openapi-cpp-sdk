@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ListFlowCategoryRequest();
 				~ListFlowCategoryRequest();
 
+				std::string getParentId()const;
+				void setParentId(const std::string& parentId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				bool getRoot()const;
@@ -43,18 +47,14 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
-				std::string getParentId()const;
-				void setParentId(const std::string& parentId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				std::string parentId_;
+				int pageNumber_;
 				std::string regionId_;
 				bool root_;
 				int pageSize_;
 				std::string projectId_;
-				std::string parentId_;
-				int pageNumber_;
 
 			};
 		}

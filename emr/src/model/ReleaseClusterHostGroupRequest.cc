@@ -36,6 +36,28 @@ void ReleaseClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ReleaseClusterHostGroupRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ReleaseClusterHostGroupRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ReleaseClusterHostGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReleaseClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ReleaseClusterHostGroupRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,27 +89,5 @@ void ReleaseClusterHostGroupRequest::setInstanceIdList(const std::string& instan
 {
 	instanceIdList_ = instanceIdList;
 	setCoreParameter("InstanceIdList", instanceIdList);
-}
-
-std::string ReleaseClusterHostGroupRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ReleaseClusterHostGroupRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string ReleaseClusterHostGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ReleaseClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

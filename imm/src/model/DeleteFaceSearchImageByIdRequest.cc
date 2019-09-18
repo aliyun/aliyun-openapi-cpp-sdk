@@ -36,17 +36,6 @@ void DeleteFaceSearchImageByIdRequest::setImageId(const std::string& imageId)
 	setCoreParameter("ImageId", imageId);
 }
 
-std::string DeleteFaceSearchImageByIdRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteFaceSearchImageByIdRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteFaceSearchImageByIdRequest::getProject()const
 {
 	return project_;
@@ -58,15 +47,15 @@ void DeleteFaceSearchImageByIdRequest::setProject(const std::string& project)
 	setCoreParameter("Project", project);
 }
 
-std::string DeleteFaceSearchImageByIdRequest::getSrcUri()const
+std::string DeleteFaceSearchImageByIdRequest::getAccessKeyId()const
 {
-	return srcUri_;
+	return accessKeyId_;
 }
 
-void DeleteFaceSearchImageByIdRequest::setSrcUri(const std::string& srcUri)
+void DeleteFaceSearchImageByIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteFaceSearchImageByIdRequest::getGroupName()const
@@ -80,6 +69,17 @@ void DeleteFaceSearchImageByIdRequest::setGroupName(const std::string& groupName
 	setCoreParameter("GroupName", groupName);
 }
 
+std::string DeleteFaceSearchImageByIdRequest::getSrcUri()const
+{
+	return srcUri_;
+}
+
+void DeleteFaceSearchImageByIdRequest::setSrcUri(const std::string& srcUri)
+{
+	srcUri_ = srcUri;
+	setCoreParameter("SrcUri", srcUri);
+}
+
 std::string DeleteFaceSearchImageByIdRequest::getUser()const
 {
 	return user_;
@@ -89,16 +89,5 @@ void DeleteFaceSearchImageByIdRequest::setUser(const std::string& user)
 {
 	user_ = user;
 	setCoreParameter("User", user);
-}
-
-std::string DeleteFaceSearchImageByIdRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteFaceSearchImageByIdRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

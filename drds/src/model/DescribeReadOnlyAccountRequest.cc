@@ -25,17 +25,6 @@ DescribeReadOnlyAccountRequest::DescribeReadOnlyAccountRequest() :
 DescribeReadOnlyAccountRequest::~DescribeReadOnlyAccountRequest()
 {}
 
-std::string DescribeReadOnlyAccountRequest::getDbName()const
-{
-	return dbName_;
-}
-
-void DescribeReadOnlyAccountRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
-}
-
 std::string DescribeReadOnlyAccountRequest::getDrdsInstanceId()const
 {
 	return drdsInstanceId_;
@@ -56,5 +45,16 @@ void DescribeReadOnlyAccountRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeReadOnlyAccountRequest::getDbName()const
+{
+	return dbName_;
+}
+
+void DescribeReadOnlyAccountRequest::setDbName(const std::string& dbName)
+{
+	dbName_ = dbName;
+	setCoreParameter("DbName", dbName);
 }
 

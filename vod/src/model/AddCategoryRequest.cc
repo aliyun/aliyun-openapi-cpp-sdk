@@ -36,28 +36,6 @@ void AddCategoryRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
-std::string AddCategoryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AddCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string AddCategoryRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddCategoryRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
-}
-
 std::string AddCategoryRequest::getType()const
 {
 	return type_;
@@ -89,5 +67,27 @@ void AddCategoryRequest::setCateName(const std::string& cateName)
 {
 	cateName_ = cateName;
 	setCoreParameter("CateName", cateName);
+}
+
+std::string AddCategoryRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void AddCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string AddCategoryRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void AddCategoryRequest::setOwnerId(const std::string& ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", ownerId);
 }
 

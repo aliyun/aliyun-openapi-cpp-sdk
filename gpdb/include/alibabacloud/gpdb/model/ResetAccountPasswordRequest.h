@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ResetAccountPasswordRequest();
 				~ResetAccountPasswordRequest();
 
-				std::string getAccountPassword()const;
-				void setAccountPassword(const std::string& accountPassword);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getAccountName()const;
 				void setAccountName(const std::string& accountName);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAccountPassword()const;
+				void setAccountPassword(const std::string& accountPassword);
 
             private:
-				std::string accountPassword_;
+				std::string accessKeyId_;
 				std::string accountName_;
 				std::string dBInstanceId_;
-				std::string accessKeyId_;
+				std::string accountPassword_;
 
 			};
 		}

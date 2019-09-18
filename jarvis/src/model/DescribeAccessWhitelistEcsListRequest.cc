@@ -25,6 +25,17 @@ DescribeAccessWhitelistEcsListRequest::DescribeAccessWhitelistEcsListRequest() :
 DescribeAccessWhitelistEcsListRequest::~DescribeAccessWhitelistEcsListRequest()
 {}
 
+std::string DescribeAccessWhitelistEcsListRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeAccessWhitelistEcsListRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeAccessWhitelistEcsListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeAccessWhitelistEcsListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeAccessWhitelistEcsListRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeAccessWhitelistEcsListRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

@@ -25,39 +25,6 @@ DescribeOssIncrementStatsRequest::DescribeOssIncrementStatsRequest() :
 DescribeOssIncrementStatsRequest::~DescribeOssIncrementStatsRequest()
 {}
 
-std::string DescribeOssIncrementStatsRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void DescribeOssIncrementStatsRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
-}
-
-std::string DescribeOssIncrementStatsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOssIncrementStatsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeOssIncrementStatsRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeOssIncrementStatsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string DescribeOssIncrementStatsRequest::getStartDate()const
 {
 	return startDate_;
@@ -89,5 +56,38 @@ void DescribeOssIncrementStatsRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
 	setCoreParameter("Scene", scene);
+}
+
+std::string DescribeOssIncrementStatsRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void DescribeOssIncrementStatsRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
+}
+
+std::string DescribeOssIncrementStatsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOssIncrementStatsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeOssIncrementStatsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeOssIncrementStatsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

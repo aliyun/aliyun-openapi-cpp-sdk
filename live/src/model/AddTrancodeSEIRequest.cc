@@ -25,15 +25,15 @@ AddTrancodeSEIRequest::AddTrancodeSEIRequest() :
 AddTrancodeSEIRequest::~AddTrancodeSEIRequest()
 {}
 
-int AddTrancodeSEIRequest::getDelay()const
+std::string AddTrancodeSEIRequest::getPattern()const
 {
-	return delay_;
+	return pattern_;
 }
 
-void AddTrancodeSEIRequest::setDelay(int delay)
+void AddTrancodeSEIRequest::setPattern(const std::string& pattern)
 {
-	delay_ = delay;
-	setCoreParameter("Delay", std::to_string(delay));
+	pattern_ = pattern;
+	setCoreParameter("Pattern", pattern);
 }
 
 std::string AddTrancodeSEIRequest::getAppName()const
@@ -47,17 +47,6 @@ void AddTrancodeSEIRequest::setAppName(const std::string& appName)
 	setCoreParameter("AppName", appName);
 }
 
-std::string AddTrancodeSEIRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AddTrancodeSEIRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int AddTrancodeSEIRequest::getRepeat()const
 {
 	return repeat_;
@@ -67,28 +56,6 @@ void AddTrancodeSEIRequest::setRepeat(int repeat)
 {
 	repeat_ = repeat;
 	setCoreParameter("Repeat", std::to_string(repeat));
-}
-
-std::string AddTrancodeSEIRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void AddTrancodeSEIRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string AddTrancodeSEIRequest::getPattern()const
-{
-	return pattern_;
-}
-
-void AddTrancodeSEIRequest::setPattern(const std::string& pattern)
-{
-	pattern_ = pattern;
-	setCoreParameter("Pattern", pattern);
 }
 
 std::string AddTrancodeSEIRequest::getText()const
@@ -102,6 +69,28 @@ void AddTrancodeSEIRequest::setText(const std::string& text)
 	setCoreParameter("Text", text);
 }
 
+std::string AddTrancodeSEIRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void AddTrancodeSEIRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
+}
+
+std::string AddTrancodeSEIRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void AddTrancodeSEIRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
 long AddTrancodeSEIRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +102,14 @@ void AddTrancodeSEIRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AddTrancodeSEIRequest::getStreamName()const
+int AddTrancodeSEIRequest::getDelay()const
 {
-	return streamName_;
+	return delay_;
 }
 
-void AddTrancodeSEIRequest::setStreamName(const std::string& streamName)
+void AddTrancodeSEIRequest::setDelay(int delay)
 {
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	delay_ = delay;
+	setCoreParameter("Delay", std::to_string(delay));
 }
 

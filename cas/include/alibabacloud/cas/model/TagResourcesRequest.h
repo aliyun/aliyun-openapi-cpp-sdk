@@ -40,31 +40,31 @@ namespace AlibabaCloud
 				TagResourcesRequest();
 				~TagResourcesRequest();
 
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
+				std::string getTagOwnerUid()const;
+				void setTagOwnerUid(const std::string& tagOwnerUid);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getScope()const;
 				void setScope(const std::string& scope);
-				std::string getTagOwnerUid()const;
-				void setTagOwnerUid(const std::string& tagOwnerUid);
 				std::string getTagOwnerBid()const;
 				void setTagOwnerBid(const std::string& tagOwnerBid);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::vector<std::string> getResourceId()const;
+				void setResourceId(const std::vector<std::string>& resourceId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 
             private:
-				std::vector<std::string> resourceId_;
+				std::string tagOwnerUid_;
 				std::string sourceIp_;
 				std::string regionId_;
 				std::string scope_;
-				std::string tagOwnerUid_;
 				std::string tagOwnerBid_;
 				std::vector<Tag> tag_;
+				std::vector<std::string> resourceId_;
 				std::string resourceType_;
 
 			};

@@ -25,6 +25,17 @@ DescribeCaptchaDayRequest::DescribeCaptchaDayRequest() :
 DescribeCaptchaDayRequest::~DescribeCaptchaDayRequest()
 {}
 
+std::string DescribeCaptchaDayRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeCaptchaDayRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string DescribeCaptchaDayRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -67,16 +78,5 @@ void DescribeCaptchaDayRequest::setTime(const std::string& time)
 {
 	time_ = time;
 	setCoreParameter("Time", time);
-}
-
-std::string DescribeCaptchaDayRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeCaptchaDayRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

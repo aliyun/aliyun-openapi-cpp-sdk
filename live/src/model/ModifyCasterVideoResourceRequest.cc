@@ -25,6 +25,28 @@ ModifyCasterVideoResourceRequest::ModifyCasterVideoResourceRequest() :
 ModifyCasterVideoResourceRequest::~ModifyCasterVideoResourceRequest()
 {}
 
+int ModifyCasterVideoResourceRequest::getEndOffset()const
+{
+	return endOffset_;
+}
+
+void ModifyCasterVideoResourceRequest::setEndOffset(int endOffset)
+{
+	endOffset_ = endOffset;
+	setCoreParameter("EndOffset", std::to_string(endOffset));
+}
+
+std::string ModifyCasterVideoResourceRequest::getMaterialId()const
+{
+	return materialId_;
+}
+
+void ModifyCasterVideoResourceRequest::setMaterialId(const std::string& materialId)
+{
+	materialId_ = materialId;
+	setCoreParameter("MaterialId", materialId);
+}
+
 std::string ModifyCasterVideoResourceRequest::getResourceId()const
 {
 	return resourceId_;
@@ -58,17 +80,6 @@ void ModifyCasterVideoResourceRequest::setCasterId(const std::string& casterId)
 	setCoreParameter("CasterId", casterId);
 }
 
-int ModifyCasterVideoResourceRequest::getEndOffset()const
-{
-	return endOffset_;
-}
-
-void ModifyCasterVideoResourceRequest::setEndOffset(int endOffset)
-{
-	endOffset_ = endOffset;
-	setCoreParameter("EndOffset", std::to_string(endOffset));
-}
-
 long ModifyCasterVideoResourceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,17 +89,6 @@ void ModifyCasterVideoResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyCasterVideoResourceRequest::getMaterialId()const
-{
-	return materialId_;
-}
-
-void ModifyCasterVideoResourceRequest::setMaterialId(const std::string& materialId)
-{
-	materialId_ = materialId;
-	setCoreParameter("MaterialId", materialId);
 }
 
 int ModifyCasterVideoResourceRequest::getBeginOffset()const
@@ -111,17 +111,6 @@ void ModifyCasterVideoResourceRequest::setLiveStreamUrl(const std::string& liveS
 {
 	liveStreamUrl_ = liveStreamUrl;
 	setCoreParameter("LiveStreamUrl", liveStreamUrl);
-}
-
-std::string ModifyCasterVideoResourceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyCasterVideoResourceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 int ModifyCasterVideoResourceRequest::getPtsCallbackInterval()const

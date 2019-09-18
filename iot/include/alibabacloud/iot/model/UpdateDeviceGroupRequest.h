@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				UpdateDeviceGroupRequest();
 				~UpdateDeviceGroupRequest();
 
-				std::string getGroupDesc()const;
-				void setGroupDesc(const std::string& groupDesc);
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getGroupDesc()const;
+				void setGroupDesc(const std::string& groupDesc);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 
             private:
-				std::string groupDesc_;
-				std::string iotInstanceId_;
 				std::string groupId_;
 				std::string accessKeyId_;
+				std::string groupDesc_;
+				std::string iotInstanceId_;
 
 			};
 		}

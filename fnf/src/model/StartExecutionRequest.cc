@@ -25,17 +25,6 @@ StartExecutionRequest::StartExecutionRequest() :
 StartExecutionRequest::~StartExecutionRequest()
 {}
 
-std::string StartExecutionRequest::getInput()const
-{
-	return input_;
-}
-
-void StartExecutionRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setCoreParameter("Input", input);
-}
-
 std::string StartExecutionRequest::getExecutionName()const
 {
 	return executionName_;
@@ -45,6 +34,17 @@ void StartExecutionRequest::setExecutionName(const std::string& executionName)
 {
 	executionName_ = executionName;
 	setCoreParameter("ExecutionName", executionName);
+}
+
+std::string StartExecutionRequest::getInput()const
+{
+	return input_;
+}
+
+void StartExecutionRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 
 std::string StartExecutionRequest::getRequestId()const

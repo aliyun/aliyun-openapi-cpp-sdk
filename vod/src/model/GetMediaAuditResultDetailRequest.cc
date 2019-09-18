@@ -47,17 +47,6 @@ void GetMediaAuditResultDetailRequest::setResourceOwnerAccount(const std::string
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-int GetMediaAuditResultDetailRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void GetMediaAuditResultDetailRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
-}
-
 std::string GetMediaAuditResultDetailRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void GetMediaAuditResultDetailRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int GetMediaAuditResultDetailRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void GetMediaAuditResultDetailRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 

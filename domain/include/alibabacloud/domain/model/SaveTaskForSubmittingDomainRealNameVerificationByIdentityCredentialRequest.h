@@ -37,12 +37,12 @@ namespace AlibabaCloud
 
 				std::string getIdentityCredentialType()const;
 				void setIdentityCredentialType(const std::string& identityCredentialType);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getIdentityCredential()const;
 				void setIdentityCredential(const std::string& identityCredential);
 				std::vector<std::string> getDomainName()const;
 				void setDomainName(const std::vector<std::string>& domainName);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getIdentityCredentialNo()const;
@@ -50,9 +50,9 @@ namespace AlibabaCloud
 
             private:
 				std::string identityCredentialType_;
-				std::string userClientIp_;
 				std::string identityCredential_;
 				std::vector<std::string> domainName_;
+				std::string userClientIp_;
 				std::string lang_;
 				std::string identityCredentialNo_;
 

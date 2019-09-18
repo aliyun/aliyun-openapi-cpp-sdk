@@ -39,37 +39,37 @@ namespace AlibabaCloud
 				void setNote(const std::string& note);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getDstPort()const;
 				void setDstPort(int dstPort);
-				std::string getInstanceIdList()const;
-				void setInstanceIdList(const std::string& instanceIdList);
-				int getLiveTime()const;
-				void setLiveTime(int liveTime);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getProductName()const;
 				void setProductName(const std::string& productName);
-				int getWhiteListType()const;
-				void setWhiteListType(int whiteListType);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getSrcUid()const;
 				void setSrcUid(const std::string& srcUid);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
+				int getWhiteListType()const;
+				void setWhiteListType(int whiteListType);
+				std::string getInstanceIdList()const;
+				void setInstanceIdList(const std::string& instanceIdList);
+				int getLiveTime()const;
+				void setLiveTime(int liveTime);
 
             private:
 				std::string note_;
 				long resourceOwnerId_;
-				std::string sourceIp_;
 				int dstPort_;
-				std::string instanceIdList_;
-				int liveTime_;
+				std::string sourceCode_;
+				std::string sourceIp_;
 				std::string productName_;
-				int whiteListType_;
 				std::string lang_;
 				std::string srcUid_;
-				std::string sourceCode_;
+				int whiteListType_;
+				std::string instanceIdList_;
+				int liveTime_;
 
 			};
 		}

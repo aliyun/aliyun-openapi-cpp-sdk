@@ -33,7 +33,7 @@ namespace AlibabaCloud
 				struct HostComponentInfo
 				{
 					std::string hostName;
-					std::vector<std::string> componentNameList;
+					ComponentNameList componentNameList;
 					std::string serviceName;
 				};
 				struct HostGroup
@@ -63,32 +63,32 @@ namespace AlibabaCloud
 				ResizeClusterV2Request();
 				~ResizeClusterV2Request();
 
-				std::string getVswitchId()const;
-				void setVswitchId(const std::string& vswitchId);
 				bool getIsOpenPublicIp()const;
 				void setIsOpenPublicIp(bool isOpenPublicIp);
 				bool getAutoPayOrder()const;
 				void setAutoPayOrder(bool autoPayOrder);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getVswitchId()const;
+				void setVswitchId(const std::string& vswitchId);
 				std::vector<HostComponentInfo> getHostComponentInfo()const;
 				void setHostComponentInfo(const std::vector<HostComponentInfo>& hostComponentInfo);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::vector<HostGroup> getHostGroup()const;
 				void setHostGroup(const std::vector<HostGroup>& hostGroup);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string vswitchId_;
 				bool isOpenPublicIp_;
 				bool autoPayOrder_;
+				std::string clusterId_;
+				std::string accessKeyId_;
+				std::string vswitchId_;
 				std::vector<HostComponentInfo> hostComponentInfo_;
 				std::string regionId_;
 				std::vector<HostGroup> hostGroup_;
-				std::string clusterId_;
-				std::string accessKeyId_;
 
 			};
 		}

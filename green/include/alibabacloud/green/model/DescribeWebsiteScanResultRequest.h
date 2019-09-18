@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				DescribeWebsiteScanResultRequest();
 				~DescribeWebsiteScanResultRequest();
 
-				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getSubServiceModule()const;
 				void setSubServiceModule(const std::string& subServiceModule);
-				std::string getSiteUrl()const;
-				void setSiteUrl(const std::string& siteUrl);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getHandleStatus()const;
-				void setHandleStatus(const std::string& handleStatus);
-				std::string getDomain()const;
-				void setDomain(const std::string& domain);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				int getTotalCount()const;
+				void setTotalCount(int totalCount);
+				std::string getSiteUrl()const;
+				void setSiteUrl(const std::string& siteUrl);
+				std::string getHandleStatus()const;
+				void setHandleStatus(const std::string& handleStatus);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				std::string getLabel()const;
 				void setLabel(const std::string& label);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				std::string getDomain()const;
+				void setDomain(const std::string& domain);
 
             private:
-				int totalCount_;
 				std::string subServiceModule_;
-				std::string siteUrl_;
 				std::string sourceIp_;
-				std::string handleStatus_;
-				std::string domain_;
 				int pageSize_;
+				std::string lang_;
+				int totalCount_;
+				std::string siteUrl_;
+				std::string handleStatus_;
 				int currentPage_;
 				std::string label_;
-				std::string lang_;
+				std::string domain_;
 
 			};
 		}

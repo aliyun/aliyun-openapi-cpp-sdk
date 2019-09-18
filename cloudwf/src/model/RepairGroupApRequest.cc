@@ -25,17 +25,6 @@ RepairGroupApRequest::RepairGroupApRequest() :
 RepairGroupApRequest::~RepairGroupApRequest()
 {}
 
-long RepairGroupApRequest::getId()const
-{
-	return id_;
-}
-
-void RepairGroupApRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string RepairGroupApRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void RepairGroupApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long RepairGroupApRequest::getId()const
+{
+	return id_;
+}
+
+void RepairGroupApRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

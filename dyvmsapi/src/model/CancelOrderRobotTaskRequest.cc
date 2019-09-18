@@ -58,17 +58,6 @@ void CancelOrderRobotTaskRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-long CancelOrderRobotTaskRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void CancelOrderRobotTaskRequest::setTaskId(long taskId)
-{
-	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
-}
-
 std::string CancelOrderRobotTaskRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +67,16 @@ void CancelOrderRobotTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long CancelOrderRobotTaskRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void CancelOrderRobotTaskRequest::setTaskId(long taskId)
+{
+	taskId_ = taskId;
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

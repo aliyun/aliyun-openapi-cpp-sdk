@@ -37,22 +37,22 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getCenId()const;
+				void setCenId(const std::string& cenId);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
 				std::string getLogStoreName()const;
 				void setLogStoreName(const std::string& logStoreName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getCenId()const;
-				void setCenId(const std::string& cenId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getFlowLogName()const;
@@ -60,14 +60,14 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string cenId_;
+				std::string description_;
+				std::string regionId_;
 				std::string projectName_;
 				std::string logStoreName_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
-				std::string regionId_;
-				std::string cenId_;
 				std::string ownerAccount_;
-				std::string description_;
 				long ownerId_;
 				std::string flowLogName_;
 

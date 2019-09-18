@@ -25,6 +25,28 @@ PutEventRuleRequest::PutEventRuleRequest() :
 PutEventRuleRequest::~PutEventRuleRequest()
 {}
 
+std::string PutEventRuleRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void PutEventRuleRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string PutEventRuleRequest::getDescription()const
+{
+	return description_;
+}
+
+void PutEventRuleRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
 std::vector<PutEventRuleRequest::EventPattern> PutEventRuleRequest::getEventPattern()const
 {
 	return eventPattern_;
@@ -45,17 +67,6 @@ void PutEventRuleRequest::setEventPattern(const std::vector<EventPattern>& event
 	}
 }
 
-std::string PutEventRuleRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void PutEventRuleRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
 std::string PutEventRuleRequest::getName()const
 {
 	return name_;
@@ -65,17 +76,6 @@ void PutEventRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string PutEventRuleRequest::getDescription()const
-{
-	return description_;
-}
-
-void PutEventRuleRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 std::string PutEventRuleRequest::getEventType()const

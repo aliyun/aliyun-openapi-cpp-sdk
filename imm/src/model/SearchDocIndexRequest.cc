@@ -36,6 +36,94 @@ void SearchDocIndexRequest::setModifiedTimeEnd(int modifiedTimeEnd)
 	setCoreParameter("ModifiedTimeEnd", std::to_string(modifiedTimeEnd));
 }
 
+int SearchDocIndexRequest::getSizeLimitEnd()const
+{
+	return sizeLimitEnd_;
+}
+
+void SearchDocIndexRequest::setSizeLimitEnd(int sizeLimitEnd)
+{
+	sizeLimitEnd_ = sizeLimitEnd;
+	setCoreParameter("SizeLimitEnd", std::to_string(sizeLimitEnd));
+}
+
+std::string SearchDocIndexRequest::getProject()const
+{
+	return project_;
+}
+
+void SearchDocIndexRequest::setProject(const std::string& project)
+{
+	project_ = project;
+	setCoreParameter("Project", project);
+}
+
+int SearchDocIndexRequest::getModifiedTimeStart()const
+{
+	return modifiedTimeStart_;
+}
+
+void SearchDocIndexRequest::setModifiedTimeStart(int modifiedTimeStart)
+{
+	modifiedTimeStart_ = modifiedTimeStart;
+	setCoreParameter("ModifiedTimeStart", std::to_string(modifiedTimeStart));
+}
+
+int SearchDocIndexRequest::getPageNumLimitStart()const
+{
+	return pageNumLimitStart_;
+}
+
+void SearchDocIndexRequest::setPageNumLimitStart(int pageNumLimitStart)
+{
+	pageNumLimitStart_ = pageNumLimitStart;
+	setCoreParameter("PageNumLimitStart", std::to_string(pageNumLimitStart));
+}
+
+std::string SearchDocIndexRequest::getContent()const
+{
+	return content_;
+}
+
+void SearchDocIndexRequest::setContent(const std::string& content)
+{
+	content_ = content;
+	setCoreParameter("Content", content);
+}
+
+std::string SearchDocIndexRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SearchDocIndexRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int SearchDocIndexRequest::getSizeLimitStart()const
+{
+	return sizeLimitStart_;
+}
+
+void SearchDocIndexRequest::setSizeLimitStart(int sizeLimitStart)
+{
+	sizeLimitStart_ = sizeLimitStart;
+	setCoreParameter("SizeLimitStart", std::to_string(sizeLimitStart));
+}
+
+int SearchDocIndexRequest::getLimit()const
+{
+	return limit_;
+}
+
+void SearchDocIndexRequest::setLimit(int limit)
+{
+	limit_ = limit;
+	setCoreParameter("Limit", std::to_string(limit));
+}
+
 std::string SearchDocIndexRequest::getCustomKey1()const
 {
 	return customKey1_;
@@ -56,17 +144,6 @@ void SearchDocIndexRequest::setSet(const std::string& set)
 {
 	set_ = set;
 	setCoreParameter("Set", set);
-}
-
-int SearchDocIndexRequest::getSizeLimitEnd()const
-{
-	return sizeLimitEnd_;
-}
-
-void SearchDocIndexRequest::setSizeLimitEnd(int sizeLimitEnd)
-{
-	sizeLimitEnd_ = sizeLimitEnd;
-	setCoreParameter("SizeLimitEnd", std::to_string(sizeLimitEnd));
 }
 
 std::string SearchDocIndexRequest::getCustomKey5()const
@@ -124,39 +201,6 @@ void SearchDocIndexRequest::setCustomKey2(const std::string& customKey2)
 	setCoreParameter("CustomKey2", customKey2);
 }
 
-std::string SearchDocIndexRequest::getProject()const
-{
-	return project_;
-}
-
-void SearchDocIndexRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setCoreParameter("Project", project);
-}
-
-int SearchDocIndexRequest::getModifiedTimeStart()const
-{
-	return modifiedTimeStart_;
-}
-
-void SearchDocIndexRequest::setModifiedTimeStart(int modifiedTimeStart)
-{
-	modifiedTimeStart_ = modifiedTimeStart;
-	setCoreParameter("ModifiedTimeStart", std::to_string(modifiedTimeStart));
-}
-
-int SearchDocIndexRequest::getPageNumLimitStart()const
-{
-	return pageNumLimitStart_;
-}
-
-void SearchDocIndexRequest::setPageNumLimitStart(int pageNumLimitStart)
-{
-	pageNumLimitStart_ = pageNumLimitStart;
-	setCoreParameter("PageNumLimitStart", std::to_string(pageNumLimitStart));
-}
-
 std::string SearchDocIndexRequest::getCustomKey6()const
 {
 	return customKey6_;
@@ -166,17 +210,6 @@ void SearchDocIndexRequest::setCustomKey6(const std::string& customKey6)
 {
 	customKey6_ = customKey6;
 	setCoreParameter("CustomKey6", customKey6);
-}
-
-std::string SearchDocIndexRequest::getContent()const
-{
-	return content_;
-}
-
-void SearchDocIndexRequest::setContent(const std::string& content)
-{
-	content_ = content;
-	setCoreParameter("Content", content);
 }
 
 int SearchDocIndexRequest::getPageNumLimitEnd()const
@@ -190,17 +223,6 @@ void SearchDocIndexRequest::setPageNumLimitEnd(int pageNumLimitEnd)
 	setCoreParameter("PageNumLimitEnd", std::to_string(pageNumLimitEnd));
 }
 
-std::string SearchDocIndexRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SearchDocIndexRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SearchDocIndexRequest::getContentType()const
 {
 	return contentType_;
@@ -212,28 +234,6 @@ void SearchDocIndexRequest::setContentType(const std::string& contentType)
 	setCoreParameter("ContentType", contentType);
 }
 
-int SearchDocIndexRequest::getSizeLimitStart()const
-{
-	return sizeLimitStart_;
-}
-
-void SearchDocIndexRequest::setSizeLimitStart(int sizeLimitStart)
-{
-	sizeLimitStart_ = sizeLimitStart;
-	setCoreParameter("SizeLimitStart", std::to_string(sizeLimitStart));
-}
-
-std::string SearchDocIndexRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SearchDocIndexRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string SearchDocIndexRequest::getName()const
 {
 	return name_;
@@ -243,16 +243,5 @@ void SearchDocIndexRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-int SearchDocIndexRequest::getLimit()const
-{
-	return limit_;
-}
-
-void SearchDocIndexRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
 }
 

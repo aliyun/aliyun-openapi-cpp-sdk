@@ -36,6 +36,17 @@ void ReleaseReplicaRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ReleaseReplicaRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReleaseReplicaRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ReleaseReplicaRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void ReleaseReplicaRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ReleaseReplicaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ReleaseReplicaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ReleaseReplicaRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ReleaseReplicaRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ReleaseReplicaRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ReleaseReplicaRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReleaseReplicaRequest::getReplicaId()const
@@ -91,6 +69,28 @@ void ReleaseReplicaRequest::setReplicaId(const std::string& replicaId)
 	setCoreParameter("ReplicaId", replicaId);
 }
 
+std::string ReleaseReplicaRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ReleaseReplicaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ReleaseReplicaRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ReleaseReplicaRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ReleaseReplicaRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void ReleaseReplicaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ReleaseReplicaRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ReleaseReplicaRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

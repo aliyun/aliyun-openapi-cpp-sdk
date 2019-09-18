@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				CheckServiceExistRequest();
 				~CheckServiceExistRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				long getCsbId()const;
 				void setCsbId(long csbId);
 				std::string getServiceName()const;
 				void setServiceName(const std::string& serviceName);
 
             private:
-				std::string regionId_;
 				long csbId_;
 				std::string serviceName_;
 

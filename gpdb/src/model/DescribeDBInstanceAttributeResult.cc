@@ -35,13 +35,9 @@ DescribeDBInstanceAttributeResult::~DescribeDBInstanceAttributeResult()
 
 void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allItems = value["Items"]["DBInstanceAttribute"];
 	for (auto value : allItems)
@@ -111,6 +107,20 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.vpcId = value["VpcId"].asString();
 		if(!value["ConnectionMode"].isNull())
 			itemsObject.connectionMode = value["ConnectionMode"].asString();
+		if(!value["StorageType"].isNull())
+			itemsObject.storageType = value["StorageType"].asString();
+		if(!value["CpuCoresPerNode"].isNull())
+			itemsObject.cpuCoresPerNode = std::stoi(value["CpuCoresPerNode"].asString());
+		if(!value["SegmentCounts"].isNull())
+			itemsObject.segmentCounts = std::stoi(value["SegmentCounts"].asString());
+		if(!value["StoragePerNode"].isNull())
+			itemsObject.storagePerNode = std::stoi(value["StoragePerNode"].asString());
+		if(!value["MemoryPerNode"].isNull())
+			itemsObject.memoryPerNode = std::stoi(value["MemoryPerNode"].asString());
+		if(!value["StorageUnit"].isNull())
+			itemsObject.storageUnit = value["StorageUnit"].asString();
+		if(!value["MemoryUnit"].isNull())
+			itemsObject.memoryUnit = value["MemoryUnit"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

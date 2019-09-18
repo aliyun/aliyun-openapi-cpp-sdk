@@ -25,28 +25,6 @@ ModifyDBInstanceMaintainTimeRequest::ModifyDBInstanceMaintainTimeRequest() :
 ModifyDBInstanceMaintainTimeRequest::~ModifyDBInstanceMaintainTimeRequest()
 {}
 
-std::string ModifyDBInstanceMaintainTimeRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void ModifyDBInstanceMaintainTimeRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void ModifyDBInstanceMaintainTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string ModifyDBInstanceMaintainTimeRequest::getStartTime()const
 {
 	return startTime_;
@@ -67,5 +45,27 @@ void ModifyDBInstanceMaintainTimeRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void ModifyDBInstanceMaintainTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string ModifyDBInstanceMaintainTimeRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void ModifyDBInstanceMaintainTimeRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
 }
 

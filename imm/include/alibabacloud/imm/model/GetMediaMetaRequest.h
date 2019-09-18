@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				GetMediaMetaRequest();
 				~GetMediaMetaRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getMediaUri()const;
 				void setMediaUri(const std::string& mediaUri);
 				std::string getProject()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string regionId_;
 				std::string mediaUri_;
 				std::string project_;
 				std::string accessKeyId_;

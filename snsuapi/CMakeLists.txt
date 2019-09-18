@@ -21,41 +21,41 @@ set(snsuapi_public_header
 	include/alibabacloud/snsuapi/SnsuapiExport.h )
 
 set(snsuapi_public_header_model 
-	include/alibabacloud/snsuapi/model/MobileStartSpeedUpRequest.h
-	include/alibabacloud/snsuapi/model/MobileStartSpeedUpResult.h
-	include/alibabacloud/snsuapi/model/BandStopSpeedUpRequest.h
-	include/alibabacloud/snsuapi/model/BandStopSpeedUpResult.h
-	include/alibabacloud/snsuapi/model/BandStatusQueryRequest.h
-	include/alibabacloud/snsuapi/model/BandStatusQueryResult.h
-	include/alibabacloud/snsuapi/model/MobileStatusQueryRequest.h
-	include/alibabacloud/snsuapi/model/MobileStatusQueryResult.h
-	include/alibabacloud/snsuapi/model/MobileStopSpeedUpRequest.h
-	include/alibabacloud/snsuapi/model/MobileStopSpeedUpResult.h
 	include/alibabacloud/snsuapi/model/BandOfferOrderRequest.h
 	include/alibabacloud/snsuapi/model/BandOfferOrderResult.h
 	include/alibabacloud/snsuapi/model/BandPrecheckRequest.h
 	include/alibabacloud/snsuapi/model/BandPrecheckResult.h
 	include/alibabacloud/snsuapi/model/BandStartSpeedUpRequest.h
-	include/alibabacloud/snsuapi/model/BandStartSpeedUpResult.h )
+	include/alibabacloud/snsuapi/model/BandStartSpeedUpResult.h
+	include/alibabacloud/snsuapi/model/BandStatusQueryRequest.h
+	include/alibabacloud/snsuapi/model/BandStatusQueryResult.h
+	include/alibabacloud/snsuapi/model/BandStopSpeedUpRequest.h
+	include/alibabacloud/snsuapi/model/BandStopSpeedUpResult.h
+	include/alibabacloud/snsuapi/model/MobileStartSpeedUpRequest.h
+	include/alibabacloud/snsuapi/model/MobileStartSpeedUpResult.h
+	include/alibabacloud/snsuapi/model/MobileStatusQueryRequest.h
+	include/alibabacloud/snsuapi/model/MobileStatusQueryResult.h
+	include/alibabacloud/snsuapi/model/MobileStopSpeedUpRequest.h
+	include/alibabacloud/snsuapi/model/MobileStopSpeedUpResult.h )
 
 set(snsuapi_src 
 	src/SnsuapiClient.cc
-	src/model/MobileStartSpeedUpRequest.cc
-	src/model/MobileStartSpeedUpResult.cc
-	src/model/BandStopSpeedUpRequest.cc
-	src/model/BandStopSpeedUpResult.cc
-	src/model/BandStatusQueryRequest.cc
-	src/model/BandStatusQueryResult.cc
-	src/model/MobileStatusQueryRequest.cc
-	src/model/MobileStatusQueryResult.cc
-	src/model/MobileStopSpeedUpRequest.cc
-	src/model/MobileStopSpeedUpResult.cc
 	src/model/BandOfferOrderRequest.cc
 	src/model/BandOfferOrderResult.cc
 	src/model/BandPrecheckRequest.cc
 	src/model/BandPrecheckResult.cc
 	src/model/BandStartSpeedUpRequest.cc
-	src/model/BandStartSpeedUpResult.cc )
+	src/model/BandStartSpeedUpResult.cc
+	src/model/BandStatusQueryRequest.cc
+	src/model/BandStatusQueryResult.cc
+	src/model/BandStopSpeedUpRequest.cc
+	src/model/BandStopSpeedUpResult.cc
+	src/model/MobileStartSpeedUpRequest.cc
+	src/model/MobileStartSpeedUpResult.cc
+	src/model/MobileStatusQueryRequest.cc
+	src/model/MobileStatusQueryResult.cc
+	src/model/MobileStopSpeedUpRequest.cc
+	src/model/MobileStopSpeedUpResult.cc )
 
 add_library(snsuapi ${LIB_TYPE}
 	${snsuapi_public_header}

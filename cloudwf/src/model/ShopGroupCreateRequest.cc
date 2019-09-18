@@ -25,6 +25,28 @@ ShopGroupCreateRequest::ShopGroupCreateRequest() :
 ShopGroupCreateRequest::~ShopGroupCreateRequest()
 {}
 
+std::string ShopGroupCreateRequest::getDescription()const
+{
+	return description_;
+}
+
+void ShopGroupCreateRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string ShopGroupCreateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ShopGroupCreateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ShopGroupCreateRequest::getShopIds()const
 {
 	return shopIds_;
@@ -47,17 +69,6 @@ void ShopGroupCreateRequest::setName(const std::string& name)
 	setCoreParameter("Name", name);
 }
 
-std::string ShopGroupCreateRequest::getDescription()const
-{
-	return description_;
-}
-
-void ShopGroupCreateRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 long ShopGroupCreateRequest::getBid()const
 {
 	return bid_;
@@ -67,16 +78,5 @@ void ShopGroupCreateRequest::setBid(long bid)
 {
 	bid_ = bid;
 	setCoreParameter("Bid", std::to_string(bid));
-}
-
-std::string ShopGroupCreateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ShopGroupCreateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,10 +35,6 @@ namespace AlibabaCloud
 				QueryTicketRequest();
 				~QueryTicketRequest();
 
-				std::string getStage()const;
-				void setStage(const std::string& stage);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getCreatorId()const;
 				void setCreatorId(const std::string& creatorId);
 				std::string getEndTime()const;
@@ -49,17 +45,21 @@ namespace AlibabaCloud
 				void setPageNum(int pageNum);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getStage()const;
+				void setStage(const std::string& stage);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getCcsInstanceId()const;
 				void setCcsInstanceId(const std::string& ccsInstanceId);
 
             private:
-				std::string stage_;
-				int pageSize_;
 				std::string creatorId_;
 				std::string endTime_;
 				std::string startTime_;
 				int pageNum_;
 				std::string type_;
+				std::string stage_;
+				int pageSize_;
 				std::string ccsInstanceId_;
 
 			};

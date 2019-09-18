@@ -36,28 +36,6 @@ void ListStaOnoffLogRequest::setOrderCol(const std::string& orderCol)
 	setCoreParameter("OrderCol", orderCol);
 }
 
-std::string ListStaOnoffLogRequest::getSearchSsid()const
-{
-	return searchSsid_;
-}
-
-void ListStaOnoffLogRequest::setSearchSsid(const std::string& searchSsid)
-{
-	searchSsid_ = searchSsid;
-	setCoreParameter("SearchSsid", searchSsid);
-}
-
-std::string ListStaOnoffLogRequest::getSearchApName()const
-{
-	return searchApName_;
-}
-
-void ListStaOnoffLogRequest::setSearchApName(const std::string& searchApName)
-{
-	searchApName_ = searchApName;
-	setCoreParameter("SearchApName", searchApName);
-}
-
 int ListStaOnoffLogRequest::getLength()const
 {
 	return length_;
@@ -80,28 +58,6 @@ void ListStaOnoffLogRequest::setSearchUsername(const std::string& searchUsername
 	setCoreParameter("SearchUsername", searchUsername);
 }
 
-int ListStaOnoffLogRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListStaOnoffLogRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
-long ListStaOnoffLogRequest::getId()const
-{
-	return id_;
-}
-
-void ListStaOnoffLogRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string ListStaOnoffLogRequest::getOrderDir()const
 {
 	return orderDir_;
@@ -122,5 +78,49 @@ void ListStaOnoffLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListStaOnoffLogRequest::getSearchSsid()const
+{
+	return searchSsid_;
+}
+
+void ListStaOnoffLogRequest::setSearchSsid(const std::string& searchSsid)
+{
+	searchSsid_ = searchSsid;
+	setCoreParameter("SearchSsid", searchSsid);
+}
+
+std::string ListStaOnoffLogRequest::getSearchApName()const
+{
+	return searchApName_;
+}
+
+void ListStaOnoffLogRequest::setSearchApName(const std::string& searchApName)
+{
+	searchApName_ = searchApName;
+	setCoreParameter("SearchApName", searchApName);
+}
+
+int ListStaOnoffLogRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListStaOnoffLogRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
+}
+
+long ListStaOnoffLogRequest::getId()const
+{
+	return id_;
+}
+
+void ListStaOnoffLogRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

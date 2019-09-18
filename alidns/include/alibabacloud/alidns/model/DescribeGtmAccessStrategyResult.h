@@ -44,32 +44,40 @@ namespace AlibabaCloud
 				DescribeGtmAccessStrategyResult();
 				explicit DescribeGtmAccessStrategyResult(const std::string &payload);
 				~DescribeGtmAccessStrategyResult();
+				std::string getInstanceId()const;
+				std::string getStrategyId()const;
+				std::string getDefaultAddrPoolStatus()const;
+				std::string getFailoverAddrPoolId()const;
+				std::string getAccessStatus()const;
+				std::string getDefaultAddrPoolMonitorStatus()const;
 				std::string getDefaultAddrPoolName()const;
 				std::string getDefultAddrPoolId()const;
 				std::string getStrategyName()const;
-				std::string getInstanceId()const;
-				std::string getStrategyId()const;
+				std::string getFailoverAddrPoolStatus()const;
 				std::string getAccessMode()const;
 				std::string getStrategyMode()const;
 				std::string getFailoverAddrPoolName()const;
-				std::string getFailoverAddrPoolId()const;
+				std::string getFailoverAddrPoolMonitorStatus()const;
 				std::vector<Line> getLines()const;
-				std::string getAccessStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string instanceId_;
+				std::string strategyId_;
+				std::string defaultAddrPoolStatus_;
+				std::string failoverAddrPoolId_;
+				std::string accessStatus_;
+				std::string defaultAddrPoolMonitorStatus_;
 				std::string defaultAddrPoolName_;
 				std::string defultAddrPoolId_;
 				std::string strategyName_;
-				std::string instanceId_;
-				std::string strategyId_;
+				std::string failoverAddrPoolStatus_;
 				std::string accessMode_;
 				std::string strategyMode_;
 				std::string failoverAddrPoolName_;
-				std::string failoverAddrPoolId_;
+				std::string failoverAddrPoolMonitorStatus_;
 				std::vector<Line> lines_;
-				std::string accessStatus_;
 
 			};
 		}

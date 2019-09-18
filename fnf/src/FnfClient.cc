@@ -51,36 +51,36 @@ FnfClient::FnfClient(const std::string & accessKeyId, const std::string & access
 FnfClient::~FnfClient()
 {}
 
-FnfClient::UpdateFlowOutcome FnfClient::updateFlow(const UpdateFlowRequest &request) const
+FnfClient::CreateFlowOutcome FnfClient::createFlow(const CreateFlowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateFlowOutcome(endpointOutcome.error());
+		return CreateFlowOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateFlowOutcome(UpdateFlowResult(outcome.result()));
+		return CreateFlowOutcome(CreateFlowResult(outcome.result()));
 	else
-		return UpdateFlowOutcome(outcome.error());
+		return CreateFlowOutcome(outcome.error());
 }
 
-void FnfClient::updateFlowAsync(const UpdateFlowRequest& request, const UpdateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void FnfClient::createFlowAsync(const CreateFlowRequest& request, const CreateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateFlow(request), context);
+		handler(this, request, createFlow(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-FnfClient::UpdateFlowOutcomeCallable FnfClient::updateFlowCallable(const UpdateFlowRequest &request) const
+FnfClient::CreateFlowOutcomeCallable FnfClient::createFlowCallable(const CreateFlowRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateFlowOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateFlowOutcome()>>(
 			[this, request]()
 			{
-			return this->updateFlow(request);
+			return this->createFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -123,42 +123,6 @@ FnfClient::DeleteFlowOutcomeCallable FnfClient::deleteFlowCallable(const DeleteF
 	return task->get_future();
 }
 
-FnfClient::CreateFlowOutcome FnfClient::createFlow(const CreateFlowRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateFlowOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateFlowOutcome(CreateFlowResult(outcome.result()));
-	else
-		return CreateFlowOutcome(outcome.error());
-}
-
-void FnfClient::createFlowAsync(const CreateFlowRequest& request, const CreateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createFlow(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FnfClient::CreateFlowOutcomeCallable FnfClient::createFlowCallable(const CreateFlowRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateFlowOutcome()>>(
-			[this, request]()
-			{
-			return this->createFlow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FnfClient::DescribeExecutionOutcome FnfClient::describeExecution(const DescribeExecutionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,42 +159,6 @@ FnfClient::DescribeExecutionOutcomeCallable FnfClient::describeExecutionCallable
 	return task->get_future();
 }
 
-FnfClient::ReportTaskFailedOutcome FnfClient::reportTaskFailed(const ReportTaskFailedRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReportTaskFailedOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReportTaskFailedOutcome(ReportTaskFailedResult(outcome.result()));
-	else
-		return ReportTaskFailedOutcome(outcome.error());
-}
-
-void FnfClient::reportTaskFailedAsync(const ReportTaskFailedRequest& request, const ReportTaskFailedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, reportTaskFailed(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FnfClient::ReportTaskFailedOutcomeCallable FnfClient::reportTaskFailedCallable(const ReportTaskFailedRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReportTaskFailedOutcome()>>(
-			[this, request]()
-			{
-			return this->reportTaskFailed(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FnfClient::DescribeFlowOutcome FnfClient::describeFlow(const DescribeFlowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,78 +189,6 @@ FnfClient::DescribeFlowOutcomeCallable FnfClient::describeFlowCallable(const Des
 			[this, request]()
 			{
 			return this->describeFlow(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FnfClient::StopExecutionOutcome FnfClient::stopExecution(const StopExecutionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopExecutionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopExecutionOutcome(StopExecutionResult(outcome.result()));
-	else
-		return StopExecutionOutcome(outcome.error());
-}
-
-void FnfClient::stopExecutionAsync(const StopExecutionRequest& request, const StopExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopExecution(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FnfClient::StopExecutionOutcomeCallable FnfClient::stopExecutionCallable(const StopExecutionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopExecutionOutcome()>>(
-			[this, request]()
-			{
-			return this->stopExecution(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FnfClient::StartExecutionOutcome FnfClient::startExecution(const StartExecutionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartExecutionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartExecutionOutcome(StartExecutionResult(outcome.result()));
-	else
-		return StartExecutionOutcome(outcome.error());
-}
-
-void FnfClient::startExecutionAsync(const StartExecutionRequest& request, const StartExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startExecution(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FnfClient::StartExecutionOutcomeCallable FnfClient::startExecutionCallable(const StartExecutionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartExecutionOutcome()>>(
-			[this, request]()
-			{
-			return this->startExecution(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,6 +267,78 @@ FnfClient::ListExecutionsOutcomeCallable FnfClient::listExecutionsCallable(const
 	return task->get_future();
 }
 
+FnfClient::ListFlowsOutcome FnfClient::listFlows(const ListFlowsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFlowsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFlowsOutcome(ListFlowsResult(outcome.result()));
+	else
+		return ListFlowsOutcome(outcome.error());
+}
+
+void FnfClient::listFlowsAsync(const ListFlowsRequest& request, const ListFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFlows(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::ListFlowsOutcomeCallable FnfClient::listFlowsCallable(const ListFlowsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFlowsOutcome()>>(
+			[this, request]()
+			{
+			return this->listFlows(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FnfClient::ReportTaskFailedOutcome FnfClient::reportTaskFailed(const ReportTaskFailedRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReportTaskFailedOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReportTaskFailedOutcome(ReportTaskFailedResult(outcome.result()));
+	else
+		return ReportTaskFailedOutcome(outcome.error());
+}
+
+void FnfClient::reportTaskFailedAsync(const ReportTaskFailedRequest& request, const ReportTaskFailedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reportTaskFailed(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::ReportTaskFailedOutcomeCallable FnfClient::reportTaskFailedCallable(const ReportTaskFailedRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReportTaskFailedOutcome()>>(
+			[this, request]()
+			{
+			return this->reportTaskFailed(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FnfClient::ReportTaskSucceededOutcome FnfClient::reportTaskSucceeded(const ReportTaskSucceededRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,36 +375,108 @@ FnfClient::ReportTaskSucceededOutcomeCallable FnfClient::reportTaskSucceededCall
 	return task->get_future();
 }
 
-FnfClient::ListFlowsOutcome FnfClient::listFlows(const ListFlowsRequest &request) const
+FnfClient::StartExecutionOutcome FnfClient::startExecution(const StartExecutionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListFlowsOutcome(endpointOutcome.error());
+		return StartExecutionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListFlowsOutcome(ListFlowsResult(outcome.result()));
+		return StartExecutionOutcome(StartExecutionResult(outcome.result()));
 	else
-		return ListFlowsOutcome(outcome.error());
+		return StartExecutionOutcome(outcome.error());
 }
 
-void FnfClient::listFlowsAsync(const ListFlowsRequest& request, const ListFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void FnfClient::startExecutionAsync(const StartExecutionRequest& request, const StartExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listFlows(request), context);
+		handler(this, request, startExecution(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-FnfClient::ListFlowsOutcomeCallable FnfClient::listFlowsCallable(const ListFlowsRequest &request) const
+FnfClient::StartExecutionOutcomeCallable FnfClient::startExecutionCallable(const StartExecutionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListFlowsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<StartExecutionOutcome()>>(
 			[this, request]()
 			{
-			return this->listFlows(request);
+			return this->startExecution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FnfClient::StopExecutionOutcome FnfClient::stopExecution(const StopExecutionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopExecutionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopExecutionOutcome(StopExecutionResult(outcome.result()));
+	else
+		return StopExecutionOutcome(outcome.error());
+}
+
+void FnfClient::stopExecutionAsync(const StopExecutionRequest& request, const StopExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopExecution(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::StopExecutionOutcomeCallable FnfClient::stopExecutionCallable(const StopExecutionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopExecutionOutcome()>>(
+			[this, request]()
+			{
+			return this->stopExecution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FnfClient::UpdateFlowOutcome FnfClient::updateFlow(const UpdateFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFlowOutcome(UpdateFlowResult(outcome.result()));
+	else
+		return UpdateFlowOutcome(outcome.error());
+}
+
+void FnfClient::updateFlowAsync(const UpdateFlowRequest& request, const UpdateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::UpdateFlowOutcomeCallable FnfClient::updateFlowCallable(const UpdateFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

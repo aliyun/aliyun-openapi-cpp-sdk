@@ -21,201 +21,225 @@ set(bssopenapi_public_header
 	include/alibabacloud/bssopenapi/BssOpenApiExport.h )
 
 set(bssopenapi_public_header_model 
-	include/alibabacloud/bssopenapi/model/QueryMonthlyBillRequest.h
-	include/alibabacloud/bssopenapi/model/QueryMonthlyBillResult.h
-	include/alibabacloud/bssopenapi/model/QueryInstanceGaapCostRequest.h
-	include/alibabacloud/bssopenapi/model/QueryInstanceGaapCostResult.h
-	include/alibabacloud/bssopenapi/model/QueryMonthlyInstanceConsumptionRequest.h
-	include/alibabacloud/bssopenapi/model/QueryMonthlyInstanceConsumptionResult.h
-	include/alibabacloud/bssopenapi/model/QueryAccountTransactionsRequest.h
-	include/alibabacloud/bssopenapi/model/QueryAccountTransactionsResult.h
-	include/alibabacloud/bssopenapi/model/QueryPrepaidCardsRequest.h
-	include/alibabacloud/bssopenapi/model/QueryPrepaidCardsResult.h
-	include/alibabacloud/bssopenapi/model/QueryAvailableInstancesRequest.h
-	include/alibabacloud/bssopenapi/model/QueryAvailableInstancesResult.h
-	include/alibabacloud/bssopenapi/model/RenewResourcePackageRequest.h
-	include/alibabacloud/bssopenapi/model/RenewResourcePackageResult.h
-	include/alibabacloud/bssopenapi/model/CreateInstanceRequest.h
-	include/alibabacloud/bssopenapi/model/CreateInstanceResult.h
-	include/alibabacloud/bssopenapi/model/GetOrderDetailRequest.h
-	include/alibabacloud/bssopenapi/model/GetOrderDetailResult.h
-	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListRequest.h
-	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListResult.h
-	include/alibabacloud/bssopenapi/model/ModifyInstanceRequest.h
-	include/alibabacloud/bssopenapi/model/ModifyInstanceResult.h
+	include/alibabacloud/bssopenapi/model/AllocateFinanceUnitResourceRequest.h
+	include/alibabacloud/bssopenapi/model/AllocateFinanceUnitResourceResult.h
+	include/alibabacloud/bssopenapi/model/ApplyInvoiceRequest.h
+	include/alibabacloud/bssopenapi/model/ApplyInvoiceResult.h
 	include/alibabacloud/bssopenapi/model/CancelOrderRequest.h
 	include/alibabacloud/bssopenapi/model/CancelOrderResult.h
+	include/alibabacloud/bssopenapi/model/ChangeResellerConsumeAmountRequest.h
+	include/alibabacloud/bssopenapi/model/ChangeResellerConsumeAmountResult.h
+	include/alibabacloud/bssopenapi/model/ConvertChargeTypeRequest.h
+	include/alibabacloud/bssopenapi/model/ConvertChargeTypeResult.h
+	include/alibabacloud/bssopenapi/model/CreateAgAccountRequest.h
+	include/alibabacloud/bssopenapi/model/CreateAgAccountResult.h
+	include/alibabacloud/bssopenapi/model/CreateFinanceUnitRequest.h
+	include/alibabacloud/bssopenapi/model/CreateFinanceUnitResult.h
+	include/alibabacloud/bssopenapi/model/CreateInstanceRequest.h
+	include/alibabacloud/bssopenapi/model/CreateInstanceResult.h
 	include/alibabacloud/bssopenapi/model/CreateResellerUserQuotaRequest.h
 	include/alibabacloud/bssopenapi/model/CreateResellerUserQuotaResult.h
-	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesRequest.h
-	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesResult.h
-	include/alibabacloud/bssopenapi/model/QueryRedeemRequest.h
-	include/alibabacloud/bssopenapi/model/QueryRedeemResult.h
-	include/alibabacloud/bssopenapi/model/SubscribeBillToOSSRequest.h
-	include/alibabacloud/bssopenapi/model/SubscribeBillToOSSResult.h
+	include/alibabacloud/bssopenapi/model/CreateResourcePackageRequest.h
+	include/alibabacloud/bssopenapi/model/CreateResourcePackageResult.h
+	include/alibabacloud/bssopenapi/model/DeleteFinanceUnitRequest.h
+	include/alibabacloud/bssopenapi/model/DeleteFinanceUnitResult.h
+	include/alibabacloud/bssopenapi/model/DescribePricingModuleRequest.h
+	include/alibabacloud/bssopenapi/model/DescribePricingModuleResult.h
+	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductResult.h
+	include/alibabacloud/bssopenapi/model/EnableBillGenerationRequest.h
+	include/alibabacloud/bssopenapi/model/EnableBillGenerationResult.h
+	include/alibabacloud/bssopenapi/model/GetCustomerAccountInfoRequest.h
+	include/alibabacloud/bssopenapi/model/GetCustomerAccountInfoResult.h
+	include/alibabacloud/bssopenapi/model/GetCustomerListRequest.h
+	include/alibabacloud/bssopenapi/model/GetCustomerListResult.h
+	include/alibabacloud/bssopenapi/model/GetOrderDetailRequest.h
+	include/alibabacloud/bssopenapi/model/GetOrderDetailResult.h
 	include/alibabacloud/bssopenapi/model/GetPayAsYouGoPriceRequest.h
 	include/alibabacloud/bssopenapi/model/GetPayAsYouGoPriceResult.h
 	include/alibabacloud/bssopenapi/model/GetResourcePackagePriceRequest.h
 	include/alibabacloud/bssopenapi/model/GetResourcePackagePriceResult.h
-	include/alibabacloud/bssopenapi/model/QueryProductListRequest.h
-	include/alibabacloud/bssopenapi/model/QueryProductListResult.h
-	include/alibabacloud/bssopenapi/model/ApplyInvoiceRequest.h
-	include/alibabacloud/bssopenapi/model/ApplyInvoiceResult.h
-	include/alibabacloud/bssopenapi/model/UnsubscribeBillToOSSRequest.h
-	include/alibabacloud/bssopenapi/model/UnsubscribeBillToOSSResult.h
-	include/alibabacloud/bssopenapi/model/GetCustomerListRequest.h
-	include/alibabacloud/bssopenapi/model/GetCustomerListResult.h
 	include/alibabacloud/bssopenapi/model/GetSubscriptionPriceRequest.h
 	include/alibabacloud/bssopenapi/model/GetSubscriptionPriceResult.h
+	include/alibabacloud/bssopenapi/model/ModifyFinanceUnitRequest.h
+	include/alibabacloud/bssopenapi/model/ModifyFinanceUnitResult.h
+	include/alibabacloud/bssopenapi/model/ModifyInstanceRequest.h
+	include/alibabacloud/bssopenapi/model/ModifyInstanceResult.h
+	include/alibabacloud/bssopenapi/model/QueryAccountBalanceRequest.h
+	include/alibabacloud/bssopenapi/model/QueryAccountBalanceResult.h
+	include/alibabacloud/bssopenapi/model/QueryAccountTransactionsRequest.h
+	include/alibabacloud/bssopenapi/model/QueryAccountTransactionsResult.h
+	include/alibabacloud/bssopenapi/model/QueryAvailableInstancesRequest.h
+	include/alibabacloud/bssopenapi/model/QueryAvailableInstancesResult.h
+	include/alibabacloud/bssopenapi/model/QueryBillRequest.h
+	include/alibabacloud/bssopenapi/model/QueryBillResult.h
+	include/alibabacloud/bssopenapi/model/QueryBillOverviewRequest.h
+	include/alibabacloud/bssopenapi/model/QueryBillOverviewResult.h
+	include/alibabacloud/bssopenapi/model/QueryCashCouponsRequest.h
+	include/alibabacloud/bssopenapi/model/QueryCashCouponsResult.h
+	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListResult.h
+	include/alibabacloud/bssopenapi/model/QueryEvaluateListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryEvaluateListResult.h
+	include/alibabacloud/bssopenapi/model/QueryFinanceUnitRequest.h
+	include/alibabacloud/bssopenapi/model/QueryFinanceUnitResult.h
+	include/alibabacloud/bssopenapi/model/QueryFinanceUnitResourceRequest.h
+	include/alibabacloud/bssopenapi/model/QueryFinanceUnitResourceResult.h
+	include/alibabacloud/bssopenapi/model/QueryInstanceBillRequest.h
+	include/alibabacloud/bssopenapi/model/QueryInstanceBillResult.h
+	include/alibabacloud/bssopenapi/model/QueryInstanceGaapCostRequest.h
+	include/alibabacloud/bssopenapi/model/QueryInstanceGaapCostResult.h
+	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListResult.h
+	include/alibabacloud/bssopenapi/model/QueryMonthlyBillRequest.h
+	include/alibabacloud/bssopenapi/model/QueryMonthlyBillResult.h
+	include/alibabacloud/bssopenapi/model/QueryMonthlyInstanceConsumptionRequest.h
+	include/alibabacloud/bssopenapi/model/QueryMonthlyInstanceConsumptionResult.h
+	include/alibabacloud/bssopenapi/model/QueryOrdersRequest.h
+	include/alibabacloud/bssopenapi/model/QueryOrdersResult.h
+	include/alibabacloud/bssopenapi/model/QueryPrepaidCardsRequest.h
+	include/alibabacloud/bssopenapi/model/QueryPrepaidCardsResult.h
+	include/alibabacloud/bssopenapi/model/QueryProductListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryProductListResult.h
+	include/alibabacloud/bssopenapi/model/QueryRedeemRequest.h
+	include/alibabacloud/bssopenapi/model/QueryRedeemResult.h
 	include/alibabacloud/bssopenapi/model/QueryResellerAvailableQuotaRequest.h
 	include/alibabacloud/bssopenapi/model/QueryResellerAvailableQuotaResult.h
+	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesRequest.h
+	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesResult.h
+	include/alibabacloud/bssopenapi/model/QuerySettlementBillRequest.h
+	include/alibabacloud/bssopenapi/model/QuerySettlementBillResult.h
+	include/alibabacloud/bssopenapi/model/QueryUserOmsDataRequest.h
+	include/alibabacloud/bssopenapi/model/QueryUserOmsDataResult.h
+	include/alibabacloud/bssopenapi/model/RenewInstanceRequest.h
+	include/alibabacloud/bssopenapi/model/RenewInstanceResult.h
+	include/alibabacloud/bssopenapi/model/RenewResourcePackageRequest.h
+	include/alibabacloud/bssopenapi/model/RenewResourcePackageResult.h
+	include/alibabacloud/bssopenapi/model/SetRenewalRequest.h
+	include/alibabacloud/bssopenapi/model/SetRenewalResult.h
+	include/alibabacloud/bssopenapi/model/SetResellerUserAlarmThresholdRequest.h
+	include/alibabacloud/bssopenapi/model/SetResellerUserAlarmThresholdResult.h
 	include/alibabacloud/bssopenapi/model/SetResellerUserQuotaRequest.h
 	include/alibabacloud/bssopenapi/model/SetResellerUserQuotaResult.h
 	include/alibabacloud/bssopenapi/model/SetResellerUserStatusRequest.h
 	include/alibabacloud/bssopenapi/model/SetResellerUserStatusResult.h
-	include/alibabacloud/bssopenapi/model/EnableBillGenerationRequest.h
-	include/alibabacloud/bssopenapi/model/EnableBillGenerationResult.h
-	include/alibabacloud/bssopenapi/model/QueryOrdersRequest.h
-	include/alibabacloud/bssopenapi/model/QueryOrdersResult.h
-	include/alibabacloud/bssopenapi/model/QueryCashCouponsRequest.h
-	include/alibabacloud/bssopenapi/model/QueryCashCouponsResult.h
-	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListRequest.h
-	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListResult.h
-	include/alibabacloud/bssopenapi/model/DescribePricingModuleRequest.h
-	include/alibabacloud/bssopenapi/model/DescribePricingModuleResult.h
-	include/alibabacloud/bssopenapi/model/QueryEvaluateListRequest.h
-	include/alibabacloud/bssopenapi/model/QueryEvaluateListResult.h
-	include/alibabacloud/bssopenapi/model/QueryAccountBalanceRequest.h
-	include/alibabacloud/bssopenapi/model/QueryAccountBalanceResult.h
-	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductRequest.h
-	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductResult.h
-	include/alibabacloud/bssopenapi/model/ChangeResellerConsumeAmountRequest.h
-	include/alibabacloud/bssopenapi/model/ChangeResellerConsumeAmountResult.h
-	include/alibabacloud/bssopenapi/model/RenewInstanceRequest.h
-	include/alibabacloud/bssopenapi/model/RenewInstanceResult.h
+	include/alibabacloud/bssopenapi/model/SubscribeBillToOSSRequest.h
+	include/alibabacloud/bssopenapi/model/SubscribeBillToOSSResult.h
+	include/alibabacloud/bssopenapi/model/UnsubscribeBillToOSSRequest.h
+	include/alibabacloud/bssopenapi/model/UnsubscribeBillToOSSResult.h
 	include/alibabacloud/bssopenapi/model/UpgradeResourcePackageRequest.h
-	include/alibabacloud/bssopenapi/model/UpgradeResourcePackageResult.h
-	include/alibabacloud/bssopenapi/model/CreateResourcePackageRequest.h
-	include/alibabacloud/bssopenapi/model/CreateResourcePackageResult.h
-	include/alibabacloud/bssopenapi/model/GetCustomerAccountInfoRequest.h
-	include/alibabacloud/bssopenapi/model/GetCustomerAccountInfoResult.h
-	include/alibabacloud/bssopenapi/model/QueryInstanceBillRequest.h
-	include/alibabacloud/bssopenapi/model/QueryInstanceBillResult.h
-	include/alibabacloud/bssopenapi/model/SetResellerUserAlarmThresholdRequest.h
-	include/alibabacloud/bssopenapi/model/SetResellerUserAlarmThresholdResult.h
-	include/alibabacloud/bssopenapi/model/QueryBillRequest.h
-	include/alibabacloud/bssopenapi/model/QueryBillResult.h
-	include/alibabacloud/bssopenapi/model/SetRenewalRequest.h
-	include/alibabacloud/bssopenapi/model/SetRenewalResult.h
-	include/alibabacloud/bssopenapi/model/CreateAgAccountRequest.h
-	include/alibabacloud/bssopenapi/model/CreateAgAccountResult.h
-	include/alibabacloud/bssopenapi/model/ConvertChargeTypeRequest.h
-	include/alibabacloud/bssopenapi/model/ConvertChargeTypeResult.h
-	include/alibabacloud/bssopenapi/model/QueryBillOverviewRequest.h
-	include/alibabacloud/bssopenapi/model/QueryBillOverviewResult.h
-	include/alibabacloud/bssopenapi/model/QuerySettlementBillRequest.h
-	include/alibabacloud/bssopenapi/model/QuerySettlementBillResult.h
-	include/alibabacloud/bssopenapi/model/QueryUserOmsDataRequest.h
-	include/alibabacloud/bssopenapi/model/QueryUserOmsDataResult.h )
+	include/alibabacloud/bssopenapi/model/UpgradeResourcePackageResult.h )
 
 set(bssopenapi_src 
 	src/BssOpenApiClient.cc
-	src/model/QueryMonthlyBillRequest.cc
-	src/model/QueryMonthlyBillResult.cc
-	src/model/QueryInstanceGaapCostRequest.cc
-	src/model/QueryInstanceGaapCostResult.cc
-	src/model/QueryMonthlyInstanceConsumptionRequest.cc
-	src/model/QueryMonthlyInstanceConsumptionResult.cc
-	src/model/QueryAccountTransactionsRequest.cc
-	src/model/QueryAccountTransactionsResult.cc
-	src/model/QueryPrepaidCardsRequest.cc
-	src/model/QueryPrepaidCardsResult.cc
-	src/model/QueryAvailableInstancesRequest.cc
-	src/model/QueryAvailableInstancesResult.cc
-	src/model/RenewResourcePackageRequest.cc
-	src/model/RenewResourcePackageResult.cc
-	src/model/CreateInstanceRequest.cc
-	src/model/CreateInstanceResult.cc
-	src/model/GetOrderDetailRequest.cc
-	src/model/GetOrderDetailResult.cc
-	src/model/QueryCustomerAddressListRequest.cc
-	src/model/QueryCustomerAddressListResult.cc
-	src/model/ModifyInstanceRequest.cc
-	src/model/ModifyInstanceResult.cc
+	src/model/AllocateFinanceUnitResourceRequest.cc
+	src/model/AllocateFinanceUnitResourceResult.cc
+	src/model/ApplyInvoiceRequest.cc
+	src/model/ApplyInvoiceResult.cc
 	src/model/CancelOrderRequest.cc
 	src/model/CancelOrderResult.cc
+	src/model/ChangeResellerConsumeAmountRequest.cc
+	src/model/ChangeResellerConsumeAmountResult.cc
+	src/model/ConvertChargeTypeRequest.cc
+	src/model/ConvertChargeTypeResult.cc
+	src/model/CreateAgAccountRequest.cc
+	src/model/CreateAgAccountResult.cc
+	src/model/CreateFinanceUnitRequest.cc
+	src/model/CreateFinanceUnitResult.cc
+	src/model/CreateInstanceRequest.cc
+	src/model/CreateInstanceResult.cc
 	src/model/CreateResellerUserQuotaRequest.cc
 	src/model/CreateResellerUserQuotaResult.cc
-	src/model/QueryResourcePackageInstancesRequest.cc
-	src/model/QueryResourcePackageInstancesResult.cc
-	src/model/QueryRedeemRequest.cc
-	src/model/QueryRedeemResult.cc
-	src/model/SubscribeBillToOSSRequest.cc
-	src/model/SubscribeBillToOSSResult.cc
+	src/model/CreateResourcePackageRequest.cc
+	src/model/CreateResourcePackageResult.cc
+	src/model/DeleteFinanceUnitRequest.cc
+	src/model/DeleteFinanceUnitResult.cc
+	src/model/DescribePricingModuleRequest.cc
+	src/model/DescribePricingModuleResult.cc
+	src/model/DescribeResourcePackageProductRequest.cc
+	src/model/DescribeResourcePackageProductResult.cc
+	src/model/EnableBillGenerationRequest.cc
+	src/model/EnableBillGenerationResult.cc
+	src/model/GetCustomerAccountInfoRequest.cc
+	src/model/GetCustomerAccountInfoResult.cc
+	src/model/GetCustomerListRequest.cc
+	src/model/GetCustomerListResult.cc
+	src/model/GetOrderDetailRequest.cc
+	src/model/GetOrderDetailResult.cc
 	src/model/GetPayAsYouGoPriceRequest.cc
 	src/model/GetPayAsYouGoPriceResult.cc
 	src/model/GetResourcePackagePriceRequest.cc
 	src/model/GetResourcePackagePriceResult.cc
-	src/model/QueryProductListRequest.cc
-	src/model/QueryProductListResult.cc
-	src/model/ApplyInvoiceRequest.cc
-	src/model/ApplyInvoiceResult.cc
-	src/model/UnsubscribeBillToOSSRequest.cc
-	src/model/UnsubscribeBillToOSSResult.cc
-	src/model/GetCustomerListRequest.cc
-	src/model/GetCustomerListResult.cc
 	src/model/GetSubscriptionPriceRequest.cc
 	src/model/GetSubscriptionPriceResult.cc
+	src/model/ModifyFinanceUnitRequest.cc
+	src/model/ModifyFinanceUnitResult.cc
+	src/model/ModifyInstanceRequest.cc
+	src/model/ModifyInstanceResult.cc
+	src/model/QueryAccountBalanceRequest.cc
+	src/model/QueryAccountBalanceResult.cc
+	src/model/QueryAccountTransactionsRequest.cc
+	src/model/QueryAccountTransactionsResult.cc
+	src/model/QueryAvailableInstancesRequest.cc
+	src/model/QueryAvailableInstancesResult.cc
+	src/model/QueryBillRequest.cc
+	src/model/QueryBillResult.cc
+	src/model/QueryBillOverviewRequest.cc
+	src/model/QueryBillOverviewResult.cc
+	src/model/QueryCashCouponsRequest.cc
+	src/model/QueryCashCouponsResult.cc
+	src/model/QueryCustomerAddressListRequest.cc
+	src/model/QueryCustomerAddressListResult.cc
+	src/model/QueryEvaluateListRequest.cc
+	src/model/QueryEvaluateListResult.cc
+	src/model/QueryFinanceUnitRequest.cc
+	src/model/QueryFinanceUnitResult.cc
+	src/model/QueryFinanceUnitResourceRequest.cc
+	src/model/QueryFinanceUnitResourceResult.cc
+	src/model/QueryInstanceBillRequest.cc
+	src/model/QueryInstanceBillResult.cc
+	src/model/QueryInstanceGaapCostRequest.cc
+	src/model/QueryInstanceGaapCostResult.cc
+	src/model/QueryInvoicingCustomerListRequest.cc
+	src/model/QueryInvoicingCustomerListResult.cc
+	src/model/QueryMonthlyBillRequest.cc
+	src/model/QueryMonthlyBillResult.cc
+	src/model/QueryMonthlyInstanceConsumptionRequest.cc
+	src/model/QueryMonthlyInstanceConsumptionResult.cc
+	src/model/QueryOrdersRequest.cc
+	src/model/QueryOrdersResult.cc
+	src/model/QueryPrepaidCardsRequest.cc
+	src/model/QueryPrepaidCardsResult.cc
+	src/model/QueryProductListRequest.cc
+	src/model/QueryProductListResult.cc
+	src/model/QueryRedeemRequest.cc
+	src/model/QueryRedeemResult.cc
 	src/model/QueryResellerAvailableQuotaRequest.cc
 	src/model/QueryResellerAvailableQuotaResult.cc
+	src/model/QueryResourcePackageInstancesRequest.cc
+	src/model/QueryResourcePackageInstancesResult.cc
+	src/model/QuerySettlementBillRequest.cc
+	src/model/QuerySettlementBillResult.cc
+	src/model/QueryUserOmsDataRequest.cc
+	src/model/QueryUserOmsDataResult.cc
+	src/model/RenewInstanceRequest.cc
+	src/model/RenewInstanceResult.cc
+	src/model/RenewResourcePackageRequest.cc
+	src/model/RenewResourcePackageResult.cc
+	src/model/SetRenewalRequest.cc
+	src/model/SetRenewalResult.cc
+	src/model/SetResellerUserAlarmThresholdRequest.cc
+	src/model/SetResellerUserAlarmThresholdResult.cc
 	src/model/SetResellerUserQuotaRequest.cc
 	src/model/SetResellerUserQuotaResult.cc
 	src/model/SetResellerUserStatusRequest.cc
 	src/model/SetResellerUserStatusResult.cc
-	src/model/EnableBillGenerationRequest.cc
-	src/model/EnableBillGenerationResult.cc
-	src/model/QueryOrdersRequest.cc
-	src/model/QueryOrdersResult.cc
-	src/model/QueryCashCouponsRequest.cc
-	src/model/QueryCashCouponsResult.cc
-	src/model/QueryInvoicingCustomerListRequest.cc
-	src/model/QueryInvoicingCustomerListResult.cc
-	src/model/DescribePricingModuleRequest.cc
-	src/model/DescribePricingModuleResult.cc
-	src/model/QueryEvaluateListRequest.cc
-	src/model/QueryEvaluateListResult.cc
-	src/model/QueryAccountBalanceRequest.cc
-	src/model/QueryAccountBalanceResult.cc
-	src/model/DescribeResourcePackageProductRequest.cc
-	src/model/DescribeResourcePackageProductResult.cc
-	src/model/ChangeResellerConsumeAmountRequest.cc
-	src/model/ChangeResellerConsumeAmountResult.cc
-	src/model/RenewInstanceRequest.cc
-	src/model/RenewInstanceResult.cc
+	src/model/SubscribeBillToOSSRequest.cc
+	src/model/SubscribeBillToOSSResult.cc
+	src/model/UnsubscribeBillToOSSRequest.cc
+	src/model/UnsubscribeBillToOSSResult.cc
 	src/model/UpgradeResourcePackageRequest.cc
-	src/model/UpgradeResourcePackageResult.cc
-	src/model/CreateResourcePackageRequest.cc
-	src/model/CreateResourcePackageResult.cc
-	src/model/GetCustomerAccountInfoRequest.cc
-	src/model/GetCustomerAccountInfoResult.cc
-	src/model/QueryInstanceBillRequest.cc
-	src/model/QueryInstanceBillResult.cc
-	src/model/SetResellerUserAlarmThresholdRequest.cc
-	src/model/SetResellerUserAlarmThresholdResult.cc
-	src/model/QueryBillRequest.cc
-	src/model/QueryBillResult.cc
-	src/model/SetRenewalRequest.cc
-	src/model/SetRenewalResult.cc
-	src/model/CreateAgAccountRequest.cc
-	src/model/CreateAgAccountResult.cc
-	src/model/ConvertChargeTypeRequest.cc
-	src/model/ConvertChargeTypeResult.cc
-	src/model/QueryBillOverviewRequest.cc
-	src/model/QueryBillOverviewResult.cc
-	src/model/QuerySettlementBillRequest.cc
-	src/model/QuerySettlementBillResult.cc
-	src/model/QueryUserOmsDataRequest.cc
-	src/model/QueryUserOmsDataResult.cc )
+	src/model/UpgradeResourcePackageResult.cc )
 
 add_library(bssopenapi ${LIB_TYPE}
 	${bssopenapi_public_header}

@@ -25,17 +25,6 @@ DeleteDrdsDBRequest::DeleteDrdsDBRequest() :
 DeleteDrdsDBRequest::~DeleteDrdsDBRequest()
 {}
 
-std::string DeleteDrdsDBRequest::getDbName()const
-{
-	return dbName_;
-}
-
-void DeleteDrdsDBRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
-}
-
 std::string DeleteDrdsDBRequest::getDrdsInstanceId()const
 {
 	return drdsInstanceId_;
@@ -56,5 +45,16 @@ void DeleteDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteDrdsDBRequest::getDbName()const
+{
+	return dbName_;
+}
+
+void DeleteDrdsDBRequest::setDbName(const std::string& dbName)
+{
+	dbName_ = dbName;
+	setCoreParameter("DbName", dbName);
 }
 

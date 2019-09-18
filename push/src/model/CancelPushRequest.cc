@@ -36,17 +36,6 @@ void CancelPushRequest::setMessageId(long messageId)
 	setCoreParameter("MessageId", std::to_string(messageId));
 }
 
-long CancelPushRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void CancelPushRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string CancelPushRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void CancelPushRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long CancelPushRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void CancelPushRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 

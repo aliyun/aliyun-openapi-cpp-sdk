@@ -36,17 +36,6 @@ void ReportMinuteRequest::setBeginDate(const std::string& beginDate)
 	setCoreParameter("BeginDate", beginDate);
 }
 
-std::string ReportMinuteRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void ReportMinuteRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
-}
-
 std::string ReportMinuteRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +56,16 @@ void ReportMinuteRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
 	setCoreParameter("Agsid", std::to_string(agsid));
+}
+
+std::string ReportMinuteRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void ReportMinuteRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
 }
 

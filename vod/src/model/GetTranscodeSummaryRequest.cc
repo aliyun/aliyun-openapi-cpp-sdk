@@ -58,17 +58,6 @@ void GetTranscodeSummaryRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string GetTranscodeSummaryRequest::getVideoIds()const
-{
-	return videoIds_;
-}
-
-void GetTranscodeSummaryRequest::setVideoIds(const std::string& videoIds)
-{
-	videoIds_ = videoIds;
-	setCoreParameter("VideoIds", videoIds);
-}
-
 std::string GetTranscodeSummaryRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +67,16 @@ void GetTranscodeSummaryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetTranscodeSummaryRequest::getVideoIds()const
+{
+	return videoIds_;
+}
+
+void GetTranscodeSummaryRequest::setVideoIds(const std::string& videoIds)
+{
+	videoIds_ = videoIds;
+	setCoreParameter("VideoIds", videoIds);
 }
 

@@ -36,6 +36,28 @@ void UpdateTerrorismPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpdateTerrorismPipelineRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateTerrorismPipelineRequest::getState()const
+{
+	return state_;
+}
+
+void UpdateTerrorismPipelineRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
 std::string UpdateTerrorismPipelineRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,28 +78,6 @@ void UpdateTerrorismPipelineRequest::setOwnerAccount(const std::string& ownerAcc
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string UpdateTerrorismPipelineRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateTerrorismPipelineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string UpdateTerrorismPipelineRequest::getState()const
-{
-	return state_;
-}
-
-void UpdateTerrorismPipelineRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
 }
 
 std::string UpdateTerrorismPipelineRequest::getNotifyConfig()const
@@ -113,17 +113,6 @@ void UpdateTerrorismPipelineRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string UpdateTerrorismPipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string UpdateTerrorismPipelineRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,5 +122,16 @@ void UpdateTerrorismPipelineRequest::setPipelineId(const std::string& pipelineId
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string UpdateTerrorismPipelineRequest::getName()const
+{
+	return name_;
+}
+
+void UpdateTerrorismPipelineRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

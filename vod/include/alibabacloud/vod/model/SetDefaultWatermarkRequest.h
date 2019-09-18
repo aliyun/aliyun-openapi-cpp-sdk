@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				SetDefaultWatermarkRequest();
 				~SetDefaultWatermarkRequest();
 
-				std::string getWatermarkId()const;
-				void setWatermarkId(const std::string& watermarkId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getWatermarkId()const;
+				void setWatermarkId(const std::string& watermarkId);
 
             private:
-				std::string watermarkId_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string watermarkId_;
 
 			};
 		}

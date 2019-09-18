@@ -51,42 +51,6 @@ ARMS4FINANCEClient::ARMS4FINANCEClient(const std::string & accessKeyId, const st
 ARMS4FINANCEClient::~ARMS4FINANCEClient()
 {}
 
-ARMS4FINANCEClient::WhereInDimQueryOutcome ARMS4FINANCEClient::whereInDimQuery(const WhereInDimQueryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return WhereInDimQueryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return WhereInDimQueryOutcome(WhereInDimQueryResult(outcome.result()));
-	else
-		return WhereInDimQueryOutcome(outcome.error());
-}
-
-void ARMS4FINANCEClient::whereInDimQueryAsync(const WhereInDimQueryRequest& request, const WhereInDimQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, whereInDimQuery(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ARMS4FINANCEClient::WhereInDimQueryOutcomeCallable ARMS4FINANCEClient::whereInDimQueryCallable(const WhereInDimQueryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<WhereInDimQueryOutcome()>>(
-			[this, request]()
-			{
-			return this->whereInDimQuery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ARMS4FINANCEClient::ARMSQueryDataSetOutcome ARMS4FINANCEClient::aRMSQueryDataSet(const ARMSQueryDataSetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +81,42 @@ ARMS4FINANCEClient::ARMSQueryDataSetOutcomeCallable ARMS4FINANCEClient::aRMSQuer
 			[this, request]()
 			{
 			return this->aRMSQueryDataSet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMS4FINANCEClient::WhereInDimQueryOutcome ARMS4FINANCEClient::whereInDimQuery(const WhereInDimQueryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WhereInDimQueryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WhereInDimQueryOutcome(WhereInDimQueryResult(outcome.result()));
+	else
+		return WhereInDimQueryOutcome(outcome.error());
+}
+
+void ARMS4FINANCEClient::whereInDimQueryAsync(const WhereInDimQueryRequest& request, const WhereInDimQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, whereInDimQuery(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMS4FINANCEClient::WhereInDimQueryOutcomeCallable ARMS4FINANCEClient::whereInDimQueryCallable(const WhereInDimQueryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WhereInDimQueryOutcome()>>(
+			[this, request]()
+			{
+			return this->whereInDimQuery(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

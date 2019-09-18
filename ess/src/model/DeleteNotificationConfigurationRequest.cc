@@ -47,17 +47,6 @@ void DeleteNotificationConfigurationRequest::setScalingGroupId(const std::string
 	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
-std::string DeleteNotificationConfigurationRequest::getNotificationArn()const
-{
-	return notificationArn_;
-}
-
-void DeleteNotificationConfigurationRequest::setNotificationArn(const std::string& notificationArn)
-{
-	notificationArn_ = notificationArn;
-	setCoreParameter("NotificationArn", notificationArn);
-}
-
 long DeleteNotificationConfigurationRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,5 +67,16 @@ void DeleteNotificationConfigurationRequest::setAccessKeyId(const std::string& a
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteNotificationConfigurationRequest::getNotificationArn()const
+{
+	return notificationArn_;
+}
+
+void DeleteNotificationConfigurationRequest::setNotificationArn(const std::string& notificationArn)
+{
+	notificationArn_ = notificationArn;
+	setCoreParameter("NotificationArn", notificationArn);
 }
 

@@ -25,6 +25,28 @@ DeleteProductTagsRequest::DeleteProductTagsRequest() :
 DeleteProductTagsRequest::~DeleteProductTagsRequest()
 {}
 
+std::string DeleteProductTagsRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void DeleteProductTagsRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string DeleteProductTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteProductTagsRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -46,27 +68,5 @@ void DeleteProductTagsRequest::setProductTagKey(const std::vector<std::string>& 
 	productTagKey_ = productTagKey;
 	for(int i = 0; i!= productTagKey.size(); i++)
 		setCoreParameter("ProductTagKey."+ std::to_string(i), productTagKey.at(i));
-}
-
-std::string DeleteProductTagsRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void DeleteProductTagsRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
-std::string DeleteProductTagsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

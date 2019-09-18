@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				DescribeHlsLiveStreamRealTimeBpsDataRequest();
 				~DescribeHlsLiveStreamRealTimeBpsDataRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getTime()const;
-				void setTime(const std::string& time);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getTime()const;
+				void setTime(const std::string& time);
 
             private:
-				std::string regionId_;
 				std::string domainName_;
-				std::string time_;
 				long ownerId_;
+				std::string time_;
 
 			};
 		}

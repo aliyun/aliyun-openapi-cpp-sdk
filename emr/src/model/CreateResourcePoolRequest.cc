@@ -47,28 +47,6 @@ void CreateResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateResourcePoolRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateResourcePoolRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateResourcePoolRequest::getName()const
-{
-	return name_;
-}
-
-void CreateResourcePoolRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 bool CreateResourcePoolRequest::getActive()const
 {
 	return active_;
@@ -102,6 +80,39 @@ void CreateResourcePoolRequest::setYarnSiteConfig(const std::string& yarnSiteCon
 	setCoreParameter("YarnSiteConfig", yarnSiteConfig);
 }
 
+std::string CreateResourcePoolRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateResourcePoolRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateResourcePoolRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateResourcePoolRequest::getName()const
+{
+	return name_;
+}
+
+void CreateResourcePoolRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
 std::vector<CreateResourcePoolRequest::Config> CreateResourcePoolRequest::getConfig()const
 {
 	return config_;
@@ -121,17 +132,6 @@ void CreateResourcePoolRequest::setConfig(const std::vector<Config>& config)
 		setCoreParameter(str + ".ConfigValue", obj.configValue);
 		setCoreParameter(str + ".Category", obj.category);
 	}
-}
-
-std::string CreateResourcePoolRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateResourcePoolRequest::getPoolType()const

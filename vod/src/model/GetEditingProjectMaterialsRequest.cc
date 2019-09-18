@@ -36,6 +36,28 @@ void GetEditingProjectMaterialsRequest::setResourceOwnerId(const std::string& re
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
+std::string GetEditingProjectMaterialsRequest::getType()const
+{
+	return type_;
+}
+
+void GetEditingProjectMaterialsRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string GetEditingProjectMaterialsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetEditingProjectMaterialsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetEditingProjectMaterialsRequest::getMaterialType()const
 {
 	return materialType_;
@@ -45,6 +67,17 @@ void GetEditingProjectMaterialsRequest::setMaterialType(const std::string& mater
 {
 	materialType_ = materialType;
 	setCoreParameter("MaterialType", materialType);
+}
+
+std::string GetEditingProjectMaterialsRequest::getProjectId()const
+{
+	return projectId_;
+}
+
+void GetEditingProjectMaterialsRequest::setProjectId(const std::string& projectId)
+{
+	projectId_ = projectId;
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string GetEditingProjectMaterialsRequest::getResourceOwnerAccount()const
@@ -78,38 +111,5 @@ void GetEditingProjectMaterialsRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
-}
-
-std::string GetEditingProjectMaterialsRequest::getType()const
-{
-	return type_;
-}
-
-void GetEditingProjectMaterialsRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
-std::string GetEditingProjectMaterialsRequest::getProjectId()const
-{
-	return projectId_;
-}
-
-void GetEditingProjectMaterialsRequest::setProjectId(const std::string& projectId)
-{
-	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
-}
-
-std::string GetEditingProjectMaterialsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetEditingProjectMaterialsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

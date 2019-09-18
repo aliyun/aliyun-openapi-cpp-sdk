@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getJsonData()const;
 				void setJsonData(const std::string& jsonData);
-				long getApConfigId()const;
-				void setApConfigId(long apConfigId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getApConfigId()const;
+				void setApConfigId(long apConfigId);
 
             private:
 				std::string jsonData_;
-				long apConfigId_;
 				std::string accessKeyId_;
+				long apConfigId_;
 
 			};
 		}

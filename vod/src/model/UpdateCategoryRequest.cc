@@ -47,17 +47,6 @@ void UpdateCategoryRequest::setResourceOwnerAccount(const std::string& resourceO
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-long UpdateCategoryRequest::getCateId()const
-{
-	return cateId_;
-}
-
-void UpdateCategoryRequest::setCateId(long cateId)
-{
-	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
-}
-
 std::string UpdateCategoryRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,6 +56,17 @@ void UpdateCategoryRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
+}
+
+long UpdateCategoryRequest::getCateId()const
+{
+	return cateId_;
+}
+
+void UpdateCategoryRequest::setCateId(long cateId)
+{
+	cateId_ = cateId;
+	setCoreParameter("CateId", std::to_string(cateId));
 }
 
 std::string UpdateCategoryRequest::getCateName()const

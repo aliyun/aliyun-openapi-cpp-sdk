@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				UpdateFlowRequest();
 				~UpdateFlowRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getRoleArn()const;
 				void setRoleArn(const std::string& roleArn);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				std::string getDefinition()const;
 				void setDefinition(const std::string& definition);
-				std::string getType()const;
-				void setType(const std::string& type);
 
             private:
+				std::string description_;
+				std::string type_;
 				std::string requestId_;
 				std::string roleArn_;
 				std::string name_;
-				std::string description_;
 				std::string definition_;
-				std::string type_;
 
 			};
 		}

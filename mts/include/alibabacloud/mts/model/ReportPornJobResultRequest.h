@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				ReportPornJobResultRequest();
 				~ReportPornJobResultRequest();
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getLabel()const;
 				void setLabel(const std::string& label);
-				std::string getDetail()const;
-				void setDetail(const std::string& detail);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDetail()const;
+				void setDetail(const std::string& detail);
 
             private:
-				std::string jobId_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string jobId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string label_;
-				std::string detail_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string detail_;
 
 			};
 		}

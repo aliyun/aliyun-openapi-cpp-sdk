@@ -25,17 +25,6 @@ ConfigNetworkRequest::ConfigNetworkRequest() :
 ConfigNetworkRequest::~ConfigNetworkRequest()
 {}
 
-std::string ConfigNetworkRequest::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void ConfigNetworkRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
-}
-
 long ConfigNetworkRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void ConfigNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ConfigNetworkRequest::getIp()const
+{
+	return ip_;
+}
+
+void ConfigNetworkRequest::setIp(const std::string& ip)
+{
+	ip_ = ip;
+	setCoreParameter("Ip", ip);
+}
+
+std::string ConfigNetworkRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void ConfigNetworkRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string ConfigNetworkRequest::getInstanceId()const
@@ -78,16 +89,5 @@ void ConfigNetworkRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
 	setCoreParameter("VpcId", vpcId);
-}
-
-std::string ConfigNetworkRequest::getIp()const
-{
-	return ip_;
-}
-
-void ConfigNetworkRequest::setIp(const std::string& ip)
-{
-	ip_ = ip;
-	setCoreParameter("Ip", ip);
 }
 

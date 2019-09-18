@@ -37,35 +37,32 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
-				std::string securityToken_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				std::string zoneId_;
-				long ownerId_;
-				std::string instanceChargeType_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string instanceChargeType_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string zoneId_;
 				std::string orderType_;
 
 			};

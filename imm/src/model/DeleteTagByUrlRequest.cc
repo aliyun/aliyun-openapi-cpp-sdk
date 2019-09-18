@@ -25,17 +25,6 @@ DeleteTagByUrlRequest::DeleteTagByUrlRequest() :
 DeleteTagByUrlRequest::~DeleteTagByUrlRequest()
 {}
 
-std::string DeleteTagByUrlRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteTagByUrlRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteTagByUrlRequest::getProject()const
 {
 	return project_;
@@ -45,6 +34,17 @@ void DeleteTagByUrlRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
+}
+
+std::string DeleteTagByUrlRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteTagByUrlRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteTagByUrlRequest::getSetId()const
@@ -67,16 +67,5 @@ void DeleteTagByUrlRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
 	setCoreParameter("SrcUri", srcUri);
-}
-
-std::string DeleteTagByUrlRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteTagByUrlRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

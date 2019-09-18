@@ -25,17 +25,6 @@ ListFlowClusterHostRequest::ListFlowClusterHostRequest() :
 ListFlowClusterHostRequest::~ListFlowClusterHostRequest()
 {}
 
-std::string ListFlowClusterHostRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListFlowClusterHostRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ListFlowClusterHostRequest::getClusterId()const
 {
 	return clusterId_;
@@ -45,6 +34,17 @@ void ListFlowClusterHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
 	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ListFlowClusterHostRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListFlowClusterHostRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListFlowClusterHostRequest::getProjectId()const

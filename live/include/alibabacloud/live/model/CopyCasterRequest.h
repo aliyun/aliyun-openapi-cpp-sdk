@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				CopyCasterRequest();
 				~CopyCasterRequest();
 
-				std::string getSrcCasterId()const;
-				void setSrcCasterId(const std::string& srcCasterId);
-				std::string getCasterName()const;
-				void setCasterName(const std::string& casterName);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getCasterName()const;
+				void setCasterName(const std::string& casterName);
+				std::string getSrcCasterId()const;
+				void setSrcCasterId(const std::string& srcCasterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string srcCasterId_;
-				std::string casterName_;
 				std::string clientToken_;
+				std::string casterName_;
+				std::string srcCasterId_;
 				long ownerId_;
 
 			};

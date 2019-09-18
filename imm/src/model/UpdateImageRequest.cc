@@ -25,17 +25,6 @@ UpdateImageRequest::UpdateImageRequest() :
 UpdateImageRequest::~UpdateImageRequest()
 {}
 
-std::string UpdateImageRequest::getRemarksB()const
-{
-	return remarksB_;
-}
-
-void UpdateImageRequest::setRemarksB(const std::string& remarksB)
-{
-	remarksB_ = remarksB;
-	setCoreParameter("RemarksB", remarksB);
-}
-
 std::string UpdateImageRequest::getProject()const
 {
 	return project_;
@@ -45,17 +34,6 @@ void UpdateImageRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
-}
-
-std::string UpdateImageRequest::getRemarksA()const
-{
-	return remarksA_;
-}
-
-void UpdateImageRequest::setRemarksA(const std::string& remarksA)
-{
-	remarksA_ = remarksA;
-	setCoreParameter("RemarksA", remarksA);
 }
 
 std::string UpdateImageRequest::getExternalId()const
@@ -80,6 +58,39 @@ void UpdateImageRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string UpdateImageRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void UpdateImageRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setCoreParameter("SourceType", sourceType);
+}
+
+std::string UpdateImageRequest::getRemarksB()const
+{
+	return remarksB_;
+}
+
+void UpdateImageRequest::setRemarksB(const std::string& remarksB)
+{
+	remarksB_ = remarksB;
+	setCoreParameter("RemarksB", remarksB);
+}
+
+std::string UpdateImageRequest::getRemarksA()const
+{
+	return remarksA_;
+}
+
+void UpdateImageRequest::setRemarksA(const std::string& remarksA)
+{
+	remarksA_ = remarksA;
+	setCoreParameter("RemarksA", remarksA);
+}
+
 std::string UpdateImageRequest::getImageUri()const
 {
 	return imageUri_;
@@ -89,17 +100,6 @@ void UpdateImageRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
 	setCoreParameter("ImageUri", imageUri);
-}
-
-std::string UpdateImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateImageRequest::getSourceUri()const
@@ -155,16 +155,5 @@ void UpdateImageRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
 	setCoreParameter("SetId", setId);
-}
-
-std::string UpdateImageRequest::getSourceType()const
-{
-	return sourceType_;
-}
-
-void UpdateImageRequest::setSourceType(const std::string& sourceType)
-{
-	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
 }
 

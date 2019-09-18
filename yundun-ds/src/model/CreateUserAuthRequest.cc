@@ -25,6 +25,17 @@ CreateUserAuthRequest::CreateUserAuthRequest() :
 CreateUserAuthRequest::~CreateUserAuthRequest()
 {}
 
+std::string CreateUserAuthRequest::getAccessKeySecret()const
+{
+	return accessKeySecret_;
+}
+
+void CreateUserAuthRequest::setAccessKeySecret(const std::string& accessKeySecret)
+{
+	accessKeySecret_ = accessKeySecret;
+	setCoreParameter("AccessKeySecret", accessKeySecret);
+}
+
 long CreateUserAuthRequest::getAccountId()const
 {
 	return accountId_;
@@ -56,17 +67,6 @@ void CreateUserAuthRequest::setAccessKey(const std::string& accessKey)
 {
 	accessKey_ = accessKey;
 	setCoreParameter("AccessKey", accessKey);
-}
-
-std::string CreateUserAuthRequest::getAccessKeySecret()const
-{
-	return accessKeySecret_;
-}
-
-void CreateUserAuthRequest::setAccessKeySecret(const std::string& accessKeySecret)
-{
-	accessKeySecret_ = accessKeySecret;
-	setCoreParameter("AccessKeySecret", accessKeySecret);
 }
 
 std::string CreateUserAuthRequest::getLang()const

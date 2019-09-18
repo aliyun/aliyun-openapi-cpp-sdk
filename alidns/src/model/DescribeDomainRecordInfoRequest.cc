@@ -25,6 +25,17 @@ DescribeDomainRecordInfoRequest::DescribeDomainRecordInfoRequest() :
 DescribeDomainRecordInfoRequest::~DescribeDomainRecordInfoRequest()
 {}
 
+std::string DescribeDomainRecordInfoRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDomainRecordInfoRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeDomainRecordInfoRequest::getRecordId()const
 {
 	return recordId_;
@@ -56,16 +67,5 @@ void DescribeDomainRecordInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeDomainRecordInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDomainRecordInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

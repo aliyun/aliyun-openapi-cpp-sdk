@@ -25,17 +25,6 @@ DescribeOrderMaterialRequest::DescribeOrderMaterialRequest() :
 DescribeOrderMaterialRequest::~DescribeOrderMaterialRequest()
 {}
 
-std::string DescribeOrderMaterialRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOrderMaterialRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeOrderMaterialRequest::getOrderId()const
 {
 	return orderId_;
@@ -45,6 +34,28 @@ void DescribeOrderMaterialRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
 	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+std::string DescribeOrderMaterialRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeOrderMaterialRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeOrderMaterialRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOrderMaterialRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOrderMaterialRequest::getLang()const

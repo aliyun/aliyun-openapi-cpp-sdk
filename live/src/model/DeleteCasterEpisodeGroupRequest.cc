@@ -25,17 +25,6 @@ DeleteCasterEpisodeGroupRequest::DeleteCasterEpisodeGroupRequest() :
 DeleteCasterEpisodeGroupRequest::~DeleteCasterEpisodeGroupRequest()
 {}
 
-long DeleteCasterEpisodeGroupRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteCasterEpisodeGroupRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteCasterEpisodeGroupRequest::getProgramId()const
 {
 	return programId_;
@@ -45,5 +34,16 @@ void DeleteCasterEpisodeGroupRequest::setProgramId(const std::string& programId)
 {
 	programId_ = programId;
 	setCoreParameter("ProgramId", programId);
+}
+
+long DeleteCasterEpisodeGroupRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DeleteCasterEpisodeGroupRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

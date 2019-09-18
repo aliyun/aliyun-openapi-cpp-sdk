@@ -25,28 +25,6 @@ QueryRegistrantProfilesRequest::QueryRegistrantProfilesRequest() :
 QueryRegistrantProfilesRequest::~QueryRegistrantProfilesRequest()
 {}
 
-std::string QueryRegistrantProfilesRequest::getRegistrantOrganization()const
-{
-	return registrantOrganization_;
-}
-
-void QueryRegistrantProfilesRequest::setRegistrantOrganization(const std::string& registrantOrganization)
-{
-	registrantOrganization_ = registrantOrganization;
-	setCoreParameter("RegistrantOrganization", registrantOrganization);
-}
-
-std::string QueryRegistrantProfilesRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void QueryRegistrantProfilesRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 long QueryRegistrantProfilesRequest::getRegistrantProfileId()const
 {
 	return registrantProfileId_;
@@ -58,6 +36,17 @@ void QueryRegistrantProfilesRequest::setRegistrantProfileId(long registrantProfi
 	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
+int QueryRegistrantProfilesRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryRegistrantProfilesRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 int QueryRegistrantProfilesRequest::getPageSize()const
 {
 	return pageSize_;
@@ -67,28 +56,6 @@ void QueryRegistrantProfilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string QueryRegistrantProfilesRequest::getRegistrantType()const
-{
-	return registrantType_;
-}
-
-void QueryRegistrantProfilesRequest::setRegistrantType(const std::string& registrantType)
-{
-	registrantType_ = registrantType;
-	setCoreParameter("RegistrantType", registrantType);
-}
-
-std::string QueryRegistrantProfilesRequest::getRegistrantProfileType()const
-{
-	return registrantProfileType_;
-}
-
-void QueryRegistrantProfilesRequest::setRegistrantProfileType(const std::string& registrantProfileType)
-{
-	registrantProfileType_ = registrantProfileType;
-	setCoreParameter("RegistrantProfileType", registrantProfileType);
 }
 
 std::string QueryRegistrantProfilesRequest::getRealNameStatus()const
@@ -113,28 +80,6 @@ void QueryRegistrantProfilesRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-int QueryRegistrantProfilesRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void QueryRegistrantProfilesRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
-}
-
-bool QueryRegistrantProfilesRequest::getDefaultRegistrantProfile()const
-{
-	return defaultRegistrantProfile_;
-}
-
-void QueryRegistrantProfilesRequest::setDefaultRegistrantProfile(bool defaultRegistrantProfile)
-{
-	defaultRegistrantProfile_ = defaultRegistrantProfile;
-	setCoreParameter("DefaultRegistrantProfile", defaultRegistrantProfile ? "true" : "false");
-}
-
 std::string QueryRegistrantProfilesRequest::getEmail()const
 {
 	return email_;
@@ -155,5 +100,60 @@ void QueryRegistrantProfilesRequest::setZhRegistrantOrganization(const std::stri
 {
 	zhRegistrantOrganization_ = zhRegistrantOrganization;
 	setCoreParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
+}
+
+std::string QueryRegistrantProfilesRequest::getRegistrantType()const
+{
+	return registrantType_;
+}
+
+void QueryRegistrantProfilesRequest::setRegistrantType(const std::string& registrantType)
+{
+	registrantType_ = registrantType;
+	setCoreParameter("RegistrantType", registrantType);
+}
+
+std::string QueryRegistrantProfilesRequest::getRegistrantProfileType()const
+{
+	return registrantProfileType_;
+}
+
+void QueryRegistrantProfilesRequest::setRegistrantProfileType(const std::string& registrantProfileType)
+{
+	registrantProfileType_ = registrantProfileType;
+	setCoreParameter("RegistrantProfileType", registrantProfileType);
+}
+
+bool QueryRegistrantProfilesRequest::getDefaultRegistrantProfile()const
+{
+	return defaultRegistrantProfile_;
+}
+
+void QueryRegistrantProfilesRequest::setDefaultRegistrantProfile(bool defaultRegistrantProfile)
+{
+	defaultRegistrantProfile_ = defaultRegistrantProfile;
+	setCoreParameter("DefaultRegistrantProfile", defaultRegistrantProfile ? "true" : "false");
+}
+
+std::string QueryRegistrantProfilesRequest::getRegistrantOrganization()const
+{
+	return registrantOrganization_;
+}
+
+void QueryRegistrantProfilesRequest::setRegistrantOrganization(const std::string& registrantOrganization)
+{
+	registrantOrganization_ = registrantOrganization;
+	setCoreParameter("RegistrantOrganization", registrantOrganization);
+}
+
+std::string QueryRegistrantProfilesRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryRegistrantProfilesRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 

@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
-				std::string getInstanceVpcName()const;
-				void setInstanceVpcName(const std::string& instanceVpcName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceName()const;
-				void setInstanceName(const std::string& instanceName);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				std::string getVirtualSwitchId()const;
 				void setVirtualSwitchId(const std::string& virtualSwitchId);
 				std::string getRegionNo()const;
 				void setRegionNo(const std::string& regionNo);
 				std::string getNetwork()const;
 				void setNetwork(const std::string& network);
+				std::string getInstanceVpcName()const;
+				void setInstanceVpcName(const std::string& instanceVpcName);
+				std::string getInstanceName()const;
+				void setInstanceName(const std::string& instanceName);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
 				std::string access_key_id_;
-				std::string instanceVpcName_;
 				long resourceOwnerId_;
-				std::string instanceName_;
-				std::string vpcId_;
 				std::string virtualSwitchId_;
 				std::string regionNo_;
 				std::string network_;
+				std::string instanceVpcName_;
+				std::string instanceName_;
+				std::string vpcId_;
 
 			};
 		}

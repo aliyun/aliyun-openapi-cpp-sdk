@@ -25,17 +25,6 @@ DeleteLiveDomainRequest::DeleteLiveDomainRequest() :
 DeleteLiveDomainRequest::~DeleteLiveDomainRequest()
 {}
 
-std::string DeleteLiveDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteLiveDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DeleteLiveDomainRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -67,5 +56,16 @@ void DeleteLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteLiveDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteLiveDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

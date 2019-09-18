@@ -25,17 +25,6 @@ DescribeThreatTypeLinesRequest::DescribeThreatTypeLinesRequest() :
 DescribeThreatTypeLinesRequest::~DescribeThreatTypeLinesRequest()
 {}
 
-std::string DescribeThreatTypeLinesRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeThreatTypeLinesRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeThreatTypeLinesRequest::getApiType()const
 {
 	return apiType_;
@@ -45,5 +34,16 @@ void DescribeThreatTypeLinesRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
 	setCoreParameter("ApiType", std::to_string(apiType));
+}
+
+std::string DescribeThreatTypeLinesRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeThreatTypeLinesRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

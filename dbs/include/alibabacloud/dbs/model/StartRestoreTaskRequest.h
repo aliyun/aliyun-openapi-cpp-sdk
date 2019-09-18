@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				StartRestoreTaskRequest();
 				~StartRestoreTaskRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getRestoreTaskId()const;
-				void setRestoreTaskId(const std::string& restoreTaskId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
+				std::string getRestoreTaskId()const;
+				void setRestoreTaskId(const std::string& restoreTaskId);
 
             private:
-				std::string regionId_;
 				std::string clientToken_;
-				std::string restoreTaskId_;
 				std::string ownerId_;
+				std::string restoreTaskId_;
 
 			};
 		}

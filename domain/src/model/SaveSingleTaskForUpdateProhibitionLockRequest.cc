@@ -25,17 +25,6 @@ SaveSingleTaskForUpdateProhibitionLockRequest::SaveSingleTaskForUpdateProhibitio
 SaveSingleTaskForUpdateProhibitionLockRequest::~SaveSingleTaskForUpdateProhibitionLockRequest()
 {}
 
-std::string SaveSingleTaskForUpdateProhibitionLockRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveSingleTaskForUpdateProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SaveSingleTaskForUpdateProhibitionLockRequest::getDomainName()const
 {
 	return domainName_;
@@ -45,6 +34,17 @@ void SaveSingleTaskForUpdateProhibitionLockRequest::setDomainName(const std::str
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+std::string SaveSingleTaskForUpdateProhibitionLockRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveSingleTaskForUpdateProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForUpdateProhibitionLockRequest::getLang()const

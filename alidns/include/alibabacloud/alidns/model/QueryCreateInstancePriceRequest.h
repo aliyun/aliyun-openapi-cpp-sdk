@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				QueryCreateInstancePriceRequest();
 				~QueryCreateInstancePriceRequest();
 
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getMonth()const;
 				void setMonth(int month);
 				std::string getUserClientIp()const;
@@ -43,18 +47,14 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getInstanceVersion()const;
 				void setInstanceVersion(const std::string& instanceVersion);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				long ownerId_;
+				std::string accessKeyId_;
 				int month_;
 				std::string userClientIp_;
 				std::string lang_;
 				std::string instanceVersion_;
-				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -25,28 +25,6 @@ DetectClothesRequest::DetectClothesRequest() :
 DetectClothesRequest::~DetectClothesRequest()
 {}
 
-std::string DetectClothesRequest::getSrcUris()const
-{
-	return srcUris_;
-}
-
-void DetectClothesRequest::setSrcUris(const std::string& srcUris)
-{
-	srcUris_ = srcUris;
-	setCoreParameter("SrcUris", srcUris);
-}
-
-std::string DetectClothesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DetectClothesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DetectClothesRequest::getProject()const
 {
 	return project_;
@@ -67,5 +45,16 @@ void DetectClothesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DetectClothesRequest::getSrcUris()const
+{
+	return srcUris_;
+}
+
+void DetectClothesRequest::setSrcUris(const std::string& srcUris)
+{
+	srcUris_ = srcUris;
+	setCoreParameter("SrcUris", srcUris);
 }
 

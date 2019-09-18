@@ -47,17 +47,6 @@ void GetRepoTagsRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string GetRepoTagsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoTagsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int GetRepoTagsRequest::getPageSize()const
 {
 	return pageSize_;

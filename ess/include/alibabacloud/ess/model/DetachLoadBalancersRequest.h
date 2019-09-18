@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DetachLoadBalancersRequest();
 				~DetachLoadBalancersRequest();
 
+				std::string getScalingGroupId()const;
+				void setScalingGroupId(const std::string& scalingGroupId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::vector<std::string> getLoadBalancer()const;
 				void setLoadBalancer(const std::vector<std::string>& loadBalancer);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getScalingGroupId()const;
-				void setScalingGroupId(const std::string& scalingGroupId);
-				bool getForceDetach()const;
-				void setForceDetach(bool forceDetach);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				bool getForceDetach()const;
+				void setForceDetach(bool forceDetach);
 
             private:
+				std::string scalingGroupId_;
+				std::string accessKeyId_;
 				std::vector<std::string> loadBalancer_;
 				std::string resourceOwnerAccount_;
-				std::string scalingGroupId_;
-				bool forceDetach_;
 				long ownerId_;
-				std::string accessKeyId_;
+				bool forceDetach_;
 
 			};
 		}

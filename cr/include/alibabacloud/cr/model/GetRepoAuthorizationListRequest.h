@@ -39,15 +39,12 @@ namespace AlibabaCloud
 				void setRepoNamespace(const std::string& repoNamespace);
 				std::string getRepoName()const;
 				void setRepoName(const std::string& repoName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getAuthorize()const;
 				void setAuthorize(const std::string& authorize);
 
             private:
 				std::string repoNamespace_;
 				std::string repoName_;
-				std::string regionId_;
 				std::string authorize_;
 
 			};

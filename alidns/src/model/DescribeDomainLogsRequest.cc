@@ -25,17 +25,6 @@ DescribeDomainLogsRequest::DescribeDomainLogsRequest() :
 DescribeDomainLogsRequest::~DescribeDomainLogsRequest()
 {}
 
-std::string DescribeDomainLogsRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void DescribeDomainLogsRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
-}
-
 std::string DescribeDomainLogsRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,6 +34,50 @@ void DescribeDomainLogsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeDomainLogsRequest::getStartDate()const
+{
+	return startDate_;
+}
+
+void DescribeDomainLogsRequest::setStartDate(const std::string& startDate)
+{
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
+}
+
+std::string DescribeDomainLogsRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeDomainLogsRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+long DescribeDomainLogsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDomainLogsRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeDomainLogsRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void DescribeDomainLogsRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeDomainLogsRequest::getUserClientIp()const
@@ -89,38 +122,5 @@ void DescribeDomainLogsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
 	setCoreParameter("KeyWord", keyWord);
-}
-
-std::string DescribeDomainLogsRequest::getStartDate()const
-{
-	return startDate_;
-}
-
-void DescribeDomainLogsRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
-}
-
-std::string DescribeDomainLogsRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeDomainLogsRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
-long DescribeDomainLogsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeDomainLogsRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

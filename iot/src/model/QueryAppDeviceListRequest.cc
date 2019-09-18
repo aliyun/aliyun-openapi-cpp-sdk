@@ -25,6 +25,34 @@ QueryAppDeviceListRequest::QueryAppDeviceListRequest() :
 QueryAppDeviceListRequest::~QueryAppDeviceListRequest()
 {}
 
+int QueryAppDeviceListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryAppDeviceListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::vector<QueryAppDeviceListRequest::TagList> QueryAppDeviceListRequest::getTagList()const
+{
+	return tagList_;
+}
+
+void QueryAppDeviceListRequest::setTagList(const std::vector<TagList>& tagList)
+{
+	tagList_ = tagList;
+	int i = 0;
+	for(int i = 0; i!= tagList.size(); i++)	{
+		auto obj = tagList.at(i);
+		std::string str ="TagList."+ std::to_string(i);
+		setCoreParameter(str + ".TagName", obj.tagName);
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+	}
+}
+
 std::vector<std::string> QueryAppDeviceListRequest::getProductKeyList()const
 {
 	return productKeyList_;
@@ -71,17 +99,6 @@ void QueryAppDeviceListRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int QueryAppDeviceListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryAppDeviceListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string QueryAppDeviceListRequest::getAppKey()const
 {
 	return appKey_;
@@ -91,22 +108,5 @@ void QueryAppDeviceListRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
 	setCoreParameter("AppKey", appKey);
-}
-
-std::vector<QueryAppDeviceListRequest::TagList> QueryAppDeviceListRequest::getTagList()const
-{
-	return tagList_;
-}
-
-void QueryAppDeviceListRequest::setTagList(const std::vector<TagList>& tagList)
-{
-	tagList_ = tagList;
-	int i = 0;
-	for(int i = 0; i!= tagList.size(); i++)	{
-		auto obj = tagList.at(i);
-		std::string str ="TagList."+ std::to_string(i);
-		setCoreParameter(str + ".TagName", obj.tagName);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-	}
 }
 

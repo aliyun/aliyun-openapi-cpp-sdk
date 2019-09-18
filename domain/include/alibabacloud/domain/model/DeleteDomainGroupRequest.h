@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeleteDomainGroupRequest();
 				~DeleteDomainGroupRequest();
 
+				long getDomainGroupId()const;
+				void setDomainGroupId(long domainGroupId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getDomainGroupId()const;
-				void setDomainGroupId(long domainGroupId);
 
             private:
+				long domainGroupId_;
 				std::string userClientIp_;
 				std::string lang_;
-				long domainGroupId_;
 
 			};
 		}

@@ -36,6 +36,17 @@ void AddZoneRequest::setProxyPattern(const std::string& proxyPattern)
 	setCoreParameter("ProxyPattern", proxyPattern);
 }
 
+std::string AddZoneRequest::getZoneName()const
+{
+	return zoneName_;
+}
+
+void AddZoneRequest::setZoneName(const std::string& zoneName)
+{
+	zoneName_ = zoneName;
+	setCoreParameter("ZoneName", zoneName);
+}
+
 std::string AddZoneRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -67,16 +78,5 @@ void AddZoneRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string AddZoneRequest::getZoneName()const
-{
-	return zoneName_;
-}
-
-void AddZoneRequest::setZoneName(const std::string& zoneName)
-{
-	zoneName_ = zoneName;
-	setCoreParameter("ZoneName", zoneName);
 }
 

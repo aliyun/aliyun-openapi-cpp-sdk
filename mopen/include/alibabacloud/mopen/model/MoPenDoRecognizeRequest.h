@@ -37,14 +37,14 @@ namespace AlibabaCloud
 
 				long getCanvasId()const;
 				void setCanvasId(long canvasId);
-				int getEndY()const;
-				void setEndY(int endY);
-				int getEndX()const;
-				void setEndX(int endX);
 				std::string getJsonConf()const;
 				void setJsonConf(const std::string& jsonConf);
 				std::string getExportType()const;
 				void setExportType(const std::string& exportType);
+				int getEndY()const;
+				void setEndY(int endY);
+				int getEndX()const;
+				void setEndX(int endX);
 				int getStartY()const;
 				void setStartY(int startY);
 				int getStartX()const;
@@ -52,10 +52,10 @@ namespace AlibabaCloud
 
             private:
 				long canvasId_;
-				int endY_;
-				int endX_;
 				std::string jsonConf_;
 				std::string exportType_;
+				int endY_;
+				int endX_;
 				int startY_;
 				int startX_;
 

@@ -36,17 +36,6 @@ void OnsMessagePushRequest::setClientId(const std::string& clientId)
 	setCoreParameter("ClientId", clientId);
 }
 
-std::string OnsMessagePushRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsMessagePushRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsMessagePushRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,6 +56,17 @@ void OnsMessagePushRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
 	setCoreParameter("MsgId", msgId);
+}
+
+std::string OnsMessagePushRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsMessagePushRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMessagePushRequest::getTopic()const

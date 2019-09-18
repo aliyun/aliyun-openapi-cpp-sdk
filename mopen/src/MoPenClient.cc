@@ -51,72 +51,144 @@ MoPenClient::MoPenClient(const std::string & accessKeyId, const std::string & ac
 MoPenClient::~MoPenClient()
 {}
 
-MoPenClient::MopenCreateGroupOutcome MoPenClient::mopenCreateGroup(const MopenCreateGroupRequest &request) const
+MoPenClient::MoPenAddGroupMemberOutcome MoPenClient::moPenAddGroupMember(const MoPenAddGroupMemberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return MopenCreateGroupOutcome(endpointOutcome.error());
+		return MoPenAddGroupMemberOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return MopenCreateGroupOutcome(MopenCreateGroupResult(outcome.result()));
+		return MoPenAddGroupMemberOutcome(MoPenAddGroupMemberResult(outcome.result()));
 	else
-		return MopenCreateGroupOutcome(outcome.error());
+		return MoPenAddGroupMemberOutcome(outcome.error());
 }
 
-void MoPenClient::mopenCreateGroupAsync(const MopenCreateGroupRequest& request, const MopenCreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MoPenClient::moPenAddGroupMemberAsync(const MoPenAddGroupMemberRequest& request, const MoPenAddGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, mopenCreateGroup(request), context);
+		handler(this, request, moPenAddGroupMember(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MoPenClient::MopenCreateGroupOutcomeCallable MoPenClient::mopenCreateGroupCallable(const MopenCreateGroupRequest &request) const
+MoPenClient::MoPenAddGroupMemberOutcomeCallable MoPenClient::moPenAddGroupMemberCallable(const MoPenAddGroupMemberRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<MopenCreateGroupOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<MoPenAddGroupMemberOutcome()>>(
 			[this, request]()
 			{
-			return this->mopenCreateGroup(request);
+			return this->moPenAddGroupMember(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-MoPenClient::MoPenQueryCanvasOutcome MoPenClient::moPenQueryCanvas(const MoPenQueryCanvasRequest &request) const
+MoPenClient::MoPenBindIsvOutcome MoPenClient::moPenBindIsv(const MoPenBindIsvRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return MoPenQueryCanvasOutcome(endpointOutcome.error());
+		return MoPenBindIsvOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return MoPenQueryCanvasOutcome(MoPenQueryCanvasResult(outcome.result()));
+		return MoPenBindIsvOutcome(MoPenBindIsvResult(outcome.result()));
 	else
-		return MoPenQueryCanvasOutcome(outcome.error());
+		return MoPenBindIsvOutcome(outcome.error());
 }
 
-void MoPenClient::moPenQueryCanvasAsync(const MoPenQueryCanvasRequest& request, const MoPenQueryCanvasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MoPenClient::moPenBindIsvAsync(const MoPenBindIsvRequest& request, const MoPenBindIsvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, moPenQueryCanvas(request), context);
+		handler(this, request, moPenBindIsv(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MoPenClient::MoPenQueryCanvasOutcomeCallable MoPenClient::moPenQueryCanvasCallable(const MoPenQueryCanvasRequest &request) const
+MoPenClient::MoPenBindIsvOutcomeCallable MoPenClient::moPenBindIsvCallable(const MoPenBindIsvRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<MoPenQueryCanvasOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<MoPenBindIsvOutcome()>>(
 			[this, request]()
 			{
-			return this->moPenQueryCanvas(request);
+			return this->moPenBindIsv(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MoPenClient::MoPenCreateDeviceOutcome MoPenClient::moPenCreateDevice(const MoPenCreateDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoPenCreateDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoPenCreateDeviceOutcome(MoPenCreateDeviceResult(outcome.result()));
+	else
+		return MoPenCreateDeviceOutcome(outcome.error());
+}
+
+void MoPenClient::moPenCreateDeviceAsync(const MoPenCreateDeviceRequest& request, const MoPenCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moPenCreateDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MoPenClient::MoPenCreateDeviceOutcomeCallable MoPenClient::moPenCreateDeviceCallable(const MoPenCreateDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoPenCreateDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->moPenCreateDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MoPenClient::MoPenDeleteGroupOutcome MoPenClient::moPenDeleteGroup(const MoPenDeleteGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoPenDeleteGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoPenDeleteGroupOutcome(MoPenDeleteGroupResult(outcome.result()));
+	else
+		return MoPenDeleteGroupOutcome(outcome.error());
+}
+
+void MoPenClient::moPenDeleteGroupAsync(const MoPenDeleteGroupRequest& request, const MoPenDeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moPenDeleteGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MoPenClient::MoPenDeleteGroupOutcomeCallable MoPenClient::moPenDeleteGroupCallable(const MoPenDeleteGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoPenDeleteGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->moPenDeleteGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,108 +267,72 @@ MoPenClient::MoPenDoRecognizeOutcomeCallable MoPenClient::moPenDoRecognizeCallab
 	return task->get_future();
 }
 
-MoPenClient::MoPenBindIsvOutcome MoPenClient::moPenBindIsv(const MoPenBindIsvRequest &request) const
+MoPenClient::MoPenFindGroupOutcome MoPenClient::moPenFindGroup(const MoPenFindGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return MoPenBindIsvOutcome(endpointOutcome.error());
+		return MoPenFindGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return MoPenBindIsvOutcome(MoPenBindIsvResult(outcome.result()));
+		return MoPenFindGroupOutcome(MoPenFindGroupResult(outcome.result()));
 	else
-		return MoPenBindIsvOutcome(outcome.error());
+		return MoPenFindGroupOutcome(outcome.error());
 }
 
-void MoPenClient::moPenBindIsvAsync(const MoPenBindIsvRequest& request, const MoPenBindIsvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MoPenClient::moPenFindGroupAsync(const MoPenFindGroupRequest& request, const MoPenFindGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, moPenBindIsv(request), context);
+		handler(this, request, moPenFindGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MoPenClient::MoPenBindIsvOutcomeCallable MoPenClient::moPenBindIsvCallable(const MoPenBindIsvRequest &request) const
+MoPenClient::MoPenFindGroupOutcomeCallable MoPenClient::moPenFindGroupCallable(const MoPenFindGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<MoPenBindIsvOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<MoPenFindGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->moPenBindIsv(request);
+			return this->moPenFindGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-MoPenClient::MoPenAddGroupMemberOutcome MoPenClient::moPenAddGroupMember(const MoPenAddGroupMemberRequest &request) const
+MoPenClient::MoPenQueryCanvasOutcome MoPenClient::moPenQueryCanvas(const MoPenQueryCanvasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return MoPenAddGroupMemberOutcome(endpointOutcome.error());
+		return MoPenQueryCanvasOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return MoPenAddGroupMemberOutcome(MoPenAddGroupMemberResult(outcome.result()));
+		return MoPenQueryCanvasOutcome(MoPenQueryCanvasResult(outcome.result()));
 	else
-		return MoPenAddGroupMemberOutcome(outcome.error());
+		return MoPenQueryCanvasOutcome(outcome.error());
 }
 
-void MoPenClient::moPenAddGroupMemberAsync(const MoPenAddGroupMemberRequest& request, const MoPenAddGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MoPenClient::moPenQueryCanvasAsync(const MoPenQueryCanvasRequest& request, const MoPenQueryCanvasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, moPenAddGroupMember(request), context);
+		handler(this, request, moPenQueryCanvas(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MoPenClient::MoPenAddGroupMemberOutcomeCallable MoPenClient::moPenAddGroupMemberCallable(const MoPenAddGroupMemberRequest &request) const
+MoPenClient::MoPenQueryCanvasOutcomeCallable MoPenClient::moPenQueryCanvasCallable(const MoPenQueryCanvasRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<MoPenAddGroupMemberOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<MoPenQueryCanvasOutcome()>>(
 			[this, request]()
 			{
-			return this->moPenAddGroupMember(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MoPenClient::MoPenCreateDeviceOutcome MoPenClient::moPenCreateDevice(const MoPenCreateDeviceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MoPenCreateDeviceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MoPenCreateDeviceOutcome(MoPenCreateDeviceResult(outcome.result()));
-	else
-		return MoPenCreateDeviceOutcome(outcome.error());
-}
-
-void MoPenClient::moPenCreateDeviceAsync(const MoPenCreateDeviceRequest& request, const MoPenCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, moPenCreateDevice(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MoPenClient::MoPenCreateDeviceOutcomeCallable MoPenClient::moPenCreateDeviceCallable(const MoPenCreateDeviceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MoPenCreateDeviceOutcome()>>(
-			[this, request]()
-			{
-			return this->moPenCreateDevice(request);
+			return this->moPenQueryCanvas(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,72 +375,36 @@ MoPenClient::MoPenSendMqttMessageOutcomeCallable MoPenClient::moPenSendMqttMessa
 	return task->get_future();
 }
 
-MoPenClient::MoPenFindGroupOutcome MoPenClient::moPenFindGroup(const MoPenFindGroupRequest &request) const
+MoPenClient::MopenCreateGroupOutcome MoPenClient::mopenCreateGroup(const MopenCreateGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return MoPenFindGroupOutcome(endpointOutcome.error());
+		return MopenCreateGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return MoPenFindGroupOutcome(MoPenFindGroupResult(outcome.result()));
+		return MopenCreateGroupOutcome(MopenCreateGroupResult(outcome.result()));
 	else
-		return MoPenFindGroupOutcome(outcome.error());
+		return MopenCreateGroupOutcome(outcome.error());
 }
 
-void MoPenClient::moPenFindGroupAsync(const MoPenFindGroupRequest& request, const MoPenFindGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MoPenClient::mopenCreateGroupAsync(const MopenCreateGroupRequest& request, const MopenCreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, moPenFindGroup(request), context);
+		handler(this, request, mopenCreateGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MoPenClient::MoPenFindGroupOutcomeCallable MoPenClient::moPenFindGroupCallable(const MoPenFindGroupRequest &request) const
+MoPenClient::MopenCreateGroupOutcomeCallable MoPenClient::mopenCreateGroupCallable(const MopenCreateGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<MoPenFindGroupOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<MopenCreateGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->moPenFindGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MoPenClient::MoPenDeleteGroupOutcome MoPenClient::moPenDeleteGroup(const MoPenDeleteGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MoPenDeleteGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MoPenDeleteGroupOutcome(MoPenDeleteGroupResult(outcome.result()));
-	else
-		return MoPenDeleteGroupOutcome(outcome.error());
-}
-
-void MoPenClient::moPenDeleteGroupAsync(const MoPenDeleteGroupRequest& request, const MoPenDeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, moPenDeleteGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MoPenClient::MoPenDeleteGroupOutcomeCallable MoPenClient::moPenDeleteGroupCallable(const MoPenDeleteGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MoPenDeleteGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->moPenDeleteGroup(request);
+			return this->mopenCreateGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

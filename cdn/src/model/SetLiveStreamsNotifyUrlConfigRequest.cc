@@ -25,17 +25,6 @@ SetLiveStreamsNotifyUrlConfigRequest::SetLiveStreamsNotifyUrlConfigRequest() :
 SetLiveStreamsNotifyUrlConfigRequest::~SetLiveStreamsNotifyUrlConfigRequest()
 {}
 
-std::string SetLiveStreamsNotifyUrlConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetLiveStreamsNotifyUrlConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -47,17 +36,6 @@ void SetLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& doma
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyUrl()const
-{
-	return notifyUrl_;
-}
-
-void SetLiveStreamsNotifyUrlConfigRequest::setNotifyUrl(const std::string& notifyUrl)
-{
-	notifyUrl_ = notifyUrl;
-	setCoreParameter("NotifyUrl", notifyUrl);
-}
-
 long SetLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +45,27 @@ void SetLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetLiveStreamsNotifyUrlConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyUrl()const
+{
+	return notifyUrl_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setNotifyUrl(const std::string& notifyUrl)
+{
+	notifyUrl_ = notifyUrl;
+	setCoreParameter("NotifyUrl", notifyUrl);
 }
 

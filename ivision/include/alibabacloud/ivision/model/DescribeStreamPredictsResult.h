@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string modelIds;
 					std::string predictId;
+					std::string detectIntervals;
 				};
 
 

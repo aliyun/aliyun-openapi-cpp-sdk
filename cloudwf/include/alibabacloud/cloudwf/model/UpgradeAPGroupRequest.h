@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				UpgradeAPGroupRequest();
 				~UpgradeAPGroupRequest();
 
-				std::vector<long> getIds()const;
-				void setIds(const std::vector<long>& ids);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::vector<long> getIds()const;
+				void setIds(const std::vector<long>& ids);
 
             private:
-				std::vector<long> ids_;
 				std::string accessKeyId_;
+				std::vector<long> ids_;
 
 			};
 		}

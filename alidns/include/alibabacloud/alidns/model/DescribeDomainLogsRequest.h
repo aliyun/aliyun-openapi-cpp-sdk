@@ -35,10 +35,16 @@ namespace AlibabaCloud
 				DescribeDomainLogsRequest();
 				~DescribeDomainLogsRequest();
 
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getStartDate()const;
+				void setStartDate(const std::string& startDate);
+				std::string getType()const;
+				void setType(const std::string& type);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				long getPageSize()const;
@@ -47,23 +53,17 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getKeyWord()const;
 				void setKeyWord(const std::string& keyWord);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
-				std::string getType()const;
-				void setType(const std::string& type);
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
 
             private:
-				std::string endDate_;
 				std::string groupId_;
+				std::string startDate_;
+				std::string type_;
+				long pageNumber_;
+				std::string endDate_;
 				std::string userClientIp_;
 				long pageSize_;
 				std::string lang_;
 				std::string keyWord_;
-				std::string startDate_;
-				std::string type_;
-				long pageNumber_;
 
 			};
 		}

@@ -25,14 +25,3 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
 CreateNamespaceRequest::~CreateNamespaceRequest()
 {}
 
-std::string CreateNamespaceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateNamespaceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

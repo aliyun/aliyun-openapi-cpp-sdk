@@ -25,6 +25,28 @@ ReportTagJobResultRequest::ReportTagJobResultRequest() :
 ReportTagJobResultRequest::~ReportTagJobResultRequest()
 {}
 
+long ReportTagJobResultRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void ReportTagJobResultRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ReportTagJobResultRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReportTagJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ReportTagJobResultRequest::getResult()const
 {
 	return result_;
@@ -47,15 +69,15 @@ void ReportTagJobResultRequest::setJobId(const std::string& jobId)
 	setCoreParameter("JobId", jobId);
 }
 
-long ReportTagJobResultRequest::getResourceOwnerId()const
+std::string ReportTagJobResultRequest::getTag()const
 {
-	return resourceOwnerId_;
+	return tag_;
 }
 
-void ReportTagJobResultRequest::setResourceOwnerId(long resourceOwnerId)
+void ReportTagJobResultRequest::setTag(const std::string& tag)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	tag_ = tag;
+	setCoreParameter("Tag", tag);
 }
 
 std::string ReportTagJobResultRequest::getResourceOwnerAccount()const
@@ -80,17 +102,6 @@ void ReportTagJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ReportTagJobResultRequest::getTag()const
-{
-	return tag_;
-}
-
-void ReportTagJobResultRequest::setTag(const std::string& tag)
-{
-	tag_ = tag;
-	setCoreParameter("Tag", tag);
-}
-
 long ReportTagJobResultRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void ReportTagJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ReportTagJobResultRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ReportTagJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

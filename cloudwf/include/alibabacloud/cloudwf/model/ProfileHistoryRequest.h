@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ProfileHistoryRequest();
 				~ProfileHistoryRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				long getAgsid()const;
+				void setAgsid(long agsid);
 				long getIdtype()const;
 				void setIdtype(long idtype);
 				std::string getEndMonth()const;
 				void setEndMonth(const std::string& endMonth);
 				std::string getBeginMonth()const;
 				void setBeginMonth(const std::string& beginMonth);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				long getAgsid()const;
-				void setAgsid(long agsid);
 
             private:
+				std::string accessKeyId_;
+				long agsid_;
 				long idtype_;
 				std::string endMonth_;
 				std::string beginMonth_;
-				std::string accessKeyId_;
-				long agsid_;
 
 			};
 		}

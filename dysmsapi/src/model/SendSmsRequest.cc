@@ -25,17 +25,6 @@ SendSmsRequest::SendSmsRequest() :
 SendSmsRequest::~SendSmsRequest()
 {}
 
-std::string SendSmsRequest::getSmsUpExtendCode()const
-{
-	return smsUpExtendCode_;
-}
-
-void SendSmsRequest::setSmsUpExtendCode(const std::string& smsUpExtendCode)
-{
-	smsUpExtendCode_ = smsUpExtendCode;
-	setCoreParameter("SmsUpExtendCode", smsUpExtendCode);
-}
-
 long SendSmsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void SendSmsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SendSmsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SendSmsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SendSmsRequest::getSmsUpExtendCode()const
+{
+	return smsUpExtendCode_;
+}
+
+void SendSmsRequest::setSmsUpExtendCode(const std::string& smsUpExtendCode)
+{
+	smsUpExtendCode_ = smsUpExtendCode;
+	setCoreParameter("SmsUpExtendCode", smsUpExtendCode);
 }
 
 std::string SendSmsRequest::getSignName()const
@@ -80,17 +91,6 @@ void SendSmsRequest::setPhoneNumbers(const std::string& phoneNumbers)
 	setCoreParameter("PhoneNumbers", phoneNumbers);
 }
 
-std::string SendSmsRequest::getOutId()const
-{
-	return outId_;
-}
-
-void SendSmsRequest::setOutId(const std::string& outId)
-{
-	outId_ = outId;
-	setCoreParameter("OutId", outId);
-}
-
 long SendSmsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,6 +102,17 @@ void SendSmsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string SendSmsRequest::getOutId()const
+{
+	return outId_;
+}
+
+void SendSmsRequest::setOutId(const std::string& outId)
+{
+	outId_ = outId;
+	setCoreParameter("OutId", outId);
+}
+
 std::string SendSmsRequest::getTemplateCode()const
 {
 	return templateCode_;
@@ -111,17 +122,6 @@ void SendSmsRequest::setTemplateCode(const std::string& templateCode)
 {
 	templateCode_ = templateCode;
 	setCoreParameter("TemplateCode", templateCode);
-}
-
-std::string SendSmsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SendSmsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SendSmsRequest::getTemplateParam()const

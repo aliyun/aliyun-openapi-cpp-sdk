@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				OnsMqttQueryClientByTopicRequest();
 				~OnsMqttQueryClientByTopicRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getParentTopic()const;
 				void setParentTopic(const std::string& parentTopic);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getSubTopic()const;
 				void setSubTopic(const std::string& subTopic);
 
             private:
-				std::string instanceId_;
 				std::string parentTopic_;
+				std::string instanceId_;
 				std::string subTopic_;
 
 			};

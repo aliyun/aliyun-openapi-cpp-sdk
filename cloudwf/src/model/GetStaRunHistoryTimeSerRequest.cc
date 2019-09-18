@@ -25,17 +25,6 @@ GetStaRunHistoryTimeSerRequest::GetStaRunHistoryTimeSerRequest() :
 GetStaRunHistoryTimeSerRequest::~GetStaRunHistoryTimeSerRequest()
 {}
 
-long GetStaRunHistoryTimeSerRequest::getId()const
-{
-	return id_;
-}
-
-void GetStaRunHistoryTimeSerRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetStaRunHistoryTimeSerRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetStaRunHistoryTimeSerRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetStaRunHistoryTimeSerRequest::getId()const
+{
+	return id_;
+}
+
+void GetStaRunHistoryTimeSerRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

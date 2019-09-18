@@ -25,17 +25,6 @@ HeadquartersToolsCoincideRequest::HeadquartersToolsCoincideRequest() :
 HeadquartersToolsCoincideRequest::~HeadquartersToolsCoincideRequest()
 {}
 
-long HeadquartersToolsCoincideRequest::getBid()const
-{
-	return bid_;
-}
-
-void HeadquartersToolsCoincideRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string HeadquartersToolsCoincideRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void HeadquartersToolsCoincideRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long HeadquartersToolsCoincideRequest::getBid()const
+{
+	return bid_;
+}
+
+void HeadquartersToolsCoincideRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

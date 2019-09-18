@@ -36,24 +36,6 @@ void IvrCallRequest::setByeCode(const std::string& byeCode)
 	setCoreParameter("ByeCode", byeCode);
 }
 
-std::vector<IvrCallRequest::MenuKeyMap> IvrCallRequest::getMenuKeyMap()const
-{
-	return menuKeyMap_;
-}
-
-void IvrCallRequest::setMenuKeyMap(const std::vector<MenuKeyMap>& menuKeyMap)
-{
-	menuKeyMap_ = menuKeyMap;
-	int i = 0;
-	for(int i = 0; i!= menuKeyMap.size(); i++)	{
-		auto obj = menuKeyMap.at(i);
-		std::string str ="MenuKeyMap."+ std::to_string(i);
-		setCoreParameter(str + ".Code", obj.code);
-		setCoreParameter(str + ".TtsParams", obj.ttsParams);
-		setCoreParameter(str + ".Key", obj.key);
-	}
-}
-
 long IvrCallRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -65,17 +47,6 @@ void IvrCallRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string IvrCallRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void IvrCallRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string IvrCallRequest::getStartTtsParams()const
 {
 	return startTtsParams_;
@@ -85,28 +56,6 @@ void IvrCallRequest::setStartTtsParams(const std::string& startTtsParams)
 {
 	startTtsParams_ = startTtsParams;
 	setCoreParameter("StartTtsParams", startTtsParams);
-}
-
-long IvrCallRequest::getPlayTimes()const
-{
-	return playTimes_;
-}
-
-void IvrCallRequest::setPlayTimes(long playTimes)
-{
-	playTimes_ = playTimes;
-	setCoreParameter("PlayTimes", std::to_string(playTimes));
-}
-
-long IvrCallRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void IvrCallRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int IvrCallRequest::getTimeout()const
@@ -162,6 +111,57 @@ void IvrCallRequest::setCalledShowNumber(const std::string& calledShowNumber)
 {
 	calledShowNumber_ = calledShowNumber;
 	setCoreParameter("CalledShowNumber", calledShowNumber);
+}
+
+std::vector<IvrCallRequest::MenuKeyMap> IvrCallRequest::getMenuKeyMap()const
+{
+	return menuKeyMap_;
+}
+
+void IvrCallRequest::setMenuKeyMap(const std::vector<MenuKeyMap>& menuKeyMap)
+{
+	menuKeyMap_ = menuKeyMap;
+	int i = 0;
+	for(int i = 0; i!= menuKeyMap.size(); i++)	{
+		auto obj = menuKeyMap.at(i);
+		std::string str ="MenuKeyMap."+ std::to_string(i);
+		setCoreParameter(str + ".Code", obj.code);
+		setCoreParameter(str + ".TtsParams", obj.ttsParams);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
+std::string IvrCallRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void IvrCallRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long IvrCallRequest::getPlayTimes()const
+{
+	return playTimes_;
+}
+
+void IvrCallRequest::setPlayTimes(long playTimes)
+{
+	playTimes_ = playTimes;
+	setCoreParameter("PlayTimes", std::to_string(playTimes));
+}
+
+long IvrCallRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void IvrCallRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string IvrCallRequest::getOutId()const

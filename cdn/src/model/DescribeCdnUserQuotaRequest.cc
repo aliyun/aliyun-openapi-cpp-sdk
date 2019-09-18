@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::DescribeCdnUserQuotaRequest;
 
 DescribeCdnUserQuotaRequest::DescribeCdnUserQuotaRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeCdnUserQuota")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnUserQuota")
 {}
 
 DescribeCdnUserQuotaRequest::~DescribeCdnUserQuotaRequest()
 {}
-
-std::string DescribeCdnUserQuotaRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeCdnUserQuotaRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 long DescribeCdnUserQuotaRequest::getOwnerId()const
 {
@@ -45,5 +34,16 @@ void DescribeCdnUserQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeCdnUserQuotaRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeCdnUserQuotaRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

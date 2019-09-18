@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ReportTaskFailedRequest();
 				~ReportTaskFailedRequest();
 
-				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
 				std::string getCause()const;
 				void setCause(const std::string& cause);
-				std::string getTaskToken()const;
-				void setTaskToken(const std::string& taskToken);
 				std::string getError()const;
 				void setError(const std::string& error);
+				std::string getRequestId()const;
+				void setRequestId(const std::string& requestId);
+				std::string getTaskToken()const;
+				void setTaskToken(const std::string& taskToken);
 
             private:
-				std::string requestId_;
 				std::string cause_;
-				std::string taskToken_;
 				std::string error_;
+				std::string requestId_;
+				std::string taskToken_;
 
 			};
 		}

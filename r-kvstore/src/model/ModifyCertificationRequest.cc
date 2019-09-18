@@ -36,15 +36,15 @@ void ModifyCertificationRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyCertificationRequest::getInstanceId()const
+std::string ModifyCertificationRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void ModifyCertificationRequest::setInstanceId(const std::string& instanceId)
+void ModifyCertificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyCertificationRequest::getSecurityToken()const
@@ -58,6 +58,17 @@ void ModifyCertificationRequest::setSecurityToken(const std::string& securityTok
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+bool ModifyCertificationRequest::getNoCertification()const
+{
+	return noCertification_;
+}
+
+void ModifyCertificationRequest::setNoCertification(bool noCertification)
+{
+	noCertification_ = noCertification;
+	setCoreParameter("NoCertification", noCertification ? "true" : "false");
+}
+
 std::string ModifyCertificationRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +78,6 @@ void ModifyCertificationRequest::setResourceOwnerAccount(const std::string& reso
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyCertificationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyCertificationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyCertificationRequest::getOwnerAccount()const
@@ -102,25 +102,14 @@ void ModifyCertificationRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-bool ModifyCertificationRequest::getNoCertification()const
+std::string ModifyCertificationRequest::getInstanceId()const
 {
-	return noCertification_;
+	return instanceId_;
 }
 
-void ModifyCertificationRequest::setNoCertification(bool noCertification)
+void ModifyCertificationRequest::setInstanceId(const std::string& instanceId)
 {
-	noCertification_ = noCertification;
-	setCoreParameter("NoCertification", noCertification ? "true" : "false");
-}
-
-std::string ModifyCertificationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyCertificationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

@@ -36,17 +36,6 @@ void OnsTrendGroupOutputTpsRequest::setPeriod(long period)
 	setCoreParameter("Period", std::to_string(period));
 }
 
-std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsTrendGroupOutputTpsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
 {
 	return groupId_;
@@ -56,17 +45,6 @@ void OnsTrendGroupOutputTpsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
-}
-
-std::string OnsTrendGroupOutputTpsRequest::getTopic()const
-{
-	return topic_;
-}
-
-void OnsTrendGroupOutputTpsRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setCoreParameter("Topic", topic);
 }
 
 long OnsTrendGroupOutputTpsRequest::getEndTime()const
@@ -100,5 +78,27 @@ void OnsTrendGroupOutputTpsRequest::setType(int type)
 {
 	type_ = type;
 	setCoreParameter("Type", std::to_string(type));
+}
+
+std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsTrendGroupOutputTpsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string OnsTrendGroupOutputTpsRequest::getTopic()const
+{
+	return topic_;
+}
+
+void OnsTrendGroupOutputTpsRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
 }
 

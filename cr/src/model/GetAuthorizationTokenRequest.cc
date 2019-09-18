@@ -25,14 +25,3 @@ GetAuthorizationTokenRequest::GetAuthorizationTokenRequest() :
 GetAuthorizationTokenRequest::~GetAuthorizationTokenRequest()
 {}
 
-std::string GetAuthorizationTokenRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetAuthorizationTokenRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

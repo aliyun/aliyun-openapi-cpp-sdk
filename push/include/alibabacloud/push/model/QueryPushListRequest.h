@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				QueryPushListRequest();
 				~QueryPushListRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				long getAppKey()const;
-				void setAppKey(long appKey);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				long getAppKey()const;
+				void setAppKey(long appKey);
 				int getPage()const;
 				void setPage(int page);
 				std::string getPushType()const;
 				void setPushType(const std::string& pushType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				int pageSize_;
 				std::string endTime_;
-				long appKey_;
 				std::string startTime_;
+				std::string accessKeyId_;
+				int pageSize_;
+				long appKey_;
 				int page_;
 				std::string pushType_;
-				std::string accessKeyId_;
 
 			};
 		}

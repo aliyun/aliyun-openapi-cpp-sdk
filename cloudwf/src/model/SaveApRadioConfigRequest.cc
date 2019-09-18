@@ -25,28 +25,6 @@ SaveApRadioConfigRequest::SaveApRadioConfigRequest() :
 SaveApRadioConfigRequest::~SaveApRadioConfigRequest()
 {}
 
-std::string SaveApRadioConfigRequest::getRequireMode()const
-{
-	return requireMode_;
-}
-
-void SaveApRadioConfigRequest::setRequireMode(const std::string& requireMode)
-{
-	requireMode_ = requireMode;
-	setCoreParameter("RequireMode", requireMode);
-}
-
-std::string SaveApRadioConfigRequest::getHtmode()const
-{
-	return htmode_;
-}
-
-void SaveApRadioConfigRequest::setHtmode(const std::string& htmode)
-{
-	htmode_ = htmode;
-	setCoreParameter("Htmode", htmode);
-}
-
 int SaveApRadioConfigRequest::getFrag()const
 {
 	return frag_;
@@ -80,17 +58,6 @@ void SaveApRadioConfigRequest::setMcastRate(int mcastRate)
 	setCoreParameter("McastRate", std::to_string(mcastRate));
 }
 
-int SaveApRadioConfigRequest::getProbereq()const
-{
-	return probereq_;
-}
-
-void SaveApRadioConfigRequest::setProbereq(int probereq)
-{
-	probereq_ = probereq;
-	setCoreParameter("Probereq", std::to_string(probereq));
-}
-
 int SaveApRadioConfigRequest::getChannel()const
 {
 	return channel_;
@@ -102,17 +69,6 @@ void SaveApRadioConfigRequest::setChannel(int channel)
 	setCoreParameter("Channel", std::to_string(channel));
 }
 
-int SaveApRadioConfigRequest::getShortgi()const
-{
-	return shortgi_;
-}
-
-void SaveApRadioConfigRequest::setShortgi(int shortgi)
-{
-	shortgi_ = shortgi;
-	setCoreParameter("Shortgi", std::to_string(shortgi));
-}
-
 std::string SaveApRadioConfigRequest::getHwmode()const
 {
 	return hwmode_;
@@ -122,28 +78,6 @@ void SaveApRadioConfigRequest::setHwmode(const std::string& hwmode)
 {
 	hwmode_ = hwmode;
 	setCoreParameter("Hwmode", hwmode);
-}
-
-int SaveApRadioConfigRequest::getUapsd()const
-{
-	return uapsd_;
-}
-
-void SaveApRadioConfigRequest::setUapsd(int uapsd)
-{
-	uapsd_ = uapsd;
-	setCoreParameter("Uapsd", std::to_string(uapsd));
-}
-
-int SaveApRadioConfigRequest::getBeaconInt()const
-{
-	return beaconInt_;
-}
-
-void SaveApRadioConfigRequest::setBeaconInt(int beaconInt)
-{
-	beaconInt_ = beaconInt;
-	setCoreParameter("BeaconInt", std::to_string(beaconInt));
 }
 
 std::string SaveApRadioConfigRequest::getMac()const
@@ -166,6 +100,116 @@ void SaveApRadioConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int SaveApRadioConfigRequest::getBcastRate()const
+{
+	return bcastRate_;
+}
+
+void SaveApRadioConfigRequest::setBcastRate(int bcastRate)
+{
+	bcastRate_ = bcastRate;
+	setCoreParameter("BcastRate", std::to_string(bcastRate));
+}
+
+int SaveApRadioConfigRequest::getDisabled()const
+{
+	return disabled_;
+}
+
+void SaveApRadioConfigRequest::setDisabled(int disabled)
+{
+	disabled_ = disabled;
+	setCoreParameter("Disabled", std::to_string(disabled));
+}
+
+long SaveApRadioConfigRequest::getId()const
+{
+	return id_;
+}
+
+void SaveApRadioConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
+}
+
+int SaveApRadioConfigRequest::getRadioIndex()const
+{
+	return radioIndex_;
+}
+
+void SaveApRadioConfigRequest::setRadioIndex(int radioIndex)
+{
+	radioIndex_ = radioIndex;
+	setCoreParameter("RadioIndex", std::to_string(radioIndex));
+}
+
+std::string SaveApRadioConfigRequest::getRequireMode()const
+{
+	return requireMode_;
+}
+
+void SaveApRadioConfigRequest::setRequireMode(const std::string& requireMode)
+{
+	requireMode_ = requireMode;
+	setCoreParameter("RequireMode", requireMode);
+}
+
+std::string SaveApRadioConfigRequest::getHtmode()const
+{
+	return htmode_;
+}
+
+void SaveApRadioConfigRequest::setHtmode(const std::string& htmode)
+{
+	htmode_ = htmode;
+	setCoreParameter("Htmode", htmode);
+}
+
+int SaveApRadioConfigRequest::getProbereq()const
+{
+	return probereq_;
+}
+
+void SaveApRadioConfigRequest::setProbereq(int probereq)
+{
+	probereq_ = probereq;
+	setCoreParameter("Probereq", std::to_string(probereq));
+}
+
+int SaveApRadioConfigRequest::getShortgi()const
+{
+	return shortgi_;
+}
+
+void SaveApRadioConfigRequest::setShortgi(int shortgi)
+{
+	shortgi_ = shortgi;
+	setCoreParameter("Shortgi", std::to_string(shortgi));
+}
+
+int SaveApRadioConfigRequest::getUapsd()const
+{
+	return uapsd_;
+}
+
+void SaveApRadioConfigRequest::setUapsd(int uapsd)
+{
+	uapsd_ = uapsd;
+	setCoreParameter("Uapsd", std::to_string(uapsd));
+}
+
+int SaveApRadioConfigRequest::getBeaconInt()const
+{
+	return beaconInt_;
+}
+
+void SaveApRadioConfigRequest::setBeaconInt(int beaconInt)
+{
+	beaconInt_ = beaconInt;
+	setCoreParameter("BeaconInt", std::to_string(beaconInt));
 }
 
 int SaveApRadioConfigRequest::getRts()const
@@ -201,28 +245,6 @@ void SaveApRadioConfigRequest::setNoscan(int noscan)
 	setCoreParameter("Noscan", std::to_string(noscan));
 }
 
-int SaveApRadioConfigRequest::getBcastRate()const
-{
-	return bcastRate_;
-}
-
-void SaveApRadioConfigRequest::setBcastRate(int bcastRate)
-{
-	bcastRate_ = bcastRate;
-	setCoreParameter("BcastRate", std::to_string(bcastRate));
-}
-
-int SaveApRadioConfigRequest::getDisabled()const
-{
-	return disabled_;
-}
-
-void SaveApRadioConfigRequest::setDisabled(int disabled)
-{
-	disabled_ = disabled;
-	setCoreParameter("Disabled", std::to_string(disabled));
-}
-
 int SaveApRadioConfigRequest::getInstantlyEffective()const
 {
 	return instantlyEffective_;
@@ -232,27 +254,5 @@ void SaveApRadioConfigRequest::setInstantlyEffective(int instantlyEffective)
 {
 	instantlyEffective_ = instantlyEffective;
 	setCoreParameter("InstantlyEffective", std::to_string(instantlyEffective));
-}
-
-long SaveApRadioConfigRequest::getId()const
-{
-	return id_;
-}
-
-void SaveApRadioConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
-int SaveApRadioConfigRequest::getRadioIndex()const
-{
-	return radioIndex_;
-}
-
-void SaveApRadioConfigRequest::setRadioIndex(int radioIndex)
-{
-	radioIndex_ = radioIndex;
-	setCoreParameter("RadioIndex", std::to_string(radioIndex));
 }
 

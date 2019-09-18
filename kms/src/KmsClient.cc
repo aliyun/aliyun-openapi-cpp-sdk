@@ -51,78 +51,6 @@ KmsClient::KmsClient(const std::string & accessKeyId, const std::string & access
 KmsClient::~KmsClient()
 {}
 
-KmsClient::ListAliasesOutcome KmsClient::listAliases(const ListAliasesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListAliasesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListAliasesOutcome(ListAliasesResult(outcome.result()));
-	else
-		return ListAliasesOutcome(outcome.error());
-}
-
-void KmsClient::listAliasesAsync(const ListAliasesRequest& request, const ListAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listAliases(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ListAliasesOutcomeCallable KmsClient::listAliasesCallable(const ListAliasesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListAliasesOutcome()>>(
-			[this, request]()
-			{
-			return this->listAliases(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::GenerateDataKeyOutcome KmsClient::generateDataKey(const GenerateDataKeyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GenerateDataKeyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GenerateDataKeyOutcome(GenerateDataKeyResult(outcome.result()));
-	else
-		return GenerateDataKeyOutcome(outcome.error());
-}
-
-void KmsClient::generateDataKeyAsync(const GenerateDataKeyRequest& request, const GenerateDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, generateDataKey(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::GenerateDataKeyOutcomeCallable KmsClient::generateDataKeyCallable(const GenerateDataKeyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GenerateDataKeyOutcome()>>(
-			[this, request]()
-			{
-			return this->generateDataKey(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 KmsClient::CancelKeyDeletionOutcome KmsClient::cancelKeyDeletion(const CancelKeyDeletionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -159,36 +87,72 @@ KmsClient::CancelKeyDeletionOutcomeCallable KmsClient::cancelKeyDeletionCallable
 	return task->get_future();
 }
 
-KmsClient::DisableKeyOutcome KmsClient::disableKey(const DisableKeyRequest &request) const
+KmsClient::CreateAliasOutcome KmsClient::createAlias(const CreateAliasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DisableKeyOutcome(endpointOutcome.error());
+		return CreateAliasOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DisableKeyOutcome(DisableKeyResult(outcome.result()));
+		return CreateAliasOutcome(CreateAliasResult(outcome.result()));
 	else
-		return DisableKeyOutcome(outcome.error());
+		return CreateAliasOutcome(outcome.error());
 }
 
-void KmsClient::disableKeyAsync(const DisableKeyRequest& request, const DisableKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void KmsClient::createAliasAsync(const CreateAliasRequest& request, const CreateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, disableKey(request), context);
+		handler(this, request, createAlias(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-KmsClient::DisableKeyOutcomeCallable KmsClient::disableKeyCallable(const DisableKeyRequest &request) const
+KmsClient::CreateAliasOutcomeCallable KmsClient::createAliasCallable(const CreateAliasRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DisableKeyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateAliasOutcome()>>(
 			[this, request]()
 			{
-			return this->disableKey(request);
+			return this->createAlias(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::CreateKeyOutcome KmsClient::createKey(const CreateKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateKeyOutcome(CreateKeyResult(outcome.result()));
+	else
+		return CreateKeyOutcome(outcome.error());
+}
+
+void KmsClient::createKeyAsync(const CreateKeyRequest& request, const CreateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::CreateKeyOutcomeCallable KmsClient::createKeyCallable(const CreateKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->createKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,36 +231,36 @@ KmsClient::DeleteAliasOutcomeCallable KmsClient::deleteAliasCallable(const Delet
 	return task->get_future();
 }
 
-KmsClient::TagResourceOutcome KmsClient::tagResource(const TagResourceRequest &request) const
+KmsClient::DeleteKeyMaterialOutcome KmsClient::deleteKeyMaterial(const DeleteKeyMaterialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TagResourceOutcome(endpointOutcome.error());
+		return DeleteKeyMaterialOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TagResourceOutcome(TagResourceResult(outcome.result()));
+		return DeleteKeyMaterialOutcome(DeleteKeyMaterialResult(outcome.result()));
 	else
-		return TagResourceOutcome(outcome.error());
+		return DeleteKeyMaterialOutcome(outcome.error());
 }
 
-void KmsClient::tagResourceAsync(const TagResourceRequest& request, const TagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void KmsClient::deleteKeyMaterialAsync(const DeleteKeyMaterialRequest& request, const DeleteKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, tagResource(request), context);
+		handler(this, request, deleteKeyMaterial(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-KmsClient::TagResourceOutcomeCallable KmsClient::tagResourceCallable(const TagResourceRequest &request) const
+KmsClient::DeleteKeyMaterialOutcomeCallable KmsClient::deleteKeyMaterialCallable(const DeleteKeyMaterialRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TagResourceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteKeyMaterialOutcome()>>(
 			[this, request]()
 			{
-			return this->tagResource(request);
+			return this->deleteKeyMaterial(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,330 +303,6 @@ KmsClient::DescribeKeyOutcomeCallable KmsClient::describeKeyCallable(const Descr
 	return task->get_future();
 }
 
-KmsClient::CreateAliasOutcome KmsClient::createAlias(const CreateAliasRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateAliasOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateAliasOutcome(CreateAliasResult(outcome.result()));
-	else
-		return CreateAliasOutcome(outcome.error());
-}
-
-void KmsClient::createAliasAsync(const CreateAliasRequest& request, const CreateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createAlias(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::CreateAliasOutcomeCallable KmsClient::createAliasCallable(const CreateAliasRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateAliasOutcome()>>(
-			[this, request]()
-			{
-			return this->createAlias(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::DeleteKeyMaterialOutcome KmsClient::deleteKeyMaterial(const DeleteKeyMaterialRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteKeyMaterialOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteKeyMaterialOutcome(DeleteKeyMaterialResult(outcome.result()));
-	else
-		return DeleteKeyMaterialOutcome(outcome.error());
-}
-
-void KmsClient::deleteKeyMaterialAsync(const DeleteKeyMaterialRequest& request, const DeleteKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteKeyMaterial(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::DeleteKeyMaterialOutcomeCallable KmsClient::deleteKeyMaterialCallable(const DeleteKeyMaterialRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteKeyMaterialOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteKeyMaterial(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::ListResourceTagsOutcome KmsClient::listResourceTags(const ListResourceTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListResourceTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListResourceTagsOutcome(ListResourceTagsResult(outcome.result()));
-	else
-		return ListResourceTagsOutcome(outcome.error());
-}
-
-void KmsClient::listResourceTagsAsync(const ListResourceTagsRequest& request, const ListResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listResourceTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ListResourceTagsOutcomeCallable KmsClient::listResourceTagsCallable(const ListResourceTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListResourceTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->listResourceTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::ImportKeyMaterialOutcome KmsClient::importKeyMaterial(const ImportKeyMaterialRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ImportKeyMaterialOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ImportKeyMaterialOutcome(ImportKeyMaterialResult(outcome.result()));
-	else
-		return ImportKeyMaterialOutcome(outcome.error());
-}
-
-void KmsClient::importKeyMaterialAsync(const ImportKeyMaterialRequest& request, const ImportKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, importKeyMaterial(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ImportKeyMaterialOutcomeCallable KmsClient::importKeyMaterialCallable(const ImportKeyMaterialRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ImportKeyMaterialOutcome()>>(
-			[this, request]()
-			{
-			return this->importKeyMaterial(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::EncryptOutcome KmsClient::encrypt(const EncryptRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EncryptOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EncryptOutcome(EncryptResult(outcome.result()));
-	else
-		return EncryptOutcome(outcome.error());
-}
-
-void KmsClient::encryptAsync(const EncryptRequest& request, const EncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, encrypt(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::EncryptOutcomeCallable KmsClient::encryptCallable(const EncryptRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EncryptOutcome()>>(
-			[this, request]()
-			{
-			return this->encrypt(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::UpdateAliasOutcome KmsClient::updateAlias(const UpdateAliasRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateAliasOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateAliasOutcome(UpdateAliasResult(outcome.result()));
-	else
-		return UpdateAliasOutcome(outcome.error());
-}
-
-void KmsClient::updateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateAlias(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::UpdateAliasOutcomeCallable KmsClient::updateAliasCallable(const UpdateAliasRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateAliasOutcome()>>(
-			[this, request]()
-			{
-			return this->updateAlias(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::UntagResourceOutcome KmsClient::untagResource(const UntagResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UntagResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UntagResourceOutcome(UntagResourceResult(outcome.result()));
-	else
-		return UntagResourceOutcome(outcome.error());
-}
-
-void KmsClient::untagResourceAsync(const UntagResourceRequest& request, const UntagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, untagResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::UntagResourceOutcomeCallable KmsClient::untagResourceCallable(const UntagResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UntagResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->untagResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::ListAliasesByKeyIdOutcome KmsClient::listAliasesByKeyId(const ListAliasesByKeyIdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListAliasesByKeyIdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListAliasesByKeyIdOutcome(ListAliasesByKeyIdResult(outcome.result()));
-	else
-		return ListAliasesByKeyIdOutcome(outcome.error());
-}
-
-void KmsClient::listAliasesByKeyIdAsync(const ListAliasesByKeyIdRequest& request, const ListAliasesByKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listAliasesByKeyId(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ListAliasesByKeyIdOutcomeCallable KmsClient::listAliasesByKeyIdCallable(const ListAliasesByKeyIdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListAliasesByKeyIdOutcome()>>(
-			[this, request]()
-			{
-			return this->listAliasesByKeyId(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::EnableKeyOutcome KmsClient::enableKey(const EnableKeyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EnableKeyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EnableKeyOutcome(EnableKeyResult(outcome.result()));
-	else
-		return EnableKeyOutcome(outcome.error());
-}
-
-void KmsClient::enableKeyAsync(const EnableKeyRequest& request, const EnableKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, enableKey(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::EnableKeyOutcomeCallable KmsClient::enableKeyCallable(const EnableKeyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EnableKeyOutcome()>>(
-			[this, request]()
-			{
-			return this->enableKey(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 KmsClient::DescribeRegionsOutcome KmsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,78 +333,6 @@ KmsClient::DescribeRegionsOutcomeCallable KmsClient::describeRegionsCallable(con
 			[this, request]()
 			{
 			return this->describeRegions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::ScheduleKeyDeletionOutcome KmsClient::scheduleKeyDeletion(const ScheduleKeyDeletionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ScheduleKeyDeletionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ScheduleKeyDeletionOutcome(ScheduleKeyDeletionResult(outcome.result()));
-	else
-		return ScheduleKeyDeletionOutcome(outcome.error());
-}
-
-void KmsClient::scheduleKeyDeletionAsync(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, scheduleKeyDeletion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ScheduleKeyDeletionOutcomeCallable KmsClient::scheduleKeyDeletionCallable(const ScheduleKeyDeletionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ScheduleKeyDeletionOutcome()>>(
-			[this, request]()
-			{
-			return this->scheduleKeyDeletion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::ListKeysOutcome KmsClient::listKeys(const ListKeysRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListKeysOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListKeysOutcome(ListKeysResult(outcome.result()));
-	else
-		return ListKeysOutcome(outcome.error());
-}
-
-void KmsClient::listKeysAsync(const ListKeysRequest& request, const ListKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listKeys(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ListKeysOutcomeCallable KmsClient::listKeysCallable(const ListKeysRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListKeysOutcome()>>(
-			[this, request]()
-			{
-			return this->listKeys(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,6 +375,150 @@ KmsClient::DescribeServiceOutcomeCallable KmsClient::describeServiceCallable(con
 	return task->get_future();
 }
 
+KmsClient::DisableKeyOutcome KmsClient::disableKey(const DisableKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableKeyOutcome(DisableKeyResult(outcome.result()));
+	else
+		return DisableKeyOutcome(outcome.error());
+}
+
+void KmsClient::disableKeyAsync(const DisableKeyRequest& request, const DisableKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::DisableKeyOutcomeCallable KmsClient::disableKeyCallable(const DisableKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->disableKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::EnableKeyOutcome KmsClient::enableKey(const EnableKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableKeyOutcome(EnableKeyResult(outcome.result()));
+	else
+		return EnableKeyOutcome(outcome.error());
+}
+
+void KmsClient::enableKeyAsync(const EnableKeyRequest& request, const EnableKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::EnableKeyOutcomeCallable KmsClient::enableKeyCallable(const EnableKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->enableKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::EncryptOutcome KmsClient::encrypt(const EncryptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EncryptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EncryptOutcome(EncryptResult(outcome.result()));
+	else
+		return EncryptOutcome(outcome.error());
+}
+
+void KmsClient::encryptAsync(const EncryptRequest& request, const EncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, encrypt(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::EncryptOutcomeCallable KmsClient::encryptCallable(const EncryptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EncryptOutcome()>>(
+			[this, request]()
+			{
+			return this->encrypt(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::GenerateDataKeyOutcome KmsClient::generateDataKey(const GenerateDataKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateDataKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateDataKeyOutcome(GenerateDataKeyResult(outcome.result()));
+	else
+		return GenerateDataKeyOutcome(outcome.error());
+}
+
+void KmsClient::generateDataKeyAsync(const GenerateDataKeyRequest& request, const GenerateDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateDataKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GenerateDataKeyOutcomeCallable KmsClient::generateDataKeyCallable(const GenerateDataKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateDataKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->generateDataKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::GetParametersForImportOutcome KmsClient::getParametersForImport(const GetParametersForImportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -843,36 +555,324 @@ KmsClient::GetParametersForImportOutcomeCallable KmsClient::getParametersForImpo
 	return task->get_future();
 }
 
-KmsClient::CreateKeyOutcome KmsClient::createKey(const CreateKeyRequest &request) const
+KmsClient::ImportKeyMaterialOutcome KmsClient::importKeyMaterial(const ImportKeyMaterialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateKeyOutcome(endpointOutcome.error());
+		return ImportKeyMaterialOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateKeyOutcome(CreateKeyResult(outcome.result()));
+		return ImportKeyMaterialOutcome(ImportKeyMaterialResult(outcome.result()));
 	else
-		return CreateKeyOutcome(outcome.error());
+		return ImportKeyMaterialOutcome(outcome.error());
 }
 
-void KmsClient::createKeyAsync(const CreateKeyRequest& request, const CreateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void KmsClient::importKeyMaterialAsync(const ImportKeyMaterialRequest& request, const ImportKeyMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createKey(request), context);
+		handler(this, request, importKeyMaterial(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-KmsClient::CreateKeyOutcomeCallable KmsClient::createKeyCallable(const CreateKeyRequest &request) const
+KmsClient::ImportKeyMaterialOutcomeCallable KmsClient::importKeyMaterialCallable(const ImportKeyMaterialRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateKeyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ImportKeyMaterialOutcome()>>(
 			[this, request]()
 			{
-			return this->createKey(request);
+			return this->importKeyMaterial(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListAliasesOutcome KmsClient::listAliases(const ListAliasesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAliasesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAliasesOutcome(ListAliasesResult(outcome.result()));
+	else
+		return ListAliasesOutcome(outcome.error());
+}
+
+void KmsClient::listAliasesAsync(const ListAliasesRequest& request, const ListAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAliases(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListAliasesOutcomeCallable KmsClient::listAliasesCallable(const ListAliasesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAliasesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAliases(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListAliasesByKeyIdOutcome KmsClient::listAliasesByKeyId(const ListAliasesByKeyIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAliasesByKeyIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAliasesByKeyIdOutcome(ListAliasesByKeyIdResult(outcome.result()));
+	else
+		return ListAliasesByKeyIdOutcome(outcome.error());
+}
+
+void KmsClient::listAliasesByKeyIdAsync(const ListAliasesByKeyIdRequest& request, const ListAliasesByKeyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAliasesByKeyId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListAliasesByKeyIdOutcomeCallable KmsClient::listAliasesByKeyIdCallable(const ListAliasesByKeyIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAliasesByKeyIdOutcome()>>(
+			[this, request]()
+			{
+			return this->listAliasesByKeyId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListKeysOutcome KmsClient::listKeys(const ListKeysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListKeysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListKeysOutcome(ListKeysResult(outcome.result()));
+	else
+		return ListKeysOutcome(outcome.error());
+}
+
+void KmsClient::listKeysAsync(const ListKeysRequest& request, const ListKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listKeys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListKeysOutcomeCallable KmsClient::listKeysCallable(const ListKeysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListKeysOutcome()>>(
+			[this, request]()
+			{
+			return this->listKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ListResourceTagsOutcome KmsClient::listResourceTags(const ListResourceTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListResourceTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListResourceTagsOutcome(ListResourceTagsResult(outcome.result()));
+	else
+		return ListResourceTagsOutcome(outcome.error());
+}
+
+void KmsClient::listResourceTagsAsync(const ListResourceTagsRequest& request, const ListResourceTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listResourceTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListResourceTagsOutcomeCallable KmsClient::listResourceTagsCallable(const ListResourceTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListResourceTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listResourceTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ScheduleKeyDeletionOutcome KmsClient::scheduleKeyDeletion(const ScheduleKeyDeletionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScheduleKeyDeletionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScheduleKeyDeletionOutcome(ScheduleKeyDeletionResult(outcome.result()));
+	else
+		return ScheduleKeyDeletionOutcome(outcome.error());
+}
+
+void KmsClient::scheduleKeyDeletionAsync(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, scheduleKeyDeletion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ScheduleKeyDeletionOutcomeCallable KmsClient::scheduleKeyDeletionCallable(const ScheduleKeyDeletionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScheduleKeyDeletionOutcome()>>(
+			[this, request]()
+			{
+			return this->scheduleKeyDeletion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::TagResourceOutcome KmsClient::tagResource(const TagResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourceOutcome(TagResourceResult(outcome.result()));
+	else
+		return TagResourceOutcome(outcome.error());
+}
+
+void KmsClient::tagResourceAsync(const TagResourceRequest& request, const TagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::TagResourceOutcomeCallable KmsClient::tagResourceCallable(const TagResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UntagResourceOutcome KmsClient::untagResource(const UntagResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourceOutcome(UntagResourceResult(outcome.result()));
+	else
+		return UntagResourceOutcome(outcome.error());
+}
+
+void KmsClient::untagResourceAsync(const UntagResourceRequest& request, const UntagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UntagResourceOutcomeCallable KmsClient::untagResourceCallable(const UntagResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdateAliasOutcome KmsClient::updateAlias(const UpdateAliasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAliasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAliasOutcome(UpdateAliasResult(outcome.result()));
+	else
+		return UpdateAliasOutcome(outcome.error());
+}
+
+void KmsClient::updateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAlias(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateAliasOutcomeCallable KmsClient::updateAliasCallable(const UpdateAliasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAliasOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAlias(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -36,6 +36,17 @@ void ModifyActiveOperationTaskRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyActiveOperationTaskRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyActiveOperationTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyActiveOperationTaskRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,50 +56,6 @@ void ModifyActiveOperationTaskRequest::setSecurityToken(const std::string& secur
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ModifyActiveOperationTaskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyActiveOperationTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyActiveOperationTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyActiveOperationTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyActiveOperationTaskRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyActiveOperationTaskRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyActiveOperationTaskRequest::getIds()const
-{
-	return ids_;
-}
-
-void ModifyActiveOperationTaskRequest::setIds(const std::string& ids)
-{
-	ids_ = ids;
-	setCoreParameter("Ids", ids);
 }
 
 std::string ModifyActiveOperationTaskRequest::getSwitchTime()const
@@ -102,6 +69,28 @@ void ModifyActiveOperationTaskRequest::setSwitchTime(const std::string& switchTi
 	setCoreParameter("SwitchTime", switchTime);
 }
 
+std::string ModifyActiveOperationTaskRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyActiveOperationTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyActiveOperationTaskRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyActiveOperationTaskRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ModifyActiveOperationTaskRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +102,14 @@ void ModifyActiveOperationTaskRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyActiveOperationTaskRequest::getAccessKeyId()const
+std::string ModifyActiveOperationTaskRequest::getIds()const
 {
-	return accessKeyId_;
+	return ids_;
 }
 
-void ModifyActiveOperationTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifyActiveOperationTaskRequest::setIds(const std::string& ids)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	ids_ = ids;
+	setCoreParameter("Ids", ids);
 }
 

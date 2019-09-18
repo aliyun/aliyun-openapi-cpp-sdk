@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				CreateConfigurationRequest();
 				~CreateConfigurationRequest();
 
+				std::string getMaxPV()const;
+				void setMaxPV(const std::string& maxPV);
+				std::string getScene()const;
+				void setScene(const std::string& scene);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getConfigurationName()const;
 				void setConfigurationName(const std::string& configurationName);
-				std::string getMaxPV()const;
-				void setMaxPV(const std::string& maxPV);
 				std::string getConfigurationMethod()const;
 				void setConfigurationMethod(const std::string& configurationMethod);
 				std::string getApplyType()const;
 				void setApplyType(const std::string& applyType);
-				std::string getScene()const;
-				void setScene(const std::string& scene);
 
             private:
+				std::string maxPV_;
+				std::string scene_;
 				std::string sourceIp_;
 				std::string configurationName_;
-				std::string maxPV_;
 				std::string configurationMethod_;
 				std::string applyType_;
-				std::string scene_;
 
 			};
 		}

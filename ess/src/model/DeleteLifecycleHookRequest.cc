@@ -25,6 +25,28 @@ DeleteLifecycleHookRequest::DeleteLifecycleHookRequest() :
 DeleteLifecycleHookRequest::~DeleteLifecycleHookRequest()
 {}
 
+std::string DeleteLifecycleHookRequest::getScalingGroupId()const
+{
+	return scalingGroupId_;
+}
+
+void DeleteLifecycleHookRequest::setScalingGroupId(const std::string& scalingGroupId)
+{
+	scalingGroupId_ = scalingGroupId;
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string DeleteLifecycleHookRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteLifecycleHookRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteLifecycleHookRequest::getLifecycleHookName()const
 {
 	return lifecycleHookName_;
@@ -58,17 +80,6 @@ void DeleteLifecycleHookRequest::setLifecycleHookId(const std::string& lifecycle
 	setCoreParameter("LifecycleHookId", lifecycleHookId);
 }
 
-std::string DeleteLifecycleHookRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void DeleteLifecycleHookRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
 std::string DeleteLifecycleHookRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,16 +100,5 @@ void DeleteLifecycleHookRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteLifecycleHookRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteLifecycleHookRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

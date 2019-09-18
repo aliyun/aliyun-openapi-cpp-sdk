@@ -36,15 +36,26 @@ void DestroyInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DestroyInstanceRequest::getInstanceId()const
+std::string DestroyInstanceRequest::getClientToken()const
 {
-	return instanceId_;
+	return clientToken_;
 }
 
-void DestroyInstanceRequest::setInstanceId(const std::string& instanceId)
+void DestroyInstanceRequest::setClientToken(const std::string& clientToken)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string DestroyInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DestroyInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DestroyInstanceRequest::getSecurityToken()const
@@ -58,6 +69,17 @@ void DestroyInstanceRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string DestroyInstanceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DestroyInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
 std::string DestroyInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,28 +89,6 @@ void DestroyInstanceRequest::setResourceOwnerAccount(const std::string& resource
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DestroyInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DestroyInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DestroyInstanceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void DestroyInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DestroyInstanceRequest::getOwnerAccount()const
@@ -102,17 +102,6 @@ void DestroyInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DestroyInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DestroyInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 long DestroyInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,14 +113,14 @@ void DestroyInstanceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DestroyInstanceRequest::getAccessKeyId()const
+std::string DestroyInstanceRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void DestroyInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+void DestroyInstanceRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

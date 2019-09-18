@@ -36,6 +36,17 @@ void DescribePunishListRequest::setSrcIP(const std::string& srcIP)
 	setCoreParameter("SrcIP", srcIP);
 }
 
+std::string DescribePunishListRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribePunishListRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribePunishListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,17 +67,6 @@ void DescribePunishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int DescribePunishListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribePunishListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePunishListRequest::getPunishStatus()const
@@ -102,14 +102,14 @@ void DescribePunishListRequest::setSrcUid(long srcUid)
 	setCoreParameter("SrcUid", std::to_string(srcUid));
 }
 
-std::string DescribePunishListRequest::getSourceCode()const
+int DescribePunishListRequest::getCurrentPage()const
 {
-	return sourceCode_;
+	return currentPage_;
 }
 
-void DescribePunishListRequest::setSourceCode(const std::string& sourceCode)
+void DescribePunishListRequest::setCurrentPage(int currentPage)
 {
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

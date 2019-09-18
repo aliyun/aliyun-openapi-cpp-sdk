@@ -36,6 +36,17 @@ void SaveUmengPagePermission4RootRequest::setGsPermission(const std::string& gsP
 	setCoreParameter("GsPermission", gsPermission);
 }
 
+std::string SaveUmengPagePermission4RootRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SaveUmengPagePermission4RootRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 long SaveUmengPagePermission4RootRequest::getAliyunPk()const
 {
 	return aliyunPk_;
@@ -78,16 +89,5 @@ void SaveUmengPagePermission4RootRequest::setBid(long bid)
 {
 	bid_ = bid;
 	setCoreParameter("Bid", std::to_string(bid));
-}
-
-std::string SaveUmengPagePermission4RootRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SaveUmengPagePermission4RootRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

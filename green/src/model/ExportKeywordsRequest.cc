@@ -25,17 +25,6 @@ ExportKeywordsRequest::ExportKeywordsRequest() :
 ExportKeywordsRequest::~ExportKeywordsRequest()
 {}
 
-std::string ExportKeywordsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ExportKeywordsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long ExportKeywordsRequest::getKeywordLibId()const
 {
 	return keywordLibId_;
@@ -45,5 +34,16 @@ void ExportKeywordsRequest::setKeywordLibId(long keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
 	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+}
+
+std::string ExportKeywordsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ExportKeywordsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeviceBatchCreateRequest();
 				~DeviceBatchCreateRequest();
 
-				std::string getSn()const;
-				void setSn(const std::string& sn);
 				int getDeviceType()const;
 				void setDeviceType(int deviceType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSn()const;
+				void setSn(const std::string& sn);
 
             private:
-				std::string sn_;
 				int deviceType_;
 				std::string accessKeyId_;
+				std::string sn_;
 
 			};
 		}

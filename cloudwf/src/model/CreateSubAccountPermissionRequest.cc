@@ -25,17 +25,6 @@ CreateSubAccountPermissionRequest::CreateSubAccountPermissionRequest() :
 CreateSubAccountPermissionRequest::~CreateSubAccountPermissionRequest()
 {}
 
-long CreateSubAccountPermissionRequest::getUid()const
-{
-	return uid_;
-}
-
-void CreateSubAccountPermissionRequest::setUid(long uid)
-{
-	uid_ = uid;
-	setCoreParameter("Uid", std::to_string(uid));
-}
-
 std::vector<long> CreateSubAccountPermissionRequest::getShopGroupIds()const
 {
 	return shopGroupIds_;
@@ -46,6 +35,28 @@ void CreateSubAccountPermissionRequest::setShopGroupIds(const std::vector<long>&
 	shopGroupIds_ = shopGroupIds;
 	for(int i = 0; i!= shopGroupIds.size(); i++)
 		setCoreParameter("ShopGroupIds."+ std::to_string(i), std::to_string(shopGroupIds.at(i)));
+}
+
+std::string CreateSubAccountPermissionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long CreateSubAccountPermissionRequest::getUid()const
+{
+	return uid_;
+}
+
+void CreateSubAccountPermissionRequest::setUid(long uid)
+{
+	uid_ = uid;
+	setCoreParameter("Uid", std::to_string(uid));
 }
 
 std::vector<long> CreateSubAccountPermissionRequest::getShopIds()const
@@ -69,17 +80,6 @@ void CreateSubAccountPermissionRequest::setPagePermission(const std::string& pag
 {
 	pagePermission_ = pagePermission;
 	setCoreParameter("PagePermission", pagePermission);
-}
-
-std::string CreateSubAccountPermissionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int CreateSubAccountPermissionRequest::getPermissionType()const

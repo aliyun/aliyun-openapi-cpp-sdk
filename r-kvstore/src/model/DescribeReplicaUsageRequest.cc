@@ -36,26 +36,15 @@ void DescribeReplicaUsageRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeReplicaUsageRequest::getSourceDBInstanceId()const
+std::string DescribeReplicaUsageRequest::getAccessKeyId()const
 {
-	return sourceDBInstanceId_;
+	return accessKeyId_;
 }
 
-void DescribeReplicaUsageRequest::setSourceDBInstanceId(const std::string& sourceDBInstanceId)
+void DescribeReplicaUsageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	sourceDBInstanceId_ = sourceDBInstanceId;
-	setCoreParameter("SourceDBInstanceId", sourceDBInstanceId);
-}
-
-std::string DescribeReplicaUsageRequest::getDestinationDBInstanceId()const
-{
-	return destinationDBInstanceId_;
-}
-
-void DescribeReplicaUsageRequest::setDestinationDBInstanceId(const std::string& destinationDBInstanceId)
-{
-	destinationDBInstanceId_ = destinationDBInstanceId;
-	setCoreParameter("DestinationDBInstanceId", destinationDBInstanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeReplicaUsageRequest::getSecurityToken()const
@@ -69,6 +58,28 @@ void DescribeReplicaUsageRequest::setSecurityToken(const std::string& securityTo
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeReplicaUsageRequest::getReplicaId()const
+{
+	return replicaId_;
+}
+
+void DescribeReplicaUsageRequest::setReplicaId(const std::string& replicaId)
+{
+	replicaId_ = replicaId;
+	setCoreParameter("ReplicaId", replicaId);
+}
+
+std::string DescribeReplicaUsageRequest::getDestinationDBInstanceId()const
+{
+	return destinationDBInstanceId_;
+}
+
+void DescribeReplicaUsageRequest::setDestinationDBInstanceId(const std::string& destinationDBInstanceId)
+{
+	destinationDBInstanceId_ = destinationDBInstanceId;
+	setCoreParameter("DestinationDBInstanceId", destinationDBInstanceId);
+}
+
 std::string DescribeReplicaUsageRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -78,17 +89,6 @@ void DescribeReplicaUsageRequest::setResourceOwnerAccount(const std::string& res
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeReplicaUsageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeReplicaUsageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeReplicaUsageRequest::getOwnerAccount()const
@@ -102,17 +102,6 @@ void DescribeReplicaUsageRequest::setOwnerAccount(const std::string& ownerAccoun
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeReplicaUsageRequest::getReplicaId()const
-{
-	return replicaId_;
-}
-
-void DescribeReplicaUsageRequest::setReplicaId(const std::string& replicaId)
-{
-	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
-}
-
 long DescribeReplicaUsageRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,14 +113,14 @@ void DescribeReplicaUsageRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeReplicaUsageRequest::getAccessKeyId()const
+std::string DescribeReplicaUsageRequest::getSourceDBInstanceId()const
 {
-	return accessKeyId_;
+	return sourceDBInstanceId_;
 }
 
-void DescribeReplicaUsageRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeReplicaUsageRequest::setSourceDBInstanceId(const std::string& sourceDBInstanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	sourceDBInstanceId_ = sourceDBInstanceId;
+	setCoreParameter("SourceDBInstanceId", sourceDBInstanceId);
 }
 

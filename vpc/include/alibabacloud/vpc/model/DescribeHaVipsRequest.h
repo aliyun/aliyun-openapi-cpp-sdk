@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			{
 				struct Filter
 				{
-					std::vector<std::string> value;
+					Value value;
 					std::string key;
 				};
 

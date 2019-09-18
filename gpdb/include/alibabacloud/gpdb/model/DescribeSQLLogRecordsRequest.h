@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				DescribeSQLLogRecordsRequest();
 				~DescribeSQLLogRecordsRequest();
 
-				std::string getDatabase()const;
-				void setDatabase(const std::string& database);
-				std::string getForm()const;
-				void setForm(const std::string& form);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getUser()const;
-				void setUser(const std::string& user);
 				std::string getQueryKeywords()const;
 				void setQueryKeywords(const std::string& queryKeywords);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDatabase()const;
+				void setDatabase(const std::string& database);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getForm()const;
+				void setForm(const std::string& form);
+				std::string getUser()const;
+				void setUser(const std::string& user);
 
             private:
-				std::string database_;
-				std::string form_;
-				int pageSize_;
-				std::string endTime_;
-				std::string dBInstanceId_;
 				std::string startTime_;
-				std::string user_;
 				std::string queryKeywords_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string database_;
+				int pageSize_;
+				std::string dBInstanceId_;
+				std::string endTime_;
+				std::string form_;
+				std::string user_;
 
 			};
 		}

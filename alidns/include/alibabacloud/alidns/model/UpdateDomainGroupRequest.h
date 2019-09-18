@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getGroupName()const;
+				void setGroupName(const std::string& groupName);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
 
             private:
 				std::string groupId_;
+				std::string groupName_;
 				std::string userClientIp_;
 				std::string lang_;
-				std::string groupName_;
 
 			};
 		}

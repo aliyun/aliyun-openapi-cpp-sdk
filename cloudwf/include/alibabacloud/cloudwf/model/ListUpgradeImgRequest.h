@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				int getLength()const;
 				void setLength(int length);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
 
             private:
 				int length_;
-				int pageIndex_;
 				std::string accessKeyId_;
+				int pageIndex_;
 
 			};
 		}

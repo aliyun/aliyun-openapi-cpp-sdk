@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				DescribeGtmLogsRequest();
 				~DescribeGtmLogsRequest();
 
+				long getStartTimestamp()const;
+				void setStartTimestamp(long startTimestamp);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				long getEndTimestamp()const;
+				void setEndTimestamp(long endTimestamp);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getUserClientIp()const;
@@ -45,22 +51,16 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
-				long getStartTimestamp()const;
-				void setStartTimestamp(long startTimestamp);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				long getEndTimestamp()const;
-				void setEndTimestamp(long endTimestamp);
 
             private:
+				long startTimestamp_;
+				int pageNumber_;
+				long endTimestamp_;
 				std::string instanceId_;
 				std::string userClientIp_;
 				int pageSize_;
 				std::string lang_;
 				std::string keyword_;
-				long startTimestamp_;
-				int pageNumber_;
-				long endTimestamp_;
 
 			};
 		}

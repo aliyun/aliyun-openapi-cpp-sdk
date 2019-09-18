@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DeleteCdnIpRequest();
 				~DeleteCdnIpRequest();
 
-				int getItemId()const;
-				void setItemId(int itemId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
+				int getItemId()const;
+				void setItemId(int itemId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getCdnIp()const;
 				void setCdnIp(const std::string& cdnIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
 
             private:
-				int itemId_;
 				long resourceOwnerId_;
+				std::string sourceCode_;
+				int itemId_;
 				std::string sourceIp_;
 				std::string cdnIp_;
 				std::string lang_;
-				std::string sourceCode_;
 
 			};
 		}

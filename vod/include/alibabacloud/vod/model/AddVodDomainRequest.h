@@ -39,10 +39,10 @@ namespace AlibabaCloud
 				void setSources(const std::string& sources);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getScope()const;
 				void setScope(const std::string& scope);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
             private:
 				std::string sources_;
 				std::string securityToken_;
-				std::string ownerAccount_;
 				std::string scope_;
+				std::string ownerAccount_;
 				std::string domainName_;
 				long ownerId_;
 				std::string checkUrl_;

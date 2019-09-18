@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ListFlowProjectUserRequest();
 				~ListFlowProjectUserRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				int pageNumber_;
 				std::string regionId_;
 				int pageSize_;
 				std::string projectId_;
-				int pageNumber_;
 
 			};
 		}

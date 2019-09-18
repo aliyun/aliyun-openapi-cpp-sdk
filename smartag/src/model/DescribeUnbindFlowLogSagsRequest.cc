@@ -47,17 +47,6 @@ void DescribeUnbindFlowLogSagsRequest::setResourceOwnerAccount(const std::string
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeUnbindFlowLogSagsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeUnbindFlowLogSagsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeUnbindFlowLogSagsRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,5 +67,16 @@ void DescribeUnbindFlowLogSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeUnbindFlowLogSagsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeUnbindFlowLogSagsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

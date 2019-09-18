@@ -25,6 +25,17 @@ DeleteDomainRecordRequest::DeleteDomainRecordRequest() :
 DeleteDomainRecordRequest::~DeleteDomainRecordRequest()
 {}
 
+std::string DeleteDomainRecordRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteDomainRecordRequest::getRecordId()const
 {
 	return recordId_;
@@ -56,16 +67,5 @@ void DeleteDomainRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DeleteDomainRecordRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

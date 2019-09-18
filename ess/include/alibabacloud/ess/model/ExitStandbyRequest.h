@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ExitStandbyRequest();
 				~ExitStandbyRequest();
 
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupId()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::vector<std::string> getInstanceId()const;
+				void setInstanceId(const std::vector<std::string>& instanceId);
 
             private:
-				std::vector<std::string> instanceId_;
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupId_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::vector<std::string> instanceId_;
 
 			};
 		}

@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DescribeDepartTotalCountRequest();
 				~DescribeDepartTotalCountRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				int featureType_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

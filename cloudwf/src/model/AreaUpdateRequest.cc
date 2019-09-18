@@ -25,6 +25,28 @@ AreaUpdateRequest::AreaUpdateRequest() :
 AreaUpdateRequest::~AreaUpdateRequest()
 {}
 
+std::string AreaUpdateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AreaUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long AreaUpdateRequest::getSid()const
+{
+	return sid_;
+}
+
+void AreaUpdateRequest::setSid(long sid)
+{
+	sid_ = sid;
+	setCoreParameter("Sid", std::to_string(sid));
+}
+
 std::string AreaUpdateRequest::getName()const
 {
 	return name_;
@@ -56,27 +78,5 @@ void AreaUpdateRequest::setAid(long aid)
 {
 	aid_ = aid;
 	setCoreParameter("Aid", std::to_string(aid));
-}
-
-std::string AreaUpdateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AreaUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-long AreaUpdateRequest::getSid()const
-{
-	return sid_;
-}
-
-void AreaUpdateRequest::setSid(long sid)
-{
-	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
 }
 

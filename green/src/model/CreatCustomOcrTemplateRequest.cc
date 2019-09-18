@@ -25,6 +25,17 @@ CreatCustomOcrTemplateRequest::CreatCustomOcrTemplateRequest() :
 CreatCustomOcrTemplateRequest::~CreatCustomOcrTemplateRequest()
 {}
 
+std::string CreatCustomOcrTemplateRequest::getRecognizeArea()const
+{
+	return recognizeArea_;
+}
+
+void CreatCustomOcrTemplateRequest::setRecognizeArea(const std::string& recognizeArea)
+{
+	recognizeArea_ = recognizeArea;
+	setCoreParameter("RecognizeArea", recognizeArea);
+}
+
 std::string CreatCustomOcrTemplateRequest::getImgUrl()const
 {
 	return imgUrl_;
@@ -56,17 +67,6 @@ void CreatCustomOcrTemplateRequest::setReferArea(const std::string& referArea)
 {
 	referArea_ = referArea;
 	setCoreParameter("ReferArea", referArea);
-}
-
-std::string CreatCustomOcrTemplateRequest::getRecognizeArea()const
-{
-	return recognizeArea_;
-}
-
-void CreatCustomOcrTemplateRequest::setRecognizeArea(const std::string& recognizeArea)
-{
-	recognizeArea_ = recognizeArea;
-	setCoreParameter("RecognizeArea", recognizeArea);
 }
 
 std::string CreatCustomOcrTemplateRequest::getName()const

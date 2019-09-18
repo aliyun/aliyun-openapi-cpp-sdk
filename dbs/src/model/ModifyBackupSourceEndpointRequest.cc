@@ -80,17 +80,6 @@ void ModifyBackupSourceEndpointRequest::setClientToken(const std::string& client
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string ModifyBackupSourceEndpointRequest::getSourceEndpointPassword()const
-{
-	return sourceEndpointPassword_;
-}
-
-void ModifyBackupSourceEndpointRequest::setSourceEndpointPassword(const std::string& sourceEndpointPassword)
-{
-	sourceEndpointPassword_ = sourceEndpointPassword;
-	setCoreParameter("SourceEndpointPassword", sourceEndpointPassword);
-}
-
 std::string ModifyBackupSourceEndpointRequest::getBackupPlanId()const
 {
 	return backupPlanId_;
@@ -100,6 +89,39 @@ void ModifyBackupSourceEndpointRequest::setBackupPlanId(const std::string& backu
 {
 	backupPlanId_ = backupPlanId;
 	setCoreParameter("BackupPlanId", backupPlanId);
+}
+
+std::string ModifyBackupSourceEndpointRequest::getSourceEndpointDatabaseName()const
+{
+	return sourceEndpointDatabaseName_;
+}
+
+void ModifyBackupSourceEndpointRequest::setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName)
+{
+	sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
+	setCoreParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
+}
+
+std::string ModifyBackupSourceEndpointRequest::getSourceEndpointIP()const
+{
+	return sourceEndpointIP_;
+}
+
+void ModifyBackupSourceEndpointRequest::setSourceEndpointIP(const std::string& sourceEndpointIP)
+{
+	sourceEndpointIP_ = sourceEndpointIP;
+	setCoreParameter("SourceEndpointIP", sourceEndpointIP);
+}
+
+std::string ModifyBackupSourceEndpointRequest::getSourceEndpointPassword()const
+{
+	return sourceEndpointPassword_;
+}
+
+void ModifyBackupSourceEndpointRequest::setSourceEndpointPassword(const std::string& sourceEndpointPassword)
+{
+	sourceEndpointPassword_ = sourceEndpointPassword;
+	setCoreParameter("SourceEndpointPassword", sourceEndpointPassword);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getBackupObjects()const
@@ -135,17 +157,6 @@ void ModifyBackupSourceEndpointRequest::setSourceEndpointPort(int sourceEndpoint
 	setCoreParameter("SourceEndpointPort", std::to_string(sourceEndpointPort));
 }
 
-std::string ModifyBackupSourceEndpointRequest::getSourceEndpointDatabaseName()const
-{
-	return sourceEndpointDatabaseName_;
-}
-
-void ModifyBackupSourceEndpointRequest::setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName)
-{
-	sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
-	setCoreParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
-}
-
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceType()const
 {
 	return sourceEndpointInstanceType_;
@@ -155,28 +166,6 @@ void ModifyBackupSourceEndpointRequest::setSourceEndpointInstanceType(const std:
 {
 	sourceEndpointInstanceType_ = sourceEndpointInstanceType;
 	setCoreParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
-}
-
-std::string ModifyBackupSourceEndpointRequest::getSourceEndpointIP()const
-{
-	return sourceEndpointIP_;
-}
-
-void ModifyBackupSourceEndpointRequest::setSourceEndpointIP(const std::string& sourceEndpointIP)
-{
-	sourceEndpointIP_ = sourceEndpointIP;
-	setCoreParameter("SourceEndpointIP", sourceEndpointIP);
-}
-
-std::string ModifyBackupSourceEndpointRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyBackupSourceEndpointRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointOracleSID()const

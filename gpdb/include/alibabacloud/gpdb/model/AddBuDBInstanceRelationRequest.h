@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				AddBuDBInstanceRelationRequest();
 				~AddBuDBInstanceRelationRequest();
 
-				std::string getBusinessUnit()const;
-				void setBusinessUnit(const std::string& businessUnit);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getBusinessUnit()const;
+				void setBusinessUnit(const std::string& businessUnit);
 
             private:
-				std::string businessUnit_;
+				std::string accessKeyId_;
 				std::string dBInstanceId_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string businessUnit_;
 
 			};
 		}

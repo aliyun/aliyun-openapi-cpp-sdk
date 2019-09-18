@@ -25,6 +25,28 @@ CancelQualificationVerificationRequest::CancelQualificationVerificationRequest()
 CancelQualificationVerificationRequest::~CancelQualificationVerificationRequest()
 {}
 
+std::string CancelQualificationVerificationRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CancelQualificationVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CancelQualificationVerificationRequest::getQualificationType()const
+{
+	return qualificationType_;
+}
+
+void CancelQualificationVerificationRequest::setQualificationType(const std::string& qualificationType)
+{
+	qualificationType_ = qualificationType;
+	setCoreParameter("QualificationType", qualificationType);
+}
+
 std::string CancelQualificationVerificationRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,27 +78,5 @@ void CancelQualificationVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string CancelQualificationVerificationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CancelQualificationVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CancelQualificationVerificationRequest::getQualificationType()const
-{
-	return qualificationType_;
-}
-
-void CancelQualificationVerificationRequest::setQualificationType(const std::string& qualificationType)
-{
-	qualificationType_ = qualificationType;
-	setCoreParameter("QualificationType", qualificationType);
 }
 

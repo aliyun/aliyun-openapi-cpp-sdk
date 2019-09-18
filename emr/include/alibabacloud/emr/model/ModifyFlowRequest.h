@@ -37,30 +37,18 @@ namespace AlibabaCloud
 
 				std::string getCronExpr()const;
 				void setCronExpr(const std::string& cronExpr);
-				std::string getParentFlowList()const;
-				void setParentFlowList(const std::string& parentFlowList);
-				std::string getAlertDingDingGroupBizId()const;
-				void setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId);
 				bool getPeriodic()const;
 				void setPeriodic(bool periodic);
-				long getStartSchedule()const;
-				void setStartSchedule(long startSchedule);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				std::string getAlertUserGroupBizId()const;
 				void setAlertUserGroupBizId(const std::string& alertUserGroupBizId);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
-				std::string getApplication()const;
-				void setApplication(const std::string& application);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				bool getCreateCluster()const;
 				void setCreateCluster(bool createCluster);
-				std::string getName()const;
-				void setName(const std::string& name);
 				long getEndSchedule()const;
 				void setEndSchedule(long endSchedule);
 				std::string getId()const;
@@ -69,6 +57,18 @@ namespace AlibabaCloud
 				void setAlertConf(const std::string& alertConf);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
+				std::string getParentFlowList()const;
+				void setParentFlowList(const std::string& parentFlowList);
+				std::string getAlertDingDingGroupBizId()const;
+				void setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId);
+				long getStartSchedule()const;
+				void setStartSchedule(long startSchedule);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getApplication()const;
+				void setApplication(const std::string& application);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 				std::string getParentCategory()const;
@@ -76,22 +76,22 @@ namespace AlibabaCloud
 
             private:
 				std::string cronExpr_;
-				std::string parentFlowList_;
-				std::string alertDingDingGroupBizId_;
 				bool periodic_;
-				long startSchedule_;
 				std::string description_;
-				std::string clusterId_;
 				std::string alertUserGroupBizId_;
 				std::string hostName_;
-				std::string application_;
 				std::string regionId_;
 				bool createCluster_;
-				std::string name_;
 				long endSchedule_;
 				std::string id_;
 				std::string alertConf_;
 				std::string projectId_;
+				std::string parentFlowList_;
+				std::string alertDingDingGroupBizId_;
+				long startSchedule_;
+				std::string clusterId_;
+				std::string application_;
+				std::string name_;
 				std::string status_;
 				std::string parentCategory_;
 

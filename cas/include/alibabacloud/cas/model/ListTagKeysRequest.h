@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ListTagKeysRequest();
 				~ListTagKeysRequest();
 
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
 
             private:
+				int currentPage_;
+				std::string resourceType_;
 				std::string sourceIp_;
 				std::string regionId_;
 				int pageSize_;
-				int currentPage_;
-				std::string resourceType_;
 
 			};
 		}

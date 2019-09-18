@@ -36,6 +36,28 @@ void AddWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddWatermarkRequest::getType()const
+{
+	return type_;
+}
+
+void AddWatermarkRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string AddWatermarkRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddWatermarkRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -45,6 +67,28 @@ void AddWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwn
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long AddWatermarkRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void AddWatermarkRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AddWatermarkRequest::getWatermarkConfig()const
+{
+	return watermarkConfig_;
+}
+
+void AddWatermarkRequest::setWatermarkConfig(const std::string& watermarkConfig)
+{
+	watermarkConfig_ = watermarkConfig;
+	setCoreParameter("WatermarkConfig", watermarkConfig);
 }
 
 std::string AddWatermarkRequest::getAppId()const
@@ -78,49 +122,5 @@ void AddWatermarkRequest::setFileUrl(const std::string& fileUrl)
 {
 	fileUrl_ = fileUrl;
 	setCoreParameter("FileUrl", fileUrl);
-}
-
-long AddWatermarkRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddWatermarkRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AddWatermarkRequest::getType()const
-{
-	return type_;
-}
-
-void AddWatermarkRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
-std::string AddWatermarkRequest::getWatermarkConfig()const
-{
-	return watermarkConfig_;
-}
-
-void AddWatermarkRequest::setWatermarkConfig(const std::string& watermarkConfig)
-{
-	watermarkConfig_ = watermarkConfig;
-	setCoreParameter("WatermarkConfig", watermarkConfig);
-}
-
-std::string AddWatermarkRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

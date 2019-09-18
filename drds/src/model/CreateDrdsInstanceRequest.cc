@@ -36,17 +36,6 @@ void CreateDrdsInstanceRequest::setIsAutoRenew(bool isAutoRenew)
 	setCoreParameter("IsAutoRenew", isAutoRenew ? "true" : "false");
 }
 
-int CreateDrdsInstanceRequest::getQuantity()const
-{
-	return quantity_;
-}
-
-void CreateDrdsInstanceRequest::setQuantity(int quantity)
-{
-	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
-}
-
 std::string CreateDrdsInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -69,17 +58,6 @@ void CreateDrdsInstanceRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-std::string CreateDrdsInstanceRequest::getSpecification()const
-{
-	return specification_;
-}
-
-void CreateDrdsInstanceRequest::setSpecification(const std::string& specification)
-{
-	specification_ = specification;
-	setCoreParameter("Specification", specification);
-}
-
 std::string CreateDrdsInstanceRequest::getType()const
 {
 	return type_;
@@ -100,17 +78,6 @@ void CreateDrdsInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateDrdsInstanceRequest::getVswitchId()const
-{
-	return vswitchId_;
-}
-
-void CreateDrdsInstanceRequest::setVswitchId(const std::string& vswitchId)
-{
-	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", vswitchId);
 }
 
 int CreateDrdsInstanceRequest::getDuration()const
@@ -155,6 +122,39 @@ void CreateDrdsInstanceRequest::setInstanceSeries(const std::string& instanceSer
 {
 	instanceSeries_ = instanceSeries;
 	setCoreParameter("InstanceSeries", instanceSeries);
+}
+
+int CreateDrdsInstanceRequest::getQuantity()const
+{
+	return quantity_;
+}
+
+void CreateDrdsInstanceRequest::setQuantity(int quantity)
+{
+	quantity_ = quantity;
+	setCoreParameter("Quantity", std::to_string(quantity));
+}
+
+std::string CreateDrdsInstanceRequest::getSpecification()const
+{
+	return specification_;
+}
+
+void CreateDrdsInstanceRequest::setSpecification(const std::string& specification)
+{
+	specification_ = specification;
+	setCoreParameter("Specification", specification);
+}
+
+std::string CreateDrdsInstanceRequest::getVswitchId()const
+{
+	return vswitchId_;
+}
+
+void CreateDrdsInstanceRequest::setVswitchId(const std::string& vswitchId)
+{
+	vswitchId_ = vswitchId;
+	setCoreParameter("VswitchId", vswitchId);
 }
 
 std::string CreateDrdsInstanceRequest::getVpcId()const

@@ -35,23 +35,20 @@ namespace AlibabaCloud
 				GetImageManifestRequest();
 				~GetImageManifestRequest();
 
+				int getSchemaVersion()const;
+				void setSchemaVersion(int schemaVersion);
 				std::string getRepoNamespace()const;
 				void setRepoNamespace(const std::string& repoNamespace);
 				std::string getRepoName()const;
 				void setRepoName(const std::string& repoName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getTag()const;
 				void setTag(const std::string& tag);
-				int getSchemaVersion()const;
-				void setSchemaVersion(int schemaVersion);
 
             private:
+				int schemaVersion_;
 				std::string repoNamespace_;
 				std::string repoName_;
-				std::string regionId_;
 				std::string tag_;
-				int schemaVersion_;
 
 			};
 		}

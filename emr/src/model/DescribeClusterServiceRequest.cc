@@ -36,28 +36,6 @@ void DescribeClusterServiceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeClusterServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeClusterServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeClusterServiceRequest::getServiceName()const
-{
-	return serviceName_;
-}
-
-void DescribeClusterServiceRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
-}
-
 std::string DescribeClusterServiceRequest::getClusterId()const
 {
 	return clusterId_;
@@ -78,5 +56,27 @@ void DescribeClusterServiceRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeClusterServiceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeClusterServiceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeClusterServiceRequest::getServiceName()const
+{
+	return serviceName_;
+}
+
+void DescribeClusterServiceRequest::setServiceName(const std::string& serviceName)
+{
+	serviceName_ = serviceName;
+	setCoreParameter("ServiceName", serviceName);
 }
 

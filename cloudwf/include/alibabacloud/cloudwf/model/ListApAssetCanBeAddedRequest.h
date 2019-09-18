@@ -41,12 +41,12 @@ namespace AlibabaCloud
 				void setApgroupId(long apgroupId);
 				int getLength()const;
 				void setLength(int length);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getPageIndex()const;
 				void setPageIndex(int pageIndex);
 				std::string getSearchMac()const;
 				void setSearchMac(const std::string& searchMac);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSearchModel()const;
 				void setSearchModel(const std::string& searchModel);
 
@@ -54,9 +54,9 @@ namespace AlibabaCloud
 				std::string searchName_;
 				long apgroupId_;
 				int length_;
+				std::string accessKeyId_;
 				int pageIndex_;
 				std::string searchMac_;
-				std::string accessKeyId_;
 				std::string searchModel_;
 
 			};

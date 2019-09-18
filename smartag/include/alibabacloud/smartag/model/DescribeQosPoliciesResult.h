@@ -38,7 +38,7 @@ namespace AlibabaCloud
 					std::string destCidr;
 					std::string qosPolicyId;
 					std::string sourcePortRange;
-					long endTime;
+					std::string endTime;
 					std::string sourceCidr;
 					int priority;
 					std::string startTime;

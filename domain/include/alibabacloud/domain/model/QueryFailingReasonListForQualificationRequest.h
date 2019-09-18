@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				QueryFailingReasonListForQualificationRequest();
 				~QueryFailingReasonListForQualificationRequest();
 
+				std::string getQualificationType()const;
+				void setQualificationType(const std::string& qualificationType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getUserClientIp()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setLimit(int limit);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getQualificationType()const;
-				void setQualificationType(const std::string& qualificationType);
 
             private:
+				std::string qualificationType_;
 				std::string instanceId_;
 				std::string userClientIp_;
 				int limit_;
 				std::string lang_;
-				std::string qualificationType_;
 
 			};
 		}

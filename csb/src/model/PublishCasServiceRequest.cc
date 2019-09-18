@@ -47,14 +47,3 @@ void PublishCasServiceRequest::setData(const std::string& data)
 	setCoreParameter("Data", data);
 }
 
-std::string PublishCasServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void PublishCasServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

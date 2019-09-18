@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DescribeThreatDistributeRequest();
 				~DescribeThreatDistributeRequest();
 
+				std::string getStartDate()const;
+				void setStartDate(const std::string& startDate);
+				int getApiType()const;
+				void setApiType(int apiType);
 				std::string getEndDate()const;
 				void setEndDate(const std::string& endDate);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getHitDay()const;
 				void setHitDay(int hitDay);
-				std::string getStartDate()const;
-				void setStartDate(const std::string& startDate);
-				int getApiType()const;
-				void setApiType(int apiType);
 
             private:
+				std::string startDate_;
+				int apiType_;
 				std::string endDate_;
 				std::string sourceIp_;
 				int hitDay_;
-				std::string startDate_;
-				int apiType_;
 
 			};
 		}

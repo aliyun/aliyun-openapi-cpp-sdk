@@ -36,17 +36,6 @@ void GetIpProfileRequest::setDeviceIdMd5(const std::string& deviceIdMd5)
 	setCoreParameter("DeviceIdMd5", deviceIdMd5);
 }
 
-int GetIpProfileRequest::getCarrier()const
-{
-	return carrier_;
-}
-
-void GetIpProfileRequest::setCarrier(int carrier)
-{
-	carrier_ = carrier;
-	setCoreParameter("Carrier", std::to_string(carrier));
-}
-
 std::string GetIpProfileRequest::getOs()const
 {
 	return os_;
@@ -56,17 +45,6 @@ void GetIpProfileRequest::setOs(const std::string& os)
 {
 	os_ = os;
 	setCoreParameter("Os", os);
-}
-
-std::string GetIpProfileRequest::getRequestUrl()const
-{
-	return requestUrl_;
-}
-
-void GetIpProfileRequest::setRequestUrl(const std::string& requestUrl)
-{
-	requestUrl_ = requestUrl;
-	setCoreParameter("RequestUrl", requestUrl);
 }
 
 std::string GetIpProfileRequest::getIp()const
@@ -89,17 +67,6 @@ void GetIpProfileRequest::setUserAgent(const std::string& userAgent)
 {
 	userAgent_ = userAgent;
 	setCoreParameter("UserAgent", userAgent);
-}
-
-int GetIpProfileRequest::getConnectionType()const
-{
-	return connectionType_;
-}
-
-void GetIpProfileRequest::setConnectionType(int connectionType)
-{
-	connectionType_ = connectionType;
-	setCoreParameter("ConnectionType", std::to_string(connectionType));
 }
 
 int GetIpProfileRequest::getSensType()const
@@ -133,5 +100,38 @@ void GetIpProfileRequest::setBusinessType(int businessType)
 {
 	businessType_ = businessType;
 	setCoreParameter("BusinessType", std::to_string(businessType));
+}
+
+int GetIpProfileRequest::getCarrier()const
+{
+	return carrier_;
+}
+
+void GetIpProfileRequest::setCarrier(int carrier)
+{
+	carrier_ = carrier;
+	setCoreParameter("Carrier", std::to_string(carrier));
+}
+
+std::string GetIpProfileRequest::getRequestUrl()const
+{
+	return requestUrl_;
+}
+
+void GetIpProfileRequest::setRequestUrl(const std::string& requestUrl)
+{
+	requestUrl_ = requestUrl;
+	setCoreParameter("RequestUrl", requestUrl);
+}
+
+int GetIpProfileRequest::getConnectionType()const
+{
+	return connectionType_;
+}
+
+void GetIpProfileRequest::setConnectionType(int connectionType)
+{
+	connectionType_ = connectionType;
+	setCoreParameter("ConnectionType", std::to_string(connectionType));
 }
 

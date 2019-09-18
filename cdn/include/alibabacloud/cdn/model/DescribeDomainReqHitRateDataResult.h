@@ -34,7 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct DataModule
 				{
-					std::string httpsValue;
 					std::string value;
 					std::string timeStamp;
 				};
@@ -46,8 +45,8 @@ namespace AlibabaCloud
 				std::vector<DataModule> getReqHitRateInterval()const;
 				std::string getEndTime()const;
 				std::string getDomainName()const;
-				std::string getDataInterval()const;
 				std::string getStartTime()const;
+				std::string getDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -55,8 +54,8 @@ namespace AlibabaCloud
 				std::vector<DataModule> reqHitRateInterval_;
 				std::string endTime_;
 				std::string domainName_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 
 			};
 		}

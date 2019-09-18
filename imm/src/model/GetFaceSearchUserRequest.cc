@@ -25,17 +25,6 @@ GetFaceSearchUserRequest::GetFaceSearchUserRequest() :
 GetFaceSearchUserRequest::~GetFaceSearchUserRequest()
 {}
 
-std::string GetFaceSearchUserRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetFaceSearchUserRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetFaceSearchUserRequest::getProject()const
 {
 	return project_;
@@ -45,6 +34,17 @@ void GetFaceSearchUserRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
+}
+
+std::string GetFaceSearchUserRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetFaceSearchUserRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetFaceSearchUserRequest::getGroupName()const
@@ -67,16 +67,5 @@ void GetFaceSearchUserRequest::setUser(const std::string& user)
 {
 	user_ = user;
 	setCoreParameter("User", user);
-}
-
-std::string GetFaceSearchUserRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetFaceSearchUserRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

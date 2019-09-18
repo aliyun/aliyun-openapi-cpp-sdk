@@ -25,17 +25,6 @@ HeadquartersToolsO2ORequest::HeadquartersToolsO2ORequest() :
 HeadquartersToolsO2ORequest::~HeadquartersToolsO2ORequest()
 {}
 
-long HeadquartersToolsO2ORequest::getBid()const
-{
-	return bid_;
-}
-
-void HeadquartersToolsO2ORequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string HeadquartersToolsO2ORequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void HeadquartersToolsO2ORequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long HeadquartersToolsO2ORequest::getBid()const
+{
+	return bid_;
+}
+
+void HeadquartersToolsO2ORequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

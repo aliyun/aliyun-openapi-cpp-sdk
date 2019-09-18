@@ -36,6 +36,17 @@ void ModifyDBInstanceMonitorRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBInstanceMonitorRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBInstanceMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyDBInstanceMonitorRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,50 +56,6 @@ void ModifyDBInstanceMonitorRequest::setSecurityToken(const std::string& securit
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ModifyDBInstanceMonitorRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyDBInstanceMonitorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyDBInstanceMonitorRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyDBInstanceMonitorRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyDBInstanceMonitorRequest::getGranularity()const
-{
-	return granularity_;
-}
-
-void ModifyDBInstanceMonitorRequest::setGranularity(const std::string& granularity)
-{
-	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
-}
-
-std::string ModifyDBInstanceMonitorRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyDBInstanceMonitorRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBInstanceMonitorRequest::getDBInstanceId()const
@@ -102,6 +69,28 @@ void ModifyDBInstanceMonitorRequest::setDBInstanceId(const std::string& dBInstan
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string ModifyDBInstanceMonitorRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyDBInstanceMonitorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyDBInstanceMonitorRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyDBInstanceMonitorRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ModifyDBInstanceMonitorRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +102,14 @@ void ModifyDBInstanceMonitorRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyDBInstanceMonitorRequest::getAccessKeyId()const
+std::string ModifyDBInstanceMonitorRequest::getGranularity()const
 {
-	return accessKeyId_;
+	return granularity_;
 }
 
-void ModifyDBInstanceMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
+void ModifyDBInstanceMonitorRequest::setGranularity(const std::string& granularity)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	granularity_ = granularity;
+	setCoreParameter("Granularity", granularity);
 }
 

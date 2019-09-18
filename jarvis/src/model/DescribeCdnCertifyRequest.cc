@@ -25,6 +25,17 @@ DescribeCdnCertifyRequest::DescribeCdnCertifyRequest() :
 DescribeCdnCertifyRequest::~DescribeCdnCertifyRequest()
 {}
 
+std::string DescribeCdnCertifyRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeCdnCertifyRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeCdnCertifyRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeCdnCertifyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeCdnCertifyRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeCdnCertifyRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

@@ -45,10 +45,10 @@ namespace AlibabaCloud
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
-				std::string getDimensions()const;
-				void setDimensions(const std::string& dimensions);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDimensions()const;
+				void setDimensions(const std::string& dimensions);
 
             private:
 				std::string policyType_;
@@ -56,8 +56,8 @@ namespace AlibabaCloud
 				std::string groupId_;
 				long endTime_;
 				long startTime_;
-				std::string dimensions_;
 				std::string accessKeyId_;
+				std::string dimensions_;
 
 			};
 		}

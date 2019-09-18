@@ -36,6 +36,17 @@ void AddWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddWaterMarkTemplateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddWaterMarkTemplateRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,17 +69,6 @@ void AddWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAccoun
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string AddWaterMarkTemplateRequest::getName()const
-{
-	return name_;
-}
-
-void AddWaterMarkTemplateRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 long AddWaterMarkTemplateRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -80,6 +80,17 @@ void AddWaterMarkTemplateRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string AddWaterMarkTemplateRequest::getName()const
+{
+	return name_;
+}
+
+void AddWaterMarkTemplateRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
 std::string AddWaterMarkTemplateRequest::getConfig()const
 {
 	return config_;
@@ -89,16 +100,5 @@ void AddWaterMarkTemplateRequest::setConfig(const std::string& config)
 {
 	config_ = config;
 	setCoreParameter("Config", config);
-}
-
-std::string AddWaterMarkTemplateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

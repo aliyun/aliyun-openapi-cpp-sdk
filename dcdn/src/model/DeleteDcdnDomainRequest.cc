@@ -25,28 +25,6 @@ DeleteDcdnDomainRequest::DeleteDcdnDomainRequest() :
 DeleteDcdnDomainRequest::~DeleteDcdnDomainRequest()
 {}
 
-std::string DeleteDcdnDomainRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DeleteDcdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string DeleteDcdnDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteDcdnDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DeleteDcdnDomainRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,5 +56,27 @@ void DeleteDcdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteDcdnDomainRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DeleteDcdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DeleteDcdnDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteDcdnDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

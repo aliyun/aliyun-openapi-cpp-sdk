@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				OnsConsumerResetOffsetRequest();
 				~OnsConsumerResetOffsetRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
 				long getResetTimestamp()const;
 				void setResetTimestamp(long resetTimestamp);
 				int getType()const;
 				void setType(int type);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
 
             private:
-				std::string instanceId_;
 				std::string groupId_;
-				std::string topic_;
 				long resetTimestamp_;
 				int type_;
+				std::string instanceId_;
+				std::string topic_;
 
 			};
 		}

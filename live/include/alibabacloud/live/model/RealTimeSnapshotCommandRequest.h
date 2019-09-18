@@ -39,28 +39,25 @@ namespace AlibabaCloud
 				void setMode(int mode);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				std::string getStreamName()const;
+				void setStreamName(const std::string& streamName);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				int getInterval()const;
-				void setInterval(int interval);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getCommand()const;
 				void setCommand(const std::string& command);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
+				int getInterval()const;
+				void setInterval(int interval);
 
             private:
 				int mode_;
 				std::string appName_;
-				std::string regionId_;
+				std::string streamName_;
 				std::string domainName_;
-				int interval_;
 				long ownerId_;
 				std::string command_;
-				std::string streamName_;
+				int interval_;
 
 			};
 		}

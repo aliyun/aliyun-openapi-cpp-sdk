@@ -47,17 +47,6 @@ void MobileStopSpeedUpRequest::setResourceOwnerAccount(const std::string& resour
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string MobileStopSpeedUpRequest::getCorrelationId()const
-{
-	return correlationId_;
-}
-
-void MobileStopSpeedUpRequest::setCorrelationId(const std::string& correlationId)
-{
-	correlationId_ = correlationId;
-	setCoreParameter("CorrelationId", correlationId);
-}
-
 long MobileStopSpeedUpRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,5 +67,16 @@ void MobileStopSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string MobileStopSpeedUpRequest::getCorrelationId()const
+{
+	return correlationId_;
+}
+
+void MobileStopSpeedUpRequest::setCorrelationId(const std::string& correlationId)
+{
+	correlationId_ = correlationId;
+	setCoreParameter("CorrelationId", correlationId);
 }
 

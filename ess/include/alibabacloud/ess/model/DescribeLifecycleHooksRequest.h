@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeLifecycleHooksRequest();
 				~DescribeLifecycleHooksRequest();
 
-				std::string getLifecycleHookName()const;
-				void setLifecycleHookName(const std::string& lifecycleHookName);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				std::vector<std::string> getLifecycleHookId()const;
-				void setLifecycleHookId(const std::vector<std::string>& lifecycleHookId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getLifecycleHookName()const;
+				void setLifecycleHookName(const std::string& lifecycleHookName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::vector<std::string> getLifecycleHookId()const;
+				void setLifecycleHookId(const std::vector<std::string>& lifecycleHookId);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string lifecycleHookName_;
-				std::string resourceOwnerAccount_;
 				std::string scalingGroupId_;
-				std::vector<std::string> lifecycleHookId_;
-				std::string ownerAccount_;
-				int pageSize_;
-				long ownerId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string lifecycleHookName_;
+				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::vector<std::string> lifecycleHookId_;
+				std::string ownerAccount_;
+				long ownerId_;
 
 			};
 		}

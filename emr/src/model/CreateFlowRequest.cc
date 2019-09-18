@@ -36,39 +36,6 @@ void CreateFlowRequest::setCronExpr(const std::string& cronExpr)
 	setCoreParameter("CronExpr", cronExpr);
 }
 
-std::string CreateFlowRequest::getParentFlowList()const
-{
-	return parentFlowList_;
-}
-
-void CreateFlowRequest::setParentFlowList(const std::string& parentFlowList)
-{
-	parentFlowList_ = parentFlowList;
-	setCoreParameter("ParentFlowList", parentFlowList);
-}
-
-std::string CreateFlowRequest::getAlertDingDingGroupBizId()const
-{
-	return alertDingDingGroupBizId_;
-}
-
-void CreateFlowRequest::setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId)
-{
-	alertDingDingGroupBizId_ = alertDingDingGroupBizId;
-	setCoreParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
-}
-
-long CreateFlowRequest::getStartSchedule()const
-{
-	return startSchedule_;
-}
-
-void CreateFlowRequest::setStartSchedule(long startSchedule)
-{
-	startSchedule_ = startSchedule;
-	setCoreParameter("StartSchedule", std::to_string(startSchedule));
-}
-
 std::string CreateFlowRequest::getDescription()const
 {
 	return description_;
@@ -78,17 +45,6 @@ void CreateFlowRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-std::string CreateFlowRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void CreateFlowRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CreateFlowRequest::getAlertUserGroupBizId()const
@@ -113,17 +69,6 @@ void CreateFlowRequest::setHostName(const std::string& hostName)
 	setCoreParameter("HostName", hostName);
 }
 
-std::string CreateFlowRequest::getApplication()const
-{
-	return application_;
-}
-
-void CreateFlowRequest::setApplication(const std::string& application)
-{
-	application_ = application;
-	setCoreParameter("Application", application);
-}
-
 std::string CreateFlowRequest::getRegionId()const
 {
 	return regionId_;
@@ -144,17 +89,6 @@ void CreateFlowRequest::setCreateCluster(bool createCluster)
 {
 	createCluster_ = createCluster;
 	setCoreParameter("CreateCluster", createCluster ? "true" : "false");
-}
-
-std::string CreateFlowRequest::getName()const
-{
-	return name_;
-}
-
-void CreateFlowRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 long CreateFlowRequest::getEndSchedule()const
@@ -188,6 +122,72 @@ void CreateFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
+}
+
+std::string CreateFlowRequest::getParentFlowList()const
+{
+	return parentFlowList_;
+}
+
+void CreateFlowRequest::setParentFlowList(const std::string& parentFlowList)
+{
+	parentFlowList_ = parentFlowList;
+	setCoreParameter("ParentFlowList", parentFlowList);
+}
+
+std::string CreateFlowRequest::getAlertDingDingGroupBizId()const
+{
+	return alertDingDingGroupBizId_;
+}
+
+void CreateFlowRequest::setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId)
+{
+	alertDingDingGroupBizId_ = alertDingDingGroupBizId;
+	setCoreParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
+}
+
+long CreateFlowRequest::getStartSchedule()const
+{
+	return startSchedule_;
+}
+
+void CreateFlowRequest::setStartSchedule(long startSchedule)
+{
+	startSchedule_ = startSchedule;
+	setCoreParameter("StartSchedule", std::to_string(startSchedule));
+}
+
+std::string CreateFlowRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void CreateFlowRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string CreateFlowRequest::getApplication()const
+{
+	return application_;
+}
+
+void CreateFlowRequest::setApplication(const std::string& application)
+{
+	application_ = application;
+	setCoreParameter("Application", application);
+}
+
+std::string CreateFlowRequest::getName()const
+{
+	return name_;
+}
+
+void CreateFlowRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string CreateFlowRequest::getParentCategory()const

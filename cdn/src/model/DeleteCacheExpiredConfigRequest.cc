@@ -25,6 +25,28 @@ DeleteCacheExpiredConfigRequest::DeleteCacheExpiredConfigRequest() :
 DeleteCacheExpiredConfigRequest::~DeleteCacheExpiredConfigRequest()
 {}
 
+std::string DeleteCacheExpiredConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DeleteCacheExpiredConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+long DeleteCacheExpiredConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DeleteCacheExpiredConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::string DeleteCacheExpiredConfigRequest::getCacheType()const
 {
 	return cacheType_;
@@ -56,27 +78,5 @@ void DeleteCacheExpiredConfigRequest::setConfigID(const std::string& configID)
 {
 	configID_ = configID;
 	setCoreParameter("ConfigID", configID);
-}
-
-std::string DeleteCacheExpiredConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DeleteCacheExpiredConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long DeleteCacheExpiredConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteCacheExpiredConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

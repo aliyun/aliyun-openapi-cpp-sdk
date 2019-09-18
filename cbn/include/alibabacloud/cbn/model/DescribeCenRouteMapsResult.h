@@ -49,7 +49,6 @@ namespace AlibabaCloud
 					std::vector<std::string> operateCommunitySet;
 					std::vector<std::string> destinationChildInstanceTypes;
 					std::string status;
-					int asPathLength;
 					int priority;
 					std::vector<std::string> sourceChildInstanceTypes;
 					std::string asPathMatchMode;

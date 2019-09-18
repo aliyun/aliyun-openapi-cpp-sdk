@@ -25,15 +25,26 @@ SubmitVideoGifJobRequest::SubmitVideoGifJobRequest() :
 SubmitVideoGifJobRequest::~SubmitVideoGifJobRequest()
 {}
 
-std::string SubmitVideoGifJobRequest::getInput()const
+long SubmitVideoGifJobRequest::getResourceOwnerId()const
 {
-	return input_;
+	return resourceOwnerId_;
 }
 
-void SubmitVideoGifJobRequest::setInput(const std::string& input)
+void SubmitVideoGifJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	input_ = input;
-	setCoreParameter("Input", input);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitVideoGifJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitVideoGifJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitVideoGifJobRequest::getUserData()const
@@ -45,17 +56,6 @@ void SubmitVideoGifJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setCoreParameter("UserData", userData);
-}
-
-long SubmitVideoGifJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitVideoGifJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitVideoGifJobRequest::getResourceOwnerAccount()const
@@ -102,17 +102,6 @@ void SubmitVideoGifJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitVideoGifJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitVideoGifJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitVideoGifJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +111,16 @@ void SubmitVideoGifJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitVideoGifJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitVideoGifJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

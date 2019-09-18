@@ -25,6 +25,17 @@ ChangeDomainOfDnsProductRequest::ChangeDomainOfDnsProductRequest() :
 ChangeDomainOfDnsProductRequest::~ChangeDomainOfDnsProductRequest()
 {}
 
+std::string ChangeDomainOfDnsProductRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ChangeDomainOfDnsProductRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ChangeDomainOfDnsProductRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -78,16 +89,5 @@ void ChangeDomainOfDnsProductRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string ChangeDomainOfDnsProductRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ChangeDomainOfDnsProductRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

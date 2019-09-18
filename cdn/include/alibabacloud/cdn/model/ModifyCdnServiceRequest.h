@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ModifyCdnServiceRequest();
 				~ModifyCdnServiceRequest();
 
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
             private:
+				long ownerId_;
 				std::string securityToken_;
 				std::string internetChargeType_;
-				long ownerId_;
 
 			};
 		}

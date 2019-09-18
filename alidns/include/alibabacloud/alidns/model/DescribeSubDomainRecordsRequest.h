@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				std::string getLine()const;
 				void setLine(const std::string& line);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getSubDomain()const;
-				void setSubDomain(const std::string& subDomain);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getType()const;
 				void setType(const std::string& type);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
+				std::string getSubDomain()const;
+				void setSubDomain(const std::string& subDomain);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
 				std::string line_;
-				std::string userClientIp_;
-				long pageSize_;
 				std::string domainName_;
-				std::string subDomain_;
-				std::string lang_;
 				std::string type_;
 				long pageNumber_;
 				std::string accessKeyId_;
+				std::string userClientIp_;
+				long pageSize_;
+				std::string subDomain_;
+				std::string lang_;
 
 			};
 		}

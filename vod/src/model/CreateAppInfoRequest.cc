@@ -36,28 +36,6 @@ void CreateAppInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateAppInfoRequest::getAppName()const
-{
-	return appName_;
-}
-
-void CreateAppInfoRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
-}
-
-std::string CreateAppInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string CreateAppInfoRequest::getDescription()const
 {
 	return description_;
@@ -80,17 +58,6 @@ void CreateAppInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
-long CreateAppInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateAppInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string CreateAppInfoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -100,5 +67,38 @@ void CreateAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateAppInfoRequest::getAppName()const
+{
+	return appName_;
+}
+
+void CreateAppInfoRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+std::string CreateAppInfoRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long CreateAppInfoRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateAppInfoRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

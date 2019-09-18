@@ -25,17 +25,6 @@ GetRadioRunHistoryTimeSerRequest::GetRadioRunHistoryTimeSerRequest() :
 GetRadioRunHistoryTimeSerRequest::~GetRadioRunHistoryTimeSerRequest()
 {}
 
-long GetRadioRunHistoryTimeSerRequest::getId()const
-{
-	return id_;
-}
-
-void GetRadioRunHistoryTimeSerRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetRadioRunHistoryTimeSerRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetRadioRunHistoryTimeSerRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetRadioRunHistoryTimeSerRequest::getId()const
+{
+	return id_;
+}
+
+void GetRadioRunHistoryTimeSerRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

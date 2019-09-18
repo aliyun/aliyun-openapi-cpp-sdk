@@ -47,6 +47,28 @@ void ListDataSourceRequest::setCreateFrom(const std::string& createFrom)
 	setCoreParameter("CreateFrom", createFrom);
 }
 
+int ListDataSourceRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListDataSourceRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListDataSourceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListDataSourceRequest::getRegionId()const
 {
 	return regionId_;
@@ -111,27 +133,5 @@ void ListDataSourceRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-int ListDataSourceRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListDataSourceRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListDataSourceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

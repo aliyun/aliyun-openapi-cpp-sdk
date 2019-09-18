@@ -36,28 +36,6 @@ void DescribeFlowLogsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeFlowLogsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeFlowLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeFlowLogsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeFlowLogsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string DescribeFlowLogsRequest::getDescription()const
 {
 	return description_;
@@ -67,17 +45,6 @@ void DescribeFlowLogsRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long DescribeFlowLogsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeFlowLogsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeFlowLogsRequest::getPageNumber()const
@@ -122,6 +89,39 @@ void DescribeFlowLogsRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
 	setCoreParameter("OutputType", outputType);
+}
+
+std::string DescribeFlowLogsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeFlowLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeFlowLogsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeFlowLogsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeFlowLogsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeFlowLogsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeFlowLogsRequest::getFlowLogId()const

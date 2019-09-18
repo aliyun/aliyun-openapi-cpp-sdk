@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyFlowCategoryRequest();
 				~ModifyFlowCategoryRequest();
 
+				std::string getParentId()const;
+				void setParentId(const std::string& parentId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setId(const std::string& id);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
-				std::string getParentId()const;
-				void setParentId(const std::string& parentId);
 
             private:
+				std::string parentId_;
 				std::string regionId_;
 				std::string name_;
 				std::string id_;
 				std::string projectId_;
-				std::string parentId_;
 
 			};
 		}

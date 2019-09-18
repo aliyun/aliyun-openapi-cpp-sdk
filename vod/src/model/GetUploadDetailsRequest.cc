@@ -36,17 +36,6 @@ void GetUploadDetailsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GetUploadDetailsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void GetUploadDetailsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 long GetUploadDetailsRequest::getResourceRealOwnerId()const
 {
 	return resourceRealOwnerId_;
@@ -58,6 +47,17 @@ void GetUploadDetailsRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
+std::string GetUploadDetailsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetUploadDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetUploadDetailsRequest::getMediaIds()const
 {
 	return mediaIds_;
@@ -67,6 +67,17 @@ void GetUploadDetailsRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
 	setCoreParameter("MediaIds", mediaIds);
+}
+
+std::string GetUploadDetailsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void GetUploadDetailsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetUploadDetailsRequest::getOwnerId()const
@@ -89,16 +100,5 @@ void GetUploadDetailsRequest::setMediaType(const std::string& mediaType)
 {
 	mediaType_ = mediaType;
 	setCoreParameter("MediaType", mediaType);
-}
-
-std::string GetUploadDetailsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetUploadDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

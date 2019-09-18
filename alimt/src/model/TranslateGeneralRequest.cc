@@ -58,17 +58,6 @@ void TranslateGeneralRequest::setFormatType(const std::string& formatType)
 	setCoreParameter("FormatType", formatType);
 }
 
-std::string TranslateGeneralRequest::getTargetLanguage()const
-{
-	return targetLanguage_;
-}
-
-void TranslateGeneralRequest::setTargetLanguage(const std::string& targetLanguage)
-{
-	targetLanguage_ = targetLanguage;
-	setCoreParameter("TargetLanguage", targetLanguage);
-}
-
 std::string TranslateGeneralRequest::getScene()const
 {
 	return scene_;
@@ -78,5 +67,16 @@ void TranslateGeneralRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
 	setCoreParameter("Scene", scene);
+}
+
+std::string TranslateGeneralRequest::getTargetLanguage()const
+{
+	return targetLanguage_;
+}
+
+void TranslateGeneralRequest::setTargetLanguage(const std::string& targetLanguage)
+{
+	targetLanguage_ = targetLanguage;
+	setCoreParameter("TargetLanguage", targetLanguage);
 }
 

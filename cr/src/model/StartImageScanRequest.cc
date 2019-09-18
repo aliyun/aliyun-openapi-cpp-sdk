@@ -47,17 +47,6 @@ void StartImageScanRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string StartImageScanRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void StartImageScanRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string StartImageScanRequest::getTag()const
 {
 	return tag_;

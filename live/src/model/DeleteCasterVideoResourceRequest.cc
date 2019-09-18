@@ -36,17 +36,6 @@ void DeleteCasterVideoResourceRequest::setResourceId(const std::string& resource
 	setCoreParameter("ResourceId", resourceId);
 }
 
-std::string DeleteCasterVideoResourceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteCasterVideoResourceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteCasterVideoResourceRequest::getCasterId()const
 {
 	return casterId_;

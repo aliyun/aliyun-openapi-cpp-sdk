@@ -25,6 +25,17 @@ DescribeAccountsRequest::DescribeAccountsRequest() :
 DescribeAccountsRequest::~DescribeAccountsRequest()
 {}
 
+std::string DescribeAccountsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeAccountsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeAccountsRequest::getAccountName()const
 {
 	return accountName_;
@@ -45,16 +56,5 @@ void DescribeAccountsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
 	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-std::string DescribeAccountsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeAccountsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

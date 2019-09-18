@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				SetDomainRecordStatusRequest();
 				~SetDomainRecordStatusRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRecordId()const;
 				void setRecordId(const std::string& recordId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				std::string accessKeyId_;
 				std::string recordId_;
 				std::string userClientIp_;
 				std::string lang_;
-				std::string accessKeyId_;
 				std::string status_;
 
 			};

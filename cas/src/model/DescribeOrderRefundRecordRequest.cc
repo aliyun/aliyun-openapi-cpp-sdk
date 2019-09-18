@@ -25,6 +25,17 @@ DescribeOrderRefundRecordRequest::DescribeOrderRefundRecordRequest() :
 DescribeOrderRefundRecordRequest::~DescribeOrderRefundRecordRequest()
 {}
 
+std::string DescribeOrderRefundRecordRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeOrderRefundRecordRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeOrderRefundRecordRequest::getSourceIp()const
 {
 	return sourceIp_;

@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				MarkOssResultRequest();
 				~MarkOssResultRequest();
 
+				std::string getScene()const;
+				void setScene(const std::string& scene);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getIds()const;
-				void setIds(const std::string& ids);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				bool getStock()const;
 				void setStock(bool stock);
-				std::string getOperation()const;
-				void setOperation(const std::string& operation);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
-				std::string getScene()const;
-				void setScene(const std::string& scene);
+				std::string getIds()const;
+				void setIds(const std::string& ids);
+				std::string getOperation()const;
+				void setOperation(const std::string& operation);
 
             private:
+				std::string scene_;
 				std::string sourceIp_;
-				std::string ids_;
 				std::string lang_;
 				bool stock_;
-				std::string operation_;
 				std::string resourceType_;
-				std::string scene_;
+				std::string ids_;
+				std::string operation_;
 
 			};
 		}

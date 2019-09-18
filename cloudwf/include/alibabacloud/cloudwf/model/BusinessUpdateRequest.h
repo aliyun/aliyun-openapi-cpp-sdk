@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				BusinessUpdateRequest();
 				~BusinessUpdateRequest();
 
-				int getWarn()const;
-				void setWarn(int warn);
 				std::string getBusinessCity()const;
 				void setBusinessCity(const std::string& businessCity);
 				std::string getWarnEmail()const;
 				void setWarnEmail(const std::string& warnEmail);
+				std::string getBusinessManager()const;
+				void setBusinessManager(const std::string& businessManager);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				int getWarn()const;
+				void setWarn(int warn);
 				std::string getBusinessAddress()const;
 				void setBusinessAddress(const std::string& businessAddress);
 				long getBid()const;
 				void setBid(long bid);
-				std::string getBusinessManager()const;
-				void setBusinessManager(const std::string& businessManager);
 				std::string getBusinessProvince()const;
 				void setBusinessProvince(const std::string& businessProvince);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				int warn_;
 				std::string businessCity_;
 				std::string warnEmail_;
+				std::string businessManager_;
+				std::string accessKeyId_;
+				int warn_;
 				std::string businessAddress_;
 				long bid_;
-				std::string businessManager_;
 				std::string businessProvince_;
-				std::string accessKeyId_;
 
 			};
 		}

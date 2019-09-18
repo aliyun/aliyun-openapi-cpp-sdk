@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				RRpcRequest();
 				~RRpcRequest();
 
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getRequestBase64Byte()const;
 				void setRequestBase64Byte(const std::string& requestBase64Byte);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
-				std::string getDeviceName()const;
-				void setDeviceName(const std::string& deviceName);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				int getTimeout()const;
 				void setTimeout(int timeout);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string iotInstanceId_;
 				std::string requestBase64Byte_;
-				std::string topic_;
-				std::string deviceName_;
 				std::string productKey_;
 				int timeout_;
 				std::string accessKeyId_;
+				std::string iotInstanceId_;
+				std::string topic_;
+				std::string deviceName_;
 
 			};
 		}

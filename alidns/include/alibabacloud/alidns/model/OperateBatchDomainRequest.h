@@ -48,20 +48,20 @@ namespace AlibabaCloud
 				OperateBatchDomainRequest();
 				~OperateBatchDomainRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::vector<DomainRecordInfo> getDomainRecordInfo()const;
 				void setDomainRecordInfo(const std::vector<DomainRecordInfo>& domainRecordInfo);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				std::string userClientIp_;
 				std::vector<DomainRecordInfo> domainRecordInfo_;
-				std::string lang_;
 				std::string type_;
+				std::string userClientIp_;
+				std::string lang_;
 
 			};
 		}

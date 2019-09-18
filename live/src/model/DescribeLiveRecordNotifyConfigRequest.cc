@@ -25,17 +25,6 @@ DescribeLiveRecordNotifyConfigRequest::DescribeLiveRecordNotifyConfigRequest() :
 DescribeLiveRecordNotifyConfigRequest::~DescribeLiveRecordNotifyConfigRequest()
 {}
 
-std::string DescribeLiveRecordNotifyConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveRecordNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeLiveRecordNotifyConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,5 +45,16 @@ void DescribeLiveRecordNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeLiveRecordNotifyConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeLiveRecordNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

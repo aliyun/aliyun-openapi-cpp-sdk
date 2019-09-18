@@ -25,6 +25,39 @@ UpdateDocIndexMetaRequest::UpdateDocIndexMetaRequest() :
 UpdateDocIndexMetaRequest::~UpdateDocIndexMetaRequest()
 {}
 
+std::string UpdateDocIndexMetaRequest::getProject()const
+{
+	return project_;
+}
+
+void UpdateDocIndexMetaRequest::setProject(const std::string& project)
+{
+	project_ = project;
+	setCoreParameter("Project", project);
+}
+
+std::string UpdateDocIndexMetaRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateDocIndexMetaRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateDocIndexMetaRequest::getUniqueId()const
+{
+	return uniqueId_;
+}
+
+void UpdateDocIndexMetaRequest::setUniqueId(const std::string& uniqueId)
+{
+	uniqueId_ = uniqueId;
+	setCoreParameter("UniqueId", uniqueId);
+}
+
 std::string UpdateDocIndexMetaRequest::getCustomKey1()const
 {
 	return customKey1_;
@@ -91,17 +124,6 @@ void UpdateDocIndexMetaRequest::setCustomKey2(const std::string& customKey2)
 	setCoreParameter("CustomKey2", customKey2);
 }
 
-std::string UpdateDocIndexMetaRequest::getProject()const
-{
-	return project_;
-}
-
-void UpdateDocIndexMetaRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setCoreParameter("Project", project);
-}
-
 std::string UpdateDocIndexMetaRequest::getCustomKey6()const
 {
 	return customKey6_;
@@ -113,28 +135,6 @@ void UpdateDocIndexMetaRequest::setCustomKey6(const std::string& customKey6)
 	setCoreParameter("CustomKey6", customKey6);
 }
 
-std::string UpdateDocIndexMetaRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateDocIndexMetaRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string UpdateDocIndexMetaRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateDocIndexMetaRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string UpdateDocIndexMetaRequest::getName()const
 {
 	return name_;
@@ -144,16 +144,5 @@ void UpdateDocIndexMetaRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string UpdateDocIndexMetaRequest::getUniqueId()const
-{
-	return uniqueId_;
-}
-
-void UpdateDocIndexMetaRequest::setUniqueId(const std::string& uniqueId)
-{
-	uniqueId_ = uniqueId;
-	setCoreParameter("UniqueId", uniqueId);
 }
 

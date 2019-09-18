@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				FetchLibrariesRequest();
 				~FetchLibrariesRequest();
 
-				int getSize()const;
-				void setSize(int size);
 				bool getNeedQuota()const;
 				void setNeedQuota(bool needQuota);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
+				int getSize()const;
+				void setSize(int size);
 				int getPage()const;
 				void setPage(int page);
 
             private:
-				int size_;
 				bool needQuota_;
 				std::string storeName_;
+				int size_;
 				int page_;
 
 			};

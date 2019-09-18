@@ -25,17 +25,6 @@ DescribeScdnDomainDetailRequest::DescribeScdnDomainDetailRequest() :
 DescribeScdnDomainDetailRequest::~DescribeScdnDomainDetailRequest()
 {}
 
-std::string DescribeScdnDomainDetailRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeScdnDomainDetailRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeScdnDomainDetailRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,5 +45,16 @@ void DescribeScdnDomainDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeScdnDomainDetailRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeScdnDomainDetailRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

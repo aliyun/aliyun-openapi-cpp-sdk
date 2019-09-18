@@ -35,33 +35,33 @@ namespace AlibabaCloud
 				CreateTaskRequest();
 				~CreateTaskRequest();
 
-				std::string getCaller()const;
-				void setCaller(const std::string& caller);
-				std::string getAddress()const;
-				void setAddress(const std::string& address);
-				std::string getTaskType()const;
-				void setTaskType(const std::string& taskType);
-				std::string getIspCity()const;
-				void setIspCity(const std::string& ispCity);
+				std::string getTaskName()const;
+				void setTaskName(const std::string& taskName);
 				std::string getAlertIds()const;
 				void setAlertIds(const std::string& alertIds);
 				std::string getOptions()const;
 				void setOptions(const std::string& options);
-				std::string getTaskName()const;
-				void setTaskName(const std::string& taskName);
+				std::string getAddress()const;
+				void setAddress(const std::string& address);
+				std::string getTaskType()const;
+				void setTaskType(const std::string& taskType);
+				std::string getCaller()const;
+				void setCaller(const std::string& caller);
+				std::string getIspCity()const;
+				void setIspCity(const std::string& ispCity);
 				std::string getInterval()const;
 				void setInterval(const std::string& interval);
 				std::string getAlertRule()const;
 				void setAlertRule(const std::string& alertRule);
 
             private:
-				std::string caller_;
-				std::string address_;
-				std::string taskType_;
-				std::string ispCity_;
+				std::string taskName_;
 				std::string alertIds_;
 				std::string options_;
-				std::string taskName_;
+				std::string address_;
+				std::string taskType_;
+				std::string caller_;
+				std::string ispCity_;
 				std::string interval_;
 				std::string alertRule_;
 

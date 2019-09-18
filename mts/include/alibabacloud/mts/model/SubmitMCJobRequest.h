@@ -35,41 +35,41 @@ namespace AlibabaCloud
 				SubmitMCJobRequest();
 				~SubmitMCJobRequest();
 
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getVideo()const;
+				void setVideo(const std::string& video);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				std::string getImages()const;
 				void setImages(const std::string& images);
-				std::string getTexts()const;
-				void setTexts(const std::string& texts);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getVideo()const;
-				void setVideo(const std::string& video);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getCensorConfig()const;
 				void setCensorConfig(const std::string& censorConfig);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				std::string getTexts()const;
+				void setTexts(const std::string& texts);
 
             private:
-				std::string userData_;
 				long resourceOwnerId_;
+				std::string video_;
+				std::string accessKeyId_;
+				std::string userData_;
 				std::string images_;
-				std::string texts_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string video_;
 				long ownerId_;
 				std::string censorConfig_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				std::string texts_;
 
 			};
 		}

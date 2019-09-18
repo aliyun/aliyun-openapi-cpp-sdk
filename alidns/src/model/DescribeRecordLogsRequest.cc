@@ -25,28 +25,6 @@ DescribeRecordLogsRequest::DescribeRecordLogsRequest() :
 DescribeRecordLogsRequest::~DescribeRecordLogsRequest()
 {}
 
-std::string DescribeRecordLogsRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void DescribeRecordLogsRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
-}
-
-std::string DescribeRecordLogsRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DescribeRecordLogsRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string DescribeRecordLogsRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,39 +34,6 @@ void DescribeRecordLogsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-long DescribeRecordLogsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeRecordLogsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeRecordLogsRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeRecordLogsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeRecordLogsRequest::getKeyWord()const
-{
-	return keyWord_;
-}
-
-void DescribeRecordLogsRequest::setKeyWord(const std::string& keyWord)
-{
-	keyWord_ = keyWord;
-	setCoreParameter("KeyWord", keyWord);
 }
 
 std::string DescribeRecordLogsRequest::getStartDate()const
@@ -122,5 +67,60 @@ void DescribeRecordLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeRecordLogsRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void DescribeRecordLogsRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
+}
+
+std::string DescribeRecordLogsRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DescribeRecordLogsRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+long DescribeRecordLogsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeRecordLogsRequest::setPageSize(long pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeRecordLogsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeRecordLogsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string DescribeRecordLogsRequest::getKeyWord()const
+{
+	return keyWord_;
+}
+
+void DescribeRecordLogsRequest::setKeyWord(const std::string& keyWord)
+{
+	keyWord_ = keyWord;
+	setCoreParameter("KeyWord", keyWord);
 }
 

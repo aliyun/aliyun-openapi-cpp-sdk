@@ -36,26 +36,26 @@ void SearchPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SearchPipelineRequest::getResourceOwnerAccount()const
+long SearchPipelineRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void SearchPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void SearchPipelineRequest::setPageNumber(long pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string SearchPipelineRequest::getOwnerAccount()const
+std::string SearchPipelineRequest::getAccessKeyId()const
 {
-	return ownerAccount_;
+	return accessKeyId_;
 }
 
-void SearchPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
+void SearchPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long SearchPipelineRequest::getPageSize()const
@@ -80,6 +80,28 @@ void SearchPipelineRequest::setState(const std::string& state)
 	setCoreParameter("State", state);
 }
 
+std::string SearchPipelineRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void SearchPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string SearchPipelineRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void SearchPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long SearchPipelineRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,27 +111,5 @@ void SearchPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-long SearchPipelineRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void SearchPipelineRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string SearchPipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SearchPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

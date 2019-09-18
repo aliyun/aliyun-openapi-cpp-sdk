@@ -35,13 +35,9 @@ DescribeCertificateListResult::~DescribeCertificateListResult()
 
 void DescribeCertificateListResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allCertificateList = value["CertificateList"]["Certificate"];
 	for (auto value : allCertificateList)
@@ -93,6 +89,8 @@ void DescribeCertificateListResult::parse(const std::string &payload)
 			certificateListObject.accessDownload = std::stoi(value["AccessDownload"].asString());
 		if(!value["PartnerOrderId"].isNull())
 			certificateListObject.partnerOrderId = value["PartnerOrderId"].asString();
+		if(!value["IsFree"].isNull())
+			certificateListObject.isFree = value["IsFree"].asString() == "true";
 		certificateList_.push_back(certificateListObject);
 	}
 	if(!value["TotalCount"].isNull())

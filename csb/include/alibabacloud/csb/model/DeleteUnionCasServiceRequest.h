@@ -39,8 +39,6 @@ namespace AlibabaCloud
 				void setLeafOnly(bool leafOnly);
 				std::string getCasCsbName()const;
 				void setCasCsbName(const std::string& casCsbName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getSrcUserId()const;
 				void setSrcUserId(const std::string& srcUserId);
 				std::string getCasServiceId()const;
@@ -49,7 +47,6 @@ namespace AlibabaCloud
             private:
 				bool leafOnly_;
 				std::string casCsbName_;
-				std::string regionId_;
 				std::string srcUserId_;
 				std::string casServiceId_;
 

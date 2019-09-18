@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				int getHsmStatus()const;
 				void setHsmStatus(int hsmStatus);
 
             private:
 				long resourceOwnerId_;
+				int currentPage_;
 				std::string instanceId_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
 				int hsmStatus_;
 
 			};

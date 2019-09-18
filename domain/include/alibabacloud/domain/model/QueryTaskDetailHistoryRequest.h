@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				QueryTaskDetailHistoryRequest();
 				~QueryTaskDetailHistoryRequest();
 
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				int getTaskStatus()const;
 				void setTaskStatus(int taskStatus);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getTaskNo()const;
 				void setTaskNo(const std::string& taskNo);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getTaskDetailNoCursor()const;
@@ -53,10 +53,10 @@ namespace AlibabaCloud
 				void setDomainNameCursor(const std::string& domainNameCursor);
 
             private:
+				std::string domainName_;
 				int taskStatus_;
 				std::string userClientIp_;
 				std::string taskNo_;
-				std::string domainName_;
 				int pageSize_;
 				std::string taskDetailNoCursor_;
 				std::string lang_;

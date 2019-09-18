@@ -25,17 +25,6 @@ StartBackupPlanRequest::StartBackupPlanRequest() :
 StartBackupPlanRequest::~StartBackupPlanRequest()
 {}
 
-std::string StartBackupPlanRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void StartBackupPlanRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string StartBackupPlanRequest::getClientToken()const
 {
 	return clientToken_;

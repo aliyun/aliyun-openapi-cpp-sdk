@@ -25,28 +25,6 @@ SubmitAnalysisJobRequest::SubmitAnalysisJobRequest() :
 SubmitAnalysisJobRequest::~SubmitAnalysisJobRequest()
 {}
 
-std::string SubmitAnalysisJobRequest::getInput()const
-{
-	return input_;
-}
-
-void SubmitAnalysisJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setCoreParameter("Input", input);
-}
-
-std::string SubmitAnalysisJobRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitAnalysisJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
 long SubmitAnalysisJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -67,6 +45,28 @@ void SubmitAnalysisJobRequest::setAnalysisConfig(const std::string& analysisConf
 {
 	analysisConfig_ = analysisConfig;
 	setCoreParameter("AnalysisConfig", analysisConfig);
+}
+
+std::string SubmitAnalysisJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitAnalysisJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitAnalysisJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitAnalysisJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
 }
 
 std::string SubmitAnalysisJobRequest::getResourceOwnerAccount()const
@@ -113,17 +113,6 @@ void SubmitAnalysisJobRequest::setPriority(const std::string& priority)
 	setCoreParameter("Priority", priority);
 }
 
-std::string SubmitAnalysisJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitAnalysisJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitAnalysisJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,5 +122,16 @@ void SubmitAnalysisJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitAnalysisJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitAnalysisJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

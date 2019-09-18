@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				UpdateBizTypeSettingRequest();
 				~UpdateBizTypeSettingRequest();
 
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
+				std::string getPorn()const;
+				void setPorn(const std::string& porn);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getTerrorism()const;
 				void setTerrorism(const std::string& terrorism);
 				std::string getBizTypeName()const;
 				void setBizTypeName(const std::string& bizTypeName);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
-				std::string getPorn()const;
-				void setPorn(const std::string& porn);
 
             private:
+				std::string resourceType_;
+				std::string porn_;
 				std::string sourceIp_;
 				std::string terrorism_;
 				std::string bizTypeName_;
-				std::string resourceType_;
-				std::string porn_;
 
 			};
 		}

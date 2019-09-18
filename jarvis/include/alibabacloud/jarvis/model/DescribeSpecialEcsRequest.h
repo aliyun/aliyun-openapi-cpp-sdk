@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeSpecialEcsRequest();
 				~DescribeSpecialEcsRequest();
 
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getTargetIp()const;
 				void setTargetIp(const std::string& targetIp);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
 
             private:
+				std::string sourceCode_;
 				std::string targetIp_;
 				std::string sourceIp_;
 				std::string lang_;
-				std::string sourceCode_;
 
 			};
 		}

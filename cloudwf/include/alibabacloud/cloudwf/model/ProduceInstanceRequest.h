@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getTraceId()const;
 				void setTraceId(const std::string& traceId);
-				std::string getProduceParameter()const;
-				void setProduceParameter(const std::string& produceParameter);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getProduceParameter()const;
+				void setProduceParameter(const std::string& produceParameter);
 
             private:
 				std::string traceId_;
-				std::string produceParameter_;
 				std::string accessKeyId_;
+				std::string produceParameter_;
 
 			};
 		}

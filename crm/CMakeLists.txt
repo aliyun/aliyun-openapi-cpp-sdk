@@ -21,57 +21,57 @@ set(crm_public_header
 	include/alibabacloud/crm/CrmExport.h )
 
 set(crm_public_header_model 
-	include/alibabacloud/crm/model/CheckLabelForBidRequest.h
-	include/alibabacloud/crm/model/CheckLabelForBidResult.h
-	include/alibabacloud/crm/model/CheckLabelRequest.h
-	include/alibabacloud/crm/model/CheckLabelResult.h
-	include/alibabacloud/crm/model/DeleteLabelForBidRequest.h
-	include/alibabacloud/crm/model/DeleteLabelForBidResult.h
 	include/alibabacloud/crm/model/AddIdentityCertifiedForBidUserRequest.h
 	include/alibabacloud/crm/model/AddIdentityCertifiedForBidUserResult.h
-	include/alibabacloud/crm/model/GetAliyunPkByAliyunIdRequest.h
-	include/alibabacloud/crm/model/GetAliyunPkByAliyunIdResult.h
-	include/alibabacloud/crm/model/QueryCustomerLabelRequest.h
-	include/alibabacloud/crm/model/QueryCustomerLabelResult.h
-	include/alibabacloud/crm/model/QueryBidUserCertifiedInfoRequest.h
-	include/alibabacloud/crm/model/QueryBidUserCertifiedInfoResult.h
-	include/alibabacloud/crm/model/BatchGetAliyunIdByAliyunPkRequest.h
-	include/alibabacloud/crm/model/BatchGetAliyunIdByAliyunPkResult.h
-	include/alibabacloud/crm/model/RemoveIdentityCertifiedForBidUserRequest.h
-	include/alibabacloud/crm/model/RemoveIdentityCertifiedForBidUserResult.h
+	include/alibabacloud/crm/model/AddLabelRequest.h
+	include/alibabacloud/crm/model/AddLabelResult.h
 	include/alibabacloud/crm/model/AddLabelForBidRequest.h
 	include/alibabacloud/crm/model/AddLabelForBidResult.h
+	include/alibabacloud/crm/model/BatchGetAliyunIdByAliyunPkRequest.h
+	include/alibabacloud/crm/model/BatchGetAliyunIdByAliyunPkResult.h
+	include/alibabacloud/crm/model/CheckLabelRequest.h
+	include/alibabacloud/crm/model/CheckLabelResult.h
+	include/alibabacloud/crm/model/CheckLabelForBidRequest.h
+	include/alibabacloud/crm/model/CheckLabelForBidResult.h
 	include/alibabacloud/crm/model/DeleteLabelRequest.h
 	include/alibabacloud/crm/model/DeleteLabelResult.h
-	include/alibabacloud/crm/model/AddLabelRequest.h
-	include/alibabacloud/crm/model/AddLabelResult.h )
+	include/alibabacloud/crm/model/DeleteLabelForBidRequest.h
+	include/alibabacloud/crm/model/DeleteLabelForBidResult.h
+	include/alibabacloud/crm/model/GetAliyunPkByAliyunIdRequest.h
+	include/alibabacloud/crm/model/GetAliyunPkByAliyunIdResult.h
+	include/alibabacloud/crm/model/QueryBidUserCertifiedInfoRequest.h
+	include/alibabacloud/crm/model/QueryBidUserCertifiedInfoResult.h
+	include/alibabacloud/crm/model/QueryCustomerLabelRequest.h
+	include/alibabacloud/crm/model/QueryCustomerLabelResult.h
+	include/alibabacloud/crm/model/RemoveIdentityCertifiedForBidUserRequest.h
+	include/alibabacloud/crm/model/RemoveIdentityCertifiedForBidUserResult.h )
 
 set(crm_src 
 	src/CrmClient.cc
-	src/model/CheckLabelForBidRequest.cc
-	src/model/CheckLabelForBidResult.cc
-	src/model/CheckLabelRequest.cc
-	src/model/CheckLabelResult.cc
-	src/model/DeleteLabelForBidRequest.cc
-	src/model/DeleteLabelForBidResult.cc
 	src/model/AddIdentityCertifiedForBidUserRequest.cc
 	src/model/AddIdentityCertifiedForBidUserResult.cc
-	src/model/GetAliyunPkByAliyunIdRequest.cc
-	src/model/GetAliyunPkByAliyunIdResult.cc
-	src/model/QueryCustomerLabelRequest.cc
-	src/model/QueryCustomerLabelResult.cc
-	src/model/QueryBidUserCertifiedInfoRequest.cc
-	src/model/QueryBidUserCertifiedInfoResult.cc
-	src/model/BatchGetAliyunIdByAliyunPkRequest.cc
-	src/model/BatchGetAliyunIdByAliyunPkResult.cc
-	src/model/RemoveIdentityCertifiedForBidUserRequest.cc
-	src/model/RemoveIdentityCertifiedForBidUserResult.cc
+	src/model/AddLabelRequest.cc
+	src/model/AddLabelResult.cc
 	src/model/AddLabelForBidRequest.cc
 	src/model/AddLabelForBidResult.cc
+	src/model/BatchGetAliyunIdByAliyunPkRequest.cc
+	src/model/BatchGetAliyunIdByAliyunPkResult.cc
+	src/model/CheckLabelRequest.cc
+	src/model/CheckLabelResult.cc
+	src/model/CheckLabelForBidRequest.cc
+	src/model/CheckLabelForBidResult.cc
 	src/model/DeleteLabelRequest.cc
 	src/model/DeleteLabelResult.cc
-	src/model/AddLabelRequest.cc
-	src/model/AddLabelResult.cc )
+	src/model/DeleteLabelForBidRequest.cc
+	src/model/DeleteLabelForBidResult.cc
+	src/model/GetAliyunPkByAliyunIdRequest.cc
+	src/model/GetAliyunPkByAliyunIdResult.cc
+	src/model/QueryBidUserCertifiedInfoRequest.cc
+	src/model/QueryBidUserCertifiedInfoResult.cc
+	src/model/QueryCustomerLabelRequest.cc
+	src/model/QueryCustomerLabelResult.cc
+	src/model/RemoveIdentityCertifiedForBidUserRequest.cc
+	src/model/RemoveIdentityCertifiedForBidUserResult.cc )
 
 add_library(crm ${LIB_TYPE}
 	${crm_public_header}

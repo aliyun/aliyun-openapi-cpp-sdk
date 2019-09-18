@@ -41,17 +41,17 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getType()const;
 				void setType(const std::string& type);
-				std::string getCcsInstanceId()const;
-				void setCcsInstanceId(const std::string& ccsInstanceId);
 				std::string getCustomFields()const;
 				void setCustomFields(const std::string& customFields);
+				std::string getCcsInstanceId()const;
+				void setCcsInstanceId(const std::string& ccsInstanceId);
 
             private:
 				std::string creatorId_;
 				std::string description_;
 				std::string type_;
-				std::string ccsInstanceId_;
 				std::string customFields_;
+				std::string ccsInstanceId_;
 
 			};
 		}

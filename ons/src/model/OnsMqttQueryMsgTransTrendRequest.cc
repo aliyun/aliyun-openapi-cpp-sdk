@@ -25,28 +25,6 @@ OnsMqttQueryMsgTransTrendRequest::OnsMqttQueryMsgTransTrendRequest() :
 OnsMqttQueryMsgTransTrendRequest::~OnsMqttQueryMsgTransTrendRequest()
 {}
 
-std::string OnsMqttQueryMsgTransTrendRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsMqttQueryMsgTransTrendRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-int OnsMqttQueryMsgTransTrendRequest::getQos()const
-{
-	return qos_;
-}
-
-void OnsMqttQueryMsgTransTrendRequest::setQos(int qos)
-{
-	qos_ = qos;
-	setCoreParameter("Qos", std::to_string(qos));
-}
-
 std::string OnsMqttQueryMsgTransTrendRequest::getTransType()const
 {
 	return transType_;
@@ -100,6 +78,28 @@ void OnsMqttQueryMsgTransTrendRequest::setParentTopic(const std::string& parentT
 {
 	parentTopic_ = parentTopic;
 	setCoreParameter("ParentTopic", parentTopic);
+}
+
+std::string OnsMqttQueryMsgTransTrendRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsMqttQueryMsgTransTrendRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int OnsMqttQueryMsgTransTrendRequest::getQos()const
+{
+	return qos_;
+}
+
+void OnsMqttQueryMsgTransTrendRequest::setQos(int qos)
+{
+	qos_ = qos;
+	setCoreParameter("Qos", std::to_string(qos));
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getMsgType()const

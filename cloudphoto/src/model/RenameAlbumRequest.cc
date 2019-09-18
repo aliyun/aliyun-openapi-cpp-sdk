@@ -25,17 +25,6 @@ RenameAlbumRequest::RenameAlbumRequest() :
 RenameAlbumRequest::~RenameAlbumRequest()
 {}
 
-std::string RenameAlbumRequest::getAlbumName()const
-{
-	return albumName_;
-}
-
-void RenameAlbumRequest::setAlbumName(const std::string& albumName)
-{
-	albumName_ = albumName;
-	setCoreParameter("AlbumName", albumName);
-}
-
 std::string RenameAlbumRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -67,5 +56,16 @@ void RenameAlbumRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
+}
+
+std::string RenameAlbumRequest::getAlbumName()const
+{
+	return albumName_;
+}
+
+void RenameAlbumRequest::setAlbumName(const std::string& albumName)
+{
+	albumName_ = albumName;
+	setCoreParameter("AlbumName", albumName);
 }
 

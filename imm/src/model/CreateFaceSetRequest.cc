@@ -25,17 +25,6 @@ CreateFaceSetRequest::CreateFaceSetRequest() :
 CreateFaceSetRequest::~CreateFaceSetRequest()
 {}
 
-std::string CreateFaceSetRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateFaceSetRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateFaceSetRequest::getProject()const
 {
 	return project_;

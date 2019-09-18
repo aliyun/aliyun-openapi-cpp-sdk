@@ -35,13 +35,9 @@ DescribeStreamPredictsResult::~DescribeStreamPredictsResult()
 
 void DescribeStreamPredictsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allStreamPredicts = value["StreamPredicts"]["StreamPredict"];
 	for (auto value : allStreamPredicts)
@@ -57,6 +53,8 @@ void DescribeStreamPredictsResult::parse(const std::string &payload)
 			streamPredictsObject.modelIds = value["ModelIds"].asString();
 		if(!value["ProbabilityThresholds"].isNull())
 			streamPredictsObject.probabilityThresholds = value["ProbabilityThresholds"].asString();
+		if(!value["DetectIntervals"].isNull())
+			streamPredictsObject.detectIntervals = value["DetectIntervals"].asString();
 		if(!value["Output"].isNull())
 			streamPredictsObject.output = value["Output"].asString();
 		if(!value["Notify"].isNull())

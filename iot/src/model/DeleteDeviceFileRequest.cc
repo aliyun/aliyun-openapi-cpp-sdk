@@ -25,6 +25,28 @@ DeleteDeviceFileRequest::DeleteDeviceFileRequest() :
 DeleteDeviceFileRequest::~DeleteDeviceFileRequest()
 {}
 
+std::string DeleteDeviceFileRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void DeleteDeviceFileRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string DeleteDeviceFileRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteDeviceFileRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteDeviceFileRequest::getIotId()const
 {
 	return iotId_;
@@ -56,28 +78,6 @@ void DeleteDeviceFileRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
 	setCoreParameter("DeviceName", deviceName);
-}
-
-std::string DeleteDeviceFileRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void DeleteDeviceFileRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
-std::string DeleteDeviceFileRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteDeviceFileRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDeviceFileRequest::getFileId()const

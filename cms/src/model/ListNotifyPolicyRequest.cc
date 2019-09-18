@@ -58,6 +58,17 @@ void ListNotifyPolicyRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
+std::string ListNotifyPolicyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int ListNotifyPolicyRequest::getPageSize()const
 {
 	return pageSize_;
@@ -89,16 +100,5 @@ void ListNotifyPolicyRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
 	setCoreParameter("Dimensions", dimensions);
-}
-
-std::string ListNotifyPolicyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,28 +25,6 @@ QueryDeviceRequest::QueryDeviceRequest() :
 QueryDeviceRequest::~QueryDeviceRequest()
 {}
 
-std::string QueryDeviceRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void QueryDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
-int QueryDeviceRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryDeviceRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 int QueryDeviceRequest::getCurrentPage()const
 {
 	return currentPage_;
@@ -78,5 +56,27 @@ void QueryDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryDeviceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+int QueryDeviceRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryDeviceRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

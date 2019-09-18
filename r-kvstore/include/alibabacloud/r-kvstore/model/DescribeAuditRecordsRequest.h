@@ -37,16 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getQueryKeywords()const;
 				void setQueryKeywords(const std::string& queryKeywords);
 				int getPageNumber()const;
@@ -55,39 +47,44 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getHostAddress()const;
 				void setHostAddress(const std::string& hostAddress);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getAccountName()const;
 				void setAccountName(const std::string& accountName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getDatabaseName()const;
-				void setDatabaseName(const std::string& databaseName);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getDatabaseName()const;
+				void setDatabaseName(const std::string& databaseName);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string endTime_;
 				std::string startTime_;
-				long ownerId_;
 				std::string queryKeywords_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string hostAddress_;
-				std::string instanceId_;
 				std::string accountName_;
 				std::string securityToken_;
-				std::string regionId_;
-				std::string databaseName_;
 				int pageSize_;
 				std::string nodeId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string endTime_;
+				long ownerId_;
+				std::string instanceId_;
+				std::string databaseName_;
 
 			};
 		}

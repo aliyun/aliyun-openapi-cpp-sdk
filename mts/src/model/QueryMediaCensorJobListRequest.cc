@@ -36,17 +36,6 @@ void QueryMediaCensorJobListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QueryMediaCensorJobListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void QueryMediaCensorJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string QueryMediaCensorJobListRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -56,17 +45,6 @@ void QueryMediaCensorJobListRequest::setNextPageToken(const std::string& nextPag
 {
 	nextPageToken_ = nextPageToken;
 	setCoreParameter("NextPageToken", nextPageToken);
-}
-
-std::string QueryMediaCensorJobListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void QueryMediaCensorJobListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string QueryMediaCensorJobListRequest::getStartOfJobCreatedTimeRange()const
@@ -80,28 +58,6 @@ void QueryMediaCensorJobListRequest::setStartOfJobCreatedTimeRange(const std::st
 	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
 }
 
-long QueryMediaCensorJobListRequest::getMaximumPageSize()const
-{
-	return maximumPageSize_;
-}
-
-void QueryMediaCensorJobListRequest::setMaximumPageSize(long maximumPageSize)
-{
-	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
-}
-
-long QueryMediaCensorJobListRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void QueryMediaCensorJobListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string QueryMediaCensorJobListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -111,17 +67,6 @@ void QueryMediaCensorJobListRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string QueryMediaCensorJobListRequest::getPipelineId()const
-{
-	return pipelineId_;
-}
-
-void QueryMediaCensorJobListRequest::setPipelineId(const std::string& pipelineId)
-{
-	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
 }
 
 std::string QueryMediaCensorJobListRequest::getJobId()const
@@ -155,5 +100,60 @@ void QueryMediaCensorJobListRequest::setEndOfJobCreatedTimeRange(const std::stri
 {
 	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
 	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+}
+
+std::string QueryMediaCensorJobListRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void QueryMediaCensorJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string QueryMediaCensorJobListRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void QueryMediaCensorJobListRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long QueryMediaCensorJobListRequest::getMaximumPageSize()const
+{
+	return maximumPageSize_;
+}
+
+void QueryMediaCensorJobListRequest::setMaximumPageSize(long maximumPageSize)
+{
+	maximumPageSize_ = maximumPageSize;
+	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+}
+
+long QueryMediaCensorJobListRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void QueryMediaCensorJobListRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string QueryMediaCensorJobListRequest::getPipelineId()const
+{
+	return pipelineId_;
+}
+
+void QueryMediaCensorJobListRequest::setPipelineId(const std::string& pipelineId)
+{
+	pipelineId_ = pipelineId;
+	setCoreParameter("PipelineId", pipelineId);
 }
 

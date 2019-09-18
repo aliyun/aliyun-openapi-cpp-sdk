@@ -25,17 +25,6 @@ GetFaceSearchGroupRequest::GetFaceSearchGroupRequest() :
 GetFaceSearchGroupRequest::~GetFaceSearchGroupRequest()
 {}
 
-std::string GetFaceSearchGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetFaceSearchGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetFaceSearchGroupRequest::getProject()const
 {
 	return project_;

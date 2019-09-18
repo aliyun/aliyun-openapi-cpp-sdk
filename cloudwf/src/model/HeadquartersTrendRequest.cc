@@ -25,17 +25,6 @@ HeadquartersTrendRequest::HeadquartersTrendRequest() :
 HeadquartersTrendRequest::~HeadquartersTrendRequest()
 {}
 
-long HeadquartersTrendRequest::getBid()const
-{
-	return bid_;
-}
-
-void HeadquartersTrendRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string HeadquartersTrendRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void HeadquartersTrendRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long HeadquartersTrendRequest::getBid()const
+{
+	return bid_;
+}
+
+void HeadquartersTrendRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

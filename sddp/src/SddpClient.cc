@@ -51,42 +51,6 @@ SddpClient::SddpClient(const std::string & accessKeyId, const std::string & acce
 SddpClient::~SddpClient()
 {}
 
-SddpClient::DescribeOssObjectDetailOutcome SddpClient::describeOssObjectDetail(const DescribeOssObjectDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOssObjectDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOssObjectDetailOutcome(DescribeOssObjectDetailResult(outcome.result()));
-	else
-		return DescribeOssObjectDetailOutcome(outcome.error());
-}
-
-void SddpClient::describeOssObjectDetailAsync(const DescribeOssObjectDetailRequest& request, const DescribeOssObjectDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOssObjectDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeOssObjectDetailOutcomeCallable SddpClient::describeOssObjectDetailCallable(const DescribeOssObjectDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOssObjectDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOssObjectDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SddpClient::CreateConfigOutcome SddpClient::createConfig(const CreateConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -123,288 +87,36 @@ SddpClient::CreateConfigOutcomeCallable SddpClient::createConfigCallable(const C
 	return task->get_future();
 }
 
-SddpClient::DescribeEventTypesOutcome SddpClient::describeEventTypes(const DescribeEventTypesRequest &request) const
+SddpClient::CreateDataLimitOutcome SddpClient::createDataLimit(const CreateDataLimitRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeEventTypesOutcome(endpointOutcome.error());
+		return CreateDataLimitOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeEventTypesOutcome(DescribeEventTypesResult(outcome.result()));
+		return CreateDataLimitOutcome(CreateDataLimitResult(outcome.result()));
 	else
-		return DescribeEventTypesOutcome(outcome.error());
+		return CreateDataLimitOutcome(outcome.error());
 }
 
-void SddpClient::describeEventTypesAsync(const DescribeEventTypesRequest& request, const DescribeEventTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::createDataLimitAsync(const CreateDataLimitRequest& request, const CreateDataLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeEventTypes(request), context);
+		handler(this, request, createDataLimit(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::DescribeEventTypesOutcomeCallable SddpClient::describeEventTypesCallable(const DescribeEventTypesRequest &request) const
+SddpClient::CreateDataLimitOutcomeCallable SddpClient::createDataLimitCallable(const CreateDataLimitRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeEventTypesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateDataLimitOutcome()>>(
 			[this, request]()
 			{
-			return this->describeEventTypes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::ModifyEventStatusOutcome SddpClient::modifyEventStatus(const ModifyEventStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyEventStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyEventStatusOutcome(ModifyEventStatusResult(outcome.result()));
-	else
-		return ModifyEventStatusOutcome(outcome.error());
-}
-
-void SddpClient::modifyEventStatusAsync(const ModifyEventStatusRequest& request, const ModifyEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyEventStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::ModifyEventStatusOutcomeCallable SddpClient::modifyEventStatusCallable(const ModifyEventStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyEventStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyEventStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribePackagesOutcome SddpClient::describePackages(const DescribePackagesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePackagesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePackagesOutcome(DescribePackagesResult(outcome.result()));
-	else
-		return DescribePackagesOutcome(outcome.error());
-}
-
-void SddpClient::describePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePackages(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribePackagesOutcomeCallable SddpClient::describePackagesCallable(const DescribePackagesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePackagesOutcome()>>(
-			[this, request]()
-			{
-			return this->describePackages(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeConfigsOutcome SddpClient::describeConfigs(const DescribeConfigsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeConfigsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeConfigsOutcome(DescribeConfigsResult(outcome.result()));
-	else
-		return DescribeConfigsOutcome(outcome.error());
-}
-
-void SddpClient::describeConfigsAsync(const DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeConfigs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeConfigsOutcomeCallable SddpClient::describeConfigsCallable(const DescribeConfigsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeConfigsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeConfigs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeAuthAccountsOutcome SddpClient::describeAuthAccounts(const DescribeAuthAccountsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAuthAccountsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAuthAccountsOutcome(DescribeAuthAccountsResult(outcome.result()));
-	else
-		return DescribeAuthAccountsOutcome(outcome.error());
-}
-
-void SddpClient::describeAuthAccountsAsync(const DescribeAuthAccountsRequest& request, const DescribeAuthAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAuthAccounts(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeAuthAccountsOutcomeCallable SddpClient::describeAuthAccountsCallable(const DescribeAuthAccountsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAuthAccountsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAuthAccounts(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::ValidateConnectorOutcome SddpClient::validateConnector(const ValidateConnectorRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ValidateConnectorOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ValidateConnectorOutcome(ValidateConnectorResult(outcome.result()));
-	else
-		return ValidateConnectorOutcome(outcome.error());
-}
-
-void SddpClient::validateConnectorAsync(const ValidateConnectorRequest& request, const ValidateConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, validateConnector(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::ValidateConnectorOutcomeCallable SddpClient::validateConnectorCallable(const ValidateConnectorRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ValidateConnectorOutcome()>>(
-			[this, request]()
-			{
-			return this->validateConnector(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeDataAssetsOutcome SddpClient::describeDataAssets(const DescribeDataAssetsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDataAssetsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDataAssetsOutcome(DescribeDataAssetsResult(outcome.result()));
-	else
-		return DescribeDataAssetsOutcome(outcome.error());
-}
-
-void SddpClient::describeDataAssetsAsync(const DescribeDataAssetsRequest& request, const DescribeDataAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDataAssets(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeDataAssetsOutcomeCallable SddpClient::describeDataAssetsCallable(const DescribeDataAssetsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDataAssetsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDataAssets(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeCloudDatabasesOutcome SddpClient::describeCloudDatabases(const DescribeCloudDatabasesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCloudDatabasesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCloudDatabasesOutcome(DescribeCloudDatabasesResult(outcome.result()));
-	else
-		return DescribeCloudDatabasesOutcome(outcome.error());
-}
-
-void SddpClient::describeCloudDatabasesAsync(const DescribeCloudDatabasesRequest& request, const DescribeCloudDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCloudDatabases(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeCloudDatabasesOutcomeCallable SddpClient::describeCloudDatabasesCallable(const DescribeCloudDatabasesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCloudDatabasesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCloudDatabases(request);
+			return this->createDataLimit(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,186 +195,6 @@ SddpClient::CreateUserAuthOutcomeCallable SddpClient::createUserAuthCallable(con
 	return task->get_future();
 }
 
-SddpClient::DeleteRuleOutcome SddpClient::deleteRule(const DeleteRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteRuleOutcome(DeleteRuleResult(outcome.result()));
-	else
-		return DeleteRuleOutcome(outcome.error());
-}
-
-void SddpClient::deleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DeleteRuleOutcomeCallable SddpClient::deleteRuleCallable(const DeleteRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeDataHubConnectorsOutcome SddpClient::describeDataHubConnectors(const DescribeDataHubConnectorsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDataHubConnectorsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDataHubConnectorsOutcome(DescribeDataHubConnectorsResult(outcome.result()));
-	else
-		return DescribeDataHubConnectorsOutcome(outcome.error());
-}
-
-void SddpClient::describeDataHubConnectorsAsync(const DescribeDataHubConnectorsRequest& request, const DescribeDataHubConnectorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDataHubConnectors(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeDataHubConnectorsOutcomeCallable SddpClient::describeDataHubConnectorsCallable(const DescribeDataHubConnectorsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDataHubConnectorsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDataHubConnectors(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeColumnsOutcome SddpClient::describeColumns(const DescribeColumnsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeColumnsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeColumnsOutcome(DescribeColumnsResult(outcome.result()));
-	else
-		return DescribeColumnsOutcome(outcome.error());
-}
-
-void SddpClient::describeColumnsAsync(const DescribeColumnsRequest& request, const DescribeColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeColumns(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeColumnsOutcomeCallable SddpClient::describeColumnsCallable(const DescribeColumnsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeColumnsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeColumns(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeDataLimitDetailOutcome SddpClient::describeDataLimitDetail(const DescribeDataLimitDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDataLimitDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDataLimitDetailOutcome(DescribeDataLimitDetailResult(outcome.result()));
-	else
-		return DescribeDataLimitDetailOutcome(outcome.error());
-}
-
-void SddpClient::describeDataLimitDetailAsync(const DescribeDataLimitDetailRequest& request, const DescribeDataLimitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDataLimitDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeDataLimitDetailOutcomeCallable SddpClient::describeDataLimitDetailCallable(const DescribeDataLimitDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDataLimitDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDataLimitDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeRulesOutcome SddpClient::describeRules(const DescribeRulesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRulesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRulesOutcome(DescribeRulesResult(outcome.result()));
-	else
-		return DescribeRulesOutcome(outcome.error());
-}
-
-void SddpClient::describeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRules(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeRulesOutcomeCallable SddpClient::describeRulesCallable(const DescribeRulesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRulesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRules(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SddpClient::DeleteDataLimitOutcome SddpClient::deleteDataLimit(const DeleteDataLimitRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -699,36 +231,36 @@ SddpClient::DeleteDataLimitOutcomeCallable SddpClient::deleteDataLimitCallable(c
 	return task->get_future();
 }
 
-SddpClient::ModifyRuleStatusOutcome SddpClient::modifyRuleStatus(const ModifyRuleStatusRequest &request) const
+SddpClient::DeleteRuleOutcome SddpClient::deleteRule(const DeleteRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyRuleStatusOutcome(endpointOutcome.error());
+		return DeleteRuleOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyRuleStatusOutcome(ModifyRuleStatusResult(outcome.result()));
+		return DeleteRuleOutcome(DeleteRuleResult(outcome.result()));
 	else
-		return ModifyRuleStatusOutcome(outcome.error());
+		return DeleteRuleOutcome(outcome.error());
 }
 
-void SddpClient::modifyRuleStatusAsync(const ModifyRuleStatusRequest& request, const ModifyRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::deleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyRuleStatus(request), context);
+		handler(this, request, deleteRule(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::ModifyRuleStatusOutcomeCallable SddpClient::modifyRuleStatusCallable(const ModifyRuleStatusRequest &request) const
+SddpClient::DeleteRuleOutcomeCallable SddpClient::deleteRuleCallable(const DeleteRuleRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyRuleStatusOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteRuleOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyRuleStatus(request);
+			return this->deleteRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,36 +303,324 @@ SddpClient::DescribeAccountDetailOutcomeCallable SddpClient::describeAccountDeta
 	return task->get_future();
 }
 
-SddpClient::DescribeDepartsOutcome SddpClient::describeDeparts(const DescribeDepartsRequest &request) const
+SddpClient::DescribeAccountsOutcome SddpClient::describeAccounts(const DescribeAccountsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDepartsOutcome(endpointOutcome.error());
+		return DescribeAccountsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDepartsOutcome(DescribeDepartsResult(outcome.result()));
+		return DescribeAccountsOutcome(DescribeAccountsResult(outcome.result()));
 	else
-		return DescribeDepartsOutcome(outcome.error());
+		return DescribeAccountsOutcome(outcome.error());
 }
 
-void SddpClient::describeDepartsAsync(const DescribeDepartsRequest& request, const DescribeDepartsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::describeAccountsAsync(const DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDeparts(request), context);
+		handler(this, request, describeAccounts(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::DescribeDepartsOutcomeCallable SddpClient::describeDepartsCallable(const DescribeDepartsRequest &request) const
+SddpClient::DescribeAccountsOutcomeCallable SddpClient::describeAccountsCallable(const DescribeAccountsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDepartsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeAccountsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDeparts(request);
+			return this->describeAccounts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeAuthAccountsOutcome SddpClient::describeAuthAccounts(const DescribeAuthAccountsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAuthAccountsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAuthAccountsOutcome(DescribeAuthAccountsResult(outcome.result()));
+	else
+		return DescribeAuthAccountsOutcome(outcome.error());
+}
+
+void SddpClient::describeAuthAccountsAsync(const DescribeAuthAccountsRequest& request, const DescribeAuthAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAuthAccounts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeAuthAccountsOutcomeCallable SddpClient::describeAuthAccountsCallable(const DescribeAuthAccountsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAuthAccountsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAuthAccounts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeCloudDatabasesOutcome SddpClient::describeCloudDatabases(const DescribeCloudDatabasesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCloudDatabasesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCloudDatabasesOutcome(DescribeCloudDatabasesResult(outcome.result()));
+	else
+		return DescribeCloudDatabasesOutcome(outcome.error());
+}
+
+void SddpClient::describeCloudDatabasesAsync(const DescribeCloudDatabasesRequest& request, const DescribeCloudDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCloudDatabases(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeCloudDatabasesOutcomeCallable SddpClient::describeCloudDatabasesCallable(const DescribeCloudDatabasesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCloudDatabasesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCloudDatabases(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeCloudInstancesOutcome SddpClient::describeCloudInstances(const DescribeCloudInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCloudInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCloudInstancesOutcome(DescribeCloudInstancesResult(outcome.result()));
+	else
+		return DescribeCloudInstancesOutcome(outcome.error());
+}
+
+void SddpClient::describeCloudInstancesAsync(const DescribeCloudInstancesRequest& request, const DescribeCloudInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCloudInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeCloudInstancesOutcomeCallable SddpClient::describeCloudInstancesCallable(const DescribeCloudInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCloudInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCloudInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeColumnsOutcome SddpClient::describeColumns(const DescribeColumnsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeColumnsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeColumnsOutcome(DescribeColumnsResult(outcome.result()));
+	else
+		return DescribeColumnsOutcome(outcome.error());
+}
+
+void SddpClient::describeColumnsAsync(const DescribeColumnsRequest& request, const DescribeColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeColumns(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeColumnsOutcomeCallable SddpClient::describeColumnsCallable(const DescribeColumnsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeColumnsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeColumns(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeConfigsOutcome SddpClient::describeConfigs(const DescribeConfigsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeConfigsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeConfigsOutcome(DescribeConfigsResult(outcome.result()));
+	else
+		return DescribeConfigsOutcome(outcome.error());
+}
+
+void SddpClient::describeConfigsAsync(const DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeConfigs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeConfigsOutcomeCallable SddpClient::describeConfigsCallable(const DescribeConfigsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeConfigsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeDataAssetsOutcome SddpClient::describeDataAssets(const DescribeDataAssetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataAssetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataAssetsOutcome(DescribeDataAssetsResult(outcome.result()));
+	else
+		return DescribeDataAssetsOutcome(outcome.error());
+}
+
+void SddpClient::describeDataAssetsAsync(const DescribeDataAssetsRequest& request, const DescribeDataAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataAssets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeDataAssetsOutcomeCallable SddpClient::describeDataAssetsCallable(const DescribeDataAssetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataAssetsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataAssets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeDataHubConnectorsOutcome SddpClient::describeDataHubConnectors(const DescribeDataHubConnectorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataHubConnectorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataHubConnectorsOutcome(DescribeDataHubConnectorsResult(outcome.result()));
+	else
+		return DescribeDataHubConnectorsOutcome(outcome.error());
+}
+
+void SddpClient::describeDataHubConnectorsAsync(const DescribeDataHubConnectorsRequest& request, const DescribeDataHubConnectorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataHubConnectors(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeDataHubConnectorsOutcomeCallable SddpClient::describeDataHubConnectorsCallable(const DescribeDataHubConnectorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataHubConnectorsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataHubConnectors(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeDataHubProjectsOutcome SddpClient::describeDataHubProjects(const DescribeDataHubProjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataHubProjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataHubProjectsOutcome(DescribeDataHubProjectsResult(outcome.result()));
+	else
+		return DescribeDataHubProjectsOutcome(outcome.error());
+}
+
+void SddpClient::describeDataHubProjectsAsync(const DescribeDataHubProjectsRequest& request, const DescribeDataHubProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataHubProjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeDataHubProjectsOutcomeCallable SddpClient::describeDataHubProjectsCallable(const DescribeDataHubProjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataHubProjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataHubProjects(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -879,108 +699,36 @@ SddpClient::DescribeDataHubTopicsOutcomeCallable SddpClient::describeDataHubTopi
 	return task->get_future();
 }
 
-SddpClient::DescribeCloudInstancesOutcome SddpClient::describeCloudInstances(const DescribeCloudInstancesRequest &request) const
+SddpClient::DescribeDataLimitDetailOutcome SddpClient::describeDataLimitDetail(const DescribeDataLimitDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeCloudInstancesOutcome(endpointOutcome.error());
+		return DescribeDataLimitDetailOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeCloudInstancesOutcome(DescribeCloudInstancesResult(outcome.result()));
+		return DescribeDataLimitDetailOutcome(DescribeDataLimitDetailResult(outcome.result()));
 	else
-		return DescribeCloudInstancesOutcome(outcome.error());
+		return DescribeDataLimitDetailOutcome(outcome.error());
 }
 
-void SddpClient::describeCloudInstancesAsync(const DescribeCloudInstancesRequest& request, const DescribeCloudInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::describeDataLimitDetailAsync(const DescribeDataLimitDetailRequest& request, const DescribeDataLimitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeCloudInstances(request), context);
+		handler(this, request, describeDataLimitDetail(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::DescribeCloudInstancesOutcomeCallable SddpClient::describeCloudInstancesCallable(const DescribeCloudInstancesRequest &request) const
+SddpClient::DescribeDataLimitDetailOutcomeCallable SddpClient::describeDataLimitDetailCallable(const DescribeDataLimitDetailRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeCloudInstancesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDataLimitDetailOutcome()>>(
 			[this, request]()
 			{
-			return this->describeCloudInstances(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeAccountsOutcome SddpClient::describeAccounts(const DescribeAccountsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAccountsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAccountsOutcome(DescribeAccountsResult(outcome.result()));
-	else
-		return DescribeAccountsOutcome(outcome.error());
-}
-
-void SddpClient::describeAccountsAsync(const DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAccounts(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeAccountsOutcomeCallable SddpClient::describeAccountsCallable(const DescribeAccountsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAccountsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAccounts(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeOssObjectsOutcome SddpClient::describeOssObjects(const DescribeOssObjectsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOssObjectsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOssObjectsOutcome(DescribeOssObjectsResult(outcome.result()));
-	else
-		return DescribeOssObjectsOutcome(outcome.error());
-}
-
-void SddpClient::describeOssObjectsAsync(const DescribeOssObjectsRequest& request, const DescribeOssObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOssObjects(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeOssObjectsOutcomeCallable SddpClient::describeOssObjectsCallable(const DescribeOssObjectsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOssObjectsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOssObjects(request);
+			return this->describeDataLimitDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,108 +771,36 @@ SddpClient::DescribeDataLimitsOutcomeCallable SddpClient::describeDataLimitsCall
 	return task->get_future();
 }
 
-SddpClient::DescribeEventsOutcome SddpClient::describeEvents(const DescribeEventsRequest &request) const
+SddpClient::DescribeDepartsOutcome SddpClient::describeDeparts(const DescribeDepartsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeEventsOutcome(endpointOutcome.error());
+		return DescribeDepartsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeEventsOutcome(DescribeEventsResult(outcome.result()));
+		return DescribeDepartsOutcome(DescribeDepartsResult(outcome.result()));
 	else
-		return DescribeEventsOutcome(outcome.error());
+		return DescribeDepartsOutcome(outcome.error());
 }
 
-void SddpClient::describeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::describeDepartsAsync(const DescribeDepartsRequest& request, const DescribeDepartsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeEvents(request), context);
+		handler(this, request, describeDeparts(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::DescribeEventsOutcomeCallable SddpClient::describeEventsCallable(const DescribeEventsRequest &request) const
+SddpClient::DescribeDepartsOutcomeCallable SddpClient::describeDepartsCallable(const DescribeDepartsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeEventsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDepartsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeEvents(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::CreateDataLimitOutcome SddpClient::createDataLimit(const CreateDataLimitRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDataLimitOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDataLimitOutcome(CreateDataLimitResult(outcome.result()));
-	else
-		return CreateDataLimitOutcome(outcome.error());
-}
-
-void SddpClient::createDataLimitAsync(const CreateDataLimitRequest& request, const CreateDataLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDataLimit(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::CreateDataLimitOutcomeCallable SddpClient::createDataLimitCallable(const CreateDataLimitRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDataLimitOutcome()>>(
-			[this, request]()
-			{
-			return this->createDataLimit(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::ModifyRuleOutcome SddpClient::modifyRule(const ModifyRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyRuleOutcome(ModifyRuleResult(outcome.result()));
-	else
-		return ModifyRuleOutcome(outcome.error());
-}
-
-void SddpClient::modifyRuleAsync(const ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::ModifyRuleOutcomeCallable SddpClient::modifyRuleCallable(const ModifyRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyRule(request);
+			return this->describeDeparts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,144 +843,72 @@ SddpClient::DescribeEventDetailOutcomeCallable SddpClient::describeEventDetailCa
 	return task->get_future();
 }
 
-SddpClient::ModifyDataLimitOutcome SddpClient::modifyDataLimit(const ModifyDataLimitRequest &request) const
+SddpClient::DescribeEventTypesOutcome SddpClient::describeEventTypes(const DescribeEventTypesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyDataLimitOutcome(endpointOutcome.error());
+		return DescribeEventTypesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyDataLimitOutcome(ModifyDataLimitResult(outcome.result()));
+		return DescribeEventTypesOutcome(DescribeEventTypesResult(outcome.result()));
 	else
-		return ModifyDataLimitOutcome(outcome.error());
+		return DescribeEventTypesOutcome(outcome.error());
 }
 
-void SddpClient::modifyDataLimitAsync(const ModifyDataLimitRequest& request, const ModifyDataLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::describeEventTypesAsync(const DescribeEventTypesRequest& request, const DescribeEventTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyDataLimit(request), context);
+		handler(this, request, describeEventTypes(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::ModifyDataLimitOutcomeCallable SddpClient::modifyDataLimitCallable(const ModifyDataLimitRequest &request) const
+SddpClient::DescribeEventTypesOutcomeCallable SddpClient::describeEventTypesCallable(const DescribeEventTypesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyDataLimitOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeEventTypesOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyDataLimit(request);
+			return this->describeEventTypes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SddpClient::DescribeTablesOutcome SddpClient::describeTables(const DescribeTablesRequest &request) const
+SddpClient::DescribeEventsOutcome SddpClient::describeEvents(const DescribeEventsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeTablesOutcome(endpointOutcome.error());
+		return DescribeEventsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeTablesOutcome(DescribeTablesResult(outcome.result()));
+		return DescribeEventsOutcome(DescribeEventsResult(outcome.result()));
 	else
-		return DescribeTablesOutcome(outcome.error());
+		return DescribeEventsOutcome(outcome.error());
 }
 
-void SddpClient::describeTablesAsync(const DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::describeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeTables(request), context);
+		handler(this, request, describeEvents(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::DescribeTablesOutcomeCallable SddpClient::describeTablesCallable(const DescribeTablesRequest &request) const
+SddpClient::DescribeEventsOutcomeCallable SddpClient::describeEventsCallable(const DescribeEventsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeTablesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeEventsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeTables(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribePrivilegesOutcome SddpClient::describePrivileges(const DescribePrivilegesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePrivilegesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePrivilegesOutcome(DescribePrivilegesResult(outcome.result()));
-	else
-		return DescribePrivilegesOutcome(outcome.error());
-}
-
-void SddpClient::describePrivilegesAsync(const DescribePrivilegesRequest& request, const DescribePrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePrivileges(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribePrivilegesOutcomeCallable SddpClient::describePrivilegesCallable(const DescribePrivilegesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePrivilegesOutcome()>>(
-			[this, request]()
-			{
-			return this->describePrivileges(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SddpClient::DescribeDataHubProjectsOutcome SddpClient::describeDataHubProjects(const DescribeDataHubProjectsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDataHubProjectsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDataHubProjectsOutcome(DescribeDataHubProjectsResult(outcome.result()));
-	else
-		return DescribeDataHubProjectsOutcome(outcome.error());
-}
-
-void SddpClient::describeDataHubProjectsAsync(const DescribeDataHubProjectsRequest& request, const DescribeDataHubProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDataHubProjects(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SddpClient::DescribeDataHubProjectsOutcomeCallable SddpClient::describeDataHubProjectsCallable(const DescribeDataHubProjectsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDataHubProjectsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDataHubProjects(request);
+			return this->describeEvents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1347,36 +951,288 @@ SddpClient::DescribeInstancesOutcomeCallable SddpClient::describeInstancesCallab
 	return task->get_future();
 }
 
-SddpClient::ModifyEventTypeStatusOutcome SddpClient::modifyEventTypeStatus(const ModifyEventTypeStatusRequest &request) const
+SddpClient::DescribeOssObjectDetailOutcome SddpClient::describeOssObjectDetail(const DescribeOssObjectDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyEventTypeStatusOutcome(endpointOutcome.error());
+		return DescribeOssObjectDetailOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyEventTypeStatusOutcome(ModifyEventTypeStatusResult(outcome.result()));
+		return DescribeOssObjectDetailOutcome(DescribeOssObjectDetailResult(outcome.result()));
 	else
-		return ModifyEventTypeStatusOutcome(outcome.error());
+		return DescribeOssObjectDetailOutcome(outcome.error());
 }
 
-void SddpClient::modifyEventTypeStatusAsync(const ModifyEventTypeStatusRequest& request, const ModifyEventTypeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::describeOssObjectDetailAsync(const DescribeOssObjectDetailRequest& request, const DescribeOssObjectDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyEventTypeStatus(request), context);
+		handler(this, request, describeOssObjectDetail(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::ModifyEventTypeStatusOutcomeCallable SddpClient::modifyEventTypeStatusCallable(const ModifyEventTypeStatusRequest &request) const
+SddpClient::DescribeOssObjectDetailOutcomeCallable SddpClient::describeOssObjectDetailCallable(const DescribeOssObjectDetailRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyEventTypeStatusOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeOssObjectDetailOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyEventTypeStatus(request);
+			return this->describeOssObjectDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeOssObjectsOutcome SddpClient::describeOssObjects(const DescribeOssObjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeOssObjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeOssObjectsOutcome(DescribeOssObjectsResult(outcome.result()));
+	else
+		return DescribeOssObjectsOutcome(outcome.error());
+}
+
+void SddpClient::describeOssObjectsAsync(const DescribeOssObjectsRequest& request, const DescribeOssObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeOssObjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeOssObjectsOutcomeCallable SddpClient::describeOssObjectsCallable(const DescribeOssObjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeOssObjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeOssObjects(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribePackagesOutcome SddpClient::describePackages(const DescribePackagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePackagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePackagesOutcome(DescribePackagesResult(outcome.result()));
+	else
+		return DescribePackagesOutcome(outcome.error());
+}
+
+void SddpClient::describePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePackages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribePackagesOutcomeCallable SddpClient::describePackagesCallable(const DescribePackagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePackagesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePackages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribePrivilegesOutcome SddpClient::describePrivileges(const DescribePrivilegesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePrivilegesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePrivilegesOutcome(DescribePrivilegesResult(outcome.result()));
+	else
+		return DescribePrivilegesOutcome(outcome.error());
+}
+
+void SddpClient::describePrivilegesAsync(const DescribePrivilegesRequest& request, const DescribePrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePrivileges(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribePrivilegesOutcomeCallable SddpClient::describePrivilegesCallable(const DescribePrivilegesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePrivilegesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePrivileges(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeRulesOutcome SddpClient::describeRules(const DescribeRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRulesOutcome(DescribeRulesResult(outcome.result()));
+	else
+		return DescribeRulesOutcome(outcome.error());
+}
+
+void SddpClient::describeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeRulesOutcomeCallable SddpClient::describeRulesCallable(const DescribeRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeTablesOutcome SddpClient::describeTables(const DescribeTablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTablesOutcome(DescribeTablesResult(outcome.result()));
+	else
+		return DescribeTablesOutcome(outcome.error());
+}
+
+void SddpClient::describeTablesAsync(const DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeTablesOutcomeCallable SddpClient::describeTablesCallable(const DescribeTablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTablesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::DescribeUserStatusOutcome SddpClient::describeUserStatus(const DescribeUserStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserStatusOutcome(DescribeUserStatusResult(outcome.result()));
+	else
+		return DescribeUserStatusOutcome(outcome.error());
+}
+
+void SddpClient::describeUserStatusAsync(const DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::DescribeUserStatusOutcomeCallable SddpClient::describeUserStatusCallable(const DescribeUserStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::ModifyDataLimitOutcome SddpClient::modifyDataLimit(const ModifyDataLimitRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDataLimitOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDataLimitOutcome(ModifyDataLimitResult(outcome.result()));
+	else
+		return ModifyDataLimitOutcome(outcome.error());
+}
+
+void SddpClient::modifyDataLimitAsync(const ModifyDataLimitRequest& request, const ModifyDataLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDataLimit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::ModifyDataLimitOutcomeCallable SddpClient::modifyDataLimitCallable(const ModifyDataLimitRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDataLimitOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDataLimit(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1419,36 +1275,180 @@ SddpClient::ModifyDefaultLevelOutcomeCallable SddpClient::modifyDefaultLevelCall
 	return task->get_future();
 }
 
-SddpClient::DescribeUserStatusOutcome SddpClient::describeUserStatus(const DescribeUserStatusRequest &request) const
+SddpClient::ModifyEventStatusOutcome SddpClient::modifyEventStatus(const ModifyEventStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeUserStatusOutcome(endpointOutcome.error());
+		return ModifyEventStatusOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeUserStatusOutcome(DescribeUserStatusResult(outcome.result()));
+		return ModifyEventStatusOutcome(ModifyEventStatusResult(outcome.result()));
 	else
-		return DescribeUserStatusOutcome(outcome.error());
+		return ModifyEventStatusOutcome(outcome.error());
 }
 
-void SddpClient::describeUserStatusAsync(const DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SddpClient::modifyEventStatusAsync(const ModifyEventStatusRequest& request, const ModifyEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeUserStatus(request), context);
+		handler(this, request, modifyEventStatus(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SddpClient::DescribeUserStatusOutcomeCallable SddpClient::describeUserStatusCallable(const DescribeUserStatusRequest &request) const
+SddpClient::ModifyEventStatusOutcomeCallable SddpClient::modifyEventStatusCallable(const ModifyEventStatusRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeUserStatusOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyEventStatusOutcome()>>(
 			[this, request]()
 			{
-			return this->describeUserStatus(request);
+			return this->modifyEventStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::ModifyEventTypeStatusOutcome SddpClient::modifyEventTypeStatus(const ModifyEventTypeStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyEventTypeStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyEventTypeStatusOutcome(ModifyEventTypeStatusResult(outcome.result()));
+	else
+		return ModifyEventTypeStatusOutcome(outcome.error());
+}
+
+void SddpClient::modifyEventTypeStatusAsync(const ModifyEventTypeStatusRequest& request, const ModifyEventTypeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyEventTypeStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::ModifyEventTypeStatusOutcomeCallable SddpClient::modifyEventTypeStatusCallable(const ModifyEventTypeStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyEventTypeStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyEventTypeStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::ModifyRuleOutcome SddpClient::modifyRule(const ModifyRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRuleOutcome(ModifyRuleResult(outcome.result()));
+	else
+		return ModifyRuleOutcome(outcome.error());
+}
+
+void SddpClient::modifyRuleAsync(const ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::ModifyRuleOutcomeCallable SddpClient::modifyRuleCallable(const ModifyRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::ModifyRuleStatusOutcome SddpClient::modifyRuleStatus(const ModifyRuleStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRuleStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRuleStatusOutcome(ModifyRuleStatusResult(outcome.result()));
+	else
+		return ModifyRuleStatusOutcome(outcome.error());
+}
+
+void SddpClient::modifyRuleStatusAsync(const ModifyRuleStatusRequest& request, const ModifyRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRuleStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::ModifyRuleStatusOutcomeCallable SddpClient::modifyRuleStatusCallable(const ModifyRuleStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRuleStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRuleStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SddpClient::ValidateConnectorOutcome SddpClient::validateConnector(const ValidateConnectorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ValidateConnectorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ValidateConnectorOutcome(ValidateConnectorResult(outcome.result()));
+	else
+		return ValidateConnectorOutcome(outcome.error());
+}
+
+void SddpClient::validateConnectorAsync(const ValidateConnectorRequest& request, const ValidateConnectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, validateConnector(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SddpClient::ValidateConnectorOutcomeCallable SddpClient::validateConnectorCallable(const ValidateConnectorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ValidateConnectorOutcome()>>(
+			[this, request]()
+			{
+			return this->validateConnector(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

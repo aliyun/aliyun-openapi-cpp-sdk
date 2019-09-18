@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeVulDetailsRequest();
 				~DescribeVulDetailsRequest();
 
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getAliasName()const;
 				void setAliasName(const std::string& aliasName);
 				std::string getSourceIp()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getType()const;
-				void setType(const std::string& type);
 
             private:
+				std::string type_;
 				std::string aliasName_;
 				std::string sourceIp_;
 				std::string name_;
 				std::string lang_;
-				std::string type_;
 
 			};
 		}

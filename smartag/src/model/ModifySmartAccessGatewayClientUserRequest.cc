@@ -36,17 +36,6 @@ void ModifySmartAccessGatewayClientUserRequest::setResourceOwnerId(long resource
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifySmartAccessGatewayClientUserRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifySmartAccessGatewayClientUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ModifySmartAccessGatewayClientUserRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void ModifySmartAccessGatewayClientUserRequest::setRegionId(const std::string& r
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifySmartAccessGatewayClientUserRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifySmartAccessGatewayClientUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int ModifySmartAccessGatewayClientUserRequest::getBandwidth()const
@@ -80,17 +80,6 @@ void ModifySmartAccessGatewayClientUserRequest::setOwnerAccount(const std::strin
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifySmartAccessGatewayClientUserRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void ModifySmartAccessGatewayClientUserRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long ModifySmartAccessGatewayClientUserRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,6 +89,17 @@ void ModifySmartAccessGatewayClientUserRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifySmartAccessGatewayClientUserRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void ModifySmartAccessGatewayClientUserRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 std::string ModifySmartAccessGatewayClientUserRequest::getUserName()const

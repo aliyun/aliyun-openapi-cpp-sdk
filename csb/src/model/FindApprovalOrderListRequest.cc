@@ -36,17 +36,6 @@ void FindApprovalOrderListRequest::setProjectName(const std::string& projectName
 	setCoreParameter("ProjectName", projectName);
 }
 
-std::string FindApprovalOrderListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void FindApprovalOrderListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long FindApprovalOrderListRequest::getCsbId()const
 {
 	return csbId_;
@@ -56,6 +45,17 @@ void FindApprovalOrderListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
 	setCoreParameter("CsbId", std::to_string(csbId));
+}
+
+int FindApprovalOrderListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void FindApprovalOrderListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string FindApprovalOrderListRequest::getAlias()const
@@ -89,17 +89,6 @@ void FindApprovalOrderListRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
 	setCoreParameter("ServiceId", std::to_string(serviceId));
-}
-
-int FindApprovalOrderListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void FindApprovalOrderListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 bool FindApprovalOrderListRequest::getOnlyPending()const

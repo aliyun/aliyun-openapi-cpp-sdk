@@ -25,17 +25,6 @@ GetStaDetailedStatusRequest::GetStaDetailedStatusRequest() :
 GetStaDetailedStatusRequest::~GetStaDetailedStatusRequest()
 {}
 
-long GetStaDetailedStatusRequest::getId()const
-{
-	return id_;
-}
-
-void GetStaDetailedStatusRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetStaDetailedStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetStaDetailedStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetStaDetailedStatusRequest::getId()const
+{
+	return id_;
+}
+
+void GetStaDetailedStatusRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

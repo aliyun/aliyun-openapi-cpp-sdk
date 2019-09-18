@@ -45,10 +45,10 @@ namespace AlibabaCloud
 				void setClassification(const std::string& classification);
 				int getType()const;
 				void setType(int type);
-				std::string getRegisterNumber()const;
-				void setRegisterNumber(const std::string& registerNumber);
 				std::string getVcode()const;
 				void setVcode(const std::string& vcode);
+				std::string getRegisterNumber()const;
+				void setRegisterNumber(const std::string& registerNumber);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
@@ -58,8 +58,8 @@ namespace AlibabaCloud
 				std::string partnerCode_;
 				std::string classification_;
 				int type_;
-				std::string registerNumber_;
 				std::string vcode_;
+				std::string registerNumber_;
 				std::string userName_;
 
 			};

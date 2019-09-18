@@ -36,17 +36,6 @@ void DescribeRouteServicesInCenRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRouteServicesInCenRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeRouteServicesInCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeRouteServicesInCenRequest::getCenId()const
 {
 	return cenId_;
@@ -58,15 +47,26 @@ void DescribeRouteServicesInCenRequest::setCenId(const std::string& cenId)
 	setCoreParameter("CenId", cenId);
 }
 
-std::string DescribeRouteServicesInCenRequest::getOwnerAccount()const
+std::string DescribeRouteServicesInCenRequest::getAccessRegionId()const
 {
-	return ownerAccount_;
+	return accessRegionId_;
 }
 
-void DescribeRouteServicesInCenRequest::setOwnerAccount(const std::string& ownerAccount)
+void DescribeRouteServicesInCenRequest::setAccessRegionId(const std::string& accessRegionId)
 {
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	accessRegionId_ = accessRegionId;
+	setCoreParameter("AccessRegionId", accessRegionId);
+}
+
+int DescribeRouteServicesInCenRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeRouteServicesInCenRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeRouteServicesInCenRequest::getPageSize()const
@@ -102,15 +102,37 @@ void DescribeRouteServicesInCenRequest::setHostRegionId(const std::string& hostR
 	setCoreParameter("HostRegionId", hostRegionId);
 }
 
-std::string DescribeRouteServicesInCenRequest::getAccessRegionId()const
+std::string DescribeRouteServicesInCenRequest::getHostVpcId()const
 {
-	return accessRegionId_;
+	return hostVpcId_;
 }
 
-void DescribeRouteServicesInCenRequest::setAccessRegionId(const std::string& accessRegionId)
+void DescribeRouteServicesInCenRequest::setHostVpcId(const std::string& hostVpcId)
 {
-	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	hostVpcId_ = hostVpcId;
+	setCoreParameter("HostVpcId", hostVpcId);
+}
+
+std::string DescribeRouteServicesInCenRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeRouteServicesInCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeRouteServicesInCenRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeRouteServicesInCenRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRouteServicesInCenRequest::getOwnerId()const
@@ -122,16 +144,5 @@ void DescribeRouteServicesInCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeRouteServicesInCenRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeRouteServicesInCenRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

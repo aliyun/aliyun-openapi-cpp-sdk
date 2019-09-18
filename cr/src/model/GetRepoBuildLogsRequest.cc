@@ -25,6 +25,17 @@ GetRepoBuildLogsRequest::GetRepoBuildLogsRequest() :
 GetRepoBuildLogsRequest::~GetRepoBuildLogsRequest()
 {}
 
+std::string GetRepoBuildLogsRequest::getBuildId()const
+{
+	return buildId_;
+}
+
+void GetRepoBuildLogsRequest::setBuildId(const std::string& buildId)
+{
+	buildId_ = buildId;
+	setCoreParameter("BuildId", buildId);
+}
+
 std::string GetRepoBuildLogsRequest::getRepoNamespace()const
 {
 	return repoNamespace_;
@@ -45,27 +56,5 @@ void GetRepoBuildLogsRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
 	setCoreParameter("RepoName", repoName);
-}
-
-std::string GetRepoBuildLogsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoBuildLogsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string GetRepoBuildLogsRequest::getBuildId()const
-{
-	return buildId_;
-}
-
-void GetRepoBuildLogsRequest::setBuildId(const std::string& buildId)
-{
-	buildId_ = buildId;
-	setCoreParameter("BuildId", buildId);
 }
 

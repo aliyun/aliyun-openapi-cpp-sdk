@@ -25,17 +25,6 @@ CreateKeywordRequest::CreateKeywordRequest() :
 CreateKeywordRequest::~CreateKeywordRequest()
 {}
 
-std::string CreateKeywordRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateKeywordRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string CreateKeywordRequest::getKeywords()const
 {
 	return keywords_;
@@ -56,6 +45,17 @@ void CreateKeywordRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
 	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+}
+
+std::string CreateKeywordRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateKeywordRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateKeywordRequest::getLang()const

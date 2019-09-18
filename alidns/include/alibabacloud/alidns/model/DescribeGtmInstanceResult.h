@@ -48,6 +48,8 @@ namespace AlibabaCloud
 				std::string getInstanceName()const;
 				std::string getVersionCode()const;
 				std::string getAlertGroup()const;
+				int getAddressPoolNum()const;
+				int getAccessStrategyNum()const;
 				std::string getExpireTime()const;
 				long getCreateTimestamp()const;
 
@@ -65,6 +67,8 @@ namespace AlibabaCloud
 				std::string instanceName_;
 				std::string versionCode_;
 				std::string alertGroup_;
+				int addressPoolNum_;
+				int accessStrategyNum_;
 				std::string expireTime_;
 				long createTimestamp_;
 

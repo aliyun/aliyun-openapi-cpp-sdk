@@ -35,28 +35,30 @@ namespace AlibabaCloud
 				AddCustomLiveStreamTranscodeRequest();
 				~AddCustomLiveStreamTranscodeRequest();
 
-				std::string getApp()const;
-				void setApp(const std::string& app);
 				std::string get_Template()const;
 				void set_Template(const std::string& _template);
+				std::string getGop()const;
+				void setGop(const std::string& gop);
+				std::string getAudioCodec()const;
+				void setAudioCodec(const std::string& audioCodec);
+				std::string getTemplateType()const;
+				void setTemplateType(const std::string& templateType);
+				std::string getAudioProfile()const;
+				void setAudioProfile(const std::string& audioProfile);
+				int getHeight()const;
+				void setHeight(int height);
+				std::string getApp()const;
+				void setApp(const std::string& app);
 				int getAudioChannelNum()const;
 				void setAudioChannelNum(int audioChannelNum);
 				int getProfile()const;
 				void setProfile(int profile);
 				int getFPS()const;
 				void setFPS(int fPS);
-				std::string getGop()const;
-				void setGop(const std::string& gop);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAudioCodec()const;
-				void setAudioCodec(const std::string& audioCodec);
 				int getAudioRate()const;
 				void setAudioRate(int audioRate);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getTemplateType()const;
-				void setTemplateType(const std::string& templateType);
 				int getAudioBitrate()const;
 				void setAudioBitrate(int audioBitrate);
 				std::string getDomain()const;
@@ -65,29 +67,24 @@ namespace AlibabaCloud
 				void setWidth(int width);
 				int getVideoBitrate()const;
 				void setVideoBitrate(int videoBitrate);
-				std::string getAudioProfile()const;
-				void setAudioProfile(const std::string& audioProfile);
-				int getHeight()const;
-				void setHeight(int height);
 
             private:
-				std::string app_;
 				std::string _template_;
+				std::string gop_;
+				std::string audioCodec_;
+				std::string templateType_;
+				std::string audioProfile_;
+				int height_;
+				std::string app_;
 				int audioChannelNum_;
 				int profile_;
 				int fPS_;
-				std::string gop_;
 				long ownerId_;
-				std::string audioCodec_;
 				int audioRate_;
-				std::string regionId_;
-				std::string templateType_;
 				int audioBitrate_;
 				std::string domain_;
 				int width_;
 				int videoBitrate_;
-				std::string audioProfile_;
-				int height_;
 
 			};
 		}

@@ -25,17 +25,6 @@ CreateAlarmRequest::CreateAlarmRequest() :
 CreateAlarmRequest::~CreateAlarmRequest()
 {}
 
-int CreateAlarmRequest::getPeriod()const
-{
-	return period_;
-}
-
-void CreateAlarmRequest::setPeriod(int period)
-{
-	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
-}
-
 std::string CreateAlarmRequest::getWebhook()const
 {
 	return webhook_;
@@ -45,39 +34,6 @@ void CreateAlarmRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
 	setCoreParameter("Webhook", webhook);
-}
-
-bool CreateAlarmRequest::getDryRun()const
-{
-	return dryRun_;
-}
-
-void CreateAlarmRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
-}
-
-std::string CreateAlarmRequest::getContactGroups()const
-{
-	return contactGroups_;
-}
-
-void CreateAlarmRequest::setContactGroups(const std::string& contactGroups)
-{
-	contactGroups_ = contactGroups;
-	setCoreParameter("ContactGroups", contactGroups);
-}
-
-int CreateAlarmRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void CreateAlarmRequest::setEndTime(int endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string CreateAlarmRequest::getThreshold()const
@@ -100,28 +56,6 @@ void CreateAlarmRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", std::to_string(startTime));
-}
-
-std::string CreateAlarmRequest::getName()const
-{
-	return name_;
-}
-
-void CreateAlarmRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string CreateAlarmRequest::get_Namespace()const
-{
-	return _namespace_;
-}
-
-void CreateAlarmRequest::set_Namespace(const std::string& _namespace)
-{
-	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
 }
 
 int CreateAlarmRequest::getEvaluationCount()const
@@ -166,6 +100,72 @@ void CreateAlarmRequest::setNotifyType(int notifyType)
 {
 	notifyType_ = notifyType;
 	setCoreParameter("NotifyType", std::to_string(notifyType));
+}
+
+int CreateAlarmRequest::getPeriod()const
+{
+	return period_;
+}
+
+void CreateAlarmRequest::setPeriod(int period)
+{
+	period_ = period;
+	setCoreParameter("Period", std::to_string(period));
+}
+
+bool CreateAlarmRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void CreateAlarmRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
+}
+
+std::string CreateAlarmRequest::getContactGroups()const
+{
+	return contactGroups_;
+}
+
+void CreateAlarmRequest::setContactGroups(const std::string& contactGroups)
+{
+	contactGroups_ = contactGroups;
+	setCoreParameter("ContactGroups", contactGroups);
+}
+
+int CreateAlarmRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void CreateAlarmRequest::setEndTime(int endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", std::to_string(endTime));
+}
+
+std::string CreateAlarmRequest::getName()const
+{
+	return name_;
+}
+
+void CreateAlarmRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string CreateAlarmRequest::get_Namespace()const
+{
+	return _namespace_;
+}
+
+void CreateAlarmRequest::set_Namespace(const std::string& _namespace)
+{
+	_namespace_ = _namespace;
+	setCoreParameter("_Namespace", _namespace);
 }
 
 std::string CreateAlarmRequest::getComparisonOperator()const

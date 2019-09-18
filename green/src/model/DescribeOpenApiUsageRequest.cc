@@ -25,28 +25,6 @@ DescribeOpenApiUsageRequest::DescribeOpenApiUsageRequest() :
 DescribeOpenApiUsageRequest::~DescribeOpenApiUsageRequest()
 {}
 
-std::string DescribeOpenApiUsageRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void DescribeOpenApiUsageRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
-}
-
-std::string DescribeOpenApiUsageRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOpenApiUsageRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeOpenApiUsageRequest::getStartDate()const
 {
 	return startDate_;
@@ -67,5 +45,27 @@ void DescribeOpenApiUsageRequest::setResourceType(const std::string& resourceTyp
 {
 	resourceType_ = resourceType;
 	setCoreParameter("ResourceType", resourceType);
+}
+
+std::string DescribeOpenApiUsageRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void DescribeOpenApiUsageRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
+}
+
+std::string DescribeOpenApiUsageRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOpenApiUsageRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

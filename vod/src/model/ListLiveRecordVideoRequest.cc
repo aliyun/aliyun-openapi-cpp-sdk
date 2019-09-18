@@ -36,6 +36,61 @@ void ListLiveRecordVideoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ListLiveRecordVideoRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void ListLiveRecordVideoRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+std::string ListLiveRecordVideoRequest::getAppName()const
+{
+	return appName_;
+}
+
+void ListLiveRecordVideoRequest::setAppName(const std::string& appName)
+{
+	appName_ = appName;
+	setCoreParameter("AppName", appName);
+}
+
+int ListLiveRecordVideoRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListLiveRecordVideoRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListLiveRecordVideoRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void ListLiveRecordVideoRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
+}
+
+std::string ListLiveRecordVideoRequest::getQueryType()const
+{
+	return queryType_;
+}
+
+void ListLiveRecordVideoRequest::setQueryType(const std::string& queryType)
+{
+	queryType_ = queryType;
+	setCoreParameter("QueryType", queryType);
+}
+
 std::string ListLiveRecordVideoRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,17 +124,6 @@ void ListLiveRecordVideoRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string ListLiveRecordVideoRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void ListLiveRecordVideoRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long ListLiveRecordVideoRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,17 +133,6 @@ void ListLiveRecordVideoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ListLiveRecordVideoRequest::getAppName()const
-{
-	return appName_;
-}
-
-void ListLiveRecordVideoRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setCoreParameter("AppName", appName);
 }
 
 int ListLiveRecordVideoRequest::getPageNo()const
@@ -113,17 +146,6 @@ void ListLiveRecordVideoRequest::setPageNo(int pageNo)
 	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
-int ListLiveRecordVideoRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListLiveRecordVideoRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListLiveRecordVideoRequest::getSortBy()const
 {
 	return sortBy_;
@@ -133,27 +155,5 @@ void ListLiveRecordVideoRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
 	setCoreParameter("SortBy", sortBy);
-}
-
-std::string ListLiveRecordVideoRequest::getStreamName()const
-{
-	return streamName_;
-}
-
-void ListLiveRecordVideoRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
-}
-
-std::string ListLiveRecordVideoRequest::getQueryType()const
-{
-	return queryType_;
-}
-
-void ListLiveRecordVideoRequest::setQueryType(const std::string& queryType)
-{
-	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
 }
 

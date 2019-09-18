@@ -36,6 +36,28 @@ void AddClusterServiceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddClusterServiceRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void AddClusterServiceRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string AddClusterServiceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddClusterServiceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddClusterServiceRequest::getRegionId()const
 {
 	return regionId_;
@@ -72,27 +94,5 @@ void AddClusterServiceRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
 	setCoreParameter("Comment", comment);
-}
-
-std::string AddClusterServiceRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void AddClusterServiceRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string AddClusterServiceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddClusterServiceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

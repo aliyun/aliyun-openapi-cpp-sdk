@@ -39,6 +39,12 @@ namespace AlibabaCloud
 				void setSelect(const std::string& select);
 				std::string getRuleDesc()const;
 				void setRuleDesc(const std::string& ruleDesc);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getShortTopic()const;
+				void setShortTopic(const std::string& shortTopic);
 				std::string getDataType()const;
 				void setDataType(const std::string& dataType);
 				std::string getIotInstanceId()const;
@@ -47,26 +53,20 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getWhere()const;
 				void setWhere(const std::string& where);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				int getTopicType()const;
 				void setTopicType(int topicType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getShortTopic()const;
-				void setShortTopic(const std::string& shortTopic);
 
             private:
 				std::string select_;
 				std::string ruleDesc_;
+				std::string productKey_;
+				std::string accessKeyId_;
+				std::string shortTopic_;
 				std::string dataType_;
 				std::string iotInstanceId_;
 				std::string name_;
 				std::string where_;
-				std::string productKey_;
 				int topicType_;
-				std::string accessKeyId_;
-				std::string shortTopic_;
 
 			};
 		}

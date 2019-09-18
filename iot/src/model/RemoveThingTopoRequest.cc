@@ -25,6 +25,28 @@ RemoveThingTopoRequest::RemoveThingTopoRequest() :
 RemoveThingTopoRequest::~RemoveThingTopoRequest()
 {}
 
+std::string RemoveThingTopoRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void RemoveThingTopoRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string RemoveThingTopoRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RemoveThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RemoveThingTopoRequest::getIotId()const
 {
 	return iotId_;
@@ -56,27 +78,5 @@ void RemoveThingTopoRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
 	setCoreParameter("DeviceName", deviceName);
-}
-
-std::string RemoveThingTopoRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void RemoveThingTopoRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
-std::string RemoveThingTopoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RemoveThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

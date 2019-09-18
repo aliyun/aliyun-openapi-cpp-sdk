@@ -25,17 +25,6 @@ CreateDomainVerifyConfigurationStatusRequest::CreateDomainVerifyConfigurationSta
 CreateDomainVerifyConfigurationStatusRequest::~CreateDomainVerifyConfigurationStatusRequest()
 {}
 
-std::string CreateDomainVerifyConfigurationStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateDomainVerifyConfigurationStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long CreateDomainVerifyConfigurationStatusRequest::getOrderId()const
 {
 	return orderId_;
@@ -47,17 +36,6 @@ void CreateDomainVerifyConfigurationStatusRequest::setOrderId(long orderId)
 	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
-std::string CreateDomainVerifyConfigurationStatusRequest::getLang()const
-{
-	return lang_;
-}
-
-void CreateDomainVerifyConfigurationStatusRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string CreateDomainVerifyConfigurationStatusRequest::getType()const
 {
 	return type_;
@@ -67,5 +45,38 @@ void CreateDomainVerifyConfigurationStatusRequest::setType(const std::string& ty
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string CreateDomainVerifyConfigurationStatusRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateDomainVerifyConfigurationStatusRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateDomainVerifyConfigurationStatusRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateDomainVerifyConfigurationStatusRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string CreateDomainVerifyConfigurationStatusRequest::getLang()const
+{
+	return lang_;
+}
+
+void CreateDomainVerifyConfigurationStatusRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

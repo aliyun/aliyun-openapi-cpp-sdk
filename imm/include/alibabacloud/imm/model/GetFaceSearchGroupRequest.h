@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				GetFaceSearchGroupRequest();
 				~GetFaceSearchGroupRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
 				std::string getGroupName()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string regionId_;
 				std::string project_;
 				std::string groupName_;
 				std::string accessKeyId_;

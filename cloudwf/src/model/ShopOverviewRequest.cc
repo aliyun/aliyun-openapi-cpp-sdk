@@ -25,17 +25,6 @@ ShopOverviewRequest::ShopOverviewRequest() :
 ShopOverviewRequest::~ShopOverviewRequest()
 {}
 
-long ShopOverviewRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void ShopOverviewRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string ShopOverviewRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void ShopOverviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ShopOverviewRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void ShopOverviewRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

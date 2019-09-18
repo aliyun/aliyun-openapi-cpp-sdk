@@ -36,17 +36,6 @@ void ShopSetredressRequest::setWorkday(const std::string& workday)
 	setCoreParameter("Workday", workday);
 }
 
-int ShopSetredressRequest::getFilterclose()const
-{
-	return filterclose_;
-}
-
-void ShopSetredressRequest::setFilterclose(int filterclose)
-{
-	filterclose_ = filterclose;
-	setCoreParameter("Filterclose", std::to_string(filterclose));
-}
-
 int ShopSetredressRequest::getMinstoptime()const
 {
 	return minstoptime_;
@@ -69,17 +58,6 @@ void ShopSetredressRequest::setHoliday(const std::string& holiday)
 	setCoreParameter("Holiday", holiday);
 }
 
-std::string ShopSetredressRequest::getHnum()const
-{
-	return hnum_;
-}
-
-void ShopSetredressRequest::setHnum(const std::string& hnum)
-{
-	hnum_ = hnum;
-	setCoreParameter("Hnum", hnum);
-}
-
 std::string ShopSetredressRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -100,17 +78,6 @@ void ShopSetredressRequest::setSid(long sid)
 {
 	sid_ = sid;
 	setCoreParameter("Sid", std::to_string(sid));
-}
-
-int ShopSetredressRequest::getClerk()const
-{
-	return clerk_;
-}
-
-void ShopSetredressRequest::setClerk(int clerk)
-{
-	clerk_ = clerk;
-	setCoreParameter("Clerk", std::to_string(clerk));
 }
 
 int ShopSetredressRequest::getFilterstate()const
@@ -155,6 +122,39 @@ void ShopSetredressRequest::setCrowdfixed(int crowdfixed)
 {
 	crowdfixed_ = crowdfixed;
 	setCoreParameter("Crowdfixed", std::to_string(crowdfixed));
+}
+
+int ShopSetredressRequest::getFilterclose()const
+{
+	return filterclose_;
+}
+
+void ShopSetredressRequest::setFilterclose(int filterclose)
+{
+	filterclose_ = filterclose;
+	setCoreParameter("Filterclose", std::to_string(filterclose));
+}
+
+std::string ShopSetredressRequest::getHnum()const
+{
+	return hnum_;
+}
+
+void ShopSetredressRequest::setHnum(const std::string& hnum)
+{
+	hnum_ = hnum;
+	setCoreParameter("Hnum", hnum);
+}
+
+int ShopSetredressRequest::getClerk()const
+{
+	return clerk_;
+}
+
+void ShopSetredressRequest::setClerk(int clerk)
+{
+	clerk_ = clerk;
+	setCoreParameter("Clerk", std::to_string(clerk));
 }
 
 int ShopSetredressRequest::getMaxstoptime()const

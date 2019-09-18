@@ -25,6 +25,17 @@ DescribeCertificateBrandListRequest::DescribeCertificateBrandListRequest() :
 DescribeCertificateBrandListRequest::~DescribeCertificateBrandListRequest()
 {}
 
+std::string DescribeCertificateBrandListRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeCertificateBrandListRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeCertificateBrandListRequest::getSourceIp()const
 {
 	return sourceIp_;

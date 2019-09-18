@@ -35,37 +35,13 @@ namespace AlibabaCloud
 				QueryEndPointListRequest();
 				~QueryEndPointListRequest();
 
-				bool getSecurity_transport()const;
-				void setSecurity_transport(bool security_transport);
 				std::string getRegionID()const;
 				void setRegionID(const std::string& regionID);
-				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
-				long getCallerParentId()const;
-				void setCallerParentId(long callerParentId);
-				long getCallerBid()const;
-				void setCallerBid(long callerBid);
-				std::string getCallerType()const;
-				void setCallerType(const std::string& callerType);
-				bool getAk_mfa_present()const;
-				void setAk_mfa_present(bool ak_mfa_present);
-				long getCallerUid()const;
-				void setCallerUid(long callerUid);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				long getUserID()const;
 				void setUserID(long userID);
 
             private:
-				bool security_transport_;
 				std::string regionID_;
-				std::string requestId_;
-				long callerParentId_;
-				long callerBid_;
-				std::string callerType_;
-				bool ak_mfa_present_;
-				long callerUid_;
-				std::string accessKeyId_;
 				long userID_;
 
 			};

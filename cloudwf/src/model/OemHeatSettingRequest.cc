@@ -25,17 +25,6 @@ OemHeatSettingRequest::OemHeatSettingRequest() :
 OemHeatSettingRequest::~OemHeatSettingRequest()
 {}
 
-long OemHeatSettingRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void OemHeatSettingRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string OemHeatSettingRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void OemHeatSettingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long OemHeatSettingRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void OemHeatSettingRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

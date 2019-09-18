@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeleteDeviceGroupRequest();
 				~DeleteDeviceGroupRequest();
 
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 
             private:
-				std::string iotInstanceId_;
 				std::string groupId_;
 				std::string accessKeyId_;
+				std::string iotInstanceId_;
 
 			};
 		}

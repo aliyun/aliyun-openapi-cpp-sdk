@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeCountAttackEventRequest();
 				~DescribeCountAttackEventRequest();
 
+				int getStartTime()const;
+				void setStartTime(int startTime);
+				std::string getProductType()const;
+				void setProductType(const std::string& productType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getServerIpList()const;
-				void setServerIpList(const std::string& serverIpList);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::string getServerIpList()const;
+				void setServerIpList(const std::string& serverIpList);
 				int getEndTime()const;
 				void setEndTime(int endTime);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
-				int getStartTime()const;
-				void setStartTime(int startTime);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
-				std::string getProductType()const;
-				void setProductType(const std::string& productType);
 
             private:
+				int startTime_;
+				std::string productType_;
 				std::string sourceIp_;
-				std::string serverIpList_;
 				int pageSize_;
+				std::string lang_;
+				std::string serverIpList_;
 				int endTime_;
 				int currentPage_;
-				int startTime_;
-				std::string lang_;
 				std::string region_;
-				std::string productType_;
 
 			};
 		}

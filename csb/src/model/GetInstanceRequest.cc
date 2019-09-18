@@ -25,17 +25,6 @@ GetInstanceRequest::GetInstanceRequest() :
 GetInstanceRequest::~GetInstanceRequest()
 {}
 
-std::string GetInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long GetInstanceRequest::getCsbId()const
 {
 	return csbId_;

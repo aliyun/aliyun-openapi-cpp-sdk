@@ -47,6 +47,39 @@ void CreateRuleRequest::setRuleDesc(const std::string& ruleDesc)
 	setCoreParameter("RuleDesc", ruleDesc);
 }
 
+std::string CreateRuleRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void CreateRuleRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string CreateRuleRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateRuleRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateRuleRequest::getShortTopic()const
+{
+	return shortTopic_;
+}
+
+void CreateRuleRequest::setShortTopic(const std::string& shortTopic)
+{
+	shortTopic_ = shortTopic;
+	setCoreParameter("ShortTopic", shortTopic);
+}
+
 std::string CreateRuleRequest::getDataType()const
 {
 	return dataType_;
@@ -91,17 +124,6 @@ void CreateRuleRequest::setWhere(const std::string& where)
 	setCoreParameter("Where", where);
 }
 
-std::string CreateRuleRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void CreateRuleRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
 int CreateRuleRequest::getTopicType()const
 {
 	return topicType_;
@@ -111,27 +133,5 @@ void CreateRuleRequest::setTopicType(int topicType)
 {
 	topicType_ = topicType;
 	setCoreParameter("TopicType", std::to_string(topicType));
-}
-
-std::string CreateRuleRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateRuleRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateRuleRequest::getShortTopic()const
-{
-	return shortTopic_;
-}
-
-void CreateRuleRequest::setShortTopic(const std::string& shortTopic)
-{
-	shortTopic_ = shortTopic;
-	setCoreParameter("ShortTopic", shortTopic);
 }
 

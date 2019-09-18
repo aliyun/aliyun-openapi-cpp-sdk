@@ -59,17 +59,6 @@ void TaskConfigCreateRequest::setTaskType(const std::string& taskType)
 	setCoreParameter("TaskType", taskType);
 }
 
-std::string TaskConfigCreateRequest::getTaskScope()const
-{
-	return taskScope_;
-}
-
-void TaskConfigCreateRequest::setTaskScope(const std::string& taskScope)
-{
-	taskScope_ = taskScope;
-	setCoreParameter("TaskScope", taskScope);
-}
-
 std::string TaskConfigCreateRequest::getAlertConfig()const
 {
 	return alertConfig_;
@@ -112,5 +101,16 @@ void TaskConfigCreateRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
 	setCoreParameter("GroupName", groupName);
+}
+
+std::string TaskConfigCreateRequest::getTaskScope()const
+{
+	return taskScope_;
+}
+
+void TaskConfigCreateRequest::setTaskScope(const std::string& taskScope)
+{
+	taskScope_ = taskScope;
+	setCoreParameter("TaskScope", taskScope);
 }
 

@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				SetSecurityPreferenceRequest();
 				~SetSecurityPreferenceRequest();
 
-				bool getAllowUserToManageAccessKeys()const;
-				void setAllowUserToManageAccessKeys(bool allowUserToManageAccessKeys);
-				bool getAllowUserToManageMFADevices()const;
-				void setAllowUserToManageMFADevices(bool allowUserToManageMFADevices);
-				bool getAllowUserToManagePublicKeys()const;
-				void setAllowUserToManagePublicKeys(bool allowUserToManagePublicKeys);
 				bool getEnableSaveMFATicket()const;
 				void setEnableSaveMFATicket(bool enableSaveMFATicket);
 				std::string getLoginNetworkMasks()const;
 				void setLoginNetworkMasks(const std::string& loginNetworkMasks);
 				bool getAllowUserToChangePassword()const;
 				void setAllowUserToChangePassword(bool allowUserToChangePassword);
+				bool getAllowUserToManagePublicKeys()const;
+				void setAllowUserToManagePublicKeys(bool allowUserToManagePublicKeys);
 				int getLoginSessionDuration()const;
 				void setLoginSessionDuration(int loginSessionDuration);
+				bool getAllowUserToManageAccessKeys()const;
+				void setAllowUserToManageAccessKeys(bool allowUserToManageAccessKeys);
+				bool getAllowUserToManageMFADevices()const;
+				void setAllowUserToManageMFADevices(bool allowUserToManageMFADevices);
 
             private:
-				bool allowUserToManageAccessKeys_;
-				bool allowUserToManageMFADevices_;
-				bool allowUserToManagePublicKeys_;
 				bool enableSaveMFATicket_;
 				std::string loginNetworkMasks_;
 				bool allowUserToChangePassword_;
+				bool allowUserToManagePublicKeys_;
 				int loginSessionDuration_;
+				bool allowUserToManageAccessKeys_;
+				bool allowUserToManageMFADevices_;
 
 			};
 		}

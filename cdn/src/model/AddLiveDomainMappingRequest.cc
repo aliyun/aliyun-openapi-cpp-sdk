@@ -25,6 +25,17 @@ AddLiveDomainMappingRequest::AddLiveDomainMappingRequest() :
 AddLiveDomainMappingRequest::~AddLiveDomainMappingRequest()
 {}
 
+long AddLiveDomainMappingRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void AddLiveDomainMappingRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
 std::string AddLiveDomainMappingRequest::getPullDomain()const
 {
 	return pullDomain_;
@@ -56,16 +67,5 @@ void AddLiveDomainMappingRequest::setPushDomain(const std::string& pushDomain)
 {
 	pushDomain_ = pushDomain;
 	setCoreParameter("PushDomain", pushDomain);
-}
-
-long AddLiveDomainMappingRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddLiveDomainMappingRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

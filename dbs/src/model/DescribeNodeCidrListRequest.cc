@@ -25,17 +25,6 @@ DescribeNodeCidrListRequest::DescribeNodeCidrListRequest() :
 DescribeNodeCidrListRequest::~DescribeNodeCidrListRequest()
 {}
 
-std::string DescribeNodeCidrListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeNodeCidrListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeNodeCidrListRequest::getClientToken()const
 {
 	return clientToken_;
@@ -47,17 +36,6 @@ void DescribeNodeCidrListRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
-std::string DescribeNodeCidrListRequest::getRegion()const
-{
-	return region_;
-}
-
-void DescribeNodeCidrListRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setCoreParameter("Region", region);
-}
-
 std::string DescribeNodeCidrListRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +45,16 @@ void DescribeNodeCidrListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
+}
+
+std::string DescribeNodeCidrListRequest::getRegion()const
+{
+	return region_;
+}
+
+void DescribeNodeCidrListRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setCoreParameter("Region", region);
 }
 

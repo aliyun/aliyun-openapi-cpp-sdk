@@ -36,15 +36,15 @@ void DeleteNetworkOptimizationSettingRequest::setResourceOwnerId(long resourceOw
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteNetworkOptimizationSettingRequest::getResourceOwnerAccount()const
+std::string DeleteNetworkOptimizationSettingRequest::getType()const
 {
-	return resourceOwnerAccount_;
+	return type_;
 }
 
-void DeleteNetworkOptimizationSettingRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DeleteNetworkOptimizationSettingRequest::setType(const std::string& type)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
 std::string DeleteNetworkOptimizationSettingRequest::getRegionId()const
@@ -69,6 +69,17 @@ void DeleteNetworkOptimizationSettingRequest::setNetworkOptId(const std::string&
 	setCoreParameter("NetworkOptId", networkOptId);
 }
 
+std::string DeleteNetworkOptimizationSettingRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteNetworkOptimizationSettingRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 std::string DeleteNetworkOptimizationSettingRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,17 +89,6 @@ void DeleteNetworkOptimizationSettingRequest::setOwnerAccount(const std::string&
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DeleteNetworkOptimizationSettingRequest::getDomain()const
-{
-	return domain_;
-}
-
-void DeleteNetworkOptimizationSettingRequest::setDomain(const std::string& domain)
-{
-	domain_ = domain;
-	setCoreParameter("Domain", domain);
 }
 
 long DeleteNetworkOptimizationSettingRequest::getOwnerId()const
@@ -102,14 +102,14 @@ void DeleteNetworkOptimizationSettingRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteNetworkOptimizationSettingRequest::getType()const
+std::string DeleteNetworkOptimizationSettingRequest::getDomain()const
 {
-	return type_;
+	return domain_;
 }
 
-void DeleteNetworkOptimizationSettingRequest::setType(const std::string& type)
+void DeleteNetworkOptimizationSettingRequest::setDomain(const std::string& domain)
 {
-	type_ = type;
-	setCoreParameter("Type", type);
+	domain_ = domain;
+	setCoreParameter("Domain", domain);
 }
 

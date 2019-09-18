@@ -25,17 +25,6 @@ CreateDialogRequest::CreateDialogRequest() :
 CreateDialogRequest::~CreateDialogRequest()
 {}
 
-std::string CreateDialogRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateDialogRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string CreateDialogRequest::getDescription()const
 {
 	return description_;
@@ -56,5 +45,16 @@ void CreateDialogRequest::setDialogName(const std::string& dialogName)
 {
 	dialogName_ = dialogName;
 	setCoreParameter("DialogName", dialogName);
+}
+
+std::string CreateDialogRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateDialogRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

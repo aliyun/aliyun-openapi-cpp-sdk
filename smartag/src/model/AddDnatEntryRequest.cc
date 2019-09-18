@@ -36,6 +36,50 @@ void AddDnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddDnatEntryRequest::getType()const
+{
+	return type_;
+}
+
+void AddDnatEntryRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string AddDnatEntryRequest::getInternalIp()const
+{
+	return internalIp_;
+}
+
+void AddDnatEntryRequest::setInternalIp(const std::string& internalIp)
+{
+	internalIp_ = internalIp;
+	setCoreParameter("InternalIp", internalIp);
+}
+
+std::string AddDnatEntryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AddDnatEntryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string AddDnatEntryRequest::getExternalIp()const
+{
+	return externalIp_;
+}
+
+void AddDnatEntryRequest::setExternalIp(const std::string& externalIp)
+{
+	externalIp_ = externalIp;
+	setCoreParameter("ExternalIp", externalIp);
+}
+
 std::string AddDnatEntryRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,39 +124,6 @@ void AddDnatEntryRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AddDnatEntryRequest::getType()const
-{
-	return type_;
-}
-
-void AddDnatEntryRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
-std::string AddDnatEntryRequest::getInternalIp()const
-{
-	return internalIp_;
-}
-
-void AddDnatEntryRequest::setInternalIp(const std::string& internalIp)
-{
-	internalIp_ = internalIp;
-	setCoreParameter("InternalIp", internalIp);
-}
-
-std::string AddDnatEntryRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AddDnatEntryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string AddDnatEntryRequest::getSagId()const
 {
 	return sagId_;
@@ -133,17 +144,6 @@ void AddDnatEntryRequest::setInternalPort(const std::string& internalPort)
 {
 	internalPort_ = internalPort;
 	setCoreParameter("InternalPort", internalPort);
-}
-
-std::string AddDnatEntryRequest::getExternalIp()const
-{
-	return externalIp_;
-}
-
-void AddDnatEntryRequest::setExternalIp(const std::string& externalIp)
-{
-	externalIp_ = externalIp;
-	setCoreParameter("ExternalIp", externalIp);
 }
 
 std::string AddDnatEntryRequest::getExternalPort()const

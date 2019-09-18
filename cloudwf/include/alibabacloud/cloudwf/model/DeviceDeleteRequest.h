@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeviceDeleteRequest();
 				~DeviceDeleteRequest();
 
-				long getDid()const;
-				void setDid(long did);
 				std::string getMac()const;
 				void setMac(const std::string& mac);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getDid()const;
+				void setDid(long did);
 
             private:
-				long did_;
 				std::string mac_;
 				std::string accessKeyId_;
+				long did_;
 
 			};
 		}

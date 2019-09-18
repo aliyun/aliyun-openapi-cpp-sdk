@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ModifyFullTableScanRequest();
 				~ModifyFullTableScanRequest();
 
-				std::string getDbName()const;
-				void setDbName(const std::string& dbName);
 				std::string getTableNames()const;
 				void setTableNames(const std::string& tableNames);
 				std::string getDrdsInstanceId()const;
 				void setDrdsInstanceId(const std::string& drdsInstanceId);
-				bool getFullTableScan()const;
-				void setFullTableScan(bool fullTableScan);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDbName()const;
+				void setDbName(const std::string& dbName);
+				bool getFullTableScan()const;
+				void setFullTableScan(bool fullTableScan);
 
             private:
-				std::string dbName_;
 				std::string tableNames_;
 				std::string drdsInstanceId_;
-				bool fullTableScan_;
 				std::string accessKeyId_;
+				std::string dbName_;
+				bool fullTableScan_;
 
 			};
 		}

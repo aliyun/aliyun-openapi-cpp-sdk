@@ -21,25 +21,25 @@ set(jarvis-public_public_header
 	include/alibabacloud/jarvis-public/Jarvis_publicExport.h )
 
 set(jarvis-public_public_header_model 
-	include/alibabacloud/jarvis-public/model/DescribeCountAttackEventRequest.h
-	include/alibabacloud/jarvis-public/model/DescribeCountAttackEventResult.h
 	include/alibabacloud/jarvis-public/model/DescribeAttackEventRequest.h
 	include/alibabacloud/jarvis-public/model/DescribeAttackEventResult.h
-	include/alibabacloud/jarvis-public/model/DescribePhoneInfoRequest.h
-	include/alibabacloud/jarvis-public/model/DescribePhoneInfoResult.h
 	include/alibabacloud/jarvis-public/model/DescribeAttackedIpRequest.h
-	include/alibabacloud/jarvis-public/model/DescribeAttackedIpResult.h )
+	include/alibabacloud/jarvis-public/model/DescribeAttackedIpResult.h
+	include/alibabacloud/jarvis-public/model/DescribeCountAttackEventRequest.h
+	include/alibabacloud/jarvis-public/model/DescribeCountAttackEventResult.h
+	include/alibabacloud/jarvis-public/model/DescribePhoneInfoRequest.h
+	include/alibabacloud/jarvis-public/model/DescribePhoneInfoResult.h )
 
 set(jarvis-public_src 
 	src/Jarvis-publicClient.cc
-	src/model/DescribeCountAttackEventRequest.cc
-	src/model/DescribeCountAttackEventResult.cc
 	src/model/DescribeAttackEventRequest.cc
 	src/model/DescribeAttackEventResult.cc
-	src/model/DescribePhoneInfoRequest.cc
-	src/model/DescribePhoneInfoResult.cc
 	src/model/DescribeAttackedIpRequest.cc
-	src/model/DescribeAttackedIpResult.cc )
+	src/model/DescribeAttackedIpResult.cc
+	src/model/DescribeCountAttackEventRequest.cc
+	src/model/DescribeCountAttackEventResult.cc
+	src/model/DescribePhoneInfoRequest.cc
+	src/model/DescribePhoneInfoResult.cc )
 
 add_library(jarvis-public ${LIB_TYPE}
 	${jarvis-public_public_header}

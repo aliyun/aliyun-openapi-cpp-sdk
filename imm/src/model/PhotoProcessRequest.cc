@@ -25,39 +25,6 @@ PhotoProcessRequest::PhotoProcessRequest() :
 PhotoProcessRequest::~PhotoProcessRequest()
 {}
 
-std::string PhotoProcessRequest::getNotifyTopicName()const
-{
-	return notifyTopicName_;
-}
-
-void PhotoProcessRequest::setNotifyTopicName(const std::string& notifyTopicName)
-{
-	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
-}
-
-std::string PhotoProcessRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void PhotoProcessRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string PhotoProcessRequest::getNotifyEndpoint()const
-{
-	return notifyEndpoint_;
-}
-
-void PhotoProcessRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
-{
-	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
-}
-
 std::string PhotoProcessRequest::getProject()const
 {
 	return project_;
@@ -80,6 +47,39 @@ void PhotoProcessRequest::setExternalID(const std::string& externalID)
 	setCoreParameter("ExternalID", externalID);
 }
 
+std::string PhotoProcessRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void PhotoProcessRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string PhotoProcessRequest::getNotifyEndpoint()const
+{
+	return notifyEndpoint_;
+}
+
+void PhotoProcessRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
+{
+	notifyEndpoint_ = notifyEndpoint;
+	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+}
+
+std::string PhotoProcessRequest::getNotifyTopicName()const
+{
+	return notifyTopicName_;
+}
+
+void PhotoProcessRequest::setNotifyTopicName(const std::string& notifyTopicName)
+{
+	notifyTopicName_ = notifyTopicName;
+	setCoreParameter("NotifyTopicName", notifyTopicName);
+}
+
 std::string PhotoProcessRequest::getSrcUri()const
 {
 	return srcUri_;
@@ -100,17 +100,6 @@ void PhotoProcessRequest::setStyle(const std::string& style)
 {
 	style_ = style;
 	setCoreParameter("Style", style);
-}
-
-std::string PhotoProcessRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void PhotoProcessRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PhotoProcessRequest::getTgtUri()const

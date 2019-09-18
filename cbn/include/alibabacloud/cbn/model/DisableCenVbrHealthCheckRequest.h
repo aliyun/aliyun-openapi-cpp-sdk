@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getCenId()const;
 				void setCenId(const std::string& cenId);
 				long getVbrInstanceOwnerId()const;
 				void setVbrInstanceOwnerId(long vbrInstanceOwnerId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getVbrInstanceId()const;
-				void setVbrInstanceId(const std::string& vbrInstanceId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getVbrInstanceRegionId()const;
 				void setVbrInstanceRegionId(const std::string& vbrInstanceRegionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getVbrInstanceId()const;
+				void setVbrInstanceId(const std::string& vbrInstanceId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string cenId_;
 				long vbrInstanceOwnerId_;
-				std::string ownerAccount_;
-				std::string vbrInstanceId_;
-				long ownerId_;
 				std::string vbrInstanceRegionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string vbrInstanceId_;
 
 			};
 		}

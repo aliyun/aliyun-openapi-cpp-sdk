@@ -36,17 +36,6 @@ void ListAllMediaBucketRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListAllMediaBucketRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListAllMediaBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ListAllMediaBucketRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -56,6 +45,28 @@ void ListAllMediaBucketRequest::setNextPageToken(const std::string& nextPageToke
 {
 	nextPageToken_ = nextPageToken;
 	setCoreParameter("NextPageToken", nextPageToken);
+}
+
+std::string ListAllMediaBucketRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListAllMediaBucketRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListAllMediaBucketRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ListAllMediaBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListAllMediaBucketRequest::getOwnerAccount()const
@@ -89,16 +100,5 @@ void ListAllMediaBucketRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ListAllMediaBucketRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListAllMediaBucketRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

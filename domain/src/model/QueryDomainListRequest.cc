@@ -25,17 +25,6 @@ QueryDomainListRequest::QueryDomainListRequest() :
 QueryDomainListRequest::~QueryDomainListRequest()
 {}
 
-long QueryDomainListRequest::getEndExpirationDate()const
-{
-	return endExpirationDate_;
-}
-
-void QueryDomainListRequest::setEndExpirationDate(long endExpirationDate)
-{
-	endExpirationDate_ = endExpirationDate;
-	setCoreParameter("EndExpirationDate", std::to_string(endExpirationDate));
-}
-
 std::string QueryDomainListRequest::getProductDomainType()const
 {
 	return productDomainType_;
@@ -58,28 +47,6 @@ void QueryDomainListRequest::setOrderKeyType(const std::string& orderKeyType)
 	setCoreParameter("OrderKeyType", orderKeyType);
 }
 
-std::string QueryDomainListRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void QueryDomainListRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long QueryDomainListRequest::getStartExpirationDate()const
-{
-	return startExpirationDate_;
-}
-
-void QueryDomainListRequest::setStartExpirationDate(long startExpirationDate)
-{
-	startExpirationDate_ = startExpirationDate;
-	setCoreParameter("StartExpirationDate", std::to_string(startExpirationDate));
-}
-
 int QueryDomainListRequest::getPageNum()const
 {
 	return pageNum_;
@@ -100,39 +67,6 @@ void QueryDomainListRequest::setOrderByType(const std::string& orderByType)
 {
 	orderByType_ = orderByType;
 	setCoreParameter("OrderByType", orderByType);
-}
-
-std::string QueryDomainListRequest::getDomainGroupId()const
-{
-	return domainGroupId_;
-}
-
-void QueryDomainListRequest::setDomainGroupId(const std::string& domainGroupId)
-{
-	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", domainGroupId);
-}
-
-long QueryDomainListRequest::getEndRegistrationDate()const
-{
-	return endRegistrationDate_;
-}
-
-void QueryDomainListRequest::setEndRegistrationDate(long endRegistrationDate)
-{
-	endRegistrationDate_ = endRegistrationDate;
-	setCoreParameter("EndRegistrationDate", std::to_string(endRegistrationDate));
-}
-
-std::string QueryDomainListRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void QueryDomainListRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int QueryDomainListRequest::getPageSize()const
@@ -166,6 +100,72 @@ void QueryDomainListRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
 	setCoreParameter("QueryType", queryType);
+}
+
+long QueryDomainListRequest::getEndExpirationDate()const
+{
+	return endExpirationDate_;
+}
+
+void QueryDomainListRequest::setEndExpirationDate(long endExpirationDate)
+{
+	endExpirationDate_ = endExpirationDate;
+	setCoreParameter("EndExpirationDate", std::to_string(endExpirationDate));
+}
+
+std::string QueryDomainListRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void QueryDomainListRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+long QueryDomainListRequest::getStartExpirationDate()const
+{
+	return startExpirationDate_;
+}
+
+void QueryDomainListRequest::setStartExpirationDate(long startExpirationDate)
+{
+	startExpirationDate_ = startExpirationDate;
+	setCoreParameter("StartExpirationDate", std::to_string(startExpirationDate));
+}
+
+std::string QueryDomainListRequest::getDomainGroupId()const
+{
+	return domainGroupId_;
+}
+
+void QueryDomainListRequest::setDomainGroupId(const std::string& domainGroupId)
+{
+	domainGroupId_ = domainGroupId;
+	setCoreParameter("DomainGroupId", domainGroupId);
+}
+
+long QueryDomainListRequest::getEndRegistrationDate()const
+{
+	return endRegistrationDate_;
+}
+
+void QueryDomainListRequest::setEndRegistrationDate(long endRegistrationDate)
+{
+	endRegistrationDate_ = endRegistrationDate;
+	setCoreParameter("EndRegistrationDate", std::to_string(endRegistrationDate));
+}
+
+std::string QueryDomainListRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryDomainListRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long QueryDomainListRequest::getStartRegistrationDate()const

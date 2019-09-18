@@ -36,34 +36,60 @@ namespace AlibabaCloud
 					int lbaWeight;
 					std::string value;
 				};
+				struct IspCityNode
+				{
+					std::string cityCode;
+					std::string ispCode;
+				};
 
 			public:
 				AddGtmAddressPoolRequest();
 				~AddGtmAddressPoolRequest();
 
+				std::string getMonitorExtendInfo()const;
+				void setMonitorExtendInfo(const std::string& monitorExtendInfo);
+				std::string getType()const;
+				void setType(const std::string& type);
+				int getTimeout()const;
+				void setTimeout(int timeout);
+				int getMinAvailableAddrNum()const;
+				void setMinAvailableAddrNum(int minAvailableAddrNum);
+				int getEvaluationCount()const;
+				void setEvaluationCount(int evaluationCount);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::vector<Addr> getAddr()const;
+				void setAddr(const std::vector<Addr>& addr);
+				std::string getMonitorStatus()const;
+				void setMonitorStatus(const std::string& monitorStatus);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				std::string getType()const;
-				void setType(const std::string& type);
-				std::vector<Addr> getAddr()const;
-				void setAddr(const std::vector<Addr>& addr);
-				int getMinAvailableAddrNum()const;
-				void setMinAvailableAddrNum(int minAvailableAddrNum);
+				std::string getProtocolType()const;
+				void setProtocolType(const std::string& protocolType);
+				int getInterval()const;
+				void setInterval(int interval);
+				std::vector<IspCityNode> getIspCityNode()const;
+				void setIspCityNode(const std::vector<IspCityNode>& ispCityNode);
 
             private:
+				std::string monitorExtendInfo_;
+				std::string type_;
+				int timeout_;
+				int minAvailableAddrNum_;
+				int evaluationCount_;
+				std::string lang_;
+				std::vector<Addr> addr_;
+				std::string monitorStatus_;
 				std::string instanceId_;
 				std::string userClientIp_;
 				std::string name_;
-				std::string lang_;
-				std::string type_;
-				std::vector<Addr> addr_;
-				int minAvailableAddrNum_;
+				std::string protocolType_;
+				int interval_;
+				std::vector<IspCityNode> ispCityNode_;
 
 			};
 		}

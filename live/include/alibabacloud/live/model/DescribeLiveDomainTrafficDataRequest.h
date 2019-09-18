@@ -35,32 +35,29 @@ namespace AlibabaCloud
 				DescribeLiveDomainTrafficDataRequest();
 				~DescribeLiveDomainTrafficDataRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
 				std::string getLocationNameEn()const;
 				void setLocationNameEn(const std::string& locationNameEn);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getIspNameEn()const;
 				void setIspNameEn(const std::string& ispNameEn);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
 
             private:
-				std::string regionId_;
-				std::string domainName_;
-				std::string endTime_;
-				std::string interval_;
 				std::string locationNameEn_;
 				std::string startTime_;
 				std::string ispNameEn_;
+				std::string domainName_;
+				std::string endTime_;
 				long ownerId_;
+				std::string interval_;
 
 			};
 		}

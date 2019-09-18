@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ListFlowNodeInstanceContainerStatusRequest();
 				~ListFlowNodeInstanceContainerStatusRequest();
 
+				std::string getNodeInstanceId()const;
+				void setNodeInstanceId(const std::string& nodeInstanceId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getNodeInstanceId()const;
-				void setNodeInstanceId(const std::string& nodeInstanceId);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
+				std::string nodeInstanceId_;
+				int pageNumber_;
 				std::string regionId_;
 				int pageSize_;
-				std::string nodeInstanceId_;
 				std::string projectId_;
-				int pageNumber_;
 
 			};
 		}

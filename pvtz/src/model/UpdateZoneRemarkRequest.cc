@@ -25,6 +25,17 @@ UpdateZoneRemarkRequest::UpdateZoneRemarkRequest() :
 UpdateZoneRemarkRequest::~UpdateZoneRemarkRequest()
 {}
 
+std::string UpdateZoneRemarkRequest::getRemark()const
+{
+	return remark_;
+}
+
+void UpdateZoneRemarkRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
 std::string UpdateZoneRemarkRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -45,17 +56,6 @@ void UpdateZoneRemarkRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setCoreParameter("ZoneId", zoneId);
-}
-
-std::string UpdateZoneRemarkRequest::getRemark()const
-{
-	return remark_;
-}
-
-void UpdateZoneRemarkRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
 }
 
 std::string UpdateZoneRemarkRequest::getLang()const

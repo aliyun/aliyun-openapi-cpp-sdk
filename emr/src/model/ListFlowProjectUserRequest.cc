@@ -25,6 +25,17 @@ ListFlowProjectUserRequest::ListFlowProjectUserRequest() :
 ListFlowProjectUserRequest::~ListFlowProjectUserRequest()
 {}
 
+int ListFlowProjectUserRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListFlowProjectUserRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListFlowProjectUserRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void ListFlowProjectUserRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-int ListFlowProjectUserRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListFlowProjectUserRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

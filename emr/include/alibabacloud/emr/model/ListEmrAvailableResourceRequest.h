@@ -37,48 +37,48 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				std::string getDepositType()const;
 				void setDepositType(const std::string& depositType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSystemDiskType()const;
+				void setSystemDiskType(const std::string& systemDiskType);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
+				std::string getInstanceChargeType()const;
+				void setInstanceChargeType(const std::string& instanceChargeType);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getDestinationResource()const;
 				void setDestinationResource(const std::string& destinationResource);
 				std::string getClusterType()const;
 				void setClusterType(const std::string& clusterType);
 				std::string getSpotStrategy()const;
 				void setSpotStrategy(const std::string& spotStrategy);
-				std::string getSystemDiskType()const;
-				void setSystemDiskType(const std::string& systemDiskType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getNetType()const;
 				void setNetType(const std::string& netType);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
 				std::string getDataDiskType()const;
 				void setDataDiskType(const std::string& dataDiskType);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
 
             private:
 				long resourceOwnerId_;
-				std::string clusterId_;
 				std::string depositType_;
 				std::string accessKeyId_;
+				std::string systemDiskType_;
+				std::string regionId_;
+				std::string instanceType_;
+				std::string instanceChargeType_;
+				std::string clusterId_;
 				std::string destinationResource_;
 				std::string clusterType_;
 				std::string spotStrategy_;
-				std::string systemDiskType_;
-				std::string regionId_;
 				std::string netType_;
 				std::string zoneId_;
-				std::string instanceType_;
 				std::string dataDiskType_;
-				std::string instanceChargeType_;
 
 			};
 		}

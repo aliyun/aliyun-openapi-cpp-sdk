@@ -37,22 +37,12 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStreamType()const;
-				void setStreamType(const std::string& streamType);
 				std::string getFormats()const;
 				void setFormats(const std::string& formats);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getChannel()const;
 				void setChannel(const std::string& channel);
-				std::string getVideoId()const;
-				void setVideoId(const std::string& videoId);
 				std::string getPlayerVersion()const;
 				void setPlayerVersion(const std::string& playerVersion);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getResultType()const;
-				void setResultType(const std::string& resultType);
 				std::string getRand()const;
 				void setRand(const std::string& rand);
 				std::string getReAuthInfo()const;
@@ -65,25 +55,35 @@ namespace AlibabaCloud
 				void setDefinition(const std::string& definition);
 				long getAuthTimeout()const;
 				void setAuthTimeout(long authTimeout);
+				std::string getStreamType()const;
+				void setStreamType(const std::string& streamType);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getVideoId()const;
+				void setVideoId(const std::string& videoId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getResultType()const;
+				void setResultType(const std::string& resultType);
 				std::string getAuthInfo()const;
 				void setAuthInfo(const std::string& authInfo);
 
             private:
 				long resourceOwnerId_;
-				std::string streamType_;
 				std::string formats_;
-				std::string resourceOwnerAccount_;
 				std::string channel_;
-				std::string videoId_;
 				std::string playerVersion_;
-				long ownerId_;
-				std::string resultType_;
 				std::string rand_;
 				std::string reAuthInfo_;
 				std::string playConfig_;
 				std::string outputType_;
 				std::string definition_;
 				long authTimeout_;
+				std::string streamType_;
+				std::string resourceOwnerAccount_;
+				std::string videoId_;
+				long ownerId_;
+				std::string resultType_;
 				std::string authInfo_;
 
 			};

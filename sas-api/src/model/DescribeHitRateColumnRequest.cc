@@ -25,6 +25,28 @@ DescribeHitRateColumnRequest::DescribeHitRateColumnRequest() :
 DescribeHitRateColumnRequest::~DescribeHitRateColumnRequest()
 {}
 
+std::string DescribeHitRateColumnRequest::getStartDate()const
+{
+	return startDate_;
+}
+
+void DescribeHitRateColumnRequest::setStartDate(const std::string& startDate)
+{
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
+}
+
+int DescribeHitRateColumnRequest::getApiType()const
+{
+	return apiType_;
+}
+
+void DescribeHitRateColumnRequest::setApiType(int apiType)
+{
+	apiType_ = apiType;
+	setCoreParameter("ApiType", std::to_string(apiType));
+}
+
 std::string DescribeHitRateColumnRequest::getEndDate()const
 {
 	return endDate_;
@@ -56,27 +78,5 @@ void DescribeHitRateColumnRequest::setHitDay(int hitDay)
 {
 	hitDay_ = hitDay;
 	setCoreParameter("HitDay", std::to_string(hitDay));
-}
-
-std::string DescribeHitRateColumnRequest::getStartDate()const
-{
-	return startDate_;
-}
-
-void DescribeHitRateColumnRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
-}
-
-int DescribeHitRateColumnRequest::getApiType()const
-{
-	return apiType_;
-}
-
-void DescribeHitRateColumnRequest::setApiType(int apiType)
-{
-	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
 }
 

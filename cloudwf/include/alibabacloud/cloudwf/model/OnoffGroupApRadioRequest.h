@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				long getApgroupId()const;
 				void setApgroupId(long apgroupId);
-				int getDisabled()const;
-				void setDisabled(int disabled);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getDisabled()const;
+				void setDisabled(int disabled);
 
             private:
 				long apgroupId_;
-				int disabled_;
 				std::string accessKeyId_;
+				int disabled_;
 
 			};
 		}

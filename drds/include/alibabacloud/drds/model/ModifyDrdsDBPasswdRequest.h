@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ModifyDrdsDBPasswdRequest();
 				~ModifyDrdsDBPasswdRequest();
 
-				std::string getNewPasswd()const;
-				void setNewPasswd(const std::string& newPasswd);
-				std::string getDbName()const;
-				void setDbName(const std::string& dbName);
 				std::string getDrdsInstanceId()const;
 				void setDrdsInstanceId(const std::string& drdsInstanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNewPasswd()const;
+				void setNewPasswd(const std::string& newPasswd);
+				std::string getDbName()const;
+				void setDbName(const std::string& dbName);
 
             private:
-				std::string newPasswd_;
-				std::string dbName_;
 				std::string drdsInstanceId_;
 				std::string accessKeyId_;
+				std::string newPasswd_;
+				std::string dbName_;
 
 			};
 		}

@@ -25,6 +25,17 @@ QueryFailReasonForDomainRealNameVerificationRequest::QueryFailReasonForDomainRea
 QueryFailReasonForDomainRealNameVerificationRequest::~QueryFailReasonForDomainRealNameVerificationRequest()
 {}
 
+std::string QueryFailReasonForDomainRealNameVerificationRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void QueryFailReasonForDomainRealNameVerificationRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
 std::string QueryFailReasonForDomainRealNameVerificationRequest::getRealNameVerificationAction()const
 {
 	return realNameVerificationAction_;
@@ -45,17 +56,6 @@ void QueryFailReasonForDomainRealNameVerificationRequest::setUserClientIp(const 
 {
 	userClientIp_ = userClientIp;
 	setCoreParameter("UserClientIp", userClientIp);
-}
-
-std::string QueryFailReasonForDomainRealNameVerificationRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void QueryFailReasonForDomainRealNameVerificationRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
 }
 
 std::string QueryFailReasonForDomainRealNameVerificationRequest::getLang()const

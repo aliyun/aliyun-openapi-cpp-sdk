@@ -25,28 +25,6 @@ UpdateDeviceGroupRequest::UpdateDeviceGroupRequest() :
 UpdateDeviceGroupRequest::~UpdateDeviceGroupRequest()
 {}
 
-std::string UpdateDeviceGroupRequest::getGroupDesc()const
-{
-	return groupDesc_;
-}
-
-void UpdateDeviceGroupRequest::setGroupDesc(const std::string& groupDesc)
-{
-	groupDesc_ = groupDesc;
-	setCoreParameter("GroupDesc", groupDesc);
-}
-
-std::string UpdateDeviceGroupRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void UpdateDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
 std::string UpdateDeviceGroupRequest::getGroupId()const
 {
 	return groupId_;
@@ -67,5 +45,27 @@ void UpdateDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateDeviceGroupRequest::getGroupDesc()const
+{
+	return groupDesc_;
+}
+
+void UpdateDeviceGroupRequest::setGroupDesc(const std::string& groupDesc)
+{
+	groupDesc_ = groupDesc;
+	setCoreParameter("GroupDesc", groupDesc);
+}
+
+std::string UpdateDeviceGroupRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 

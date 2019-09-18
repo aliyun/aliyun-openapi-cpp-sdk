@@ -37,6 +37,18 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
+				std::string getInstanceClass()const;
+				void setInstanceClass(const std::string& instanceClass);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCapacity()const;
+				void setCapacity(const std::string& capacity);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getBusinessInfo()const;
+				void setBusinessInfo(const std::string& businessInfo);
 				long getPeriod()const;
 				void setPeriod(long period);
 				bool getAutoPay()const;
@@ -47,44 +59,29 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getCouponNo()const;
-				void setCouponNo(const std::string& couponNo);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInstanceClass()const;
-				void setInstanceClass(const std::string& instanceClass);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getCapacity()const;
-				void setCapacity(const std::string& capacity);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				bool getForceUpgrade()const;
 				void setForceUpgrade(bool forceUpgrade);
-				std::string getBusinessInfo()const;
-				void setBusinessInfo(const std::string& businessInfo);
 
             private:
 				long resourceOwnerId_;
+				std::string couponNo_;
+				std::string instanceClass_;
+				std::string accessKeyId_;
+				std::string capacity_;
+				std::string securityToken_;
+				std::string businessInfo_;
 				long period_;
 				bool autoPay_;
 				std::string fromApp_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string couponNo_;
 				long ownerId_;
-				std::string instanceClass_;
-				std::string accessKeyId_;
-				std::string capacity_;
 				std::string instanceId_;
-				std::string securityToken_;
-				std::string regionId_;
 				bool forceUpgrade_;
-				std::string businessInfo_;
 
 			};
 		}

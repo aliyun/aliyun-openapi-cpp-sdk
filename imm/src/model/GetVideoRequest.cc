@@ -25,28 +25,6 @@ GetVideoRequest::GetVideoRequest() :
 GetVideoRequest::~GetVideoRequest()
 {}
 
-std::string GetVideoRequest::getVideoUri()const
-{
-	return videoUri_;
-}
-
-void GetVideoRequest::setVideoUri(const std::string& videoUri)
-{
-	videoUri_ = videoUri;
-	setCoreParameter("VideoUri", videoUri);
-}
-
-std::string GetVideoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetVideoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetVideoRequest::getProject()const
 {
 	return project_;
@@ -58,17 +36,6 @@ void GetVideoRequest::setProject(const std::string& project)
 	setCoreParameter("Project", project);
 }
 
-std::string GetVideoRequest::getSetId()const
-{
-	return setId_;
-}
-
-void GetVideoRequest::setSetId(const std::string& setId)
-{
-	setId_ = setId;
-	setCoreParameter("SetId", setId);
-}
-
 std::string GetVideoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,5 +45,27 @@ void GetVideoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetVideoRequest::getVideoUri()const
+{
+	return videoUri_;
+}
+
+void GetVideoRequest::setVideoUri(const std::string& videoUri)
+{
+	videoUri_ = videoUri;
+	setCoreParameter("VideoUri", videoUri);
+}
+
+std::string GetVideoRequest::getSetId()const
+{
+	return setId_;
+}
+
+void GetVideoRequest::setSetId(const std::string& setId)
+{
+	setId_ = setId;
+	setCoreParameter("SetId", setId);
 }
 

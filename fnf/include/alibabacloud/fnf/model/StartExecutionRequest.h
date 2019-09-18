@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				StartExecutionRequest();
 				~StartExecutionRequest();
 
-				std::string getInput()const;
-				void setInput(const std::string& input);
 				std::string getExecutionName()const;
 				void setExecutionName(const std::string& executionName);
+				std::string getInput()const;
+				void setInput(const std::string& input);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getFlowName()const;
 				void setFlowName(const std::string& flowName);
 
             private:
-				std::string input_;
 				std::string executionName_;
+				std::string input_;
 				std::string requestId_;
 				std::string flowName_;
 

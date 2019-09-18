@@ -36,17 +36,6 @@ void ListPageConfigTemplateRequest::setLength(int length)
 	setCoreParameter("Length", std::to_string(length));
 }
 
-int ListPageConfigTemplateRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListPageConfigTemplateRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
 std::string ListPageConfigTemplateRequest::getSearchTempName()const
 {
 	return searchTempName_;
@@ -67,5 +56,16 @@ void ListPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListPageConfigTemplateRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListPageConfigTemplateRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

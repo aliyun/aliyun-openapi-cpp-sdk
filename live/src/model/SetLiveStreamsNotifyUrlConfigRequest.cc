@@ -36,26 +36,15 @@ void SetLiveStreamsNotifyUrlConfigRequest::setAuthKey(const std::string& authKey
 	setCoreParameter("AuthKey", authKey);
 }
 
-std::string SetLiveStreamsNotifyUrlConfigRequest::getRegionId()const
+std::string SetLiveStreamsNotifyUrlConfigRequest::getAuthType()const
 {
-	return regionId_;
+	return authType_;
 }
 
-void SetLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string& regionId)
+void SetLiveStreamsNotifyUrlConfigRequest::setAuthType(const std::string& authType)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string SetLiveStreamsNotifyUrlConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void SetLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	authType_ = authType;
+	setCoreParameter("AuthType", authType);
 }
 
 std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyUrl()const
@@ -69,6 +58,17 @@ void SetLiveStreamsNotifyUrlConfigRequest::setNotifyUrl(const std::string& notif
 	setCoreParameter("NotifyUrl", notifyUrl);
 }
 
+std::string SetLiveStreamsNotifyUrlConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
 long SetLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,16 +78,5 @@ void SetLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SetLiveStreamsNotifyUrlConfigRequest::getAuthType()const
-{
-	return authType_;
-}
-
-void SetLiveStreamsNotifyUrlConfigRequest::setAuthType(const std::string& authType)
-{
-	authType_ = authType;
-	setCoreParameter("AuthType", authType);
 }
 

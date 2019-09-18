@@ -25,17 +25,6 @@ CreateTagSetRequest::CreateTagSetRequest() :
 CreateTagSetRequest::~CreateTagSetRequest()
 {}
 
-std::string CreateTagSetRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateTagSetRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateTagSetRequest::getProject()const
 {
 	return project_;

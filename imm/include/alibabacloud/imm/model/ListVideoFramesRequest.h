@@ -35,26 +35,23 @@ namespace AlibabaCloud
 				ListVideoFramesRequest();
 				~ListVideoFramesRequest();
 
-				std::string getVideoUri()const;
-				void setVideoUri(const std::string& videoUri);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getMarker()const;
-				void setMarker(const std::string& marker);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getSetId()const;
-				void setSetId(const std::string& setId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getVideoUri()const;
+				void setVideoUri(const std::string& videoUri);
+				std::string getMarker()const;
+				void setMarker(const std::string& marker);
+				std::string getSetId()const;
+				void setSetId(const std::string& setId);
 
             private:
-				std::string videoUri_;
-				std::string regionId_;
-				std::string marker_;
 				std::string project_;
-				std::string setId_;
 				std::string accessKeyId_;
+				std::string videoUri_;
+				std::string marker_;
+				std::string setId_;
 
 			};
 		}

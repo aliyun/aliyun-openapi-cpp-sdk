@@ -47,17 +47,6 @@ void ListApAssetRequest::setSearchName(const std::string& searchName)
 	setCoreParameter("SearchName", searchName);
 }
 
-std::string ListApAssetRequest::getSearchSerialNo()const
-{
-	return searchSerialNo_;
-}
-
-void ListApAssetRequest::setSearchSerialNo(const std::string& searchSerialNo)
-{
-	searchSerialNo_ = searchSerialNo;
-	setCoreParameter("SearchSerialNo", searchSerialNo);
-}
-
 int ListApAssetRequest::getLength()const
 {
 	return length_;
@@ -67,28 +56,6 @@ void ListApAssetRequest::setLength(int length)
 {
 	length_ = length;
 	setCoreParameter("Length", std::to_string(length));
-}
-
-int ListApAssetRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListApAssetRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
-std::string ListApAssetRequest::getSearchMac()const
-{
-	return searchMac_;
-}
-
-void ListApAssetRequest::setSearchMac(const std::string& searchMac)
-{
-	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
 }
 
 std::string ListApAssetRequest::getOrderDir()const
@@ -111,6 +78,39 @@ void ListApAssetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListApAssetRequest::getSearchSerialNo()const
+{
+	return searchSerialNo_;
+}
+
+void ListApAssetRequest::setSearchSerialNo(const std::string& searchSerialNo)
+{
+	searchSerialNo_ = searchSerialNo;
+	setCoreParameter("SearchSerialNo", searchSerialNo);
+}
+
+int ListApAssetRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListApAssetRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
+}
+
+std::string ListApAssetRequest::getSearchMac()const
+{
+	return searchMac_;
+}
+
+void ListApAssetRequest::setSearchMac(const std::string& searchMac)
+{
+	searchMac_ = searchMac;
+	setCoreParameter("SearchMac", searchMac);
 }
 
 std::string ListApAssetRequest::getSearchModel()const

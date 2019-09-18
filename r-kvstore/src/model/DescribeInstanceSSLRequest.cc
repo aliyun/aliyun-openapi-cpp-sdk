@@ -36,15 +36,15 @@ void DescribeInstanceSSLRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeInstanceSSLRequest::getInstanceId()const
+std::string DescribeInstanceSSLRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void DescribeInstanceSSLRequest::setInstanceId(const std::string& instanceId)
+void DescribeInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeInstanceSSLRequest::getSecurityToken()const
@@ -69,17 +69,6 @@ void DescribeInstanceSSLRequest::setResourceOwnerAccount(const std::string& reso
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeInstanceSSLRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeInstanceSSLRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeInstanceSSLRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,14 +91,14 @@ void DescribeInstanceSSLRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeInstanceSSLRequest::getAccessKeyId()const
+std::string DescribeInstanceSSLRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void DescribeInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeInstanceSSLRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

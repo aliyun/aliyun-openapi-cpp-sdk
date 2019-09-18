@@ -47,6 +47,17 @@ void UpdateMcuTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpdateMcuTemplateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateMcuTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UpdateMcuTemplateRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -89,16 +100,5 @@ void UpdateMcuTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
 	setCoreParameter("TemplateId", templateId);
-}
-
-std::string UpdateMcuTemplateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateMcuTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

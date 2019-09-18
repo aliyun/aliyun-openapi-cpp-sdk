@@ -47,14 +47,3 @@ void GetRepoWebhookRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string GetRepoWebhookRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoWebhookRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

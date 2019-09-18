@@ -25,6 +25,28 @@ ListProductByTagsRequest::ListProductByTagsRequest() :
 ListProductByTagsRequest::~ListProductByTagsRequest()
 {}
 
+int ListProductByTagsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void ListProductByTagsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string ListProductByTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListProductByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<ListProductByTagsRequest::ProductTag> ListProductByTagsRequest::getProductTag()const
 {
 	return productTag_;
@@ -62,27 +84,5 @@ void ListProductByTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-int ListProductByTagsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void ListProductByTagsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string ListProductByTagsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListProductByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

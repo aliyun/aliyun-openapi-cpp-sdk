@@ -25,17 +25,6 @@ AuthorizeSecurityGroupRequest::AuthorizeSecurityGroupRequest() :
 AuthorizeSecurityGroupRequest::~AuthorizeSecurityGroupRequest()
 {}
 
-std::string AuthorizeSecurityGroupRequest::getBizType()const
-{
-	return bizType_;
-}
-
-void AuthorizeSecurityGroupRequest::setBizType(const std::string& bizType)
-{
-	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
-}
-
 long AuthorizeSecurityGroupRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,28 +34,6 @@ void AuthorizeSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string AuthorizeSecurityGroupRequest::getBizContent()const
-{
-	return bizContent_;
-}
-
-void AuthorizeSecurityGroupRequest::setBizContent(const std::string& bizContent)
-{
-	bizContent_ = bizContent;
-	setCoreParameter("BizContent", bizContent);
-}
-
-std::string AuthorizeSecurityGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AuthorizeSecurityGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string AuthorizeSecurityGroupRequest::getClusterId()const
@@ -89,5 +56,38 @@ void AuthorizeSecurityGroupRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AuthorizeSecurityGroupRequest::getBizType()const
+{
+	return bizType_;
+}
+
+void AuthorizeSecurityGroupRequest::setBizType(const std::string& bizType)
+{
+	bizType_ = bizType;
+	setCoreParameter("BizType", bizType);
+}
+
+std::string AuthorizeSecurityGroupRequest::getBizContent()const
+{
+	return bizContent_;
+}
+
+void AuthorizeSecurityGroupRequest::setBizContent(const std::string& bizContent)
+{
+	bizContent_ = bizContent;
+	setCoreParameter("BizContent", bizContent);
+}
+
+std::string AuthorizeSecurityGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AuthorizeSecurityGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

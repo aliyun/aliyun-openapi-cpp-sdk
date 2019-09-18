@@ -36,6 +36,83 @@ void ModifyFlowLogAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyFlowLogAttributeRequest::getNetflowVersion()const
+{
+	return netflowVersion_;
+}
+
+void ModifyFlowLogAttributeRequest::setNetflowVersion(const std::string& netflowVersion)
+{
+	netflowVersion_ = netflowVersion;
+	setCoreParameter("NetflowVersion", netflowVersion);
+}
+
+std::string ModifyFlowLogAttributeRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyFlowLogAttributeRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+int ModifyFlowLogAttributeRequest::getInactiveAging()const
+{
+	return inactiveAging_;
+}
+
+void ModifyFlowLogAttributeRequest::setInactiveAging(int inactiveAging)
+{
+	inactiveAging_ = inactiveAging;
+	setCoreParameter("InactiveAging", std::to_string(inactiveAging));
+}
+
+std::string ModifyFlowLogAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyFlowLogAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyFlowLogAttributeRequest::getSlsRegionId()const
+{
+	return slsRegionId_;
+}
+
+void ModifyFlowLogAttributeRequest::setSlsRegionId(const std::string& slsRegionId)
+{
+	slsRegionId_ = slsRegionId;
+	setCoreParameter("SlsRegionId", slsRegionId);
+}
+
+int ModifyFlowLogAttributeRequest::getActiveAging()const
+{
+	return activeAging_;
+}
+
+void ModifyFlowLogAttributeRequest::setActiveAging(int activeAging)
+{
+	activeAging_ = activeAging;
+	setCoreParameter("ActiveAging", std::to_string(activeAging));
+}
+
+std::string ModifyFlowLogAttributeRequest::getOutputType()const
+{
+	return outputType_;
+}
+
+void ModifyFlowLogAttributeRequest::setOutputType(const std::string& outputType)
+{
+	outputType_ = outputType;
+	setCoreParameter("OutputType", outputType);
+}
+
 std::string ModifyFlowLogAttributeRequest::getProjectName()const
 {
 	return projectName_;
@@ -91,28 +168,6 @@ void ModifyFlowLogAttributeRequest::setNetflowServerPort(int netflowServerPort)
 	setCoreParameter("NetflowServerPort", std::to_string(netflowServerPort));
 }
 
-std::string ModifyFlowLogAttributeRequest::getNetflowVersion()const
-{
-	return netflowVersion_;
-}
-
-void ModifyFlowLogAttributeRequest::setNetflowVersion(const std::string& netflowVersion)
-{
-	netflowVersion_ = netflowVersion;
-	setCoreParameter("NetflowVersion", netflowVersion);
-}
-
-std::string ModifyFlowLogAttributeRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyFlowLogAttributeRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 long ModifyFlowLogAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -122,17 +177,6 @@ void ModifyFlowLogAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int ModifyFlowLogAttributeRequest::getInactiveAging()const
-{
-	return inactiveAging_;
-}
-
-void ModifyFlowLogAttributeRequest::setInactiveAging(int inactiveAging)
-{
-	inactiveAging_ = inactiveAging;
-	setCoreParameter("InactiveAging", std::to_string(inactiveAging));
 }
 
 std::string ModifyFlowLogAttributeRequest::getNetflowServerIp()const
@@ -146,17 +190,6 @@ void ModifyFlowLogAttributeRequest::setNetflowServerIp(const std::string& netflo
 	setCoreParameter("NetflowServerIp", netflowServerIp);
 }
 
-std::string ModifyFlowLogAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyFlowLogAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyFlowLogAttributeRequest::getName()const
 {
 	return name_;
@@ -166,39 +199,6 @@ void ModifyFlowLogAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string ModifyFlowLogAttributeRequest::getSlsRegionId()const
-{
-	return slsRegionId_;
-}
-
-void ModifyFlowLogAttributeRequest::setSlsRegionId(const std::string& slsRegionId)
-{
-	slsRegionId_ = slsRegionId;
-	setCoreParameter("SlsRegionId", slsRegionId);
-}
-
-int ModifyFlowLogAttributeRequest::getActiveAging()const
-{
-	return activeAging_;
-}
-
-void ModifyFlowLogAttributeRequest::setActiveAging(int activeAging)
-{
-	activeAging_ = activeAging;
-	setCoreParameter("ActiveAging", std::to_string(activeAging));
-}
-
-std::string ModifyFlowLogAttributeRequest::getOutputType()const
-{
-	return outputType_;
-}
-
-void ModifyFlowLogAttributeRequest::setOutputType(const std::string& outputType)
-{
-	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
 }
 
 std::string ModifyFlowLogAttributeRequest::getFlowLogId()const

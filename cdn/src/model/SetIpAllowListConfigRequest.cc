@@ -19,33 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetIpAllowListConfigRequest;
 
 SetIpAllowListConfigRequest::SetIpAllowListConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetIpAllowListConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetIpAllowListConfig")
 {}
 
 SetIpAllowListConfigRequest::~SetIpAllowListConfigRequest()
 {}
-
-std::string SetIpAllowListConfigRequest::getAllowIps()const
-{
-	return allowIps_;
-}
-
-void SetIpAllowListConfigRequest::setAllowIps(const std::string& allowIps)
-{
-	allowIps_ = allowIps;
-	setCoreParameter("AllowIps", allowIps);
-}
-
-std::string SetIpAllowListConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetIpAllowListConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string SetIpAllowListConfigRequest::getDomainName()const
 {
@@ -67,5 +45,27 @@ void SetIpAllowListConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetIpAllowListConfigRequest::getAllowIps()const
+{
+	return allowIps_;
+}
+
+void SetIpAllowListConfigRequest::setAllowIps(const std::string& allowIps)
+{
+	allowIps_ = allowIps;
+	setCoreParameter("AllowIps", allowIps);
+}
+
+std::string SetIpAllowListConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetIpAllowListConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

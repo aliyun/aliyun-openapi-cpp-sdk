@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DescribeIpInfoRequest();
 				~DescribeIpInfoRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getIP()const;
 				void setIP(const std::string& iP);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				std::string iP_;
 				long ownerId_;
+				std::string securityToken_;
 
 			};
 		}

@@ -25,17 +25,6 @@ DescribeSlowLogRecordsRequest::DescribeSlowLogRecordsRequest() :
 DescribeSlowLogRecordsRequest::~DescribeSlowLogRecordsRequest()
 {}
 
-long DescribeSlowLogRecordsRequest::getSQLId()const
-{
-	return sQLId_;
-}
-
-void DescribeSlowLogRecordsRequest::setSQLId(long sQLId)
-{
-	sQLId_ = sQLId;
-	setCoreParameter("SQLId", std::to_string(sQLId));
-}
-
 long DescribeSlowLogRecordsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,94 @@ void DescribeSlowLogRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeSlowLogRecordsRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeSlowLogRecordsRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+int DescribeSlowLogRecordsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeSlowLogRecordsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeSlowLogRecordsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeSlowLogRecordsRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeSlowLogRecordsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeSlowLogRecordsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeSlowLogRecordsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeSlowLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeSlowLogRecordsRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void DescribeSlowLogRecordsRequest::setNodeId(const std::string& nodeId)
+{
+	nodeId_ = nodeId;
+	setCoreParameter("NodeId", nodeId);
+}
+
+long DescribeSlowLogRecordsRequest::getSQLId()const
+{
+	return sQLId_;
+}
+
+void DescribeSlowLogRecordsRequest::setSQLId(long sQLId)
+{
+	sQLId_ = sQLId;
+	setCoreParameter("SQLId", std::to_string(sQLId));
 }
 
 std::string DescribeSlowLogRecordsRequest::getResourceOwnerAccount()const
@@ -80,17 +157,6 @@ void DescribeSlowLogRecordsRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeSlowLogRecordsRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeSlowLogRecordsRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long DescribeSlowLogRecordsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,28 +168,6 @@ void DescribeSlowLogRecordsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeSlowLogRecordsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeSlowLogRecordsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeSlowLogRecordsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string DescribeSlowLogRecordsRequest::getDBName()const
 {
 	return dBName_;
@@ -133,60 +177,5 @@ void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
 	setCoreParameter("DBName", dBName);
-}
-
-std::string DescribeSlowLogRecordsRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeSlowLogRecordsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeSlowLogRecordsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeSlowLogRecordsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int DescribeSlowLogRecordsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeSlowLogRecordsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeSlowLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-std::string DescribeSlowLogRecordsRequest::getNodeId()const
-{
-	return nodeId_;
-}
-
-void DescribeSlowLogRecordsRequest::setNodeId(const std::string& nodeId)
-{
-	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
 }
 

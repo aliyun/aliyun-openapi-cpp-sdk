@@ -36,17 +36,6 @@ void DeleteApgroupSsidConfigRequest::setApgroupId(long apgroupId)
 	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
-long DeleteApgroupSsidConfigRequest::getId()const
-{
-	return id_;
-}
-
-void DeleteApgroupSsidConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string DeleteApgroupSsidConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void DeleteApgroupSsidConfigRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long DeleteApgroupSsidConfigRequest::getId()const
+{
+	return id_;
+}
+
+void DeleteApgroupSsidConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

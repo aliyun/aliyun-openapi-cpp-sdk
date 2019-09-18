@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				QueryCustomMetricListRequest();
 				~QueryCustomMetricListRequest();
 
-				std::string getSize()const;
-				void setSize(const std::string& size);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSize()const;
+				void setSize(const std::string& size);
 				std::string getPage()const;
 				void setPage(const std::string& page);
 				std::string getMetricName()const;
 				void setMetricName(const std::string& metricName);
 				std::string getDimension()const;
 				void setDimension(const std::string& dimension);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getMd5()const;
 				void setMd5(const std::string& md5);
 
             private:
-				std::string size_;
 				std::string groupId_;
+				std::string accessKeyId_;
+				std::string size_;
 				std::string page_;
 				std::string metricName_;
 				std::string dimension_;
-				std::string accessKeyId_;
 				std::string md5_;
 
 			};

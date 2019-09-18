@@ -25,17 +25,6 @@ OnsWarnDeleteRequest::OnsWarnDeleteRequest() :
 OnsWarnDeleteRequest::~OnsWarnDeleteRequest()
 {}
 
-std::string OnsWarnDeleteRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsWarnDeleteRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsWarnDeleteRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,6 +34,17 @@ void OnsWarnDeleteRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string OnsWarnDeleteRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsWarnDeleteRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsWarnDeleteRequest::getTopic()const

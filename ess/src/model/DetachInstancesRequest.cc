@@ -36,16 +36,26 @@ void DetachInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::vector<std::string> DetachInstancesRequest::getInstanceId()const
+std::string DetachInstancesRequest::getScalingGroupId()const
 {
-	return instanceId_;
+	return scalingGroupId_;
 }
 
-void DetachInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
+void DetachInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
-	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	scalingGroupId_ = scalingGroupId;
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string DetachInstancesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DetachInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetachInstancesRequest::getResourceOwnerAccount()const
@@ -57,17 +67,6 @@ void DetachInstancesRequest::setResourceOwnerAccount(const std::string& resource
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DetachInstancesRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void DetachInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DetachInstancesRequest::getOwnerAccount()const
@@ -92,14 +91,15 @@ void DetachInstancesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DetachInstancesRequest::getAccessKeyId()const
+std::vector<std::string> DetachInstancesRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void DetachInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+void DetachInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	for(int i = 0; i!= instanceId.size(); i++)
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 

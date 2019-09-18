@@ -36,50 +36,6 @@ void SaveApConfigRequest::setCountry(const std::string& country)
 	setCoreParameter("Country", country);
 }
 
-long SaveApConfigRequest::getApAssetId()const
-{
-	return apAssetId_;
-}
-
-void SaveApConfigRequest::setApAssetId(long apAssetId)
-{
-	apAssetId_ = apAssetId;
-	setCoreParameter("ApAssetId", std::to_string(apAssetId));
-}
-
-int SaveApConfigRequest::getLogLevel()const
-{
-	return logLevel_;
-}
-
-void SaveApConfigRequest::setLogLevel(int logLevel)
-{
-	logLevel_ = logLevel;
-	setCoreParameter("LogLevel", std::to_string(logLevel));
-}
-
-std::string SaveApConfigRequest::getName()const
-{
-	return name_;
-}
-
-void SaveApConfigRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-int SaveApConfigRequest::getEchoInt()const
-{
-	return echoInt_;
-}
-
-void SaveApConfigRequest::setEchoInt(int echoInt)
-{
-	echoInt_ = echoInt;
-	setCoreParameter("EchoInt", std::to_string(echoInt));
-}
-
 int SaveApConfigRequest::getScan()const
 {
 	return scan_;
@@ -100,17 +56,6 @@ void SaveApConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long SaveApConfigRequest::getId()const
-{
-	return id_;
-}
-
-void SaveApConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string SaveApConfigRequest::getDai()const
@@ -155,5 +100,60 @@ void SaveApConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long SaveApConfigRequest::getApAssetId()const
+{
+	return apAssetId_;
+}
+
+void SaveApConfigRequest::setApAssetId(long apAssetId)
+{
+	apAssetId_ = apAssetId;
+	setCoreParameter("ApAssetId", std::to_string(apAssetId));
+}
+
+int SaveApConfigRequest::getLogLevel()const
+{
+	return logLevel_;
+}
+
+void SaveApConfigRequest::setLogLevel(int logLevel)
+{
+	logLevel_ = logLevel;
+	setCoreParameter("LogLevel", std::to_string(logLevel));
+}
+
+std::string SaveApConfigRequest::getName()const
+{
+	return name_;
+}
+
+void SaveApConfigRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+int SaveApConfigRequest::getEchoInt()const
+{
+	return echoInt_;
+}
+
+void SaveApConfigRequest::setEchoInt(int echoInt)
+{
+	echoInt_ = echoInt;
+	setCoreParameter("EchoInt", std::to_string(echoInt));
+}
+
+long SaveApConfigRequest::getId()const
+{
+	return id_;
+}
+
+void SaveApConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

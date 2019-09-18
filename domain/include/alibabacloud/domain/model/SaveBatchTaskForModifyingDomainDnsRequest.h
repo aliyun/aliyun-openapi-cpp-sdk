@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				SaveBatchTaskForModifyingDomainDnsRequest();
 				~SaveBatchTaskForModifyingDomainDnsRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::vector<std::string> getDomainName()const;
 				void setDomainName(const std::vector<std::string>& domainName);
+				bool getAliyunDns()const;
+				void setAliyunDns(bool aliyunDns);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::vector<std::string> getDomainNameServer()const;
 				void setDomainNameServer(const std::vector<std::string>& domainNameServer);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				bool getAliyunDns()const;
-				void setAliyunDns(bool aliyunDns);
 
             private:
-				std::string userClientIp_;
 				std::vector<std::string> domainName_;
+				bool aliyunDns_;
+				std::string userClientIp_;
 				std::vector<std::string> domainNameServer_;
 				std::string lang_;
-				bool aliyunDns_;
 
 			};
 		}

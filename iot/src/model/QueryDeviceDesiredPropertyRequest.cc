@@ -37,6 +37,28 @@ void QueryDeviceDesiredPropertyRequest::setIdentifier(const std::vector<std::str
 		setCoreParameter("Identifier."+ std::to_string(i), identifier.at(i));
 }
 
+std::string QueryDeviceDesiredPropertyRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string QueryDeviceDesiredPropertyRequest::getIotId()const
 {
 	return iotId_;
@@ -68,27 +90,5 @@ void QueryDeviceDesiredPropertyRequest::setDeviceName(const std::string& deviceN
 {
 	deviceName_ = deviceName;
 	setCoreParameter("DeviceName", deviceName);
-}
-
-std::string QueryDeviceDesiredPropertyRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryDeviceDesiredPropertyRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
-std::string QueryDeviceDesiredPropertyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryDeviceDesiredPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

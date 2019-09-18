@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeLiveStreamsControlHistoryRequest();
 				~DescribeLiveStreamsControlHistoryRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
@@ -43,17 +45,15 @@ namespace AlibabaCloud
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
+				std::string startTime_;
 				std::string appName_;
 				std::string securityToken_;
 				std::string domainName_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
 
 			};

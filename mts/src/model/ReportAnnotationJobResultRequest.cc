@@ -25,15 +25,26 @@ ReportAnnotationJobResultRequest::ReportAnnotationJobResultRequest() :
 ReportAnnotationJobResultRequest::~ReportAnnotationJobResultRequest()
 {}
 
-std::string ReportAnnotationJobResultRequest::getAnnotation()const
+long ReportAnnotationJobResultRequest::getResourceOwnerId()const
 {
-	return annotation_;
+	return resourceOwnerId_;
 }
 
-void ReportAnnotationJobResultRequest::setAnnotation(const std::string& annotation)
+void ReportAnnotationJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	annotation_ = annotation;
-	setCoreParameter("Annotation", annotation);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ReportAnnotationJobResultRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReportAnnotationJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportAnnotationJobResultRequest::getJobId()const
@@ -47,15 +58,26 @@ void ReportAnnotationJobResultRequest::setJobId(const std::string& jobId)
 	setCoreParameter("JobId", jobId);
 }
 
-long ReportAnnotationJobResultRequest::getResourceOwnerId()const
+std::string ReportAnnotationJobResultRequest::getDetails()const
 {
-	return resourceOwnerId_;
+	return details_;
 }
 
-void ReportAnnotationJobResultRequest::setResourceOwnerId(long resourceOwnerId)
+void ReportAnnotationJobResultRequest::setDetails(const std::string& details)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	details_ = details;
+	setCoreParameter("Details", details);
+}
+
+std::string ReportAnnotationJobResultRequest::getAnnotation()const
+{
+	return annotation_;
+}
+
+void ReportAnnotationJobResultRequest::setAnnotation(const std::string& annotation)
+{
+	annotation_ = annotation;
+	setCoreParameter("Annotation", annotation);
 }
 
 std::string ReportAnnotationJobResultRequest::getResourceOwnerAccount()const
@@ -80,17 +102,6 @@ void ReportAnnotationJobResultRequest::setOwnerAccount(const std::string& ownerA
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ReportAnnotationJobResultRequest::getDetails()const
-{
-	return details_;
-}
-
-void ReportAnnotationJobResultRequest::setDetails(const std::string& details)
-{
-	details_ = details;
-	setCoreParameter("Details", details);
-}
-
 long ReportAnnotationJobResultRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void ReportAnnotationJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ReportAnnotationJobResultRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ReportAnnotationJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

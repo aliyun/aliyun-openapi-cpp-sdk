@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DescribeScdnDomainTopReferVisitRequest();
 				~DescribeScdnDomainTopReferVisitRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getSortBy()const;
-				void setSortBy(const std::string& sortBy);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getSortBy()const;
+				void setSortBy(const std::string& sortBy);
 
             private:
-				std::string securityToken_;
 				std::string domainName_;
-				std::string sortBy_;
 				std::string startTime_;
 				long ownerId_;
+				std::string securityToken_;
+				std::string sortBy_;
 
 			};
 		}

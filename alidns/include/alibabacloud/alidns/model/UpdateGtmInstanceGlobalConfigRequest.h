@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				std::string getAlertGroup()const;
 				void setAlertGroup(const std::string& alertGroup);
+				std::string getCnameMode()const;
+				void setCnameMode(const std::string& cnameMode);
+				std::string getLbaStrategy()const;
+				void setLbaStrategy(const std::string& lbaStrategy);
+				int getTtl()const;
+				void setTtl(int ttl);
+				std::string getCnameCustomDomainName()const;
+				void setCnameCustomDomainName(const std::string& cnameCustomDomainName);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				std::string getUserDomainName()const;
 				void setUserDomainName(const std::string& userDomainName);
-				std::string getCnameMode()const;
-				void setCnameMode(const std::string& cnameMode);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getLbaStrategy()const;
-				void setLbaStrategy(const std::string& lbaStrategy);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getTtl()const;
-				void setTtl(int ttl);
-				std::string getCnameCustomDomainName()const;
-				void setCnameCustomDomainName(const std::string& cnameCustomDomainName);
 
             private:
 				std::string alertGroup_;
+				std::string cnameMode_;
+				std::string lbaStrategy_;
+				int ttl_;
+				std::string cnameCustomDomainName_;
 				std::string instanceId_;
 				std::string instanceName_;
 				std::string userDomainName_;
-				std::string cnameMode_;
 				std::string userClientIp_;
-				std::string lbaStrategy_;
 				std::string lang_;
-				int ttl_;
-				std::string cnameCustomDomainName_;
 
 			};
 		}

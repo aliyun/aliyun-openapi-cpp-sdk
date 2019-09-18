@@ -36,6 +36,28 @@ void DescribeAppInfoRequest::setTotalCount(int totalCount)
 	setCoreParameter("TotalCount", std::to_string(totalCount));
 }
 
+int DescribeAppInfoRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeAppInfoRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeAppInfoRequest::getPlatform()const
+{
+	return platform_;
+}
+
+void DescribeAppInfoRequest::setPlatform(const std::string& platform)
+{
+	platform_ = platform;
+	setCoreParameter("Platform", platform);
+}
+
 std::string DescribeAppInfoRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -58,17 +80,6 @@ void DescribeAppInfoRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeAppInfoRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeAppInfoRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeAppInfoRequest::getLang()const
 {
 	return lang_;
@@ -78,16 +89,5 @@ void DescribeAppInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeAppInfoRequest::getPlatform()const
-{
-	return platform_;
-}
-
-void DescribeAppInfoRequest::setPlatform(const std::string& platform)
-{
-	platform_ = platform;
-	setCoreParameter("Platform", platform);
 }
 

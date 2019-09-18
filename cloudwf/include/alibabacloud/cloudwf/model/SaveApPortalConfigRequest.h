@@ -37,12 +37,16 @@ namespace AlibabaCloud
 
 				std::string getAuthKey()const;
 				void setAuthKey(const std::string& authKey);
-				std::string getPortalUrl()const;
-				void setPortalUrl(const std::string& portalUrl);
 				bool getPortalStatus()const;
 				void setPortalStatus(bool portalStatus);
 				std::string getWhitelist()const;
 				void setWhitelist(const std::string& whitelist);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				int getNetwork()const;
+				void setNetwork(int network);
+				std::string getPortalUrl()const;
+				void setPortalUrl(const std::string& portalUrl);
 				std::string getCheckUrl()const;
 				void setCheckUrl(const std::string& checkUrl);
 				long getApConfigId()const;
@@ -51,22 +55,18 @@ namespace AlibabaCloud
 				void setAuthSecret(const std::string& authSecret);
 				std::string getWebAuthUrl()const;
 				void setWebAuthUrl(const std::string& webAuthUrl);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				int getNetwork()const;
-				void setNetwork(int network);
 
             private:
 				std::string authKey_;
-				std::string portalUrl_;
 				bool portalStatus_;
 				std::string whitelist_;
+				std::string accessKeyId_;
+				int network_;
+				std::string portalUrl_;
 				std::string checkUrl_;
 				long apConfigId_;
 				std::string authSecret_;
 				std::string webAuthUrl_;
-				std::string accessKeyId_;
-				int network_;
 
 			};
 		}

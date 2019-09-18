@@ -25,17 +25,6 @@ UnbindInputBucketRequest::UnbindInputBucketRequest() :
 UnbindInputBucketRequest::~UnbindInputBucketRequest()
 {}
 
-std::string UnbindInputBucketRequest::getBucket()const
-{
-	return bucket_;
-}
-
-void UnbindInputBucketRequest::setBucket(const std::string& bucket)
-{
-	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
-}
-
 long UnbindInputBucketRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,6 +36,17 @@ void UnbindInputBucketRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UnbindInputBucketRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UnbindInputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UnbindInputBucketRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +56,6 @@ void UnbindInputBucketRequest::setResourceOwnerAccount(const std::string& resour
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string UnbindInputBucketRequest::getRoleArn()const
-{
-	return roleArn_;
-}
-
-void UnbindInputBucketRequest::setRoleArn(const std::string& roleArn)
-{
-	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
 }
 
 std::string UnbindInputBucketRequest::getOwnerAccount()const
@@ -91,14 +80,25 @@ void UnbindInputBucketRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UnbindInputBucketRequest::getAccessKeyId()const
+std::string UnbindInputBucketRequest::getBucket()const
 {
-	return accessKeyId_;
+	return bucket_;
 }
 
-void UnbindInputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
+void UnbindInputBucketRequest::setBucket(const std::string& bucket)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	bucket_ = bucket;
+	setCoreParameter("Bucket", bucket);
+}
+
+std::string UnbindInputBucketRequest::getRoleArn()const
+{
+	return roleArn_;
+}
+
+void UnbindInputBucketRequest::setRoleArn(const std::string& roleArn)
+{
+	roleArn_ = roleArn;
+	setCoreParameter("RoleArn", roleArn);
 }
 

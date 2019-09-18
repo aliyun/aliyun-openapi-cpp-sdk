@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeDrdsInstancesRequest();
 				~DescribeDrdsInstancesRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
-				std::string regionId_;
 				std::string type_;
 				std::string accessKeyId_;
 				std::string tags_;
+				std::string regionId_;
 
 			};
 		}

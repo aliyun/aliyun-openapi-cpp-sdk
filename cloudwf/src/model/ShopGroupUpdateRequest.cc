@@ -36,28 +36,6 @@ void ShopGroupUpdateRequest::setGid(long gid)
 	setCoreParameter("Gid", std::to_string(gid));
 }
 
-std::string ShopGroupUpdateRequest::getShopIds()const
-{
-	return shopIds_;
-}
-
-void ShopGroupUpdateRequest::setShopIds(const std::string& shopIds)
-{
-	shopIds_ = shopIds;
-	setCoreParameter("ShopIds", shopIds);
-}
-
-std::string ShopGroupUpdateRequest::getName()const
-{
-	return name_;
-}
-
-void ShopGroupUpdateRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string ShopGroupUpdateRequest::getDescription()const
 {
 	return description_;
@@ -78,5 +56,27 @@ void ShopGroupUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ShopGroupUpdateRequest::getShopIds()const
+{
+	return shopIds_;
+}
+
+void ShopGroupUpdateRequest::setShopIds(const std::string& shopIds)
+{
+	shopIds_ = shopIds;
+	setCoreParameter("ShopIds", shopIds);
+}
+
+std::string ShopGroupUpdateRequest::getName()const
+{
+	return name_;
+}
+
+void ShopGroupUpdateRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

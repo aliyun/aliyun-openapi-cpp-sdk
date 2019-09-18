@@ -47,17 +47,6 @@ void DeleteImageRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string DeleteImageRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteImageRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteImageRequest::getTag()const
 {
 	return tag_;

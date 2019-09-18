@@ -25,17 +25,6 @@ DescribePhoneInfoRequest::DescribePhoneInfoRequest() :
 DescribePhoneInfoRequest::~DescribePhoneInfoRequest()
 {}
 
-std::string DescribePhoneInfoRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribePhoneInfoRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribePhoneInfoRequest::getPhoneNum()const
 {
 	return phoneNum_;
@@ -47,17 +36,6 @@ void DescribePhoneInfoRequest::setPhoneNum(const std::string& phoneNum)
 	setCoreParameter("PhoneNum", phoneNum);
 }
 
-std::string DescribePhoneInfoRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribePhoneInfoRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string DescribePhoneInfoRequest::getSourceCode()const
 {
 	return sourceCode_;
@@ -67,5 +45,27 @@ void DescribePhoneInfoRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
 	setCoreParameter("SourceCode", sourceCode);
+}
+
+std::string DescribePhoneInfoRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribePhoneInfoRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string DescribePhoneInfoRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribePhoneInfoRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

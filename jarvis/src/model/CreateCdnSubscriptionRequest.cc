@@ -36,6 +36,17 @@ void CreateCdnSubscriptionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateCdnSubscriptionRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void CreateCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string CreateCdnSubscriptionRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -67,16 +78,5 @@ void CreateCdnSubscriptionRequest::setCdnUidList(const std::string& cdnUidList)
 {
 	cdnUidList_ = cdnUidList;
 	setCoreParameter("CdnUidList", cdnUidList);
-}
-
-std::string CreateCdnSubscriptionRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void CreateCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

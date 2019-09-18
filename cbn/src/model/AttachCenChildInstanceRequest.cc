@@ -25,17 +25,6 @@ AttachCenChildInstanceRequest::AttachCenChildInstanceRequest() :
 AttachCenChildInstanceRequest::~AttachCenChildInstanceRequest()
 {}
 
-std::string AttachCenChildInstanceRequest::getChildInstanceId()const
-{
-	return childInstanceId_;
-}
-
-void AttachCenChildInstanceRequest::setChildInstanceId(const std::string& childInstanceId)
-{
-	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
-}
-
 long AttachCenChildInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void AttachCenChildInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string AttachCenChildInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AttachCenChildInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string AttachCenChildInstanceRequest::getCenId()const
 {
 	return cenId_;
@@ -67,6 +45,28 @@ void AttachCenChildInstanceRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
 	setCoreParameter("CenId", cenId);
+}
+
+std::string AttachCenChildInstanceRequest::getChildInstanceRegionId()const
+{
+	return childInstanceRegionId_;
+}
+
+void AttachCenChildInstanceRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
+{
+	childInstanceRegionId_ = childInstanceRegionId;
+	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+}
+
+std::string AttachCenChildInstanceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void AttachCenChildInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachCenChildInstanceRequest::getOwnerAccount()const
@@ -113,14 +113,14 @@ void AttachCenChildInstanceRequest::setChildInstanceOwnerId(long childInstanceOw
 	setCoreParameter("ChildInstanceOwnerId", std::to_string(childInstanceOwnerId));
 }
 
-std::string AttachCenChildInstanceRequest::getChildInstanceRegionId()const
+std::string AttachCenChildInstanceRequest::getChildInstanceId()const
 {
-	return childInstanceRegionId_;
+	return childInstanceId_;
 }
 
-void AttachCenChildInstanceRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
+void AttachCenChildInstanceRequest::setChildInstanceId(const std::string& childInstanceId)
 {
-	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	childInstanceId_ = childInstanceId;
+	setCoreParameter("ChildInstanceId", childInstanceId);
 }
 

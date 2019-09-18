@@ -25,6 +25,17 @@ QueryTopicReverseRouteTableRequest::QueryTopicReverseRouteTableRequest() :
 QueryTopicReverseRouteTableRequest::~QueryTopicReverseRouteTableRequest()
 {}
 
+std::string QueryTopicReverseRouteTableRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryTopicReverseRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string QueryTopicReverseRouteTableRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void QueryTopicReverseRouteTableRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
 	setCoreParameter("Topic", topic);
-}
-
-std::string QueryTopicReverseRouteTableRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryTopicReverseRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,6 +25,28 @@ CreateFlowCategoryRequest::CreateFlowCategoryRequest() :
 CreateFlowCategoryRequest::~CreateFlowCategoryRequest()
 {}
 
+std::string CreateFlowCategoryRequest::getType()const
+{
+	return type_;
+}
+
+void CreateFlowCategoryRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string CreateFlowCategoryRequest::getParentId()const
+{
+	return parentId_;
+}
+
+void CreateFlowCategoryRequest::setParentId(const std::string& parentId)
+{
+	parentId_ = parentId;
+	setCoreParameter("ParentId", parentId);
+}
+
 std::string CreateFlowCategoryRequest::getRegionId()const
 {
 	return regionId_;
@@ -47,17 +69,6 @@ void CreateFlowCategoryRequest::setName(const std::string& name)
 	setCoreParameter("Name", name);
 }
 
-std::string CreateFlowCategoryRequest::getType()const
-{
-	return type_;
-}
-
-void CreateFlowCategoryRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
 std::string CreateFlowCategoryRequest::getProjectId()const
 {
 	return projectId_;
@@ -67,16 +78,5 @@ void CreateFlowCategoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-std::string CreateFlowCategoryRequest::getParentId()const
-{
-	return parentId_;
-}
-
-void CreateFlowCategoryRequest::setParentId(const std::string& parentId)
-{
-	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
 }
 

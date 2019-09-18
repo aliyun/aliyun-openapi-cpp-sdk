@@ -25,6 +25,39 @@ DescribeChangeLogsRequest::DescribeChangeLogsRequest() :
 DescribeChangeLogsRequest::~DescribeChangeLogsRequest()
 {}
 
+long DescribeChangeLogsRequest::getStartTimestamp()const
+{
+	return startTimestamp_;
+}
+
+void DescribeChangeLogsRequest::setStartTimestamp(long startTimestamp)
+{
+	startTimestamp_ = startTimestamp;
+	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
+}
+
+int DescribeChangeLogsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeChangeLogsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+long DescribeChangeLogsRequest::getEndTimestamp()const
+{
+	return endTimestamp_;
+}
+
+void DescribeChangeLogsRequest::setEndTimestamp(long endTimestamp)
+{
+	endTimestamp_ = endTimestamp;
+	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
+}
+
 std::string DescribeChangeLogsRequest::getEntityType()const
 {
 	return entityType_;
@@ -89,38 +122,5 @@ void DescribeChangeLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-long DescribeChangeLogsRequest::getStartTimestamp()const
-{
-	return startTimestamp_;
-}
-
-void DescribeChangeLogsRequest::setStartTimestamp(long startTimestamp)
-{
-	startTimestamp_ = startTimestamp;
-	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
-}
-
-int DescribeChangeLogsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeChangeLogsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-long DescribeChangeLogsRequest::getEndTimestamp()const
-{
-	return endTimestamp_;
-}
-
-void DescribeChangeLogsRequest::setEndTimestamp(long endTimestamp)
-{
-	endTimestamp_ = endTimestamp;
-	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
 }
 

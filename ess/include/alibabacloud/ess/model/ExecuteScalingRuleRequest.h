@@ -37,33 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getScalingRuleAri()const;
-				void setScalingRuleAri(const std::string& scalingRuleAri);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				float getBreachThreshold()const;
 				void setBreachThreshold(float breachThreshold);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				float getMetricValue()const;
 				void setMetricValue(float metricValue);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getScalingRuleAri()const;
+				void setScalingRuleAri(const std::string& scalingRuleAri);
 
             private:
 				long resourceOwnerId_;
-				std::string scalingRuleAri_;
-				std::string resourceOwnerAccount_;
 				std::string clientToken_;
+				std::string accessKeyId_;
 				float breachThreshold_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				float metricValue_;
-				std::string accessKeyId_;
+				std::string scalingRuleAri_;
 
 			};
 		}

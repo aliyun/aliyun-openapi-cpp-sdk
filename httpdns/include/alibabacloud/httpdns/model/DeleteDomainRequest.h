@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DeleteDomainRequest();
 				~DeleteDomainRequest();
 
-				std::string getAccountId()const;
-				void setAccountId(const std::string& accountId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAccountId()const;
+				void setAccountId(const std::string& accountId);
 
             private:
-				std::string accountId_;
 				std::string domainName_;
 				std::string accessKeyId_;
+				std::string accountId_;
 
 			};
 		}

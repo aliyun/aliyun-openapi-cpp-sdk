@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				OnsGroupCreateRequest();
 				~OnsGroupCreateRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				std::string groupId_;
 				std::string remark_;
+				std::string instanceId_;
 
 			};
 		}

@@ -48,6 +48,17 @@ void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resour
 		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
 }
 
+std::string UntagResourcesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void UntagResourcesRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
 std::string UntagResourcesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -80,16 +91,5 @@ void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 	tagKey_ = tagKey;
 	for(int i = 0; i!= tagKey.size(); i++)
 		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
-}
-
-std::string UntagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void UntagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
 }
 

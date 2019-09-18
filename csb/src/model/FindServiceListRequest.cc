@@ -47,17 +47,6 @@ void FindServiceListRequest::setShowDelService(bool showDelService)
 	setCoreParameter("ShowDelService", showDelService ? "true" : "false");
 }
 
-int FindServiceListRequest::getCasShowType()const
-{
-	return casShowType_;
-}
-
-void FindServiceListRequest::setCasShowType(int casShowType)
-{
-	casShowType_ = casShowType;
-	setCoreParameter("CasShowType", std::to_string(casShowType));
-}
-
 long FindServiceListRequest::getCsbId()const
 {
 	return csbId_;
@@ -69,15 +58,26 @@ void FindServiceListRequest::setCsbId(long csbId)
 	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
-std::string FindServiceListRequest::getRegionId()const
+int FindServiceListRequest::getPageNum()const
 {
-	return regionId_;
+	return pageNum_;
 }
 
-void FindServiceListRequest::setRegionId(const std::string& regionId)
+void FindServiceListRequest::setPageNum(int pageNum)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+int FindServiceListRequest::getCasShowType()const
+{
+	return casShowType_;
+}
+
+void FindServiceListRequest::setCasShowType(int casShowType)
+{
+	casShowType_ = casShowType;
+	setCoreParameter("CasShowType", std::to_string(casShowType));
 }
 
 std::string FindServiceListRequest::getAlias()const
@@ -100,16 +100,5 @@ void FindServiceListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
 	setCoreParameter("ServiceName", serviceName);
-}
-
-int FindServiceListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void FindServiceListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

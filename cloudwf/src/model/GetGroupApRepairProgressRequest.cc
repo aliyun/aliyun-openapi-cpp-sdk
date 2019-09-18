@@ -25,17 +25,6 @@ GetGroupApRepairProgressRequest::GetGroupApRepairProgressRequest() :
 GetGroupApRepairProgressRequest::~GetGroupApRepairProgressRequest()
 {}
 
-long GetGroupApRepairProgressRequest::getId()const
-{
-	return id_;
-}
-
-void GetGroupApRepairProgressRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetGroupApRepairProgressRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetGroupApRepairProgressRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetGroupApRepairProgressRequest::getId()const
+{
+	return id_;
+}
+
+void GetGroupApRepairProgressRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

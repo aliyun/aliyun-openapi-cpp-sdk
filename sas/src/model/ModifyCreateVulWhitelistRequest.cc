@@ -36,17 +36,6 @@ void ModifyCreateVulWhitelistRequest::setReason(const std::string& reason)
 	setCoreParameter("Reason", reason);
 }
 
-std::string ModifyCreateVulWhitelistRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyCreateVulWhitelistRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string ModifyCreateVulWhitelistRequest::getWhitelist()const
 {
 	return whitelist_;
@@ -56,5 +45,16 @@ void ModifyCreateVulWhitelistRequest::setWhitelist(const std::string& whitelist)
 {
 	whitelist_ = whitelist;
 	setCoreParameter("Whitelist", whitelist);
+}
+
+std::string ModifyCreateVulWhitelistRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyCreateVulWhitelistRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

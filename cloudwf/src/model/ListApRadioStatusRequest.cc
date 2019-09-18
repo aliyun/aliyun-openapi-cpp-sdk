@@ -25,17 +25,6 @@ ListApRadioStatusRequest::ListApRadioStatusRequest() :
 ListApRadioStatusRequest::~ListApRadioStatusRequest()
 {}
 
-int ListApRadioStatusRequest::getSearchDisabled()const
-{
-	return searchDisabled_;
-}
-
-void ListApRadioStatusRequest::setSearchDisabled(int searchDisabled)
-{
-	searchDisabled_ = searchDisabled;
-	setCoreParameter("SearchDisabled", std::to_string(searchDisabled));
-}
-
 std::string ListApRadioStatusRequest::getOrderCol()const
 {
 	return orderCol_;
@@ -80,39 +69,6 @@ void ListApRadioStatusRequest::setLength(int length)
 	setCoreParameter("Length", std::to_string(length));
 }
 
-std::string ListApRadioStatusRequest::getSearchMac()const
-{
-	return searchMac_;
-}
-
-void ListApRadioStatusRequest::setSearchMac(const std::string& searchMac)
-{
-	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
-}
-
-std::string ListApRadioStatusRequest::getSearchApgroupName()const
-{
-	return searchApgroupName_;
-}
-
-void ListApRadioStatusRequest::setSearchApgroupName(const std::string& searchApgroupName)
-{
-	searchApgroupName_ = searchApgroupName;
-	setCoreParameter("SearchApgroupName", searchApgroupName);
-}
-
-int ListApRadioStatusRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListApRadioStatusRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
 std::string ListApRadioStatusRequest::getOrderDir()const
 {
 	return orderDir_;
@@ -144,5 +100,49 @@ void ListApRadioStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListApRadioStatusRequest::getSearchDisabled()const
+{
+	return searchDisabled_;
+}
+
+void ListApRadioStatusRequest::setSearchDisabled(int searchDisabled)
+{
+	searchDisabled_ = searchDisabled;
+	setCoreParameter("SearchDisabled", std::to_string(searchDisabled));
+}
+
+std::string ListApRadioStatusRequest::getSearchMac()const
+{
+	return searchMac_;
+}
+
+void ListApRadioStatusRequest::setSearchMac(const std::string& searchMac)
+{
+	searchMac_ = searchMac;
+	setCoreParameter("SearchMac", searchMac);
+}
+
+std::string ListApRadioStatusRequest::getSearchApgroupName()const
+{
+	return searchApgroupName_;
+}
+
+void ListApRadioStatusRequest::setSearchApgroupName(const std::string& searchApgroupName)
+{
+	searchApgroupName_ = searchApgroupName;
+	setCoreParameter("SearchApgroupName", searchApgroupName);
+}
+
+int ListApRadioStatusRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListApRadioStatusRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

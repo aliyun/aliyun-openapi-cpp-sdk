@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getExecutionName()const;
 				void setExecutionName(const std::string& executionName);
-				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
 				std::string getCause()const;
 				void setCause(const std::string& cause);
-				std::string getFlowName()const;
-				void setFlowName(const std::string& flowName);
 				std::string getError()const;
 				void setError(const std::string& error);
+				std::string getRequestId()const;
+				void setRequestId(const std::string& requestId);
+				std::string getFlowName()const;
+				void setFlowName(const std::string& flowName);
 
             private:
 				std::string executionName_;
-				std::string requestId_;
 				std::string cause_;
-				std::string flowName_;
 				std::string error_;
+				std::string requestId_;
+				std::string flowName_;
 
 			};
 		}

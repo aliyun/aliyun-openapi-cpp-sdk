@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeImageLibRequest();
 				~DescribeImageLibRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getServiceModule()const;
 				void setServiceModule(const std::string& serviceModule);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				std::string serviceModule_;
+				std::string sourceIp_;
 
 			};
 		}

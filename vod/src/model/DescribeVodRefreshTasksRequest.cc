@@ -36,28 +36,6 @@ void DescribeVodRefreshTasksRequest::setObjectPath(const std::string& objectPath
 	setCoreParameter("ObjectPath", objectPath);
 }
 
-std::string DescribeVodRefreshTasksRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeVodRefreshTasksRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string DescribeVodRefreshTasksRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeVodRefreshTasksRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeVodRefreshTasksRequest::getStartTime()const
 {
 	return startTime_;
@@ -67,17 +45,6 @@ void DescribeVodRefreshTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeVodRefreshTasksRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeVodRefreshTasksRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeVodRefreshTasksRequest::getPageNumber()const
@@ -144,6 +111,39 @@ void DescribeVodRefreshTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setCoreParameter("TaskId", taskId);
+}
+
+std::string DescribeVodRefreshTasksRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeVodRefreshTasksRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeVodRefreshTasksRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeVodRefreshTasksRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeVodRefreshTasksRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeVodRefreshTasksRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodRefreshTasksRequest::getStatus()const

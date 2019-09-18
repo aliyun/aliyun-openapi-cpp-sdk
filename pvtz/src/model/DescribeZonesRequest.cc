@@ -36,6 +36,17 @@ void DescribeZonesRequest::setQueryVpcId(const std::string& queryVpcId)
 	setCoreParameter("QueryVpcId", queryVpcId);
 }
 
+int DescribeZonesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeZonesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeZonesRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -100,17 +111,6 @@ void DescribeZonesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setCoreParameter("Keyword", keyword);
-}
-
-int DescribeZonesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeZonesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeZonesRequest::getQueryRegionId()const

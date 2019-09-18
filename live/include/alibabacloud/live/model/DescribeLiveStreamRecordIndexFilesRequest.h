@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				DescribeLiveStreamRecordIndexFilesRequest();
 				~DescribeLiveStreamRecordIndexFilesRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
+				std::string startTime_;
+				int pageNum_;
 				std::string appName_;
 				std::string securityToken_;
-				std::string domainName_;
 				int pageSize_;
-				std::string endTime_;
-				std::string startTime_;
-				long ownerId_;
-				int pageNum_;
 				std::string streamName_;
 				std::string order_;
+				std::string domainName_;
+				std::string endTime_;
+				long ownerId_;
 
 			};
 		}

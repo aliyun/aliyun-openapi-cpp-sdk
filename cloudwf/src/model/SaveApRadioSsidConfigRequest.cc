@@ -36,28 +36,6 @@ void SaveApRadioSsidConfigRequest::setNasid(const std::string& nasid)
 	setCoreParameter("Nasid", nasid);
 }
 
-int SaveApRadioSsidConfigRequest::getAuthPort()const
-{
-	return authPort_;
-}
-
-void SaveApRadioSsidConfigRequest::setAuthPort(int authPort)
-{
-	authPort_ = authPort;
-	setCoreParameter("AuthPort", std::to_string(authPort));
-}
-
-int SaveApRadioSsidConfigRequest::getHidden()const
-{
-	return hidden_;
-}
-
-void SaveApRadioSsidConfigRequest::setHidden(int hidden)
-{
-	hidden_ = hidden;
-	setCoreParameter("Hidden", std::to_string(hidden));
-}
-
 int SaveApRadioSsidConfigRequest::getDynamicVlan()const
 {
 	return dynamicVlan_;
@@ -67,17 +45,6 @@ void SaveApRadioSsidConfigRequest::setDynamicVlan(int dynamicVlan)
 {
 	dynamicVlan_ = dynamicVlan;
 	setCoreParameter("DynamicVlan", std::to_string(dynamicVlan));
-}
-
-std::string SaveApRadioSsidConfigRequest::getAuthServer()const
-{
-	return authServer_;
-}
-
-void SaveApRadioSsidConfigRequest::setAuthServer(const std::string& authServer)
-{
-	authServer_ = authServer;
-	setCoreParameter("AuthServer", authServer);
 }
 
 std::string SaveApRadioSsidConfigRequest::getSecondaryAcctServer()const
@@ -91,39 +58,6 @@ void SaveApRadioSsidConfigRequest::setSecondaryAcctServer(const std::string& sec
 	setCoreParameter("SecondaryAcctServer", secondaryAcctServer);
 }
 
-std::string SaveApRadioSsidConfigRequest::getSsid()const
-{
-	return ssid_;
-}
-
-void SaveApRadioSsidConfigRequest::setSsid(const std::string& ssid)
-{
-	ssid_ = ssid;
-	setCoreParameter("Ssid", ssid);
-}
-
-int SaveApRadioSsidConfigRequest::getCir()const
-{
-	return cir_;
-}
-
-void SaveApRadioSsidConfigRequest::setCir(int cir)
-{
-	cir_ = cir;
-	setCoreParameter("Cir", std::to_string(cir));
-}
-
-std::string SaveApRadioSsidConfigRequest::getMac()const
-{
-	return mac_;
-}
-
-void SaveApRadioSsidConfigRequest::setMac(const std::string& mac)
-{
-	mac_ = mac;
-	setCoreParameter("Mac", mac);
-}
-
 std::string SaveApRadioSsidConfigRequest::getSecondaryAcctSecret()const
 {
 	return secondaryAcctSecret_;
@@ -133,17 +67,6 @@ void SaveApRadioSsidConfigRequest::setSecondaryAcctSecret(const std::string& sec
 {
 	secondaryAcctSecret_ = secondaryAcctSecret;
 	setCoreParameter("SecondaryAcctSecret", secondaryAcctSecret);
-}
-
-std::string SaveApRadioSsidConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SaveApRadioSsidConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int SaveApRadioSsidConfigRequest::getIeee80211w()const
@@ -157,28 +80,6 @@ void SaveApRadioSsidConfigRequest::setIeee80211w(int ieee80211w)
 	setCoreParameter("Ieee80211w", std::to_string(ieee80211w));
 }
 
-int SaveApRadioSsidConfigRequest::getNetwork()const
-{
-	return network_;
-}
-
-void SaveApRadioSsidConfigRequest::setNetwork(int network)
-{
-	network_ = network;
-	setCoreParameter("Network", std::to_string(network));
-}
-
-int SaveApRadioSsidConfigRequest::getIsolate()const
-{
-	return isolate_;
-}
-
-void SaveApRadioSsidConfigRequest::setIsolate(int isolate)
-{
-	isolate_ = isolate;
-	setCoreParameter("Isolate", std::to_string(isolate));
-}
-
 long SaveApRadioSsidConfigRequest::getApAssetId()const
 {
 	return apAssetId_;
@@ -188,17 +89,6 @@ void SaveApRadioSsidConfigRequest::setApAssetId(long apAssetId)
 {
 	apAssetId_ = apAssetId;
 	setCoreParameter("ApAssetId", std::to_string(apAssetId));
-}
-
-std::string SaveApRadioSsidConfigRequest::getEncKey()const
-{
-	return encKey_;
-}
-
-void SaveApRadioSsidConfigRequest::setEncKey(const std::string& encKey)
-{
-	encKey_ = encKey;
-	setCoreParameter("EncKey", encKey);
 }
 
 int SaveApRadioSsidConfigRequest::getMulticastForward()const
@@ -212,28 +102,6 @@ void SaveApRadioSsidConfigRequest::setMulticastForward(int multicastForward)
 	setCoreParameter("MulticastForward", std::to_string(multicastForward));
 }
 
-std::string SaveApRadioSsidConfigRequest::getEncryption()const
-{
-	return encryption_;
-}
-
-void SaveApRadioSsidConfigRequest::setEncryption(const std::string& encryption)
-{
-	encryption_ = encryption;
-	setCoreParameter("Encryption", encryption);
-}
-
-int SaveApRadioSsidConfigRequest::getWmm()const
-{
-	return wmm_;
-}
-
-void SaveApRadioSsidConfigRequest::setWmm(int wmm)
-{
-	wmm_ = wmm;
-	setCoreParameter("Wmm", std::to_string(wmm));
-}
-
 int SaveApRadioSsidConfigRequest::getAuthCache()const
 {
 	return authCache_;
@@ -243,17 +111,6 @@ void SaveApRadioSsidConfigRequest::setAuthCache(int authCache)
 {
 	authCache_ = authCache;
 	setCoreParameter("AuthCache", std::to_string(authCache));
-}
-
-int SaveApRadioSsidConfigRequest::getDisabled()const
-{
-	return disabled_;
-}
-
-void SaveApRadioSsidConfigRequest::setDisabled(int disabled)
-{
-	disabled_ = disabled;
-	setCoreParameter("Disabled", std::to_string(disabled));
 }
 
 long SaveApRadioSsidConfigRequest::getId()const
@@ -267,17 +124,6 @@ void SaveApRadioSsidConfigRequest::setId(long id)
 	setCoreParameter("Id", std::to_string(id));
 }
 
-int SaveApRadioSsidConfigRequest::getRadioIndex()const
-{
-	return radioIndex_;
-}
-
-void SaveApRadioSsidConfigRequest::setRadioIndex(int radioIndex)
-{
-	radioIndex_ = radioIndex;
-	setCoreParameter("RadioIndex", std::to_string(radioIndex));
-}
-
 int SaveApRadioSsidConfigRequest::getIgnoreWeakProbe()const
 {
 	return ignoreWeakProbe_;
@@ -287,17 +133,6 @@ void SaveApRadioSsidConfigRequest::setIgnoreWeakProbe(int ignoreWeakProbe)
 {
 	ignoreWeakProbe_ = ignoreWeakProbe;
 	setCoreParameter("IgnoreWeakProbe", std::to_string(ignoreWeakProbe));
-}
-
-int SaveApRadioSsidConfigRequest::getMaxassoc()const
-{
-	return maxassoc_;
-}
-
-void SaveApRadioSsidConfigRequest::setMaxassoc(int maxassoc)
-{
-	maxassoc_ = maxassoc;
-	setCoreParameter("Maxassoc", std::to_string(maxassoc));
 }
 
 std::string SaveApRadioSsidConfigRequest::getAcctServer()const
@@ -331,28 +166,6 @@ void SaveApRadioSsidConfigRequest::setDaeClient(const std::string& daeClient)
 {
 	daeClient_ = daeClient;
 	setCoreParameter("DaeClient", daeClient);
-}
-
-std::string SaveApRadioSsidConfigRequest::getDaeSecret()const
-{
-	return daeSecret_;
-}
-
-void SaveApRadioSsidConfigRequest::setDaeSecret(const std::string& daeSecret)
-{
-	daeSecret_ = daeSecret;
-	setCoreParameter("DaeSecret", daeSecret);
-}
-
-int SaveApRadioSsidConfigRequest::getDisassocLowAck()const
-{
-	return disassocLowAck_;
-}
-
-void SaveApRadioSsidConfigRequest::setDisassocLowAck(int disassocLowAck)
-{
-	disassocLowAck_ = disassocLowAck;
-	setCoreParameter("DisassocLowAck", std::to_string(disassocLowAck));
 }
 
 int SaveApRadioSsidConfigRequest::getSecondaryAuthPort()const
@@ -410,6 +223,226 @@ void SaveApRadioSsidConfigRequest::setDaePort(int daePort)
 	setCoreParameter("DaePort", std::to_string(daePort));
 }
 
+int SaveApRadioSsidConfigRequest::getMaxInactivity()const
+{
+	return maxInactivity_;
+}
+
+void SaveApRadioSsidConfigRequest::setMaxInactivity(int maxInactivity)
+{
+	maxInactivity_ = maxInactivity;
+	setCoreParameter("MaxInactivity", std::to_string(maxInactivity));
+}
+
+int SaveApRadioSsidConfigRequest::getShortPreamble()const
+{
+	return shortPreamble_;
+}
+
+void SaveApRadioSsidConfigRequest::setShortPreamble(int shortPreamble)
+{
+	shortPreamble_ = shortPreamble;
+	setCoreParameter("ShortPreamble", std::to_string(shortPreamble));
+}
+
+std::string SaveApRadioSsidConfigRequest::getSecondaryAuthSecret()const
+{
+	return secondaryAuthSecret_;
+}
+
+void SaveApRadioSsidConfigRequest::setSecondaryAuthSecret(const std::string& secondaryAuthSecret)
+{
+	secondaryAuthSecret_ = secondaryAuthSecret;
+	setCoreParameter("SecondaryAuthSecret", secondaryAuthSecret);
+}
+
+int SaveApRadioSsidConfigRequest::getAuthPort()const
+{
+	return authPort_;
+}
+
+void SaveApRadioSsidConfigRequest::setAuthPort(int authPort)
+{
+	authPort_ = authPort;
+	setCoreParameter("AuthPort", std::to_string(authPort));
+}
+
+int SaveApRadioSsidConfigRequest::getHidden()const
+{
+	return hidden_;
+}
+
+void SaveApRadioSsidConfigRequest::setHidden(int hidden)
+{
+	hidden_ = hidden;
+	setCoreParameter("Hidden", std::to_string(hidden));
+}
+
+std::string SaveApRadioSsidConfigRequest::getAuthServer()const
+{
+	return authServer_;
+}
+
+void SaveApRadioSsidConfigRequest::setAuthServer(const std::string& authServer)
+{
+	authServer_ = authServer;
+	setCoreParameter("AuthServer", authServer);
+}
+
+std::string SaveApRadioSsidConfigRequest::getSsid()const
+{
+	return ssid_;
+}
+
+void SaveApRadioSsidConfigRequest::setSsid(const std::string& ssid)
+{
+	ssid_ = ssid;
+	setCoreParameter("Ssid", ssid);
+}
+
+int SaveApRadioSsidConfigRequest::getCir()const
+{
+	return cir_;
+}
+
+void SaveApRadioSsidConfigRequest::setCir(int cir)
+{
+	cir_ = cir;
+	setCoreParameter("Cir", std::to_string(cir));
+}
+
+std::string SaveApRadioSsidConfigRequest::getMac()const
+{
+	return mac_;
+}
+
+void SaveApRadioSsidConfigRequest::setMac(const std::string& mac)
+{
+	mac_ = mac;
+	setCoreParameter("Mac", mac);
+}
+
+std::string SaveApRadioSsidConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SaveApRadioSsidConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int SaveApRadioSsidConfigRequest::getNetwork()const
+{
+	return network_;
+}
+
+void SaveApRadioSsidConfigRequest::setNetwork(int network)
+{
+	network_ = network;
+	setCoreParameter("Network", std::to_string(network));
+}
+
+int SaveApRadioSsidConfigRequest::getIsolate()const
+{
+	return isolate_;
+}
+
+void SaveApRadioSsidConfigRequest::setIsolate(int isolate)
+{
+	isolate_ = isolate;
+	setCoreParameter("Isolate", std::to_string(isolate));
+}
+
+std::string SaveApRadioSsidConfigRequest::getEncKey()const
+{
+	return encKey_;
+}
+
+void SaveApRadioSsidConfigRequest::setEncKey(const std::string& encKey)
+{
+	encKey_ = encKey;
+	setCoreParameter("EncKey", encKey);
+}
+
+std::string SaveApRadioSsidConfigRequest::getEncryption()const
+{
+	return encryption_;
+}
+
+void SaveApRadioSsidConfigRequest::setEncryption(const std::string& encryption)
+{
+	encryption_ = encryption;
+	setCoreParameter("Encryption", encryption);
+}
+
+int SaveApRadioSsidConfigRequest::getWmm()const
+{
+	return wmm_;
+}
+
+void SaveApRadioSsidConfigRequest::setWmm(int wmm)
+{
+	wmm_ = wmm;
+	setCoreParameter("Wmm", std::to_string(wmm));
+}
+
+int SaveApRadioSsidConfigRequest::getDisabled()const
+{
+	return disabled_;
+}
+
+void SaveApRadioSsidConfigRequest::setDisabled(int disabled)
+{
+	disabled_ = disabled;
+	setCoreParameter("Disabled", std::to_string(disabled));
+}
+
+int SaveApRadioSsidConfigRequest::getRadioIndex()const
+{
+	return radioIndex_;
+}
+
+void SaveApRadioSsidConfigRequest::setRadioIndex(int radioIndex)
+{
+	radioIndex_ = radioIndex;
+	setCoreParameter("RadioIndex", std::to_string(radioIndex));
+}
+
+int SaveApRadioSsidConfigRequest::getMaxassoc()const
+{
+	return maxassoc_;
+}
+
+void SaveApRadioSsidConfigRequest::setMaxassoc(int maxassoc)
+{
+	maxassoc_ = maxassoc;
+	setCoreParameter("Maxassoc", std::to_string(maxassoc));
+}
+
+std::string SaveApRadioSsidConfigRequest::getDaeSecret()const
+{
+	return daeSecret_;
+}
+
+void SaveApRadioSsidConfigRequest::setDaeSecret(const std::string& daeSecret)
+{
+	daeSecret_ = daeSecret;
+	setCoreParameter("DaeSecret", daeSecret);
+}
+
+int SaveApRadioSsidConfigRequest::getDisassocLowAck()const
+{
+	return disassocLowAck_;
+}
+
+void SaveApRadioSsidConfigRequest::setDisassocLowAck(int disassocLowAck)
+{
+	disassocLowAck_ = disassocLowAck;
+	setCoreParameter("DisassocLowAck", std::to_string(disassocLowAck));
+}
+
 int SaveApRadioSsidConfigRequest::getSsidLb()const
 {
 	return ssidLb_;
@@ -430,17 +463,6 @@ void SaveApRadioSsidConfigRequest::setAcctPort(int acctPort)
 {
 	acctPort_ = acctPort;
 	setCoreParameter("AcctPort", std::to_string(acctPort));
-}
-
-int SaveApRadioSsidConfigRequest::getMaxInactivity()const
-{
-	return maxInactivity_;
-}
-
-void SaveApRadioSsidConfigRequest::setMaxInactivity(int maxInactivity)
-{
-	maxInactivity_ = maxInactivity;
-	setCoreParameter("MaxInactivity", std::to_string(maxInactivity));
 }
 
 int SaveApRadioSsidConfigRequest::getVlanDhcp()const
@@ -465,17 +487,6 @@ void SaveApRadioSsidConfigRequest::setInstantlyEffective(int instantlyEffective)
 	setCoreParameter("InstantlyEffective", std::to_string(instantlyEffective));
 }
 
-int SaveApRadioSsidConfigRequest::getShortPreamble()const
-{
-	return shortPreamble_;
-}
-
-void SaveApRadioSsidConfigRequest::setShortPreamble(int shortPreamble)
-{
-	shortPreamble_ = shortPreamble;
-	setCoreParameter("ShortPreamble", std::to_string(shortPreamble));
-}
-
 std::string SaveApRadioSsidConfigRequest::getAuthSecret()const
 {
 	return authSecret_;
@@ -485,17 +496,6 @@ void SaveApRadioSsidConfigRequest::setAuthSecret(const std::string& authSecret)
 {
 	authSecret_ = authSecret;
 	setCoreParameter("AuthSecret", authSecret);
-}
-
-std::string SaveApRadioSsidConfigRequest::getSecondaryAuthSecret()const
-{
-	return secondaryAuthSecret_;
-}
-
-void SaveApRadioSsidConfigRequest::setSecondaryAuthSecret(const std::string& secondaryAuthSecret)
-{
-	secondaryAuthSecret_ = secondaryAuthSecret;
-	setCoreParameter("SecondaryAuthSecret", secondaryAuthSecret);
 }
 
 std::string SaveApRadioSsidConfigRequest::getOwnip()const

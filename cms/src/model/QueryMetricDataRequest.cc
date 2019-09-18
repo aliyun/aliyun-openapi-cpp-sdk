@@ -47,17 +47,6 @@ void QueryMetricDataRequest::setPeriod(const std::string& period)
 	setCoreParameter("Period", period);
 }
 
-std::string QueryMetricDataRequest::getMetric()const
-{
-	return metric_;
-}
-
-void QueryMetricDataRequest::setMetric(const std::string& metric)
-{
-	metric_ = metric;
-	setCoreParameter("Metric", metric);
-}
-
 std::string QueryMetricDataRequest::getLength()const
 {
 	return length_;
@@ -122,6 +111,17 @@ void QueryMetricDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryMetricDataRequest::getMetric()const
+{
+	return metric_;
+}
+
+void QueryMetricDataRequest::setMetric(const std::string& metric)
+{
+	metric_ = metric;
+	setCoreParameter("Metric", metric);
 }
 
 std::string QueryMetricDataRequest::getDimensions()const

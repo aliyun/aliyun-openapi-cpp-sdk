@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				UserDataCreateRequest();
 				~UserDataCreateRequest();
 
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUploadFile()const;
 				void setUploadFile(const std::string& uploadFile);
 				std::string getName()const;
 				void setName(const std::string& name);
 				long getBid()const;
 				void setBid(long bid);
-				std::string getType()const;
-				void setType(const std::string& type);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string type_;
+				std::string accessKeyId_;
 				std::string uploadFile_;
 				std::string name_;
 				long bid_;
-				std::string type_;
-				std::string accessKeyId_;
 
 			};
 		}

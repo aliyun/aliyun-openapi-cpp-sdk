@@ -37,28 +37,6 @@ void ListFlowNodeInstanceRequest::setStatusList(const std::vector<std::string>& 
 		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
 }
 
-std::string ListFlowNodeInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListFlowNodeInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListFlowNodeInstanceRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListFlowNodeInstanceRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListFlowNodeInstanceRequest::getOrderBy()const
 {
 	return orderBy_;
@@ -81,17 +59,6 @@ void ListFlowNodeInstanceRequest::setStartTime(long startTime)
 	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
-std::string ListFlowNodeInstanceRequest::getProjectId()const
-{
-	return projectId_;
-}
-
-void ListFlowNodeInstanceRequest::setProjectId(const std::string& projectId)
-{
-	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
-}
-
 int ListFlowNodeInstanceRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -101,6 +68,39 @@ void ListFlowNodeInstanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListFlowNodeInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListFlowNodeInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListFlowNodeInstanceRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListFlowNodeInstanceRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListFlowNodeInstanceRequest::getProjectId()const
+{
+	return projectId_;
+}
+
+void ListFlowNodeInstanceRequest::setProjectId(const std::string& projectId)
+{
+	projectId_ = projectId;
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string ListFlowNodeInstanceRequest::getOrderType()const

@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string groupName;
 					std::string status;
 					std::string groupCode;
+					std::string fatherCode;
 					std::string lineCode;
 					std::string lineName;
 				};

@@ -25,17 +25,6 @@ KickStaRequest::KickStaRequest() :
 KickStaRequest::~KickStaRequest()
 {}
 
-long KickStaRequest::getId()const
-{
-	return id_;
-}
-
-void KickStaRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string KickStaRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void KickStaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long KickStaRequest::getId()const
+{
+	return id_;
+}
+
+void KickStaRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

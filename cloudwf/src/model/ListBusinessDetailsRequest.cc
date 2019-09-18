@@ -58,17 +58,6 @@ void ListBusinessDetailsRequest::setLength(int length)
 	setCoreParameter("Length", std::to_string(length));
 }
 
-int ListBusinessDetailsRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListBusinessDetailsRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
 std::string ListBusinessDetailsRequest::getOrderDir()const
 {
 	return orderDir_;
@@ -89,5 +78,16 @@ void ListBusinessDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListBusinessDetailsRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListBusinessDetailsRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

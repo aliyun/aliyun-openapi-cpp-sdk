@@ -25,6 +25,28 @@ ProfileHistoryListRequest::ProfileHistoryListRequest() :
 ProfileHistoryListRequest::~ProfileHistoryListRequest()
 {}
 
+std::string ProfileHistoryListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ProfileHistoryListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ProfileHistoryListRequest::getAgsid()const
+{
+	return agsid_;
+}
+
+void ProfileHistoryListRequest::setAgsid(long agsid)
+{
+	agsid_ = agsid;
+	setCoreParameter("Agsid", std::to_string(agsid));
+}
+
 long ProfileHistoryListRequest::getIdtype()const
 {
 	return idtype_;
@@ -56,27 +78,5 @@ void ProfileHistoryListRequest::setPer(int per)
 {
 	per_ = per;
 	setCoreParameter("Per", std::to_string(per));
-}
-
-std::string ProfileHistoryListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ProfileHistoryListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-long ProfileHistoryListRequest::getAgsid()const
-{
-	return agsid_;
-}
-
-void ProfileHistoryListRequest::setAgsid(long agsid)
-{
-	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
 }
 

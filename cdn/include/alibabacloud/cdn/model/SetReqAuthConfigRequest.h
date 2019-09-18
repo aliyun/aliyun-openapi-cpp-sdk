@@ -39,6 +39,10 @@ namespace AlibabaCloud
 				void setKey1(const std::string& key1);
 				std::string getKey2()const;
 				void setKey2(const std::string& key2);
+				std::string getTimeOut()const;
+				void setTimeOut(const std::string& timeOut);
+				std::string getAuthType()const;
+				void setAuthType(const std::string& authType);
 				std::string getAuthRemoteDesc()const;
 				void setAuthRemoteDesc(const std::string& authRemoteDesc);
 				std::string getSecurityToken()const;
@@ -47,20 +51,16 @@ namespace AlibabaCloud
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTimeOut()const;
-				void setTimeOut(const std::string& timeOut);
-				std::string getAuthType()const;
-				void setAuthType(const std::string& authType);
 
             private:
 				std::string key1_;
 				std::string key2_;
+				std::string timeOut_;
+				std::string authType_;
 				std::string authRemoteDesc_;
 				std::string securityToken_;
 				std::string domainName_;
 				long ownerId_;
-				std::string timeOut_;
-				std::string authType_;
 
 			};
 		}

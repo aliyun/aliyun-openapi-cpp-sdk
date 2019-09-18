@@ -36,17 +36,6 @@ void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setContact
 	setCoreParameter("ContactType", contactType);
 }
 
-std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 long SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getRegistrantProfileId()const
 {
 	return registrantProfileId_;
@@ -79,6 +68,17 @@ void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setTransfe
 {
 	transferOutProhibited_ = transferOutProhibited;
 	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
+}
+
+std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getLang()const

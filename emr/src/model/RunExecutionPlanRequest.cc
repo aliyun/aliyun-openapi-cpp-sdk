@@ -36,6 +36,17 @@ void RunExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RunExecutionPlanRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RunExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string RunExecutionPlanRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,16 +78,5 @@ void RunExecutionPlanRequest::setId(const std::string& id)
 {
 	id_ = id;
 	setCoreParameter("Id", id);
-}
-
-std::string RunExecutionPlanRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RunExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

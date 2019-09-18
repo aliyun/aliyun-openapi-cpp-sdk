@@ -36,17 +36,6 @@ void ModifyDeviceInfoRequest::setUserDeviceId(const std::string& userDeviceId)
 	setCoreParameter("UserDeviceId", userDeviceId);
 }
 
-std::string ModifyDeviceInfoRequest::getBizType()const
-{
-	return bizType_;
-}
-
-void ModifyDeviceInfoRequest::setBizType(const std::string& bizType)
-{
-	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
-}
-
 std::string ModifyDeviceInfoRequest::getDuration()const
 {
 	return duration_;
@@ -100,5 +89,16 @@ void ModifyDeviceInfoRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
 	setCoreParameter("DeviceId", deviceId);
+}
+
+std::string ModifyDeviceInfoRequest::getBizType()const
+{
+	return bizType_;
+}
+
+void ModifyDeviceInfoRequest::setBizType(const std::string& bizType)
+{
+	bizType_ = bizType;
+	setCoreParameter("BizType", bizType);
 }
 

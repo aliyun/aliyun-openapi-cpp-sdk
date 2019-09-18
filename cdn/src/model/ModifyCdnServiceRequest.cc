@@ -19,11 +19,22 @@
 using AlibabaCloud::Cdn::Model::ModifyCdnServiceRequest;
 
 ModifyCdnServiceRequest::ModifyCdnServiceRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "ModifyCdnService")
+	RpcServiceRequest("cdn", "2014-11-11", "ModifyCdnService")
 {}
 
 ModifyCdnServiceRequest::~ModifyCdnServiceRequest()
 {}
+
+long ModifyCdnServiceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyCdnServiceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
 
 std::string ModifyCdnServiceRequest::getSecurityToken()const
 {
@@ -45,16 +56,5 @@ void ModifyCdnServiceRequest::setInternetChargeType(const std::string& internetC
 {
 	internetChargeType_ = internetChargeType;
 	setCoreParameter("InternetChargeType", internetChargeType);
-}
-
-long ModifyCdnServiceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyCdnServiceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

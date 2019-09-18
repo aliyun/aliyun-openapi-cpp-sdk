@@ -25,26 +25,26 @@ CreateGroupFacesJobRequest::CreateGroupFacesJobRequest() :
 CreateGroupFacesJobRequest::~CreateGroupFacesJobRequest()
 {}
 
-std::string CreateGroupFacesJobRequest::getNotifyTopicName()const
+std::string CreateGroupFacesJobRequest::getProject()const
 {
-	return notifyTopicName_;
+	return project_;
 }
 
-void CreateGroupFacesJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
+void CreateGroupFacesJobRequest::setProject(const std::string& project)
 {
-	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	project_ = project;
+	setCoreParameter("Project", project);
 }
 
-std::string CreateGroupFacesJobRequest::getRegionId()const
+std::string CreateGroupFacesJobRequest::getAccessKeyId()const
 {
-	return regionId_;
+	return accessKeyId_;
 }
 
-void CreateGroupFacesJobRequest::setRegionId(const std::string& regionId)
+void CreateGroupFacesJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateGroupFacesJobRequest::getNotifyEndpoint()const
@@ -58,15 +58,15 @@ void CreateGroupFacesJobRequest::setNotifyEndpoint(const std::string& notifyEndp
 	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
-std::string CreateGroupFacesJobRequest::getProject()const
+std::string CreateGroupFacesJobRequest::getNotifyTopicName()const
 {
-	return project_;
+	return notifyTopicName_;
 }
 
-void CreateGroupFacesJobRequest::setProject(const std::string& project)
+void CreateGroupFacesJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
-	project_ = project;
-	setCoreParameter("Project", project);
+	notifyTopicName_ = notifyTopicName;
+	setCoreParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateGroupFacesJobRequest::getSetId()const
@@ -78,16 +78,5 @@ void CreateGroupFacesJobRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
 	setCoreParameter("SetId", setId);
-}
-
-std::string CreateGroupFacesJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateGroupFacesJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

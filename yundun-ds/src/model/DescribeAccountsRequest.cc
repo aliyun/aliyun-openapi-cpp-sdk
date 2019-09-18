@@ -36,39 +36,6 @@ void DescribeAccountsRequest::setProductCode(const std::string& productCode)
 	setCoreParameter("ProductCode", productCode);
 }
 
-std::string DescribeAccountsRequest::getLoginName()const
-{
-	return loginName_;
-}
-
-void DescribeAccountsRequest::setLoginName(const std::string& loginName)
-{
-	loginName_ = loginName;
-	setCoreParameter("LoginName", loginName);
-}
-
-int DescribeAccountsRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void DescribeAccountsRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
-std::string DescribeAccountsRequest::getColumnId()const
-{
-	return columnId_;
-}
-
-void DescribeAccountsRequest::setColumnId(const std::string& columnId)
-{
-	columnId_ = columnId;
-	setCoreParameter("ColumnId", columnId);
-}
-
 std::string DescribeAccountsRequest::getPackageId()const
 {
 	return packageId_;
@@ -78,28 +45,6 @@ void DescribeAccountsRequest::setPackageId(const std::string& packageId)
 {
 	packageId_ = packageId;
 	setCoreParameter("PackageId", packageId);
-}
-
-int DescribeAccountsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeAccountsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string DescribeAccountsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeAccountsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeAccountsRequest::getSourceIp()const
@@ -122,28 +67,6 @@ void DescribeAccountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-long DescribeAccountsRequest::getDepartId()const
-{
-	return departId_;
-}
-
-void DescribeAccountsRequest::setDepartId(long departId)
-{
-	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
-}
-
-int DescribeAccountsRequest::getOperationId()const
-{
-	return operationId_;
-}
-
-void DescribeAccountsRequest::setOperationId(int operationId)
-{
-	operationId_ = operationId;
-	setCoreParameter("OperationId", std::to_string(operationId));
 }
 
 std::string DescribeAccountsRequest::getTableId()const
@@ -188,5 +111,82 @@ void DescribeAccountsRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
 	setCoreParameter("QueryType", std::to_string(queryType));
+}
+
+std::string DescribeAccountsRequest::getLoginName()const
+{
+	return loginName_;
+}
+
+void DescribeAccountsRequest::setLoginName(const std::string& loginName)
+{
+	loginName_ = loginName;
+	setCoreParameter("LoginName", loginName);
+}
+
+int DescribeAccountsRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void DescribeAccountsRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeAccountsRequest::getColumnId()const
+{
+	return columnId_;
+}
+
+void DescribeAccountsRequest::setColumnId(const std::string& columnId)
+{
+	columnId_ = columnId;
+	setCoreParameter("ColumnId", columnId);
+}
+
+int DescribeAccountsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeAccountsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeAccountsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeAccountsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+long DescribeAccountsRequest::getDepartId()const
+{
+	return departId_;
+}
+
+void DescribeAccountsRequest::setDepartId(long departId)
+{
+	departId_ = departId;
+	setCoreParameter("DepartId", std::to_string(departId));
+}
+
+int DescribeAccountsRequest::getOperationId()const
+{
+	return operationId_;
+}
+
+void DescribeAccountsRequest::setOperationId(int operationId)
+{
+	operationId_ = operationId;
+	setCoreParameter("OperationId", std::to_string(operationId));
 }
 

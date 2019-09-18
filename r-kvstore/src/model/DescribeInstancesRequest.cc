@@ -36,39 +36,6 @@ void DescribeInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeInstancesRequest::getInstanceStatus()const
-{
-	return instanceStatus_;
-}
-
-void DescribeInstancesRequest::setInstanceStatus(const std::string& instanceStatus)
-{
-	instanceStatus_ = instanceStatus;
-	setCoreParameter("InstanceStatus", instanceStatus);
-}
-
-std::string DescribeInstancesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeInstancesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string DescribeInstancesRequest::getSearchKey()const
 {
 	return searchKey_;
@@ -100,17 +67,6 @@ void DescribeInstancesRequest::setEngineVersion(const std::string& engineVersion
 {
 	engineVersion_ = engineVersion;
 	setCoreParameter("EngineVersion", engineVersion);
-}
-
-long DescribeInstancesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeInstancesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstancesRequest::getInstanceClass()const
@@ -146,17 +102,6 @@ void DescribeInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeInstancesRequest::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void DescribeInstancesRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
-}
-
 std::string DescribeInstancesRequest::getExpired()const
 {
 	return expired_;
@@ -179,15 +124,109 @@ void DescribeInstancesRequest::setSecurityToken(const std::string& securityToken
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeInstancesRequest::getRegionId()const
+int DescribeInstancesRequest::getPageSize()const
 {
-	return regionId_;
+	return pageSize_;
 }
 
-void DescribeInstancesRequest::setRegionId(const std::string& regionId)
+void DescribeInstancesRequest::setPageSize(int pageSize)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeInstancesRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void DescribeInstancesRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setCoreParameter("InstanceType", instanceType);
+}
+
+std::vector<DescribeInstancesRequest::Tag> DescribeInstancesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeInstancesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
+	}
+}
+
+std::string DescribeInstancesRequest::getInstanceStatus()const
+{
+	return instanceStatus_;
+}
+
+void DescribeInstancesRequest::setInstanceStatus(const std::string& instanceStatus)
+{
+	instanceStatus_ = instanceStatus;
+	setCoreParameter("InstanceStatus", instanceStatus);
+}
+
+std::string DescribeInstancesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeInstancesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeInstancesRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeInstancesRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeInstancesRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void DescribeInstancesRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setCoreParameter("VSwitchId", vSwitchId);
+}
+
+int DescribeInstancesRequest::getVpcCloudInsInfo()const
+{
+	return vpcCloudInsInfo_;
+}
+
+void DescribeInstancesRequest::setVpcCloudInsInfo(int vpcCloudInsInfo)
+{
+	vpcCloudInsInfo_ = vpcCloudInsInfo;
+	setCoreParameter("VpcCloudInsInfo", std::to_string(vpcCloudInsInfo));
 }
 
 std::string DescribeInstancesRequest::getInstanceIds()const
@@ -223,28 +262,6 @@ void DescribeInstancesRequest::setVpcId(const std::string& vpcId)
 	setCoreParameter("VpcId", vpcId);
 }
 
-int DescribeInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeInstancesRequest::getInstanceType()const
-{
-	return instanceType_;
-}
-
-void DescribeInstancesRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
-}
-
 std::string DescribeInstancesRequest::getZoneId()const
 {
 	return zoneId_;
@@ -265,22 +282,5 @@ void DescribeInstancesRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
 	setCoreParameter("ChargeType", chargeType);
-}
-
-std::vector<DescribeInstancesRequest::Tag> DescribeInstancesRequest::getTag()const
-{
-	return tag_;
-}
-
-void DescribeInstancesRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
-	}
 }
 

@@ -35,10 +35,6 @@ namespace AlibabaCloud
 				OnsMqttQueryMsgTransTrendRequest();
 				~OnsMqttQueryMsgTransTrendRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				int getQos()const;
-				void setQos(int qos);
 				std::string getTransType()const;
 				void setTransType(const std::string& transType);
 				long getEndTime()const;
@@ -49,19 +45,23 @@ namespace AlibabaCloud
 				void setTpsType(const std::string& tpsType);
 				std::string getParentTopic()const;
 				void setParentTopic(const std::string& parentTopic);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getQos()const;
+				void setQos(int qos);
 				std::string getMsgType()const;
 				void setMsgType(const std::string& msgType);
 				std::string getSubTopic()const;
 				void setSubTopic(const std::string& subTopic);
 
             private:
-				std::string instanceId_;
-				int qos_;
 				std::string transType_;
 				long endTime_;
 				long beginTime_;
 				std::string tpsType_;
 				std::string parentTopic_;
+				std::string instanceId_;
+				int qos_;
 				std::string msgType_;
 				std::string subTopic_;
 

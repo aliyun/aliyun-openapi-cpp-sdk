@@ -25,6 +25,28 @@ QueryCreateInstancePriceRequest::QueryCreateInstancePriceRequest() :
 QueryCreateInstancePriceRequest::~QueryCreateInstancePriceRequest()
 {}
 
+long QueryCreateInstancePriceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void QueryCreateInstancePriceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string QueryCreateInstancePriceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryCreateInstancePriceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int QueryCreateInstancePriceRequest::getMonth()const
 {
 	return month_;
@@ -67,27 +89,5 @@ void QueryCreateInstancePriceRequest::setInstanceVersion(const std::string& inst
 {
 	instanceVersion_ = instanceVersion;
 	setCoreParameter("InstanceVersion", instanceVersion);
-}
-
-long QueryCreateInstancePriceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void QueryCreateInstancePriceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string QueryCreateInstancePriceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryCreateInstancePriceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

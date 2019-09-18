@@ -25,17 +25,6 @@ DescribeRestoreTaskListRequest::DescribeRestoreTaskListRequest() :
 DescribeRestoreTaskListRequest::~DescribeRestoreTaskListRequest()
 {}
 
-std::string DescribeRestoreTaskListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRestoreTaskListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeRestoreTaskListRequest::getClientToken()const
 {
 	return clientToken_;
@@ -45,28 +34,6 @@ void DescribeRestoreTaskListRequest::setClientToken(const std::string& clientTok
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string DescribeRestoreTaskListRequest::getRestoreTaskId()const
-{
-	return restoreTaskId_;
-}
-
-void DescribeRestoreTaskListRequest::setRestoreTaskId(const std::string& restoreTaskId)
-{
-	restoreTaskId_ = restoreTaskId;
-	setCoreParameter("RestoreTaskId", restoreTaskId);
-}
-
-int DescribeRestoreTaskListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeRestoreTaskListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRestoreTaskListRequest::getBackupPlanId()const
@@ -100,5 +67,27 @@ void DescribeRestoreTaskListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
+}
+
+std::string DescribeRestoreTaskListRequest::getRestoreTaskId()const
+{
+	return restoreTaskId_;
+}
+
+void DescribeRestoreTaskListRequest::setRestoreTaskId(const std::string& restoreTaskId)
+{
+	restoreTaskId_ = restoreTaskId;
+	setCoreParameter("RestoreTaskId", restoreTaskId);
+}
+
+int DescribeRestoreTaskListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeRestoreTaskListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -25,17 +25,6 @@ DescribeOrderAuditFailRecordRequest::DescribeOrderAuditFailRecordRequest() :
 DescribeOrderAuditFailRecordRequest::~DescribeOrderAuditFailRecordRequest()
 {}
 
-std::string DescribeOrderAuditFailRecordRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOrderAuditFailRecordRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeOrderAuditFailRecordRequest::getOrderId()const
 {
 	return orderId_;
@@ -45,6 +34,28 @@ void DescribeOrderAuditFailRecordRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
 	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+std::string DescribeOrderAuditFailRecordRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeOrderAuditFailRecordRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeOrderAuditFailRecordRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOrderAuditFailRecordRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOrderAuditFailRecordRequest::getLang()const

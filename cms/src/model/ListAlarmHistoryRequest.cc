@@ -36,17 +36,6 @@ void ListAlarmHistoryRequest::setCursor(const std::string& cursor)
 	setCoreParameter("Cursor", cursor);
 }
 
-int ListAlarmHistoryRequest::getSize()const
-{
-	return size_;
-}
-
-void ListAlarmHistoryRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string ListAlarmHistoryRequest::getEndTime()const
 {
 	return endTime_;
@@ -56,17 +45,6 @@ void ListAlarmHistoryRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string ListAlarmHistoryRequest::getId()const
-{
-	return id_;
-}
-
-void ListAlarmHistoryRequest::setId(const std::string& id)
-{
-	id_ = id;
-	setCoreParameter("Id", id);
 }
 
 std::string ListAlarmHistoryRequest::getStartTime()const
@@ -89,5 +67,27 @@ void ListAlarmHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListAlarmHistoryRequest::getSize()const
+{
+	return size_;
+}
+
+void ListAlarmHistoryRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
+}
+
+std::string ListAlarmHistoryRequest::getId()const
+{
+	return id_;
+}
+
+void ListAlarmHistoryRequest::setId(const std::string& id)
+{
+	id_ = id;
+	setCoreParameter("Id", id);
 }
 

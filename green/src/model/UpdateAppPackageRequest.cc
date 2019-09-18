@@ -36,6 +36,17 @@ void UpdateAppPackageRequest::setDebug(bool debug)
 	setCoreParameter("Debug", debug ? "true" : "false");
 }
 
+std::string UpdateAppPackageRequest::getPlatform()const
+{
+	return platform_;
+}
+
+void UpdateAppPackageRequest::setPlatform(const std::string& platform)
+{
+	platform_ = platform;
+	setCoreParameter("Platform", platform);
+}
+
 std::string UpdateAppPackageRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -78,16 +89,5 @@ void UpdateAppPackageRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string UpdateAppPackageRequest::getPlatform()const
-{
-	return platform_;
-}
-
-void UpdateAppPackageRequest::setPlatform(const std::string& platform)
-{
-	platform_ = platform;
-	setCoreParameter("Platform", platform);
 }
 

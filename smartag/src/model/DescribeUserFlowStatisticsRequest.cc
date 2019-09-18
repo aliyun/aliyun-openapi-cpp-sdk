@@ -36,17 +36,6 @@ void DescribeUserFlowStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeUserFlowStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeUserFlowStatisticsRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,39 +45,6 @@ void DescribeUserFlowStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeUserFlowStatisticsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeUserFlowStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeUserFlowStatisticsRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void DescribeUserFlowStatisticsRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
-std::string DescribeUserFlowStatisticsRequest::getStatisticsDate()const
-{
-	return statisticsDate_;
-}
-
-void DescribeUserFlowStatisticsRequest::setStatisticsDate(const std::string& statisticsDate)
-{
-	statisticsDate_ = statisticsDate;
-	setCoreParameter("StatisticsDate", statisticsDate);
 }
 
 std::vector<std::string> DescribeUserFlowStatisticsRequest::getUserNames()const
@@ -103,6 +59,39 @@ void DescribeUserFlowStatisticsRequest::setUserNames(const std::vector<std::stri
 		setCoreParameter("UserNames."+ std::to_string(i), userNames.at(i));
 }
 
+std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeUserFlowStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeUserFlowStatisticsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeUserFlowStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeUserFlowStatisticsRequest::getStatisticsDate()const
+{
+	return statisticsDate_;
+}
+
+void DescribeUserFlowStatisticsRequest::setStatisticsDate(const std::string& statisticsDate)
+{
+	statisticsDate_ = statisticsDate;
+	setCoreParameter("StatisticsDate", statisticsDate);
+}
+
 long DescribeUserFlowStatisticsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -112,5 +101,16 @@ void DescribeUserFlowStatisticsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeUserFlowStatisticsRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void DescribeUserFlowStatisticsRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

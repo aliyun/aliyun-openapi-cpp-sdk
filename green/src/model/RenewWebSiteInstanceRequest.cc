@@ -25,28 +25,6 @@ RenewWebSiteInstanceRequest::RenewWebSiteInstanceRequest() :
 RenewWebSiteInstanceRequest::~RenewWebSiteInstanceRequest()
 {}
 
-int RenewWebSiteInstanceRequest::getDuration()const
-{
-	return duration_;
-}
-
-void RenewWebSiteInstanceRequest::setDuration(int duration)
-{
-	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
-}
-
-std::string RenewWebSiteInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void RenewWebSiteInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string RenewWebSiteInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -89,6 +67,28 @@ void RenewWebSiteInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+int RenewWebSiteInstanceRequest::getDuration()const
+{
+	return duration_;
+}
+
+void RenewWebSiteInstanceRequest::setDuration(int duration)
+{
+	duration_ = duration;
+	setCoreParameter("Duration", std::to_string(duration));
+}
+
+std::string RenewWebSiteInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void RenewWebSiteInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string RenewWebSiteInstanceRequest::getPricingCycle()const

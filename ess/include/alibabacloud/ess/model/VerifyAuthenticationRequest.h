@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				VerifyAuthenticationRequest();
 				~VerifyAuthenticationRequest();
 
-				long getUid()const;
-				void setUid(long uid);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getUid()const;
+				void setUid(long uid);
 
             private:
-				long uid_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::string accessKeyId_;
+				long uid_;
 
 			};
 		}

@@ -47,14 +47,3 @@ void CreateProjectRequest::setCsbId(long csbId)
 	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
-std::string CreateProjectRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateProjectRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ListMonitoringTemplatesRequest();
 				~ListMonitoringTemplatesRequest();
 
+				bool getHistory()const;
+				void setHistory(bool history);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
 				bool getTotal()const;
 				void setTotal(bool total);
 				std::string getName()const;
@@ -43,21 +47,17 @@ namespace AlibabaCloud
 				void setPageSize(long pageSize);
 				long getId()const;
 				void setId(long id);
-				bool getHistory()const;
-				void setHistory(bool history);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
 
             private:
+				bool history_;
+				long pageNumber_;
 				bool total_;
 				std::string name_;
 				long pageSize_;
 				long id_;
-				bool history_;
 				std::string keyword_;
-				long pageNumber_;
 
 			};
 		}

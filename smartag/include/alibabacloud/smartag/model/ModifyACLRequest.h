@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				ModifyACLRequest();
 				~ModifyACLRequest();
 
-				std::string getAclId()const;
-				void setAclId(const std::string& aclId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getAclId()const;
+				void setAclId(const std::string& aclId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string aclId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string regionId_;
+				std::string aclId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string name_;
 				long ownerId_;
+				std::string name_;
 
 			};
 		}

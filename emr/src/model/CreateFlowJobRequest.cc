@@ -36,17 +36,6 @@ void CreateFlowJobRequest::setRunConf(const std::string& runConf)
 	setCoreParameter("RunConf", runConf);
 }
 
-std::string CreateFlowJobRequest::getEnvConf()const
-{
-	return envConf_;
-}
-
-void CreateFlowJobRequest::setEnvConf(const std::string& envConf)
-{
-	envConf_ = envConf;
-	setCoreParameter("EnvConf", envConf);
-}
-
 std::string CreateFlowJobRequest::getDescription()const
 {
 	return description_;
@@ -58,17 +47,6 @@ void CreateFlowJobRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-std::string CreateFlowJobRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void CreateFlowJobRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
 std::string CreateFlowJobRequest::getType()const
 {
 	return type_;
@@ -78,17 +56,6 @@ void CreateFlowJobRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
-}
-
-std::string CreateFlowJobRequest::getParams()const
-{
-	return params_;
-}
-
-void CreateFlowJobRequest::setParams(const std::string& params)
-{
-	params_ = params;
-	setCoreParameter("Params", params);
 }
 
 std::string CreateFlowJobRequest::getParamConf()const
@@ -141,17 +108,6 @@ void CreateFlowJobRequest::setMode(const std::string& mode)
 	setCoreParameter("Mode", mode);
 }
 
-long CreateFlowJobRequest::getRetryInterval()const
-{
-	return retryInterval_;
-}
-
-void CreateFlowJobRequest::setRetryInterval(long retryInterval)
-{
-	retryInterval_ = retryInterval;
-	setCoreParameter("RetryInterval", std::to_string(retryInterval));
-}
-
 std::string CreateFlowJobRequest::getMonitorConf()const
 {
 	return monitorConf_;
@@ -174,17 +130,6 @@ void CreateFlowJobRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string CreateFlowJobRequest::getName()const
-{
-	return name_;
-}
-
-void CreateFlowJobRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 int CreateFlowJobRequest::getMaxRetry()const
 {
 	return maxRetry_;
@@ -194,17 +139,6 @@ void CreateFlowJobRequest::setMaxRetry(int maxRetry)
 {
 	maxRetry_ = maxRetry;
 	setCoreParameter("MaxRetry", std::to_string(maxRetry));
-}
-
-bool CreateFlowJobRequest::getAdhoc()const
-{
-	return adhoc_;
-}
-
-void CreateFlowJobRequest::setAdhoc(bool adhoc)
-{
-	adhoc_ = adhoc;
-	setCoreParameter("Adhoc", adhoc ? "true" : "false");
 }
 
 std::string CreateFlowJobRequest::getAlertConf()const
@@ -227,6 +161,72 @@ void CreateFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
+}
+
+std::string CreateFlowJobRequest::getEnvConf()const
+{
+	return envConf_;
+}
+
+void CreateFlowJobRequest::setEnvConf(const std::string& envConf)
+{
+	envConf_ = envConf;
+	setCoreParameter("EnvConf", envConf);
+}
+
+std::string CreateFlowJobRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void CreateFlowJobRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string CreateFlowJobRequest::getParams()const
+{
+	return params_;
+}
+
+void CreateFlowJobRequest::setParams(const std::string& params)
+{
+	params_ = params;
+	setCoreParameter("Params", params);
+}
+
+long CreateFlowJobRequest::getRetryInterval()const
+{
+	return retryInterval_;
+}
+
+void CreateFlowJobRequest::setRetryInterval(long retryInterval)
+{
+	retryInterval_ = retryInterval;
+	setCoreParameter("RetryInterval", std::to_string(retryInterval));
+}
+
+std::string CreateFlowJobRequest::getName()const
+{
+	return name_;
+}
+
+void CreateFlowJobRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+bool CreateFlowJobRequest::getAdhoc()const
+{
+	return adhoc_;
+}
+
+void CreateFlowJobRequest::setAdhoc(bool adhoc)
+{
+	adhoc_ = adhoc;
+	setCoreParameter("Adhoc", adhoc ? "true" : "false");
 }
 
 std::string CreateFlowJobRequest::getParentCategory()const

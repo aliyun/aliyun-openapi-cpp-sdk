@@ -25,6 +25,17 @@ QueryFailingReasonListForQualificationRequest::QueryFailingReasonListForQualific
 QueryFailingReasonListForQualificationRequest::~QueryFailingReasonListForQualificationRequest()
 {}
 
+std::string QueryFailingReasonListForQualificationRequest::getQualificationType()const
+{
+	return qualificationType_;
+}
+
+void QueryFailingReasonListForQualificationRequest::setQualificationType(const std::string& qualificationType)
+{
+	qualificationType_ = qualificationType;
+	setCoreParameter("QualificationType", qualificationType);
+}
+
 std::string QueryFailingReasonListForQualificationRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -67,16 +78,5 @@ void QueryFailingReasonListForQualificationRequest::setLang(const std::string& l
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string QueryFailingReasonListForQualificationRequest::getQualificationType()const
-{
-	return qualificationType_;
-}
-
-void QueryFailingReasonListForQualificationRequest::setQualificationType(const std::string& qualificationType)
-{
-	qualificationType_ = qualificationType;
-	setCoreParameter("QualificationType", qualificationType);
 }
 

@@ -35,13 +35,9 @@ DescribeInstancesResult::~DescribeInstancesResult()
 
 void DescribeInstancesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allInstances = value["Instances"]["KVStoreInstance"];
 	for (auto value : allInstances)
@@ -111,6 +107,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.destroyTime = value["DestroyTime"].asString();
 		if(!value["ConnectionMode"].isNull())
 			instancesObject.connectionMode = value["ConnectionMode"].asString();
+		if(!value["VpcCloudInstanceId"].isNull())
+			instancesObject.vpcCloudInstanceId = value["VpcCloudInstanceId"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

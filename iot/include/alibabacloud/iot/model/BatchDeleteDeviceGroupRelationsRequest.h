@@ -40,20 +40,20 @@ namespace AlibabaCloud
 				BatchDeleteDeviceGroupRelationsRequest();
 				~BatchDeleteDeviceGroupRelationsRequest();
 
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				std::vector<Device> getDevice()const;
-				void setDevice(const std::vector<Device>& device);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::vector<Device> getDevice()const;
+				void setDevice(const std::vector<Device>& device);
 
             private:
-				std::string iotInstanceId_;
 				std::string groupId_;
-				std::vector<Device> device_;
 				std::string accessKeyId_;
+				std::string iotInstanceId_;
+				std::vector<Device> device_;
 
 			};
 		}

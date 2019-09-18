@@ -35,34 +35,34 @@ namespace AlibabaCloud
 				SetPasswordPolicyRequest();
 				~SetPasswordPolicyRequest();
 
-				bool getRequireNumbers()const;
-				void setRequireNumbers(bool requireNumbers);
 				int getPasswordReusePrevention()const;
 				void setPasswordReusePrevention(int passwordReusePrevention);
 				bool getRequireUppercaseCharacters()const;
 				void setRequireUppercaseCharacters(bool requireUppercaseCharacters);
+				int getMinimumPasswordLength()const;
+				void setMinimumPasswordLength(int minimumPasswordLength);
+				bool getRequireNumbers()const;
+				void setRequireNumbers(bool requireNumbers);
+				bool getRequireLowercaseCharacters()const;
+				void setRequireLowercaseCharacters(bool requireLowercaseCharacters);
 				int getMaxPasswordAge()const;
 				void setMaxPasswordAge(int maxPasswordAge);
 				int getMaxLoginAttemps()const;
 				void setMaxLoginAttemps(int maxLoginAttemps);
 				bool getHardExpiry()const;
 				void setHardExpiry(bool hardExpiry);
-				int getMinimumPasswordLength()const;
-				void setMinimumPasswordLength(int minimumPasswordLength);
-				bool getRequireLowercaseCharacters()const;
-				void setRequireLowercaseCharacters(bool requireLowercaseCharacters);
 				bool getRequireSymbols()const;
 				void setRequireSymbols(bool requireSymbols);
 
             private:
-				bool requireNumbers_;
 				int passwordReusePrevention_;
 				bool requireUppercaseCharacters_;
+				int minimumPasswordLength_;
+				bool requireNumbers_;
+				bool requireLowercaseCharacters_;
 				int maxPasswordAge_;
 				int maxLoginAttemps_;
 				bool hardExpiry_;
-				int minimumPasswordLength_;
-				bool requireLowercaseCharacters_;
 				bool requireSymbols_;
 
 			};

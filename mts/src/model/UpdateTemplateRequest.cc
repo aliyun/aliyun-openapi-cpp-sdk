@@ -47,6 +47,50 @@ void UpdateTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpdateTemplateRequest::getVideo()const
+{
+	return video_;
+}
+
+void UpdateTemplateRequest::setVideo(const std::string& video)
+{
+	video_ = video;
+	setCoreParameter("Video", video);
+}
+
+std::string UpdateTemplateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateTemplateRequest::getTransConfig()const
+{
+	return transConfig_;
+}
+
+void UpdateTemplateRequest::setTransConfig(const std::string& transConfig)
+{
+	transConfig_ = transConfig;
+	setCoreParameter("TransConfig", transConfig);
+}
+
+std::string UpdateTemplateRequest::getAudio()const
+{
+	return audio_;
+}
+
+void UpdateTemplateRequest::setAudio(const std::string& audio)
+{
+	audio_ = audio;
+	setCoreParameter("Audio", audio);
+}
+
 std::string UpdateTemplateRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,17 +124,6 @@ void UpdateTemplateRequest::setMuxConfig(const std::string& muxConfig)
 	setCoreParameter("MuxConfig", muxConfig);
 }
 
-std::string UpdateTemplateRequest::getVideo()const
-{
-	return video_;
-}
-
-void UpdateTemplateRequest::setVideo(const std::string& video)
-{
-	video_ = video;
-	setCoreParameter("Video", video);
-}
-
 long UpdateTemplateRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,17 +146,6 @@ void UpdateTemplateRequest::setTemplateId(const std::string& templateId)
 	setCoreParameter("TemplateId", templateId);
 }
 
-std::string UpdateTemplateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string UpdateTemplateRequest::getName()const
 {
 	return name_;
@@ -133,27 +155,5 @@ void UpdateTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
-}
-
-std::string UpdateTemplateRequest::getTransConfig()const
-{
-	return transConfig_;
-}
-
-void UpdateTemplateRequest::setTransConfig(const std::string& transConfig)
-{
-	transConfig_ = transConfig;
-	setCoreParameter("TransConfig", transConfig);
-}
-
-std::string UpdateTemplateRequest::getAudio()const
-{
-	return audio_;
-}
-
-void UpdateTemplateRequest::setAudio(const std::string& audio)
-{
-	audio_ = audio;
-	setCoreParameter("Audio", audio);
 }
 

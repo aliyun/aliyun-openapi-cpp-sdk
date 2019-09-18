@@ -47,17 +47,6 @@ void DeleteAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOw
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DeleteAppInfoRequest::getAppId()const
-{
-	return appId_;
-}
-
-void DeleteAppInfoRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setCoreParameter("AppId", appId);
-}
-
 long DeleteAppInfoRequest::getResourceRealOwnerId()const
 {
 	return resourceRealOwnerId_;
@@ -89,5 +78,16 @@ void DeleteAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteAppInfoRequest::getAppId()const
+{
+	return appId_;
+}
+
+void DeleteAppInfoRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
 }
 

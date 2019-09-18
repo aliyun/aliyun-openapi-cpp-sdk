@@ -25,17 +25,6 @@ GetAddApsProgressRequest::GetAddApsProgressRequest() :
 GetAddApsProgressRequest::~GetAddApsProgressRequest()
 {}
 
-long GetAddApsProgressRequest::getId()const
-{
-	return id_;
-}
-
-void GetAddApsProgressRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetAddApsProgressRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetAddApsProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetAddApsProgressRequest::getId()const
+{
+	return id_;
+}
+
+void GetAddApsProgressRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

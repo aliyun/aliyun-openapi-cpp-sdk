@@ -42,12 +42,12 @@ namespace AlibabaCloud
 
 				std::string getMonitorExtendInfo()const;
 				void setMonitorExtendInfo(const std::string& monitorExtendInfo);
+				int getTimeout()const;
+				void setTimeout(int timeout);
 				std::string getAddrPoolId()const;
 				void setAddrPoolId(const std::string& addrPoolId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getName()const;
-				void setName(const std::string& name);
 				int getEvaluationCount()const;
 				void setEvaluationCount(int evaluationCount);
 				std::string getProtocolType()const;
@@ -56,21 +56,18 @@ namespace AlibabaCloud
 				void setInterval(int interval);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getTimeout()const;
-				void setTimeout(int timeout);
 				std::vector<IspCityNode> getIspCityNode()const;
 				void setIspCityNode(const std::vector<IspCityNode>& ispCityNode);
 
             private:
 				std::string monitorExtendInfo_;
+				int timeout_;
 				std::string addrPoolId_;
 				std::string userClientIp_;
-				std::string name_;
 				int evaluationCount_;
 				std::string protocolType_;
 				int interval_;
 				std::string lang_;
-				int timeout_;
 				std::vector<IspCityNode> ispCityNode_;
 
 			};

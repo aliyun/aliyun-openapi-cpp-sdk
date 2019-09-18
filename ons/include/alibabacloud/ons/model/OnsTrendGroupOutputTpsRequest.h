@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				long getPeriod()const;
 				void setPeriod(long period);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getBeginTime()const;
 				void setBeginTime(long beginTime);
 				int getType()const;
 				void setType(int type);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
 
             private:
 				long period_;
-				std::string instanceId_;
 				std::string groupId_;
-				std::string topic_;
 				long endTime_;
 				long beginTime_;
 				int type_;
+				std::string instanceId_;
+				std::string topic_;
 
 			};
 		}

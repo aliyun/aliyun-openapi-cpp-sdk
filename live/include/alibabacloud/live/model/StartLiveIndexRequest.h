@@ -35,44 +35,41 @@ namespace AlibabaCloud
 				StartLiveIndexRequest();
 				~StartLiveIndexRequest();
 
-				std::string getOssBucket()const;
-				void setOssBucket(const std::string& ossBucket);
 				std::string getTokenId()const;
 				void setTokenId(const std::string& tokenId);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getOssEndpoint()const;
 				void setOssEndpoint(const std::string& ossEndpoint);
-				std::string getInputUrl()const;
-				void setInputUrl(const std::string& inputUrl);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getInterval()const;
-				void setInterval(int interval);
 				std::string getOssRamRole()const;
 				void setOssRamRole(const std::string& ossRamRole);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
 				std::string getOssUserId()const;
 				void setOssUserId(const std::string& ossUserId);
+				std::string getOssBucket()const;
+				void setOssBucket(const std::string& ossBucket);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getInputUrl()const;
+				void setInputUrl(const std::string& inputUrl);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getInterval()const;
+				void setInterval(int interval);
 
             private:
-				std::string ossBucket_;
 				std::string tokenId_;
-				std::string domainName_;
 				std::string ossEndpoint_;
-				std::string inputUrl_;
-				long ownerId_;
 				std::string appName_;
-				std::string regionId_;
-				int interval_;
 				std::string ossRamRole_;
 				std::string streamName_;
 				std::string ossUserId_;
+				std::string ossBucket_;
+				std::string domainName_;
+				std::string inputUrl_;
+				long ownerId_;
+				int interval_;
 
 			};
 		}

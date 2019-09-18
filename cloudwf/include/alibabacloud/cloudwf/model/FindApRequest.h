@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				FindApRequest();
 				~FindApRequest();
 
-				long getId()const;
-				void setId(long id);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getId()const;
+				void setId(long id);
 
             private:
-				long id_;
 				std::string accessKeyId_;
+				long id_;
 
 			};
 		}

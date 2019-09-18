@@ -25,39 +25,6 @@ ModifyBackupStrategyRequest::ModifyBackupStrategyRequest() :
 ModifyBackupStrategyRequest::~ModifyBackupStrategyRequest()
 {}
 
-std::string ModifyBackupStrategyRequest::getBackupPeriod()const
-{
-	return backupPeriod_;
-}
-
-void ModifyBackupStrategyRequest::setBackupPeriod(const std::string& backupPeriod)
-{
-	backupPeriod_ = backupPeriod;
-	setCoreParameter("BackupPeriod", backupPeriod);
-}
-
-std::string ModifyBackupStrategyRequest::getBackupStartTime()const
-{
-	return backupStartTime_;
-}
-
-void ModifyBackupStrategyRequest::setBackupStartTime(const std::string& backupStartTime)
-{
-	backupStartTime_ = backupStartTime;
-	setCoreParameter("BackupStartTime", backupStartTime);
-}
-
-std::string ModifyBackupStrategyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyBackupStrategyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyBackupStrategyRequest::getClientToken()const
 {
 	return clientToken_;
@@ -89,5 +56,27 @@ void ModifyBackupStrategyRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
+}
+
+std::string ModifyBackupStrategyRequest::getBackupPeriod()const
+{
+	return backupPeriod_;
+}
+
+void ModifyBackupStrategyRequest::setBackupPeriod(const std::string& backupPeriod)
+{
+	backupPeriod_ = backupPeriod;
+	setCoreParameter("BackupPeriod", backupPeriod);
+}
+
+std::string ModifyBackupStrategyRequest::getBackupStartTime()const
+{
+	return backupStartTime_;
+}
+
+void ModifyBackupStrategyRequest::setBackupStartTime(const std::string& backupStartTime)
+{
+	backupStartTime_ = backupStartTime;
+	setCoreParameter("BackupStartTime", backupStartTime);
 }
 

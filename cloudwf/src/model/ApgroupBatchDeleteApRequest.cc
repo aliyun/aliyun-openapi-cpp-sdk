@@ -25,17 +25,6 @@ ApgroupBatchDeleteApRequest::ApgroupBatchDeleteApRequest() :
 ApgroupBatchDeleteApRequest::~ApgroupBatchDeleteApRequest()
 {}
 
-std::string ApgroupBatchDeleteApRequest::getApAssetIds()const
-{
-	return apAssetIds_;
-}
-
-void ApgroupBatchDeleteApRequest::setApAssetIds(const std::string& apAssetIds)
-{
-	apAssetIds_ = apAssetIds;
-	setCoreParameter("ApAssetIds", apAssetIds);
-}
-
 std::string ApgroupBatchDeleteApRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void ApgroupBatchDeleteApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ApgroupBatchDeleteApRequest::getApAssetIds()const
+{
+	return apAssetIds_;
+}
+
+void ApgroupBatchDeleteApRequest::setApAssetIds(const std::string& apAssetIds)
+{
+	apAssetIds_ = apAssetIds;
+	setCoreParameter("ApAssetIds", apAssetIds);
 }
 

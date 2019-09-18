@@ -25,17 +25,6 @@ PeripheryAnalyseRequest::PeripheryAnalyseRequest() :
 PeripheryAnalyseRequest::~PeripheryAnalyseRequest()
 {}
 
-long PeripheryAnalyseRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void PeripheryAnalyseRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string PeripheryAnalyseRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void PeripheryAnalyseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long PeripheryAnalyseRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void PeripheryAnalyseRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

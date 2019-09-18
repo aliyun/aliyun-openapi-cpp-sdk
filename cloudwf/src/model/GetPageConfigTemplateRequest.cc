@@ -25,17 +25,6 @@ GetPageConfigTemplateRequest::GetPageConfigTemplateRequest() :
 GetPageConfigTemplateRequest::~GetPageConfigTemplateRequest()
 {}
 
-long GetPageConfigTemplateRequest::getId()const
-{
-	return id_;
-}
-
-void GetPageConfigTemplateRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetPageConfigTemplateRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetPageConfigTemplateRequest::getId()const
+{
+	return id_;
+}
+
+void GetPageConfigTemplateRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

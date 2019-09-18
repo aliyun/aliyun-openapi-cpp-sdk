@@ -25,39 +25,6 @@ OnsMessagePageQueryByTopicRequest::OnsMessagePageQueryByTopicRequest() :
 OnsMessagePageQueryByTopicRequest::~OnsMessagePageQueryByTopicRequest()
 {}
 
-std::string OnsMessagePageQueryByTopicRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsMessagePageQueryByTopicRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-int OnsMessagePageQueryByTopicRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void OnsMessagePageQueryByTopicRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string OnsMessagePageQueryByTopicRequest::getTopic()const
-{
-	return topic_;
-}
-
-void OnsMessagePageQueryByTopicRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setCoreParameter("Topic", topic);
-}
-
 long OnsMessagePageQueryByTopicRequest::getEndTime()const
 {
 	return endTime_;
@@ -89,6 +56,39 @@ void OnsMessagePageQueryByTopicRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string OnsMessagePageQueryByTopicRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsMessagePageQueryByTopicRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+int OnsMessagePageQueryByTopicRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void OnsMessagePageQueryByTopicRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string OnsMessagePageQueryByTopicRequest::getTopic()const
+{
+	return topic_;
+}
+
+void OnsMessagePageQueryByTopicRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getTaskId()const

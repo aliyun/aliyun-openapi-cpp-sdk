@@ -25,39 +25,6 @@ DescribeScdnDomainUvDataRequest::DescribeScdnDomainUvDataRequest() :
 DescribeScdnDomainUvDataRequest::~DescribeScdnDomainUvDataRequest()
 {}
 
-long DescribeScdnDomainUvDataRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeScdnDomainUvDataRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-long DescribeScdnDomainUvDataRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void DescribeScdnDomainUvDataRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool DescribeScdnDomainUvDataRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void DescribeScdnDomainUvDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
 std::string DescribeScdnDomainUvDataRequest::getStartTime()const
 {
 	return startTime_;
@@ -67,127 +34,6 @@ void DescribeScdnDomainUvDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void DescribeScdnDomainUvDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void DescribeScdnDomainUvDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void DescribeScdnDomainUvDataRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeScdnDomainUvDataRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeScdnDomainUvDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void DescribeScdnDomainUvDataRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void DescribeScdnDomainUvDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void DescribeScdnDomainUvDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long DescribeScdnDomainUvDataRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void DescribeScdnDomainUvDataRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
-}
-
-std::string DescribeScdnDomainUvDataRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void DescribeScdnDomainUvDataRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void DescribeScdnDomainUvDataRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeScdnDomainUvDataRequest::getDomainName()const
@@ -212,17 +58,6 @@ void DescribeScdnDomainUvDataRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeScdnDomainUvDataRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void DescribeScdnDomainUvDataRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long DescribeScdnDomainUvDataRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -232,71 +67,5 @@ void DescribeScdnDomainUvDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeScdnDomainUvDataRequest::getVersion()const
-{
-	return version_;
-}
-
-void DescribeScdnDomainUvDataRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-bool DescribeScdnDomainUvDataRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void DescribeScdnDomainUvDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool DescribeScdnDomainUvDataRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void DescribeScdnDomainUvDataRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-bool DescribeScdnDomainUvDataRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void DescribeScdnDomainUvDataRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string DescribeScdnDomainUvDataRequest::getServiceCode()const
-{
-	return serviceCode_;
-}
-
-void DescribeScdnDomainUvDataRequest::setServiceCode(const std::string& serviceCode)
-{
-	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
-}
-
-std::string DescribeScdnDomainUvDataRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void DescribeScdnDomainUvDataRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
 }
 

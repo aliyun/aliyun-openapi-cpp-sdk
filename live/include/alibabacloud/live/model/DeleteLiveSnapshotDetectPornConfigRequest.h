@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DeleteLiveSnapshotDetectPornConfigRequest();
 				~DeleteLiveSnapshotDetectPornConfigRequest();
 
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string appName_;
-				std::string securityToken_;
 				std::string domainName_;
 				long ownerId_;
+				std::string appName_;
+				std::string securityToken_;
 
 			};
 		}

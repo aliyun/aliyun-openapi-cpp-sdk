@@ -25,17 +25,6 @@ StopCasterSceneRequest::StopCasterSceneRequest() :
 StopCasterSceneRequest::~StopCasterSceneRequest()
 {}
 
-std::string StopCasterSceneRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void StopCasterSceneRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string StopCasterSceneRequest::getCasterId()const
 {
 	return casterId_;
@@ -47,17 +36,6 @@ void StopCasterSceneRequest::setCasterId(const std::string& casterId)
 	setCoreParameter("CasterId", casterId);
 }
 
-std::string StopCasterSceneRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void StopCasterSceneRequest::setSceneId(const std::string& sceneId)
-{
-	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
-}
-
 long StopCasterSceneRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -67,5 +45,16 @@ void StopCasterSceneRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string StopCasterSceneRequest::getSceneId()const
+{
+	return sceneId_;
+}
+
+void StopCasterSceneRequest::setSceneId(const std::string& sceneId)
+{
+	sceneId_ = sceneId;
+	setCoreParameter("SceneId", sceneId);
 }
 

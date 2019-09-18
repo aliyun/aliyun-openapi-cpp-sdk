@@ -25,17 +25,6 @@ GetUmengPagePermission4RootRequest::GetUmengPagePermission4RootRequest() :
 GetUmengPagePermission4RootRequest::~GetUmengPagePermission4RootRequest()
 {}
 
-long GetUmengPagePermission4RootRequest::getId()const
-{
-	return id_;
-}
-
-void GetUmengPagePermission4RootRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetUmengPagePermission4RootRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetUmengPagePermission4RootRequest::setAccessKeyId(const std::string& acces
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetUmengPagePermission4RootRequest::getId()const
+{
+	return id_;
+}
+
+void GetUmengPagePermission4RootRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

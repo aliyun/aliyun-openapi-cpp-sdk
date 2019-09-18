@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				CheckDomainRequest();
 				~CheckDomainRequest();
 
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				std::string getFeeCurrency()const;
 				void setFeeCurrency(const std::string& feeCurrency);
 				int getFeePeriod()const;
 				void setFeePeriod(int feePeriod);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getFeeCommand()const;
 				void setFeeCommand(const std::string& feeCommand);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string domainName_;
 				std::string feeCurrency_;
 				int feePeriod_;
-				std::string domainName_;
 				std::string feeCommand_;
 				std::string lang_;
 

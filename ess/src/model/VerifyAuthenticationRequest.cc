@@ -25,17 +25,6 @@ VerifyAuthenticationRequest::VerifyAuthenticationRequest() :
 VerifyAuthenticationRequest::~VerifyAuthenticationRequest()
 {}
 
-long VerifyAuthenticationRequest::getUid()const
-{
-	return uid_;
-}
-
-void VerifyAuthenticationRequest::setUid(long uid)
-{
-	uid_ = uid;
-	setCoreParameter("Uid", std::to_string(uid));
-}
-
 long VerifyAuthenticationRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -78,5 +67,16 @@ void VerifyAuthenticationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long VerifyAuthenticationRequest::getUid()const
+{
+	return uid_;
+}
+
+void VerifyAuthenticationRequest::setUid(long uid)
+{
+	uid_ = uid;
+	setCoreParameter("Uid", std::to_string(uid));
 }
 

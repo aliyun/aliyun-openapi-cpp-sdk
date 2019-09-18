@@ -25,61 +25,6 @@ DescribeSlowLogRecordsRequest::DescribeSlowLogRecordsRequest() :
 DescribeSlowLogRecordsRequest::~DescribeSlowLogRecordsRequest()
 {}
 
-long DescribeSlowLogRecordsRequest::getSQLId()const
-{
-	return sQLId_;
-}
-
-void DescribeSlowLogRecordsRequest::setSQLId(long sQLId)
-{
-	sQLId_ = sQLId;
-	setCoreParameter("SQLId", std::to_string(sQLId));
-}
-
-std::string DescribeSlowLogRecordsRequest::getDBName()const
-{
-	return dBName_;
-}
-
-void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
-{
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
-}
-
-int DescribeSlowLogRecordsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeSlowLogRecordsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeSlowLogRecordsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeSlowLogRecordsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeSlowLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string DescribeSlowLogRecordsRequest::getStartTime()const
 {
 	return startTime_;
@@ -111,5 +56,60 @@ void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int DescribeSlowLogRecordsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeSlowLogRecordsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeSlowLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+long DescribeSlowLogRecordsRequest::getSQLId()const
+{
+	return sQLId_;
+}
+
+void DescribeSlowLogRecordsRequest::setSQLId(long sQLId)
+{
+	sQLId_ = sQLId;
+	setCoreParameter("SQLId", std::to_string(sQLId));
+}
+
+std::string DescribeSlowLogRecordsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeSlowLogRecordsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+std::string DescribeSlowLogRecordsRequest::getDBName()const
+{
+	return dBName_;
+}
+
+void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
+{
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
 }
 

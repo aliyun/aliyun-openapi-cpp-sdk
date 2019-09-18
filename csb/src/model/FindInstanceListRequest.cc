@@ -25,28 +25,6 @@ FindInstanceListRequest::FindInstanceListRequest() :
 FindInstanceListRequest::~FindInstanceListRequest()
 {}
 
-std::string FindInstanceListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void FindInstanceListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string FindInstanceListRequest::getSearchTxt()const
-{
-	return searchTxt_;
-}
-
-void FindInstanceListRequest::setSearchTxt(const std::string& searchTxt)
-{
-	searchTxt_ = searchTxt;
-	setCoreParameter("SearchTxt", searchTxt);
-}
-
 long FindInstanceListRequest::getCsbId()const
 {
 	return csbId_;
@@ -67,6 +45,17 @@ void FindInstanceListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
 	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+std::string FindInstanceListRequest::getSearchTxt()const
+{
+	return searchTxt_;
+}
+
+void FindInstanceListRequest::setSearchTxt(const std::string& searchTxt)
+{
+	searchTxt_ = searchTxt;
+	setCoreParameter("SearchTxt", searchTxt);
 }
 
 int FindInstanceListRequest::getStatus()const

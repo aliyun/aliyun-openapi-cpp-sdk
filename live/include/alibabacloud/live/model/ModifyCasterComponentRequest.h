@@ -35,40 +35,37 @@ namespace AlibabaCloud
 				ModifyCasterComponentRequest();
 				~ModifyCasterComponentRequest();
 
-				std::string getComponentId()const;
-				void setComponentId(const std::string& componentId);
-				std::string getComponentType()const;
-				void setComponentType(const std::string& componentType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getImageLayerContent()const;
 				void setImageLayerContent(const std::string& imageLayerContent);
-				std::string getCasterId()const;
-				void setCasterId(const std::string& casterId);
-				std::string getEffect()const;
-				void setEffect(const std::string& effect);
-				std::string getComponentLayer()const;
-				void setComponentLayer(const std::string& componentLayer);
-				std::string getCaptionLayerContent()const;
-				void setCaptionLayerContent(const std::string& captionLayerContent);
 				std::string getComponentName()const;
 				void setComponentName(const std::string& componentName);
+				std::string getComponentId()const;
+				void setComponentId(const std::string& componentId);
+				std::string getCasterId()const;
+				void setCasterId(const std::string& casterId);
+				std::string getComponentLayer()const;
+				void setComponentLayer(const std::string& componentLayer);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getComponentType()const;
+				void setComponentType(const std::string& componentType);
+				std::string getEffect()const;
+				void setEffect(const std::string& effect);
+				std::string getCaptionLayerContent()const;
+				void setCaptionLayerContent(const std::string& captionLayerContent);
 				std::string getTextLayerContent()const;
 				void setTextLayerContent(const std::string& textLayerContent);
 
             private:
-				std::string componentId_;
-				std::string componentType_;
-				std::string regionId_;
 				std::string imageLayerContent_;
-				std::string casterId_;
-				std::string effect_;
-				std::string componentLayer_;
-				std::string captionLayerContent_;
 				std::string componentName_;
+				std::string componentId_;
+				std::string casterId_;
+				std::string componentLayer_;
 				long ownerId_;
+				std::string componentType_;
+				std::string effect_;
+				std::string captionLayerContent_;
 				std::string textLayerContent_;
 
 			};

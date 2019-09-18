@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				MobileStartSpeedUpRequest();
 				~MobileStartSpeedUpRequest();
 
-				std::string getDuration()const;
-				void setDuration(const std::string& duration);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getPublicIp()const;
+				void setPublicIp(const std::string& publicIp);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDuration()const;
+				void setDuration(const std::string& duration);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getIp()const;
 				void setIp(const std::string& ip);
 				std::string getDestinationIpAddress()const;
 				void setDestinationIpAddress(const std::string& destinationIpAddress);
-				std::string getPublicIp()const;
-				void setPublicIp(const std::string& publicIp);
-				std::string getPublicPort()const;
-				void setPublicPort(const std::string& publicPort);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getToken()const;
 				void setToken(const std::string& token);
+				std::string getPublicPort()const;
+				void setPublicPort(const std::string& publicPort);
 
             private:
-				std::string duration_;
 				long resourceOwnerId_;
+				std::string publicIp_;
+				std::string accessKeyId_;
+				std::string duration_;
 				std::string resourceOwnerAccount_;
 				std::string ip_;
 				std::string destinationIpAddress_;
-				std::string publicIp_;
-				std::string publicPort_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string token_;
+				std::string publicPort_;
 
 			};
 		}

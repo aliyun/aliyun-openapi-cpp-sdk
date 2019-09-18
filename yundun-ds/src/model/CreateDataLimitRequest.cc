@@ -25,6 +25,17 @@ CreateDataLimitRequest::CreateDataLimitRequest() :
 CreateDataLimitRequest::~CreateDataLimitRequest()
 {}
 
+std::string CreateDataLimitRequest::getParentId()const
+{
+	return parentId_;
+}
+
+void CreateDataLimitRequest::setParentId(const std::string& parentId)
+{
+	parentId_ = parentId;
+	setCoreParameter("ParentId", parentId);
+}
+
 std::string CreateDataLimitRequest::getPassword()const
 {
 	return password_;
@@ -45,17 +56,6 @@ void CreateDataLimitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string CreateDataLimitRequest::getConnector()const
-{
-	return connector_;
-}
-
-void CreateDataLimitRequest::setConnector(const std::string& connector)
-{
-	connector_ = connector;
-	setCoreParameter("Connector", connector);
 }
 
 std::string CreateDataLimitRequest::getDataLimitList()const
@@ -80,17 +80,6 @@ void CreateDataLimitRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-int CreateDataLimitRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void CreateDataLimitRequest::setResourceType(int resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
-}
-
 std::string CreateDataLimitRequest::getServiceRegionId()const
 {
 	return serviceRegionId_;
@@ -102,15 +91,26 @@ void CreateDataLimitRequest::setServiceRegionId(const std::string& serviceRegion
 	setCoreParameter("ServiceRegionId", serviceRegionId);
 }
 
-std::string CreateDataLimitRequest::getParentId()const
+int CreateDataLimitRequest::getResourceType()const
 {
-	return parentId_;
+	return resourceType_;
 }
 
-void CreateDataLimitRequest::setParentId(const std::string& parentId)
+void CreateDataLimitRequest::setResourceType(int resourceType)
 {
-	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", std::to_string(resourceType));
+}
+
+std::string CreateDataLimitRequest::getConnector()const
+{
+	return connector_;
+}
+
+void CreateDataLimitRequest::setConnector(const std::string& connector)
+{
+	connector_ = connector;
+	setCoreParameter("Connector", connector);
 }
 
 std::string CreateDataLimitRequest::getUserName()const

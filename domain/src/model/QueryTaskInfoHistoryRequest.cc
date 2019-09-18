@@ -25,17 +25,6 @@ QueryTaskInfoHistoryRequest::QueryTaskInfoHistoryRequest() :
 QueryTaskInfoHistoryRequest::~QueryTaskInfoHistoryRequest()
 {}
 
-long QueryTaskInfoHistoryRequest::getBeginCreateTime()const
-{
-	return beginCreateTime_;
-}
-
-void QueryTaskInfoHistoryRequest::setBeginCreateTime(long beginCreateTime)
-{
-	beginCreateTime_ = beginCreateTime;
-	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
-}
-
 long QueryTaskInfoHistoryRequest::getEndCreateTime()const
 {
 	return endCreateTime_;
@@ -45,6 +34,17 @@ void QueryTaskInfoHistoryRequest::setEndCreateTime(long endCreateTime)
 {
 	endCreateTime_ = endCreateTime;
 	setCoreParameter("EndCreateTime", std::to_string(endCreateTime));
+}
+
+long QueryTaskInfoHistoryRequest::getBeginCreateTime()const
+{
+	return beginCreateTime_;
+}
+
+void QueryTaskInfoHistoryRequest::setBeginCreateTime(long beginCreateTime)
+{
+	beginCreateTime_ = beginCreateTime;
+	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
 }
 
 std::string QueryTaskInfoHistoryRequest::getTaskNoCursor()const

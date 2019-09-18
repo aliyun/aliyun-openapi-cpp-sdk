@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				UpLoadMapRequest();
 				~UpLoadMapRequest();
 
-				std::string getFileName()const;
-				void setFileName(const std::string& fileName);
 				std::string getUploadId()const;
 				void setUploadId(const std::string& uploadId);
 				std::string getObjectName()const;
 				void setObjectName(const std::string& objectName);
-				int getChunkIndex()const;
-				void setChunkIndex(int chunkIndex);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getFileName()const;
+				void setFileName(const std::string& fileName);
+				int getChunkIndex()const;
+				void setChunkIndex(int chunkIndex);
 				int getChunkCnt()const;
 				void setChunkCnt(int chunkCnt);
 
             private:
-				std::string fileName_;
 				std::string uploadId_;
 				std::string objectName_;
-				int chunkIndex_;
 				std::string accessKeyId_;
+				std::string fileName_;
+				int chunkIndex_;
 				int chunkCnt_;
 
 			};

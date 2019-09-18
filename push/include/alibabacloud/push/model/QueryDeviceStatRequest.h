@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				long getAppKey()const;
-				void setAppKey(long appKey);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getDeviceType()const;
 				void setDeviceType(const std::string& deviceType);
-				std::string getQueryType()const;
-				void setQueryType(const std::string& queryType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getAppKey()const;
+				void setAppKey(long appKey);
+				std::string getQueryType()const;
+				void setQueryType(const std::string& queryType);
 
             private:
 				std::string endTime_;
-				long appKey_;
 				std::string startTime_;
 				std::string deviceType_;
-				std::string queryType_;
 				std::string accessKeyId_;
+				long appKey_;
+				std::string queryType_;
 
 			};
 		}

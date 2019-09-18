@@ -25,17 +25,6 @@ OemFlowrateRankingRequest::OemFlowrateRankingRequest() :
 OemFlowrateRankingRequest::~OemFlowrateRankingRequest()
 {}
 
-long OemFlowrateRankingRequest::getBid()const
-{
-	return bid_;
-}
-
-void OemFlowrateRankingRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string OemFlowrateRankingRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void OemFlowrateRankingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long OemFlowrateRankingRequest::getBid()const
+{
+	return bid_;
+}
+
+void OemFlowrateRankingRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

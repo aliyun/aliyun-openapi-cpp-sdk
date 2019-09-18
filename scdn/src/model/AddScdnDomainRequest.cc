@@ -25,17 +25,6 @@ AddScdnDomainRequest::AddScdnDomainRequest() :
 AddScdnDomainRequest::~AddScdnDomainRequest()
 {}
 
-std::string AddScdnDomainRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void AddScdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string AddScdnDomainRequest::getSources()const
 {
 	return sources_;
@@ -45,6 +34,17 @@ void AddScdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
 	setCoreParameter("Sources", sources);
+}
+
+std::string AddScdnDomainRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void AddScdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string AddScdnDomainRequest::getSecurityToken()const
@@ -58,17 +58,6 @@ void AddScdnDomainRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string AddScdnDomainRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void AddScdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string AddScdnDomainRequest::getScope()const
 {
 	return scope_;
@@ -78,6 +67,17 @@ void AddScdnDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
 	setCoreParameter("Scope", scope);
+}
+
+std::string AddScdnDomainRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void AddScdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddScdnDomainRequest::getDomainName()const

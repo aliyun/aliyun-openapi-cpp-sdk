@@ -36,6 +36,28 @@ void DescribeClusterServiceConfigTagRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeClusterServiceConfigTagRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeClusterServiceConfigTagRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string DescribeClusterServiceConfigTagRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeClusterServiceConfigTagRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeClusterServiceConfigTagRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,27 +89,5 @@ void DescribeClusterServiceConfigTagRequest::setServiceName(const std::string& s
 {
 	serviceName_ = serviceName;
 	setCoreParameter("ServiceName", serviceName);
-}
-
-std::string DescribeClusterServiceConfigTagRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void DescribeClusterServiceConfigTagRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string DescribeClusterServiceConfigTagRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeClusterServiceConfigTagRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,17 +25,6 @@ CancelJobRequest::CancelJobRequest() :
 CancelJobRequest::~CancelJobRequest()
 {}
 
-std::string CancelJobRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void CancelJobRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
-}
-
 long CancelJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -89,5 +78,16 @@ void CancelJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CancelJobRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void CancelJobRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setCoreParameter("JobId", jobId);
 }
 

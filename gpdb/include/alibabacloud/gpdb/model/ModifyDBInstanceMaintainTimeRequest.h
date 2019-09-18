@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ModifyDBInstanceMaintainTimeRequest();
 				~ModifyDBInstanceMaintainTimeRequest();
 
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 
             private:
-				std::string endTime_;
-				std::string dBInstanceId_;
 				std::string startTime_;
 				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string endTime_;
 
 			};
 		}

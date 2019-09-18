@@ -36,17 +36,6 @@ void CreateOrderRefundRecordRequest::setReason(const std::string& reason)
 	setCoreParameter("Reason", reason);
 }
 
-std::string CreateOrderRefundRecordRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateOrderRefundRecordRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long CreateOrderRefundRecordRequest::getOrderId()const
 {
 	return orderId_;
@@ -56,5 +45,27 @@ void CreateOrderRefundRecordRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
 	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+std::string CreateOrderRefundRecordRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateOrderRefundRecordRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateOrderRefundRecordRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateOrderRefundRecordRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

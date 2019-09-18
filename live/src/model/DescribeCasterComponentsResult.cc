@@ -35,13 +35,9 @@ DescribeCasterComponentsResult::~DescribeCasterComponentsResult()
 
 void DescribeCasterComponentsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allComponents = value["Components"]["Component"];
 	for (auto value : allComponents)
@@ -64,6 +60,8 @@ void DescribeCasterComponentsResult::parse(const std::string &payload)
 			componentsObject.componentLayer.widthNormalized = std::stof(componentLayerNode["WidthNormalized"].asString());
 		if(!componentLayerNode["PositionRefer"].isNull())
 			componentsObject.componentLayer.positionRefer = componentLayerNode["PositionRefer"].asString();
+		if(!componentLayerNode["Transparency"].isNull())
+			componentsObject.componentLayer.transparency = std::stoi(componentLayerNode["Transparency"].asString());
 			auto allPositionNormalizeds = componentLayerNode["PositionNormalizeds"]["Position"];
 			for (auto value : allPositionNormalizeds)
 				componentsObject.componentLayer.positionNormalizeds.push_back(value.asString());
@@ -100,6 +98,12 @@ void DescribeCasterComponentsResult::parse(const std::string &payload)
 			componentsObject.captionLayerContent.borderWidthNormalized = std::stof(captionLayerContentNode["BorderWidthNormalized"].asString());
 		if(!captionLayerContentNode["BorderColor"].isNull())
 			componentsObject.captionLayerContent.borderColor = captionLayerContentNode["BorderColor"].asString();
+		if(!captionLayerContentNode["WordCountPerLine"].isNull())
+			componentsObject.captionLayerContent.wordCountPerLine = std::stoi(captionLayerContentNode["WordCountPerLine"].asString());
+		if(!captionLayerContentNode["WordSpaceNormalized"].isNull())
+			componentsObject.captionLayerContent.wordSpaceNormalized = std::stof(captionLayerContentNode["WordSpaceNormalized"].asString());
+		if(!captionLayerContentNode["LineSpaceNormalized"].isNull())
+			componentsObject.captionLayerContent.lineSpaceNormalized = std::stof(captionLayerContentNode["LineSpaceNormalized"].asString());
 		components_.push_back(componentsObject);
 	}
 	if(!value["Total"].isNull())

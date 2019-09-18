@@ -25,17 +25,6 @@ DescribeFullBackupListRequest::DescribeFullBackupListRequest() :
 DescribeFullBackupListRequest::~DescribeFullBackupListRequest()
 {}
 
-std::string DescribeFullBackupListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeFullBackupListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeFullBackupListRequest::getClientToken()const
 {
 	return clientToken_;
@@ -45,17 +34,6 @@ void DescribeFullBackupListRequest::setClientToken(const std::string& clientToke
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-int DescribeFullBackupListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeFullBackupListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeFullBackupListRequest::getBackupPlanId()const
@@ -89,5 +67,16 @@ void DescribeFullBackupListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
+}
+
+int DescribeFullBackupListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeFullBackupListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

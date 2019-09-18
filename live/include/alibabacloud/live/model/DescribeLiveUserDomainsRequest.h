@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeLiveUserDomainsRequest();
 				~DescribeLiveUserDomainsRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getRegionName()const;
 				void setRegionName(const std::string& regionName);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getDomainStatus()const;
 				void setDomainStatus(const std::string& domainStatus);
-				std::string getLiveDomainType()const;
-				void setLiveDomainType(const std::string& liveDomainType);
 				std::string getDomainSearchType()const;
 				void setDomainSearchType(const std::string& domainSearchType);
+				std::string getLiveDomainType()const;
+				void setLiveDomainType(const std::string& liveDomainType);
 
             private:
+				int pageNumber_;
 				std::string securityToken_;
 				int pageSize_;
-				std::string domainName_;
 				std::string regionName_;
+				std::string domainName_;
 				long ownerId_;
-				int pageNumber_;
 				std::string domainStatus_;
-				std::string liveDomainType_;
 				std::string domainSearchType_;
+				std::string liveDomainType_;
 
 			};
 		}

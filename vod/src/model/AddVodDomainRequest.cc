@@ -47,17 +47,6 @@ void AddVodDomainRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string AddVodDomainRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void AddVodDomainRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string AddVodDomainRequest::getScope()const
 {
 	return scope_;
@@ -67,6 +56,17 @@ void AddVodDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
 	setCoreParameter("Scope", scope);
+}
+
+std::string AddVodDomainRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void AddVodDomainRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddVodDomainRequest::getDomainName()const

@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				UpdateRepoBuildRuleRequest();
 				~UpdateRepoBuildRuleRequest();
 
+				long getBuildRuleId()const;
+				void setBuildRuleId(long buildRuleId);
 				std::string getRepoNamespace()const;
 				void setRepoNamespace(const std::string& repoNamespace);
 				std::string getRepoName()const;
 				void setRepoName(const std::string& repoName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				long getBuildRuleId()const;
-				void setBuildRuleId(long buildRuleId);
 
             private:
+				long buildRuleId_;
 				std::string repoNamespace_;
 				std::string repoName_;
-				std::string regionId_;
-				long buildRuleId_;
 
 			};
 		}

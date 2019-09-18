@@ -36,17 +36,6 @@ void AddClusterServiceForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string AddClusterServiceForAdminRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AddClusterServiceForAdminRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string AddClusterServiceForAdminRequest::getServiceList()const
 {
 	return serviceList_;
@@ -56,17 +45,6 @@ void AddClusterServiceForAdminRequest::setServiceList(const std::string& service
 {
 	serviceList_ = serviceList;
 	setCoreParameter("ServiceList", serviceList);
-}
-
-std::string AddClusterServiceForAdminRequest::getComment()const
-{
-	return comment_;
-}
-
-void AddClusterServiceForAdminRequest::setComment(const std::string& comment)
-{
-	comment_ = comment;
-	setCoreParameter("Comment", comment);
 }
 
 std::string AddClusterServiceForAdminRequest::getClusterId()const
@@ -100,5 +78,27 @@ void AddClusterServiceForAdminRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AddClusterServiceForAdminRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void AddClusterServiceForAdminRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string AddClusterServiceForAdminRequest::getComment()const
+{
+	return comment_;
+}
+
+void AddClusterServiceForAdminRequest::setComment(const std::string& comment)
+{
+	comment_ = comment;
+	setCoreParameter("Comment", comment);
 }
 

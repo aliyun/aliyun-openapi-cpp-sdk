@@ -25,6 +25,17 @@ DescribeLocationListRequest::DescribeLocationListRequest() :
 DescribeLocationListRequest::~DescribeLocationListRequest()
 {}
 
+std::string DescribeLocationListRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeLocationListRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeLocationListRequest::getSourceIp()const
 {
 	return sourceIp_;

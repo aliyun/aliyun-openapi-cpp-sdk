@@ -36,17 +36,6 @@ void QueryTransferInListRequest::setSubmissionStartDate(long submissionStartDate
 	setCoreParameter("SubmissionStartDate", std::to_string(submissionStartDate));
 }
 
-std::string QueryTransferInListRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void QueryTransferInListRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 long QueryTransferInListRequest::getSubmissionEndDate()const
 {
 	return submissionEndDate_;
@@ -67,6 +56,28 @@ void QueryTransferInListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+int QueryTransferInListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryTransferInListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+std::string QueryTransferInListRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryTransferInListRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryTransferInListRequest::getSimpleTransferInStatus()const
@@ -100,16 +111,5 @@ void QueryTransferInListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int QueryTransferInListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void QueryTransferInListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

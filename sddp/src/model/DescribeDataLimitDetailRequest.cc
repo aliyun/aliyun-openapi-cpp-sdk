@@ -25,6 +25,17 @@ DescribeDataLimitDetailRequest::DescribeDataLimitDetailRequest() :
 DescribeDataLimitDetailRequest::~DescribeDataLimitDetailRequest()
 {}
 
+int DescribeDataLimitDetailRequest::getNetworkType()const
+{
+	return networkType_;
+}
+
+void DescribeDataLimitDetailRequest::setNetworkType(int networkType)
+{
+	networkType_ = networkType;
+	setCoreParameter("NetworkType", std::to_string(networkType));
+}
+
 std::string DescribeDataLimitDetailRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void DescribeDataLimitDetailRequest::setId(long id)
 {
 	id_ = id;
 	setCoreParameter("Id", std::to_string(id));
-}
-
-int DescribeDataLimitDetailRequest::getNetworkType()const
-{
-	return networkType_;
-}
-
-void DescribeDataLimitDetailRequest::setNetworkType(int networkType)
-{
-	networkType_ = networkType;
-	setCoreParameter("NetworkType", std::to_string(networkType));
 }
 
 std::string DescribeDataLimitDetailRequest::getLang()const

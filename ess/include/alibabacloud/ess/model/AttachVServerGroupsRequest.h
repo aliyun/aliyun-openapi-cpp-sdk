@@ -33,36 +33,42 @@ namespace AlibabaCloud
 				struct VServerGroup
 				{
 					std::string loadBalancerId;
-					RepeatList vServerGroupAttribute;
+					struct VServerGroupAttribute
+					{
+						std::string vServerGroupId;
+						int port;
+						int weight;
+					};
+					VServerGroupAttribute vServerGroupAttribute;
 				};
 
 			public:
 				AttachVServerGroupsRequest();
 				~AttachVServerGroupsRequest();
 
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
 				bool getForceAttach()const;
 				void setForceAttach(bool forceAttach);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::vector<VServerGroup> getVServerGroup()const;
 				void setVServerGroup(const std::vector<VServerGroup>& vServerGroup);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string scalingGroupId_;
 				bool forceAttach_;
+				std::string accessKeyId_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::vector<VServerGroup> vServerGroup_;
-				std::string accessKeyId_;
 
 			};
 		}

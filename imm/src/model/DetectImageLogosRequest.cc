@@ -25,28 +25,6 @@ DetectImageLogosRequest::DetectImageLogosRequest() :
 DetectImageLogosRequest::~DetectImageLogosRequest()
 {}
 
-std::string DetectImageLogosRequest::getImageUri()const
-{
-	return imageUri_;
-}
-
-void DetectImageLogosRequest::setImageUri(const std::string& imageUri)
-{
-	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
-}
-
-std::string DetectImageLogosRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DetectImageLogosRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DetectImageLogosRequest::getProject()const
 {
 	return project_;
@@ -67,5 +45,16 @@ void DetectImageLogosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DetectImageLogosRequest::getImageUri()const
+{
+	return imageUri_;
+}
+
+void DetectImageLogosRequest::setImageUri(const std::string& imageUri)
+{
+	imageUri_ = imageUri;
+	setCoreParameter("ImageUri", imageUri);
 }
 

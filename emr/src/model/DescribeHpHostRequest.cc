@@ -25,17 +25,6 @@ DescribeHpHostRequest::DescribeHpHostRequest() :
 DescribeHpHostRequest::~DescribeHpHostRequest()
 {}
 
-std::string DescribeHpHostRequest::getHpHostBizId()const
-{
-	return hpHostBizId_;
-}
-
-void DescribeHpHostRequest::setHpHostBizId(const std::string& hpHostBizId)
-{
-	hpHostBizId_ = hpHostBizId;
-	setCoreParameter("HpHostBizId", hpHostBizId);
-}
-
 long DescribeHpHostRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void DescribeHpHostRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeHpHostRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeHpHostRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeHpHostRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,27 @@ void DescribeHpHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeHpHostRequest::getHpHostBizId()const
+{
+	return hpHostBizId_;
+}
+
+void DescribeHpHostRequest::setHpHostBizId(const std::string& hpHostBizId)
+{
+	hpHostBizId_ = hpHostBizId;
+	setCoreParameter("HpHostBizId", hpHostBizId);
+}
+
+std::string DescribeHpHostRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeHpHostRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

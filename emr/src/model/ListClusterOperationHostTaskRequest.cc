@@ -36,39 +36,6 @@ void ListClusterOperationHostTaskRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListClusterOperationHostTaskRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListClusterOperationHostTaskRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListClusterOperationHostTaskRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListClusterOperationHostTaskRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListClusterOperationHostTaskRequest::getOperationId()const
-{
-	return operationId_;
-}
-
-void ListClusterOperationHostTaskRequest::setOperationId(const std::string& operationId)
-{
-	operationId_ = operationId;
-	setCoreParameter("OperationId", operationId);
-}
-
 std::string ListClusterOperationHostTaskRequest::getHostId()const
 {
 	return hostId_;
@@ -111,6 +78,39 @@ void ListClusterOperationHostTaskRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListClusterOperationHostTaskRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListClusterOperationHostTaskRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListClusterOperationHostTaskRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListClusterOperationHostTaskRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListClusterOperationHostTaskRequest::getOperationId()const
+{
+	return operationId_;
+}
+
+void ListClusterOperationHostTaskRequest::setOperationId(const std::string& operationId)
+{
+	operationId_ = operationId;
+	setCoreParameter("OperationId", operationId);
 }
 
 std::string ListClusterOperationHostTaskRequest::getStatus()const

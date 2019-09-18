@@ -25,17 +25,6 @@ ShopActionReturningRequest::ShopActionReturningRequest() :
 ShopActionReturningRequest::~ShopActionReturningRequest()
 {}
 
-long ShopActionReturningRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void ShopActionReturningRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string ShopActionReturningRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void ShopActionReturningRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ShopActionReturningRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void ShopActionReturningRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

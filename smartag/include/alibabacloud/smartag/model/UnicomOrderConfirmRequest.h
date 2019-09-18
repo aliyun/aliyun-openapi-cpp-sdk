@@ -34,7 +34,7 @@ namespace AlibabaCloud
 				{
 					std::string scItemName;
 					std::string itemAmount;
-					std::vector<std::string> snList;
+					SnList snList;
 					std::string orderItemId;
 					std::string scItemCode;
 					int itemQuantity;
@@ -46,41 +46,41 @@ namespace AlibabaCloud
 				UnicomOrderConfirmRequest();
 				~UnicomOrderConfirmRequest();
 
-				std::string getTmsCode()const;
-				void setTmsCode(const std::string& tmsCode);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getTmsCode()const;
+				void setTmsCode(const std::string& tmsCode);
 				std::vector<OrderItem> getOrderItem()const;
 				void setOrderItem(const std::vector<OrderItem>& orderItem);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				long getOrderPostFee()const;
+				void setOrderPostFee(long orderPostFee);
+				std::string getTradeId()const;
+				void setTradeId(const std::string& tradeId);
 				std::string getOwnerUserId()const;
 				void setOwnerUserId(const std::string& ownerUserId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				long getOrderPostFee()const;
-				void setOrderPostFee(long orderPostFee);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getTmsOrderCode()const;
 				void setTmsOrderCode(const std::string& tmsOrderCode);
-				std::string getTradeId()const;
-				void setTradeId(const std::string& tradeId);
 
             private:
-				std::string tmsCode_;
 				long resourceOwnerId_;
+				std::string tmsCode_;
 				std::vector<OrderItem> orderItem_;
+				std::string regionId_;
+				long orderPostFee_;
+				std::string tradeId_;
 				std::string ownerUserId_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
-				long orderPostFee_;
 				long ownerId_;
 				std::string tmsOrderCode_;
-				std::string tradeId_;
 
 			};
 		}

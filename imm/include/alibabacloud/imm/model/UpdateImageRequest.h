@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				UpdateImageRequest();
 				~UpdateImageRequest();
 
-				std::string getRemarksB()const;
-				void setRemarksB(const std::string& remarksB);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getRemarksA()const;
-				void setRemarksA(const std::string& remarksA);
 				std::string getExternalId()const;
 				void setExternalId(const std::string& externalId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSourceType()const;
+				void setSourceType(const std::string& sourceType);
+				std::string getRemarksB()const;
+				void setRemarksB(const std::string& remarksB);
+				std::string getRemarksA()const;
+				void setRemarksA(const std::string& remarksA);
 				std::string getImageUri()const;
 				void setImageUri(const std::string& imageUri);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getSourceUri()const;
 				void setSourceUri(const std::string& sourceUri);
 				std::string getSourcePosition()const;
@@ -59,23 +59,20 @@ namespace AlibabaCloud
 				void setRemarksC(const std::string& remarksC);
 				std::string getSetId()const;
 				void setSetId(const std::string& setId);
-				std::string getSourceType()const;
-				void setSourceType(const std::string& sourceType);
 
             private:
-				std::string remarksB_;
 				std::string project_;
-				std::string remarksA_;
 				std::string externalId_;
 				std::string accessKeyId_;
+				std::string sourceType_;
+				std::string remarksB_;
+				std::string remarksA_;
 				std::string imageUri_;
-				std::string regionId_;
 				std::string sourceUri_;
 				std::string sourcePosition_;
 				std::string remarksD_;
 				std::string remarksC_;
 				std::string setId_;
-				std::string sourceType_;
 
 			};
 		}

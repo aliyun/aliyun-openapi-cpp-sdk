@@ -25,17 +25,6 @@ ModifyScheduledTaskRequest::ModifyScheduledTaskRequest() :
 ModifyScheduledTaskRequest::~ModifyScheduledTaskRequest()
 {}
 
-std::string ModifyScheduledTaskRequest::getLaunchTime()const
-{
-	return launchTime_;
-}
-
-void ModifyScheduledTaskRequest::setLaunchTime(const std::string& launchTime)
-{
-	launchTime_ = launchTime;
-	setCoreParameter("LaunchTime", launchTime);
-}
-
 long ModifyScheduledTaskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -69,6 +58,50 @@ void ModifyScheduledTaskRequest::setMaxValue(int maxValue)
 	setCoreParameter("MaxValue", std::to_string(maxValue));
 }
 
+std::string ModifyScheduledTaskRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyScheduledTaskRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string ModifyScheduledTaskRequest::getRecurrenceEndTime()const
+{
+	return recurrenceEndTime_;
+}
+
+void ModifyScheduledTaskRequest::setRecurrenceEndTime(const std::string& recurrenceEndTime)
+{
+	recurrenceEndTime_ = recurrenceEndTime;
+	setCoreParameter("RecurrenceEndTime", recurrenceEndTime);
+}
+
+std::string ModifyScheduledTaskRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyScheduledTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyScheduledTaskRequest::getLaunchTime()const
+{
+	return launchTime_;
+}
+
+void ModifyScheduledTaskRequest::setLaunchTime(const std::string& launchTime)
+{
+	launchTime_ = launchTime;
+	setCoreParameter("LaunchTime", launchTime);
+}
+
 std::string ModifyScheduledTaskRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -89,17 +122,6 @@ void ModifyScheduledTaskRequest::setOwnerAccount(const std::string& ownerAccount
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyScheduledTaskRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyScheduledTaskRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
 }
 
 long ModifyScheduledTaskRequest::getOwnerId()const
@@ -133,28 +155,6 @@ void ModifyScheduledTaskRequest::setLaunchExpirationTime(int launchExpirationTim
 {
 	launchExpirationTime_ = launchExpirationTime;
 	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
-}
-
-std::string ModifyScheduledTaskRequest::getRecurrenceEndTime()const
-{
-	return recurrenceEndTime_;
-}
-
-void ModifyScheduledTaskRequest::setRecurrenceEndTime(const std::string& recurrenceEndTime)
-{
-	recurrenceEndTime_ = recurrenceEndTime;
-	setCoreParameter("RecurrenceEndTime", recurrenceEndTime);
-}
-
-std::string ModifyScheduledTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyScheduledTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int ModifyScheduledTaskRequest::getMinValue()const

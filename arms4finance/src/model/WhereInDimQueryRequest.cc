@@ -25,6 +25,39 @@ WhereInDimQueryRequest::WhereInDimQueryRequest() :
 WhereInDimQueryRequest::~WhereInDimQueryRequest()
 {}
 
+std::string WhereInDimQueryRequest::getDateStr()const
+{
+	return dateStr_;
+}
+
+void WhereInDimQueryRequest::setDateStr(const std::string& dateStr)
+{
+	dateStr_ = dateStr;
+	setCoreParameter("DateStr", dateStr);
+}
+
+long WhereInDimQueryRequest::getMinTime()const
+{
+	return minTime_;
+}
+
+void WhereInDimQueryRequest::setMinTime(long minTime)
+{
+	minTime_ = minTime;
+	setCoreParameter("MinTime", std::to_string(minTime));
+}
+
+long WhereInDimQueryRequest::getMaxTime()const
+{
+	return maxTime_;
+}
+
+void WhereInDimQueryRequest::setMaxTime(long maxTime)
+{
+	maxTime_ = maxTime;
+	setCoreParameter("MaxTime", std::to_string(maxTime));
+}
+
 std::string WhereInDimQueryRequest::getWhereInKey()const
 {
 	return whereInKey_;
@@ -59,17 +92,6 @@ void WhereInDimQueryRequest::setIntervalInSec(int intervalInSec)
 	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
 }
 
-std::string WhereInDimQueryRequest::getDateStr()const
-{
-	return dateStr_;
-}
-
-void WhereInDimQueryRequest::setDateStr(const std::string& dateStr)
-{
-	dateStr_ = dateStr;
-	setCoreParameter("DateStr", dateStr);
-}
-
 bool WhereInDimQueryRequest::getIsDrillDown()const
 {
 	return isDrillDown_;
@@ -79,17 +101,6 @@ void WhereInDimQueryRequest::setIsDrillDown(bool isDrillDown)
 {
 	isDrillDown_ = isDrillDown;
 	setCoreParameter("IsDrillDown", isDrillDown ? "true" : "false");
-}
-
-long WhereInDimQueryRequest::getMinTime()const
-{
-	return minTime_;
-}
-
-void WhereInDimQueryRequest::setMinTime(long minTime)
-{
-	minTime_ = minTime;
-	setCoreParameter("MinTime", std::to_string(minTime));
 }
 
 long WhereInDimQueryRequest::getDatasetId()const
@@ -113,17 +124,6 @@ void WhereInDimQueryRequest::setWhereInValues(const std::vector<std::string>& wh
 	whereInValues_ = whereInValues;
 	for(int i = 0; i!= whereInValues.size(); i++)
 		setCoreParameter("WhereInValues."+ std::to_string(i), whereInValues.at(i));
-}
-
-long WhereInDimQueryRequest::getMaxTime()const
-{
-	return maxTime_;
-}
-
-void WhereInDimQueryRequest::setMaxTime(long maxTime)
-{
-	maxTime_ = maxTime;
-	setCoreParameter("MaxTime", std::to_string(maxTime));
 }
 
 std::vector<WhereInDimQueryRequest::Dimensions> WhereInDimQueryRequest::getDimensions()const

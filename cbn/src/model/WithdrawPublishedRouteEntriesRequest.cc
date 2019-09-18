@@ -25,17 +25,6 @@ WithdrawPublishedRouteEntriesRequest::WithdrawPublishedRouteEntriesRequest() :
 WithdrawPublishedRouteEntriesRequest::~WithdrawPublishedRouteEntriesRequest()
 {}
 
-std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceId()const
-{
-	return childInstanceId_;
-}
-
-void WithdrawPublishedRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
-{
-	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
-}
-
 long WithdrawPublishedRouteEntriesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void WithdrawPublishedRouteEntriesRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string WithdrawPublishedRouteEntriesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void WithdrawPublishedRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string WithdrawPublishedRouteEntriesRequest::getCenId()const
 {
 	return cenId_;
@@ -67,6 +45,28 @@ void WithdrawPublishedRouteEntriesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
 	setCoreParameter("CenId", cenId);
+}
+
+std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceRegionId()const
+{
+	return childInstanceRegionId_;
+}
+
+void WithdrawPublishedRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
+{
+	childInstanceRegionId_ = childInstanceRegionId;
+	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+}
+
+std::string WithdrawPublishedRouteEntriesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void WithdrawPublishedRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getDestinationCidrBlock()const
@@ -91,6 +91,17 @@ void WithdrawPublishedRouteEntriesRequest::setChildInstanceType(const std::strin
 	setCoreParameter("ChildInstanceType", childInstanceType);
 }
 
+std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceId()const
+{
+	return childInstanceId_;
+}
+
+void WithdrawPublishedRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
+{
+	childInstanceId_ = childInstanceId;
+	setCoreParameter("ChildInstanceId", childInstanceId);
+}
+
 std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceRouteTableId()const
 {
 	return childInstanceRouteTableId_;
@@ -100,16 +111,5 @@ void WithdrawPublishedRouteEntriesRequest::setChildInstanceRouteTableId(const st
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
 	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
-}
-
-std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceRegionId()const
-{
-	return childInstanceRegionId_;
-}
-
-void WithdrawPublishedRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
-{
-	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 

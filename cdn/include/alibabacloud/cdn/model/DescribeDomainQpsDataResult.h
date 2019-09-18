@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				struct DataModule
 				{
 					std::string overseasValue;
-					std::string httpsAccDomesticValue;
+					std::string staticOverseasValue;
+					std::string staticValue;
+					std::string staticDomesticValue;
 					std::string timeStamp;
 					std::string domesticValue;
-					std::string httpsAccOverseasValue;
-					std::string httpsValue;
+					std::string dynamicOverseasValue;
 					std::string accDomesticValue;
 					std::string value;
 					std::string accOverseasValue;
-					std::string httpsDomesticValue;
-					std::string httpsAccValue;
+					std::string dynamicDomesticValue;
 					std::string accValue;
-					std::string httpsOverseasValue;
+					std::string dynamicValue;
 				};
 
 

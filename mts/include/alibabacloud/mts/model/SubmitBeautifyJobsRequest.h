@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				SubmitBeautifyJobsRequest();
 				~SubmitBeautifyJobsRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getBeautifyConfig()const;
 				void setBeautifyConfig(const std::string& beautifyConfig);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
-				bool getAsync()const;
-				void setAsync(bool async);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				bool getAsync()const;
+				void setAsync(bool async);
 
             private:
+				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string beautifyConfig_;
 				std::string userData_;
-				bool async_;
-				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				bool async_;
 
 			};
 		}

@@ -36,17 +36,6 @@ void RenderResourcePoolXmlForAdminRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RenderResourcePoolXmlForAdminRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RenderResourcePoolXmlForAdminRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string RenderResourcePoolXmlForAdminRequest::getResourcePoolId()const
 {
 	return resourcePoolId_;
@@ -89,5 +78,16 @@ void RenderResourcePoolXmlForAdminRequest::setAccessKeyId(const std::string& acc
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RenderResourcePoolXmlForAdminRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RenderResourcePoolXmlForAdminRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

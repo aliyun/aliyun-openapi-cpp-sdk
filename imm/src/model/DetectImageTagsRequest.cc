@@ -25,28 +25,6 @@ DetectImageTagsRequest::DetectImageTagsRequest() :
 DetectImageTagsRequest::~DetectImageTagsRequest()
 {}
 
-std::string DetectImageTagsRequest::getImageUri()const
-{
-	return imageUri_;
-}
-
-void DetectImageTagsRequest::setImageUri(const std::string& imageUri)
-{
-	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
-}
-
-std::string DetectImageTagsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DetectImageTagsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DetectImageTagsRequest::getProject()const
 {
 	return project_;
@@ -56,6 +34,17 @@ void DetectImageTagsRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
+}
+
+std::string DetectImageTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DetectImageTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetectImageTagsRequest::getRealUid()const
@@ -69,14 +58,14 @@ void DetectImageTagsRequest::setRealUid(const std::string& realUid)
 	setCoreParameter("RealUid", realUid);
 }
 
-std::string DetectImageTagsRequest::getAccessKeyId()const
+std::string DetectImageTagsRequest::getImageUri()const
 {
-	return accessKeyId_;
+	return imageUri_;
 }
 
-void DetectImageTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+void DetectImageTagsRequest::setImageUri(const std::string& imageUri)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	imageUri_ = imageUri;
+	setCoreParameter("ImageUri", imageUri);
 }
 

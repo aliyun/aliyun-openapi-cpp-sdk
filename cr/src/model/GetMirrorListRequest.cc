@@ -25,14 +25,3 @@ GetMirrorListRequest::GetMirrorListRequest() :
 GetMirrorListRequest::~GetMirrorListRequest()
 {}
 
-std::string GetMirrorListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetMirrorListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

@@ -25,6 +25,17 @@ QueryTradeIntentionUserListRequest::QueryTradeIntentionUserListRequest() :
 QueryTradeIntentionUserListRequest::~QueryTradeIntentionUserListRequest()
 {}
 
+int QueryTradeIntentionUserListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryTradeIntentionUserListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 int QueryTradeIntentionUserListRequest::getPageSize()const
 {
 	return pageSize_;
@@ -56,17 +67,6 @@ void QueryTradeIntentionUserListRequest::setEnd(long end)
 {
 	end_ = end;
 	setCoreParameter("End", std::to_string(end));
-}
-
-int QueryTradeIntentionUserListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void QueryTradeIntentionUserListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 long QueryTradeIntentionUserListRequest::getBegin()const

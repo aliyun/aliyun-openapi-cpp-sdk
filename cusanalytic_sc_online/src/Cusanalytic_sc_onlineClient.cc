@@ -31,97 +31,25 @@ Cusanalytic_sc_onlineClient::Cusanalytic_sc_onlineClient(const Credentials &cred
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cusanalytic_sc_online");
 }
 
 Cusanalytic_sc_onlineClient::Cusanalytic_sc_onlineClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cusanalytic_sc_online");
 }
 
 Cusanalytic_sc_onlineClient::Cusanalytic_sc_onlineClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cusanalytic_sc_online");
 }
 
 Cusanalytic_sc_onlineClient::~Cusanalytic_sc_onlineClient()
 {}
-
-Cusanalytic_sc_onlineClient::DescribeLocationsOutcome Cusanalytic_sc_onlineClient::describeLocations(const DescribeLocationsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLocationsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLocationsOutcome(DescribeLocationsResult(outcome.result()));
-	else
-		return DescribeLocationsOutcome(outcome.error());
-}
-
-void Cusanalytic_sc_onlineClient::describeLocationsAsync(const DescribeLocationsRequest& request, const DescribeLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLocations(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cusanalytic_sc_onlineClient::DescribeLocationsOutcomeCallable Cusanalytic_sc_onlineClient::describeLocationsCallable(const DescribeLocationsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLocationsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLocations(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cusanalytic_sc_onlineClient::GetSupportStoreOutcome Cusanalytic_sc_onlineClient::getSupportStore(const GetSupportStoreRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSupportStoreOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSupportStoreOutcome(GetSupportStoreResult(outcome.result()));
-	else
-		return GetSupportStoreOutcome(outcome.error());
-}
-
-void Cusanalytic_sc_onlineClient::getSupportStoreAsync(const GetSupportStoreRequest& request, const GetSupportStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSupportStore(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cusanalytic_sc_onlineClient::GetSupportStoreOutcomeCallable Cusanalytic_sc_onlineClient::getSupportStoreCallable(const GetSupportStoreRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSupportStoreOutcome()>>(
-			[this, request]()
-			{
-			return this->getSupportStore(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
 
 Cusanalytic_sc_onlineClient::DescribeActionDataOutcome Cusanalytic_sc_onlineClient::describeActionData(const DescribeActionDataRequest &request) const
 {
@@ -159,72 +87,36 @@ Cusanalytic_sc_onlineClient::DescribeActionDataOutcomeCallable Cusanalytic_sc_on
 	return task->get_future();
 }
 
-Cusanalytic_sc_onlineClient::GetPortrayalOutcome Cusanalytic_sc_onlineClient::getPortrayal(const GetPortrayalRequest &request) const
+Cusanalytic_sc_onlineClient::DescribeLocationsOutcome Cusanalytic_sc_onlineClient::describeLocations(const DescribeLocationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetPortrayalOutcome(endpointOutcome.error());
+		return DescribeLocationsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetPortrayalOutcome(GetPortrayalResult(outcome.result()));
+		return DescribeLocationsOutcome(DescribeLocationsResult(outcome.result()));
 	else
-		return GetPortrayalOutcome(outcome.error());
+		return DescribeLocationsOutcome(outcome.error());
 }
 
-void Cusanalytic_sc_onlineClient::getPortrayalAsync(const GetPortrayalRequest& request, const GetPortrayalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Cusanalytic_sc_onlineClient::describeLocationsAsync(const DescribeLocationsRequest& request, const DescribeLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getPortrayal(request), context);
+		handler(this, request, describeLocations(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-Cusanalytic_sc_onlineClient::GetPortrayalOutcomeCallable Cusanalytic_sc_onlineClient::getPortrayalCallable(const GetPortrayalRequest &request) const
+Cusanalytic_sc_onlineClient::DescribeLocationsOutcomeCallable Cusanalytic_sc_onlineClient::describeLocationsCallable(const DescribeLocationsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetPortrayalOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLocationsOutcome()>>(
 			[this, request]()
 			{
-			return this->getPortrayal(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cusanalytic_sc_onlineClient::GetHeatMapDataOutcome Cusanalytic_sc_onlineClient::getHeatMapData(const GetHeatMapDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetHeatMapDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetHeatMapDataOutcome(GetHeatMapDataResult(outcome.result()));
-	else
-		return GetHeatMapDataOutcome(outcome.error());
-}
-
-void Cusanalytic_sc_onlineClient::getHeatMapDataAsync(const GetHeatMapDataRequest& request, const GetHeatMapDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getHeatMapData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cusanalytic_sc_onlineClient::GetHeatMapDataOutcomeCallable Cusanalytic_sc_onlineClient::getHeatMapDataCallable(const GetHeatMapDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetHeatMapDataOutcome()>>(
-			[this, request]()
-			{
-			return this->getHeatMapData(request);
+			return this->describeLocations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,36 +159,36 @@ Cusanalytic_sc_onlineClient::GetActionCursorOutcomeCallable Cusanalytic_sc_onlin
 	return task->get_future();
 }
 
-Cusanalytic_sc_onlineClient::GetImageUrlOutcome Cusanalytic_sc_onlineClient::getImageUrl(const GetImageUrlRequest &request) const
+Cusanalytic_sc_onlineClient::GetAnalyzeCommodityDataOutcome Cusanalytic_sc_onlineClient::getAnalyzeCommodityData(const GetAnalyzeCommodityDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetImageUrlOutcome(endpointOutcome.error());
+		return GetAnalyzeCommodityDataOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetImageUrlOutcome(GetImageUrlResult(outcome.result()));
+		return GetAnalyzeCommodityDataOutcome(GetAnalyzeCommodityDataResult(outcome.result()));
 	else
-		return GetImageUrlOutcome(outcome.error());
+		return GetAnalyzeCommodityDataOutcome(outcome.error());
 }
 
-void Cusanalytic_sc_onlineClient::getImageUrlAsync(const GetImageUrlRequest& request, const GetImageUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Cusanalytic_sc_onlineClient::getAnalyzeCommodityDataAsync(const GetAnalyzeCommodityDataRequest& request, const GetAnalyzeCommodityDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getImageUrl(request), context);
+		handler(this, request, getAnalyzeCommodityData(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-Cusanalytic_sc_onlineClient::GetImageUrlOutcomeCallable Cusanalytic_sc_onlineClient::getImageUrlCallable(const GetImageUrlRequest &request) const
+Cusanalytic_sc_onlineClient::GetAnalyzeCommodityDataOutcomeCallable Cusanalytic_sc_onlineClient::getAnalyzeCommodityDataCallable(const GetAnalyzeCommodityDataRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetImageUrlOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetAnalyzeCommodityDataOutcome()>>(
 			[this, request]()
 			{
-			return this->getImageUrl(request);
+			return this->getAnalyzeCommodityData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,36 +231,108 @@ Cusanalytic_sc_onlineClient::GetAnalyzePlaceDataOutcomeCallable Cusanalytic_sc_o
 	return task->get_future();
 }
 
-Cusanalytic_sc_onlineClient::GetOverviewDataOutcome Cusanalytic_sc_onlineClient::getOverviewData(const GetOverviewDataRequest &request) const
+Cusanalytic_sc_onlineClient::GetEMapOutcome Cusanalytic_sc_onlineClient::getEMap(const GetEMapRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetOverviewDataOutcome(endpointOutcome.error());
+		return GetEMapOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetOverviewDataOutcome(GetOverviewDataResult(outcome.result()));
+		return GetEMapOutcome(GetEMapResult(outcome.result()));
 	else
-		return GetOverviewDataOutcome(outcome.error());
+		return GetEMapOutcome(outcome.error());
 }
 
-void Cusanalytic_sc_onlineClient::getOverviewDataAsync(const GetOverviewDataRequest& request, const GetOverviewDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Cusanalytic_sc_onlineClient::getEMapAsync(const GetEMapRequest& request, const GetEMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getOverviewData(request), context);
+		handler(this, request, getEMap(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-Cusanalytic_sc_onlineClient::GetOverviewDataOutcomeCallable Cusanalytic_sc_onlineClient::getOverviewDataCallable(const GetOverviewDataRequest &request) const
+Cusanalytic_sc_onlineClient::GetEMapOutcomeCallable Cusanalytic_sc_onlineClient::getEMapCallable(const GetEMapRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetOverviewDataOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetEMapOutcome()>>(
 			[this, request]()
 			{
-			return this->getOverviewData(request);
+			return this->getEMap(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetHeatMapDataOutcome Cusanalytic_sc_onlineClient::getHeatMapData(const GetHeatMapDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetHeatMapDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetHeatMapDataOutcome(GetHeatMapDataResult(outcome.result()));
+	else
+		return GetHeatMapDataOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getHeatMapDataAsync(const GetHeatMapDataRequest& request, const GetHeatMapDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getHeatMapData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetHeatMapDataOutcomeCallable Cusanalytic_sc_onlineClient::getHeatMapDataCallable(const GetHeatMapDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetHeatMapDataOutcome()>>(
+			[this, request]()
+			{
+			return this->getHeatMapData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetImageUrlOutcome Cusanalytic_sc_onlineClient::getImageUrl(const GetImageUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetImageUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetImageUrlOutcome(GetImageUrlResult(outcome.result()));
+	else
+		return GetImageUrlOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getImageUrlAsync(const GetImageUrlRequest& request, const GetImageUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getImageUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetImageUrlOutcomeCallable Cusanalytic_sc_onlineClient::getImageUrlCallable(const GetImageUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetImageUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getImageUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,36 +375,180 @@ Cusanalytic_sc_onlineClient::GetLocationsOutcomeCallable Cusanalytic_sc_onlineCl
 	return task->get_future();
 }
 
-Cusanalytic_sc_onlineClient::GetAnalyzeCommodityDataOutcome Cusanalytic_sc_onlineClient::getAnalyzeCommodityData(const GetAnalyzeCommodityDataRequest &request) const
+Cusanalytic_sc_onlineClient::GetOverviewDataOutcome Cusanalytic_sc_onlineClient::getOverviewData(const GetOverviewDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetAnalyzeCommodityDataOutcome(endpointOutcome.error());
+		return GetOverviewDataOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetAnalyzeCommodityDataOutcome(GetAnalyzeCommodityDataResult(outcome.result()));
+		return GetOverviewDataOutcome(GetOverviewDataResult(outcome.result()));
 	else
-		return GetAnalyzeCommodityDataOutcome(outcome.error());
+		return GetOverviewDataOutcome(outcome.error());
 }
 
-void Cusanalytic_sc_onlineClient::getAnalyzeCommodityDataAsync(const GetAnalyzeCommodityDataRequest& request, const GetAnalyzeCommodityDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Cusanalytic_sc_onlineClient::getOverviewDataAsync(const GetOverviewDataRequest& request, const GetOverviewDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getAnalyzeCommodityData(request), context);
+		handler(this, request, getOverviewData(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-Cusanalytic_sc_onlineClient::GetAnalyzeCommodityDataOutcomeCallable Cusanalytic_sc_onlineClient::getAnalyzeCommodityDataCallable(const GetAnalyzeCommodityDataRequest &request) const
+Cusanalytic_sc_onlineClient::GetOverviewDataOutcomeCallable Cusanalytic_sc_onlineClient::getOverviewDataCallable(const GetOverviewDataRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetAnalyzeCommodityDataOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetOverviewDataOutcome()>>(
 			[this, request]()
 			{
-			return this->getAnalyzeCommodityData(request);
+			return this->getOverviewData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetPersonInStore5MinOutcome Cusanalytic_sc_onlineClient::getPersonInStore5Min(const GetPersonInStore5MinRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPersonInStore5MinOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPersonInStore5MinOutcome(GetPersonInStore5MinResult(outcome.result()));
+	else
+		return GetPersonInStore5MinOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getPersonInStore5MinAsync(const GetPersonInStore5MinRequest& request, const GetPersonInStore5MinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPersonInStore5Min(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetPersonInStore5MinOutcomeCallable Cusanalytic_sc_onlineClient::getPersonInStore5MinCallable(const GetPersonInStore5MinRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPersonInStore5MinOutcome()>>(
+			[this, request]()
+			{
+			return this->getPersonInStore5Min(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetPortrayalOutcome Cusanalytic_sc_onlineClient::getPortrayal(const GetPortrayalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPortrayalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPortrayalOutcome(GetPortrayalResult(outcome.result()));
+	else
+		return GetPortrayalOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getPortrayalAsync(const GetPortrayalRequest& request, const GetPortrayalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPortrayal(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetPortrayalOutcomeCallable Cusanalytic_sc_onlineClient::getPortrayalCallable(const GetPortrayalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPortrayalOutcome()>>(
+			[this, request]()
+			{
+			return this->getPortrayal(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetRoiRankingOutcome Cusanalytic_sc_onlineClient::getRoiRanking(const GetRoiRankingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRoiRankingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRoiRankingOutcome(GetRoiRankingResult(outcome.result()));
+	else
+		return GetRoiRankingOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getRoiRankingAsync(const GetRoiRankingRequest& request, const GetRoiRankingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRoiRanking(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetRoiRankingOutcomeCallable Cusanalytic_sc_onlineClient::getRoiRankingCallable(const GetRoiRankingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRoiRankingOutcome()>>(
+			[this, request]()
+			{
+			return this->getRoiRanking(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::GetSupportStoreOutcome Cusanalytic_sc_onlineClient::getSupportStore(const GetSupportStoreRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSupportStoreOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSupportStoreOutcome(GetSupportStoreResult(outcome.result()));
+	else
+		return GetSupportStoreOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::getSupportStoreAsync(const GetSupportStoreRequest& request, const GetSupportStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSupportStore(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::GetSupportStoreOutcomeCallable Cusanalytic_sc_onlineClient::getSupportStoreCallable(const GetSupportStoreRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSupportStoreOutcome()>>(
+			[this, request]()
+			{
+			return this->getSupportStore(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -477,42 +585,6 @@ Cusanalytic_sc_onlineClient::ListVisitorsOutcomeCallable Cusanalytic_sc_onlineCl
 			[this, request]()
 			{
 			return this->listVisitors(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Cusanalytic_sc_onlineClient::GetEMapOutcome Cusanalytic_sc_onlineClient::getEMap(const GetEMapRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetEMapOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetEMapOutcome(GetEMapResult(outcome.result()));
-	else
-		return GetEMapOutcome(outcome.error());
-}
-
-void Cusanalytic_sc_onlineClient::getEMapAsync(const GetEMapRequest& request, const GetEMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getEMap(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cusanalytic_sc_onlineClient::GetEMapOutcomeCallable Cusanalytic_sc_onlineClient::getEMapCallable(const GetEMapRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetEMapOutcome()>>(
-			[this, request]()
-			{
-			return this->getEMap(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

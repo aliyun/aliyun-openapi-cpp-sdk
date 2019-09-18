@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				AnalyzeNvcRequest();
 				~AnalyzeNvcRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getData()const;
 				void setData(const std::string& data);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getScoreJsonStr()const;
 				void setScoreJsonStr(const std::string& scoreJsonStr);
 
             private:
-				std::string sourceIp_;
 				std::string data_;
+				std::string sourceIp_;
 				std::string scoreJsonStr_;
 
 			};

@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getPageType()const;
 				void setPageType(const std::string& pageType);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getCustomPageUrl()const;
 				void setCustomPageUrl(const std::string& customPageUrl);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
 				std::string pageType_;
-				std::string securityToken_;
 				std::string domainName_;
 				std::string customPageUrl_;
 				long ownerId_;
+				std::string securityToken_;
 
 			};
 		}

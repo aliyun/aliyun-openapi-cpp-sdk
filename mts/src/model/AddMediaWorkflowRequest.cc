@@ -36,6 +36,17 @@ void AddMediaWorkflowRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddMediaWorkflowRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddMediaWorkflowRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,17 +80,6 @@ void AddMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string AddMediaWorkflowRequest::getName()const
-{
-	return name_;
-}
-
-void AddMediaWorkflowRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 long AddMediaWorkflowRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -91,17 +91,6 @@ void AddMediaWorkflowRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AddMediaWorkflowRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string AddMediaWorkflowRequest::getTriggerMode()const
 {
 	return triggerMode_;
@@ -111,5 +100,16 @@ void AddMediaWorkflowRequest::setTriggerMode(const std::string& triggerMode)
 {
 	triggerMode_ = triggerMode;
 	setCoreParameter("TriggerMode", triggerMode);
+}
+
+std::string AddMediaWorkflowRequest::getName()const
+{
+	return name_;
+}
+
+void AddMediaWorkflowRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

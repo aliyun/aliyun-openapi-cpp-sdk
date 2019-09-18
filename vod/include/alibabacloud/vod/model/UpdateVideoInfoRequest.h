@@ -37,18 +37,10 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getVideoId()const;
-				void setVideoId(const std::string& videoId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
-				std::string getTags()const;
-				void setTags(const std::string& tags);
 				std::string getCoverURL()const;
 				void setCoverURL(const std::string& coverURL);
 				std::string getDownloadSwitch()const;
@@ -57,21 +49,29 @@ namespace AlibabaCloud
 				void setCateId(long cateId);
 				std::string getCustomMediaInfo()const;
 				void setCustomMediaInfo(const std::string& customMediaInfo);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getVideoId()const;
+				void setVideoId(const std::string& videoId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string description_;
-				std::string videoId_;
-				long ownerId_;
 				std::string title_;
-				std::string tags_;
 				std::string coverURL_;
 				std::string downloadSwitch_;
 				long cateId_;
 				std::string customMediaInfo_;
+				std::string resourceOwnerAccount_;
+				std::string videoId_;
+				long ownerId_;
+				std::string tags_;
 				std::string status_;
 
 			};

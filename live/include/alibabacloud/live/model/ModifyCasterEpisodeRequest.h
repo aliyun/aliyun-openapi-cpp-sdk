@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				ModifyCasterEpisodeRequest();
 				~ModifyCasterEpisodeRequest();
 
+				std::string getEpisodeName()const;
+				void setEpisodeName(const std::string& episodeName);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getResourceId()const;
 				void setResourceId(const std::string& resourceId);
 				std::vector<std::string> getComponentId()const;
 				void setComponentId(const std::vector<std::string>& componentId);
-				std::string getSwitchType()const;
-				void setSwitchType(const std::string& switchType);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
-				std::string getEpisodeName()const;
-				void setEpisodeName(const std::string& episodeName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getEpisodeId()const;
 				void setEpisodeId(const std::string& episodeId);
+				std::string getSwitchType()const;
+				void setSwitchType(const std::string& switchType);
 
             private:
+				std::string episodeName_;
+				std::string startTime_;
 				std::string resourceId_;
 				std::vector<std::string> componentId_;
-				std::string switchType_;
 				std::string casterId_;
-				std::string episodeName_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
 				std::string episodeId_;
+				std::string switchType_;
 
 			};
 		}

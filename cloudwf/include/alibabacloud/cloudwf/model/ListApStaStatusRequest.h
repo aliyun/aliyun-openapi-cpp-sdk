@@ -37,39 +37,39 @@ namespace AlibabaCloud
 
 				std::string getOrderCol()const;
 				void setOrderCol(const std::string& orderCol);
+				int getLength()const;
+				void setLength(int length);
+				std::string getSearchUsername()const;
+				void setSearchUsername(const std::string& searchUsername);
+				std::string getOrderDir()const;
+				void setOrderDir(const std::string& orderDir);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSearchProtocal()const;
 				void setSearchProtocal(const std::string& searchProtocal);
 				std::string getSearchSsid()const;
 				void setSearchSsid(const std::string& searchSsid);
 				std::string getSearchIp()const;
 				void setSearchIp(const std::string& searchIp);
-				int getLength()const;
-				void setLength(int length);
-				std::string getSearchUsername()const;
-				void setSearchUsername(const std::string& searchUsername);
 				std::string getSearchMac()const;
 				void setSearchMac(const std::string& searchMac);
 				int getPageIndex()const;
 				void setPageIndex(int pageIndex);
 				long getId()const;
 				void setId(long id);
-				std::string getOrderDir()const;
-				void setOrderDir(const std::string& orderDir);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string orderCol_;
+				int length_;
+				std::string searchUsername_;
+				std::string orderDir_;
+				std::string accessKeyId_;
 				std::string searchProtocal_;
 				std::string searchSsid_;
 				std::string searchIp_;
-				int length_;
-				std::string searchUsername_;
 				std::string searchMac_;
 				int pageIndex_;
 				long id_;
-				std::string orderDir_;
-				std::string accessKeyId_;
 
 			};
 		}

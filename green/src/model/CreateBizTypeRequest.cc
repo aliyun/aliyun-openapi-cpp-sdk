@@ -25,6 +25,17 @@ CreateBizTypeRequest::CreateBizTypeRequest() :
 CreateBizTypeRequest::~CreateBizTypeRequest()
 {}
 
+std::string CreateBizTypeRequest::getBizTypeImport()const
+{
+	return bizTypeImport_;
+}
+
+void CreateBizTypeRequest::setBizTypeImport(const std::string& bizTypeImport)
+{
+	bizTypeImport_ = bizTypeImport;
+	setCoreParameter("BizTypeImport", bizTypeImport);
+}
+
 std::string CreateBizTypeRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,16 +67,5 @@ void CreateBizTypeRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
 	setCoreParameter("BizTypeName", bizTypeName);
-}
-
-std::string CreateBizTypeRequest::getBizTypeImport()const
-{
-	return bizTypeImport_;
-}
-
-void CreateBizTypeRequest::setBizTypeImport(const std::string& bizTypeImport)
-{
-	bizTypeImport_ = bizTypeImport;
-	setCoreParameter("BizTypeImport", bizTypeImport);
 }
 

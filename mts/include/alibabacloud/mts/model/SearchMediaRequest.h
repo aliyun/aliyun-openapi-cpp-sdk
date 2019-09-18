@@ -37,14 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
 				long getPageNumber()const;
@@ -57,31 +51,37 @@ namespace AlibabaCloud
 				void setPageSize(long pageSize);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				std::string getSortBy()const;
-				void setSortBy(const std::string& sortBy);
-				std::string getTo()const;
-				void setTo(const std::string& to);
 				std::string getTag()const;
 				void setTag(const std::string& tag);
 				std::string getKeyWord()const;
 				void setKeyWord(const std::string& keyWord);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getSortBy()const;
+				void setSortBy(const std::string& sortBy);
+				std::string getTo()const;
+				void setTo(const std::string& to);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				std::string description_;
-				long ownerId_;
 				std::string title_;
 				long pageNumber_;
 				std::string accessKeyId_;
 				std::string cateId_;
 				long pageSize_;
 				std::string from_;
-				std::string sortBy_;
-				std::string to_;
 				std::string tag_;
 				std::string keyWord_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string sortBy_;
+				std::string to_;
 
 			};
 		}

@@ -35,28 +35,38 @@ DescribeGtmInstanceStatusResult::~DescribeGtmInstanceStatusResult()
 
 void DescribeGtmInstanceStatusResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AccessStatus"].isNull())
-		accessStatus_ = value["AccessStatus"].asString();
-	if(!value["AlertStatus"].isNull())
-		alertStatus_ = value["AlertStatus"].asString();
+	if(!value["AddrNotAvailableNum"].isNull())
+		addrNotAvailableNum_ = std::stoi(value["AddrNotAvailableNum"].asString());
+	if(!value["AddrPoolNotAvailableNum"].isNull())
+		addrPoolNotAvailableNum_ = std::stoi(value["AddrPoolNotAvailableNum"].asString());
+	if(!value["SwitchToFailoverStrategyNum"].isNull())
+		switchToFailoverStrategyNum_ = std::stoi(value["SwitchToFailoverStrategyNum"].asString());
+	if(!value["StrategyNotAvailableNum"].isNull())
+		strategyNotAvailableNum_ = std::stoi(value["StrategyNotAvailableNum"].asString());
 
 }
 
-std::string DescribeGtmInstanceStatusResult::getAlertStatus()const
+int DescribeGtmInstanceStatusResult::getStrategyNotAvailableNum()const
 {
-	return alertStatus_;
+	return strategyNotAvailableNum_;
 }
 
-std::string DescribeGtmInstanceStatusResult::getAccessStatus()const
+int DescribeGtmInstanceStatusResult::getSwitchToFailoverStrategyNum()const
 {
-	return accessStatus_;
+	return switchToFailoverStrategyNum_;
+}
+
+int DescribeGtmInstanceStatusResult::getAddrNotAvailableNum()const
+{
+	return addrNotAvailableNum_;
+}
+
+int DescribeGtmInstanceStatusResult::getAddrPoolNotAvailableNum()const
+{
+	return addrPoolNotAvailableNum_;
 }
 

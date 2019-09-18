@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				SubmitFpShotJobRequest();
 				~SubmitFpShotJobRequest();
 
-				std::string getInput()const;
-				void setInput(const std::string& input);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				std::string getFpShotConfig()const;
 				void setFpShotConfig(const std::string& fpShotConfig);
 				std::string getResourceOwnerAccount()const;
@@ -49,21 +49,21 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				std::string getInput()const;
+				void setInput(const std::string& input);
 
             private:
-				std::string input_;
-				std::string userData_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string userData_;
 				std::string fpShotConfig_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				std::string input_;
 
 			};
 		}

@@ -25,6 +25,17 @@ ModifyFlowCategoryRequest::ModifyFlowCategoryRequest() :
 ModifyFlowCategoryRequest::~ModifyFlowCategoryRequest()
 {}
 
+std::string ModifyFlowCategoryRequest::getParentId()const
+{
+	return parentId_;
+}
+
+void ModifyFlowCategoryRequest::setParentId(const std::string& parentId)
+{
+	parentId_ = parentId;
+	setCoreParameter("ParentId", parentId);
+}
+
 std::string ModifyFlowCategoryRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,16 +78,5 @@ void ModifyFlowCategoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-std::string ModifyFlowCategoryRequest::getParentId()const
-{
-	return parentId_;
-}
-
-void ModifyFlowCategoryRequest::setParentId(const std::string& parentId)
-{
-	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
 }
 

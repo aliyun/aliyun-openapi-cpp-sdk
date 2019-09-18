@@ -51,78 +51,6 @@ StsClient::StsClient(const std::string & accessKeyId, const std::string & access
 StsClient::~StsClient()
 {}
 
-StsClient::GetCallerIdentityOutcome StsClient::getCallerIdentity(const GetCallerIdentityRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetCallerIdentityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetCallerIdentityOutcome(GetCallerIdentityResult(outcome.result()));
-	else
-		return GetCallerIdentityOutcome(outcome.error());
-}
-
-void StsClient::getCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getCallerIdentity(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-StsClient::GetCallerIdentityOutcomeCallable StsClient::getCallerIdentityCallable(const GetCallerIdentityRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetCallerIdentityOutcome()>>(
-			[this, request]()
-			{
-			return this->getCallerIdentity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-StsClient::GenerateSessionAccessKeyOutcome StsClient::generateSessionAccessKey(const GenerateSessionAccessKeyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GenerateSessionAccessKeyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GenerateSessionAccessKeyOutcome(GenerateSessionAccessKeyResult(outcome.result()));
-	else
-		return GenerateSessionAccessKeyOutcome(outcome.error());
-}
-
-void StsClient::generateSessionAccessKeyAsync(const GenerateSessionAccessKeyRequest& request, const GenerateSessionAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, generateSessionAccessKey(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-StsClient::GenerateSessionAccessKeyOutcomeCallable StsClient::generateSessionAccessKeyCallable(const GenerateSessionAccessKeyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GenerateSessionAccessKeyOutcome()>>(
-			[this, request]()
-			{
-			return this->generateSessionAccessKey(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 StsClient::AssumeRoleOutcome StsClient::assumeRole(const AssumeRoleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +117,78 @@ StsClient::AssumeRoleWithSAMLOutcomeCallable StsClient::assumeRoleWithSAMLCallab
 			[this, request]()
 			{
 			return this->assumeRoleWithSAML(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+StsClient::GenerateSessionAccessKeyOutcome StsClient::generateSessionAccessKey(const GenerateSessionAccessKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateSessionAccessKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateSessionAccessKeyOutcome(GenerateSessionAccessKeyResult(outcome.result()));
+	else
+		return GenerateSessionAccessKeyOutcome(outcome.error());
+}
+
+void StsClient::generateSessionAccessKeyAsync(const GenerateSessionAccessKeyRequest& request, const GenerateSessionAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateSessionAccessKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+StsClient::GenerateSessionAccessKeyOutcomeCallable StsClient::generateSessionAccessKeyCallable(const GenerateSessionAccessKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateSessionAccessKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->generateSessionAccessKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+StsClient::GetCallerIdentityOutcome StsClient::getCallerIdentity(const GetCallerIdentityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCallerIdentityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCallerIdentityOutcome(GetCallerIdentityResult(outcome.result()));
+	else
+		return GetCallerIdentityOutcome(outcome.error());
+}
+
+void StsClient::getCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCallerIdentity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+StsClient::GetCallerIdentityOutcomeCallable StsClient::getCallerIdentityCallable(const GetCallerIdentityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCallerIdentityOutcome()>>(
+			[this, request]()
+			{
+			return this->getCallerIdentity(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

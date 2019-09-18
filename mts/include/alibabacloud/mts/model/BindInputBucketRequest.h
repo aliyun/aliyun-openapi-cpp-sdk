@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				BindInputBucketRequest();
 				~BindInputBucketRequest();
 
-				std::string getBucket()const;
-				void setBucket(const std::string& bucket);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRoleArn()const;
-				void setRoleArn(const std::string& roleArn);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getBucket()const;
+				void setBucket(const std::string& bucket);
+				std::string getRoleArn()const;
+				void setRoleArn(const std::string& roleArn);
 
             private:
-				std::string bucket_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
-				std::string roleArn_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string bucket_;
+				std::string roleArn_;
 
 			};
 		}

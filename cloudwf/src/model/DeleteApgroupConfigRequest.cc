@@ -25,17 +25,6 @@ DeleteApgroupConfigRequest::DeleteApgroupConfigRequest() :
 DeleteApgroupConfigRequest::~DeleteApgroupConfigRequest()
 {}
 
-long DeleteApgroupConfigRequest::getId()const
-{
-	return id_;
-}
-
-void DeleteApgroupConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string DeleteApgroupConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DeleteApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long DeleteApgroupConfigRequest::getId()const
+{
+	return id_;
+}
+
+void DeleteApgroupConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

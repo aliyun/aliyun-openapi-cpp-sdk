@@ -36,39 +36,6 @@ void ListClusterServiceConfigHistoryRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListClusterServiceConfigHistoryRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListClusterServiceConfigHistoryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListClusterServiceConfigHistoryRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListClusterServiceConfigHistoryRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListClusterServiceConfigHistoryRequest::getServiceName()const
-{
-	return serviceName_;
-}
-
-void ListClusterServiceConfigHistoryRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
-}
-
 std::string ListClusterServiceConfigHistoryRequest::getClusterId()const
 {
 	return clusterId_;
@@ -111,5 +78,38 @@ void ListClusterServiceConfigHistoryRequest::setConfigVersion(const std::string&
 {
 	configVersion_ = configVersion;
 	setCoreParameter("ConfigVersion", configVersion);
+}
+
+std::string ListClusterServiceConfigHistoryRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListClusterServiceConfigHistoryRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListClusterServiceConfigHistoryRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListClusterServiceConfigHistoryRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListClusterServiceConfigHistoryRequest::getServiceName()const
+{
+	return serviceName_;
+}
+
+void ListClusterServiceConfigHistoryRequest::setServiceName(const std::string& serviceName)
+{
+	serviceName_ = serviceName;
+	setCoreParameter("ServiceName", serviceName);
 }
 

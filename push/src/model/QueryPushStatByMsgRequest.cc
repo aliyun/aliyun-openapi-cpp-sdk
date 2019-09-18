@@ -36,17 +36,6 @@ void QueryPushStatByMsgRequest::setMessageId(long messageId)
 	setCoreParameter("MessageId", std::to_string(messageId));
 }
 
-long QueryPushStatByMsgRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void QueryPushStatByMsgRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string QueryPushStatByMsgRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void QueryPushStatByMsgRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long QueryPushStatByMsgRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void QueryPushStatByMsgRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 

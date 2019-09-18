@@ -36,15 +36,26 @@ void DescribeBackupDBsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeBackupDBsRequest::getRestoreTime()const
+int DescribeBackupDBsRequest::getPageNumber()const
 {
-	return restoreTime_;
+	return pageNumber_;
 }
 
-void DescribeBackupDBsRequest::setRestoreTime(const std::string& restoreTime)
+void DescribeBackupDBsRequest::setPageNumber(int pageNumber)
 {
-	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeBackupDBsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeBackupDBsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeBackupDBsRequest::getSecurityToken()const
@@ -56,6 +67,28 @@ void DescribeBackupDBsRequest::setSecurityToken(const std::string& securityToken
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+int DescribeBackupDBsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeBackupDBsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeBackupDBsRequest::getRestoreTime()const
+{
+	return restoreTime_;
+}
+
+void DescribeBackupDBsRequest::setRestoreTime(const std::string& restoreTime)
+{
+	restoreTime_ = restoreTime;
+	setCoreParameter("RestoreTime", restoreTime);
 }
 
 std::string DescribeBackupDBsRequest::getResourceOwnerAccount()const
@@ -91,17 +124,6 @@ void DescribeBackupDBsRequest::setBackupId(const std::string& backupId)
 	setCoreParameter("BackupId", backupId);
 }
 
-int DescribeBackupDBsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeBackupDBsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeBackupDBsRequest::getSourceDBInstance()const
 {
 	return sourceDBInstance_;
@@ -122,27 +144,5 @@ void DescribeBackupDBsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeBackupDBsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeBackupDBsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribeBackupDBsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeBackupDBsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

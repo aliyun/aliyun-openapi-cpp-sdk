@@ -25,6 +25,17 @@ StopRuleRequest::StopRuleRequest() :
 StopRuleRequest::~StopRuleRequest()
 {}
 
+std::string StopRuleRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void StopRuleRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string StopRuleRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -45,16 +56,5 @@ void StopRuleRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
 	setCoreParameter("RuleId", std::to_string(ruleId));
-}
-
-std::string StopRuleRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void StopRuleRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

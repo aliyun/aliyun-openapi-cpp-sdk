@@ -35,13 +35,9 @@ DescribeZoneRecordsResult::~DescribeZoneRecordsResult()
 
 void DescribeZoneRecordsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allRecords = value["Records"]["Record"];
 	for (auto value : allRecords)
@@ -61,6 +57,8 @@ void DescribeZoneRecordsResult::parse(const std::string &payload)
 			recordsObject.value = value["Value"].asString();
 		if(!value["Status"].isNull())
 			recordsObject.status = value["Status"].asString();
+		if(!value["RegionId"].isNull())
+			recordsObject.regionId = value["RegionId"].asString();
 		records_.push_back(recordsObject);
 	}
 	if(!value["TotalItems"].isNull())

@@ -35,20 +35,26 @@ namespace AlibabaCloud
 				CreateQosCarRequest();
 				~CreateQosCarRequest();
 
-				int getMaxBandwidthAbs()const;
-				void setMaxBandwidthAbs(int maxBandwidthAbs);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getMinBandwidthAbs()const;
 				void setMinBandwidthAbs(int minBandwidthAbs);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getPercentSourceType()const;
+				void setPercentSourceType(const std::string& percentSourceType);
+				std::string getQosId()const;
+				void setQosId(const std::string& qosId);
+				int getMaxBandwidthAbs()const;
+				void setMaxBandwidthAbs(int maxBandwidthAbs);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getMaxBandwidthPercent()const;
 				void setMaxBandwidthPercent(int maxBandwidthPercent);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				int getPriority()const;
@@ -57,28 +63,22 @@ namespace AlibabaCloud
 				void setMinBandwidthPercent(int minBandwidthPercent);
 				std::string getLimitType()const;
 				void setLimitType(const std::string& limitType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getPercentSourceType()const;
-				void setPercentSourceType(const std::string& percentSourceType);
-				std::string getQosId()const;
-				void setQosId(const std::string& qosId);
 
             private:
-				int maxBandwidthAbs_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				int minBandwidthAbs_;
+				std::string description_;
+				std::string regionId_;
+				std::string percentSourceType_;
+				std::string qosId_;
+				int maxBandwidthAbs_;
+				std::string resourceOwnerAccount_;
 				int maxBandwidthPercent_;
 				std::string ownerAccount_;
-				std::string description_;
 				long ownerId_;
 				int priority_;
 				int minBandwidthPercent_;
 				std::string limitType_;
-				std::string regionId_;
-				std::string percentSourceType_;
-				std::string qosId_;
 
 			};
 		}

@@ -36,39 +36,6 @@ void ModifyAlertDingDingGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyAlertDingDingGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyAlertDingDingGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyAlertDingDingGroupRequest::getBizId()const
-{
-	return bizId_;
-}
-
-void ModifyAlertDingDingGroupRequest::setBizId(const std::string& bizId)
-{
-	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
-}
-
-std::string ModifyAlertDingDingGroupRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyAlertDingDingGroupRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string ModifyAlertDingDingGroupRequest::getDescription()const
 {
 	return description_;
@@ -100,5 +67,38 @@ void ModifyAlertDingDingGroupRequest::setWebHookUrl(const std::string& webHookUr
 {
 	webHookUrl_ = webHookUrl;
 	setCoreParameter("WebHookUrl", webHookUrl);
+}
+
+std::string ModifyAlertDingDingGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyAlertDingDingGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyAlertDingDingGroupRequest::getBizId()const
+{
+	return bizId_;
+}
+
+void ModifyAlertDingDingGroupRequest::setBizId(const std::string& bizId)
+{
+	bizId_ = bizId;
+	setCoreParameter("BizId", bizId);
+}
+
+std::string ModifyAlertDingDingGroupRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyAlertDingDingGroupRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

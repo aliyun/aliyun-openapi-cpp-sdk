@@ -35,19 +35,22 @@ namespace AlibabaCloud
 				DescribeExpectationResultRequest();
 				~DescribeExpectationResultRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getOrderId()const;
 				void setOrderId(long orderId);
 				std::string getExpectationType()const;
 				void setExpectationType(const std::string& expectationType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				long orderId_;
 				std::string expectationType_;
+				std::string resourceGroupId_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

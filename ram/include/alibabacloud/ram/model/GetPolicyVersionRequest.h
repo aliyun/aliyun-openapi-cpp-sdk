@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				GetPolicyVersionRequest();
 				~GetPolicyVersionRequest();
 
-				std::string getVersionId()const;
-				void setVersionId(const std::string& versionId);
 				std::string getPolicyType()const;
 				void setPolicyType(const std::string& policyType);
+				std::string getVersionId()const;
+				void setVersionId(const std::string& versionId);
 				std::string getPolicyName()const;
 				void setPolicyName(const std::string& policyName);
 
             private:
-				std::string versionId_;
 				std::string policyType_;
+				std::string versionId_;
 				std::string policyName_;
 
 			};

@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				SetAuditSecurityIpRequest();
 				~SetAuditSecurityIpRequest();
 
-				std::string getOperateMode()const;
-				void setOperateMode(const std::string& operateMode);
 				std::string getSecurityGroupName()const;
 				void setSecurityGroupName(const std::string& securityGroupName);
+				std::string getOperateMode()const;
+				void setOperateMode(const std::string& operateMode);
 				std::string getIps()const;
 				void setIps(const std::string& ips);
 
             private:
-				std::string operateMode_;
 				std::string securityGroupName_;
+				std::string operateMode_;
 				std::string ips_;
 
 			};

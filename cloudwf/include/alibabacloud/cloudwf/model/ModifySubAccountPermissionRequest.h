@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				std::vector<long> getShopGroupIds()const;
 				void setShopGroupIds(const std::vector<long>& shopGroupIds);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::vector<long> getShopIds()const;
 				void setShopIds(const std::vector<long>& shopIds);
 				std::string getPagePermission()const;
 				void setPagePermission(const std::string& pagePermission);
 				long getId()const;
 				void setId(long id);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::vector<long> getBusinessIds()const;
 				void setBusinessIds(const std::vector<long>& businessIds);
 
             private:
 				std::vector<long> shopGroupIds_;
+				std::string accessKeyId_;
 				std::vector<long> shopIds_;
 				std::string pagePermission_;
 				long id_;
-				std::string accessKeyId_;
 				std::vector<long> businessIds_;
 
 			};

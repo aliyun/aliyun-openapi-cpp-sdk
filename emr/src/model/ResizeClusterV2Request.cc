@@ -25,17 +25,6 @@ ResizeClusterV2Request::ResizeClusterV2Request() :
 ResizeClusterV2Request::~ResizeClusterV2Request()
 {}
 
-std::string ResizeClusterV2Request::getVswitchId()const
-{
-	return vswitchId_;
-}
-
-void ResizeClusterV2Request::setVswitchId(const std::string& vswitchId)
-{
-	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", vswitchId);
-}
-
 bool ResizeClusterV2Request::getIsOpenPublicIp()const
 {
 	return isOpenPublicIp_;
@@ -56,6 +45,39 @@ void ResizeClusterV2Request::setAutoPayOrder(bool autoPayOrder)
 {
 	autoPayOrder_ = autoPayOrder;
 	setCoreParameter("AutoPayOrder", autoPayOrder ? "true" : "false");
+}
+
+std::string ResizeClusterV2Request::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ResizeClusterV2Request::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ResizeClusterV2Request::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ResizeClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ResizeClusterV2Request::getVswitchId()const
+{
+	return vswitchId_;
+}
+
+void ResizeClusterV2Request::setVswitchId(const std::string& vswitchId)
+{
+	vswitchId_ = vswitchId;
+	setCoreParameter("VswitchId", vswitchId);
 }
 
 std::vector<ResizeClusterV2Request::HostComponentInfo> ResizeClusterV2Request::getHostComponentInfo()const
@@ -119,27 +141,5 @@ void ResizeClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 		setCoreParameter(str + ".HostPassword", obj.hostPassword);
 		setCoreParameter(str + ".HostGroupType", obj.hostGroupType);
 	}
-}
-
-std::string ResizeClusterV2Request::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ResizeClusterV2Request::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string ResizeClusterV2Request::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ResizeClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

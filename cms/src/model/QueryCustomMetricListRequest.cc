@@ -25,17 +25,6 @@ QueryCustomMetricListRequest::QueryCustomMetricListRequest() :
 QueryCustomMetricListRequest::~QueryCustomMetricListRequest()
 {}
 
-std::string QueryCustomMetricListRequest::getSize()const
-{
-	return size_;
-}
-
-void QueryCustomMetricListRequest::setSize(const std::string& size)
-{
-	size_ = size;
-	setCoreParameter("Size", size);
-}
-
 std::string QueryCustomMetricListRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,6 +34,28 @@ void QueryCustomMetricListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string QueryCustomMetricListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryCustomMetricListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryCustomMetricListRequest::getSize()const
+{
+	return size_;
+}
+
+void QueryCustomMetricListRequest::setSize(const std::string& size)
+{
+	size_ = size;
+	setCoreParameter("Size", size);
 }
 
 std::string QueryCustomMetricListRequest::getPage()const
@@ -78,17 +89,6 @@ void QueryCustomMetricListRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
 	setCoreParameter("Dimension", dimension);
-}
-
-std::string QueryCustomMetricListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryCustomMetricListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryCustomMetricListRequest::getMd5()const

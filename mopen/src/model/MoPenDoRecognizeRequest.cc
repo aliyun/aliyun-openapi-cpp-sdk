@@ -36,28 +36,6 @@ void MoPenDoRecognizeRequest::setCanvasId(long canvasId)
 	setCoreParameter("CanvasId", std::to_string(canvasId));
 }
 
-int MoPenDoRecognizeRequest::getEndY()const
-{
-	return endY_;
-}
-
-void MoPenDoRecognizeRequest::setEndY(int endY)
-{
-	endY_ = endY;
-	setCoreParameter("EndY", std::to_string(endY));
-}
-
-int MoPenDoRecognizeRequest::getEndX()const
-{
-	return endX_;
-}
-
-void MoPenDoRecognizeRequest::setEndX(int endX)
-{
-	endX_ = endX;
-	setCoreParameter("EndX", std::to_string(endX));
-}
-
 std::string MoPenDoRecognizeRequest::getJsonConf()const
 {
 	return jsonConf_;
@@ -78,6 +56,28 @@ void MoPenDoRecognizeRequest::setExportType(const std::string& exportType)
 {
 	exportType_ = exportType;
 	setCoreParameter("ExportType", exportType);
+}
+
+int MoPenDoRecognizeRequest::getEndY()const
+{
+	return endY_;
+}
+
+void MoPenDoRecognizeRequest::setEndY(int endY)
+{
+	endY_ = endY;
+	setCoreParameter("EndY", std::to_string(endY));
+}
+
+int MoPenDoRecognizeRequest::getEndX()const
+{
+	return endX_;
+}
+
+void MoPenDoRecognizeRequest::setEndX(int endX)
+{
+	endX_ = endX;
+	setCoreParameter("EndX", std::to_string(endX));
 }
 
 int MoPenDoRecognizeRequest::getStartY()const

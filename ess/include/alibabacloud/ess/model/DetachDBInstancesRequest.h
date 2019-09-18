@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DetachDBInstancesRequest();
 				~DetachDBInstancesRequest();
 
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				std::vector<std::string> getDBInstance()const;
-				void setDBInstance(const std::vector<std::string>& dBInstance);
-				bool getForceDetach()const;
-				void setForceDetach(bool forceDetach);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::vector<std::string> getDBInstance()const;
+				void setDBInstance(const std::vector<std::string>& dBInstance);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				bool getForceDetach()const;
+				void setForceDetach(bool forceDetach);
 
             private:
-				std::string resourceOwnerAccount_;
 				std::string scalingGroupId_;
-				std::vector<std::string> dBInstance_;
-				bool forceDetach_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string resourceOwnerAccount_;
+				std::vector<std::string> dBInstance_;
+				long ownerId_;
+				bool forceDetach_;
 
 			};
 		}

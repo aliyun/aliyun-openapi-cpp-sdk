@@ -47,17 +47,6 @@ void ListFacesRequest::setHasFaceName(const std::string& hasFaceName)
 	setCoreParameter("HasFaceName", hasFaceName);
 }
 
-int ListFacesRequest::getSize()const
-{
-	return size_;
-}
-
-void ListFacesRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string ListFacesRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -78,6 +67,17 @@ void ListFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
+}
+
+int ListFacesRequest::getSize()const
+{
+	return size_;
+}
+
+void ListFacesRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListFacesRequest::getState()const

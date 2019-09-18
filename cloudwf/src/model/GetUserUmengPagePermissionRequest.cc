@@ -25,17 +25,6 @@ GetUserUmengPagePermissionRequest::GetUserUmengPagePermissionRequest() :
 GetUserUmengPagePermissionRequest::~GetUserUmengPagePermissionRequest()
 {}
 
-long GetUserUmengPagePermissionRequest::getBid()const
-{
-	return bid_;
-}
-
-void GetUserUmengPagePermissionRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string GetUserUmengPagePermissionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetUserUmengPagePermissionRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetUserUmengPagePermissionRequest::getBid()const
+{
+	return bid_;
+}
+
+void GetUserUmengPagePermissionRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

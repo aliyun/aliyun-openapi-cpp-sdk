@@ -36,6 +36,50 @@ void SearchLogRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int SearchLogRequest::getLine()const
+{
+	return line_;
+}
+
+void SearchLogRequest::setLine(int line)
+{
+	line_ = line;
+	setCoreParameter("Line", std::to_string(line));
+}
+
+std::string SearchLogRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SearchLogRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SearchLogRequest::getHostName()const
+{
+	return hostName_;
+}
+
+void SearchLogRequest::setHostName(const std::string& hostName)
+{
+	hostName_ = hostName;
+	setCoreParameter("HostName", hostName);
+}
+
+std::string SearchLogRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void SearchLogRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string SearchLogRequest::getLogstoreName()const
 {
 	return logstoreName_;
@@ -69,17 +113,6 @@ void SearchLogRequest::setOffset(int offset)
 	setCoreParameter("Offset", std::to_string(offset));
 }
 
-int SearchLogRequest::getLine()const
-{
-	return line_;
-}
-
-void SearchLogRequest::setLine(int line)
-{
-	line_ = line;
-	setCoreParameter("Line", std::to_string(line));
-}
-
 std::string SearchLogRequest::getClusterId()const
 {
 	return clusterId_;
@@ -102,17 +135,6 @@ void SearchLogRequest::setReverse(bool reverse)
 	setCoreParameter("Reverse", reverse ? "true" : "false");
 }
 
-std::string SearchLogRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SearchLogRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SearchLogRequest::getHostInnerIp()const
 {
 	return hostInnerIp_;
@@ -122,28 +144,6 @@ void SearchLogRequest::setHostInnerIp(const std::string& hostInnerIp)
 {
 	hostInnerIp_ = hostInnerIp;
 	setCoreParameter("HostInnerIp", hostInnerIp);
-}
-
-std::string SearchLogRequest::getHostName()const
-{
-	return hostName_;
-}
-
-void SearchLogRequest::setHostName(const std::string& hostName)
-{
-	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
-}
-
-std::string SearchLogRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SearchLogRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 int SearchLogRequest::getToTimestamp()const

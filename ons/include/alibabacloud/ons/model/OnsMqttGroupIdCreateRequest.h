@@ -35,19 +35,16 @@ namespace AlibabaCloud
 				OnsMqttGroupIdCreateRequest();
 				~OnsMqttGroupIdCreateRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getTopic()const;
 				void setTopic(const std::string& topic);
 
             private:
-				std::string instanceId_;
-				std::string regionId_;
 				std::string groupId_;
+				std::string instanceId_;
 				std::string topic_;
 
 			};

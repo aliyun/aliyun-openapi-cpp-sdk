@@ -25,17 +25,6 @@ AttachAppPolicyToIdentityRequest::AttachAppPolicyToIdentityRequest() :
 AttachAppPolicyToIdentityRequest::~AttachAppPolicyToIdentityRequest()
 {}
 
-std::string AttachAppPolicyToIdentityRequest::getIdentityName()const
-{
-	return identityName_;
-}
-
-void AttachAppPolicyToIdentityRequest::setIdentityName(const std::string& identityName)
-{
-	identityName_ = identityName;
-	setCoreParameter("IdentityName", identityName);
-}
-
 long AttachAppPolicyToIdentityRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,39 +34,6 @@ void AttachAppPolicyToIdentityRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string AttachAppPolicyToIdentityRequest::getIdentityType()const
-{
-	return identityType_;
-}
-
-void AttachAppPolicyToIdentityRequest::setIdentityType(const std::string& identityType)
-{
-	identityType_ = identityType;
-	setCoreParameter("IdentityType", identityType);
-}
-
-std::string AttachAppPolicyToIdentityRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AttachAppPolicyToIdentityRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string AttachAppPolicyToIdentityRequest::getAppId()const
-{
-	return appId_;
-}
-
-void AttachAppPolicyToIdentityRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setCoreParameter("AppId", appId);
 }
 
 std::string AttachAppPolicyToIdentityRequest::getPolicyNames()const
@@ -102,6 +58,39 @@ void AttachAppPolicyToIdentityRequest::setResourceRealOwnerId(const std::string&
 	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
+std::string AttachAppPolicyToIdentityRequest::getIdentityName()const
+{
+	return identityName_;
+}
+
+void AttachAppPolicyToIdentityRequest::setIdentityName(const std::string& identityName)
+{
+	identityName_ = identityName;
+	setCoreParameter("IdentityName", identityName);
+}
+
+std::string AttachAppPolicyToIdentityRequest::getIdentityType()const
+{
+	return identityType_;
+}
+
+void AttachAppPolicyToIdentityRequest::setIdentityType(const std::string& identityType)
+{
+	identityType_ = identityType;
+	setCoreParameter("IdentityType", identityType);
+}
+
+std::string AttachAppPolicyToIdentityRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void AttachAppPolicyToIdentityRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
 long AttachAppPolicyToIdentityRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +100,16 @@ void AttachAppPolicyToIdentityRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AttachAppPolicyToIdentityRequest::getAppId()const
+{
+	return appId_;
+}
+
+void AttachAppPolicyToIdentityRequest::setAppId(const std::string& appId)
+{
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
 }
 

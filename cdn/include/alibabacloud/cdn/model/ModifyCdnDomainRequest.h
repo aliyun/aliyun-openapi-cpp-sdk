@@ -35,24 +35,33 @@ namespace AlibabaCloud
 				ModifyCdnDomainRequest();
 				~ModifyCdnDomainRequest();
 
-				std::string getTopLevelDomain()const;
-				void setTopLevelDomain(const std::string& topLevelDomain);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSources()const;
 				void setSources(const std::string& sources);
+				int getSourcePort()const;
+				void setSourcePort(int sourcePort);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getPriorities()const;
+				void setPriorities(const std::string& priorities);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getSourceType()const;
+				void setSourceType(const std::string& sourceType);
+				std::string getTopLevelDomain()const;
+				void setTopLevelDomain(const std::string& topLevelDomain);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string topLevelDomain_;
-				std::string resourceGroupId_;
 				std::string sources_;
+				int sourcePort_;
+				std::string resourceGroupId_;
+				std::string priorities_;
 				std::string securityToken_;
+				std::string sourceType_;
+				std::string topLevelDomain_;
 				std::string domainName_;
 				long ownerId_;
 

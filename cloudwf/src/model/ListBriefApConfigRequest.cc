@@ -25,17 +25,6 @@ ListBriefApConfigRequest::ListBriefApConfigRequest() :
 ListBriefApConfigRequest::~ListBriefApConfigRequest()
 {}
 
-int ListBriefApConfigRequest::getSearchScan()const
-{
-	return searchScan_;
-}
-
-void ListBriefApConfigRequest::setSearchScan(int searchScan)
-{
-	searchScan_ = searchScan;
-	setCoreParameter("SearchScan", std::to_string(searchScan));
-}
-
 std::string ListBriefApConfigRequest::getOrderCol()const
 {
 	return orderCol_;
@@ -69,28 +58,6 @@ void ListBriefApConfigRequest::setLength(int length)
 	setCoreParameter("Length", std::to_string(length));
 }
 
-std::string ListBriefApConfigRequest::getSearchMac()const
-{
-	return searchMac_;
-}
-
-void ListBriefApConfigRequest::setSearchMac(const std::string& searchMac)
-{
-	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
-}
-
-int ListBriefApConfigRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListBriefApConfigRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
 std::string ListBriefApConfigRequest::getOrderDir()const
 {
 	return orderDir_;
@@ -111,6 +78,39 @@ void ListBriefApConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ListBriefApConfigRequest::getSearchScan()const
+{
+	return searchScan_;
+}
+
+void ListBriefApConfigRequest::setSearchScan(int searchScan)
+{
+	searchScan_ = searchScan;
+	setCoreParameter("SearchScan", std::to_string(searchScan));
+}
+
+std::string ListBriefApConfigRequest::getSearchMac()const
+{
+	return searchMac_;
+}
+
+void ListBriefApConfigRequest::setSearchMac(const std::string& searchMac)
+{
+	searchMac_ = searchMac;
+	setCoreParameter("SearchMac", searchMac);
+}
+
+int ListBriefApConfigRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListBriefApConfigRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListBriefApConfigRequest::getSearchModel()const

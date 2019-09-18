@@ -25,6 +25,28 @@ DescribeThreatDistributeRequest::DescribeThreatDistributeRequest() :
 DescribeThreatDistributeRequest::~DescribeThreatDistributeRequest()
 {}
 
+std::string DescribeThreatDistributeRequest::getStartDate()const
+{
+	return startDate_;
+}
+
+void DescribeThreatDistributeRequest::setStartDate(const std::string& startDate)
+{
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
+}
+
+int DescribeThreatDistributeRequest::getApiType()const
+{
+	return apiType_;
+}
+
+void DescribeThreatDistributeRequest::setApiType(int apiType)
+{
+	apiType_ = apiType;
+	setCoreParameter("ApiType", std::to_string(apiType));
+}
+
 std::string DescribeThreatDistributeRequest::getEndDate()const
 {
 	return endDate_;
@@ -56,27 +78,5 @@ void DescribeThreatDistributeRequest::setHitDay(int hitDay)
 {
 	hitDay_ = hitDay;
 	setCoreParameter("HitDay", std::to_string(hitDay));
-}
-
-std::string DescribeThreatDistributeRequest::getStartDate()const
-{
-	return startDate_;
-}
-
-void DescribeThreatDistributeRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
-}
-
-int DescribeThreatDistributeRequest::getApiType()const
-{
-	return apiType_;
-}
-
-void DescribeThreatDistributeRequest::setApiType(int apiType)
-{
-	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
 }
 

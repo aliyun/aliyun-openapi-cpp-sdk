@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				CreateLoginProfileRequest();
 				~CreateLoginProfileRequest();
 
-				std::string getPassword()const;
-				void setPassword(const std::string& password);
 				bool getPasswordResetRequired()const;
 				void setPasswordResetRequired(bool passwordResetRequired);
+				std::string getPassword()const;
+				void setPassword(const std::string& password);
 				bool getMFABindRequired()const;
 				void setMFABindRequired(bool mFABindRequired);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
-				std::string password_;
 				bool passwordResetRequired_;
+				std::string password_;
 				bool mFABindRequired_;
 				std::string userName_;
 

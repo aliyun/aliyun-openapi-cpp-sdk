@@ -25,17 +25,6 @@ CreateSignatureDocumentRequest::CreateSignatureDocumentRequest() :
 CreateSignatureDocumentRequest::~CreateSignatureDocumentRequest()
 {}
 
-std::string CreateSignatureDocumentRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateSignatureDocumentRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string CreateSignatureDocumentRequest::getDocContent()const
 {
 	return docContent_;
@@ -47,17 +36,6 @@ void CreateSignatureDocumentRequest::setDocContent(const std::string& docContent
 	setCoreParameter("DocContent", docContent);
 }
 
-std::string CreateSignatureDocumentRequest::getLang()const
-{
-	return lang_;
-}
-
-void CreateSignatureDocumentRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string CreateSignatureDocumentRequest::getDocTitle()const
 {
 	return docTitle_;
@@ -67,5 +45,38 @@ void CreateSignatureDocumentRequest::setDocTitle(const std::string& docTitle)
 {
 	docTitle_ = docTitle;
 	setCoreParameter("DocTitle", docTitle);
+}
+
+std::string CreateSignatureDocumentRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateSignatureDocumentRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateSignatureDocumentRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateSignatureDocumentRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string CreateSignatureDocumentRequest::getLang()const
+{
+	return lang_;
+}
+
+void CreateSignatureDocumentRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

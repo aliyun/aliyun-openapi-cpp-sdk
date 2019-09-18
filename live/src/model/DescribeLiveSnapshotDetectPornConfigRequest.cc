@@ -25,6 +25,17 @@ DescribeLiveSnapshotDetectPornConfigRequest::DescribeLiveSnapshotDetectPornConfi
 DescribeLiveSnapshotDetectPornConfigRequest::~DescribeLiveSnapshotDetectPornConfigRequest()
 {}
 
+int DescribeLiveSnapshotDetectPornConfigRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void DescribeLiveSnapshotDetectPornConfigRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getAppName()const
 {
 	return appName_;
@@ -47,17 +58,6 @@ void DescribeLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::st
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeLiveSnapshotDetectPornConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 int DescribeLiveSnapshotDetectPornConfigRequest::getPageSize()const
 {
 	return pageSize_;
@@ -69,28 +69,6 @@ void DescribeLiveSnapshotDetectPornConfigRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeLiveSnapshotDetectPornConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-int DescribeLiveSnapshotDetectPornConfigRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void DescribeLiveSnapshotDetectPornConfigRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
-}
-
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getOrder()const
 {
 	return order_;
@@ -100,5 +78,27 @@ void DescribeLiveSnapshotDetectPornConfigRequest::setOrder(const std::string& or
 {
 	order_ = order;
 	setCoreParameter("Order", order);
+}
+
+std::string DescribeLiveSnapshotDetectPornConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+long DescribeLiveSnapshotDetectPornConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

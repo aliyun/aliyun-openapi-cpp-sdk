@@ -80,39 +80,6 @@ void ModifyExecutionPlanRequest::setConfigurations(const std::string& configurat
 	setCoreParameter("Configurations", configurations);
 }
 
-bool ModifyExecutionPlanRequest::getIoOptimized()const
-{
-	return ioOptimized_;
-}
-
-void ModifyExecutionPlanRequest::setIoOptimized(bool ioOptimized)
-{
-	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
-}
-
-std::string ModifyExecutionPlanRequest::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void ModifyExecutionPlanRequest::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
-}
-
-bool ModifyExecutionPlanRequest::getEasEnable()const
-{
-	return easEnable_;
-}
-
-void ModifyExecutionPlanRequest::setEasEnable(bool easEnable)
-{
-	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable ? "true" : "false");
-}
-
 bool ModifyExecutionPlanRequest::getCreateClusterOnDemand()const
 {
 	return createClusterOnDemand_;
@@ -135,40 +102,6 @@ void ModifyExecutionPlanRequest::setStartTime(long startTime)
 	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
-std::vector<std::string> ModifyExecutionPlanRequest::getJobIdList()const
-{
-	return jobIdList_;
-}
-
-void ModifyExecutionPlanRequest::setJobIdList(const std::vector<std::string>& jobIdList)
-{
-	jobIdList_ = jobIdList;
-	for(int i = 0; i!= jobIdList.size(); i++)
-		setCoreParameter("JobIdList."+ std::to_string(i), jobIdList.at(i));
-}
-
-std::string ModifyExecutionPlanRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string ModifyExecutionPlanRequest::getDayOfMonth()const
-{
-	return dayOfMonth_;
-}
-
-void ModifyExecutionPlanRequest::setDayOfMonth(const std::string& dayOfMonth)
-{
-	dayOfMonth_ = dayOfMonth;
-	setCoreParameter("DayOfMonth", dayOfMonth);
-}
-
 std::vector<ModifyExecutionPlanRequest::BootstrapAction> ModifyExecutionPlanRequest::getBootstrapAction()const
 {
 	return bootstrapAction_;
@@ -185,28 +118,6 @@ void ModifyExecutionPlanRequest::setBootstrapAction(const std::vector<BootstrapA
 		setCoreParameter(str + ".Arg", obj.arg);
 		setCoreParameter(str + ".Name", obj.name);
 	}
-}
-
-std::string ModifyExecutionPlanRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyExecutionPlanRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-bool ModifyExecutionPlanRequest::getUseLocalMetaDb()const
-{
-	return useLocalMetaDb_;
-}
-
-void ModifyExecutionPlanRequest::setUseLocalMetaDb(bool useLocalMetaDb)
-{
-	useLocalMetaDb_ = useLocalMetaDb;
-	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
 }
 
 std::string ModifyExecutionPlanRequest::getEmrVer()const
@@ -231,17 +142,6 @@ void ModifyExecutionPlanRequest::setId(const std::string& id)
 	setCoreParameter("Id", id);
 }
 
-std::string ModifyExecutionPlanRequest::getUserDefinedEmrEcsRole()const
-{
-	return userDefinedEmrEcsRole_;
-}
-
-void ModifyExecutionPlanRequest::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
-{
-	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
-	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
-}
-
 bool ModifyExecutionPlanRequest::getIsOpenPublicIp()const
 {
 	return isOpenPublicIp_;
@@ -262,28 +162,6 @@ void ModifyExecutionPlanRequest::setExecutionPlanVersion(long executionPlanVersi
 {
 	executionPlanVersion_ = executionPlanVersion;
 	setCoreParameter("ExecutionPlanVersion", std::to_string(executionPlanVersion));
-}
-
-std::string ModifyExecutionPlanRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ModifyExecutionPlanRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-std::string ModifyExecutionPlanRequest::getTimeUnit()const
-{
-	return timeUnit_;
-}
-
-void ModifyExecutionPlanRequest::setTimeUnit(const std::string& timeUnit)
-{
-	timeUnit_ = timeUnit;
-	setCoreParameter("TimeUnit", timeUnit);
 }
 
 std::string ModifyExecutionPlanRequest::getInstanceGeneration()const
@@ -331,17 +209,6 @@ void ModifyExecutionPlanRequest::setOptionSoftWareList(const std::vector<std::st
 		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
 }
 
-std::string ModifyExecutionPlanRequest::getVpcId()const
-{
-	return vpcId_;
-}
-
-void ModifyExecutionPlanRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
 std::string ModifyExecutionPlanRequest::getNetType()const
 {
 	return netType_;
@@ -351,17 +218,6 @@ void ModifyExecutionPlanRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
 	setCoreParameter("NetType", netType);
-}
-
-std::string ModifyExecutionPlanRequest::getWorkflowDefinition()const
-{
-	return workflowDefinition_;
-}
-
-void ModifyExecutionPlanRequest::setWorkflowDefinition(const std::string& workflowDefinition)
-{
-	workflowDefinition_ = workflowDefinition;
-	setCoreParameter("WorkflowDefinition", workflowDefinition);
 }
 
 std::vector<ModifyExecutionPlanRequest::EcsOrder> ModifyExecutionPlanRequest::getEcsOrder()const
@@ -408,17 +264,6 @@ void ModifyExecutionPlanRequest::setZoneId(const std::string& zoneId)
 	setCoreParameter("ZoneId", zoneId);
 }
 
-std::string ModifyExecutionPlanRequest::getDayOfWeek()const
-{
-	return dayOfWeek_;
-}
-
-void ModifyExecutionPlanRequest::setDayOfWeek(const std::string& dayOfWeek)
-{
-	dayOfWeek_ = dayOfWeek;
-	setCoreParameter("DayOfWeek", dayOfWeek);
-}
-
 bool ModifyExecutionPlanRequest::getUseCustomHiveMetaDB()const
 {
 	return useCustomHiveMetaDB_;
@@ -428,6 +273,172 @@ void ModifyExecutionPlanRequest::setUseCustomHiveMetaDB(bool useCustomHiveMetaDB
 {
 	useCustomHiveMetaDB_ = useCustomHiveMetaDB;
 	setCoreParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB ? "true" : "false");
+}
+
+bool ModifyExecutionPlanRequest::getInitCustomHiveMetaDB()const
+{
+	return initCustomHiveMetaDB_;
+}
+
+void ModifyExecutionPlanRequest::setInitCustomHiveMetaDB(bool initCustomHiveMetaDB)
+{
+	initCustomHiveMetaDB_ = initCustomHiveMetaDB;
+	setCoreParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
+}
+
+bool ModifyExecutionPlanRequest::getIoOptimized()const
+{
+	return ioOptimized_;
+}
+
+void ModifyExecutionPlanRequest::setIoOptimized(bool ioOptimized)
+{
+	ioOptimized_ = ioOptimized;
+	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
+}
+
+std::string ModifyExecutionPlanRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void ModifyExecutionPlanRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setCoreParameter("SecurityGroupId", securityGroupId);
+}
+
+bool ModifyExecutionPlanRequest::getEasEnable()const
+{
+	return easEnable_;
+}
+
+void ModifyExecutionPlanRequest::setEasEnable(bool easEnable)
+{
+	easEnable_ = easEnable;
+	setCoreParameter("EasEnable", easEnable ? "true" : "false");
+}
+
+std::vector<std::string> ModifyExecutionPlanRequest::getJobIdList()const
+{
+	return jobIdList_;
+}
+
+void ModifyExecutionPlanRequest::setJobIdList(const std::vector<std::string>& jobIdList)
+{
+	jobIdList_ = jobIdList;
+	for(int i = 0; i!= jobIdList.size(); i++)
+		setCoreParameter("JobIdList."+ std::to_string(i), jobIdList.at(i));
+}
+
+std::string ModifyExecutionPlanRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyExecutionPlanRequest::getDayOfMonth()const
+{
+	return dayOfMonth_;
+}
+
+void ModifyExecutionPlanRequest::setDayOfMonth(const std::string& dayOfMonth)
+{
+	dayOfMonth_ = dayOfMonth;
+	setCoreParameter("DayOfMonth", dayOfMonth);
+}
+
+std::string ModifyExecutionPlanRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyExecutionPlanRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+bool ModifyExecutionPlanRequest::getUseLocalMetaDb()const
+{
+	return useLocalMetaDb_;
+}
+
+void ModifyExecutionPlanRequest::setUseLocalMetaDb(bool useLocalMetaDb)
+{
+	useLocalMetaDb_ = useLocalMetaDb;
+	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
+}
+
+std::string ModifyExecutionPlanRequest::getUserDefinedEmrEcsRole()const
+{
+	return userDefinedEmrEcsRole_;
+}
+
+void ModifyExecutionPlanRequest::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
+{
+	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
+	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+}
+
+std::string ModifyExecutionPlanRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ModifyExecutionPlanRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ModifyExecutionPlanRequest::getTimeUnit()const
+{
+	return timeUnit_;
+}
+
+void ModifyExecutionPlanRequest::setTimeUnit(const std::string& timeUnit)
+{
+	timeUnit_ = timeUnit;
+	setCoreParameter("TimeUnit", timeUnit);
+}
+
+std::string ModifyExecutionPlanRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void ModifyExecutionPlanRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
+}
+
+std::string ModifyExecutionPlanRequest::getWorkflowDefinition()const
+{
+	return workflowDefinition_;
+}
+
+void ModifyExecutionPlanRequest::setWorkflowDefinition(const std::string& workflowDefinition)
+{
+	workflowDefinition_ = workflowDefinition;
+	setCoreParameter("WorkflowDefinition", workflowDefinition);
+}
+
+std::string ModifyExecutionPlanRequest::getDayOfWeek()const
+{
+	return dayOfWeek_;
+}
+
+void ModifyExecutionPlanRequest::setDayOfWeek(const std::string& dayOfWeek)
+{
+	dayOfWeek_ = dayOfWeek;
+	setCoreParameter("DayOfWeek", dayOfWeek);
 }
 
 std::string ModifyExecutionPlanRequest::getStrategy()const
@@ -471,17 +482,6 @@ void ModifyExecutionPlanRequest::setHighAvailabilityEnable(bool highAvailability
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
 	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
-}
-
-bool ModifyExecutionPlanRequest::getInitCustomHiveMetaDB()const
-{
-	return initCustomHiveMetaDB_;
-}
-
-void ModifyExecutionPlanRequest::setInitCustomHiveMetaDB(bool initCustomHiveMetaDB)
-{
-	initCustomHiveMetaDB_ = initCustomHiveMetaDB;
-	setCoreParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
 }
 
 bool ModifyExecutionPlanRequest::getLogEnable()const

@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				ShopDataAlarmRequest();
 				~ShopDataAlarmRequest();
 
-				std::string getWarnPhone()const;
-				void setWarnPhone(const std::string& warnPhone);
-				int getWarn()const;
-				void setWarn(int warn);
-				int getCloseWarn()const;
-				void setCloseWarn(int closeWarn);
 				std::string getWarnEmail()const;
 				void setWarnEmail(const std::string& warnEmail);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getSid()const;
 				void setSid(long sid);
+				std::string getWarnPhone()const;
+				void setWarnPhone(const std::string& warnPhone);
+				int getWarn()const;
+				void setWarn(int warn);
+				int getCloseWarn()const;
+				void setCloseWarn(int closeWarn);
 
             private:
-				std::string warnPhone_;
-				int warn_;
-				int closeWarn_;
 				std::string warnEmail_;
 				std::string accessKeyId_;
 				long sid_;
+				std::string warnPhone_;
+				int warn_;
+				int closeWarn_;
 
 			};
 		}

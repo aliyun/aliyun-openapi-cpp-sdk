@@ -30,36 +30,29 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SMARTAG_EXPORT ModifySmartAccessGatewayRequest : public RpcServiceRequest
 			{
-				struct SnatEntries
-				{
-					std::string cidrBlock;
-					std::string snatIp;
-				};
 
 			public:
 				ModifySmartAccessGatewayRequest();
 				~ModifySmartAccessGatewayRequest();
 
-				std::vector<SnatEntries> getSnatEntries()const;
-				void setSnatEntries(const std::vector<SnatEntries>& snatEntries);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getCity()const;
 				void setCity(const std::string& city);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getSecurityLockThreshold()const;
 				void setSecurityLockThreshold(int securityLockThreshold);
 				std::string getRoutingStrategy()const;
 				void setRoutingStrategy(const std::string& routingStrategy);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getCidrBlock()const;
@@ -68,16 +61,15 @@ namespace AlibabaCloud
 				void setSmartAGId(const std::string& smartAGId);
 
             private:
-				std::vector<SnatEntries> snatEntries_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string city_;
-				std::string ownerAccount_;
 				std::string description_;
-				long ownerId_;
 				int securityLockThreshold_;
 				std::string routingStrategy_;
 				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
 				std::string name_;
 				std::string cidrBlock_;
 				std::string smartAGId_;

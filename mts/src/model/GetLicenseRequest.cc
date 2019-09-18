@@ -47,6 +47,28 @@ void GetLicenseRequest::setData(const std::string& data)
 	setCoreParameter("Data", data);
 }
 
+std::string GetLicenseRequest::getType()const
+{
+	return type_;
+}
+
+void GetLicenseRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string GetLicenseRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetLicenseRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetLicenseRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +89,6 @@ void GetLicenseRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string GetLicenseRequest::getHeader()const
-{
-	return header_;
-}
-
-void GetLicenseRequest::setHeader(const std::string& header)
-{
-	header_ = header;
-	setCoreParameter("Header", header);
 }
 
 std::string GetLicenseRequest::getOwnerId()const
@@ -102,15 +113,15 @@ void GetLicenseRequest::setMediaId(const std::string& mediaId)
 	setCoreParameter("MediaId", mediaId);
 }
 
-std::string GetLicenseRequest::getType()const
+std::string GetLicenseRequest::getHeader()const
 {
-	return type_;
+	return header_;
 }
 
-void GetLicenseRequest::setType(const std::string& type)
+void GetLicenseRequest::setHeader(const std::string& header)
 {
-	type_ = type;
-	setCoreParameter("Type", type);
+	header_ = header;
+	setCoreParameter("Header", header);
 }
 
 std::string GetLicenseRequest::getLicenseUrl()const
@@ -122,16 +133,5 @@ void GetLicenseRequest::setLicenseUrl(const std::string& licenseUrl)
 {
 	licenseUrl_ = licenseUrl;
 	setCoreParameter("LicenseUrl", licenseUrl);
-}
-
-std::string GetLicenseRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetLicenseRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

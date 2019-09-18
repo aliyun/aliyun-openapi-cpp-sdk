@@ -36,15 +36,15 @@ void ModifyReplicaVerificationModeRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyReplicaVerificationModeRequest::getVerificationMode()const
+std::string ModifyReplicaVerificationModeRequest::getAccessKeyId()const
 {
-	return verificationMode_;
+	return accessKeyId_;
 }
 
-void ModifyReplicaVerificationModeRequest::setVerificationMode(const std::string& verificationMode)
+void ModifyReplicaVerificationModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	verificationMode_ = verificationMode;
-	setCoreParameter("VerificationMode", verificationMode);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyReplicaVerificationModeRequest::getSecurityToken()const
@@ -58,6 +58,28 @@ void ModifyReplicaVerificationModeRequest::setSecurityToken(const std::string& s
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyReplicaVerificationModeRequest::getReplicaId()const
+{
+	return replicaId_;
+}
+
+void ModifyReplicaVerificationModeRequest::setReplicaId(const std::string& replicaId)
+{
+	replicaId_ = replicaId;
+	setCoreParameter("ReplicaId", replicaId);
+}
+
+std::string ModifyReplicaVerificationModeRequest::getVerificationMode()const
+{
+	return verificationMode_;
+}
+
+void ModifyReplicaVerificationModeRequest::setVerificationMode(const std::string& verificationMode)
+{
+	verificationMode_ = verificationMode;
+	setCoreParameter("VerificationMode", verificationMode);
+}
+
 std::string ModifyReplicaVerificationModeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +89,6 @@ void ModifyReplicaVerificationModeRequest::setResourceOwnerAccount(const std::st
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyReplicaVerificationModeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyReplicaVerificationModeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyReplicaVerificationModeRequest::getOwnerAccount()const
@@ -91,17 +102,6 @@ void ModifyReplicaVerificationModeRequest::setOwnerAccount(const std::string& ow
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyReplicaVerificationModeRequest::getReplicaId()const
-{
-	return replicaId_;
-}
-
-void ModifyReplicaVerificationModeRequest::setReplicaId(const std::string& replicaId)
-{
-	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
-}
-
 long ModifyReplicaVerificationModeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,16 +111,5 @@ void ModifyReplicaVerificationModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyReplicaVerificationModeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyReplicaVerificationModeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

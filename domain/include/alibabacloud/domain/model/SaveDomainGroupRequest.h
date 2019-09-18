@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				SaveDomainGroupRequest();
 				~SaveDomainGroupRequest();
 
+				long getDomainGroupId()const;
+				void setDomainGroupId(long domainGroupId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainGroupName()const;
 				void setDomainGroupName(const std::string& domainGroupName);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getDomainGroupId()const;
-				void setDomainGroupId(long domainGroupId);
 
             private:
+				long domainGroupId_;
 				std::string userClientIp_;
 				std::string domainGroupName_;
 				std::string lang_;
-				long domainGroupId_;
 
 			};
 		}

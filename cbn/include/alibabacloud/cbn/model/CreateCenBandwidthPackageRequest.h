@@ -35,10 +35,16 @@ namespace AlibabaCloud
 				CreateCenBandwidthPackageRequest();
 				~CreateCenBandwidthPackageRequest();
 
-				std::string getGeographicRegionBId()const;
-				void setGeographicRegionBId(const std::string& geographicRegionBId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getBandwidthPackageChargeType()const;
+				void setBandwidthPackageChargeType(const std::string& bandwidthPackageChargeType);
+				std::string getGeographicRegionBId()const;
+				void setGeographicRegionBId(const std::string& geographicRegionBId);
 				int getPeriod()const;
 				void setPeriod(int period);
 				std::string getGeographicRegionAId()const;
@@ -47,36 +53,30 @@ namespace AlibabaCloud
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getBandwidthPackageChargeType()const;
-				void setBandwidthPackageChargeType(const std::string& bandwidthPackageChargeType);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
 
             private:
-				std::string geographicRegionBId_;
 				long resourceOwnerId_;
+				std::string clientToken_;
+				std::string description_;
+				std::string bandwidthPackageChargeType_;
+				std::string geographicRegionBId_;
 				int period_;
 				std::string geographicRegionAId_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string clientToken_;
 				int bandwidth_;
 				std::string ownerAccount_;
-				std::string description_;
 				long ownerId_;
-				std::string bandwidthPackageChargeType_;
 				std::string name_;
 				std::string pricingCycle_;
 

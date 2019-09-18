@@ -25,17 +25,6 @@ ReportTaskFailedRequest::ReportTaskFailedRequest() :
 ReportTaskFailedRequest::~ReportTaskFailedRequest()
 {}
 
-std::string ReportTaskFailedRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void ReportTaskFailedRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
 std::string ReportTaskFailedRequest::getCause()const
 {
 	return cause_;
@@ -47,17 +36,6 @@ void ReportTaskFailedRequest::setCause(const std::string& cause)
 	setCoreParameter("Cause", cause);
 }
 
-std::string ReportTaskFailedRequest::getTaskToken()const
-{
-	return taskToken_;
-}
-
-void ReportTaskFailedRequest::setTaskToken(const std::string& taskToken)
-{
-	taskToken_ = taskToken;
-	setCoreParameter("TaskToken", taskToken);
-}
-
 std::string ReportTaskFailedRequest::getError()const
 {
 	return error_;
@@ -67,5 +45,27 @@ void ReportTaskFailedRequest::setError(const std::string& error)
 {
 	error_ = error;
 	setCoreParameter("Error", error);
+}
+
+std::string ReportTaskFailedRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void ReportTaskFailedRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setCoreParameter("RequestId", requestId);
+}
+
+std::string ReportTaskFailedRequest::getTaskToken()const
+{
+	return taskToken_;
+}
+
+void ReportTaskFailedRequest::setTaskToken(const std::string& taskToken)
+{
+	taskToken_ = taskToken;
+	setCoreParameter("TaskToken", taskToken);
 }
 

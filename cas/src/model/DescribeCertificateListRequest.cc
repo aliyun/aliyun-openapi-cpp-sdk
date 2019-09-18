@@ -25,6 +25,17 @@ DescribeCertificateListRequest::DescribeCertificateListRequest() :
 DescribeCertificateListRequest::~DescribeCertificateListRequest()
 {}
 
+std::string DescribeCertificateListRequest::getSortType()const
+{
+	return sortType_;
+}
+
+void DescribeCertificateListRequest::setSortType(const std::string& sortType)
+{
+	sortType_ = sortType;
+	setCoreParameter("SortType", sortType);
+}
+
 std::string DescribeCertificateListRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -45,61 +56,6 @@ void DescribeCertificateListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string DescribeCertificateListRequest::getSortType()const
-{
-	return sortType_;
-}
-
-void DescribeCertificateListRequest::setSortType(const std::string& sortType)
-{
-	sortType_ = sortType;
-	setCoreParameter("SortType", sortType);
-}
-
-std::string DescribeCertificateListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCertificateListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int DescribeCertificateListRequest::getShowSize()const
-{
-	return showSize_;
-}
-
-void DescribeCertificateListRequest::setShowSize(int showSize)
-{
-	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
-}
-
-std::string DescribeCertificateListRequest::getSortColumn()const
-{
-	return sortColumn_;
-}
-
-void DescribeCertificateListRequest::setSortColumn(const std::string& sortColumn)
-{
-	sortColumn_ = sortColumn;
-	setCoreParameter("SortColumn", sortColumn);
-}
-
-int DescribeCertificateListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeCertificateListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::vector<DescribeCertificateListRequest::Tag> DescribeCertificateListRequest::getTag()const
@@ -139,6 +95,39 @@ void DescribeCertificateListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
 	setCoreParameter("Keyword", keyword);
+}
+
+int DescribeCertificateListRequest::getShowSize()const
+{
+	return showSize_;
+}
+
+void DescribeCertificateListRequest::setShowSize(int showSize)
+{
+	showSize_ = showSize;
+	setCoreParameter("ShowSize", std::to_string(showSize));
+}
+
+int DescribeCertificateListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeCertificateListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeCertificateListRequest::getSortColumn()const
+{
+	return sortColumn_;
+}
+
+void DescribeCertificateListRequest::setSortColumn(const std::string& sortColumn)
+{
+	sortColumn_ = sortColumn;
+	setCoreParameter("SortColumn", sortColumn);
 }
 
 std::string DescribeCertificateListRequest::getStatus()const

@@ -36,6 +36,17 @@ void DescribeDBInstanceSSLRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDBInstanceSSLRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDBInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeDBInstanceSSLRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeDBInstanceSSLRequest::setSecurityToken(const std::string& securityT
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeDBInstanceSSLRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeDBInstanceSSLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeDBInstanceSSLRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeDBInstanceSSLRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeDBInstanceSSLRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeDBInstanceSSLRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDBInstanceSSLRequest::getDBInstanceId()const
@@ -91,6 +69,28 @@ void DescribeDBInstanceSSLRequest::setDBInstanceId(const std::string& dBInstance
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeDBInstanceSSLRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeDBInstanceSSLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeDBInstanceSSLRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeDBInstanceSSLRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeDBInstanceSSLRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void DescribeDBInstanceSSLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDBInstanceSSLRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDBInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

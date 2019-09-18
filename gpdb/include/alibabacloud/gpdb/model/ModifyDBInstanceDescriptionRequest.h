@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ModifyDBInstanceDescriptionRequest();
 				~ModifyDBInstanceDescriptionRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getDBInstanceDescription()const;
 				void setDBInstanceDescription(const std::string& dBInstanceDescription);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string dBInstanceId_;
 				std::string dBInstanceDescription_;
-				std::string accessKeyId_;
 
 			};
 		}

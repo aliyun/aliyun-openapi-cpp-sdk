@@ -25,6 +25,17 @@ DescribeVulDetailsRequest::DescribeVulDetailsRequest() :
 DescribeVulDetailsRequest::~DescribeVulDetailsRequest()
 {}
 
+std::string DescribeVulDetailsRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeVulDetailsRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string DescribeVulDetailsRequest::getAliasName()const
 {
 	return aliasName_;
@@ -67,16 +78,5 @@ void DescribeVulDetailsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeVulDetailsRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeVulDetailsRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeHpHostRequest();
 				~DescribeHpHostRequest();
 
-				std::string getHpHostBizId()const;
-				void setHpHostBizId(const std::string& hpHostBizId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getHpHostBizId()const;
+				void setHpHostBizId(const std::string& hpHostBizId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
-				std::string hpHostBizId_;
 				long resourceOwnerId_;
-				std::string regionId_;
 				std::string accessKeyId_;
+				std::string hpHostBizId_;
+				std::string regionId_;
 
 			};
 		}

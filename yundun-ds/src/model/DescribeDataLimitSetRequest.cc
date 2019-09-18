@@ -25,6 +25,17 @@ DescribeDataLimitSetRequest::DescribeDataLimitSetRequest() :
 DescribeDataLimitSetRequest::~DescribeDataLimitSetRequest()
 {}
 
+int DescribeDataLimitSetRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeDataLimitSetRequest::setResourceType(int resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", std::to_string(resourceType));
+}
+
 std::string DescribeDataLimitSetRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeDataLimitSetRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int DescribeDataLimitSetRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeDataLimitSetRequest::setResourceType(int resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 

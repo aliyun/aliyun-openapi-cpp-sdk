@@ -36,28 +36,6 @@ void DescribeAlarmHistoryRequest::setAlertName(const std::string& alertName)
 	setCoreParameter("AlertName", alertName);
 }
 
-std::string DescribeAlarmHistoryRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DescribeAlarmHistoryRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-std::string DescribeAlarmHistoryRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeAlarmHistoryRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeAlarmHistoryRequest::getRuleName()const
 {
 	return ruleName_;
@@ -78,17 +56,6 @@ void DescribeAlarmHistoryRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-bool DescribeAlarmHistoryRequest::getAscending()const
-{
-	return ascending_;
-}
-
-void DescribeAlarmHistoryRequest::setAscending(bool ascending)
-{
-	ascending_ = ascending;
-	setCoreParameter("Ascending", ascending ? "true" : "false");
 }
 
 std::string DescribeAlarmHistoryRequest::getAccessKeyId()const
@@ -113,17 +80,6 @@ void DescribeAlarmHistoryRequest::setOnlyCount(bool onlyCount)
 	setCoreParameter("OnlyCount", onlyCount ? "true" : "false");
 }
 
-std::string DescribeAlarmHistoryRequest::get_Namespace()const
-{
-	return _namespace_;
-}
-
-void DescribeAlarmHistoryRequest::set_Namespace(const std::string& _namespace)
-{
-	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
-}
-
 int DescribeAlarmHistoryRequest::getPageSize()const
 {
 	return pageSize_;
@@ -146,17 +102,6 @@ void DescribeAlarmHistoryRequest::setState(const std::string& state)
 	setCoreParameter("State", state);
 }
 
-int DescribeAlarmHistoryRequest::getPage()const
-{
-	return page_;
-}
-
-void DescribeAlarmHistoryRequest::setPage(int page)
-{
-	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
-}
-
 std::string DescribeAlarmHistoryRequest::getMetricName()const
 {
 	return metricName_;
@@ -166,6 +111,61 @@ void DescribeAlarmHistoryRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
 	setCoreParameter("MetricName", metricName);
+}
+
+std::string DescribeAlarmHistoryRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeAlarmHistoryRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string DescribeAlarmHistoryRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeAlarmHistoryRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+bool DescribeAlarmHistoryRequest::getAscending()const
+{
+	return ascending_;
+}
+
+void DescribeAlarmHistoryRequest::setAscending(bool ascending)
+{
+	ascending_ = ascending;
+	setCoreParameter("Ascending", ascending ? "true" : "false");
+}
+
+std::string DescribeAlarmHistoryRequest::get_Namespace()const
+{
+	return _namespace_;
+}
+
+void DescribeAlarmHistoryRequest::set_Namespace(const std::string& _namespace)
+{
+	_namespace_ = _namespace;
+	setCoreParameter("_Namespace", _namespace);
+}
+
+int DescribeAlarmHistoryRequest::getPage()const
+{
+	return page_;
+}
+
+void DescribeAlarmHistoryRequest::setPage(int page)
+{
+	page_ = page;
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string DescribeAlarmHistoryRequest::getStatus()const

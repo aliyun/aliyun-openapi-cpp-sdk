@@ -119,17 +119,6 @@ void CreateShardingDBInstanceRequest::setSecurityToken(const std::string& securi
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string CreateShardingDBInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateShardingDBInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateShardingDBInstanceRequest::getEngine()const
 {
 	return engine_;

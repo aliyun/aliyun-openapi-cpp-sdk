@@ -25,6 +25,28 @@ SaveBatchTaskForCreatingOrderRedeemRequest::SaveBatchTaskForCreatingOrderRedeemR
 SaveBatchTaskForCreatingOrderRedeemRequest::~SaveBatchTaskForCreatingOrderRedeemRequest()
 {}
 
+std::string SaveBatchTaskForCreatingOrderRedeemRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void SaveBatchTaskForCreatingOrderRedeemRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setCoreParameter("CouponNo", couponNo);
+}
+
+bool SaveBatchTaskForCreatingOrderRedeemRequest::getUseCoupon()const
+{
+	return useCoupon_;
+}
+
+void SaveBatchTaskForCreatingOrderRedeemRequest::setUseCoupon(bool useCoupon)
+{
+	useCoupon_ = useCoupon;
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+}
+
 std::string SaveBatchTaskForCreatingOrderRedeemRequest::getPromotionNo()const
 {
 	return promotionNo_;
@@ -62,28 +84,6 @@ void SaveBatchTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::stri
 {
 	userClientIp_ = userClientIp;
 	setCoreParameter("UserClientIp", userClientIp);
-}
-
-std::string SaveBatchTaskForCreatingOrderRedeemRequest::getCouponNo()const
-{
-	return couponNo_;
-}
-
-void SaveBatchTaskForCreatingOrderRedeemRequest::setCouponNo(const std::string& couponNo)
-{
-	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
-}
-
-bool SaveBatchTaskForCreatingOrderRedeemRequest::getUseCoupon()const
-{
-	return useCoupon_;
-}
-
-void SaveBatchTaskForCreatingOrderRedeemRequest::setUseCoupon(bool useCoupon)
-{
-	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderRedeemRequest::getLang()const

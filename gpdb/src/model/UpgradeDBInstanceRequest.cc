@@ -25,15 +25,15 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
 UpgradeDBInstanceRequest::~UpgradeDBInstanceRequest()
 {}
 
-std::string UpgradeDBInstanceRequest::getDBInstanceGroupCount()const
+std::string UpgradeDBInstanceRequest::getAccessKeyId()const
 {
-	return dBInstanceGroupCount_;
+	return accessKeyId_;
 }
 
-void UpgradeDBInstanceRequest::setDBInstanceGroupCount(const std::string& dBInstanceGroupCount)
+void UpgradeDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	dBInstanceGroupCount_ = dBInstanceGroupCount;
-	setCoreParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpgradeDBInstanceRequest::getRegionId()const
@@ -58,6 +58,17 @@ void UpgradeDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string UpgradeDBInstanceRequest::getDBInstanceGroupCount()const
+{
+	return dBInstanceGroupCount_;
+}
+
+void UpgradeDBInstanceRequest::setDBInstanceGroupCount(const std::string& dBInstanceGroupCount)
+{
+	dBInstanceGroupCount_ = dBInstanceGroupCount;
+	setCoreParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+}
+
 long UpgradeDBInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -69,28 +80,6 @@ void UpgradeDBInstanceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UpgradeDBInstanceRequest::getPayType()const
-{
-	return payType_;
-}
-
-void UpgradeDBInstanceRequest::setPayType(const std::string& payType)
-{
-	payType_ = payType;
-	setCoreParameter("PayType", payType);
-}
-
-std::string UpgradeDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpgradeDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string UpgradeDBInstanceRequest::getDBInstanceClass()const
 {
 	return dBInstanceClass_;
@@ -100,5 +89,16 @@ void UpgradeDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceC
 {
 	dBInstanceClass_ = dBInstanceClass;
 	setCoreParameter("DBInstanceClass", dBInstanceClass);
+}
+
+std::string UpgradeDBInstanceRequest::getPayType()const
+{
+	return payType_;
+}
+
+void UpgradeDBInstanceRequest::setPayType(const std::string& payType)
+{
+	payType_ = payType;
+	setCoreParameter("PayType", payType);
 }
 

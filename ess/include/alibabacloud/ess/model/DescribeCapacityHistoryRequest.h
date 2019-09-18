@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				DescribeCapacityHistoryRequest();
 				~DescribeCapacityHistoryRequest();
 
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string resourceOwnerAccount_;
 				std::string scalingGroupId_;
-				int pageSize_;
-				std::string endTime_;
 				std::string startTime_;
-				long ownerId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string endTime_;
+				long ownerId_;
 
 			};
 		}

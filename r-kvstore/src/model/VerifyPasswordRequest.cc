@@ -36,6 +36,17 @@ void VerifyPasswordRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string VerifyPasswordRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void VerifyPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string VerifyPasswordRequest::getPassword()const
 {
 	return password_;
@@ -45,17 +56,6 @@ void VerifyPasswordRequest::setPassword(const std::string& password)
 {
 	password_ = password;
 	setCoreParameter("Password", password);
-}
-
-std::string VerifyPasswordRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void VerifyPasswordRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string VerifyPasswordRequest::getSecurityToken()const
@@ -80,17 +80,6 @@ void VerifyPasswordRequest::setResourceOwnerAccount(const std::string& resourceO
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string VerifyPasswordRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void VerifyPasswordRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string VerifyPasswordRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -113,14 +102,14 @@ void VerifyPasswordRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string VerifyPasswordRequest::getAccessKeyId()const
+std::string VerifyPasswordRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void VerifyPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
+void VerifyPasswordRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

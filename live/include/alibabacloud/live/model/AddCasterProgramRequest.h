@@ -32,29 +32,29 @@ namespace AlibabaCloud
 			{
 				struct Episode
 				{
-					std::string resourceId;
-					std::vector<std::string> componentId;
-					std::string switchType;
 					std::string episodeType;
 					std::string episodeName;
-					std::string endTime;
+					std::string resourceId;
+					ComponentId componentId;
 					std::string startTime;
+					std::string endTime;
+					std::string switchType;
 				};
 
 			public:
 				AddCasterProgramRequest();
 				~AddCasterProgramRequest();
 
-				std::string getCasterId()const;
-				void setCasterId(const std::string& casterId);
 				std::vector<Episode> getEpisode()const;
 				void setEpisode(const std::vector<Episode>& episode);
+				std::string getCasterId()const;
+				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string casterId_;
 				std::vector<Episode> episode_;
+				std::string casterId_;
 				long ownerId_;
 
 			};

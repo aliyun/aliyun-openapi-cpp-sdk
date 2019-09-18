@@ -25,17 +25,6 @@ GetResolveCountSummaryRequest::GetResolveCountSummaryRequest() :
 GetResolveCountSummaryRequest::~GetResolveCountSummaryRequest()
 {}
 
-std::string GetResolveCountSummaryRequest::getGranularity()const
-{
-	return granularity_;
-}
-
-void GetResolveCountSummaryRequest::setGranularity(const std::string& granularity)
-{
-	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
-}
-
 int GetResolveCountSummaryRequest::getTimeSpan()const
 {
 	return timeSpan_;
@@ -56,5 +45,16 @@ void GetResolveCountSummaryRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetResolveCountSummaryRequest::getGranularity()const
+{
+	return granularity_;
+}
+
+void GetResolveCountSummaryRequest::setGranularity(const std::string& granularity)
+{
+	granularity_ = granularity;
+	setCoreParameter("Granularity", granularity);
 }
 

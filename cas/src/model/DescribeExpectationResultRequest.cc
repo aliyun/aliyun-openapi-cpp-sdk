@@ -25,17 +25,6 @@ DescribeExpectationResultRequest::DescribeExpectationResultRequest() :
 DescribeExpectationResultRequest::~DescribeExpectationResultRequest()
 {}
 
-std::string DescribeExpectationResultRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeExpectationResultRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeExpectationResultRequest::getOrderId()const
 {
 	return orderId_;
@@ -56,6 +45,28 @@ void DescribeExpectationResultRequest::setExpectationType(const std::string& exp
 {
 	expectationType_ = expectationType;
 	setCoreParameter("ExpectationType", expectationType);
+}
+
+std::string DescribeExpectationResultRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeExpectationResultRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeExpectationResultRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeExpectationResultRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeExpectationResultRequest::getLang()const

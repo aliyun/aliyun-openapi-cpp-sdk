@@ -25,6 +25,28 @@ ProfileHistoryRequest::ProfileHistoryRequest() :
 ProfileHistoryRequest::~ProfileHistoryRequest()
 {}
 
+std::string ProfileHistoryRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ProfileHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ProfileHistoryRequest::getAgsid()const
+{
+	return agsid_;
+}
+
+void ProfileHistoryRequest::setAgsid(long agsid)
+{
+	agsid_ = agsid;
+	setCoreParameter("Agsid", std::to_string(agsid));
+}
+
 long ProfileHistoryRequest::getIdtype()const
 {
 	return idtype_;
@@ -56,27 +78,5 @@ void ProfileHistoryRequest::setBeginMonth(const std::string& beginMonth)
 {
 	beginMonth_ = beginMonth;
 	setCoreParameter("BeginMonth", beginMonth);
-}
-
-std::string ProfileHistoryRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ProfileHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-long ProfileHistoryRequest::getAgsid()const
-{
-	return agsid_;
-}
-
-void ProfileHistoryRequest::setAgsid(long agsid)
-{
-	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
 }
 

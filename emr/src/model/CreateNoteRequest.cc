@@ -36,28 +36,6 @@ void CreateNoteRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateNoteRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateNoteRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateNoteRequest::getName()const
-{
-	return name_;
-}
-
-void CreateNoteRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateNoteRequest::getClusterId()const
 {
 	return clusterId_;
@@ -89,5 +67,27 @@ void CreateNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateNoteRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateNoteRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateNoteRequest::getName()const
+{
+	return name_;
+}
+
+void CreateNoteRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ListProductTagsRequest();
 				~ListProductTagsRequest();
 
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 
             private:
-				std::string iotInstanceId_;
 				std::string productKey_;
 				std::string accessKeyId_;
+				std::string iotInstanceId_;
 
 			};
 		}

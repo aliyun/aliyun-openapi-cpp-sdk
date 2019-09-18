@@ -25,28 +25,6 @@ UnbindAliasRequest::UnbindAliasRequest() :
 UnbindAliasRequest::~UnbindAliasRequest()
 {}
 
-std::string UnbindAliasRequest::getAliasName()const
-{
-	return aliasName_;
-}
-
-void UnbindAliasRequest::setAliasName(const std::string& aliasName)
-{
-	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
-}
-
-long UnbindAliasRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void UnbindAliasRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string UnbindAliasRequest::getDeviceId()const
 {
 	return deviceId_;
@@ -67,6 +45,28 @@ void UnbindAliasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UnbindAliasRequest::getAliasName()const
+{
+	return aliasName_;
+}
+
+void UnbindAliasRequest::setAliasName(const std::string& aliasName)
+{
+	aliasName_ = aliasName;
+	setCoreParameter("AliasName", aliasName);
+}
+
+long UnbindAliasRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void UnbindAliasRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 bool UnbindAliasRequest::getUnbindAll()const

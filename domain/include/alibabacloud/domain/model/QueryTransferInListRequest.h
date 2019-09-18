@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				long getSubmissionStartDate()const;
 				void setSubmissionStartDate(long submissionStartDate);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				long getSubmissionEndDate()const;
 				void setSubmissionEndDate(long submissionEndDate);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getSimpleTransferInStatus()const;
 				void setSimpleTransferInStatus(const std::string& simpleTransferInStatus);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 
             private:
 				long submissionStartDate_;
-				std::string userClientIp_;
 				long submissionEndDate_;
 				std::string domainName_;
+				int pageNum_;
+				std::string userClientIp_;
 				std::string simpleTransferInStatus_;
 				int pageSize_;
 				std::string lang_;
-				int pageNum_;
 
 			};
 		}

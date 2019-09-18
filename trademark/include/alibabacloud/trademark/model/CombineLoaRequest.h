@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				CombineLoaRequest();
 				~CombineLoaRequest();
 
-				std::string getTrademarkName()const;
-				void setTrademarkName(const std::string& trademarkName);
 				std::string getMaterialName()const;
 				void setMaterialName(const std::string& materialName);
 				std::string getAddress()const;
 				void setAddress(const std::string& address);
+				std::string getMaterialId()const;
+				void setMaterialId(const std::string& materialId);
+				std::string getTrademarkName()const;
+				void setTrademarkName(const std::string& trademarkName);
 				std::string getNationality()const;
 				void setNationality(const std::string& nationality);
 				std::string getTmProduceType()const;
 				void setTmProduceType(const std::string& tmProduceType);
-				std::string getMaterialId()const;
-				void setMaterialId(const std::string& materialId);
 
             private:
-				std::string trademarkName_;
 				std::string materialName_;
 				std::string address_;
+				std::string materialId_;
+				std::string trademarkName_;
 				std::string nationality_;
 				std::string tmProduceType_;
-				std::string materialId_;
 
 			};
 		}

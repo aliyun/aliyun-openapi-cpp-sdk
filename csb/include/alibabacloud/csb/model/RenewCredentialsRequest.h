@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				RenewCredentialsRequest();
 				~RenewCredentialsRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				long getCredentialId()const;
 				void setCredentialId(long credentialId);
 
             private:
-				std::string regionId_;
 				long credentialId_;
 
 			};

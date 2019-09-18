@@ -36,28 +36,6 @@ void ModifyFlowForWebRequest::setCronExpr(const std::string& cronExpr)
 	setCoreParameter("CronExpr", cronExpr);
 }
 
-std::string ModifyFlowForWebRequest::getParentFlowList()const
-{
-	return parentFlowList_;
-}
-
-void ModifyFlowForWebRequest::setParentFlowList(const std::string& parentFlowList)
-{
-	parentFlowList_ = parentFlowList;
-	setCoreParameter("ParentFlowList", parentFlowList);
-}
-
-std::string ModifyFlowForWebRequest::getAlertDingDingGroupBizId()const
-{
-	return alertDingDingGroupBizId_;
-}
-
-void ModifyFlowForWebRequest::setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId)
-{
-	alertDingDingGroupBizId_ = alertDingDingGroupBizId;
-	setCoreParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
-}
-
 bool ModifyFlowForWebRequest::getPeriodic()const
 {
 	return periodic_;
@@ -67,17 +45,6 @@ void ModifyFlowForWebRequest::setPeriodic(bool periodic)
 {
 	periodic_ = periodic;
 	setCoreParameter("Periodic", periodic ? "true" : "false");
-}
-
-long ModifyFlowForWebRequest::getStartSchedule()const
-{
-	return startSchedule_;
-}
-
-void ModifyFlowForWebRequest::setStartSchedule(long startSchedule)
-{
-	startSchedule_ = startSchedule;
-	setCoreParameter("StartSchedule", std::to_string(startSchedule));
 }
 
 std::string ModifyFlowForWebRequest::getDescription()const
@@ -91,17 +58,6 @@ void ModifyFlowForWebRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-std::string ModifyFlowForWebRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ModifyFlowForWebRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
 std::string ModifyFlowForWebRequest::getAlertUserGroupBizId()const
 {
 	return alertUserGroupBizId_;
@@ -111,17 +67,6 @@ void ModifyFlowForWebRequest::setAlertUserGroupBizId(const std::string& alertUse
 {
 	alertUserGroupBizId_ = alertUserGroupBizId;
 	setCoreParameter("AlertUserGroupBizId", alertUserGroupBizId);
-}
-
-std::string ModifyFlowForWebRequest::getGraph()const
-{
-	return graph_;
-}
-
-void ModifyFlowForWebRequest::setGraph(const std::string& graph)
-{
-	graph_ = graph;
-	setCoreParameter("Graph", graph);
 }
 
 std::string ModifyFlowForWebRequest::getHostName()const
@@ -155,17 +100,6 @@ void ModifyFlowForWebRequest::setCreateCluster(bool createCluster)
 {
 	createCluster_ = createCluster;
 	setCoreParameter("CreateCluster", createCluster ? "true" : "false");
-}
-
-std::string ModifyFlowForWebRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyFlowForWebRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 long ModifyFlowForWebRequest::getEndSchedule()const
@@ -210,6 +144,72 @@ void ModifyFlowForWebRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
+}
+
+std::string ModifyFlowForWebRequest::getParentFlowList()const
+{
+	return parentFlowList_;
+}
+
+void ModifyFlowForWebRequest::setParentFlowList(const std::string& parentFlowList)
+{
+	parentFlowList_ = parentFlowList;
+	setCoreParameter("ParentFlowList", parentFlowList);
+}
+
+std::string ModifyFlowForWebRequest::getAlertDingDingGroupBizId()const
+{
+	return alertDingDingGroupBizId_;
+}
+
+void ModifyFlowForWebRequest::setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId)
+{
+	alertDingDingGroupBizId_ = alertDingDingGroupBizId;
+	setCoreParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
+}
+
+long ModifyFlowForWebRequest::getStartSchedule()const
+{
+	return startSchedule_;
+}
+
+void ModifyFlowForWebRequest::setStartSchedule(long startSchedule)
+{
+	startSchedule_ = startSchedule;
+	setCoreParameter("StartSchedule", std::to_string(startSchedule));
+}
+
+std::string ModifyFlowForWebRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ModifyFlowForWebRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string ModifyFlowForWebRequest::getGraph()const
+{
+	return graph_;
+}
+
+void ModifyFlowForWebRequest::setGraph(const std::string& graph)
+{
+	graph_ = graph;
+	setCoreParameter("Graph", graph);
+}
+
+std::string ModifyFlowForWebRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyFlowForWebRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyFlowForWebRequest::getStatus()const

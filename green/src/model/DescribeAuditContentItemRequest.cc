@@ -25,17 +25,6 @@ DescribeAuditContentItemRequest::DescribeAuditContentItemRequest() :
 DescribeAuditContentItemRequest::~DescribeAuditContentItemRequest()
 {}
 
-int DescribeAuditContentItemRequest::getTotalCount()const
-{
-	return totalCount_;
-}
-
-void DescribeAuditContentItemRequest::setTotalCount(int totalCount)
-{
-	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
-}
-
 std::string DescribeAuditContentItemRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -58,17 +47,6 @@ void DescribeAuditContentItemRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeAuditContentItemRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeAuditContentItemRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeAuditContentItemRequest::getLang()const
 {
 	return lang_;
@@ -80,17 +58,6 @@ void DescribeAuditContentItemRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string DescribeAuditContentItemRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeAuditContentItemRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
-}
-
 std::string DescribeAuditContentItemRequest::getTaskId()const
 {
 	return taskId_;
@@ -100,5 +67,38 @@ void DescribeAuditContentItemRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setCoreParameter("TaskId", taskId);
+}
+
+int DescribeAuditContentItemRequest::getTotalCount()const
+{
+	return totalCount_;
+}
+
+void DescribeAuditContentItemRequest::setTotalCount(int totalCount)
+{
+	totalCount_ = totalCount;
+	setCoreParameter("TotalCount", std::to_string(totalCount));
+}
+
+int DescribeAuditContentItemRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeAuditContentItemRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeAuditContentItemRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeAuditContentItemRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
 }
 

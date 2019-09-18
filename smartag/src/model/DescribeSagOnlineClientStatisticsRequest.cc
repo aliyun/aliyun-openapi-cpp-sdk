@@ -36,17 +36,6 @@ void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerId(long resourceO
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSagOnlineClientStatisticsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeSagOnlineClientStatisticsRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,17 +45,6 @@ void DescribeSagOnlineClientStatisticsRequest::setRegionId(const std::string& re
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeSagOnlineClientStatisticsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeSagOnlineClientStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::vector<std::string> DescribeSagOnlineClientStatisticsRequest::getSmartAGIds()const
@@ -79,6 +57,28 @@ void DescribeSagOnlineClientStatisticsRequest::setSmartAGIds(const std::vector<s
 	smartAGIds_ = smartAGIds;
 	for(int i = 0; i!= smartAGIds.size(); i++)
 		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
+}
+
+std::string DescribeSagOnlineClientStatisticsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeSagOnlineClientStatisticsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeSagOnlineClientStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSagOnlineClientStatisticsRequest::getOwnerId()const

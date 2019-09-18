@@ -19,33 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetCcConfigRequest;
 
 SetCcConfigRequest::SetCcConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetCcConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetCcConfig")
 {}
 
 SetCcConfigRequest::~SetCcConfigRequest()
 {}
-
-std::string SetCcConfigRequest::getAllowIps()const
-{
-	return allowIps_;
-}
-
-void SetCcConfigRequest::setAllowIps(const std::string& allowIps)
-{
-	allowIps_ = allowIps;
-	setCoreParameter("AllowIps", allowIps);
-}
-
-std::string SetCcConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetCcConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string SetCcConfigRequest::getDomainName()const
 {
@@ -67,6 +45,28 @@ void SetCcConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetCcConfigRequest::getAllowIps()const
+{
+	return allowIps_;
+}
+
+void SetCcConfigRequest::setAllowIps(const std::string& allowIps)
+{
+	allowIps_ = allowIps;
+	setCoreParameter("AllowIps", allowIps);
+}
+
+std::string SetCcConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetCcConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetCcConfigRequest::getBlockIps()const

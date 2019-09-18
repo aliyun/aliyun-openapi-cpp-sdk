@@ -25,39 +25,6 @@ CreatePornBatchDetectJobRequest::CreatePornBatchDetectJobRequest() :
 CreatePornBatchDetectJobRequest::~CreatePornBatchDetectJobRequest()
 {}
 
-std::string CreatePornBatchDetectJobRequest::getNotifyTopicName()const
-{
-	return notifyTopicName_;
-}
-
-void CreatePornBatchDetectJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
-{
-	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
-}
-
-std::string CreatePornBatchDetectJobRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreatePornBatchDetectJobRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreatePornBatchDetectJobRequest::getNotifyEndpoint()const
-{
-	return notifyEndpoint_;
-}
-
-void CreatePornBatchDetectJobRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
-{
-	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
-}
-
 std::string CreatePornBatchDetectJobRequest::getProject()const
 {
 	return project_;
@@ -80,17 +47,6 @@ void CreatePornBatchDetectJobRequest::setExternalID(const std::string& externalI
 	setCoreParameter("ExternalID", externalID);
 }
 
-std::string CreatePornBatchDetectJobRequest::getSrcUri()const
-{
-	return srcUri_;
-}
-
-void CreatePornBatchDetectJobRequest::setSrcUri(const std::string& srcUri)
-{
-	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
-}
-
 std::string CreatePornBatchDetectJobRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -100,6 +56,39 @@ void CreatePornBatchDetectJobRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreatePornBatchDetectJobRequest::getNotifyEndpoint()const
+{
+	return notifyEndpoint_;
+}
+
+void CreatePornBatchDetectJobRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
+{
+	notifyEndpoint_ = notifyEndpoint;
+	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+}
+
+std::string CreatePornBatchDetectJobRequest::getNotifyTopicName()const
+{
+	return notifyTopicName_;
+}
+
+void CreatePornBatchDetectJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
+{
+	notifyTopicName_ = notifyTopicName;
+	setCoreParameter("NotifyTopicName", notifyTopicName);
+}
+
+std::string CreatePornBatchDetectJobRequest::getSrcUri()const
+{
+	return srcUri_;
+}
+
+void CreatePornBatchDetectJobRequest::setSrcUri(const std::string& srcUri)
+{
+	srcUri_ = srcUri;
+	setCoreParameter("SrcUri", srcUri);
 }
 
 std::string CreatePornBatchDetectJobRequest::getTgtUri()const

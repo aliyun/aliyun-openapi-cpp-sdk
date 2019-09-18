@@ -36,28 +36,6 @@ void ListPornBatchDetectJobsRequest::setMaxKeys(int maxKeys)
 	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
-std::string ListPornBatchDetectJobsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListPornBatchDetectJobsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListPornBatchDetectJobsRequest::getMarker()const
-{
-	return marker_;
-}
-
-void ListPornBatchDetectJobsRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setCoreParameter("Marker", marker);
-}
-
 std::string ListPornBatchDetectJobsRequest::getProject()const
 {
 	return project_;
@@ -78,5 +56,16 @@ void ListPornBatchDetectJobsRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListPornBatchDetectJobsRequest::getMarker()const
+{
+	return marker_;
+}
+
+void ListPornBatchDetectJobsRequest::setMarker(const std::string& marker)
+{
+	marker_ = marker;
+	setCoreParameter("Marker", marker);
 }
 

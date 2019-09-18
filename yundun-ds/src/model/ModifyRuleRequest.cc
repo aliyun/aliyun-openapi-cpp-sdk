@@ -25,6 +25,28 @@ ModifyRuleRequest::ModifyRuleRequest() :
 ModifyRuleRequest::~ModifyRuleRequest()
 {}
 
+long ModifyRuleRequest::getRiskLevelId()const
+{
+	return riskLevelId_;
+}
+
+void ModifyRuleRequest::setRiskLevelId(long riskLevelId)
+{
+	riskLevelId_ = riskLevelId;
+	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+}
+
+std::string ModifyRuleRequest::getContent()const
+{
+	return content_;
+}
+
+void ModifyRuleRequest::setContent(const std::string& content)
+{
+	content_ = content;
+	setCoreParameter("Content", content);
+}
+
 std::string ModifyRuleRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -34,28 +56,6 @@ void ModifyRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-int ModifyRuleRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void ModifyRuleRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
-std::string ModifyRuleRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyRuleRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 long ModifyRuleRequest::getId()const
@@ -69,17 +69,6 @@ void ModifyRuleRequest::setId(long id)
 	setCoreParameter("Id", std::to_string(id));
 }
 
-long ModifyRuleRequest::getRiskLevelId()const
-{
-	return riskLevelId_;
-}
-
-void ModifyRuleRequest::setRiskLevelId(long riskLevelId)
-{
-	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
-}
-
 std::string ModifyRuleRequest::getLang()const
 {
 	return lang_;
@@ -89,6 +78,17 @@ void ModifyRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+int ModifyRuleRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void ModifyRuleRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int ModifyRuleRequest::getCustomType()const
@@ -102,6 +102,17 @@ void ModifyRuleRequest::setCustomType(int customType)
 	setCoreParameter("CustomType", std::to_string(customType));
 }
 
+std::string ModifyRuleRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyRuleRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
 int ModifyRuleRequest::getCategory()const
 {
 	return category_;
@@ -111,16 +122,5 @@ void ModifyRuleRequest::setCategory(int category)
 {
 	category_ = category;
 	setCoreParameter("Category", std::to_string(category));
-}
-
-std::string ModifyRuleRequest::getContent()const
-{
-	return content_;
-}
-
-void ModifyRuleRequest::setContent(const std::string& content)
-{
-	content_ = content;
-	setCoreParameter("Content", content);
 }
 

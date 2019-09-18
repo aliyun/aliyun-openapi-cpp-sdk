@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				DescribeKeywordRequest();
 				~DescribeKeywordRequest();
 
-				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getKeywordLibId()const;
-				void setKeywordLibId(int keywordLibId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
+				int getTotalCount()const;
+				void setTotalCount(int totalCount);
+				int getKeywordLibId()const;
+				void setKeywordLibId(int keywordLibId);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 
             private:
-				int totalCount_;
 				std::string sourceIp_;
-				int keywordLibId_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
 				std::string keyword_;
+				int totalCount_;
+				int keywordLibId_;
+				int currentPage_;
 
 			};
 		}

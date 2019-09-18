@@ -41,26 +41,26 @@ namespace AlibabaCloud
 				void setMaxFaceNum(int maxFaceNum);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getRetAttributes()const;
 				void setRetAttributes(const std::string& retAttributes);
+				std::string getClientTag()const;
+				void setClientTag(const std::string& clientTag);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getMaterialValue()const;
 				void setMaterialValue(const std::string& materialValue);
 				bool getDontSaveDB()const;
 				void setDontSaveDB(bool dontSaveDB);
-				std::string getClientTag()const;
-				void setClientTag(const std::string& clientTag);
 
             private:
 				int maxNumPhotosPerCategory_;
 				int maxFaceNum_;
 				long resourceOwnerId_;
-				std::string sourceIp_;
 				std::string retAttributes_;
+				std::string clientTag_;
+				std::string sourceIp_;
 				std::string materialValue_;
 				bool dontSaveDB_;
-				std::string clientTag_;
 
 			};
 		}

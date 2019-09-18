@@ -36,17 +36,6 @@ void QueryDomainRealNameVerificationInfoRequest::setFetchImage(bool fetchImage)
 	setCoreParameter("FetchImage", fetchImage ? "true" : "false");
 }
 
-std::string QueryDomainRealNameVerificationInfoRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void QueryDomainRealNameVerificationInfoRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string QueryDomainRealNameVerificationInfoRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,6 +45,17 @@ void QueryDomainRealNameVerificationInfoRequest::setDomainName(const std::string
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+std::string QueryDomainRealNameVerificationInfoRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryDomainRealNameVerificationInfoRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainRealNameVerificationInfoRequest::getLang()const

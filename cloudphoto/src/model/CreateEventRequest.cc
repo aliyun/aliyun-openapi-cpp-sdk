@@ -25,72 +25,6 @@ CreateEventRequest::CreateEventRequest() :
 CreateEventRequest::~CreateEventRequest()
 {}
 
-std::string CreateEventRequest::getBannerPhotoId()const
-{
-	return bannerPhotoId_;
-}
-
-void CreateEventRequest::setBannerPhotoId(const std::string& bannerPhotoId)
-{
-	bannerPhotoId_ = bannerPhotoId;
-	setCoreParameter("BannerPhotoId", bannerPhotoId);
-}
-
-std::string CreateEventRequest::getWatermarkPhotoId()const
-{
-	return watermarkPhotoId_;
-}
-
-void CreateEventRequest::setWatermarkPhotoId(const std::string& watermarkPhotoId)
-{
-	watermarkPhotoId_ = watermarkPhotoId;
-	setCoreParameter("WatermarkPhotoId", watermarkPhotoId);
-}
-
-std::string CreateEventRequest::getIdentity()const
-{
-	return identity_;
-}
-
-void CreateEventRequest::setIdentity(const std::string& identity)
-{
-	identity_ = identity;
-	setCoreParameter("Identity", identity);
-}
-
-std::string CreateEventRequest::getSplashPhotoId()const
-{
-	return splashPhotoId_;
-}
-
-void CreateEventRequest::setSplashPhotoId(const std::string& splashPhotoId)
-{
-	splashPhotoId_ = splashPhotoId;
-	setCoreParameter("SplashPhotoId", splashPhotoId);
-}
-
-std::string CreateEventRequest::getLibraryId()const
-{
-	return libraryId_;
-}
-
-void CreateEventRequest::setLibraryId(const std::string& libraryId)
-{
-	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
-}
-
-std::string CreateEventRequest::getWeixinTitle()const
-{
-	return weixinTitle_;
-}
-
-void CreateEventRequest::setWeixinTitle(const std::string& weixinTitle)
-{
-	weixinTitle_ = weixinTitle;
-	setCoreParameter("WeixinTitle", weixinTitle);
-}
-
 std::string CreateEventRequest::getStoreName()const
 {
 	return storeName_;
@@ -133,6 +67,72 @@ void CreateEventRequest::setEndAt(long endAt)
 {
 	endAt_ = endAt;
 	setCoreParameter("EndAt", std::to_string(endAt));
+}
+
+std::string CreateEventRequest::getIdentity()const
+{
+	return identity_;
+}
+
+void CreateEventRequest::setIdentity(const std::string& identity)
+{
+	identity_ = identity;
+	setCoreParameter("Identity", identity);
+}
+
+std::string CreateEventRequest::getWatermarkPhotoId()const
+{
+	return watermarkPhotoId_;
+}
+
+void CreateEventRequest::setWatermarkPhotoId(const std::string& watermarkPhotoId)
+{
+	watermarkPhotoId_ = watermarkPhotoId;
+	setCoreParameter("WatermarkPhotoId", watermarkPhotoId);
+}
+
+std::string CreateEventRequest::getSplashPhotoId()const
+{
+	return splashPhotoId_;
+}
+
+void CreateEventRequest::setSplashPhotoId(const std::string& splashPhotoId)
+{
+	splashPhotoId_ = splashPhotoId;
+	setCoreParameter("SplashPhotoId", splashPhotoId);
+}
+
+std::string CreateEventRequest::getLibraryId()const
+{
+	return libraryId_;
+}
+
+void CreateEventRequest::setLibraryId(const std::string& libraryId)
+{
+	libraryId_ = libraryId;
+	setCoreParameter("LibraryId", libraryId);
+}
+
+std::string CreateEventRequest::getWeixinTitle()const
+{
+	return weixinTitle_;
+}
+
+void CreateEventRequest::setWeixinTitle(const std::string& weixinTitle)
+{
+	weixinTitle_ = weixinTitle;
+	setCoreParameter("WeixinTitle", weixinTitle);
+}
+
+std::string CreateEventRequest::getBannerPhotoId()const
+{
+	return bannerPhotoId_;
+}
+
+void CreateEventRequest::setBannerPhotoId(const std::string& bannerPhotoId)
+{
+	bannerPhotoId_ = bannerPhotoId;
+	setCoreParameter("BannerPhotoId", bannerPhotoId);
 }
 
 long CreateEventRequest::getStartAt()const

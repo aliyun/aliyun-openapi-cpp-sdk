@@ -25,17 +25,6 @@ DescribeDrdsDBIpWhiteListRequest::DescribeDrdsDBIpWhiteListRequest() :
 DescribeDrdsDBIpWhiteListRequest::~DescribeDrdsDBIpWhiteListRequest()
 {}
 
-std::string DescribeDrdsDBIpWhiteListRequest::getDbName()const
-{
-	return dbName_;
-}
-
-void DescribeDrdsDBIpWhiteListRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
-}
-
 std::string DescribeDrdsDBIpWhiteListRequest::getDrdsInstanceId()const
 {
 	return drdsInstanceId_;
@@ -67,5 +56,16 @@ void DescribeDrdsDBIpWhiteListRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDrdsDBIpWhiteListRequest::getDbName()const
+{
+	return dbName_;
+}
+
+void DescribeDrdsDBIpWhiteListRequest::setDbName(const std::string& dbName)
+{
+	dbName_ = dbName;
+	setCoreParameter("DbName", dbName);
 }
 

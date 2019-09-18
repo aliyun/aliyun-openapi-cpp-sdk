@@ -36,17 +36,6 @@ void DescribeTempInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeTempInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeTempInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string DescribeTempInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +45,6 @@ void DescribeTempInstanceRequest::setResourceOwnerAccount(const std::string& res
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeTempInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeTempInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeTempInstanceRequest::getOwnerAccount()const

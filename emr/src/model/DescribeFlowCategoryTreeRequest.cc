@@ -25,17 +25,6 @@ DescribeFlowCategoryTreeRequest::DescribeFlowCategoryTreeRequest() :
 DescribeFlowCategoryTreeRequest::~DescribeFlowCategoryTreeRequest()
 {}
 
-std::string DescribeFlowCategoryTreeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeFlowCategoryTreeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeFlowCategoryTreeRequest::getType()const
 {
 	return type_;
@@ -45,6 +34,17 @@ void DescribeFlowCategoryTreeRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setCoreParameter("Type", type);
+}
+
+std::string DescribeFlowCategoryTreeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeFlowCategoryTreeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowCategoryTreeRequest::getProjectId()const

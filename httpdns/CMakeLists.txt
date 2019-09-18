@@ -21,37 +21,37 @@ set(httpdns_public_header
 	include/alibabacloud/httpdns/HttpdnsExport.h )
 
 set(httpdns_public_header_model 
-	include/alibabacloud/httpdns/model/GetResolveStatisticsRequest.h
-	include/alibabacloud/httpdns/model/GetResolveStatisticsResult.h
+	include/alibabacloud/httpdns/model/AddDomainRequest.h
+	include/alibabacloud/httpdns/model/AddDomainResult.h
 	include/alibabacloud/httpdns/model/DeleteDomainRequest.h
 	include/alibabacloud/httpdns/model/DeleteDomainResult.h
 	include/alibabacloud/httpdns/model/DescribeDomainsRequest.h
 	include/alibabacloud/httpdns/model/DescribeDomainsResult.h
+	include/alibabacloud/httpdns/model/GetAccountInfoRequest.h
+	include/alibabacloud/httpdns/model/GetAccountInfoResult.h
 	include/alibabacloud/httpdns/model/GetResolveCountSummaryRequest.h
 	include/alibabacloud/httpdns/model/GetResolveCountSummaryResult.h
-	include/alibabacloud/httpdns/model/AddDomainRequest.h
-	include/alibabacloud/httpdns/model/AddDomainResult.h
+	include/alibabacloud/httpdns/model/GetResolveStatisticsRequest.h
+	include/alibabacloud/httpdns/model/GetResolveStatisticsResult.h
 	include/alibabacloud/httpdns/model/ListDomainsRequest.h
-	include/alibabacloud/httpdns/model/ListDomainsResult.h
-	include/alibabacloud/httpdns/model/GetAccountInfoRequest.h
-	include/alibabacloud/httpdns/model/GetAccountInfoResult.h )
+	include/alibabacloud/httpdns/model/ListDomainsResult.h )
 
 set(httpdns_src 
 	src/HttpdnsClient.cc
-	src/model/GetResolveStatisticsRequest.cc
-	src/model/GetResolveStatisticsResult.cc
+	src/model/AddDomainRequest.cc
+	src/model/AddDomainResult.cc
 	src/model/DeleteDomainRequest.cc
 	src/model/DeleteDomainResult.cc
 	src/model/DescribeDomainsRequest.cc
 	src/model/DescribeDomainsResult.cc
+	src/model/GetAccountInfoRequest.cc
+	src/model/GetAccountInfoResult.cc
 	src/model/GetResolveCountSummaryRequest.cc
 	src/model/GetResolveCountSummaryResult.cc
-	src/model/AddDomainRequest.cc
-	src/model/AddDomainResult.cc
+	src/model/GetResolveStatisticsRequest.cc
+	src/model/GetResolveStatisticsResult.cc
 	src/model/ListDomainsRequest.cc
-	src/model/ListDomainsResult.cc
-	src/model/GetAccountInfoRequest.cc
-	src/model/GetAccountInfoResult.cc )
+	src/model/ListDomainsResult.cc )
 
 add_library(httpdns ${LIB_TYPE}
 	${httpdns_public_header}

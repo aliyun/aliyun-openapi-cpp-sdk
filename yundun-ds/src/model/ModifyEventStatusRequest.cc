@@ -25,17 +25,6 @@ ModifyEventStatusRequest::ModifyEventStatusRequest() :
 ModifyEventStatusRequest::~ModifyEventStatusRequest()
 {}
 
-std::string ModifyEventStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyEventStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 bool ModifyEventStatusRequest::getBacked()const
 {
 	return backed_;
@@ -47,15 +36,15 @@ void ModifyEventStatusRequest::setBacked(bool backed)
 	setCoreParameter("Backed", backed ? "true" : "false");
 }
 
-int ModifyEventStatusRequest::getFeatureType()const
+std::string ModifyEventStatusRequest::getSourceIp()const
 {
-	return featureType_;
+	return sourceIp_;
 }
 
-void ModifyEventStatusRequest::setFeatureType(int featureType)
+void ModifyEventStatusRequest::setSourceIp(const std::string& sourceIp)
 {
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyEventStatusRequest::getDealReason()const
@@ -89,6 +78,17 @@ void ModifyEventStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
+}
+
+int ModifyEventStatusRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void ModifyEventStatusRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int ModifyEventStatusRequest::getStatus()const

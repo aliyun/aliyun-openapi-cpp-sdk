@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				DescribeRestoreTaskListRequest();
 				~DescribeRestoreTaskListRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getRestoreTaskId()const;
-				void setRestoreTaskId(const std::string& restoreTaskId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
+				std::string getRestoreTaskId()const;
+				void setRestoreTaskId(const std::string& restoreTaskId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string regionId_;
 				std::string clientToken_;
-				std::string restoreTaskId_;
-				int pageSize_;
 				std::string backupPlanId_;
 				int pageNum_;
 				std::string ownerId_;
+				std::string restoreTaskId_;
+				int pageSize_;
 
 			};
 		}

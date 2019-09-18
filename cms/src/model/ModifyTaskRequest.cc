@@ -25,37 +25,15 @@ ModifyTaskRequest::ModifyTaskRequest() :
 ModifyTaskRequest::~ModifyTaskRequest()
 {}
 
-std::string ModifyTaskRequest::getCaller()const
+std::string ModifyTaskRequest::getTaskName()const
 {
-	return caller_;
+	return taskName_;
 }
 
-void ModifyTaskRequest::setCaller(const std::string& caller)
+void ModifyTaskRequest::setTaskName(const std::string& taskName)
 {
-	caller_ = caller;
-	setCoreParameter("Caller", caller);
-}
-
-std::string ModifyTaskRequest::getAddress()const
-{
-	return address_;
-}
-
-void ModifyTaskRequest::setAddress(const std::string& address)
-{
-	address_ = address;
-	setCoreParameter("Address", address);
-}
-
-std::string ModifyTaskRequest::getIspCity()const
-{
-	return ispCity_;
-}
-
-void ModifyTaskRequest::setIspCity(const std::string& ispCity)
-{
-	ispCity_ = ispCity;
-	setCoreParameter("IspCity", ispCity);
+	taskName_ = taskName;
+	setCoreParameter("TaskName", taskName);
 }
 
 std::string ModifyTaskRequest::getAlertIds()const
@@ -80,15 +58,48 @@ void ModifyTaskRequest::setOptions(const std::string& options)
 	setCoreParameter("Options", options);
 }
 
-std::string ModifyTaskRequest::getTaskName()const
+std::string ModifyTaskRequest::getTaskId()const
 {
-	return taskName_;
+	return taskId_;
 }
 
-void ModifyTaskRequest::setTaskName(const std::string& taskName)
+void ModifyTaskRequest::setTaskId(const std::string& taskId)
 {
-	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	taskId_ = taskId;
+	setCoreParameter("TaskId", taskId);
+}
+
+std::string ModifyTaskRequest::getAddress()const
+{
+	return address_;
+}
+
+void ModifyTaskRequest::setAddress(const std::string& address)
+{
+	address_ = address;
+	setCoreParameter("Address", address);
+}
+
+std::string ModifyTaskRequest::getCaller()const
+{
+	return caller_;
+}
+
+void ModifyTaskRequest::setCaller(const std::string& caller)
+{
+	caller_ = caller;
+	setCoreParameter("Caller", caller);
+}
+
+std::string ModifyTaskRequest::getIspCity()const
+{
+	return ispCity_;
+}
+
+void ModifyTaskRequest::setIspCity(const std::string& ispCity)
+{
+	ispCity_ = ispCity;
+	setCoreParameter("IspCity", ispCity);
 }
 
 std::string ModifyTaskRequest::getInterval()const
@@ -111,16 +122,5 @@ void ModifyTaskRequest::setAlertRule(const std::string& alertRule)
 {
 	alertRule_ = alertRule;
 	setCoreParameter("AlertRule", alertRule);
-}
-
-std::string ModifyTaskRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void ModifyTaskRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
 }
 

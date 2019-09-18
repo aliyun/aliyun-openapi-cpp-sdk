@@ -25,17 +25,6 @@ SaveProbeDataSubscriberRequest::SaveProbeDataSubscriberRequest() :
 SaveProbeDataSubscriberRequest::~SaveProbeDataSubscriberRequest()
 {}
 
-std::string SaveProbeDataSubscriberRequest::getApiUrl()const
-{
-	return apiUrl_;
-}
-
-void SaveProbeDataSubscriberRequest::setApiUrl(const std::string& apiUrl)
-{
-	apiUrl_ = apiUrl;
-	setCoreParameter("ApiUrl", apiUrl);
-}
-
 std::string SaveProbeDataSubscriberRequest::getParamGenScript()const
 {
 	return paramGenScript_;
@@ -45,17 +34,6 @@ void SaveProbeDataSubscriberRequest::setParamGenScript(const std::string& paramG
 {
 	paramGenScript_ = paramGenScript;
 	setCoreParameter("ParamGenScript", paramGenScript);
-}
-
-std::string SaveProbeDataSubscriberRequest::getName()const
-{
-	return name_;
-}
-
-void SaveProbeDataSubscriberRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string SaveProbeDataSubscriberRequest::getHttpMethod()const
@@ -80,17 +58,6 @@ void SaveProbeDataSubscriberRequest::setDescription(const std::string& descripti
 	setCoreParameter("Description", description);
 }
 
-long SaveProbeDataSubscriberRequest::getId()const
-{
-	return id_;
-}
-
-void SaveProbeDataSubscriberRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 int SaveProbeDataSubscriberRequest::getType()const
 {
 	return type_;
@@ -111,6 +78,39 @@ void SaveProbeDataSubscriberRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SaveProbeDataSubscriberRequest::getApiUrl()const
+{
+	return apiUrl_;
+}
+
+void SaveProbeDataSubscriberRequest::setApiUrl(const std::string& apiUrl)
+{
+	apiUrl_ = apiUrl;
+	setCoreParameter("ApiUrl", apiUrl);
+}
+
+std::string SaveProbeDataSubscriberRequest::getName()const
+{
+	return name_;
+}
+
+void SaveProbeDataSubscriberRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+long SaveProbeDataSubscriberRequest::getId()const
+{
+	return id_;
+}
+
+void SaveProbeDataSubscriberRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::vector<long> SaveProbeDataSubscriberRequest::getResourceIds()const

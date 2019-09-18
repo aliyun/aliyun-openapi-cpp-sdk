@@ -25,17 +25,6 @@ FrequencyAnalyseRequest::FrequencyAnalyseRequest() :
 FrequencyAnalyseRequest::~FrequencyAnalyseRequest()
 {}
 
-long FrequencyAnalyseRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void FrequencyAnalyseRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string FrequencyAnalyseRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void FrequencyAnalyseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long FrequencyAnalyseRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void FrequencyAnalyseRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

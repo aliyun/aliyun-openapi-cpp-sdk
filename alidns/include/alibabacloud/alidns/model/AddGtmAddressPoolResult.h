@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit AddGtmAddressPoolResult(const std::string &payload);
 				~AddGtmAddressPoolResult();
 				std::string getAddrPoolId()const;
+				std::string getMonitorConfigId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string addrPoolId_;
+				std::string monitorConfigId_;
 
 			};
 		}

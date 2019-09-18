@@ -25,28 +25,6 @@ SubmitMediaDetailJobRequest::SubmitMediaDetailJobRequest() :
 SubmitMediaDetailJobRequest::~SubmitMediaDetailJobRequest()
 {}
 
-std::string SubmitMediaDetailJobRequest::getInput()const
-{
-	return input_;
-}
-
-void SubmitMediaDetailJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setCoreParameter("Input", input);
-}
-
-std::string SubmitMediaDetailJobRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitMediaDetailJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
 long SubmitMediaDetailJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,15 +36,26 @@ void SubmitMediaDetailJobRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string SubmitMediaDetailJobRequest::getMediaDetailConfig()const
+std::string SubmitMediaDetailJobRequest::getAccessKeyId()const
 {
-	return mediaDetailConfig_;
+	return accessKeyId_;
 }
 
-void SubmitMediaDetailJobRequest::setMediaDetailConfig(const std::string& mediaDetailConfig)
+void SubmitMediaDetailJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	mediaDetailConfig_ = mediaDetailConfig;
-	setCoreParameter("MediaDetailConfig", mediaDetailConfig);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitMediaDetailJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitMediaDetailJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
 }
 
 std::string SubmitMediaDetailJobRequest::getResourceOwnerAccount()const
@@ -102,17 +91,6 @@ void SubmitMediaDetailJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitMediaDetailJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitMediaDetailJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitMediaDetailJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +100,27 @@ void SubmitMediaDetailJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitMediaDetailJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitMediaDetailJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
+}
+
+std::string SubmitMediaDetailJobRequest::getMediaDetailConfig()const
+{
+	return mediaDetailConfig_;
+}
+
+void SubmitMediaDetailJobRequest::setMediaDetailConfig(const std::string& mediaDetailConfig)
+{
+	mediaDetailConfig_ = mediaDetailConfig;
+	setCoreParameter("MediaDetailConfig", mediaDetailConfig);
 }
 

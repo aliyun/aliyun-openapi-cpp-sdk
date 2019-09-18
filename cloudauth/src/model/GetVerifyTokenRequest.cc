@@ -25,17 +25,6 @@ GetVerifyTokenRequest::GetVerifyTokenRequest() :
 GetVerifyTokenRequest::~GetVerifyTokenRequest()
 {}
 
-std::string GetVerifyTokenRequest::getUserData()const
-{
-	return userData_;
-}
-
-void GetVerifyTokenRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
 long GetVerifyTokenRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,28 +34,6 @@ void GetVerifyTokenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string GetVerifyTokenRequest::getBiz()const
-{
-	return biz_;
-}
-
-void GetVerifyTokenRequest::setBiz(const std::string& biz)
-{
-	biz_ = biz;
-	setCoreParameter("Biz", biz);
-}
-
-std::string GetVerifyTokenRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void GetVerifyTokenRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string GetVerifyTokenRequest::getBinding()const
@@ -89,6 +56,39 @@ void GetVerifyTokenRequest::setVerifyConfigs(const std::string& verifyConfigs)
 {
 	verifyConfigs_ = verifyConfigs;
 	setCoreParameter("VerifyConfigs", verifyConfigs);
+}
+
+std::string GetVerifyTokenRequest::getUserData()const
+{
+	return userData_;
+}
+
+void GetVerifyTokenRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
+}
+
+std::string GetVerifyTokenRequest::getBiz()const
+{
+	return biz_;
+}
+
+void GetVerifyTokenRequest::setBiz(const std::string& biz)
+{
+	biz_ = biz;
+	setCoreParameter("Biz", biz);
+}
+
+std::string GetVerifyTokenRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void GetVerifyTokenRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string GetVerifyTokenRequest::getTicketId()const

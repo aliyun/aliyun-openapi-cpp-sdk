@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				std::string getNewUserName()const;
 				void setNewUserName(const std::string& newUserName);
-				std::string getNewDisplayName()const;
-				void setNewDisplayName(const std::string& newDisplayName);
 				std::string getNewMobilePhone()const;
 				void setNewMobilePhone(const std::string& newMobilePhone);
-				std::string getNewComments()const;
-				void setNewComments(const std::string& newComments);
 				std::string getNewEmail()const;
 				void setNewEmail(const std::string& newEmail);
+				std::string getNewDisplayName()const;
+				void setNewDisplayName(const std::string& newDisplayName);
+				std::string getNewComments()const;
+				void setNewComments(const std::string& newComments);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
 				std::string newUserName_;
-				std::string newDisplayName_;
 				std::string newMobilePhone_;
-				std::string newComments_;
 				std::string newEmail_;
+				std::string newDisplayName_;
+				std::string newComments_;
 				std::string userName_;
 
 			};

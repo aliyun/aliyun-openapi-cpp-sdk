@@ -39,33 +39,33 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				long getGroupId()const;
 				void setGroupId(long groupId);
 				std::vector<std::string> getItemIds()const;
 				void setItemIds(const std::vector<std::string>& itemIds);
-				std::string getName()const;
-				void setName(const std::string& name);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getRiskLevel()const;
 				void setRiskLevel(const std::string& riskLevel);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
 				std::string sourceIp_;
+				int pageSize_;
+				std::string lang_;
 				long groupId_;
 				std::vector<std::string> itemIds_;
-				std::string name_;
-				int pageSize_;
 				int currentPage_;
-				std::string lang_;
 				std::string riskLevel_;
+				std::string name_;
 				std::string status_;
 
 			};

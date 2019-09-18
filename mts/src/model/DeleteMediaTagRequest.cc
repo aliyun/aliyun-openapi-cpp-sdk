@@ -36,6 +36,28 @@ void DeleteMediaTagRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DeleteMediaTagRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteMediaTagRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteMediaTagRequest::getTag()const
+{
+	return tag_;
+}
+
+void DeleteMediaTagRequest::setTag(const std::string& tag)
+{
+	tag_ = tag;
+	setCoreParameter("Tag", tag);
+}
+
 std::string DeleteMediaTagRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,17 +80,6 @@ void DeleteMediaTagRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DeleteMediaTagRequest::getTag()const
-{
-	return tag_;
-}
-
-void DeleteMediaTagRequest::setTag(const std::string& tag)
-{
-	tag_ = tag;
-	setCoreParameter("Tag", tag);
-}
-
 long DeleteMediaTagRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,16 +100,5 @@ void DeleteMediaTagRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
 	setCoreParameter("MediaId", mediaId);
-}
-
-std::string DeleteMediaTagRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteMediaTagRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

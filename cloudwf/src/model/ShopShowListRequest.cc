@@ -47,6 +47,17 @@ void ShopShowListRequest::setAddress(const std::string& address)
 	setCoreParameter("Address", address);
 }
 
+std::string ShopShowListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ShopShowListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ShopShowListRequest::getName()const
 {
 	return name_;
@@ -111,16 +122,5 @@ void ShopShowListRequest::setShopStatus(int shopStatus)
 {
 	shopStatus_ = shopStatus;
 	setCoreParameter("ShopStatus", std::to_string(shopStatus));
-}
-
-std::string ShopShowListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ShopShowListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

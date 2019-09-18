@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getActionType()const;
 				void setActionType(const std::string& actionType);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string actionType_;
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string userClientIp_;
 				std::string lang_;
-				std::string accessKeyId_;
 
 			};
 		}

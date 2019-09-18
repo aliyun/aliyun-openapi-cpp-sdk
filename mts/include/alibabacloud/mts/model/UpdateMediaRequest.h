@@ -35,40 +35,40 @@ namespace AlibabaCloud
 				UpdateMediaRequest();
 				~UpdateMediaRequest();
 
-				std::string getCoverURL()const;
-				void setCoverURL(const std::string& coverURL);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getCateId()const;
-				void setCateId(long cateId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getMediaId()const;
-				void setMediaId(const std::string& mediaId);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCoverURL()const;
+				void setCoverURL(const std::string& coverURL);
+				long getCateId()const;
+				void setCateId(long cateId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getMediaId()const;
+				void setMediaId(const std::string& mediaId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 
             private:
-				std::string coverURL_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				long cateId_;
-				std::string ownerAccount_;
 				std::string description_;
-				long ownerId_;
-				std::string mediaId_;
 				std::string title_;
 				std::string accessKeyId_;
+				std::string coverURL_;
+				long cateId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string mediaId_;
 				std::string tags_;
 
 			};

@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				DescribeBackupPlanListRequest();
 				~DescribeBackupPlanListRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getRegion()const;
+				void setRegion(const std::string& region);
 
             private:
-				std::string regionId_;
 				std::string clientToken_;
-				int pageSize_;
 				std::string backupPlanId_;
-				std::string region_;
 				int pageNum_;
 				std::string ownerId_;
+				int pageSize_;
+				std::string region_;
 
 			};
 		}

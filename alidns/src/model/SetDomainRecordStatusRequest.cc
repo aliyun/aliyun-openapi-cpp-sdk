@@ -25,6 +25,17 @@ SetDomainRecordStatusRequest::SetDomainRecordStatusRequest() :
 SetDomainRecordStatusRequest::~SetDomainRecordStatusRequest()
 {}
 
+std::string SetDomainRecordStatusRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetDomainRecordStatusRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string SetDomainRecordStatusRequest::getRecordId()const
 {
 	return recordId_;
@@ -56,17 +67,6 @@ void SetDomainRecordStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string SetDomainRecordStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetDomainRecordStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetDomainRecordStatusRequest::getStatus()const

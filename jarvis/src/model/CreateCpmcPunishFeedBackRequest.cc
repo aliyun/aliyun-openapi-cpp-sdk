@@ -25,17 +25,6 @@ CreateCpmcPunishFeedBackRequest::CreateCpmcPunishFeedBackRequest() :
 CreateCpmcPunishFeedBackRequest::~CreateCpmcPunishFeedBackRequest()
 {}
 
-int CreateCpmcPunishFeedBackRequest::getFeedBack()const
-{
-	return feedBack_;
-}
-
-void CreateCpmcPunishFeedBackRequest::setFeedBack(int feedBack)
-{
-	feedBack_ = feedBack;
-	setCoreParameter("FeedBack", std::to_string(feedBack));
-}
-
 std::string CreateCpmcPunishFeedBackRequest::getSrcIP()const
 {
 	return srcIP_;
@@ -45,17 +34,6 @@ void CreateCpmcPunishFeedBackRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
 	setCoreParameter("SrcIP", srcIP);
-}
-
-std::string CreateCpmcPunishFeedBackRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateCpmcPunishFeedBackRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
 }
 
 int CreateCpmcPunishFeedBackRequest::getDstPort()const
@@ -80,17 +58,6 @@ void CreateCpmcPunishFeedBackRequest::setProtocolName(const std::string& protoco
 	setCoreParameter("ProtocolName", protocolName);
 }
 
-int CreateCpmcPunishFeedBackRequest::getSrcPort()const
-{
-	return srcPort_;
-}
-
-void CreateCpmcPunishFeedBackRequest::setSrcPort(int srcPort)
-{
-	srcPort_ = srcPort;
-	setCoreParameter("SrcPort", std::to_string(srcPort));
-}
-
 std::string CreateCpmcPunishFeedBackRequest::getPunishType()const
 {
 	return punishType_;
@@ -102,15 +69,37 @@ void CreateCpmcPunishFeedBackRequest::setPunishType(const std::string& punishTyp
 	setCoreParameter("PunishType", punishType);
 }
 
-std::string CreateCpmcPunishFeedBackRequest::getGmtCreate()const
+std::string CreateCpmcPunishFeedBackRequest::getSourceCode()const
 {
-	return gmtCreate_;
+	return sourceCode_;
 }
 
-void CreateCpmcPunishFeedBackRequest::setGmtCreate(const std::string& gmtCreate)
+void CreateCpmcPunishFeedBackRequest::setSourceCode(const std::string& sourceCode)
 {
-	gmtCreate_ = gmtCreate;
-	setCoreParameter("GmtCreate", gmtCreate);
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
+int CreateCpmcPunishFeedBackRequest::getFeedBack()const
+{
+	return feedBack_;
+}
+
+void CreateCpmcPunishFeedBackRequest::setFeedBack(int feedBack)
+{
+	feedBack_ = feedBack;
+	setCoreParameter("FeedBack", std::to_string(feedBack));
+}
+
+std::string CreateCpmcPunishFeedBackRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateCpmcPunishFeedBackRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getDstIP()const
@@ -135,14 +124,25 @@ void CreateCpmcPunishFeedBackRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string CreateCpmcPunishFeedBackRequest::getSourceCode()const
+std::string CreateCpmcPunishFeedBackRequest::getGmtCreate()const
 {
-	return sourceCode_;
+	return gmtCreate_;
 }
 
-void CreateCpmcPunishFeedBackRequest::setSourceCode(const std::string& sourceCode)
+void CreateCpmcPunishFeedBackRequest::setGmtCreate(const std::string& gmtCreate)
 {
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	gmtCreate_ = gmtCreate;
+	setCoreParameter("GmtCreate", gmtCreate);
+}
+
+int CreateCpmcPunishFeedBackRequest::getSrcPort()const
+{
+	return srcPort_;
+}
+
+void CreateCpmcPunishFeedBackRequest::setSrcPort(int srcPort)
+{
+	srcPort_ = srcPort;
+	setCoreParameter("SrcPort", std::to_string(srcPort));
 }
 

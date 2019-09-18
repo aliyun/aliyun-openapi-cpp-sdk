@@ -25,17 +25,6 @@ GetInstanceByShopRequest::GetInstanceByShopRequest() :
 GetInstanceByShopRequest::~GetInstanceByShopRequest()
 {}
 
-long GetInstanceByShopRequest::getShopId()const
-{
-	return shopId_;
-}
-
-void GetInstanceByShopRequest::setShopId(long shopId)
-{
-	shopId_ = shopId;
-	setCoreParameter("ShopId", std::to_string(shopId));
-}
-
 std::string GetInstanceByShopRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetInstanceByShopRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetInstanceByShopRequest::getShopId()const
+{
+	return shopId_;
+}
+
+void GetInstanceByShopRequest::setShopId(long shopId)
+{
+	shopId_ = shopId;
+	setCoreParameter("ShopId", std::to_string(shopId));
 }
 

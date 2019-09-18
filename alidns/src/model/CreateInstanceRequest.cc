@@ -25,28 +25,6 @@ CreateInstanceRequest::CreateInstanceRequest() :
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
 
-int CreateInstanceRequest::getMonth()const
-{
-	return month_;
-}
-
-void CreateInstanceRequest::setMonth(int month)
-{
-	month_ = month;
-	setCoreParameter("Month", std::to_string(month));
-}
-
-std::string CreateInstanceRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void CreateInstanceRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string CreateInstanceRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,28 +34,6 @@ void CreateInstanceRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-std::string CreateInstanceRequest::getLang()const
-{
-	return lang_;
-}
-
-void CreateInstanceRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
-std::string CreateInstanceRequest::getInstanceVersion()const
-{
-	return instanceVersion_;
-}
-
-void CreateInstanceRequest::setInstanceVersion(const std::string& instanceVersion)
-{
-	instanceVersion_ = instanceVersion;
-	setCoreParameter("InstanceVersion", instanceVersion);
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -111,5 +67,49 @@ void CreateInstanceRequest::setToken(const std::string& token)
 {
 	token_ = token;
 	setCoreParameter("Token", token);
+}
+
+int CreateInstanceRequest::getMonth()const
+{
+	return month_;
+}
+
+void CreateInstanceRequest::setMonth(int month)
+{
+	month_ = month;
+	setCoreParameter("Month", std::to_string(month));
+}
+
+std::string CreateInstanceRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void CreateInstanceRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string CreateInstanceRequest::getLang()const
+{
+	return lang_;
+}
+
+void CreateInstanceRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string CreateInstanceRequest::getInstanceVersion()const
+{
+	return instanceVersion_;
+}
+
+void CreateInstanceRequest::setInstanceVersion(const std::string& instanceVersion)
+{
+	instanceVersion_ = instanceVersion;
+	setCoreParameter("InstanceVersion", instanceVersion);
 }
 

@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				DescribeDrdsInstanceDbMonitorRequest();
 				~DescribeDrdsInstanceDbMonitorRequest();
 
-				std::string getDbName()const;
-				void setDbName(const std::string& dbName);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				std::string getDrdsInstanceId()const;
 				void setDrdsInstanceId(const std::string& drdsInstanceId);
-				std::string getKey()const;
-				void setKey(const std::string& key);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDbName()const;
+				void setDbName(const std::string& dbName);
+				std::string getKey()const;
+				void setKey(const std::string& key);
 
             private:
-				std::string dbName_;
 				long endTime_;
 				long startTime_;
 				std::string drdsInstanceId_;
-				std::string key_;
 				std::string accessKeyId_;
+				std::string dbName_;
+				std::string key_;
 
 			};
 		}

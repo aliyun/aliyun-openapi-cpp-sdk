@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				long getGid()const;
 				void setGid(long gid);
-				std::string getShopIds()const;
-				void setShopIds(const std::string& shopIds);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getShopIds()const;
+				void setShopIds(const std::string& shopIds);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				long gid_;
-				std::string shopIds_;
-				std::string name_;
 				std::string description_;
 				std::string accessKeyId_;
+				std::string shopIds_;
+				std::string name_;
 
 			};
 		}

@@ -25,26 +25,26 @@ IndexTagRequest::IndexTagRequest() :
 IndexTagRequest::~IndexTagRequest()
 {}
 
-std::string IndexTagRequest::getSrcUris()const
+std::string IndexTagRequest::getProject()const
 {
-	return srcUris_;
+	return project_;
 }
 
-void IndexTagRequest::setSrcUris(const std::string& srcUris)
+void IndexTagRequest::setProject(const std::string& project)
 {
-	srcUris_ = srcUris;
-	setCoreParameter("SrcUris", srcUris);
+	project_ = project;
+	setCoreParameter("Project", project);
 }
 
-std::string IndexTagRequest::getRegionId()const
+std::string IndexTagRequest::getAccessKeyId()const
 {
-	return regionId_;
+	return accessKeyId_;
 }
 
-void IndexTagRequest::setRegionId(const std::string& regionId)
+void IndexTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string IndexTagRequest::getModelId()const
@@ -58,15 +58,15 @@ void IndexTagRequest::setModelId(const std::string& modelId)
 	setCoreParameter("ModelId", modelId);
 }
 
-std::string IndexTagRequest::getProject()const
+std::string IndexTagRequest::getSrcUris()const
 {
-	return project_;
+	return srcUris_;
 }
 
-void IndexTagRequest::setProject(const std::string& project)
+void IndexTagRequest::setSrcUris(const std::string& srcUris)
 {
-	project_ = project;
-	setCoreParameter("Project", project);
+	srcUris_ = srcUris;
+	setCoreParameter("SrcUris", srcUris);
 }
 
 std::string IndexTagRequest::getSetId()const
@@ -89,16 +89,5 @@ void IndexTagRequest::setForce(const std::string& force)
 {
 	force_ = force;
 	setCoreParameter("Force", force);
-}
-
-std::string IndexTagRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void IndexTagRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

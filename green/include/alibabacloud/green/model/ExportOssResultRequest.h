@@ -35,26 +35,14 @@ namespace AlibabaCloud
 				ExportOssResultRequest();
 				~ExportOssResultRequest();
 
-				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				float getMinScore()const;
 				void setMinScore(float minScore);
-				std::string getSuggestion()const;
-				void setSuggestion(const std::string& suggestion);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				float getMaxScore()const;
 				void setMaxScore(float maxScore);
 				std::string getStartDate()const;
 				void setStartDate(const std::string& startDate);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
 				std::string getScene()const;
 				void setScene(const std::string& scene);
-				std::string getBucket()const;
-				void setBucket(const std::string& bucket);
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
@@ -63,22 +51,34 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				bool getStock()const;
 				void setStock(bool stock);
+				int getTotalCount()const;
+				void setTotalCount(int totalCount);
+				std::string getSuggestion()const;
+				void setSuggestion(const std::string& suggestion);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
+				std::string getBucket()const;
+				void setBucket(const std::string& bucket);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
 
             private:
-				int totalCount_;
 				float minScore_;
-				std::string suggestion_;
-				int currentPage_;
 				float maxScore_;
 				std::string startDate_;
-				std::string resourceType_;
 				std::string scene_;
-				std::string bucket_;
-				std::string endDate_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string lang_;
 				bool stock_;
+				int totalCount_;
+				std::string suggestion_;
+				int currentPage_;
+				std::string resourceType_;
+				std::string bucket_;
+				std::string endDate_;
 
 			};
 		}

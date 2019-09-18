@@ -25,28 +25,6 @@ PushMessageToiOSRequest::PushMessageToiOSRequest() :
 PushMessageToiOSRequest::~PushMessageToiOSRequest()
 {}
 
-long PushMessageToiOSRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void PushMessageToiOSRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
-std::string PushMessageToiOSRequest::getTargetValue()const
-{
-	return targetValue_;
-}
-
-void PushMessageToiOSRequest::setTargetValue(const std::string& targetValue)
-{
-	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
-}
-
 std::string PushMessageToiOSRequest::getTitle()const
 {
 	return title_;
@@ -100,5 +78,27 @@ void PushMessageToiOSRequest::setTarget(const std::string& target)
 {
 	target_ = target;
 	setCoreParameter("Target", target);
+}
+
+long PushMessageToiOSRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void PushMessageToiOSRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
+}
+
+std::string PushMessageToiOSRequest::getTargetValue()const
+{
+	return targetValue_;
+}
+
+void PushMessageToiOSRequest::setTargetValue(const std::string& targetValue)
+{
+	targetValue_ = targetValue;
+	setCoreParameter("TargetValue", targetValue);
 }
 

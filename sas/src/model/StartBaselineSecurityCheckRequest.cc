@@ -36,6 +36,29 @@ void StartBaselineSecurityCheckRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::vector<long> StartBaselineSecurityCheckRequest::getItemIds()const
+{
+	return itemIds_;
+}
+
+void StartBaselineSecurityCheckRequest::setItemIds(const std::vector<long>& itemIds)
+{
+	itemIds_ = itemIds;
+	for(int i = 0; i!= itemIds.size(); i++)
+		setCoreParameter("ItemIds."+ std::to_string(i), std::to_string(itemIds.at(i)));
+}
+
+std::string StartBaselineSecurityCheckRequest::getType()const
+{
+	return type_;
+}
+
+void StartBaselineSecurityCheckRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::vector<std::string> StartBaselineSecurityCheckRequest::getAssets()const
 {
 	return assets_;
@@ -59,18 +82,6 @@ void StartBaselineSecurityCheckRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::vector<long> StartBaselineSecurityCheckRequest::getItemIds()const
-{
-	return itemIds_;
-}
-
-void StartBaselineSecurityCheckRequest::setItemIds(const std::vector<long>& itemIds)
-{
-	itemIds_ = itemIds;
-	for(int i = 0; i!= itemIds.size(); i++)
-		setCoreParameter("ItemIds."+ std::to_string(i), std::to_string(itemIds.at(i)));
-}
-
 std::string StartBaselineSecurityCheckRequest::getLang()const
 {
 	return lang_;
@@ -80,16 +91,5 @@ void StartBaselineSecurityCheckRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string StartBaselineSecurityCheckRequest::getType()const
-{
-	return type_;
-}
-
-void StartBaselineSecurityCheckRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

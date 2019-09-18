@@ -36,6 +36,28 @@ void DescribeRecordStatisticsRequest::setRr(const std::string& rr)
 	setCoreParameter("Rr", rr);
 }
 
+std::string DescribeRecordStatisticsRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeRecordStatisticsRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeRecordStatisticsRequest::getStartDate()const
+{
+	return startDate_;
+}
+
+void DescribeRecordStatisticsRequest::setStartDate(const std::string& startDate)
+{
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
+}
+
 std::string DescribeRecordStatisticsRequest::getEndDate()const
 {
 	return endDate_;
@@ -58,17 +80,6 @@ void DescribeRecordStatisticsRequest::setUserClientIp(const std::string& userCli
 	setCoreParameter("UserClientIp", userClientIp);
 }
 
-std::string DescribeRecordStatisticsRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeRecordStatisticsRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
 std::string DescribeRecordStatisticsRequest::getLang()const
 {
 	return lang_;
@@ -78,16 +89,5 @@ void DescribeRecordStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeRecordStatisticsRequest::getStartDate()const
-{
-	return startDate_;
-}
-
-void DescribeRecordStatisticsRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
 }
 

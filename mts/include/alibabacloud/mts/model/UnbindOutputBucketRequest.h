@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				UnbindOutputBucketRequest();
 				~UnbindOutputBucketRequest();
 
-				std::string getBucket()const;
-				void setBucket(const std::string& bucket);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
@@ -47,14 +45,16 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getBucket()const;
+				void setBucket(const std::string& bucket);
 
             private:
-				std::string bucket_;
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string bucket_;
 
 			};
 		}

@@ -25,17 +25,6 @@ GetApDetailedConfigRequest::GetApDetailedConfigRequest() :
 GetApDetailedConfigRequest::~GetApDetailedConfigRequest()
 {}
 
-long GetApDetailedConfigRequest::getId()const
-{
-	return id_;
-}
-
-void GetApDetailedConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetApDetailedConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetApDetailedConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetApDetailedConfigRequest::getId()const
+{
+	return id_;
+}
+
+void GetApDetailedConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

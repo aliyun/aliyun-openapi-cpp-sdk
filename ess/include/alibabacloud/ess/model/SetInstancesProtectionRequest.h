@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				SetInstancesProtectionRequest();
 				~SetInstancesProtectionRequest();
 
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<std::string> getInstanceId()const;
+				void setInstanceId(const std::vector<std::string>& instanceId);
 				bool getProtectedFromScaleIn()const;
 				void setProtectedFromScaleIn(bool protectedFromScaleIn);
 
             private:
-				std::vector<std::string> instanceId_;
-				std::string resourceOwnerAccount_;
 				std::string scalingGroupId_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::vector<std::string> instanceId_;
 				bool protectedFromScaleIn_;
 
 			};

@@ -25,6 +25,28 @@ CreateConfigurationRequest::CreateConfigurationRequest() :
 CreateConfigurationRequest::~CreateConfigurationRequest()
 {}
 
+std::string CreateConfigurationRequest::getMaxPV()const
+{
+	return maxPV_;
+}
+
+void CreateConfigurationRequest::setMaxPV(const std::string& maxPV)
+{
+	maxPV_ = maxPV;
+	setCoreParameter("MaxPV", maxPV);
+}
+
+std::string CreateConfigurationRequest::getScene()const
+{
+	return scene_;
+}
+
+void CreateConfigurationRequest::setScene(const std::string& scene)
+{
+	scene_ = scene;
+	setCoreParameter("Scene", scene);
+}
+
 std::string CreateConfigurationRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,17 +69,6 @@ void CreateConfigurationRequest::setConfigurationName(const std::string& configu
 	setCoreParameter("ConfigurationName", configurationName);
 }
 
-std::string CreateConfigurationRequest::getMaxPV()const
-{
-	return maxPV_;
-}
-
-void CreateConfigurationRequest::setMaxPV(const std::string& maxPV)
-{
-	maxPV_ = maxPV;
-	setCoreParameter("MaxPV", maxPV);
-}
-
 std::string CreateConfigurationRequest::getConfigurationMethod()const
 {
 	return configurationMethod_;
@@ -78,16 +89,5 @@ void CreateConfigurationRequest::setApplyType(const std::string& applyType)
 {
 	applyType_ = applyType;
 	setCoreParameter("ApplyType", applyType);
-}
-
-std::string CreateConfigurationRequest::getScene()const
-{
-	return scene_;
-}
-
-void CreateConfigurationRequest::setScene(const std::string& scene)
-{
-	scene_ = scene;
-	setCoreParameter("Scene", scene);
 }
 

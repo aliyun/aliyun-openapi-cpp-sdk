@@ -37,45 +37,45 @@ namespace AlibabaCloud
 
 				long getProductId()const;
 				void setProductId(long productId);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
 				long getPackageId()const;
 				void setPackageId(long packageId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getQueryName()const;
 				void setQueryName(const std::string& queryName);
 				long getRiskLevelId()const;
 				void setRiskLevelId(long riskLevelId);
-				long getInstanceId()const;
-				void setInstanceId(long instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getName()const;
-				void setName(const std::string& name);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getRuleId()const;
-				void setRuleId(long ruleId);
 				int getQueryType()const;
 				void setQueryType(int queryType);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				long getInstanceId()const;
+				void setInstanceId(long instanceId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				long getRuleId()const;
+				void setRuleId(long ruleId);
 
             private:
 				long productId_;
-				int featureType_;
 				long packageId_;
-				int currentPage_;
 				std::string queryName_;
 				long riskLevelId_;
-				long instanceId_;
 				std::string sourceIp_;
-				std::string name_;
 				int pageSize_;
 				std::string lang_;
-				long ruleId_;
 				int queryType_;
+				int featureType_;
+				int currentPage_;
+				long instanceId_;
+				std::string name_;
+				long ruleId_;
 
 			};
 		}

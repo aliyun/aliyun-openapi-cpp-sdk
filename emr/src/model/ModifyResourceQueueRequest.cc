@@ -36,6 +36,61 @@ void ModifyResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyResourceQueueRequest::getQualifiedName()const
+{
+	return qualifiedName_;
+}
+
+void ModifyResourceQueueRequest::setQualifiedName(const std::string& qualifiedName)
+{
+	qualifiedName_ = qualifiedName;
+	setCoreParameter("QualifiedName", qualifiedName);
+}
+
+long ModifyResourceQueueRequest::getResourcePoolId()const
+{
+	return resourcePoolId_;
+}
+
+void ModifyResourceQueueRequest::setResourcePoolId(long resourcePoolId)
+{
+	resourcePoolId_ = resourcePoolId;
+	setCoreParameter("ResourcePoolId", std::to_string(resourcePoolId));
+}
+
+std::string ModifyResourceQueueRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ModifyResourceQueueRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+bool ModifyResourceQueueRequest::getLeaf()const
+{
+	return leaf_;
+}
+
+void ModifyResourceQueueRequest::setLeaf(bool leaf)
+{
+	leaf_ = leaf;
+	setCoreParameter("Leaf", leaf ? "true" : "false");
+}
+
+std::string ModifyResourceQueueRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 long ModifyResourceQueueRequest::getParentQueueId()const
 {
 	return parentQueueId_;
@@ -69,28 +124,6 @@ void ModifyResourceQueueRequest::setName(const std::string& name)
 	setCoreParameter("Name", name);
 }
 
-std::string ModifyResourceQueueRequest::getQualifiedName()const
-{
-	return qualifiedName_;
-}
-
-void ModifyResourceQueueRequest::setQualifiedName(const std::string& qualifiedName)
-{
-	qualifiedName_ = qualifiedName;
-	setCoreParameter("QualifiedName", qualifiedName);
-}
-
-long ModifyResourceQueueRequest::getResourcePoolId()const
-{
-	return resourcePoolId_;
-}
-
-void ModifyResourceQueueRequest::setResourcePoolId(long resourcePoolId)
-{
-	resourcePoolId_ = resourcePoolId;
-	setCoreParameter("ResourcePoolId", std::to_string(resourcePoolId));
-}
-
 std::string ModifyResourceQueueRequest::getId()const
 {
 	return id_;
@@ -100,28 +133,6 @@ void ModifyResourceQueueRequest::setId(const std::string& id)
 {
 	id_ = id;
 	setCoreParameter("Id", id);
-}
-
-std::string ModifyResourceQueueRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ModifyResourceQueueRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
-bool ModifyResourceQueueRequest::getLeaf()const
-{
-	return leaf_;
-}
-
-void ModifyResourceQueueRequest::setLeaf(bool leaf)
-{
-	leaf_ = leaf;
-	setCoreParameter("Leaf", leaf ? "true" : "false");
 }
 
 std::vector<ModifyResourceQueueRequest::Config> ModifyResourceQueueRequest::getConfig()const
@@ -142,16 +153,5 @@ void ModifyResourceQueueRequest::setConfig(const std::vector<Config>& config)
 		setCoreParameter(str + ".Id", std::to_string(obj.id));
 		setCoreParameter(str + ".Category", obj.category);
 	}
-}
-
-std::string ModifyResourceQueueRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

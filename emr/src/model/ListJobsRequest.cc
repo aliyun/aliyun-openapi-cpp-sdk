@@ -36,28 +36,6 @@ void ListJobsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListJobsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListJobsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListJobsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListJobsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string ListJobsRequest::getQueryString()const
 {
 	return queryString_;
@@ -91,17 +69,6 @@ void ListJobsRequest::setPageNumber(int pageNumber)
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string ListJobsRequest::getQueryType()const
-{
-	return queryType_;
-}
-
-void ListJobsRequest::setQueryType(const std::string& queryType)
-{
-	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
-}
-
 std::string ListJobsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -111,5 +78,38 @@ void ListJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListJobsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListJobsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListJobsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListJobsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListJobsRequest::getQueryType()const
+{
+	return queryType_;
+}
+
+void ListJobsRequest::setQueryType(const std::string& queryType)
+{
+	queryType_ = queryType;
+	setCoreParameter("QueryType", queryType);
 }
 

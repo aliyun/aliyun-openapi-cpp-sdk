@@ -25,6 +25,17 @@ DescribeHelpListRequest::DescribeHelpListRequest() :
 DescribeHelpListRequest::~DescribeHelpListRequest()
 {}
 
+std::string DescribeHelpListRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeHelpListRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeHelpListRequest::getSourceIp()const
 {
 	return sourceIp_;

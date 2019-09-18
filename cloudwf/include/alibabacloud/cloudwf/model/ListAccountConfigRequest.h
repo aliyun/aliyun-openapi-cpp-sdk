@@ -39,22 +39,22 @@ namespace AlibabaCloud
 				void setOrderCol(const std::string& orderCol);
 				int getLength()const;
 				void setLength(int length);
-				std::string getSearchEmail()const;
-				void setSearchEmail(const std::string& searchEmail);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
 				std::string getOrderDir()const;
 				void setOrderDir(const std::string& orderDir);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSearchEmail()const;
+				void setSearchEmail(const std::string& searchEmail);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
 
             private:
 				std::string orderCol_;
 				int length_;
-				std::string searchEmail_;
-				int pageIndex_;
 				std::string orderDir_;
 				std::string accessKeyId_;
+				std::string searchEmail_;
+				int pageIndex_;
 
 			};
 		}

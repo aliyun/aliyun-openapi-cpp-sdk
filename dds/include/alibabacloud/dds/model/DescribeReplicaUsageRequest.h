@@ -37,36 +37,33 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSourceDBInstanceId()const;
-				void setSourceDBInstanceId(const std::string& sourceDBInstanceId);
-				std::string getDestinationDBInstanceId()const;
-				void setDestinationDBInstanceId(const std::string& destinationDBInstanceId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getReplicaId()const;
-				void setReplicaId(const std::string& replicaId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getReplicaId()const;
+				void setReplicaId(const std::string& replicaId);
+				std::string getDestinationDBInstanceId()const;
+				void setDestinationDBInstanceId(const std::string& destinationDBInstanceId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getSourceDBInstanceId()const;
+				void setSourceDBInstanceId(const std::string& sourceDBInstanceId);
 
             private:
 				long resourceOwnerId_;
-				std::string sourceDBInstanceId_;
-				std::string destinationDBInstanceId_;
-				std::string securityToken_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
-				std::string replicaId_;
-				long ownerId_;
 				std::string accessKeyId_;
+				std::string securityToken_;
+				std::string replicaId_;
+				std::string destinationDBInstanceId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string sourceDBInstanceId_;
 
 			};
 		}

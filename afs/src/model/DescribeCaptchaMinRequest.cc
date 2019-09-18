@@ -25,6 +25,17 @@ DescribeCaptchaMinRequest::DescribeCaptchaMinRequest() :
 DescribeCaptchaMinRequest::~DescribeCaptchaMinRequest()
 {}
 
+std::string DescribeCaptchaMinRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeCaptchaMinRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string DescribeCaptchaMinRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -67,16 +78,5 @@ void DescribeCaptchaMinRequest::setTime(const std::string& time)
 {
 	time_ = time;
 	setCoreParameter("Time", time);
-}
-
-std::string DescribeCaptchaMinRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeCaptchaMinRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

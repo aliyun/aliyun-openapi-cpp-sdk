@@ -36,17 +36,6 @@ void UnbindInstance2VpcRequest::setAccess_key_id(const std::string& access_key_i
 	setCoreParameter("Access_key_id", access_key_id);
 }
 
-std::string UnbindInstance2VpcRequest::getInstanceVpcName()const
-{
-	return instanceVpcName_;
-}
-
-void UnbindInstance2VpcRequest::setInstanceVpcName(const std::string& instanceVpcName)
-{
-	instanceVpcName_ = instanceVpcName;
-	setCoreParameter("InstanceVpcName", instanceVpcName);
-}
-
 long UnbindInstance2VpcRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -58,17 +47,6 @@ void UnbindInstance2VpcRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UnbindInstance2VpcRequest::getInstanceName()const
-{
-	return instanceName_;
-}
-
-void UnbindInstance2VpcRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
-}
-
 std::string UnbindInstance2VpcRequest::getRegionNo()const
 {
 	return regionNo_;
@@ -78,5 +56,27 @@ void UnbindInstance2VpcRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
 	setCoreParameter("RegionNo", regionNo);
+}
+
+std::string UnbindInstance2VpcRequest::getInstanceVpcName()const
+{
+	return instanceVpcName_;
+}
+
+void UnbindInstance2VpcRequest::setInstanceVpcName(const std::string& instanceVpcName)
+{
+	instanceVpcName_ = instanceVpcName;
+	setCoreParameter("InstanceVpcName", instanceVpcName);
+}
+
+std::string UnbindInstance2VpcRequest::getInstanceName()const
+{
+	return instanceName_;
+}
+
+void UnbindInstance2VpcRequest::setInstanceName(const std::string& instanceName)
+{
+	instanceName_ = instanceName;
+	setCoreParameter("InstanceName", instanceName);
 }
 

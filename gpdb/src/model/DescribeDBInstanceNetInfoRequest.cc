@@ -25,17 +25,6 @@ DescribeDBInstanceNetInfoRequest::DescribeDBInstanceNetInfoRequest() :
 DescribeDBInstanceNetInfoRequest::~DescribeDBInstanceNetInfoRequest()
 {}
 
-std::string DescribeDBInstanceNetInfoRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeDBInstanceNetInfoRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DescribeDBInstanceNetInfoRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDBInstanceNetInfoRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeDBInstanceNetInfoRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

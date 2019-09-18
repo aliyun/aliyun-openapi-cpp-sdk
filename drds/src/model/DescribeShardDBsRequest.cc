@@ -25,17 +25,6 @@ DescribeShardDBsRequest::DescribeShardDBsRequest() :
 DescribeShardDBsRequest::~DescribeShardDBsRequest()
 {}
 
-std::string DescribeShardDBsRequest::getDbName()const
-{
-	return dbName_;
-}
-
-void DescribeShardDBsRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
-}
-
 std::string DescribeShardDBsRequest::getDrdsInstanceId()const
 {
 	return drdsInstanceId_;
@@ -56,5 +45,16 @@ void DescribeShardDBsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeShardDBsRequest::getDbName()const
+{
+	return dbName_;
+}
+
+void DescribeShardDBsRequest::setDbName(const std::string& dbName)
+{
+	dbName_ = dbName;
+	setCoreParameter("DbName", dbName);
 }
 

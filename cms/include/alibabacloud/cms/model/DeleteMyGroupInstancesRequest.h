@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				DeleteMyGroupInstancesRequest();
 				~DeleteMyGroupInstancesRequest();
 
+				long getGroupId()const;
+				void setGroupId(long groupId);
 				std::string getInstanceIds()const;
 				void setInstanceIds(const std::string& instanceIds);
 				std::string getInstanceIdList()const;
 				void setInstanceIdList(const std::string& instanceIdList);
-				long getGroupId()const;
-				void setGroupId(long groupId);
 				std::string getCategory()const;
 				void setCategory(const std::string& category);
 
             private:
+				long groupId_;
 				std::string instanceIds_;
 				std::string instanceIdList_;
-				long groupId_;
 				std::string category_;
 
 			};

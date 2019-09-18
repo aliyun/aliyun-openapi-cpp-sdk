@@ -59,17 +59,6 @@ void TaskConfigModifyRequest::setTaskType(const std::string& taskType)
 	setCoreParameter("TaskType", taskType);
 }
 
-std::string TaskConfigModifyRequest::getTaskScope()const
-{
-	return taskScope_;
-}
-
-void TaskConfigModifyRequest::setTaskScope(const std::string& taskScope)
-{
-	taskScope_ = taskScope;
-	setCoreParameter("TaskScope", taskScope);
-}
-
 std::string TaskConfigModifyRequest::getAlertConfig()const
 {
 	return alertConfig_;
@@ -103,17 +92,6 @@ void TaskConfigModifyRequest::setTaskName(const std::string& taskName)
 	setCoreParameter("TaskName", taskName);
 }
 
-long TaskConfigModifyRequest::getId()const
-{
-	return id_;
-}
-
-void TaskConfigModifyRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string TaskConfigModifyRequest::getGroupName()const
 {
 	return groupName_;
@@ -123,5 +101,27 @@ void TaskConfigModifyRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
 	setCoreParameter("GroupName", groupName);
+}
+
+std::string TaskConfigModifyRequest::getTaskScope()const
+{
+	return taskScope_;
+}
+
+void TaskConfigModifyRequest::setTaskScope(const std::string& taskScope)
+{
+	taskScope_ = taskScope;
+	setCoreParameter("TaskScope", taskScope);
+}
+
+long TaskConfigModifyRequest::getId()const
+{
+	return id_;
+}
+
+void TaskConfigModifyRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

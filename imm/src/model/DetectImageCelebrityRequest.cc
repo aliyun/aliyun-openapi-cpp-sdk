@@ -25,15 +25,26 @@ DetectImageCelebrityRequest::DetectImageCelebrityRequest() :
 DetectImageCelebrityRequest::~DetectImageCelebrityRequest()
 {}
 
-std::string DetectImageCelebrityRequest::getImageUri()const
+std::string DetectImageCelebrityRequest::getProject()const
 {
-	return imageUri_;
+	return project_;
 }
 
-void DetectImageCelebrityRequest::setImageUri(const std::string& imageUri)
+void DetectImageCelebrityRequest::setProject(const std::string& project)
 {
-	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	project_ = project;
+	setCoreParameter("Project", project);
+}
+
+std::string DetectImageCelebrityRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DetectImageCelebrityRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetectImageCelebrityRequest::getLibrary()const
@@ -47,28 +58,6 @@ void DetectImageCelebrityRequest::setLibrary(const std::string& library)
 	setCoreParameter("Library", library);
 }
 
-std::string DetectImageCelebrityRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DetectImageCelebrityRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DetectImageCelebrityRequest::getProject()const
-{
-	return project_;
-}
-
-void DetectImageCelebrityRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setCoreParameter("Project", project);
-}
-
 std::string DetectImageCelebrityRequest::getRealUid()const
 {
 	return realUid_;
@@ -80,14 +69,14 @@ void DetectImageCelebrityRequest::setRealUid(const std::string& realUid)
 	setCoreParameter("RealUid", realUid);
 }
 
-std::string DetectImageCelebrityRequest::getAccessKeyId()const
+std::string DetectImageCelebrityRequest::getImageUri()const
 {
-	return accessKeyId_;
+	return imageUri_;
 }
 
-void DetectImageCelebrityRequest::setAccessKeyId(const std::string& accessKeyId)
+void DetectImageCelebrityRequest::setImageUri(const std::string& imageUri)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	imageUri_ = imageUri;
+	setCoreParameter("ImageUri", imageUri);
 }
 

@@ -25,50 +25,6 @@ DescribeLiveDomainTrafficDataRequest::DescribeLiveDomainTrafficDataRequest() :
 DescribeLiveDomainTrafficDataRequest::~DescribeLiveDomainTrafficDataRequest()
 {}
 
-std::string DescribeLiveDomainTrafficDataRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLiveDomainTrafficDataRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeLiveDomainTrafficDataRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeLiveDomainTrafficDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-std::string DescribeLiveDomainTrafficDataRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeLiveDomainTrafficDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeLiveDomainTrafficDataRequest::getInterval()const
-{
-	return interval_;
-}
-
-void DescribeLiveDomainTrafficDataRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setCoreParameter("Interval", interval);
-}
-
 std::string DescribeLiveDomainTrafficDataRequest::getLocationNameEn()const
 {
 	return locationNameEn_;
@@ -102,6 +58,28 @@ void DescribeLiveDomainTrafficDataRequest::setIspNameEn(const std::string& ispNa
 	setCoreParameter("IspNameEn", ispNameEn);
 }
 
+std::string DescribeLiveDomainTrafficDataRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveDomainTrafficDataRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+std::string DescribeLiveDomainTrafficDataRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeLiveDomainTrafficDataRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
 long DescribeLiveDomainTrafficDataRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,5 +89,16 @@ void DescribeLiveDomainTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeLiveDomainTrafficDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeLiveDomainTrafficDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setCoreParameter("Interval", interval);
 }
 

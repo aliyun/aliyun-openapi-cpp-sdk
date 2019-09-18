@@ -36,17 +36,6 @@ void RefreshClusterResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RefreshClusterResourcePoolRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RefreshClusterResourcePoolRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long RefreshClusterResourcePoolRequest::getResourcePoolId()const
 {
 	return resourcePoolId_;
@@ -78,5 +67,16 @@ void RefreshClusterResourcePoolRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RefreshClusterResourcePoolRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RefreshClusterResourcePoolRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				SaveSingleTaskForModifyingDnsHostRequest();
 				~SaveSingleTaskForModifyingDnsHostRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::vector<std::string> getIp()const;
 				void setIp(const std::vector<std::string>& ip);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getDnsName()const;
 				void setDnsName(const std::string& dnsName);
 				std::string getUserClientIp()const;
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 
             private:
-				std::string instanceId_;
 				std::vector<std::string> ip_;
+				std::string instanceId_;
 				std::string dnsName_;
 				std::string userClientIp_;
 				std::string lang_;

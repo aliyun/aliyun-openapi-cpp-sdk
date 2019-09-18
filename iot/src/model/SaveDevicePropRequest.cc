@@ -25,39 +25,6 @@ SaveDevicePropRequest::SaveDevicePropRequest() :
 SaveDevicePropRequest::~SaveDevicePropRequest()
 {}
 
-std::string SaveDevicePropRequest::getIotId()const
-{
-	return iotId_;
-}
-
-void SaveDevicePropRequest::setIotId(const std::string& iotId)
-{
-	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
-}
-
-std::string SaveDevicePropRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void SaveDevicePropRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
-std::string SaveDevicePropRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void SaveDevicePropRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
-}
-
 std::string SaveDevicePropRequest::getProductKey()const
 {
 	return productKey_;
@@ -89,5 +56,38 @@ void SaveDevicePropRequest::setProps(const std::string& props)
 {
 	props_ = props;
 	setCoreParameter("Props", props);
+}
+
+std::string SaveDevicePropRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void SaveDevicePropRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+std::string SaveDevicePropRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void SaveDevicePropRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string SaveDevicePropRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void SaveDevicePropRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
 }
 

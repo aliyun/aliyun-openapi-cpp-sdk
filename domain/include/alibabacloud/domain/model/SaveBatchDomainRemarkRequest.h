@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				SaveBatchDomainRemarkRequest();
 				~SaveBatchDomainRemarkRequest();
 
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getInstanceIds()const;
 				void setInstanceIds(const std::string& instanceIds);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string remark_;
 				std::string instanceIds_;
 				std::string userClientIp_;
-				std::string remark_;
 				std::string lang_;
 
 			};

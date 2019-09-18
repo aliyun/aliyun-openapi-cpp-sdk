@@ -25,17 +25,6 @@ DescribeDBInstanceIPArrayListRequest::DescribeDBInstanceIPArrayListRequest() :
 DescribeDBInstanceIPArrayListRequest::~DescribeDBInstanceIPArrayListRequest()
 {}
 
-std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeDBInstanceIPArrayListRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DescribeDBInstanceIPArrayListRequest::setAccessKeyId(const std::string& acc
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeDBInstanceIPArrayListRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

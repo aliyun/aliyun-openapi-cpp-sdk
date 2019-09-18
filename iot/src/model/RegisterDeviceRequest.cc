@@ -36,39 +36,6 @@ void RegisterDeviceRequest::setPinCode(const std::string& pinCode)
 	setCoreParameter("PinCode", pinCode);
 }
 
-std::string RegisterDeviceRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void RegisterDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
-std::string RegisterDeviceRequest::getNickname()const
-{
-	return nickname_;
-}
-
-void RegisterDeviceRequest::setNickname(const std::string& nickname)
-{
-	nickname_ = nickname;
-	setCoreParameter("Nickname", nickname);
-}
-
-std::string RegisterDeviceRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void RegisterDeviceRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
-}
-
 std::string RegisterDeviceRequest::getProductKey()const
 {
 	return productKey_;
@@ -100,5 +67,38 @@ void RegisterDeviceRequest::setDevEui(const std::string& devEui)
 {
 	devEui_ = devEui;
 	setCoreParameter("DevEui", devEui);
+}
+
+std::string RegisterDeviceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void RegisterDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string RegisterDeviceRequest::getNickname()const
+{
+	return nickname_;
+}
+
+void RegisterDeviceRequest::setNickname(const std::string& nickname)
+{
+	nickname_ = nickname;
+	setCoreParameter("Nickname", nickname);
+}
+
+std::string RegisterDeviceRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void RegisterDeviceRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
 }
 

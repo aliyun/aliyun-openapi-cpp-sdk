@@ -36,6 +36,28 @@ void SetEditingProjectMaterialsRequest::setResourceOwnerId(const std::string& re
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
+std::string SetEditingProjectMaterialsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetEditingProjectMaterialsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetEditingProjectMaterialsRequest::getProjectId()const
+{
+	return projectId_;
+}
+
+void SetEditingProjectMaterialsRequest::setProjectId(const std::string& projectId)
+{
+	projectId_ = projectId;
+	setCoreParameter("ProjectId", projectId);
+}
+
 std::string SetEditingProjectMaterialsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,17 +80,6 @@ void SetEditingProjectMaterialsRequest::setOwnerAccount(const std::string& owner
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string SetEditingProjectMaterialsRequest::getMaterialIds()const
-{
-	return materialIds_;
-}
-
-void SetEditingProjectMaterialsRequest::setMaterialIds(const std::string& materialIds)
-{
-	materialIds_ = materialIds;
-	setCoreParameter("MaterialIds", materialIds);
-}
-
 std::string SetEditingProjectMaterialsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -80,25 +91,14 @@ void SetEditingProjectMaterialsRequest::setOwnerId(const std::string& ownerId)
 	setCoreParameter("OwnerId", ownerId);
 }
 
-std::string SetEditingProjectMaterialsRequest::getProjectId()const
+std::string SetEditingProjectMaterialsRequest::getMaterialIds()const
 {
-	return projectId_;
+	return materialIds_;
 }
 
-void SetEditingProjectMaterialsRequest::setProjectId(const std::string& projectId)
+void SetEditingProjectMaterialsRequest::setMaterialIds(const std::string& materialIds)
 {
-	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
-}
-
-std::string SetEditingProjectMaterialsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetEditingProjectMaterialsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	materialIds_ = materialIds;
+	setCoreParameter("MaterialIds", materialIds);
 }
 

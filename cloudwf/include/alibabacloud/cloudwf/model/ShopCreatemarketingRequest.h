@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ShopCreatemarketingRequest();
 				~ShopCreatemarketingRequest();
 
-				std::string getEtime()const;
-				void setEtime(const std::string& etime);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getStime()const;
 				void setStime(const std::string& stime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getSid()const;
 				void setSid(long sid);
+				std::string getEtime()const;
+				void setEtime(const std::string& etime);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string etime_;
-				std::string name_;
 				std::string stime_;
 				std::string accessKeyId_;
 				long sid_;
+				std::string etime_;
+				std::string name_;
 
 			};
 		}

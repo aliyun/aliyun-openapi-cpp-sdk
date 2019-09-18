@@ -25,18 +25,6 @@ RemoveMetricRuleTargetsRequest::RemoveMetricRuleTargetsRequest() :
 RemoveMetricRuleTargetsRequest::~RemoveMetricRuleTargetsRequest()
 {}
 
-std::vector<std::string> RemoveMetricRuleTargetsRequest::getContactGroupTargetIds()const
-{
-	return contactGroupTargetIds_;
-}
-
-void RemoveMetricRuleTargetsRequest::setContactGroupTargetIds(const std::vector<std::string>& contactGroupTargetIds)
-{
-	contactGroupTargetIds_ = contactGroupTargetIds;
-	for(int i = 0; i!= contactGroupTargetIds.size(); i++)
-		setCoreParameter("ContactGroupTargetIds."+ std::to_string(i), contactGroupTargetIds.at(i));
-}
-
 std::vector<std::string> RemoveMetricRuleTargetsRequest::getTargetIds()const
 {
 	return targetIds_;
@@ -49,6 +37,29 @@ void RemoveMetricRuleTargetsRequest::setTargetIds(const std::vector<std::string>
 		setCoreParameter("TargetIds."+ std::to_string(i), targetIds.at(i));
 }
 
+std::string RemoveMetricRuleTargetsRequest::getRuleName()const
+{
+	return ruleName_;
+}
+
+void RemoveMetricRuleTargetsRequest::setRuleName(const std::string& ruleName)
+{
+	ruleName_ = ruleName;
+	setCoreParameter("RuleName", ruleName);
+}
+
+std::vector<std::string> RemoveMetricRuleTargetsRequest::getContactGroupTargetIds()const
+{
+	return contactGroupTargetIds_;
+}
+
+void RemoveMetricRuleTargetsRequest::setContactGroupTargetIds(const std::vector<std::string>& contactGroupTargetIds)
+{
+	contactGroupTargetIds_ = contactGroupTargetIds;
+	for(int i = 0; i!= contactGroupTargetIds.size(); i++)
+		setCoreParameter("ContactGroupTargetIds."+ std::to_string(i), contactGroupTargetIds.at(i));
+}
+
 std::vector<std::string> RemoveMetricRuleTargetsRequest::getWebhookTargetIds()const
 {
 	return webhookTargetIds_;
@@ -59,16 +70,5 @@ void RemoveMetricRuleTargetsRequest::setWebhookTargetIds(const std::vector<std::
 	webhookTargetIds_ = webhookTargetIds;
 	for(int i = 0; i!= webhookTargetIds.size(); i++)
 		setCoreParameter("WebhookTargetIds."+ std::to_string(i), webhookTargetIds.at(i));
-}
-
-std::string RemoveMetricRuleTargetsRequest::getRuleName()const
-{
-	return ruleName_;
-}
-
-void RemoveMetricRuleTargetsRequest::setRuleName(const std::string& ruleName)
-{
-	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
 }
 

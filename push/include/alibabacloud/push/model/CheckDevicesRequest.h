@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getDeviceIds()const;
 				void setDeviceIds(const std::string& deviceIds);
-				long getAppKey()const;
-				void setAppKey(long appKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getAppKey()const;
+				void setAppKey(long appKey);
 
             private:
 				std::string deviceIds_;
-				long appKey_;
 				std::string accessKeyId_;
+				long appKey_;
 
 			};
 		}

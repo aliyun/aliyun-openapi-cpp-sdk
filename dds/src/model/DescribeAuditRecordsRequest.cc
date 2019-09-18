@@ -36,39 +36,6 @@ void DescribeAuditRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAuditRecordsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeAuditRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAuditRecordsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeAuditRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeAuditRecordsRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeAuditRecordsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
-}
-
 std::string DescribeAuditRecordsRequest::getStartTime()const
 {
 	return startTime_;
@@ -78,17 +45,6 @@ void DescribeAuditRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
-}
-
-long DescribeAuditRecordsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeAuditRecordsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAuditRecordsRequest::getQueryKeywords()const
@@ -135,17 +91,6 @@ void DescribeAuditRecordsRequest::setDatabase(const std::string& database)
 	setCoreParameter("Database", database);
 }
 
-std::string DescribeAuditRecordsRequest::getForm()const
-{
-	return form_;
-}
-
-void DescribeAuditRecordsRequest::setForm(const std::string& form)
-{
-	form_ = form;
-	setCoreParameter("Form", form);
-}
-
 std::string DescribeAuditRecordsRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -155,17 +100,6 @@ void DescribeAuditRecordsRequest::setSecurityToken(const std::string& securityTo
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeAuditRecordsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeAuditRecordsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeAuditRecordsRequest::getPageSize()const
@@ -199,6 +133,61 @@ void DescribeAuditRecordsRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
 	setCoreParameter("NodeId", nodeId);
+}
+
+std::string DescribeAuditRecordsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAuditRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAuditRecordsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeAuditRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeAuditRecordsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeAuditRecordsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+long DescribeAuditRecordsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeAuditRecordsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAuditRecordsRequest::getForm()const
+{
+	return form_;
+}
+
+void DescribeAuditRecordsRequest::setForm(const std::string& form)
+{
+	form_ = form;
+	setCoreParameter("Form", form);
 }
 
 std::string DescribeAuditRecordsRequest::getUser()const

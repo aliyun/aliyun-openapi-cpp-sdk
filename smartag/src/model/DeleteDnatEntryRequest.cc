@@ -36,15 +36,15 @@ void DeleteDnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteDnatEntryRequest::getResourceOwnerAccount()const
+std::string DeleteDnatEntryRequest::getDnatEntryId()const
 {
-	return resourceOwnerAccount_;
+	return dnatEntryId_;
 }
 
-void DeleteDnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DeleteDnatEntryRequest::setDnatEntryId(const std::string& dnatEntryId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	dnatEntryId_ = dnatEntryId;
+	setCoreParameter("DnatEntryId", dnatEntryId);
 }
 
 std::string DeleteDnatEntryRequest::getRegionId()const
@@ -58,15 +58,15 @@ void DeleteDnatEntryRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-std::string DeleteDnatEntryRequest::getSagId()const
+std::string DeleteDnatEntryRequest::getResourceOwnerAccount()const
 {
-	return sagId_;
+	return resourceOwnerAccount_;
 }
 
-void DeleteDnatEntryRequest::setSagId(const std::string& sagId)
+void DeleteDnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	sagId_ = sagId;
-	setCoreParameter("SagId", sagId);
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDnatEntryRequest::getOwnerAccount()const
@@ -91,14 +91,14 @@ void DeleteDnatEntryRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteDnatEntryRequest::getDnatEntryId()const
+std::string DeleteDnatEntryRequest::getSagId()const
 {
-	return dnatEntryId_;
+	return sagId_;
 }
 
-void DeleteDnatEntryRequest::setDnatEntryId(const std::string& dnatEntryId)
+void DeleteDnatEntryRequest::setSagId(const std::string& sagId)
 {
-	dnatEntryId_ = dnatEntryId;
-	setCoreParameter("DnatEntryId", dnatEntryId);
+	sagId_ = sagId;
+	setCoreParameter("SagId", sagId);
 }
 

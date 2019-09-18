@@ -36,15 +36,15 @@ void ModifyInstanceSpecPreCheckRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceSpecPreCheckRequest::getInstanceId()const
+std::string ModifyInstanceSpecPreCheckRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void ModifyInstanceSpecPreCheckRequest::setInstanceId(const std::string& instanceId)
+void ModifyInstanceSpecPreCheckRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getSecurityToken()const
@@ -69,17 +69,6 @@ void ModifyInstanceSpecPreCheckRequest::setResourceOwnerAccount(const std::strin
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyInstanceSpecPreCheckRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyInstanceSpecPreCheckRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyInstanceSpecPreCheckRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,6 +91,17 @@ void ModifyInstanceSpecPreCheckRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyInstanceSpecPreCheckRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyInstanceSpecPreCheckRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
 std::string ModifyInstanceSpecPreCheckRequest::getTargetInstanceClass()const
 {
 	return targetInstanceClass_;
@@ -111,16 +111,5 @@ void ModifyInstanceSpecPreCheckRequest::setTargetInstanceClass(const std::string
 {
 	targetInstanceClass_ = targetInstanceClass;
 	setCoreParameter("TargetInstanceClass", targetInstanceClass);
-}
-
-std::string ModifyInstanceSpecPreCheckRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyInstanceSpecPreCheckRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

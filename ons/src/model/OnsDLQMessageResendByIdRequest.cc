@@ -25,17 +25,6 @@ OnsDLQMessageResendByIdRequest::OnsDLQMessageResendByIdRequest() :
 OnsDLQMessageResendByIdRequest::~OnsDLQMessageResendByIdRequest()
 {}
 
-std::string OnsDLQMessageResendByIdRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsDLQMessageResendByIdRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsDLQMessageResendByIdRequest::getGroupId()const
 {
 	return groupId_;
@@ -56,5 +45,16 @@ void OnsDLQMessageResendByIdRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
 	setCoreParameter("MsgId", msgId);
+}
+
+std::string OnsDLQMessageResendByIdRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsDLQMessageResendByIdRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

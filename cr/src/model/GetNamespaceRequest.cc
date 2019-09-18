@@ -25,17 +25,6 @@ GetNamespaceRequest::GetNamespaceRequest() :
 GetNamespaceRequest::~GetNamespaceRequest()
 {}
 
-std::string GetNamespaceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetNamespaceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetNamespaceRequest::get_Namespace()const
 {
 	return _namespace_;

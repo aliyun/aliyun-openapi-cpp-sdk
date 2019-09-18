@@ -47,17 +47,6 @@ void DescribeCertificateStatusCountRequest::setSourceIp(const std::string& sourc
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeCertificateStatusCountRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeCertificateStatusCountRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::vector<DescribeCertificateStatusCountRequest::Tag> DescribeCertificateStatusCountRequest::getTag()const
 {
 	return tag_;

@@ -47,17 +47,6 @@ void GetUserSourceRepoRefListRequest::setSourceRepoName(const std::string& sourc
 	setCoreParameter("SourceRepoName", sourceRepoName);
 }
 
-std::string GetUserSourceRepoRefListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetUserSourceRepoRefListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetUserSourceRepoRefListRequest::getSourceRepoNamespace()const
 {
 	return sourceRepoNamespace_;

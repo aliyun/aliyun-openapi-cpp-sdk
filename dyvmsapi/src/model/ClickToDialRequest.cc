@@ -36,39 +36,6 @@ void ClickToDialRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ClickToDialRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ClickToDialRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-bool ClickToDialRequest::getRecordFlag()const
-{
-	return recordFlag_;
-}
-
-void ClickToDialRequest::setRecordFlag(bool recordFlag)
-{
-	recordFlag_ = recordFlag;
-	setCoreParameter("RecordFlag", recordFlag ? "true" : "false");
-}
-
-long ClickToDialRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ClickToDialRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string ClickToDialRequest::getCallerShowNumber()const
 {
 	return callerShowNumber_;
@@ -124,17 +91,6 @@ void ClickToDialRequest::setCalledShowNumber(const std::string& calledShowNumber
 	setCoreParameter("CalledShowNumber", calledShowNumber);
 }
 
-std::string ClickToDialRequest::getOutId()const
-{
-	return outId_;
-}
-
-void ClickToDialRequest::setOutId(const std::string& outId)
-{
-	outId_ = outId;
-	setCoreParameter("OutId", outId);
-}
-
 bool ClickToDialRequest::getAsrFlag()const
 {
 	return asrFlag_;
@@ -144,6 +100,50 @@ void ClickToDialRequest::setAsrFlag(bool asrFlag)
 {
 	asrFlag_ = asrFlag;
 	setCoreParameter("AsrFlag", asrFlag ? "true" : "false");
+}
+
+std::string ClickToDialRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ClickToDialRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+bool ClickToDialRequest::getRecordFlag()const
+{
+	return recordFlag_;
+}
+
+void ClickToDialRequest::setRecordFlag(bool recordFlag)
+{
+	recordFlag_ = recordFlag;
+	setCoreParameter("RecordFlag", recordFlag ? "true" : "false");
+}
+
+long ClickToDialRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ClickToDialRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ClickToDialRequest::getOutId()const
+{
+	return outId_;
+}
+
+void ClickToDialRequest::setOutId(const std::string& outId)
+{
+	outId_ = outId;
+	setCoreParameter("OutId", outId);
 }
 
 std::string ClickToDialRequest::getAsrModelId()const

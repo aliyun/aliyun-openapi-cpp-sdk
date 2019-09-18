@@ -25,6 +25,17 @@ SaveBatchDomainRemarkRequest::SaveBatchDomainRemarkRequest() :
 SaveBatchDomainRemarkRequest::~SaveBatchDomainRemarkRequest()
 {}
 
+std::string SaveBatchDomainRemarkRequest::getRemark()const
+{
+	return remark_;
+}
+
+void SaveBatchDomainRemarkRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
 std::string SaveBatchDomainRemarkRequest::getInstanceIds()const
 {
 	return instanceIds_;
@@ -45,17 +56,6 @@ void SaveBatchDomainRemarkRequest::setUserClientIp(const std::string& userClient
 {
 	userClientIp_ = userClientIp;
 	setCoreParameter("UserClientIp", userClientIp);
-}
-
-std::string SaveBatchDomainRemarkRequest::getRemark()const
-{
-	return remark_;
-}
-
-void SaveBatchDomainRemarkRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
 }
 
 std::string SaveBatchDomainRemarkRequest::getLang()const

@@ -25,17 +25,6 @@ DescribeShardDbConnectionInfoRequest::DescribeShardDbConnectionInfoRequest() :
 DescribeShardDbConnectionInfoRequest::~DescribeShardDbConnectionInfoRequest()
 {}
 
-std::string DescribeShardDbConnectionInfoRequest::getDbName()const
-{
-	return dbName_;
-}
-
-void DescribeShardDbConnectionInfoRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
-}
-
 std::string DescribeShardDbConnectionInfoRequest::getDrdsInstanceId()const
 {
 	return drdsInstanceId_;
@@ -67,5 +56,16 @@ void DescribeShardDbConnectionInfoRequest::setAccessKeyId(const std::string& acc
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeShardDbConnectionInfoRequest::getDbName()const
+{
+	return dbName_;
+}
+
+void DescribeShardDbConnectionInfoRequest::setDbName(const std::string& dbName)
+{
+	dbName_ = dbName;
+	setCoreParameter("DbName", dbName);
 }
 

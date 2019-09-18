@@ -25,6 +25,28 @@ UserDataCreateRequest::UserDataCreateRequest() :
 UserDataCreateRequest::~UserDataCreateRequest()
 {}
 
+std::string UserDataCreateRequest::getType()const
+{
+	return type_;
+}
+
+void UserDataCreateRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string UserDataCreateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UserDataCreateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UserDataCreateRequest::getUploadFile()const
 {
 	return uploadFile_;
@@ -56,27 +78,5 @@ void UserDataCreateRequest::setBid(long bid)
 {
 	bid_ = bid;
 	setCoreParameter("Bid", std::to_string(bid));
-}
-
-std::string UserDataCreateRequest::getType()const
-{
-	return type_;
-}
-
-void UserDataCreateRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
-std::string UserDataCreateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UserDataCreateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

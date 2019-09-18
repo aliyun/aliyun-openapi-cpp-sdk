@@ -51,114 +51,6 @@ CrmClient::CrmClient(const std::string & accessKeyId, const std::string & access
 CrmClient::~CrmClient()
 {}
 
-CrmClient::CheckLabelForBidOutcome CrmClient::checkLabelForBid(const CheckLabelForBidRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckLabelForBidOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckLabelForBidOutcome(CheckLabelForBidResult(outcome.result()));
-	else
-		return CheckLabelForBidOutcome(outcome.error());
-}
-
-void CrmClient::checkLabelForBidAsync(const CheckLabelForBidRequest& request, const CheckLabelForBidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkLabelForBid(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::CheckLabelForBidOutcomeCallable CrmClient::checkLabelForBidCallable(const CheckLabelForBidRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckLabelForBidOutcome()>>(
-			[this, request]()
-			{
-			return this->checkLabelForBid(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CrmClient::CheckLabelOutcome CrmClient::checkLabel(const CheckLabelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckLabelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckLabelOutcome(CheckLabelResult(outcome.result()));
-	else
-		return CheckLabelOutcome(outcome.error());
-}
-
-void CrmClient::checkLabelAsync(const CheckLabelRequest& request, const CheckLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkLabel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::CheckLabelOutcomeCallable CrmClient::checkLabelCallable(const CheckLabelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckLabelOutcome()>>(
-			[this, request]()
-			{
-			return this->checkLabel(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CrmClient::DeleteLabelForBidOutcome CrmClient::deleteLabelForBid(const DeleteLabelForBidRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteLabelForBidOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteLabelForBidOutcome(DeleteLabelForBidResult(outcome.result()));
-	else
-		return DeleteLabelForBidOutcome(outcome.error());
-}
-
-void CrmClient::deleteLabelForBidAsync(const DeleteLabelForBidRequest& request, const DeleteLabelForBidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteLabelForBid(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::DeleteLabelForBidOutcomeCallable CrmClient::deleteLabelForBidCallable(const DeleteLabelForBidRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteLabelForBidOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteLabelForBid(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CrmClient::AddIdentityCertifiedForBidUserOutcome CrmClient::addIdentityCertifiedForBidUser(const AddIdentityCertifiedForBidUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,180 +87,36 @@ CrmClient::AddIdentityCertifiedForBidUserOutcomeCallable CrmClient::addIdentityC
 	return task->get_future();
 }
 
-CrmClient::GetAliyunPkByAliyunIdOutcome CrmClient::getAliyunPkByAliyunId(const GetAliyunPkByAliyunIdRequest &request) const
+CrmClient::AddLabelOutcome CrmClient::addLabel(const AddLabelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetAliyunPkByAliyunIdOutcome(endpointOutcome.error());
+		return AddLabelOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetAliyunPkByAliyunIdOutcome(GetAliyunPkByAliyunIdResult(outcome.result()));
+		return AddLabelOutcome(AddLabelResult(outcome.result()));
 	else
-		return GetAliyunPkByAliyunIdOutcome(outcome.error());
+		return AddLabelOutcome(outcome.error());
 }
 
-void CrmClient::getAliyunPkByAliyunIdAsync(const GetAliyunPkByAliyunIdRequest& request, const GetAliyunPkByAliyunIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrmClient::addLabelAsync(const AddLabelRequest& request, const AddLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getAliyunPkByAliyunId(request), context);
+		handler(this, request, addLabel(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrmClient::GetAliyunPkByAliyunIdOutcomeCallable CrmClient::getAliyunPkByAliyunIdCallable(const GetAliyunPkByAliyunIdRequest &request) const
+CrmClient::AddLabelOutcomeCallable CrmClient::addLabelCallable(const AddLabelRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetAliyunPkByAliyunIdOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddLabelOutcome()>>(
 			[this, request]()
 			{
-			return this->getAliyunPkByAliyunId(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CrmClient::QueryCustomerLabelOutcome CrmClient::queryCustomerLabel(const QueryCustomerLabelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryCustomerLabelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryCustomerLabelOutcome(QueryCustomerLabelResult(outcome.result()));
-	else
-		return QueryCustomerLabelOutcome(outcome.error());
-}
-
-void CrmClient::queryCustomerLabelAsync(const QueryCustomerLabelRequest& request, const QueryCustomerLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryCustomerLabel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::QueryCustomerLabelOutcomeCallable CrmClient::queryCustomerLabelCallable(const QueryCustomerLabelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryCustomerLabelOutcome()>>(
-			[this, request]()
-			{
-			return this->queryCustomerLabel(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CrmClient::QueryBidUserCertifiedInfoOutcome CrmClient::queryBidUserCertifiedInfo(const QueryBidUserCertifiedInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryBidUserCertifiedInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryBidUserCertifiedInfoOutcome(QueryBidUserCertifiedInfoResult(outcome.result()));
-	else
-		return QueryBidUserCertifiedInfoOutcome(outcome.error());
-}
-
-void CrmClient::queryBidUserCertifiedInfoAsync(const QueryBidUserCertifiedInfoRequest& request, const QueryBidUserCertifiedInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryBidUserCertifiedInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::QueryBidUserCertifiedInfoOutcomeCallable CrmClient::queryBidUserCertifiedInfoCallable(const QueryBidUserCertifiedInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryBidUserCertifiedInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->queryBidUserCertifiedInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CrmClient::BatchGetAliyunIdByAliyunPkOutcome CrmClient::batchGetAliyunIdByAliyunPk(const BatchGetAliyunIdByAliyunPkRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BatchGetAliyunIdByAliyunPkOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BatchGetAliyunIdByAliyunPkOutcome(BatchGetAliyunIdByAliyunPkResult(outcome.result()));
-	else
-		return BatchGetAliyunIdByAliyunPkOutcome(outcome.error());
-}
-
-void CrmClient::batchGetAliyunIdByAliyunPkAsync(const BatchGetAliyunIdByAliyunPkRequest& request, const BatchGetAliyunIdByAliyunPkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, batchGetAliyunIdByAliyunPk(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::BatchGetAliyunIdByAliyunPkOutcomeCallable CrmClient::batchGetAliyunIdByAliyunPkCallable(const BatchGetAliyunIdByAliyunPkRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BatchGetAliyunIdByAliyunPkOutcome()>>(
-			[this, request]()
-			{
-			return this->batchGetAliyunIdByAliyunPk(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CrmClient::RemoveIdentityCertifiedForBidUserOutcome CrmClient::removeIdentityCertifiedForBidUser(const RemoveIdentityCertifiedForBidUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveIdentityCertifiedForBidUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveIdentityCertifiedForBidUserOutcome(RemoveIdentityCertifiedForBidUserResult(outcome.result()));
-	else
-		return RemoveIdentityCertifiedForBidUserOutcome(outcome.error());
-}
-
-void CrmClient::removeIdentityCertifiedForBidUserAsync(const RemoveIdentityCertifiedForBidUserRequest& request, const RemoveIdentityCertifiedForBidUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeIdentityCertifiedForBidUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrmClient::RemoveIdentityCertifiedForBidUserOutcomeCallable CrmClient::removeIdentityCertifiedForBidUserCallable(const RemoveIdentityCertifiedForBidUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveIdentityCertifiedForBidUserOutcome()>>(
-			[this, request]()
-			{
-			return this->removeIdentityCertifiedForBidUser(request);
+			return this->addLabel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,6 +159,114 @@ CrmClient::AddLabelForBidOutcomeCallable CrmClient::addLabelForBidCallable(const
 	return task->get_future();
 }
 
+CrmClient::BatchGetAliyunIdByAliyunPkOutcome CrmClient::batchGetAliyunIdByAliyunPk(const BatchGetAliyunIdByAliyunPkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchGetAliyunIdByAliyunPkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchGetAliyunIdByAliyunPkOutcome(BatchGetAliyunIdByAliyunPkResult(outcome.result()));
+	else
+		return BatchGetAliyunIdByAliyunPkOutcome(outcome.error());
+}
+
+void CrmClient::batchGetAliyunIdByAliyunPkAsync(const BatchGetAliyunIdByAliyunPkRequest& request, const BatchGetAliyunIdByAliyunPkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchGetAliyunIdByAliyunPk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::BatchGetAliyunIdByAliyunPkOutcomeCallable CrmClient::batchGetAliyunIdByAliyunPkCallable(const BatchGetAliyunIdByAliyunPkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchGetAliyunIdByAliyunPkOutcome()>>(
+			[this, request]()
+			{
+			return this->batchGetAliyunIdByAliyunPk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrmClient::CheckLabelOutcome CrmClient::checkLabel(const CheckLabelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckLabelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckLabelOutcome(CheckLabelResult(outcome.result()));
+	else
+		return CheckLabelOutcome(outcome.error());
+}
+
+void CrmClient::checkLabelAsync(const CheckLabelRequest& request, const CheckLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkLabel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::CheckLabelOutcomeCallable CrmClient::checkLabelCallable(const CheckLabelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckLabelOutcome()>>(
+			[this, request]()
+			{
+			return this->checkLabel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrmClient::CheckLabelForBidOutcome CrmClient::checkLabelForBid(const CheckLabelForBidRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckLabelForBidOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckLabelForBidOutcome(CheckLabelForBidResult(outcome.result()));
+	else
+		return CheckLabelForBidOutcome(outcome.error());
+}
+
+void CrmClient::checkLabelForBidAsync(const CheckLabelForBidRequest& request, const CheckLabelForBidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkLabelForBid(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::CheckLabelForBidOutcomeCallable CrmClient::checkLabelForBidCallable(const CheckLabelForBidRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckLabelForBidOutcome()>>(
+			[this, request]()
+			{
+			return this->checkLabelForBid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CrmClient::DeleteLabelOutcome CrmClient::deleteLabel(const DeleteLabelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,36 +303,180 @@ CrmClient::DeleteLabelOutcomeCallable CrmClient::deleteLabelCallable(const Delet
 	return task->get_future();
 }
 
-CrmClient::AddLabelOutcome CrmClient::addLabel(const AddLabelRequest &request) const
+CrmClient::DeleteLabelForBidOutcome CrmClient::deleteLabelForBid(const DeleteLabelForBidRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddLabelOutcome(endpointOutcome.error());
+		return DeleteLabelForBidOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddLabelOutcome(AddLabelResult(outcome.result()));
+		return DeleteLabelForBidOutcome(DeleteLabelForBidResult(outcome.result()));
 	else
-		return AddLabelOutcome(outcome.error());
+		return DeleteLabelForBidOutcome(outcome.error());
 }
 
-void CrmClient::addLabelAsync(const AddLabelRequest& request, const AddLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrmClient::deleteLabelForBidAsync(const DeleteLabelForBidRequest& request, const DeleteLabelForBidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addLabel(request), context);
+		handler(this, request, deleteLabelForBid(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrmClient::AddLabelOutcomeCallable CrmClient::addLabelCallable(const AddLabelRequest &request) const
+CrmClient::DeleteLabelForBidOutcomeCallable CrmClient::deleteLabelForBidCallable(const DeleteLabelForBidRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddLabelOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteLabelForBidOutcome()>>(
 			[this, request]()
 			{
-			return this->addLabel(request);
+			return this->deleteLabelForBid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrmClient::GetAliyunPkByAliyunIdOutcome CrmClient::getAliyunPkByAliyunId(const GetAliyunPkByAliyunIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAliyunPkByAliyunIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAliyunPkByAliyunIdOutcome(GetAliyunPkByAliyunIdResult(outcome.result()));
+	else
+		return GetAliyunPkByAliyunIdOutcome(outcome.error());
+}
+
+void CrmClient::getAliyunPkByAliyunIdAsync(const GetAliyunPkByAliyunIdRequest& request, const GetAliyunPkByAliyunIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAliyunPkByAliyunId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::GetAliyunPkByAliyunIdOutcomeCallable CrmClient::getAliyunPkByAliyunIdCallable(const GetAliyunPkByAliyunIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAliyunPkByAliyunIdOutcome()>>(
+			[this, request]()
+			{
+			return this->getAliyunPkByAliyunId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrmClient::QueryBidUserCertifiedInfoOutcome CrmClient::queryBidUserCertifiedInfo(const QueryBidUserCertifiedInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryBidUserCertifiedInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryBidUserCertifiedInfoOutcome(QueryBidUserCertifiedInfoResult(outcome.result()));
+	else
+		return QueryBidUserCertifiedInfoOutcome(outcome.error());
+}
+
+void CrmClient::queryBidUserCertifiedInfoAsync(const QueryBidUserCertifiedInfoRequest& request, const QueryBidUserCertifiedInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryBidUserCertifiedInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::QueryBidUserCertifiedInfoOutcomeCallable CrmClient::queryBidUserCertifiedInfoCallable(const QueryBidUserCertifiedInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryBidUserCertifiedInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryBidUserCertifiedInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrmClient::QueryCustomerLabelOutcome CrmClient::queryCustomerLabel(const QueryCustomerLabelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCustomerLabelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCustomerLabelOutcome(QueryCustomerLabelResult(outcome.result()));
+	else
+		return QueryCustomerLabelOutcome(outcome.error());
+}
+
+void CrmClient::queryCustomerLabelAsync(const QueryCustomerLabelRequest& request, const QueryCustomerLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCustomerLabel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::QueryCustomerLabelOutcomeCallable CrmClient::queryCustomerLabelCallable(const QueryCustomerLabelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCustomerLabelOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCustomerLabel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrmClient::RemoveIdentityCertifiedForBidUserOutcome CrmClient::removeIdentityCertifiedForBidUser(const RemoveIdentityCertifiedForBidUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveIdentityCertifiedForBidUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveIdentityCertifiedForBidUserOutcome(RemoveIdentityCertifiedForBidUserResult(outcome.result()));
+	else
+		return RemoveIdentityCertifiedForBidUserOutcome(outcome.error());
+}
+
+void CrmClient::removeIdentityCertifiedForBidUserAsync(const RemoveIdentityCertifiedForBidUserRequest& request, const RemoveIdentityCertifiedForBidUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeIdentityCertifiedForBidUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrmClient::RemoveIdentityCertifiedForBidUserOutcomeCallable CrmClient::removeIdentityCertifiedForBidUserCallable(const RemoveIdentityCertifiedForBidUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveIdentityCertifiedForBidUserOutcome()>>(
+			[this, request]()
+			{
+			return this->removeIdentityCertifiedForBidUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

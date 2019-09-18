@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				QueryKnowledgesRequest();
 				~QueryKnowledgesRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getCoreWordName()const;
-				void setCoreWordName(const std::string& coreWordName);
 				std::string getKnowledgeTitle()const;
 				void setKnowledgeTitle(const std::string& knowledgeTitle);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getCoreWordName()const;
+				void setCoreWordName(const std::string& coreWordName);
 				long getCategoryId()const;
 				void setCategoryId(long categoryId);
 
             private:
-				int pageSize_;
-				std::string coreWordName_;
 				std::string knowledgeTitle_;
 				int pageNumber_;
+				int pageSize_;
+				std::string coreWordName_;
 				long categoryId_;
 
 			};

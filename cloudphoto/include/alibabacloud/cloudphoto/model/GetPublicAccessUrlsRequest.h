@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				GetPublicAccessUrlsRequest();
 				~GetPublicAccessUrlsRequest();
 
-				std::string getDomainType()const;
-				void setDomainType(const std::string& domainType);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				std::vector<long> getPhotoId()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setStoreName(const std::string& storeName);
 				std::string getZoomType()const;
 				void setZoomType(const std::string& zoomType);
+				std::string getDomainType()const;
+				void setDomainType(const std::string& domainType);
 
             private:
-				std::string domainType_;
 				std::string libraryId_;
 				std::vector<long> photoId_;
 				std::string storeName_;
 				std::string zoomType_;
+				std::string domainType_;
 
 			};
 		}

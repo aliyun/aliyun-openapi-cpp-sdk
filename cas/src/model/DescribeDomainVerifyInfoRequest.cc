@@ -25,17 +25,6 @@ DescribeDomainVerifyInfoRequest::DescribeDomainVerifyInfoRequest() :
 DescribeDomainVerifyInfoRequest::~DescribeDomainVerifyInfoRequest()
 {}
 
-std::string DescribeDomainVerifyInfoRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeDomainVerifyInfoRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeDomainVerifyInfoRequest::getOrderId()const
 {
 	return orderId_;
@@ -45,6 +34,28 @@ void DescribeDomainVerifyInfoRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
 	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+std::string DescribeDomainVerifyInfoRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeDomainVerifyInfoRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeDomainVerifyInfoRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeDomainVerifyInfoRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDomainVerifyInfoRequest::getLang()const

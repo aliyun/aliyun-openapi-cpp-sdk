@@ -47,17 +47,6 @@ void GetHdfsCapacityStatisticInfoRequest::setResourceOwnerId(long resourceOwnerI
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GetHdfsCapacityStatisticInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetHdfsCapacityStatisticInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetHdfsCapacityStatisticInfoRequest::getClusterId()const
 {
 	return clusterId_;
@@ -89,5 +78,16 @@ void GetHdfsCapacityStatisticInfoRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetHdfsCapacityStatisticInfoRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetHdfsCapacityStatisticInfoRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

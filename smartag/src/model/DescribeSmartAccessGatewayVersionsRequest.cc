@@ -36,17 +36,6 @@ void DescribeSmartAccessGatewayVersionsRequest::setResourceOwnerId(long resource
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSmartAccessGatewayVersionsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeSmartAccessGatewayVersionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeSmartAccessGatewayVersionsRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void DescribeSmartAccessGatewayVersionsRequest::setRegionId(const std::string& r
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeSmartAccessGatewayVersionsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSmartAccessGatewayVersionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSmartAccessGatewayVersionsRequest::getOwnerAccount()const
@@ -69,17 +69,6 @@ void DescribeSmartAccessGatewayVersionsRequest::setOwnerAccount(const std::strin
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeSmartAccessGatewayVersionsRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void DescribeSmartAccessGatewayVersionsRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long DescribeSmartAccessGatewayVersionsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void DescribeSmartAccessGatewayVersionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeSmartAccessGatewayVersionsRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void DescribeSmartAccessGatewayVersionsRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

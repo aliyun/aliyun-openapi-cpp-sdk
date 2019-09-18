@@ -25,14 +25,3 @@ UpdateUserInfoRequest::UpdateUserInfoRequest() :
 UpdateUserInfoRequest::~UpdateUserInfoRequest()
 {}
 
-std::string UpdateUserInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateUserInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

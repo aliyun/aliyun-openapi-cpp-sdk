@@ -25,17 +25,6 @@ UpdateGtmAccessStrategyRequest::UpdateGtmAccessStrategyRequest() :
 UpdateGtmAccessStrategyRequest::~UpdateGtmAccessStrategyRequest()
 {}
 
-std::string UpdateGtmAccessStrategyRequest::getStrategyName()const
-{
-	return strategyName_;
-}
-
-void UpdateGtmAccessStrategyRequest::setStrategyName(const std::string& strategyName)
-{
-	strategyName_ = strategyName;
-	setCoreParameter("StrategyName", strategyName);
-}
-
 std::string UpdateGtmAccessStrategyRequest::getDefaultAddrPoolId()const
 {
 	return defaultAddrPoolId_;
@@ -47,17 +36,6 @@ void UpdateGtmAccessStrategyRequest::setDefaultAddrPoolId(const std::string& def
 	setCoreParameter("DefaultAddrPoolId", defaultAddrPoolId);
 }
 
-std::string UpdateGtmAccessStrategyRequest::getAccessLines()const
-{
-	return accessLines_;
-}
-
-void UpdateGtmAccessStrategyRequest::setAccessLines(const std::string& accessLines)
-{
-	accessLines_ = accessLines;
-	setCoreParameter("AccessLines", accessLines);
-}
-
 std::string UpdateGtmAccessStrategyRequest::getFailoverAddrPoolId()const
 {
 	return failoverAddrPoolId_;
@@ -67,6 +45,28 @@ void UpdateGtmAccessStrategyRequest::setFailoverAddrPoolId(const std::string& fa
 {
 	failoverAddrPoolId_ = failoverAddrPoolId;
 	setCoreParameter("FailoverAddrPoolId", failoverAddrPoolId);
+}
+
+std::string UpdateGtmAccessStrategyRequest::getStrategyName()const
+{
+	return strategyName_;
+}
+
+void UpdateGtmAccessStrategyRequest::setStrategyName(const std::string& strategyName)
+{
+	strategyName_ = strategyName;
+	setCoreParameter("StrategyName", strategyName);
+}
+
+std::string UpdateGtmAccessStrategyRequest::getAccessLines()const
+{
+	return accessLines_;
+}
+
+void UpdateGtmAccessStrategyRequest::setAccessLines(const std::string& accessLines)
+{
+	accessLines_ = accessLines;
+	setCoreParameter("AccessLines", accessLines);
 }
 
 std::string UpdateGtmAccessStrategyRequest::getUserClientIp()const

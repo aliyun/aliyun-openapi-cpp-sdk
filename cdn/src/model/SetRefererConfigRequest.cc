@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetRefererConfigRequest;
 
 SetRefererConfigRequest::SetRefererConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetRefererConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetRefererConfig")
 {}
 
 SetRefererConfigRequest::~SetRefererConfigRequest()
@@ -36,17 +36,6 @@ void SetRefererConfigRequest::setReferList(const std::string& referList)
 	setCoreParameter("ReferList", referList);
 }
 
-std::string SetRefererConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetRefererConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string SetRefererConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,6 +45,28 @@ void SetRefererConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+long SetRefererConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SetRefererConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetRefererConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetRefererConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetRefererConfigRequest::getReferType()const
@@ -78,17 +89,6 @@ void SetRefererConfigRequest::setDisableAst(const std::string& disableAst)
 {
 	disableAst_ = disableAst;
 	setCoreParameter("DisableAst", disableAst);
-}
-
-long SetRefererConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetRefererConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetRefererConfigRequest::getAllowEmpty()const

@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				SetCcConfigRequest();
 				~SetCcConfigRequest();
 
-				std::string getAllowIps()const;
-				void setAllowIps(const std::string& allowIps);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getAllowIps()const;
+				void setAllowIps(const std::string& allowIps);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 				std::string getBlockIps()const;
 				void setBlockIps(const std::string& blockIps);
 
             private:
-				std::string allowIps_;
-				std::string securityToken_;
 				std::string domainName_;
 				long ownerId_;
+				std::string allowIps_;
+				std::string securityToken_;
 				std::string blockIps_;
 
 			};

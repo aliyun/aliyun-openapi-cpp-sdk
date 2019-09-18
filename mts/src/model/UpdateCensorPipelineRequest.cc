@@ -36,6 +36,28 @@ void UpdateCensorPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpdateCensorPipelineRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateCensorPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateCensorPipelineRequest::getState()const
+{
+	return state_;
+}
+
+void UpdateCensorPipelineRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setCoreParameter("State", state);
+}
+
 std::string UpdateCensorPipelineRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,28 +78,6 @@ void UpdateCensorPipelineRequest::setOwnerAccount(const std::string& ownerAccoun
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string UpdateCensorPipelineRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateCensorPipelineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string UpdateCensorPipelineRequest::getState()const
-{
-	return state_;
-}
-
-void UpdateCensorPipelineRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
 }
 
 std::string UpdateCensorPipelineRequest::getNotifyConfig()const
@@ -113,17 +113,6 @@ void UpdateCensorPipelineRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string UpdateCensorPipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateCensorPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string UpdateCensorPipelineRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,5 +122,16 @@ void UpdateCensorPipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string UpdateCensorPipelineRequest::getName()const
+{
+	return name_;
+}
+
+void UpdateCensorPipelineRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 

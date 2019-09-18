@@ -25,17 +25,6 @@ GetApgroupPortalConfigProgressRequest::GetApgroupPortalConfigProgressRequest() :
 GetApgroupPortalConfigProgressRequest::~GetApgroupPortalConfigProgressRequest()
 {}
 
-long GetApgroupPortalConfigProgressRequest::getId()const
-{
-	return id_;
-}
-
-void GetApgroupPortalConfigProgressRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetApgroupPortalConfigProgressRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetApgroupPortalConfigProgressRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetApgroupPortalConfigProgressRequest::getId()const
+{
+	return id_;
+}
+
+void GetApgroupPortalConfigProgressRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

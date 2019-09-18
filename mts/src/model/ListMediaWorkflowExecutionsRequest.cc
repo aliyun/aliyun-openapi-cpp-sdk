@@ -36,28 +36,6 @@ void ListMediaWorkflowExecutionsRequest::setResourceOwnerId(long resourceOwnerId
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListMediaWorkflowExecutionsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListMediaWorkflowExecutionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ListMediaWorkflowExecutionsRequest::getInputFileURL()const
-{
-	return inputFileURL_;
-}
-
-void ListMediaWorkflowExecutionsRequest::setInputFileURL(const std::string& inputFileURL)
-{
-	inputFileURL_ = inputFileURL;
-	setCoreParameter("InputFileURL", inputFileURL);
-}
-
 std::string ListMediaWorkflowExecutionsRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -67,6 +45,39 @@ void ListMediaWorkflowExecutionsRequest::setNextPageToken(const std::string& nex
 {
 	nextPageToken_ = nextPageToken;
 	setCoreParameter("NextPageToken", nextPageToken);
+}
+
+std::string ListMediaWorkflowExecutionsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListMediaWorkflowExecutionsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowId()const
+{
+	return mediaWorkflowId_;
+}
+
+void ListMediaWorkflowExecutionsRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
+{
+	mediaWorkflowId_ = mediaWorkflowId;
+	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+}
+
+std::string ListMediaWorkflowExecutionsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ListMediaWorkflowExecutionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getOwnerAccount()const
@@ -91,17 +102,6 @@ void ListMediaWorkflowExecutionsRequest::setMaximumPageSize(long maximumPageSize
 	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
-std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowId()const
-{
-	return mediaWorkflowId_;
-}
-
-void ListMediaWorkflowExecutionsRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
-{
-	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
-}
-
 long ListMediaWorkflowExecutionsRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,14 +124,14 @@ void ListMediaWorkflowExecutionsRequest::setMediaWorkflowName(const std::string&
 	setCoreParameter("MediaWorkflowName", mediaWorkflowName);
 }
 
-std::string ListMediaWorkflowExecutionsRequest::getAccessKeyId()const
+std::string ListMediaWorkflowExecutionsRequest::getInputFileURL()const
 {
-	return accessKeyId_;
+	return inputFileURL_;
 }
 
-void ListMediaWorkflowExecutionsRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListMediaWorkflowExecutionsRequest::setInputFileURL(const std::string& inputFileURL)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	inputFileURL_ = inputFileURL;
+	setCoreParameter("InputFileURL", inputFileURL);
 }
 

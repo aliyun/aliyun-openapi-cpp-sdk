@@ -35,33 +35,33 @@ namespace AlibabaCloud
 				ListTimeLinePhotosRequest();
 				~ListTimeLinePhotosRequest();
 
-				int getSize()const;
-				void setSize(int size);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
-				int getPage()const;
-				void setPage(int page);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				std::string getFilterBy()const;
 				void setFilterBy(const std::string& filterBy);
+				int getSize()const;
+				void setSize(int size);
+				int getPage()const;
+				void setPage(int page);
 				std::string getDirection()const;
 				void setDirection(const std::string& direction);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
 
             private:
-				int size_;
 				std::string libraryId_;
 				long endTime_;
 				std::string storeName_;
-				int page_;
 				long startTime_;
 				std::string filterBy_;
+				int size_;
+				int page_;
 				std::string direction_;
 				std::string order_;
 

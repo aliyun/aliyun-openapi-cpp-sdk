@@ -36,6 +36,17 @@ void DescribeConsoleAccessWhiteListRequest::setSrcIP(const std::string& srcIP)
 	setCoreParameter("SrcIP", srcIP);
 }
 
+std::string DescribeConsoleAccessWhiteListRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeConsoleAccessWhiteListRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeConsoleAccessWhiteListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,39 +67,6 @@ void DescribeConsoleAccessWhiteListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeConsoleAccessWhiteListRequest::getQueryProduct()const
-{
-	return queryProduct_;
-}
-
-void DescribeConsoleAccessWhiteListRequest::setQueryProduct(const std::string& queryProduct)
-{
-	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
-}
-
-int DescribeConsoleAccessWhiteListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeConsoleAccessWhiteListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-int DescribeConsoleAccessWhiteListRequest::getWhiteListType()const
-{
-	return whiteListType_;
-}
-
-void DescribeConsoleAccessWhiteListRequest::setWhiteListType(int whiteListType)
-{
-	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
 }
 
 std::string DescribeConsoleAccessWhiteListRequest::getDstIP()const
@@ -113,6 +91,39 @@ void DescribeConsoleAccessWhiteListRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
+int DescribeConsoleAccessWhiteListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeConsoleAccessWhiteListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+int DescribeConsoleAccessWhiteListRequest::getWhiteListType()const
+{
+	return whiteListType_;
+}
+
+void DescribeConsoleAccessWhiteListRequest::setWhiteListType(int whiteListType)
+{
+	whiteListType_ = whiteListType;
+	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+}
+
+std::string DescribeConsoleAccessWhiteListRequest::getQueryProduct()const
+{
+	return queryProduct_;
+}
+
+void DescribeConsoleAccessWhiteListRequest::setQueryProduct(const std::string& queryProduct)
+{
+	queryProduct_ = queryProduct;
+	setCoreParameter("QueryProduct", queryProduct);
+}
+
 std::string DescribeConsoleAccessWhiteListRequest::getStatus()const
 {
 	return status_;
@@ -122,16 +133,5 @@ void DescribeConsoleAccessWhiteListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
 	setCoreParameter("Status", status);
-}
-
-std::string DescribeConsoleAccessWhiteListRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeConsoleAccessWhiteListRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

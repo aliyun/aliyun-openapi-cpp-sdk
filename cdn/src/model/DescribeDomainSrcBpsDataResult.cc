@@ -35,13 +35,9 @@ DescribeDomainSrcBpsDataResult::~DescribeDomainSrcBpsDataResult()
 
 void DescribeDomainSrcBpsDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allSrcBpsDataPerInterval = value["SrcBpsDataPerInterval"]["DataModule"];
 	for (auto value : allSrcBpsDataPerInterval)
@@ -51,8 +47,6 @@ void DescribeDomainSrcBpsDataResult::parse(const std::string &payload)
 			srcBpsDataPerIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
 			srcBpsDataPerIntervalObject.value = value["Value"].asString();
-		if(!value["HttpsValue"].isNull())
-			srcBpsDataPerIntervalObject.httpsValue = value["HttpsValue"].asString();
 		srcBpsDataPerInterval_.push_back(srcBpsDataPerIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

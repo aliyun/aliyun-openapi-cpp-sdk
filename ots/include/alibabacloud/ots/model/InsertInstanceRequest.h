@@ -42,27 +42,27 @@ namespace AlibabaCloud
 
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
-				std::string getClusterType()const;
-				void setClusterType(const std::string& clusterType);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getInstanceName()const;
-				void setInstanceName(const std::string& instanceName);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::vector<TagInfo> getTagInfo()const;
-				void setTagInfo(const std::vector<TagInfo>& tagInfo);
 				std::string getNetwork()const;
 				void setNetwork(const std::string& network);
+				std::string getClusterType()const;
+				void setClusterType(const std::string& clusterType);
+				std::string getInstanceName()const;
+				void setInstanceName(const std::string& instanceName);
+				std::vector<TagInfo> getTagInfo()const;
+				void setTagInfo(const std::vector<TagInfo>& tagInfo);
 
             private:
 				std::string access_key_id_;
-				std::string clusterType_;
 				long resourceOwnerId_;
-				std::string instanceName_;
 				std::string description_;
-				std::vector<TagInfo> tagInfo_;
 				std::string network_;
+				std::string clusterType_;
+				std::string instanceName_;
+				std::vector<TagInfo> tagInfo_;
 
 			};
 		}

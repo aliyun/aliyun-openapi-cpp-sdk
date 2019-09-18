@@ -37,29 +37,29 @@ namespace AlibabaCloud
 
 				std::string getRr()const;
 				void setRr(const std::string& rr);
-				long getRecordId()const;
-				void setRecordId(long recordId);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getType()const;
 				void setType(const std::string& type);
 				int getPriority()const;
 				void setPriority(int priority);
 				int getTtl()const;
 				void setTtl(int ttl);
+				long getRecordId()const;
+				void setRecordId(long recordId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				std::string getValue()const;
 				void setValue(const std::string& value);
 
             private:
 				std::string rr_;
-				long recordId_;
-				std::string userClientIp_;
-				std::string lang_;
 				std::string type_;
 				int priority_;
 				int ttl_;
+				long recordId_;
+				std::string userClientIp_;
+				std::string lang_;
 				std::string value_;
 
 			};

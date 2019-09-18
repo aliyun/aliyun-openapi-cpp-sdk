@@ -36,28 +36,6 @@ void DescribeScalingActivityRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeScalingActivityRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeScalingActivityRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeScalingActivityRequest::getHostGroupId()const
-{
-	return hostGroupId_;
-}
-
-void DescribeScalingActivityRequest::setHostGroupId(const std::string& hostGroupId)
-{
-	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
-}
-
 std::string DescribeScalingActivityRequest::getClusterId()const
 {
 	return clusterId_;
@@ -89,5 +67,27 @@ void DescribeScalingActivityRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeScalingActivityRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeScalingActivityRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeScalingActivityRequest::getHostGroupId()const
+{
+	return hostGroupId_;
+}
+
+void DescribeScalingActivityRequest::setHostGroupId(const std::string& hostGroupId)
+{
+	hostGroupId_ = hostGroupId;
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 

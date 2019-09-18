@@ -47,14 +47,3 @@ void CreateOrderRequest::setCsbId(long csbId)
 	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
-std::string CreateOrderRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateOrderRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ListUsersForGroupRequest();
 				~ListUsersForGroupRequest();
 
+				std::string getGroupName()const;
+				void setGroupName(const std::string& groupName);
 				std::string getMarker()const;
 				void setMarker(const std::string& marker);
 				int getMaxItems()const;
 				void setMaxItems(int maxItems);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
 
             private:
+				std::string groupName_;
 				std::string marker_;
 				int maxItems_;
-				std::string groupName_;
 
 			};
 		}

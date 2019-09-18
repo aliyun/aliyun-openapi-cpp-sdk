@@ -36,6 +36,28 @@ void DescribeCpmcPunishListRequest::setSrcIP(const std::string& srcIP)
 	setCoreParameter("SrcIP", srcIP);
 }
 
+std::string DescribeCpmcPunishListRequest::getPunishType()const
+{
+	return punishType_;
+}
+
+void DescribeCpmcPunishListRequest::setPunishType(const std::string& punishType)
+{
+	punishType_ = punishType;
+	setCoreParameter("PunishType", punishType);
+}
+
+std::string DescribeCpmcPunishListRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeCpmcPunishListRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeCpmcPunishListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,28 +78,6 @@ void DescribeCpmcPunishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeCpmcPunishListRequest::getPunishType()const
-{
-	return punishType_;
-}
-
-void DescribeCpmcPunishListRequest::setPunishType(const std::string& punishType)
-{
-	punishType_ = punishType;
-	setCoreParameter("PunishType", punishType);
-}
-
-int DescribeCpmcPunishListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeCpmcPunishListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeCpmcPunishListRequest::getPunishStatus()const
@@ -102,14 +102,14 @@ void DescribeCpmcPunishListRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string DescribeCpmcPunishListRequest::getSourceCode()const
+int DescribeCpmcPunishListRequest::getCurrentPage()const
 {
-	return sourceCode_;
+	return currentPage_;
 }
 
-void DescribeCpmcPunishListRequest::setSourceCode(const std::string& sourceCode)
+void DescribeCpmcPunishListRequest::setCurrentPage(int currentPage)
 {
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

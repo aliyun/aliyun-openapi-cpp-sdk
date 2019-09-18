@@ -36,6 +36,17 @@ void DescribeAvailableEngineVersionRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAvailableEngineVersionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeAvailableEngineVersionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeAvailableEngineVersionRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeAvailableEngineVersionRequest::setSecurityToken(const std::string& 
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeAvailableEngineVersionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeAvailableEngineVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAvailableEngineVersionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeAvailableEngineVersionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeAvailableEngineVersionRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeAvailableEngineVersionRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAvailableEngineVersionRequest::getDBInstanceId()const
@@ -91,6 +69,28 @@ void DescribeAvailableEngineVersionRequest::setDBInstanceId(const std::string& d
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeAvailableEngineVersionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAvailableEngineVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAvailableEngineVersionRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeAvailableEngineVersionRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeAvailableEngineVersionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void DescribeAvailableEngineVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeAvailableEngineVersionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeAvailableEngineVersionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

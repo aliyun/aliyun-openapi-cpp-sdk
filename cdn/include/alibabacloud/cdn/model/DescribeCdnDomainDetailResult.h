@@ -41,19 +41,24 @@ namespace AlibabaCloud
 						std::string priority;
 						int port;
 						std::string enabled;
-						std::string weight;
 					};
 					std::vector<SourceModel> sourceModels;
 					std::string description;
 					std::string resourceGroupId;
-					std::string scope;
 					std::string domainName;
+					std::string sourceType;
 					std::string gmtModified;
-					std::string cdnType;
 					std::string gmtCreated;
+					int sourcePort;
 					std::string cname;
 					std::string serverCertificateStatus;
+					std::vector<std::string> sources;
 					std::string httpsCname;
+					std::string serverCertificate;
+					std::string scope;
+					std::string region;
+					std::string cdnType;
+					std::string certificateName;
 					std::string domainStatus;
 				};
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::PushObjectCacheRequest;
 
 PushObjectCacheRequest::PushObjectCacheRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "PushObjectCache")
+	RpcServiceRequest("cdn", "2014-11-11", "PushObjectCache")
 {}
 
 PushObjectCacheRequest::~PushObjectCacheRequest()
@@ -34,17 +34,6 @@ void PushObjectCacheRequest::setArea(const std::string& area)
 {
 	area_ = area;
 	setCoreParameter("Area", area);
-}
-
-std::string PushObjectCacheRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void PushObjectCacheRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string PushObjectCacheRequest::getObjectPath()const
@@ -67,5 +56,16 @@ void PushObjectCacheRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string PushObjectCacheRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void PushObjectCacheRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

@@ -35,13 +35,9 @@ DescribeCenRouteMapsResult::~DescribeCenRouteMapsResult()
 
 void DescribeCenRouteMapsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allRouteMaps = value["RouteMaps"]["RouteMap"];
 	for (auto value : allRouteMaps)
@@ -67,8 +63,6 @@ void DescribeCenRouteMapsResult::parse(const std::string &payload)
 			routeMapsObject.cidrMatchMode = value["CidrMatchMode"].asString();
 		if(!value["AsPathMatchMode"].isNull())
 			routeMapsObject.asPathMatchMode = value["AsPathMatchMode"].asString();
-		if(!value["AsPathLength"].isNull())
-			routeMapsObject.asPathLength = std::stoi(value["AsPathLength"].asString());
 		if(!value["CommunityMatchMode"].isNull())
 			routeMapsObject.communityMatchMode = value["CommunityMatchMode"].asString();
 		if(!value["CommunityOperateMode"].isNull())

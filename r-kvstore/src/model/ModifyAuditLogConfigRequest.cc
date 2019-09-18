@@ -36,15 +36,15 @@ void ModifyAuditLogConfigRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyAuditLogConfigRequest::getInstanceId()const
+std::string ModifyAuditLogConfigRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void ModifyAuditLogConfigRequest::setInstanceId(const std::string& instanceId)
+void ModifyAuditLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyAuditLogConfigRequest::getSecurityToken()const
@@ -58,28 +58,6 @@ void ModifyAuditLogConfigRequest::setSecurityToken(const std::string& securityTo
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string ModifyAuditLogConfigRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyAuditLogConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyAuditLogConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyAuditLogConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyAuditLogConfigRequest::getAuditCommand()const
 {
 	return auditCommand_;
@@ -89,6 +67,28 @@ void ModifyAuditLogConfigRequest::setAuditCommand(const std::string& auditComman
 {
 	auditCommand_ = auditCommand;
 	setCoreParameter("AuditCommand", auditCommand);
+}
+
+std::string ModifyAuditLogConfigRequest::getRetention()const
+{
+	return retention_;
+}
+
+void ModifyAuditLogConfigRequest::setRetention(const std::string& retention)
+{
+	retention_ = retention;
+	setCoreParameter("Retention", retention);
+}
+
+std::string ModifyAuditLogConfigRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyAuditLogConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyAuditLogConfigRequest::getOwnerAccount()const
@@ -113,25 +113,14 @@ void ModifyAuditLogConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ModifyAuditLogConfigRequest::getRetention()const
+std::string ModifyAuditLogConfigRequest::getInstanceId()const
 {
-	return retention_;
+	return instanceId_;
 }
 
-void ModifyAuditLogConfigRequest::setRetention(const std::string& retention)
+void ModifyAuditLogConfigRequest::setInstanceId(const std::string& instanceId)
 {
-	retention_ = retention;
-	setCoreParameter("Retention", retention);
-}
-
-std::string ModifyAuditLogConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyAuditLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

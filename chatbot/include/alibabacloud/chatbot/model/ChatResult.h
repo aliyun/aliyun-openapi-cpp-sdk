@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct Text
 					{
+						std::string intentName;
 						std::string content;
 						std::string answerSource;
 						std::string metaData;

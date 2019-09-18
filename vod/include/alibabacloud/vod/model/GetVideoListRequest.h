@@ -37,39 +37,39 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				long getCateId()const;
-				void setCateId(long cateId);
-				int getPageNo()const;
-				void setPageNo(int pageNo);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getSortBy()const;
-				void setSortBy(const std::string& sortBy);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 				std::string getStorageLocation()const;
 				void setStorageLocation(const std::string& storageLocation);
+				long getCateId()const;
+				void setCateId(long cateId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getPageNo()const;
+				void setPageNo(int pageNo);
+				std::string getSortBy()const;
+				void setSortBy(const std::string& sortBy);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				long cateId_;
-				int pageNo_;
-				int pageSize_;
-				std::string endTime_;
-				std::string sortBy_;
 				std::string startTime_;
-				long ownerId_;
-				std::string status_;
 				std::string storageLocation_;
+				long cateId_;
+				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string endTime_;
+				long ownerId_;
+				int pageNo_;
+				std::string sortBy_;
+				std::string status_;
 
 			};
 		}

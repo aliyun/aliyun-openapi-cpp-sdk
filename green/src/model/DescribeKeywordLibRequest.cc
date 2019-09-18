@@ -25,17 +25,6 @@ DescribeKeywordLibRequest::DescribeKeywordLibRequest() :
 DescribeKeywordLibRequest::~DescribeKeywordLibRequest()
 {}
 
-std::string DescribeKeywordLibRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeKeywordLibRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeKeywordLibRequest::getServiceModule()const
 {
 	return serviceModule_;
@@ -45,6 +34,17 @@ void DescribeKeywordLibRequest::setServiceModule(const std::string& serviceModul
 {
 	serviceModule_ = serviceModule;
 	setCoreParameter("ServiceModule", serviceModule);
+}
+
+std::string DescribeKeywordLibRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeKeywordLibRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeKeywordLibRequest::getLang()const

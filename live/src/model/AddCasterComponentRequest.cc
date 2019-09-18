@@ -25,39 +25,6 @@ AddCasterComponentRequest::AddCasterComponentRequest() :
 AddCasterComponentRequest::~AddCasterComponentRequest()
 {}
 
-std::string AddCasterComponentRequest::getComponentType()const
-{
-	return componentType_;
-}
-
-void AddCasterComponentRequest::setComponentType(const std::string& componentType)
-{
-	componentType_ = componentType;
-	setCoreParameter("ComponentType", componentType);
-}
-
-std::string AddCasterComponentRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AddCasterComponentRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string AddCasterComponentRequest::getLocationId()const
-{
-	return locationId_;
-}
-
-void AddCasterComponentRequest::setLocationId(const std::string& locationId)
-{
-	locationId_ = locationId;
-	setCoreParameter("LocationId", locationId);
-}
-
 std::string AddCasterComponentRequest::getImageLayerContent()const
 {
 	return imageLayerContent_;
@@ -67,50 +34,6 @@ void AddCasterComponentRequest::setImageLayerContent(const std::string& imageLay
 {
 	imageLayerContent_ = imageLayerContent;
 	setCoreParameter("ImageLayerContent", imageLayerContent);
-}
-
-std::string AddCasterComponentRequest::getCasterId()const
-{
-	return casterId_;
-}
-
-void AddCasterComponentRequest::setCasterId(const std::string& casterId)
-{
-	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
-}
-
-std::string AddCasterComponentRequest::getEffect()const
-{
-	return effect_;
-}
-
-void AddCasterComponentRequest::setEffect(const std::string& effect)
-{
-	effect_ = effect;
-	setCoreParameter("Effect", effect);
-}
-
-std::string AddCasterComponentRequest::getComponentLayer()const
-{
-	return componentLayer_;
-}
-
-void AddCasterComponentRequest::setComponentLayer(const std::string& componentLayer)
-{
-	componentLayer_ = componentLayer;
-	setCoreParameter("ComponentLayer", componentLayer);
-}
-
-std::string AddCasterComponentRequest::getCaptionLayerContent()const
-{
-	return captionLayerContent_;
-}
-
-void AddCasterComponentRequest::setCaptionLayerContent(const std::string& captionLayerContent)
-{
-	captionLayerContent_ = captionLayerContent;
-	setCoreParameter("CaptionLayerContent", captionLayerContent);
 }
 
 std::string AddCasterComponentRequest::getComponentName()const
@@ -124,6 +47,28 @@ void AddCasterComponentRequest::setComponentName(const std::string& componentNam
 	setCoreParameter("ComponentName", componentName);
 }
 
+std::string AddCasterComponentRequest::getCasterId()const
+{
+	return casterId_;
+}
+
+void AddCasterComponentRequest::setCasterId(const std::string& casterId)
+{
+	casterId_ = casterId;
+	setCoreParameter("CasterId", casterId);
+}
+
+std::string AddCasterComponentRequest::getComponentLayer()const
+{
+	return componentLayer_;
+}
+
+void AddCasterComponentRequest::setComponentLayer(const std::string& componentLayer)
+{
+	componentLayer_ = componentLayer;
+	setCoreParameter("ComponentLayer", componentLayer);
+}
+
 long AddCasterComponentRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -133,6 +78,50 @@ void AddCasterComponentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AddCasterComponentRequest::getComponentType()const
+{
+	return componentType_;
+}
+
+void AddCasterComponentRequest::setComponentType(const std::string& componentType)
+{
+	componentType_ = componentType;
+	setCoreParameter("ComponentType", componentType);
+}
+
+std::string AddCasterComponentRequest::getLocationId()const
+{
+	return locationId_;
+}
+
+void AddCasterComponentRequest::setLocationId(const std::string& locationId)
+{
+	locationId_ = locationId;
+	setCoreParameter("LocationId", locationId);
+}
+
+std::string AddCasterComponentRequest::getEffect()const
+{
+	return effect_;
+}
+
+void AddCasterComponentRequest::setEffect(const std::string& effect)
+{
+	effect_ = effect;
+	setCoreParameter("Effect", effect);
+}
+
+std::string AddCasterComponentRequest::getCaptionLayerContent()const
+{
+	return captionLayerContent_;
+}
+
+void AddCasterComponentRequest::setCaptionLayerContent(const std::string& captionLayerContent)
+{
+	captionLayerContent_ = captionLayerContent;
+	setCoreParameter("CaptionLayerContent", captionLayerContent);
 }
 
 std::string AddCasterComponentRequest::getTextLayerContent()const

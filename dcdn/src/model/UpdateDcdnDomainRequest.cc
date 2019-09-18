@@ -36,17 +36,6 @@ void UpdateDcdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomai
 	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
-std::string UpdateDcdnDomainRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void UpdateDcdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string UpdateDcdnDomainRequest::getSources()const
 {
 	return sources_;
@@ -56,17 +45,6 @@ void UpdateDcdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
 	setCoreParameter("Sources", sources);
-}
-
-std::string UpdateDcdnDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void UpdateDcdnDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateDcdnDomainRequest::getDomainName()const
@@ -89,5 +67,27 @@ void UpdateDcdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UpdateDcdnDomainRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void UpdateDcdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string UpdateDcdnDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void UpdateDcdnDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

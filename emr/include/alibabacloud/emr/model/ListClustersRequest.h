@@ -39,40 +39,40 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::vector<std::string> getStatusList()const;
 				void setStatusList(const std::vector<std::string>& statusList);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::vector<std::string> getClusterTypeList()const;
-				void setClusterTypeList(const std::vector<std::string>& clusterTypeList);
 				bool getIsDesc()const;
 				void setIsDesc(bool isDesc);
-				std::string getCreateType()const;
-				void setCreateType(const std::string& createType);
 				std::string getDepositType()const;
 				void setDepositType(const std::string& depositType);
-				bool getDefaultStatus()const;
-				void setDefaultStatus(bool defaultStatus);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getMachineType()const;
 				void setMachineType(const std::string& machineType);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getCreateType()const;
+				void setCreateType(const std::string& createType);
+				bool getDefaultStatus()const;
+				void setDefaultStatus(bool defaultStatus);
+				std::vector<std::string> getClusterTypeList()const;
+				void setClusterTypeList(const std::vector<std::string>& clusterTypeList);
 
             private:
 				long resourceOwnerId_;
 				std::vector<std::string> statusList_;
-				std::string regionId_;
-				int pageSize_;
-				std::vector<std::string> clusterTypeList_;
 				bool isDesc_;
-				std::string createType_;
 				std::string depositType_;
-				bool defaultStatus_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string machineType_;
+				std::string regionId_;
+				int pageSize_;
+				std::string createType_;
+				bool defaultStatus_;
+				std::vector<std::string> clusterTypeList_;
 
 			};
 		}

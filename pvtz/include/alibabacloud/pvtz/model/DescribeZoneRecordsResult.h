@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					int priority;
 					std::string value;
 					long recordId;
+					std::string regionId;
 					int ttl;
 				};
 

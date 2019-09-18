@@ -25,17 +25,6 @@ DeleteScalingGroupRequest::DeleteScalingGroupRequest() :
 DeleteScalingGroupRequest::~DeleteScalingGroupRequest()
 {}
 
-std::string DeleteScalingGroupRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DeleteScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DeleteScalingGroupRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;
@@ -47,6 +36,17 @@ void DeleteScalingGroupRequest::setScalingGroupId(const std::string& scalingGrou
 	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
+std::string DeleteScalingGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 bool DeleteScalingGroupRequest::getForceDelete()const
 {
 	return forceDelete_;
@@ -56,6 +56,17 @@ void DeleteScalingGroupRequest::setForceDelete(bool forceDelete)
 {
 	forceDelete_ = forceDelete;
 	setCoreParameter("ForceDelete", forceDelete ? "true" : "false");
+}
+
+std::string DeleteScalingGroupRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DeleteScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteScalingGroupRequest::getOwnerAccount()const
@@ -78,16 +89,5 @@ void DeleteScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteScalingGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

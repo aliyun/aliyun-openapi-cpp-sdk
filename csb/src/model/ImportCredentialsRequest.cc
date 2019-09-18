@@ -47,14 +47,3 @@ void ImportCredentialsRequest::setCsbId(long csbId)
 	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
-std::string ImportCredentialsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ImportCredentialsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

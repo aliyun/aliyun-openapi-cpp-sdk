@@ -39,31 +39,31 @@ namespace AlibabaCloud
 				void setEmailVerificationCode(const std::string& emailVerificationCode);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getPhoneNumberVerificationCode()const;
 				void setPhoneNumberVerificationCode(const std::string& phoneNumberVerificationCode);
+				std::string getPhoneNumber()const;
+				void setPhoneNumber(const std::string& phoneNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getBizId()const;
 				void setBizId(const std::string& bizId);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getPhoneNumber()const;
-				void setPhoneNumber(const std::string& phoneNumber);
 				std::string getEmail()const;
 				void setEmail(const std::string& email);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string emailVerificationCode_;
 				long resourceOwnerId_;
-				std::string regionId_;
 				std::string phoneNumberVerificationCode_;
+				std::string phoneNumber_;
+				std::string accessKeyId_;
+				std::string regionId_;
 				std::string bizId_;
 				std::string name_;
-				std::string phoneNumber_;
 				std::string email_;
-				std::string accessKeyId_;
 
 			};
 		}

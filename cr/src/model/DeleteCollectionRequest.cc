@@ -25,17 +25,6 @@ DeleteCollectionRequest::DeleteCollectionRequest() :
 DeleteCollectionRequest::~DeleteCollectionRequest()
 {}
 
-std::string DeleteCollectionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteCollectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long DeleteCollectionRequest::getCollectionId()const
 {
 	return collectionId_;

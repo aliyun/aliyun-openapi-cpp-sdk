@@ -80,17 +80,6 @@ void CreateNotifyPolicyRequest::setStartTime(long startTime)
 	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
-std::string CreateNotifyPolicyRequest::getDimensions()const
-{
-	return dimensions_;
-}
-
-void CreateNotifyPolicyRequest::setDimensions(const std::string& dimensions)
-{
-	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
-}
-
 std::string CreateNotifyPolicyRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -100,5 +89,16 @@ void CreateNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateNotifyPolicyRequest::getDimensions()const
+{
+	return dimensions_;
+}
+
+void CreateNotifyPolicyRequest::setDimensions(const std::string& dimensions)
+{
+	dimensions_ = dimensions;
+	setCoreParameter("Dimensions", dimensions);
 }
 

@@ -35,28 +35,25 @@ namespace AlibabaCloud
 				UpdateFaceGroupRequest();
 				~UpdateFaceGroupRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getSetId()const;
-				void setSetId(const std::string& setId);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getGroupName()const;
+				void setGroupName(const std::string& groupName);
+				std::string getSetId()const;
+				void setSetId(const std::string& setId);
 				std::string getGroupCoverFaceId()const;
 				void setGroupCoverFaceId(const std::string& groupCoverFaceId);
 
             private:
-				std::string regionId_;
-				std::string groupId_;
 				std::string project_;
-				std::string setId_;
-				std::string groupName_;
 				std::string accessKeyId_;
+				std::string groupId_;
+				std::string groupName_;
+				std::string setId_;
 				std::string groupCoverFaceId_;
 
 			};

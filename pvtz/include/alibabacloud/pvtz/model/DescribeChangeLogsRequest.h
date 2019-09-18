@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				DescribeChangeLogsRequest();
 				~DescribeChangeLogsRequest();
 
+				long getStartTimestamp()const;
+				void setStartTimestamp(long startTimestamp);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				long getEndTimestamp()const;
+				void setEndTimestamp(long endTimestamp);
 				std::string getEntityType()const;
 				void setEntityType(const std::string& entityType);
 				int getPageSize()const;
@@ -47,23 +53,17 @@ namespace AlibabaCloud
 				void setKeyword(const std::string& keyword);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getStartTimestamp()const;
-				void setStartTimestamp(long startTimestamp);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				long getEndTimestamp()const;
-				void setEndTimestamp(long endTimestamp);
 
             private:
+				long startTimestamp_;
+				int pageNumber_;
+				long endTimestamp_;
 				std::string entityType_;
 				int pageSize_;
 				std::string userClientIp_;
 				std::string zoneId_;
 				std::string keyword_;
 				std::string lang_;
-				long startTimestamp_;
-				int pageNumber_;
-				long endTimestamp_;
 
 			};
 		}

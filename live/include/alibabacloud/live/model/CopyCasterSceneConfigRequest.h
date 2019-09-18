@@ -37,21 +37,18 @@ namespace AlibabaCloud
 
 				std::string getFromSceneId()const;
 				void setFromSceneId(const std::string& fromSceneId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				std::string getToSceneId()const;
+				void setToSceneId(const std::string& toSceneId);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getToSceneId()const;
-				void setToSceneId(const std::string& toSceneId);
 
             private:
 				std::string fromSceneId_;
-				std::string regionId_;
+				std::string toSceneId_;
 				std::string casterId_;
 				long ownerId_;
-				std::string toSceneId_;
 
 			};
 		}

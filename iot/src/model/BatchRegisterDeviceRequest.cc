@@ -25,17 +25,6 @@ BatchRegisterDeviceRequest::BatchRegisterDeviceRequest() :
 BatchRegisterDeviceRequest::~BatchRegisterDeviceRequest()
 {}
 
-std::string BatchRegisterDeviceRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void BatchRegisterDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
 int BatchRegisterDeviceRequest::getCount()const
 {
 	return count_;
@@ -67,5 +56,16 @@ void BatchRegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BatchRegisterDeviceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void BatchRegisterDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 

@@ -36,6 +36,17 @@ void AddGtmMonitorRequest::setMonitorExtendInfo(const std::string& monitorExtend
 	setCoreParameter("MonitorExtendInfo", monitorExtendInfo);
 }
 
+int AddGtmMonitorRequest::getTimeout()const
+{
+	return timeout_;
+}
+
+void AddGtmMonitorRequest::setTimeout(int timeout)
+{
+	timeout_ = timeout;
+	setCoreParameter("Timeout", std::to_string(timeout));
+}
+
 std::string AddGtmMonitorRequest::getAddrPoolId()const
 {
 	return addrPoolId_;
@@ -56,17 +67,6 @@ void AddGtmMonitorRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
 	setCoreParameter("UserClientIp", userClientIp);
-}
-
-std::string AddGtmMonitorRequest::getName()const
-{
-	return name_;
-}
-
-void AddGtmMonitorRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 int AddGtmMonitorRequest::getEvaluationCount()const
@@ -111,17 +111,6 @@ void AddGtmMonitorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int AddGtmMonitorRequest::getTimeout()const
-{
-	return timeout_;
-}
-
-void AddGtmMonitorRequest::setTimeout(int timeout)
-{
-	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
 }
 
 std::vector<AddGtmMonitorRequest::IspCityNode> AddGtmMonitorRequest::getIspCityNode()const

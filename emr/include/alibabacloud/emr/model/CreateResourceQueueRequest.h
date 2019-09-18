@@ -44,12 +44,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				long getParentQueueId()const;
-				void setParentQueueId(long parentQueueId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getQualifiedName()const;
 				void setQualifiedName(const std::string& qualifiedName);
 				long getResourcePoolId()const;
@@ -58,22 +52,28 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				bool getLeaf()const;
 				void setLeaf(bool leaf);
-				std::vector<Config> getConfig()const;
-				void setConfig(const std::vector<Config>& config);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getParentQueueId()const;
+				void setParentQueueId(long parentQueueId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::vector<Config> getConfig()const;
+				void setConfig(const std::vector<Config>& config);
 
             private:
 				long resourceOwnerId_;
-				long parentQueueId_;
-				std::string regionId_;
-				std::string name_;
 				std::string qualifiedName_;
 				long resourcePoolId_;
 				std::string clusterId_;
 				bool leaf_;
-				std::vector<Config> config_;
 				std::string accessKeyId_;
+				long parentQueueId_;
+				std::string regionId_;
+				std::string name_;
+				std::vector<Config> config_;
 
 			};
 		}

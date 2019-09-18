@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getDevicePosition()const;
 				void setDevicePosition(const std::string& devicePosition);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
 				long getDid()const;
 				void setDid(long did);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string devicePosition_;
+				std::string accessKeyId_;
 				std::string deviceName_;
 				long did_;
-				std::string accessKeyId_;
 
 			};
 		}

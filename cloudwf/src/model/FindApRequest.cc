@@ -25,17 +25,6 @@ FindApRequest::FindApRequest() :
 FindApRequest::~FindApRequest()
 {}
 
-long FindApRequest::getId()const
-{
-	return id_;
-}
-
-void FindApRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string FindApRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void FindApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long FindApRequest::getId()const
+{
+	return id_;
+}
+
+void FindApRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

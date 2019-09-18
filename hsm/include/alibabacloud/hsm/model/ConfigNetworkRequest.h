@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				ConfigNetworkRequest();
 				~ConfigNetworkRequest();
 
-				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getIp()const;
+				void setIp(const std::string& ip);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
-				std::string getIp()const;
-				void setIp(const std::string& ip);
 
             private:
-				std::string vSwitchId_;
 				long resourceOwnerId_;
+				std::string ip_;
+				std::string vSwitchId_;
 				std::string instanceId_;
 				std::string sourceIp_;
 				std::string vpcId_;
-				std::string ip_;
 
 			};
 		}

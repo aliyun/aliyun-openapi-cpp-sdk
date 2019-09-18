@@ -51,32 +51,32 @@ namespace AlibabaCloud
 				void setRackInfo(const std::string& rackInfo);
 				std::string getRole()const;
 				void setRole(const std::string& role);
-				std::string getSerialNumber()const;
-				void setSerialNumber(const std::string& serialNumber);
 				std::string getHostType()const;
 				void setHostType(const std::string& hostType);
 				std::string getSecurityGroupId()const;
 				void setSecurityGroupId(const std::string& securityGroupId);
-				std::vector<HpHostDisk> getHpHostDisk()const;
-				void setHpHostDisk(const std::vector<HpHostDisk>& hpHostDisk);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getVswitchId()const;
-				void setVswitchId(const std::string& vswitchId);
 				std::string getHpHostBizId()const;
 				void setHpHostBizId(const std::string& hpHostBizId);
-				std::string getExternalKey()const;
-				void setExternalKey(const std::string& externalKey);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getVpcId()const;
-				void setVpcId(const std::string& vpcId);
 				std::string getInnerIp()const;
 				void setInnerIp(const std::string& innerIp);
 				std::string getExternalIp()const;
 				void setExternalIp(const std::string& externalIp);
+				std::string getSerialNumber()const;
+				void setSerialNumber(const std::string& serialNumber);
+				std::vector<HpHostDisk> getHpHostDisk()const;
+				void setHpHostDisk(const std::vector<HpHostDisk>& hpHostDisk);
+				std::string getVswitchId()const;
+				void setVswitchId(const std::string& vswitchId);
+				std::string getExternalKey()const;
+				void setExternalKey(const std::string& externalKey);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
 				int cpuCore_;
@@ -84,19 +84,19 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string rackInfo_;
 				std::string role_;
-				std::string serialNumber_;
 				std::string hostType_;
 				std::string securityGroupId_;
-				std::vector<HpHostDisk> hpHostDisk_;
 				std::string accessKeyId_;
-				std::string vswitchId_;
 				std::string hpHostBizId_;
-				std::string externalKey_;
 				std::string hostName_;
 				std::string regionId_;
-				std::string vpcId_;
 				std::string innerIp_;
 				std::string externalIp_;
+				std::string serialNumber_;
+				std::vector<HpHostDisk> hpHostDisk_;
+				std::string vswitchId_;
+				std::string externalKey_;
+				std::string vpcId_;
 
 			};
 		}

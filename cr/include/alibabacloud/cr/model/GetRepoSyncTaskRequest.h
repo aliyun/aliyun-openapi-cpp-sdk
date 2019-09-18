@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				GetRepoSyncTaskRequest();
 				~GetRepoSyncTaskRequest();
 
+				std::string getSyncTaskId()const;
+				void setSyncTaskId(const std::string& syncTaskId);
 				std::string getRepoNamespace()const;
 				void setRepoNamespace(const std::string& repoNamespace);
 				std::string getRepoName()const;
 				void setRepoName(const std::string& repoName);
-				std::string getSyncTaskId()const;
-				void setSyncTaskId(const std::string& syncTaskId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
             private:
+				std::string syncTaskId_;
 				std::string repoNamespace_;
 				std::string repoName_;
-				std::string syncTaskId_;
-				std::string regionId_;
 
 			};
 		}

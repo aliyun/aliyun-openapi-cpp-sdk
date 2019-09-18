@@ -25,17 +25,6 @@ FetchPhotosRequest::FetchPhotosRequest() :
 FetchPhotosRequest::~FetchPhotosRequest()
 {}
 
-int FetchPhotosRequest::getSize()const
-{
-	return size_;
-}
-
-void FetchPhotosRequest::setSize(int size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string FetchPhotosRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -67,6 +56,17 @@ void FetchPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
+}
+
+int FetchPhotosRequest::getSize()const
+{
+	return size_;
+}
+
+void FetchPhotosRequest::setSize(int size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string FetchPhotosRequest::getState()const

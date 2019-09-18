@@ -25,6 +25,28 @@ UpdateEntityRequest::UpdateEntityRequest() :
 UpdateEntityRequest::~UpdateEntityRequest()
 {}
 
+std::string UpdateEntityRequest::getEntityName()const
+{
+	return entityName_;
+}
+
+void UpdateEntityRequest::setEntityName(const std::string& entityName)
+{
+	entityName_ = entityName;
+	setCoreParameter("EntityName", entityName);
+}
+
+long UpdateEntityRequest::getEntityId()const
+{
+	return entityId_;
+}
+
+void UpdateEntityRequest::setEntityId(long entityId)
+{
+	entityId_ = entityId;
+	setCoreParameter("EntityId", std::to_string(entityId));
+}
+
 std::string UpdateEntityRequest::getRegex()const
 {
 	return regex_;
@@ -56,27 +78,5 @@ void UpdateEntityRequest::setMembers(const std::string& members)
 {
 	members_ = members;
 	setCoreParameter("Members", members);
-}
-
-std::string UpdateEntityRequest::getEntityName()const
-{
-	return entityName_;
-}
-
-void UpdateEntityRequest::setEntityName(const std::string& entityName)
-{
-	entityName_ = entityName;
-	setCoreParameter("EntityName", entityName);
-}
-
-long UpdateEntityRequest::getEntityId()const
-{
-	return entityId_;
-}
-
-void UpdateEntityRequest::setEntityId(long entityId)
-{
-	entityId_ = entityId;
-	setCoreParameter("EntityId", std::to_string(entityId));
 }
 

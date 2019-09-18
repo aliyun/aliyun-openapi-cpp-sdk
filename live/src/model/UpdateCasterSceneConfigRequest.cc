@@ -25,6 +25,17 @@ UpdateCasterSceneConfigRequest::UpdateCasterSceneConfigRequest() :
 UpdateCasterSceneConfigRequest::~UpdateCasterSceneConfigRequest()
 {}
 
+std::string UpdateCasterSceneConfigRequest::getLayoutId()const
+{
+	return layoutId_;
+}
+
+void UpdateCasterSceneConfigRequest::setLayoutId(const std::string& layoutId)
+{
+	layoutId_ = layoutId;
+	setCoreParameter("LayoutId", layoutId);
+}
+
 std::vector<std::string> UpdateCasterSceneConfigRequest::getComponentId()const
 {
 	return componentId_;
@@ -35,17 +46,6 @@ void UpdateCasterSceneConfigRequest::setComponentId(const std::vector<std::strin
 	componentId_ = componentId;
 	for(int i = 0; i!= componentId.size(); i++)
 		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
-}
-
-std::string UpdateCasterSceneConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateCasterSceneConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateCasterSceneConfigRequest::getCasterId()const
@@ -59,17 +59,6 @@ void UpdateCasterSceneConfigRequest::setCasterId(const std::string& casterId)
 	setCoreParameter("CasterId", casterId);
 }
 
-std::string UpdateCasterSceneConfigRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void UpdateCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
-{
-	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
-}
-
 long UpdateCasterSceneConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -81,14 +70,14 @@ void UpdateCasterSceneConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UpdateCasterSceneConfigRequest::getLayoutId()const
+std::string UpdateCasterSceneConfigRequest::getSceneId()const
 {
-	return layoutId_;
+	return sceneId_;
 }
 
-void UpdateCasterSceneConfigRequest::setLayoutId(const std::string& layoutId)
+void UpdateCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
 {
-	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
+	sceneId_ = sceneId;
+	setCoreParameter("SceneId", sceneId);
 }
 

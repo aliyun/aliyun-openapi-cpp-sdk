@@ -25,17 +25,6 @@ GetApgroupSsidConfigProgressRequest::GetApgroupSsidConfigProgressRequest() :
 GetApgroupSsidConfigProgressRequest::~GetApgroupSsidConfigProgressRequest()
 {}
 
-long GetApgroupSsidConfigProgressRequest::getId()const
-{
-	return id_;
-}
-
-void GetApgroupSsidConfigProgressRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetApgroupSsidConfigProgressRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetApgroupSsidConfigProgressRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetApgroupSsidConfigProgressRequest::getId()const
+{
+	return id_;
+}
+
+void GetApgroupSsidConfigProgressRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

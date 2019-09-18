@@ -25,17 +25,6 @@ AuthenticateSigRequest::AuthenticateSigRequest() :
 AuthenticateSigRequest::~AuthenticateSigRequest()
 {}
 
-std::string AuthenticateSigRequest::getSig()const
-{
-	return sig_;
-}
-
-void AuthenticateSigRequest::setSig(const std::string& sig)
-{
-	sig_ = sig;
-	setCoreParameter("Sig", sig);
-}
-
 std::string AuthenticateSigRequest::getRemoteIp()const
 {
 	return remoteIp_;
@@ -45,28 +34,6 @@ void AuthenticateSigRequest::setRemoteIp(const std::string& remoteIp)
 {
 	remoteIp_ = remoteIp;
 	setCoreParameter("RemoteIp", remoteIp);
-}
-
-std::string AuthenticateSigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void AuthenticateSigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string AuthenticateSigRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void AuthenticateSigRequest::setAppKey(const std::string& appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
 }
 
 std::string AuthenticateSigRequest::getSessionId()const
@@ -80,6 +47,39 @@ void AuthenticateSigRequest::setSessionId(const std::string& sessionId)
 	setCoreParameter("SessionId", sessionId);
 }
 
+std::string AuthenticateSigRequest::getScene()const
+{
+	return scene_;
+}
+
+void AuthenticateSigRequest::setScene(const std::string& scene)
+{
+	scene_ = scene;
+	setCoreParameter("Scene", scene);
+}
+
+std::string AuthenticateSigRequest::getSig()const
+{
+	return sig_;
+}
+
+void AuthenticateSigRequest::setSig(const std::string& sig)
+{
+	sig_ = sig;
+	setCoreParameter("Sig", sig);
+}
+
+std::string AuthenticateSigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void AuthenticateSigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
 std::string AuthenticateSigRequest::getToken()const
 {
 	return token_;
@@ -91,14 +91,14 @@ void AuthenticateSigRequest::setToken(const std::string& token)
 	setCoreParameter("Token", token);
 }
 
-std::string AuthenticateSigRequest::getScene()const
+std::string AuthenticateSigRequest::getAppKey()const
 {
-	return scene_;
+	return appKey_;
 }
 
-void AuthenticateSigRequest::setScene(const std::string& scene)
+void AuthenticateSigRequest::setAppKey(const std::string& appKey)
 {
-	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	appKey_ = appKey;
+	setCoreParameter("AppKey", appKey);
 }
 

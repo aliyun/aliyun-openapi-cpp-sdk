@@ -36,6 +36,17 @@ void DescribeEmrMainVersionRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeEmrMainVersionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeEmrMainVersionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeEmrMainVersionRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void DescribeEmrMainVersionRequest::setEmrVersion(const std::string& emrVersion)
 {
 	emrVersion_ = emrVersion;
 	setCoreParameter("EmrVersion", emrVersion);
-}
-
-std::string DescribeEmrMainVersionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeEmrMainVersionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

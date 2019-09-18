@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				PreloadVodObjectCachesRequest();
 				~PreloadVodObjectCachesRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getObjectPath()const;
 				void setObjectPath(const std::string& objectPath);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string securityToken_;
 				std::string objectPath_;
 				long ownerId_;
+				std::string securityToken_;
 
 			};
 		}

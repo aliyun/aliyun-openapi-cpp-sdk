@@ -25,15 +25,15 @@ UpdateDcdnIpaDomainRequest::UpdateDcdnIpaDomainRequest() :
 UpdateDcdnIpaDomainRequest::~UpdateDcdnIpaDomainRequest()
 {}
 
-std::string UpdateDcdnIpaDomainRequest::getTopLevelDomain()const
+std::string UpdateDcdnIpaDomainRequest::getSources()const
 {
-	return topLevelDomain_;
+	return sources_;
 }
 
-void UpdateDcdnIpaDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+void UpdateDcdnIpaDomainRequest::setSources(const std::string& sources)
 {
-	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	sources_ = sources;
+	setCoreParameter("Sources", sources);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getResourceGroupId()const
@@ -47,17 +47,6 @@ void UpdateDcdnIpaDomainRequest::setResourceGroupId(const std::string& resourceG
 	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string UpdateDcdnIpaDomainRequest::getSources()const
-{
-	return sources_;
-}
-
-void UpdateDcdnIpaDomainRequest::setSources(const std::string& sources)
-{
-	sources_ = sources;
-	setCoreParameter("Sources", sources);
-}
-
 std::string UpdateDcdnIpaDomainRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -67,6 +56,17 @@ void UpdateDcdnIpaDomainRequest::setSecurityToken(const std::string& securityTok
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string UpdateDcdnIpaDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void UpdateDcdnIpaDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getDomainName()const

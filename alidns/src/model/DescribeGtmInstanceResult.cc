@@ -35,13 +35,9 @@ DescribeGtmInstanceResult::~DescribeGtmInstanceResult()
 
 void DescribeGtmInstanceResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
@@ -69,6 +65,10 @@ void DescribeGtmInstanceResult::parse(const std::string &payload)
 		alertGroup_ = value["AlertGroup"].asString();
 	if(!value["CnameMode"].isNull())
 		cnameMode_ = value["CnameMode"].asString();
+	if(!value["AccessStrategyNum"].isNull())
+		accessStrategyNum_ = std::stoi(value["AccessStrategyNum"].asString());
+	if(!value["AddressPoolNum"].isNull())
+		addressPoolNum_ = std::stoi(value["AddressPoolNum"].asString());
 
 }
 
@@ -125,6 +125,16 @@ std::string DescribeGtmInstanceResult::getVersionCode()const
 std::string DescribeGtmInstanceResult::getAlertGroup()const
 {
 	return alertGroup_;
+}
+
+int DescribeGtmInstanceResult::getAddressPoolNum()const
+{
+	return addressPoolNum_;
+}
+
+int DescribeGtmInstanceResult::getAccessStrategyNum()const
+{
+	return accessStrategyNum_;
 }
 
 std::string DescribeGtmInstanceResult::getExpireTime()const

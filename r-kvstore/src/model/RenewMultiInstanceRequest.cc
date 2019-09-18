@@ -36,6 +36,50 @@ void RenewMultiInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RenewMultiInstanceRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void RenewMultiInstanceRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setCoreParameter("CouponNo", couponNo);
+}
+
+std::string RenewMultiInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RenewMultiInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RenewMultiInstanceRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void RenewMultiInstanceRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string RenewMultiInstanceRequest::getBusinessInfo()const
+{
+	return businessInfo_;
+}
+
+void RenewMultiInstanceRequest::setBusinessInfo(const std::string& businessInfo)
+{
+	businessInfo_ = businessInfo;
+	setCoreParameter("BusinessInfo", businessInfo);
+}
+
 long RenewMultiInstanceRequest::getPeriod()const
 {
 	return period_;
@@ -91,17 +135,6 @@ void RenewMultiInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string RenewMultiInstanceRequest::getCouponNo()const
-{
-	return couponNo_;
-}
-
-void RenewMultiInstanceRequest::setCouponNo(const std::string& couponNo)
-{
-	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
-}
-
 long RenewMultiInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,39 +146,6 @@ void RenewMultiInstanceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string RenewMultiInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RenewMultiInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string RenewMultiInstanceRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void RenewMultiInstanceRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string RenewMultiInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RenewMultiInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string RenewMultiInstanceRequest::getInstanceIds()const
 {
 	return instanceIds_;
@@ -155,16 +155,5 @@ void RenewMultiInstanceRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
 	setCoreParameter("InstanceIds", instanceIds);
-}
-
-std::string RenewMultiInstanceRequest::getBusinessInfo()const
-{
-	return businessInfo_;
-}
-
-void RenewMultiInstanceRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
 }
 

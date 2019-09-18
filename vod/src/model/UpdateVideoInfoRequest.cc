@@ -36,17 +36,6 @@ void UpdateVideoInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UpdateVideoInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpdateVideoInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string UpdateVideoInfoRequest::getDescription()const
 {
 	return description_;
@@ -58,28 +47,6 @@ void UpdateVideoInfoRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-std::string UpdateVideoInfoRequest::getVideoId()const
-{
-	return videoId_;
-}
-
-void UpdateVideoInfoRequest::setVideoId(const std::string& videoId)
-{
-	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
-}
-
-long UpdateVideoInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateVideoInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string UpdateVideoInfoRequest::getTitle()const
 {
 	return title_;
@@ -89,17 +56,6 @@ void UpdateVideoInfoRequest::setTitle(const std::string& title)
 {
 	title_ = title;
 	setCoreParameter("Title", title);
-}
-
-std::string UpdateVideoInfoRequest::getTags()const
-{
-	return tags_;
-}
-
-void UpdateVideoInfoRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setCoreParameter("Tags", tags);
 }
 
 std::string UpdateVideoInfoRequest::getCoverURL()const
@@ -144,6 +100,50 @@ void UpdateVideoInfoRequest::setCustomMediaInfo(const std::string& customMediaIn
 {
 	customMediaInfo_ = customMediaInfo;
 	setCoreParameter("CustomMediaInfo", customMediaInfo);
+}
+
+std::string UpdateVideoInfoRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UpdateVideoInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string UpdateVideoInfoRequest::getVideoId()const
+{
+	return videoId_;
+}
+
+void UpdateVideoInfoRequest::setVideoId(const std::string& videoId)
+{
+	videoId_ = videoId;
+	setCoreParameter("VideoId", videoId);
+}
+
+long UpdateVideoInfoRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void UpdateVideoInfoRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UpdateVideoInfoRequest::getTags()const
+{
+	return tags_;
+}
+
+void UpdateVideoInfoRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setCoreParameter("Tags", tags);
 }
 
 std::string UpdateVideoInfoRequest::getStatus()const

@@ -25,17 +25,6 @@ QueryLoRaJoinPermissionsRequest::QueryLoRaJoinPermissionsRequest() :
 QueryLoRaJoinPermissionsRequest::~QueryLoRaJoinPermissionsRequest()
 {}
 
-std::string QueryLoRaJoinPermissionsRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void QueryLoRaJoinPermissionsRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
 std::string QueryLoRaJoinPermissionsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void QueryLoRaJoinPermissionsRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryLoRaJoinPermissionsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryLoRaJoinPermissionsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 

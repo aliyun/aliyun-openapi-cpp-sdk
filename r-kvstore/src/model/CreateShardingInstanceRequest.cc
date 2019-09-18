@@ -47,17 +47,6 @@ void CreateShardingInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateShardingInstanceRequest::getNodeType()const
-{
-	return nodeType_;
-}
-
-void CreateShardingInstanceRequest::setNodeType(const std::string& nodeType)
-{
-	nodeType_ = nodeType;
-	setCoreParameter("NodeType", nodeType);
-}
-
 std::string CreateShardingInstanceRequest::getCouponNo()const
 {
 	return couponNo_;
@@ -89,39 +78,6 @@ void CreateShardingInstanceRequest::setEngineVersion(const std::string& engineVe
 {
 	engineVersion_ = engineVersion;
 	setCoreParameter("EngineVersion", engineVersion);
-}
-
-std::string CreateShardingInstanceRequest::getInstanceClass()const
-{
-	return instanceClass_;
-}
-
-void CreateShardingInstanceRequest::setInstanceClass(const std::string& instanceClass)
-{
-	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
-}
-
-std::string CreateShardingInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateShardingInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-long CreateShardingInstanceRequest::getCapacity()const
-{
-	return capacity_;
-}
-
-void CreateShardingInstanceRequest::setCapacity(long capacity)
-{
-	capacity_ = capacity;
-	setCoreParameter("Capacity", std::to_string(capacity));
 }
 
 std::string CreateShardingInstanceRequest::getPassword()const
@@ -157,17 +113,6 @@ void CreateShardingInstanceRequest::setSecurityToken(const std::string& security
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string CreateShardingInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateShardingInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateShardingInstanceRequest::getIncrementalBackupMode()const
 {
 	return incrementalBackupMode_;
@@ -177,17 +122,6 @@ void CreateShardingInstanceRequest::setIncrementalBackupMode(const std::string& 
 {
 	incrementalBackupMode_ = incrementalBackupMode;
 	setCoreParameter("IncrementalBackupMode", incrementalBackupMode);
-}
-
-std::string CreateShardingInstanceRequest::getInstanceType()const
-{
-	return instanceType_;
-}
-
-void CreateShardingInstanceRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string CreateShardingInstanceRequest::getBusinessInfo()const
@@ -212,39 +146,6 @@ void CreateShardingInstanceRequest::setPeriod(const std::string& period)
 	setCoreParameter("Period", period);
 }
 
-std::string CreateShardingInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateShardingInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateShardingInstanceRequest::getSrcDBInstanceId()const
-{
-	return srcDBInstanceId_;
-}
-
-void CreateShardingInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
-{
-	srcDBInstanceId_ = srcDBInstanceId;
-	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
-}
-
-std::string CreateShardingInstanceRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateShardingInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
 std::string CreateShardingInstanceRequest::getBackupId()const
 {
 	return backupId_;
@@ -265,28 +166,6 @@ void CreateShardingInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateShardingInstanceRequest::getToken()const
-{
-	return token_;
-}
-
-void CreateShardingInstanceRequest::setToken(const std::string& token)
-{
-	token_ = token;
-	setCoreParameter("Token", token);
-}
-
-int CreateShardingInstanceRequest::getShardQuantity()const
-{
-	return shardQuantity_;
-}
-
-void CreateShardingInstanceRequest::setShardQuantity(int shardQuantity)
-{
-	shardQuantity_ = shardQuantity;
-	setCoreParameter("ShardQuantity", std::to_string(shardQuantity));
 }
 
 std::string CreateShardingInstanceRequest::getVSwitchId()const
@@ -333,6 +212,149 @@ void CreateShardingInstanceRequest::setInstanceName(const std::string& instanceN
 	setCoreParameter("InstanceName", instanceName);
 }
 
+std::string CreateShardingInstanceRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void CreateShardingInstanceRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
+}
+
+int CreateShardingInstanceRequest::getProxyQuantity()const
+{
+	return proxyQuantity_;
+}
+
+void CreateShardingInstanceRequest::setProxyQuantity(int proxyQuantity)
+{
+	proxyQuantity_ = proxyQuantity;
+	setCoreParameter("ProxyQuantity", std::to_string(proxyQuantity));
+}
+
+std::string CreateShardingInstanceRequest::getProxyMode()const
+{
+	return proxyMode_;
+}
+
+void CreateShardingInstanceRequest::setProxyMode(const std::string& proxyMode)
+{
+	proxyMode_ = proxyMode;
+	setCoreParameter("ProxyMode", proxyMode);
+}
+
+std::string CreateShardingInstanceRequest::getNodeType()const
+{
+	return nodeType_;
+}
+
+void CreateShardingInstanceRequest::setNodeType(const std::string& nodeType)
+{
+	nodeType_ = nodeType;
+	setCoreParameter("NodeType", nodeType);
+}
+
+std::string CreateShardingInstanceRequest::getInstanceClass()const
+{
+	return instanceClass_;
+}
+
+void CreateShardingInstanceRequest::setInstanceClass(const std::string& instanceClass)
+{
+	instanceClass_ = instanceClass;
+	setCoreParameter("InstanceClass", instanceClass);
+}
+
+std::string CreateShardingInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateShardingInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long CreateShardingInstanceRequest::getCapacity()const
+{
+	return capacity_;
+}
+
+void CreateShardingInstanceRequest::setCapacity(long capacity)
+{
+	capacity_ = capacity;
+	setCoreParameter("Capacity", std::to_string(capacity));
+}
+
+std::string CreateShardingInstanceRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void CreateShardingInstanceRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string CreateShardingInstanceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateShardingInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateShardingInstanceRequest::getSrcDBInstanceId()const
+{
+	return srcDBInstanceId_;
+}
+
+void CreateShardingInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
+{
+	srcDBInstanceId_ = srcDBInstanceId;
+	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
+}
+
+std::string CreateShardingInstanceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateShardingInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string CreateShardingInstanceRequest::getToken()const
+{
+	return token_;
+}
+
+void CreateShardingInstanceRequest::setToken(const std::string& token)
+{
+	token_ = token;
+	setCoreParameter("Token", token);
+}
+
+int CreateShardingInstanceRequest::getShardQuantity()const
+{
+	return shardQuantity_;
+}
+
+void CreateShardingInstanceRequest::setShardQuantity(int shardQuantity)
+{
+	shardQuantity_ = shardQuantity;
+	setCoreParameter("ShardQuantity", std::to_string(shardQuantity));
+}
+
 int CreateShardingInstanceRequest::getShardReplicaQuantity()const
 {
 	return shardReplicaQuantity_;
@@ -377,17 +399,6 @@ void CreateShardingInstanceRequest::setRedisManagerClass(const std::string& redi
 	setCoreParameter("RedisManagerClass", redisManagerClass);
 }
 
-std::string CreateShardingInstanceRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void CreateShardingInstanceRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
-}
-
 std::string CreateShardingInstanceRequest::getChargeType()const
 {
 	return chargeType_;
@@ -399,17 +410,6 @@ void CreateShardingInstanceRequest::setChargeType(const std::string& chargeType)
 	setCoreParameter("ChargeType", chargeType);
 }
 
-int CreateShardingInstanceRequest::getProxyQuantity()const
-{
-	return proxyQuantity_;
-}
-
-void CreateShardingInstanceRequest::setProxyQuantity(int proxyQuantity)
-{
-	proxyQuantity_ = proxyQuantity;
-	setCoreParameter("ProxyQuantity", std::to_string(proxyQuantity));
-}
-
 std::string CreateShardingInstanceRequest::getConfig()const
 {
 	return config_;
@@ -419,16 +419,5 @@ void CreateShardingInstanceRequest::setConfig(const std::string& config)
 {
 	config_ = config;
 	setCoreParameter("Config", config);
-}
-
-std::string CreateShardingInstanceRequest::getProxyMode()const
-{
-	return proxyMode_;
-}
-
-void CreateShardingInstanceRequest::setProxyMode(const std::string& proxyMode)
-{
-	proxyMode_ = proxyMode;
-	setCoreParameter("ProxyMode", proxyMode);
 }
 

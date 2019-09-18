@@ -36,15 +36,15 @@ void AddLiveAppSnapshotConfigRequest::setTimeInterval(int timeInterval)
 	setCoreParameter("TimeInterval", std::to_string(timeInterval));
 }
 
-std::string AddLiveAppSnapshotConfigRequest::getOssBucket()const
+std::string AddLiveAppSnapshotConfigRequest::getOssEndpoint()const
 {
-	return ossBucket_;
+	return ossEndpoint_;
 }
 
-void AddLiveAppSnapshotConfigRequest::setOssBucket(const std::string& ossBucket)
+void AddLiveAppSnapshotConfigRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
-	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", ossBucket);
+	ossEndpoint_ = ossEndpoint;
+	setCoreParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string AddLiveAppSnapshotConfigRequest::getAppName()const
@@ -69,6 +69,28 @@ void AddLiveAppSnapshotConfigRequest::setSecurityToken(const std::string& securi
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string AddLiveAppSnapshotConfigRequest::getOverwriteOssObject()const
+{
+	return overwriteOssObject_;
+}
+
+void AddLiveAppSnapshotConfigRequest::setOverwriteOssObject(const std::string& overwriteOssObject)
+{
+	overwriteOssObject_ = overwriteOssObject;
+	setCoreParameter("OverwriteOssObject", overwriteOssObject);
+}
+
+std::string AddLiveAppSnapshotConfigRequest::getOssBucket()const
+{
+	return ossBucket_;
+}
+
+void AddLiveAppSnapshotConfigRequest::setOssBucket(const std::string& ossBucket)
+{
+	ossBucket_ = ossBucket;
+	setCoreParameter("OssBucket", ossBucket);
+}
+
 std::string AddLiveAppSnapshotConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -80,17 +102,6 @@ void AddLiveAppSnapshotConfigRequest::setDomainName(const std::string& domainNam
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string AddLiveAppSnapshotConfigRequest::getOssEndpoint()const
-{
-	return ossEndpoint_;
-}
-
-void AddLiveAppSnapshotConfigRequest::setOssEndpoint(const std::string& ossEndpoint)
-{
-	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", ossEndpoint);
-}
-
 std::string AddLiveAppSnapshotConfigRequest::getSequenceOssObject()const
 {
 	return sequenceOssObject_;
@@ -100,17 +111,6 @@ void AddLiveAppSnapshotConfigRequest::setSequenceOssObject(const std::string& se
 {
 	sequenceOssObject_ = sequenceOssObject;
 	setCoreParameter("SequenceOssObject", sequenceOssObject);
-}
-
-std::string AddLiveAppSnapshotConfigRequest::getOverwriteOssObject()const
-{
-	return overwriteOssObject_;
-}
-
-void AddLiveAppSnapshotConfigRequest::setOverwriteOssObject(const std::string& overwriteOssObject)
-{
-	overwriteOssObject_ = overwriteOssObject;
-	setCoreParameter("OverwriteOssObject", overwriteOssObject);
 }
 
 long AddLiveAppSnapshotConfigRequest::getOwnerId()const

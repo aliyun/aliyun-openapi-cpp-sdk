@@ -25,6 +25,17 @@ DescribeCasterLayoutsRequest::DescribeCasterLayoutsRequest() :
 DescribeCasterLayoutsRequest::~DescribeCasterLayoutsRequest()
 {}
 
+std::string DescribeCasterLayoutsRequest::getLayoutId()const
+{
+	return layoutId_;
+}
+
+void DescribeCasterLayoutsRequest::setLayoutId(const std::string& layoutId)
+{
+	layoutId_ = layoutId;
+	setCoreParameter("LayoutId", layoutId);
+}
+
 std::string DescribeCasterLayoutsRequest::getCasterId()const
 {
 	return casterId_;
@@ -45,16 +56,5 @@ void DescribeCasterLayoutsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeCasterLayoutsRequest::getLayoutId()const
-{
-	return layoutId_;
-}
-
-void DescribeCasterLayoutsRequest::setLayoutId(const std::string& layoutId)
-{
-	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
 }
 

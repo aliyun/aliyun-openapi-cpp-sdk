@@ -41,9 +41,11 @@ namespace AlibabaCloud
 					std::string sourceType;
 					std::string certType;
 					int wildDomainCount;
+					std::string partnerOrderId;
 					long orderId;
 					std::string statusCode;
 					std::string brandName;
+					bool isFree;
 					std::string orderType;
 					long year;
 					bool showCancel;

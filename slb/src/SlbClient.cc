@@ -51,432 +51,72 @@ SlbClient::SlbClient(const std::string & accessKeyId, const std::string & access
 SlbClient::~SlbClient()
 {}
 
-SlbClient::SetDomainExtensionAttributeOutcome SlbClient::setDomainExtensionAttribute(const SetDomainExtensionAttributeRequest &request) const
+SlbClient::AddAccessControlListEntryOutcome SlbClient::addAccessControlListEntry(const AddAccessControlListEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SetDomainExtensionAttributeOutcome(endpointOutcome.error());
+		return AddAccessControlListEntryOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SetDomainExtensionAttributeOutcome(SetDomainExtensionAttributeResult(outcome.result()));
+		return AddAccessControlListEntryOutcome(AddAccessControlListEntryResult(outcome.result()));
 	else
-		return SetDomainExtensionAttributeOutcome(outcome.error());
+		return AddAccessControlListEntryOutcome(outcome.error());
 }
 
-void SlbClient::setDomainExtensionAttributeAsync(const SetDomainExtensionAttributeRequest& request, const SetDomainExtensionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::addAccessControlListEntryAsync(const AddAccessControlListEntryRequest& request, const AddAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, setDomainExtensionAttribute(request), context);
+		handler(this, request, addAccessControlListEntry(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::SetDomainExtensionAttributeOutcomeCallable SlbClient::setDomainExtensionAttributeCallable(const SetDomainExtensionAttributeRequest &request) const
+SlbClient::AddAccessControlListEntryOutcomeCallable SlbClient::addAccessControlListEntryCallable(const AddAccessControlListEntryRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SetDomainExtensionAttributeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddAccessControlListEntryOutcome()>>(
 			[this, request]()
 			{
-			return this->setDomainExtensionAttribute(request);
+			return this->addAccessControlListEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::CreateLoadBalancerUDPListenerOutcome SlbClient::createLoadBalancerUDPListener(const CreateLoadBalancerUDPListenerRequest &request) const
+SlbClient::AddBackendServersOutcome SlbClient::addBackendServers(const AddBackendServersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateLoadBalancerUDPListenerOutcome(endpointOutcome.error());
+		return AddBackendServersOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateLoadBalancerUDPListenerOutcome(CreateLoadBalancerUDPListenerResult(outcome.result()));
+		return AddBackendServersOutcome(AddBackendServersResult(outcome.result()));
 	else
-		return CreateLoadBalancerUDPListenerOutcome(outcome.error());
+		return AddBackendServersOutcome(outcome.error());
 }
 
-void SlbClient::createLoadBalancerUDPListenerAsync(const CreateLoadBalancerUDPListenerRequest& request, const CreateLoadBalancerUDPListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::addBackendServersAsync(const AddBackendServersRequest& request, const AddBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createLoadBalancerUDPListener(request), context);
+		handler(this, request, addBackendServers(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::CreateLoadBalancerUDPListenerOutcomeCallable SlbClient::createLoadBalancerUDPListenerCallable(const CreateLoadBalancerUDPListenerRequest &request) const
+SlbClient::AddBackendServersOutcomeCallable SlbClient::addBackendServersCallable(const AddBackendServersRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateLoadBalancerUDPListenerOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AddBackendServersOutcome()>>(
 			[this, request]()
 			{
-			return this->createLoadBalancerUDPListener(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeMasterSlaveVServerGroupsOutcome SlbClient::describeMasterSlaveVServerGroups(const DescribeMasterSlaveVServerGroupsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeMasterSlaveVServerGroupsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeMasterSlaveVServerGroupsOutcome(DescribeMasterSlaveVServerGroupsResult(outcome.result()));
-	else
-		return DescribeMasterSlaveVServerGroupsOutcome(outcome.error());
-}
-
-void SlbClient::describeMasterSlaveVServerGroupsAsync(const DescribeMasterSlaveVServerGroupsRequest& request, const DescribeMasterSlaveVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeMasterSlaveVServerGroups(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeMasterSlaveVServerGroupsOutcomeCallable SlbClient::describeMasterSlaveVServerGroupsCallable(const DescribeMasterSlaveVServerGroupsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeMasterSlaveVServerGroupsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeMasterSlaveVServerGroups(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeLoadBalancerTCPListenerAttributeOutcome SlbClient::describeLoadBalancerTCPListenerAttribute(const DescribeLoadBalancerTCPListenerAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLoadBalancerTCPListenerAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLoadBalancerTCPListenerAttributeOutcome(DescribeLoadBalancerTCPListenerAttributeResult(outcome.result()));
-	else
-		return DescribeLoadBalancerTCPListenerAttributeOutcome(outcome.error());
-}
-
-void SlbClient::describeLoadBalancerTCPListenerAttributeAsync(const DescribeLoadBalancerTCPListenerAttributeRequest& request, const DescribeLoadBalancerTCPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLoadBalancerTCPListenerAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeLoadBalancerTCPListenerAttributeOutcomeCallable SlbClient::describeLoadBalancerTCPListenerAttributeCallable(const DescribeLoadBalancerTCPListenerAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerTCPListenerAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLoadBalancerTCPListenerAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::StartLoadBalancerListenerOutcome SlbClient::startLoadBalancerListener(const StartLoadBalancerListenerRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartLoadBalancerListenerOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartLoadBalancerListenerOutcome(StartLoadBalancerListenerResult(outcome.result()));
-	else
-		return StartLoadBalancerListenerOutcome(outcome.error());
-}
-
-void SlbClient::startLoadBalancerListenerAsync(const StartLoadBalancerListenerRequest& request, const StartLoadBalancerListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startLoadBalancerListener(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::StartLoadBalancerListenerOutcomeCallable SlbClient::startLoadBalancerListenerCallable(const StartLoadBalancerListenerRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartLoadBalancerListenerOutcome()>>(
-			[this, request]()
-			{
-			return this->startLoadBalancerListener(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::StopLoadBalancerListenerOutcome SlbClient::stopLoadBalancerListener(const StopLoadBalancerListenerRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopLoadBalancerListenerOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopLoadBalancerListenerOutcome(StopLoadBalancerListenerResult(outcome.result()));
-	else
-		return StopLoadBalancerListenerOutcome(outcome.error());
-}
-
-void SlbClient::stopLoadBalancerListenerAsync(const StopLoadBalancerListenerRequest& request, const StopLoadBalancerListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopLoadBalancerListener(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::StopLoadBalancerListenerOutcomeCallable SlbClient::stopLoadBalancerListenerCallable(const StopLoadBalancerListenerRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopLoadBalancerListenerOutcome()>>(
-			[this, request]()
-			{
-			return this->stopLoadBalancerListener(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeListenerAccessControlAttributeOutcome SlbClient::describeListenerAccessControlAttribute(const DescribeListenerAccessControlAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeListenerAccessControlAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeListenerAccessControlAttributeOutcome(DescribeListenerAccessControlAttributeResult(outcome.result()));
-	else
-		return DescribeListenerAccessControlAttributeOutcome(outcome.error());
-}
-
-void SlbClient::describeListenerAccessControlAttributeAsync(const DescribeListenerAccessControlAttributeRequest& request, const DescribeListenerAccessControlAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeListenerAccessControlAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeListenerAccessControlAttributeOutcomeCallable SlbClient::describeListenerAccessControlAttributeCallable(const DescribeListenerAccessControlAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeListenerAccessControlAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeListenerAccessControlAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetLoadBalancerStatusOutcome SlbClient::setLoadBalancerStatus(const SetLoadBalancerStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetLoadBalancerStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetLoadBalancerStatusOutcome(SetLoadBalancerStatusResult(outcome.result()));
-	else
-		return SetLoadBalancerStatusOutcome(outcome.error());
-}
-
-void SlbClient::setLoadBalancerStatusAsync(const SetLoadBalancerStatusRequest& request, const SetLoadBalancerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setLoadBalancerStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetLoadBalancerStatusOutcomeCallable SlbClient::setLoadBalancerStatusCallable(const SetLoadBalancerStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetLoadBalancerStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->setLoadBalancerStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::ModifyLoadBalancerInstanceSpecOutcome SlbClient::modifyLoadBalancerInstanceSpec(const ModifyLoadBalancerInstanceSpecRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyLoadBalancerInstanceSpecOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyLoadBalancerInstanceSpecOutcome(ModifyLoadBalancerInstanceSpecResult(outcome.result()));
-	else
-		return ModifyLoadBalancerInstanceSpecOutcome(outcome.error());
-}
-
-void SlbClient::modifyLoadBalancerInstanceSpecAsync(const ModifyLoadBalancerInstanceSpecRequest& request, const ModifyLoadBalancerInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyLoadBalancerInstanceSpec(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::ModifyLoadBalancerInstanceSpecOutcomeCallable SlbClient::modifyLoadBalancerInstanceSpecCallable(const ModifyLoadBalancerInstanceSpecRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerInstanceSpecOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyLoadBalancerInstanceSpec(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetLoadBalancerTCPListenerAttributeOutcome SlbClient::setLoadBalancerTCPListenerAttribute(const SetLoadBalancerTCPListenerAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetLoadBalancerTCPListenerAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetLoadBalancerTCPListenerAttributeOutcome(SetLoadBalancerTCPListenerAttributeResult(outcome.result()));
-	else
-		return SetLoadBalancerTCPListenerAttributeOutcome(outcome.error());
-}
-
-void SlbClient::setLoadBalancerTCPListenerAttributeAsync(const SetLoadBalancerTCPListenerAttributeRequest& request, const SetLoadBalancerTCPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setLoadBalancerTCPListenerAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetLoadBalancerTCPListenerAttributeOutcomeCallable SlbClient::setLoadBalancerTCPListenerAttributeCallable(const SetLoadBalancerTCPListenerAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetLoadBalancerTCPListenerAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->setLoadBalancerTCPListenerAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeVServerGroupAttributeOutcome SlbClient::describeVServerGroupAttribute(const DescribeVServerGroupAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeVServerGroupAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeVServerGroupAttributeOutcome(DescribeVServerGroupAttributeResult(outcome.result()));
-	else
-		return DescribeVServerGroupAttributeOutcome(outcome.error());
-}
-
-void SlbClient::describeVServerGroupAttributeAsync(const DescribeVServerGroupAttributeRequest& request, const DescribeVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeVServerGroupAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeVServerGroupAttributeOutcomeCallable SlbClient::describeVServerGroupAttributeCallable(const DescribeVServerGroupAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeVServerGroupAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeVServerGroupAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DeleteVServerGroupOutcome SlbClient::deleteVServerGroup(const DeleteVServerGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteVServerGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteVServerGroupOutcome(DeleteVServerGroupResult(outcome.result()));
-	else
-		return DeleteVServerGroupOutcome(outcome.error());
-}
-
-void SlbClient::deleteVServerGroupAsync(const DeleteVServerGroupRequest& request, const DeleteVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteVServerGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DeleteVServerGroupOutcomeCallable SlbClient::deleteVServerGroupCallable(const DeleteVServerGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteVServerGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteVServerGroup(request);
+			return this->addBackendServers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +159,150 @@ SlbClient::AddListenerWhiteListItemOutcomeCallable SlbClient::addListenerWhiteLi
 	return task->get_future();
 }
 
+SlbClient::AddTagsOutcome SlbClient::addTags(const AddTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddTagsOutcome(AddTagsResult(outcome.result()));
+	else
+		return AddTagsOutcome(outcome.error());
+}
+
+void SlbClient::addTagsAsync(const AddTagsRequest& request, const AddTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::AddTagsOutcomeCallable SlbClient::addTagsCallable(const AddTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->addTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::AddVServerGroupBackendServersOutcome SlbClient::addVServerGroupBackendServers(const AddVServerGroupBackendServersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddVServerGroupBackendServersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddVServerGroupBackendServersOutcome(AddVServerGroupBackendServersResult(outcome.result()));
+	else
+		return AddVServerGroupBackendServersOutcome(outcome.error());
+}
+
+void SlbClient::addVServerGroupBackendServersAsync(const AddVServerGroupBackendServersRequest& request, const AddVServerGroupBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addVServerGroupBackendServers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::AddVServerGroupBackendServersOutcomeCallable SlbClient::addVServerGroupBackendServersCallable(const AddVServerGroupBackendServersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddVServerGroupBackendServersOutcome()>>(
+			[this, request]()
+			{
+			return this->addVServerGroupBackendServers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::CreateAccessControlListOutcome SlbClient::createAccessControlList(const CreateAccessControlListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAccessControlListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAccessControlListOutcome(CreateAccessControlListResult(outcome.result()));
+	else
+		return CreateAccessControlListOutcome(outcome.error());
+}
+
+void SlbClient::createAccessControlListAsync(const CreateAccessControlListRequest& request, const CreateAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAccessControlList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::CreateAccessControlListOutcomeCallable SlbClient::createAccessControlListCallable(const CreateAccessControlListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAccessControlListOutcome()>>(
+			[this, request]()
+			{
+			return this->createAccessControlList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::CreateDomainExtensionOutcome SlbClient::createDomainExtension(const CreateDomainExtensionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDomainExtensionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDomainExtensionOutcome(CreateDomainExtensionResult(outcome.result()));
+	else
+		return CreateDomainExtensionOutcome(outcome.error());
+}
+
+void SlbClient::createDomainExtensionAsync(const CreateDomainExtensionRequest& request, const CreateDomainExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDomainExtension(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::CreateDomainExtensionOutcomeCallable SlbClient::createDomainExtensionCallable(const CreateDomainExtensionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDomainExtensionOutcome()>>(
+			[this, request]()
+			{
+			return this->createDomainExtension(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::CreateLoadBalancerOutcome SlbClient::createLoadBalancer(const CreateLoadBalancerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,690 +333,6 @@ SlbClient::CreateLoadBalancerOutcomeCallable SlbClient::createLoadBalancerCallab
 			[this, request]()
 			{
 			return this->createLoadBalancer(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::RemoveTagsOutcome SlbClient::removeTags(const RemoveTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveTagsOutcome(RemoveTagsResult(outcome.result()));
-	else
-		return RemoveTagsOutcome(outcome.error());
-}
-
-void SlbClient::removeTagsAsync(const RemoveTagsRequest& request, const RemoveTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::RemoveTagsOutcomeCallable SlbClient::removeTagsCallable(const RemoveTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->removeTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeDomainExtensionsOutcome SlbClient::describeDomainExtensions(const DescribeDomainExtensionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainExtensionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainExtensionsOutcome(DescribeDomainExtensionsResult(outcome.result()));
-	else
-		return DescribeDomainExtensionsOutcome(outcome.error());
-}
-
-void SlbClient::describeDomainExtensionsAsync(const DescribeDomainExtensionsRequest& request, const DescribeDomainExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomainExtensions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeDomainExtensionsOutcomeCallable SlbClient::describeDomainExtensionsCallable(const DescribeDomainExtensionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainExtensionsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomainExtensions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetLoadBalancerHTTPListenerAttributeOutcome SlbClient::setLoadBalancerHTTPListenerAttribute(const SetLoadBalancerHTTPListenerAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetLoadBalancerHTTPListenerAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetLoadBalancerHTTPListenerAttributeOutcome(SetLoadBalancerHTTPListenerAttributeResult(outcome.result()));
-	else
-		return SetLoadBalancerHTTPListenerAttributeOutcome(outcome.error());
-}
-
-void SlbClient::setLoadBalancerHTTPListenerAttributeAsync(const SetLoadBalancerHTTPListenerAttributeRequest& request, const SetLoadBalancerHTTPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setLoadBalancerHTTPListenerAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetLoadBalancerHTTPListenerAttributeOutcomeCallable SlbClient::setLoadBalancerHTTPListenerAttributeCallable(const SetLoadBalancerHTTPListenerAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetLoadBalancerHTTPListenerAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->setLoadBalancerHTTPListenerAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetLoadBalancerDeleteProtectionOutcome SlbClient::setLoadBalancerDeleteProtection(const SetLoadBalancerDeleteProtectionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetLoadBalancerDeleteProtectionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetLoadBalancerDeleteProtectionOutcome(SetLoadBalancerDeleteProtectionResult(outcome.result()));
-	else
-		return SetLoadBalancerDeleteProtectionOutcome(outcome.error());
-}
-
-void SlbClient::setLoadBalancerDeleteProtectionAsync(const SetLoadBalancerDeleteProtectionRequest& request, const SetLoadBalancerDeleteProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setLoadBalancerDeleteProtection(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetLoadBalancerDeleteProtectionOutcomeCallable SlbClient::setLoadBalancerDeleteProtectionCallable(const SetLoadBalancerDeleteProtectionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetLoadBalancerDeleteProtectionOutcome()>>(
-			[this, request]()
-			{
-			return this->setLoadBalancerDeleteProtection(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::UploadCACertificateOutcome SlbClient::uploadCACertificate(const UploadCACertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UploadCACertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UploadCACertificateOutcome(UploadCACertificateResult(outcome.result()));
-	else
-		return UploadCACertificateOutcome(outcome.error());
-}
-
-void SlbClient::uploadCACertificateAsync(const UploadCACertificateRequest& request, const UploadCACertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, uploadCACertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::UploadCACertificateOutcomeCallable SlbClient::uploadCACertificateCallable(const UploadCACertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UploadCACertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->uploadCACertificate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetListenerAccessControlStatusOutcome SlbClient::setListenerAccessControlStatus(const SetListenerAccessControlStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetListenerAccessControlStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetListenerAccessControlStatusOutcome(SetListenerAccessControlStatusResult(outcome.result()));
-	else
-		return SetListenerAccessControlStatusOutcome(outcome.error());
-}
-
-void SlbClient::setListenerAccessControlStatusAsync(const SetListenerAccessControlStatusRequest& request, const SetListenerAccessControlStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setListenerAccessControlStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetListenerAccessControlStatusOutcomeCallable SlbClient::setListenerAccessControlStatusCallable(const SetListenerAccessControlStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetListenerAccessControlStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->setListenerAccessControlStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcome SlbClient::setLoadBalancerHTTPSListenerAttribute(const SetLoadBalancerHTTPSListenerAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetLoadBalancerHTTPSListenerAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetLoadBalancerHTTPSListenerAttributeOutcome(SetLoadBalancerHTTPSListenerAttributeResult(outcome.result()));
-	else
-		return SetLoadBalancerHTTPSListenerAttributeOutcome(outcome.error());
-}
-
-void SlbClient::setLoadBalancerHTTPSListenerAttributeAsync(const SetLoadBalancerHTTPSListenerAttributeRequest& request, const SetLoadBalancerHTTPSListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setLoadBalancerHTTPSListenerAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::setLoadBalancerHTTPSListenerAttributeCallable(const SetLoadBalancerHTTPSListenerAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetLoadBalancerHTTPSListenerAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->setLoadBalancerHTTPSListenerAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeZonesOutcome SlbClient::describeZones(const DescribeZonesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeZonesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeZonesOutcome(DescribeZonesResult(outcome.result()));
-	else
-		return DescribeZonesOutcome(outcome.error());
-}
-
-void SlbClient::describeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeZones(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeZonesOutcomeCallable SlbClient::describeZonesCallable(const DescribeZonesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeZones(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DeleteLoadBalancerListenerOutcome SlbClient::deleteLoadBalancerListener(const DeleteLoadBalancerListenerRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteLoadBalancerListenerOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteLoadBalancerListenerOutcome(DeleteLoadBalancerListenerResult(outcome.result()));
-	else
-		return DeleteLoadBalancerListenerOutcome(outcome.error());
-}
-
-void SlbClient::deleteLoadBalancerListenerAsync(const DeleteLoadBalancerListenerRequest& request, const DeleteLoadBalancerListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteLoadBalancerListener(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DeleteLoadBalancerListenerOutcomeCallable SlbClient::deleteLoadBalancerListenerCallable(const DeleteLoadBalancerListenerRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerListenerOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteLoadBalancerListener(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeAvailableResourceOutcome SlbClient::describeAvailableResource(const DescribeAvailableResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAvailableResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAvailableResourceOutcome(DescribeAvailableResourceResult(outcome.result()));
-	else
-		return DescribeAvailableResourceOutcome(outcome.error());
-}
-
-void SlbClient::describeAvailableResourceAsync(const DescribeAvailableResourceRequest& request, const DescribeAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAvailableResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeAvailableResourceOutcomeCallable SlbClient::describeAvailableResourceCallable(const DescribeAvailableResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAvailableResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAvailableResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeVServerGroupsOutcome SlbClient::describeVServerGroups(const DescribeVServerGroupsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeVServerGroupsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeVServerGroupsOutcome(DescribeVServerGroupsResult(outcome.result()));
-	else
-		return DescribeVServerGroupsOutcome(outcome.error());
-}
-
-void SlbClient::describeVServerGroupsAsync(const DescribeVServerGroupsRequest& request, const DescribeVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeVServerGroups(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeVServerGroupsOutcomeCallable SlbClient::describeVServerGroupsCallable(const DescribeVServerGroupsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeVServerGroupsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeVServerGroups(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeLoadBalancerHTTPListenerAttributeOutcome SlbClient::describeLoadBalancerHTTPListenerAttribute(const DescribeLoadBalancerHTTPListenerAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLoadBalancerHTTPListenerAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLoadBalancerHTTPListenerAttributeOutcome(DescribeLoadBalancerHTTPListenerAttributeResult(outcome.result()));
-	else
-		return DescribeLoadBalancerHTTPListenerAttributeOutcome(outcome.error());
-}
-
-void SlbClient::describeLoadBalancerHTTPListenerAttributeAsync(const DescribeLoadBalancerHTTPListenerAttributeRequest& request, const DescribeLoadBalancerHTTPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLoadBalancerHTTPListenerAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeLoadBalancerHTTPListenerAttributeOutcomeCallable SlbClient::describeLoadBalancerHTTPListenerAttributeCallable(const DescribeLoadBalancerHTTPListenerAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerHTTPListenerAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLoadBalancerHTTPListenerAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeTagsOutcome SlbClient::describeTags(const DescribeTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTagsOutcome(DescribeTagsResult(outcome.result()));
-	else
-		return DescribeTagsOutcome(outcome.error());
-}
-
-void SlbClient::describeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeTagsOutcomeCallable SlbClient::describeTagsCallable(const DescribeTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DeleteLoadBalancerOutcome SlbClient::deleteLoadBalancer(const DeleteLoadBalancerRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteLoadBalancerOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteLoadBalancerOutcome(DeleteLoadBalancerResult(outcome.result()));
-	else
-		return DeleteLoadBalancerOutcome(outcome.error());
-}
-
-void SlbClient::deleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteLoadBalancer(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DeleteLoadBalancerOutcomeCallable SlbClient::deleteLoadBalancerCallable(const DeleteLoadBalancerRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteLoadBalancer(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::CreateVServerGroupOutcome SlbClient::createVServerGroup(const CreateVServerGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateVServerGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateVServerGroupOutcome(CreateVServerGroupResult(outcome.result()));
-	else
-		return CreateVServerGroupOutcome(outcome.error());
-}
-
-void SlbClient::createVServerGroupAsync(const CreateVServerGroupRequest& request, const CreateVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createVServerGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::CreateVServerGroupOutcomeCallable SlbClient::createVServerGroupCallable(const CreateVServerGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateVServerGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->createVServerGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeLoadBalancersOutcome SlbClient::describeLoadBalancers(const DescribeLoadBalancersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLoadBalancersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLoadBalancersOutcome(DescribeLoadBalancersResult(outcome.result()));
-	else
-		return DescribeLoadBalancersOutcome(outcome.error());
-}
-
-void SlbClient::describeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLoadBalancers(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeLoadBalancersOutcomeCallable SlbClient::describeLoadBalancersCallable(const DescribeLoadBalancersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancersOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLoadBalancers(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetCACertificateNameOutcome SlbClient::setCACertificateName(const SetCACertificateNameRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetCACertificateNameOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetCACertificateNameOutcome(SetCACertificateNameResult(outcome.result()));
-	else
-		return SetCACertificateNameOutcome(outcome.error());
-}
-
-void SlbClient::setCACertificateNameAsync(const SetCACertificateNameRequest& request, const SetCACertificateNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setCACertificateName(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetCACertificateNameOutcomeCallable SlbClient::setCACertificateNameCallable(const SetCACertificateNameRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetCACertificateNameOutcome()>>(
-			[this, request]()
-			{
-			return this->setCACertificateName(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeMasterSlaveVServerGroupAttributeOutcome SlbClient::describeMasterSlaveVServerGroupAttribute(const DescribeMasterSlaveVServerGroupAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeMasterSlaveVServerGroupAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeMasterSlaveVServerGroupAttributeOutcome(DescribeMasterSlaveVServerGroupAttributeResult(outcome.result()));
-	else
-		return DescribeMasterSlaveVServerGroupAttributeOutcome(outcome.error());
-}
-
-void SlbClient::describeMasterSlaveVServerGroupAttributeAsync(const DescribeMasterSlaveVServerGroupAttributeRequest& request, const DescribeMasterSlaveVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeMasterSlaveVServerGroupAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeMasterSlaveVServerGroupAttributeOutcomeCallable SlbClient::describeMasterSlaveVServerGroupAttributeCallable(const DescribeMasterSlaveVServerGroupAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeMasterSlaveVServerGroupAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeMasterSlaveVServerGroupAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::RemoveBackendServersOutcome SlbClient::removeBackendServers(const RemoveBackendServersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveBackendServersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveBackendServersOutcome(RemoveBackendServersResult(outcome.result()));
-	else
-		return RemoveBackendServersOutcome(outcome.error());
-}
-
-void SlbClient::removeBackendServersAsync(const RemoveBackendServersRequest& request, const RemoveBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeBackendServers(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::RemoveBackendServersOutcomeCallable SlbClient::removeBackendServersCallable(const RemoveBackendServersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveBackendServersOutcome()>>(
-			[this, request]()
-			{
-			return this->removeBackendServers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1275,360 +375,108 @@ SlbClient::CreateLoadBalancerHTTPListenerOutcomeCallable SlbClient::createLoadBa
 	return task->get_future();
 }
 
-SlbClient::ModifyVServerGroupBackendServersOutcome SlbClient::modifyVServerGroupBackendServers(const ModifyVServerGroupBackendServersRequest &request) const
+SlbClient::CreateLoadBalancerHTTPSListenerOutcome SlbClient::createLoadBalancerHTTPSListener(const CreateLoadBalancerHTTPSListenerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyVServerGroupBackendServersOutcome(endpointOutcome.error());
+		return CreateLoadBalancerHTTPSListenerOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyVServerGroupBackendServersOutcome(ModifyVServerGroupBackendServersResult(outcome.result()));
+		return CreateLoadBalancerHTTPSListenerOutcome(CreateLoadBalancerHTTPSListenerResult(outcome.result()));
 	else
-		return ModifyVServerGroupBackendServersOutcome(outcome.error());
+		return CreateLoadBalancerHTTPSListenerOutcome(outcome.error());
 }
 
-void SlbClient::modifyVServerGroupBackendServersAsync(const ModifyVServerGroupBackendServersRequest& request, const ModifyVServerGroupBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::createLoadBalancerHTTPSListenerAsync(const CreateLoadBalancerHTTPSListenerRequest& request, const CreateLoadBalancerHTTPSListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyVServerGroupBackendServers(request), context);
+		handler(this, request, createLoadBalancerHTTPSListener(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::ModifyVServerGroupBackendServersOutcomeCallable SlbClient::modifyVServerGroupBackendServersCallable(const ModifyVServerGroupBackendServersRequest &request) const
+SlbClient::CreateLoadBalancerHTTPSListenerOutcomeCallable SlbClient::createLoadBalancerHTTPSListenerCallable(const CreateLoadBalancerHTTPSListenerRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyVServerGroupBackendServersOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateLoadBalancerHTTPSListenerOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyVServerGroupBackendServers(request);
+			return this->createLoadBalancerHTTPSListener(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::AddAccessControlListEntryOutcome SlbClient::addAccessControlListEntry(const AddAccessControlListEntryRequest &request) const
+SlbClient::CreateLoadBalancerTCPListenerOutcome SlbClient::createLoadBalancerTCPListener(const CreateLoadBalancerTCPListenerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddAccessControlListEntryOutcome(endpointOutcome.error());
+		return CreateLoadBalancerTCPListenerOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddAccessControlListEntryOutcome(AddAccessControlListEntryResult(outcome.result()));
+		return CreateLoadBalancerTCPListenerOutcome(CreateLoadBalancerTCPListenerResult(outcome.result()));
 	else
-		return AddAccessControlListEntryOutcome(outcome.error());
+		return CreateLoadBalancerTCPListenerOutcome(outcome.error());
 }
 
-void SlbClient::addAccessControlListEntryAsync(const AddAccessControlListEntryRequest& request, const AddAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::createLoadBalancerTCPListenerAsync(const CreateLoadBalancerTCPListenerRequest& request, const CreateLoadBalancerTCPListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addAccessControlListEntry(request), context);
+		handler(this, request, createLoadBalancerTCPListener(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::AddAccessControlListEntryOutcomeCallable SlbClient::addAccessControlListEntryCallable(const AddAccessControlListEntryRequest &request) const
+SlbClient::CreateLoadBalancerTCPListenerOutcomeCallable SlbClient::createLoadBalancerTCPListenerCallable(const CreateLoadBalancerTCPListenerRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddAccessControlListEntryOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateLoadBalancerTCPListenerOutcome()>>(
 			[this, request]()
 			{
-			return this->addAccessControlListEntry(request);
+			return this->createLoadBalancerTCPListener(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::DeleteRulesOutcome SlbClient::deleteRules(const DeleteRulesRequest &request) const
+SlbClient::CreateLoadBalancerUDPListenerOutcome SlbClient::createLoadBalancerUDPListener(const CreateLoadBalancerUDPListenerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteRulesOutcome(endpointOutcome.error());
+		return CreateLoadBalancerUDPListenerOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteRulesOutcome(DeleteRulesResult(outcome.result()));
+		return CreateLoadBalancerUDPListenerOutcome(CreateLoadBalancerUDPListenerResult(outcome.result()));
 	else
-		return DeleteRulesOutcome(outcome.error());
+		return CreateLoadBalancerUDPListenerOutcome(outcome.error());
 }
 
-void SlbClient::deleteRulesAsync(const DeleteRulesRequest& request, const DeleteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::createLoadBalancerUDPListenerAsync(const CreateLoadBalancerUDPListenerRequest& request, const CreateLoadBalancerUDPListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteRules(request), context);
+		handler(this, request, createLoadBalancerUDPListener(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::DeleteRulesOutcomeCallable SlbClient::deleteRulesCallable(const DeleteRulesRequest &request) const
+SlbClient::CreateLoadBalancerUDPListenerOutcomeCallable SlbClient::createLoadBalancerUDPListenerCallable(const CreateLoadBalancerUDPListenerRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteRulesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateLoadBalancerUDPListenerOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteRules(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeLoadBalancerUDPListenerAttributeOutcome SlbClient::describeLoadBalancerUDPListenerAttribute(const DescribeLoadBalancerUDPListenerAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLoadBalancerUDPListenerAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLoadBalancerUDPListenerAttributeOutcome(DescribeLoadBalancerUDPListenerAttributeResult(outcome.result()));
-	else
-		return DescribeLoadBalancerUDPListenerAttributeOutcome(outcome.error());
-}
-
-void SlbClient::describeLoadBalancerUDPListenerAttributeAsync(const DescribeLoadBalancerUDPListenerAttributeRequest& request, const DescribeLoadBalancerUDPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLoadBalancerUDPListenerAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeLoadBalancerUDPListenerAttributeOutcomeCallable SlbClient::describeLoadBalancerUDPListenerAttributeCallable(const DescribeLoadBalancerUDPListenerAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerUDPListenerAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLoadBalancerUDPListenerAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DeleteMasterSlaveVServerGroupOutcome SlbClient::deleteMasterSlaveVServerGroup(const DeleteMasterSlaveVServerGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteMasterSlaveVServerGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteMasterSlaveVServerGroupOutcome(DeleteMasterSlaveVServerGroupResult(outcome.result()));
-	else
-		return DeleteMasterSlaveVServerGroupOutcome(outcome.error());
-}
-
-void SlbClient::deleteMasterSlaveVServerGroupAsync(const DeleteMasterSlaveVServerGroupRequest& request, const DeleteMasterSlaveVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteMasterSlaveVServerGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DeleteMasterSlaveVServerGroupOutcomeCallable SlbClient::deleteMasterSlaveVServerGroupCallable(const DeleteMasterSlaveVServerGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteMasterSlaveVServerGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteMasterSlaveVServerGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeCACertificatesOutcome SlbClient::describeCACertificates(const DescribeCACertificatesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCACertificatesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCACertificatesOutcome(DescribeCACertificatesResult(outcome.result()));
-	else
-		return DescribeCACertificatesOutcome(outcome.error());
-}
-
-void SlbClient::describeCACertificatesAsync(const DescribeCACertificatesRequest& request, const DescribeCACertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCACertificates(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeCACertificatesOutcomeCallable SlbClient::describeCACertificatesCallable(const DescribeCACertificatesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCACertificatesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCACertificates(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::CreateMasterSlaveVServerGroupOutcome SlbClient::createMasterSlaveVServerGroup(const CreateMasterSlaveVServerGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateMasterSlaveVServerGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateMasterSlaveVServerGroupOutcome(CreateMasterSlaveVServerGroupResult(outcome.result()));
-	else
-		return CreateMasterSlaveVServerGroupOutcome(outcome.error());
-}
-
-void SlbClient::createMasterSlaveVServerGroupAsync(const CreateMasterSlaveVServerGroupRequest& request, const CreateMasterSlaveVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createMasterSlaveVServerGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::CreateMasterSlaveVServerGroupOutcomeCallable SlbClient::createMasterSlaveVServerGroupCallable(const CreateMasterSlaveVServerGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateMasterSlaveVServerGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->createMasterSlaveVServerGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetBackendServersOutcome SlbClient::setBackendServers(const SetBackendServersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetBackendServersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetBackendServersOutcome(SetBackendServersResult(outcome.result()));
-	else
-		return SetBackendServersOutcome(outcome.error());
-}
-
-void SlbClient::setBackendServersAsync(const SetBackendServersRequest& request, const SetBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setBackendServers(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetBackendServersOutcomeCallable SlbClient::setBackendServersCallable(const SetBackendServersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetBackendServersOutcome()>>(
-			[this, request]()
-			{
-			return this->setBackendServers(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DeleteAccessControlListOutcome SlbClient::deleteAccessControlList(const DeleteAccessControlListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteAccessControlListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteAccessControlListOutcome(DeleteAccessControlListResult(outcome.result()));
-	else
-		return DeleteAccessControlListOutcome(outcome.error());
-}
-
-void SlbClient::deleteAccessControlListAsync(const DeleteAccessControlListRequest& request, const DeleteAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteAccessControlList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DeleteAccessControlListOutcomeCallable SlbClient::deleteAccessControlListCallable(const DeleteAccessControlListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteAccessControlListOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteAccessControlList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::RemoveVServerGroupBackendServersOutcome SlbClient::removeVServerGroupBackendServers(const RemoveVServerGroupBackendServersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveVServerGroupBackendServersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveVServerGroupBackendServersOutcome(RemoveVServerGroupBackendServersResult(outcome.result()));
-	else
-		return RemoveVServerGroupBackendServersOutcome(outcome.error());
-}
-
-void SlbClient::removeVServerGroupBackendServersAsync(const RemoveVServerGroupBackendServersRequest& request, const RemoveVServerGroupBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeVServerGroupBackendServers(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::RemoveVServerGroupBackendServersOutcomeCallable SlbClient::removeVServerGroupBackendServersCallable(const RemoveVServerGroupBackendServersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveVServerGroupBackendServersOutcome()>>(
-			[this, request]()
-			{
-			return this->removeVServerGroupBackendServers(request);
+			return this->createLoadBalancerUDPListener(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1671,72 +519,144 @@ SlbClient::CreateMasterSlaveServerGroupOutcomeCallable SlbClient::createMasterSl
 	return task->get_future();
 }
 
-SlbClient::DescribeLoadBalancerAttributeOutcome SlbClient::describeLoadBalancerAttribute(const DescribeLoadBalancerAttributeRequest &request) const
+SlbClient::CreateMasterSlaveVServerGroupOutcome SlbClient::createMasterSlaveVServerGroup(const CreateMasterSlaveVServerGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeLoadBalancerAttributeOutcome(endpointOutcome.error());
+		return CreateMasterSlaveVServerGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeLoadBalancerAttributeOutcome(DescribeLoadBalancerAttributeResult(outcome.result()));
+		return CreateMasterSlaveVServerGroupOutcome(CreateMasterSlaveVServerGroupResult(outcome.result()));
 	else
-		return DescribeLoadBalancerAttributeOutcome(outcome.error());
+		return CreateMasterSlaveVServerGroupOutcome(outcome.error());
 }
 
-void SlbClient::describeLoadBalancerAttributeAsync(const DescribeLoadBalancerAttributeRequest& request, const DescribeLoadBalancerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::createMasterSlaveVServerGroupAsync(const CreateMasterSlaveVServerGroupRequest& request, const CreateMasterSlaveVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeLoadBalancerAttribute(request), context);
+		handler(this, request, createMasterSlaveVServerGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::DescribeLoadBalancerAttributeOutcomeCallable SlbClient::describeLoadBalancerAttributeCallable(const DescribeLoadBalancerAttributeRequest &request) const
+SlbClient::CreateMasterSlaveVServerGroupOutcomeCallable SlbClient::createMasterSlaveVServerGroupCallable(const CreateMasterSlaveVServerGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerAttributeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateMasterSlaveVServerGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->describeLoadBalancerAttribute(request);
+			return this->createMasterSlaveVServerGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::SetServerCertificateNameOutcome SlbClient::setServerCertificateName(const SetServerCertificateNameRequest &request) const
+SlbClient::CreateRulesOutcome SlbClient::createRules(const CreateRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SetServerCertificateNameOutcome(endpointOutcome.error());
+		return CreateRulesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SetServerCertificateNameOutcome(SetServerCertificateNameResult(outcome.result()));
+		return CreateRulesOutcome(CreateRulesResult(outcome.result()));
 	else
-		return SetServerCertificateNameOutcome(outcome.error());
+		return CreateRulesOutcome(outcome.error());
 }
 
-void SlbClient::setServerCertificateNameAsync(const SetServerCertificateNameRequest& request, const SetServerCertificateNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::createRulesAsync(const CreateRulesRequest& request, const CreateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, setServerCertificateName(request), context);
+		handler(this, request, createRules(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::SetServerCertificateNameOutcomeCallable SlbClient::setServerCertificateNameCallable(const SetServerCertificateNameRequest &request) const
+SlbClient::CreateRulesOutcomeCallable SlbClient::createRulesCallable(const CreateRulesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SetServerCertificateNameOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateRulesOutcome()>>(
 			[this, request]()
 			{
-			return this->setServerCertificateName(request);
+			return this->createRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::CreateVServerGroupOutcome SlbClient::createVServerGroup(const CreateVServerGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVServerGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVServerGroupOutcome(CreateVServerGroupResult(outcome.result()));
+	else
+		return CreateVServerGroupOutcome(outcome.error());
+}
+
+void SlbClient::createVServerGroupAsync(const CreateVServerGroupRequest& request, const CreateVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVServerGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::CreateVServerGroupOutcomeCallable SlbClient::createVServerGroupCallable(const CreateVServerGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVServerGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createVServerGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteAccessControlListOutcome SlbClient::deleteAccessControlList(const DeleteAccessControlListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAccessControlListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAccessControlListOutcome(DeleteAccessControlListResult(outcome.result()));
+	else
+		return DeleteAccessControlListOutcome(outcome.error());
+}
+
+void SlbClient::deleteAccessControlListAsync(const DeleteAccessControlListRequest& request, const DeleteAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAccessControlList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteAccessControlListOutcomeCallable SlbClient::deleteAccessControlListCallable(const DeleteAccessControlListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAccessControlListOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAccessControlList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,72 +699,288 @@ SlbClient::DeleteCACertificateOutcomeCallable SlbClient::deleteCACertificateCall
 	return task->get_future();
 }
 
-SlbClient::SetAccessControlListAttributeOutcome SlbClient::setAccessControlListAttribute(const SetAccessControlListAttributeRequest &request) const
+SlbClient::DeleteDomainExtensionOutcome SlbClient::deleteDomainExtension(const DeleteDomainExtensionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SetAccessControlListAttributeOutcome(endpointOutcome.error());
+		return DeleteDomainExtensionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SetAccessControlListAttributeOutcome(SetAccessControlListAttributeResult(outcome.result()));
+		return DeleteDomainExtensionOutcome(DeleteDomainExtensionResult(outcome.result()));
 	else
-		return SetAccessControlListAttributeOutcome(outcome.error());
+		return DeleteDomainExtensionOutcome(outcome.error());
 }
 
-void SlbClient::setAccessControlListAttributeAsync(const SetAccessControlListAttributeRequest& request, const SetAccessControlListAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::deleteDomainExtensionAsync(const DeleteDomainExtensionRequest& request, const DeleteDomainExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, setAccessControlListAttribute(request), context);
+		handler(this, request, deleteDomainExtension(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::SetAccessControlListAttributeOutcomeCallable SlbClient::setAccessControlListAttributeCallable(const SetAccessControlListAttributeRequest &request) const
+SlbClient::DeleteDomainExtensionOutcomeCallable SlbClient::deleteDomainExtensionCallable(const DeleteDomainExtensionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SetAccessControlListAttributeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteDomainExtensionOutcome()>>(
 			[this, request]()
 			{
-			return this->setAccessControlListAttribute(request);
+			return this->deleteDomainExtension(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::CreateLoadBalancerTCPListenerOutcome SlbClient::createLoadBalancerTCPListener(const CreateLoadBalancerTCPListenerRequest &request) const
+SlbClient::DeleteLoadBalancerOutcome SlbClient::deleteLoadBalancer(const DeleteLoadBalancerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateLoadBalancerTCPListenerOutcome(endpointOutcome.error());
+		return DeleteLoadBalancerOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateLoadBalancerTCPListenerOutcome(CreateLoadBalancerTCPListenerResult(outcome.result()));
+		return DeleteLoadBalancerOutcome(DeleteLoadBalancerResult(outcome.result()));
 	else
-		return CreateLoadBalancerTCPListenerOutcome(outcome.error());
+		return DeleteLoadBalancerOutcome(outcome.error());
 }
 
-void SlbClient::createLoadBalancerTCPListenerAsync(const CreateLoadBalancerTCPListenerRequest& request, const CreateLoadBalancerTCPListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::deleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createLoadBalancerTCPListener(request), context);
+		handler(this, request, deleteLoadBalancer(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::CreateLoadBalancerTCPListenerOutcomeCallable SlbClient::createLoadBalancerTCPListenerCallable(const CreateLoadBalancerTCPListenerRequest &request) const
+SlbClient::DeleteLoadBalancerOutcomeCallable SlbClient::deleteLoadBalancerCallable(const DeleteLoadBalancerRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateLoadBalancerTCPListenerOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerOutcome()>>(
 			[this, request]()
 			{
-			return this->createLoadBalancerTCPListener(request);
+			return this->deleteLoadBalancer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteLoadBalancerListenerOutcome SlbClient::deleteLoadBalancerListener(const DeleteLoadBalancerListenerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLoadBalancerListenerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLoadBalancerListenerOutcome(DeleteLoadBalancerListenerResult(outcome.result()));
+	else
+		return DeleteLoadBalancerListenerOutcome(outcome.error());
+}
+
+void SlbClient::deleteLoadBalancerListenerAsync(const DeleteLoadBalancerListenerRequest& request, const DeleteLoadBalancerListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLoadBalancerListener(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteLoadBalancerListenerOutcomeCallable SlbClient::deleteLoadBalancerListenerCallable(const DeleteLoadBalancerListenerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerListenerOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLoadBalancerListener(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteMasterSlaveServerGroupOutcome SlbClient::deleteMasterSlaveServerGroup(const DeleteMasterSlaveServerGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMasterSlaveServerGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMasterSlaveServerGroupOutcome(DeleteMasterSlaveServerGroupResult(outcome.result()));
+	else
+		return DeleteMasterSlaveServerGroupOutcome(outcome.error());
+}
+
+void SlbClient::deleteMasterSlaveServerGroupAsync(const DeleteMasterSlaveServerGroupRequest& request, const DeleteMasterSlaveServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMasterSlaveServerGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteMasterSlaveServerGroupOutcomeCallable SlbClient::deleteMasterSlaveServerGroupCallable(const DeleteMasterSlaveServerGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMasterSlaveServerGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMasterSlaveServerGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteMasterSlaveVServerGroupOutcome SlbClient::deleteMasterSlaveVServerGroup(const DeleteMasterSlaveVServerGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMasterSlaveVServerGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMasterSlaveVServerGroupOutcome(DeleteMasterSlaveVServerGroupResult(outcome.result()));
+	else
+		return DeleteMasterSlaveVServerGroupOutcome(outcome.error());
+}
+
+void SlbClient::deleteMasterSlaveVServerGroupAsync(const DeleteMasterSlaveVServerGroupRequest& request, const DeleteMasterSlaveVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMasterSlaveVServerGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteMasterSlaveVServerGroupOutcomeCallable SlbClient::deleteMasterSlaveVServerGroupCallable(const DeleteMasterSlaveVServerGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMasterSlaveVServerGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMasterSlaveVServerGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteRulesOutcome SlbClient::deleteRules(const DeleteRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRulesOutcome(DeleteRulesResult(outcome.result()));
+	else
+		return DeleteRulesOutcome(outcome.error());
+}
+
+void SlbClient::deleteRulesAsync(const DeleteRulesRequest& request, const DeleteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteRulesOutcomeCallable SlbClient::deleteRulesCallable(const DeleteRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteServerCertificateOutcome SlbClient::deleteServerCertificate(const DeleteServerCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteServerCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteServerCertificateOutcome(DeleteServerCertificateResult(outcome.result()));
+	else
+		return DeleteServerCertificateOutcome(outcome.error());
+}
+
+void SlbClient::deleteServerCertificateAsync(const DeleteServerCertificateRequest& request, const DeleteServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteServerCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteServerCertificateOutcomeCallable SlbClient::deleteServerCertificateCallable(const DeleteServerCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteServerCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteServerCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteVServerGroupOutcome SlbClient::deleteVServerGroup(const DeleteVServerGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVServerGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVServerGroupOutcome(DeleteVServerGroupResult(outcome.result()));
+	else
+		return DeleteVServerGroupOutcome(outcome.error());
+}
+
+void SlbClient::deleteVServerGroupAsync(const DeleteVServerGroupRequest& request, const DeleteVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVServerGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteVServerGroupOutcomeCallable SlbClient::deleteVServerGroupCallable(const DeleteVServerGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVServerGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVServerGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1923,108 +1059,108 @@ SlbClient::DescribeAccessControlListsOutcomeCallable SlbClient::describeAccessCo
 	return task->get_future();
 }
 
-SlbClient::DeleteDomainExtensionOutcome SlbClient::deleteDomainExtension(const DeleteDomainExtensionRequest &request) const
+SlbClient::DescribeAvailableResourceOutcome SlbClient::describeAvailableResource(const DescribeAvailableResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteDomainExtensionOutcome(endpointOutcome.error());
+		return DescribeAvailableResourceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteDomainExtensionOutcome(DeleteDomainExtensionResult(outcome.result()));
+		return DescribeAvailableResourceOutcome(DescribeAvailableResourceResult(outcome.result()));
 	else
-		return DeleteDomainExtensionOutcome(outcome.error());
+		return DescribeAvailableResourceOutcome(outcome.error());
 }
 
-void SlbClient::deleteDomainExtensionAsync(const DeleteDomainExtensionRequest& request, const DeleteDomainExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::describeAvailableResourceAsync(const DescribeAvailableResourceRequest& request, const DescribeAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteDomainExtension(request), context);
+		handler(this, request, describeAvailableResource(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::DeleteDomainExtensionOutcomeCallable SlbClient::deleteDomainExtensionCallable(const DeleteDomainExtensionRequest &request) const
+SlbClient::DescribeAvailableResourceOutcomeCallable SlbClient::describeAvailableResourceCallable(const DescribeAvailableResourceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteDomainExtensionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeAvailableResourceOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteDomainExtension(request);
+			return this->describeAvailableResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::SetRuleOutcome SlbClient::setRule(const SetRuleRequest &request) const
+SlbClient::DescribeCACertificatesOutcome SlbClient::describeCACertificates(const DescribeCACertificatesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SetRuleOutcome(endpointOutcome.error());
+		return DescribeCACertificatesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SetRuleOutcome(SetRuleResult(outcome.result()));
+		return DescribeCACertificatesOutcome(DescribeCACertificatesResult(outcome.result()));
 	else
-		return SetRuleOutcome(outcome.error());
+		return DescribeCACertificatesOutcome(outcome.error());
 }
 
-void SlbClient::setRuleAsync(const SetRuleRequest& request, const SetRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::describeCACertificatesAsync(const DescribeCACertificatesRequest& request, const DescribeCACertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, setRule(request), context);
+		handler(this, request, describeCACertificates(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::SetRuleOutcomeCallable SlbClient::setRuleCallable(const SetRuleRequest &request) const
+SlbClient::DescribeCACertificatesOutcomeCallable SlbClient::describeCACertificatesCallable(const DescribeCACertificatesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SetRuleOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeCACertificatesOutcome()>>(
 			[this, request]()
 			{
-			return this->setRule(request);
+			return this->describeCACertificates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::DescribeMasterSlaveServerGroupsOutcome SlbClient::describeMasterSlaveServerGroups(const DescribeMasterSlaveServerGroupsRequest &request) const
+SlbClient::DescribeDomainExtensionsOutcome SlbClient::describeDomainExtensions(const DescribeDomainExtensionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeMasterSlaveServerGroupsOutcome(endpointOutcome.error());
+		return DescribeDomainExtensionsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeMasterSlaveServerGroupsOutcome(DescribeMasterSlaveServerGroupsResult(outcome.result()));
+		return DescribeDomainExtensionsOutcome(DescribeDomainExtensionsResult(outcome.result()));
 	else
-		return DescribeMasterSlaveServerGroupsOutcome(outcome.error());
+		return DescribeDomainExtensionsOutcome(outcome.error());
 }
 
-void SlbClient::describeMasterSlaveServerGroupsAsync(const DescribeMasterSlaveServerGroupsRequest& request, const DescribeMasterSlaveServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::describeDomainExtensionsAsync(const DescribeDomainExtensionsRequest& request, const DescribeDomainExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeMasterSlaveServerGroups(request), context);
+		handler(this, request, describeDomainExtensions(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::DescribeMasterSlaveServerGroupsOutcomeCallable SlbClient::describeMasterSlaveServerGroupsCallable(const DescribeMasterSlaveServerGroupsRequest &request) const
+SlbClient::DescribeDomainExtensionsOutcomeCallable SlbClient::describeDomainExtensionsCallable(const DescribeDomainExtensionsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeMasterSlaveServerGroupsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDomainExtensionsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeMasterSlaveServerGroups(request);
+			return this->describeDomainExtensions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2067,504 +1203,108 @@ SlbClient::DescribeHealthStatusOutcomeCallable SlbClient::describeHealthStatusCa
 	return task->get_future();
 }
 
-SlbClient::DescribeRegionsOutcome SlbClient::describeRegions(const DescribeRegionsRequest &request) const
+SlbClient::DescribeListenerAccessControlAttributeOutcome SlbClient::describeListenerAccessControlAttribute(const DescribeListenerAccessControlAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeRegionsOutcome(endpointOutcome.error());
+		return DescribeListenerAccessControlAttributeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
+		return DescribeListenerAccessControlAttributeOutcome(DescribeListenerAccessControlAttributeResult(outcome.result()));
 	else
-		return DescribeRegionsOutcome(outcome.error());
+		return DescribeListenerAccessControlAttributeOutcome(outcome.error());
 }
 
-void SlbClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::describeListenerAccessControlAttributeAsync(const DescribeListenerAccessControlAttributeRequest& request, const DescribeListenerAccessControlAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeRegions(request), context);
+		handler(this, request, describeListenerAccessControlAttribute(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::DescribeRegionsOutcomeCallable SlbClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
+SlbClient::DescribeListenerAccessControlAttributeOutcomeCallable SlbClient::describeListenerAccessControlAttributeCallable(const DescribeListenerAccessControlAttributeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeListenerAccessControlAttributeOutcome()>>(
 			[this, request]()
 			{
-			return this->describeRegions(request);
+			return this->describeListenerAccessControlAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::RemoveListenerWhiteListItemOutcome SlbClient::removeListenerWhiteListItem(const RemoveListenerWhiteListItemRequest &request) const
+SlbClient::DescribeLoadBalancerAttributeOutcome SlbClient::describeLoadBalancerAttribute(const DescribeLoadBalancerAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RemoveListenerWhiteListItemOutcome(endpointOutcome.error());
+		return DescribeLoadBalancerAttributeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RemoveListenerWhiteListItemOutcome(RemoveListenerWhiteListItemResult(outcome.result()));
+		return DescribeLoadBalancerAttributeOutcome(DescribeLoadBalancerAttributeResult(outcome.result()));
 	else
-		return RemoveListenerWhiteListItemOutcome(outcome.error());
+		return DescribeLoadBalancerAttributeOutcome(outcome.error());
 }
 
-void SlbClient::removeListenerWhiteListItemAsync(const RemoveListenerWhiteListItemRequest& request, const RemoveListenerWhiteListItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::describeLoadBalancerAttributeAsync(const DescribeLoadBalancerAttributeRequest& request, const DescribeLoadBalancerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, removeListenerWhiteListItem(request), context);
+		handler(this, request, describeLoadBalancerAttribute(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::RemoveListenerWhiteListItemOutcomeCallable SlbClient::removeListenerWhiteListItemCallable(const RemoveListenerWhiteListItemRequest &request) const
+SlbClient::DescribeLoadBalancerAttributeOutcomeCallable SlbClient::describeLoadBalancerAttributeCallable(const DescribeLoadBalancerAttributeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RemoveListenerWhiteListItemOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerAttributeOutcome()>>(
 			[this, request]()
 			{
-			return this->removeListenerWhiteListItem(request);
+			return this->describeLoadBalancerAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::CreateLoadBalancerHTTPSListenerOutcome SlbClient::createLoadBalancerHTTPSListener(const CreateLoadBalancerHTTPSListenerRequest &request) const
+SlbClient::DescribeLoadBalancerHTTPListenerAttributeOutcome SlbClient::describeLoadBalancerHTTPListenerAttribute(const DescribeLoadBalancerHTTPListenerAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateLoadBalancerHTTPSListenerOutcome(endpointOutcome.error());
+		return DescribeLoadBalancerHTTPListenerAttributeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateLoadBalancerHTTPSListenerOutcome(CreateLoadBalancerHTTPSListenerResult(outcome.result()));
+		return DescribeLoadBalancerHTTPListenerAttributeOutcome(DescribeLoadBalancerHTTPListenerAttributeResult(outcome.result()));
 	else
-		return CreateLoadBalancerHTTPSListenerOutcome(outcome.error());
+		return DescribeLoadBalancerHTTPListenerAttributeOutcome(outcome.error());
 }
 
-void SlbClient::createLoadBalancerHTTPSListenerAsync(const CreateLoadBalancerHTTPSListenerRequest& request, const CreateLoadBalancerHTTPSListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::describeLoadBalancerHTTPListenerAttributeAsync(const DescribeLoadBalancerHTTPListenerAttributeRequest& request, const DescribeLoadBalancerHTTPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createLoadBalancerHTTPSListener(request), context);
+		handler(this, request, describeLoadBalancerHTTPListenerAttribute(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::CreateLoadBalancerHTTPSListenerOutcomeCallable SlbClient::createLoadBalancerHTTPSListenerCallable(const CreateLoadBalancerHTTPSListenerRequest &request) const
+SlbClient::DescribeLoadBalancerHTTPListenerAttributeOutcomeCallable SlbClient::describeLoadBalancerHTTPListenerAttributeCallable(const DescribeLoadBalancerHTTPListenerAttributeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateLoadBalancerHTTPSListenerOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerHTTPListenerAttributeOutcome()>>(
 			[this, request]()
 			{
-			return this->createLoadBalancerHTTPSListener(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DeleteMasterSlaveServerGroupOutcome SlbClient::deleteMasterSlaveServerGroup(const DeleteMasterSlaveServerGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteMasterSlaveServerGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteMasterSlaveServerGroupOutcome(DeleteMasterSlaveServerGroupResult(outcome.result()));
-	else
-		return DeleteMasterSlaveServerGroupOutcome(outcome.error());
-}
-
-void SlbClient::deleteMasterSlaveServerGroupAsync(const DeleteMasterSlaveServerGroupRequest& request, const DeleteMasterSlaveServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteMasterSlaveServerGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DeleteMasterSlaveServerGroupOutcomeCallable SlbClient::deleteMasterSlaveServerGroupCallable(const DeleteMasterSlaveServerGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteMasterSlaveServerGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteMasterSlaveServerGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeServerCertificatesOutcome SlbClient::describeServerCertificates(const DescribeServerCertificatesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeServerCertificatesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeServerCertificatesOutcome(DescribeServerCertificatesResult(outcome.result()));
-	else
-		return DescribeServerCertificatesOutcome(outcome.error());
-}
-
-void SlbClient::describeServerCertificatesAsync(const DescribeServerCertificatesRequest& request, const DescribeServerCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeServerCertificates(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeServerCertificatesOutcomeCallable SlbClient::describeServerCertificatesCallable(const DescribeServerCertificatesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeServerCertificatesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeServerCertificates(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeRulesOutcome SlbClient::describeRules(const DescribeRulesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRulesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRulesOutcome(DescribeRulesResult(outcome.result()));
-	else
-		return DescribeRulesOutcome(outcome.error());
-}
-
-void SlbClient::describeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRules(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeRulesOutcomeCallable SlbClient::describeRulesCallable(const DescribeRulesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRulesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRules(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::RemoveAccessControlListEntryOutcome SlbClient::removeAccessControlListEntry(const RemoveAccessControlListEntryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveAccessControlListEntryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveAccessControlListEntryOutcome(RemoveAccessControlListEntryResult(outcome.result()));
-	else
-		return RemoveAccessControlListEntryOutcome(outcome.error());
-}
-
-void SlbClient::removeAccessControlListEntryAsync(const RemoveAccessControlListEntryRequest& request, const RemoveAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeAccessControlListEntry(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::RemoveAccessControlListEntryOutcomeCallable SlbClient::removeAccessControlListEntryCallable(const RemoveAccessControlListEntryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveAccessControlListEntryOutcome()>>(
-			[this, request]()
-			{
-			return this->removeAccessControlListEntry(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::CreateDomainExtensionOutcome SlbClient::createDomainExtension(const CreateDomainExtensionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDomainExtensionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDomainExtensionOutcome(CreateDomainExtensionResult(outcome.result()));
-	else
-		return CreateDomainExtensionOutcome(outcome.error());
-}
-
-void SlbClient::createDomainExtensionAsync(const CreateDomainExtensionRequest& request, const CreateDomainExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDomainExtension(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::CreateDomainExtensionOutcomeCallable SlbClient::createDomainExtensionCallable(const CreateDomainExtensionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDomainExtensionOutcome()>>(
-			[this, request]()
-			{
-			return this->createDomainExtension(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeRuleAttributeOutcome SlbClient::describeRuleAttribute(const DescribeRuleAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRuleAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRuleAttributeOutcome(DescribeRuleAttributeResult(outcome.result()));
-	else
-		return DescribeRuleAttributeOutcome(outcome.error());
-}
-
-void SlbClient::describeRuleAttributeAsync(const DescribeRuleAttributeRequest& request, const DescribeRuleAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRuleAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeRuleAttributeOutcomeCallable SlbClient::describeRuleAttributeCallable(const DescribeRuleAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRuleAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRuleAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::UploadServerCertificateOutcome SlbClient::uploadServerCertificate(const UploadServerCertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UploadServerCertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UploadServerCertificateOutcome(UploadServerCertificateResult(outcome.result()));
-	else
-		return UploadServerCertificateOutcome(outcome.error());
-}
-
-void SlbClient::uploadServerCertificateAsync(const UploadServerCertificateRequest& request, const UploadServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, uploadServerCertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::UploadServerCertificateOutcomeCallable SlbClient::uploadServerCertificateCallable(const UploadServerCertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UploadServerCertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->uploadServerCertificate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DeleteServerCertificateOutcome SlbClient::deleteServerCertificate(const DeleteServerCertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteServerCertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteServerCertificateOutcome(DeleteServerCertificateResult(outcome.result()));
-	else
-		return DeleteServerCertificateOutcome(outcome.error());
-}
-
-void SlbClient::deleteServerCertificateAsync(const DeleteServerCertificateRequest& request, const DeleteServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteServerCertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DeleteServerCertificateOutcomeCallable SlbClient::deleteServerCertificateCallable(const DeleteServerCertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteServerCertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteServerCertificate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetVServerGroupAttributeOutcome SlbClient::setVServerGroupAttribute(const SetVServerGroupAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetVServerGroupAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetVServerGroupAttributeOutcome(SetVServerGroupAttributeResult(outcome.result()));
-	else
-		return SetVServerGroupAttributeOutcome(outcome.error());
-}
-
-void SlbClient::setVServerGroupAttributeAsync(const SetVServerGroupAttributeRequest& request, const SetVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setVServerGroupAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetVServerGroupAttributeOutcomeCallable SlbClient::setVServerGroupAttributeCallable(const SetVServerGroupAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetVServerGroupAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->setVServerGroupAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::SetLoadBalancerNameOutcome SlbClient::setLoadBalancerName(const SetLoadBalancerNameRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetLoadBalancerNameOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetLoadBalancerNameOutcome(SetLoadBalancerNameResult(outcome.result()));
-	else
-		return SetLoadBalancerNameOutcome(outcome.error());
-}
-
-void SlbClient::setLoadBalancerNameAsync(const SetLoadBalancerNameRequest& request, const SetLoadBalancerNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setLoadBalancerName(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::SetLoadBalancerNameOutcomeCallable SlbClient::setLoadBalancerNameCallable(const SetLoadBalancerNameRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetLoadBalancerNameOutcome()>>(
-			[this, request]()
-			{
-			return this->setLoadBalancerName(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::ModifyLoadBalancerInternetSpecOutcome SlbClient::modifyLoadBalancerInternetSpec(const ModifyLoadBalancerInternetSpecRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyLoadBalancerInternetSpecOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyLoadBalancerInternetSpecOutcome(ModifyLoadBalancerInternetSpecResult(outcome.result()));
-	else
-		return ModifyLoadBalancerInternetSpecOutcome(outcome.error());
-}
-
-void SlbClient::modifyLoadBalancerInternetSpecAsync(const ModifyLoadBalancerInternetSpecRequest& request, const ModifyLoadBalancerInternetSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyLoadBalancerInternetSpec(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::ModifyLoadBalancerInternetSpecOutcomeCallable SlbClient::modifyLoadBalancerInternetSpecCallable(const ModifyLoadBalancerInternetSpecRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerInternetSpecOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyLoadBalancerInternetSpec(request);
+			return this->describeLoadBalancerHTTPListenerAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,36 +1347,108 @@ SlbClient::DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::
 	return task->get_future();
 }
 
-SlbClient::CreateAccessControlListOutcome SlbClient::createAccessControlList(const CreateAccessControlListRequest &request) const
+SlbClient::DescribeLoadBalancerTCPListenerAttributeOutcome SlbClient::describeLoadBalancerTCPListenerAttribute(const DescribeLoadBalancerTCPListenerAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateAccessControlListOutcome(endpointOutcome.error());
+		return DescribeLoadBalancerTCPListenerAttributeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateAccessControlListOutcome(CreateAccessControlListResult(outcome.result()));
+		return DescribeLoadBalancerTCPListenerAttributeOutcome(DescribeLoadBalancerTCPListenerAttributeResult(outcome.result()));
 	else
-		return CreateAccessControlListOutcome(outcome.error());
+		return DescribeLoadBalancerTCPListenerAttributeOutcome(outcome.error());
 }
 
-void SlbClient::createAccessControlListAsync(const CreateAccessControlListRequest& request, const CreateAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::describeLoadBalancerTCPListenerAttributeAsync(const DescribeLoadBalancerTCPListenerAttributeRequest& request, const DescribeLoadBalancerTCPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createAccessControlList(request), context);
+		handler(this, request, describeLoadBalancerTCPListenerAttribute(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::CreateAccessControlListOutcomeCallable SlbClient::createAccessControlListCallable(const CreateAccessControlListRequest &request) const
+SlbClient::DescribeLoadBalancerTCPListenerAttributeOutcomeCallable SlbClient::describeLoadBalancerTCPListenerAttributeCallable(const DescribeLoadBalancerTCPListenerAttributeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateAccessControlListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerTCPListenerAttributeOutcome()>>(
 			[this, request]()
 			{
-			return this->createAccessControlList(request);
+			return this->describeLoadBalancerTCPListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeLoadBalancerUDPListenerAttributeOutcome SlbClient::describeLoadBalancerUDPListenerAttribute(const DescribeLoadBalancerUDPListenerAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLoadBalancerUDPListenerAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLoadBalancerUDPListenerAttributeOutcome(DescribeLoadBalancerUDPListenerAttributeResult(outcome.result()));
+	else
+		return DescribeLoadBalancerUDPListenerAttributeOutcome(outcome.error());
+}
+
+void SlbClient::describeLoadBalancerUDPListenerAttributeAsync(const DescribeLoadBalancerUDPListenerAttributeRequest& request, const DescribeLoadBalancerUDPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLoadBalancerUDPListenerAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeLoadBalancerUDPListenerAttributeOutcomeCallable SlbClient::describeLoadBalancerUDPListenerAttributeCallable(const DescribeLoadBalancerUDPListenerAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerUDPListenerAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLoadBalancerUDPListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeLoadBalancersOutcome SlbClient::describeLoadBalancers(const DescribeLoadBalancersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLoadBalancersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLoadBalancersOutcome(DescribeLoadBalancersResult(outcome.result()));
+	else
+		return DescribeLoadBalancersOutcome(outcome.error());
+}
+
+void SlbClient::describeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLoadBalancers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeLoadBalancersOutcomeCallable SlbClient::describeLoadBalancersCallable(const DescribeLoadBalancersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLoadBalancers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2679,36 +1491,468 @@ SlbClient::DescribeMasterSlaveServerGroupAttributeOutcomeCallable SlbClient::des
 	return task->get_future();
 }
 
-SlbClient::AddTagsOutcome SlbClient::addTags(const AddTagsRequest &request) const
+SlbClient::DescribeMasterSlaveServerGroupsOutcome SlbClient::describeMasterSlaveServerGroups(const DescribeMasterSlaveServerGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddTagsOutcome(endpointOutcome.error());
+		return DescribeMasterSlaveServerGroupsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddTagsOutcome(AddTagsResult(outcome.result()));
+		return DescribeMasterSlaveServerGroupsOutcome(DescribeMasterSlaveServerGroupsResult(outcome.result()));
 	else
-		return AddTagsOutcome(outcome.error());
+		return DescribeMasterSlaveServerGroupsOutcome(outcome.error());
 }
 
-void SlbClient::addTagsAsync(const AddTagsRequest& request, const AddTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::describeMasterSlaveServerGroupsAsync(const DescribeMasterSlaveServerGroupsRequest& request, const DescribeMasterSlaveServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addTags(request), context);
+		handler(this, request, describeMasterSlaveServerGroups(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::AddTagsOutcomeCallable SlbClient::addTagsCallable(const AddTagsRequest &request) const
+SlbClient::DescribeMasterSlaveServerGroupsOutcomeCallable SlbClient::describeMasterSlaveServerGroupsCallable(const DescribeMasterSlaveServerGroupsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddTagsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeMasterSlaveServerGroupsOutcome()>>(
 			[this, request]()
 			{
-			return this->addTags(request);
+			return this->describeMasterSlaveServerGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeMasterSlaveVServerGroupAttributeOutcome SlbClient::describeMasterSlaveVServerGroupAttribute(const DescribeMasterSlaveVServerGroupAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMasterSlaveVServerGroupAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMasterSlaveVServerGroupAttributeOutcome(DescribeMasterSlaveVServerGroupAttributeResult(outcome.result()));
+	else
+		return DescribeMasterSlaveVServerGroupAttributeOutcome(outcome.error());
+}
+
+void SlbClient::describeMasterSlaveVServerGroupAttributeAsync(const DescribeMasterSlaveVServerGroupAttributeRequest& request, const DescribeMasterSlaveVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMasterSlaveVServerGroupAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeMasterSlaveVServerGroupAttributeOutcomeCallable SlbClient::describeMasterSlaveVServerGroupAttributeCallable(const DescribeMasterSlaveVServerGroupAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMasterSlaveVServerGroupAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMasterSlaveVServerGroupAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeMasterSlaveVServerGroupsOutcome SlbClient::describeMasterSlaveVServerGroups(const DescribeMasterSlaveVServerGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMasterSlaveVServerGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMasterSlaveVServerGroupsOutcome(DescribeMasterSlaveVServerGroupsResult(outcome.result()));
+	else
+		return DescribeMasterSlaveVServerGroupsOutcome(outcome.error());
+}
+
+void SlbClient::describeMasterSlaveVServerGroupsAsync(const DescribeMasterSlaveVServerGroupsRequest& request, const DescribeMasterSlaveVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMasterSlaveVServerGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeMasterSlaveVServerGroupsOutcomeCallable SlbClient::describeMasterSlaveVServerGroupsCallable(const DescribeMasterSlaveVServerGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMasterSlaveVServerGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMasterSlaveVServerGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeRegionsOutcome SlbClient::describeRegions(const DescribeRegionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRegionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
+	else
+		return DescribeRegionsOutcome(outcome.error());
+}
+
+void SlbClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRegions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeRegionsOutcomeCallable SlbClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRegions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeRuleAttributeOutcome SlbClient::describeRuleAttribute(const DescribeRuleAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRuleAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRuleAttributeOutcome(DescribeRuleAttributeResult(outcome.result()));
+	else
+		return DescribeRuleAttributeOutcome(outcome.error());
+}
+
+void SlbClient::describeRuleAttributeAsync(const DescribeRuleAttributeRequest& request, const DescribeRuleAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRuleAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeRuleAttributeOutcomeCallable SlbClient::describeRuleAttributeCallable(const DescribeRuleAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRuleAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRuleAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeRulesOutcome SlbClient::describeRules(const DescribeRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRulesOutcome(DescribeRulesResult(outcome.result()));
+	else
+		return DescribeRulesOutcome(outcome.error());
+}
+
+void SlbClient::describeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeRulesOutcomeCallable SlbClient::describeRulesCallable(const DescribeRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeServerCertificatesOutcome SlbClient::describeServerCertificates(const DescribeServerCertificatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeServerCertificatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeServerCertificatesOutcome(DescribeServerCertificatesResult(outcome.result()));
+	else
+		return DescribeServerCertificatesOutcome(outcome.error());
+}
+
+void SlbClient::describeServerCertificatesAsync(const DescribeServerCertificatesRequest& request, const DescribeServerCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeServerCertificates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeServerCertificatesOutcomeCallable SlbClient::describeServerCertificatesCallable(const DescribeServerCertificatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeServerCertificatesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeServerCertificates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeTagsOutcome SlbClient::describeTags(const DescribeTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTagsOutcome(DescribeTagsResult(outcome.result()));
+	else
+		return DescribeTagsOutcome(outcome.error());
+}
+
+void SlbClient::describeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeTagsOutcomeCallable SlbClient::describeTagsCallable(const DescribeTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeVServerGroupAttributeOutcome SlbClient::describeVServerGroupAttribute(const DescribeVServerGroupAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVServerGroupAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVServerGroupAttributeOutcome(DescribeVServerGroupAttributeResult(outcome.result()));
+	else
+		return DescribeVServerGroupAttributeOutcome(outcome.error());
+}
+
+void SlbClient::describeVServerGroupAttributeAsync(const DescribeVServerGroupAttributeRequest& request, const DescribeVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVServerGroupAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeVServerGroupAttributeOutcomeCallable SlbClient::describeVServerGroupAttributeCallable(const DescribeVServerGroupAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVServerGroupAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVServerGroupAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeVServerGroupsOutcome SlbClient::describeVServerGroups(const DescribeVServerGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVServerGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVServerGroupsOutcome(DescribeVServerGroupsResult(outcome.result()));
+	else
+		return DescribeVServerGroupsOutcome(outcome.error());
+}
+
+void SlbClient::describeVServerGroupsAsync(const DescribeVServerGroupsRequest& request, const DescribeVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVServerGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeVServerGroupsOutcomeCallable SlbClient::describeVServerGroupsCallable(const DescribeVServerGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVServerGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVServerGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeZonesOutcome SlbClient::describeZones(const DescribeZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeZonesOutcome(DescribeZonesResult(outcome.result()));
+	else
+		return DescribeZonesOutcome(outcome.error());
+}
+
+void SlbClient::describeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeZonesOutcomeCallable SlbClient::describeZonesCallable(const DescribeZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::ModifyLoadBalancerInstanceSpecOutcome SlbClient::modifyLoadBalancerInstanceSpec(const ModifyLoadBalancerInstanceSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLoadBalancerInstanceSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLoadBalancerInstanceSpecOutcome(ModifyLoadBalancerInstanceSpecResult(outcome.result()));
+	else
+		return ModifyLoadBalancerInstanceSpecOutcome(outcome.error());
+}
+
+void SlbClient::modifyLoadBalancerInstanceSpecAsync(const ModifyLoadBalancerInstanceSpecRequest& request, const ModifyLoadBalancerInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLoadBalancerInstanceSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::ModifyLoadBalancerInstanceSpecOutcomeCallable SlbClient::modifyLoadBalancerInstanceSpecCallable(const ModifyLoadBalancerInstanceSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerInstanceSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLoadBalancerInstanceSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::ModifyLoadBalancerInternetSpecOutcome SlbClient::modifyLoadBalancerInternetSpec(const ModifyLoadBalancerInternetSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLoadBalancerInternetSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLoadBalancerInternetSpecOutcome(ModifyLoadBalancerInternetSpecResult(outcome.result()));
+	else
+		return ModifyLoadBalancerInternetSpecOutcome(outcome.error());
+}
+
+void SlbClient::modifyLoadBalancerInternetSpecAsync(const ModifyLoadBalancerInternetSpecRequest& request, const ModifyLoadBalancerInternetSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLoadBalancerInternetSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::ModifyLoadBalancerInternetSpecOutcomeCallable SlbClient::modifyLoadBalancerInternetSpecCallable(const ModifyLoadBalancerInternetSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerInternetSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLoadBalancerInternetSpec(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2751,108 +1995,612 @@ SlbClient::ModifyLoadBalancerPayTypeOutcomeCallable SlbClient::modifyLoadBalance
 	return task->get_future();
 }
 
-SlbClient::CreateRulesOutcome SlbClient::createRules(const CreateRulesRequest &request) const
+SlbClient::ModifyVServerGroupBackendServersOutcome SlbClient::modifyVServerGroupBackendServers(const ModifyVServerGroupBackendServersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateRulesOutcome(endpointOutcome.error());
+		return ModifyVServerGroupBackendServersOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateRulesOutcome(CreateRulesResult(outcome.result()));
+		return ModifyVServerGroupBackendServersOutcome(ModifyVServerGroupBackendServersResult(outcome.result()));
 	else
-		return CreateRulesOutcome(outcome.error());
+		return ModifyVServerGroupBackendServersOutcome(outcome.error());
 }
 
-void SlbClient::createRulesAsync(const CreateRulesRequest& request, const CreateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::modifyVServerGroupBackendServersAsync(const ModifyVServerGroupBackendServersRequest& request, const ModifyVServerGroupBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createRules(request), context);
+		handler(this, request, modifyVServerGroupBackendServers(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::CreateRulesOutcomeCallable SlbClient::createRulesCallable(const CreateRulesRequest &request) const
+SlbClient::ModifyVServerGroupBackendServersOutcomeCallable SlbClient::modifyVServerGroupBackendServersCallable(const ModifyVServerGroupBackendServersRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateRulesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyVServerGroupBackendServersOutcome()>>(
 			[this, request]()
 			{
-			return this->createRules(request);
+			return this->modifyVServerGroupBackendServers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::AddVServerGroupBackendServersOutcome SlbClient::addVServerGroupBackendServers(const AddVServerGroupBackendServersRequest &request) const
+SlbClient::RemoveAccessControlListEntryOutcome SlbClient::removeAccessControlListEntry(const RemoveAccessControlListEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddVServerGroupBackendServersOutcome(endpointOutcome.error());
+		return RemoveAccessControlListEntryOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddVServerGroupBackendServersOutcome(AddVServerGroupBackendServersResult(outcome.result()));
+		return RemoveAccessControlListEntryOutcome(RemoveAccessControlListEntryResult(outcome.result()));
 	else
-		return AddVServerGroupBackendServersOutcome(outcome.error());
+		return RemoveAccessControlListEntryOutcome(outcome.error());
 }
 
-void SlbClient::addVServerGroupBackendServersAsync(const AddVServerGroupBackendServersRequest& request, const AddVServerGroupBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::removeAccessControlListEntryAsync(const RemoveAccessControlListEntryRequest& request, const RemoveAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addVServerGroupBackendServers(request), context);
+		handler(this, request, removeAccessControlListEntry(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::AddVServerGroupBackendServersOutcomeCallable SlbClient::addVServerGroupBackendServersCallable(const AddVServerGroupBackendServersRequest &request) const
+SlbClient::RemoveAccessControlListEntryOutcomeCallable SlbClient::removeAccessControlListEntryCallable(const RemoveAccessControlListEntryRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddVServerGroupBackendServersOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RemoveAccessControlListEntryOutcome()>>(
 			[this, request]()
 			{
-			return this->addVServerGroupBackendServers(request);
+			return this->removeAccessControlListEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-SlbClient::AddBackendServersOutcome SlbClient::addBackendServers(const AddBackendServersRequest &request) const
+SlbClient::RemoveBackendServersOutcome SlbClient::removeBackendServers(const RemoveBackendServersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddBackendServersOutcome(endpointOutcome.error());
+		return RemoveBackendServersOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddBackendServersOutcome(AddBackendServersResult(outcome.result()));
+		return RemoveBackendServersOutcome(RemoveBackendServersResult(outcome.result()));
 	else
-		return AddBackendServersOutcome(outcome.error());
+		return RemoveBackendServersOutcome(outcome.error());
 }
 
-void SlbClient::addBackendServersAsync(const AddBackendServersRequest& request, const AddBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::removeBackendServersAsync(const RemoveBackendServersRequest& request, const RemoveBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addBackendServers(request), context);
+		handler(this, request, removeBackendServers(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::AddBackendServersOutcomeCallable SlbClient::addBackendServersCallable(const AddBackendServersRequest &request) const
+SlbClient::RemoveBackendServersOutcomeCallable SlbClient::removeBackendServersCallable(const RemoveBackendServersRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddBackendServersOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RemoveBackendServersOutcome()>>(
 			[this, request]()
 			{
-			return this->addBackendServers(request);
+			return this->removeBackendServers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::RemoveListenerWhiteListItemOutcome SlbClient::removeListenerWhiteListItem(const RemoveListenerWhiteListItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveListenerWhiteListItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveListenerWhiteListItemOutcome(RemoveListenerWhiteListItemResult(outcome.result()));
+	else
+		return RemoveListenerWhiteListItemOutcome(outcome.error());
+}
+
+void SlbClient::removeListenerWhiteListItemAsync(const RemoveListenerWhiteListItemRequest& request, const RemoveListenerWhiteListItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeListenerWhiteListItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::RemoveListenerWhiteListItemOutcomeCallable SlbClient::removeListenerWhiteListItemCallable(const RemoveListenerWhiteListItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveListenerWhiteListItemOutcome()>>(
+			[this, request]()
+			{
+			return this->removeListenerWhiteListItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::RemoveTagsOutcome SlbClient::removeTags(const RemoveTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveTagsOutcome(RemoveTagsResult(outcome.result()));
+	else
+		return RemoveTagsOutcome(outcome.error());
+}
+
+void SlbClient::removeTagsAsync(const RemoveTagsRequest& request, const RemoveTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::RemoveTagsOutcomeCallable SlbClient::removeTagsCallable(const RemoveTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->removeTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::RemoveVServerGroupBackendServersOutcome SlbClient::removeVServerGroupBackendServers(const RemoveVServerGroupBackendServersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveVServerGroupBackendServersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveVServerGroupBackendServersOutcome(RemoveVServerGroupBackendServersResult(outcome.result()));
+	else
+		return RemoveVServerGroupBackendServersOutcome(outcome.error());
+}
+
+void SlbClient::removeVServerGroupBackendServersAsync(const RemoveVServerGroupBackendServersRequest& request, const RemoveVServerGroupBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeVServerGroupBackendServers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::RemoveVServerGroupBackendServersOutcomeCallable SlbClient::removeVServerGroupBackendServersCallable(const RemoveVServerGroupBackendServersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveVServerGroupBackendServersOutcome()>>(
+			[this, request]()
+			{
+			return this->removeVServerGroupBackendServers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetAccessControlListAttributeOutcome SlbClient::setAccessControlListAttribute(const SetAccessControlListAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAccessControlListAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAccessControlListAttributeOutcome(SetAccessControlListAttributeResult(outcome.result()));
+	else
+		return SetAccessControlListAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setAccessControlListAttributeAsync(const SetAccessControlListAttributeRequest& request, const SetAccessControlListAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAccessControlListAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetAccessControlListAttributeOutcomeCallable SlbClient::setAccessControlListAttributeCallable(const SetAccessControlListAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAccessControlListAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setAccessControlListAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetBackendServersOutcome SlbClient::setBackendServers(const SetBackendServersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetBackendServersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetBackendServersOutcome(SetBackendServersResult(outcome.result()));
+	else
+		return SetBackendServersOutcome(outcome.error());
+}
+
+void SlbClient::setBackendServersAsync(const SetBackendServersRequest& request, const SetBackendServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setBackendServers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetBackendServersOutcomeCallable SlbClient::setBackendServersCallable(const SetBackendServersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetBackendServersOutcome()>>(
+			[this, request]()
+			{
+			return this->setBackendServers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetCACertificateNameOutcome SlbClient::setCACertificateName(const SetCACertificateNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetCACertificateNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetCACertificateNameOutcome(SetCACertificateNameResult(outcome.result()));
+	else
+		return SetCACertificateNameOutcome(outcome.error());
+}
+
+void SlbClient::setCACertificateNameAsync(const SetCACertificateNameRequest& request, const SetCACertificateNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setCACertificateName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetCACertificateNameOutcomeCallable SlbClient::setCACertificateNameCallable(const SetCACertificateNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetCACertificateNameOutcome()>>(
+			[this, request]()
+			{
+			return this->setCACertificateName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetDomainExtensionAttributeOutcome SlbClient::setDomainExtensionAttribute(const SetDomainExtensionAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDomainExtensionAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDomainExtensionAttributeOutcome(SetDomainExtensionAttributeResult(outcome.result()));
+	else
+		return SetDomainExtensionAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setDomainExtensionAttributeAsync(const SetDomainExtensionAttributeRequest& request, const SetDomainExtensionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDomainExtensionAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetDomainExtensionAttributeOutcomeCallable SlbClient::setDomainExtensionAttributeCallable(const SetDomainExtensionAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDomainExtensionAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setDomainExtensionAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetListenerAccessControlStatusOutcome SlbClient::setListenerAccessControlStatus(const SetListenerAccessControlStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetListenerAccessControlStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetListenerAccessControlStatusOutcome(SetListenerAccessControlStatusResult(outcome.result()));
+	else
+		return SetListenerAccessControlStatusOutcome(outcome.error());
+}
+
+void SlbClient::setListenerAccessControlStatusAsync(const SetListenerAccessControlStatusRequest& request, const SetListenerAccessControlStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setListenerAccessControlStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetListenerAccessControlStatusOutcomeCallable SlbClient::setListenerAccessControlStatusCallable(const SetListenerAccessControlStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetListenerAccessControlStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setListenerAccessControlStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetLoadBalancerDeleteProtectionOutcome SlbClient::setLoadBalancerDeleteProtection(const SetLoadBalancerDeleteProtectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLoadBalancerDeleteProtectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLoadBalancerDeleteProtectionOutcome(SetLoadBalancerDeleteProtectionResult(outcome.result()));
+	else
+		return SetLoadBalancerDeleteProtectionOutcome(outcome.error());
+}
+
+void SlbClient::setLoadBalancerDeleteProtectionAsync(const SetLoadBalancerDeleteProtectionRequest& request, const SetLoadBalancerDeleteProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLoadBalancerDeleteProtection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetLoadBalancerDeleteProtectionOutcomeCallable SlbClient::setLoadBalancerDeleteProtectionCallable(const SetLoadBalancerDeleteProtectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLoadBalancerDeleteProtectionOutcome()>>(
+			[this, request]()
+			{
+			return this->setLoadBalancerDeleteProtection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetLoadBalancerHTTPListenerAttributeOutcome SlbClient::setLoadBalancerHTTPListenerAttribute(const SetLoadBalancerHTTPListenerAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLoadBalancerHTTPListenerAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLoadBalancerHTTPListenerAttributeOutcome(SetLoadBalancerHTTPListenerAttributeResult(outcome.result()));
+	else
+		return SetLoadBalancerHTTPListenerAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setLoadBalancerHTTPListenerAttributeAsync(const SetLoadBalancerHTTPListenerAttributeRequest& request, const SetLoadBalancerHTTPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLoadBalancerHTTPListenerAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetLoadBalancerHTTPListenerAttributeOutcomeCallable SlbClient::setLoadBalancerHTTPListenerAttributeCallable(const SetLoadBalancerHTTPListenerAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLoadBalancerHTTPListenerAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setLoadBalancerHTTPListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcome SlbClient::setLoadBalancerHTTPSListenerAttribute(const SetLoadBalancerHTTPSListenerAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLoadBalancerHTTPSListenerAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLoadBalancerHTTPSListenerAttributeOutcome(SetLoadBalancerHTTPSListenerAttributeResult(outcome.result()));
+	else
+		return SetLoadBalancerHTTPSListenerAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setLoadBalancerHTTPSListenerAttributeAsync(const SetLoadBalancerHTTPSListenerAttributeRequest& request, const SetLoadBalancerHTTPSListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLoadBalancerHTTPSListenerAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::setLoadBalancerHTTPSListenerAttributeCallable(const SetLoadBalancerHTTPSListenerAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLoadBalancerHTTPSListenerAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setLoadBalancerHTTPSListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetLoadBalancerNameOutcome SlbClient::setLoadBalancerName(const SetLoadBalancerNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLoadBalancerNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLoadBalancerNameOutcome(SetLoadBalancerNameResult(outcome.result()));
+	else
+		return SetLoadBalancerNameOutcome(outcome.error());
+}
+
+void SlbClient::setLoadBalancerNameAsync(const SetLoadBalancerNameRequest& request, const SetLoadBalancerNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLoadBalancerName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetLoadBalancerNameOutcomeCallable SlbClient::setLoadBalancerNameCallable(const SetLoadBalancerNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLoadBalancerNameOutcome()>>(
+			[this, request]()
+			{
+			return this->setLoadBalancerName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetLoadBalancerStatusOutcome SlbClient::setLoadBalancerStatus(const SetLoadBalancerStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLoadBalancerStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLoadBalancerStatusOutcome(SetLoadBalancerStatusResult(outcome.result()));
+	else
+		return SetLoadBalancerStatusOutcome(outcome.error());
+}
+
+void SlbClient::setLoadBalancerStatusAsync(const SetLoadBalancerStatusRequest& request, const SetLoadBalancerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLoadBalancerStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetLoadBalancerStatusOutcomeCallable SlbClient::setLoadBalancerStatusCallable(const SetLoadBalancerStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLoadBalancerStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setLoadBalancerStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetLoadBalancerTCPListenerAttributeOutcome SlbClient::setLoadBalancerTCPListenerAttribute(const SetLoadBalancerTCPListenerAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLoadBalancerTCPListenerAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLoadBalancerTCPListenerAttributeOutcome(SetLoadBalancerTCPListenerAttributeResult(outcome.result()));
+	else
+		return SetLoadBalancerTCPListenerAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setLoadBalancerTCPListenerAttributeAsync(const SetLoadBalancerTCPListenerAttributeRequest& request, const SetLoadBalancerTCPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLoadBalancerTCPListenerAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetLoadBalancerTCPListenerAttributeOutcomeCallable SlbClient::setLoadBalancerTCPListenerAttributeCallable(const SetLoadBalancerTCPListenerAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLoadBalancerTCPListenerAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setLoadBalancerTCPListenerAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2889,6 +2637,258 @@ SlbClient::SetLoadBalancerUDPListenerAttributeOutcomeCallable SlbClient::setLoad
 			[this, request]()
 			{
 			return this->setLoadBalancerUDPListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetRuleOutcome SlbClient::setRule(const SetRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetRuleOutcome(SetRuleResult(outcome.result()));
+	else
+		return SetRuleOutcome(outcome.error());
+}
+
+void SlbClient::setRuleAsync(const SetRuleRequest& request, const SetRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetRuleOutcomeCallable SlbClient::setRuleCallable(const SetRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->setRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetServerCertificateNameOutcome SlbClient::setServerCertificateName(const SetServerCertificateNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetServerCertificateNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetServerCertificateNameOutcome(SetServerCertificateNameResult(outcome.result()));
+	else
+		return SetServerCertificateNameOutcome(outcome.error());
+}
+
+void SlbClient::setServerCertificateNameAsync(const SetServerCertificateNameRequest& request, const SetServerCertificateNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setServerCertificateName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetServerCertificateNameOutcomeCallable SlbClient::setServerCertificateNameCallable(const SetServerCertificateNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetServerCertificateNameOutcome()>>(
+			[this, request]()
+			{
+			return this->setServerCertificateName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetVServerGroupAttributeOutcome SlbClient::setVServerGroupAttribute(const SetVServerGroupAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetVServerGroupAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetVServerGroupAttributeOutcome(SetVServerGroupAttributeResult(outcome.result()));
+	else
+		return SetVServerGroupAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setVServerGroupAttributeAsync(const SetVServerGroupAttributeRequest& request, const SetVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setVServerGroupAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetVServerGroupAttributeOutcomeCallable SlbClient::setVServerGroupAttributeCallable(const SetVServerGroupAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetVServerGroupAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setVServerGroupAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::StartLoadBalancerListenerOutcome SlbClient::startLoadBalancerListener(const StartLoadBalancerListenerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartLoadBalancerListenerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartLoadBalancerListenerOutcome(StartLoadBalancerListenerResult(outcome.result()));
+	else
+		return StartLoadBalancerListenerOutcome(outcome.error());
+}
+
+void SlbClient::startLoadBalancerListenerAsync(const StartLoadBalancerListenerRequest& request, const StartLoadBalancerListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startLoadBalancerListener(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::StartLoadBalancerListenerOutcomeCallable SlbClient::startLoadBalancerListenerCallable(const StartLoadBalancerListenerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartLoadBalancerListenerOutcome()>>(
+			[this, request]()
+			{
+			return this->startLoadBalancerListener(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::StopLoadBalancerListenerOutcome SlbClient::stopLoadBalancerListener(const StopLoadBalancerListenerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopLoadBalancerListenerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopLoadBalancerListenerOutcome(StopLoadBalancerListenerResult(outcome.result()));
+	else
+		return StopLoadBalancerListenerOutcome(outcome.error());
+}
+
+void SlbClient::stopLoadBalancerListenerAsync(const StopLoadBalancerListenerRequest& request, const StopLoadBalancerListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopLoadBalancerListener(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::StopLoadBalancerListenerOutcomeCallable SlbClient::stopLoadBalancerListenerCallable(const StopLoadBalancerListenerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopLoadBalancerListenerOutcome()>>(
+			[this, request]()
+			{
+			return this->stopLoadBalancerListener(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::UploadCACertificateOutcome SlbClient::uploadCACertificate(const UploadCACertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadCACertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadCACertificateOutcome(UploadCACertificateResult(outcome.result()));
+	else
+		return UploadCACertificateOutcome(outcome.error());
+}
+
+void SlbClient::uploadCACertificateAsync(const UploadCACertificateRequest& request, const UploadCACertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadCACertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::UploadCACertificateOutcomeCallable SlbClient::uploadCACertificateCallable(const UploadCACertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadCACertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadCACertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::UploadServerCertificateOutcome SlbClient::uploadServerCertificate(const UploadServerCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadServerCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadServerCertificateOutcome(UploadServerCertificateResult(outcome.result()));
+	else
+		return UploadServerCertificateOutcome(outcome.error());
+}
+
+void SlbClient::uploadServerCertificateAsync(const UploadServerCertificateRequest& request, const UploadServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadServerCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::UploadServerCertificateOutcomeCallable SlbClient::uploadServerCertificateCallable(const UploadServerCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadServerCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadServerCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

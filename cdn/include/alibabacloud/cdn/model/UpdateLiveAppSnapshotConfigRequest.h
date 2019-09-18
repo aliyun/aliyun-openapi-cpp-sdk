@@ -37,32 +37,32 @@ namespace AlibabaCloud
 
 				int getTimeInterval()const;
 				void setTimeInterval(int timeInterval);
-				std::string getOssBucket()const;
-				void setOssBucket(const std::string& ossBucket);
+				std::string getOssEndpoint()const;
+				void setOssEndpoint(const std::string& ossEndpoint);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				std::string getOssEndpoint()const;
-				void setOssEndpoint(const std::string& ossEndpoint);
-				std::string getSequenceOssObject()const;
-				void setSequenceOssObject(const std::string& sequenceOssObject);
 				std::string getOverwriteOssObject()const;
 				void setOverwriteOssObject(const std::string& overwriteOssObject);
+				std::string getOssBucket()const;
+				void setOssBucket(const std::string& ossBucket);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				std::string getSequenceOssObject()const;
+				void setSequenceOssObject(const std::string& sequenceOssObject);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
 				int timeInterval_;
-				std::string ossBucket_;
+				std::string ossEndpoint_;
 				std::string appName_;
 				std::string securityToken_;
-				std::string domainName_;
-				std::string ossEndpoint_;
-				std::string sequenceOssObject_;
 				std::string overwriteOssObject_;
+				std::string ossBucket_;
+				std::string domainName_;
+				std::string sequenceOssObject_;
 				long ownerId_;
 
 			};

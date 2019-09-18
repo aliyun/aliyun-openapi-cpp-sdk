@@ -25,39 +25,6 @@ DetectTagRequest::DetectTagRequest() :
 DetectTagRequest::~DetectTagRequest()
 {}
 
-std::string DetectTagRequest::getSrcUris()const
-{
-	return srcUris_;
-}
-
-void DetectTagRequest::setSrcUris(const std::string& srcUris)
-{
-	srcUris_ = srcUris;
-	setCoreParameter("SrcUris", srcUris);
-}
-
-std::string DetectTagRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DetectTagRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DetectTagRequest::getModelId()const
-{
-	return modelId_;
-}
-
-void DetectTagRequest::setModelId(const std::string& modelId)
-{
-	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
-}
-
 std::string DetectTagRequest::getProject()const
 {
 	return project_;
@@ -78,5 +45,27 @@ void DetectTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DetectTagRequest::getModelId()const
+{
+	return modelId_;
+}
+
+void DetectTagRequest::setModelId(const std::string& modelId)
+{
+	modelId_ = modelId;
+	setCoreParameter("ModelId", modelId);
+}
+
+std::string DetectTagRequest::getSrcUris()const
+{
+	return srcUris_;
+}
+
+void DetectTagRequest::setSrcUris(const std::string& srcUris)
+{
+	srcUris_ = srcUris;
+	setCoreParameter("SrcUris", srcUris);
 }
 

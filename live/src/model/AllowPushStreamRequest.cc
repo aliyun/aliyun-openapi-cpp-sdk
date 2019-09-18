@@ -25,61 +25,6 @@ AllowPushStreamRequest::AllowPushStreamRequest() :
 AllowPushStreamRequest::~AllowPushStreamRequest()
 {}
 
-std::string AllowPushStreamRequest::getApp_ip()const
-{
-	return app_ip_;
-}
-
-void AllowPushStreamRequest::setApp_ip(const std::string& app_ip)
-{
-	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
-}
-
-std::string AllowPushStreamRequest::getPopProduct()const
-{
-	return popProduct_;
-}
-
-void AllowPushStreamRequest::setPopProduct(const std::string& popProduct)
-{
-	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
-}
-
-long AllowPushStreamRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void AllowPushStreamRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-bool AllowPushStreamRequest::getProxy_original_security_transport()const
-{
-	return proxy_original_security_transport_;
-}
-
-void AllowPushStreamRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
-{
-	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
-}
-
-std::string AllowPushStreamRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void AllowPushStreamRequest::setCallerBid(const std::string& callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
-}
-
 long AllowPushStreamRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,72 +34,6 @@ void AllowPushStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AllowPushStreamRequest::getProxy_original_source_ip()const
-{
-	return proxy_original_source_ip_;
-}
-
-void AllowPushStreamRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
-{
-	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
-}
-
-std::string AllowPushStreamRequest::getVersion()const
-{
-	return version_;
-}
-
-void AllowPushStreamRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setCoreParameter("Version", version);
-}
-
-std::string AllowPushStreamRequest::getOwnerIdLoginEmail()const
-{
-	return ownerIdLoginEmail_;
-}
-
-void AllowPushStreamRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
-{
-	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
-}
-
-std::string AllowPushStreamRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void AllowPushStreamRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-bool AllowPushStreamRequest::getProxy_trust_transport_info()const
-{
-	return proxy_trust_transport_info_;
-}
-
-void AllowPushStreamRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
-{
-	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
-}
-
-bool AllowPushStreamRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void AllowPushStreamRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string AllowPushStreamRequest::getRoomId()const
@@ -168,72 +47,6 @@ void AllowPushStreamRequest::setRoomId(const std::string& roomId)
 	setCoreParameter("RoomId", roomId);
 }
 
-std::string AllowPushStreamRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AllowPushStreamRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-bool AllowPushStreamRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void AllowPushStreamRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
-std::string AllowPushStreamRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void AllowPushStreamRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string AllowPushStreamRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AllowPushStreamRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string AllowPushStreamRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void AllowPushStreamRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
-std::string AllowPushStreamRequest::getRequestContent()const
-{
-	return requestContent_;
-}
-
-void AllowPushStreamRequest::setRequestContent(const std::string& requestContent)
-{
-	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
-}
-
 std::string AllowPushStreamRequest::getAppId()const
 {
 	return appId_;
@@ -243,38 +56,5 @@ void AllowPushStreamRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setCoreParameter("AppId", appId);
-}
-
-std::string AllowPushStreamRequest::getCallerBidEmail()const
-{
-	return callerBidEmail_;
-}
-
-void AllowPushStreamRequest::setCallerBidEmail(const std::string& callerBidEmail)
-{
-	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
-}
-
-std::string AllowPushStreamRequest::getCallerUidEmail()const
-{
-	return callerUidEmail_;
-}
-
-void AllowPushStreamRequest::setCallerUidEmail(const std::string& callerUidEmail)
-{
-	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
-}
-
-long AllowPushStreamRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void AllowPushStreamRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

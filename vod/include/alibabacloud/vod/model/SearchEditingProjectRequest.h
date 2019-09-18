@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getTitle()const;
+				void setTitle(const std::string& title);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				int getPageNo()const;
 				void setPageNo(int pageNo);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getSortBy()const;
 				void setSortBy(const std::string& sortBy);
 				std::string getStatus()const;
@@ -62,15 +62,15 @@ namespace AlibabaCloud
 
             private:
 				std::string resourceOwnerId_;
+				std::string startTime_;
+				std::string title_;
+				std::string accessKeyId_;
+				int pageSize_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string endTime_;
-				std::string startTime_;
 				std::string ownerId_;
-				std::string title_;
-				std::string accessKeyId_;
 				int pageNo_;
-				int pageSize_;
 				std::string sortBy_;
 				std::string status_;
 

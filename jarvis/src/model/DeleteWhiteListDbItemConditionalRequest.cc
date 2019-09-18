@@ -36,6 +36,17 @@ void DeleteWhiteListDbItemConditionalRequest::setSrcIP(const std::string& srcIP)
 	setCoreParameter("SrcIP", srcIP);
 }
 
+std::string DeleteWhiteListDbItemConditionalRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DeleteWhiteListDbItemConditionalRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DeleteWhiteListDbItemConditionalRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -78,16 +89,5 @@ void DeleteWhiteListDbItemConditionalRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DeleteWhiteListDbItemConditionalRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DeleteWhiteListDbItemConditionalRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

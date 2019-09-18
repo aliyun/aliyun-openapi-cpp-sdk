@@ -25,28 +25,6 @@ QueryKnowledgesRequest::QueryKnowledgesRequest() :
 QueryKnowledgesRequest::~QueryKnowledgesRequest()
 {}
 
-int QueryKnowledgesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryKnowledgesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string QueryKnowledgesRequest::getCoreWordName()const
-{
-	return coreWordName_;
-}
-
-void QueryKnowledgesRequest::setCoreWordName(const std::string& coreWordName)
-{
-	coreWordName_ = coreWordName;
-	setCoreParameter("CoreWordName", coreWordName);
-}
-
 std::string QueryKnowledgesRequest::getKnowledgeTitle()const
 {
 	return knowledgeTitle_;
@@ -67,6 +45,28 @@ void QueryKnowledgesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int QueryKnowledgesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryKnowledgesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryKnowledgesRequest::getCoreWordName()const
+{
+	return coreWordName_;
+}
+
+void QueryKnowledgesRequest::setCoreWordName(const std::string& coreWordName)
+{
+	coreWordName_ = coreWordName;
+	setCoreParameter("CoreWordName", coreWordName);
 }
 
 long QueryKnowledgesRequest::getCategoryId()const

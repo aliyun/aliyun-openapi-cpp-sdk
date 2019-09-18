@@ -47,28 +47,6 @@ void PushNoticeToiOSRequest::setApnsEnv(const std::string& apnsEnv)
 	setCoreParameter("ApnsEnv", apnsEnv);
 }
 
-long PushNoticeToiOSRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void PushNoticeToiOSRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
-std::string PushNoticeToiOSRequest::getTargetValue()const
-{
-	return targetValue_;
-}
-
-void PushNoticeToiOSRequest::setTargetValue(const std::string& targetValue)
-{
-	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
-}
-
 std::string PushNoticeToiOSRequest::getTitle()const
 {
 	return title_;
@@ -122,5 +100,27 @@ void PushNoticeToiOSRequest::setTarget(const std::string& target)
 {
 	target_ = target;
 	setCoreParameter("Target", target);
+}
+
+long PushNoticeToiOSRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void PushNoticeToiOSRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
+}
+
+std::string PushNoticeToiOSRequest::getTargetValue()const
+{
+	return targetValue_;
+}
+
+void PushNoticeToiOSRequest::setTargetValue(const std::string& targetValue)
+{
+	targetValue_ = targetValue;
+	setCoreParameter("TargetValue", targetValue);
 }
 

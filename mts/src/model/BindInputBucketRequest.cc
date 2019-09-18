@@ -25,17 +25,6 @@ BindInputBucketRequest::BindInputBucketRequest() :
 BindInputBucketRequest::~BindInputBucketRequest()
 {}
 
-std::string BindInputBucketRequest::getBucket()const
-{
-	return bucket_;
-}
-
-void BindInputBucketRequest::setBucket(const std::string& bucket)
-{
-	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
-}
-
 long BindInputBucketRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,6 +36,17 @@ void BindInputBucketRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string BindInputBucketRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void BindInputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string BindInputBucketRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +56,6 @@ void BindInputBucketRequest::setResourceOwnerAccount(const std::string& resource
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string BindInputBucketRequest::getRoleArn()const
-{
-	return roleArn_;
-}
-
-void BindInputBucketRequest::setRoleArn(const std::string& roleArn)
-{
-	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
 }
 
 std::string BindInputBucketRequest::getOwnerAccount()const
@@ -91,14 +80,25 @@ void BindInputBucketRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string BindInputBucketRequest::getAccessKeyId()const
+std::string BindInputBucketRequest::getBucket()const
 {
-	return accessKeyId_;
+	return bucket_;
 }
 
-void BindInputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
+void BindInputBucketRequest::setBucket(const std::string& bucket)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	bucket_ = bucket;
+	setCoreParameter("Bucket", bucket);
+}
+
+std::string BindInputBucketRequest::getRoleArn()const
+{
+	return roleArn_;
+}
+
+void BindInputBucketRequest::setRoleArn(const std::string& roleArn)
+{
+	roleArn_ = roleArn;
+	setCoreParameter("RoleArn", roleArn);
 }
 

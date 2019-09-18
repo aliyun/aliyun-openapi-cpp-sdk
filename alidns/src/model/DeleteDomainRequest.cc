@@ -25,17 +25,6 @@ DeleteDomainRequest::DeleteDomainRequest() :
 DeleteDomainRequest::~DeleteDomainRequest()
 {}
 
-std::string DeleteDomainRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DeleteDomainRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string DeleteDomainRequest::getDomainName()const
 {
 	return domainName_;
@@ -47,17 +36,6 @@ void DeleteDomainRequest::setDomainName(const std::string& domainName)
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string DeleteDomainRequest::getLang()const
-{
-	return lang_;
-}
-
-void DeleteDomainRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string DeleteDomainRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,27 @@ void DeleteDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteDomainRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DeleteDomainRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string DeleteDomainRequest::getLang()const
+{
+	return lang_;
+}
+
+void DeleteDomainRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

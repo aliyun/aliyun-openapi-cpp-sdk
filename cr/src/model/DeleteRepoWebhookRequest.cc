@@ -25,17 +25,6 @@ DeleteRepoWebhookRequest::DeleteRepoWebhookRequest() :
 DeleteRepoWebhookRequest::~DeleteRepoWebhookRequest()
 {}
 
-std::string DeleteRepoWebhookRequest::getRepoNamespace()const
-{
-	return repoNamespace_;
-}
-
-void DeleteRepoWebhookRequest::setRepoNamespace(const std::string& repoNamespace)
-{
-	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
-}
-
 long DeleteRepoWebhookRequest::getWebhookId()const
 {
 	return webhookId_;
@@ -47,6 +36,17 @@ void DeleteRepoWebhookRequest::setWebhookId(long webhookId)
 	setCoreParameter("WebhookId", std::to_string(webhookId));
 }
 
+std::string DeleteRepoWebhookRequest::getRepoNamespace()const
+{
+	return repoNamespace_;
+}
+
+void DeleteRepoWebhookRequest::setRepoNamespace(const std::string& repoNamespace)
+{
+	repoNamespace_ = repoNamespace;
+	setCoreParameter("RepoNamespace", repoNamespace);
+}
+
 std::string DeleteRepoWebhookRequest::getRepoName()const
 {
 	return repoName_;
@@ -56,16 +56,5 @@ void DeleteRepoWebhookRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
 	setCoreParameter("RepoName", repoName);
-}
-
-std::string DeleteRepoWebhookRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteRepoWebhookRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 

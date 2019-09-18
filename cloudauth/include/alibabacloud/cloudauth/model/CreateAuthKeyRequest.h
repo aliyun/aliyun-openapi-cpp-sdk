@@ -35,24 +35,24 @@ namespace AlibabaCloud
 				CreateAuthKeyRequest();
 				~CreateAuthKeyRequest();
 
-				std::string getBizType()const;
-				void setBizType(const std::string& bizType);
 				std::string getUserDeviceId()const;
 				void setUserDeviceId(const std::string& userDeviceId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				bool getTest()const;
 				void setTest(bool test);
+				std::string getBizType()const;
+				void setBizType(const std::string& bizType);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				int getAuthYears()const;
 				void setAuthYears(int authYears);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string bizType_;
 				std::string userDeviceId_;
-				std::string sourceIp_;
 				bool test_;
+				std::string bizType_;
+				std::string sourceIp_;
 				int authYears_;
 				std::string lang_;
 

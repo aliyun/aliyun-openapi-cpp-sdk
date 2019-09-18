@@ -35,34 +35,31 @@ namespace AlibabaCloud
 				PhotoProcessRequest();
 				~PhotoProcessRequest();
 
-				std::string getNotifyTopicName()const;
-				void setNotifyTopicName(const std::string& notifyTopicName);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNotifyEndpoint()const;
-				void setNotifyEndpoint(const std::string& notifyEndpoint);
 				std::string getProject()const;
 				void setProject(const std::string& project);
 				std::string getExternalID()const;
 				void setExternalID(const std::string& externalID);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNotifyEndpoint()const;
+				void setNotifyEndpoint(const std::string& notifyEndpoint);
+				std::string getNotifyTopicName()const;
+				void setNotifyTopicName(const std::string& notifyTopicName);
 				std::string getSrcUri()const;
 				void setSrcUri(const std::string& srcUri);
 				std::string getStyle()const;
 				void setStyle(const std::string& style);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTgtUri()const;
 				void setTgtUri(const std::string& tgtUri);
 
             private:
-				std::string notifyTopicName_;
-				std::string regionId_;
-				std::string notifyEndpoint_;
 				std::string project_;
 				std::string externalID_;
+				std::string accessKeyId_;
+				std::string notifyEndpoint_;
+				std::string notifyTopicName_;
 				std::string srcUri_;
 				std::string style_;
-				std::string accessKeyId_;
 				std::string tgtUri_;
 
 			};

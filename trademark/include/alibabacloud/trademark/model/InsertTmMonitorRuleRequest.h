@@ -37,29 +37,29 @@ namespace AlibabaCloud
 
 				std::string getStartApplyDate()const;
 				void setStartApplyDate(const std::string& startApplyDate);
-				std::string getNotifyStatus()const;
-				void setNotifyStatus(const std::string& notifyStatus);
 				int getRuleType()const;
 				void setRuleType(int ruleType);
 				std::string getRuleSource()const;
 				void setRuleSource(const std::string& ruleSource);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
-				std::string getEndApplyDate()const;
-				void setEndApplyDate(const std::string& endApplyDate);
 				std::string getClassification()const;
 				void setClassification(const std::string& classification);
+				std::string getNotifyStatus()const;
+				void setNotifyStatus(const std::string& notifyStatus);
+				std::string getEndApplyDate()const;
+				void setEndApplyDate(const std::string& endApplyDate);
 				std::string getRuleKeyword()const;
 				void setRuleKeyword(const std::string& ruleKeyword);
 
             private:
 				std::string startApplyDate_;
-				std::string notifyStatus_;
 				int ruleType_;
 				std::string ruleSource_;
 				std::string ruleName_;
-				std::string endApplyDate_;
 				std::string classification_;
+				std::string notifyStatus_;
+				std::string endApplyDate_;
 				std::string ruleKeyword_;
 
 			};

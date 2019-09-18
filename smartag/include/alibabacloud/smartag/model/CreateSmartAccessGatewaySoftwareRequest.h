@@ -37,35 +37,35 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getUserCount()const;
+				void setUserCount(int userCount);
 				int getPeriod()const;
 				void setPeriod(int period);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				int getUserCount()const;
-				void setUserCount(int userCount);
-				std::string getChargeType()const;
-				void setChargeType(const std::string& chargeType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getChargeType()const;
+				void setChargeType(const std::string& chargeType);
 				long getDataPlan()const;
 				void setDataPlan(long dataPlan);
 
             private:
 				long resourceOwnerId_;
+				std::string regionId_;
+				int userCount_;
 				int period_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string regionId_;
 				std::string ownerAccount_;
-				int userCount_;
-				std::string chargeType_;
 				long ownerId_;
+				std::string chargeType_;
 				long dataPlan_;
 
 			};

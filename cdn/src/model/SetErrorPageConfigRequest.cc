@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetErrorPageConfigRequest;
 
 SetErrorPageConfigRequest::SetErrorPageConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetErrorPageConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetErrorPageConfig")
 {}
 
 SetErrorPageConfigRequest::~SetErrorPageConfigRequest()
@@ -34,17 +34,6 @@ void SetErrorPageConfigRequest::setPageType(const std::string& pageType)
 {
 	pageType_ = pageType;
 	setCoreParameter("PageType", pageType);
-}
-
-std::string SetErrorPageConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetErrorPageConfigRequest::getDomainName()const
@@ -78,5 +67,16 @@ void SetErrorPageConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetErrorPageConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

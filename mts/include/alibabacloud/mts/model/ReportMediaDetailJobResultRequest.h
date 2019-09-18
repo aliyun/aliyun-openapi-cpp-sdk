@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				ReportMediaDetailJobResultRequest();
 				~ReportMediaDetailJobResultRequest();
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
+				std::string getTag()const;
+				void setTag(const std::string& tag);
+				std::string getResults()const;
+				void setResults(const std::string& results);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getTag()const;
-				void setTag(const std::string& tag);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getResults()const;
-				void setResults(const std::string& results);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string jobId_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string jobId_;
+				std::string tag_;
+				std::string results_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string tag_;
 				long ownerId_;
-				std::string results_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -25,17 +25,6 @@ DeleteServiceRequest::DeleteServiceRequest() :
 DeleteServiceRequest::~DeleteServiceRequest()
 {}
 
-std::string DeleteServiceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteServiceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteServiceRequest::getServiceName()const
 {
 	return serviceName_;

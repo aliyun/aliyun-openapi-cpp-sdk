@@ -25,6 +25,17 @@ CreateAliDnsRecordIdRequest::CreateAliDnsRecordIdRequest() :
 CreateAliDnsRecordIdRequest::~CreateAliDnsRecordIdRequest()
 {}
 
+long CreateAliDnsRecordIdRequest::getOrderId()const
+{
+	return orderId_;
+}
+
+void CreateAliDnsRecordIdRequest::setOrderId(long orderId)
+{
+	orderId_ = orderId;
+	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
 std::string CreateAliDnsRecordIdRequest::getRecordId()const
 {
 	return recordId_;
@@ -36,6 +47,17 @@ void CreateAliDnsRecordIdRequest::setRecordId(const std::string& recordId)
 	setCoreParameter("RecordId", recordId);
 }
 
+std::string CreateAliDnsRecordIdRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateAliDnsRecordIdRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateAliDnsRecordIdRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +67,6 @@ void CreateAliDnsRecordIdRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-long CreateAliDnsRecordIdRequest::getOrderId()const
-{
-	return orderId_;
-}
-
-void CreateAliDnsRecordIdRequest::setOrderId(long orderId)
-{
-	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateAliDnsRecordIdRequest::getLang()const

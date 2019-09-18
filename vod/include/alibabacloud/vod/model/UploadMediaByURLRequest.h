@@ -37,18 +37,20 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getMessageCallback()const;
 				void setMessageCallback(const std::string& messageCallback);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getPriority()const;
-				void setPriority(const std::string& priority);
 				std::string getStorageLocation()const;
 				void setStorageLocation(const std::string& storageLocation);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
+				std::string getWorkflowId()const;
+				void setWorkflowId(const std::string& workflowId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getPriority()const;
+				void setPriority(const std::string& priority);
 				std::string getTemplateGroupId()const;
 				void setTemplateGroupId(const std::string& templateGroupId);
 				std::string getUploadMetadatas()const;
@@ -57,22 +59,20 @@ namespace AlibabaCloud
 				void setUploadURLs(const std::string& uploadURLs);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
-				std::string getWorkflowId()const;
-				void setWorkflowId(const std::string& workflowId);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string messageCallback_;
-				long ownerId_;
-				std::string priority_;
 				std::string storageLocation_;
 				std::string userData_;
+				std::string workflowId_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::string priority_;
 				std::string templateGroupId_;
 				std::string uploadMetadatas_;
 				std::string uploadURLs_;
 				std::string appId_;
-				std::string workflowId_;
 
 			};
 		}

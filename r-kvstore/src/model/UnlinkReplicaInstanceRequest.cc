@@ -36,15 +36,15 @@ void UnlinkReplicaInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UnlinkReplicaInstanceRequest::getInstanceId()const
+std::string UnlinkReplicaInstanceRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void UnlinkReplicaInstanceRequest::setInstanceId(const std::string& instanceId)
+void UnlinkReplicaInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnlinkReplicaInstanceRequest::getSecurityToken()const
@@ -58,6 +58,17 @@ void UnlinkReplicaInstanceRequest::setSecurityToken(const std::string& securityT
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string UnlinkReplicaInstanceRequest::getReplicaId()const
+{
+	return replicaId_;
+}
+
+void UnlinkReplicaInstanceRequest::setReplicaId(const std::string& replicaId)
+{
+	replicaId_ = replicaId;
+	setCoreParameter("ReplicaId", replicaId);
+}
+
 std::string UnlinkReplicaInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +78,6 @@ void UnlinkReplicaInstanceRequest::setResourceOwnerAccount(const std::string& re
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string UnlinkReplicaInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UnlinkReplicaInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string UnlinkReplicaInstanceRequest::getOwnerAccount()const
@@ -91,17 +91,6 @@ void UnlinkReplicaInstanceRequest::setOwnerAccount(const std::string& ownerAccou
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string UnlinkReplicaInstanceRequest::getReplicaId()const
-{
-	return replicaId_;
-}
-
-void UnlinkReplicaInstanceRequest::setReplicaId(const std::string& replicaId)
-{
-	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
-}
-
 long UnlinkReplicaInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +102,14 @@ void UnlinkReplicaInstanceRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UnlinkReplicaInstanceRequest::getAccessKeyId()const
+std::string UnlinkReplicaInstanceRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void UnlinkReplicaInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+void UnlinkReplicaInstanceRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

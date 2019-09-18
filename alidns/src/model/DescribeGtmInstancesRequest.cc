@@ -25,6 +25,17 @@ DescribeGtmInstancesRequest::DescribeGtmInstancesRequest() :
 DescribeGtmInstancesRequest::~DescribeGtmInstancesRequest()
 {}
 
+int DescribeGtmInstancesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeGtmInstancesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeGtmInstancesRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -80,14 +91,14 @@ void DescribeGtmInstancesRequest::setKeyword(const std::string& keyword)
 	setCoreParameter("Keyword", keyword);
 }
 
-int DescribeGtmInstancesRequest::getPageNumber()const
+bool DescribeGtmInstancesRequest::getNeedDetailAttributes()const
 {
-	return pageNumber_;
+	return needDetailAttributes_;
 }
 
-void DescribeGtmInstancesRequest::setPageNumber(int pageNumber)
+void DescribeGtmInstancesRequest::setNeedDetailAttributes(bool needDetailAttributes)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	needDetailAttributes_ = needDetailAttributes;
+	setCoreParameter("NeedDetailAttributes", needDetailAttributes ? "true" : "false");
 }
 

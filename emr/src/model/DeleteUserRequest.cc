@@ -36,17 +36,6 @@ void DeleteUserRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteUserRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteUserRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteUserRequest::getClusterId()const
 {
 	return clusterId_;
@@ -89,5 +78,16 @@ void DeleteUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteUserRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteUserRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

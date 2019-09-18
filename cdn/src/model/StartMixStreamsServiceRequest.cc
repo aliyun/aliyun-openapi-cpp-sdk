@@ -25,6 +25,39 @@ StartMixStreamsServiceRequest::StartMixStreamsServiceRequest() :
 StartMixStreamsServiceRequest::~StartMixStreamsServiceRequest()
 {}
 
+std::string StartMixStreamsServiceRequest::getMixStreamName()const
+{
+	return mixStreamName_;
+}
+
+void StartMixStreamsServiceRequest::setMixStreamName(const std::string& mixStreamName)
+{
+	mixStreamName_ = mixStreamName;
+	setCoreParameter("MixStreamName", mixStreamName);
+}
+
+std::string StartMixStreamsServiceRequest::getMixAppName()const
+{
+	return mixAppName_;
+}
+
+void StartMixStreamsServiceRequest::setMixAppName(const std::string& mixAppName)
+{
+	mixAppName_ = mixAppName;
+	setCoreParameter("MixAppName", mixAppName);
+}
+
+std::string StartMixStreamsServiceRequest::getMainStreamName()const
+{
+	return mainStreamName_;
+}
+
+void StartMixStreamsServiceRequest::setMainStreamName(const std::string& mainStreamName)
+{
+	mainStreamName_ = mainStreamName;
+	setCoreParameter("MainStreamName", mainStreamName);
+}
+
 std::string StartMixStreamsServiceRequest::getMixType()const
 {
 	return mixType_;
@@ -56,17 +89,6 @@ void StartMixStreamsServiceRequest::setMainDomainName(const std::string& mainDom
 {
 	mainDomainName_ = mainDomainName;
 	setCoreParameter("MainDomainName", mainDomainName);
-}
-
-std::string StartMixStreamsServiceRequest::getMixStreamName()const
-{
-	return mixStreamName_;
-}
-
-void StartMixStreamsServiceRequest::setMixStreamName(const std::string& mixStreamName)
-{
-	mixStreamName_ = mixStreamName;
-	setCoreParameter("MixStreamName", mixStreamName);
 }
 
 std::string StartMixStreamsServiceRequest::getMixTemplate()const
@@ -111,27 +133,5 @@ void StartMixStreamsServiceRequest::setMainAppName(const std::string& mainAppNam
 {
 	mainAppName_ = mainAppName;
 	setCoreParameter("MainAppName", mainAppName);
-}
-
-std::string StartMixStreamsServiceRequest::getMixAppName()const
-{
-	return mixAppName_;
-}
-
-void StartMixStreamsServiceRequest::setMixAppName(const std::string& mixAppName)
-{
-	mixAppName_ = mixAppName;
-	setCoreParameter("MixAppName", mixAppName);
-}
-
-std::string StartMixStreamsServiceRequest::getMainStreamName()const
-{
-	return mainStreamName_;
-}
-
-void StartMixStreamsServiceRequest::setMainStreamName(const std::string& mainStreamName)
-{
-	mainStreamName_ = mainStreamName;
-	setCoreParameter("MainStreamName", mainStreamName);
 }
 

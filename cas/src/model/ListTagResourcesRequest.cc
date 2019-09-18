@@ -37,6 +37,17 @@ void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& reso
 		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
 }
 
+std::string ListTagResourcesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
 std::string ListTagResourcesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -85,16 +96,5 @@ void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 		setCoreParameter(str + ".Value", obj.value);
 		setCoreParameter(str + ".Key", obj.key);
 	}
-}
-
-std::string ListTagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
 }
 

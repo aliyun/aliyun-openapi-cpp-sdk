@@ -36,6 +36,28 @@ void QueryTradeProduceListRequest::setBuyerStatus(int buyerStatus)
 	setCoreParameter("BuyerStatus", std::to_string(buyerStatus));
 }
 
+int QueryTradeProduceListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryTradeProduceListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+std::string QueryTradeProduceListRequest::getSortFiled()const
+{
+	return sortFiled_;
+}
+
+void QueryTradeProduceListRequest::setSortFiled(const std::string& sortFiled)
+{
+	sortFiled_ = sortFiled;
+	setCoreParameter("SortFiled", sortFiled);
+}
+
 int QueryTradeProduceListRequest::getPageSize()const
 {
 	return pageSize_;
@@ -78,28 +100,6 @@ void QueryTradeProduceListRequest::setSortOrder(const std::string& sortOrder)
 {
 	sortOrder_ = sortOrder;
 	setCoreParameter("SortOrder", sortOrder);
-}
-
-int QueryTradeProduceListRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void QueryTradeProduceListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
-}
-
-std::string QueryTradeProduceListRequest::getSortFiled()const
-{
-	return sortFiled_;
-}
-
-void QueryTradeProduceListRequest::setSortFiled(const std::string& sortFiled)
-{
-	sortFiled_ = sortFiled;
-	setCoreParameter("SortFiled", sortFiled);
 }
 
 std::string QueryTradeProduceListRequest::getRegisterNumber()const

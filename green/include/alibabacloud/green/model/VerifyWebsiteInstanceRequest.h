@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				VerifyWebsiteInstanceRequest();
 				~VerifyWebsiteInstanceRequest();
 
+				std::string getVerifyMethod()const;
+				void setVerifyMethod(const std::string& verifyMethod);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getVerifyMethod()const;
-				void setVerifyMethod(const std::string& verifyMethod);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string verifyMethod_;
 				std::string instanceId_;
 				std::string sourceIp_;
-				std::string verifyMethod_;
 				std::string lang_;
 
 			};

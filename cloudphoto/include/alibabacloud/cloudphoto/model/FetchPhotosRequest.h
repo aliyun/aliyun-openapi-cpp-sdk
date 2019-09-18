@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				FetchPhotosRequest();
 				~FetchPhotosRequest();
 
-				int getSize()const;
-				void setSize(int size);
 				std::string getLibraryId()const;
 				void setLibraryId(const std::string& libraryId);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
+				int getSize()const;
+				void setSize(int size);
 				std::string getState()const;
 				void setState(const std::string& state);
 				int getPage()const;
@@ -51,10 +51,10 @@ namespace AlibabaCloud
 				void setOrder(const std::string& order);
 
             private:
-				int size_;
 				std::string libraryId_;
 				std::string orderBy_;
 				std::string storeName_;
+				int size_;
 				std::string state_;
 				int page_;
 				std::string order_;

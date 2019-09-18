@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				DeactivateScalingConfigurationRequest();
 				~DeactivateScalingConfigurationRequest();
 
-				std::string getScalingConfigurationId()const;
-				void setScalingConfigurationId(const std::string& scalingConfigurationId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getScalingConfigurationId()const;
+				void setScalingConfigurationId(const std::string& scalingConfigurationId);
 
             private:
-				std::string scalingConfigurationId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string scalingConfigurationId_;
 
 			};
 		}

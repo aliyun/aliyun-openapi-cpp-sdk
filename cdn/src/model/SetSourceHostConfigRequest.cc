@@ -19,33 +19,11 @@
 using AlibabaCloud::Cdn::Model::SetSourceHostConfigRequest;
 
 SetSourceHostConfigRequest::SetSourceHostConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetSourceHostConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetSourceHostConfig")
 {}
 
 SetSourceHostConfigRequest::~SetSourceHostConfigRequest()
 {}
-
-std::string SetSourceHostConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void SetSourceHostConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string SetSourceHostConfigRequest::getEnable()const
-{
-	return enable_;
-}
-
-void SetSourceHostConfigRequest::setEnable(const std::string& enable)
-{
-	enable_ = enable;
-	setCoreParameter("Enable", enable);
-}
 
 std::string SetSourceHostConfigRequest::getDomainName()const
 {
@@ -67,6 +45,28 @@ void SetSourceHostConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string SetSourceHostConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void SetSourceHostConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string SetSourceHostConfigRequest::getEnable()const
+{
+	return enable_;
+}
+
+void SetSourceHostConfigRequest::setEnable(const std::string& enable)
+{
+	enable_ = enable;
+	setCoreParameter("Enable", enable);
 }
 
 std::string SetSourceHostConfigRequest::getBackSrcDomain()const

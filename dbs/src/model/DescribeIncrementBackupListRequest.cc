@@ -25,17 +25,6 @@ DescribeIncrementBackupListRequest::DescribeIncrementBackupListRequest() :
 DescribeIncrementBackupListRequest::~DescribeIncrementBackupListRequest()
 {}
 
-std::string DescribeIncrementBackupListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeIncrementBackupListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeIncrementBackupListRequest::getClientToken()const
 {
 	return clientToken_;
@@ -45,17 +34,6 @@ void DescribeIncrementBackupListRequest::setClientToken(const std::string& clien
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-int DescribeIncrementBackupListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeIncrementBackupListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIncrementBackupListRequest::getBackupPlanId()const
@@ -89,5 +67,16 @@ void DescribeIncrementBackupListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", ownerId);
+}
+
+int DescribeIncrementBackupListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeIncrementBackupListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

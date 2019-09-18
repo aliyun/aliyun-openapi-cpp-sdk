@@ -35,44 +35,44 @@ namespace AlibabaCloud
 				DescribeCacheAnalysisReportListRequest();
 				~DescribeCacheAnalysisReportListRequest();
 
+				std::string getDate()const;
+				void setDate(const std::string& date);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getPageNumbers()const;
+				void setPageNumbers(int pageNumbers);
+				std::string getNodeId()const;
+				void setNodeId(const std::string& nodeId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				int getPageNumbers()const;
-				void setPageNumbers(int pageNumbers);
 				int getDays()const;
 				void setDays(int days);
-				std::string getNodeId()const;
-				void setNodeId(const std::string& nodeId);
 
             private:
+				std::string date_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string securityToken_;
+				int pageSize_;
+				int pageNumbers_;
+				std::string nodeId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string instanceId_;
-				std::string securityToken_;
-				std::string regionId_;
-				int pageSize_;
-				int pageNumbers_;
 				int days_;
-				std::string nodeId_;
 
 			};
 		}

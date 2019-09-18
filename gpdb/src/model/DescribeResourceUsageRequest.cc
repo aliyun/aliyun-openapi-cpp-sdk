@@ -25,17 +25,6 @@ DescribeResourceUsageRequest::DescribeResourceUsageRequest() :
 DescribeResourceUsageRequest::~DescribeResourceUsageRequest()
 {}
 
-std::string DescribeResourceUsageRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeResourceUsageRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
 std::string DescribeResourceUsageRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void DescribeResourceUsageRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeResourceUsageRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeResourceUsageRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

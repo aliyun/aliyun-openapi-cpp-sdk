@@ -25,6 +25,39 @@ ListFlowRequest::ListFlowRequest() :
 ListFlowRequest::~ListFlowRequest()
 {}
 
+bool ListFlowRequest::getPeriodic()const
+{
+	return periodic_;
+}
+
+void ListFlowRequest::setPeriodic(bool periodic)
+{
+	periodic_ = periodic;
+	setCoreParameter("Periodic", periodic ? "true" : "false");
+}
+
+std::string ListFlowRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ListFlowRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
+}
+
+int ListFlowRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListFlowRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListFlowRequest::getJobId()const
 {
 	return jobId_;
@@ -45,17 +78,6 @@ void ListFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
-}
-
-bool ListFlowRequest::getPeriodic()const
-{
-	return periodic_;
-}
-
-void ListFlowRequest::setPeriodic(bool periodic)
-{
-	periodic_ = periodic;
-	setCoreParameter("Periodic", periodic ? "true" : "false");
 }
 
 std::string ListFlowRequest::getName()const
@@ -91,17 +113,6 @@ void ListFlowRequest::setId(const std::string& id)
 	setCoreParameter("Id", id);
 }
 
-std::string ListFlowRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ListFlowRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
 std::string ListFlowRequest::getProjectId()const
 {
 	return projectId_;
@@ -111,17 +122,6 @@ void ListFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-int ListFlowRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListFlowRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowRequest::getStatus()const

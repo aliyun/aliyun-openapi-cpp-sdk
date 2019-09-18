@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::DescribeL2VipsByDomainRequest;
 
 DescribeL2VipsByDomainRequest::DescribeL2VipsByDomainRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeL2VipsByDomain")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeL2VipsByDomain")
 {}
 
 DescribeL2VipsByDomainRequest::~DescribeL2VipsByDomainRequest()
 {}
-
-std::string DescribeL2VipsByDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeL2VipsByDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string DescribeL2VipsByDomainRequest::getDomainName()const
 {
@@ -56,5 +45,16 @@ void DescribeL2VipsByDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeL2VipsByDomainRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeL2VipsByDomainRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

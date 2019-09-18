@@ -25,17 +25,6 @@ UpdateAuditSettingRequest::UpdateAuditSettingRequest() :
 UpdateAuditSettingRequest::~UpdateAuditSettingRequest()
 {}
 
-std::string UpdateAuditSettingRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void UpdateAuditSettingRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string UpdateAuditSettingRequest::getSeed()const
 {
 	return seed_;
@@ -56,6 +45,17 @@ void UpdateAuditSettingRequest::setAuditRange(const std::string& auditRange)
 {
 	auditRange_ = auditRange;
 	setCoreParameter("AuditRange", auditRange);
+}
+
+std::string UpdateAuditSettingRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void UpdateAuditSettingRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateAuditSettingRequest::getCallback()const

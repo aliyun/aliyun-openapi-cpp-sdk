@@ -36,14 +36,3 @@ void UpdateOrderListRequest::setData(const std::string& data)
 	setCoreParameter("Data", data);
 }
 
-std::string UpdateOrderListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateOrderListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

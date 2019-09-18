@@ -25,15 +25,15 @@ DeleteDatabaseRequest::DeleteDatabaseRequest() :
 DeleteDatabaseRequest::~DeleteDatabaseRequest()
 {}
 
-std::string DeleteDatabaseRequest::getDBName()const
+std::string DeleteDatabaseRequest::getAccessKeyId()const
 {
-	return dBName_;
+	return accessKeyId_;
 }
 
-void DeleteDatabaseRequest::setDBName(const std::string& dBName)
+void DeleteDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDatabaseRequest::getDBInstanceId()const
@@ -47,14 +47,14 @@ void DeleteDatabaseRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string DeleteDatabaseRequest::getAccessKeyId()const
+std::string DeleteDatabaseRequest::getDBName()const
 {
-	return accessKeyId_;
+	return dBName_;
 }
 
-void DeleteDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
+void DeleteDatabaseRequest::setDBName(const std::string& dBName)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	dBName_ = dBName;
+	setCoreParameter("DBName", dBName);
 }
 

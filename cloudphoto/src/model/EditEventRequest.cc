@@ -36,72 +36,6 @@ void EditEventRequest::setEventId(const std::string& eventId)
 	setCoreParameter("EventId", eventId);
 }
 
-std::string EditEventRequest::getBannerPhotoId()const
-{
-	return bannerPhotoId_;
-}
-
-void EditEventRequest::setBannerPhotoId(const std::string& bannerPhotoId)
-{
-	bannerPhotoId_ = bannerPhotoId;
-	setCoreParameter("BannerPhotoId", bannerPhotoId);
-}
-
-std::string EditEventRequest::getWatermarkPhotoId()const
-{
-	return watermarkPhotoId_;
-}
-
-void EditEventRequest::setWatermarkPhotoId(const std::string& watermarkPhotoId)
-{
-	watermarkPhotoId_ = watermarkPhotoId;
-	setCoreParameter("WatermarkPhotoId", watermarkPhotoId);
-}
-
-std::string EditEventRequest::getIdentity()const
-{
-	return identity_;
-}
-
-void EditEventRequest::setIdentity(const std::string& identity)
-{
-	identity_ = identity;
-	setCoreParameter("Identity", identity);
-}
-
-std::string EditEventRequest::getSplashPhotoId()const
-{
-	return splashPhotoId_;
-}
-
-void EditEventRequest::setSplashPhotoId(const std::string& splashPhotoId)
-{
-	splashPhotoId_ = splashPhotoId;
-	setCoreParameter("SplashPhotoId", splashPhotoId);
-}
-
-std::string EditEventRequest::getLibraryId()const
-{
-	return libraryId_;
-}
-
-void EditEventRequest::setLibraryId(const std::string& libraryId)
-{
-	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
-}
-
-std::string EditEventRequest::getWeixinTitle()const
-{
-	return weixinTitle_;
-}
-
-void EditEventRequest::setWeixinTitle(const std::string& weixinTitle)
-{
-	weixinTitle_ = weixinTitle;
-	setCoreParameter("WeixinTitle", weixinTitle);
-}
-
 std::string EditEventRequest::getStoreName()const
 {
 	return storeName_;
@@ -144,6 +78,72 @@ void EditEventRequest::setEndAt(long endAt)
 {
 	endAt_ = endAt;
 	setCoreParameter("EndAt", std::to_string(endAt));
+}
+
+std::string EditEventRequest::getIdentity()const
+{
+	return identity_;
+}
+
+void EditEventRequest::setIdentity(const std::string& identity)
+{
+	identity_ = identity;
+	setCoreParameter("Identity", identity);
+}
+
+std::string EditEventRequest::getWatermarkPhotoId()const
+{
+	return watermarkPhotoId_;
+}
+
+void EditEventRequest::setWatermarkPhotoId(const std::string& watermarkPhotoId)
+{
+	watermarkPhotoId_ = watermarkPhotoId;
+	setCoreParameter("WatermarkPhotoId", watermarkPhotoId);
+}
+
+std::string EditEventRequest::getSplashPhotoId()const
+{
+	return splashPhotoId_;
+}
+
+void EditEventRequest::setSplashPhotoId(const std::string& splashPhotoId)
+{
+	splashPhotoId_ = splashPhotoId;
+	setCoreParameter("SplashPhotoId", splashPhotoId);
+}
+
+std::string EditEventRequest::getLibraryId()const
+{
+	return libraryId_;
+}
+
+void EditEventRequest::setLibraryId(const std::string& libraryId)
+{
+	libraryId_ = libraryId;
+	setCoreParameter("LibraryId", libraryId);
+}
+
+std::string EditEventRequest::getWeixinTitle()const
+{
+	return weixinTitle_;
+}
+
+void EditEventRequest::setWeixinTitle(const std::string& weixinTitle)
+{
+	weixinTitle_ = weixinTitle;
+	setCoreParameter("WeixinTitle", weixinTitle);
+}
+
+std::string EditEventRequest::getBannerPhotoId()const
+{
+	return bannerPhotoId_;
+}
+
+void EditEventRequest::setBannerPhotoId(const std::string& bannerPhotoId)
+{
+	bannerPhotoId_ = bannerPhotoId;
+	setCoreParameter("BannerPhotoId", bannerPhotoId);
 }
 
 long EditEventRequest::getStartAt()const

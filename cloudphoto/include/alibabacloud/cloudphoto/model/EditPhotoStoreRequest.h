@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getAutoCleanEnabled()const;
 				void setAutoCleanEnabled(const std::string& autoCleanEnabled);
-				long getDefaultTrashQuota()const;
-				void setDefaultTrashQuota(long defaultTrashQuota);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
 				std::string getRemark()const;
@@ -47,14 +45,16 @@ namespace AlibabaCloud
 				void setDefaultQuota(long defaultQuota);
 				int getAutoCleanDays()const;
 				void setAutoCleanDays(int autoCleanDays);
+				long getDefaultTrashQuota()const;
+				void setDefaultTrashQuota(long defaultTrashQuota);
 
             private:
 				std::string autoCleanEnabled_;
-				long defaultTrashQuota_;
 				std::string storeName_;
 				std::string remark_;
 				long defaultQuota_;
 				int autoCleanDays_;
+				long defaultTrashQuota_;
 
 			};
 		}

@@ -25,17 +25,6 @@ ProfileTagRequest::ProfileTagRequest() :
 ProfileTagRequest::~ProfileTagRequest()
 {}
 
-long ProfileTagRequest::getIdtype()const
-{
-	return idtype_;
-}
-
-void ProfileTagRequest::setIdtype(long idtype)
-{
-	idtype_ = idtype;
-	setCoreParameter("Idtype", std::to_string(idtype));
-}
-
 std::string ProfileTagRequest::getBeginDate()const
 {
 	return beginDate_;
@@ -47,17 +36,6 @@ void ProfileTagRequest::setBeginDate(const std::string& beginDate)
 	setCoreParameter("BeginDate", beginDate);
 }
 
-std::string ProfileTagRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void ProfileTagRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
-}
-
 int ProfileTagRequest::getAppType()const
 {
 	return appType_;
@@ -67,17 +45,6 @@ void ProfileTagRequest::setAppType(int appType)
 {
 	appType_ = appType;
 	setCoreParameter("AppType", std::to_string(appType));
-}
-
-std::string ProfileTagRequest::getTag()const
-{
-	return tag_;
-}
-
-void ProfileTagRequest::setTag(const std::string& tag)
-{
-	tag_ = tag;
-	setCoreParameter("Tag", tag);
 }
 
 std::string ProfileTagRequest::getAccessKeyId()const
@@ -111,5 +78,38 @@ void ProfileTagRequest::setAreaNumber(int areaNumber)
 {
 	areaNumber_ = areaNumber;
 	setCoreParameter("AreaNumber", std::to_string(areaNumber));
+}
+
+long ProfileTagRequest::getIdtype()const
+{
+	return idtype_;
+}
+
+void ProfileTagRequest::setIdtype(long idtype)
+{
+	idtype_ = idtype;
+	setCoreParameter("Idtype", std::to_string(idtype));
+}
+
+std::string ProfileTagRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void ProfileTagRequest::setEndDate(const std::string& endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", endDate);
+}
+
+std::string ProfileTagRequest::getTag()const
+{
+	return tag_;
+}
+
+void ProfileTagRequest::setTag(const std::string& tag)
+{
+	tag_ = tag;
+	setCoreParameter("Tag", tag);
 }
 

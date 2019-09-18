@@ -25,28 +25,6 @@ ModifyPathCacheExpiredConfigRequest::ModifyPathCacheExpiredConfigRequest() :
 ModifyPathCacheExpiredConfigRequest::~ModifyPathCacheExpiredConfigRequest()
 {}
 
-std::string ModifyPathCacheExpiredConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ModifyPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ModifyPathCacheExpiredConfigRequest::getConfigID()const
-{
-	return configID_;
-}
-
-void ModifyPathCacheExpiredConfigRequest::setConfigID(const std::string& configID)
-{
-	configID_ = configID;
-	setCoreParameter("ConfigID", configID);
-}
-
 std::string ModifyPathCacheExpiredConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -100,5 +78,27 @@ void ModifyPathCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
 	setCoreParameter("TTL", tTL);
+}
+
+std::string ModifyPathCacheExpiredConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ModifyPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string ModifyPathCacheExpiredConfigRequest::getConfigID()const
+{
+	return configID_;
+}
+
+void ModifyPathCacheExpiredConfigRequest::setConfigID(const std::string& configID)
+{
+	configID_ = configID;
+	setCoreParameter("ConfigID", configID);
 }
 

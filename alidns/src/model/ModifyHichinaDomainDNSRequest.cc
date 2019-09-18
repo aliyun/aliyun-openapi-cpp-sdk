@@ -25,17 +25,6 @@ ModifyHichinaDomainDNSRequest::ModifyHichinaDomainDNSRequest() :
 ModifyHichinaDomainDNSRequest::~ModifyHichinaDomainDNSRequest()
 {}
 
-std::string ModifyHichinaDomainDNSRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void ModifyHichinaDomainDNSRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string ModifyHichinaDomainDNSRequest::getDomainName()const
 {
 	return domainName_;
@@ -47,17 +36,6 @@ void ModifyHichinaDomainDNSRequest::setDomainName(const std::string& domainName)
 	setCoreParameter("DomainName", domainName);
 }
 
-std::string ModifyHichinaDomainDNSRequest::getLang()const
-{
-	return lang_;
-}
-
-void ModifyHichinaDomainDNSRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string ModifyHichinaDomainDNSRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,27 @@ void ModifyHichinaDomainDNSRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyHichinaDomainDNSRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void ModifyHichinaDomainDNSRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+std::string ModifyHichinaDomainDNSRequest::getLang()const
+{
+	return lang_;
+}
+
+void ModifyHichinaDomainDNSRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

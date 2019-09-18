@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				std::string getCode()const;
 				void setCode(const std::string& code);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getConfigList()const;
-				void setConfigList(const std::string& configList);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getValue()const;
 				void setValue(const std::string& value);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				std::string getConfigList()const;
+				void setConfigList(const std::string& configList);
 
             private:
 				std::string code_;
-				std::string sourceIp_;
-				int featureType_;
 				std::string description_;
-				std::string configList_;
+				std::string sourceIp_;
 				std::string lang_;
 				std::string value_;
+				int featureType_;
+				std::string configList_;
 
 			};
 		}

@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				int getTotalCount()const;
 				void setTotalCount(int totalCount);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getPlatform()const;
+				void setPlatform(const std::string& platform);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getPlatform()const;
-				void setPlatform(const std::string& platform);
 
             private:
 				int totalCount_;
+				int currentPage_;
+				std::string platform_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
-				std::string platform_;
 
 			};
 		}

@@ -25,14 +25,3 @@ GetRegionListRequest::GetRegionListRequest() :
 GetRegionListRequest::~GetRegionListRequest()
 {}
 
-std::string GetRegionListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRegionListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

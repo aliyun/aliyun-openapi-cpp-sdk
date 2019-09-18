@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					int inactiveAging;
 					std::string flowLogId;
 					std::string name;
+					int totalSagNum;
 					std::string slsRegionId;
 					std::string outputType;
 				};

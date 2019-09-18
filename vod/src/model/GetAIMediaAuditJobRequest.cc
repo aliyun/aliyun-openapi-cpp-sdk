@@ -25,17 +25,6 @@ GetAIMediaAuditJobRequest::GetAIMediaAuditJobRequest() :
 GetAIMediaAuditJobRequest::~GetAIMediaAuditJobRequest()
 {}
 
-std::string GetAIMediaAuditJobRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void GetAIMediaAuditJobRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
-}
-
 long GetAIMediaAuditJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -78,5 +67,16 @@ void GetAIMediaAuditJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetAIMediaAuditJobRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void GetAIMediaAuditJobRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setCoreParameter("JobId", jobId);
 }
 

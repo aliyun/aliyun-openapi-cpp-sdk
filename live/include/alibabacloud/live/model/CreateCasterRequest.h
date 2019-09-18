@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				CreateCasterRequest();
 				~CreateCasterRequest();
 
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getCasterName()const;
+				void setCasterName(const std::string& casterName);
 				std::string getCasterTemplate()const;
 				void setCasterTemplate(const std::string& casterTemplate);
 				std::string getExpireTime()const;
 				void setExpireTime(const std::string& expireTime);
 				int getNormType()const;
 				void setNormType(int normType);
-				std::string getCasterName()const;
-				void setCasterName(const std::string& casterName);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getChargeType()const;
-				void setChargeType(const std::string& chargeType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getPurchaseTime()const;
 				void setPurchaseTime(const std::string& purchaseTime);
+				std::string getChargeType()const;
+				void setChargeType(const std::string& chargeType);
 
             private:
+				std::string clientToken_;
+				std::string casterName_;
 				std::string casterTemplate_;
 				std::string expireTime_;
 				int normType_;
-				std::string casterName_;
-				std::string clientToken_;
-				std::string chargeType_;
 				long ownerId_;
 				std::string purchaseTime_;
+				std::string chargeType_;
 
 			};
 		}

@@ -36,17 +36,6 @@ void DeleteSnapshotSettingsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteSnapshotSettingsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DeleteSnapshotSettingsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string DeleteSnapshotSettingsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -56,17 +45,6 @@ void DeleteSnapshotSettingsRequest::setResourceOwnerAccount(const std::string& r
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteSnapshotSettingsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteSnapshotSettingsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteSnapshotSettingsRequest::getOwnerAccount()const

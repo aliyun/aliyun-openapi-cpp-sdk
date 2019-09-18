@@ -25,28 +25,6 @@ QueryTagsRequest::QueryTagsRequest() :
 QueryTagsRequest::~QueryTagsRequest()
 {}
 
-std::string QueryTagsRequest::getClientKey()const
-{
-	return clientKey_;
-}
-
-void QueryTagsRequest::setClientKey(const std::string& clientKey)
-{
-	clientKey_ = clientKey;
-	setCoreParameter("ClientKey", clientKey);
-}
-
-long QueryTagsRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void QueryTagsRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string QueryTagsRequest::getKeyType()const
 {
 	return keyType_;
@@ -67,5 +45,27 @@ void QueryTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryTagsRequest::getClientKey()const
+{
+	return clientKey_;
+}
+
+void QueryTagsRequest::setClientKey(const std::string& clientKey)
+{
+	clientKey_ = clientKey;
+	setCoreParameter("ClientKey", clientKey);
+}
+
+long QueryTagsRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void QueryTagsRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 

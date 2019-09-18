@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				StopCasterSceneRequest();
 				~StopCasterSceneRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
-				std::string getSceneId()const;
-				void setSceneId(const std::string& sceneId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSceneId()const;
+				void setSceneId(const std::string& sceneId);
 
             private:
-				std::string regionId_;
 				std::string casterId_;
-				std::string sceneId_;
 				long ownerId_;
+				std::string sceneId_;
 
 			};
 		}

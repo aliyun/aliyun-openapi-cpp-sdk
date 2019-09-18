@@ -25,17 +25,6 @@ DescribeDeploymentRegionListRequest::DescribeDeploymentRegionListRequest() :
 DescribeDeploymentRegionListRequest::~DescribeDeploymentRegionListRequest()
 {}
 
-std::string DescribeDeploymentRegionListRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeDeploymentRegionListRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeDeploymentRegionListRequest::getCertificateId()const
 {
 	return certificateId_;
@@ -56,6 +45,28 @@ void DescribeDeploymentRegionListRequest::setCloudProduct(const std::string& clo
 {
 	cloudProduct_ = cloudProduct;
 	setCoreParameter("CloudProduct", cloudProduct);
+}
+
+std::string DescribeDeploymentRegionListRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeDeploymentRegionListRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeDeploymentRegionListRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeDeploymentRegionListRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDeploymentRegionListRequest::getLang()const

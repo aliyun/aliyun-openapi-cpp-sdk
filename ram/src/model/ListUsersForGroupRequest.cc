@@ -25,6 +25,17 @@ ListUsersForGroupRequest::ListUsersForGroupRequest() :
 ListUsersForGroupRequest::~ListUsersForGroupRequest()
 {}
 
+std::string ListUsersForGroupRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void ListUsersForGroupRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setCoreParameter("GroupName", groupName);
+}
+
 std::string ListUsersForGroupRequest::getMarker()const
 {
 	return marker_;
@@ -45,16 +56,5 @@ void ListUsersForGroupRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
 	setCoreParameter("MaxItems", std::to_string(maxItems));
-}
-
-std::string ListUsersForGroupRequest::getGroupName()const
-{
-	return groupName_;
-}
-
-void ListUsersForGroupRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
 }
 

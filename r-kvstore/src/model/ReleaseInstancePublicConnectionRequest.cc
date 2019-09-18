@@ -36,15 +36,15 @@ void ReleaseInstancePublicConnectionRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ReleaseInstancePublicConnectionRequest::getInstanceId()const
+std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void ReleaseInstancePublicConnectionRequest::setInstanceId(const std::string& instanceId)
+void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getSecurityToken()const
@@ -67,17 +67,6 @@ void ReleaseInstancePublicConnectionRequest::setResourceOwnerAccount(const std::
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ReleaseInstancePublicConnectionRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ReleaseInstancePublicConnectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getOwnerAccount()const
@@ -113,14 +102,14 @@ void ReleaseInstancePublicConnectionRequest::setCurrentConnectionString(const st
 	setCoreParameter("CurrentConnectionString", currentConnectionString);
 }
 
-std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
+std::string ReleaseInstancePublicConnectionRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
+void ReleaseInstancePublicConnectionRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

@@ -25,17 +25,6 @@ DescribeLiveCertificateDetailRequest::DescribeLiveCertificateDetailRequest() :
 DescribeLiveCertificateDetailRequest::~DescribeLiveCertificateDetailRequest()
 {}
 
-std::string DescribeLiveCertificateDetailRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeLiveCertificateDetailRequest::getCertName()const
 {
 	return certName_;
@@ -56,5 +45,16 @@ void DescribeLiveCertificateDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeLiveCertificateDetailRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeLiveCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

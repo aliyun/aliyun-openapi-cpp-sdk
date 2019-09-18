@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				DeleteConferenceResult();
 				explicit DeleteConferenceResult(const std::string &payload);
 				~DeleteConferenceResult();
-				std::string getConferenceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string conferenceId_;
 
 			};
 		}

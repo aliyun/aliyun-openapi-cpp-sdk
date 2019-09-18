@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				NodeProcessCreateRequest();
 				~NodeProcessCreateRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getProcessName()const;
 				void setProcessName(const std::string& processName);
+				std::string getCommand()const;
+				void setCommand(const std::string& command);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getProcessUser()const;
 				void setProcessUser(const std::string& processUser);
-				std::string getCommand()const;
-				void setCommand(const std::string& command);
 
             private:
-				std::string instanceId_;
 				std::string processName_;
+				std::string command_;
+				std::string instanceId_;
 				std::string name_;
 				std::string processUser_;
-				std::string command_;
 
 			};
 		}

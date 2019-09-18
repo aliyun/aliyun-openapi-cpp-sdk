@@ -36,6 +36,17 @@ void DescribeReplicaInitializeProgressRequest::setResourceOwnerId(long resourceO
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeReplicaInitializeProgressRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeReplicaInitializeProgressRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeReplicaInitializeProgressRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeReplicaInitializeProgressRequest::setSecurityToken(const std::strin
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeReplicaInitializeProgressRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeReplicaInitializeProgressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeReplicaInitializeProgressRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeReplicaInitializeProgressRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeReplicaInitializeProgressRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeReplicaInitializeProgressRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeReplicaInitializeProgressRequest::getReplicaId()const
@@ -91,6 +69,28 @@ void DescribeReplicaInitializeProgressRequest::setReplicaId(const std::string& r
 	setCoreParameter("ReplicaId", replicaId);
 }
 
+std::string DescribeReplicaInitializeProgressRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeReplicaInitializeProgressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeReplicaInitializeProgressRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeReplicaInitializeProgressRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeReplicaInitializeProgressRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void DescribeReplicaInitializeProgressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeReplicaInitializeProgressRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeReplicaInitializeProgressRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

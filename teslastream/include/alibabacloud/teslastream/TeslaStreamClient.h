@@ -22,12 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "TeslaStreamExport.h"
-#include "model/GetJobTopologyRequest.h"
-#include "model/GetJobTopologyResult.h"
 #include "model/BatchGetJobMetricInfoRequest.h"
 #include "model/BatchGetJobMetricInfoResult.h"
 #include "model/BatchGetPluginConfigInfoRequest.h"
 #include "model/BatchGetPluginConfigInfoResult.h"
+#include "model/GetJobTopologyRequest.h"
+#include "model/GetJobTopologyResult.h"
 
 
 namespace AlibabaCloud
@@ -37,29 +37,29 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_TESLASTREAM_EXPORT TeslaStreamClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::GetJobTopologyResult> GetJobTopologyOutcome;
-			typedef std::future<GetJobTopologyOutcome> GetJobTopologyOutcomeCallable;
-			typedef std::function<void(const TeslaStreamClient*, const Model::GetJobTopologyRequest&, const GetJobTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobTopologyAsyncHandler;
 			typedef Outcome<Error, Model::BatchGetJobMetricInfoResult> BatchGetJobMetricInfoOutcome;
 			typedef std::future<BatchGetJobMetricInfoOutcome> BatchGetJobMetricInfoOutcomeCallable;
 			typedef std::function<void(const TeslaStreamClient*, const Model::BatchGetJobMetricInfoRequest&, const BatchGetJobMetricInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetJobMetricInfoAsyncHandler;
 			typedef Outcome<Error, Model::BatchGetPluginConfigInfoResult> BatchGetPluginConfigInfoOutcome;
 			typedef std::future<BatchGetPluginConfigInfoOutcome> BatchGetPluginConfigInfoOutcomeCallable;
 			typedef std::function<void(const TeslaStreamClient*, const Model::BatchGetPluginConfigInfoRequest&, const BatchGetPluginConfigInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetPluginConfigInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetJobTopologyResult> GetJobTopologyOutcome;
+			typedef std::future<GetJobTopologyOutcome> GetJobTopologyOutcomeCallable;
+			typedef std::function<void(const TeslaStreamClient*, const Model::GetJobTopologyRequest&, const GetJobTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobTopologyAsyncHandler;
 
 			TeslaStreamClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			TeslaStreamClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			TeslaStreamClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~TeslaStreamClient();
-			GetJobTopologyOutcome getJobTopology(const Model::GetJobTopologyRequest &request)const;
-			void getJobTopologyAsync(const Model::GetJobTopologyRequest& request, const GetJobTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetJobTopologyOutcomeCallable getJobTopologyCallable(const Model::GetJobTopologyRequest& request) const;
 			BatchGetJobMetricInfoOutcome batchGetJobMetricInfo(const Model::BatchGetJobMetricInfoRequest &request)const;
 			void batchGetJobMetricInfoAsync(const Model::BatchGetJobMetricInfoRequest& request, const BatchGetJobMetricInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchGetJobMetricInfoOutcomeCallable batchGetJobMetricInfoCallable(const Model::BatchGetJobMetricInfoRequest& request) const;
 			BatchGetPluginConfigInfoOutcome batchGetPluginConfigInfo(const Model::BatchGetPluginConfigInfoRequest &request)const;
 			void batchGetPluginConfigInfoAsync(const Model::BatchGetPluginConfigInfoRequest& request, const BatchGetPluginConfigInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchGetPluginConfigInfoOutcomeCallable batchGetPluginConfigInfoCallable(const Model::BatchGetPluginConfigInfoRequest& request) const;
+			GetJobTopologyOutcome getJobTopology(const Model::GetJobTopologyRequest &request)const;
+			void getJobTopologyAsync(const Model::GetJobTopologyRequest& request, const GetJobTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetJobTopologyOutcomeCallable getJobTopologyCallable(const Model::GetJobTopologyRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

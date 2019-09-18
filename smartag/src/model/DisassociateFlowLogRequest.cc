@@ -36,17 +36,6 @@ void DisassociateFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DisassociateFlowLogRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DisassociateFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DisassociateFlowLogRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void DisassociateFlowLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string DisassociateFlowLogRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DisassociateFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DisassociateFlowLogRequest::getOwnerAccount()const
@@ -69,17 +69,6 @@ void DisassociateFlowLogRequest::setOwnerAccount(const std::string& ownerAccount
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DisassociateFlowLogRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void DisassociateFlowLogRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long DisassociateFlowLogRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,6 +78,17 @@ void DisassociateFlowLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DisassociateFlowLogRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void DisassociateFlowLogRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 std::string DisassociateFlowLogRequest::getFlowLogId()const

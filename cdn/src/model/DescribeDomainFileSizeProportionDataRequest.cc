@@ -19,22 +19,11 @@
 using AlibabaCloud::Cdn::Model::DescribeDomainFileSizeProportionDataRequest;
 
 DescribeDomainFileSizeProportionDataRequest::DescribeDomainFileSizeProportionDataRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainFileSizeProportionData")
+	RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainFileSizeProportionData")
 {}
 
 DescribeDomainFileSizeProportionDataRequest::~DescribeDomainFileSizeProportionDataRequest()
 {}
-
-std::string DescribeDomainFileSizeProportionDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainFileSizeProportionDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
 
 std::string DescribeDomainFileSizeProportionDataRequest::getDomainName()const
 {
@@ -78,5 +67,16 @@ void DescribeDomainFileSizeProportionDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeDomainFileSizeProportionDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeDomainFileSizeProportionDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

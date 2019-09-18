@@ -25,17 +25,6 @@ OnsGroupListRequest::OnsGroupListRequest() :
 OnsGroupListRequest::~OnsGroupListRequest()
 {}
 
-std::string OnsGroupListRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsGroupListRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsGroupListRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,5 +34,16 @@ void OnsGroupListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string OnsGroupListRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsGroupListRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

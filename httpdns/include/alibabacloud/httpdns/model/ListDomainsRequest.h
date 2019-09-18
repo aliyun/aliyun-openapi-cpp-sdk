@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ListDomainsRequest();
 				~ListDomainsRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				int pageSize_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				int pageSize_;
 
 			};
 		}

@@ -25,26 +25,26 @@ QueryDeviceEventDataRequest::QueryDeviceEventDataRequest() :
 QueryDeviceEventDataRequest::~QueryDeviceEventDataRequest()
 {}
 
-int QueryDeviceEventDataRequest::getAsc()const
+long QueryDeviceEventDataRequest::getStartTime()const
 {
-	return asc_;
+	return startTime_;
 }
 
-void QueryDeviceEventDataRequest::setAsc(int asc)
+void QueryDeviceEventDataRequest::setStartTime(long startTime)
 {
-	asc_ = asc;
-	setCoreParameter("Asc", std::to_string(asc));
+	startTime_ = startTime;
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
-std::string QueryDeviceEventDataRequest::getIdentifier()const
+std::string QueryDeviceEventDataRequest::getAccessKeyId()const
 {
-	return identifier_;
+	return accessKeyId_;
 }
 
-void QueryDeviceEventDataRequest::setIdentifier(const std::string& identifier)
+void QueryDeviceEventDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	identifier_ = identifier;
-	setCoreParameter("Identifier", identifier);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceEventDataRequest::getIotId()const
@@ -80,6 +80,17 @@ void QueryDeviceEventDataRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string QueryDeviceEventDataRequest::getIdentifier()const
+{
+	return identifier_;
+}
+
+void QueryDeviceEventDataRequest::setIdentifier(const std::string& identifier)
+{
+	identifier_ = identifier;
+	setCoreParameter("Identifier", identifier);
+}
+
 long QueryDeviceEventDataRequest::getEndTime()const
 {
 	return endTime_;
@@ -89,6 +100,28 @@ void QueryDeviceEventDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", std::to_string(endTime));
+}
+
+std::string QueryDeviceEventDataRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceEventDataRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+int QueryDeviceEventDataRequest::getAsc()const
+{
+	return asc_;
+}
+
+void QueryDeviceEventDataRequest::setAsc(int asc)
+{
+	asc_ = asc;
+	setCoreParameter("Asc", std::to_string(asc));
 }
 
 std::string QueryDeviceEventDataRequest::getEventType()const
@@ -111,38 +144,5 @@ void QueryDeviceEventDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
 	setCoreParameter("DeviceName", deviceName);
-}
-
-long QueryDeviceEventDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void QueryDeviceEventDataRequest::setStartTime(long startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
-}
-
-std::string QueryDeviceEventDataRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryDeviceEventDataRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
-std::string QueryDeviceEventDataRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryDeviceEventDataRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

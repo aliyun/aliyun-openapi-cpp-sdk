@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ModifyRdsReadWeightRequest();
 				~ModifyRdsReadWeightRequest();
 
-				std::string getInstanceNames()const;
-				void setInstanceNames(const std::string& instanceNames);
-				std::string getDbName()const;
-				void setDbName(const std::string& dbName);
 				std::string getWeights()const;
 				void setWeights(const std::string& weights);
 				std::string getDrdsInstanceId()const;
 				void setDrdsInstanceId(const std::string& drdsInstanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getInstanceNames()const;
+				void setInstanceNames(const std::string& instanceNames);
+				std::string getDbName()const;
+				void setDbName(const std::string& dbName);
 
             private:
-				std::string instanceNames_;
-				std::string dbName_;
 				std::string weights_;
 				std::string drdsInstanceId_;
 				std::string accessKeyId_;
+				std::string instanceNames_;
+				std::string dbName_;
 
 			};
 		}

@@ -47,17 +47,6 @@ void DescribeCheckWarningSummaryRequest::setSourceIp(const std::string& sourceIp
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-int DescribeCheckWarningSummaryRequest::getRiskStatus()const
-{
-	return riskStatus_;
-}
-
-void DescribeCheckWarningSummaryRequest::setRiskStatus(int riskStatus)
-{
-	riskStatus_ = riskStatus;
-	setCoreParameter("RiskStatus", std::to_string(riskStatus));
-}
-
 int DescribeCheckWarningSummaryRequest::getPageSize()const
 {
 	return pageSize_;
@@ -69,15 +58,15 @@ void DescribeCheckWarningSummaryRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeCheckWarningSummaryRequest::getStrategyId()const
+std::string DescribeCheckWarningSummaryRequest::getLang()const
 {
-	return strategyId_;
+	return lang_;
 }
 
-void DescribeCheckWarningSummaryRequest::setStrategyId(long strategyId)
+void DescribeCheckWarningSummaryRequest::setLang(const std::string& lang)
 {
-	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeCheckWarningSummaryRequest::getCurrentPage()const
@@ -91,15 +80,26 @@ void DescribeCheckWarningSummaryRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeCheckWarningSummaryRequest::getLang()const
+int DescribeCheckWarningSummaryRequest::getRiskStatus()const
 {
-	return lang_;
+	return riskStatus_;
 }
 
-void DescribeCheckWarningSummaryRequest::setLang(const std::string& lang)
+void DescribeCheckWarningSummaryRequest::setRiskStatus(int riskStatus)
 {
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	riskStatus_ = riskStatus;
+	setCoreParameter("RiskStatus", std::to_string(riskStatus));
+}
+
+long DescribeCheckWarningSummaryRequest::getStrategyId()const
+{
+	return strategyId_;
+}
+
+void DescribeCheckWarningSummaryRequest::setStrategyId(long strategyId)
+{
+	strategyId_ = strategyId;
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string DescribeCheckWarningSummaryRequest::getTypeName()const

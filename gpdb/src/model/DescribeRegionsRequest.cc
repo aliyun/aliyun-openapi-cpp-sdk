@@ -36,3 +36,14 @@ void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeRegionsRequest::getRegion()const
+{
+	return region_;
+}
+
+void DescribeRegionsRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setCoreParameter("Region", region);
+}
+

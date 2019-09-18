@@ -25,17 +25,6 @@ GetResolveStatisticsRequest::GetResolveStatisticsRequest() :
 GetResolveStatisticsRequest::~GetResolveStatisticsRequest()
 {}
 
-std::string GetResolveStatisticsRequest::getGranularity()const
-{
-	return granularity_;
-}
-
-void GetResolveStatisticsRequest::setGranularity(const std::string& granularity)
-{
-	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
-}
-
 std::string GetResolveStatisticsRequest::getProtocolName()const
 {
 	return protocolName_;
@@ -78,5 +67,16 @@ void GetResolveStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetResolveStatisticsRequest::getGranularity()const
+{
+	return granularity_;
+}
+
+void GetResolveStatisticsRequest::setGranularity(const std::string& granularity)
+{
+	granularity_ = granularity;
+	setCoreParameter("Granularity", granularity);
 }
 

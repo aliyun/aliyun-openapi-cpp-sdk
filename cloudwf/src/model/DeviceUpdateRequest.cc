@@ -36,6 +36,17 @@ void DeviceUpdateRequest::setDevicePosition(const std::string& devicePosition)
 	setCoreParameter("DevicePosition", devicePosition);
 }
 
+std::string DeviceUpdateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeviceUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeviceUpdateRequest::getDeviceName()const
 {
 	return deviceName_;
@@ -56,16 +67,5 @@ void DeviceUpdateRequest::setDid(long did)
 {
 	did_ = did;
 	setCoreParameter("Did", std::to_string(did));
-}
-
-std::string DeviceUpdateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeviceUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

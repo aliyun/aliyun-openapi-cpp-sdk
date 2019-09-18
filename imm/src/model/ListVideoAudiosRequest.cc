@@ -25,6 +25,28 @@ ListVideoAudiosRequest::ListVideoAudiosRequest() :
 ListVideoAudiosRequest::~ListVideoAudiosRequest()
 {}
 
+std::string ListVideoAudiosRequest::getProject()const
+{
+	return project_;
+}
+
+void ListVideoAudiosRequest::setProject(const std::string& project)
+{
+	project_ = project;
+	setCoreParameter("Project", project);
+}
+
+std::string ListVideoAudiosRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListVideoAudiosRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListVideoAudiosRequest::getVideoUri()const
 {
 	return videoUri_;
@@ -34,17 +56,6 @@ void ListVideoAudiosRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
 	setCoreParameter("VideoUri", videoUri);
-}
-
-std::string ListVideoAudiosRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListVideoAudiosRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListVideoAudiosRequest::getMarker()const
@@ -58,17 +69,6 @@ void ListVideoAudiosRequest::setMarker(const std::string& marker)
 	setCoreParameter("Marker", marker);
 }
 
-std::string ListVideoAudiosRequest::getProject()const
-{
-	return project_;
-}
-
-void ListVideoAudiosRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setCoreParameter("Project", project);
-}
-
 std::string ListVideoAudiosRequest::getSetId()const
 {
 	return setId_;
@@ -78,16 +78,5 @@ void ListVideoAudiosRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
 	setCoreParameter("SetId", setId);
-}
-
-std::string ListVideoAudiosRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListVideoAudiosRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

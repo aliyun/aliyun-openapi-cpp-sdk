@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				UpdateDomainToDomainGroupRequest();
 				~UpdateDomainToDomainGroupRequest();
 
-				int getDataSource()const;
-				void setDataSource(int dataSource);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getFileToUpload()const;
 				void setFileToUpload(const std::string& fileToUpload);
 				std::vector<std::string> getDomainName()const;
 				void setDomainName(const std::vector<std::string>& domainName);
 				bool getReplace()const;
 				void setReplace(bool replace);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				long getDomainGroupId()const;
 				void setDomainGroupId(long domainGroupId);
+				int getDataSource()const;
+				void setDataSource(int dataSource);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				int dataSource_;
-				std::string userClientIp_;
 				std::string fileToUpload_;
 				std::vector<std::string> domainName_;
 				bool replace_;
-				std::string lang_;
 				long domainGroupId_;
+				int dataSource_;
+				std::string userClientIp_;
+				std::string lang_;
 
 			};
 		}

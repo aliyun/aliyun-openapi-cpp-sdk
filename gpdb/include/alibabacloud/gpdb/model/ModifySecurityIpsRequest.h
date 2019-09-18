@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				ModifySecurityIpsRequest();
 				~ModifySecurityIpsRequest();
 
-				std::string getSecurityIPList()const;
-				void setSecurityIPList(const std::string& securityIPList);
 				std::string getDBInstanceIPArrayName()const;
 				void setDBInstanceIPArrayName(const std::string& dBInstanceIPArrayName);
-				std::string getDBInstanceIPArrayAttribute()const;
-				void setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getSecurityIPList()const;
+				void setSecurityIPList(const std::string& securityIPList);
+				std::string getDBInstanceIPArrayAttribute()const;
+				void setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute);
 
             private:
-				std::string securityIPList_;
 				std::string dBInstanceIPArrayName_;
-				std::string dBInstanceIPArrayAttribute_;
-				std::string dBInstanceId_;
 				std::string accessKeyId_;
+				std::string dBInstanceId_;
+				std::string securityIPList_;
+				std::string dBInstanceIPArrayAttribute_;
 
 			};
 		}

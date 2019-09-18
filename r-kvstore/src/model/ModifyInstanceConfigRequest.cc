@@ -36,15 +36,15 @@ void ModifyInstanceConfigRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyInstanceConfigRequest::getInstanceId()const
+std::string ModifyInstanceConfigRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void ModifyInstanceConfigRequest::setInstanceId(const std::string& instanceId)
+void ModifyInstanceConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceConfigRequest::getSecurityToken()const
@@ -69,17 +69,6 @@ void ModifyInstanceConfigRequest::setResourceOwnerAccount(const std::string& res
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyInstanceConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyInstanceConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyInstanceConfigRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,6 +91,17 @@ void ModifyInstanceConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyInstanceConfigRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ModifyInstanceConfigRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
 std::string ModifyInstanceConfigRequest::getConfig()const
 {
 	return config_;
@@ -111,16 +111,5 @@ void ModifyInstanceConfigRequest::setConfig(const std::string& config)
 {
 	config_ = config;
 	setCoreParameter("Config", config);
-}
-
-std::string ModifyInstanceConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyInstanceConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -58,15 +58,15 @@ void DescribeWarningMachinesRequest::setMachineName(const std::string& machineNa
 	setCoreParameter("MachineName", machineName);
 }
 
-long DescribeWarningMachinesRequest::getStrategyId()const
+std::string DescribeWarningMachinesRequest::getLang()const
 {
-	return strategyId_;
+	return lang_;
 }
 
-void DescribeWarningMachinesRequest::setStrategyId(long strategyId)
+void DescribeWarningMachinesRequest::setLang(const std::string& lang)
 {
-	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeWarningMachinesRequest::getCurrentPage()const
@@ -80,17 +80,6 @@ void DescribeWarningMachinesRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeWarningMachinesRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeWarningMachinesRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 long DescribeWarningMachinesRequest::getRiskId()const
 {
 	return riskId_;
@@ -100,6 +89,17 @@ void DescribeWarningMachinesRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
 	setCoreParameter("RiskId", std::to_string(riskId));
+}
+
+long DescribeWarningMachinesRequest::getStrategyId()const
+{
+	return strategyId_;
+}
+
+void DescribeWarningMachinesRequest::setStrategyId(long strategyId)
+{
+	strategyId_ = strategyId;
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string DescribeWarningMachinesRequest::getUuids()const

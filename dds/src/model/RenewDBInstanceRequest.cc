@@ -36,6 +36,72 @@ void RenewDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RenewDBInstanceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void RenewDBInstanceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
+std::string RenewDBInstanceRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void RenewDBInstanceRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setCoreParameter("CouponNo", couponNo);
+}
+
+std::string RenewDBInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RenewDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RenewDBInstanceRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void RenewDBInstanceRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string RenewDBInstanceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void RenewDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string RenewDBInstanceRequest::getBusinessInfo()const
+{
+	return businessInfo_;
+}
+
+void RenewDBInstanceRequest::setBusinessInfo(const std::string& businessInfo)
+{
+	businessInfo_ = businessInfo;
+	setCoreParameter("BusinessInfo", businessInfo);
+}
+
 int RenewDBInstanceRequest::getPeriod()const
 {
 	return period_;
@@ -69,17 +135,6 @@ void RenewDBInstanceRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string RenewDBInstanceRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void RenewDBInstanceRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
 std::string RenewDBInstanceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -91,17 +146,6 @@ void RenewDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string RenewDBInstanceRequest::getCouponNo()const
-{
-	return couponNo_;
-}
-
-void RenewDBInstanceRequest::setCouponNo(const std::string& couponNo)
-{
-	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
-}
-
 long RenewDBInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,60 +155,5 @@ void RenewDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RenewDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RenewDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string RenewDBInstanceRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void RenewDBInstanceRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string RenewDBInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RenewDBInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string RenewDBInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void RenewDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-std::string RenewDBInstanceRequest::getBusinessInfo()const
-{
-	return businessInfo_;
-}
-
-void RenewDBInstanceRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
 }
 

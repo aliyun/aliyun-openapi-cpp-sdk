@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				SavePageConfigTemplateRequest();
 				~SavePageConfigTemplateRequest();
 
-				int getTempType()const;
-				void setTempType(int tempType);
-				std::string getTempDesc()const;
-				void setTempDesc(const std::string& tempDesc);
 				std::string getTempName()const;
 				void setTempName(const std::string& tempName);
-				long getId()const;
-				void setId(long id);
 				std::string getTempPermission()const;
 				void setTempPermission(const std::string& tempPermission);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getTempType()const;
+				void setTempType(int tempType);
+				std::string getTempDesc()const;
+				void setTempDesc(const std::string& tempDesc);
+				long getId()const;
+				void setId(long id);
 
             private:
-				int tempType_;
-				std::string tempDesc_;
 				std::string tempName_;
-				long id_;
 				std::string tempPermission_;
 				std::string accessKeyId_;
+				int tempType_;
+				std::string tempDesc_;
+				long id_;
 
 			};
 		}

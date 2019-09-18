@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			{
 				struct Filter
 				{
-					std::vector<std::string> value;
+					Value value;
 					std::string key;
 				};
 
@@ -40,32 +40,35 @@ namespace AlibabaCloud
 				DescribeCenBandwidthPackagesRequest();
 				~DescribeCenBandwidthPackagesRequest();
 
-				std::vector<Filter> getFilter()const;
-				void setFilter(const std::vector<Filter>& filter);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				bool getIncludeReservationData()const;
+				void setIncludeReservationData(bool includeReservationData);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				bool getIsOrKey()const;
 				void setIsOrKey(bool isOrKey);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<Filter> getFilter()const;
+				void setFilter(const std::vector<Filter>& filter);
 
             private:
-				std::vector<Filter> filter_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				int pageSize_;
-				long ownerId_;
+				bool includeReservationData_;
 				int pageNumber_;
 				bool isOrKey_;
+				int pageSize_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::vector<Filter> filter_;
 
 			};
 		}

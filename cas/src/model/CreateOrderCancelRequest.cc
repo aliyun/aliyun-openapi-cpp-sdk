@@ -25,17 +25,6 @@ CreateOrderCancelRequest::CreateOrderCancelRequest() :
 CreateOrderCancelRequest::~CreateOrderCancelRequest()
 {}
 
-std::string CreateOrderCancelRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateOrderCancelRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long CreateOrderCancelRequest::getOrderId()const
 {
 	return orderId_;
@@ -45,6 +34,28 @@ void CreateOrderCancelRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
 	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+std::string CreateOrderCancelRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateOrderCancelRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateOrderCancelRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void CreateOrderCancelRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrderCancelRequest::getLang()const

@@ -25,6 +25,17 @@ CreateSignaturePeopleCertificateRequest::CreateSignaturePeopleCertificateRequest
 CreateSignaturePeopleCertificateRequest::~CreateSignaturePeopleCertificateRequest()
 {}
 
+std::string CreateSignaturePeopleCertificateRequest::getIdentityNumber()const
+{
+	return identityNumber_;
+}
+
+void CreateSignaturePeopleCertificateRequest::setIdentityNumber(const std::string& identityNumber)
+{
+	identityNumber_ = identityNumber;
+	setCoreParameter("IdentityNumber", identityNumber);
+}
+
 std::string CreateSignaturePeopleCertificateRequest::getPeopleName()const
 {
 	return peopleName_;
@@ -36,6 +47,17 @@ void CreateSignaturePeopleCertificateRequest::setPeopleName(const std::string& p
 	setCoreParameter("PeopleName", peopleName);
 }
 
+std::string CreateSignaturePeopleCertificateRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateSignaturePeopleCertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateSignaturePeopleCertificateRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,28 +67,6 @@ void CreateSignaturePeopleCertificateRequest::setSourceIp(const std::string& sou
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string CreateSignaturePeopleCertificateRequest::getMobile()const
-{
-	return mobile_;
-}
-
-void CreateSignaturePeopleCertificateRequest::setMobile(const std::string& mobile)
-{
-	mobile_ = mobile;
-	setCoreParameter("Mobile", mobile);
-}
-
-std::string CreateSignaturePeopleCertificateRequest::getIdentityNumber()const
-{
-	return identityNumber_;
-}
-
-void CreateSignaturePeopleCertificateRequest::setIdentityNumber(const std::string& identityNumber)
-{
-	identityNumber_ = identityNumber;
-	setCoreParameter("IdentityNumber", identityNumber);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getLang()const
@@ -89,5 +89,16 @@ void CreateSignaturePeopleCertificateRequest::setEmail(const std::string& email)
 {
 	email_ = email;
 	setCoreParameter("Email", email);
+}
+
+std::string CreateSignaturePeopleCertificateRequest::getMobile()const
+{
+	return mobile_;
+}
+
+void CreateSignaturePeopleCertificateRequest::setMobile(const std::string& mobile)
+{
+	mobile_ = mobile;
+	setCoreParameter("Mobile", mobile);
 }
 

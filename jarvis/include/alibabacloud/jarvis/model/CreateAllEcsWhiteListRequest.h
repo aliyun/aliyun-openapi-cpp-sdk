@@ -39,16 +39,16 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSrcIP()const;
 				void setSrcIP(const std::string& srcIP);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getSourceCode()const;
 				void setSourceCode(const std::string& sourceCode);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
 				long resourceOwnerId_;
 				std::string srcIP_;
-				std::string sourceIp_;
 				std::string sourceCode_;
+				std::string sourceIp_;
 
 			};
 		}

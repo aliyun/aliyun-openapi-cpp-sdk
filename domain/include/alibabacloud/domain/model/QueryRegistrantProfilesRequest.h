@@ -35,44 +35,44 @@ namespace AlibabaCloud
 				QueryRegistrantProfilesRequest();
 				~QueryRegistrantProfilesRequest();
 
-				std::string getRegistrantOrganization()const;
-				void setRegistrantOrganization(const std::string& registrantOrganization);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				long getRegistrantProfileId()const;
 				void setRegistrantProfileId(long registrantProfileId);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getRegistrantType()const;
-				void setRegistrantType(const std::string& registrantType);
-				std::string getRegistrantProfileType()const;
-				void setRegistrantProfileType(const std::string& registrantProfileType);
 				std::string getRealNameStatus()const;
 				void setRealNameStatus(const std::string& realNameStatus);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
-				bool getDefaultRegistrantProfile()const;
-				void setDefaultRegistrantProfile(bool defaultRegistrantProfile);
 				std::string getEmail()const;
 				void setEmail(const std::string& email);
 				std::string getZhRegistrantOrganization()const;
 				void setZhRegistrantOrganization(const std::string& zhRegistrantOrganization);
+				std::string getRegistrantType()const;
+				void setRegistrantType(const std::string& registrantType);
+				std::string getRegistrantProfileType()const;
+				void setRegistrantProfileType(const std::string& registrantProfileType);
+				bool getDefaultRegistrantProfile()const;
+				void setDefaultRegistrantProfile(bool defaultRegistrantProfile);
+				std::string getRegistrantOrganization()const;
+				void setRegistrantOrganization(const std::string& registrantOrganization);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 
             private:
-				std::string registrantOrganization_;
-				std::string userClientIp_;
 				long registrantProfileId_;
+				int pageNum_;
 				int pageSize_;
-				std::string registrantType_;
-				std::string registrantProfileType_;
 				std::string realNameStatus_;
 				std::string lang_;
-				int pageNum_;
-				bool defaultRegistrantProfile_;
 				std::string email_;
 				std::string zhRegistrantOrganization_;
+				std::string registrantType_;
+				std::string registrantProfileType_;
+				bool defaultRegistrantProfile_;
+				std::string registrantOrganization_;
+				std::string userClientIp_;
 
 			};
 		}

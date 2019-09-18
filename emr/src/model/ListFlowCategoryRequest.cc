@@ -25,6 +25,28 @@ ListFlowCategoryRequest::ListFlowCategoryRequest() :
 ListFlowCategoryRequest::~ListFlowCategoryRequest()
 {}
 
+std::string ListFlowCategoryRequest::getParentId()const
+{
+	return parentId_;
+}
+
+void ListFlowCategoryRequest::setParentId(const std::string& parentId)
+{
+	parentId_ = parentId;
+	setCoreParameter("ParentId", parentId);
+}
+
+int ListFlowCategoryRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListFlowCategoryRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListFlowCategoryRequest::getRegionId()const
 {
 	return regionId_;
@@ -67,27 +89,5 @@ void ListFlowCategoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
 	setCoreParameter("ProjectId", projectId);
-}
-
-std::string ListFlowCategoryRequest::getParentId()const
-{
-	return parentId_;
-}
-
-void ListFlowCategoryRequest::setParentId(const std::string& parentId)
-{
-	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
-}
-
-int ListFlowCategoryRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListFlowCategoryRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

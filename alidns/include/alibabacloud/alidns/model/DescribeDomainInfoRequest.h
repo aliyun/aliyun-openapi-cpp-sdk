@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				DescribeDomainInfoRequest();
 				~DescribeDomainInfoRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				bool getNeedDetailAttributes()const;
 				void setNeedDetailAttributes(bool needDetailAttributes);
 
             private:
-				std::string userClientIp_;
 				std::string domainName_;
-				std::string lang_;
 				std::string accessKeyId_;
+				std::string userClientIp_;
+				std::string lang_;
 				bool needDetailAttributes_;
 
 			};

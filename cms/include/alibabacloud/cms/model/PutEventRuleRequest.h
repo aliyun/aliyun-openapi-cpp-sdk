@@ -32,35 +32,35 @@ namespace AlibabaCloud
 			{
 				struct EventPattern
 				{
-					std::vector<std::string> levelList;
+					LevelList levelList;
 					std::string product;
-					std::vector<std::string> statusList;
-					std::vector<std::string> nameList;
-					std::vector<std::string> eventTypeList;
+					StatusList statusList;
+					NameList nameList;
+					EventTypeList eventTypeList;
 				};
 
 			public:
 				PutEventRuleRequest();
 				~PutEventRuleRequest();
 
-				std::vector<EventPattern> getEventPattern()const;
-				void setEventPattern(const std::vector<EventPattern>& eventPattern);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::vector<EventPattern> getEventPattern()const;
+				void setEventPattern(const std::vector<EventPattern>& eventPattern);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getEventType()const;
 				void setEventType(const std::string& eventType);
 				std::string getState()const;
 				void setState(const std::string& state);
 
             private:
-				std::vector<EventPattern> eventPattern_;
 				std::string groupId_;
-				std::string name_;
 				std::string description_;
+				std::vector<EventPattern> eventPattern_;
+				std::string name_;
 				std::string eventType_;
 				std::string state_;
 

@@ -19,11 +19,22 @@
 using AlibabaCloud::Cdn::Model::SetDomainServerCertificateRequest;
 
 SetDomainServerCertificateRequest::SetDomainServerCertificateRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetDomainServerCertificate")
+	RpcServiceRequest("cdn", "2014-11-11", "SetDomainServerCertificate")
 {}
 
 SetDomainServerCertificateRequest::~SetDomainServerCertificateRequest()
 {}
+
+std::string SetDomainServerCertificateRequest::getServerCertificate()const
+{
+	return serverCertificate_;
+}
+
+void SetDomainServerCertificateRequest::setServerCertificate(const std::string& serverCertificate)
+{
+	serverCertificate_ = serverCertificate;
+	setCoreParameter("ServerCertificate", serverCertificate);
+}
 
 std::string SetDomainServerCertificateRequest::getPrivateKey()const
 {
@@ -36,17 +47,6 @@ void SetDomainServerCertificateRequest::setPrivateKey(const std::string& private
 	setCoreParameter("PrivateKey", privateKey);
 }
 
-std::string SetDomainServerCertificateRequest::getForceSet()const
-{
-	return forceSet_;
-}
-
-void SetDomainServerCertificateRequest::setForceSet(const std::string& forceSet)
-{
-	forceSet_ = forceSet;
-	setCoreParameter("ForceSet", forceSet);
-}
-
 std::string SetDomainServerCertificateRequest::getServerCertificateStatus()const
 {
 	return serverCertificateStatus_;
@@ -56,17 +56,6 @@ void SetDomainServerCertificateRequest::setServerCertificateStatus(const std::st
 {
 	serverCertificateStatus_ = serverCertificateStatus;
 	setCoreParameter("ServerCertificateStatus", serverCertificateStatus);
-}
-
-std::string SetDomainServerCertificateRequest::getServerCertificate()const
-{
-	return serverCertificate_;
-}
-
-void SetDomainServerCertificateRequest::setServerCertificate(const std::string& serverCertificate)
-{
-	serverCertificate_ = serverCertificate;
-	setCoreParameter("ServerCertificate", serverCertificate);
 }
 
 std::string SetDomainServerCertificateRequest::getSecurityToken()const
@@ -89,6 +78,17 @@ void SetDomainServerCertificateRequest::setCertType(const std::string& certType)
 {
 	certType_ = certType;
 	setCoreParameter("CertType", certType);
+}
+
+std::string SetDomainServerCertificateRequest::getForceSet()const
+{
+	return forceSet_;
+}
+
+void SetDomainServerCertificateRequest::setForceSet(const std::string& forceSet)
+{
+	forceSet_ = forceSet;
+	setCoreParameter("ForceSet", forceSet);
 }
 
 std::string SetDomainServerCertificateRequest::getCertName()const

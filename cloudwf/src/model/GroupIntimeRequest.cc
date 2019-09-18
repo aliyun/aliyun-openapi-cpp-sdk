@@ -25,17 +25,6 @@ GroupIntimeRequest::GroupIntimeRequest() :
 GroupIntimeRequest::~GroupIntimeRequest()
 {}
 
-long GroupIntimeRequest::getGsid()const
-{
-	return gsid_;
-}
-
-void GroupIntimeRequest::setGsid(long gsid)
-{
-	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
-}
-
 std::string GroupIntimeRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GroupIntimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GroupIntimeRequest::getGsid()const
+{
+	return gsid_;
+}
+
+void GroupIntimeRequest::setGsid(long gsid)
+{
+	gsid_ = gsid;
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 

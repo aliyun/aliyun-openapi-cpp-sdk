@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				QueryDialogsRequest();
 				~QueryDialogsRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getDialogName()const;
 				void setDialogName(const std::string& dialogName);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string instanceId_;
-				int pageSize_;
 				std::string dialogName_;
 				int pageNumber_;
+				std::string instanceId_;
+				int pageSize_;
 
 			};
 		}

@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				SubmitAIJobRequest();
 				~SubmitAIJobRequest();
 
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
-				std::string getInput()const;
-				void setInput(const std::string& input);
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				std::string getTypes()const;
 				void setTypes(const std::string& types);
 				std::string getResourceOwnerAccount()const;
@@ -51,22 +51,22 @@ namespace AlibabaCloud
 				void setOwnerId(const std::string& ownerId);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
+				std::string getInput()const;
+				void setInput(const std::string& input);
 				std::string getConfig()const;
 				void setConfig(const std::string& config);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string userData_;
-				std::string input_;
 				std::string resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string userData_;
 				std::string types_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string ownerId_;
 				std::string mediaId_;
+				std::string input_;
 				std::string config_;
-				std::string accessKeyId_;
 
 			};
 		}

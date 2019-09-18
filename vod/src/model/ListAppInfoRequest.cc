@@ -36,26 +36,26 @@ void ListAppInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListAppInfoRequest::getResourceOwnerAccount()const
+long ListAppInfoRequest::getResourceRealOwnerId()const
 {
-	return resourceOwnerAccount_;
+	return resourceRealOwnerId_;
 }
 
-void ListAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ListAppInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	resourceRealOwnerId_ = resourceRealOwnerId;
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
-int ListAppInfoRequest::getPageNo()const
+std::string ListAppInfoRequest::getAccessKeyId()const
 {
-	return pageNo_;
+	return accessKeyId_;
 }
 
-void ListAppInfoRequest::setPageNo(int pageNo)
+void ListAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int ListAppInfoRequest::getPageSize()const
@@ -69,15 +69,15 @@ void ListAppInfoRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long ListAppInfoRequest::getResourceRealOwnerId()const
+std::string ListAppInfoRequest::getResourceOwnerAccount()const
 {
-	return resourceRealOwnerId_;
+	return resourceOwnerAccount_;
 }
 
-void ListAppInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
+void ListAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
-	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ListAppInfoRequest::getOwnerId()const
@@ -91,15 +91,15 @@ void ListAppInfoRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ListAppInfoRequest::getAccessKeyId()const
+int ListAppInfoRequest::getPageNo()const
 {
-	return accessKeyId_;
+	return pageNo_;
 }
 
-void ListAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListAppInfoRequest::setPageNo(int pageNo)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string ListAppInfoRequest::getStatus()const

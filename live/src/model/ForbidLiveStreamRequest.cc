@@ -25,17 +25,6 @@ ForbidLiveStreamRequest::ForbidLiveStreamRequest() :
 ForbidLiveStreamRequest::~ForbidLiveStreamRequest()
 {}
 
-std::string ForbidLiveStreamRequest::getResumeTime()const
-{
-	return resumeTime_;
-}
-
-void ForbidLiveStreamRequest::setResumeTime(const std::string& resumeTime)
-{
-	resumeTime_ = resumeTime;
-	setCoreParameter("ResumeTime", resumeTime);
-}
-
 std::string ForbidLiveStreamRequest::getAppName()const
 {
 	return appName_;
@@ -47,15 +36,37 @@ void ForbidLiveStreamRequest::setAppName(const std::string& appName)
 	setCoreParameter("AppName", appName);
 }
 
-std::string ForbidLiveStreamRequest::getRegionId()const
+std::string ForbidLiveStreamRequest::getStreamName()const
 {
-	return regionId_;
+	return streamName_;
 }
 
-void ForbidLiveStreamRequest::setRegionId(const std::string& regionId)
+void ForbidLiveStreamRequest::setStreamName(const std::string& streamName)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
+}
+
+std::string ForbidLiveStreamRequest::getControlStreamAction()const
+{
+	return controlStreamAction_;
+}
+
+void ForbidLiveStreamRequest::setControlStreamAction(const std::string& controlStreamAction)
+{
+	controlStreamAction_ = controlStreamAction;
+	setCoreParameter("ControlStreamAction", controlStreamAction);
+}
+
+std::string ForbidLiveStreamRequest::getResumeTime()const
+{
+	return resumeTime_;
+}
+
+void ForbidLiveStreamRequest::setResumeTime(const std::string& resumeTime)
+{
+	resumeTime_ = resumeTime;
+	setCoreParameter("ResumeTime", resumeTime);
 }
 
 std::string ForbidLiveStreamRequest::getLiveStreamType()const
@@ -100,27 +111,5 @@ void ForbidLiveStreamRequest::setOneshot(const std::string& oneshot)
 {
 	oneshot_ = oneshot;
 	setCoreParameter("Oneshot", oneshot);
-}
-
-std::string ForbidLiveStreamRequest::getStreamName()const
-{
-	return streamName_;
-}
-
-void ForbidLiveStreamRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
-}
-
-std::string ForbidLiveStreamRequest::getControlStreamAction()const
-{
-	return controlStreamAction_;
-}
-
-void ForbidLiveStreamRequest::setControlStreamAction(const std::string& controlStreamAction)
-{
-	controlStreamAction_ = controlStreamAction;
-	setCoreParameter("ControlStreamAction", controlStreamAction);
 }
 

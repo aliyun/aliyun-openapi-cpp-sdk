@@ -21,63 +21,71 @@ set(cusanalytic_sc_online_public_header
 	include/alibabacloud/cusanalytic_sc_online/Cusanalytic_sc_onlineExport.h )
 
 set(cusanalytic_sc_online_public_header_model 
-	include/alibabacloud/cusanalytic_sc_online/model/DescribeLocationsRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/DescribeLocationsResult.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetSupportStoreRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetSupportStoreResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/DescribeActionDataRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/DescribeActionDataResult.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetPortrayalRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetPortrayalResult.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetHeatMapDataRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetHeatMapDataResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/DescribeLocationsRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/DescribeLocationsResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetActionCursorRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetActionCursorResult.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetImageUrlRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetImageUrlResult.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzePlaceDataRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzePlaceDataResult.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetOverviewDataRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetOverviewDataResult.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetLocationsRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/GetLocationsResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzeCommodityDataRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzeCommodityDataResult.h
-	include/alibabacloud/cusanalytic_sc_online/model/ListVisitorsRequest.h
-	include/alibabacloud/cusanalytic_sc_online/model/ListVisitorsResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzePlaceDataRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetAnalyzePlaceDataResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetEMapRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/GetEMapResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetHeatMapDataRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetHeatMapDataResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetImageUrlRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetImageUrlResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetLocationsRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetLocationsResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetOverviewDataRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetOverviewDataResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetPersonInStore5MinRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetPersonInStore5MinResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetPortrayalRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetPortrayalResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetRoiRankingRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetRoiRankingResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetSupportStoreRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/GetSupportStoreResult.h
+	include/alibabacloud/cusanalytic_sc_online/model/ListVisitorsRequest.h
+	include/alibabacloud/cusanalytic_sc_online/model/ListVisitorsResult.h
 	include/alibabacloud/cusanalytic_sc_online/model/SearchPersonByImgRequest.h
 	include/alibabacloud/cusanalytic_sc_online/model/SearchPersonByImgResult.h )
 
 set(cusanalytic_sc_online_src 
 	src/Cusanalytic_sc_onlineClient.cc
-	src/model/DescribeLocationsRequest.cc
-	src/model/DescribeLocationsResult.cc
-	src/model/GetSupportStoreRequest.cc
-	src/model/GetSupportStoreResult.cc
 	src/model/DescribeActionDataRequest.cc
 	src/model/DescribeActionDataResult.cc
-	src/model/GetPortrayalRequest.cc
-	src/model/GetPortrayalResult.cc
-	src/model/GetHeatMapDataRequest.cc
-	src/model/GetHeatMapDataResult.cc
+	src/model/DescribeLocationsRequest.cc
+	src/model/DescribeLocationsResult.cc
 	src/model/GetActionCursorRequest.cc
 	src/model/GetActionCursorResult.cc
-	src/model/GetImageUrlRequest.cc
-	src/model/GetImageUrlResult.cc
-	src/model/GetAnalyzePlaceDataRequest.cc
-	src/model/GetAnalyzePlaceDataResult.cc
-	src/model/GetOverviewDataRequest.cc
-	src/model/GetOverviewDataResult.cc
-	src/model/GetLocationsRequest.cc
-	src/model/GetLocationsResult.cc
 	src/model/GetAnalyzeCommodityDataRequest.cc
 	src/model/GetAnalyzeCommodityDataResult.cc
-	src/model/ListVisitorsRequest.cc
-	src/model/ListVisitorsResult.cc
+	src/model/GetAnalyzePlaceDataRequest.cc
+	src/model/GetAnalyzePlaceDataResult.cc
 	src/model/GetEMapRequest.cc
 	src/model/GetEMapResult.cc
+	src/model/GetHeatMapDataRequest.cc
+	src/model/GetHeatMapDataResult.cc
+	src/model/GetImageUrlRequest.cc
+	src/model/GetImageUrlResult.cc
+	src/model/GetLocationsRequest.cc
+	src/model/GetLocationsResult.cc
+	src/model/GetOverviewDataRequest.cc
+	src/model/GetOverviewDataResult.cc
+	src/model/GetPersonInStore5MinRequest.cc
+	src/model/GetPersonInStore5MinResult.cc
+	src/model/GetPortrayalRequest.cc
+	src/model/GetPortrayalResult.cc
+	src/model/GetRoiRankingRequest.cc
+	src/model/GetRoiRankingResult.cc
+	src/model/GetSupportStoreRequest.cc
+	src/model/GetSupportStoreResult.cc
+	src/model/ListVisitorsRequest.cc
+	src/model/ListVisitorsResult.cc
 	src/model/SearchPersonByImgRequest.cc
 	src/model/SearchPersonByImgResult.cc )
 

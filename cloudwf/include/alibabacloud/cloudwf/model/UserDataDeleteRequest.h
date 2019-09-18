@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				long getIid()const;
 				void setIid(long iid);
-				long getBid()const;
-				void setBid(long bid);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getBid()const;
+				void setBid(long bid);
 
             private:
 				long iid_;
-				long bid_;
 				std::string accessKeyId_;
+				long bid_;
 
 			};
 		}

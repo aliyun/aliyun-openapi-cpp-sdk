@@ -37,29 +37,29 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getStatusList()const;
 				void setStatusList(const std::vector<std::string>& statusList);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
 				long getStartTime()const;
 				void setStartTime(long startTime);
-				std::string getProjectId()const;
-				void setProjectId(const std::string& projectId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
 				std::string getOrderType()const;
 				void setOrderType(const std::string& orderType);
 
             private:
 				std::vector<std::string> statusList_;
-				std::string regionId_;
-				int pageSize_;
 				std::string orderBy_;
 				long startTime_;
-				std::string projectId_;
 				int pageNumber_;
+				std::string regionId_;
+				int pageSize_;
+				std::string projectId_;
 				std::string orderType_;
 
 			};

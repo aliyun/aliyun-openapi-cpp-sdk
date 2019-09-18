@@ -47,17 +47,6 @@ void PubBroadcastRequest::setMessageContent(const std::string& messageContent)
 	setCoreParameter("MessageContent", messageContent);
 }
 
-std::string PubBroadcastRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void PubBroadcastRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
 std::string PubBroadcastRequest::getProductKey()const
 {
 	return productKey_;
@@ -78,5 +67,16 @@ void PubBroadcastRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string PubBroadcastRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void PubBroadcastRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 

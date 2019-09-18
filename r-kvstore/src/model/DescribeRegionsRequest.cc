@@ -36,6 +36,17 @@ void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeRegionsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeRegionsRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -58,17 +69,6 @@ void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeRegionsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRegionsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeRegionsRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -78,17 +78,6 @@ void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string DescribeRegionsRequest::getAcceptLanguage()const
-{
-	return acceptLanguage_;
-}
-
-void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
-{
-	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 
 long DescribeRegionsRequest::getOwnerId()const
@@ -102,14 +91,14 @@ void DescribeRegionsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRegionsRequest::getAccessKeyId()const
+std::string DescribeRegionsRequest::getAcceptLanguage()const
 {
-	return accessKeyId_;
+	return acceptLanguage_;
 }
 
-void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	acceptLanguage_ = acceptLanguage;
+	setCoreParameter("AcceptLanguage", acceptLanguage);
 }
 

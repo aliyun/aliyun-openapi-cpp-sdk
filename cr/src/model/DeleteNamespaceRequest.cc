@@ -25,17 +25,6 @@ DeleteNamespaceRequest::DeleteNamespaceRequest() :
 DeleteNamespaceRequest::~DeleteNamespaceRequest()
 {}
 
-std::string DeleteNamespaceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteNamespaceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DeleteNamespaceRequest::get_Namespace()const
 {
 	return _namespace_;

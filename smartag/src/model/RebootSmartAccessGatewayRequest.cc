@@ -36,6 +36,17 @@ void RebootSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RebootSmartAccessGatewayRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RebootSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 std::string RebootSmartAccessGatewayRequest::getSerialNumber()const
 {
 	return serialNumber_;
@@ -58,17 +69,6 @@ void RebootSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string&
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string RebootSmartAccessGatewayRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RebootSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string RebootSmartAccessGatewayRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -80,17 +80,6 @@ void RebootSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string RebootSmartAccessGatewayRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void RebootSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long RebootSmartAccessGatewayRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,5 +89,16 @@ void RebootSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string RebootSmartAccessGatewayRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void RebootSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

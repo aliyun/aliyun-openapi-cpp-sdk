@@ -39,34 +39,34 @@ namespace AlibabaCloud
 				void setResourceOwnerId(const std::string& resourceOwnerId);
 				std::string getData()const;
 				void setData(const std::string& data);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getHeader()const;
-				void setHeader(const std::string& header);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
-				std::string getType()const;
-				void setType(const std::string& type);
+				std::string getHeader()const;
+				void setHeader(const std::string& header);
 				std::string getLicenseUrl()const;
 				void setLicenseUrl(const std::string& licenseUrl);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string resourceOwnerId_;
 				std::string data_;
+				std::string type_;
+				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string header_;
 				std::string ownerId_;
 				std::string mediaId_;
-				std::string type_;
+				std::string header_;
 				std::string licenseUrl_;
-				std::string accessKeyId_;
 
 			};
 		}

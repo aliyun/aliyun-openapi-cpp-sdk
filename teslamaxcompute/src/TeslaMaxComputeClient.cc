@@ -51,36 +51,72 @@ TeslaMaxComputeClient::TeslaMaxComputeClient(const std::string & accessKeyId, co
 TeslaMaxComputeClient::~TeslaMaxComputeClient()
 {}
 
-TeslaMaxComputeClient::GetUserInstanceOutcome TeslaMaxComputeClient::getUserInstance(const GetUserInstanceRequest &request) const
+TeslaMaxComputeClient::GetClusterInstanceOutcome TeslaMaxComputeClient::getClusterInstance(const GetClusterInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetUserInstanceOutcome(endpointOutcome.error());
+		return GetClusterInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetUserInstanceOutcome(GetUserInstanceResult(outcome.result()));
+		return GetClusterInstanceOutcome(GetClusterInstanceResult(outcome.result()));
 	else
-		return GetUserInstanceOutcome(outcome.error());
+		return GetClusterInstanceOutcome(outcome.error());
 }
 
-void TeslaMaxComputeClient::getUserInstanceAsync(const GetUserInstanceRequest& request, const GetUserInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TeslaMaxComputeClient::getClusterInstanceAsync(const GetClusterInstanceRequest& request, const GetClusterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getUserInstance(request), context);
+		handler(this, request, getClusterInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TeslaMaxComputeClient::GetUserInstanceOutcomeCallable TeslaMaxComputeClient::getUserInstanceCallable(const GetUserInstanceRequest &request) const
+TeslaMaxComputeClient::GetClusterInstanceOutcomeCallable TeslaMaxComputeClient::getClusterInstanceCallable(const GetClusterInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetUserInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetClusterInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->getUserInstance(request);
+			return this->getClusterInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TeslaMaxComputeClient::GetInstancesStatusCountOutcome TeslaMaxComputeClient::getInstancesStatusCount(const GetInstancesStatusCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInstancesStatusCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInstancesStatusCountOutcome(GetInstancesStatusCountResult(outcome.result()));
+	else
+		return GetInstancesStatusCountOutcome(outcome.error());
+}
+
+void TeslaMaxComputeClient::getInstancesStatusCountAsync(const GetInstancesStatusCountRequest& request, const GetInstancesStatusCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInstancesStatusCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TeslaMaxComputeClient::GetInstancesStatusCountOutcomeCallable TeslaMaxComputeClient::getInstancesStatusCountCallable(const GetInstancesStatusCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInstancesStatusCountOutcome()>>(
+			[this, request]()
+			{
+			return this->getInstancesStatusCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -123,108 +159,108 @@ TeslaMaxComputeClient::GetProjectInstanceOutcomeCallable TeslaMaxComputeClient::
 	return task->get_future();
 }
 
-TeslaMaxComputeClient::QueryTopologyOutcome TeslaMaxComputeClient::queryTopology(const QueryTopologyRequest &request) const
+TeslaMaxComputeClient::GetQuotaHistoryInfoOutcome TeslaMaxComputeClient::getQuotaHistoryInfo(const GetQuotaHistoryInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryTopologyOutcome(endpointOutcome.error());
+		return GetQuotaHistoryInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryTopologyOutcome(QueryTopologyResult(outcome.result()));
+		return GetQuotaHistoryInfoOutcome(GetQuotaHistoryInfoResult(outcome.result()));
 	else
-		return QueryTopologyOutcome(outcome.error());
+		return GetQuotaHistoryInfoOutcome(outcome.error());
 }
 
-void TeslaMaxComputeClient::queryTopologyAsync(const QueryTopologyRequest& request, const QueryTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TeslaMaxComputeClient::getQuotaHistoryInfoAsync(const GetQuotaHistoryInfoRequest& request, const GetQuotaHistoryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryTopology(request), context);
+		handler(this, request, getQuotaHistoryInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TeslaMaxComputeClient::QueryTopologyOutcomeCallable TeslaMaxComputeClient::queryTopologyCallable(const QueryTopologyRequest &request) const
+TeslaMaxComputeClient::GetQuotaHistoryInfoOutcomeCallable TeslaMaxComputeClient::getQuotaHistoryInfoCallable(const GetQuotaHistoryInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryTopologyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetQuotaHistoryInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->queryTopology(request);
+			return this->getQuotaHistoryInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-TeslaMaxComputeClient::QueryResourceInventoryOutcome TeslaMaxComputeClient::queryResourceInventory(const QueryResourceInventoryRequest &request) const
+TeslaMaxComputeClient::GetQuotaInstanceOutcome TeslaMaxComputeClient::getQuotaInstance(const GetQuotaInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryResourceInventoryOutcome(endpointOutcome.error());
+		return GetQuotaInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryResourceInventoryOutcome(QueryResourceInventoryResult(outcome.result()));
+		return GetQuotaInstanceOutcome(GetQuotaInstanceResult(outcome.result()));
 	else
-		return QueryResourceInventoryOutcome(outcome.error());
+		return GetQuotaInstanceOutcome(outcome.error());
 }
 
-void TeslaMaxComputeClient::queryResourceInventoryAsync(const QueryResourceInventoryRequest& request, const QueryResourceInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TeslaMaxComputeClient::getQuotaInstanceAsync(const GetQuotaInstanceRequest& request, const GetQuotaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryResourceInventory(request), context);
+		handler(this, request, getQuotaInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TeslaMaxComputeClient::QueryResourceInventoryOutcomeCallable TeslaMaxComputeClient::queryResourceInventoryCallable(const QueryResourceInventoryRequest &request) const
+TeslaMaxComputeClient::GetQuotaInstanceOutcomeCallable TeslaMaxComputeClient::getQuotaInstanceCallable(const GetQuotaInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryResourceInventoryOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetQuotaInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->queryResourceInventory(request);
+			return this->getQuotaInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-TeslaMaxComputeClient::GetInstancesStatusCountOutcome TeslaMaxComputeClient::getInstancesStatusCount(const GetInstancesStatusCountRequest &request) const
+TeslaMaxComputeClient::GetUserInstanceOutcome TeslaMaxComputeClient::getUserInstance(const GetUserInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetInstancesStatusCountOutcome(endpointOutcome.error());
+		return GetUserInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetInstancesStatusCountOutcome(GetInstancesStatusCountResult(outcome.result()));
+		return GetUserInstanceOutcome(GetUserInstanceResult(outcome.result()));
 	else
-		return GetInstancesStatusCountOutcome(outcome.error());
+		return GetUserInstanceOutcome(outcome.error());
 }
 
-void TeslaMaxComputeClient::getInstancesStatusCountAsync(const GetInstancesStatusCountRequest& request, const GetInstancesStatusCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TeslaMaxComputeClient::getUserInstanceAsync(const GetUserInstanceRequest& request, const GetUserInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getInstancesStatusCount(request), context);
+		handler(this, request, getUserInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TeslaMaxComputeClient::GetInstancesStatusCountOutcomeCallable TeslaMaxComputeClient::getInstancesStatusCountCallable(const GetInstancesStatusCountRequest &request) const
+TeslaMaxComputeClient::GetUserInstanceOutcomeCallable TeslaMaxComputeClient::getUserInstanceCallable(const GetUserInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetInstancesStatusCountOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetUserInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->getInstancesStatusCount(request);
+			return this->getUserInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,108 +339,72 @@ TeslaMaxComputeClient::QueryCustomerSaleInfoOutcomeCallable TeslaMaxComputeClien
 	return task->get_future();
 }
 
-TeslaMaxComputeClient::GetQuotaInstanceOutcome TeslaMaxComputeClient::getQuotaInstance(const GetQuotaInstanceRequest &request) const
+TeslaMaxComputeClient::QueryResourceInventoryOutcome TeslaMaxComputeClient::queryResourceInventory(const QueryResourceInventoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetQuotaInstanceOutcome(endpointOutcome.error());
+		return QueryResourceInventoryOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetQuotaInstanceOutcome(GetQuotaInstanceResult(outcome.result()));
+		return QueryResourceInventoryOutcome(QueryResourceInventoryResult(outcome.result()));
 	else
-		return GetQuotaInstanceOutcome(outcome.error());
+		return QueryResourceInventoryOutcome(outcome.error());
 }
 
-void TeslaMaxComputeClient::getQuotaInstanceAsync(const GetQuotaInstanceRequest& request, const GetQuotaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TeslaMaxComputeClient::queryResourceInventoryAsync(const QueryResourceInventoryRequest& request, const QueryResourceInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getQuotaInstance(request), context);
+		handler(this, request, queryResourceInventory(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TeslaMaxComputeClient::GetQuotaInstanceOutcomeCallable TeslaMaxComputeClient::getQuotaInstanceCallable(const GetQuotaInstanceRequest &request) const
+TeslaMaxComputeClient::QueryResourceInventoryOutcomeCallable TeslaMaxComputeClient::queryResourceInventoryCallable(const QueryResourceInventoryRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetQuotaInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<QueryResourceInventoryOutcome()>>(
 			[this, request]()
 			{
-			return this->getQuotaInstance(request);
+			return this->queryResourceInventory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-TeslaMaxComputeClient::GetClusterInstanceOutcome TeslaMaxComputeClient::getClusterInstance(const GetClusterInstanceRequest &request) const
+TeslaMaxComputeClient::QueryTopologyOutcome TeslaMaxComputeClient::queryTopology(const QueryTopologyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetClusterInstanceOutcome(endpointOutcome.error());
+		return QueryTopologyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetClusterInstanceOutcome(GetClusterInstanceResult(outcome.result()));
+		return QueryTopologyOutcome(QueryTopologyResult(outcome.result()));
 	else
-		return GetClusterInstanceOutcome(outcome.error());
+		return QueryTopologyOutcome(outcome.error());
 }
 
-void TeslaMaxComputeClient::getClusterInstanceAsync(const GetClusterInstanceRequest& request, const GetClusterInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TeslaMaxComputeClient::queryTopologyAsync(const QueryTopologyRequest& request, const QueryTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getClusterInstance(request), context);
+		handler(this, request, queryTopology(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TeslaMaxComputeClient::GetClusterInstanceOutcomeCallable TeslaMaxComputeClient::getClusterInstanceCallable(const GetClusterInstanceRequest &request) const
+TeslaMaxComputeClient::QueryTopologyOutcomeCallable TeslaMaxComputeClient::queryTopologyCallable(const QueryTopologyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetClusterInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<QueryTopologyOutcome()>>(
 			[this, request]()
 			{
-			return this->getClusterInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TeslaMaxComputeClient::GetQuotaHistoryInfoOutcome TeslaMaxComputeClient::getQuotaHistoryInfo(const GetQuotaHistoryInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetQuotaHistoryInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetQuotaHistoryInfoOutcome(GetQuotaHistoryInfoResult(outcome.result()));
-	else
-		return GetQuotaHistoryInfoOutcome(outcome.error());
-}
-
-void TeslaMaxComputeClient::getQuotaHistoryInfoAsync(const GetQuotaHistoryInfoRequest& request, const GetQuotaHistoryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getQuotaHistoryInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TeslaMaxComputeClient::GetQuotaHistoryInfoOutcomeCallable TeslaMaxComputeClient::getQuotaHistoryInfoCallable(const GetQuotaHistoryInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetQuotaHistoryInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->getQuotaHistoryInfo(request);
+			return this->queryTopology(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

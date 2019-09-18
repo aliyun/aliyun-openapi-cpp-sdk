@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				ModifyClusterHostGroupRequest();
 				~ModifyClusterHostGroupRequest();
 
-				std::string getVswitchId()const;
-				void setVswitchId(const std::string& vswitchId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getHostGroupId()const;
-				void setHostGroupId(const std::string& hostGroupId);
 				std::string getSecurityGroupId()const;
 				void setSecurityGroupId(const std::string& securityGroupId);
-				std::string getComment()const;
-				void setComment(const std::string& comment);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getHostGroupName()const;
 				void setHostGroupName(const std::string& hostGroupName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getVswitchId()const;
+				void setVswitchId(const std::string& vswitchId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getHostGroupId()const;
+				void setHostGroupId(const std::string& hostGroupId);
+				std::string getComment()const;
+				void setComment(const std::string& comment);
 
             private:
-				std::string vswitchId_;
 				long resourceOwnerId_;
-				std::string regionId_;
-				std::string hostGroupId_;
 				std::string securityGroupId_;
-				std::string comment_;
 				std::string clusterId_;
 				std::string hostGroupName_;
 				std::string accessKeyId_;
+				std::string vswitchId_;
+				std::string regionId_;
+				std::string hostGroupId_;
+				std::string comment_;
 
 			};
 		}

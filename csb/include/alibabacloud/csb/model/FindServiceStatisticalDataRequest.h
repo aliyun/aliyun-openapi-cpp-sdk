@@ -37,21 +37,18 @@ namespace AlibabaCloud
 
 				long getCsbId()const;
 				void setCsbId(long csbId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				long getEndTime()const;
 				void setEndTime(long endTime);
-				std::string getServiceName()const;
-				void setServiceName(const std::string& serviceName);
 				long getStartTime()const;
 				void setStartTime(long startTime);
+				std::string getServiceName()const;
+				void setServiceName(const std::string& serviceName);
 
             private:
 				long csbId_;
-				std::string regionId_;
 				long endTime_;
-				std::string serviceName_;
 				long startTime_;
+				std::string serviceName_;
 
 			};
 		}

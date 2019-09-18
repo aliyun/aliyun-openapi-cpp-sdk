@@ -36,6 +36,28 @@ void DescribeKernelReleaseNotesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeKernelReleaseNotesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeKernelReleaseNotesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeKernelReleaseNotesRequest::getKernelVersion()const
+{
+	return kernelVersion_;
+}
+
+void DescribeKernelReleaseNotesRequest::setKernelVersion(const std::string& kernelVersion)
+{
+	kernelVersion_ = kernelVersion;
+	setCoreParameter("KernelVersion", kernelVersion);
+}
+
 std::string DescribeKernelReleaseNotesRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -58,17 +80,6 @@ void DescribeKernelReleaseNotesRequest::setResourceOwnerAccount(const std::strin
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeKernelReleaseNotesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeKernelReleaseNotesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeKernelReleaseNotesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,27 +100,5 @@ void DescribeKernelReleaseNotesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeKernelReleaseNotesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeKernelReleaseNotesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeKernelReleaseNotesRequest::getKernelVersion()const
-{
-	return kernelVersion_;
-}
-
-void DescribeKernelReleaseNotesRequest::setKernelVersion(const std::string& kernelVersion)
-{
-	kernelVersion_ = kernelVersion;
-	setCoreParameter("KernelVersion", kernelVersion);
 }
 

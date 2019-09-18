@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				ConfirmTransferInEmailRequest();
 				~ConfirmTransferInEmailRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::vector<std::string> getDomainName()const;
 				void setDomainName(const std::vector<std::string>& domainName);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getEmail()const;
 				void setEmail(const std::string& email);
 
             private:
-				std::string userClientIp_;
 				std::vector<std::string> domainName_;
+				std::string userClientIp_;
 				std::string lang_;
 				std::string email_;
 

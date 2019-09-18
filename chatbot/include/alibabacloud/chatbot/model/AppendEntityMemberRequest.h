@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				AppendEntityMemberRequest();
 				~AppendEntityMemberRequest();
 
-				std::string getMember()const;
-				void setMember(const std::string& member);
 				long getEntityId()const;
 				void setEntityId(long entityId);
+				std::string getMember()const;
+				void setMember(const std::string& member);
 				std::string getApplyType()const;
 				void setApplyType(const std::string& applyType);
 
             private:
-				std::string member_;
 				long entityId_;
+				std::string member_;
 				std::string applyType_;
 
 			};

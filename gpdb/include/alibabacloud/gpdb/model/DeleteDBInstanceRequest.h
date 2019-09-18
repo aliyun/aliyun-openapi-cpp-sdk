@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string clientToken_;
+				std::string accessKeyId_;
 				std::string dBInstanceId_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

@@ -36,17 +36,6 @@ void DescribeSecurityGroupAttributeRequest::setResourceOwnerId(long resourceOwne
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSecurityGroupAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeSecurityGroupAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeSecurityGroupAttributeRequest::getClusterId()const
 {
 	return clusterId_;
@@ -67,5 +56,16 @@ void DescribeSecurityGroupAttributeRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeSecurityGroupAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeSecurityGroupAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

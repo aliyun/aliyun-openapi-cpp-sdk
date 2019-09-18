@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				DescribeRequestGraphRequest();
 				~DescribeRequestGraphRequest();
 
+				long getStartTimestamp()const;
+				void setStartTimestamp(long startTimestamp);
+				long getEndTimestamp()const;
+				void setEndTimestamp(long endTimestamp);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getUserClientIp()const;
@@ -43,18 +47,14 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				long getStartTimestamp()const;
-				void setStartTimestamp(long startTimestamp);
-				long getEndTimestamp()const;
-				void setEndTimestamp(long endTimestamp);
 
             private:
+				long startTimestamp_;
+				long endTimestamp_;
 				std::string vpcId_;
 				std::string userClientIp_;
 				std::string zoneId_;
 				std::string lang_;
-				long startTimestamp_;
-				long endTimestamp_;
 
 			};
 		}

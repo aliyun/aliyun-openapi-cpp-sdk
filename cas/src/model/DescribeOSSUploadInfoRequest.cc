@@ -25,17 +25,6 @@ DescribeOSSUploadInfoRequest::DescribeOSSUploadInfoRequest() :
 DescribeOSSUploadInfoRequest::~DescribeOSSUploadInfoRequest()
 {}
 
-std::string DescribeOSSUploadInfoRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOSSUploadInfoRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeOSSUploadInfoRequest::getOrderId()const
 {
 	return orderId_;
@@ -56,6 +45,28 @@ void DescribeOSSUploadInfoRequest::setDocumentType(int documentType)
 {
 	documentType_ = documentType;
 	setCoreParameter("DocumentType", std::to_string(documentType));
+}
+
+std::string DescribeOSSUploadInfoRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeOSSUploadInfoRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeOSSUploadInfoRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOSSUploadInfoRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOSSUploadInfoRequest::getLang()const

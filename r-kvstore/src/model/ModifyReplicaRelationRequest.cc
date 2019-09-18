@@ -36,6 +36,17 @@ void ModifyReplicaRelationRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyReplicaRelationRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyReplicaRelationRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyReplicaRelationRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void ModifyReplicaRelationRequest::setSecurityToken(const std::string& securityT
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ModifyReplicaRelationRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyReplicaRelationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyReplicaRelationRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyReplicaRelationRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyReplicaRelationRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyReplicaRelationRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyReplicaRelationRequest::getReplicaId()const
@@ -91,6 +69,28 @@ void ModifyReplicaRelationRequest::setReplicaId(const std::string& replicaId)
 	setCoreParameter("ReplicaId", replicaId);
 }
 
+std::string ModifyReplicaRelationRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyReplicaRelationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyReplicaRelationRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyReplicaRelationRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ModifyReplicaRelationRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void ModifyReplicaRelationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyReplicaRelationRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyReplicaRelationRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

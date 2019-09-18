@@ -47,6 +47,17 @@ void ResumeLiveStreamRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
+std::string ResumeLiveStreamRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void ResumeLiveStreamRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
+}
+
 std::string ResumeLiveStreamRequest::getLiveStreamType()const
 {
 	return liveStreamType_;
@@ -78,16 +89,5 @@ void ResumeLiveStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ResumeLiveStreamRequest::getStreamName()const
-{
-	return streamName_;
-}
-
-void ResumeLiveStreamRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
 }
 

@@ -36,28 +36,6 @@ void PushNoticeToAndroidRequest::setExtParameters(const std::string& extParamete
 	setCoreParameter("ExtParameters", extParameters);
 }
 
-long PushNoticeToAndroidRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void PushNoticeToAndroidRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
-std::string PushNoticeToAndroidRequest::getTargetValue()const
-{
-	return targetValue_;
-}
-
-void PushNoticeToAndroidRequest::setTargetValue(const std::string& targetValue)
-{
-	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
-}
-
 std::string PushNoticeToAndroidRequest::getTitle()const
 {
 	return title_;
@@ -111,5 +89,27 @@ void PushNoticeToAndroidRequest::setTarget(const std::string& target)
 {
 	target_ = target;
 	setCoreParameter("Target", target);
+}
+
+long PushNoticeToAndroidRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void PushNoticeToAndroidRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
+}
+
+std::string PushNoticeToAndroidRequest::getTargetValue()const
+{
+	return targetValue_;
+}
+
+void PushNoticeToAndroidRequest::setTargetValue(const std::string& targetValue)
+{
+	targetValue_ = targetValue;
+	setCoreParameter("TargetValue", targetValue);
 }
 

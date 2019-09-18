@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				AddLiveDetectNotifyConfigRequest();
 				~AddLiveDetectNotifyConfigRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getNotifyUrl()const;
-				void setNotifyUrl(const std::string& notifyUrl);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getNotifyUrl()const;
+				void setNotifyUrl(const std::string& notifyUrl);
 
             private:
-				std::string securityToken_;
 				std::string domainName_;
-				std::string notifyUrl_;
 				long ownerId_;
+				std::string securityToken_;
+				std::string notifyUrl_;
 
 			};
 		}

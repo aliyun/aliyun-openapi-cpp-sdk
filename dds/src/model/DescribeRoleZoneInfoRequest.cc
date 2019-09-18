@@ -36,6 +36,17 @@ void DescribeRoleZoneInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeRoleZoneInfoRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeRoleZoneInfoRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeRoleZoneInfoRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -45,39 +56,6 @@ void DescribeRoleZoneInfoRequest::setSecurityToken(const std::string& securityTo
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DescribeRoleZoneInfoRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeRoleZoneInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeRoleZoneInfoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRoleZoneInfoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeRoleZoneInfoRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeRoleZoneInfoRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeRoleZoneInfoRequest::getDBInstanceId()const
@@ -91,6 +69,28 @@ void DescribeRoleZoneInfoRequest::setDBInstanceId(const std::string& dBInstanceI
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string DescribeRoleZoneInfoRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeRoleZoneInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeRoleZoneInfoRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeRoleZoneInfoRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeRoleZoneInfoRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +100,5 @@ void DescribeRoleZoneInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeRoleZoneInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeRoleZoneInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

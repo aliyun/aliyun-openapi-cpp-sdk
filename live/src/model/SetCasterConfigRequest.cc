@@ -25,28 +25,6 @@ SetCasterConfigRequest::SetCasterConfigRequest() :
 SetCasterConfigRequest::~SetCasterConfigRequest()
 {}
 
-std::string SetCasterConfigRequest::getSideOutputUrl()const
-{
-	return sideOutputUrl_;
-}
-
-void SetCasterConfigRequest::setSideOutputUrl(const std::string& sideOutputUrl)
-{
-	sideOutputUrl_ = sideOutputUrl;
-	setCoreParameter("SideOutputUrl", sideOutputUrl);
-}
-
-std::string SetCasterConfigRequest::getCasterId()const
-{
-	return casterId_;
-}
-
-void SetCasterConfigRequest::setCasterId(const std::string& casterId)
-{
-	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
-}
-
 int SetCasterConfigRequest::getChannelEnable()const
 {
 	return channelEnable_;
@@ -56,17 +34,6 @@ void SetCasterConfigRequest::setChannelEnable(int channelEnable)
 {
 	channelEnable_ = channelEnable;
 	setCoreParameter("ChannelEnable", std::to_string(channelEnable));
-}
-
-std::string SetCasterConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void SetCasterConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
 }
 
 int SetCasterConfigRequest::getProgramEffect()const
@@ -89,17 +56,6 @@ void SetCasterConfigRequest::setProgramName(const std::string& programName)
 {
 	programName_ = programName;
 	setCoreParameter("ProgramName", programName);
-}
-
-long SetCasterConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void SetCasterConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetCasterConfigRequest::getRecordConfig()const
@@ -135,28 +91,6 @@ void SetCasterConfigRequest::setTranscodeConfig(const std::string& transcodeConf
 	setCoreParameter("TranscodeConfig", transcodeConfig);
 }
 
-float SetCasterConfigRequest::getDelay()const
-{
-	return delay_;
-}
-
-void SetCasterConfigRequest::setDelay(float delay)
-{
-	delay_ = delay;
-	setCoreParameter("Delay", std::to_string(delay));
-}
-
-std::string SetCasterConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SetCasterConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string SetCasterConfigRequest::getCasterName()const
 {
 	return casterName_;
@@ -166,6 +100,61 @@ void SetCasterConfigRequest::setCasterName(const std::string& casterName)
 {
 	casterName_ = casterName;
 	setCoreParameter("CasterName", casterName);
+}
+
+std::string SetCasterConfigRequest::getSideOutputUrl()const
+{
+	return sideOutputUrl_;
+}
+
+void SetCasterConfigRequest::setSideOutputUrl(const std::string& sideOutputUrl)
+{
+	sideOutputUrl_ = sideOutputUrl;
+	setCoreParameter("SideOutputUrl", sideOutputUrl);
+}
+
+std::string SetCasterConfigRequest::getCasterId()const
+{
+	return casterId_;
+}
+
+void SetCasterConfigRequest::setCasterId(const std::string& casterId)
+{
+	casterId_ = casterId;
+	setCoreParameter("CasterId", casterId);
+}
+
+std::string SetCasterConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void SetCasterConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
+long SetCasterConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void SetCasterConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+float SetCasterConfigRequest::getDelay()const
+{
+	return delay_;
+}
+
+void SetCasterConfigRequest::setDelay(float delay)
+{
+	delay_ = delay;
+	setCoreParameter("Delay", std::to_string(delay));
 }
 
 std::string SetCasterConfigRequest::getCallbackUrl()const

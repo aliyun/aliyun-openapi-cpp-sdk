@@ -51,144 +51,108 @@ IvisionClient::IvisionClient(const std::string & accessKeyId, const std::string 
 IvisionClient::~IvisionClient()
 {}
 
-IvisionClient::TrainProjectOutcome IvisionClient::trainProject(const TrainProjectRequest &request) const
+IvisionClient::CreateFaceGroupOutcome IvisionClient::createFaceGroup(const CreateFaceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TrainProjectOutcome(endpointOutcome.error());
+		return CreateFaceGroupOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TrainProjectOutcome(TrainProjectResult(outcome.result()));
+		return CreateFaceGroupOutcome(CreateFaceGroupResult(outcome.result()));
 	else
-		return TrainProjectOutcome(outcome.error());
+		return CreateFaceGroupOutcome(outcome.error());
 }
 
-void IvisionClient::trainProjectAsync(const TrainProjectRequest& request, const TrainProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createFaceGroupAsync(const CreateFaceGroupRequest& request, const CreateFaceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, trainProject(request), context);
+		handler(this, request, createFaceGroup(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::TrainProjectOutcomeCallable IvisionClient::trainProjectCallable(const TrainProjectRequest &request) const
+IvisionClient::CreateFaceGroupOutcomeCallable IvisionClient::createFaceGroupCallable(const CreateFaceGroupRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TrainProjectOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateFaceGroupOutcome()>>(
 			[this, request]()
 			{
-			return this->trainProject(request);
+			return this->createFaceGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-IvisionClient::CreateTagOutcome IvisionClient::createTag(const CreateTagRequest &request) const
+IvisionClient::CreatePredictModelOutcome IvisionClient::createPredictModel(const CreatePredictModelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateTagOutcome(endpointOutcome.error());
+		return CreatePredictModelOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateTagOutcome(CreateTagResult(outcome.result()));
+		return CreatePredictModelOutcome(CreatePredictModelResult(outcome.result()));
 	else
-		return CreateTagOutcome(outcome.error());
+		return CreatePredictModelOutcome(outcome.error());
 }
 
-void IvisionClient::createTagAsync(const CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createPredictModelAsync(const CreatePredictModelRequest& request, const CreatePredictModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createTag(request), context);
+		handler(this, request, createPredictModel(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::CreateTagOutcomeCallable IvisionClient::createTagCallable(const CreateTagRequest &request) const
+IvisionClient::CreatePredictModelOutcomeCallable IvisionClient::createPredictModelCallable(const CreatePredictModelRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateTagOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreatePredictModelOutcome()>>(
 			[this, request]()
 			{
-			return this->createTag(request);
+			return this->createPredictModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-IvisionClient::StartStreamPredictOutcome IvisionClient::startStreamPredict(const StartStreamPredictRequest &request) const
+IvisionClient::CreatePredictTemplateOutcome IvisionClient::createPredictTemplate(const CreatePredictTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return StartStreamPredictOutcome(endpointOutcome.error());
+		return CreatePredictTemplateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return StartStreamPredictOutcome(StartStreamPredictResult(outcome.result()));
+		return CreatePredictTemplateOutcome(CreatePredictTemplateResult(outcome.result()));
 	else
-		return StartStreamPredictOutcome(outcome.error());
+		return CreatePredictTemplateOutcome(outcome.error());
 }
 
-void IvisionClient::startStreamPredictAsync(const StartStreamPredictRequest& request, const StartStreamPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createPredictTemplateAsync(const CreatePredictTemplateRequest& request, const CreatePredictTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, startStreamPredict(request), context);
+		handler(this, request, createPredictTemplate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::StartStreamPredictOutcomeCallable IvisionClient::startStreamPredictCallable(const StartStreamPredictRequest &request) const
+IvisionClient::CreatePredictTemplateOutcomeCallable IvisionClient::createPredictTemplateCallable(const CreatePredictTemplateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<StartStreamPredictOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreatePredictTemplateOutcome()>>(
 			[this, request]()
 			{
-			return this->startStreamPredict(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DescribeTrainResultOutcome IvisionClient::describeTrainResult(const DescribeTrainResultRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTrainResultOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTrainResultOutcome(DescribeTrainResultResult(outcome.result()));
-	else
-		return DescribeTrainResultOutcome(outcome.error());
-}
-
-void IvisionClient::describeTrainResultAsync(const DescribeTrainResultRequest& request, const DescribeTrainResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTrainResult(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DescribeTrainResultOutcomeCallable IvisionClient::describeTrainResultCallable(const DescribeTrainResultRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTrainResultOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTrainResult(request);
+			return this->createPredictTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,648 +195,36 @@ IvisionClient::CreateProjectOutcomeCallable IvisionClient::createProjectCallable
 	return task->get_future();
 }
 
-IvisionClient::DescribeIterationsOutcome IvisionClient::describeIterations(const DescribeIterationsRequest &request) const
+IvisionClient::CreateQuickDeployOutcome IvisionClient::createQuickDeploy(const CreateQuickDeployRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeIterationsOutcome(endpointOutcome.error());
+		return CreateQuickDeployOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeIterationsOutcome(DescribeIterationsResult(outcome.result()));
+		return CreateQuickDeployOutcome(CreateQuickDeployResult(outcome.result()));
 	else
-		return DescribeIterationsOutcome(outcome.error());
+		return CreateQuickDeployOutcome(outcome.error());
 }
 
-void IvisionClient::describeIterationsAsync(const DescribeIterationsRequest& request, const DescribeIterationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createQuickDeployAsync(const CreateQuickDeployRequest& request, const CreateQuickDeployAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeIterations(request), context);
+		handler(this, request, createQuickDeploy(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::DescribeIterationsOutcomeCallable IvisionClient::describeIterationsCallable(const DescribeIterationsRequest &request) const
+IvisionClient::CreateQuickDeployOutcomeCallable IvisionClient::createQuickDeployCallable(const CreateQuickDeployRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeIterationsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateQuickDeployOutcome()>>(
 			[this, request]()
 			{
-			return this->describeIterations(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DescribeTrainDatasByIdsOutcome IvisionClient::describeTrainDatasByIds(const DescribeTrainDatasByIdsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTrainDatasByIdsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTrainDatasByIdsOutcome(DescribeTrainDatasByIdsResult(outcome.result()));
-	else
-		return DescribeTrainDatasByIdsOutcome(outcome.error());
-}
-
-void IvisionClient::describeTrainDatasByIdsAsync(const DescribeTrainDatasByIdsRequest& request, const DescribeTrainDatasByIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTrainDatasByIds(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DescribeTrainDatasByIdsOutcomeCallable IvisionClient::describeTrainDatasByIdsCallable(const DescribeTrainDatasByIdsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTrainDatasByIdsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTrainDatasByIds(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::CreateTrainDatasFromPredictionOutcome IvisionClient::createTrainDatasFromPrediction(const CreateTrainDatasFromPredictionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateTrainDatasFromPredictionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateTrainDatasFromPredictionOutcome(CreateTrainDatasFromPredictionResult(outcome.result()));
-	else
-		return CreateTrainDatasFromPredictionOutcome(outcome.error());
-}
-
-void IvisionClient::createTrainDatasFromPredictionAsync(const CreateTrainDatasFromPredictionRequest& request, const CreateTrainDatasFromPredictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createTrainDatasFromPrediction(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::CreateTrainDatasFromPredictionOutcomeCallable IvisionClient::createTrainDatasFromPredictionCallable(const CreateTrainDatasFromPredictionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateTrainDatasFromPredictionOutcome()>>(
-			[this, request]()
-			{
-			return this->createTrainDatasFromPrediction(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::ModifyTagAttributeOutcome IvisionClient::modifyTagAttribute(const ModifyTagAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyTagAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyTagAttributeOutcome(ModifyTagAttributeResult(outcome.result()));
-	else
-		return ModifyTagAttributeOutcome(outcome.error());
-}
-
-void IvisionClient::modifyTagAttributeAsync(const ModifyTagAttributeRequest& request, const ModifyTagAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyTagAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::ModifyTagAttributeOutcomeCallable IvisionClient::modifyTagAttributeCallable(const ModifyTagAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyTagAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyTagAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::CreateTrainDataRegionTagOutcome IvisionClient::createTrainDataRegionTag(const CreateTrainDataRegionTagRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateTrainDataRegionTagOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateTrainDataRegionTagOutcome(CreateTrainDataRegionTagResult(outcome.result()));
-	else
-		return CreateTrainDataRegionTagOutcome(outcome.error());
-}
-
-void IvisionClient::createTrainDataRegionTagAsync(const CreateTrainDataRegionTagRequest& request, const CreateTrainDataRegionTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createTrainDataRegionTag(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::CreateTrainDataRegionTagOutcomeCallable IvisionClient::createTrainDataRegionTagCallable(const CreateTrainDataRegionTagRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateTrainDataRegionTagOutcome()>>(
-			[this, request]()
-			{
-			return this->createTrainDataRegionTag(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DeleteFaceGroupOutcome IvisionClient::deleteFaceGroup(const DeleteFaceGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteFaceGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteFaceGroupOutcome(DeleteFaceGroupResult(outcome.result()));
-	else
-		return DeleteFaceGroupOutcome(outcome.error());
-}
-
-void IvisionClient::deleteFaceGroupAsync(const DeleteFaceGroupRequest& request, const DeleteFaceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteFaceGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DeleteFaceGroupOutcomeCallable IvisionClient::deleteFaceGroupCallable(const DeleteFaceGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteFaceGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteFaceGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::StopStreamPredictOutcome IvisionClient::stopStreamPredict(const StopStreamPredictRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopStreamPredictOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopStreamPredictOutcome(StopStreamPredictResult(outcome.result()));
-	else
-		return StopStreamPredictOutcome(outcome.error());
-}
-
-void IvisionClient::stopStreamPredictAsync(const StopStreamPredictRequest& request, const StopStreamPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopStreamPredict(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::StopStreamPredictOutcomeCallable IvisionClient::stopStreamPredictCallable(const StopStreamPredictRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopStreamPredictOutcome()>>(
-			[this, request]()
-			{
-			return this->stopStreamPredict(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::CreateTrainDataTagOutcome IvisionClient::createTrainDataTag(const CreateTrainDataTagRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateTrainDataTagOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateTrainDataTagOutcome(CreateTrainDataTagResult(outcome.result()));
-	else
-		return CreateTrainDataTagOutcome(outcome.error());
-}
-
-void IvisionClient::createTrainDataTagAsync(const CreateTrainDataTagRequest& request, const CreateTrainDataTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createTrainDataTag(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::CreateTrainDataTagOutcomeCallable IvisionClient::createTrainDataTagCallable(const CreateTrainDataTagRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateTrainDataTagOutcome()>>(
-			[this, request]()
-			{
-			return this->createTrainDataTag(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DeleteTagOutcome IvisionClient::deleteTag(const DeleteTagRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteTagOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteTagOutcome(DeleteTagResult(outcome.result()));
-	else
-		return DeleteTagOutcome(outcome.error());
-}
-
-void IvisionClient::deleteTagAsync(const DeleteTagRequest& request, const DeleteTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteTag(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DeleteTagOutcomeCallable IvisionClient::deleteTagCallable(const DeleteTagRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteTagOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteTag(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::ModifyTrainDataTagAttributeOutcome IvisionClient::modifyTrainDataTagAttribute(const ModifyTrainDataTagAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyTrainDataTagAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyTrainDataTagAttributeOutcome(ModifyTrainDataTagAttributeResult(outcome.result()));
-	else
-		return ModifyTrainDataTagAttributeOutcome(outcome.error());
-}
-
-void IvisionClient::modifyTrainDataTagAttributeAsync(const ModifyTrainDataTagAttributeRequest& request, const ModifyTrainDataTagAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyTrainDataTagAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::ModifyTrainDataTagAttributeOutcomeCallable IvisionClient::modifyTrainDataTagAttributeCallable(const ModifyTrainDataTagAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyTrainDataTagAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyTrainDataTagAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::ModifyTrainDataRegionTagAttributeOutcome IvisionClient::modifyTrainDataRegionTagAttribute(const ModifyTrainDataRegionTagAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyTrainDataRegionTagAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyTrainDataRegionTagAttributeOutcome(ModifyTrainDataRegionTagAttributeResult(outcome.result()));
-	else
-		return ModifyTrainDataRegionTagAttributeOutcome(outcome.error());
-}
-
-void IvisionClient::modifyTrainDataRegionTagAttributeAsync(const ModifyTrainDataRegionTagAttributeRequest& request, const ModifyTrainDataRegionTagAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyTrainDataRegionTagAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::ModifyTrainDataRegionTagAttributeOutcomeCallable IvisionClient::modifyTrainDataRegionTagAttributeCallable(const ModifyTrainDataRegionTagAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyTrainDataRegionTagAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyTrainDataRegionTagAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DescribeStreamPredictsOutcome IvisionClient::describeStreamPredicts(const DescribeStreamPredictsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeStreamPredictsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeStreamPredictsOutcome(DescribeStreamPredictsResult(outcome.result()));
-	else
-		return DescribeStreamPredictsOutcome(outcome.error());
-}
-
-void IvisionClient::describeStreamPredictsAsync(const DescribeStreamPredictsRequest& request, const DescribeStreamPredictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeStreamPredicts(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DescribeStreamPredictsOutcomeCallable IvisionClient::describeStreamPredictsCallable(const DescribeStreamPredictsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeStreamPredictsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeStreamPredicts(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DescribeTagsOutcome IvisionClient::describeTags(const DescribeTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTagsOutcome(DescribeTagsResult(outcome.result()));
-	else
-		return DescribeTagsOutcome(outcome.error());
-}
-
-void IvisionClient::describeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DescribeTagsOutcomeCallable IvisionClient::describeTagsCallable(const DescribeTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DescribeStreamPredictResultOutcome IvisionClient::describeStreamPredictResult(const DescribeStreamPredictResultRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeStreamPredictResultOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeStreamPredictResultOutcome(DescribeStreamPredictResultResult(outcome.result()));
-	else
-		return DescribeStreamPredictResultOutcome(outcome.error());
-}
-
-void IvisionClient::describeStreamPredictResultAsync(const DescribeStreamPredictResultRequest& request, const DescribeStreamPredictResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeStreamPredictResult(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DescribeStreamPredictResultOutcomeCallable IvisionClient::describeStreamPredictResultCallable(const DescribeStreamPredictResultRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeStreamPredictResultOutcome()>>(
-			[this, request]()
-			{
-			return this->describeStreamPredictResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DeleteIterationOutcome IvisionClient::deleteIteration(const DeleteIterationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteIterationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteIterationOutcome(DeleteIterationResult(outcome.result()));
-	else
-		return DeleteIterationOutcome(outcome.error());
-}
-
-void IvisionClient::deleteIterationAsync(const DeleteIterationRequest& request, const DeleteIterationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteIteration(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DeleteIterationOutcomeCallable IvisionClient::deleteIterationCallable(const DeleteIterationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteIterationOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteIteration(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::CreateTrainDatasTagOutcome IvisionClient::createTrainDatasTag(const CreateTrainDatasTagRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateTrainDatasTagOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateTrainDatasTagOutcome(CreateTrainDatasTagResult(outcome.result()));
-	else
-		return CreateTrainDatasTagOutcome(outcome.error());
-}
-
-void IvisionClient::createTrainDatasTagAsync(const CreateTrainDatasTagRequest& request, const CreateTrainDatasTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createTrainDatasTag(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::CreateTrainDatasTagOutcomeCallable IvisionClient::createTrainDatasTagCallable(const CreateTrainDatasTagRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateTrainDatasTagOutcome()>>(
-			[this, request]()
-			{
-			return this->createTrainDatasTag(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DeleteTrainDatasTagOutcome IvisionClient::deleteTrainDatasTag(const DeleteTrainDatasTagRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteTrainDatasTagOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteTrainDatasTagOutcome(DeleteTrainDatasTagResult(outcome.result()));
-	else
-		return DeleteTrainDatasTagOutcome(outcome.error());
-}
-
-void IvisionClient::deleteTrainDatasTagAsync(const DeleteTrainDatasTagRequest& request, const DeleteTrainDatasTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteTrainDatasTag(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DeleteTrainDatasTagOutcomeCallable IvisionClient::deleteTrainDatasTagCallable(const DeleteTrainDatasTagRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteTrainDatasTagOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteTrainDatasTag(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::ImagePredictOutcome IvisionClient::imagePredict(const ImagePredictRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ImagePredictOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ImagePredictOutcome(ImagePredictResult(outcome.result()));
-	else
-		return ImagePredictOutcome(outcome.error());
-}
-
-void IvisionClient::imagePredictAsync(const ImagePredictRequest& request, const ImagePredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, imagePredict(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::ImagePredictOutcomeCallable IvisionClient::imagePredictCallable(const ImagePredictRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ImagePredictOutcome()>>(
-			[this, request]()
-			{
-			return this->imagePredict(request);
+			return this->createQuickDeploy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,324 +267,144 @@ IvisionClient::CreateStreamPredictOutcomeCallable IvisionClient::createStreamPre
 	return task->get_future();
 }
 
-IvisionClient::DeleteStreamPredictOutcome IvisionClient::deleteStreamPredict(const DeleteStreamPredictRequest &request) const
+IvisionClient::CreateTagOutcome IvisionClient::createTag(const CreateTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteStreamPredictOutcome(endpointOutcome.error());
+		return CreateTagOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteStreamPredictOutcome(DeleteStreamPredictResult(outcome.result()));
+		return CreateTagOutcome(CreateTagResult(outcome.result()));
 	else
-		return DeleteStreamPredictOutcome(outcome.error());
+		return CreateTagOutcome(outcome.error());
 }
 
-void IvisionClient::deleteStreamPredictAsync(const DeleteStreamPredictRequest& request, const DeleteStreamPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createTagAsync(const CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteStreamPredict(request), context);
+		handler(this, request, createTag(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::DeleteStreamPredictOutcomeCallable IvisionClient::deleteStreamPredictCallable(const DeleteStreamPredictRequest &request) const
+IvisionClient::CreateTagOutcomeCallable IvisionClient::createTagCallable(const CreateTagRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteStreamPredictOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateTagOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteStreamPredict(request);
+			return this->createTag(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-IvisionClient::DescribeFaceGroupsOutcome IvisionClient::describeFaceGroups(const DescribeFaceGroupsRequest &request) const
+IvisionClient::CreateTrainDataRegionTagOutcome IvisionClient::createTrainDataRegionTag(const CreateTrainDataRegionTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeFaceGroupsOutcome(endpointOutcome.error());
+		return CreateTrainDataRegionTagOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeFaceGroupsOutcome(DescribeFaceGroupsResult(outcome.result()));
+		return CreateTrainDataRegionTagOutcome(CreateTrainDataRegionTagResult(outcome.result()));
 	else
-		return DescribeFaceGroupsOutcome(outcome.error());
+		return CreateTrainDataRegionTagOutcome(outcome.error());
 }
 
-void IvisionClient::describeFaceGroupsAsync(const DescribeFaceGroupsRequest& request, const DescribeFaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createTrainDataRegionTagAsync(const CreateTrainDataRegionTagRequest& request, const CreateTrainDataRegionTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeFaceGroups(request), context);
+		handler(this, request, createTrainDataRegionTag(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::DescribeFaceGroupsOutcomeCallable IvisionClient::describeFaceGroupsCallable(const DescribeFaceGroupsRequest &request) const
+IvisionClient::CreateTrainDataRegionTagOutcomeCallable IvisionClient::createTrainDataRegionTagCallable(const CreateTrainDataRegionTagRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeFaceGroupsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateTrainDataRegionTagOutcome()>>(
 			[this, request]()
 			{
-			return this->describeFaceGroups(request);
+			return this->createTrainDataRegionTag(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-IvisionClient::ModifyProjectAttributeOutcome IvisionClient::modifyProjectAttribute(const ModifyProjectAttributeRequest &request) const
+IvisionClient::CreateTrainDataTagOutcome IvisionClient::createTrainDataTag(const CreateTrainDataTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyProjectAttributeOutcome(endpointOutcome.error());
+		return CreateTrainDataTagOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyProjectAttributeOutcome(ModifyProjectAttributeResult(outcome.result()));
+		return CreateTrainDataTagOutcome(CreateTrainDataTagResult(outcome.result()));
 	else
-		return ModifyProjectAttributeOutcome(outcome.error());
+		return CreateTrainDataTagOutcome(outcome.error());
 }
 
-void IvisionClient::modifyProjectAttributeAsync(const ModifyProjectAttributeRequest& request, const ModifyProjectAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createTrainDataTagAsync(const CreateTrainDataTagRequest& request, const CreateTrainDataTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyProjectAttribute(request), context);
+		handler(this, request, createTrainDataTag(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::ModifyProjectAttributeOutcomeCallable IvisionClient::modifyProjectAttributeCallable(const ModifyProjectAttributeRequest &request) const
+IvisionClient::CreateTrainDataTagOutcomeCallable IvisionClient::createTrainDataTagCallable(const CreateTrainDataTagRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyProjectAttributeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateTrainDataTagOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyProjectAttribute(request);
+			return this->createTrainDataTag(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-IvisionClient::DescribeProjectsOutcome IvisionClient::describeProjects(const DescribeProjectsRequest &request) const
+IvisionClient::CreateTrainDatasFromPredictionOutcome IvisionClient::createTrainDatasFromPrediction(const CreateTrainDatasFromPredictionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeProjectsOutcome(endpointOutcome.error());
+		return CreateTrainDatasFromPredictionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeProjectsOutcome(DescribeProjectsResult(outcome.result()));
+		return CreateTrainDatasFromPredictionOutcome(CreateTrainDatasFromPredictionResult(outcome.result()));
 	else
-		return DescribeProjectsOutcome(outcome.error());
+		return CreateTrainDatasFromPredictionOutcome(outcome.error());
 }
 
-void IvisionClient::describeProjectsAsync(const DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createTrainDatasFromPredictionAsync(const CreateTrainDatasFromPredictionRequest& request, const CreateTrainDatasFromPredictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeProjects(request), context);
+		handler(this, request, createTrainDatasFromPrediction(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::DescribeProjectsOutcomeCallable IvisionClient::describeProjectsCallable(const DescribeProjectsRequest &request) const
+IvisionClient::CreateTrainDatasFromPredictionOutcomeCallable IvisionClient::createTrainDatasFromPredictionCallable(const CreateTrainDatasFromPredictionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeProjectsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateTrainDatasFromPredictionOutcome()>>(
 			[this, request]()
 			{
-			return this->describeProjects(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::CreateFaceGroupOutcome IvisionClient::createFaceGroup(const CreateFaceGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateFaceGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateFaceGroupOutcome(CreateFaceGroupResult(outcome.result()));
-	else
-		return CreateFaceGroupOutcome(outcome.error());
-}
-
-void IvisionClient::createFaceGroupAsync(const CreateFaceGroupRequest& request, const CreateFaceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createFaceGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::CreateFaceGroupOutcomeCallable IvisionClient::createFaceGroupCallable(const CreateFaceGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateFaceGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->createFaceGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DeleteTrainDatasOutcome IvisionClient::deleteTrainDatas(const DeleteTrainDatasRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteTrainDatasOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteTrainDatasOutcome(DeleteTrainDatasResult(outcome.result()));
-	else
-		return DeleteTrainDatasOutcome(outcome.error());
-}
-
-void IvisionClient::deleteTrainDatasAsync(const DeleteTrainDatasRequest& request, const DeleteTrainDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteTrainDatas(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DeleteTrainDatasOutcomeCallable IvisionClient::deleteTrainDatasCallable(const DeleteTrainDatasRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteTrainDatasOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteTrainDatas(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DeleteProjectOutcome IvisionClient::deleteProject(const DeleteProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteProjectOutcome(DeleteProjectResult(outcome.result()));
-	else
-		return DeleteProjectOutcome(outcome.error());
-}
-
-void IvisionClient::deleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DeleteProjectOutcomeCallable IvisionClient::deleteProjectCallable(const DeleteProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DescribePredictDatasOutcome IvisionClient::describePredictDatas(const DescribePredictDatasRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePredictDatasOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePredictDatasOutcome(DescribePredictDatasResult(outcome.result()));
-	else
-		return DescribePredictDatasOutcome(outcome.error());
-}
-
-void IvisionClient::describePredictDatasAsync(const DescribePredictDatasRequest& request, const DescribePredictDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePredictDatas(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DescribePredictDatasOutcomeCallable IvisionClient::describePredictDatasCallable(const DescribePredictDatasRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePredictDatasOutcome()>>(
-			[this, request]()
-			{
-			return this->describePredictDatas(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::SearchFaceOutcome IvisionClient::searchFace(const SearchFaceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchFaceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchFaceOutcome(SearchFaceResult(outcome.result()));
-	else
-		return SearchFaceOutcome(outcome.error());
-}
-
-void IvisionClient::searchFaceAsync(const SearchFaceRequest& request, const SearchFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, searchFace(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::SearchFaceOutcomeCallable IvisionClient::searchFaceCallable(const SearchFaceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchFaceOutcome()>>(
-			[this, request]()
-			{
-			return this->searchFace(request);
+			return this->createTrainDatasFromPrediction(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1275,144 +447,36 @@ IvisionClient::CreateTrainDatasFromUrlsOutcomeCallable IvisionClient::createTrai
 	return task->get_future();
 }
 
-IvisionClient::UnregisterFaceOutcome IvisionClient::unregisterFace(const UnregisterFaceRequest &request) const
+IvisionClient::CreateTrainDatasTagOutcome IvisionClient::createTrainDatasTag(const CreateTrainDatasTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UnregisterFaceOutcome(endpointOutcome.error());
+		return CreateTrainDatasTagOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UnregisterFaceOutcome(UnregisterFaceResult(outcome.result()));
+		return CreateTrainDatasTagOutcome(CreateTrainDatasTagResult(outcome.result()));
 	else
-		return UnregisterFaceOutcome(outcome.error());
+		return CreateTrainDatasTagOutcome(outcome.error());
 }
 
-void IvisionClient::unregisterFaceAsync(const UnregisterFaceRequest& request, const UnregisterFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvisionClient::createTrainDatasTagAsync(const CreateTrainDatasTagRequest& request, const CreateTrainDatasTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, unregisterFace(request), context);
+		handler(this, request, createTrainDatasTag(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvisionClient::UnregisterFaceOutcomeCallable IvisionClient::unregisterFaceCallable(const UnregisterFaceRequest &request) const
+IvisionClient::CreateTrainDatasTagOutcomeCallable IvisionClient::createTrainDatasTagCallable(const CreateTrainDatasTagRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UnregisterFaceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateTrainDatasTagOutcome()>>(
 			[this, request]()
 			{
-			return this->unregisterFace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DeletePredictDatasOutcome IvisionClient::deletePredictDatas(const DeletePredictDatasRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeletePredictDatasOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeletePredictDatasOutcome(DeletePredictDatasResult(outcome.result()));
-	else
-		return DeletePredictDatasOutcome(outcome.error());
-}
-
-void IvisionClient::deletePredictDatasAsync(const DeletePredictDatasRequest& request, const DeletePredictDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deletePredictDatas(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DeletePredictDatasOutcomeCallable IvisionClient::deletePredictDatasCallable(const DeletePredictDatasRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeletePredictDatasOutcome()>>(
-			[this, request]()
-			{
-			return this->deletePredictDatas(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::DescribeTrainDatasOutcome IvisionClient::describeTrainDatas(const DescribeTrainDatasRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTrainDatasOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTrainDatasOutcome(DescribeTrainDatasResult(outcome.result()));
-	else
-		return DescribeTrainDatasOutcome(outcome.error());
-}
-
-void IvisionClient::describeTrainDatasAsync(const DescribeTrainDatasRequest& request, const DescribeTrainDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTrainDatas(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::DescribeTrainDatasOutcomeCallable IvisionClient::describeTrainDatasCallable(const DescribeTrainDatasRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTrainDatasOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTrainDatas(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvisionClient::RegisterFaceOutcome IvisionClient::registerFace(const RegisterFaceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RegisterFaceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RegisterFaceOutcome(RegisterFaceResult(outcome.result()));
-	else
-		return RegisterFaceOutcome(outcome.error());
-}
-
-void IvisionClient::registerFaceAsync(const RegisterFaceRequest& request, const RegisterFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, registerFace(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvisionClient::RegisterFaceOutcomeCallable IvisionClient::registerFaceCallable(const RegisterFaceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RegisterFaceOutcome()>>(
-			[this, request]()
-			{
-			return this->registerFace(request);
+			return this->createTrainDatasTag(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1455,6 +519,1086 @@ IvisionClient::CreateUploadTokenOutcomeCallable IvisionClient::createUploadToken
 	return task->get_future();
 }
 
+IvisionClient::DeleteFaceGroupOutcome IvisionClient::deleteFaceGroup(const DeleteFaceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFaceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFaceGroupOutcome(DeleteFaceGroupResult(outcome.result()));
+	else
+		return DeleteFaceGroupOutcome(outcome.error());
+}
+
+void IvisionClient::deleteFaceGroupAsync(const DeleteFaceGroupRequest& request, const DeleteFaceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFaceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeleteFaceGroupOutcomeCallable IvisionClient::deleteFaceGroupCallable(const DeleteFaceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFaceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFaceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeleteIterationOutcome IvisionClient::deleteIteration(const DeleteIterationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIterationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIterationOutcome(DeleteIterationResult(outcome.result()));
+	else
+		return DeleteIterationOutcome(outcome.error());
+}
+
+void IvisionClient::deleteIterationAsync(const DeleteIterationRequest& request, const DeleteIterationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIteration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeleteIterationOutcomeCallable IvisionClient::deleteIterationCallable(const DeleteIterationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIterationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIteration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeletePredictDatasOutcome IvisionClient::deletePredictDatas(const DeletePredictDatasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePredictDatasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePredictDatasOutcome(DeletePredictDatasResult(outcome.result()));
+	else
+		return DeletePredictDatasOutcome(outcome.error());
+}
+
+void IvisionClient::deletePredictDatasAsync(const DeletePredictDatasRequest& request, const DeletePredictDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePredictDatas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeletePredictDatasOutcomeCallable IvisionClient::deletePredictDatasCallable(const DeletePredictDatasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePredictDatasOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePredictDatas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeletePredictModelOutcome IvisionClient::deletePredictModel(const DeletePredictModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePredictModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePredictModelOutcome(DeletePredictModelResult(outcome.result()));
+	else
+		return DeletePredictModelOutcome(outcome.error());
+}
+
+void IvisionClient::deletePredictModelAsync(const DeletePredictModelRequest& request, const DeletePredictModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePredictModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeletePredictModelOutcomeCallable IvisionClient::deletePredictModelCallable(const DeletePredictModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePredictModelOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePredictModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeletePredictTemplateOutcome IvisionClient::deletePredictTemplate(const DeletePredictTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePredictTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePredictTemplateOutcome(DeletePredictTemplateResult(outcome.result()));
+	else
+		return DeletePredictTemplateOutcome(outcome.error());
+}
+
+void IvisionClient::deletePredictTemplateAsync(const DeletePredictTemplateRequest& request, const DeletePredictTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePredictTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeletePredictTemplateOutcomeCallable IvisionClient::deletePredictTemplateCallable(const DeletePredictTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePredictTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePredictTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeleteProjectOutcome IvisionClient::deleteProject(const DeleteProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteProjectOutcome(DeleteProjectResult(outcome.result()));
+	else
+		return DeleteProjectOutcome(outcome.error());
+}
+
+void IvisionClient::deleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeleteProjectOutcomeCallable IvisionClient::deleteProjectCallable(const DeleteProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeleteStreamPredictOutcome IvisionClient::deleteStreamPredict(const DeleteStreamPredictRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStreamPredictOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStreamPredictOutcome(DeleteStreamPredictResult(outcome.result()));
+	else
+		return DeleteStreamPredictOutcome(outcome.error());
+}
+
+void IvisionClient::deleteStreamPredictAsync(const DeleteStreamPredictRequest& request, const DeleteStreamPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStreamPredict(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeleteStreamPredictOutcomeCallable IvisionClient::deleteStreamPredictCallable(const DeleteStreamPredictRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStreamPredictOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStreamPredict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeleteTagOutcome IvisionClient::deleteTag(const DeleteTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTagOutcome(DeleteTagResult(outcome.result()));
+	else
+		return DeleteTagOutcome(outcome.error());
+}
+
+void IvisionClient::deleteTagAsync(const DeleteTagRequest& request, const DeleteTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeleteTagOutcomeCallable IvisionClient::deleteTagCallable(const DeleteTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTagOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeleteTrainDatasOutcome IvisionClient::deleteTrainDatas(const DeleteTrainDatasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTrainDatasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTrainDatasOutcome(DeleteTrainDatasResult(outcome.result()));
+	else
+		return DeleteTrainDatasOutcome(outcome.error());
+}
+
+void IvisionClient::deleteTrainDatasAsync(const DeleteTrainDatasRequest& request, const DeleteTrainDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTrainDatas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeleteTrainDatasOutcomeCallable IvisionClient::deleteTrainDatasCallable(const DeleteTrainDatasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTrainDatasOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTrainDatas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DeleteTrainDatasTagOutcome IvisionClient::deleteTrainDatasTag(const DeleteTrainDatasTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTrainDatasTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTrainDatasTagOutcome(DeleteTrainDatasTagResult(outcome.result()));
+	else
+		return DeleteTrainDatasTagOutcome(outcome.error());
+}
+
+void IvisionClient::deleteTrainDatasTagAsync(const DeleteTrainDatasTagRequest& request, const DeleteTrainDatasTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTrainDatasTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DeleteTrainDatasTagOutcomeCallable IvisionClient::deleteTrainDatasTagCallable(const DeleteTrainDatasTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTrainDatasTagOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTrainDatasTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeFaceGroupsOutcome IvisionClient::describeFaceGroups(const DescribeFaceGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFaceGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFaceGroupsOutcome(DescribeFaceGroupsResult(outcome.result()));
+	else
+		return DescribeFaceGroupsOutcome(outcome.error());
+}
+
+void IvisionClient::describeFaceGroupsAsync(const DescribeFaceGroupsRequest& request, const DescribeFaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFaceGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeFaceGroupsOutcomeCallable IvisionClient::describeFaceGroupsCallable(const DescribeFaceGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFaceGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFaceGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeIterationsOutcome IvisionClient::describeIterations(const DescribeIterationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIterationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIterationsOutcome(DescribeIterationsResult(outcome.result()));
+	else
+		return DescribeIterationsOutcome(outcome.error());
+}
+
+void IvisionClient::describeIterationsAsync(const DescribeIterationsRequest& request, const DescribeIterationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIterations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeIterationsOutcomeCallable IvisionClient::describeIterationsCallable(const DescribeIterationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIterationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIterations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribePredictDatasOutcome IvisionClient::describePredictDatas(const DescribePredictDatasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePredictDatasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePredictDatasOutcome(DescribePredictDatasResult(outcome.result()));
+	else
+		return DescribePredictDatasOutcome(outcome.error());
+}
+
+void IvisionClient::describePredictDatasAsync(const DescribePredictDatasRequest& request, const DescribePredictDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePredictDatas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribePredictDatasOutcomeCallable IvisionClient::describePredictDatasCallable(const DescribePredictDatasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePredictDatasOutcome()>>(
+			[this, request]()
+			{
+			return this->describePredictDatas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribePredictModelsOutcome IvisionClient::describePredictModels(const DescribePredictModelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePredictModelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePredictModelsOutcome(DescribePredictModelsResult(outcome.result()));
+	else
+		return DescribePredictModelsOutcome(outcome.error());
+}
+
+void IvisionClient::describePredictModelsAsync(const DescribePredictModelsRequest& request, const DescribePredictModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePredictModels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribePredictModelsOutcomeCallable IvisionClient::describePredictModelsCallable(const DescribePredictModelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePredictModelsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePredictModels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribePredictTemplatesOutcome IvisionClient::describePredictTemplates(const DescribePredictTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePredictTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePredictTemplatesOutcome(DescribePredictTemplatesResult(outcome.result()));
+	else
+		return DescribePredictTemplatesOutcome(outcome.error());
+}
+
+void IvisionClient::describePredictTemplatesAsync(const DescribePredictTemplatesRequest& request, const DescribePredictTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePredictTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribePredictTemplatesOutcomeCallable IvisionClient::describePredictTemplatesCallable(const DescribePredictTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePredictTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePredictTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeProjectsOutcome IvisionClient::describeProjects(const DescribeProjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProjectsOutcome(DescribeProjectsResult(outcome.result()));
+	else
+		return DescribeProjectsOutcome(outcome.error());
+}
+
+void IvisionClient::describeProjectsAsync(const DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeProjectsOutcomeCallable IvisionClient::describeProjectsCallable(const DescribeProjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProjects(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeQuickDeploysOutcome IvisionClient::describeQuickDeploys(const DescribeQuickDeploysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeQuickDeploysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeQuickDeploysOutcome(DescribeQuickDeploysResult(outcome.result()));
+	else
+		return DescribeQuickDeploysOutcome(outcome.error());
+}
+
+void IvisionClient::describeQuickDeploysAsync(const DescribeQuickDeploysRequest& request, const DescribeQuickDeploysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeQuickDeploys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeQuickDeploysOutcomeCallable IvisionClient::describeQuickDeploysCallable(const DescribeQuickDeploysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeQuickDeploysOutcome()>>(
+			[this, request]()
+			{
+			return this->describeQuickDeploys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeStreamPredictResultOutcome IvisionClient::describeStreamPredictResult(const DescribeStreamPredictResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStreamPredictResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStreamPredictResultOutcome(DescribeStreamPredictResultResult(outcome.result()));
+	else
+		return DescribeStreamPredictResultOutcome(outcome.error());
+}
+
+void IvisionClient::describeStreamPredictResultAsync(const DescribeStreamPredictResultRequest& request, const DescribeStreamPredictResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStreamPredictResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeStreamPredictResultOutcomeCallable IvisionClient::describeStreamPredictResultCallable(const DescribeStreamPredictResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStreamPredictResultOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStreamPredictResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeStreamPredictsOutcome IvisionClient::describeStreamPredicts(const DescribeStreamPredictsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStreamPredictsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStreamPredictsOutcome(DescribeStreamPredictsResult(outcome.result()));
+	else
+		return DescribeStreamPredictsOutcome(outcome.error());
+}
+
+void IvisionClient::describeStreamPredictsAsync(const DescribeStreamPredictsRequest& request, const DescribeStreamPredictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStreamPredicts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeStreamPredictsOutcomeCallable IvisionClient::describeStreamPredictsCallable(const DescribeStreamPredictsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStreamPredictsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStreamPredicts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeSystemPredictModelsOutcome IvisionClient::describeSystemPredictModels(const DescribeSystemPredictModelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSystemPredictModelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSystemPredictModelsOutcome(DescribeSystemPredictModelsResult(outcome.result()));
+	else
+		return DescribeSystemPredictModelsOutcome(outcome.error());
+}
+
+void IvisionClient::describeSystemPredictModelsAsync(const DescribeSystemPredictModelsRequest& request, const DescribeSystemPredictModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSystemPredictModels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeSystemPredictModelsOutcomeCallable IvisionClient::describeSystemPredictModelsCallable(const DescribeSystemPredictModelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSystemPredictModelsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSystemPredictModels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeTagsOutcome IvisionClient::describeTags(const DescribeTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTagsOutcome(DescribeTagsResult(outcome.result()));
+	else
+		return DescribeTagsOutcome(outcome.error());
+}
+
+void IvisionClient::describeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeTagsOutcomeCallable IvisionClient::describeTagsCallable(const DescribeTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeTrainDatasOutcome IvisionClient::describeTrainDatas(const DescribeTrainDatasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTrainDatasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTrainDatasOutcome(DescribeTrainDatasResult(outcome.result()));
+	else
+		return DescribeTrainDatasOutcome(outcome.error());
+}
+
+void IvisionClient::describeTrainDatasAsync(const DescribeTrainDatasRequest& request, const DescribeTrainDatasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTrainDatas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeTrainDatasOutcomeCallable IvisionClient::describeTrainDatasCallable(const DescribeTrainDatasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTrainDatasOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTrainDatas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeTrainDatasByIdsOutcome IvisionClient::describeTrainDatasByIds(const DescribeTrainDatasByIdsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTrainDatasByIdsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTrainDatasByIdsOutcome(DescribeTrainDatasByIdsResult(outcome.result()));
+	else
+		return DescribeTrainDatasByIdsOutcome(outcome.error());
+}
+
+void IvisionClient::describeTrainDatasByIdsAsync(const DescribeTrainDatasByIdsRequest& request, const DescribeTrainDatasByIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTrainDatasByIds(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeTrainDatasByIdsOutcomeCallable IvisionClient::describeTrainDatasByIdsCallable(const DescribeTrainDatasByIdsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTrainDatasByIdsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTrainDatasByIds(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::DescribeTrainResultOutcome IvisionClient::describeTrainResult(const DescribeTrainResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTrainResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTrainResultOutcome(DescribeTrainResultResult(outcome.result()));
+	else
+		return DescribeTrainResultOutcome(outcome.error());
+}
+
+void IvisionClient::describeTrainResultAsync(const DescribeTrainResultRequest& request, const DescribeTrainResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTrainResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::DescribeTrainResultOutcomeCallable IvisionClient::describeTrainResultCallable(const DescribeTrainResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTrainResultOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTrainResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::ImagePredictOutcome IvisionClient::imagePredict(const ImagePredictRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImagePredictOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImagePredictOutcome(ImagePredictResult(outcome.result()));
+	else
+		return ImagePredictOutcome(outcome.error());
+}
+
+void IvisionClient::imagePredictAsync(const ImagePredictRequest& request, const ImagePredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, imagePredict(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::ImagePredictOutcomeCallable IvisionClient::imagePredictCallable(const ImagePredictRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImagePredictOutcome()>>(
+			[this, request]()
+			{
+			return this->imagePredict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::ModifyPredictTemplateAttributeOutcome IvisionClient::modifyPredictTemplateAttribute(const ModifyPredictTemplateAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPredictTemplateAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPredictTemplateAttributeOutcome(ModifyPredictTemplateAttributeResult(outcome.result()));
+	else
+		return ModifyPredictTemplateAttributeOutcome(outcome.error());
+}
+
+void IvisionClient::modifyPredictTemplateAttributeAsync(const ModifyPredictTemplateAttributeRequest& request, const ModifyPredictTemplateAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPredictTemplateAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::ModifyPredictTemplateAttributeOutcomeCallable IvisionClient::modifyPredictTemplateAttributeCallable(const ModifyPredictTemplateAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPredictTemplateAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPredictTemplateAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::ModifyProjectAttributeOutcome IvisionClient::modifyProjectAttribute(const ModifyProjectAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyProjectAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyProjectAttributeOutcome(ModifyProjectAttributeResult(outcome.result()));
+	else
+		return ModifyProjectAttributeOutcome(outcome.error());
+}
+
+void IvisionClient::modifyProjectAttributeAsync(const ModifyProjectAttributeRequest& request, const ModifyProjectAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyProjectAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::ModifyProjectAttributeOutcomeCallable IvisionClient::modifyProjectAttributeCallable(const ModifyProjectAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyProjectAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyProjectAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::ModifyTagAttributeOutcome IvisionClient::modifyTagAttribute(const ModifyTagAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTagAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTagAttributeOutcome(ModifyTagAttributeResult(outcome.result()));
+	else
+		return ModifyTagAttributeOutcome(outcome.error());
+}
+
+void IvisionClient::modifyTagAttributeAsync(const ModifyTagAttributeRequest& request, const ModifyTagAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTagAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::ModifyTagAttributeOutcomeCallable IvisionClient::modifyTagAttributeCallable(const ModifyTagAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTagAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTagAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::ModifyTrainDataRegionTagAttributeOutcome IvisionClient::modifyTrainDataRegionTagAttribute(const ModifyTrainDataRegionTagAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTrainDataRegionTagAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTrainDataRegionTagAttributeOutcome(ModifyTrainDataRegionTagAttributeResult(outcome.result()));
+	else
+		return ModifyTrainDataRegionTagAttributeOutcome(outcome.error());
+}
+
+void IvisionClient::modifyTrainDataRegionTagAttributeAsync(const ModifyTrainDataRegionTagAttributeRequest& request, const ModifyTrainDataRegionTagAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTrainDataRegionTagAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::ModifyTrainDataRegionTagAttributeOutcomeCallable IvisionClient::modifyTrainDataRegionTagAttributeCallable(const ModifyTrainDataRegionTagAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTrainDataRegionTagAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTrainDataRegionTagAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::ModifyTrainDataTagAttributeOutcome IvisionClient::modifyTrainDataTagAttribute(const ModifyTrainDataTagAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTrainDataTagAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTrainDataTagAttributeOutcome(ModifyTrainDataTagAttributeResult(outcome.result()));
+	else
+		return ModifyTrainDataTagAttributeOutcome(outcome.error());
+}
+
+void IvisionClient::modifyTrainDataTagAttributeAsync(const ModifyTrainDataTagAttributeRequest& request, const ModifyTrainDataTagAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTrainDataTagAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::ModifyTrainDataTagAttributeOutcomeCallable IvisionClient::modifyTrainDataTagAttributeCallable(const ModifyTrainDataTagAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTrainDataTagAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTrainDataTagAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IvisionClient::PredictImageOutcome IvisionClient::predictImage(const PredictImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1629,258 @@ IvisionClient::PredictImageOutcomeCallable IvisionClient::predictImageCallable(c
 			[this, request]()
 			{
 			return this->predictImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::QuickTestOutcome IvisionClient::quickTest(const QuickTestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuickTestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuickTestOutcome(QuickTestResult(outcome.result()));
+	else
+		return QuickTestOutcome(outcome.error());
+}
+
+void IvisionClient::quickTestAsync(const QuickTestRequest& request, const QuickTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, quickTest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::QuickTestOutcomeCallable IvisionClient::quickTestCallable(const QuickTestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuickTestOutcome()>>(
+			[this, request]()
+			{
+			return this->quickTest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::RegisterFaceOutcome IvisionClient::registerFace(const RegisterFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterFaceOutcome(RegisterFaceResult(outcome.result()));
+	else
+		return RegisterFaceOutcome(outcome.error());
+}
+
+void IvisionClient::registerFaceAsync(const RegisterFaceRequest& request, const RegisterFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::RegisterFaceOutcomeCallable IvisionClient::registerFaceCallable(const RegisterFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->registerFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::SearchFaceOutcome IvisionClient::searchFace(const SearchFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchFaceOutcome(SearchFaceResult(outcome.result()));
+	else
+		return SearchFaceOutcome(outcome.error());
+}
+
+void IvisionClient::searchFaceAsync(const SearchFaceRequest& request, const SearchFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::SearchFaceOutcomeCallable IvisionClient::searchFaceCallable(const SearchFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->searchFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::StartStreamPredictOutcome IvisionClient::startStreamPredict(const StartStreamPredictRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartStreamPredictOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartStreamPredictOutcome(StartStreamPredictResult(outcome.result()));
+	else
+		return StartStreamPredictOutcome(outcome.error());
+}
+
+void IvisionClient::startStreamPredictAsync(const StartStreamPredictRequest& request, const StartStreamPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startStreamPredict(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::StartStreamPredictOutcomeCallable IvisionClient::startStreamPredictCallable(const StartStreamPredictRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartStreamPredictOutcome()>>(
+			[this, request]()
+			{
+			return this->startStreamPredict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::StopStreamPredictOutcome IvisionClient::stopStreamPredict(const StopStreamPredictRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopStreamPredictOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopStreamPredictOutcome(StopStreamPredictResult(outcome.result()));
+	else
+		return StopStreamPredictOutcome(outcome.error());
+}
+
+void IvisionClient::stopStreamPredictAsync(const StopStreamPredictRequest& request, const StopStreamPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopStreamPredict(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::StopStreamPredictOutcomeCallable IvisionClient::stopStreamPredictCallable(const StopStreamPredictRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopStreamPredictOutcome()>>(
+			[this, request]()
+			{
+			return this->stopStreamPredict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::TrainProjectOutcome IvisionClient::trainProject(const TrainProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TrainProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TrainProjectOutcome(TrainProjectResult(outcome.result()));
+	else
+		return TrainProjectOutcome(outcome.error());
+}
+
+void IvisionClient::trainProjectAsync(const TrainProjectRequest& request, const TrainProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, trainProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::TrainProjectOutcomeCallable IvisionClient::trainProjectCallable(const TrainProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TrainProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->trainProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvisionClient::UnregisterFaceOutcome IvisionClient::unregisterFace(const UnregisterFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnregisterFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnregisterFaceOutcome(UnregisterFaceResult(outcome.result()));
+	else
+		return UnregisterFaceOutcome(outcome.error());
+}
+
+void IvisionClient::unregisterFaceAsync(const UnregisterFaceRequest& request, const UnregisterFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unregisterFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvisionClient::UnregisterFaceOutcomeCallable IvisionClient::unregisterFaceCallable(const UnregisterFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnregisterFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->unregisterFace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

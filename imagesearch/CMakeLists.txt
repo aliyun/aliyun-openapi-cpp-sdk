@@ -21,19 +21,19 @@ set(imagesearch_public_header
 	include/alibabacloud/imagesearch/ImageSearchExport.h )
 
 set(imagesearch_public_header_model 
-	include/alibabacloud/imagesearch/model/DeleteItemRequest.h
-	include/alibabacloud/imagesearch/model/DeleteItemResult.h
 	include/alibabacloud/imagesearch/model/AddItemRequest.h
 	include/alibabacloud/imagesearch/model/AddItemResult.h
+	include/alibabacloud/imagesearch/model/DeleteItemRequest.h
+	include/alibabacloud/imagesearch/model/DeleteItemResult.h
 	include/alibabacloud/imagesearch/model/SearchItemRequest.h
 	include/alibabacloud/imagesearch/model/SearchItemResult.h )
 
 set(imagesearch_src 
 	src/ImageSearchClient.cc
-	src/model/DeleteItemRequest.cc
-	src/model/DeleteItemResult.cc
 	src/model/AddItemRequest.cc
 	src/model/AddItemResult.cc
+	src/model/DeleteItemRequest.cc
+	src/model/DeleteItemResult.cc
 	src/model/SearchItemRequest.cc
 	src/model/SearchItemResult.cc )
 

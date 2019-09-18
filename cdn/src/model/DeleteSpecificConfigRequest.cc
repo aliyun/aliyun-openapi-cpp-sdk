@@ -19,33 +19,11 @@
 using AlibabaCloud::Cdn::Model::DeleteSpecificConfigRequest;
 
 DeleteSpecificConfigRequest::DeleteSpecificConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DeleteSpecificConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "DeleteSpecificConfig")
 {}
 
 DeleteSpecificConfigRequest::~DeleteSpecificConfigRequest()
 {}
-
-std::string DeleteSpecificConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteSpecificConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string DeleteSpecificConfigRequest::getConfigId()const
-{
-	return configId_;
-}
-
-void DeleteSpecificConfigRequest::setConfigId(const std::string& configId)
-{
-	configId_ = configId;
-	setCoreParameter("ConfigId", configId);
-}
 
 std::string DeleteSpecificConfigRequest::getDomainName()const
 {
@@ -67,5 +45,38 @@ void DeleteSpecificConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteSpecificConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteSpecificConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DeleteSpecificConfigRequest::getFunctionName()const
+{
+	return functionName_;
+}
+
+void DeleteSpecificConfigRequest::setFunctionName(const std::string& functionName)
+{
+	functionName_ = functionName;
+	setCoreParameter("FunctionName", functionName);
+}
+
+std::string DeleteSpecificConfigRequest::getConfigId()const
+{
+	return configId_;
+}
+
+void DeleteSpecificConfigRequest::setConfigId(const std::string& configId)
+{
+	configId_ = configId;
+	setCoreParameter("ConfigId", configId);
 }
 

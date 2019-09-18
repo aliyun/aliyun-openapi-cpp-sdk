@@ -51,42 +51,6 @@ HsmClient::HsmClient(const std::string & accessKeyId, const std::string & access
 HsmClient::~HsmClient()
 {}
 
-HsmClient::ConfigWhiteListOutcome HsmClient::configWhiteList(const ConfigWhiteListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ConfigWhiteListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ConfigWhiteListOutcome(ConfigWhiteListResult(outcome.result()));
-	else
-		return ConfigWhiteListOutcome(outcome.error());
-}
-
-void HsmClient::configWhiteListAsync(const ConfigWhiteListRequest& request, const ConfigWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, configWhiteList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-HsmClient::ConfigWhiteListOutcomeCallable HsmClient::configWhiteListCallable(const ConfigWhiteListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ConfigWhiteListOutcome()>>(
-			[this, request]()
-			{
-			return this->configWhiteList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 HsmClient::ConfigNetworkOutcome HsmClient::configNetwork(const ConfigNetworkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -123,36 +87,72 @@ HsmClient::ConfigNetworkOutcomeCallable HsmClient::configNetworkCallable(const C
 	return task->get_future();
 }
 
-HsmClient::ReleaseInstanceOutcome HsmClient::releaseInstance(const ReleaseInstanceRequest &request) const
+HsmClient::ConfigWhiteListOutcome HsmClient::configWhiteList(const ConfigWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ReleaseInstanceOutcome(endpointOutcome.error());
+		return ConfigWhiteListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ReleaseInstanceOutcome(ReleaseInstanceResult(outcome.result()));
+		return ConfigWhiteListOutcome(ConfigWhiteListResult(outcome.result()));
 	else
-		return ReleaseInstanceOutcome(outcome.error());
+		return ConfigWhiteListOutcome(outcome.error());
 }
 
-void HsmClient::releaseInstanceAsync(const ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HsmClient::configWhiteListAsync(const ConfigWhiteListRequest& request, const ConfigWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, releaseInstance(request), context);
+		handler(this, request, configWhiteList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HsmClient::ReleaseInstanceOutcomeCallable HsmClient::releaseInstanceCallable(const ReleaseInstanceRequest &request) const
+HsmClient::ConfigWhiteListOutcomeCallable HsmClient::configWhiteListCallable(const ConfigWhiteListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ReleaseInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ConfigWhiteListOutcome()>>(
 			[this, request]()
 			{
-			return this->releaseInstance(request);
+			return this->configWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HsmClient::CreateInstanceOutcome HsmClient::createInstance(const CreateInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInstanceOutcome(CreateInstanceResult(outcome.result()));
+	else
+		return CreateInstanceOutcome(outcome.error());
+}
+
+void HsmClient::createInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HsmClient::CreateInstanceOutcomeCallable HsmClient::createInstanceCallable(const CreateInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,42 +231,6 @@ HsmClient::DescribeRegionsOutcomeCallable HsmClient::describeRegionsCallable(con
 	return task->get_future();
 }
 
-HsmClient::CreateInstanceOutcome HsmClient::createInstance(const CreateInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateInstanceOutcome(CreateInstanceResult(outcome.result()));
-	else
-		return CreateInstanceOutcome(outcome.error());
-}
-
-void HsmClient::createInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-HsmClient::CreateInstanceOutcomeCallable HsmClient::createInstanceCallable(const CreateInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->createInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 HsmClient::ModifyInstanceOutcome HsmClient::modifyInstance(const ModifyInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +261,42 @@ HsmClient::ModifyInstanceOutcomeCallable HsmClient::modifyInstanceCallable(const
 			[this, request]()
 			{
 			return this->modifyInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HsmClient::ReleaseInstanceOutcome HsmClient::releaseInstance(const ReleaseInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReleaseInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReleaseInstanceOutcome(ReleaseInstanceResult(outcome.result()));
+	else
+		return ReleaseInstanceOutcome(outcome.error());
+}
+
+void HsmClient::releaseInstanceAsync(const ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, releaseInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HsmClient::ReleaseInstanceOutcomeCallable HsmClient::releaseInstanceCallable(const ReleaseInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReleaseInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->releaseInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

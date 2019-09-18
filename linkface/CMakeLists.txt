@@ -21,81 +21,81 @@ set(linkface_public_header
 	include/alibabacloud/linkface/LinkFaceExport.h )
 
 set(linkface_public_header_model 
-	include/alibabacloud/linkface/model/QuerySyncPicScheduleRequest.h
-	include/alibabacloud/linkface/model/QuerySyncPicScheduleResult.h
-	include/alibabacloud/linkface/model/UnlinkFaceRequest.h
-	include/alibabacloud/linkface/model/UnlinkFaceResult.h
-	include/alibabacloud/linkface/model/UpdateFaceRequest.h
-	include/alibabacloud/linkface/model/UpdateFaceResult.h
-	include/alibabacloud/linkface/model/SyncFacePicturesRequest.h
-	include/alibabacloud/linkface/model/SyncFacePicturesResult.h
 	include/alibabacloud/linkface/model/CreateGroupRequest.h
 	include/alibabacloud/linkface/model/CreateGroupResult.h
 	include/alibabacloud/linkface/model/DeleteDeviceAllGroupRequest.h
 	include/alibabacloud/linkface/model/DeleteDeviceAllGroupResult.h
-	include/alibabacloud/linkface/model/DeleteGroupRequest.h
-	include/alibabacloud/linkface/model/DeleteGroupResult.h
 	include/alibabacloud/linkface/model/DeleteDeviceGroupRequest.h
 	include/alibabacloud/linkface/model/DeleteDeviceGroupResult.h
 	include/alibabacloud/linkface/model/DeleteFaceRequest.h
 	include/alibabacloud/linkface/model/DeleteFaceResult.h
-	include/alibabacloud/linkface/model/QueryAuthenticationRequest.h
-	include/alibabacloud/linkface/model/QueryAuthenticationResult.h
-	include/alibabacloud/linkface/model/QueryGroupUsersRequest.h
-	include/alibabacloud/linkface/model/QueryGroupUsersResult.h
+	include/alibabacloud/linkface/model/DeleteGroupRequest.h
+	include/alibabacloud/linkface/model/DeleteGroupResult.h
 	include/alibabacloud/linkface/model/LinkFaceRequest.h
 	include/alibabacloud/linkface/model/LinkFaceResult.h
-	include/alibabacloud/linkface/model/SearchFaceRequest.h
-	include/alibabacloud/linkface/model/SearchFaceResult.h
-	include/alibabacloud/linkface/model/QueryAllGroupsRequest.h
-	include/alibabacloud/linkface/model/QueryAllGroupsResult.h
-	include/alibabacloud/linkface/model/RegisterFaceRequest.h
-	include/alibabacloud/linkface/model/RegisterFaceResult.h
 	include/alibabacloud/linkface/model/QueryAddUserInfoRequest.h
 	include/alibabacloud/linkface/model/QueryAddUserInfoResult.h
+	include/alibabacloud/linkface/model/QueryAllGroupsRequest.h
+	include/alibabacloud/linkface/model/QueryAllGroupsResult.h
+	include/alibabacloud/linkface/model/QueryAuthenticationRequest.h
+	include/alibabacloud/linkface/model/QueryAuthenticationResult.h
+	include/alibabacloud/linkface/model/QueryFaceRequest.h
+	include/alibabacloud/linkface/model/QueryFaceResult.h
+	include/alibabacloud/linkface/model/QueryGroupUsersRequest.h
+	include/alibabacloud/linkface/model/QueryGroupUsersResult.h
 	include/alibabacloud/linkface/model/QueryLicensesRequest.h
 	include/alibabacloud/linkface/model/QueryLicensesResult.h
-	include/alibabacloud/linkface/model/QueryFaceRequest.h
-	include/alibabacloud/linkface/model/QueryFaceResult.h )
+	include/alibabacloud/linkface/model/QuerySyncPicScheduleRequest.h
+	include/alibabacloud/linkface/model/QuerySyncPicScheduleResult.h
+	include/alibabacloud/linkface/model/RegisterFaceRequest.h
+	include/alibabacloud/linkface/model/RegisterFaceResult.h
+	include/alibabacloud/linkface/model/SearchFaceRequest.h
+	include/alibabacloud/linkface/model/SearchFaceResult.h
+	include/alibabacloud/linkface/model/SyncFacePicturesRequest.h
+	include/alibabacloud/linkface/model/SyncFacePicturesResult.h
+	include/alibabacloud/linkface/model/UnlinkFaceRequest.h
+	include/alibabacloud/linkface/model/UnlinkFaceResult.h
+	include/alibabacloud/linkface/model/UpdateFaceRequest.h
+	include/alibabacloud/linkface/model/UpdateFaceResult.h )
 
 set(linkface_src 
 	src/LinkFaceClient.cc
-	src/model/QuerySyncPicScheduleRequest.cc
-	src/model/QuerySyncPicScheduleResult.cc
-	src/model/UnlinkFaceRequest.cc
-	src/model/UnlinkFaceResult.cc
-	src/model/UpdateFaceRequest.cc
-	src/model/UpdateFaceResult.cc
-	src/model/SyncFacePicturesRequest.cc
-	src/model/SyncFacePicturesResult.cc
 	src/model/CreateGroupRequest.cc
 	src/model/CreateGroupResult.cc
 	src/model/DeleteDeviceAllGroupRequest.cc
 	src/model/DeleteDeviceAllGroupResult.cc
-	src/model/DeleteGroupRequest.cc
-	src/model/DeleteGroupResult.cc
 	src/model/DeleteDeviceGroupRequest.cc
 	src/model/DeleteDeviceGroupResult.cc
 	src/model/DeleteFaceRequest.cc
 	src/model/DeleteFaceResult.cc
-	src/model/QueryAuthenticationRequest.cc
-	src/model/QueryAuthenticationResult.cc
-	src/model/QueryGroupUsersRequest.cc
-	src/model/QueryGroupUsersResult.cc
+	src/model/DeleteGroupRequest.cc
+	src/model/DeleteGroupResult.cc
 	src/model/LinkFaceRequest.cc
 	src/model/LinkFaceResult.cc
-	src/model/SearchFaceRequest.cc
-	src/model/SearchFaceResult.cc
-	src/model/QueryAllGroupsRequest.cc
-	src/model/QueryAllGroupsResult.cc
-	src/model/RegisterFaceRequest.cc
-	src/model/RegisterFaceResult.cc
 	src/model/QueryAddUserInfoRequest.cc
 	src/model/QueryAddUserInfoResult.cc
+	src/model/QueryAllGroupsRequest.cc
+	src/model/QueryAllGroupsResult.cc
+	src/model/QueryAuthenticationRequest.cc
+	src/model/QueryAuthenticationResult.cc
+	src/model/QueryFaceRequest.cc
+	src/model/QueryFaceResult.cc
+	src/model/QueryGroupUsersRequest.cc
+	src/model/QueryGroupUsersResult.cc
 	src/model/QueryLicensesRequest.cc
 	src/model/QueryLicensesResult.cc
-	src/model/QueryFaceRequest.cc
-	src/model/QueryFaceResult.cc )
+	src/model/QuerySyncPicScheduleRequest.cc
+	src/model/QuerySyncPicScheduleResult.cc
+	src/model/RegisterFaceRequest.cc
+	src/model/RegisterFaceResult.cc
+	src/model/SearchFaceRequest.cc
+	src/model/SearchFaceResult.cc
+	src/model/SyncFacePicturesRequest.cc
+	src/model/SyncFacePicturesResult.cc
+	src/model/UnlinkFaceRequest.cc
+	src/model/UnlinkFaceResult.cc
+	src/model/UpdateFaceRequest.cc
+	src/model/UpdateFaceResult.cc )
 
 add_library(linkface ${LIB_TYPE}
 	${linkface_public_header}

@@ -47,17 +47,6 @@ void QueryTagJobListRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string QueryTagJobListRequest::getTagJobIds()const
-{
-	return tagJobIds_;
-}
-
-void QueryTagJobListRequest::setTagJobIds(const std::string& tagJobIds)
-{
-	tagJobIds_ = tagJobIds;
-	setCoreParameter("TagJobIds", tagJobIds);
-}
-
 std::string QueryTagJobListRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -89,5 +78,16 @@ void QueryTagJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryTagJobListRequest::getTagJobIds()const
+{
+	return tagJobIds_;
+}
+
+void QueryTagJobListRequest::setTagJobIds(const std::string& tagJobIds)
+{
+	tagJobIds_ = tagJobIds;
+	setCoreParameter("TagJobIds", tagJobIds);
 }
 

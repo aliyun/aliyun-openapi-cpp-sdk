@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				GetAuditHistoryRequest();
 				~GetAuditHistoryRequest();
 
-				long getPageNo()const;
-				void setPageNo(long pageNo);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
 				std::string getVideoId()const;
 				void setVideoId(const std::string& videoId);
+				long getPageNo()const;
+				void setPageNo(long pageNo);
 				std::string getSortBy()const;
 				void setSortBy(const std::string& sortBy);
 
             private:
-				long pageNo_;
 				long pageSize_;
 				std::string videoId_;
+				long pageNo_;
 				std::string sortBy_;
 
 			};

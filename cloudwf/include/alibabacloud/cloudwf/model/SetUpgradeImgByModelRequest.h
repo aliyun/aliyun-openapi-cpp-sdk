@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				SetUpgradeImgByModelRequest();
 				~SetUpgradeImgByModelRequest();
 
-				std::string getImgAddr()const;
-				void setImgAddr(const std::string& imgAddr);
 				std::string getImgVersion()const;
 				void setImgVersion(const std::string& imgVersion);
 				long getApModelId()const;
 				void setApModelId(long apModelId);
-				std::string getComment()const;
-				void setComment(const std::string& comment);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getImgAddr()const;
+				void setImgAddr(const std::string& imgAddr);
+				std::string getComment()const;
+				void setComment(const std::string& comment);
 
             private:
-				std::string imgAddr_;
 				std::string imgVersion_;
 				long apModelId_;
-				std::string comment_;
 				std::string accessKeyId_;
+				std::string imgAddr_;
+				std::string comment_;
 
 			};
 		}

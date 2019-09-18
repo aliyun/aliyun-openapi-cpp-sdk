@@ -36,15 +36,26 @@ void SubmitMcuJobRequest::set_Template(const std::string& _template)
 	setCoreParameter("_Template", _template);
 }
 
-std::string SubmitMcuJobRequest::getInput()const
+long SubmitMcuJobRequest::getResourceOwnerId()const
 {
-	return input_;
+	return resourceOwnerId_;
 }
 
-void SubmitMcuJobRequest::setInput(const std::string& input)
+void SubmitMcuJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	input_ = input;
-	setCoreParameter("Input", input);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitMcuJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitMcuJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitMcuJobRequest::getUserData()const
@@ -56,17 +67,6 @@ void SubmitMcuJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setCoreParameter("UserData", userData);
-}
-
-long SubmitMcuJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitMcuJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitMcuJobRequest::getResourceOwnerAccount()const
@@ -113,17 +113,6 @@ void SubmitMcuJobRequest::setTemplateId(const std::string& templateId)
 	setCoreParameter("TemplateId", templateId);
 }
 
-std::string SubmitMcuJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitMcuJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitMcuJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -133,5 +122,16 @@ void SubmitMcuJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitMcuJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitMcuJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

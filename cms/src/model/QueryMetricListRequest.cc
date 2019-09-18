@@ -47,39 +47,6 @@ void QueryMetricListRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QueryMetricListRequest::getPeriod()const
-{
-	return period_;
-}
-
-void QueryMetricListRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setCoreParameter("Period", period);
-}
-
-std::string QueryMetricListRequest::getMetric()const
-{
-	return metric_;
-}
-
-void QueryMetricListRequest::setMetric(const std::string& metric)
-{
-	metric_ = metric;
-	setCoreParameter("Metric", metric);
-}
-
-std::string QueryMetricListRequest::getLength()const
-{
-	return length_;
-}
-
-void QueryMetricListRequest::setLength(const std::string& length)
-{
-	length_ = length;
-	setCoreParameter("Length", length);
-}
-
 std::string QueryMetricListRequest::getProject()const
 {
 	return project_;
@@ -89,17 +56,6 @@ void QueryMetricListRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
-}
-
-std::string QueryMetricListRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void QueryMetricListRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
 }
 
 std::string QueryMetricListRequest::getExpress()const
@@ -133,6 +89,50 @@ void QueryMetricListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryMetricListRequest::getPeriod()const
+{
+	return period_;
+}
+
+void QueryMetricListRequest::setPeriod(const std::string& period)
+{
+	period_ = period;
+	setCoreParameter("Period", period);
+}
+
+std::string QueryMetricListRequest::getLength()const
+{
+	return length_;
+}
+
+void QueryMetricListRequest::setLength(const std::string& length)
+{
+	length_ = length;
+	setCoreParameter("Length", length);
+}
+
+std::string QueryMetricListRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void QueryMetricListRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
+}
+
+std::string QueryMetricListRequest::getMetric()const
+{
+	return metric_;
+}
+
+void QueryMetricListRequest::setMetric(const std::string& metric)
+{
+	metric_ = metric;
+	setCoreParameter("Metric", metric);
 }
 
 std::string QueryMetricListRequest::getDimensions()const

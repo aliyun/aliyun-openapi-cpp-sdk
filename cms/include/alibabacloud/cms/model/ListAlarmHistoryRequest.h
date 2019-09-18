@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				std::string getCursor()const;
 				void setCursor(const std::string& cursor);
-				int getSize()const;
-				void setSize(int size);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getId()const;
-				void setId(const std::string& id);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getSize()const;
+				void setSize(int size);
+				std::string getId()const;
+				void setId(const std::string& id);
 
             private:
 				std::string cursor_;
-				int size_;
 				std::string endTime_;
-				std::string id_;
 				std::string startTime_;
 				std::string accessKeyId_;
+				int size_;
+				std::string id_;
 
 			};
 		}

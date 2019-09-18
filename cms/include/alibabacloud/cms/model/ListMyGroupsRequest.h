@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				bool getSelectContactGroups()const;
 				void setSelectContactGroups(bool selectContactGroups);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getType()const;
 				void setType(const std::string& type);
-				std::string getKeyword()const;
-				void setKeyword(const std::string& keyword);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getBindUrls()const;
 				void setBindUrls(const std::string& bindUrls);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getKeyword()const;
+				void setKeyword(const std::string& keyword);
 
             private:
 				bool selectContactGroups_;
-				std::string instanceId_;
-				int pageSize_;
 				std::string type_;
-				std::string keyword_;
 				std::string groupName_;
 				int pageNumber_;
 				std::string bindUrls_;
+				std::string instanceId_;
+				int pageSize_;
+				std::string keyword_;
 
 			};
 		}

@@ -58,17 +58,6 @@ void ListClusterHostComponentForAdminRequest::setComponentName(const std::string
 	setCoreParameter("ComponentName", componentName);
 }
 
-std::string ListClusterHostComponentForAdminRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ListClusterHostComponentForAdminRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
-}
-
 std::string ListClusterHostComponentForAdminRequest::getUserId()const
 {
 	return userId_;
@@ -155,6 +144,17 @@ void ListClusterHostComponentForAdminRequest::setServiceName(const std::string& 
 {
 	serviceName_ = serviceName;
 	setCoreParameter("ServiceName", serviceName);
+}
+
+std::string ListClusterHostComponentForAdminRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ListClusterHostComponentForAdminRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ListClusterHostComponentForAdminRequest::getHostRole()const

@@ -25,17 +25,6 @@ GetProjectRequest::GetProjectRequest() :
 GetProjectRequest::~GetProjectRequest()
 {}
 
-std::string GetProjectRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetProjectRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetProjectRequest::getProject()const
 {
 	return project_;

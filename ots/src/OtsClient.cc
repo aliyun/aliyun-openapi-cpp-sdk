@@ -51,180 +51,108 @@ OtsClient::OtsClient(const std::string & accessKeyId, const std::string & access
 OtsClient::~OtsClient()
 {}
 
-OtsClient::ListClusterTypeOutcome OtsClient::listClusterType(const ListClusterTypeRequest &request) const
+OtsClient::BindInstance2VpcOutcome OtsClient::bindInstance2Vpc(const BindInstance2VpcRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterTypeOutcome(endpointOutcome.error());
+		return BindInstance2VpcOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterTypeOutcome(ListClusterTypeResult(outcome.result()));
+		return BindInstance2VpcOutcome(BindInstance2VpcResult(outcome.result()));
 	else
-		return ListClusterTypeOutcome(outcome.error());
+		return BindInstance2VpcOutcome(outcome.error());
 }
 
-void OtsClient::listClusterTypeAsync(const ListClusterTypeRequest& request, const ListClusterTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OtsClient::bindInstance2VpcAsync(const BindInstance2VpcRequest& request, const BindInstance2VpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterType(request), context);
+		handler(this, request, bindInstance2Vpc(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OtsClient::ListClusterTypeOutcomeCallable OtsClient::listClusterTypeCallable(const ListClusterTypeRequest &request) const
+OtsClient::BindInstance2VpcOutcomeCallable OtsClient::bindInstance2VpcCallable(const BindInstance2VpcRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterTypeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<BindInstance2VpcOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterType(request);
+			return this->bindInstance2Vpc(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-OtsClient::UnbindInstance2VpcOutcome OtsClient::unbindInstance2Vpc(const UnbindInstance2VpcRequest &request) const
+OtsClient::DeleteInstanceOutcome OtsClient::deleteInstance(const DeleteInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UnbindInstance2VpcOutcome(endpointOutcome.error());
+		return DeleteInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UnbindInstance2VpcOutcome(UnbindInstance2VpcResult(outcome.result()));
+		return DeleteInstanceOutcome(DeleteInstanceResult(outcome.result()));
 	else
-		return UnbindInstance2VpcOutcome(outcome.error());
+		return DeleteInstanceOutcome(outcome.error());
 }
 
-void OtsClient::unbindInstance2VpcAsync(const UnbindInstance2VpcRequest& request, const UnbindInstance2VpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OtsClient::deleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, unbindInstance2Vpc(request), context);
+		handler(this, request, deleteInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OtsClient::UnbindInstance2VpcOutcomeCallable OtsClient::unbindInstance2VpcCallable(const UnbindInstance2VpcRequest &request) const
+OtsClient::DeleteInstanceOutcomeCallable OtsClient::deleteInstanceCallable(const DeleteInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UnbindInstance2VpcOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->unbindInstance2Vpc(request);
+			return this->deleteInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-OtsClient::UpdateInstanceOutcome OtsClient::updateInstance(const UpdateInstanceRequest &request) const
+OtsClient::DeleteTagsOutcome OtsClient::deleteTags(const DeleteTagsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateInstanceOutcome(endpointOutcome.error());
+		return DeleteTagsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateInstanceOutcome(UpdateInstanceResult(outcome.result()));
+		return DeleteTagsOutcome(DeleteTagsResult(outcome.result()));
 	else
-		return UpdateInstanceOutcome(outcome.error());
+		return DeleteTagsOutcome(outcome.error());
 }
 
-void OtsClient::updateInstanceAsync(const UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OtsClient::deleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateInstance(request), context);
+		handler(this, request, deleteTags(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OtsClient::UpdateInstanceOutcomeCallable OtsClient::updateInstanceCallable(const UpdateInstanceRequest &request) const
+OtsClient::DeleteTagsOutcomeCallable OtsClient::deleteTagsCallable(const DeleteTagsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteTagsOutcome()>>(
 			[this, request]()
 			{
-			return this->updateInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OtsClient::ListInstanceOutcome OtsClient::listInstance(const ListInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListInstanceOutcome(ListInstanceResult(outcome.result()));
-	else
-		return ListInstanceOutcome(outcome.error());
-}
-
-void OtsClient::listInstanceAsync(const ListInstanceRequest& request, const ListInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OtsClient::ListInstanceOutcomeCallable OtsClient::listInstanceCallable(const ListInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->listInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OtsClient::ListVpcInfoByVpcOutcome OtsClient::listVpcInfoByVpc(const ListVpcInfoByVpcRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListVpcInfoByVpcOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListVpcInfoByVpcOutcome(ListVpcInfoByVpcResult(outcome.result()));
-	else
-		return ListVpcInfoByVpcOutcome(outcome.error());
-}
-
-void OtsClient::listVpcInfoByVpcAsync(const ListVpcInfoByVpcRequest& request, const ListVpcInfoByVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listVpcInfoByVpc(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OtsClient::ListVpcInfoByVpcOutcomeCallable OtsClient::listVpcInfoByVpcCallable(const ListVpcInfoByVpcRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListVpcInfoByVpcOutcome()>>(
-			[this, request]()
-			{
-			return this->listVpcInfoByVpc(request);
+			return this->deleteTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,42 +195,6 @@ OtsClient::GetInstanceOutcomeCallable OtsClient::getInstanceCallable(const GetIn
 	return task->get_future();
 }
 
-OtsClient::BindInstance2VpcOutcome OtsClient::bindInstance2Vpc(const BindInstance2VpcRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BindInstance2VpcOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BindInstance2VpcOutcome(BindInstance2VpcResult(outcome.result()));
-	else
-		return BindInstance2VpcOutcome(outcome.error());
-}
-
-void OtsClient::bindInstance2VpcAsync(const BindInstance2VpcRequest& request, const BindInstance2VpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bindInstance2Vpc(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OtsClient::BindInstance2VpcOutcomeCallable OtsClient::bindInstance2VpcCallable(const BindInstance2VpcRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BindInstance2VpcOutcome()>>(
-			[this, request]()
-			{
-			return this->bindInstance2Vpc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OtsClient::InsertInstanceOutcome OtsClient::insertInstance(const InsertInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +225,114 @@ OtsClient::InsertInstanceOutcomeCallable OtsClient::insertInstanceCallable(const
 			[this, request]()
 			{
 			return this->insertInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OtsClient::InsertTagsOutcome OtsClient::insertTags(const InsertTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InsertTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InsertTagsOutcome(InsertTagsResult(outcome.result()));
+	else
+		return InsertTagsOutcome(outcome.error());
+}
+
+void OtsClient::insertTagsAsync(const InsertTagsRequest& request, const InsertTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, insertTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OtsClient::InsertTagsOutcomeCallable OtsClient::insertTagsCallable(const InsertTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InsertTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->insertTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OtsClient::ListClusterTypeOutcome OtsClient::listClusterType(const ListClusterTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListClusterTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListClusterTypeOutcome(ListClusterTypeResult(outcome.result()));
+	else
+		return ListClusterTypeOutcome(outcome.error());
+}
+
+void OtsClient::listClusterTypeAsync(const ListClusterTypeRequest& request, const ListClusterTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listClusterType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OtsClient::ListClusterTypeOutcomeCallable OtsClient::listClusterTypeCallable(const ListClusterTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListClusterTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->listClusterType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OtsClient::ListInstanceOutcome OtsClient::listInstance(const ListInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstanceOutcome(ListInstanceResult(outcome.result()));
+	else
+		return ListInstanceOutcome(outcome.error());
+}
+
+void OtsClient::listInstanceAsync(const ListInstanceRequest& request, const ListInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OtsClient::ListInstanceOutcomeCallable OtsClient::listInstanceCallable(const ListInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,108 +411,108 @@ OtsClient::ListVpcInfoByInstanceOutcomeCallable OtsClient::listVpcInfoByInstance
 	return task->get_future();
 }
 
-OtsClient::InsertTagsOutcome OtsClient::insertTags(const InsertTagsRequest &request) const
+OtsClient::ListVpcInfoByVpcOutcome OtsClient::listVpcInfoByVpc(const ListVpcInfoByVpcRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return InsertTagsOutcome(endpointOutcome.error());
+		return ListVpcInfoByVpcOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return InsertTagsOutcome(InsertTagsResult(outcome.result()));
+		return ListVpcInfoByVpcOutcome(ListVpcInfoByVpcResult(outcome.result()));
 	else
-		return InsertTagsOutcome(outcome.error());
+		return ListVpcInfoByVpcOutcome(outcome.error());
 }
 
-void OtsClient::insertTagsAsync(const InsertTagsRequest& request, const InsertTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OtsClient::listVpcInfoByVpcAsync(const ListVpcInfoByVpcRequest& request, const ListVpcInfoByVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, insertTags(request), context);
+		handler(this, request, listVpcInfoByVpc(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OtsClient::InsertTagsOutcomeCallable OtsClient::insertTagsCallable(const InsertTagsRequest &request) const
+OtsClient::ListVpcInfoByVpcOutcomeCallable OtsClient::listVpcInfoByVpcCallable(const ListVpcInfoByVpcRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<InsertTagsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListVpcInfoByVpcOutcome()>>(
 			[this, request]()
 			{
-			return this->insertTags(request);
+			return this->listVpcInfoByVpc(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-OtsClient::DeleteTagsOutcome OtsClient::deleteTags(const DeleteTagsRequest &request) const
+OtsClient::UnbindInstance2VpcOutcome OtsClient::unbindInstance2Vpc(const UnbindInstance2VpcRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteTagsOutcome(endpointOutcome.error());
+		return UnbindInstance2VpcOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteTagsOutcome(DeleteTagsResult(outcome.result()));
+		return UnbindInstance2VpcOutcome(UnbindInstance2VpcResult(outcome.result()));
 	else
-		return DeleteTagsOutcome(outcome.error());
+		return UnbindInstance2VpcOutcome(outcome.error());
 }
 
-void OtsClient::deleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OtsClient::unbindInstance2VpcAsync(const UnbindInstance2VpcRequest& request, const UnbindInstance2VpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteTags(request), context);
+		handler(this, request, unbindInstance2Vpc(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OtsClient::DeleteTagsOutcomeCallable OtsClient::deleteTagsCallable(const DeleteTagsRequest &request) const
+OtsClient::UnbindInstance2VpcOutcomeCallable OtsClient::unbindInstance2VpcCallable(const UnbindInstance2VpcRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteTagsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UnbindInstance2VpcOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteTags(request);
+			return this->unbindInstance2Vpc(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-OtsClient::DeleteInstanceOutcome OtsClient::deleteInstance(const DeleteInstanceRequest &request) const
+OtsClient::UpdateInstanceOutcome OtsClient::updateInstance(const UpdateInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteInstanceOutcome(endpointOutcome.error());
+		return UpdateInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteInstanceOutcome(DeleteInstanceResult(outcome.result()));
+		return UpdateInstanceOutcome(UpdateInstanceResult(outcome.result()));
 	else
-		return DeleteInstanceOutcome(outcome.error());
+		return UpdateInstanceOutcome(outcome.error());
 }
 
-void OtsClient::deleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void OtsClient::updateInstanceAsync(const UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteInstance(request), context);
+		handler(this, request, updateInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-OtsClient::DeleteInstanceOutcomeCallable OtsClient::deleteInstanceCallable(const DeleteInstanceRequest &request) const
+OtsClient::UpdateInstanceOutcomeCallable OtsClient::updateInstanceCallable(const UpdateInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UpdateInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteInstance(request);
+			return this->updateInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

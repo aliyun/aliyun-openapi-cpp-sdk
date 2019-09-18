@@ -47,17 +47,6 @@ void ListApgroupConfigRequest::setSearchName(const std::string& searchName)
 	setCoreParameter("SearchName", searchName);
 }
 
-std::string ListApgroupConfigRequest::getSearchCompany()const
-{
-	return searchCompany_;
-}
-
-void ListApgroupConfigRequest::setSearchCompany(const std::string& searchCompany)
-{
-	searchCompany_ = searchCompany;
-	setCoreParameter("SearchCompany", searchCompany);
-}
-
 int ListApgroupConfigRequest::getLength()const
 {
 	return length_;
@@ -67,17 +56,6 @@ void ListApgroupConfigRequest::setLength(int length)
 {
 	length_ = length;
 	setCoreParameter("Length", std::to_string(length));
-}
-
-int ListApgroupConfigRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListApgroupConfigRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListApgroupConfigRequest::getOrderDir()const
@@ -100,5 +78,27 @@ void ListApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListApgroupConfigRequest::getSearchCompany()const
+{
+	return searchCompany_;
+}
+
+void ListApgroupConfigRequest::setSearchCompany(const std::string& searchCompany)
+{
+	searchCompany_ = searchCompany;
+	setCoreParameter("SearchCompany", searchCompany);
+}
+
+int ListApgroupConfigRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListApgroupConfigRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

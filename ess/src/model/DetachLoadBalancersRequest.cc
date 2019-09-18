@@ -25,6 +25,28 @@ DetachLoadBalancersRequest::DetachLoadBalancersRequest() :
 DetachLoadBalancersRequest::~DetachLoadBalancersRequest()
 {}
 
+std::string DetachLoadBalancersRequest::getScalingGroupId()const
+{
+	return scalingGroupId_;
+}
+
+void DetachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
+{
+	scalingGroupId_ = scalingGroupId;
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string DetachLoadBalancersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DetachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<std::string> DetachLoadBalancersRequest::getLoadBalancer()const
 {
 	return loadBalancer_;
@@ -48,28 +70,6 @@ void DetachLoadBalancersRequest::setResourceOwnerAccount(const std::string& reso
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DetachLoadBalancersRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void DetachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
-bool DetachLoadBalancersRequest::getForceDetach()const
-{
-	return forceDetach_;
-}
-
-void DetachLoadBalancersRequest::setForceDetach(bool forceDetach)
-{
-	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
-}
-
 long DetachLoadBalancersRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -81,14 +81,14 @@ void DetachLoadBalancersRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DetachLoadBalancersRequest::getAccessKeyId()const
+bool DetachLoadBalancersRequest::getForceDetach()const
 {
-	return accessKeyId_;
+	return forceDetach_;
 }
 
-void DetachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
+void DetachLoadBalancersRequest::setForceDetach(bool forceDetach)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	forceDetach_ = forceDetach;
+	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
 }
 

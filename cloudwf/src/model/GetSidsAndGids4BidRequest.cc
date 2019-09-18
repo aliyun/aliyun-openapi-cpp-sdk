@@ -25,17 +25,6 @@ GetSidsAndGids4BidRequest::GetSidsAndGids4BidRequest() :
 GetSidsAndGids4BidRequest::~GetSidsAndGids4BidRequest()
 {}
 
-int GetSidsAndGids4BidRequest::getQueryType()const
-{
-	return queryType_;
-}
-
-void GetSidsAndGids4BidRequest::setQueryType(int queryType)
-{
-	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
-}
-
 std::string GetSidsAndGids4BidRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -56,5 +45,16 @@ void GetSidsAndGids4BidRequest::setQueryId(long queryId)
 {
 	queryId_ = queryId;
 	setCoreParameter("QueryId", std::to_string(queryId));
+}
+
+int GetSidsAndGids4BidRequest::getQueryType()const
+{
+	return queryType_;
+}
+
+void GetSidsAndGids4BidRequest::setQueryType(int queryType)
+{
+	queryType_ = queryType;
+	setCoreParameter("QueryType", std::to_string(queryType));
 }
 

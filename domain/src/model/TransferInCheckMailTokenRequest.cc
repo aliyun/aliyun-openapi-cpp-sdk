@@ -25,6 +25,17 @@ TransferInCheckMailTokenRequest::TransferInCheckMailTokenRequest() :
 TransferInCheckMailTokenRequest::~TransferInCheckMailTokenRequest()
 {}
 
+std::string TransferInCheckMailTokenRequest::getToken()const
+{
+	return token_;
+}
+
+void TransferInCheckMailTokenRequest::setToken(const std::string& token)
+{
+	token_ = token;
+	setCoreParameter("Token", token);
+}
+
 std::string TransferInCheckMailTokenRequest::getUserClientIp()const
 {
 	return userClientIp_;
@@ -45,16 +56,5 @@ void TransferInCheckMailTokenRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string TransferInCheckMailTokenRequest::getToken()const
-{
-	return token_;
-}
-
-void TransferInCheckMailTokenRequest::setToken(const std::string& token)
-{
-	token_ = token;
-	setCoreParameter("Token", token);
 }
 

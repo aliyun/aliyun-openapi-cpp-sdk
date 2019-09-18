@@ -39,22 +39,22 @@ namespace AlibabaCloud
 				void setOnDemandUrl(const std::string& onDemandUrl);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getNotifyUrl()const;
 				void setNotifyUrl(const std::string& notifyUrl);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				bool getNeedStatusNotify()const;
 				void setNeedStatusNotify(bool needStatusNotify);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
 				std::string onDemandUrl_;
 				std::string securityToken_;
-				std::string domainName_;
 				std::string notifyUrl_;
-				long ownerId_;
 				bool needStatusNotify_;
+				std::string domainName_;
+				long ownerId_;
 
 			};
 		}

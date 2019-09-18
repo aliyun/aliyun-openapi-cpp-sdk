@@ -36,6 +36,28 @@ void CreateDrdsDBRequest::setEncode(const std::string& encode)
 	setCoreParameter("Encode", encode);
 }
 
+std::string CreateDrdsDBRequest::getDrdsInstanceId()const
+{
+	return drdsInstanceId_;
+}
+
+void CreateDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
+{
+	drdsInstanceId_ = drdsInstanceId;
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+}
+
+std::string CreateDrdsDBRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string CreateDrdsDBRequest::getPassword()const
 {
 	return password_;
@@ -67,27 +89,5 @@ void CreateDrdsDBRequest::setRdsInstances(const std::string& rdsInstances)
 {
 	rdsInstances_ = rdsInstances;
 	setCoreParameter("RdsInstances", rdsInstances);
-}
-
-std::string CreateDrdsDBRequest::getDrdsInstanceId()const
-{
-	return drdsInstanceId_;
-}
-
-void CreateDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
-{
-	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
-}
-
-std::string CreateDrdsDBRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

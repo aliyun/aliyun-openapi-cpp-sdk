@@ -25,6 +25,28 @@ DescribeHitRatePieRequest::DescribeHitRatePieRequest() :
 DescribeHitRatePieRequest::~DescribeHitRatePieRequest()
 {}
 
+std::string DescribeHitRatePieRequest::getStartDate()const
+{
+	return startDate_;
+}
+
+void DescribeHitRatePieRequest::setStartDate(const std::string& startDate)
+{
+	startDate_ = startDate;
+	setCoreParameter("StartDate", startDate);
+}
+
+int DescribeHitRatePieRequest::getApiType()const
+{
+	return apiType_;
+}
+
+void DescribeHitRatePieRequest::setApiType(int apiType)
+{
+	apiType_ = apiType;
+	setCoreParameter("ApiType", std::to_string(apiType));
+}
+
 std::string DescribeHitRatePieRequest::getEndDate()const
 {
 	return endDate_;
@@ -47,17 +69,6 @@ void DescribeHitRatePieRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeHitRatePieRequest::getStartDate()const
-{
-	return startDate_;
-}
-
-void DescribeHitRatePieRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
-}
-
 int DescribeHitRatePieRequest::getHitDay()const
 {
 	return hitDay_;
@@ -67,16 +78,5 @@ void DescribeHitRatePieRequest::setHitDay(int hitDay)
 {
 	hitDay_ = hitDay;
 	setCoreParameter("HitDay", std::to_string(hitDay));
-}
-
-int DescribeHitRatePieRequest::getApiType()const
-{
-	return apiType_;
-}
-
-void DescribeHitRatePieRequest::setApiType(int apiType)
-{
-	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
 }
 

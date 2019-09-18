@@ -37,45 +37,21 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getEndHour()const;
-				void setEndHour(int endHour);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				int getDayList()const;
-				void setDayList(int dayList);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				int getRetentionDay()const;
-				void setRetentionDay(int retentionDay);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getMaxManualSnapshots()const;
-				void setMaxManualSnapshots(int maxManualSnapshots);
-				int getMaxAutoSnapshots()const;
-				void setMaxAutoSnapshots(int maxAutoSnapshots);
-				int getBeginHour()const;
-				void setBeginHour(int beginHour);
 
             private:
 				long resourceOwnerId_;
-				int endHour_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				int dayList_;
 				long ownerId_;
 				std::string accessKeyId_;
-				std::string instanceId_;
-				int retentionDay_;
-				std::string regionId_;
-				int maxManualSnapshots_;
-				int maxAutoSnapshots_;
-				int beginHour_;
 
 			};
 		}

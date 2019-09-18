@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ApplyTemplateRequest();
 				~ApplyTemplateRequest();
 
-				long getEnableStartTime()const;
-				void setEnableStartTime(long enableStartTime);
 				std::string getApplyMode()const;
 				void setApplyMode(const std::string& applyMode);
 				std::string getTemplateIds()const;
@@ -47,16 +45,18 @@ namespace AlibabaCloud
 				void setGroupId(long groupId);
 				long getNotifyLevel()const;
 				void setNotifyLevel(long notifyLevel);
+				long getEnableStartTime()const;
+				void setEnableStartTime(long enableStartTime);
 				long getSilenceTime()const;
 				void setSilenceTime(long silenceTime);
 
             private:
-				long enableStartTime_;
 				std::string applyMode_;
 				std::string templateIds_;
 				long enableEndTime_;
 				long groupId_;
 				long notifyLevel_;
+				long enableStartTime_;
 				long silenceTime_;
 
 			};

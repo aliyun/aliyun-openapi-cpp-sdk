@@ -25,17 +25,6 @@ GetRepoBatchRequest::GetRepoBatchRequest() :
 GetRepoBatchRequest::~GetRepoBatchRequest()
 {}
 
-std::string GetRepoBatchRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoBatchRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetRepoBatchRequest::getRepoIds()const
 {
 	return repoIds_;

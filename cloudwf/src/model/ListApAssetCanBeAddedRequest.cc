@@ -58,6 +58,17 @@ void ListApAssetCanBeAddedRequest::setLength(int length)
 	setCoreParameter("Length", std::to_string(length));
 }
 
+std::string ListApAssetCanBeAddedRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListApAssetCanBeAddedRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int ListApAssetCanBeAddedRequest::getPageIndex()const
 {
 	return pageIndex_;
@@ -78,17 +89,6 @@ void ListApAssetCanBeAddedRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
 	setCoreParameter("SearchMac", searchMac);
-}
-
-std::string ListApAssetCanBeAddedRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListApAssetCanBeAddedRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListApAssetCanBeAddedRequest::getSearchModel()const

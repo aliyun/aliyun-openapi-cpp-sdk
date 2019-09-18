@@ -36,17 +36,6 @@ void StopExecutionRequest::setExecutionName(const std::string& executionName)
 	setCoreParameter("ExecutionName", executionName);
 }
 
-std::string StopExecutionRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void StopExecutionRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
 std::string StopExecutionRequest::getCause()const
 {
 	return cause_;
@@ -58,17 +47,6 @@ void StopExecutionRequest::setCause(const std::string& cause)
 	setCoreParameter("Cause", cause);
 }
 
-std::string StopExecutionRequest::getFlowName()const
-{
-	return flowName_;
-}
-
-void StopExecutionRequest::setFlowName(const std::string& flowName)
-{
-	flowName_ = flowName;
-	setCoreParameter("FlowName", flowName);
-}
-
 std::string StopExecutionRequest::getError()const
 {
 	return error_;
@@ -78,5 +56,27 @@ void StopExecutionRequest::setError(const std::string& error)
 {
 	error_ = error;
 	setCoreParameter("Error", error);
+}
+
+std::string StopExecutionRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void StopExecutionRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setCoreParameter("RequestId", requestId);
+}
+
+std::string StopExecutionRequest::getFlowName()const
+{
+	return flowName_;
+}
+
+void StopExecutionRequest::setFlowName(const std::string& flowName)
+{
+	flowName_ = flowName;
+	setCoreParameter("FlowName", flowName);
 }
 

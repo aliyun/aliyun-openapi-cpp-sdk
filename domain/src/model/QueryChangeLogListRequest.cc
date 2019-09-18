@@ -25,28 +25,6 @@ QueryChangeLogListRequest::QueryChangeLogListRequest() :
 QueryChangeLogListRequest::~QueryChangeLogListRequest()
 {}
 
-long QueryChangeLogListRequest::getEndDate()const
-{
-	return endDate_;
-}
-
-void QueryChangeLogListRequest::setEndDate(long endDate)
-{
-	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
-}
-
-std::string QueryChangeLogListRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void QueryChangeLogListRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string QueryChangeLogListRequest::getDomainName()const
 {
 	return domainName_;
@@ -56,28 +34,6 @@ void QueryChangeLogListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-int QueryChangeLogListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryChangeLogListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string QueryChangeLogListRequest::getLang()const
-{
-	return lang_;
-}
-
-void QueryChangeLogListRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 int QueryChangeLogListRequest::getPageNum()const
@@ -100,5 +56,49 @@ void QueryChangeLogListRequest::setStartDate(long startDate)
 {
 	startDate_ = startDate;
 	setCoreParameter("StartDate", std::to_string(startDate));
+}
+
+long QueryChangeLogListRequest::getEndDate()const
+{
+	return endDate_;
+}
+
+void QueryChangeLogListRequest::setEndDate(long endDate)
+{
+	endDate_ = endDate;
+	setCoreParameter("EndDate", std::to_string(endDate));
+}
+
+std::string QueryChangeLogListRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void QueryChangeLogListRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+int QueryChangeLogListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryChangeLogListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryChangeLogListRequest::getLang()const
+{
+	return lang_;
+}
+
+void QueryChangeLogListRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

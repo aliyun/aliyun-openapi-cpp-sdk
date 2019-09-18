@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DescribeUserConfigsRequest();
 				~DescribeUserConfigsRequest();
 
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 				std::string getConfig()const;
 				void setConfig(const std::string& config);
 
             private:
-				std::string securityToken_;
 				long ownerId_;
+				std::string securityToken_;
 				std::string config_;
 
 			};

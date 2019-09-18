@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				GetUserSourceAccountRequest();
 				~GetUserSourceAccountRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getSourceOriginType()const;
 				void setSourceOriginType(const std::string& sourceOriginType);
 
             private:
-				std::string regionId_;
 				std::string sourceOriginType_;
 
 			};

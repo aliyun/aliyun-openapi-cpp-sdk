@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				DescribeRecordLogsRequest();
 				~DescribeRecordLogsRequest();
 
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				std::string getKeyWord()const;
-				void setKeyWord(const std::string& keyWord);
 				std::string getStartDate()const;
 				void setStartDate(const std::string& startDate);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				std::string getKeyWord()const;
+				void setKeyWord(const std::string& keyWord);
 
             private:
-				std::string endDate_;
-				std::string userClientIp_;
 				std::string domainName_;
-				long pageSize_;
-				std::string lang_;
-				std::string keyWord_;
 				std::string startDate_;
 				long pageNumber_;
 				std::string accessKeyId_;
+				std::string endDate_;
+				std::string userClientIp_;
+				long pageSize_;
+				std::string lang_;
+				std::string keyWord_;
 
 			};
 		}

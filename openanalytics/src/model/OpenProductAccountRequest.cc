@@ -25,72 +25,6 @@ OpenProductAccountRequest::OpenProductAccountRequest() :
 OpenProductAccountRequest::~OpenProductAccountRequest()
 {}
 
-long OpenProductAccountRequest::getCallerParentId()const
-{
-	return callerParentId_;
-}
-
-void OpenProductAccountRequest::setCallerParentId(long callerParentId)
-{
-	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
-}
-
-long OpenProductAccountRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void OpenProductAccountRequest::setCallerBid(long callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
-}
-
-std::string OpenProductAccountRequest::getCallerType()const
-{
-	return callerType_;
-}
-
-void OpenProductAccountRequest::setCallerType(const std::string& callerType)
-{
-	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
-}
-
-bool OpenProductAccountRequest::getAk_mfa_present()const
-{
-	return ak_mfa_present_;
-}
-
-void OpenProductAccountRequest::setAk_mfa_present(bool ak_mfa_present)
-{
-	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
-}
-
-std::string OpenProductAccountRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void OpenProductAccountRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-bool OpenProductAccountRequest::getSecurity_transport()const
-{
-	return security_transport_;
-}
-
-void OpenProductAccountRequest::setSecurity_transport(bool security_transport)
-{
-	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
-}
-
 std::string OpenProductAccountRequest::getRegionID()const
 {
 	return regionID_;
@@ -100,28 +34,6 @@ void OpenProductAccountRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
 	setCoreParameter("RegionID", regionID);
-}
-
-std::string OpenProductAccountRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void OpenProductAccountRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
-}
-
-long OpenProductAccountRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void OpenProductAccountRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string OpenProductAccountRequest::getProductCode()const

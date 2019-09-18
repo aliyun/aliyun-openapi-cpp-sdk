@@ -35,28 +35,28 @@ namespace AlibabaCloud
 				SaveSingleTaskForUpdatingContactInfoRequest();
 				~SaveSingleTaskForUpdatingContactInfoRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getContactType()const;
 				void setContactType(const std::string& contactType);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getRegistrantProfileId()const;
 				void setRegistrantProfileId(long registrantProfileId);
 				bool getAddTransferLock()const;
 				void setAddTransferLock(bool addTransferLock);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string instanceId_;
 				std::string contactType_;
-				std::string userClientIp_;
 				std::string domainName_;
 				long registrantProfileId_;
 				bool addTransferLock_;
+				std::string instanceId_;
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

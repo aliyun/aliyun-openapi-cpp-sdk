@@ -25,6 +25,17 @@ DescribeLiveStreamOnlineUserNumRequest::DescribeLiveStreamOnlineUserNumRequest()
 DescribeLiveStreamOnlineUserNumRequest::~DescribeLiveStreamOnlineUserNumRequest()
 {}
 
+std::string DescribeLiveStreamOnlineUserNumRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeLiveStreamOnlineUserNumRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
 std::string DescribeLiveStreamOnlineUserNumRequest::getAppName()const
 {
 	return appName_;
@@ -45,6 +56,17 @@ void DescribeLiveStreamOnlineUserNumRequest::setSecurityToken(const std::string&
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeLiveStreamOnlineUserNumRequest::getStreamName()const
+{
+	return streamName_;
+}
+
+void DescribeLiveStreamOnlineUserNumRequest::setStreamName(const std::string& streamName)
+{
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamOnlineUserNumRequest::getDomainName()const
@@ -69,17 +91,6 @@ void DescribeLiveStreamOnlineUserNumRequest::setEndTime(const std::string& endTi
 	setCoreParameter("EndTime", endTime);
 }
 
-std::string DescribeLiveStreamOnlineUserNumRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeLiveStreamOnlineUserNumRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 long DescribeLiveStreamOnlineUserNumRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,16 +100,5 @@ void DescribeLiveStreamOnlineUserNumRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeLiveStreamOnlineUserNumRequest::getStreamName()const
-{
-	return streamName_;
-}
-
-void DescribeLiveStreamOnlineUserNumRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
 }
 

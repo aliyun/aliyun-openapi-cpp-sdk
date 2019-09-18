@@ -25,17 +25,6 @@ GetUpgradeImgRequest::GetUpgradeImgRequest() :
 GetUpgradeImgRequest::~GetUpgradeImgRequest()
 {}
 
-long GetUpgradeImgRequest::getId()const
-{
-	return id_;
-}
-
-void GetUpgradeImgRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetUpgradeImgRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetUpgradeImgRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetUpgradeImgRequest::getId()const
+{
+	return id_;
+}
+
+void GetUpgradeImgRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

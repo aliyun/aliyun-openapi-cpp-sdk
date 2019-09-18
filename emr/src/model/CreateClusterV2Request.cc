@@ -80,28 +80,6 @@ void CreateClusterV2Request::setConfigurations(const std::string& configurations
 	setCoreParameter("Configurations", configurations);
 }
 
-bool CreateClusterV2Request::getIoOptimized()const
-{
-	return ioOptimized_;
-}
-
-void CreateClusterV2Request::setIoOptimized(bool ioOptimized)
-{
-	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
-}
-
-std::string CreateClusterV2Request::getSecurityGroupId()const
-{
-	return securityGroupId_;
-}
-
-void CreateClusterV2Request::setSecurityGroupId(const std::string& securityGroupId)
-{
-	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
-}
-
 bool CreateClusterV2Request::getSshEnable()const
 {
 	return sshEnable_;
@@ -111,17 +89,6 @@ void CreateClusterV2Request::setSshEnable(bool sshEnable)
 {
 	sshEnable_ = sshEnable;
 	setCoreParameter("SshEnable", sshEnable ? "true" : "false");
-}
-
-bool CreateClusterV2Request::getEasEnable()const
-{
-	return easEnable_;
-}
-
-void CreateClusterV2Request::setEasEnable(bool easEnable)
-{
-	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 std::string CreateClusterV2Request::getKeyPairName()const
@@ -155,28 +122,6 @@ void CreateClusterV2Request::setSecurityGroupName(const std::string& securityGro
 {
 	securityGroupName_ = securityGroupName;
 	setCoreParameter("SecurityGroupName", securityGroupName);
-}
-
-std::string CreateClusterV2Request::getDepositType()const
-{
-	return depositType_;
-}
-
-void CreateClusterV2Request::setDepositType(const std::string& depositType)
-{
-	depositType_ = depositType;
-	setCoreParameter("DepositType", depositType);
-}
-
-std::string CreateClusterV2Request::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateClusterV2Request::getMachineType()const
@@ -226,28 +171,6 @@ void CreateClusterV2Request::setBootstrapAction(const std::vector<BootstrapActio
 	}
 }
 
-std::string CreateClusterV2Request::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateClusterV2Request::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-bool CreateClusterV2Request::getUseLocalMetaDb()const
-{
-	return useLocalMetaDb_;
-}
-
-void CreateClusterV2Request::setUseLocalMetaDb(bool useLocalMetaDb)
-{
-	useLocalMetaDb_ = useLocalMetaDb;
-	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
-}
-
 std::string CreateClusterV2Request::getMetaStoreConf()const
 {
 	return metaStoreConf_;
@@ -268,35 +191,6 @@ void CreateClusterV2Request::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
 	setCoreParameter("EmrVer", emrVer);
-}
-
-std::vector<CreateClusterV2Request::UserInfo> CreateClusterV2Request::getUserInfo()const
-{
-	return userInfo_;
-}
-
-void CreateClusterV2Request::setUserInfo(const std::vector<UserInfo>& userInfo)
-{
-	userInfo_ = userInfo;
-	int i = 0;
-	for(int i = 0; i!= userInfo.size(); i++)	{
-		auto obj = userInfo.at(i);
-		std::string str ="UserInfo."+ std::to_string(i);
-		setCoreParameter(str + ".Password", obj.password);
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".UserName", obj.userName);
-	}
-}
-
-std::string CreateClusterV2Request::getUserDefinedEmrEcsRole()const
-{
-	return userDefinedEmrEcsRole_;
-}
-
-void CreateClusterV2Request::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
-{
-	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
-	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
 }
 
 std::string CreateClusterV2Request::getAuthorizeContent()const
@@ -330,28 +224,6 @@ void CreateClusterV2Request::setPeriod(int period)
 {
 	period_ = period;
 	setCoreParameter("Period", std::to_string(period));
-}
-
-std::string CreateClusterV2Request::getWhiteListType()const
-{
-	return whiteListType_;
-}
-
-void CreateClusterV2Request::setWhiteListType(const std::string& whiteListType)
-{
-	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", whiteListType);
-}
-
-std::string CreateClusterV2Request::getRelatedClusterId()const
-{
-	return relatedClusterId_;
-}
-
-void CreateClusterV2Request::setRelatedClusterId(const std::string& relatedClusterId)
-{
-	relatedClusterId_ = relatedClusterId;
-	setCoreParameter("RelatedClusterId", relatedClusterId);
 }
 
 std::string CreateClusterV2Request::getInstanceGeneration()const
@@ -410,17 +282,6 @@ void CreateClusterV2Request::setOptionSoftWareList(const std::vector<std::string
 		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
 }
 
-std::string CreateClusterV2Request::getVpcId()const
-{
-	return vpcId_;
-}
-
-void CreateClusterV2Request::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
-}
-
 std::string CreateClusterV2Request::getNetType()const
 {
 	return netType_;
@@ -441,6 +302,178 @@ void CreateClusterV2Request::setName(const std::string& name)
 {
 	name_ = name;
 	setCoreParameter("Name", name);
+}
+
+std::string CreateClusterV2Request::getZoneId()const
+{
+	return zoneId_;
+}
+
+void CreateClusterV2Request::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
+}
+
+bool CreateClusterV2Request::getUseCustomHiveMetaDB()const
+{
+	return useCustomHiveMetaDB_;
+}
+
+void CreateClusterV2Request::setUseCustomHiveMetaDB(bool useCustomHiveMetaDB)
+{
+	useCustomHiveMetaDB_ = useCustomHiveMetaDB;
+	setCoreParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB ? "true" : "false");
+}
+
+bool CreateClusterV2Request::getInitCustomHiveMetaDB()const
+{
+	return initCustomHiveMetaDB_;
+}
+
+void CreateClusterV2Request::setInitCustomHiveMetaDB(bool initCustomHiveMetaDB)
+{
+	initCustomHiveMetaDB_ = initCustomHiveMetaDB;
+	setCoreParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
+}
+
+bool CreateClusterV2Request::getIoOptimized()const
+{
+	return ioOptimized_;
+}
+
+void CreateClusterV2Request::setIoOptimized(bool ioOptimized)
+{
+	ioOptimized_ = ioOptimized;
+	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
+}
+
+std::string CreateClusterV2Request::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void CreateClusterV2Request::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setCoreParameter("SecurityGroupId", securityGroupId);
+}
+
+bool CreateClusterV2Request::getEasEnable()const
+{
+	return easEnable_;
+}
+
+void CreateClusterV2Request::setEasEnable(bool easEnable)
+{
+	easEnable_ = easEnable;
+	setCoreParameter("EasEnable", easEnable ? "true" : "false");
+}
+
+std::string CreateClusterV2Request::getDepositType()const
+{
+	return depositType_;
+}
+
+void CreateClusterV2Request::setDepositType(const std::string& depositType)
+{
+	depositType_ = depositType;
+	setCoreParameter("DepositType", depositType);
+}
+
+std::string CreateClusterV2Request::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateClusterV2Request::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateClusterV2Request::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+bool CreateClusterV2Request::getUseLocalMetaDb()const
+{
+	return useLocalMetaDb_;
+}
+
+void CreateClusterV2Request::setUseLocalMetaDb(bool useLocalMetaDb)
+{
+	useLocalMetaDb_ = useLocalMetaDb;
+	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
+}
+
+std::vector<CreateClusterV2Request::UserInfo> CreateClusterV2Request::getUserInfo()const
+{
+	return userInfo_;
+}
+
+void CreateClusterV2Request::setUserInfo(const std::vector<UserInfo>& userInfo)
+{
+	userInfo_ = userInfo;
+	int i = 0;
+	for(int i = 0; i!= userInfo.size(); i++)	{
+		auto obj = userInfo.at(i);
+		std::string str ="UserInfo."+ std::to_string(i);
+		setCoreParameter(str + ".Password", obj.password);
+		setCoreParameter(str + ".UserId", obj.userId);
+		setCoreParameter(str + ".UserName", obj.userName);
+	}
+}
+
+std::string CreateClusterV2Request::getUserDefinedEmrEcsRole()const
+{
+	return userDefinedEmrEcsRole_;
+}
+
+void CreateClusterV2Request::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
+{
+	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
+	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+}
+
+std::string CreateClusterV2Request::getWhiteListType()const
+{
+	return whiteListType_;
+}
+
+void CreateClusterV2Request::setWhiteListType(const std::string& whiteListType)
+{
+	whiteListType_ = whiteListType;
+	setCoreParameter("WhiteListType", whiteListType);
+}
+
+std::string CreateClusterV2Request::getRelatedClusterId()const
+{
+	return relatedClusterId_;
+}
+
+void CreateClusterV2Request::setRelatedClusterId(const std::string& relatedClusterId)
+{
+	relatedClusterId_ = relatedClusterId;
+	setCoreParameter("RelatedClusterId", relatedClusterId);
+}
+
+std::string CreateClusterV2Request::getVpcId()const
+{
+	return vpcId_;
+}
+
+void CreateClusterV2Request::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::vector<CreateClusterV2Request::HostGroup> CreateClusterV2Request::getHostGroup()const
@@ -476,17 +509,6 @@ void CreateClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 	}
 }
 
-std::string CreateClusterV2Request::getZoneId()const
-{
-	return zoneId_;
-}
-
-void CreateClusterV2Request::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
-}
-
 std::string CreateClusterV2Request::getChargeType()const
 {
 	return chargeType_;
@@ -496,17 +518,6 @@ void CreateClusterV2Request::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
 	setCoreParameter("ChargeType", chargeType);
-}
-
-bool CreateClusterV2Request::getUseCustomHiveMetaDB()const
-{
-	return useCustomHiveMetaDB_;
-}
-
-void CreateClusterV2Request::setUseCustomHiveMetaDB(bool useCustomHiveMetaDB)
-{
-	useCustomHiveMetaDB_ = useCustomHiveMetaDB;
-	setCoreParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB ? "true" : "false");
 }
 
 std::vector<CreateClusterV2Request::Config> CreateClusterV2Request::getConfig()const
@@ -539,16 +550,5 @@ void CreateClusterV2Request::setHighAvailabilityEnable(bool highAvailabilityEnab
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
 	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
-}
-
-bool CreateClusterV2Request::getInitCustomHiveMetaDB()const
-{
-	return initCustomHiveMetaDB_;
-}
-
-void CreateClusterV2Request::setInitCustomHiveMetaDB(bool initCustomHiveMetaDB)
-{
-	initCustomHiveMetaDB_ = initCustomHiveMetaDB;
-	setCoreParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
 }
 

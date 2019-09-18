@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				RegisterPhotoRequest();
 				~RegisterPhotoRequest();
 
-				std::string getLibraryId()const;
-				void setLibraryId(const std::string& libraryId);
 				float getLatitude()const;
 				void setLatitude(float latitude);
 				std::string getPhotoTitle()const;
@@ -47,34 +45,36 @@ namespace AlibabaCloud
 				void setIsVideo(const std::string& isVideo);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
-				long getSize()const;
-				void setSize(long size);
 				long getTakenAt()const;
 				void setTakenAt(long takenAt);
-				int getWidth()const;
-				void setWidth(int width);
-				std::string getLocation()const;
-				void setLocation(const std::string& location);
 				float getLongitude()const;
 				void setLongitude(float longitude);
 				int getHeight()const;
 				void setHeight(int height);
+				std::string getLibraryId()const;
+				void setLibraryId(const std::string& libraryId);
+				long getSize()const;
+				void setSize(long size);
+				int getWidth()const;
+				void setWidth(int width);
+				std::string getLocation()const;
+				void setLocation(const std::string& location);
 				std::string getMd5()const;
 				void setMd5(const std::string& md5);
 
             private:
-				std::string libraryId_;
 				float latitude_;
 				std::string photoTitle_;
 				std::string storeName_;
 				std::string isVideo_;
 				std::string remark_;
-				long size_;
 				long takenAt_;
-				int width_;
-				std::string location_;
 				float longitude_;
 				int height_;
+				std::string libraryId_;
+				long size_;
+				int width_;
+				std::string location_;
 				std::string md5_;
 
 			};

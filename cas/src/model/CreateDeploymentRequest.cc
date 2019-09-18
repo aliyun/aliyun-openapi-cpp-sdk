@@ -25,6 +25,28 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
 CreateDeploymentRequest::~CreateDeploymentRequest()
 {}
 
+std::string CreateDeploymentRequest::getCloudProduct()const
+{
+	return cloudProduct_;
+}
+
+void CreateDeploymentRequest::setCloudProduct(const std::string& cloudProduct)
+{
+	cloudProduct_ = cloudProduct;
+	setCoreParameter("CloudProduct", cloudProduct);
+}
+
+std::string CreateDeploymentRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateDeploymentRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateDeploymentRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -34,6 +56,17 @@ void CreateDeploymentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string CreateDeploymentRequest::getLang()const
+{
+	return lang_;
+}
+
+void CreateDeploymentRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 long CreateDeploymentRequest::getCertificateId()const
@@ -56,28 +89,6 @@ void CreateDeploymentRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
 	setCoreParameter("Domain", domain);
-}
-
-std::string CreateDeploymentRequest::getCloudProduct()const
-{
-	return cloudProduct_;
-}
-
-void CreateDeploymentRequest::setCloudProduct(const std::string& cloudProduct)
-{
-	cloudProduct_ = cloudProduct;
-	setCoreParameter("CloudProduct", cloudProduct);
-}
-
-std::string CreateDeploymentRequest::getLang()const
-{
-	return lang_;
-}
-
-void CreateDeploymentRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 std::string CreateDeploymentRequest::getRegion()const

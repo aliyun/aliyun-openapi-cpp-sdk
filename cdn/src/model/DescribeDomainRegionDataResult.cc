@@ -35,13 +35,9 @@ DescribeDomainRegionDataResult::~DescribeDomainRegionDataResult()
 
 void DescribeDomainRegionDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allValue = value["Value"]["RegionProportionData"];
 	for (auto value : allValue)
@@ -63,6 +59,10 @@ void DescribeDomainRegionDataResult::parse(const std::string &payload)
 			valueObject.qps = value["Qps"].asString();
 		if(!value["AvgResponseRate"].isNull())
 			valueObject.avgResponseRate = value["AvgResponseRate"].asString();
+		if(!value["ByteHitRate"].isNull())
+			valueObject.byteHitRate = value["ByteHitRate"].asString();
+		if(!value["ReqHitRate"].isNull())
+			valueObject.reqHitRate = value["ReqHitRate"].asString();
 		if(!value["ReqErrRate"].isNull())
 			valueObject.reqErrRate = value["ReqErrRate"].asString();
 		if(!value["TotalBytes"].isNull())

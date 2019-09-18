@@ -35,13 +35,9 @@ DescribeDomainReqHitRateDataResult::~DescribeDomainReqHitRateDataResult()
 
 void DescribeDomainReqHitRateDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allReqHitRateInterval = value["ReqHitRateInterval"]["DataModule"];
 	for (auto value : allReqHitRateInterval)
@@ -51,18 +47,16 @@ void DescribeDomainReqHitRateDataResult::parse(const std::string &payload)
 			reqHitRateIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
 			reqHitRateIntervalObject.value = value["Value"].asString();
-		if(!value["HttpsValue"].isNull())
-			reqHitRateIntervalObject.httpsValue = value["HttpsValue"].asString();
 		reqHitRateInterval_.push_back(reqHitRateIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
 }
 
@@ -81,13 +75,13 @@ std::string DescribeDomainReqHitRateDataResult::getDomainName()const
 	return domainName_;
 }
 
-std::string DescribeDomainReqHitRateDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
 std::string DescribeDomainReqHitRateDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDomainReqHitRateDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 

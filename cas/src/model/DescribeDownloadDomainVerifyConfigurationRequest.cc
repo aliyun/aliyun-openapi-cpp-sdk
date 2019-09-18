@@ -25,17 +25,6 @@ DescribeDownloadDomainVerifyConfigurationRequest::DescribeDownloadDomainVerifyCo
 DescribeDownloadDomainVerifyConfigurationRequest::~DescribeDownloadDomainVerifyConfigurationRequest()
 {}
 
-std::string DescribeDownloadDomainVerifyConfigurationRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeDownloadDomainVerifyConfigurationRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeDownloadDomainVerifyConfigurationRequest::getOrderId()const
 {
 	return orderId_;
@@ -45,6 +34,28 @@ void DescribeDownloadDomainVerifyConfigurationRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
 	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+std::string DescribeDownloadDomainVerifyConfigurationRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeDownloadDomainVerifyConfigurationRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeDownloadDomainVerifyConfigurationRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeDownloadDomainVerifyConfigurationRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDownloadDomainVerifyConfigurationRequest::getLang()const

@@ -25,6 +25,17 @@ OnsMessageTraceRequest::OnsMessageTraceRequest() :
 OnsMessageTraceRequest::~OnsMessageTraceRequest()
 {}
 
+std::string OnsMessageTraceRequest::getMsgId()const
+{
+	return msgId_;
+}
+
+void OnsMessageTraceRequest::setMsgId(const std::string& msgId)
+{
+	msgId_ = msgId;
+	setCoreParameter("MsgId", msgId);
+}
+
 std::string OnsMessageTraceRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -45,16 +56,5 @@ void OnsMessageTraceRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
 	setCoreParameter("Topic", topic);
-}
-
-std::string OnsMessageTraceRequest::getMsgId()const
-{
-	return msgId_;
-}
-
-void OnsMessageTraceRequest::setMsgId(const std::string& msgId)
-{
-	msgId_ = msgId;
-	setCoreParameter("MsgId", msgId);
 }
 

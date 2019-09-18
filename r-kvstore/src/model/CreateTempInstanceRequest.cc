@@ -36,28 +36,6 @@ void CreateTempInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateTempInstanceRequest::getSnapshotId()const
-{
-	return snapshotId_;
-}
-
-void CreateTempInstanceRequest::setSnapshotId(const std::string& snapshotId)
-{
-	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", snapshotId);
-}
-
-std::string CreateTempInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateTempInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string CreateTempInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +45,6 @@ void CreateTempInstanceRequest::setResourceOwnerAccount(const std::string& resou
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateTempInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateTempInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateTempInstanceRequest::getOwnerAccount()const

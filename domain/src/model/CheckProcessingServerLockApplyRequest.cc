@@ -25,17 +25,6 @@ CheckProcessingServerLockApplyRequest::CheckProcessingServerLockApplyRequest() :
 CheckProcessingServerLockApplyRequest::~CheckProcessingServerLockApplyRequest()
 {}
 
-int CheckProcessingServerLockApplyRequest::getFeePeriod()const
-{
-	return feePeriod_;
-}
-
-void CheckProcessingServerLockApplyRequest::setFeePeriod(int feePeriod)
-{
-	feePeriod_ = feePeriod;
-	setCoreParameter("FeePeriod", std::to_string(feePeriod));
-}
-
 std::string CheckProcessingServerLockApplyRequest::getDomainName()const
 {
 	return domainName_;
@@ -45,6 +34,17 @@ void CheckProcessingServerLockApplyRequest::setDomainName(const std::string& dom
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+int CheckProcessingServerLockApplyRequest::getFeePeriod()const
+{
+	return feePeriod_;
+}
+
+void CheckProcessingServerLockApplyRequest::setFeePeriod(int feePeriod)
+{
+	feePeriod_ = feePeriod;
+	setCoreParameter("FeePeriod", std::to_string(feePeriod));
 }
 
 std::string CheckProcessingServerLockApplyRequest::getUserClientIp()const

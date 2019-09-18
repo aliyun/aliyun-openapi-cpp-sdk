@@ -40,37 +40,37 @@ namespace AlibabaCloud
 				WhereInDimQueryRequest();
 				~WhereInDimQueryRequest();
 
+				std::string getDateStr()const;
+				void setDateStr(const std::string& dateStr);
+				long getMinTime()const;
+				void setMinTime(long minTime);
+				long getMaxTime()const;
+				void setMaxTime(long maxTime);
 				std::string getWhereInKey()const;
 				void setWhereInKey(const std::string& whereInKey);
 				std::vector<std::string> getMeasures()const;
 				void setMeasures(const std::vector<std::string>& measures);
 				int getIntervalInSec()const;
 				void setIntervalInSec(int intervalInSec);
-				std::string getDateStr()const;
-				void setDateStr(const std::string& dateStr);
 				bool getIsDrillDown()const;
 				void setIsDrillDown(bool isDrillDown);
-				long getMinTime()const;
-				void setMinTime(long minTime);
 				long getDatasetId()const;
 				void setDatasetId(long datasetId);
 				std::vector<std::string> getWhereInValues()const;
 				void setWhereInValues(const std::vector<std::string>& whereInValues);
-				long getMaxTime()const;
-				void setMaxTime(long maxTime);
 				std::vector<Dimensions> getDimensions()const;
 				void setDimensions(const std::vector<Dimensions>& dimensions);
 
             private:
+				std::string dateStr_;
+				long minTime_;
+				long maxTime_;
 				std::string whereInKey_;
 				std::vector<std::string> measures_;
 				int intervalInSec_;
-				std::string dateStr_;
 				bool isDrillDown_;
-				long minTime_;
 				long datasetId_;
 				std::vector<std::string> whereInValues_;
-				long maxTime_;
 				std::vector<Dimensions> dimensions_;
 
 			};

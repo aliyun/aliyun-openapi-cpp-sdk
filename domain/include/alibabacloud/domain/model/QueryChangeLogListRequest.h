@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				QueryChangeLogListRequest();
 				~QueryChangeLogListRequest();
 
-				long getEndDate()const;
-				void setEndDate(long endDate);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				long getStartDate()const;
 				void setStartDate(long startDate);
+				long getEndDate()const;
+				void setEndDate(long endDate);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				long endDate_;
-				std::string userClientIp_;
 				std::string domainName_;
-				int pageSize_;
-				std::string lang_;
 				int pageNum_;
 				long startDate_;
+				long endDate_;
+				std::string userClientIp_;
+				int pageSize_;
+				std::string lang_;
 
 			};
 		}

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				BatchRegisterDeviceRequest();
 				~BatchRegisterDeviceRequest();
 
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
 				int getCount()const;
 				void setCount(int count);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 
             private:
-				std::string iotInstanceId_;
 				int count_;
 				std::string productKey_;
 				std::string accessKeyId_;
+				std::string iotInstanceId_;
 
 			};
 		}

@@ -47,6 +47,28 @@ void LogicalDeleteResourceRequest::setHid(long hid)
 	setCoreParameter("Hid", std::to_string(hid));
 }
 
+std::string LogicalDeleteResourceRequest::getInvoker()const
+{
+	return invoker_;
+}
+
+void LogicalDeleteResourceRequest::setInvoker(const std::string& invoker)
+{
+	invoker_ = invoker;
+	setCoreParameter("Invoker", invoker);
+}
+
+std::string LogicalDeleteResourceRequest::getMessage()const
+{
+	return message_;
+}
+
+void LogicalDeleteResourceRequest::setMessage(const std::string& message)
+{
+	message_ = message;
+	setCoreParameter("Message", message);
+}
+
 bool LogicalDeleteResourceRequest::getSuccess()const
 {
 	return success_;
@@ -91,17 +113,6 @@ void LogicalDeleteResourceRequest::setPk(const std::string& pk)
 	setCoreParameter("Pk", pk);
 }
 
-std::string LogicalDeleteResourceRequest::getInvoker()const
-{
-	return invoker_;
-}
-
-void LogicalDeleteResourceRequest::setInvoker(const std::string& invoker)
-{
-	invoker_ = invoker;
-	setCoreParameter("Invoker", invoker);
-}
-
 std::string LogicalDeleteResourceRequest::getBid()const
 {
 	return bid_;
@@ -111,17 +122,6 @@ void LogicalDeleteResourceRequest::setBid(const std::string& bid)
 {
 	bid_ = bid;
 	setCoreParameter("Bid", bid);
-}
-
-std::string LogicalDeleteResourceRequest::getMessage()const
-{
-	return message_;
-}
-
-void LogicalDeleteResourceRequest::setMessage(const std::string& message)
-{
-	message_ = message;
-	setCoreParameter("Message", message);
 }
 
 std::string LogicalDeleteResourceRequest::getTaskExtraData()const

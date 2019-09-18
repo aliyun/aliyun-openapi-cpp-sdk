@@ -36,17 +36,6 @@ void CreateBackupPlanRequest::setDatabaseType(const std::string& databaseType)
 	setCoreParameter("DatabaseType", databaseType);
 }
 
-std::string CreateBackupPlanRequest::getPeriod()const
-{
-	return period_;
-}
-
-void CreateBackupPlanRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setCoreParameter("Period", period);
-}
-
 std::string CreateBackupPlanRequest::getClientToken()const
 {
 	return clientToken_;
@@ -56,28 +45,6 @@ void CreateBackupPlanRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string CreateBackupPlanRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateBackupPlanRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
-}
-
-int CreateBackupPlanRequest::getUsedTime()const
-{
-	return usedTime_;
-}
-
-void CreateBackupPlanRequest::setUsedTime(int usedTime)
-{
-	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string CreateBackupPlanRequest::getInstanceClass()const
@@ -102,17 +69,6 @@ void CreateBackupPlanRequest::setStorageType(const std::string& storageType)
 	setCoreParameter("StorageType", storageType);
 }
 
-std::string CreateBackupPlanRequest::getBackupMethod()const
-{
-	return backupMethod_;
-}
-
-void CreateBackupPlanRequest::setBackupMethod(const std::string& backupMethod)
-{
-	backupMethod_ = backupMethod;
-	setCoreParameter("BackupMethod", backupMethod);
-}
-
 std::string CreateBackupPlanRequest::getDatabaseRegion()const
 {
 	return databaseRegion_;
@@ -124,28 +80,6 @@ void CreateBackupPlanRequest::setDatabaseRegion(const std::string& databaseRegio
 	setCoreParameter("DatabaseRegion", databaseRegion);
 }
 
-std::string CreateBackupPlanRequest::getStorageRegion()const
-{
-	return storageRegion_;
-}
-
-void CreateBackupPlanRequest::setStorageRegion(const std::string& storageRegion)
-{
-	storageRegion_ = storageRegion;
-	setCoreParameter("StorageRegion", storageRegion);
-}
-
-std::string CreateBackupPlanRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateBackupPlanRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateBackupPlanRequest::getInstanceType()const
 {
 	return instanceType_;
@@ -155,6 +89,61 @@ void CreateBackupPlanRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
 	setCoreParameter("InstanceType", instanceType);
+}
+
+std::string CreateBackupPlanRequest::getPeriod()const
+{
+	return period_;
+}
+
+void CreateBackupPlanRequest::setPeriod(const std::string& period)
+{
+	period_ = period;
+	setCoreParameter("Period", period);
+}
+
+std::string CreateBackupPlanRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateBackupPlanRequest::setOwnerId(const std::string& ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", ownerId);
+}
+
+int CreateBackupPlanRequest::getUsedTime()const
+{
+	return usedTime_;
+}
+
+void CreateBackupPlanRequest::setUsedTime(int usedTime)
+{
+	usedTime_ = usedTime;
+	setCoreParameter("UsedTime", std::to_string(usedTime));
+}
+
+std::string CreateBackupPlanRequest::getBackupMethod()const
+{
+	return backupMethod_;
+}
+
+void CreateBackupPlanRequest::setBackupMethod(const std::string& backupMethod)
+{
+	backupMethod_ = backupMethod;
+	setCoreParameter("BackupMethod", backupMethod);
+}
+
+std::string CreateBackupPlanRequest::getStorageRegion()const
+{
+	return storageRegion_;
+}
+
+void CreateBackupPlanRequest::setStorageRegion(const std::string& storageRegion)
+{
+	storageRegion_ = storageRegion;
+	setCoreParameter("StorageRegion", storageRegion);
 }
 
 std::string CreateBackupPlanRequest::getRegion()const

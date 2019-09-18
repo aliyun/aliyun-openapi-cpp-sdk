@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeDcdnIpaUserDomainsRequest();
 				~DescribeDcdnIpaUserDomainsRequest();
 
-				std::string getFuncFilter()const;
-				void setFuncFilter(const std::string& funcFilter);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				bool getCheckDomainShow()const;
 				void setCheckDomainShow(bool checkDomainShow);
 				std::string getResourceGroupId()const;
@@ -45,29 +45,29 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getFuncFilter()const;
+				void setFuncFilter(const std::string& funcFilter);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getFuncId()const;
 				void setFuncId(const std::string& funcId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getDomainStatus()const;
 				void setDomainStatus(const std::string& domainStatus);
 				std::string getDomainSearchType()const;
 				void setDomainSearchType(const std::string& domainSearchType);
 
             private:
-				std::string funcFilter_;
+				int pageNumber_;
 				bool checkDomainShow_;
 				std::string resourceGroupId_;
 				std::string securityToken_;
 				int pageSize_;
+				std::string funcFilter_;
 				std::string domainName_;
 				long ownerId_;
 				std::string funcId_;
-				int pageNumber_;
 				std::string domainStatus_;
 				std::string domainSearchType_;
 

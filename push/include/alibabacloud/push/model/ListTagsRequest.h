@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				ListTagsRequest();
 				~ListTagsRequest();
 
-				long getAppKey()const;
-				void setAppKey(long appKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getAppKey()const;
+				void setAppKey(long appKey);
 
             private:
-				long appKey_;
 				std::string accessKeyId_;
+				long appKey_;
 
 			};
 		}

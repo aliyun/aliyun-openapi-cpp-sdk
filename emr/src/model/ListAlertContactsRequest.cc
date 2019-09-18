@@ -47,28 +47,6 @@ void ListAlertContactsRequest::setFromApp(const std::string& fromApp)
 	setCoreParameter("FromApp", fromApp);
 }
 
-std::string ListAlertContactsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListAlertContactsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListAlertContactsRequest::getIds()const
-{
-	return ids_;
-}
-
-void ListAlertContactsRequest::setIds(const std::string& ids)
-{
-	ids_ = ids;
-	setCoreParameter("Ids", ids);
-}
-
 std::string ListAlertContactsRequest::getUserId()const
 {
 	return userId_;
@@ -89,5 +67,27 @@ void ListAlertContactsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListAlertContactsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListAlertContactsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ListAlertContactsRequest::getIds()const
+{
+	return ids_;
+}
+
+void ListAlertContactsRequest::setIds(const std::string& ids)
+{
+	ids_ = ids;
+	setCoreParameter("Ids", ids);
 }
 

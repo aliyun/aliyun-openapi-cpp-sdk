@@ -36,15 +36,26 @@ void QuerySendDetailsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string QuerySendDetailsRequest::getResourceOwnerAccount()const
+std::string QuerySendDetailsRequest::getPhoneNumber()const
 {
-	return resourceOwnerAccount_;
+	return phoneNumber_;
 }
 
-void QuerySendDetailsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void QuerySendDetailsRequest::setPhoneNumber(const std::string& phoneNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	phoneNumber_ = phoneNumber;
+	setCoreParameter("PhoneNumber", phoneNumber);
+}
+
+std::string QuerySendDetailsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QuerySendDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QuerySendDetailsRequest::getSendDate()const
@@ -58,28 +69,6 @@ void QuerySendDetailsRequest::setSendDate(const std::string& sendDate)
 	setCoreParameter("SendDate", sendDate);
 }
 
-std::string QuerySendDetailsRequest::getPhoneNumber()const
-{
-	return phoneNumber_;
-}
-
-void QuerySendDetailsRequest::setPhoneNumber(const std::string& phoneNumber)
-{
-	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
-}
-
-std::string QuerySendDetailsRequest::getBizId()const
-{
-	return bizId_;
-}
-
-void QuerySendDetailsRequest::setBizId(const std::string& bizId)
-{
-	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
-}
-
 long QuerySendDetailsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -89,6 +78,17 @@ void QuerySendDetailsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QuerySendDetailsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void QuerySendDetailsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QuerySendDetailsRequest::getCurrentPage()const
@@ -113,14 +113,14 @@ void QuerySendDetailsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string QuerySendDetailsRequest::getAccessKeyId()const
+std::string QuerySendDetailsRequest::getBizId()const
 {
-	return accessKeyId_;
+	return bizId_;
 }
 
-void QuerySendDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
+void QuerySendDetailsRequest::setBizId(const std::string& bizId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	bizId_ = bizId;
+	setCoreParameter("BizId", bizId);
 }
 

@@ -58,6 +58,17 @@ void GetNotifyPolicyRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
+std::string GetNotifyPolicyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetNotifyPolicyRequest::getId()const
 {
 	return id_;
@@ -78,16 +89,5 @@ void GetNotifyPolicyRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
 	setCoreParameter("Dimensions", dimensions);
-}
-
-std::string GetNotifyPolicyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

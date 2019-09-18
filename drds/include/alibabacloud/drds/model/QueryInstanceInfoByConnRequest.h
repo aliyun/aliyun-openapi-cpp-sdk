@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				QueryInstanceInfoByConnRequest();
 				~QueryInstanceInfoByConnRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				int getPort()const;
 				void setPort(int port);
 				std::string getHost()const;
 				void setHost(const std::string& host);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				int port_;
 				std::string host_;
 				std::string userName_;
-				std::string accessKeyId_;
 
 			};
 		}

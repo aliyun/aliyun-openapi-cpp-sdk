@@ -25,17 +25,6 @@ DescribeFlowProjectClusterSettingRequest::DescribeFlowProjectClusterSettingReque
 DescribeFlowProjectClusterSettingRequest::~DescribeFlowProjectClusterSettingRequest()
 {}
 
-std::string DescribeFlowProjectClusterSettingRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeFlowProjectClusterSettingRequest::getClusterId()const
 {
 	return clusterId_;
@@ -45,6 +34,17 @@ void DescribeFlowProjectClusterSettingRequest::setClusterId(const std::string& c
 {
 	clusterId_ = clusterId;
 	setCoreParameter("ClusterId", clusterId);
+}
+
+std::string DescribeFlowProjectClusterSettingRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowProjectClusterSettingRequest::getProjectId()const

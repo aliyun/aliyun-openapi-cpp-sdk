@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DescribeEventTypesRequest();
 				~DescribeEventTypesRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getParentTypeId()const;
 				void setParentTypeId(long parentTypeId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				std::string sourceIp_;
 				long parentTypeId_;
+				std::string sourceIp_;
 				std::string lang_;
 
 			};

@@ -25,17 +25,6 @@ ListEmailVerificationRequest::ListEmailVerificationRequest() :
 ListEmailVerificationRequest::~ListEmailVerificationRequest()
 {}
 
-long ListEmailVerificationRequest::getBeginCreateTime()const
-{
-	return beginCreateTime_;
-}
-
-void ListEmailVerificationRequest::setBeginCreateTime(long beginCreateTime)
-{
-	beginCreateTime_ = beginCreateTime;
-	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
-}
-
 long ListEmailVerificationRequest::getEndCreateTime()const
 {
 	return endCreateTime_;
@@ -45,6 +34,39 @@ void ListEmailVerificationRequest::setEndCreateTime(long endCreateTime)
 {
 	endCreateTime_ = endCreateTime;
 	setCoreParameter("EndCreateTime", std::to_string(endCreateTime));
+}
+
+int ListEmailVerificationRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void ListEmailVerificationRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setCoreParameter("PageNum", std::to_string(pageNum));
+}
+
+int ListEmailVerificationRequest::getVerificationStatus()const
+{
+	return verificationStatus_;
+}
+
+void ListEmailVerificationRequest::setVerificationStatus(int verificationStatus)
+{
+	verificationStatus_ = verificationStatus;
+	setCoreParameter("VerificationStatus", std::to_string(verificationStatus));
+}
+
+long ListEmailVerificationRequest::getBeginCreateTime()const
+{
+	return beginCreateTime_;
+}
+
+void ListEmailVerificationRequest::setBeginCreateTime(long beginCreateTime)
+{
+	beginCreateTime_ = beginCreateTime;
+	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
 }
 
 int ListEmailVerificationRequest::getPageSize()const
@@ -80,17 +102,6 @@ void ListEmailVerificationRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-int ListEmailVerificationRequest::getPageNum()const
-{
-	return pageNum_;
-}
-
-void ListEmailVerificationRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
-}
-
 std::string ListEmailVerificationRequest::getEmail()const
 {
 	return email_;
@@ -100,16 +111,5 @@ void ListEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
 	setCoreParameter("Email", email);
-}
-
-int ListEmailVerificationRequest::getVerificationStatus()const
-{
-	return verificationStatus_;
-}
-
-void ListEmailVerificationRequest::setVerificationStatus(int verificationStatus)
-{
-	verificationStatus_ = verificationStatus;
-	setCoreParameter("VerificationStatus", std::to_string(verificationStatus));
 }
 

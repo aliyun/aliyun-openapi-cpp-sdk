@@ -36,6 +36,17 @@ void CreateOrderDocumentRequest::setOssKey(const std::string& ossKey)
 	setCoreParameter("OssKey", ossKey);
 }
 
+std::string CreateOrderDocumentRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateOrderDocumentRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateOrderDocumentRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,28 +56,6 @@ void CreateOrderDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setCoreParameter("SourceIp", sourceIp);
-}
-
-long CreateOrderDocumentRequest::getOrderId()const
-{
-	return orderId_;
-}
-
-void CreateOrderDocumentRequest::setOrderId(long orderId)
-{
-	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
-}
-
-int CreateOrderDocumentRequest::getDocumentType()const
-{
-	return documentType_;
-}
-
-void CreateOrderDocumentRequest::setDocumentType(int documentType)
-{
-	documentType_ = documentType;
-	setCoreParameter("DocumentType", std::to_string(documentType));
 }
 
 std::string CreateOrderDocumentRequest::getLang()const
@@ -89,5 +78,27 @@ void CreateOrderDocumentRequest::setExtName(const std::string& extName)
 {
 	extName_ = extName;
 	setCoreParameter("ExtName", extName);
+}
+
+long CreateOrderDocumentRequest::getOrderId()const
+{
+	return orderId_;
+}
+
+void CreateOrderDocumentRequest::setOrderId(long orderId)
+{
+	orderId_ = orderId;
+	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+int CreateOrderDocumentRequest::getDocumentType()const
+{
+	return documentType_;
+}
+
+void CreateOrderDocumentRequest::setDocumentType(int documentType)
+{
+	documentType_ = documentType;
+	setCoreParameter("DocumentType", std::to_string(documentType));
 }
 

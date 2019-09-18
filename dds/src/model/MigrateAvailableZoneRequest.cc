@@ -25,17 +25,6 @@ MigrateAvailableZoneRequest::MigrateAvailableZoneRequest() :
 MigrateAvailableZoneRequest::~MigrateAvailableZoneRequest()
 {}
 
-std::string MigrateAvailableZoneRequest::getVswitch()const
-{
-	return vswitch_;
-}
-
-void MigrateAvailableZoneRequest::setVswitch(const std::string& vswitch)
-{
-	vswitch_ = vswitch;
-	setCoreParameter("Vswitch", vswitch);
-}
-
 long MigrateAvailableZoneRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,15 +36,15 @@ void MigrateAvailableZoneRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string MigrateAvailableZoneRequest::getResourceOwnerAccount()const
+std::string MigrateAvailableZoneRequest::getAccessKeyId()const
 {
-	return resourceOwnerAccount_;
+	return accessKeyId_;
 }
 
-void MigrateAvailableZoneRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void MigrateAvailableZoneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MigrateAvailableZoneRequest::getEffectiveTime()const
@@ -69,28 +58,6 @@ void MigrateAvailableZoneRequest::setEffectiveTime(const std::string& effectiveT
 	setCoreParameter("EffectiveTime", effectiveTime);
 }
 
-std::string MigrateAvailableZoneRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void MigrateAvailableZoneRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string MigrateAvailableZoneRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void MigrateAvailableZoneRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
-}
-
 std::string MigrateAvailableZoneRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;
@@ -100,6 +67,28 @@ void MigrateAvailableZoneRequest::setDBInstanceId(const std::string& dBInstanceI
 {
 	dBInstanceId_ = dBInstanceId;
 	setCoreParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string MigrateAvailableZoneRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void MigrateAvailableZoneRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string MigrateAvailableZoneRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void MigrateAvailableZoneRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long MigrateAvailableZoneRequest::getOwnerId()const
@@ -113,14 +102,25 @@ void MigrateAvailableZoneRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string MigrateAvailableZoneRequest::getAccessKeyId()const
+std::string MigrateAvailableZoneRequest::getVswitch()const
 {
-	return accessKeyId_;
+	return vswitch_;
 }
 
-void MigrateAvailableZoneRequest::setAccessKeyId(const std::string& accessKeyId)
+void MigrateAvailableZoneRequest::setVswitch(const std::string& vswitch)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	vswitch_ = vswitch;
+	setCoreParameter("Vswitch", vswitch);
+}
+
+std::string MigrateAvailableZoneRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void MigrateAvailableZoneRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setCoreParameter("ZoneId", zoneId);
 }
 

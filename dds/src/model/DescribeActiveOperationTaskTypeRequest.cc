@@ -36,6 +36,17 @@ void DescribeActiveOperationTaskTypeRequest::setResourceOwnerId(long resourceOwn
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeActiveOperationTaskTypeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeActiveOperationTaskTypeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int DescribeActiveOperationTaskTypeRequest::getIsHistory()const
 {
 	return isHistory_;
@@ -69,17 +80,6 @@ void DescribeActiveOperationTaskTypeRequest::setResourceOwnerAccount(const std::
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeActiveOperationTaskTypeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeActiveOperationTaskTypeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeActiveOperationTaskTypeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -100,16 +100,5 @@ void DescribeActiveOperationTaskTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeActiveOperationTaskTypeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeActiveOperationTaskTypeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,17 +25,6 @@ StartCasterRequest::StartCasterRequest() :
 StartCasterRequest::~StartCasterRequest()
 {}
 
-std::string StartCasterRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void StartCasterRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string StartCasterRequest::getCasterId()const
 {
 	return casterId_;

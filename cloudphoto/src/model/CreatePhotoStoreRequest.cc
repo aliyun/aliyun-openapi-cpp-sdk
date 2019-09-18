@@ -25,17 +25,6 @@ CreatePhotoStoreRequest::CreatePhotoStoreRequest() :
 CreatePhotoStoreRequest::~CreatePhotoStoreRequest()
 {}
 
-std::string CreatePhotoStoreRequest::getBucketName()const
-{
-	return bucketName_;
-}
-
-void CreatePhotoStoreRequest::setBucketName(const std::string& bucketName)
-{
-	bucketName_ = bucketName;
-	setCoreParameter("BucketName", bucketName);
-}
-
 std::string CreatePhotoStoreRequest::getStoreName()const
 {
 	return storeName_;
@@ -67,5 +56,16 @@ void CreatePhotoStoreRequest::setDefaultQuota(long defaultQuota)
 {
 	defaultQuota_ = defaultQuota;
 	setCoreParameter("DefaultQuota", std::to_string(defaultQuota));
+}
+
+std::string CreatePhotoStoreRequest::getBucketName()const
+{
+	return bucketName_;
+}
+
+void CreatePhotoStoreRequest::setBucketName(const std::string& bucketName)
+{
+	bucketName_ = bucketName;
+	setCoreParameter("BucketName", bucketName);
 }
 

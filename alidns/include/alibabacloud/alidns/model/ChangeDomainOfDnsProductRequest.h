@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ChangeDomainOfDnsProductRequest();
 				~ChangeDomainOfDnsProductRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getNewDomain()const;
@@ -45,16 +47,14 @@ namespace AlibabaCloud
 				void setForce(bool force);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				std::string instanceId_;
 				std::string newDomain_;
 				std::string userClientIp_;
 				bool force_;
 				std::string lang_;
-				std::string accessKeyId_;
 
 			};
 		}

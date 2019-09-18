@@ -70,6 +70,7 @@ namespace AlibabaCloud
 					std::string serialNumber;
 					std::vector<SmartAccessGateway::Link> links;
 					std::string aclIds;
+					std::string backupStatus;
 				};
 
 

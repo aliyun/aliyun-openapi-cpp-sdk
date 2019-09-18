@@ -25,17 +25,6 @@ UpdateOssStockStatusRequest::UpdateOssStockStatusRequest() :
 UpdateOssStockStatusRequest::~UpdateOssStockStatusRequest()
 {}
 
-std::string UpdateOssStockStatusRequest::getImageAutoFreeze()const
-{
-	return imageAutoFreeze_;
-}
-
-void UpdateOssStockStatusRequest::setImageAutoFreeze(const std::string& imageAutoFreeze)
-{
-	imageAutoFreeze_ = imageAutoFreeze;
-	setCoreParameter("ImageAutoFreeze", imageAutoFreeze);
-}
-
 std::string UpdateOssStockStatusRequest::getResourceTypeList()const
 {
 	return resourceTypeList_;
@@ -58,17 +47,6 @@ void UpdateOssStockStatusRequest::setVideoFrameInterval(int videoFrameInterval)
 	setCoreParameter("VideoFrameInterval", std::to_string(videoFrameInterval));
 }
 
-int UpdateOssStockStatusRequest::getVideoMaxSize()const
-{
-	return videoMaxSize_;
-}
-
-void UpdateOssStockStatusRequest::setVideoMaxSize(int videoMaxSize)
-{
-	videoMaxSize_ = videoMaxSize;
-	setCoreParameter("VideoMaxSize", std::to_string(videoMaxSize));
-}
-
 std::string UpdateOssStockStatusRequest::getStartDate()const
 {
 	return startDate_;
@@ -78,6 +56,61 @@ void UpdateOssStockStatusRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
 	setCoreParameter("StartDate", startDate);
+}
+
+std::string UpdateOssStockStatusRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void UpdateOssStockStatusRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string UpdateOssStockStatusRequest::getVideoAutoFreezeSceneList()const
+{
+	return videoAutoFreezeSceneList_;
+}
+
+void UpdateOssStockStatusRequest::setVideoAutoFreezeSceneList(const std::string& videoAutoFreezeSceneList)
+{
+	videoAutoFreezeSceneList_ = videoAutoFreezeSceneList;
+	setCoreParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
+}
+
+std::string UpdateOssStockStatusRequest::getLang()const
+{
+	return lang_;
+}
+
+void UpdateOssStockStatusRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string UpdateOssStockStatusRequest::getImageAutoFreeze()const
+{
+	return imageAutoFreeze_;
+}
+
+void UpdateOssStockStatusRequest::setImageAutoFreeze(const std::string& imageAutoFreeze)
+{
+	imageAutoFreeze_ = imageAutoFreeze;
+	setCoreParameter("ImageAutoFreeze", imageAutoFreeze);
+}
+
+int UpdateOssStockStatusRequest::getVideoMaxSize()const
+{
+	return videoMaxSize_;
+}
+
+void UpdateOssStockStatusRequest::setVideoMaxSize(int videoMaxSize)
+{
+	videoMaxSize_ = videoMaxSize;
+	setCoreParameter("VideoMaxSize", std::to_string(videoMaxSize));
 }
 
 std::string UpdateOssStockStatusRequest::getAutoFreezeType()const
@@ -113,17 +146,6 @@ void UpdateOssStockStatusRequest::setBucketConfigList(const std::string& bucketC
 	setCoreParameter("BucketConfigList", bucketConfigList);
 }
 
-std::string UpdateOssStockStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void UpdateOssStockStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 std::string UpdateOssStockStatusRequest::getSceneList()const
 {
 	return sceneList_;
@@ -133,28 +155,6 @@ void UpdateOssStockStatusRequest::setSceneList(const std::string& sceneList)
 {
 	sceneList_ = sceneList;
 	setCoreParameter("SceneList", sceneList);
-}
-
-std::string UpdateOssStockStatusRequest::getVideoAutoFreezeSceneList()const
-{
-	return videoAutoFreezeSceneList_;
-}
-
-void UpdateOssStockStatusRequest::setVideoAutoFreezeSceneList(const std::string& videoAutoFreezeSceneList)
-{
-	videoAutoFreezeSceneList_ = videoAutoFreezeSceneList;
-	setCoreParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
-}
-
-std::string UpdateOssStockStatusRequest::getLang()const
-{
-	return lang_;
-}
-
-void UpdateOssStockStatusRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 int UpdateOssStockStatusRequest::getVideoMaxFrames()const

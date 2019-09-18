@@ -36,6 +36,28 @@ void CreateSmartAccessGatewaySoftwareRequest::setResourceOwnerId(long resourceOw
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateSmartAccessGatewaySoftwareRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateSmartAccessGatewaySoftwareRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int CreateSmartAccessGatewaySoftwareRequest::getUserCount()const
+{
+	return userCount_;
+}
+
+void CreateSmartAccessGatewaySoftwareRequest::setUserCount(int userCount)
+{
+	userCount_ = userCount;
+	setCoreParameter("UserCount", std::to_string(userCount));
+}
+
 int CreateSmartAccessGatewaySoftwareRequest::getPeriod()const
 {
 	return period_;
@@ -69,17 +91,6 @@ void CreateSmartAccessGatewaySoftwareRequest::setResourceOwnerAccount(const std:
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateSmartAccessGatewaySoftwareRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateSmartAccessGatewaySoftwareRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateSmartAccessGatewaySoftwareRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -91,15 +102,15 @@ void CreateSmartAccessGatewaySoftwareRequest::setOwnerAccount(const std::string&
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-int CreateSmartAccessGatewaySoftwareRequest::getUserCount()const
+long CreateSmartAccessGatewaySoftwareRequest::getOwnerId()const
 {
-	return userCount_;
+	return ownerId_;
 }
 
-void CreateSmartAccessGatewaySoftwareRequest::setUserCount(int userCount)
+void CreateSmartAccessGatewaySoftwareRequest::setOwnerId(long ownerId)
 {
-	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getChargeType()const
@@ -111,17 +122,6 @@ void CreateSmartAccessGatewaySoftwareRequest::setChargeType(const std::string& c
 {
 	chargeType_ = chargeType;
 	setCoreParameter("ChargeType", chargeType);
-}
-
-long CreateSmartAccessGatewaySoftwareRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateSmartAccessGatewaySoftwareRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long CreateSmartAccessGatewaySoftwareRequest::getDataPlan()const

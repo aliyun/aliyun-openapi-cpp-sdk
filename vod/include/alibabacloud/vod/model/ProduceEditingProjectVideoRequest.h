@@ -37,14 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getMediaMetadata()const;
-				void setMediaMetadata(const std::string& mediaMetadata);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
 				std::string getAccessKeyId()const;
@@ -53,26 +47,32 @@ namespace AlibabaCloud
 				void setCoverURL(const std::string& coverURL);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
-				std::string getTimeline()const;
-				void setTimeline(const std::string& timeline);
 				std::string getProduceConfig()const;
 				void setProduceConfig(const std::string& produceConfig);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
+				std::string getMediaMetadata()const;
+				void setMediaMetadata(const std::string& mediaMetadata);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getTimeline()const;
+				void setTimeline(const std::string& timeline);
 
             private:
 				long resourceOwnerId_;
-				std::string mediaMetadata_;
-				std::string resourceOwnerAccount_;
 				std::string description_;
-				long ownerId_;
 				std::string title_;
 				std::string accessKeyId_;
 				std::string coverURL_;
 				std::string userData_;
-				std::string timeline_;
 				std::string produceConfig_;
 				std::string projectId_;
+				std::string mediaMetadata_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
+				std::string timeline_;
 
 			};
 		}

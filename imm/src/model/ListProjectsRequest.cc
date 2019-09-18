@@ -36,15 +36,15 @@ void ListProjectsRequest::setMaxKeys(int maxKeys)
 	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
-std::string ListProjectsRequest::getRegionId()const
+std::string ListProjectsRequest::getAccessKeyId()const
 {
-	return regionId_;
+	return accessKeyId_;
 }
 
-void ListProjectsRequest::setRegionId(const std::string& regionId)
+void ListProjectsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListProjectsRequest::getMarker()const
@@ -56,16 +56,5 @@ void ListProjectsRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
 	setCoreParameter("Marker", marker);
-}
-
-std::string ListProjectsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListProjectsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

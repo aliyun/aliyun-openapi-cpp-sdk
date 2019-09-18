@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				AuthenticateSigRequest();
 				~AuthenticateSigRequest();
 
-				std::string getSig()const;
-				void setSig(const std::string& sig);
 				std::string getRemoteIp()const;
 				void setRemoteIp(const std::string& remoteIp);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getAppKey()const;
-				void setAppKey(const std::string& appKey);
 				std::string getSessionId()const;
 				void setSessionId(const std::string& sessionId);
-				std::string getToken()const;
-				void setToken(const std::string& token);
 				std::string getScene()const;
 				void setScene(const std::string& scene);
+				std::string getSig()const;
+				void setSig(const std::string& sig);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getToken()const;
+				void setToken(const std::string& token);
+				std::string getAppKey()const;
+				void setAppKey(const std::string& appKey);
 
             private:
-				std::string sig_;
 				std::string remoteIp_;
-				std::string sourceIp_;
-				std::string appKey_;
 				std::string sessionId_;
-				std::string token_;
 				std::string scene_;
+				std::string sig_;
+				std::string sourceIp_;
+				std::string token_;
+				std::string appKey_;
 
 			};
 		}

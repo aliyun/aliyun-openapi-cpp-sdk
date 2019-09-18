@@ -25,17 +25,6 @@ GetApgroupScanConfigSaveProgressRequest::GetApgroupScanConfigSaveProgressRequest
 GetApgroupScanConfigSaveProgressRequest::~GetApgroupScanConfigSaveProgressRequest()
 {}
 
-long GetApgroupScanConfigSaveProgressRequest::getId()const
-{
-	return id_;
-}
-
-void GetApgroupScanConfigSaveProgressRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetApgroupScanConfigSaveProgressRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetApgroupScanConfigSaveProgressRequest::setAccessKeyId(const std::string& 
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetApgroupScanConfigSaveProgressRequest::getId()const
+{
+	return id_;
+}
+
+void GetApgroupScanConfigSaveProgressRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

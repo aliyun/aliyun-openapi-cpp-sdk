@@ -25,17 +25,6 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
 
-std::string DescribeRegionsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeRegionsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeRegionsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

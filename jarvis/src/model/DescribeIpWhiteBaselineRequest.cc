@@ -36,6 +36,28 @@ void DescribeIpWhiteBaselineRequest::setSrcIp(const std::string& srcIp)
 	setCoreParameter("SrcIp", srcIp);
 }
 
+std::string DescribeIpWhiteBaselineRequest::getRemark()const
+{
+	return remark_;
+}
+
+void DescribeIpWhiteBaselineRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string DescribeIpWhiteBaselineRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeIpWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeIpWhiteBaselineRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -58,28 +80,6 @@ void DescribeIpWhiteBaselineRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeIpWhiteBaselineRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeIpWhiteBaselineRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string DescribeIpWhiteBaselineRequest::getRemark()const
-{
-	return remark_;
-}
-
-void DescribeIpWhiteBaselineRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
-}
-
 std::string DescribeIpWhiteBaselineRequest::getLang()const
 {
 	return lang_;
@@ -91,15 +91,15 @@ void DescribeIpWhiteBaselineRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string DescribeIpWhiteBaselineRequest::getSourceCode()const
+int DescribeIpWhiteBaselineRequest::getCurrentPage()const
 {
-	return sourceCode_;
+	return currentPage_;
 }
 
-void DescribeIpWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
+void DescribeIpWhiteBaselineRequest::setCurrentPage(int currentPage)
 {
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeIpWhiteBaselineRequest::getStatus()const

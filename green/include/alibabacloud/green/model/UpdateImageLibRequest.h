@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				UpdateImageLibRequest();
 				~UpdateImageLibRequest();
 
+				std::string getScene()const;
+				void setScene(const std::string& scene);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				bool getEnable()const;
 				void setEnable(bool enable);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getBizTypes()const;
-				void setBizTypes(const std::string& bizTypes);
 				int getId()const;
 				void setId(int id);
+				std::string getBizTypes()const;
+				void setBizTypes(const std::string& bizTypes);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getCategory()const;
 				void setCategory(const std::string& category);
-				std::string getScene()const;
-				void setScene(const std::string& scene);
 
             private:
+				std::string scene_;
 				std::string sourceIp_;
 				bool enable_;
-				std::string name_;
-				std::string bizTypes_;
 				int id_;
+				std::string bizTypes_;
+				std::string name_;
 				std::string category_;
-				std::string scene_;
 
 			};
 		}

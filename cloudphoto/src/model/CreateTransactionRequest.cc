@@ -36,17 +36,6 @@ void CreateTransactionRequest::setExt(const std::string& ext)
 	setCoreParameter("Ext", ext);
 }
 
-long CreateTransactionRequest::getSize()const
-{
-	return size_;
-}
-
-void CreateTransactionRequest::setSize(long size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 std::string CreateTransactionRequest::getLibraryId()const
 {
 	return libraryId_;
@@ -67,6 +56,17 @@ void CreateTransactionRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
 	setCoreParameter("StoreName", storeName);
+}
+
+long CreateTransactionRequest::getSize()const
+{
+	return size_;
+}
+
+void CreateTransactionRequest::setSize(long size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string CreateTransactionRequest::getForce()const

@@ -25,6 +25,17 @@ ModifySQLCollectorPolicyRequest::ModifySQLCollectorPolicyRequest() :
 ModifySQLCollectorPolicyRequest::~ModifySQLCollectorPolicyRequest()
 {}
 
+std::string ModifySQLCollectorPolicyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifySQLCollectorPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifySQLCollectorPolicyRequest::getSQLCollectorStatus()const
 {
 	return sQLCollectorStatus_;
@@ -45,16 +56,5 @@ void ModifySQLCollectorPolicyRequest::setDBInstanceId(const std::string& dBInsta
 {
 	dBInstanceId_ = dBInstanceId;
 	setCoreParameter("DBInstanceId", dBInstanceId);
-}
-
-std::string ModifySQLCollectorPolicyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifySQLCollectorPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

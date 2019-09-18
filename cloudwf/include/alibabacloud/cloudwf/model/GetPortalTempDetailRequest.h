@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				GetPortalTempDetailRequest();
 				~GetPortalTempDetailRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				long getId()const;
 				void setId(long id);
 				std::string getUniqueId()const;
 				void setUniqueId(const std::string& uniqueId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				long id_;
 				std::string uniqueId_;
-				std::string accessKeyId_;
 
 			};
 		}

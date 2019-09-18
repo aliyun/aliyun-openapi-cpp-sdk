@@ -45,6 +45,8 @@ namespace AlibabaCloud
 					std::string instanceName;
 					std::string versionCode;
 					std::string alertGroup;
+					int addressPoolNum;
+					int accessStrategyNum;
 					std::string expireTime;
 					long createTimestamp;
 				};

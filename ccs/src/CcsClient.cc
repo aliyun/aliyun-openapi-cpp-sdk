@@ -87,42 +87,6 @@ CcsClient::CreateTicketOutcomeCallable CcsClient::createTicketCallable(const Cre
 	return task->get_future();
 }
 
-CcsClient::QueryTicketOutcome CcsClient::queryTicket(const QueryTicketRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryTicketOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryTicketOutcome(QueryTicketResult(outcome.result()));
-	else
-		return QueryTicketOutcome(outcome.error());
-}
-
-void CcsClient::queryTicketAsync(const QueryTicketRequest& request, const QueryTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryTicket(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CcsClient::QueryTicketOutcomeCallable CcsClient::queryTicketCallable(const QueryTicketRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryTicketOutcome()>>(
-			[this, request]()
-			{
-			return this->queryTicket(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CcsClient::GetHotlineRecordOutcome CcsClient::getHotlineRecord(const GetHotlineRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +189,42 @@ CcsClient::QueryHotlineRecordOutcomeCallable CcsClient::queryHotlineRecordCallab
 			[this, request]()
 			{
 			return this->queryHotlineRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CcsClient::QueryTicketOutcome CcsClient::queryTicket(const QueryTicketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTicketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTicketOutcome(QueryTicketResult(outcome.result()));
+	else
+		return QueryTicketOutcome(outcome.error());
+}
+
+void CcsClient::queryTicketAsync(const QueryTicketRequest& request, const QueryTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTicket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CcsClient::QueryTicketOutcomeCallable CcsClient::queryTicketCallable(const QueryTicketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTicketOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTicket(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

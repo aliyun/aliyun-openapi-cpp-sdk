@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DeleteCasterEpisodeGroupRequest();
 				~DeleteCasterEpisodeGroupRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getProgramId()const;
 				void setProgramId(const std::string& programId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				long ownerId_;
 				std::string programId_;
+				long ownerId_;
 
 			};
 		}

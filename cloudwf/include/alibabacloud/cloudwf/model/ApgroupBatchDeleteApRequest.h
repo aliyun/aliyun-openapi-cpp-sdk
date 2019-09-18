@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				ApgroupBatchDeleteApRequest();
 				~ApgroupBatchDeleteApRequest();
 
-				std::string getApAssetIds()const;
-				void setApAssetIds(const std::string& apAssetIds);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getApAssetIds()const;
+				void setApAssetIds(const std::string& apAssetIds);
 
             private:
-				std::string apAssetIds_;
 				std::string accessKeyId_;
+				std::string apAssetIds_;
 
 			};
 		}

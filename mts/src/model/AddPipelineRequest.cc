@@ -47,6 +47,28 @@ void AddPipelineRequest::setRole(const std::string& role)
 	setCoreParameter("Role", role);
 }
 
+std::string AddPipelineRequest::getSpeed()const
+{
+	return speed_;
+}
+
+void AddPipelineRequest::setSpeed(const std::string& speed)
+{
+	speed_ = speed;
+	setCoreParameter("Speed", speed);
+}
+
+std::string AddPipelineRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AddPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string AddPipelineRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -67,17 +89,6 @@ void AddPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string AddPipelineRequest::getName()const
-{
-	return name_;
-}
-
-void AddPipelineRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
 }
 
 std::string AddPipelineRequest::getNotifyConfig()const
@@ -102,6 +113,17 @@ void AddPipelineRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string AddPipelineRequest::getName()const
+{
+	return name_;
+}
+
+void AddPipelineRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
 long AddPipelineRequest::getSpeedLevel()const
 {
 	return speedLevel_;
@@ -111,27 +133,5 @@ void AddPipelineRequest::setSpeedLevel(long speedLevel)
 {
 	speedLevel_ = speedLevel;
 	setCoreParameter("SpeedLevel", std::to_string(speedLevel));
-}
-
-std::string AddPipelineRequest::getSpeed()const
-{
-	return speed_;
-}
-
-void AddPipelineRequest::setSpeed(const std::string& speed)
-{
-	speed_ = speed;
-	setCoreParameter("Speed", speed);
-}
-
-std::string AddPipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AddPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

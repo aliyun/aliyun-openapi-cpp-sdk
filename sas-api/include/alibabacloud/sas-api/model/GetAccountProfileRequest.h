@@ -37,42 +37,42 @@ namespace AlibabaCloud
 
 				std::string getDeviceIdMd5()const;
 				void setDeviceIdMd5(const std::string& deviceIdMd5);
-				int getCarrier()const;
-				void setCarrier(int carrier);
 				std::string getOs()const;
 				void setOs(const std::string& os);
-				std::string getPhone()const;
-				void setPhone(const std::string& phone);
-				std::string getRequestUrl()const;
-				void setRequestUrl(const std::string& requestUrl);
 				std::string getIp()const;
 				void setIp(const std::string& ip);
 				std::string getUserAgent()const;
 				void setUserAgent(const std::string& userAgent);
-				int getConnectionType()const;
-				void setConnectionType(int connectionType);
 				int getSensType()const;
 				void setSensType(int sensType);
 				int getDeviceType()const;
 				void setDeviceType(int deviceType);
-				long getAccessTimestamp()const;
-				void setAccessTimestamp(long accessTimestamp);
 				int getBusinessType()const;
 				void setBusinessType(int businessType);
+				int getCarrier()const;
+				void setCarrier(int carrier);
+				std::string getPhone()const;
+				void setPhone(const std::string& phone);
+				std::string getRequestUrl()const;
+				void setRequestUrl(const std::string& requestUrl);
+				int getConnectionType()const;
+				void setConnectionType(int connectionType);
+				long getAccessTimestamp()const;
+				void setAccessTimestamp(long accessTimestamp);
 
             private:
 				std::string deviceIdMd5_;
-				int carrier_;
 				std::string os_;
-				std::string phone_;
-				std::string requestUrl_;
 				std::string ip_;
 				std::string userAgent_;
-				int connectionType_;
 				int sensType_;
 				int deviceType_;
-				long accessTimestamp_;
 				int businessType_;
+				int carrier_;
+				std::string phone_;
+				std::string requestUrl_;
+				int connectionType_;
+				long accessTimestamp_;
 
 			};
 		}

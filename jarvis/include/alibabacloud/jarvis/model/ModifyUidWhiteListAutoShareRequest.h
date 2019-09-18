@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				ModifyUidWhiteListAutoShareRequest();
 				~ModifyUidWhiteListAutoShareRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getAutoConfig()const;
 				void setAutoConfig(int autoConfig);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getProductName()const;
 				void setProductName(const std::string& productName);
-				int getWhiteListType()const;
-				void setWhiteListType(int whiteListType);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getSrcUid()const;
 				void setSrcUid(const std::string& srcUid);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
+				int getWhiteListType()const;
+				void setWhiteListType(int whiteListType);
 
             private:
-				std::string sourceIp_;
 				int autoConfig_;
+				std::string sourceCode_;
+				std::string sourceIp_;
 				std::string productName_;
-				int whiteListType_;
 				std::string lang_;
 				std::string srcUid_;
-				std::string sourceCode_;
+				int whiteListType_;
 
 			};
 		}

@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRemoteAccessIp()const;
+				void setRemoteAccessIp(const std::string& remoteAccessIp);
 				std::string getSerialNumber()const;
 				void setSerialNumber(const std::string& serialNumber);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getRemoteAccessIp()const;
-				void setRemoteAccessIp(const std::string& remoteAccessIp);
-				std::string getSmartAGId()const;
-				void setSmartAGId(const std::string& smartAGId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSmartAGId()const;
+				void setSmartAGId(const std::string& smartAGId);
 
             private:
 				long resourceOwnerId_;
+				std::string remoteAccessIp_;
 				std::string serialNumber_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string remoteAccessIp_;
-				std::string smartAGId_;
 				long ownerId_;
+				std::string smartAGId_;
 
 			};
 		}

@@ -36,6 +36,17 @@ void DescribeRiskListDetailRequest::setRiskType(const std::string& riskType)
 	setCoreParameter("RiskType", riskType);
 }
 
+std::string DescribeRiskListDetailRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeRiskListDetailRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeRiskListDetailRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -56,39 +67,6 @@ void DescribeRiskListDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeRiskListDetailRequest::getQueryProduct()const
-{
-	return queryProduct_;
-}
-
-void DescribeRiskListDetailRequest::setQueryProduct(const std::string& queryProduct)
-{
-	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
-}
-
-int DescribeRiskListDetailRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeRiskListDetailRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string DescribeRiskListDetailRequest::getRiskDescribe()const
-{
-	return riskDescribe_;
-}
-
-void DescribeRiskListDetailRequest::setRiskDescribe(const std::string& riskDescribe)
-{
-	riskDescribe_ = riskDescribe;
-	setCoreParameter("RiskDescribe", riskDescribe);
 }
 
 std::string DescribeRiskListDetailRequest::getLang()const
@@ -113,15 +91,37 @@ void DescribeRiskListDetailRequest::setSrcUid(long srcUid)
 	setCoreParameter("SrcUid", std::to_string(srcUid));
 }
 
-std::string DescribeRiskListDetailRequest::getSourceCode()const
+int DescribeRiskListDetailRequest::getCurrentPage()const
 {
-	return sourceCode_;
+	return currentPage_;
 }
 
-void DescribeRiskListDetailRequest::setSourceCode(const std::string& sourceCode)
+void DescribeRiskListDetailRequest::setCurrentPage(int currentPage)
 {
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeRiskListDetailRequest::getRiskDescribe()const
+{
+	return riskDescribe_;
+}
+
+void DescribeRiskListDetailRequest::setRiskDescribe(const std::string& riskDescribe)
+{
+	riskDescribe_ = riskDescribe;
+	setCoreParameter("RiskDescribe", riskDescribe);
+}
+
+std::string DescribeRiskListDetailRequest::getQueryProduct()const
+{
+	return queryProduct_;
+}
+
+void DescribeRiskListDetailRequest::setQueryProduct(const std::string& queryProduct)
+{
+	queryProduct_ = queryProduct;
+	setCoreParameter("QueryProduct", queryProduct);
 }
 
 std::string DescribeRiskListDetailRequest::getQueryRegionId()const

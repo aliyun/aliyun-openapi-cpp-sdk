@@ -25,17 +25,6 @@ OemMarketingCustomerRequest::OemMarketingCustomerRequest() :
 OemMarketingCustomerRequest::~OemMarketingCustomerRequest()
 {}
 
-long OemMarketingCustomerRequest::getBid()const
-{
-	return bid_;
-}
-
-void OemMarketingCustomerRequest::setBid(long bid)
-{
-	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
-}
-
 std::string OemMarketingCustomerRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void OemMarketingCustomerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long OemMarketingCustomerRequest::getBid()const
+{
+	return bid_;
+}
+
+void OemMarketingCustomerRequest::setBid(long bid)
+{
+	bid_ = bid;
+	setCoreParameter("Bid", std::to_string(bid));
 }
 

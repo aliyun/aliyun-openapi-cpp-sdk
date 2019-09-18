@@ -39,37 +39,37 @@ namespace AlibabaCloud
 				void setContainer(const std::string& container);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getVideo()const;
+				void setVideo(const std::string& video);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTransConfig()const;
+				void setTransConfig(const std::string& transConfig);
+				std::string getAudio()const;
+				void setAudio(const std::string& audio);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getTransConfig()const;
-				void setTransConfig(const std::string& transConfig);
 				std::string getMuxConfig()const;
 				void setMuxConfig(const std::string& muxConfig);
-				std::string getVideo()const;
-				void setVideo(const std::string& video);
-				std::string getAudio()const;
-				void setAudio(const std::string& audio);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string container_;
 				long resourceOwnerId_;
+				std::string video_;
+				std::string accessKeyId_;
+				std::string transConfig_;
+				std::string audio_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string name_;
-				std::string transConfig_;
 				std::string muxConfig_;
-				std::string video_;
-				std::string audio_;
 				long ownerId_;
-				std::string accessKeyId_;
+				std::string name_;
 
 			};
 		}

@@ -21,49 +21,49 @@ set(yundun_public_header
 	include/alibabacloud/yundun/YundunExport.h )
 
 set(yundun_public_header_model 
-	include/alibabacloud/yundun/model/TodayqpsByRegionRequest.h
-	include/alibabacloud/yundun/model/TodayqpsByRegionResult.h
-	include/alibabacloud/yundun/model/TodayAllppsRequest.h
-	include/alibabacloud/yundun/model/TodayAllppsResult.h
 	include/alibabacloud/yundun/model/AllMalwareNumRequest.h
 	include/alibabacloud/yundun/model/AllMalwareNumResult.h
-	include/alibabacloud/yundun/model/TodayCrackInterceptRequest.h
-	include/alibabacloud/yundun/model/TodayCrackInterceptResult.h
-	include/alibabacloud/yundun/model/TodayBackdoorRequest.h
-	include/alibabacloud/yundun/model/TodayBackdoorResult.h
-	include/alibabacloud/yundun/model/TodayMalwareNumRequest.h
-	include/alibabacloud/yundun/model/TodayMalwareNumResult.h
-	include/alibabacloud/yundun/model/WebAttackNumRequest.h
-	include/alibabacloud/yundun/model/WebAttackNumResult.h
-	include/alibabacloud/yundun/model/TodayAegisOnlineRateRequest.h
-	include/alibabacloud/yundun/model/TodayAegisOnlineRateResult.h
 	include/alibabacloud/yundun/model/CurrentDdosAttackNumRequest.h
 	include/alibabacloud/yundun/model/CurrentDdosAttackNumResult.h
+	include/alibabacloud/yundun/model/TodayAegisOnlineRateRequest.h
+	include/alibabacloud/yundun/model/TodayAegisOnlineRateResult.h
 	include/alibabacloud/yundun/model/TodayAllkbpsRequest.h
-	include/alibabacloud/yundun/model/TodayAllkbpsResult.h )
+	include/alibabacloud/yundun/model/TodayAllkbpsResult.h
+	include/alibabacloud/yundun/model/TodayAllppsRequest.h
+	include/alibabacloud/yundun/model/TodayAllppsResult.h
+	include/alibabacloud/yundun/model/TodayBackdoorRequest.h
+	include/alibabacloud/yundun/model/TodayBackdoorResult.h
+	include/alibabacloud/yundun/model/TodayCrackInterceptRequest.h
+	include/alibabacloud/yundun/model/TodayCrackInterceptResult.h
+	include/alibabacloud/yundun/model/TodayMalwareNumRequest.h
+	include/alibabacloud/yundun/model/TodayMalwareNumResult.h
+	include/alibabacloud/yundun/model/TodayqpsByRegionRequest.h
+	include/alibabacloud/yundun/model/TodayqpsByRegionResult.h
+	include/alibabacloud/yundun/model/WebAttackNumRequest.h
+	include/alibabacloud/yundun/model/WebAttackNumResult.h )
 
 set(yundun_src 
 	src/YundunClient.cc
-	src/model/TodayqpsByRegionRequest.cc
-	src/model/TodayqpsByRegionResult.cc
-	src/model/TodayAllppsRequest.cc
-	src/model/TodayAllppsResult.cc
 	src/model/AllMalwareNumRequest.cc
 	src/model/AllMalwareNumResult.cc
-	src/model/TodayCrackInterceptRequest.cc
-	src/model/TodayCrackInterceptResult.cc
-	src/model/TodayBackdoorRequest.cc
-	src/model/TodayBackdoorResult.cc
-	src/model/TodayMalwareNumRequest.cc
-	src/model/TodayMalwareNumResult.cc
-	src/model/WebAttackNumRequest.cc
-	src/model/WebAttackNumResult.cc
-	src/model/TodayAegisOnlineRateRequest.cc
-	src/model/TodayAegisOnlineRateResult.cc
 	src/model/CurrentDdosAttackNumRequest.cc
 	src/model/CurrentDdosAttackNumResult.cc
+	src/model/TodayAegisOnlineRateRequest.cc
+	src/model/TodayAegisOnlineRateResult.cc
 	src/model/TodayAllkbpsRequest.cc
-	src/model/TodayAllkbpsResult.cc )
+	src/model/TodayAllkbpsResult.cc
+	src/model/TodayAllppsRequest.cc
+	src/model/TodayAllppsResult.cc
+	src/model/TodayBackdoorRequest.cc
+	src/model/TodayBackdoorResult.cc
+	src/model/TodayCrackInterceptRequest.cc
+	src/model/TodayCrackInterceptResult.cc
+	src/model/TodayMalwareNumRequest.cc
+	src/model/TodayMalwareNumResult.cc
+	src/model/TodayqpsByRegionRequest.cc
+	src/model/TodayqpsByRegionResult.cc
+	src/model/WebAttackNumRequest.cc
+	src/model/WebAttackNumResult.cc )
 
 add_library(yundun ${LIB_TYPE}
 	${yundun_public_header}

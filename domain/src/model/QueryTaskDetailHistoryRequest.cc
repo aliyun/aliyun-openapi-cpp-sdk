@@ -25,6 +25,17 @@ QueryTaskDetailHistoryRequest::QueryTaskDetailHistoryRequest() :
 QueryTaskDetailHistoryRequest::~QueryTaskDetailHistoryRequest()
 {}
 
+std::string QueryTaskDetailHistoryRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void QueryTaskDetailHistoryRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
 int QueryTaskDetailHistoryRequest::getTaskStatus()const
 {
 	return taskStatus_;
@@ -56,17 +67,6 @@ void QueryTaskDetailHistoryRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
 	setCoreParameter("TaskNo", taskNo);
-}
-
-std::string QueryTaskDetailHistoryRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void QueryTaskDetailHistoryRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
 }
 
 int QueryTaskDetailHistoryRequest::getPageSize()const

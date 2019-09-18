@@ -21,17 +21,17 @@ set(arms4finance_public_header
 	include/alibabacloud/arms4finance/ARMS4FINANCEExport.h )
 
 set(arms4finance_public_header_model 
-	include/alibabacloud/arms4finance/model/WhereInDimQueryRequest.h
-	include/alibabacloud/arms4finance/model/WhereInDimQueryResult.h
 	include/alibabacloud/arms4finance/model/ARMSQueryDataSetRequest.h
-	include/alibabacloud/arms4finance/model/ARMSQueryDataSetResult.h )
+	include/alibabacloud/arms4finance/model/ARMSQueryDataSetResult.h
+	include/alibabacloud/arms4finance/model/WhereInDimQueryRequest.h
+	include/alibabacloud/arms4finance/model/WhereInDimQueryResult.h )
 
 set(arms4finance_src 
 	src/ARMS4FINANCEClient.cc
-	src/model/WhereInDimQueryRequest.cc
-	src/model/WhereInDimQueryResult.cc
 	src/model/ARMSQueryDataSetRequest.cc
-	src/model/ARMSQueryDataSetResult.cc )
+	src/model/ARMSQueryDataSetResult.cc
+	src/model/WhereInDimQueryRequest.cc
+	src/model/WhereInDimQueryResult.cc )
 
 add_library(arms4finance ${LIB_TYPE}
 	${arms4finance_public_header}

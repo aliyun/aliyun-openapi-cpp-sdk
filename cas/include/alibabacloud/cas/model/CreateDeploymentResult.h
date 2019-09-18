@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CreateDeploymentResult();
 				explicit CreateDeploymentResult(const std::string &payload);
 				~CreateDeploymentResult();
+				long getDeploymentId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long deploymentId_;
 
 			};
 		}

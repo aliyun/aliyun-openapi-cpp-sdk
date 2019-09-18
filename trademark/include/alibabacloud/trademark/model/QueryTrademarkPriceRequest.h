@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getTmName()const;
 				void setTmName(const std::string& tmName);
-				std::string getTmIcon()const;
-				void setTmIcon(const std::string& tmIcon);
 				std::string getOrderData()const;
 				void setOrderData(const std::string& orderData);
 				int getType()const;
 				void setType(int type);
 				long getUserId()const;
 				void setUserId(long userId);
+				std::string getTmIcon()const;
+				void setTmIcon(const std::string& tmIcon);
 
             private:
 				std::string tmName_;
-				std::string tmIcon_;
 				std::string orderData_;
 				int type_;
 				long userId_;
+				std::string tmIcon_;
 
 			};
 		}

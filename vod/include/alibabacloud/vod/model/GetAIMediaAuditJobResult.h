@@ -80,10 +80,76 @@ namespace AlibabaCloud
 								std::string label;
 								std::vector<TopListItem4> topList2;
 							};
+							struct AdResult
+							{
+								struct CounterListItem7
+								{
+									std::string label;
+									int count;
+								};
+								struct TopListItem8
+								{
+									std::string score;
+									std::string label;
+									std::string timestamp;
+									std::string url;
+								};
+								std::string suggestion;
+								std::string maxScore;
+								std::string averageScore;
+								std::vector<TopListItem8> topList6;
+								std::string label;
+								std::vector<CounterListItem7> counterList5;
+							};
+							struct LiveResult
+							{
+								struct CounterListItem11
+								{
+									std::string label;
+									int count;
+								};
+								struct TopListItem12
+								{
+									std::string score;
+									std::string label;
+									std::string timestamp;
+									std::string url;
+								};
+								std::string suggestion;
+								std::string maxScore;
+								std::string averageScore;
+								std::string label;
+								std::vector<CounterListItem11> counterList9;
+								std::vector<TopListItem12> topList10;
+							};
+							struct LogoResult
+							{
+								struct CounterListItem15
+								{
+									std::string label;
+									int count;
+								};
+								struct TopListItem16
+								{
+									std::string score;
+									std::string label;
+									std::string timestamp;
+									std::string url;
+								};
+								std::string suggestion;
+								std::string maxScore;
+								std::string averageScore;
+								std::vector<TopListItem16> topList14;
+								std::string label;
+								std::vector<CounterListItem15> counterList13;
+							};
+							LogoResult logoResult;
 							std::string suggestion;
 							TerrorismResult terrorismResult;
+							LiveResult liveResult;
 							std::string label;
 							PornResult pornResult;
+							AdResult adResult;
 						};
 						struct ImageResultItem
 						{

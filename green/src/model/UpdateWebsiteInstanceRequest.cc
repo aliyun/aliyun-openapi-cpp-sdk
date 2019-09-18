@@ -25,6 +25,50 @@ UpdateWebsiteInstanceRequest::UpdateWebsiteInstanceRequest() :
 UpdateWebsiteInstanceRequest::~UpdateWebsiteInstanceRequest()
 {}
 
+std::string UpdateWebsiteInstanceRequest::getIndexPage()const
+{
+	return indexPage_;
+}
+
+void UpdateWebsiteInstanceRequest::setIndexPage(const std::string& indexPage)
+{
+	indexPage_ = indexPage;
+	setCoreParameter("IndexPage", indexPage);
+}
+
+std::string UpdateWebsiteInstanceRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void UpdateWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
+}
+
+std::string UpdateWebsiteInstanceRequest::getLang()const
+{
+	return lang_;
+}
+
+void UpdateWebsiteInstanceRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+int UpdateWebsiteInstanceRequest::getWebsiteScanInterval()const
+{
+	return websiteScanInterval_;
+}
+
+void UpdateWebsiteInstanceRequest::setWebsiteScanInterval(int websiteScanInterval)
+{
+	websiteScanInterval_ = websiteScanInterval;
+	setCoreParameter("WebsiteScanInterval", std::to_string(websiteScanInterval));
+}
+
 std::string UpdateWebsiteInstanceRequest::getSiteProtocol()const
 {
 	return siteProtocol_;
@@ -47,28 +91,6 @@ void UpdateWebsiteInstanceRequest::setInstanceId(const std::string& instanceId)
 	setCoreParameter("InstanceId", instanceId);
 }
 
-std::string UpdateWebsiteInstanceRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void UpdateWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-int UpdateWebsiteInstanceRequest::getWebsiteScanInterval()const
-{
-	return websiteScanInterval_;
-}
-
-void UpdateWebsiteInstanceRequest::setWebsiteScanInterval(int websiteScanInterval)
-{
-	websiteScanInterval_ = websiteScanInterval;
-	setCoreParameter("WebsiteScanInterval", std::to_string(websiteScanInterval));
-}
-
 std::string UpdateWebsiteInstanceRequest::getDomain()const
 {
 	return domain_;
@@ -78,28 +100,6 @@ void UpdateWebsiteInstanceRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
 	setCoreParameter("Domain", domain);
-}
-
-std::string UpdateWebsiteInstanceRequest::getIndexPage()const
-{
-	return indexPage_;
-}
-
-void UpdateWebsiteInstanceRequest::setIndexPage(const std::string& indexPage)
-{
-	indexPage_ = indexPage;
-	setCoreParameter("IndexPage", indexPage);
-}
-
-std::string UpdateWebsiteInstanceRequest::getLang()const
-{
-	return lang_;
-}
-
-void UpdateWebsiteInstanceRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 int UpdateWebsiteInstanceRequest::getIndexPageScanInterval()const

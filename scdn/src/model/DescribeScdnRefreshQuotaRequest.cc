@@ -25,17 +25,6 @@ DescribeScdnRefreshQuotaRequest::DescribeScdnRefreshQuotaRequest() :
 DescribeScdnRefreshQuotaRequest::~DescribeScdnRefreshQuotaRequest()
 {}
 
-std::string DescribeScdnRefreshQuotaRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeScdnRefreshQuotaRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
-}
-
 long DescribeScdnRefreshQuotaRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -45,5 +34,16 @@ void DescribeScdnRefreshQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeScdnRefreshQuotaRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeScdnRefreshQuotaRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setCoreParameter("SecurityToken", securityToken);
 }
 

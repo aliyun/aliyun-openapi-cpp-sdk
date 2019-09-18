@@ -37,45 +37,42 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getNetworkType()const;
+				void setNetworkType(const std::string& networkType);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				int getClassicExpiredDays()const;
+				void setClassicExpiredDays(int classicExpiredDays);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getNetworkType()const;
-				void setNetworkType(const std::string& networkType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getRetainClassic()const;
 				void setRetainClassic(const std::string& retainClassic);
-				int getClassicExpiredDays()const;
-				void setClassicExpiredDays(int classicExpiredDays);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
 				long resourceOwnerId_;
+				std::string networkType_;
+				std::string accessKeyId_;
+				std::string securityToken_;
+				int classicExpiredDays_;
+				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string networkType_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string vSwitchId_;
-				std::string securityToken_;
-				std::string regionId_;
 				std::string retainClassic_;
-				int classicExpiredDays_;
 				std::string vpcId_;
-				std::string dBInstanceId_;
 
 			};
 		}

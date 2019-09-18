@@ -25,17 +25,6 @@ ModifyACLRuleRequest::ModifyACLRuleRequest() :
 ModifyACLRuleRequest::~ModifyACLRuleRequest()
 {}
 
-std::string ModifyACLRuleRequest::getAclId()const
-{
-	return aclId_;
-}
-
-void ModifyACLRuleRequest::setAclId(const std::string& aclId)
-{
-	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
-}
-
 long ModifyACLRuleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -56,6 +45,94 @@ void ModifyACLRuleRequest::setSourcePortRange(const std::string& sourcePortRange
 {
 	sourcePortRange_ = sourcePortRange;
 	setCoreParameter("SourcePortRange", sourcePortRange);
+}
+
+std::string ModifyACLRuleRequest::getSourceCidr()const
+{
+	return sourceCidr_;
+}
+
+void ModifyACLRuleRequest::setSourceCidr(const std::string& sourceCidr)
+{
+	sourceCidr_ = sourceCidr;
+	setCoreParameter("SourceCidr", sourceCidr);
+}
+
+std::string ModifyACLRuleRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyACLRuleRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string ModifyACLRuleRequest::getType()const
+{
+	return type_;
+}
+
+void ModifyACLRuleRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string ModifyACLRuleRequest::getDestCidr()const
+{
+	return destCidr_;
+}
+
+void ModifyACLRuleRequest::setDestCidr(const std::string& destCidr)
+{
+	destCidr_ = destCidr;
+	setCoreParameter("DestCidr", destCidr);
+}
+
+std::string ModifyACLRuleRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyACLRuleRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyACLRuleRequest::getDirection()const
+{
+	return direction_;
+}
+
+void ModifyACLRuleRequest::setDirection(const std::string& direction)
+{
+	direction_ = direction;
+	setCoreParameter("Direction", direction);
+}
+
+std::string ModifyACLRuleRequest::getPolicy()const
+{
+	return policy_;
+}
+
+void ModifyACLRuleRequest::setPolicy(const std::string& policy)
+{
+	policy_ = policy;
+	setCoreParameter("Policy", policy);
+}
+
+std::string ModifyACLRuleRequest::getAclId()const
+{
+	return aclId_;
+}
+
+void ModifyACLRuleRequest::setAclId(const std::string& aclId)
+{
+	aclId_ = aclId;
+	setCoreParameter("AclId", aclId);
 }
 
 std::string ModifyACLRuleRequest::getResourceOwnerAccount()const
@@ -91,28 +168,6 @@ void ModifyACLRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyACLRuleRequest::getSourceCidr()const
-{
-	return sourceCidr_;
-}
-
-void ModifyACLRuleRequest::setSourceCidr(const std::string& sourceCidr)
-{
-	sourceCidr_ = sourceCidr;
-	setCoreParameter("SourceCidr", sourceCidr);
-}
-
-std::string ModifyACLRuleRequest::getDescription()const
-{
-	return description_;
-}
-
-void ModifyACLRuleRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 long ModifyACLRuleRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -135,17 +190,6 @@ void ModifyACLRuleRequest::setPriority(int priority)
 	setCoreParameter("Priority", std::to_string(priority));
 }
 
-std::string ModifyACLRuleRequest::getType()const
-{
-	return type_;
-}
-
-void ModifyACLRuleRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
-}
-
 std::string ModifyACLRuleRequest::getAcrId()const
 {
 	return acrId_;
@@ -157,17 +201,6 @@ void ModifyACLRuleRequest::setAcrId(const std::string& acrId)
 	setCoreParameter("AcrId", acrId);
 }
 
-std::string ModifyACLRuleRequest::getDestCidr()const
-{
-	return destCidr_;
-}
-
-void ModifyACLRuleRequest::setDestCidr(const std::string& destCidr)
-{
-	destCidr_ = destCidr;
-	setCoreParameter("DestCidr", destCidr);
-}
-
 std::string ModifyACLRuleRequest::getDestPortRange()const
 {
 	return destPortRange_;
@@ -177,38 +210,5 @@ void ModifyACLRuleRequest::setDestPortRange(const std::string& destPortRange)
 {
 	destPortRange_ = destPortRange;
 	setCoreParameter("DestPortRange", destPortRange);
-}
-
-std::string ModifyACLRuleRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyACLRuleRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyACLRuleRequest::getDirection()const
-{
-	return direction_;
-}
-
-void ModifyACLRuleRequest::setDirection(const std::string& direction)
-{
-	direction_ = direction;
-	setCoreParameter("Direction", direction);
-}
-
-std::string ModifyACLRuleRequest::getPolicy()const
-{
-	return policy_;
-}
-
-void ModifyACLRuleRequest::setPolicy(const std::string& policy)
-{
-	policy_ = policy;
-	setCoreParameter("Policy", policy);
 }
 

@@ -36,28 +36,6 @@ void OnsTrendTopicInputTpsRequest::setPeriod(long period)
 	setCoreParameter("Period", std::to_string(period));
 }
 
-std::string OnsTrendTopicInputTpsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsTrendTopicInputTpsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string OnsTrendTopicInputTpsRequest::getTopic()const
-{
-	return topic_;
-}
-
-void OnsTrendTopicInputTpsRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setCoreParameter("Topic", topic);
-}
-
 long OnsTrendTopicInputTpsRequest::getEndTime()const
 {
 	return endTime_;
@@ -89,5 +67,27 @@ void OnsTrendTopicInputTpsRequest::setType(int type)
 {
 	type_ = type;
 	setCoreParameter("Type", std::to_string(type));
+}
+
+std::string OnsTrendTopicInputTpsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsTrendTopicInputTpsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
+}
+
+std::string OnsTrendTopicInputTpsRequest::getTopic()const
+{
+	return topic_;
+}
+
+void OnsTrendTopicInputTpsRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
 }
 

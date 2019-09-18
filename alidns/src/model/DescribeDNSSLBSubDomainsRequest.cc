@@ -25,17 +25,6 @@ DescribeDNSSLBSubDomainsRequest::DescribeDNSSLBSubDomainsRequest() :
 DescribeDNSSLBSubDomainsRequest::~DescribeDNSSLBSubDomainsRequest()
 {}
 
-std::string DescribeDNSSLBSubDomainsRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void DescribeDNSSLBSubDomainsRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string DescribeDNSSLBSubDomainsRequest::getDomainName()const
 {
 	return domainName_;
@@ -45,28 +34,6 @@ void DescribeDNSSLBSubDomainsRequest::setDomainName(const std::string& domainNam
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
-}
-
-long DescribeDNSSLBSubDomainsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeDNSSLBSubDomainsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeDNSSLBSubDomainsRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeDNSSLBSubDomainsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
 }
 
 long DescribeDNSSLBSubDomainsRequest::getPageNumber()const
@@ -89,5 +56,38 @@ void DescribeDNSSLBSubDomainsRequest::setAccessKeyId(const std::string& accessKe
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDNSSLBSubDomainsRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void DescribeDNSSLBSubDomainsRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
+}
+
+long DescribeDNSSLBSubDomainsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeDNSSLBSubDomainsRequest::setPageSize(long pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeDNSSLBSubDomainsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeDNSSLBSubDomainsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 

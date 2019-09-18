@@ -58,6 +58,17 @@ void CreateLoadBalancerRequest::setClientToken(const std::string& clientToken)
 	setCoreParameter("ClientToken", clientToken);
 }
 
+std::string CreateLoadBalancerRequest::getCloudType()const
+{
+	return cloudType_;
+}
+
+void CreateLoadBalancerRequest::setCloudType(const std::string& cloudType)
+{
+	cloudType_ = cloudType;
+	setCoreParameter("CloudType", cloudType);
+}
+
 std::string CreateLoadBalancerRequest::getAddressIPVersion()const
 {
 	return addressIPVersion_;

@@ -25,17 +25,6 @@ ModifyBackupObjectsRequest::ModifyBackupObjectsRequest() :
 ModifyBackupObjectsRequest::~ModifyBackupObjectsRequest()
 {}
 
-std::string ModifyBackupObjectsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyBackupObjectsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ModifyBackupObjectsRequest::getClientToken()const
 {
 	return clientToken_;

@@ -25,39 +25,6 @@ PutProjectRequest::PutProjectRequest() :
 PutProjectRequest::~PutProjectRequest()
 {}
 
-int PutProjectRequest::getCU()const
-{
-	return cU_;
-}
-
-void PutProjectRequest::setCU(int cU)
-{
-	cU_ = cU;
-	setCoreParameter("CU", std::to_string(cU));
-}
-
-std::string PutProjectRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void PutProjectRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string PutProjectRequest::getServiceRole()const
-{
-	return serviceRole_;
-}
-
-void PutProjectRequest::setServiceRole(const std::string& serviceRole)
-{
-	serviceRole_ = serviceRole;
-	setCoreParameter("ServiceRole", serviceRole);
-}
-
 std::string PutProjectRequest::getProject()const
 {
 	return project_;
@@ -67,17 +34,6 @@ void PutProjectRequest::setProject(const std::string& project)
 {
 	project_ = project;
 	setCoreParameter("Project", project);
-}
-
-std::string PutProjectRequest::getBillingType()const
-{
-	return billingType_;
-}
-
-void PutProjectRequest::setBillingType(const std::string& billingType)
-{
-	billingType_ = billingType;
-	setCoreParameter("BillingType", billingType);
 }
 
 std::string PutProjectRequest::getType()const
@@ -100,5 +56,38 @@ void PutProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int PutProjectRequest::getCU()const
+{
+	return cU_;
+}
+
+void PutProjectRequest::setCU(int cU)
+{
+	cU_ = cU;
+	setCoreParameter("CU", std::to_string(cU));
+}
+
+std::string PutProjectRequest::getServiceRole()const
+{
+	return serviceRole_;
+}
+
+void PutProjectRequest::setServiceRole(const std::string& serviceRole)
+{
+	serviceRole_ = serviceRole;
+	setCoreParameter("ServiceRole", serviceRole);
+}
+
+std::string PutProjectRequest::getBillingType()const
+{
+	return billingType_;
+}
+
+void PutProjectRequest::setBillingType(const std::string& billingType)
+{
+	billingType_ = billingType;
+	setCoreParameter("BillingType", billingType);
 }
 

@@ -35,37 +35,37 @@ namespace AlibabaCloud
 				SendSmsRequest();
 				~SendSmsRequest();
 
-				std::string getSmsUpExtendCode()const;
-				void setSmsUpExtendCode(const std::string& smsUpExtendCode);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSmsUpExtendCode()const;
+				void setSmsUpExtendCode(const std::string& smsUpExtendCode);
 				std::string getSignName()const;
 				void setSignName(const std::string& signName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getPhoneNumbers()const;
 				void setPhoneNumbers(const std::string& phoneNumbers);
-				std::string getOutId()const;
-				void setOutId(const std::string& outId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getOutId()const;
+				void setOutId(const std::string& outId);
 				std::string getTemplateCode()const;
 				void setTemplateCode(const std::string& templateCode);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTemplateParam()const;
 				void setTemplateParam(const std::string& templateParam);
 
             private:
-				std::string smsUpExtendCode_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
+				std::string smsUpExtendCode_;
 				std::string signName_;
 				std::string resourceOwnerAccount_;
 				std::string phoneNumbers_;
-				std::string outId_;
 				long ownerId_;
+				std::string outId_;
 				std::string templateCode_;
-				std::string accessKeyId_;
 				std::string templateParam_;
 
 			};

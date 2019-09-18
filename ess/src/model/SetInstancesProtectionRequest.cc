@@ -25,16 +25,26 @@ SetInstancesProtectionRequest::SetInstancesProtectionRequest() :
 SetInstancesProtectionRequest::~SetInstancesProtectionRequest()
 {}
 
-std::vector<std::string> SetInstancesProtectionRequest::getInstanceId()const
+std::string SetInstancesProtectionRequest::getScalingGroupId()const
 {
-	return instanceId_;
+	return scalingGroupId_;
 }
 
-void SetInstancesProtectionRequest::setInstanceId(const std::vector<std::string>& instanceId)
+void SetInstancesProtectionRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
-	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	scalingGroupId_ = scalingGroupId;
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string SetInstancesProtectionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetInstancesProtectionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetInstancesProtectionRequest::getResourceOwnerAccount()const
@@ -48,17 +58,6 @@ void SetInstancesProtectionRequest::setResourceOwnerAccount(const std::string& r
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string SetInstancesProtectionRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void SetInstancesProtectionRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
 long SetInstancesProtectionRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -70,15 +69,16 @@ void SetInstancesProtectionRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetInstancesProtectionRequest::getAccessKeyId()const
+std::vector<std::string> SetInstancesProtectionRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void SetInstancesProtectionRequest::setAccessKeyId(const std::string& accessKeyId)
+void SetInstancesProtectionRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	for(int i = 0; i!= instanceId.size(); i++)
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 
 bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const

@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				CreateAccountRequest();
 				~CreateAccountRequest();
 
-				std::string getAccountPassword()const;
-				void setAccountPassword(const std::string& accountPassword);
-				std::string getAccountName()const;
-				void setAccountName(const std::string& accountName);
-				std::string getDatabaseName()const;
-				void setDatabaseName(const std::string& databaseName);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAccountDescription()const;
 				void setAccountDescription(const std::string& accountDescription);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAccountName()const;
+				void setAccountName(const std::string& accountName);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getAccountPassword()const;
+				void setAccountPassword(const std::string& accountPassword);
+				std::string getDatabaseName()const;
+				void setDatabaseName(const std::string& databaseName);
 
             private:
-				std::string accountPassword_;
-				std::string accountName_;
-				std::string databaseName_;
-				std::string dBInstanceId_;
-				long ownerId_;
 				std::string accountDescription_;
 				std::string accessKeyId_;
+				std::string accountName_;
+				std::string dBInstanceId_;
+				long ownerId_;
+				std::string accountPassword_;
+				std::string databaseName_;
 
 			};
 		}

@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				PutProjectRequest();
 				~PutProjectRequest();
 
-				int getCU()const;
-				void setCU(int cU);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getServiceRole()const;
-				void setServiceRole(const std::string& serviceRole);
 				std::string getProject()const;
 				void setProject(const std::string& project);
-				std::string getBillingType()const;
-				void setBillingType(const std::string& billingType);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getCU()const;
+				void setCU(int cU);
+				std::string getServiceRole()const;
+				void setServiceRole(const std::string& serviceRole);
+				std::string getBillingType()const;
+				void setBillingType(const std::string& billingType);
 
             private:
-				int cU_;
-				std::string regionId_;
-				std::string serviceRole_;
 				std::string project_;
-				std::string billingType_;
 				std::string type_;
 				std::string accessKeyId_;
+				int cU_;
+				std::string serviceRole_;
+				std::string billingType_;
 
 			};
 		}

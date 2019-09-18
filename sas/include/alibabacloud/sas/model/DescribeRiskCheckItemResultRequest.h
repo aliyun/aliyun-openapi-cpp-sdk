@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				DescribeRiskCheckItemResultRequest();
 				~DescribeRiskCheckItemResultRequest();
 
-				long getItemId()const;
-				void setItemId(long itemId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				long getItemId()const;
+				void setItemId(long itemId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
-				long itemId_;
 				long resourceOwnerId_;
+				int currentPage_;
+				long itemId_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
 
 			};

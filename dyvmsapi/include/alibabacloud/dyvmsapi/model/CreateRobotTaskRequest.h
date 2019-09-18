@@ -39,20 +39,22 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRecallStateCodes()const;
 				void setRecallStateCodes(const std::string& recallStateCodes);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getTaskName()const;
 				void setTaskName(const std::string& taskName);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				int getRecallTimes()const;
+				void setRecallTimes(int recallTimes);
+				bool getIsSelfLine()const;
+				void setIsSelfLine(bool isSelfLine);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getRetryType()const;
 				void setRetryType(int retryType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				long getDialogId()const;
 				void setDialogId(long dialogId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				int getRecallTimes()const;
-				void setRecallTimes(int recallTimes);
 				std::string getCaller()const;
 				void setCaller(const std::string& caller);
 				bool getNumberStatusIdent()const;
@@ -61,24 +63,22 @@ namespace AlibabaCloud
 				void setCorpName(const std::string& corpName);
 				int getRecallInterval()const;
 				void setRecallInterval(int recallInterval);
-				bool getIsSelfLine()const;
-				void setIsSelfLine(bool isSelfLine);
 
             private:
 				long resourceOwnerId_;
 				std::string recallStateCodes_;
-				std::string resourceOwnerAccount_;
 				std::string taskName_;
+				std::string accessKeyId_;
+				int recallTimes_;
+				bool isSelfLine_;
+				std::string resourceOwnerAccount_;
 				int retryType_;
 				long ownerId_;
 				long dialogId_;
-				std::string accessKeyId_;
-				int recallTimes_;
 				std::string caller_;
 				bool numberStatusIdent_;
 				std::string corpName_;
 				int recallInterval_;
-				bool isSelfLine_;
 
 			};
 		}

@@ -36,15 +36,15 @@ void CreateQosRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateQosRequest::getQosName()const
+std::string CreateQosRequest::getRegionId()const
 {
-	return qosName_;
+	return regionId_;
 }
 
-void CreateQosRequest::setQosName(const std::string& qosName)
+void CreateQosRequest::setRegionId(const std::string& regionId)
 {
-	qosName_ = qosName;
-	setCoreParameter("QosName", qosName);
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateQosRequest::getResourceOwnerAccount()const
@@ -56,17 +56,6 @@ void CreateQosRequest::setResourceOwnerAccount(const std::string& resourceOwnerA
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateQosRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateQosRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateQosRequest::getOwnerAccount()const
@@ -89,5 +78,16 @@ void CreateQosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateQosRequest::getQosName()const
+{
+	return qosName_;
+}
+
+void CreateQosRequest::setQosName(const std::string& qosName)
+{
+	qosName_ = qosName;
+	setCoreParameter("QosName", qosName);
 }
 

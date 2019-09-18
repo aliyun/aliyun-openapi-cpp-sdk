@@ -47,28 +47,6 @@ void ListUmengPagePermission4RootRequest::setLength(int length)
 	setCoreParameter("Length", std::to_string(length));
 }
 
-std::string ListUmengPagePermission4RootRequest::getSearchEmail()const
-{
-	return searchEmail_;
-}
-
-void ListUmengPagePermission4RootRequest::setSearchEmail(const std::string& searchEmail)
-{
-	searchEmail_ = searchEmail;
-	setCoreParameter("SearchEmail", searchEmail);
-}
-
-int ListUmengPagePermission4RootRequest::getPageIndex()const
-{
-	return pageIndex_;
-}
-
-void ListUmengPagePermission4RootRequest::setPageIndex(int pageIndex)
-{
-	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
-}
-
 std::string ListUmengPagePermission4RootRequest::getOrderDir()const
 {
 	return orderDir_;
@@ -89,5 +67,27 @@ void ListUmengPagePermission4RootRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListUmengPagePermission4RootRequest::getSearchEmail()const
+{
+	return searchEmail_;
+}
+
+void ListUmengPagePermission4RootRequest::setSearchEmail(const std::string& searchEmail)
+{
+	searchEmail_ = searchEmail;
+	setCoreParameter("SearchEmail", searchEmail);
+}
+
+int ListUmengPagePermission4RootRequest::getPageIndex()const
+{
+	return pageIndex_;
+}
+
+void ListUmengPagePermission4RootRequest::setPageIndex(int pageIndex)
+{
+	pageIndex_ = pageIndex;
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

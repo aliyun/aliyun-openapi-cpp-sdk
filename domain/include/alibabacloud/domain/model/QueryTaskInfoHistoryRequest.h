@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				QueryTaskInfoHistoryRequest();
 				~QueryTaskInfoHistoryRequest();
 
-				long getBeginCreateTime()const;
-				void setBeginCreateTime(long beginCreateTime);
 				long getEndCreateTime()const;
 				void setEndCreateTime(long endCreateTime);
+				long getBeginCreateTime()const;
+				void setBeginCreateTime(long beginCreateTime);
 				std::string getTaskNoCursor()const;
 				void setTaskNoCursor(const std::string& taskNoCursor);
 				std::string getUserClientIp()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setCreateTimeCursor(long createTimeCursor);
 
             private:
-				long beginCreateTime_;
 				long endCreateTime_;
+				long beginCreateTime_;
 				std::string taskNoCursor_;
 				std::string userClientIp_;
 				int pageSize_;

@@ -36,6 +36,28 @@ void ListStackRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int ListStackRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListStackRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListStackRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListStackRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListStackRequest::getRegionId()const
 {
 	return regionId_;
@@ -78,27 +100,5 @@ void ListStackRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
 	setCoreParameter("StackVersion", stackVersion);
-}
-
-int ListStackRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListStackRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string ListStackRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListStackRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

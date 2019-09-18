@@ -25,14 +25,3 @@ CreateRepoRequest::CreateRepoRequest() :
 CreateRepoRequest::~CreateRepoRequest()
 {}
 
-std::string CreateRepoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateRepoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

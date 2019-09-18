@@ -36,39 +36,6 @@ void DescribeClusterServiceConfigTagForAdminRequest::setResourceOwnerId(long res
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeClusterServiceConfigTagForAdminRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeClusterServiceConfigTagForAdminRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeClusterServiceConfigTagForAdminRequest::getConfigTag()const
-{
-	return configTag_;
-}
-
-void DescribeClusterServiceConfigTagForAdminRequest::setConfigTag(const std::string& configTag)
-{
-	configTag_ = configTag;
-	setCoreParameter("ConfigTag", configTag);
-}
-
-std::string DescribeClusterServiceConfigTagForAdminRequest::getServiceName()const
-{
-	return serviceName_;
-}
-
-void DescribeClusterServiceConfigTagForAdminRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
-}
-
 std::string DescribeClusterServiceConfigTagForAdminRequest::getClusterId()const
 {
 	return clusterId_;
@@ -100,5 +67,38 @@ void DescribeClusterServiceConfigTagForAdminRequest::setAccessKeyId(const std::s
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeClusterServiceConfigTagForAdminRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeClusterServiceConfigTagForAdminRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DescribeClusterServiceConfigTagForAdminRequest::getConfigTag()const
+{
+	return configTag_;
+}
+
+void DescribeClusterServiceConfigTagForAdminRequest::setConfigTag(const std::string& configTag)
+{
+	configTag_ = configTag;
+	setCoreParameter("ConfigTag", configTag);
+}
+
+std::string DescribeClusterServiceConfigTagForAdminRequest::getServiceName()const
+{
+	return serviceName_;
+}
+
+void DescribeClusterServiceConfigTagForAdminRequest::setServiceName(const std::string& serviceName)
+{
+	serviceName_ = serviceName;
+	setCoreParameter("ServiceName", serviceName);
 }
 

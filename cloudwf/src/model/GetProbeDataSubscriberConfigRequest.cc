@@ -25,17 +25,6 @@ GetProbeDataSubscriberConfigRequest::GetProbeDataSubscriberConfigRequest() :
 GetProbeDataSubscriberConfigRequest::~GetProbeDataSubscriberConfigRequest()
 {}
 
-long GetProbeDataSubscriberConfigRequest::getId()const
-{
-	return id_;
-}
-
-void GetProbeDataSubscriberConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetProbeDataSubscriberConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetProbeDataSubscriberConfigRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetProbeDataSubscriberConfigRequest::getId()const
+{
+	return id_;
+}
+
+void GetProbeDataSubscriberConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

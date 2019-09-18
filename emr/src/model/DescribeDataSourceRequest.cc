@@ -36,6 +36,17 @@ void DescribeDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDataSourceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeDataSourceRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void DescribeDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
 	setCoreParameter("Id", id);
-}
-
-std::string DescribeDataSourceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

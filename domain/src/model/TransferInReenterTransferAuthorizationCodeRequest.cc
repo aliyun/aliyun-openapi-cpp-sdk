@@ -25,17 +25,6 @@ TransferInReenterTransferAuthorizationCodeRequest::TransferInReenterTransferAuth
 TransferInReenterTransferAuthorizationCodeRequest::~TransferInReenterTransferAuthorizationCodeRequest()
 {}
 
-std::string TransferInReenterTransferAuthorizationCodeRequest::getTransferAuthorizationCode()const
-{
-	return transferAuthorizationCode_;
-}
-
-void TransferInReenterTransferAuthorizationCodeRequest::setTransferAuthorizationCode(const std::string& transferAuthorizationCode)
-{
-	transferAuthorizationCode_ = transferAuthorizationCode;
-	setCoreParameter("TransferAuthorizationCode", transferAuthorizationCode);
-}
-
 std::string TransferInReenterTransferAuthorizationCodeRequest::getDomainName()const
 {
 	return domainName_;
@@ -45,6 +34,17 @@ void TransferInReenterTransferAuthorizationCodeRequest::setDomainName(const std:
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+std::string TransferInReenterTransferAuthorizationCodeRequest::getTransferAuthorizationCode()const
+{
+	return transferAuthorizationCode_;
+}
+
+void TransferInReenterTransferAuthorizationCodeRequest::setTransferAuthorizationCode(const std::string& transferAuthorizationCode)
+{
+	transferAuthorizationCode_ = transferAuthorizationCode;
+	setCoreParameter("TransferAuthorizationCode", transferAuthorizationCode);
 }
 
 std::string TransferInReenterTransferAuthorizationCodeRequest::getUserClientIp()const

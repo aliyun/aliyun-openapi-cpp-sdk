@@ -25,15 +25,26 @@ SubmitImageQualityJobRequest::SubmitImageQualityJobRequest() :
 SubmitImageQualityJobRequest::~SubmitImageQualityJobRequest()
 {}
 
-std::string SubmitImageQualityJobRequest::getInput()const
+long SubmitImageQualityJobRequest::getResourceOwnerId()const
 {
-	return input_;
+	return resourceOwnerId_;
 }
 
-void SubmitImageQualityJobRequest::setInput(const std::string& input)
+void SubmitImageQualityJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
-	input_ = input;
-	setCoreParameter("Input", input);
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string SubmitImageQualityJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitImageQualityJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitImageQualityJobRequest::getUserData()const
@@ -45,17 +56,6 @@ void SubmitImageQualityJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
 	setCoreParameter("UserData", userData);
-}
-
-long SubmitImageQualityJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void SubmitImageQualityJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitImageQualityJobRequest::getResourceOwnerAccount()const
@@ -91,17 +91,6 @@ void SubmitImageQualityJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitImageQualityJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitImageQualityJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitImageQualityJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -111,5 +100,16 @@ void SubmitImageQualityJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitImageQualityJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitImageQualityJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

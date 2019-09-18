@@ -37,12 +37,6 @@ namespace AlibabaCloud
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				long getUserId()const;
@@ -57,20 +51,23 @@ namespace AlibabaCloud
 				void setTargetProductCode(const std::string& targetProductCode);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				long getDepartId()const;
-				void setDepartId(long departId);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getDealUserId()const;
 				void setDealUserId(const std::string& dealUserId);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				long getDepartId()const;
+				void setDepartId(long departId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
 				std::string productCode_;
-				int featureType_;
-				std::string endTime_;
-				int currentPage_;
 				std::string startTime_;
 				long userId_;
 				std::string typeCode_;
@@ -78,9 +75,12 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				std::string targetProductCode_;
 				int pageSize_;
-				long departId_;
 				std::string lang_;
 				std::string dealUserId_;
+				int featureType_;
+				std::string endTime_;
+				int currentPage_;
+				long departId_;
 				std::string status_;
 
 			};

@@ -25,6 +25,17 @@ DescribeAccessWhiteListSlbListRequest::DescribeAccessWhiteListSlbListRequest() :
 DescribeAccessWhiteListSlbListRequest::~DescribeAccessWhiteListSlbListRequest()
 {}
 
+std::string DescribeAccessWhiteListSlbListRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DescribeAccessWhiteListSlbListRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DescribeAccessWhiteListSlbListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeAccessWhiteListSlbListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeAccessWhiteListSlbListRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DescribeAccessWhiteListSlbListRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ListBriefConfigByActionRequest();
 				~ListBriefConfigByActionRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				long getAncestorApgroupId()const;
 				void setAncestorApgroupId(long ancestorApgroupId);
 				int getLimit()const;
 				void setLimit(int limit);
 				std::string getFuzzySearch()const;
 				void setFuzzySearch(const std::string& fuzzySearch);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 				long ancestorApgroupId_;
 				int limit_;
 				std::string fuzzySearch_;
-				std::string accessKeyId_;
 
 			};
 		}

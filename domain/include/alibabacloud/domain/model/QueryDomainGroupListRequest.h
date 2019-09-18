@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				QueryDomainGroupListRequest();
 				~QueryDomainGroupListRequest();
 
+				bool getShowDeletingGroup()const;
+				void setShowDeletingGroup(bool showDeletingGroup);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainGroupName()const;
 				void setDomainGroupName(const std::string& domainGroupName);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				bool getShowDeletingGroup()const;
-				void setShowDeletingGroup(bool showDeletingGroup);
 
             private:
+				bool showDeletingGroup_;
 				std::string userClientIp_;
 				std::string domainGroupName_;
 				std::string lang_;
-				bool showDeletingGroup_;
 
 			};
 		}

@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				AreaDeleteRequest();
 				~AreaDeleteRequest();
 
-				long getAid()const;
-				void setAid(long aid);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getSid()const;
 				void setSid(long sid);
+				long getAid()const;
+				void setAid(long aid);
 
             private:
-				long aid_;
 				std::string accessKeyId_;
 				long sid_;
+				long aid_;
 
 			};
 		}

@@ -35,25 +35,25 @@ namespace AlibabaCloud
 				DescribeLiveStreamRecordIndexFileRequest();
 				~DescribeLiveStreamRecordIndexFileRequest();
 
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getRecordId()const;
 				void setRecordId(const std::string& recordId);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
 
             private:
+				std::string domainName_;
+				long ownerId_;
 				std::string recordId_;
 				std::string appName_;
 				std::string securityToken_;
-				std::string domainName_;
-				long ownerId_;
 				std::string streamName_;
 
 			};

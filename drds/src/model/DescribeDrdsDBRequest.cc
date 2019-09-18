@@ -25,17 +25,6 @@ DescribeDrdsDBRequest::DescribeDrdsDBRequest() :
 DescribeDrdsDBRequest::~DescribeDrdsDBRequest()
 {}
 
-std::string DescribeDrdsDBRequest::getDbName()const
-{
-	return dbName_;
-}
-
-void DescribeDrdsDBRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
-}
-
 std::string DescribeDrdsDBRequest::getDrdsInstanceId()const
 {
 	return drdsInstanceId_;
@@ -56,5 +45,16 @@ void DescribeDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDrdsDBRequest::getDbName()const
+{
+	return dbName_;
+}
+
+void DescribeDrdsDBRequest::setDbName(const std::string& dbName)
+{
+	dbName_ = dbName;
+	setCoreParameter("DbName", dbName);
 }
 

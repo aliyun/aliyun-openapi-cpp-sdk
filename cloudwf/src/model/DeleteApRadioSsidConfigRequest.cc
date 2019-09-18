@@ -25,6 +25,17 @@ DeleteApRadioSsidConfigRequest::DeleteApRadioSsidConfigRequest() :
 DeleteApRadioSsidConfigRequest::~DeleteApRadioSsidConfigRequest()
 {}
 
+std::string DeleteApRadioSsidConfigRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteApRadioSsidConfigRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int DeleteApRadioSsidConfigRequest::getInstantlyEffective()const
 {
 	return instantlyEffective_;
@@ -45,16 +56,5 @@ void DeleteApRadioSsidConfigRequest::setId(long id)
 {
 	id_ = id;
 	setCoreParameter("Id", std::to_string(id));
-}
-
-std::string DeleteApRadioSsidConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteApRadioSsidConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

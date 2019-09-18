@@ -37,45 +37,45 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getBackupId()const;
 				void setBackupId(int backupId);
+				std::string getNeedAof()const;
+				void setNeedAof(const std::string& needAof);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 
             private:
 				long resourceOwnerId_;
+				std::string startTime_;
+				int pageNumber_;
+				std::string accessKeyId_;
+				std::string securityToken_;
+				int pageSize_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				int backupId_;
+				std::string needAof_;
 				std::string endTime_;
-				std::string startTime_;
 				long ownerId_;
-				int pageNumber_;
-				std::string accessKeyId_;
 				std::string instanceId_;
-				std::string securityToken_;
-				std::string regionId_;
-				int pageSize_;
 
 			};
 		}

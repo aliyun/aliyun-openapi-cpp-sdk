@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeCaptchaMinRequest();
 				~DescribeCaptchaMinRequest();
 
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getConfigName()const;
@@ -43,15 +45,13 @@ namespace AlibabaCloud
 				void setRefExtId(const std::string& refExtId);
 				std::string getTime()const;
 				void setTime(const std::string& time);
-				std::string getType()const;
-				void setType(const std::string& type);
 
             private:
+				std::string type_;
 				std::string sourceIp_;
 				std::string configName_;
 				std::string refExtId_;
 				std::string time_;
-				std::string type_;
 
 			};
 		}

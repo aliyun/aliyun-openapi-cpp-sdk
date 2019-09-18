@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				CreateUserAuthRequest();
 				~CreateUserAuthRequest();
 
+				std::string getAccessKeySecret()const;
+				void setAccessKeySecret(const std::string& accessKeySecret);
 				long getAccountId()const;
 				void setAccountId(long accountId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getAccessKey()const;
 				void setAccessKey(const std::string& accessKey);
-				std::string getAccessKeySecret()const;
-				void setAccessKeySecret(const std::string& accessKeySecret);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string accessKeySecret_;
 				long accountId_;
 				std::string sourceIp_;
 				std::string accessKey_;
-				std::string accessKeySecret_;
 				std::string lang_;
 
 			};

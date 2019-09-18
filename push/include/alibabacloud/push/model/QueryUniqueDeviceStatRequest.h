@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				QueryUniqueDeviceStatRequest();
 				~QueryUniqueDeviceStatRequest();
 
-				std::string getGranularity()const;
-				void setGranularity(const std::string& granularity);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				long getAppKey()const;
-				void setAppKey(long appKey);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getGranularity()const;
+				void setGranularity(const std::string& granularity);
+				long getAppKey()const;
+				void setAppKey(long appKey);
 
             private:
-				std::string granularity_;
 				std::string endTime_;
-				long appKey_;
 				std::string startTime_;
 				std::string accessKeyId_;
+				std::string granularity_;
+				long appKey_;
 
 			};
 		}

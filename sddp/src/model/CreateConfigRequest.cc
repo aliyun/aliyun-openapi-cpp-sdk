@@ -36,28 +36,6 @@ void CreateConfigRequest::setCode(const std::string& code)
 	setCoreParameter("Code", code);
 }
 
-std::string CreateConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-int CreateConfigRequest::getFeatureType()const
-{
-	return featureType_;
-}
-
-void CreateConfigRequest::setFeatureType(int featureType)
-{
-	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
-}
-
 std::string CreateConfigRequest::getDescription()const
 {
 	return description_;
@@ -69,15 +47,15 @@ void CreateConfigRequest::setDescription(const std::string& description)
 	setCoreParameter("Description", description);
 }
 
-std::string CreateConfigRequest::getConfigList()const
+std::string CreateConfigRequest::getSourceIp()const
 {
-	return configList_;
+	return sourceIp_;
 }
 
-void CreateConfigRequest::setConfigList(const std::string& configList)
+void CreateConfigRequest::setSourceIp(const std::string& sourceIp)
 {
-	configList_ = configList;
-	setCoreParameter("ConfigList", configList);
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateConfigRequest::getLang()const
@@ -100,5 +78,27 @@ void CreateConfigRequest::setValue(const std::string& value)
 {
 	value_ = value;
 	setCoreParameter("Value", value);
+}
+
+int CreateConfigRequest::getFeatureType()const
+{
+	return featureType_;
+}
+
+void CreateConfigRequest::setFeatureType(int featureType)
+{
+	featureType_ = featureType;
+	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string CreateConfigRequest::getConfigList()const
+{
+	return configList_;
+}
+
+void CreateConfigRequest::setConfigList(const std::string& configList)
+{
+	configList_ = configList;
+	setCoreParameter("ConfigList", configList);
 }
 

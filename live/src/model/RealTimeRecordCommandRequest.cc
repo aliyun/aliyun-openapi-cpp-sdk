@@ -36,15 +36,15 @@ void RealTimeRecordCommandRequest::setAppName(const std::string& appName)
 	setCoreParameter("AppName", appName);
 }
 
-std::string RealTimeRecordCommandRequest::getRegionId()const
+std::string RealTimeRecordCommandRequest::getStreamName()const
 {
-	return regionId_;
+	return streamName_;
 }
 
-void RealTimeRecordCommandRequest::setRegionId(const std::string& regionId)
+void RealTimeRecordCommandRequest::setStreamName(const std::string& streamName)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	streamName_ = streamName;
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string RealTimeRecordCommandRequest::getDomainName()const
@@ -78,16 +78,5 @@ void RealTimeRecordCommandRequest::setCommand(const std::string& command)
 {
 	command_ = command;
 	setCoreParameter("Command", command);
-}
-
-std::string RealTimeRecordCommandRequest::getStreamName()const
-{
-	return streamName_;
-}
-
-void RealTimeRecordCommandRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
 }
 

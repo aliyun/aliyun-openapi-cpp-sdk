@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				UpdateOssCallbackSettingRequest();
 				~UpdateOssCallbackSettingRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				bool getScanCallback()const;
-				void setScanCallback(bool scanCallback);
 				std::string getScanCallbackSuggestions()const;
 				void setScanCallbackSuggestions(const std::string& scanCallbackSuggestions);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getCallbackSeed()const;
 				void setCallbackSeed(const std::string& callbackSeed);
-				bool getAuditCallback()const;
-				void setAuditCallback(bool auditCallback);
-				std::string getCallbackUrl()const;
-				void setCallbackUrl(const std::string& callbackUrl);
 				std::string getServiceModules()const;
 				void setServiceModules(const std::string& serviceModules);
+				bool getAuditCallback()const;
+				void setAuditCallback(bool auditCallback);
+				bool getScanCallback()const;
+				void setScanCallback(bool scanCallback);
+				std::string getCallbackUrl()const;
+				void setCallbackUrl(const std::string& callbackUrl);
 
             private:
-				std::string sourceIp_;
-				bool scanCallback_;
 				std::string scanCallbackSuggestions_;
+				std::string sourceIp_;
 				std::string callbackSeed_;
-				bool auditCallback_;
-				std::string callbackUrl_;
 				std::string serviceModules_;
+				bool auditCallback_;
+				bool scanCallback_;
+				std::string callbackUrl_;
 
 			};
 		}

@@ -36,28 +36,6 @@ void UpdateDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UpdateDataSourceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateDataSourceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string UpdateDataSourceRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateDataSourceRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string UpdateDataSourceRequest::getDescription()const
 {
 	return description_;
@@ -80,17 +58,6 @@ void UpdateDataSourceRequest::setConf(const std::string& conf)
 	setCoreParameter("Conf", conf);
 }
 
-std::string UpdateDataSourceRequest::getId()const
-{
-	return id_;
-}
-
-void UpdateDataSourceRequest::setId(const std::string& id)
-{
-	id_ = id;
-	setCoreParameter("Id", id);
-}
-
 std::string UpdateDataSourceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -100,5 +67,38 @@ void UpdateDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateDataSourceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void UpdateDataSourceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string UpdateDataSourceRequest::getName()const
+{
+	return name_;
+}
+
+void UpdateDataSourceRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string UpdateDataSourceRequest::getId()const
+{
+	return id_;
+}
+
+void UpdateDataSourceRequest::setId(const std::string& id)
+{
+	id_ = id;
+	setCoreParameter("Id", id);
 }
 

@@ -25,6 +25,17 @@ ValidateConnectorRequest::ValidateConnectorRequest() :
 ValidateConnectorRequest::~ValidateConnectorRequest()
 {}
 
+std::string ValidateConnectorRequest::getParentId()const
+{
+	return parentId_;
+}
+
+void ValidateConnectorRequest::setParentId(const std::string& parentId)
+{
+	parentId_ = parentId;
+	setCoreParameter("ParentId", parentId);
+}
+
 std::string ValidateConnectorRequest::getPassword()const
 {
 	return password_;
@@ -47,17 +58,6 @@ void ValidateConnectorRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string ValidateConnectorRequest::getConnector()const
-{
-	return connector_;
-}
-
-void ValidateConnectorRequest::setConnector(const std::string& connector)
-{
-	connector_ = connector;
-	setCoreParameter("Connector", connector);
-}
-
 std::string ValidateConnectorRequest::getLang()const
 {
 	return lang_;
@@ -67,17 +67,6 @@ void ValidateConnectorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-int ValidateConnectorRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void ValidateConnectorRequest::setResourceType(int resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string ValidateConnectorRequest::getServiceRegionId()const
@@ -91,15 +80,26 @@ void ValidateConnectorRequest::setServiceRegionId(const std::string& serviceRegi
 	setCoreParameter("ServiceRegionId", serviceRegionId);
 }
 
-std::string ValidateConnectorRequest::getParentId()const
+int ValidateConnectorRequest::getResourceType()const
 {
-	return parentId_;
+	return resourceType_;
 }
 
-void ValidateConnectorRequest::setParentId(const std::string& parentId)
+void ValidateConnectorRequest::setResourceType(int resourceType)
 {
-	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", std::to_string(resourceType));
+}
+
+std::string ValidateConnectorRequest::getConnector()const
+{
+	return connector_;
+}
+
+void ValidateConnectorRequest::setConnector(const std::string& connector)
+{
+	connector_ = connector;
+	setCoreParameter("Connector", connector);
 }
 
 std::string ValidateConnectorRequest::getUserName()const

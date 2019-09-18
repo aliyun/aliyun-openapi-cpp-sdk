@@ -25,15 +25,37 @@ CreateVideoCompressTaskRequest::CreateVideoCompressTaskRequest() :
 CreateVideoCompressTaskRequest::~CreateVideoCompressTaskRequest()
 {}
 
-std::string CreateVideoCompressTaskRequest::getVideoUri()const
+std::string CreateVideoCompressTaskRequest::getProject()const
 {
-	return videoUri_;
+	return project_;
 }
 
-void CreateVideoCompressTaskRequest::setVideoUri(const std::string& videoUri)
+void CreateVideoCompressTaskRequest::setProject(const std::string& project)
 {
-	videoUri_ = videoUri;
-	setCoreParameter("VideoUri", videoUri);
+	project_ = project;
+	setCoreParameter("Project", project);
+}
+
+std::string CreateVideoCompressTaskRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateVideoCompressTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateVideoCompressTaskRequest::getNotifyEndpoint()const
+{
+	return notifyEndpoint_;
+}
+
+void CreateVideoCompressTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
+{
+	notifyEndpoint_ = notifyEndpoint;
+	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateVideoCompressTaskRequest::getNotifyTopicName()const
@@ -58,47 +80,14 @@ void CreateVideoCompressTaskRequest::setTargetList(const std::string& targetList
 	setCoreParameter("TargetList", targetList);
 }
 
-std::string CreateVideoCompressTaskRequest::getRegionId()const
+std::string CreateVideoCompressTaskRequest::getVideoUri()const
 {
-	return regionId_;
+	return videoUri_;
 }
 
-void CreateVideoCompressTaskRequest::setRegionId(const std::string& regionId)
+void CreateVideoCompressTaskRequest::setVideoUri(const std::string& videoUri)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateVideoCompressTaskRequest::getNotifyEndpoint()const
-{
-	return notifyEndpoint_;
-}
-
-void CreateVideoCompressTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
-{
-	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
-}
-
-std::string CreateVideoCompressTaskRequest::getProject()const
-{
-	return project_;
-}
-
-void CreateVideoCompressTaskRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setCoreParameter("Project", project);
-}
-
-std::string CreateVideoCompressTaskRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateVideoCompressTaskRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	videoUri_ = videoUri;
+	setCoreParameter("VideoUri", videoUri);
 }
 

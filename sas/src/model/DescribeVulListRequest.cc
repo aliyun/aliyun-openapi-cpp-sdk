@@ -25,15 +25,26 @@ DescribeVulListRequest::DescribeVulListRequest() :
 DescribeVulListRequest::~DescribeVulListRequest()
 {}
 
-std::string DescribeVulListRequest::getAliasName()const
+std::string DescribeVulListRequest::getRemark()const
 {
-	return aliasName_;
+	return remark_;
 }
 
-void DescribeVulListRequest::setAliasName(const std::string& aliasName)
+void DescribeVulListRequest::setRemark(const std::string& remark)
 {
-	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	remark_ = remark;
+	setCoreParameter("Remark", remark);
+}
+
+std::string DescribeVulListRequest::getType()const
+{
+	return type_;
+}
+
+void DescribeVulListRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeVulListRequest::getSourceIp()const
@@ -58,15 +69,15 @@ void DescribeVulListRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeVulListRequest::getRemark()const
+std::string DescribeVulListRequest::getLang()const
 {
-	return remark_;
+	return lang_;
 }
 
-void DescribeVulListRequest::setRemark(const std::string& remark)
+void DescribeVulListRequest::setLang(const std::string& lang)
 {
-	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeVulListRequest::getDealed()const
@@ -91,26 +102,15 @@ void DescribeVulListRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-std::string DescribeVulListRequest::getLang()const
+std::string DescribeVulListRequest::getAliasName()const
 {
-	return lang_;
+	return aliasName_;
 }
 
-void DescribeVulListRequest::setLang(const std::string& lang)
+void DescribeVulListRequest::setAliasName(const std::string& aliasName)
 {
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
-std::string DescribeVulListRequest::getType()const
-{
-	return type_;
-}
-
-void DescribeVulListRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
+	aliasName_ = aliasName;
+	setCoreParameter("AliasName", aliasName);
 }
 
 std::string DescribeVulListRequest::getNecessity()const

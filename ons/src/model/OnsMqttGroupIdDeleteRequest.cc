@@ -25,28 +25,6 @@ OnsMqttGroupIdDeleteRequest::OnsMqttGroupIdDeleteRequest() :
 OnsMqttGroupIdDeleteRequest::~OnsMqttGroupIdDeleteRequest()
 {}
 
-std::string OnsMqttGroupIdDeleteRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsMqttGroupIdDeleteRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string OnsMqttGroupIdDeleteRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void OnsMqttGroupIdDeleteRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string OnsMqttGroupIdDeleteRequest::getGroupId()const
 {
 	return groupId_;
@@ -56,5 +34,16 @@ void OnsMqttGroupIdDeleteRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string OnsMqttGroupIdDeleteRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsMqttGroupIdDeleteRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

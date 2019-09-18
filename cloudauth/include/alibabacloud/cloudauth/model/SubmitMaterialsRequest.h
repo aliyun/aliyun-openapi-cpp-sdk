@@ -42,18 +42,18 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getVerifyToken()const;
+				void setVerifyToken(const std::string& verifyToken);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::vector<Material> getMaterial()const;
 				void setMaterial(const std::vector<Material>& material);
-				std::string getVerifyToken()const;
-				void setVerifyToken(const std::string& verifyToken);
 
             private:
 				long resourceOwnerId_;
+				std::string verifyToken_;
 				std::string sourceIp_;
 				std::vector<Material> material_;
-				std::string verifyToken_;
 
 			};
 		}

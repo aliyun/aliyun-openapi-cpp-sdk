@@ -37,17 +37,17 @@ namespace AlibabaCloud
 
 				std::string getAddress()const;
 				void setAddress(const std::string& address);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
 				std::string address_;
-				std::string userClientIp_;
 				std::string domainName_;
+				std::string userClientIp_;
 				std::string lang_;
 
 			};

@@ -25,23 +25,6 @@ DescribeCensRequest::DescribeCensRequest() :
 DescribeCensRequest::~DescribeCensRequest()
 {}
 
-std::vector<DescribeCensRequest::Filter> DescribeCensRequest::getFilter()const
-{
-	return filter_;
-}
-
-void DescribeCensRequest::setFilter(const std::vector<Filter>& filter)
-{
-	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
-	}
-}
-
 long DescribeCensRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -53,26 +36,15 @@ void DescribeCensRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeCensRequest::getResourceOwnerAccount()const
+int DescribeCensRequest::getPageNumber()const
 {
-	return resourceOwnerAccount_;
+	return pageNumber_;
 }
 
-void DescribeCensRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeCensRequest::setPageNumber(int pageNumber)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeCensRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeCensRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeCensRequest::getPageSize()const
@@ -103,6 +75,28 @@ void DescribeCensRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string DescribeCensRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeCensRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeCensRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeCensRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long DescribeCensRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -114,14 +108,20 @@ void DescribeCensRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-int DescribeCensRequest::getPageNumber()const
+std::vector<DescribeCensRequest::Filter> DescribeCensRequest::getFilter()const
 {
-	return pageNumber_;
+	return filter_;
 }
 
-void DescribeCensRequest::setPageNumber(int pageNumber)
+void DescribeCensRequest::setFilter(const std::vector<Filter>& filter)
 {
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	filter_ = filter;
+	int i = 0;
+	for(int i = 0; i!= filter.size(); i++)	{
+		auto obj = filter.at(i);
+		std::string str ="Filter."+ std::to_string(i);
+		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
+		setCoreParameter(str + ".Key", obj.key);
+	}
 }
 

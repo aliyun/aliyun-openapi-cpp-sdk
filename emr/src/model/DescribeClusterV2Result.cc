@@ -35,13 +35,9 @@ DescribeClusterV2Result::~DescribeClusterV2Result()
 
 void DescribeClusterV2Result::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto clusterInfoNode = value["ClusterInfo"];
 	if(!clusterInfoNode["Id"].isNull())
@@ -164,8 +160,8 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 			hostGroupObject.hostGroupSubType = value["HostGroupSubType"].asString();
 		if(!value["HostGroupChangeType"].isNull())
 			hostGroupObject.hostGroupChangeType = value["HostGroupChangeType"].asString();
-		if(!value["hostGroupChangeStatus"].isNull())
-			hostGroupObject.hostGroupChangeStatus = value["hostGroupChangeStatus"].asString();
+		if(!value["HostGroupChangeStatus"].isNull())
+			hostGroupObject.hostGroupChangeStatus = value["HostGroupChangeStatus"].asString();
 		if(!value["ChargeType"].isNull())
 			hostGroupObject.chargeType = value["ChargeType"].asString();
 		if(!value["Period"].isNull())

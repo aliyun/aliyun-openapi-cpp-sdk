@@ -58,3 +58,14 @@ void DescribeGtmInstanceRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
+bool DescribeGtmInstanceRequest::getNeedDetailAttributes()const
+{
+	return needDetailAttributes_;
+}
+
+void DescribeGtmInstanceRequest::setNeedDetailAttributes(bool needDetailAttributes)
+{
+	needDetailAttributes_ = needDetailAttributes;
+	setCoreParameter("NeedDetailAttributes", needDetailAttributes ? "true" : "false");
+}
+

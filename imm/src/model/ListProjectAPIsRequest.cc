@@ -25,17 +25,6 @@ ListProjectAPIsRequest::ListProjectAPIsRequest() :
 ListProjectAPIsRequest::~ListProjectAPIsRequest()
 {}
 
-std::string ListProjectAPIsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListProjectAPIsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string ListProjectAPIsRequest::getProject()const
 {
 	return project_;

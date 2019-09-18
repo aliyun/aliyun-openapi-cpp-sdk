@@ -25,6 +25,17 @@ DescribeBizTypeSettingRequest::DescribeBizTypeSettingRequest() :
 DescribeBizTypeSettingRequest::~DescribeBizTypeSettingRequest()
 {}
 
+std::string DescribeBizTypeSettingRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeBizTypeSettingRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", resourceType);
+}
+
 std::string DescribeBizTypeSettingRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,16 +56,5 @@ void DescribeBizTypeSettingRequest::setBizTypeName(const std::string& bizTypeNam
 {
 	bizTypeName_ = bizTypeName;
 	setCoreParameter("BizTypeName", bizTypeName);
-}
-
-std::string DescribeBizTypeSettingRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeBizTypeSettingRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
 }
 

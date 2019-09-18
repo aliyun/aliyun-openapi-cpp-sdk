@@ -37,36 +37,36 @@ namespace AlibabaCloud
 
 				std::string getOutputs()const;
 				void setOutputs(const std::string& outputs);
-				std::string getInput()const;
-				void setInput(const std::string& input);
-				std::string getOutputBucket()const;
-				void setOutputBucket(const std::string& outputBucket);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getOutputLocation()const;
+				void setOutputLocation(const std::string& outputLocation);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getOutputLocation()const;
-				void setOutputLocation(const std::string& outputLocation);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
+				std::string getInput()const;
+				void setInput(const std::string& input);
+				std::string getOutputBucket()const;
+				void setOutputBucket(const std::string& outputBucket);
 
             private:
 				std::string outputs_;
-				std::string input_;
-				std::string outputBucket_;
 				long resourceOwnerId_;
+				std::string outputLocation_;
+				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string outputLocation_;
 				long ownerId_;
-				std::string accessKeyId_;
 				std::string pipelineId_;
+				std::string input_;
+				std::string outputBucket_;
 
 			};
 		}

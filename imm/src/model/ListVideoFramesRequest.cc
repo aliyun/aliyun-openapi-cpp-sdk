@@ -25,6 +25,28 @@ ListVideoFramesRequest::ListVideoFramesRequest() :
 ListVideoFramesRequest::~ListVideoFramesRequest()
 {}
 
+std::string ListVideoFramesRequest::getProject()const
+{
+	return project_;
+}
+
+void ListVideoFramesRequest::setProject(const std::string& project)
+{
+	project_ = project;
+	setCoreParameter("Project", project);
+}
+
+std::string ListVideoFramesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListVideoFramesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ListVideoFramesRequest::getVideoUri()const
 {
 	return videoUri_;
@@ -34,17 +56,6 @@ void ListVideoFramesRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
 	setCoreParameter("VideoUri", videoUri);
-}
-
-std::string ListVideoFramesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListVideoFramesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListVideoFramesRequest::getMarker()const
@@ -58,17 +69,6 @@ void ListVideoFramesRequest::setMarker(const std::string& marker)
 	setCoreParameter("Marker", marker);
 }
 
-std::string ListVideoFramesRequest::getProject()const
-{
-	return project_;
-}
-
-void ListVideoFramesRequest::setProject(const std::string& project)
-{
-	project_ = project;
-	setCoreParameter("Project", project);
-}
-
 std::string ListVideoFramesRequest::getSetId()const
 {
 	return setId_;
@@ -78,16 +78,5 @@ void ListVideoFramesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
 	setCoreParameter("SetId", setId);
-}
-
-std::string ListVideoFramesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListVideoFramesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

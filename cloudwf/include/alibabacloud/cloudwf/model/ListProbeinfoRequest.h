@@ -45,12 +45,12 @@ namespace AlibabaCloud
 				void setLength(int length);
 				std::string getSearchSensorName()const;
 				void setSearchSensorName(const std::string& searchSensorName);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
 				std::string getOrderDir()const;
 				void setOrderDir(const std::string& orderDir);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
 
             private:
 				std::string orderCol_;
@@ -58,9 +58,9 @@ namespace AlibabaCloud
 				std::string searchSensorMac_;
 				int length_;
 				std::string searchSensorName_;
-				int pageIndex_;
 				std::string orderDir_;
 				std::string accessKeyId_;
+				int pageIndex_;
 
 			};
 		}

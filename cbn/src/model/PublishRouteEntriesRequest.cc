@@ -25,17 +25,6 @@ PublishRouteEntriesRequest::PublishRouteEntriesRequest() :
 PublishRouteEntriesRequest::~PublishRouteEntriesRequest()
 {}
 
-std::string PublishRouteEntriesRequest::getChildInstanceId()const
-{
-	return childInstanceId_;
-}
-
-void PublishRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
-{
-	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
-}
-
 long PublishRouteEntriesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,17 +36,6 @@ void PublishRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string PublishRouteEntriesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void PublishRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string PublishRouteEntriesRequest::getCenId()const
 {
 	return cenId_;
@@ -67,6 +45,28 @@ void PublishRouteEntriesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
 	setCoreParameter("CenId", cenId);
+}
+
+std::string PublishRouteEntriesRequest::getChildInstanceRegionId()const
+{
+	return childInstanceRegionId_;
+}
+
+void PublishRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
+{
+	childInstanceRegionId_ = childInstanceRegionId;
+	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+}
+
+std::string PublishRouteEntriesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void PublishRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PublishRouteEntriesRequest::getDestinationCidrBlock()const
@@ -91,6 +91,17 @@ void PublishRouteEntriesRequest::setChildInstanceType(const std::string& childIn
 	setCoreParameter("ChildInstanceType", childInstanceType);
 }
 
+std::string PublishRouteEntriesRequest::getChildInstanceId()const
+{
+	return childInstanceId_;
+}
+
+void PublishRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
+{
+	childInstanceId_ = childInstanceId;
+	setCoreParameter("ChildInstanceId", childInstanceId);
+}
+
 std::string PublishRouteEntriesRequest::getChildInstanceRouteTableId()const
 {
 	return childInstanceRouteTableId_;
@@ -100,16 +111,5 @@ void PublishRouteEntriesRequest::setChildInstanceRouteTableId(const std::string&
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
 	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
-}
-
-std::string PublishRouteEntriesRequest::getChildInstanceRegionId()const
-{
-	return childInstanceRegionId_;
-}
-
-void PublishRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
-{
-	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 

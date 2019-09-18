@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				SetCenInterRegionBandwidthLimitRequest();
 				~SetCenInterRegionBandwidthLimitRequest();
 
-				std::string getLocalRegionId()const;
-				void setLocalRegionId(const std::string& localRegionId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getCenId()const;
 				void setCenId(const std::string& cenId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getOppositeRegionId()const;
 				void setOppositeRegionId(const std::string& oppositeRegionId);
-				long getBandwidthLimit()const;
-				void setBandwidthLimit(long bandwidthLimit);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getLocalRegionId()const;
+				void setLocalRegionId(const std::string& localRegionId);
+				long getBandwidthLimit()const;
+				void setBandwidthLimit(long bandwidthLimit);
 
             private:
-				std::string localRegionId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				std::string cenId_;
+				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string oppositeRegionId_;
-				long bandwidthLimit_;
 				long ownerId_;
+				std::string localRegionId_;
+				long bandwidthLimit_;
 
 			};
 		}

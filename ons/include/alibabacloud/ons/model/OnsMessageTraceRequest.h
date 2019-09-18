@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				OnsMessageTraceRequest();
 				~OnsMessageTraceRequest();
 
+				std::string getMsgId()const;
+				void setMsgId(const std::string& msgId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getTopic()const;
 				void setTopic(const std::string& topic);
-				std::string getMsgId()const;
-				void setMsgId(const std::string& msgId);
 
             private:
+				std::string msgId_;
 				std::string instanceId_;
 				std::string topic_;
-				std::string msgId_;
 
 			};
 		}

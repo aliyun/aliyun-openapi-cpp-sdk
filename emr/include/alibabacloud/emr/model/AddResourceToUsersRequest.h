@@ -35,65 +35,29 @@ namespace AlibabaCloud
 				AddResourceToUsersRequest();
 				~AddResourceToUsersRequest();
 
-				std::string getApp_ip()const;
-				void setApp_ip(const std::string& app_ip);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceId()const;
 				void setResourceId(const std::string& resourceId);
-				long getCallerParentId()const;
-				void setCallerParentId(long callerParentId);
 				std::vector<std::string> getUserIdList()const;
 				void setUserIdList(const std::vector<std::string>& userIdList);
-				bool getProxy_original_security_transport()const;
-				void setProxy_original_security_transport(bool proxy_original_security_transport);
-				std::string getCallerBid()const;
-				void setCallerBid(const std::string& callerBid);
-				std::string getProxy_original_source_ip()const;
-				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
-				bool getAk_mfa_present()const;
-				void setAk_mfa_present(bool ak_mfa_present);
-				bool getProxy_trust_transport_info()const;
-				void setProxy_trust_transport_info(bool proxy_trust_transport_info);
-				std::string getCallerType()const;
-				void setCallerType(const std::string& callerType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getSecurity_transport()const;
-				void setSecurity_transport(bool security_transport);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
 				std::vector<long> getRoleIdList()const;
 				void setRoleIdList(const std::vector<long>& roleIdList);
-				long getCallerUid()const;
-				void setCallerUid(long callerUid);
 
             private:
-				std::string app_ip_;
 				long resourceOwnerId_;
 				std::string resourceId_;
-				long callerParentId_;
 				std::vector<std::string> userIdList_;
-				bool proxy_original_security_transport_;
-				std::string callerBid_;
-				std::string proxy_original_source_ip_;
 				std::string resourceType_;
-				bool ak_mfa_present_;
-				bool proxy_trust_transport_info_;
-				std::string callerType_;
 				std::string accessKeyId_;
-				bool security_transport_;
-				std::string securityToken_;
 				std::string regionId_;
-				std::string requestId_;
 				std::vector<long> roleIdList_;
-				long callerUid_;
 
 			};
 		}

@@ -35,6 +35,16 @@ namespace AlibabaCloud
 				ListStaStatusRequest();
 				~ListStaStatusRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSearchSsid()const;
+				void setSearchSsid(const std::string& searchSsid);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
+				std::string getSearchMac()const;
+				void setSearchMac(const std::string& searchMac);
+				std::string getSearchDescription()const;
+				void setSearchDescription(const std::string& searchDescription);
 				std::string getOrderCol()const;
 				void setOrderCol(const std::string& orderCol);
 				std::string getSearchGroupName()const;
@@ -47,38 +57,28 @@ namespace AlibabaCloud
 				void setSearchUsername(const std::string& searchUsername);
 				std::string getOrderDir()const;
 				void setOrderDir(const std::string& orderDir);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSearchProtocal()const;
 				void setSearchProtocal(const std::string& searchProtocal);
-				std::string getSearchSsid()const;
-				void setSearchSsid(const std::string& searchSsid);
 				std::string getSearchApName()const;
 				void setSearchApName(const std::string& searchApName);
 				std::string getSearchIp()const;
 				void setSearchIp(const std::string& searchIp);
-				int getPageIndex()const;
-				void setPageIndex(int pageIndex);
-				std::string getSearchMac()const;
-				void setSearchMac(const std::string& searchMac);
-				std::string getSearchDescription()const;
-				void setSearchDescription(const std::string& searchDescription);
 
             private:
+				std::string accessKeyId_;
+				std::string searchSsid_;
+				int pageIndex_;
+				std::string searchMac_;
+				std::string searchDescription_;
 				std::string orderCol_;
 				std::string searchGroupName_;
 				int searchStatus_;
 				int length_;
 				std::string searchUsername_;
 				std::string orderDir_;
-				std::string accessKeyId_;
 				std::string searchProtocal_;
-				std::string searchSsid_;
 				std::string searchApName_;
 				std::string searchIp_;
-				int pageIndex_;
-				std::string searchMac_;
-				std::string searchDescription_;
 
 			};
 		}

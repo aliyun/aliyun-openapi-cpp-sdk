@@ -25,6 +25,17 @@ UpdateCustomOcrTemplateRequest::UpdateCustomOcrTemplateRequest() :
 UpdateCustomOcrTemplateRequest::~UpdateCustomOcrTemplateRequest()
 {}
 
+std::string UpdateCustomOcrTemplateRequest::getRecognizeArea()const
+{
+	return recognizeArea_;
+}
+
+void UpdateCustomOcrTemplateRequest::setRecognizeArea(const std::string& recognizeArea)
+{
+	recognizeArea_ = recognizeArea;
+	setCoreParameter("RecognizeArea", recognizeArea);
+}
+
 std::string UpdateCustomOcrTemplateRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -45,17 +56,6 @@ void UpdateCustomOcrTemplateRequest::setReferArea(const std::string& referArea)
 {
 	referArea_ = referArea;
 	setCoreParameter("ReferArea", referArea);
-}
-
-std::string UpdateCustomOcrTemplateRequest::getRecognizeArea()const
-{
-	return recognizeArea_;
-}
-
-void UpdateCustomOcrTemplateRequest::setRecognizeArea(const std::string& recognizeArea)
-{
-	recognizeArea_ = recognizeArea;
-	setCoreParameter("RecognizeArea", recognizeArea);
 }
 
 std::string UpdateCustomOcrTemplateRequest::getName()const

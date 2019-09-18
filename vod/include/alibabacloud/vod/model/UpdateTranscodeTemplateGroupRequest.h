@@ -39,28 +39,28 @@ namespace AlibabaCloud
 				void setTranscodeTemplateList(const std::string& transcodeTemplateList);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getName()const;
-				void setName(const std::string& name);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getLocked()const;
-				void setLocked(const std::string& locked);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getLocked()const;
+				void setLocked(const std::string& locked);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getTranscodeTemplateGroupId()const;
 				void setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string transcodeTemplateList_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string name_;
-				long ownerId_;
-				std::string locked_;
 				std::string accessKeyId_;
+				std::string locked_;
+				std::string resourceOwnerAccount_;
+				long ownerId_;
 				std::string transcodeTemplateGroupId_;
+				std::string name_;
 
 			};
 		}

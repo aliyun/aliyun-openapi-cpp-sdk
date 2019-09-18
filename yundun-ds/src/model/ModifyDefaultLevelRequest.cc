@@ -25,17 +25,6 @@ ModifyDefaultLevelRequest::ModifyDefaultLevelRequest() :
 ModifyDefaultLevelRequest::~ModifyDefaultLevelRequest()
 {}
 
-std::string ModifyDefaultLevelRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifyDefaultLevelRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int ModifyDefaultLevelRequest::getFeatureType()const
 {
 	return featureType_;
@@ -56,6 +45,17 @@ void ModifyDefaultLevelRequest::setDefaultId(long defaultId)
 {
 	defaultId_ = defaultId;
 	setCoreParameter("DefaultId", std::to_string(defaultId));
+}
+
+std::string ModifyDefaultLevelRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifyDefaultLevelRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyDefaultLevelRequest::getLang()const

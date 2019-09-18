@@ -36,17 +36,6 @@ void ListMediaRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ListMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ListMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ListMediaRequest::getNextPageToken()const
 {
 	return nextPageToken_;
@@ -56,6 +45,39 @@ void ListMediaRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
 	setCoreParameter("NextPageToken", nextPageToken);
+}
+
+std::string ListMediaRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListMediaRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListMediaRequest::getFrom()const
+{
+	return from_;
+}
+
+void ListMediaRequest::setFrom(const std::string& from)
+{
+	from_ = from;
+	setCoreParameter("From", from);
+}
+
+std::string ListMediaRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ListMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListMediaRequest::getOwnerAccount()const
@@ -80,28 +102,6 @@ void ListMediaRequest::setMaximumPageSize(long maximumPageSize)
 	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
-std::string ListMediaRequest::getFrom()const
-{
-	return from_;
-}
-
-void ListMediaRequest::setFrom(const std::string& from)
-{
-	from_ = from;
-	setCoreParameter("From", from);
-}
-
-std::string ListMediaRequest::getTo()const
-{
-	return to_;
-}
-
-void ListMediaRequest::setTo(const std::string& to)
-{
-	to_ = to;
-	setCoreParameter("To", to);
-}
-
 long ListMediaRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,14 +113,14 @@ void ListMediaRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ListMediaRequest::getAccessKeyId()const
+std::string ListMediaRequest::getTo()const
 {
-	return accessKeyId_;
+	return to_;
 }
 
-void ListMediaRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListMediaRequest::setTo(const std::string& to)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	to_ = to;
+	setCoreParameter("To", to);
 }
 

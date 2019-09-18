@@ -25,17 +25,6 @@ DescribeOssObjectDetailRequest::DescribeOssObjectDetailRequest() :
 DescribeOssObjectDetailRequest::~DescribeOssObjectDetailRequest()
 {}
 
-std::string DescribeOssObjectDetailRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeOssObjectDetailRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeOssObjectDetailRequest::getFeatureType()const
 {
 	return featureType_;
@@ -45,6 +34,17 @@ void DescribeOssObjectDetailRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeOssObjectDetailRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeOssObjectDetailRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeOssObjectDetailRequest::getId()const

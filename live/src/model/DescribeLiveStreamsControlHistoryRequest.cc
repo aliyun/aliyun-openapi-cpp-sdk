@@ -25,6 +25,17 @@ DescribeLiveStreamsControlHistoryRequest::DescribeLiveStreamsControlHistoryReque
 DescribeLiveStreamsControlHistoryRequest::~DescribeLiveStreamsControlHistoryRequest()
 {}
 
+std::string DescribeLiveStreamsControlHistoryRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeLiveStreamsControlHistoryRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
 std::string DescribeLiveStreamsControlHistoryRequest::getAppName()const
 {
 	return appName_;
@@ -67,17 +78,6 @@ void DescribeLiveStreamsControlHistoryRequest::setEndTime(const std::string& end
 {
 	endTime_ = endTime;
 	setCoreParameter("EndTime", endTime);
-}
-
-std::string DescribeLiveStreamsControlHistoryRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeLiveStreamsControlHistoryRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveStreamsControlHistoryRequest::getOwnerId()const

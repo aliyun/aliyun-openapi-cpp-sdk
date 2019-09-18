@@ -25,17 +25,6 @@ DetachDBInstancesRequest::DetachDBInstancesRequest() :
 DetachDBInstancesRequest::~DetachDBInstancesRequest()
 {}
 
-std::string DetachDBInstancesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DetachDBInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DetachDBInstancesRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;
@@ -45,6 +34,28 @@ void DetachDBInstancesRequest::setScalingGroupId(const std::string& scalingGroup
 {
 	scalingGroupId_ = scalingGroupId;
 	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string DetachDBInstancesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DetachDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DetachDBInstancesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DetachDBInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::vector<std::string> DetachDBInstancesRequest::getDBInstance()const
@@ -59,17 +70,6 @@ void DetachDBInstancesRequest::setDBInstance(const std::vector<std::string>& dBI
 		setCoreParameter("DBInstance."+ std::to_string(i), dBInstance.at(i));
 }
 
-bool DetachDBInstancesRequest::getForceDetach()const
-{
-	return forceDetach_;
-}
-
-void DetachDBInstancesRequest::setForceDetach(bool forceDetach)
-{
-	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
-}
-
 long DetachDBInstancesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -81,14 +81,14 @@ void DetachDBInstancesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DetachDBInstancesRequest::getAccessKeyId()const
+bool DetachDBInstancesRequest::getForceDetach()const
 {
-	return accessKeyId_;
+	return forceDetach_;
 }
 
-void DetachDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+void DetachDBInstancesRequest::setForceDetach(bool forceDetach)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	forceDetach_ = forceDetach;
+	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
 }
 

@@ -25,17 +25,6 @@ SetDNSSLBStatusRequest::SetDNSSLBStatusRequest() :
 SetDNSSLBStatusRequest::~SetDNSSLBStatusRequest()
 {}
 
-std::string SetDNSSLBStatusRequest::getUserClientIp()const
-{
-	return userClientIp_;
-}
-
-void SetDNSSLBStatusRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
-}
-
 std::string SetDNSSLBStatusRequest::getDomainName()const
 {
 	return domainName_;
@@ -45,6 +34,28 @@ void SetDNSSLBStatusRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
 	setCoreParameter("DomainName", domainName);
+}
+
+std::string SetDNSSLBStatusRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetDNSSLBStatusRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetDNSSLBStatusRequest::getUserClientIp()const
+{
+	return userClientIp_;
+}
+
+void SetDNSSLBStatusRequest::setUserClientIp(const std::string& userClientIp)
+{
+	userClientIp_ = userClientIp;
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SetDNSSLBStatusRequest::getSubDomain()const
@@ -78,16 +89,5 @@ void SetDNSSLBStatusRequest::setOpen(bool open)
 {
 	open_ = open;
 	setCoreParameter("Open", open ? "true" : "false");
-}
-
-std::string SetDNSSLBStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SetDNSSLBStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

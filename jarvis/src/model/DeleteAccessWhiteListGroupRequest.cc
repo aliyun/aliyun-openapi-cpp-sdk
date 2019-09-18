@@ -25,6 +25,17 @@ DeleteAccessWhiteListGroupRequest::DeleteAccessWhiteListGroupRequest() :
 DeleteAccessWhiteListGroupRequest::~DeleteAccessWhiteListGroupRequest()
 {}
 
+std::string DeleteAccessWhiteListGroupRequest::getSourceCode()const
+{
+	return sourceCode_;
+}
+
+void DeleteAccessWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
+{
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
+}
+
 std::string DeleteAccessWhiteListGroupRequest::getGroupIdList()const
 {
 	return groupIdList_;
@@ -56,16 +67,5 @@ void DeleteAccessWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-std::string DeleteAccessWhiteListGroupRequest::getSourceCode()const
-{
-	return sourceCode_;
-}
-
-void DeleteAccessWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
-{
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
 }
 

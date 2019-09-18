@@ -47,14 +47,3 @@ void UpdateRepoRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string UpdateRepoRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void UpdateRepoRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

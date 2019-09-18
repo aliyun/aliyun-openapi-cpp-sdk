@@ -35,12 +35,18 @@ namespace AlibabaCloud
 				PlayInfoRequest();
 				~PlayInfoRequest();
 
-				std::string getPlayDomain()const;
-				void setPlayDomain(const std::string& playDomain);
 				std::string getResourceOwnerId()const;
 				void setResourceOwnerId(const std::string& resourceOwnerId);
 				std::string getFormats()const;
 				void setFormats(const std::string& formats);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRand()const;
+				void setRand(const std::string& rand);
+				long getAuthTimeout()const;
+				void setAuthTimeout(long authTimeout);
+				std::string getPlayDomain()const;
+				void setPlayDomain(const std::string& playDomain);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -53,28 +59,22 @@ namespace AlibabaCloud
 				void setOwnerId(const std::string& ownerId);
 				std::string getMediaId()const;
 				void setMediaId(const std::string& mediaId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRand()const;
-				void setRand(const std::string& rand);
-				long getAuthTimeout()const;
-				void setAuthTimeout(long authTimeout);
 				std::string getAuthInfo()const;
 				void setAuthInfo(const std::string& authInfo);
 
             private:
-				std::string playDomain_;
 				std::string resourceOwnerId_;
 				std::string formats_;
+				std::string accessKeyId_;
+				std::string rand_;
+				long authTimeout_;
+				std::string playDomain_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string hlsUriToken_;
 				std::string terminal_;
 				std::string ownerId_;
 				std::string mediaId_;
-				std::string accessKeyId_;
-				std::string rand_;
-				long authTimeout_;
 				std::string authInfo_;
 
 			};

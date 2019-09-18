@@ -25,14 +25,3 @@ CreateUserSourceAccountRequest::CreateUserSourceAccountRequest() :
 CreateUserSourceAccountRequest::~CreateUserSourceAccountRequest()
 {}
 
-std::string CreateUserSourceAccountRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateUserSourceAccountRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-

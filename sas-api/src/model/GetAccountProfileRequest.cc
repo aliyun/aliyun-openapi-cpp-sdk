@@ -36,17 +36,6 @@ void GetAccountProfileRequest::setDeviceIdMd5(const std::string& deviceIdMd5)
 	setCoreParameter("DeviceIdMd5", deviceIdMd5);
 }
 
-int GetAccountProfileRequest::getCarrier()const
-{
-	return carrier_;
-}
-
-void GetAccountProfileRequest::setCarrier(int carrier)
-{
-	carrier_ = carrier;
-	setCoreParameter("Carrier", std::to_string(carrier));
-}
-
 std::string GetAccountProfileRequest::getOs()const
 {
 	return os_;
@@ -56,28 +45,6 @@ void GetAccountProfileRequest::setOs(const std::string& os)
 {
 	os_ = os;
 	setCoreParameter("Os", os);
-}
-
-std::string GetAccountProfileRequest::getPhone()const
-{
-	return phone_;
-}
-
-void GetAccountProfileRequest::setPhone(const std::string& phone)
-{
-	phone_ = phone;
-	setCoreParameter("Phone", phone);
-}
-
-std::string GetAccountProfileRequest::getRequestUrl()const
-{
-	return requestUrl_;
-}
-
-void GetAccountProfileRequest::setRequestUrl(const std::string& requestUrl)
-{
-	requestUrl_ = requestUrl;
-	setCoreParameter("RequestUrl", requestUrl);
 }
 
 std::string GetAccountProfileRequest::getIp()const
@@ -102,17 +69,6 @@ void GetAccountProfileRequest::setUserAgent(const std::string& userAgent)
 	setCoreParameter("UserAgent", userAgent);
 }
 
-int GetAccountProfileRequest::getConnectionType()const
-{
-	return connectionType_;
-}
-
-void GetAccountProfileRequest::setConnectionType(int connectionType)
-{
-	connectionType_ = connectionType;
-	setCoreParameter("ConnectionType", std::to_string(connectionType));
-}
-
 int GetAccountProfileRequest::getSensType()const
 {
 	return sensType_;
@@ -135,17 +91,6 @@ void GetAccountProfileRequest::setDeviceType(int deviceType)
 	setCoreParameter("DeviceType", std::to_string(deviceType));
 }
 
-long GetAccountProfileRequest::getAccessTimestamp()const
-{
-	return accessTimestamp_;
-}
-
-void GetAccountProfileRequest::setAccessTimestamp(long accessTimestamp)
-{
-	accessTimestamp_ = accessTimestamp;
-	setCoreParameter("AccessTimestamp", std::to_string(accessTimestamp));
-}
-
 int GetAccountProfileRequest::getBusinessType()const
 {
 	return businessType_;
@@ -155,5 +100,60 @@ void GetAccountProfileRequest::setBusinessType(int businessType)
 {
 	businessType_ = businessType;
 	setCoreParameter("BusinessType", std::to_string(businessType));
+}
+
+int GetAccountProfileRequest::getCarrier()const
+{
+	return carrier_;
+}
+
+void GetAccountProfileRequest::setCarrier(int carrier)
+{
+	carrier_ = carrier;
+	setCoreParameter("Carrier", std::to_string(carrier));
+}
+
+std::string GetAccountProfileRequest::getPhone()const
+{
+	return phone_;
+}
+
+void GetAccountProfileRequest::setPhone(const std::string& phone)
+{
+	phone_ = phone;
+	setCoreParameter("Phone", phone);
+}
+
+std::string GetAccountProfileRequest::getRequestUrl()const
+{
+	return requestUrl_;
+}
+
+void GetAccountProfileRequest::setRequestUrl(const std::string& requestUrl)
+{
+	requestUrl_ = requestUrl;
+	setCoreParameter("RequestUrl", requestUrl);
+}
+
+int GetAccountProfileRequest::getConnectionType()const
+{
+	return connectionType_;
+}
+
+void GetAccountProfileRequest::setConnectionType(int connectionType)
+{
+	connectionType_ = connectionType;
+	setCoreParameter("ConnectionType", std::to_string(connectionType));
+}
+
+long GetAccountProfileRequest::getAccessTimestamp()const
+{
+	return accessTimestamp_;
+}
+
+void GetAccountProfileRequest::setAccessTimestamp(long accessTimestamp)
+{
+	accessTimestamp_ = accessTimestamp;
+	setCoreParameter("AccessTimestamp", std::to_string(accessTimestamp));
 }
 

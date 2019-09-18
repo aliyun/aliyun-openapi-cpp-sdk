@@ -36,17 +36,6 @@ void InsertMaterialRequest::setContactEmail(const std::string& contactEmail)
 	setCoreParameter("ContactEmail", contactEmail);
 }
 
-std::string InsertMaterialRequest::getContactAddress()const
-{
-	return contactAddress_;
-}
-
-void InsertMaterialRequest::setContactAddress(const std::string& contactAddress)
-{
-	contactAddress_ = contactAddress;
-	setCoreParameter("ContactAddress", contactAddress);
-}
-
 std::string InsertMaterialRequest::getEAddress()const
 {
 	return eAddress_;
@@ -80,28 +69,6 @@ void InsertMaterialRequest::setLegalNoticeOssKey(const std::string& legalNoticeO
 	setCoreParameter("LegalNoticeOssKey", legalNoticeOssKey);
 }
 
-std::string InsertMaterialRequest::getAddress()const
-{
-	return address_;
-}
-
-void InsertMaterialRequest::setAddress(const std::string& address)
-{
-	address_ = address;
-	setCoreParameter("Address", address);
-}
-
-std::string InsertMaterialRequest::getTown()const
-{
-	return town_;
-}
-
-void InsertMaterialRequest::setTown(const std::string& town)
-{
-	town_ = town;
-	setCoreParameter("Town", town);
-}
-
 std::string InsertMaterialRequest::getContactNumber()const
 {
 	return contactNumber_;
@@ -122,17 +89,6 @@ void InsertMaterialRequest::setCity(const std::string& city)
 {
 	city_ = city;
 	setCoreParameter("City", city);
-}
-
-std::string InsertMaterialRequest::getIdCardOssKey()const
-{
-	return idCardOssKey_;
-}
-
-void InsertMaterialRequest::setIdCardOssKey(const std::string& idCardOssKey)
-{
-	idCardOssKey_ = idCardOssKey;
-	setCoreParameter("IdCardOssKey", idCardOssKey);
 }
 
 int InsertMaterialRequest::getType()const
@@ -168,6 +124,72 @@ void InsertMaterialRequest::setPassportOssKey(const std::string& passportOssKey)
 	setCoreParameter("PassportOssKey", passportOssKey);
 }
 
+std::string InsertMaterialRequest::getProvince()const
+{
+	return province_;
+}
+
+void InsertMaterialRequest::setProvince(const std::string& province)
+{
+	province_ = province;
+	setCoreParameter("Province", province);
+}
+
+std::string InsertMaterialRequest::getLoaOssKey()const
+{
+	return loaOssKey_;
+}
+
+void InsertMaterialRequest::setLoaOssKey(const std::string& loaOssKey)
+{
+	loaOssKey_ = loaOssKey;
+	setCoreParameter("LoaOssKey", loaOssKey);
+}
+
+std::string InsertMaterialRequest::getContactAddress()const
+{
+	return contactAddress_;
+}
+
+void InsertMaterialRequest::setContactAddress(const std::string& contactAddress)
+{
+	contactAddress_ = contactAddress;
+	setCoreParameter("ContactAddress", contactAddress);
+}
+
+std::string InsertMaterialRequest::getAddress()const
+{
+	return address_;
+}
+
+void InsertMaterialRequest::setAddress(const std::string& address)
+{
+	address_ = address;
+	setCoreParameter("Address", address);
+}
+
+std::string InsertMaterialRequest::getTown()const
+{
+	return town_;
+}
+
+void InsertMaterialRequest::setTown(const std::string& town)
+{
+	town_ = town;
+	setCoreParameter("Town", town);
+}
+
+std::string InsertMaterialRequest::getIdCardOssKey()const
+{
+	return idCardOssKey_;
+}
+
+void InsertMaterialRequest::setIdCardOssKey(const std::string& idCardOssKey)
+{
+	idCardOssKey_ = idCardOssKey;
+	setCoreParameter("IdCardOssKey", idCardOssKey);
+}
+
 std::string InsertMaterialRequest::getContactZipcode()const
 {
 	return contactZipcode_;
@@ -188,17 +210,6 @@ void InsertMaterialRequest::setEName(const std::string& eName)
 {
 	eName_ = eName;
 	setCoreParameter("EName", eName);
-}
-
-std::string InsertMaterialRequest::getProvince()const
-{
-	return province_;
-}
-
-void InsertMaterialRequest::setProvince(const std::string& province)
-{
-	province_ = province;
-	setCoreParameter("Province", province);
 }
 
 std::string InsertMaterialRequest::getBusinessLicenceOssKey()const
@@ -243,16 +254,5 @@ void InsertMaterialRequest::setRegion(int region)
 {
 	region_ = region;
 	setCoreParameter("Region", std::to_string(region));
-}
-
-std::string InsertMaterialRequest::getLoaOssKey()const
-{
-	return loaOssKey_;
-}
-
-void InsertMaterialRequest::setLoaOssKey(const std::string& loaOssKey)
-{
-	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", loaOssKey);
 }
 

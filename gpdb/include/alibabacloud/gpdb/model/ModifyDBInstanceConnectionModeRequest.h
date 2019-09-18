@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getConnectionMode()const;
 				void setConnectionMode(const std::string& connectionMode);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
 				std::string connectionMode_;
-				std::string dBInstanceId_;
 				std::string accessKeyId_;
+				std::string dBInstanceId_;
 
 			};
 		}

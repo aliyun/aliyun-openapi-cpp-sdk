@@ -35,37 +35,37 @@ namespace AlibabaCloud
 				ListNotaryOrdersRequest();
 				~ListNotaryOrdersRequest();
 
+				long getStartOrderDate()const;
+				void setStartOrderDate(long startOrderDate);
+				int getNotaryType()const;
+				void setNotaryType(int notaryType);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				int getSortKeyType()const;
 				void setSortKeyType(int sortKeyType);
 				std::string getSortByType()const;
 				void setSortByType(const std::string& sortByType);
-				long getStartOrderDate()const;
-				void setStartOrderDate(long startOrderDate);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getBizId()const;
 				void setBizId(const std::string& bizId);
-				int getNotaryType()const;
-				void setNotaryType(int notaryType);
 				long getEndOrderDate()const;
 				void setEndOrderDate(long endOrderDate);
 				std::string getAliyunOrderId()const;
 				void setAliyunOrderId(const std::string& aliyunOrderId);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				int getNotaryStatus()const;
 				void setNotaryStatus(int notaryStatus);
 
             private:
+				long startOrderDate_;
+				int notaryType_;
+				int pageNum_;
 				int sortKeyType_;
 				std::string sortByType_;
-				long startOrderDate_;
 				int pageSize_;
 				std::string bizId_;
-				int notaryType_;
 				long endOrderDate_;
 				std::string aliyunOrderId_;
-				int pageNum_;
 				int notaryStatus_;
 
 			};

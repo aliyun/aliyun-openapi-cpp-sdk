@@ -36,50 +36,6 @@ void DescribeQosCarsRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeQosCarsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeQosCarsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeQosCarsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeQosCarsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string DescribeQosCarsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void DescribeQosCarsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-int DescribeQosCarsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeQosCarsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeQosCarsRequest::getDescription()const
 {
 	return description_;
@@ -89,39 +45,6 @@ void DescribeQosCarsRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setCoreParameter("Description", description);
-}
-
-long DescribeQosCarsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeQosCarsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeQosCarsRequest::getQosId()const
-{
-	return qosId_;
-}
-
-void DescribeQosCarsRequest::setQosId(const std::string& qosId)
-{
-	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
-}
-
-std::string DescribeQosCarsRequest::getQosCarId()const
-{
-	return qosCarId_;
-}
-
-void DescribeQosCarsRequest::setQosCarId(const std::string& qosCarId)
-{
-	qosCarId_ = qosCarId;
-	setCoreParameter("QosCarId", qosCarId);
 }
 
 int DescribeQosCarsRequest::getPageNumber()const
@@ -135,6 +58,39 @@ void DescribeQosCarsRequest::setPageNumber(int pageNumber)
 	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeQosCarsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeQosCarsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int DescribeQosCarsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeQosCarsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeQosCarsRequest::getQosId()const
+{
+	return qosId_;
+}
+
+void DescribeQosCarsRequest::setQosId(const std::string& qosId)
+{
+	qosId_ = qosId;
+	setCoreParameter("QosId", qosId);
+}
+
 std::string DescribeQosCarsRequest::getOrder()const
 {
 	return order_;
@@ -144,5 +100,49 @@ void DescribeQosCarsRequest::setOrder(const std::string& order)
 {
 	order_ = order;
 	setCoreParameter("Order", order);
+}
+
+std::string DescribeQosCarsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeQosCarsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeQosCarsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeQosCarsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeQosCarsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeQosCarsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeQosCarsRequest::getQosCarId()const
+{
+	return qosCarId_;
+}
+
+void DescribeQosCarsRequest::setQosCarId(const std::string& qosCarId)
+{
+	qosCarId_ = qosCarId;
+	setCoreParameter("QosCarId", qosCarId);
 }
 

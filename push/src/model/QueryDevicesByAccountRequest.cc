@@ -25,6 +25,17 @@ QueryDevicesByAccountRequest::QueryDevicesByAccountRequest() :
 QueryDevicesByAccountRequest::~QueryDevicesByAccountRequest()
 {}
 
+std::string QueryDevicesByAccountRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryDevicesByAccountRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 long QueryDevicesByAccountRequest::getAppKey()const
 {
 	return appKey_;
@@ -45,16 +56,5 @@ void QueryDevicesByAccountRequest::setAccount(const std::string& account)
 {
 	account_ = account;
 	setCoreParameter("Account", account);
-}
-
-std::string QueryDevicesByAccountRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryDevicesByAccountRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

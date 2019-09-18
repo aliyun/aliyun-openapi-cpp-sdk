@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				DescribeCdnSubscriptionRequest();
 				~DescribeCdnSubscriptionRequest();
 
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getSubscriptionState()const;
 				void setSubscriptionState(int subscriptionState);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 				std::string getVendorName()const;
 				void setVendorName(const std::string& vendorName);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
 
             private:
+				std::string sourceCode_;
 				std::string sourceIp_;
 				int subscriptionState_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
+				int currentPage_;
 				std::string vendorName_;
-				std::string sourceCode_;
 
 			};
 		}

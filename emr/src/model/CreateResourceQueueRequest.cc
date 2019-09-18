@@ -36,39 +36,6 @@ void CreateResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-long CreateResourceQueueRequest::getParentQueueId()const
-{
-	return parentQueueId_;
-}
-
-void CreateResourceQueueRequest::setParentQueueId(long parentQueueId)
-{
-	parentQueueId_ = parentQueueId;
-	setCoreParameter("ParentQueueId", std::to_string(parentQueueId));
-}
-
-std::string CreateResourceQueueRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateResourceQueueRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateResourceQueueRequest::getName()const
-{
-	return name_;
-}
-
-void CreateResourceQueueRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 std::string CreateResourceQueueRequest::getQualifiedName()const
 {
 	return qualifiedName_;
@@ -113,6 +80,50 @@ void CreateResourceQueueRequest::setLeaf(bool leaf)
 	setCoreParameter("Leaf", leaf ? "true" : "false");
 }
 
+std::string CreateResourceQueueRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long CreateResourceQueueRequest::getParentQueueId()const
+{
+	return parentQueueId_;
+}
+
+void CreateResourceQueueRequest::setParentQueueId(long parentQueueId)
+{
+	parentQueueId_ = parentQueueId;
+	setCoreParameter("ParentQueueId", std::to_string(parentQueueId));
+}
+
+std::string CreateResourceQueueRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateResourceQueueRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string CreateResourceQueueRequest::getName()const
+{
+	return name_;
+}
+
+void CreateResourceQueueRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
 std::vector<CreateResourceQueueRequest::Config> CreateResourceQueueRequest::getConfig()const
 {
 	return config_;
@@ -130,16 +141,5 @@ void CreateResourceQueueRequest::setConfig(const std::vector<Config>& config)
 		setCoreParameter(str + ".ConfigValue", obj.configValue);
 		setCoreParameter(str + ".Category", obj.category);
 	}
-}
-
-std::string CreateResourceQueueRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

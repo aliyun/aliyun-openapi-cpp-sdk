@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				SetGtmMonitorStatusRequest();
 				~SetGtmMonitorStatusRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getMonitorConfigId()const;
 				void setMonitorConfigId(const std::string& monitorConfigId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
-				std::string userClientIp_;
 				std::string monitorConfigId_;
+				std::string userClientIp_;
 				std::string lang_;
 				std::string status_;
 

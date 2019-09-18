@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				AreaUpdateRequest();
 				~AreaUpdateRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				long getSid()const;
+				void setSid(long sid);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getDids()const;
 				void setDids(const std::string& dids);
 				long getAid()const;
 				void setAid(long aid);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				long getSid()const;
-				void setSid(long sid);
 
             private:
+				std::string accessKeyId_;
+				long sid_;
 				std::string name_;
 				std::string dids_;
 				long aid_;
-				std::string accessKeyId_;
-				long sid_;
 
 			};
 		}

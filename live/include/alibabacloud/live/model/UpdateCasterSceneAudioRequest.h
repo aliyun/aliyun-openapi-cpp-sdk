@@ -32,37 +32,34 @@ namespace AlibabaCloud
 			{
 				struct AudioLayer
 				{
-					int fixedDelayDuration;
 					float volumeRate;
 					std::string validChannel;
+					int fixedDelayDuration;
 				};
 
 			public:
 				UpdateCasterSceneAudioRequest();
 				~UpdateCasterSceneAudioRequest();
 
-				std::vector<AudioLayer> getAudioLayer()const;
-				void setAudioLayer(const std::vector<AudioLayer>& audioLayer);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::vector<AudioLayer> getAudioLayer()const;
+				void setAudioLayer(const std::vector<AudioLayer>& audioLayer);
 				std::string getSceneId()const;
 				void setSceneId(const std::string& sceneId);
 				std::vector<std::string> getMixList()const;
 				void setMixList(const std::vector<std::string>& mixList);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				int getFollowEnable()const;
 				void setFollowEnable(int followEnable);
 
             private:
-				std::vector<AudioLayer> audioLayer_;
-				std::string regionId_;
 				std::string casterId_;
+				long ownerId_;
+				std::vector<AudioLayer> audioLayer_;
 				std::string sceneId_;
 				std::vector<std::string> mixList_;
-				long ownerId_;
 				int followEnable_;
 
 			};

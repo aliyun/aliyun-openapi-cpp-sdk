@@ -25,17 +25,6 @@ DeleteCertificateRequest::DeleteCertificateRequest() :
 DeleteCertificateRequest::~DeleteCertificateRequest()
 {}
 
-std::string DeleteCertificateRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DeleteCertificateRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DeleteCertificateRequest::getCertificateId()const
 {
 	return certificateId_;
@@ -45,6 +34,28 @@ void DeleteCertificateRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
 	setCoreParameter("CertificateId", std::to_string(certificateId));
+}
+
+std::string DeleteCertificateRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DeleteCertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DeleteCertificateRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DeleteCertificateRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteCertificateRequest::getLang()const

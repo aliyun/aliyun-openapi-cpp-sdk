@@ -25,15 +25,26 @@ DescribeDBInstancePerformanceRequest::DescribeDBInstancePerformanceRequest() :
 DescribeDBInstancePerformanceRequest::~DescribeDBInstancePerformanceRequest()
 {}
 
-std::string DescribeDBInstancePerformanceRequest::getEndTime()const
+std::string DescribeDBInstancePerformanceRequest::getStartTime()const
 {
-	return endTime_;
+	return startTime_;
 }
 
-void DescribeDBInstancePerformanceRequest::setEndTime(const std::string& endTime)
+void DescribeDBInstancePerformanceRequest::setStartTime(const std::string& startTime)
 {
-	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	startTime_ = startTime;
+	setCoreParameter("StartTime", startTime);
+}
+
+std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeDBInstancePerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getDBInstanceId()const
@@ -47,17 +58,6 @@ void DescribeDBInstancePerformanceRequest::setDBInstanceId(const std::string& dB
 	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string DescribeDBInstancePerformanceRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeDBInstancePerformanceRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
-}
-
 std::string DescribeDBInstancePerformanceRequest::getKey()const
 {
 	return key_;
@@ -69,14 +69,14 @@ void DescribeDBInstancePerformanceRequest::setKey(const std::string& key)
 	setCoreParameter("Key", key);
 }
 
-std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const
+std::string DescribeDBInstancePerformanceRequest::getEndTime()const
 {
-	return accessKeyId_;
+	return endTime_;
 }
 
-void DescribeDBInstancePerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeDBInstancePerformanceRequest::setEndTime(const std::string& endTime)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	endTime_ = endTime;
+	setCoreParameter("EndTime", endTime);
 }
 

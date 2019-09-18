@@ -25,6 +25,28 @@ ShopMarketingListRequest::ShopMarketingListRequest() :
 ShopMarketingListRequest::~ShopMarketingListRequest()
 {}
 
+std::string ShopMarketingListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ShopMarketingListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long ShopMarketingListRequest::getSid()const
+{
+	return sid_;
+}
+
+void ShopMarketingListRequest::setSid(long sid)
+{
+	sid_ = sid;
+	setCoreParameter("Sid", std::to_string(sid));
+}
+
 std::string ShopMarketingListRequest::getName()const
 {
 	return name_;
@@ -56,27 +78,5 @@ void ShopMarketingListRequest::setPer(int per)
 {
 	per_ = per;
 	setCoreParameter("Per", std::to_string(per));
-}
-
-std::string ShopMarketingListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ShopMarketingListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-long ShopMarketingListRequest::getSid()const
-{
-	return sid_;
-}
-
-void ShopMarketingListRequest::setSid(long sid)
-{
-	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
 }
 

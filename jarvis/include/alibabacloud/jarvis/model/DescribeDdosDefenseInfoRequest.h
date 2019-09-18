@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DescribeDdosDefenseInfoRequest();
 				~DescribeDdosDefenseInfoRequest();
 
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				long getSrcUid()const;
 				void setSrcUid(long srcUid);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
 
             private:
+				std::string sourceCode_;
 				std::string sourceIp_;
 				std::string lang_;
 				long srcUid_;
-				std::string sourceCode_;
 
 			};
 		}

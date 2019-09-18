@@ -25,17 +25,6 @@ UpLoadMapRequest::UpLoadMapRequest() :
 UpLoadMapRequest::~UpLoadMapRequest()
 {}
 
-std::string UpLoadMapRequest::getFileName()const
-{
-	return fileName_;
-}
-
-void UpLoadMapRequest::setFileName(const std::string& fileName)
-{
-	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
-}
-
 std::string UpLoadMapRequest::getUploadId()const
 {
 	return uploadId_;
@@ -58,17 +47,6 @@ void UpLoadMapRequest::setObjectName(const std::string& objectName)
 	setCoreParameter("ObjectName", objectName);
 }
 
-int UpLoadMapRequest::getChunkIndex()const
-{
-	return chunkIndex_;
-}
-
-void UpLoadMapRequest::setChunkIndex(int chunkIndex)
-{
-	chunkIndex_ = chunkIndex;
-	setCoreParameter("ChunkIndex", std::to_string(chunkIndex));
-}
-
 std::string UpLoadMapRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -78,6 +56,28 @@ void UpLoadMapRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpLoadMapRequest::getFileName()const
+{
+	return fileName_;
+}
+
+void UpLoadMapRequest::setFileName(const std::string& fileName)
+{
+	fileName_ = fileName;
+	setCoreParameter("FileName", fileName);
+}
+
+int UpLoadMapRequest::getChunkIndex()const
+{
+	return chunkIndex_;
+}
+
+void UpLoadMapRequest::setChunkIndex(int chunkIndex)
+{
+	chunkIndex_ = chunkIndex;
+	setCoreParameter("ChunkIndex", std::to_string(chunkIndex));
 }
 
 int UpLoadMapRequest::getChunkCnt()const

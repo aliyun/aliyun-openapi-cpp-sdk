@@ -25,17 +25,6 @@ RegisterPhotoRequest::RegisterPhotoRequest() :
 RegisterPhotoRequest::~RegisterPhotoRequest()
 {}
 
-std::string RegisterPhotoRequest::getLibraryId()const
-{
-	return libraryId_;
-}
-
-void RegisterPhotoRequest::setLibraryId(const std::string& libraryId)
-{
-	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
-}
-
 float RegisterPhotoRequest::getLatitude()const
 {
 	return latitude_;
@@ -91,17 +80,6 @@ void RegisterPhotoRequest::setRemark(const std::string& remark)
 	setCoreParameter("Remark", remark);
 }
 
-long RegisterPhotoRequest::getSize()const
-{
-	return size_;
-}
-
-void RegisterPhotoRequest::setSize(long size)
-{
-	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
-}
-
 long RegisterPhotoRequest::getTakenAt()const
 {
 	return takenAt_;
@@ -111,28 +89,6 @@ void RegisterPhotoRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
 	setCoreParameter("TakenAt", std::to_string(takenAt));
-}
-
-int RegisterPhotoRequest::getWidth()const
-{
-	return width_;
-}
-
-void RegisterPhotoRequest::setWidth(int width)
-{
-	width_ = width;
-	setCoreParameter("Width", std::to_string(width));
-}
-
-std::string RegisterPhotoRequest::getLocation()const
-{
-	return location_;
-}
-
-void RegisterPhotoRequest::setLocation(const std::string& location)
-{
-	location_ = location;
-	setCoreParameter("Location", location);
 }
 
 float RegisterPhotoRequest::getLongitude()const
@@ -155,6 +111,50 @@ void RegisterPhotoRequest::setHeight(int height)
 {
 	height_ = height;
 	setCoreParameter("Height", std::to_string(height));
+}
+
+std::string RegisterPhotoRequest::getLibraryId()const
+{
+	return libraryId_;
+}
+
+void RegisterPhotoRequest::setLibraryId(const std::string& libraryId)
+{
+	libraryId_ = libraryId;
+	setCoreParameter("LibraryId", libraryId);
+}
+
+long RegisterPhotoRequest::getSize()const
+{
+	return size_;
+}
+
+void RegisterPhotoRequest::setSize(long size)
+{
+	size_ = size;
+	setCoreParameter("Size", std::to_string(size));
+}
+
+int RegisterPhotoRequest::getWidth()const
+{
+	return width_;
+}
+
+void RegisterPhotoRequest::setWidth(int width)
+{
+	width_ = width;
+	setCoreParameter("Width", std::to_string(width));
+}
+
+std::string RegisterPhotoRequest::getLocation()const
+{
+	return location_;
+}
+
+void RegisterPhotoRequest::setLocation(const std::string& location)
+{
+	location_ = location;
+	setCoreParameter("Location", location);
 }
 
 std::string RegisterPhotoRequest::getMd5()const

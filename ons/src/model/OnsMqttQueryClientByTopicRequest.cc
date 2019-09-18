@@ -25,17 +25,6 @@ OnsMqttQueryClientByTopicRequest::OnsMqttQueryClientByTopicRequest() :
 OnsMqttQueryClientByTopicRequest::~OnsMqttQueryClientByTopicRequest()
 {}
 
-std::string OnsMqttQueryClientByTopicRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsMqttQueryClientByTopicRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsMqttQueryClientByTopicRequest::getParentTopic()const
 {
 	return parentTopic_;
@@ -45,6 +34,17 @@ void OnsMqttQueryClientByTopicRequest::setParentTopic(const std::string& parentT
 {
 	parentTopic_ = parentTopic;
 	setCoreParameter("ParentTopic", parentTopic);
+}
+
+std::string OnsMqttQueryClientByTopicRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsMqttQueryClientByTopicRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMqttQueryClientByTopicRequest::getSubTopic()const

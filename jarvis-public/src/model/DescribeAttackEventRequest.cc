@@ -25,6 +25,28 @@ DescribeAttackEventRequest::DescribeAttackEventRequest() :
 DescribeAttackEventRequest::~DescribeAttackEventRequest()
 {}
 
+int DescribeAttackEventRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeAttackEventRequest::setStartTime(int startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", std::to_string(startTime));
+}
+
+std::string DescribeAttackEventRequest::getProductType()const
+{
+	return productType_;
+}
+
+void DescribeAttackEventRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setCoreParameter("ProductType", productType);
+}
+
 std::string DescribeAttackEventRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -36,17 +58,6 @@ void DescribeAttackEventRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeAttackEventRequest::getServerIpList()const
-{
-	return serverIpList_;
-}
-
-void DescribeAttackEventRequest::setServerIpList(const std::string& serverIpList)
-{
-	serverIpList_ = serverIpList;
-	setCoreParameter("ServerIpList", serverIpList);
-}
-
 int DescribeAttackEventRequest::getPageSize()const
 {
 	return pageSize_;
@@ -56,6 +67,28 @@ void DescribeAttackEventRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeAttackEventRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeAttackEventRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setCoreParameter("Lang", lang);
+}
+
+std::string DescribeAttackEventRequest::getServerIpList()const
+{
+	return serverIpList_;
+}
+
+void DescribeAttackEventRequest::setServerIpList(const std::string& serverIpList)
+{
+	serverIpList_ = serverIpList;
+	setCoreParameter("ServerIpList", serverIpList);
 }
 
 int DescribeAttackEventRequest::getEndTime()const
@@ -80,28 +113,6 @@ void DescribeAttackEventRequest::setCurrentPage(int currentPage)
 	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
-int DescribeAttackEventRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeAttackEventRequest::setStartTime(int startTime)
-{
-	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
-}
-
-std::string DescribeAttackEventRequest::getLang()const
-{
-	return lang_;
-}
-
-void DescribeAttackEventRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setCoreParameter("Lang", lang);
-}
-
 std::string DescribeAttackEventRequest::getRegion()const
 {
 	return region_;
@@ -111,16 +122,5 @@ void DescribeAttackEventRequest::setRegion(const std::string& region)
 {
 	region_ = region;
 	setCoreParameter("Region", region);
-}
-
-std::string DescribeAttackEventRequest::getProductType()const
-{
-	return productType_;
-}
-
-void DescribeAttackEventRequest::setProductType(const std::string& productType)
-{
-	productType_ = productType;
-	setCoreParameter("ProductType", productType);
 }
 

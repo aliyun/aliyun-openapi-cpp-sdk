@@ -47,6 +47,17 @@ void ModifyGuardDomainModeRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyGuardDomainModeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyGuardDomainModeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyGuardDomainModeRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -56,39 +67,6 @@ void ModifyGuardDomainModeRequest::setSecurityToken(const std::string& securityT
 {
 	securityToken_ = securityToken;
 	setCoreParameter("SecurityToken", securityToken);
-}
-
-std::string ModifyGuardDomainModeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyGuardDomainModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyGuardDomainModeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyGuardDomainModeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyGuardDomainModeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyGuardDomainModeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyGuardDomainModeRequest::getReplicaId()const
@@ -102,6 +80,28 @@ void ModifyGuardDomainModeRequest::setReplicaId(const std::string& replicaId)
 	setCoreParameter("ReplicaId", replicaId);
 }
 
+std::string ModifyGuardDomainModeRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyGuardDomainModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string ModifyGuardDomainModeRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void ModifyGuardDomainModeRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long ModifyGuardDomainModeRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -111,16 +111,5 @@ void ModifyGuardDomainModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyGuardDomainModeRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyGuardDomainModeRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

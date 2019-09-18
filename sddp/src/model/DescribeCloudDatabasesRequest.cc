@@ -25,6 +25,17 @@ DescribeCloudDatabasesRequest::DescribeCloudDatabasesRequest() :
 DescribeCloudDatabasesRequest::~DescribeCloudDatabasesRequest()
 {}
 
+long DescribeCloudDatabasesRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeCloudDatabasesRequest::setResourceType(long resourceType)
+{
+	resourceType_ = resourceType;
+	setCoreParameter("ResourceType", std::to_string(resourceType));
+}
+
 std::string DescribeCloudDatabasesRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -56,17 +67,6 @@ void DescribeCloudDatabasesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setCoreParameter("Lang", lang);
-}
-
-long DescribeCloudDatabasesRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeCloudDatabasesRequest::setResourceType(long resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string DescribeCloudDatabasesRequest::getServiceRegionId()const

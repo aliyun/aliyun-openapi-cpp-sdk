@@ -39,27 +39,27 @@ namespace AlibabaCloud
 				void setPassword(const std::string& password);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getConnector()const;
-				void setConnector(const std::string& connector);
 				long getId()const;
 				void setId(long id);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getResourceType()const;
-				void setResourceType(int resourceType);
 				std::string getServiceRegionId()const;
 				void setServiceRegionId(const std::string& serviceRegionId);
+				int getResourceType()const;
+				void setResourceType(int resourceType);
+				std::string getConnector()const;
+				void setConnector(const std::string& connector);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
 				std::string password_;
 				std::string sourceIp_;
-				std::string connector_;
 				long id_;
 				std::string lang_;
-				int resourceType_;
 				std::string serviceRegionId_;
+				int resourceType_;
+				std::string connector_;
 				std::string userName_;
 
 			};

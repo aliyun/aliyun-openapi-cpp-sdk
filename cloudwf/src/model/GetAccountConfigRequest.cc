@@ -25,17 +25,6 @@ GetAccountConfigRequest::GetAccountConfigRequest() :
 GetAccountConfigRequest::~GetAccountConfigRequest()
 {}
 
-long GetAccountConfigRequest::getId()const
-{
-	return id_;
-}
-
-void GetAccountConfigRequest::setId(long id)
-{
-	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
-}
-
 std::string GetAccountConfigRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -45,5 +34,16 @@ void GetAccountConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetAccountConfigRequest::getId()const
+{
+	return id_;
+}
+
+void GetAccountConfigRequest::setId(long id)
+{
+	id_ = id;
+	setCoreParameter("Id", std::to_string(id));
 }
 

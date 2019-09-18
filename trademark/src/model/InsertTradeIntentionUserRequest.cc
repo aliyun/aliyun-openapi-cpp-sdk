@@ -80,17 +80,6 @@ void InsertTradeIntentionUserRequest::setType(int type)
 	setCoreParameter("Type", std::to_string(type));
 }
 
-std::string InsertTradeIntentionUserRequest::getRegisterNumber()const
-{
-	return registerNumber_;
-}
-
-void InsertTradeIntentionUserRequest::setRegisterNumber(const std::string& registerNumber)
-{
-	registerNumber_ = registerNumber;
-	setCoreParameter("RegisterNumber", registerNumber);
-}
-
 std::string InsertTradeIntentionUserRequest::getVcode()const
 {
 	return vcode_;
@@ -100,6 +89,17 @@ void InsertTradeIntentionUserRequest::setVcode(const std::string& vcode)
 {
 	vcode_ = vcode;
 	setCoreParameter("Vcode", vcode);
+}
+
+std::string InsertTradeIntentionUserRequest::getRegisterNumber()const
+{
+	return registerNumber_;
+}
+
+void InsertTradeIntentionUserRequest::setRegisterNumber(const std::string& registerNumber)
+{
+	registerNumber_ = registerNumber;
+	setCoreParameter("RegisterNumber", registerNumber);
 }
 
 std::string InsertTradeIntentionUserRequest::getUserName()const

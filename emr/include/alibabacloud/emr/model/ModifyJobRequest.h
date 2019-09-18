@@ -35,38 +35,38 @@ namespace AlibabaCloud
 				ModifyJobRequest();
 				~ModifyJobRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getFailAct()const;
+				void setFailAct(const std::string& failAct);
 				std::string getRunParameter()const;
 				void setRunParameter(const std::string& runParameter);
 				int getRetryInterval()const;
 				void setRetryInterval(int retryInterval);
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getId()const;
 				void setId(const std::string& id);
-				std::string getType()const;
-				void setType(const std::string& type);
 				int getMaxRetry()const;
 				void setMaxRetry(int maxRetry);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getFailAct()const;
-				void setFailAct(const std::string& failAct);
 
             private:
+				long resourceOwnerId_;
+				std::string type_;
+				std::string accessKeyId_;
+				std::string failAct_;
 				std::string runParameter_;
 				int retryInterval_;
-				long resourceOwnerId_;
 				std::string regionId_;
 				std::string name_;
 				std::string id_;
-				std::string type_;
 				int maxRetry_;
-				std::string accessKeyId_;
-				std::string failAct_;
 
 			};
 		}

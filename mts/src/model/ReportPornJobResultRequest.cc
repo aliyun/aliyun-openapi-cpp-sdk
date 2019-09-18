@@ -25,17 +25,6 @@ ReportPornJobResultRequest::ReportPornJobResultRequest() :
 ReportPornJobResultRequest::~ReportPornJobResultRequest()
 {}
 
-std::string ReportPornJobResultRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void ReportPornJobResultRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
-}
-
 long ReportPornJobResultRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,6 +34,28 @@ void ReportPornJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ReportPornJobResultRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReportPornJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ReportPornJobResultRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void ReportPornJobResultRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setCoreParameter("JobId", jobId);
 }
 
 std::string ReportPornJobResultRequest::getResourceOwnerAccount()const
@@ -80,17 +91,6 @@ void ReportPornJobResultRequest::setLabel(const std::string& label)
 	setCoreParameter("Label", label);
 }
 
-std::string ReportPornJobResultRequest::getDetail()const
-{
-	return detail_;
-}
-
-void ReportPornJobResultRequest::setDetail(const std::string& detail)
-{
-	detail_ = detail;
-	setCoreParameter("Detail", detail);
-}
-
 long ReportPornJobResultRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -102,14 +102,14 @@ void ReportPornJobResultRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string ReportPornJobResultRequest::getAccessKeyId()const
+std::string ReportPornJobResultRequest::getDetail()const
 {
-	return accessKeyId_;
+	return detail_;
 }
 
-void ReportPornJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+void ReportPornJobResultRequest::setDetail(const std::string& detail)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	detail_ = detail;
+	setCoreParameter("Detail", detail);
 }
 

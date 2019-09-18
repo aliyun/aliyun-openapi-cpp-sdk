@@ -25,17 +25,6 @@ DescribeDeploymentDetailRequest::DescribeDeploymentDetailRequest() :
 DescribeDeploymentDetailRequest::~DescribeDeploymentDetailRequest()
 {}
 
-std::string DescribeDeploymentDetailRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeDeploymentDetailRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeDeploymentDetailRequest::getCertificateId()const
 {
 	return certificateId_;
@@ -45,6 +34,28 @@ void DescribeDeploymentDetailRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
 	setCoreParameter("CertificateId", std::to_string(certificateId));
+}
+
+std::string DescribeDeploymentDetailRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeDeploymentDetailRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeDeploymentDetailRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeDeploymentDetailRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDeploymentDetailRequest::getLang()const

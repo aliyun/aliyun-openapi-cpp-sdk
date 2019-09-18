@@ -25,17 +25,6 @@ GetTagSetRequest::GetTagSetRequest() :
 GetTagSetRequest::~GetTagSetRequest()
 {}
 
-std::string GetTagSetRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetTagSetRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string GetTagSetRequest::getProject()const
 {
 	return project_;
@@ -47,17 +36,6 @@ void GetTagSetRequest::setProject(const std::string& project)
 	setCoreParameter("Project", project);
 }
 
-std::string GetTagSetRequest::getSetId()const
-{
-	return setId_;
-}
-
-void GetTagSetRequest::setSetId(const std::string& setId)
-{
-	setId_ = setId;
-	setCoreParameter("SetId", setId);
-}
-
 std::string GetTagSetRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -67,5 +45,16 @@ void GetTagSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetTagSetRequest::getSetId()const
+{
+	return setId_;
+}
+
+void GetTagSetRequest::setSetId(const std::string& setId)
+{
+	setId_ = setId;
+	setCoreParameter("SetId", setId);
 }
 

@@ -25,17 +25,6 @@ ReplaceCredentialRequest::ReplaceCredentialRequest() :
 ReplaceCredentialRequest::~ReplaceCredentialRequest()
 {}
 
-std::string ReplaceCredentialRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ReplaceCredentialRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 long ReplaceCredentialRequest::getCredentialId()const
 {
 	return credentialId_;

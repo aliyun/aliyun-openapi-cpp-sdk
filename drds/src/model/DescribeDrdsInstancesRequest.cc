@@ -25,17 +25,6 @@ DescribeDrdsInstancesRequest::DescribeDrdsInstancesRequest() :
 DescribeDrdsInstancesRequest::~DescribeDrdsInstancesRequest()
 {}
 
-std::string DescribeDrdsInstancesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeDrdsInstancesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeDrdsInstancesRequest::getType()const
 {
 	return type_;
@@ -67,5 +56,16 @@ void DescribeDrdsInstancesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setCoreParameter("Tags", tags);
+}
+
+std::string DescribeDrdsInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDrdsInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -47,17 +47,6 @@ void MobileStatusQueryRequest::setResourceOwnerAccount(const std::string& resour
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string MobileStatusQueryRequest::getCorrelationId()const
-{
-	return correlationId_;
-}
-
-void MobileStatusQueryRequest::setCorrelationId(const std::string& correlationId)
-{
-	correlationId_ = correlationId;
-	setCoreParameter("CorrelationId", correlationId);
-}
-
 long MobileStatusQueryRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -78,5 +67,16 @@ void MobileStatusQueryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string MobileStatusQueryRequest::getCorrelationId()const
+{
+	return correlationId_;
+}
+
+void MobileStatusQueryRequest::setCorrelationId(const std::string& correlationId)
+{
+	correlationId_ = correlationId;
+	setCoreParameter("CorrelationId", correlationId);
 }
 

@@ -36,61 +36,6 @@ void CreateCloudConnectNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateCloudConnectNetworkRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateCloudConnectNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string CreateCloudConnectNetworkRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateCloudConnectNetworkRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateCloudConnectNetworkRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateCloudConnectNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string CreateCloudConnectNetworkRequest::getName()const
-{
-	return name_;
-}
-
-void CreateCloudConnectNetworkRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
-std::string CreateCloudConnectNetworkRequest::getCidrBlock()const
-{
-	return cidrBlock_;
-}
-
-void CreateCloudConnectNetworkRequest::setCidrBlock(const std::string& cidrBlock)
-{
-	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
-}
-
 std::string CreateCloudConnectNetworkRequest::getDescription()const
 {
 	return description_;
@@ -113,6 +58,17 @@ void CreateCloudConnectNetworkRequest::setSnatCidrBlock(const std::string& snatC
 	setCoreParameter("SnatCidrBlock", snatCidrBlock);
 }
 
+std::string CreateCloudConnectNetworkRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateCloudConnectNetworkRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
 bool CreateCloudConnectNetworkRequest::getIsDefault()const
 {
 	return isDefault_;
@@ -124,6 +80,28 @@ void CreateCloudConnectNetworkRequest::setIsDefault(bool isDefault)
 	setCoreParameter("IsDefault", isDefault ? "true" : "false");
 }
 
+std::string CreateCloudConnectNetworkRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateCloudConnectNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string CreateCloudConnectNetworkRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateCloudConnectNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
 long CreateCloudConnectNetworkRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -133,5 +111,27 @@ void CreateCloudConnectNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateCloudConnectNetworkRequest::getName()const
+{
+	return name_;
+}
+
+void CreateCloudConnectNetworkRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setCoreParameter("Name", name);
+}
+
+std::string CreateCloudConnectNetworkRequest::getCidrBlock()const
+{
+	return cidrBlock_;
+}
+
+void CreateCloudConnectNetworkRequest::setCidrBlock(const std::string& cidrBlock)
+{
+	cidrBlock_ = cidrBlock;
+	setCoreParameter("CidrBlock", cidrBlock);
 }
 

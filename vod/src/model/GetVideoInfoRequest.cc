@@ -36,6 +36,17 @@ void GetVideoInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string GetVideoInfoRequest::getResultTypes()const
+{
+	return resultTypes_;
+}
+
+void GetVideoInfoRequest::setResultTypes(const std::string& resultTypes)
+{
+	resultTypes_ = resultTypes;
+	setCoreParameter("ResultTypes", resultTypes);
+}
+
 std::string GetVideoInfoRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,28 +69,6 @@ void GetVideoInfoRequest::setVideoId(const std::string& videoId)
 	setCoreParameter("VideoId", videoId);
 }
 
-std::string GetVideoInfoRequest::getAdditionType()const
-{
-	return additionType_;
-}
-
-void GetVideoInfoRequest::setAdditionType(const std::string& additionType)
-{
-	additionType_ = additionType;
-	setCoreParameter("AdditionType", additionType);
-}
-
-std::string GetVideoInfoRequest::getResultTypes()const
-{
-	return resultTypes_;
-}
-
-void GetVideoInfoRequest::setResultTypes(const std::string& resultTypes)
-{
-	resultTypes_ = resultTypes;
-	setCoreParameter("ResultTypes", resultTypes);
-}
-
 long GetVideoInfoRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void GetVideoInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string GetVideoInfoRequest::getAdditionType()const
+{
+	return additionType_;
+}
+
+void GetVideoInfoRequest::setAdditionType(const std::string& additionType)
+{
+	additionType_ = additionType;
+	setCoreParameter("AdditionType", additionType);
 }
 

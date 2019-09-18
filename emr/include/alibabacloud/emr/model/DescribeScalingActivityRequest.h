@@ -37,24 +37,24 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getHostGroupId()const;
-				void setHostGroupId(const std::string& hostGroupId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getScalingActivityId()const;
 				void setScalingActivityId(const std::string& scalingActivityId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getHostGroupId()const;
+				void setHostGroupId(const std::string& hostGroupId);
 
             private:
 				long resourceOwnerId_;
-				std::string regionId_;
-				std::string hostGroupId_;
 				std::string clusterId_;
 				std::string scalingActivityId_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				std::string hostGroupId_;
 
 			};
 		}

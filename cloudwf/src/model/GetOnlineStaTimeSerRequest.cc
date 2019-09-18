@@ -25,28 +25,6 @@ GetOnlineStaTimeSerRequest::GetOnlineStaTimeSerRequest() :
 GetOnlineStaTimeSerRequest::~GetOnlineStaTimeSerRequest()
 {}
 
-long GetOnlineStaTimeSerRequest::getZoomStart()const
-{
-	return zoomStart_;
-}
-
-void GetOnlineStaTimeSerRequest::setZoomStart(long zoomStart)
-{
-	zoomStart_ = zoomStart;
-	setCoreParameter("ZoomStart", std::to_string(zoomStart));
-}
-
-long GetOnlineStaTimeSerRequest::getCompanyId()const
-{
-	return companyId_;
-}
-
-void GetOnlineStaTimeSerRequest::setCompanyId(long companyId)
-{
-	companyId_ = companyId;
-	setCoreParameter("CompanyId", std::to_string(companyId));
-}
-
 long GetOnlineStaTimeSerRequest::getApgroupId()const
 {
 	return apgroupId_;
@@ -69,6 +47,39 @@ void GetOnlineStaTimeSerRequest::setStart(long start)
 	setCoreParameter("Start", std::to_string(start));
 }
 
+std::string GetOnlineStaTimeSerRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetOnlineStaTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+long GetOnlineStaTimeSerRequest::getZoomStart()const
+{
+	return zoomStart_;
+}
+
+void GetOnlineStaTimeSerRequest::setZoomStart(long zoomStart)
+{
+	zoomStart_ = zoomStart;
+	setCoreParameter("ZoomStart", std::to_string(zoomStart));
+}
+
+long GetOnlineStaTimeSerRequest::getCompanyId()const
+{
+	return companyId_;
+}
+
+void GetOnlineStaTimeSerRequest::setCompanyId(long companyId)
+{
+	companyId_ = companyId;
+	setCoreParameter("CompanyId", std::to_string(companyId));
+}
+
 long GetOnlineStaTimeSerRequest::getZoomEnd()const
 {
 	return zoomEnd_;
@@ -89,16 +100,5 @@ void GetOnlineStaTimeSerRequest::setEnd(long end)
 {
 	end_ = end;
 	setCoreParameter("End", std::to_string(end));
-}
-
-std::string GetOnlineStaTimeSerRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetOnlineStaTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

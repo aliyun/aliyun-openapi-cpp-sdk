@@ -35,31 +35,31 @@ namespace AlibabaCloud
 				MoveAppResourceRequest();
 				~MoveAppResourceRequest();
 
-				std::string getTargetAppId()const;
-				void setTargetAppId(const std::string& targetAppId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getResourceRealOwnerId()const;
 				void setResourceRealOwnerId(long resourceRealOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTargetAppId()const;
+				void setTargetAppId(const std::string& targetAppId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceIds()const;
 				void setResourceIds(const std::string& resourceIds);
 
             private:
-				std::string targetAppId_;
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
 				long resourceRealOwnerId_;
+				std::string accessKeyId_;
+				std::string targetAppId_;
+				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::string resourceType_;
-				std::string accessKeyId_;
 				std::string resourceIds_;
 
 			};

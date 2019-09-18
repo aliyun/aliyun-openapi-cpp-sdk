@@ -25,6 +25,28 @@ EnableThingRequest::EnableThingRequest() :
 EnableThingRequest::~EnableThingRequest()
 {}
 
+std::string EnableThingRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void EnableThingRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string EnableThingRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void EnableThingRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string EnableThingRequest::getIotId()const
 {
 	return iotId_;
@@ -56,27 +78,5 @@ void EnableThingRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
 	setCoreParameter("DeviceName", deviceName);
-}
-
-std::string EnableThingRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void EnableThingRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
-
-std::string EnableThingRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void EnableThingRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

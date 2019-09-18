@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				PollTaskResultRequest();
 				~PollTaskResultRequest();
 
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				int getTaskResultStatus()const;
+				void setTaskResultStatus(int taskResultStatus);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getTaskNo()const;
 				void setTaskNo(const std::string& taskNo);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
-				int getTaskResultStatus()const;
-				void setTaskResultStatus(int taskResultStatus);
 
             private:
+				std::string domainName_;
+				int pageNum_;
+				int taskResultStatus_;
 				std::string instanceId_;
 				std::string userClientIp_;
 				std::string taskNo_;
-				std::string domainName_;
 				int pageSize_;
 				std::string lang_;
-				int pageNum_;
-				int taskResultStatus_;
 
 			};
 		}

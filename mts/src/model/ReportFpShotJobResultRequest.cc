@@ -25,6 +25,28 @@ ReportFpShotJobResultRequest::ReportFpShotJobResultRequest() :
 ReportFpShotJobResultRequest::~ReportFpShotJobResultRequest()
 {}
 
+long ReportFpShotJobResultRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void ReportFpShotJobResultRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ReportFpShotJobResultRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ReportFpShotJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ReportFpShotJobResultRequest::getResult()const
 {
 	return result_;
@@ -47,15 +69,15 @@ void ReportFpShotJobResultRequest::setJobId(const std::string& jobId)
 	setCoreParameter("JobId", jobId);
 }
 
-long ReportFpShotJobResultRequest::getResourceOwnerId()const
+std::string ReportFpShotJobResultRequest::getDetails()const
 {
-	return resourceOwnerId_;
+	return details_;
 }
 
-void ReportFpShotJobResultRequest::setResourceOwnerId(long resourceOwnerId)
+void ReportFpShotJobResultRequest::setDetails(const std::string& details)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	details_ = details;
+	setCoreParameter("Details", details);
 }
 
 std::string ReportFpShotJobResultRequest::getResourceOwnerAccount()const
@@ -80,17 +102,6 @@ void ReportFpShotJobResultRequest::setOwnerAccount(const std::string& ownerAccou
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ReportFpShotJobResultRequest::getDetails()const
-{
-	return details_;
-}
-
-void ReportFpShotJobResultRequest::setDetails(const std::string& details)
-{
-	details_ = details;
-	setCoreParameter("Details", details);
-}
-
 long ReportFpShotJobResultRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -100,16 +111,5 @@ void ReportFpShotJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ReportFpShotJobResultRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ReportFpShotJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

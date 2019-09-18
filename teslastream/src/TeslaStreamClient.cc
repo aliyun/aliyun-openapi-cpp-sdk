@@ -51,42 +51,6 @@ TeslaStreamClient::TeslaStreamClient(const std::string & accessKeyId, const std:
 TeslaStreamClient::~TeslaStreamClient()
 {}
 
-TeslaStreamClient::GetJobTopologyOutcome TeslaStreamClient::getJobTopology(const GetJobTopologyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetJobTopologyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetJobTopologyOutcome(GetJobTopologyResult(outcome.result()));
-	else
-		return GetJobTopologyOutcome(outcome.error());
-}
-
-void TeslaStreamClient::getJobTopologyAsync(const GetJobTopologyRequest& request, const GetJobTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getJobTopology(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TeslaStreamClient::GetJobTopologyOutcomeCallable TeslaStreamClient::getJobTopologyCallable(const GetJobTopologyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetJobTopologyOutcome()>>(
-			[this, request]()
-			{
-			return this->getJobTopology(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TeslaStreamClient::BatchGetJobMetricInfoOutcome TeslaStreamClient::batchGetJobMetricInfo(const BatchGetJobMetricInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +117,42 @@ TeslaStreamClient::BatchGetPluginConfigInfoOutcomeCallable TeslaStreamClient::ba
 			[this, request]()
 			{
 			return this->batchGetPluginConfigInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TeslaStreamClient::GetJobTopologyOutcome TeslaStreamClient::getJobTopology(const GetJobTopologyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetJobTopologyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetJobTopologyOutcome(GetJobTopologyResult(outcome.result()));
+	else
+		return GetJobTopologyOutcome(outcome.error());
+}
+
+void TeslaStreamClient::getJobTopologyAsync(const GetJobTopologyRequest& request, const GetJobTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getJobTopology(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TeslaStreamClient::GetJobTopologyOutcomeCallable TeslaStreamClient::getJobTopologyCallable(const GetJobTopologyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetJobTopologyOutcome()>>(
+			[this, request]()
+			{
+			return this->getJobTopology(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

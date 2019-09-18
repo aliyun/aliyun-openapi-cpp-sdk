@@ -35,11 +35,8 @@ namespace AlibabaCloud
 				CreateUserInfoRequest();
 				~CreateUserInfoRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
             private:
-				std::string regionId_;
 
 			};
 		}

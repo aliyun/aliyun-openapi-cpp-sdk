@@ -25,17 +25,6 @@ DescribeRenewOrderRequest::DescribeRenewOrderRequest() :
 DescribeRenewOrderRequest::~DescribeRenewOrderRequest()
 {}
 
-std::string DescribeRenewOrderRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeRenewOrderRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 long DescribeRenewOrderRequest::getOrderId()const
 {
 	return orderId_;
@@ -45,5 +34,27 @@ void DescribeRenewOrderRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
 	setCoreParameter("OrderId", std::to_string(orderId));
+}
+
+std::string DescribeRenewOrderRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeRenewOrderRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setCoreParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeRenewOrderRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeRenewOrderRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 

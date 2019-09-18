@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				long getMessageId()const;
 				void setMessageId(long messageId);
-				long getAppKey()const;
-				void setAppKey(long appKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getAppKey()const;
+				void setAppKey(long appKey);
 
             private:
 				long messageId_;
-				long appKey_;
 				std::string accessKeyId_;
+				long appKey_;
 
 			};
 		}

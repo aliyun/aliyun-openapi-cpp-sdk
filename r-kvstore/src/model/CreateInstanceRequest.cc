@@ -146,17 +146,6 @@ void CreateInstanceRequest::setSecurityToken(const std::string& securityToken)
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string CreateInstanceRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string CreateInstanceRequest::getInstanceType()const
 {
 	return instanceType_;

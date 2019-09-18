@@ -25,17 +25,6 @@ OnsConsumerAccumulateRequest::OnsConsumerAccumulateRequest() :
 OnsConsumerAccumulateRequest::~OnsConsumerAccumulateRequest()
 {}
 
-std::string OnsConsumerAccumulateRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsConsumerAccumulateRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsConsumerAccumulateRequest::getGroupId()const
 {
 	return groupId_;
@@ -45,6 +34,17 @@ void OnsConsumerAccumulateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setCoreParameter("GroupId", groupId);
+}
+
+std::string OnsConsumerAccumulateRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsConsumerAccumulateRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool OnsConsumerAccumulateRequest::getDetail()const

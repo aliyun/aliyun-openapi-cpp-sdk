@@ -58,17 +58,6 @@ void CreateAccessWhiteListGroupRequest::setSrcIP(const std::string& srcIP)
 	setCoreParameter("SrcIP", srcIP);
 }
 
-std::string CreateAccessWhiteListGroupRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void CreateAccessWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int CreateAccessWhiteListGroupRequest::getDstPort()const
 {
 	return dstPort_;
@@ -80,26 +69,26 @@ void CreateAccessWhiteListGroupRequest::setDstPort(int dstPort)
 	setCoreParameter("DstPort", std::to_string(dstPort));
 }
 
-std::string CreateAccessWhiteListGroupRequest::getInstanceIdList()const
+std::string CreateAccessWhiteListGroupRequest::getSourceCode()const
 {
-	return instanceIdList_;
+	return sourceCode_;
 }
 
-void CreateAccessWhiteListGroupRequest::setInstanceIdList(const std::string& instanceIdList)
+void CreateAccessWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
-	instanceIdList_ = instanceIdList;
-	setCoreParameter("InstanceIdList", instanceIdList);
+	sourceCode_ = sourceCode;
+	setCoreParameter("SourceCode", sourceCode);
 }
 
-int CreateAccessWhiteListGroupRequest::getLiveTime()const
+std::string CreateAccessWhiteListGroupRequest::getSourceIp()const
 {
-	return liveTime_;
+	return sourceIp_;
 }
 
-void CreateAccessWhiteListGroupRequest::setLiveTime(int liveTime)
+void CreateAccessWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
-	liveTime_ = liveTime;
-	setCoreParameter("LiveTime", std::to_string(liveTime));
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getProductName()const
@@ -111,17 +100,6 @@ void CreateAccessWhiteListGroupRequest::setProductName(const std::string& produc
 {
 	productName_ = productName;
 	setCoreParameter("ProductName", productName);
-}
-
-int CreateAccessWhiteListGroupRequest::getWhiteListType()const
-{
-	return whiteListType_;
-}
-
-void CreateAccessWhiteListGroupRequest::setWhiteListType(int whiteListType)
-{
-	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
 }
 
 std::string CreateAccessWhiteListGroupRequest::getInstanceInfoList()const
@@ -146,14 +124,36 @@ void CreateAccessWhiteListGroupRequest::setLang(const std::string& lang)
 	setCoreParameter("Lang", lang);
 }
 
-std::string CreateAccessWhiteListGroupRequest::getSourceCode()const
+int CreateAccessWhiteListGroupRequest::getWhiteListType()const
 {
-	return sourceCode_;
+	return whiteListType_;
 }
 
-void CreateAccessWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
+void CreateAccessWhiteListGroupRequest::setWhiteListType(int whiteListType)
 {
-	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	whiteListType_ = whiteListType;
+	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+}
+
+std::string CreateAccessWhiteListGroupRequest::getInstanceIdList()const
+{
+	return instanceIdList_;
+}
+
+void CreateAccessWhiteListGroupRequest::setInstanceIdList(const std::string& instanceIdList)
+{
+	instanceIdList_ = instanceIdList;
+	setCoreParameter("InstanceIdList", instanceIdList);
+}
+
+int CreateAccessWhiteListGroupRequest::getLiveTime()const
+{
+	return liveTime_;
+}
+
+void CreateAccessWhiteListGroupRequest::setLiveTime(int liveTime)
+{
+	liveTime_ = liveTime;
+	setCoreParameter("LiveTime", std::to_string(liveTime));
 }
 

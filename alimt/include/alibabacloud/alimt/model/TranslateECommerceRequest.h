@@ -41,17 +41,17 @@ namespace AlibabaCloud
 				void setSourceText(const std::string& sourceText);
 				std::string getFormatType()const;
 				void setFormatType(const std::string& formatType);
-				std::string getTargetLanguage()const;
-				void setTargetLanguage(const std::string& targetLanguage);
 				std::string getScene()const;
 				void setScene(const std::string& scene);
+				std::string getTargetLanguage()const;
+				void setTargetLanguage(const std::string& targetLanguage);
 
             private:
 				std::string sourceLanguage_;
 				std::string sourceText_;
 				std::string formatType_;
-				std::string targetLanguage_;
 				std::string scene_;
+				std::string targetLanguage_;
 
 			};
 		}

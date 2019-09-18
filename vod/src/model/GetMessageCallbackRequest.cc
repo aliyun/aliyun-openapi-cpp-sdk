@@ -36,6 +36,28 @@ void GetMessageCallbackRequest::setResourceOwnerId(const std::string& resourceOw
 	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
+long GetMessageCallbackRequest::getResourceRealOwnerId()const
+{
+	return resourceRealOwnerId_;
+}
+
+void GetMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
+{
+	resourceRealOwnerId_ = resourceRealOwnerId;
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+}
+
+std::string GetMessageCallbackRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetMessageCallbackRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,28 +80,6 @@ void GetMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string GetMessageCallbackRequest::getAppId()const
-{
-	return appId_;
-}
-
-void GetMessageCallbackRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setCoreParameter("AppId", appId);
-}
-
-long GetMessageCallbackRequest::getResourceRealOwnerId()const
-{
-	return resourceRealOwnerId_;
-}
-
-void GetMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
-{
-	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
-}
-
 std::string GetMessageCallbackRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -91,14 +91,14 @@ void GetMessageCallbackRequest::setOwnerId(const std::string& ownerId)
 	setCoreParameter("OwnerId", ownerId);
 }
 
-std::string GetMessageCallbackRequest::getAccessKeyId()const
+std::string GetMessageCallbackRequest::getAppId()const
 {
-	return accessKeyId_;
+	return appId_;
 }
 
-void GetMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
+void GetMessageCallbackRequest::setAppId(const std::string& appId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	appId_ = appId;
+	setCoreParameter("AppId", appId);
 }
 

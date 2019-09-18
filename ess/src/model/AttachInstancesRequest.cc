@@ -25,17 +25,6 @@ AttachInstancesRequest::AttachInstancesRequest() :
 AttachInstancesRequest::~AttachInstancesRequest()
 {}
 
-std::string AttachInstancesRequest::getInstanceId10()const
-{
-	return instanceId10_;
-}
-
-void AttachInstancesRequest::setInstanceId10(const std::string& instanceId10)
-{
-	instanceId10_ = instanceId10;
-	setCoreParameter("InstanceId10", instanceId10);
-}
-
 int AttachInstancesRequest::getLoadBalancerWeight6()const
 {
 	return loadBalancerWeight6_;
@@ -91,17 +80,6 @@ void AttachInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string AttachInstancesRequest::getInstanceId12()const
-{
-	return instanceId12_;
-}
-
-void AttachInstancesRequest::setInstanceId12(const std::string& instanceId12)
-{
-	instanceId12_ = instanceId12;
-	setCoreParameter("InstanceId12", instanceId12);
-}
-
 int AttachInstancesRequest::getLoadBalancerWeight8()const
 {
 	return loadBalancerWeight8_;
@@ -111,17 +89,6 @@ void AttachInstancesRequest::setLoadBalancerWeight8(int loadBalancerWeight8)
 {
 	loadBalancerWeight8_ = loadBalancerWeight8;
 	setCoreParameter("LoadBalancerWeight8", std::to_string(loadBalancerWeight8));
-}
-
-std::string AttachInstancesRequest::getInstanceId11()const
-{
-	return instanceId11_;
-}
-
-void AttachInstancesRequest::setInstanceId11(const std::string& instanceId11)
-{
-	instanceId11_ = instanceId11;
-	setCoreParameter("InstanceId11", instanceId11);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight9()const
@@ -190,17 +157,6 @@ void AttachInstancesRequest::setLoadBalancerWeight16(int loadBalancerWeight16)
 	setCoreParameter("LoadBalancerWeight16", std::to_string(loadBalancerWeight16));
 }
 
-std::string AttachInstancesRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void AttachInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
 int AttachInstancesRequest::getLoadBalancerWeight4()const
 {
 	return loadBalancerWeight4_;
@@ -256,28 +212,6 @@ void AttachInstancesRequest::setLoadBalancerWeight1(int loadBalancerWeight1)
 	setCoreParameter("LoadBalancerWeight1", std::to_string(loadBalancerWeight1));
 }
 
-std::string AttachInstancesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void AttachInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string AttachInstancesRequest::getInstanceId20()const
-{
-	return instanceId20_;
-}
-
-void AttachInstancesRequest::setInstanceId20(const std::string& instanceId20)
-{
-	instanceId20_ = instanceId20;
-	setCoreParameter("InstanceId20", instanceId20);
-}
-
 std::string AttachInstancesRequest::getInstanceId1()const
 {
 	return instanceId1_;
@@ -311,17 +245,6 @@ void AttachInstancesRequest::setInstanceId3(const std::string& instanceId3)
 	setCoreParameter("InstanceId3", instanceId3);
 }
 
-std::string AttachInstancesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AttachInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string AttachInstancesRequest::getInstanceId2()const
 {
 	return instanceId2_;
@@ -353,17 +276,6 @@ void AttachInstancesRequest::setInstanceId4(const std::string& instanceId4)
 {
 	instanceId4_ = instanceId4;
 	setCoreParameter("InstanceId4", instanceId4);
-}
-
-std::string AttachInstancesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void AttachInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AttachInstancesRequest::getInstanceId7()const
@@ -421,17 +333,6 @@ void AttachInstancesRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string AttachInstancesRequest::getInstanceId18()const
-{
-	return instanceId18_;
-}
-
-void AttachInstancesRequest::setInstanceId18(const std::string& instanceId18)
-{
-	instanceId18_ = instanceId18;
-	setCoreParameter("InstanceId18", instanceId18);
-}
-
 int AttachInstancesRequest::getLoadBalancerWeight19()const
 {
 	return loadBalancerWeight19_;
@@ -441,17 +342,6 @@ void AttachInstancesRequest::setLoadBalancerWeight19(int loadBalancerWeight19)
 {
 	loadBalancerWeight19_ = loadBalancerWeight19;
 	setCoreParameter("LoadBalancerWeight19", std::to_string(loadBalancerWeight19));
-}
-
-std::string AttachInstancesRequest::getInstanceId17()const
-{
-	return instanceId17_;
-}
-
-void AttachInstancesRequest::setInstanceId17(const std::string& instanceId17)
-{
-	instanceId17_ = instanceId17;
-	setCoreParameter("InstanceId17", instanceId17);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight17()const
@@ -465,17 +355,6 @@ void AttachInstancesRequest::setLoadBalancerWeight17(int loadBalancerWeight17)
 	setCoreParameter("LoadBalancerWeight17", std::to_string(loadBalancerWeight17));
 }
 
-std::string AttachInstancesRequest::getInstanceId19()const
-{
-	return instanceId19_;
-}
-
-void AttachInstancesRequest::setInstanceId19(const std::string& instanceId19)
-{
-	instanceId19_ = instanceId19;
-	setCoreParameter("InstanceId19", instanceId19);
-}
-
 int AttachInstancesRequest::getLoadBalancerWeight18()const
 {
 	return loadBalancerWeight18_;
@@ -485,6 +364,127 @@ void AttachInstancesRequest::setLoadBalancerWeight18(int loadBalancerWeight18)
 {
 	loadBalancerWeight18_ = loadBalancerWeight18;
 	setCoreParameter("LoadBalancerWeight18", std::to_string(loadBalancerWeight18));
+}
+
+std::string AttachInstancesRequest::getInstanceId10()const
+{
+	return instanceId10_;
+}
+
+void AttachInstancesRequest::setInstanceId10(const std::string& instanceId10)
+{
+	instanceId10_ = instanceId10;
+	setCoreParameter("InstanceId10", instanceId10);
+}
+
+std::string AttachInstancesRequest::getInstanceId12()const
+{
+	return instanceId12_;
+}
+
+void AttachInstancesRequest::setInstanceId12(const std::string& instanceId12)
+{
+	instanceId12_ = instanceId12;
+	setCoreParameter("InstanceId12", instanceId12);
+}
+
+std::string AttachInstancesRequest::getInstanceId11()const
+{
+	return instanceId11_;
+}
+
+void AttachInstancesRequest::setInstanceId11(const std::string& instanceId11)
+{
+	instanceId11_ = instanceId11;
+	setCoreParameter("InstanceId11", instanceId11);
+}
+
+std::string AttachInstancesRequest::getScalingGroupId()const
+{
+	return scalingGroupId_;
+}
+
+void AttachInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
+{
+	scalingGroupId_ = scalingGroupId;
+	setCoreParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string AttachInstancesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void AttachInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string AttachInstancesRequest::getInstanceId20()const
+{
+	return instanceId20_;
+}
+
+void AttachInstancesRequest::setInstanceId20(const std::string& instanceId20)
+{
+	instanceId20_ = instanceId20;
+	setCoreParameter("InstanceId20", instanceId20);
+}
+
+std::string AttachInstancesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void AttachInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string AttachInstancesRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void AttachInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setCoreParameter("OwnerAccount", ownerAccount);
+}
+
+std::string AttachInstancesRequest::getInstanceId18()const
+{
+	return instanceId18_;
+}
+
+void AttachInstancesRequest::setInstanceId18(const std::string& instanceId18)
+{
+	instanceId18_ = instanceId18;
+	setCoreParameter("InstanceId18", instanceId18);
+}
+
+std::string AttachInstancesRequest::getInstanceId17()const
+{
+	return instanceId17_;
+}
+
+void AttachInstancesRequest::setInstanceId17(const std::string& instanceId17)
+{
+	instanceId17_ = instanceId17;
+	setCoreParameter("InstanceId17", instanceId17);
+}
+
+std::string AttachInstancesRequest::getInstanceId19()const
+{
+	return instanceId19_;
+}
+
+void AttachInstancesRequest::setInstanceId19(const std::string& instanceId19)
+{
+	instanceId19_ = instanceId19;
+	setCoreParameter("InstanceId19", instanceId19);
 }
 
 std::string AttachInstancesRequest::getInstanceId14()const

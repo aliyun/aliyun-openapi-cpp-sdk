@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				SetDNSSLBStatusRequest();
 				~SetDNSSLBStatusRequest();
 
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserClientIp()const;
+				void setUserClientIp(const std::string& userClientIp);
 				std::string getSubDomain()const;
 				void setSubDomain(const std::string& subDomain);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				bool getOpen()const;
 				void setOpen(bool open);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				std::string userClientIp_;
 				std::string domainName_;
+				std::string accessKeyId_;
+				std::string userClientIp_;
 				std::string subDomain_;
 				std::string lang_;
 				bool open_;
-				std::string accessKeyId_;
 
 			};
 		}

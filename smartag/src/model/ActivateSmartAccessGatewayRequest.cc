@@ -36,17 +36,6 @@ void ActivateSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ActivateSmartAccessGatewayRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ActivateSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string ActivateSmartAccessGatewayRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,6 +45,17 @@ void ActivateSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setCoreParameter("RegionId", regionId);
+}
+
+std::string ActivateSmartAccessGatewayRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ActivateSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ActivateSmartAccessGatewayRequest::getOwnerAccount()const
@@ -69,17 +69,6 @@ void ActivateSmartAccessGatewayRequest::setOwnerAccount(const std::string& owner
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ActivateSmartAccessGatewayRequest::getSmartAGId()const
-{
-	return smartAGId_;
-}
-
-void ActivateSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
-}
-
 long ActivateSmartAccessGatewayRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -89,5 +78,16 @@ void ActivateSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ActivateSmartAccessGatewayRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void ActivateSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

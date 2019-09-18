@@ -35,35 +35,35 @@ namespace AlibabaCloud
 				AddLiveSnapshotDetectPornConfigRequest();
 				~AddLiveSnapshotDetectPornConfigRequest();
 
-				std::string getOssBucket()const;
-				void setOssBucket(const std::string& ossBucket);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getOssEndpoint()const;
 				void setOssEndpoint(const std::string& ossEndpoint);
-				int getInterval()const;
-				void setInterval(int interval);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getOssObject()const;
 				void setOssObject(const std::string& ossObject);
 				std::vector<std::string> getScene()const;
 				void setScene(const std::vector<std::string>& scene);
+				std::string getAppName()const;
+				void setAppName(const std::string& appName);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getOssBucket()const;
+				void setOssBucket(const std::string& ossBucket);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				int getInterval()const;
+				void setInterval(int interval);
 
             private:
-				std::string ossBucket_;
-				std::string appName_;
-				std::string securityToken_;
-				std::string domainName_;
 				std::string ossEndpoint_;
-				int interval_;
-				long ownerId_;
 				std::string ossObject_;
 				std::vector<std::string> scene_;
+				std::string appName_;
+				std::string securityToken_;
+				std::string ossBucket_;
+				std::string domainName_;
+				long ownerId_;
+				int interval_;
 
 			};
 		}

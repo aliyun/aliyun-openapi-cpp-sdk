@@ -25,6 +25,28 @@ CreateFlowRequest::CreateFlowRequest() :
 CreateFlowRequest::~CreateFlowRequest()
 {}
 
+std::string CreateFlowRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateFlowRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string CreateFlowRequest::getType()const
+{
+	return type_;
+}
+
+void CreateFlowRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
 std::string CreateFlowRequest::getRequestId()const
 {
 	return requestId_;
@@ -58,17 +80,6 @@ void CreateFlowRequest::setName(const std::string& name)
 	setCoreParameter("Name", name);
 }
 
-std::string CreateFlowRequest::getDescription()const
-{
-	return description_;
-}
-
-void CreateFlowRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setCoreParameter("Description", description);
-}
-
 std::string CreateFlowRequest::getDefinition()const
 {
 	return definition_;
@@ -78,16 +89,5 @@ void CreateFlowRequest::setDefinition(const std::string& definition)
 {
 	definition_ = definition;
 	setCoreParameter("Definition", definition);
-}
-
-std::string CreateFlowRequest::getType()const
-{
-	return type_;
-}
-
-void CreateFlowRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setCoreParameter("Type", type);
 }
 

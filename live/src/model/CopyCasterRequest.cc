@@ -25,15 +25,15 @@ CopyCasterRequest::CopyCasterRequest() :
 CopyCasterRequest::~CopyCasterRequest()
 {}
 
-std::string CopyCasterRequest::getSrcCasterId()const
+std::string CopyCasterRequest::getClientToken()const
 {
-	return srcCasterId_;
+	return clientToken_;
 }
 
-void CopyCasterRequest::setSrcCasterId(const std::string& srcCasterId)
+void CopyCasterRequest::setClientToken(const std::string& clientToken)
 {
-	srcCasterId_ = srcCasterId;
-	setCoreParameter("SrcCasterId", srcCasterId);
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CopyCasterRequest::getCasterName()const
@@ -47,15 +47,15 @@ void CopyCasterRequest::setCasterName(const std::string& casterName)
 	setCoreParameter("CasterName", casterName);
 }
 
-std::string CopyCasterRequest::getClientToken()const
+std::string CopyCasterRequest::getSrcCasterId()const
 {
-	return clientToken_;
+	return srcCasterId_;
 }
 
-void CopyCasterRequest::setClientToken(const std::string& clientToken)
+void CopyCasterRequest::setSrcCasterId(const std::string& srcCasterId)
 {
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	srcCasterId_ = srcCasterId;
+	setCoreParameter("SrcCasterId", srcCasterId);
 }
 
 long CopyCasterRequest::getOwnerId()const

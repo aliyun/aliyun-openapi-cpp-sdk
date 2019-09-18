@@ -25,17 +25,6 @@ ListTagJobsRequest::ListTagJobsRequest() :
 ListTagJobsRequest::~ListTagJobsRequest()
 {}
 
-std::string ListTagJobsRequest::getCondition()const
-{
-	return condition_;
-}
-
-void ListTagJobsRequest::setCondition(const std::string& condition)
-{
-	condition_ = condition;
-	setCoreParameter("Condition", condition);
-}
-
 int ListTagJobsRequest::getMaxKeys()const
 {
 	return maxKeys_;
@@ -45,28 +34,6 @@ void ListTagJobsRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
 	setCoreParameter("MaxKeys", std::to_string(maxKeys));
-}
-
-std::string ListTagJobsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListTagJobsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListTagJobsRequest::getMarker()const
-{
-	return marker_;
-}
-
-void ListTagJobsRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setCoreParameter("Marker", marker);
 }
 
 std::string ListTagJobsRequest::getProject()const
@@ -89,5 +56,27 @@ void ListTagJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListTagJobsRequest::getCondition()const
+{
+	return condition_;
+}
+
+void ListTagJobsRequest::setCondition(const std::string& condition)
+{
+	condition_ = condition;
+	setCoreParameter("Condition", condition);
+}
+
+std::string ListTagJobsRequest::getMarker()const
+{
+	return marker_;
+}
+
+void ListTagJobsRequest::setMarker(const std::string& marker)
+{
+	marker_ = marker;
+	setCoreParameter("Marker", marker);
 }
 

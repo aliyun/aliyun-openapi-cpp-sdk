@@ -58,6 +58,17 @@ void DeleteNotifyPolicyRequest::setGroupId(const std::string& groupId)
 	setCoreParameter("GroupId", groupId);
 }
 
+std::string DeleteNotifyPolicyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DeleteNotifyPolicyRequest::getId()const
 {
 	return id_;
@@ -78,16 +89,5 @@ void DeleteNotifyPolicyRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
 	setCoreParameter("Dimensions", dimensions);
-}
-
-std::string DeleteNotifyPolicyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

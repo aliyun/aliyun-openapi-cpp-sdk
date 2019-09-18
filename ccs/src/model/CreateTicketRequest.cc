@@ -58,17 +58,6 @@ void CreateTicketRequest::setType(const std::string& type)
 	setCoreParameter("Type", type);
 }
 
-std::string CreateTicketRequest::getCcsInstanceId()const
-{
-	return ccsInstanceId_;
-}
-
-void CreateTicketRequest::setCcsInstanceId(const std::string& ccsInstanceId)
-{
-	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", ccsInstanceId);
-}
-
 std::string CreateTicketRequest::getCustomFields()const
 {
 	return customFields_;
@@ -78,5 +67,16 @@ void CreateTicketRequest::setCustomFields(const std::string& customFields)
 {
 	customFields_ = customFields;
 	setCoreParameter("CustomFields", customFields);
+}
+
+std::string CreateTicketRequest::getCcsInstanceId()const
+{
+	return ccsInstanceId_;
+}
+
+void CreateTicketRequest::setCcsInstanceId(const std::string& ccsInstanceId)
+{
+	ccsInstanceId_ = ccsInstanceId;
+	setCoreParameter("CcsInstanceId", ccsInstanceId);
 }
 

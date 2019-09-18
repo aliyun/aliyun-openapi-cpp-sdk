@@ -35,13 +35,9 @@ DescribeGtmInstancesResult::~DescribeGtmInstancesResult()
 
 void DescribeGtmInstancesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allGtmInstances = value["GtmInstances"]["GtmInstance"];
 	for (auto value : allGtmInstances)
@@ -73,6 +69,10 @@ void DescribeGtmInstancesResult::parse(const std::string &payload)
 			gtmInstancesObject.alertGroup = value["AlertGroup"].asString();
 		if(!value["CnameMode"].isNull())
 			gtmInstancesObject.cnameMode = value["CnameMode"].asString();
+		if(!value["AccessStrategyNum"].isNull())
+			gtmInstancesObject.accessStrategyNum = std::stoi(value["AccessStrategyNum"].asString());
+		if(!value["AddressPoolNum"].isNull())
+			gtmInstancesObject.addressPoolNum = std::stoi(value["AddressPoolNum"].asString());
 		gtmInstances_.push_back(gtmInstancesObject);
 	}
 	if(!value["PageNumber"].isNull())

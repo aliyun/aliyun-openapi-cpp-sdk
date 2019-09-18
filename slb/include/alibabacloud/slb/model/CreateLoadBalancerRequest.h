@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getCloudType()const;
+				void setCloudType(const std::string& cloudType);
 				std::string getAddressIPVersion()const;
 				void setAddressIPVersion(const std::string& addressIPVersion);
 				std::string getMasterZoneId()const;
@@ -94,6 +96,7 @@ namespace AlibabaCloud
 				std::string access_key_id_;
 				long resourceOwnerId_;
 				std::string clientToken_;
+				std::string cloudType_;
 				std::string addressIPVersion_;
 				std::string masterZoneId_;
 				int duration_;

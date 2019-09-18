@@ -69,17 +69,6 @@ void SubmitPreprocessJobsRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitPreprocessJobsRequest::getPreprocessType()const
-{
-	return preprocessType_;
-}
-
-void SubmitPreprocessJobsRequest::setPreprocessType(const std::string& preprocessType)
-{
-	preprocessType_ = preprocessType;
-	setCoreParameter("PreprocessType", preprocessType);
-}
-
 std::string SubmitPreprocessJobsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -89,5 +78,16 @@ void SubmitPreprocessJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitPreprocessJobsRequest::getPreprocessType()const
+{
+	return preprocessType_;
+}
+
+void SubmitPreprocessJobsRequest::setPreprocessType(const std::string& preprocessType)
+{
+	preprocessType_ = preprocessType;
+	setCoreParameter("PreprocessType", preprocessType);
 }
 

@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				ImportKeywordsRequest();
 				~ImportKeywordsRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getKeywordLibId()const;
 				void setKeywordLibId(int keywordLibId);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 				std::string getKeywordsObject()const;
 				void setKeywordsObject(const std::string& keywordsObject);
 
             private:
-				std::string sourceIp_;
 				int keywordLibId_;
+				std::string sourceIp_;
 				std::string keywordsObject_;
 
 			};

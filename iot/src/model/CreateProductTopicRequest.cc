@@ -25,17 +25,6 @@ CreateProductTopicRequest::CreateProductTopicRequest() :
 CreateProductTopicRequest::~CreateProductTopicRequest()
 {}
 
-std::string CreateProductTopicRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void CreateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
-}
-
 std::string CreateProductTopicRequest::getProductKey()const
 {
 	return productKey_;
@@ -45,6 +34,28 @@ void CreateProductTopicRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
 	setCoreParameter("ProductKey", productKey);
+}
+
+std::string CreateProductTopicRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateProductTopicRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void CreateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string CreateProductTopicRequest::getTopicShortName()const
@@ -67,17 +78,6 @@ void CreateProductTopicRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
 	setCoreParameter("Operation", operation);
-}
-
-std::string CreateProductTopicRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateProductTopicRequest::getDesc()const

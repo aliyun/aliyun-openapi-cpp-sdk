@@ -71,28 +71,6 @@ void ListExecutionPlanInstancesRequest::setStatusList(const std::vector<std::str
 		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
 }
 
-std::string ListExecutionPlanInstancesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListExecutionPlanInstancesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-int ListExecutionPlanInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListExecutionPlanInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 bool ListExecutionPlanInstancesRequest::getIsDesc()const
 {
 	return isDesc_;
@@ -124,5 +102,27 @@ void ListExecutionPlanInstancesRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListExecutionPlanInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListExecutionPlanInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+int ListExecutionPlanInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListExecutionPlanInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

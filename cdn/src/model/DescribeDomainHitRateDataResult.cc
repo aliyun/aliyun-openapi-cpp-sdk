@@ -35,13 +35,9 @@ DescribeDomainHitRateDataResult::~DescribeDomainHitRateDataResult()
 
 void DescribeDomainHitRateDataResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allHitRateInterval = value["HitRateInterval"]["DataModule"];
 	for (auto value : allHitRateInterval)
@@ -51,8 +47,6 @@ void DescribeDomainHitRateDataResult::parse(const std::string &payload)
 			hitRateIntervalObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["Value"].isNull())
 			hitRateIntervalObject.value = value["Value"].asString();
-		if(!value["HttpsValue"].isNull())
-			hitRateIntervalObject.httpsValue = value["HttpsValue"].asString();
 		hitRateInterval_.push_back(hitRateIntervalObject);
 	}
 	if(!value["DomainName"].isNull())

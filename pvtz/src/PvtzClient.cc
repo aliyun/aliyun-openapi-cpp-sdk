@@ -51,6 +51,42 @@ PvtzClient::PvtzClient(const std::string & accessKeyId, const std::string & acce
 PvtzClient::~PvtzClient()
 {}
 
+PvtzClient::AddZoneOutcome PvtzClient::addZone(const AddZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddZoneOutcome(AddZoneResult(outcome.result()));
+	else
+		return AddZoneOutcome(outcome.error());
+}
+
+void PvtzClient::addZoneAsync(const AddZoneRequest& request, const AddZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::AddZoneOutcomeCallable PvtzClient::addZoneCallable(const AddZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->addZone(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PvtzClient::AddZoneRecordOutcome PvtzClient::addZoneRecord(const AddZoneRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -87,108 +123,36 @@ PvtzClient::AddZoneRecordOutcomeCallable PvtzClient::addZoneRecordCallable(const
 	return task->get_future();
 }
 
-PvtzClient::DescribeZoneInfoOutcome PvtzClient::describeZoneInfo(const DescribeZoneInfoRequest &request) const
+PvtzClient::BindZoneVpcOutcome PvtzClient::bindZoneVpc(const BindZoneVpcRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeZoneInfoOutcome(endpointOutcome.error());
+		return BindZoneVpcOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeZoneInfoOutcome(DescribeZoneInfoResult(outcome.result()));
+		return BindZoneVpcOutcome(BindZoneVpcResult(outcome.result()));
 	else
-		return DescribeZoneInfoOutcome(outcome.error());
+		return BindZoneVpcOutcome(outcome.error());
 }
 
-void PvtzClient::describeZoneInfoAsync(const DescribeZoneInfoRequest& request, const DescribeZoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void PvtzClient::bindZoneVpcAsync(const BindZoneVpcRequest& request, const BindZoneVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeZoneInfo(request), context);
+		handler(this, request, bindZoneVpc(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-PvtzClient::DescribeZoneInfoOutcomeCallable PvtzClient::describeZoneInfoCallable(const DescribeZoneInfoRequest &request) const
+PvtzClient::BindZoneVpcOutcomeCallable PvtzClient::bindZoneVpcCallable(const BindZoneVpcRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeZoneInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<BindZoneVpcOutcome()>>(
 			[this, request]()
 			{
-			return this->describeZoneInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PvtzClient::DeleteZoneRecordOutcome PvtzClient::deleteZoneRecord(const DeleteZoneRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteZoneRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteZoneRecordOutcome(DeleteZoneRecordResult(outcome.result()));
-	else
-		return DeleteZoneRecordOutcome(outcome.error());
-}
-
-void PvtzClient::deleteZoneRecordAsync(const DeleteZoneRecordRequest& request, const DeleteZoneRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteZoneRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PvtzClient::DeleteZoneRecordOutcomeCallable PvtzClient::deleteZoneRecordCallable(const DeleteZoneRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteZoneRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteZoneRecord(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PvtzClient::UpdateZoneRemarkOutcome PvtzClient::updateZoneRemark(const UpdateZoneRemarkRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateZoneRemarkOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateZoneRemarkOutcome(UpdateZoneRemarkResult(outcome.result()));
-	else
-		return UpdateZoneRemarkOutcome(outcome.error());
-}
-
-void PvtzClient::updateZoneRemarkAsync(const UpdateZoneRemarkRequest& request, const UpdateZoneRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateZoneRemark(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PvtzClient::UpdateZoneRemarkOutcomeCallable PvtzClient::updateZoneRemarkCallable(const UpdateZoneRemarkRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateZoneRemarkOutcome()>>(
-			[this, request]()
-			{
-			return this->updateZoneRemark(request);
+			return this->bindZoneVpc(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -231,108 +195,144 @@ PvtzClient::CheckZoneNameOutcomeCallable PvtzClient::checkZoneNameCallable(const
 	return task->get_future();
 }
 
-PvtzClient::UpdateZoneRecordOutcome PvtzClient::updateZoneRecord(const UpdateZoneRecordRequest &request) const
+PvtzClient::DeleteZoneOutcome PvtzClient::deleteZone(const DeleteZoneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateZoneRecordOutcome(endpointOutcome.error());
+		return DeleteZoneOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateZoneRecordOutcome(UpdateZoneRecordResult(outcome.result()));
+		return DeleteZoneOutcome(DeleteZoneResult(outcome.result()));
 	else
-		return UpdateZoneRecordOutcome(outcome.error());
+		return DeleteZoneOutcome(outcome.error());
 }
 
-void PvtzClient::updateZoneRecordAsync(const UpdateZoneRecordRequest& request, const UpdateZoneRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void PvtzClient::deleteZoneAsync(const DeleteZoneRequest& request, const DeleteZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateZoneRecord(request), context);
+		handler(this, request, deleteZone(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-PvtzClient::UpdateZoneRecordOutcomeCallable PvtzClient::updateZoneRecordCallable(const UpdateZoneRecordRequest &request) const
+PvtzClient::DeleteZoneOutcomeCallable PvtzClient::deleteZoneCallable(const DeleteZoneRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateZoneRecordOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteZoneOutcome()>>(
 			[this, request]()
 			{
-			return this->updateZoneRecord(request);
+			return this->deleteZone(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-PvtzClient::AddZoneOutcome PvtzClient::addZone(const AddZoneRequest &request) const
+PvtzClient::DeleteZoneRecordOutcome PvtzClient::deleteZoneRecord(const DeleteZoneRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AddZoneOutcome(endpointOutcome.error());
+		return DeleteZoneRecordOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AddZoneOutcome(AddZoneResult(outcome.result()));
+		return DeleteZoneRecordOutcome(DeleteZoneRecordResult(outcome.result()));
 	else
-		return AddZoneOutcome(outcome.error());
+		return DeleteZoneRecordOutcome(outcome.error());
 }
 
-void PvtzClient::addZoneAsync(const AddZoneRequest& request, const AddZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void PvtzClient::deleteZoneRecordAsync(const DeleteZoneRecordRequest& request, const DeleteZoneRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, addZone(request), context);
+		handler(this, request, deleteZoneRecord(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-PvtzClient::AddZoneOutcomeCallable PvtzClient::addZoneCallable(const AddZoneRequest &request) const
+PvtzClient::DeleteZoneRecordOutcomeCallable PvtzClient::deleteZoneRecordCallable(const DeleteZoneRecordRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AddZoneOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteZoneRecordOutcome()>>(
 			[this, request]()
 			{
-			return this->addZone(request);
+			return this->deleteZoneRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-PvtzClient::BindZoneVpcOutcome PvtzClient::bindZoneVpc(const BindZoneVpcRequest &request) const
+PvtzClient::DescribeChangeLogsOutcome PvtzClient::describeChangeLogs(const DescribeChangeLogsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return BindZoneVpcOutcome(endpointOutcome.error());
+		return DescribeChangeLogsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return BindZoneVpcOutcome(BindZoneVpcResult(outcome.result()));
+		return DescribeChangeLogsOutcome(DescribeChangeLogsResult(outcome.result()));
 	else
-		return BindZoneVpcOutcome(outcome.error());
+		return DescribeChangeLogsOutcome(outcome.error());
 }
 
-void PvtzClient::bindZoneVpcAsync(const BindZoneVpcRequest& request, const BindZoneVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void PvtzClient::describeChangeLogsAsync(const DescribeChangeLogsRequest& request, const DescribeChangeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, bindZoneVpc(request), context);
+		handler(this, request, describeChangeLogs(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-PvtzClient::BindZoneVpcOutcomeCallable PvtzClient::bindZoneVpcCallable(const BindZoneVpcRequest &request) const
+PvtzClient::DescribeChangeLogsOutcomeCallable PvtzClient::describeChangeLogsCallable(const DescribeChangeLogsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<BindZoneVpcOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeChangeLogsOutcome()>>(
 			[this, request]()
 			{
-			return this->bindZoneVpc(request);
+			return this->describeChangeLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PvtzClient::DescribeRegionsOutcome PvtzClient::describeRegions(const DescribeRegionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRegionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
+	else
+		return DescribeRegionsOutcome(outcome.error());
+}
+
+void PvtzClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRegions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::DescribeRegionsOutcomeCallable PvtzClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRegions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,150 +411,6 @@ PvtzClient::DescribeStatisticSummaryOutcomeCallable PvtzClient::describeStatisti
 	return task->get_future();
 }
 
-PvtzClient::SetProxyPatternOutcome PvtzClient::setProxyPattern(const SetProxyPatternRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetProxyPatternOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetProxyPatternOutcome(SetProxyPatternResult(outcome.result()));
-	else
-		return SetProxyPatternOutcome(outcome.error());
-}
-
-void PvtzClient::setProxyPatternAsync(const SetProxyPatternRequest& request, const SetProxyPatternAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setProxyPattern(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PvtzClient::SetProxyPatternOutcomeCallable PvtzClient::setProxyPatternCallable(const SetProxyPatternRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetProxyPatternOutcome()>>(
-			[this, request]()
-			{
-			return this->setProxyPattern(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PvtzClient::DescribeZoneVpcTreeOutcome PvtzClient::describeZoneVpcTree(const DescribeZoneVpcTreeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeZoneVpcTreeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeZoneVpcTreeOutcome(DescribeZoneVpcTreeResult(outcome.result()));
-	else
-		return DescribeZoneVpcTreeOutcome(outcome.error());
-}
-
-void PvtzClient::describeZoneVpcTreeAsync(const DescribeZoneVpcTreeRequest& request, const DescribeZoneVpcTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeZoneVpcTree(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PvtzClient::DescribeZoneVpcTreeOutcomeCallable PvtzClient::describeZoneVpcTreeCallable(const DescribeZoneVpcTreeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeZoneVpcTreeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeZoneVpcTree(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PvtzClient::DescribeChangeLogsOutcome PvtzClient::describeChangeLogs(const DescribeChangeLogsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeChangeLogsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeChangeLogsOutcome(DescribeChangeLogsResult(outcome.result()));
-	else
-		return DescribeChangeLogsOutcome(outcome.error());
-}
-
-void PvtzClient::describeChangeLogsAsync(const DescribeChangeLogsRequest& request, const DescribeChangeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeChangeLogs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PvtzClient::DescribeChangeLogsOutcomeCallable PvtzClient::describeChangeLogsCallable(const DescribeChangeLogsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeChangeLogsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeChangeLogs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PvtzClient::DeleteZoneOutcome PvtzClient::deleteZone(const DeleteZoneRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteZoneOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteZoneOutcome(DeleteZoneResult(outcome.result()));
-	else
-		return DeleteZoneOutcome(outcome.error());
-}
-
-void PvtzClient::deleteZoneAsync(const DeleteZoneRequest& request, const DeleteZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteZone(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PvtzClient::DeleteZoneOutcomeCallable PvtzClient::deleteZoneCallable(const DeleteZoneRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteZoneOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteZone(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PvtzClient::DescribeUserServiceStatusOutcome PvtzClient::describeUserServiceStatus(const DescribeUserServiceStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -591,72 +447,36 @@ PvtzClient::DescribeUserServiceStatusOutcomeCallable PvtzClient::describeUserSer
 	return task->get_future();
 }
 
-PvtzClient::DescribeRegionsOutcome PvtzClient::describeRegions(const DescribeRegionsRequest &request) const
+PvtzClient::DescribeZoneInfoOutcome PvtzClient::describeZoneInfo(const DescribeZoneInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeRegionsOutcome(endpointOutcome.error());
+		return DescribeZoneInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
+		return DescribeZoneInfoOutcome(DescribeZoneInfoResult(outcome.result()));
 	else
-		return DescribeRegionsOutcome(outcome.error());
+		return DescribeZoneInfoOutcome(outcome.error());
 }
 
-void PvtzClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void PvtzClient::describeZoneInfoAsync(const DescribeZoneInfoRequest& request, const DescribeZoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeRegions(request), context);
+		handler(this, request, describeZoneInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-PvtzClient::DescribeRegionsOutcomeCallable PvtzClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
+PvtzClient::DescribeZoneInfoOutcomeCallable PvtzClient::describeZoneInfoCallable(const DescribeZoneInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeZoneInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->describeRegions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PvtzClient::SetZoneRecordStatusOutcome PvtzClient::setZoneRecordStatus(const SetZoneRecordStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetZoneRecordStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetZoneRecordStatusOutcome(SetZoneRecordStatusResult(outcome.result()));
-	else
-		return SetZoneRecordStatusOutcome(outcome.error());
-}
-
-void PvtzClient::setZoneRecordStatusAsync(const SetZoneRecordStatusRequest& request, const SetZoneRecordStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setZoneRecordStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PvtzClient::SetZoneRecordStatusOutcomeCallable PvtzClient::setZoneRecordStatusCallable(const SetZoneRecordStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetZoneRecordStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->setZoneRecordStatus(request);
+			return this->describeZoneInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +519,42 @@ PvtzClient::DescribeZoneRecordsOutcomeCallable PvtzClient::describeZoneRecordsCa
 	return task->get_future();
 }
 
+PvtzClient::DescribeZoneVpcTreeOutcome PvtzClient::describeZoneVpcTree(const DescribeZoneVpcTreeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeZoneVpcTreeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeZoneVpcTreeOutcome(DescribeZoneVpcTreeResult(outcome.result()));
+	else
+		return DescribeZoneVpcTreeOutcome(outcome.error());
+}
+
+void PvtzClient::describeZoneVpcTreeAsync(const DescribeZoneVpcTreeRequest& request, const DescribeZoneVpcTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeZoneVpcTree(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::DescribeZoneVpcTreeOutcomeCallable PvtzClient::describeZoneVpcTreeCallable(const DescribeZoneVpcTreeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeZoneVpcTreeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeZoneVpcTree(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PvtzClient::DescribeZonesOutcome PvtzClient::describeZones(const DescribeZonesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +585,150 @@ PvtzClient::DescribeZonesOutcomeCallable PvtzClient::describeZonesCallable(const
 			[this, request]()
 			{
 			return this->describeZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PvtzClient::SetProxyPatternOutcome PvtzClient::setProxyPattern(const SetProxyPatternRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetProxyPatternOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetProxyPatternOutcome(SetProxyPatternResult(outcome.result()));
+	else
+		return SetProxyPatternOutcome(outcome.error());
+}
+
+void PvtzClient::setProxyPatternAsync(const SetProxyPatternRequest& request, const SetProxyPatternAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setProxyPattern(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::SetProxyPatternOutcomeCallable PvtzClient::setProxyPatternCallable(const SetProxyPatternRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetProxyPatternOutcome()>>(
+			[this, request]()
+			{
+			return this->setProxyPattern(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PvtzClient::SetZoneRecordStatusOutcome PvtzClient::setZoneRecordStatus(const SetZoneRecordStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetZoneRecordStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetZoneRecordStatusOutcome(SetZoneRecordStatusResult(outcome.result()));
+	else
+		return SetZoneRecordStatusOutcome(outcome.error());
+}
+
+void PvtzClient::setZoneRecordStatusAsync(const SetZoneRecordStatusRequest& request, const SetZoneRecordStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setZoneRecordStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::SetZoneRecordStatusOutcomeCallable PvtzClient::setZoneRecordStatusCallable(const SetZoneRecordStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetZoneRecordStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setZoneRecordStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PvtzClient::UpdateZoneRecordOutcome PvtzClient::updateZoneRecord(const UpdateZoneRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateZoneRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateZoneRecordOutcome(UpdateZoneRecordResult(outcome.result()));
+	else
+		return UpdateZoneRecordOutcome(outcome.error());
+}
+
+void PvtzClient::updateZoneRecordAsync(const UpdateZoneRecordRequest& request, const UpdateZoneRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateZoneRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::UpdateZoneRecordOutcomeCallable PvtzClient::updateZoneRecordCallable(const UpdateZoneRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateZoneRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->updateZoneRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PvtzClient::UpdateZoneRemarkOutcome PvtzClient::updateZoneRemark(const UpdateZoneRemarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateZoneRemarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateZoneRemarkOutcome(UpdateZoneRemarkResult(outcome.result()));
+	else
+		return UpdateZoneRemarkOutcome(outcome.error());
+}
+
+void PvtzClient::updateZoneRemarkAsync(const UpdateZoneRemarkRequest& request, const UpdateZoneRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateZoneRemark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::UpdateZoneRemarkOutcomeCallable PvtzClient::updateZoneRemarkCallable(const UpdateZoneRemarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateZoneRemarkOutcome()>>(
+			[this, request]()
+			{
+			return this->updateZoneRemark(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

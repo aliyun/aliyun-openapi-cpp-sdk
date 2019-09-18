@@ -37,12 +37,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				bool getRecordFlag()const;
-				void setRecordFlag(bool recordFlag);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getCallerShowNumber()const;
 				void setCallerShowNumber(const std::string& callerShowNumber);
 				std::string getAccessKeyId()const;
@@ -53,10 +47,16 @@ namespace AlibabaCloud
 				void setCalledNumber(const std::string& calledNumber);
 				std::string getCalledShowNumber()const;
 				void setCalledShowNumber(const std::string& calledShowNumber);
-				std::string getOutId()const;
-				void setOutId(const std::string& outId);
 				bool getAsrFlag()const;
 				void setAsrFlag(bool asrFlag);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				bool getRecordFlag()const;
+				void setRecordFlag(bool recordFlag);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getOutId()const;
+				void setOutId(const std::string& outId);
 				std::string getAsrModelId()const;
 				void setAsrModelId(const std::string& asrModelId);
 				std::string getCallerNumber()const;
@@ -64,16 +64,16 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				bool recordFlag_;
-				long ownerId_;
 				std::string callerShowNumber_;
 				std::string accessKeyId_;
 				int sessionTimeout_;
 				std::string calledNumber_;
 				std::string calledShowNumber_;
-				std::string outId_;
 				bool asrFlag_;
+				std::string resourceOwnerAccount_;
+				bool recordFlag_;
+				long ownerId_;
+				std::string outId_;
 				std::string asrModelId_;
 				std::string callerNumber_;
 

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeUserStatusResult(const std::string &payload);
 				~DescribeUserStatusResult();
 				std::string getOpenApiBeginTime()const;
+				std::string getUid()const;
 				bool getOpenApiUsed()const;
 				std::string getOssCheckStatus()const;
 				int getOssVideoSizeLimit()const;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string openApiBeginTime_;
+				std::string uid_;
 				bool openApiUsed_;
 				std::string ossCheckStatus_;
 				int ossVideoSizeLimit_;

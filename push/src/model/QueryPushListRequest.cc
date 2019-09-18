@@ -25,17 +25,6 @@ QueryPushListRequest::QueryPushListRequest() :
 QueryPushListRequest::~QueryPushListRequest()
 {}
 
-int QueryPushListRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void QueryPushListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string QueryPushListRequest::getEndTime()const
 {
 	return endTime_;
@@ -47,17 +36,6 @@ void QueryPushListRequest::setEndTime(const std::string& endTime)
 	setCoreParameter("EndTime", endTime);
 }
 
-long QueryPushListRequest::getAppKey()const
-{
-	return appKey_;
-}
-
-void QueryPushListRequest::setAppKey(long appKey)
-{
-	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
-}
-
 std::string QueryPushListRequest::getStartTime()const
 {
 	return startTime_;
@@ -67,6 +45,39 @@ void QueryPushListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setCoreParameter("StartTime", startTime);
+}
+
+std::string QueryPushListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryPushListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int QueryPushListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryPushListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+long QueryPushListRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void QueryPushListRequest::setAppKey(long appKey)
+{
+	appKey_ = appKey;
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 int QueryPushListRequest::getPage()const
@@ -89,16 +100,5 @@ void QueryPushListRequest::setPushType(const std::string& pushType)
 {
 	pushType_ = pushType;
 	setCoreParameter("PushType", pushType);
-}
-
-std::string QueryPushListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryPushListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

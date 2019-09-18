@@ -25,6 +25,17 @@ CheckDomainRequest::CheckDomainRequest() :
 CheckDomainRequest::~CheckDomainRequest()
 {}
 
+std::string CheckDomainRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void CheckDomainRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setCoreParameter("DomainName", domainName);
+}
+
 std::string CheckDomainRequest::getFeeCurrency()const
 {
 	return feeCurrency_;
@@ -45,17 +56,6 @@ void CheckDomainRequest::setFeePeriod(int feePeriod)
 {
 	feePeriod_ = feePeriod;
 	setCoreParameter("FeePeriod", std::to_string(feePeriod));
-}
-
-std::string CheckDomainRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void CheckDomainRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
 }
 
 std::string CheckDomainRequest::getFeeCommand()const

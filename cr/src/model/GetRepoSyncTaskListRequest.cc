@@ -47,17 +47,6 @@ void GetRepoSyncTaskListRequest::setRepoName(const std::string& repoName)
 	setCoreParameter("RepoName", repoName);
 }
 
-std::string GetRepoSyncTaskListRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetRepoSyncTaskListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 int GetRepoSyncTaskListRequest::getPageSize()const
 {
 	return pageSize_;

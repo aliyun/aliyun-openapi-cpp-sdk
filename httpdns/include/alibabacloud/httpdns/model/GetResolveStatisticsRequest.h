@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				GetResolveStatisticsRequest();
 				~GetResolveStatisticsRequest();
 
-				std::string getGranularity()const;
-				void setGranularity(const std::string& granularity);
 				std::string getProtocolName()const;
 				void setProtocolName(const std::string& protocolName);
 				std::string getDomainName()const;
@@ -45,13 +43,15 @@ namespace AlibabaCloud
 				void setTimeSpan(int timeSpan);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getGranularity()const;
+				void setGranularity(const std::string& granularity);
 
             private:
-				std::string granularity_;
 				std::string protocolName_;
 				std::string domainName_;
 				int timeSpan_;
 				std::string accessKeyId_;
+				std::string granularity_;
 
 			};
 		}

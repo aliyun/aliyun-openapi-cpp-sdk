@@ -37,30 +37,30 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				long getSmartAGUid()const;
-				void setSmartAGUid(long smartAGUid);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getCcnId()const;
 				void setCcnId(const std::string& ccnId);
-				std::string getSmartAGId()const;
-				void setSmartAGId(const std::string& smartAGId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				long getSmartAGUid()const;
+				void setSmartAGUid(long smartAGUid);
+				std::string getSmartAGId()const;
+				void setSmartAGId(const std::string& smartAGId);
 
             private:
 				long resourceOwnerId_;
-				long smartAGUid_;
-				std::string resourceOwnerAccount_;
-				std::string regionId_;
-				std::string ownerAccount_;
 				std::string ccnId_;
-				std::string smartAGId_;
+				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				long ownerId_;
+				long smartAGUid_;
+				std::string smartAGId_;
 
 			};
 		}

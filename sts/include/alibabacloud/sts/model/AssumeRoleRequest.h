@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				AssumeRoleRequest();
 				~AssumeRoleRequest();
 
-				std::string getRoleArn()const;
-				void setRoleArn(const std::string& roleArn);
 				std::string getRoleSessionName()const;
 				void setRoleSessionName(const std::string& roleSessionName);
-				long getDurationSeconds()const;
-				void setDurationSeconds(long durationSeconds);
 				std::string getPolicy()const;
 				void setPolicy(const std::string& policy);
+				std::string getRoleArn()const;
+				void setRoleArn(const std::string& roleArn);
+				long getDurationSeconds()const;
+				void setDurationSeconds(long durationSeconds);
 
             private:
-				std::string roleArn_;
 				std::string roleSessionName_;
-				long durationSeconds_;
 				std::string policy_;
+				std::string roleArn_;
+				long durationSeconds_;
 
 			};
 		}

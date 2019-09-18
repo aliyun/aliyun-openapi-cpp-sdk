@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DescribeEcsListPageRequest();
 				~DescribeEcsListPageRequest();
 
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getSourceCode()const;
+				void setSourceCode(const std::string& sourceCode);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getSourceCode()const;
-				void setSourceCode(const std::string& sourceCode);
 
             private:
+				int currentPage_;
+				std::string sourceCode_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
-				std::string sourceCode_;
 
 			};
 		}

@@ -25,6 +25,17 @@ ConfigurationStyleRequest::ConfigurationStyleRequest() :
 ConfigurationStyleRequest::~ConfigurationStyleRequest()
 {}
 
+std::string ConfigurationStyleRequest::getScene()const
+{
+	return scene_;
+}
+
+void ConfigurationStyleRequest::setScene(const std::string& scene)
+{
+	scene_ = scene;
+	setCoreParameter("Scene", scene);
+}
+
 std::string ConfigurationStyleRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -67,16 +78,5 @@ void ConfigurationStyleRequest::setApplyType(const std::string& applyType)
 {
 	applyType_ = applyType;
 	setCoreParameter("ApplyType", applyType);
-}
-
-std::string ConfigurationStyleRequest::getScene()const
-{
-	return scene_;
-}
-
-void ConfigurationStyleRequest::setScene(const std::string& scene)
-{
-	scene_ = scene;
-	setCoreParameter("Scene", scene);
 }
 

@@ -25,28 +25,6 @@ ListSetsRequest::ListSetsRequest() :
 ListSetsRequest::~ListSetsRequest()
 {}
 
-std::string ListSetsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ListSetsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ListSetsRequest::getMarker()const
-{
-	return marker_;
-}
-
-void ListSetsRequest::setMarker(const std::string& marker)
-{
-	marker_ = marker;
-	setCoreParameter("Marker", marker);
-}
-
 std::string ListSetsRequest::getProject()const
 {
 	return project_;
@@ -67,5 +45,16 @@ void ListSetsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListSetsRequest::getMarker()const
+{
+	return marker_;
+}
+
+void ListSetsRequest::setMarker(const std::string& marker)
+{
+	marker_ = marker;
+	setCoreParameter("Marker", marker);
 }
 

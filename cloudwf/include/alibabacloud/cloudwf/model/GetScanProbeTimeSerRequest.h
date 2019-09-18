@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				GetScanProbeTimeSerRequest();
 				~GetScanProbeTimeSerRequest();
 
-				long getZoomStart()const;
-				void setZoomStart(long zoomStart);
-				long getCompanyId()const;
-				void setCompanyId(long companyId);
 				long getApgroupId()const;
 				void setApgroupId(long apgroupId);
 				long getStart()const;
 				void setStart(long start);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				long getZoomStart()const;
+				void setZoomStart(long zoomStart);
+				long getCompanyId()const;
+				void setCompanyId(long companyId);
 				long getZoomEnd()const;
 				void setZoomEnd(long zoomEnd);
 				long getEnd()const;
 				void setEnd(long end);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
-				long zoomStart_;
-				long companyId_;
 				long apgroupId_;
 				long start_;
+				std::string accessKeyId_;
+				long zoomStart_;
+				long companyId_;
 				long zoomEnd_;
 				long end_;
-				std::string accessKeyId_;
 
 			};
 		}

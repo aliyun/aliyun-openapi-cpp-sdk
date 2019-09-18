@@ -25,17 +25,6 @@ DescribePublishedRouteEntriesRequest::DescribePublishedRouteEntriesRequest() :
 DescribePublishedRouteEntriesRequest::~DescribePublishedRouteEntriesRequest()
 {}
 
-std::string DescribePublishedRouteEntriesRequest::getChildInstanceId()const
-{
-	return childInstanceId_;
-}
-
-void DescribePublishedRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
-{
-	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
-}
-
 long DescribePublishedRouteEntriesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -45,17 +34,6 @@ void DescribePublishedRouteEntriesRequest::setResourceOwnerId(long resourceOwner
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribePublishedRouteEntriesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribePublishedRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getCenId()const
@@ -69,15 +47,15 @@ void DescribePublishedRouteEntriesRequest::setCenId(const std::string& cenId)
 	setCoreParameter("CenId", cenId);
 }
 
-std::string DescribePublishedRouteEntriesRequest::getDestinationCidrBlock()const
+int DescribePublishedRouteEntriesRequest::getPageNumber()const
 {
-	return destinationCidrBlock_;
+	return pageNumber_;
 }
 
-void DescribePublishedRouteEntriesRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
+void DescribePublishedRouteEntriesRequest::setPageNumber(int pageNumber)
 {
-	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribePublishedRouteEntriesRequest::getPageSize()const
@@ -91,6 +69,39 @@ void DescribePublishedRouteEntriesRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribePublishedRouteEntriesRequest::getChildInstanceRegionId()const
+{
+	return childInstanceRegionId_;
+}
+
+void DescribePublishedRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
+{
+	childInstanceRegionId_ = childInstanceRegionId;
+	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+}
+
+std::string DescribePublishedRouteEntriesRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribePublishedRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribePublishedRouteEntriesRequest::getDestinationCidrBlock()const
+{
+	return destinationCidrBlock_;
+}
+
+void DescribePublishedRouteEntriesRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
+{
+	destinationCidrBlock_ = destinationCidrBlock;
+	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+}
+
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceType()const
 {
 	return childInstanceType_;
@@ -102,6 +113,17 @@ void DescribePublishedRouteEntriesRequest::setChildInstanceType(const std::strin
 	setCoreParameter("ChildInstanceType", childInstanceType);
 }
 
+std::string DescribePublishedRouteEntriesRequest::getChildInstanceId()const
+{
+	return childInstanceId_;
+}
+
+void DescribePublishedRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
+{
+	childInstanceId_ = childInstanceId;
+	setCoreParameter("ChildInstanceId", childInstanceId);
+}
+
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceRouteTableId()const
 {
 	return childInstanceRouteTableId_;
@@ -111,27 +133,5 @@ void DescribePublishedRouteEntriesRequest::setChildInstanceRouteTableId(const st
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
 	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
-}
-
-int DescribePublishedRouteEntriesRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribePublishedRouteEntriesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string DescribePublishedRouteEntriesRequest::getChildInstanceRegionId()const
-{
-	return childInstanceRegionId_;
-}
-
-void DescribePublishedRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
-{
-	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 

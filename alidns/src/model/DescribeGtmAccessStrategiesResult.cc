@@ -35,13 +35,9 @@ DescribeGtmAccessStrategiesResult::~DescribeGtmAccessStrategiesResult()
 
 void DescribeGtmAccessStrategiesResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allStrategies = value["Strategies"]["Strategy"];
 	for (auto value : allStrategies)
@@ -71,6 +67,14 @@ void DescribeGtmAccessStrategiesResult::parse(const std::string &payload)
 			strategiesObject.strategyMode = value["StrategyMode"].asString();
 		if(!value["InstanceId"].isNull())
 			strategiesObject.instanceId = value["InstanceId"].asString();
+		if(!value["DefaultAddrPoolStatus"].isNull())
+			strategiesObject.defaultAddrPoolStatus = value["DefaultAddrPoolStatus"].asString();
+		if(!value["FailoverAddrPoolStatus"].isNull())
+			strategiesObject.failoverAddrPoolStatus = value["FailoverAddrPoolStatus"].asString();
+		if(!value["DefaultAddrPoolMonitorStatus"].isNull())
+			strategiesObject.defaultAddrPoolMonitorStatus = value["DefaultAddrPoolMonitorStatus"].asString();
+		if(!value["FailoverAddrPoolMonitorStatus"].isNull())
+			strategiesObject.failoverAddrPoolMonitorStatus = value["FailoverAddrPoolMonitorStatus"].asString();
 		auto allLines = value["Lines"]["Line"];
 		for (auto value : allLines)
 		{

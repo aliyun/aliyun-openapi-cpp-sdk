@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				UpdateZoneRemarkRequest();
 				~UpdateZoneRemarkRequest();
 
+				std::string getRemark()const;
+				void setRemark(const std::string& remark);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
-				std::string getRemark()const;
-				void setRemark(const std::string& remark);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string remark_;
 				std::string userClientIp_;
 				std::string zoneId_;
-				std::string remark_;
 				std::string lang_;
 
 			};

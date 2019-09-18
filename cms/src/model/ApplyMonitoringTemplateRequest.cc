@@ -25,17 +25,6 @@ ApplyMonitoringTemplateRequest::ApplyMonitoringTemplateRequest() :
 ApplyMonitoringTemplateRequest::~ApplyMonitoringTemplateRequest()
 {}
 
-long ApplyMonitoringTemplateRequest::getEnableStartTime()const
-{
-	return enableStartTime_;
-}
-
-void ApplyMonitoringTemplateRequest::setEnableStartTime(long enableStartTime)
-{
-	enableStartTime_ = enableStartTime;
-	setCoreParameter("EnableStartTime", std::to_string(enableStartTime));
-}
-
 std::string ApplyMonitoringTemplateRequest::getApplyMode()const
 {
 	return applyMode_;
@@ -100,6 +89,17 @@ void ApplyMonitoringTemplateRequest::setNotifyLevel(long notifyLevel)
 {
 	notifyLevel_ = notifyLevel;
 	setCoreParameter("NotifyLevel", std::to_string(notifyLevel));
+}
+
+long ApplyMonitoringTemplateRequest::getEnableStartTime()const
+{
+	return enableStartTime_;
+}
+
+void ApplyMonitoringTemplateRequest::setEnableStartTime(long enableStartTime)
+{
+	enableStartTime_ = enableStartTime;
+	setCoreParameter("EnableStartTime", std::to_string(enableStartTime));
 }
 
 long ApplyMonitoringTemplateRequest::getSilenceTime()const

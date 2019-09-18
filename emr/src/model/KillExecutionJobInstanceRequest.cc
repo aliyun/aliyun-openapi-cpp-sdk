@@ -36,6 +36,17 @@ void KillExecutionJobInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string KillExecutionJobInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void KillExecutionJobInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string KillExecutionJobInstanceRequest::getRegionId()const
 {
 	return regionId_;
@@ -56,16 +67,5 @@ void KillExecutionJobInstanceRequest::setJobInstanceId(const std::string& jobIns
 {
 	jobInstanceId_ = jobInstanceId;
 	setCoreParameter("JobInstanceId", jobInstanceId);
-}
-
-std::string KillExecutionJobInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void KillExecutionJobInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

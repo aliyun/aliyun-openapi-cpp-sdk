@@ -25,17 +25,6 @@ OnsGroupCreateRequest::OnsGroupCreateRequest() :
 OnsGroupCreateRequest::~OnsGroupCreateRequest()
 {}
 
-std::string OnsGroupCreateRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void OnsGroupCreateRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
 std::string OnsGroupCreateRequest::getGroupId()const
 {
 	return groupId_;
@@ -56,5 +45,16 @@ void OnsGroupCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
 	setCoreParameter("Remark", remark);
+}
+
+std::string OnsGroupCreateRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void OnsGroupCreateRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

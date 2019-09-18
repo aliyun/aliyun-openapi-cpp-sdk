@@ -25,6 +25,17 @@ SetCasterSceneConfigRequest::SetCasterSceneConfigRequest() :
 SetCasterSceneConfigRequest::~SetCasterSceneConfigRequest()
 {}
 
+std::string SetCasterSceneConfigRequest::getLayoutId()const
+{
+	return layoutId_;
+}
+
+void SetCasterSceneConfigRequest::setLayoutId(const std::string& layoutId)
+{
+	layoutId_ = layoutId;
+	setCoreParameter("LayoutId", layoutId);
+}
+
 std::vector<std::string> SetCasterSceneConfigRequest::getComponentId()const
 {
 	return componentId_;
@@ -35,17 +46,6 @@ void SetCasterSceneConfigRequest::setComponentId(const std::vector<std::string>&
 	componentId_ = componentId;
 	for(int i = 0; i!= componentId.size(); i++)
 		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
-}
-
-std::string SetCasterSceneConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SetCasterSceneConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
 }
 
 std::string SetCasterSceneConfigRequest::getCasterId()const
@@ -59,17 +59,6 @@ void SetCasterSceneConfigRequest::setCasterId(const std::string& casterId)
 	setCoreParameter("CasterId", casterId);
 }
 
-std::string SetCasterSceneConfigRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void SetCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
-{
-	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
-}
-
 long SetCasterSceneConfigRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -81,14 +70,14 @@ void SetCasterSceneConfigRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetCasterSceneConfigRequest::getLayoutId()const
+std::string SetCasterSceneConfigRequest::getSceneId()const
 {
-	return layoutId_;
+	return sceneId_;
 }
 
-void SetCasterSceneConfigRequest::setLayoutId(const std::string& layoutId)
+void SetCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
 {
-	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
+	sceneId_ = sceneId;
+	setCoreParameter("SceneId", sceneId);
 }
 

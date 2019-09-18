@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DeleteEventTargetsRequest();
 				~DeleteEventTargetsRequest();
 
-				std::vector<std::string> getIds()const;
-				void setIds(const std::vector<std::string>& ids);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
+				std::vector<std::string> getIds()const;
+				void setIds(const std::vector<std::string>& ids);
 
             private:
-				std::vector<std::string> ids_;
 				std::string ruleName_;
+				std::vector<std::string> ids_;
 
 			};
 		}

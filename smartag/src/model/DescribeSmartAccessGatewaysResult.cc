@@ -35,13 +35,9 @@ DescribeSmartAccessGatewaysResult::~DescribeSmartAccessGatewaysResult()
 
 void DescribeSmartAccessGatewaysResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto allSmartAccessGateways = value["SmartAccessGateways"]["SmartAccessGateway"];
 	for (auto value : allSmartAccessGateways)
@@ -95,6 +91,8 @@ void DescribeSmartAccessGatewaysResult::parse(const std::string &payload)
 			smartAccessGatewaysObject.backupSoftwareVersion = value["BackupSoftwareVersion"].asString();
 		if(!value["SmartAGUid"].isNull())
 			smartAccessGatewaysObject.smartAGUid = std::stol(value["SmartAGUid"].asString());
+		if(!value["BackupStatus"].isNull())
+			smartAccessGatewaysObject.backupStatus = value["BackupStatus"].asString();
 		auto allLinks = value["Links"]["Link"];
 		for (auto value : allLinks)
 		{

@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				SetDomainServerCertificateRequest();
 				~SetDomainServerCertificateRequest();
 
-				std::string getPrivateKey()const;
-				void setPrivateKey(const std::string& privateKey);
-				std::string getForceSet()const;
-				void setForceSet(const std::string& forceSet);
-				std::string getServerCertificateStatus()const;
-				void setServerCertificateStatus(const std::string& serverCertificateStatus);
 				std::string getServerCertificate()const;
 				void setServerCertificate(const std::string& serverCertificate);
+				std::string getPrivateKey()const;
+				void setPrivateKey(const std::string& privateKey);
+				std::string getServerCertificateStatus()const;
+				void setServerCertificateStatus(const std::string& serverCertificateStatus);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getCertType()const;
 				void setCertType(const std::string& certType);
+				std::string getForceSet()const;
+				void setForceSet(const std::string& forceSet);
 				std::string getCertName()const;
 				void setCertName(const std::string& certName);
 				std::string getDomainName()const;
@@ -57,12 +57,12 @@ namespace AlibabaCloud
 				void setRegion(const std::string& region);
 
             private:
-				std::string privateKey_;
-				std::string forceSet_;
-				std::string serverCertificateStatus_;
 				std::string serverCertificate_;
+				std::string privateKey_;
+				std::string serverCertificateStatus_;
 				std::string securityToken_;
 				std::string certType_;
+				std::string forceSet_;
 				std::string certName_;
 				std::string domainName_;
 				long ownerId_;

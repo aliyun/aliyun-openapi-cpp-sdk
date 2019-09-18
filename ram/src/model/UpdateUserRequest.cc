@@ -36,17 +36,6 @@ void UpdateUserRequest::setNewUserName(const std::string& newUserName)
 	setCoreParameter("NewUserName", newUserName);
 }
 
-std::string UpdateUserRequest::getNewDisplayName()const
-{
-	return newDisplayName_;
-}
-
-void UpdateUserRequest::setNewDisplayName(const std::string& newDisplayName)
-{
-	newDisplayName_ = newDisplayName;
-	setCoreParameter("NewDisplayName", newDisplayName);
-}
-
 std::string UpdateUserRequest::getNewMobilePhone()const
 {
 	return newMobilePhone_;
@@ -58,17 +47,6 @@ void UpdateUserRequest::setNewMobilePhone(const std::string& newMobilePhone)
 	setCoreParameter("NewMobilePhone", newMobilePhone);
 }
 
-std::string UpdateUserRequest::getNewComments()const
-{
-	return newComments_;
-}
-
-void UpdateUserRequest::setNewComments(const std::string& newComments)
-{
-	newComments_ = newComments;
-	setCoreParameter("NewComments", newComments);
-}
-
 std::string UpdateUserRequest::getNewEmail()const
 {
 	return newEmail_;
@@ -78,6 +56,28 @@ void UpdateUserRequest::setNewEmail(const std::string& newEmail)
 {
 	newEmail_ = newEmail;
 	setCoreParameter("NewEmail", newEmail);
+}
+
+std::string UpdateUserRequest::getNewDisplayName()const
+{
+	return newDisplayName_;
+}
+
+void UpdateUserRequest::setNewDisplayName(const std::string& newDisplayName)
+{
+	newDisplayName_ = newDisplayName;
+	setCoreParameter("NewDisplayName", newDisplayName);
+}
+
+std::string UpdateUserRequest::getNewComments()const
+{
+	return newComments_;
+}
+
+void UpdateUserRequest::setNewComments(const std::string& newComments)
+{
+	newComments_ = newComments;
+	setCoreParameter("NewComments", newComments);
 }
 
 std::string UpdateUserRequest::getUserName()const

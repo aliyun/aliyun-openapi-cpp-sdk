@@ -25,6 +25,17 @@ SetVodDomainCertificateRequest::SetVodDomainCertificateRequest() :
 SetVodDomainCertificateRequest::~SetVodDomainCertificateRequest()
 {}
 
+std::string SetVodDomainCertificateRequest::getSSLProtocol()const
+{
+	return sSLProtocol_;
+}
+
+void SetVodDomainCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
+{
+	sSLProtocol_ = sSLProtocol;
+	setCoreParameter("SSLProtocol", sSLProtocol);
+}
+
 std::string SetVodDomainCertificateRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -36,15 +47,15 @@ void SetVodDomainCertificateRequest::setSecurityToken(const std::string& securit
 	setCoreParameter("SecurityToken", securityToken);
 }
 
-std::string SetVodDomainCertificateRequest::getSSLPub()const
+std::string SetVodDomainCertificateRequest::getSSLPri()const
 {
-	return sSLPub_;
+	return sSLPri_;
 }
 
-void SetVodDomainCertificateRequest::setSSLPub(const std::string& sSLPub)
+void SetVodDomainCertificateRequest::setSSLPri(const std::string& sSLPri)
 {
-	sSLPub_ = sSLPub;
-	setCoreParameter("SSLPub", sSLPub);
+	sSLPri_ = sSLPri;
+	setCoreParameter("SSLPri", sSLPri);
 }
 
 std::string SetVodDomainCertificateRequest::getCertName()const
@@ -56,17 +67,6 @@ void SetVodDomainCertificateRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
 	setCoreParameter("CertName", certName);
-}
-
-std::string SetVodDomainCertificateRequest::getSSLProtocol()const
-{
-	return sSLProtocol_;
-}
-
-void SetVodDomainCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
-{
-	sSLProtocol_ = sSLProtocol;
-	setCoreParameter("SSLProtocol", sSLProtocol);
 }
 
 std::string SetVodDomainCertificateRequest::getDomainName()const
@@ -91,6 +91,17 @@ void SetVodDomainCertificateRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string SetVodDomainCertificateRequest::getSSLPub()const
+{
+	return sSLPub_;
+}
+
+void SetVodDomainCertificateRequest::setSSLPub(const std::string& sSLPub)
+{
+	sSLPub_ = sSLPub;
+	setCoreParameter("SSLPub", sSLPub);
+}
+
 std::string SetVodDomainCertificateRequest::getRegion()const
 {
 	return region_;
@@ -100,16 +111,5 @@ void SetVodDomainCertificateRequest::setRegion(const std::string& region)
 {
 	region_ = region;
 	setCoreParameter("Region", region);
-}
-
-std::string SetVodDomainCertificateRequest::getSSLPri()const
-{
-	return sSLPri_;
-}
-
-void SetVodDomainCertificateRequest::setSSLPri(const std::string& sSLPri)
-{
-	sSLPri_ = sSLPri;
-	setCoreParameter("SSLPri", sSLPri);
 }
 

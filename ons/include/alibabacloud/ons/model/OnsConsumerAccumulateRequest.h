@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				OnsConsumerAccumulateRequest();
 				~OnsConsumerAccumulateRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				bool getDetail()const;
 				void setDetail(bool detail);
 
             private:
-				std::string instanceId_;
 				std::string groupId_;
+				std::string instanceId_;
 				bool detail_;
 
 			};

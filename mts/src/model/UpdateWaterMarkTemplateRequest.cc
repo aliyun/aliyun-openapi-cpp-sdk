@@ -36,6 +36,28 @@ void UpdateWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpdateWaterMarkTemplateRequest::getWaterMarkTemplateId()const
+{
+	return waterMarkTemplateId_;
+}
+
+void UpdateWaterMarkTemplateRequest::setWaterMarkTemplateId(const std::string& waterMarkTemplateId)
+{
+	waterMarkTemplateId_ = waterMarkTemplateId;
+	setCoreParameter("WaterMarkTemplateId", waterMarkTemplateId);
+}
+
+std::string UpdateWaterMarkTemplateRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 std::string UpdateWaterMarkTemplateRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -58,17 +80,6 @@ void UpdateWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAcc
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-std::string UpdateWaterMarkTemplateRequest::getName()const
-{
-	return name_;
-}
-
-void UpdateWaterMarkTemplateRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
-}
-
 long UpdateWaterMarkTemplateRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -80,15 +91,15 @@ void UpdateWaterMarkTemplateRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UpdateWaterMarkTemplateRequest::getWaterMarkTemplateId()const
+std::string UpdateWaterMarkTemplateRequest::getName()const
 {
-	return waterMarkTemplateId_;
+	return name_;
 }
 
-void UpdateWaterMarkTemplateRequest::setWaterMarkTemplateId(const std::string& waterMarkTemplateId)
+void UpdateWaterMarkTemplateRequest::setName(const std::string& name)
 {
-	waterMarkTemplateId_ = waterMarkTemplateId;
-	setCoreParameter("WaterMarkTemplateId", waterMarkTemplateId);
+	name_ = name;
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateWaterMarkTemplateRequest::getConfig()const
@@ -100,16 +111,5 @@ void UpdateWaterMarkTemplateRequest::setConfig(const std::string& config)
 {
 	config_ = config;
 	setCoreParameter("Config", config);
-}
-
-std::string UpdateWaterMarkTemplateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

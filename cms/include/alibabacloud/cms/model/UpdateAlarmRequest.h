@@ -35,22 +35,12 @@ namespace AlibabaCloud
 				UpdateAlarmRequest();
 				~UpdateAlarmRequest();
 
-				int getPeriod()const;
-				void setPeriod(int period);
 				std::string getWebhook()const;
 				void setWebhook(const std::string& webhook);
-				bool getDryRun()const;
-				void setDryRun(bool dryRun);
-				std::string getContactGroups()const;
-				void setContactGroups(const std::string& contactGroups);
-				int getEndTime()const;
-				void setEndTime(int endTime);
 				std::string getThreshold()const;
 				void setThreshold(const std::string& threshold);
 				int getStartTime()const;
 				void setStartTime(int startTime);
-				std::string getName()const;
-				void setName(const std::string& name);
 				int getEvaluationCount()const;
 				void setEvaluationCount(int evaluationCount);
 				int getSilenceTime()const;
@@ -59,24 +49,34 @@ namespace AlibabaCloud
 				void setId(const std::string& id);
 				int getNotifyType()const;
 				void setNotifyType(int notifyType);
+				int getPeriod()const;
+				void setPeriod(int period);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
+				std::string getContactGroups()const;
+				void setContactGroups(const std::string& contactGroups);
+				int getEndTime()const;
+				void setEndTime(int endTime);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getComparisonOperator()const;
 				void setComparisonOperator(const std::string& comparisonOperator);
 				std::string getStatistics()const;
 				void setStatistics(const std::string& statistics);
 
             private:
-				int period_;
 				std::string webhook_;
-				bool dryRun_;
-				std::string contactGroups_;
-				int endTime_;
 				std::string threshold_;
 				int startTime_;
-				std::string name_;
 				int evaluationCount_;
 				int silenceTime_;
 				std::string id_;
 				int notifyType_;
+				int period_;
+				bool dryRun_;
+				std::string contactGroups_;
+				int endTime_;
+				std::string name_;
 				std::string comparisonOperator_;
 				std::string statistics_;
 

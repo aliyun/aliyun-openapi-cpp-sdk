@@ -47,17 +47,6 @@ void ConfigAutoRenewRequest::setMonths(int months)
 	setCoreParameter("Months", std::to_string(months));
 }
 
-bool ConfigAutoRenewRequest::getAutoRenew()const
-{
-	return autoRenew_;
-}
-
-void ConfigAutoRenewRequest::setAutoRenew(bool autoRenew)
-{
-	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
-}
-
 std::vector<std::string> ConfigAutoRenewRequest::getApList()const
 {
 	return apList_;
@@ -79,5 +68,16 @@ void ConfigAutoRenewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+bool ConfigAutoRenewRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void ConfigAutoRenewRequest::setAutoRenew(bool autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 

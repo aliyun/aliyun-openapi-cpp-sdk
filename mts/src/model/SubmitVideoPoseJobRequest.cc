@@ -25,28 +25,6 @@ SubmitVideoPoseJobRequest::SubmitVideoPoseJobRequest() :
 SubmitVideoPoseJobRequest::~SubmitVideoPoseJobRequest()
 {}
 
-std::string SubmitVideoPoseJobRequest::getInput()const
-{
-	return input_;
-}
-
-void SubmitVideoPoseJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setCoreParameter("Input", input);
-}
-
-std::string SubmitVideoPoseJobRequest::getUserData()const
-{
-	return userData_;
-}
-
-void SubmitVideoPoseJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setCoreParameter("UserData", userData);
-}
-
 long SubmitVideoPoseJobRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -67,6 +45,28 @@ void SubmitVideoPoseJobRequest::setOutputConfig(const std::string& outputConfig)
 {
 	outputConfig_ = outputConfig;
 	setCoreParameter("OutputConfig", outputConfig);
+}
+
+std::string SubmitVideoPoseJobRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SubmitVideoPoseJobRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SubmitVideoPoseJobRequest::getUserData()const
+{
+	return userData_;
+}
+
+void SubmitVideoPoseJobRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setCoreParameter("UserData", userData);
 }
 
 std::string SubmitVideoPoseJobRequest::getResourceOwnerAccount()const
@@ -102,17 +102,6 @@ void SubmitVideoPoseJobRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SubmitVideoPoseJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SubmitVideoPoseJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
 std::string SubmitVideoPoseJobRequest::getPipelineId()const
 {
 	return pipelineId_;
@@ -122,5 +111,16 @@ void SubmitVideoPoseJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
 	setCoreParameter("PipelineId", pipelineId);
+}
+
+std::string SubmitVideoPoseJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitVideoPoseJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setCoreParameter("Input", input);
 }
 

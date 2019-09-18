@@ -35,19 +35,19 @@ namespace AlibabaCloud
 				OnsConsumerStatusRequest();
 				~OnsConsumerStatusRequest();
 
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				bool getNeedJstack()const;
 				void setNeedJstack(bool needJstack);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
 				bool getDetail()const;
 				void setDetail(bool detail);
 
             private:
+				std::string groupId_;
 				std::string instanceId_;
 				bool needJstack_;
-				std::string groupId_;
 				bool detail_;
 
 			};

@@ -36,15 +36,15 @@ void DescribeLogicInstanceTopologyRequest::setResourceOwnerId(long resourceOwner
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeLogicInstanceTopologyRequest::getInstanceId()const
+std::string DescribeLogicInstanceTopologyRequest::getAccessKeyId()const
 {
-	return instanceId_;
+	return accessKeyId_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setInstanceId(const std::string& instanceId)
+void DescribeLogicInstanceTopologyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeLogicInstanceTopologyRequest::getSecurityToken()const
@@ -69,17 +69,6 @@ void DescribeLogicInstanceTopologyRequest::setResourceOwnerAccount(const std::st
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeLogicInstanceTopologyRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeLogicInstanceTopologyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string DescribeLogicInstanceTopologyRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -102,14 +91,14 @@ void DescribeLogicInstanceTopologyRequest::setOwnerId(long ownerId)
 	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeLogicInstanceTopologyRequest::getAccessKeyId()const
+std::string DescribeLogicInstanceTopologyRequest::getInstanceId()const
 {
-	return accessKeyId_;
+	return instanceId_;
 }
 
-void DescribeLogicInstanceTopologyRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeLogicInstanceTopologyRequest::setInstanceId(const std::string& instanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	instanceId_ = instanceId;
+	setCoreParameter("InstanceId", instanceId);
 }
 

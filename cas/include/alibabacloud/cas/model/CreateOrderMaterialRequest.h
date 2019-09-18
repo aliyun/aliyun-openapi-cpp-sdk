@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setLeaderEmail(const std::string& leaderEmail);
 				std::string getCompanyAddress()const;
 				void setCompanyAddress(const std::string& companyAddress);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getCompanyCode()const;
 				void setCompanyCode(const std::string& companyCode);
 				std::string getPersonEmail()const;
@@ -94,6 +96,7 @@ namespace AlibabaCloud
 				std::string countryCode_;
 				std::string leaderEmail_;
 				std::string companyAddress_;
+				std::string resourceGroupId_;
 				std::string companyCode_;
 				std::string personEmail_;
 				std::string province_;

@@ -51,36 +51,36 @@ IvpdClient::IvpdClient(const std::string & accessKeyId, const std::string & acce
 IvpdClient::~IvpdClient()
 {}
 
-IvpdClient::ExtendImageStyleOutcome IvpdClient::extendImageStyle(const ExtendImageStyleRequest &request) const
+IvpdClient::ChangeImageSizeOutcome IvpdClient::changeImageSize(const ChangeImageSizeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ExtendImageStyleOutcome(endpointOutcome.error());
+		return ChangeImageSizeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ExtendImageStyleOutcome(ExtendImageStyleResult(outcome.result()));
+		return ChangeImageSizeOutcome(ChangeImageSizeResult(outcome.result()));
 	else
-		return ExtendImageStyleOutcome(outcome.error());
+		return ChangeImageSizeOutcome(outcome.error());
 }
 
-void IvpdClient::extendImageStyleAsync(const ExtendImageStyleRequest& request, const ExtendImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvpdClient::changeImageSizeAsync(const ChangeImageSizeRequest& request, const ChangeImageSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, extendImageStyle(request), context);
+		handler(this, request, changeImageSize(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvpdClient::ExtendImageStyleOutcomeCallable IvpdClient::extendImageStyleCallable(const ExtendImageStyleRequest &request) const
+IvpdClient::ChangeImageSizeOutcomeCallable IvpdClient::changeImageSizeCallable(const ChangeImageSizeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ExtendImageStyleOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ChangeImageSizeOutcome()>>(
 			[this, request]()
 			{
-			return this->extendImageStyle(request);
+			return this->changeImageSize(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -123,108 +123,36 @@ IvpdClient::DetectImageElementsOutcomeCallable IvpdClient::detectImageElementsCa
 	return task->get_future();
 }
 
-IvpdClient::RecognizeImageStyleOutcome IvpdClient::recognizeImageStyle(const RecognizeImageStyleRequest &request) const
+IvpdClient::ExtendImageStyleOutcome IvpdClient::extendImageStyle(const ExtendImageStyleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RecognizeImageStyleOutcome(endpointOutcome.error());
+		return ExtendImageStyleOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RecognizeImageStyleOutcome(RecognizeImageStyleResult(outcome.result()));
+		return ExtendImageStyleOutcome(ExtendImageStyleResult(outcome.result()));
 	else
-		return RecognizeImageStyleOutcome(outcome.error());
+		return ExtendImageStyleOutcome(outcome.error());
 }
 
-void IvpdClient::recognizeImageStyleAsync(const RecognizeImageStyleRequest& request, const RecognizeImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void IvpdClient::extendImageStyleAsync(const ExtendImageStyleRequest& request, const ExtendImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, recognizeImageStyle(request), context);
+		handler(this, request, extendImageStyle(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-IvpdClient::RecognizeImageStyleOutcomeCallable IvpdClient::recognizeImageStyleCallable(const RecognizeImageStyleRequest &request) const
+IvpdClient::ExtendImageStyleOutcomeCallable IvpdClient::extendImageStyleCallable(const ExtendImageStyleRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RecognizeImageStyleOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ExtendImageStyleOutcome()>>(
 			[this, request]()
 			{
-			return this->recognizeImageStyle(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvpdClient::ChangeImageSizeOutcome IvpdClient::changeImageSize(const ChangeImageSizeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ChangeImageSizeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ChangeImageSizeOutcome(ChangeImageSizeResult(outcome.result()));
-	else
-		return ChangeImageSizeOutcome(outcome.error());
-}
-
-void IvpdClient::changeImageSizeAsync(const ChangeImageSizeRequest& request, const ChangeImageSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, changeImageSize(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvpdClient::ChangeImageSizeOutcomeCallable IvpdClient::changeImageSizeCallable(const ChangeImageSizeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ChangeImageSizeOutcome()>>(
-			[this, request]()
-			{
-			return this->changeImageSize(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-IvpdClient::SegmentImageOutcome IvpdClient::segmentImage(const SegmentImageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SegmentImageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SegmentImageOutcome(SegmentImageResult(outcome.result()));
-	else
-		return SegmentImageOutcome(outcome.error());
-}
-
-void IvpdClient::segmentImageAsync(const SegmentImageRequest& request, const SegmentImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, segmentImage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-IvpdClient::SegmentImageOutcomeCallable IvpdClient::segmentImageCallable(const SegmentImageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SegmentImageOutcome()>>(
-			[this, request]()
-			{
-			return this->segmentImage(request);
+			return this->extendImageStyle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +231,42 @@ IvpdClient::RecognizeImageColorOutcomeCallable IvpdClient::recognizeImageColorCa
 	return task->get_future();
 }
 
+IvpdClient::RecognizeImageStyleOutcome IvpdClient::recognizeImageStyle(const RecognizeImageStyleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizeImageStyleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizeImageStyleOutcome(RecognizeImageStyleResult(outcome.result()));
+	else
+		return RecognizeImageStyleOutcome(outcome.error());
+}
+
+void IvpdClient::recognizeImageStyleAsync(const RecognizeImageStyleRequest& request, const RecognizeImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizeImageStyle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::RecognizeImageStyleOutcomeCallable IvpdClient::recognizeImageStyleCallable(const RecognizeImageStyleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizeImageStyleOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizeImageStyle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IvpdClient::RecolorImageOutcome IvpdClient::recolorImage(const RecolorImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +297,42 @@ IvpdClient::RecolorImageOutcomeCallable IvpdClient::recolorImageCallable(const R
 			[this, request]()
 			{
 			return this->recolorImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::SegmentImageOutcome IvpdClient::segmentImage(const SegmentImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SegmentImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SegmentImageOutcome(SegmentImageResult(outcome.result()));
+	else
+		return SegmentImageOutcome(outcome.error());
+}
+
+void IvpdClient::segmentImageAsync(const SegmentImageRequest& request, const SegmentImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, segmentImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::SegmentImageOutcomeCallable IvpdClient::segmentImageCallable(const SegmentImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SegmentImageOutcome()>>(
+			[this, request]()
+			{
+			return this->segmentImage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

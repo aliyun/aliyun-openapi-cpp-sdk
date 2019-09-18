@@ -36,17 +36,6 @@ void DescribeConditionsRequest::setProductCode(const std::string& productCode)
 	setCoreParameter("ProductCode", productCode);
 }
 
-std::string DescribeConditionsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeConditionsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
 int DescribeConditionsRequest::getFeatureType()const
 {
 	return featureType_;
@@ -56,6 +45,17 @@ void DescribeConditionsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
 	setCoreParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeConditionsRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void DescribeConditionsRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeConditionsRequest::getSearchType()const

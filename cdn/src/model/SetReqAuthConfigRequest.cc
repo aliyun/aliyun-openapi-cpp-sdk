@@ -19,7 +19,7 @@
 using AlibabaCloud::Cdn::Model::SetReqAuthConfigRequest;
 
 SetReqAuthConfigRequest::SetReqAuthConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetReqAuthConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetReqAuthConfig")
 {}
 
 SetReqAuthConfigRequest::~SetReqAuthConfigRequest()
@@ -45,6 +45,28 @@ void SetReqAuthConfigRequest::setKey2(const std::string& key2)
 {
 	key2_ = key2;
 	setCoreParameter("Key2", key2);
+}
+
+std::string SetReqAuthConfigRequest::getTimeOut()const
+{
+	return timeOut_;
+}
+
+void SetReqAuthConfigRequest::setTimeOut(const std::string& timeOut)
+{
+	timeOut_ = timeOut;
+	setCoreParameter("TimeOut", timeOut);
+}
+
+std::string SetReqAuthConfigRequest::getAuthType()const
+{
+	return authType_;
+}
+
+void SetReqAuthConfigRequest::setAuthType(const std::string& authType)
+{
+	authType_ = authType;
+	setCoreParameter("AuthType", authType);
 }
 
 std::string SetReqAuthConfigRequest::getAuthRemoteDesc()const
@@ -89,27 +111,5 @@ void SetReqAuthConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SetReqAuthConfigRequest::getTimeOut()const
-{
-	return timeOut_;
-}
-
-void SetReqAuthConfigRequest::setTimeOut(const std::string& timeOut)
-{
-	timeOut_ = timeOut;
-	setCoreParameter("TimeOut", timeOut);
-}
-
-std::string SetReqAuthConfigRequest::getAuthType()const
-{
-	return authType_;
-}
-
-void SetReqAuthConfigRequest::setAuthType(const std::string& authType)
-{
-	authType_ = authType;
-	setCoreParameter("AuthType", authType);
 }
 

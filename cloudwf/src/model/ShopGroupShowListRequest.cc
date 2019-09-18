@@ -25,6 +25,17 @@ ShopGroupShowListRequest::ShopGroupShowListRequest() :
 ShopGroupShowListRequest::~ShopGroupShowListRequest()
 {}
 
+std::string ShopGroupShowListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ShopGroupShowListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int ShopGroupShowListRequest::getPage()const
 {
 	return page_;
@@ -56,16 +67,5 @@ void ShopGroupShowListRequest::setPer(int per)
 {
 	per_ = per;
 	setCoreParameter("Per", std::to_string(per));
-}
-
-std::string ShopGroupShowListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ShopGroupShowListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

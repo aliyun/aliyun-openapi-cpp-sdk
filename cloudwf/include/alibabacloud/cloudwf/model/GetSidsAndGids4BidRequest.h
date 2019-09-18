@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				GetSidsAndGids4BidRequest();
 				~GetSidsAndGids4BidRequest();
 
-				int getQueryType()const;
-				void setQueryType(int queryType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getQueryId()const;
 				void setQueryId(long queryId);
+				int getQueryType()const;
+				void setQueryType(int queryType);
 
             private:
-				int queryType_;
 				std::string accessKeyId_;
 				long queryId_;
+				int queryType_;
 
 			};
 		}

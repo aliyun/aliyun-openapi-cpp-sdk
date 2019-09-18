@@ -25,6 +25,17 @@ QueryInstanceInfoByConnRequest::QueryInstanceInfoByConnRequest() :
 QueryInstanceInfoByConnRequest::~QueryInstanceInfoByConnRequest()
 {}
 
+std::string QueryInstanceInfoByConnRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryInstanceInfoByConnRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
 int QueryInstanceInfoByConnRequest::getPort()const
 {
 	return port_;
@@ -56,16 +67,5 @@ void QueryInstanceInfoByConnRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
 	setCoreParameter("UserName", userName);
-}
-
-std::string QueryInstanceInfoByConnRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryInstanceInfoByConnRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

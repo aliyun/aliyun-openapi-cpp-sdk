@@ -36,17 +36,6 @@ void RenewBackupPlanRequest::setPeriod(const std::string& period)
 	setCoreParameter("Period", period);
 }
 
-std::string RenewBackupPlanRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void RenewBackupPlanRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
 std::string RenewBackupPlanRequest::getClientToken()const
 {
 	return clientToken_;

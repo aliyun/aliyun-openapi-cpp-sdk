@@ -35,34 +35,34 @@ namespace AlibabaCloud
 				DescribeDataAssetsRequest();
 				~DescribeDataAssetsRequest();
 
+				std::string getRiskLevels()const;
+				void setRiskLevels(const std::string& riskLevels);
 				int getRangeId()const;
 				void setRangeId(int rangeId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getFeatureType()const;
-				void setFeatureType(int featureType);
-				std::string getRiskLevels()const;
-				void setRiskLevels(const std::string& riskLevels);
-				std::string getName()const;
-				void setName(const std::string& name);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getFeatureType()const;
+				void setFeatureType(int featureType);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getName()const;
+				void setName(const std::string& name);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
 
             private:
+				std::string riskLevels_;
 				int rangeId_;
 				std::string sourceIp_;
-				int featureType_;
-				std::string riskLevels_;
-				std::string name_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
+				int featureType_;
+				int currentPage_;
+				std::string name_;
 				long ruleId_;
 
 			};

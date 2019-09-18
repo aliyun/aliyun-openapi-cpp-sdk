@@ -35,32 +35,32 @@ namespace AlibabaCloud
 				ProfileTagRequest();
 				~ProfileTagRequest();
 
-				long getIdtype()const;
-				void setIdtype(long idtype);
 				std::string getBeginDate()const;
 				void setBeginDate(const std::string& beginDate);
-				std::string getEndDate()const;
-				void setEndDate(const std::string& endDate);
 				int getAppType()const;
 				void setAppType(int appType);
-				std::string getTag()const;
-				void setTag(const std::string& tag);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				long getAgsid()const;
 				void setAgsid(long agsid);
 				int getAreaNumber()const;
 				void setAreaNumber(int areaNumber);
+				long getIdtype()const;
+				void setIdtype(long idtype);
+				std::string getEndDate()const;
+				void setEndDate(const std::string& endDate);
+				std::string getTag()const;
+				void setTag(const std::string& tag);
 
             private:
-				long idtype_;
 				std::string beginDate_;
-				std::string endDate_;
 				int appType_;
-				std::string tag_;
 				std::string accessKeyId_;
 				long agsid_;
 				int areaNumber_;
+				long idtype_;
+				std::string endDate_;
+				std::string tag_;
 
 			};
 		}

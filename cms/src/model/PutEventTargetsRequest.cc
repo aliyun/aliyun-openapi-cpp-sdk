@@ -81,25 +81,6 @@ void PutEventTargetsRequest::setSlsParameters(const std::vector<SlsParameters>& 
 	}
 }
 
-std::vector<PutEventTargetsRequest::FcParameters> PutEventTargetsRequest::getFcParameters()const
-{
-	return fcParameters_;
-}
-
-void PutEventTargetsRequest::setFcParameters(const std::vector<FcParameters>& fcParameters)
-{
-	fcParameters_ = fcParameters;
-	int i = 0;
-	for(int i = 0; i!= fcParameters.size(); i++)	{
-		auto obj = fcParameters.at(i);
-		std::string str ="FcParameters."+ std::to_string(i);
-		setCoreParameter(str + ".FunctionName", obj.functionName);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Region", obj.region);
-	}
-}
-
 std::string PutEventTargetsRequest::getRuleName()const
 {
 	return ruleName_;
@@ -126,6 +107,25 @@ void PutEventTargetsRequest::setMnsParameters(const std::vector<MnsParameters>& 
 		setCoreParameter(str + ".Id", obj.id);
 		setCoreParameter(str + ".Region", obj.region);
 		setCoreParameter(str + ".Queue", obj.queue);
+	}
+}
+
+std::vector<PutEventTargetsRequest::FcParameters> PutEventTargetsRequest::getFcParameters()const
+{
+	return fcParameters_;
+}
+
+void PutEventTargetsRequest::setFcParameters(const std::vector<FcParameters>& fcParameters)
+{
+	fcParameters_ = fcParameters;
+	int i = 0;
+	for(int i = 0; i!= fcParameters.size(); i++)	{
+		auto obj = fcParameters.at(i);
+		std::string str ="FcParameters."+ std::to_string(i);
+		setCoreParameter(str + ".FunctionName", obj.functionName);
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Region", obj.region);
 	}
 }
 

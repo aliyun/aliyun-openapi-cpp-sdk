@@ -35,29 +35,29 @@ namespace AlibabaCloud
 				DescribeAuditContentItemRequest();
 				~DescribeAuditContentItemRequest();
 
-				int getTotalCount()const;
-				void setTotalCount(int totalCount);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				int getTotalCount()const;
+				void setTotalCount(int totalCount);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
 
             private:
-				int totalCount_;
 				std::string sourceIp_;
 				int pageSize_;
-				int currentPage_;
 				std::string lang_;
-				std::string resourceType_;
 				std::string taskId_;
+				int totalCount_;
+				int currentPage_;
+				std::string resourceType_;
 
 			};
 		}

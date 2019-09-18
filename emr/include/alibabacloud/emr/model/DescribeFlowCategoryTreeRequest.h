@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DescribeFlowCategoryTreeRequest();
 				~DescribeFlowCategoryTreeRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 
             private:
-				std::string regionId_;
 				std::string type_;
+				std::string regionId_;
 				std::string projectId_;
 
 			};

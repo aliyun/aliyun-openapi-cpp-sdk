@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeTotalAndRateLineRequest();
 				~DescribeTotalAndRateLineRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				int getApiType()const;
 				void setApiType(int apiType);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string sourceIp_;
 				int apiType_;
+				std::string sourceIp_;
 
 			};
 		}
