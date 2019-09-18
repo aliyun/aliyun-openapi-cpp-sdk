@@ -555,6 +555,42 @@ ImmClient::CreateTagSetOutcomeCallable ImmClient::createTagSetCallable(const Cre
 	return task->get_future();
 }
 
+ImmClient::CreateVideoAbstractTaskOutcome ImmClient::createVideoAbstractTask(const CreateVideoAbstractTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVideoAbstractTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVideoAbstractTaskOutcome(CreateVideoAbstractTaskResult(outcome.result()));
+	else
+		return CreateVideoAbstractTaskOutcome(outcome.error());
+}
+
+void ImmClient::createVideoAbstractTaskAsync(const CreateVideoAbstractTaskRequest& request, const CreateVideoAbstractTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVideoAbstractTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::CreateVideoAbstractTaskOutcomeCallable ImmClient::createVideoAbstractTaskCallable(const CreateVideoAbstractTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVideoAbstractTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createVideoAbstractTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::CreateVideoAnalyseTaskOutcome ImmClient::createVideoAnalyseTask(const CreateVideoAnalyseTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

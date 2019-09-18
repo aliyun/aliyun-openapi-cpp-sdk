@@ -49,6 +49,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/CreateTagJobResult.h
 	include/alibabacloud/imm/model/CreateTagSetRequest.h
 	include/alibabacloud/imm/model/CreateTagSetResult.h
+	include/alibabacloud/imm/model/CreateVideoAbstractTaskRequest.h
+	include/alibabacloud/imm/model/CreateVideoAbstractTaskResult.h
 	include/alibabacloud/imm/model/CreateVideoAnalyseTaskRequest.h
 	include/alibabacloud/imm/model/CreateVideoAnalyseTaskResult.h
 	include/alibabacloud/imm/model/CreateVideoCompressTaskRequest.h
@@ -254,6 +256,8 @@ set(imm_src
 	src/model/CreateTagJobResult.cc
 	src/model/CreateTagSetRequest.cc
 	src/model/CreateTagSetResult.cc
+	src/model/CreateVideoAbstractTaskRequest.cc
+	src/model/CreateVideoAbstractTaskResult.cc
 	src/model/CreateVideoAnalyseTaskRequest.cc
 	src/model/CreateVideoAnalyseTaskResult.cc
 	src/model/CreateVideoCompressTaskRequest.cc

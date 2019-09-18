@@ -50,6 +50,8 @@
 #include "model/CreateTagJobResult.h"
 #include "model/CreateTagSetRequest.h"
 #include "model/CreateTagSetResult.h"
+#include "model/CreateVideoAbstractTaskRequest.h"
+#include "model/CreateVideoAbstractTaskResult.h"
 #include "model/CreateVideoAnalyseTaskRequest.h"
 #include "model/CreateVideoAnalyseTaskResult.h"
 #include "model/CreateVideoCompressTaskRequest.h"
@@ -275,6 +277,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTagSetResult> CreateTagSetOutcome;
 			typedef std::future<CreateTagSetOutcome> CreateTagSetOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateTagSetRequest&, const CreateTagSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagSetAsyncHandler;
+			typedef Outcome<Error, Model::CreateVideoAbstractTaskResult> CreateVideoAbstractTaskOutcome;
+			typedef std::future<CreateVideoAbstractTaskOutcome> CreateVideoAbstractTaskOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::CreateVideoAbstractTaskRequest&, const CreateVideoAbstractTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoAbstractTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateVideoAnalyseTaskResult> CreateVideoAnalyseTaskOutcome;
 			typedef std::future<CreateVideoAnalyseTaskOutcome> CreateVideoAnalyseTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateVideoAnalyseTaskRequest&, const CreateVideoAnalyseTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoAnalyseTaskAsyncHandler;
@@ -583,6 +588,9 @@ namespace AlibabaCloud
 			CreateTagSetOutcome createTagSet(const Model::CreateTagSetRequest &request)const;
 			void createTagSetAsync(const Model::CreateTagSetRequest& request, const CreateTagSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTagSetOutcomeCallable createTagSetCallable(const Model::CreateTagSetRequest& request) const;
+			CreateVideoAbstractTaskOutcome createVideoAbstractTask(const Model::CreateVideoAbstractTaskRequest &request)const;
+			void createVideoAbstractTaskAsync(const Model::CreateVideoAbstractTaskRequest& request, const CreateVideoAbstractTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateVideoAbstractTaskOutcomeCallable createVideoAbstractTaskCallable(const Model::CreateVideoAbstractTaskRequest& request) const;
 			CreateVideoAnalyseTaskOutcome createVideoAnalyseTask(const Model::CreateVideoAnalyseTaskRequest &request)const;
 			void createVideoAnalyseTaskAsync(const Model::CreateVideoAnalyseTaskRequest& request, const CreateVideoAnalyseTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVideoAnalyseTaskOutcomeCallable createVideoAnalyseTaskCallable(const Model::CreateVideoAnalyseTaskRequest& request) const;
